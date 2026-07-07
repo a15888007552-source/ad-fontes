@@ -6,7 +6,3 @@ desktop.ini
 # editor
 .vscode/
 *.swp
-
-# 未公开模块:布索尼美学含未发表论文分析,论文发表前不得推送
-# 解禁时删掉下面这行、并把 index.html 模块二改回带链接的 <a> 卡片
-modules/busoni/
