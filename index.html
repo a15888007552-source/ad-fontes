@@ -1,0 +1,199 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ad Fontes · 溯源 — 音乐学数字文献工坊</title>
+<meta name="description" content="一处音乐学的数字文献工坊。每一条史实都标注来源。">
+<style>
+  :root{
+    --paper:#f6f1e7; --ink:#201c17; --muted:#6b6157; --line:#d9cfbe;
+    --rubric:#8c2b1f; --card:#fbf8f1; --card-line:#e5dccb; --shadow:rgba(60,40,20,.10);
+    --gold:#9a7b2e;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#16130f; --ink:#e9e2d4; --muted:#a79c8b; --line:#332c22;
+      --rubric:#d8695a; --card:#1d1913; --card-line:#332c22; --shadow:rgba(0,0,0,.4);
+      --gold:#c9a54e;
+    }
+  }
+  :root[data-theme="light"]{
+    --paper:#f6f1e7; --ink:#201c17; --muted:#6b6157; --line:#d9cfbe;
+    --rubric:#8c2b1f; --card:#fbf8f1; --card-line:#e5dccb; --shadow:rgba(60,40,20,.10); --gold:#9a7b2e;
+  }
+  :root[data-theme="dark"]{
+    --paper:#16130f; --ink:#e9e2d4; --muted:#a79c8b; --line:#332c22;
+    --rubric:#d8695a; --card:#1d1913; --card-line:#332c22; --shadow:rgba(0,0,0,.4); --gold:#c9a54e;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Georgia","Songti SC","STSong","SimSun","Noto Serif CJK SC",serif;
+    line-height:1.7; text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:clamp(2.2rem,5vw,4.5rem) clamp(1.2rem,5vw,2rem) 4rem;}
+
+  /* Masthead */
+  header{text-align:center; margin-bottom:2.6rem;}
+  .mast-latin{
+    font-size:clamp(2.6rem,9vw,4.2rem); letter-spacing:.16em; font-weight:400;
+    margin:0; line-height:1; text-transform:uppercase;
+  }
+  .mast-latin .dot{color:var(--rubric)}
+  .mast-cn{
+    font-size:clamp(1.15rem,4vw,1.5rem); letter-spacing:.5em; color:var(--muted);
+    margin:.9rem 0 0; padding-left:.5em;
+  }
+  .rule{
+    width:64px; height:1px; background:var(--line); border:0; margin:1.6rem auto;
+    position:relative;
+  }
+  .rule::after{
+    content:"❧"; position:absolute; top:-.85em; left:50%; transform:translateX(-50%);
+    color:var(--rubric); background:var(--paper); padding:0 .5rem; font-size:.9rem;
+  }
+  .gloss{color:var(--muted); font-style:italic; font-size:.98rem; margin:0;}
+
+  /* Manifesto */
+  .lede{
+    font-size:1.06rem; color:var(--ink); margin:2.4rem auto 3.2rem; max-width:44ch;
+    text-align:justify; hyphens:auto;
+  }
+  .lede .drop{
+    float:left; font-size:3.1rem; line-height:.82; padding:.16em .12em 0 0;
+    color:var(--rubric); font-weight:600;
+  }
+
+  /* Section heading */
+  .sec-h{
+    font-size:.82rem; letter-spacing:.32em; text-transform:uppercase; color:var(--muted);
+    text-align:center; margin:0 0 1.6rem; font-weight:400;
+  }
+
+  /* Module cards */
+  .mods{list-style:none; padding:0; margin:0; display:grid; gap:1.1rem;}
+  .mod{
+    display:block; text-decoration:none; color:inherit;
+    background:var(--card); border:1px solid var(--card-line); border-radius:3px;
+    padding:1.35rem 1.5rem 1.4rem; position:relative;
+    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  a.mod:hover{border-color:var(--rubric); transform:translateY(-2px); box-shadow:0 8px 24px var(--shadow);}
+  .mod-top{display:flex; align-items:baseline; gap:.7rem; margin-bottom:.35rem; flex-wrap:wrap;}
+  .num{
+    font-size:.9rem; letter-spacing:.15em; color:var(--rubric); font-variant:small-caps;
+    min-width:1.4em;
+  }
+  .mod-title{font-size:1.22rem; margin:0; font-weight:600;}
+  .mod-sub{font-size:.86rem; color:var(--muted); font-style:italic; margin-left:.2rem;}
+  .mod-desc{color:var(--muted); font-size:.97rem; margin:.15rem 0 0; padding-left:calc(1.4em + .7rem);}
+  .mod-meta{
+    padding-left:calc(1.4em + .7rem); margin-top:.7rem;
+    display:flex; gap:1rem; align-items:center; font-size:.8rem; flex-wrap:wrap;
+  }
+  .src{color:var(--muted); letter-spacing:.02em;}
+  .badge{
+    font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; padding:.2em .6em;
+    border-radius:2px; border:1px solid currentColor;
+  }
+  .badge.live{color:var(--gold);}
+  .badge.wip{color:var(--muted); opacity:.8;}
+  .mod.wip{opacity:.72; cursor:default;}
+  .go{margin-left:auto; color:var(--rubric); font-size:.9rem; letter-spacing:.05em;}
+  .mod.wip .go{display:none;}
+
+  /* Principle note */
+  .principle{
+    margin-top:3.4rem; padding-top:1.8rem; border-top:1px solid var(--line);
+    font-size:.95rem; color:var(--muted); text-align:center; max-width:52ch;
+    margin-left:auto; margin-right:auto;
+  }
+  .principle b{color:var(--ink); font-weight:600;}
+
+  footer{
+    margin-top:3rem; text-align:center; color:var(--muted); font-size:.82rem; line-height:1.9;
+  }
+  footer .draft{color:var(--rubric); font-style:italic;}
+
+  /* theme toggle */
+  .toggle{
+    position:fixed; top:1rem; right:1rem; background:transparent; border:1px solid var(--line);
+    color:var(--muted); border-radius:2px; padding:.35rem .6rem; font:inherit; font-size:.75rem;
+    cursor:pointer; letter-spacing:.1em;
+  }
+  .toggle:hover{border-color:var(--rubric); color:var(--rubric);}
+</style>
+
+<button class="toggle" id="toggle" aria-label="切换明暗">☾ / ☀</button>
+
+<div class="wrap">
+  <header>
+    <h1 class="mast-latin">Ad&nbsp;Fontes<span class="dot">.</span></h1>
+    <p class="mast-cn">溯 源</p>
+    <hr class="rule">
+    <p class="gloss">ad fontes — 回到本源</p>
+  </header>
+
+  <p class="lede">
+    <span class="drop">这</span>是一处音乐学的数字文献工坊。每一个模块都是一件独立的研究工具,而非科普读物;其中每一条史实、每一句判断,都标注它所依据的来源。名字取自文艺复兴人文主义者的口号 <i>ad fontes</i>——回到本源。
+  </p>
+
+  <p class="sec-h">Modules · 模块</p>
+
+  <ul class="mods">
+    <li>
+      <a class="mod" href="modules/europa/index.html">
+        <div class="mod-top">
+          <span class="num">I</span>
+          <h2 class="mod-title">Annales Musicorum Europae</h2>
+          <span class="mod-sub">欧罗巴音乐家年鉴</span>
+        </div>
+        <p class="mod-desc">一百位音乐家的交互年鉴,自古希腊至二十世纪。传记、术语、学术争议与深度词条,均可溯源。</p>
+        <div class="mod-meta">
+          <span class="src">据 Grout《西方音乐史》· Taruskin《牛津西方音乐史》</span>
+          <span class="badge live">已上线</span>
+          <span class="go">进入 →</span>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <div class="mod wip">
+        <div class="mod-top">
+          <span class="num">II</span>
+          <h2 class="mod-title">Busoni · Portrait</h2>
+          <span class="mod-sub">布索尼《肖像尝试》译注</span>
+        </div>
+        <p class="mod-desc">布索尼论歌剧文献的全文汉译与笺注——中文世界尚无的读本。</p>
+        <div class="mod-meta">
+          <span class="src">据布索尼原文 · 校勘中</span>
+          <span class="badge wip">建设中</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <p class="principle">
+    <b>编辑原则</b>　本站不收录无来源的断言。凡涉生卒、事件、评断,皆注明所据文献;存疑者标注争议,不替读者定谳。
+  </p>
+
+  <footer>
+    辛申奥　·　陕西师范大学音乐学院　·　MMXXVI<br>
+    <span class="draft">编辑中 · 内容持续校订</span>
+  </footer>
+</div>
+
+<script>
+  (function(){
+    var t = document.getElementById('toggle');
+    var root = document.documentElement;
+    t.addEventListener('click', function(){
+      var cur = root.getAttribute('data-theme');
+      if(!cur){
+        var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        cur = dark ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
