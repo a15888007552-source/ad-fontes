@@ -4,77 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Musica Theorica · 乐理 — Ad Fontes</title>
-<meta name="description" content="偏学术的乐理:调式与调性之辨、记谱法的演化、特殊(人工)调式详解,及二十世纪的观念转变。史料图与可交互、可听的结构图示。">
+<meta name="description" content="偏学术的乐理:古希腊乐学、调式与调性、记谱法的演化、特殊调式与二十世纪。以字母音阶(可点击、钢琴音色)与史料图讲解,每栏附脉络图。">
 <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/theory/index.html">
 <link rel="icon" href="../../favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Musica Theorica · 乐理">
-<meta property="og:description" content="调式与调性 · 记谱法的演化 · 特殊调式详解 · 二十世纪。史料图与可交互可听的图示。">
+<meta property="og:description" content="古希腊乐学 · 调式与调性 · 记谱法的演化 · 特殊调式 · 二十世纪。字母音阶可点击发声,史料图溯源。">
 <style>
 :root{
   --paper:#f6f1e7;--ink:#201c17;--mut:#6b6157;--line:#d9cfbe;--rubric:#8c2b1f;
   --card:#fbf8f1;--cardline:#e5dccb;--gold:#9a7b2e;--acc:#2b5e6b;--hi:#c8722a;
-  --wkey:#fbf8f1;--wkeyline:#c8bda6;--bkey:#2a241c;
   --serif:"Georgia","Songti SC","STSong","Noto Serif CJK SC",serif;
   --sans:"Segoe UI","Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
 }
 @media(prefers-color-scheme:dark){:root{
   --paper:#16130f;--ink:#e9e2d4;--mut:#a79c8b;--line:#332c22;--rubric:#d8695a;
   --card:#1d1913;--cardline:#332c22;--gold:#c9a54e;--acc:#6fb0bd;--hi:#e0975a;
-  --wkey:#e8e0cf;--wkeyline:#8a7f68;--bkey:#0c0a07;
 }}
-:root[data-theme=light]{--paper:#f6f1e7;--ink:#201c17;--mut:#6b6157;--line:#d9cfbe;--rubric:#8c2b1f;--card:#fbf8f1;--cardline:#e5dccb;--gold:#9a7b2e;--acc:#2b5e6b;--hi:#c8722a;--wkey:#fbf8f1;--wkeyline:#c8bda6;--bkey:#2a241c}
-:root[data-theme=dark]{--paper:#16130f;--ink:#e9e2d4;--mut:#a79c8b;--line:#332c22;--rubric:#d8695a;--card:#1d1913;--cardline:#332c22;--gold:#c9a54e;--acc:#6fb0bd;--hi:#e0975a;--wkey:#e8e0cf;--wkeyline:#8a7f68;--bkey:#0c0a07}
+:root[data-theme=light]{--paper:#f6f1e7;--ink:#201c17;--mut:#6b6157;--line:#d9cfbe;--rubric:#8c2b1f;--card:#fbf8f1;--cardline:#e5dccb;--gold:#9a7b2e;--acc:#2b5e6b;--hi:#c8722a}
+:root[data-theme=dark]{--paper:#16130f;--ink:#e9e2d4;--mut:#a79c8b;--line:#332c22;--rubric:#d8695a;--card:#1d1913;--cardline:#332c22;--gold:#c9a54e;--acc:#6fb0bd;--hi:#e0975a}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.9;-webkit-font-smoothing:antialiased}
-.wrap{max-width:840px;margin:0 auto;padding:clamp(1.8rem,4vw,3.2rem) clamp(1rem,4vw,1.8rem) 4rem}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:clamp(1.6rem,3.5vw,3rem) clamp(1rem,4vw,2.4rem) 4rem}
+.col{max-width:70ch}
 a{color:var(--rubric)}
-.back{display:inline-block;font-family:var(--sans);font-size:.78rem;letter-spacing:.12em;color:var(--mut);text-decoration:none;margin-bottom:1.5rem}
+.back{display:inline-block;font-family:var(--sans);font-size:.78rem;letter-spacing:.12em;color:var(--mut);text-decoration:none;margin-bottom:1.4rem}
 .back:hover{color:var(--rubric)}
-header{text-align:center;margin-bottom:1.2rem}
+header{text-align:center;margin-bottom:1.1rem}
 .mast{font-size:clamp(1.9rem,7vw,3rem);letter-spacing:.14em;margin:0;font-weight:400;text-transform:uppercase}
 .mast .dot{color:var(--rubric)}
 .mast-cn{font-size:clamp(1rem,4vw,1.2rem);letter-spacing:.5em;color:var(--mut);margin:.7rem 0 0;padding-left:.5em}
-.lede{color:var(--mut);font-style:italic;text-align:center;max-width:52ch;margin:1rem auto 0;font-size:.98rem}
-.rule{width:56px;height:1px;background:var(--line);border:0;margin:1.4rem auto;position:relative}
+.lede{color:var(--mut);font-style:italic;text-align:center;max-width:56ch;margin:1rem auto 0;font-size:.97rem}
+.rule{width:56px;height:1px;background:var(--line);border:0;margin:1.3rem auto;position:relative}
 .rule::after{content:"❧";position:absolute;top:-.85em;left:50%;transform:translateX(-50%);color:var(--rubric);background:var(--paper);padding:0 .5rem;font-size:.85rem}
-nav.tabs{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -1rem 2rem;padding:.5rem 1rem;display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center}
-nav.tabs button{font-family:var(--sans);font-size:.8rem;letter-spacing:.03em;background:transparent;border:1px solid transparent;color:var(--mut);padding:.4rem .7rem;border-radius:3px;cursor:pointer}
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -1rem 1.4rem;padding:.5rem 1rem;display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center}
+nav.tabs button{font-family:var(--sans);font-size:.82rem;letter-spacing:.03em;background:transparent;border:1px solid transparent;color:var(--mut);padding:.4rem .75rem;border-radius:3px;cursor:pointer}
 nav.tabs button:hover{color:var(--ink)}
 nav.tabs button.on{color:var(--ink);background:var(--card);border-color:var(--cardline);box-shadow:inset 0 -2px 0 var(--rubric)}
 section.view{display:none}
 section.view.on{display:block;animation:fade .3s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
-h2.sec{font-size:1.5rem;margin:.3rem 0 .2rem;font-weight:600}
+h2.sec{font-size:1.55rem;margin:.2rem 0 .2rem;font-weight:600}
 h2.sec .en{font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rubric);display:block;margin-bottom:.35rem}
-h3{font-size:1.14rem;margin:2.4rem 0 .5rem;font-weight:600;padding-left:.6rem;border-left:3px solid var(--gold)}
-h4{font-size:1rem;margin:1.4rem 0 .3rem;font-weight:600;color:var(--rubric)}
-p{margin:.85rem 0}
-.abstract{font-size:1.02rem;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1rem 0;margin:1.2rem 0}
-.def{background:var(--card);border:1px solid var(--cardline);border-left:3px solid var(--acc);border-radius:3px;padding:.85rem 1.05rem;margin:1.1rem 0;font-size:.96rem}
+h3{font-size:1.18rem;margin:2.4rem 0 .5rem;font-weight:600;padding-left:.6rem;border-left:3px solid var(--gold);scroll-margin-top:64px}
+h4{font-size:1.02rem;margin:1.5rem 0 .3rem;font-weight:600;color:var(--rubric)}
+p{margin:.85rem 0;max-width:72ch}
+.abstract{font-size:1.02rem;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.9rem 0;margin:1rem 0;max-width:74ch}
+.def{background:var(--card);border:1px solid var(--cardline);border-left:3px solid var(--acc);border-radius:3px;padding:.85rem 1.05rem;margin:1.1rem 0;font-size:.96rem;max-width:74ch}
 .def b{color:var(--ink)}
-.note{font-size:.9rem;color:var(--mut)}
+.note{font-size:.9rem;color:var(--mut);max-width:72ch}
 em.term{font-style:normal;color:var(--rubric);font-weight:600}
 .lat{font-style:italic;color:var(--mut)}
+/* flow / 脉络图 */
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:.4rem;margin:.4rem 0 1.8rem;font-family:var(--sans)}
+.flow .node{display:flex;flex-direction:column;justify-content:center;background:var(--card);border:1px solid var(--cardline);border-radius:4px;padding:.4rem .7rem;font-size:.82rem;color:var(--ink);cursor:pointer;transition:border-color .15s}
+.flow .node:hover{border-color:var(--rubric)}
+.flow .node small{display:block;font-size:.68rem;color:var(--mut);margin-top:.1rem}
+.flow .arr{display:flex;align-items:center;color:var(--gold);font-size:1rem}
+/* figures */
 .fig{margin:1.4rem 0;padding:1rem;background:var(--card);border:1px solid var(--cardline);border-radius:4px}
-.fig .cap{font-family:var(--sans);font-size:.78rem;color:var(--mut);margin-top:.7rem;line-height:1.65}
+.fig .cap{font-family:var(--sans);font-size:.78rem;color:var(--mut);margin-top:.7rem;line-height:1.65;max-width:78ch}
 .fig .cap b{color:var(--ink);font-weight:600}
 figure.hist{margin:0}
 figure.hist img{width:100%;display:block;border:1px solid var(--cardline);border-radius:3px;background:#fff}
 figure.hist figcaption{font-family:var(--sans);font-size:.76rem;color:var(--mut);margin-top:.5rem;line-height:1.6}
 figure.hist figcaption b{color:var(--ink)}
-.kbd{position:relative;height:112px;margin:.2rem 0;user-select:none;touch-action:manipulation}
-.wk{position:absolute;top:0;bottom:0;background:var(--wkey);border:1px solid var(--wkeyline);border-radius:0 0 4px 4px;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px;font-family:var(--sans);font-size:9px;color:var(--mut)}
-.bk{position:absolute;top:0;height:64%;background:var(--bkey);border-radius:0 0 3px 3px;cursor:pointer;z-index:3}
-.wk.hl{background:var(--hi);color:#fff;border-color:var(--hi)}
-.wk.ton{background:var(--rubric);color:#fff;border-color:var(--rubric)}
-.bk.hl{background:var(--hi)}.bk.ton{background:var(--rubric)}
-.wk:active,.bk:active{filter:brightness(1.15)}
-.ctrls{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.6rem 0 .2rem}
-.play{font-family:var(--sans);font-size:.8rem;background:var(--rubric);color:#fff;border:none;border-radius:3px;padding:.35rem .75rem;cursor:pointer;letter-spacing:.03em}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:720px){.grid2{grid-template-columns:1fr}}
+/* letter scale view */
+.sv{margin:.3rem 0}
+.sv-row{display:flex;flex-wrap:wrap;align-items:center;gap:0;font-family:var(--sans)}
+.sv-note{min-width:34px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--cardline);border-radius:5px;font-size:1rem;font-weight:600;color:var(--ink);cursor:pointer;margin:2px 0;transition:transform .08s,background .15s}
+.sv-note:hover{background:var(--hi);color:#fff;border-color:var(--hi)}
+.sv-note:active{transform:scale(.9)}
+.sv-note.ton{background:var(--rubric);color:#fff;border-color:var(--rubric)}
+.sv-gap{min-width:26px;text-align:center;font-size:.66rem;color:var(--mut);align-self:center}
+.sv-gap.H{color:var(--rubric);font-weight:700}
+.sv-gap.big{color:var(--acc)}
+.ctrls{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.55rem 0 .2rem}
+.play{font-family:var(--sans);font-size:.8rem;background:var(--rubric);color:#fff;border:none;border-radius:4px;padding:.38rem .8rem;cursor:pointer;letter-spacing:.02em}
 .play:hover{filter:brightness(1.08)}
 .play.alt{background:var(--acc)}
+.play.g{background:var(--gold)}
 .pick{font-family:var(--sans);display:flex;gap:.25rem;flex-wrap:wrap}
 .pick button{font-family:var(--sans);font-size:.8rem;background:transparent;border:1px solid var(--line);color:var(--mut);border-radius:3px;padding:.3rem .6rem;cursor:pointer}
 .pick button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
@@ -84,20 +97,21 @@ table.sc{border-collapse:collapse;width:100%;font-size:.85rem;margin:.7rem 0}
 table.sc th,table.sc td{border:1px solid var(--cardline);padding:.35rem .5rem;text-align:left;vertical-align:top}
 table.sc th{font-family:var(--sans);font-size:.74rem;letter-spacing:.05em;color:var(--mut);font-weight:600}
 table.sc .ch{color:var(--rubric);font-weight:600;white-space:nowrap}
+table.sc .num{font-family:var(--mono);color:var(--acc);letter-spacing:.08em}
 .modecard{border:1px solid var(--cardline);border-radius:4px;padding:.8rem 1rem;margin:1rem 0;background:var(--card)}
 .modecard .hd{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.4rem}
 .modecard .hd b{font-size:1.02rem}
 .tag{font-family:var(--sans);font-size:.72rem;color:var(--mut);border:1px solid var(--line);border-radius:10px;padding:.05em .6em}
-.iv{font-family:var(--sans);font-size:.82rem;color:var(--acc);letter-spacing:.04em;margin:.3rem 0}
 .matrix{border-collapse:collapse;font-family:var(--sans);font-size:11px;margin:.5rem auto}
 .matrix td{border:1px solid var(--cardline);width:25px;height:23px;text-align:center;color:var(--mut)}
 .matrix td.d{background:color-mix(in srgb,var(--gold) 20%,transparent);color:var(--ink);font-weight:700}
-.refs{font-size:.82rem;color:var(--mut);line-height:1.75}
+.refs{font-size:.82rem;color:var(--mut);line-height:1.75;max-width:80ch}
 .refs b{color:var(--ink)}
 footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-align:center;color:var(--mut);font-size:.8rem;line-height:1.9}
 .toggle{position:fixed;top:.8rem;right:.8rem;background:var(--paper);border:1px solid var(--line);color:var(--mut);border-radius:2px;padding:.3rem .55rem;font:inherit;font-size:.72rem;cursor:pointer;letter-spacing:.1em;z-index:30}
 .toggle:hover{border-color:var(--rubric);color:var(--rubric)}
 .hint{font-family:var(--sans);font-size:.75rem;color:var(--mut);font-style:normal}
+.gletters{font-family:var(--mono);letter-spacing:.15em;color:var(--acc)}
 </style>
 </head>
 <body>
@@ -107,7 +121,7 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
   <header>
     <h1 class="mast">Musica&nbsp;Theorica<span class="dot">.</span></h1>
     <p class="mast-cn">乐 理</p>
-    <p class="lede">不作零基础的普及,而以史与论为经纬:调式如何让位于调性、记谱法如何从提示演化为蓝图、作曲家如何以人工音阶逃离大小调,以及二十世纪"音乐材料"这一概念本身的松动。结构图示可交互、可发声。</p>
+    <p class="lede">不作零基础普及,而以史与论为经纬。音阶以字母呈示,点击任意音名或「▶」即可听见(钢琴音色);每栏首列脉络图,可点跳转。</p>
     <hr class="rule">
   </header>
 
@@ -119,148 +133,216 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
   </nav>
 
   <main>
-  <!-- ══════════ 调式与调性 ══════════ -->
+  <!-- ════════════ 调式与调性 ════════════ -->
   <section class="view on" id="v-mode">
     <h2 class="sec"><span class="en">Modus &amp; Tonalitas</span>调式与调性</h2>
-    <p class="abstract">"调式"与"调性"常被混用,却指向两套不同的组织原则。<em class="term">调式</em>(modus)是旋律性的:它由一批音级加一个作为归宿的<em class="term">结音</em>(finalis)、一段规定的<em class="term">音域</em>(ambitus)与一个吟诵中心(tenor / repercussa)界定,统辖了中世纪至文艺复兴的单声与复调。<em class="term">调性</em>(tonalitas)则是和声性的:它以主音为引力中心,由和弦的<b>功能层级</b>(主—下属—属)驱动张力与解决,统治了约 1600–1910 年的西方音乐。从前者到后者,并非"进步",而是一次组织范式的更替。</p>
+    <div class="flow" data-flow='[["古希腊乐学","g-greek"],["八教会调式","g-medieval"],["格拉雷安十二调式","g-glarean"],["调式→调性","g-tonality"]]'></div>
+    <p class="abstract">"调式"与"调性"常被混用,却是两套组织原则。<em class="term">调式</em>(modus)是旋律性的:由一批音级、一个作为归宿的<em class="term">结音</em>(finalis)与一段音域(ambitus)界定;<em class="term">调性</em>(tonalitas)是和声性的:以主音为引力中心,由和弦的<b>功能</b>(主—下属—属)驱动张力与解决。西方乐理的这条主线,起于古希腊人对"数"与"音"的思辨。</p>
 
-    <h3>一、中世纪的八种教会调式</h3>
-    <p>加洛林理论家为整理格里高利圣咏,借由波爱修斯转译的希腊乐学,归纳出<em class="term">八种教会调式</em>(octoechos)。它们两两成对:<b>正格</b>(authentic)以结音为音域下界,<b>变格</b>(plagal,前缀 Hypo-)则以结音居于音域之中。关键不在"音阶",而在<b>结音落在哪个音</b>(D E F G)与<b>吟诵音在何处</b>。</p>
+    <h3 id="g-greek">一、古希腊乐学:数、四音音列、完整体系与调式</h3>
+    <p>古希腊人视音乐兼具<b>神性</b>与<b>数理</b>:它源出缪斯(Muse),又被毕达哥拉斯还原为整数之比。毕达哥拉斯相信,宏观宇宙(macrocosm)与微观乐音遵循同一套数学逻辑,而音乐是人能借感官直接"听"到的宇宙真理。</p>
+
+    <h4>1 · 和谐论(毕达哥拉斯)</h4>
+    <p>最早以数解释音乐的理论。核心:<em class="term">音乐由数决定,不同的弦长比发出不同的音</em>。相传毕氏由铁匠铺的锤声悟得最简整数比对应最协和的音程:</p>
     <div class="fig">
-      <div class="svgwrap"><table class="sc">
-        <tr><th>序</th><th>调式(希腊名后加)</th><th>结音 Finalis</th><th>类型</th><th>吟诵音 Tenor</th></tr>
-        <tr><td>I / II</td><td class="ch">多利亚 / 下多利亚</td><td>D</td><td>正 / 变</td><td>a / F</td></tr>
-        <tr><td>III / IV</td><td class="ch">弗里几亚 / 下弗里几亚</td><td>E</td><td>正 / 变</td><td>c / a</td></tr>
-        <tr><td>V / VI</td><td class="ch">利底亚 / 下利底亚</td><td>F</td><td>正 / 变</td><td>c / a</td></tr>
-        <tr><td>VII / VIII</td><td class="ch">混合利底亚 / 下混合利底亚</td><td>G</td><td>正 / 变</td><td>d / c</td></tr>
-      </table></div>
-      <div class="cap"><b>八种教会调式。</b>同一结音的正、变格共享结音而音域不同——旋律的"性格"由结音上方半音的位置与吟诵音决定,而非现代意义上的"音阶"。希腊调式名(多利亚等)在中世纪被张冠李戴,与古希腊的同名调式并不对应。</div>
-    </div>
-    <p>把七个自然音(白键)各作一次结音,即可听见结音移动如何改变半音的落点、从而改变性格。下面的键盘是同一批白键,只是<b>红色结音</b>在移动:</p>
-    <div class="fig">
-      <div class="pick" id="modepick"></div>
-      <div id="kb-mode" style="margin-top:.5rem"></div>
-      <div class="ctrls"><button class="play" data-play="mode">▶ 播放此调式</button> <span class="hint" id="modechar"></span></div>
-      <div class="cap"><b>七个"白键调式"。</b>多利亚(D)的升六、弗里几亚(E)的降二、利底亚(F)的升四、混合利底亚(G)的降七——每一个"特征音"都是半音落点移动的结果。洛克里亚(B)结音上方即为减五度,故理论上少有作品以之为结。</div>
+      <div id="ratios"></div>
+      <div class="cap"><b>弦长比与协和音程。</b><b>2:1</b>→八度、<b>3:2</b>→五度、<b>4:3</b>→四度;比例越简单,听感越协和。点按可听——这是西方"协和"概念的数学起点。(尼科马库斯所记铁匠铺传说于物理上并不成立,Taruskin 视之为把既成音体系"自然化"的事后叙事。)</div>
     </div>
 
-    <h3>二、格拉雷安的十二调式与大小调的追认</h3>
-    <p>1547 年,格拉雷安(Glareanus)在《十二弦琴》(<span class="lat">Dodecachordon</span>)中主张调式应有十二种,补入结音为 A 的<em class="term">爱奥利亚</em>与结音为 C 的<em class="term">伊奥尼亚</em>及其变格。他等于用理论"追认"了早已在实践中盛行的、以 C 与 A 为中心的两种音阶——它们正是日后<b>大调</b>与<b>自然小调</b>的前身。调式体系由此埋下自我瓦解的种子。</p>
-    <div class="def"><b>术语辨。</b>今日流行、爵士语汇里的"多利亚""利底亚"等,是<b>被抽掉了结音—音域—吟诵音之整套法则</b>后、仅剩音程排列的"音阶模式";它与中世纪的<span class="lat">modus</span>同名而不同实。谈历史时须分清这两层含义(参 Harold Powers, New Grove "Mode")。</div>
+    <h4>2 · 四音音列(tetrachord)与三种"属"</h4>
+    <p>希腊乐学的基本砖块是<em class="term">四音音列</em>:四个音<b>自上而下</b>排列,首尾相距一个纯四度(阿里斯托克塞诺斯《和谐的要素》)。中间两音的位置,分出三种<em class="term">属</em>(genus):</p>
+    <div class="fig">
+      <div id="genera"></div>
+      <div class="cap"><b>四音音列的三属(降序,首尾纯四度)。</b><b>自然属</b>(diatonic,全-全-半)最常用;<b>变化属</b>(chromatic,小三度-半-半)色彩浓;<b>四分音属</b>(enharmonic,大三度+两个四分之一音)含微分音——点最后一个可听见古希腊的四分音。</div>
+    </div>
 
-    <h3>三、从调式到调性:功能和声的生成</h3>
-    <p>17 世纪,众多调式收敛为<b>大—小调二元</b>。差别之核心在结音上方的<b>三度</b>(大三度 vs 小三度),以及为强化归宿而在小调中升高的导音。但真正的转变不在音阶,而在<b>和声获得了功能</b>:拉莫(Rameau)《和声学》(1722)以<em class="term">基础低音</em>(basse fondamentale)与和弦转位说明,一切和声可归结为主(T)、下属(S)、属(D)三种功能的运动——属七对主的强烈倾向,给了音乐"方向"与"回家"的叙事。</p>
-    <p>达尔豪斯在《和声调性之生成研究》中提醒:modality 向 tonality 的过渡是渐进而多线的,不能读作单一的"发现"。但其结果清晰可辨——<em class="term">调性</em>成为一套以主音为引力中心的功能层级,并以<b>五度圈</b>为其调空间的地图:相邻两调仅差一个升/降号,关系最近。</p>
+    <h4>3 · 大、小完整音列体系</h4>
+    <p>把四音音列首尾<b>相连</b>(conjunct,共用一音)或<b>相隔</b>(disjunct,间以一全音)拼接,得到跨两个八度的音列骨架。<em class="term">大完整音列体系</em>(Greater Perfect System)由四个四音音列构成,以自然属为主;<em class="term">小完整音列体系</em>(Lesser Perfect System)由三个四音音列构成。</p>
+    <div class="fig"><figure class="hist" id="nota-systema"></figure><div class="cap"><b>大完整音列体系(Systema Teleion)。</b>四个四音音列以"相连/相隔"拼接,附加一个最低音(proslambanomenos);整个古希腊调式与托诺斯理论,都在这张骨架上展开。</div></div>
+
+    <h4>4 · 八度类别(species)与七种古希腊调式</h4>
+    <p>克里奥尼德斯(Cleonides)将大完整体系里<b>截取一个八度</b>的七种不同方式称为<em class="term">八度类别</em>(species):同样七个自然音,从不同的音起算,全音与半音的排列便不同,得出七种<b>古希腊调式</b>(harmoniai)。注意两点:古希腊音阶<b>自上而下</b>思考;其调式名与后世中世纪的同名调式<b>并不对应</b>(一桩流传千年的张冠李戴)。</p>
+    <div class="fig">
+      <div class="pick" id="gmodepick"></div>
+      <div id="gmode-sv" style="margin-top:.6rem"></div>
+      <div class="ctrls"><button class="play" data-play="gmode">▶ 降序播放此调式</button> <span class="hint" id="gmodechar"></span></div>
+      <div class="cap"><b>七种八度类别(白音,降序)。</b>红色为该类别的起音。下表并列你笔记中的度数记法与其白音八度。多利亚(E–E)居中,被希腊人视为最"正"的调式。</div>
+      <div class="svgwrap"><table class="sc" id="gmode-table"></table></div>
+    </div>
+
+    <h4>5 · 托诺斯(tonos)与托勒密的天体音乐</h4>
+    <p><em class="term">托诺斯</em>一词有三层含义:①泛指音符、音程、音区、音高,多指人声的音域;②克里奥尼德斯与阿里斯托克塞诺斯发明"十三托诺斯系统"——把整套音阶在不同音高上<b>整体平移</b>(相当于移调),阿里皮乌斯后扩至十五种;③托勒密提出"七托诺斯系统":所有托诺斯落在<b>相同</b>音域内,调式之别只在其<b>内部音程的组合</b>。托勒密更把乐律接上天文,提出<em class="term">天体音乐</em>(harmonia mundi):行星运行发出人耳听不见的音乐。</p>
+
+    <h4>6 · 道德教化学说(ethos,柏拉图)</h4>
+    <div class="def"><b>音乐即教化。</b>柏拉图主张:①不同调式令人生不同之情(此即"同声相应",resonance);②艺术与教育的失序会招致城邦的失序,故音乐传统必须<b>不变</b>;③音乐过度使人柔弱、体育过度使人粗鲁,教育须求二者之<b>平衡</b>。古希腊由此把调式与人格、政治绑定——调式从来不只是音阶。</div>
+
+    <h3 id="g-medieval">二、中世纪的八种教会调式</h3>
+    <p>加洛林理论家为整理格里高利圣咏,借波爱修斯转译的希腊乐学,归纳出<em class="term">八种教会调式</em>。它们两两成对:<b>正格</b>以结音为音域下界,<b>变格</b>(Hypo-)则结音居中。关键在<b>结音落在 D E F G 之何者</b>与吟诵音的位置,而非现代的"音阶"。</p>
+    <div class="fig">
+      <div class="pick" id="cmodepick"></div>
+      <div id="cmode-sv" style="margin-top:.6rem"></div>
+      <div class="ctrls"><button class="play" data-play="cmode">▶ 播放</button> <span class="hint" id="cmodechar"></span></div>
+      <div class="cap"><b>七个"白音调式"(升序,红色为结音)。</b>多利亚(D)升六、弗里几亚(E)降二、利底亚(F)升四、混合利底亚(G)降七——每个"特征音"都是半音落点移动的结果。这些是抽掉了古希腊整套体系后、仅存音程排列的"调式模式";与古希腊同名调式同名异实(参 Harold Powers, New Grove "Mode")。</div>
+    </div>
+
+    <h3 id="g-glarean">三、格拉雷安的十二调式与大小调的追认</h3>
+    <p>1547 年,格拉雷安《十二弦琴》(<span class="lat">Dodecachordon</span>)主张调式应有十二种,补入结音为 <b>A</b> 的<em class="term">爱奥利亚</em>与结音为 <b>C</b> 的<em class="term">伊奥尼亚</em>及其变格。这等于用理论<b>追认</b>了实践中早已盛行、以 C 与 A 为中心的两种音阶——它们正是<b>大调</b>与<b>自然小调</b>的前身。</p>
+    <div class="fig grid2">
+      <div><div class="hint" style="margin-bottom:.3rem">伊奥尼亚(C)= 日后的大调</div><div id="sv-ionian"></div><div class="ctrls"><button class="play" data-play="sv-ionian">▶</button></div></div>
+      <div><div class="hint" style="margin-bottom:.3rem">爱奥利亚(A)= 日后的自然小调</div><div id="sv-aeolian"></div><div class="ctrls"><button class="play" data-play="sv-aeolian">▶</button></div></div>
+    </div>
+    <div class="cap" style="font-family:var(--sans);font-size:.78rem;color:var(--mut);max-width:78ch"><b>两条决定性的音阶。</b>伊奥尼亚全用白音 C D E F G A B,半音在 3–4、7–8 级(明亮);爱奥利亚 A B C D E F G,半音在 2–3、5–6 级(忧郁)。格拉雷安为它们正名,大小调二元自此浮出水面。</div>
+
+    <h3 id="g-tonality">四、从调式到调性:功能和声的生成(科雷利—拉莫)</h3>
+    <p>真正的转变不在音阶,而在<b>和声获得了功能</b>。约 1680–1720 年,<em class="term">科雷利</em>(Arcangelo Corelli)在其三重奏鸣曲与《大协奏曲》(Op. 6)中,以清晰的<b>属—主</b>进行、模进与终止式,把和声写成有方向、会"回家"的语法——他常被称作"调性句法之父"。其《小提琴奏鸣曲》Op. 5(1700)风行全欧,成为大小调语汇的范本。</p>
+    <div class="fig"><figure class="hist" id="nota-corelli"></figure><div class="cap"><b>科雷利《小提琴奏鸣曲》Op. 5 No. 3(1700)。</b>清晰的功能低音与终止式,是成熟大小调语法的早期典范;数字低音标记着和声的功能骨架。</div></div>
+    <p>1722 年,<em class="term">拉莫</em>(Rameau)《和声学》为这套实践提供了理论:以<em class="term">基础低音</em>(basse fondamentale)与和弦转位说明,一切和声可归为主(T)、下属(S)、属(D)三种功能的运动。达尔豪斯《和声调性之生成研究》则提醒:modality 向 tonality 的过渡渐进而多线,不可读作单一"发现"。其结果是<em class="term">调性</em>——以主音为引力中心的功能层级,并以<b>五度圈</b>为其调空间的地图。</p>
     <div class="fig">
       <div class="svgwrap"><div id="cof"></div></div>
       <div class="ctrls"><button class="play alt" data-play="fifths">▶ 沿五度圈上行</button></div>
-      <div class="cap"><b>五度圈。</b>外圈大调,内圈其<b>关系小调</b>(共用调号)。顺时针每步加一升号、逆时针每步加一降号;调号中升降号的出现顺序即由此决定。点任一调可听其主三和弦。此图既是转调的近邻地图,也是功能调性把十二律统一为一个封闭系统的可视化。</div>
+      <div class="cap"><b>五度圈。</b>外圈大调、内圈其关系小调(共用调号);顺时针每步加一升号,逆时针每步加一降号。点任一调听其主三和弦。它把十二律统一为一个封闭的功能系统。</div>
     </div>
-    <p class="note">调性并非"自然",而是历史的建制;二十世纪对它的松动(见末栏)因此不是"失序",而是另一种秩序的登场。</p>
   </section>
 
-  <!-- ══════════ 记谱法的演化 ══════════ -->
+  <!-- ════════════ 记谱法的演化 ════════════ -->
   <section class="view" id="v-notation">
     <h2 class="sec"><span class="en">Evolutio Notationis</span>记谱法的演化</h2>
-    <p class="abstract">记谱法的历史,是一部"<b>可读性</b>"不断增强的历史:从只为已会唱者提示旋律轮廓的<em class="term">备忘</em>,到能让人视读未闻之曲的<em class="term">蓝图</em>。每一次飞跃——音高的钉定、时值的量化、印刷的普及——都同时改变了音乐能被<b>构想</b>与<b>传播</b>的方式。以下按史料排列。</p>
+    <div class="flow" data-flow='[["古希腊字母谱","n-greek"],["无线纽姆","n-neume1"],["加线·四线谱","n-neume2"],["圭多:六声与手","n-guido"],["有量记谱","n-mensural"],["印刷·五线谱","n-print"]]'></div>
+    <p class="abstract">记谱法的历史,是"<b>可读性</b>"不断增强的历史:从只为已会唱者提示轮廓的<em class="term">备忘</em>,到能让人视读未闻之曲、并跨时空重演的<em class="term">蓝图</em>。每一次飞跃——音高的钉定、时值的量化、印刷的普及——都改变了音乐能被<b>构想</b>与<b>传播</b>的方式。</p>
 
-    <h4>1 · 古代:字母谱</h4>
-    <p>古希腊以两套字母(声乐、器乐各一)标音,经波爱修斯《音乐原理》转译为拉丁传统。实际音响几近失传,仅存四十余件残篇(如塞基洛斯墓志铭)。它记录的是"哪个音",却不含节奏的精确指令。</p>
-    <div class="fig"><figure class="hist" id="nota-greek"></figure><div class="cap"><b>古希腊记谱残存。</b>字母置于歌词之上以示音高;这类史料稀少而破碎,正是"古代"之所以难以被<b>听见</b>的原因。</div></div>
+    <h3 id="n-greek">一、古希腊:两套字母谱</h3>
+    <p>希腊人用两套记号标示音高,置于歌词之上:<em class="term">器乐谱</em>以旋转、变形的古字母表示,<em class="term">声乐谱</em>以爱奥尼亚字母(Α Β Γ …)表示;两者除音高外,尚有表示<b>时值长短与休止</b>的附加记号。经波爱修斯转译,希腊乐名传入拉丁西方。</p>
+    <div class="fig">
+      <div class="svgwrap"><div id="greeknot"></div></div>
+      <div class="cap"><b>古希腊两套记谱(示意一段音阶)。</b>上行为器乐符号谱,下行为声乐字母谱;同一音高,两套系统各有其号。真正的完整符号表见于阿里皮乌斯,涵盖全部十五托诺斯。</div>
+    </div>
+    <div class="fig grid2">
+      <div><figure class="hist" id="nota-orestes"></figure></div>
+      <div><figure class="hist" id="nota-seikilos"></figure></div>
+    </div>
+    <div class="cap" style="font-family:var(--sans);font-size:.78rem;color:var(--mut);max-width:80ch"><b>实存的希腊记谱。</b>左:欧里庇得斯《俄瑞斯忒斯》合唱残篇纸草(约前 5 世纪),字母谱直接写在希腊文歌词上方;右:塞基洛斯之歌的<b>原谱转写</b>——现存最完整的古代旋律,记号标出音高与时值。(用原谱而非墓碑照,方见记谱本身。)</div>
 
-    <h4>2 · 纽姆:轮廓的备忘(9 世纪起)</h4>
-    <p>加洛林时期出现<em class="term">纽姆</em>(neuma):最初为<b>无线纽姆</b>(adiastematic / cheironomic),只以点、竖、勾画出旋律的起伏与走向,供<b>已熟记曲调者</b>提示——格劳特喻之为"食谱",备重构而非供视读。基本形有单音的 punctum(点)、virga(竖),二音的 pes/podatus(上行)、clivis(下行),三音的 torculus(低—高—低)、porrectus(高—低—高)等。</p>
-    <div class="fig"><div class="svgwrap"><div id="neume-svg"></div></div><div class="cap"><b>纽姆基本形。</b>形状即"手势":一笔画出若干音的相对高低。无线纽姆不指定绝对音高,只保存轮廓与连断。</div></div>
-    <div class="fig"><figure class="hist" id="nota-neumes"></figure><div class="cap"><b>无线纽姆手稿。</b>音符悬浮于歌词之上,无谱线可依;同一曲调在不同修道院的纽姆书写(圣加尔、梅斯、拉昂等)各成方言。</div></div>
+    <h3 id="n-neume1">二、纽姆的三步:从无线到四线</h3>
+    <p>加洛林时期出现<em class="term">纽姆</em>(neuma),其可读性经历三步演化:</p>
+    <div class="fig">
+      <div class="svgwrap"><div id="neume-stages"></div></div>
+      <div class="cap"><b>纽姆的三阶段。</b>①<b>无线纽姆</b>(adiastematic,约9世纪):点、竖、勾悬于歌词上方,只记轮廓与走向,供已熟记者提示,不定绝对音高。②<b>加线</b>(约11世纪初):先划一条(常为红色 F)、再加一条(黄色 c)干线,音高始有坐标。③<b>四线谱</b>(圭多):四线四间,方形音符各就其位,音高完全钉定。</div>
+    </div>
+    <div class="fig"><figure class="hist" id="nota-neumes"></figure><div class="cap"><b>无线纽姆手稿(圣加尔 Cantatorium)。</b>音符悬浮于歌词之上、无谱线可依;同一曲调在圣加尔、梅斯、拉昂等地的纽姆书写各成方言。</div></div>
 
-    <h4>3 · 圭多·达雷佐:钉住音高(约 1030)</h4>
-    <p>圭多的三项发明第一次让"视唱"成为可能:其一,<em class="term">谱线</em>——先用一两条线、后成<b>四线谱</b>,并以<b>红线钉 F、黄线钉 c</b>(音部记号 clef 的前身),音高从此有了坐标;其二,<em class="term">六声音阶</em>(hexachordum)与唱名 ut-re-mi-fa-sol-la,取自圣咏《Ut queant laxis》每句首音,其中唯一的半音落在 <b>mi–fa</b>;其三,<em class="term">圭多手</em>(manus Guidonis),把二十个音位映射到左手关节,供教学记忆。跨六声演唱时以<em class="term">互位</em>(mutatio)与<em class="term">变化音</em>(musica ficta)衔接。</p>
-    <div class="fig"><div class="svgwrap"><div id="hexachord-svg"></div></div><div class="cap"><b>六声音阶与 mi–fa 半音。</b>唱名不是绝对音高而是<b>相对功能</b>:无论从何音起,半音总落在 mi–fa,歌者借此感知音程。这是"音乐识字"的核心装置。</div></div>
-    <div class="fig"><figure class="hist" id="nota-guidohand"></figure><div class="cap"><b>圭多手。</b>左手各关节被指派一个音位(Γ ut 起于拇指尖),教师点指即示唱名;它把抽象的音高系统"握"在手中。此城之事,欧罗巴年鉴的阿雷佐一栏另有专述。</div></div>
+    <h3 id="n-guido">三、圭多·达雷佐:四线谱、软硬六声与圭多手</h3>
+    <p>圭多(约1030)的贡献让"视唱"成为可能,也是<b>现代五线谱的直接源头</b>:其一,把纽姆放上<b>四线谱</b>并以颜色钉音,后世增至五线、沿用至今;其二,<em class="term">六声音阶</em>(hexachordum)与唱名 ut-re-mi-fa-sol-la,取自圣咏《Ut queant laxis》每句首音,唯一半音永落在 <b>mi–fa</b>;其三,<em class="term">圭多手</em>,把二十音位映射到左手关节以便教学。</p>
+    <div class="def"><b>软六声、硬六声与自然六声。</b>为覆盖更宽音域并处理 B 的两种形态,六声音阶有三种起点:起于 <b>C</b> 的<em class="term">自然六声</em>(naturale,不含 B);起于 <b>G</b> 的<em class="term">硬六声</em>(durum,含 B♮ 即"硬 B",↺ 方形记号,五线谱♮的前身);起于 <b>F</b> 的<em class="term">软六声</em>(molle,含 B♭ 即"软 B",圆形记号,♭的前身)。歌者跨六声演唱时以<em class="term">互位</em>(mutatio)衔接——B♭/B♮ 之别,正由此而来。</div>
+    <div class="fig">
+      <div class="pick" id="hexpick"></div>
+      <div id="hex-sv" style="margin-top:.5rem"></div>
+      <div class="ctrls"><button class="play" data-play="hex">▶ 播放此六声</button> <span class="hint" id="hexchar"></span></div>
+      <div class="cap"><b>三种六声音阶。</b>切换可见硬六声(G,含 B♮)与软六声(F,含 B♭)之别——这是"还原/降号"观念的历史起点。红色为 ut。</div>
+    </div>
+    <div class="fig"><figure class="hist" id="nota-guidohand"></figure><div class="cap"><b>圭多手。</b>左手各关节被指派一个音位(Γ ut 起于拇指尖),教师点指即示唱名。欧罗巴年鉴的阿雷佐一栏另有专述。</div></div>
 
-    <h4>4 · 有量记谱:量化时间(13–16 世纪)</h4>
-    <p>音高既定,余下的是节奏。科隆的弗兰科(Franco of Cologne,约 1280)在《有量歌唱艺术》中确立:<b>音符的形状即其时值</b>——longa(长)、brevis(短)、semibrevis(半短)等,并以"完整/不完整"(perfect/imperfect,三分或二分)规定其比例。<em class="term">新艺术</em>(Ars Nova,维特里 1320 年代)引入更短的 minima,使二分与三分并行不悖,并发展出<em class="term">等节奏</em>(isorhythm:重复的音高序列 color 与节奏序列 talea 交错)。1501 年佩特鲁奇以活字印出第一部复调曲集《Odhecaton》,记谱进入机械复制时代。</p>
-    <div class="fig"><div class="svgwrap"><div id="mensural-svg"></div></div><div class="cap"><b>有量记谱的音符形状。</b>从 maxima 到 semiminima,时值由符头形状与符干、符尾决定;黑符与白符(15 世纪起)之别亦关乎时值。这是现代音符时值系统的直接祖先。</div></div>
-    <div class="fig"><figure class="hist" id="nota-mensural"></figure><div class="cap"><b>记谱作为视觉的智力游戏(Ars subtilior)。</b>科尔迪埃把情歌《Belle, bonne, sage》写成一颗心——14 世纪末,记谱不仅足够精确以承载空前复杂的节奏,更成为炫技与巧思的载体;节奏的繁难在此臻于中世纪之极。</div></div>
-    <div class="fig"><figure class="hist" id="nota-squarcialupi"></figure><div class="cap"><b>华美的有量记谱(如 Squarcialupi 抄本)。</b>意大利新艺术的泥金抄本,兼具精确的时值与手工的奢华——记谱此时已是可读的蓝图,也是可藏的艺术品。</div></div>
-    <div class="fig"><figure class="hist" id="nota-petrucci"></figure><div class="cap"><b>佩特鲁奇活字乐谱(1501,威尼斯)。</b>印刷把乐谱从修道院的手抄推向市场,复调音乐得以规模化流通——记谱的可读性最终连上了传播的可复制性。</div></div>
+    <h3 id="n-mensural">四、有量记谱:量化时间</h3>
+    <p>音高既定,余下的是节奏。科隆的<em class="term">弗兰科</em>(Franco of Cologne,约1280)《有量歌唱艺术》确立:<b>音符形状即其时值</b>——maxima、longa、brevis、semibrevis 等,并以<em class="term">完整/不完整</em>(perfect/imperfect,即三分或二分)规定其比例,由<b>节拍记号</b>(○ 表完整三分、Ⅽ 表不完整二分)标明。<em class="term">新艺术</em>(Ars Nova,维特里 1320 年代)引入更短的 minima,使二分与三分并行,并发展出<em class="term">等节奏</em>(isorhythm:重复的音高序列 <span class="lat">color</span> 与节奏序列 <span class="lat">talea</span> 交错)。连音符的连写(ligatura)、以变黑表示时值改变的<em class="term">染色</em>(coloration)一并成熟。</p>
+    <div class="fig">
+      <div class="svgwrap"><div id="mensural-svg"></div></div>
+      <div class="cap"><b>有量记谱的音符形状(时值递减)。</b>从 maxima 到 semiminima,时值由符头形状与符干、符尾决定;15 世纪起黑符改为白符(仅描轮廓)。这是现代音符时值系统的直接祖先。</div>
+    </div>
+    <div class="fig grid2">
+      <div><figure class="hist" id="nota-mensural"></figure></div>
+      <div><figure class="hist" id="nota-squarcialupi"></figure></div>
+    </div>
+    <div class="cap" style="font-family:var(--sans);font-size:.78rem;color:var(--mut);max-width:80ch"><b>有量记谱之极致。</b>左:科尔迪埃把情歌《Belle, bonne, sage》写成心形(Ars subtilior),节奏繁难臻于中世纪之顶,记谱成了视觉的智力游戏;右:Squarcialupi 抄本(兰迪尼)——意大利新艺术的泥金抄本,精确与奢华并存。</div>
 
-    <h4>5 · 现代五线谱及其之后</h4>
-    <p>17 世纪,五线谱定型:小节线规整了强弱周期,拍号、力度与分句被<b>刻进印版</b>,数字低音退场。至此记谱成为可供陌生人视读、跨时空重演的完整蓝图。二十世纪则出现反向运动——凯奇、彭代雷茨基、克拉姆等以<em class="term">图形谱</em>(graphic / proportional notation)重新把不确定性、空间与噪音写入纸面,记谱再度成为开放的发明。</p>
-    <p class="note">这一栏的史料图取自公有领域抄本与印本,署名见图注。若你要某一环节更细(如圣加尔与拉昂纽姆的比较、佩罗坦的记谱),我们可专门展开。</p>
+    <h3 id="n-print">五、印刷与五线谱的定型</h3>
+    <p>1501 年,<em class="term">佩特鲁奇</em>(Ottaviano Petrucci)在威尼斯以活字印出第一部复调曲集《Odhecaton》,乐谱由手抄推向市场,复调得以规模化流通。17 世纪,由圭多四线谱增益而来的<b>五线谱</b>最终定型:线数固定为五,小节线规整强弱周期,拍号、力度、分句被刻进印版,数字低音渐退。<b>五线谱并非凭空而来</b>——它是纽姆加线、圭多定音、有量计时、印刷标准化这一长链的终点。二十世纪则出现反向运动:凯奇、彭代雷茨基、克拉姆以<em class="term">图形谱</em>把不确定性、空间与噪音重新写入纸面,记谱再度成为开放的发明。</p>
+    <div class="fig"><figure class="hist" id="nota-petrucci"></figure><div class="cap"><b>佩特鲁奇《Harmonice Musices Odhecaton》(威尼斯,1501)。</b>第一部活字印刷的复调曲集;记谱的可读性至此连上了传播的可复制性。</div></div>
+    <p class="note">此栏若仍有偷懒,请指出——如圣加尔与拉昂纽姆的比较、Ars subtilior 的具体读法、数字低音的实现,均可专门展开。</p>
   </section>
 
-  <!-- ══════════ 特殊调式 ══════════ -->
+  <!-- ════════════ 特殊调式 ════════════ -->
   <section class="view" id="v-special">
     <h2 class="sec"><span class="en">Scalae Speciales</span>特殊调式:逃离大小调的引力</h2>
-    <p class="abstract">19 世纪末,功能调性的引力被作曲家视为一种需要挣脱的"重力场"。挣脱之道不止一条,但相当一部分走向了<em class="term">人工音阶</em>(synthetic / artificial scales)——尤其是<b>对称音阶</b>:它们把八度作<b>均匀</b>切分,使音级之间失去大小调式那种指向唯一主音的"倾向箭头",调性引力因之被悬置。另有一路不诉诸对称,而回到<b>自然泛音列</b>取材。下文分述其结构、来源与用法。理解它们的钥匙只有两把:<b>对称</b>(决定移调是否受限)与<b>来源</b>(泛音 / 民间 / 纯构造)。</p>
+    <div class="flow" data-flow='[["全音阶","s-whole"],["八声音阶","s-oct"],["梅西安七调式","s-mess"],["泛音音阶","s-acou"],["巴托克轴心","s-axis"],["斯克里亚宾","s-scriabin"],["五声","s-penta"]]'></div>
+    <p class="abstract">19 世纪末,功能调性的引力被作曲家视为需要挣脱的"重力场"。一大路径是<em class="term">人工音阶</em>,尤其是<b>对称音阶</b>:它们把八度作<b>均匀</b>切分,使音级失去指向唯一主音的"倾向箭头",调性引力被悬置;另一路则回到<b>自然泛音列</b>取材。理解它们只需两把钥匙:<b>对称</b>(决定移调是否受限)与<b>来源</b>(泛音 / 民间 / 纯构造)。</p>
 
-    <h3>一、全音阶(whole-tone)</h3>
-    <p>把八度均分为六个<b>全音</b>,得六音音阶。因每两音间隔全同,它<b>不含半音</b>——而半音正是调性中最强的"倾向箭头"(导音→主音)。失去半音,一切音级地位均等,声音悬浮无着;其自然和声是<b>增三和弦</b>。由于结构完全对称,全音阶只有<b>两个</b>互不重合的移调(WT0 与 WT1)。德彪西《帆》(<span class="lat">Voiles</span>)几乎通篇以之写成,状水、雾与梦。</p>
-    <div class="fig"><div id="kb-whole"></div><div class="ctrls"><button class="play" data-play="scale-whole">▶ 全音阶</button><button class="play alt" data-play="chord-aug">▶ 增三和弦</button><button class="play alt" data-play="clock-whole">◷ 时钟视角</button></div><div class="cap"><b>全音阶(C D E F♯ G♯ A♯)。</b>六个等距音;在音高时钟上是一个正六边形——旋转它(移调)只会落回自身,故仅两种移调。</div><div class="svgwrap"><div id="clock-whole" style="margin-top:.6rem"></div></div></div>
+    <h3 id="s-whole">一、全音阶(whole-tone)</h3>
+    <p>八度均分为六个全音,六音音阶。因处处全音、<b>不含半音</b>,失去调性最强的"倾向箭头",声音悬浮无着;自然和声是<b>增三和弦</b>。结构完全对称,故只有<b>两个</b>互不重合的移调。德彪西《帆》几乎通篇由它写成。</p>
+    <div class="fig"><div id="sv-whole"></div><div class="ctrls"><button class="play" data-play="sv-whole">▶ 全音阶</button><button class="play alt" data-play="chord-aug">▶ 增三和弦</button></div><div class="svgwrap"><div id="clock-whole" style="margin-top:.5rem"></div></div><div class="cap"><b>全音阶(C D E F♯ G♯ A♯)。</b>在音高时钟上是正六边形——旋转它(移调)只落回自身,故仅两种移调。</div></div>
 
-    <h3>二、八声音阶(octatonic / 减音阶)</h3>
-    <p>全音与半音<b>交替</b>,得八音音阶。它含四个减七和弦、两个属七结构,色彩紧张而斑斓;有<b>三个</b>互不重合的移调(OCT0/1/2)。里姆斯基-科萨科夫将其系统化为俄国乐派的调色板,斯特拉文斯基则据以写就《火鸟》《彼得鲁什卡》乃至《春之祭》的大量段落——塔鲁斯金《斯特拉文斯基与俄罗斯传统》以"八声性"(octatonicism)为其风格枢纽。它与大小调可以交涉(八声—全音、八声—自然音的叠置),这种"既调性又非调性"的暧昧正是其魅力。</p>
-    <div class="fig"><div id="kb-oct"></div><div class="ctrls"><button class="play" data-play="scale-oct">▶ 八声音阶</button><button class="play alt" data-play="clock-oct">◷ 时钟视角</button></div><div class="cap"><b>八声音阶(半—全交替)。</b>在时钟上为两个相嵌的减七方阵;梅西安将其列为其"有限移调调式"第 2 号。</div><div class="svgwrap"><div id="clock-oct" style="margin-top:.6rem"></div></div></div>
+    <h3 id="s-oct">二、八声音阶(octatonic / 减音阶)</h3>
+    <p>全音与半音<b>交替</b>,八音音阶。含四个减七、两个属七结构,色彩紧张斑斓;有<b>三个</b>互不重合的移调。里姆斯基-科萨科夫将其系统化,斯特拉文斯基据以写《火鸟》《彼得鲁什卡》——塔鲁斯金以"八声性"为其风格枢纽。它与大小调可交涉,"既调性又非调性"的暧昧正是其魅力。</p>
+    <div class="fig"><div id="sv-oct"></div><div class="ctrls"><button class="play" data-play="sv-oct">▶ 八声音阶</button></div><div class="svgwrap"><div id="clock-oct" style="margin-top:.5rem"></div></div><div class="cap"><b>八声音阶(半—全交替)。</b>在时钟上为两个相嵌的减七方阵;梅西安称之为其第 2 号调式。</div></div>
 
-    <h3>三、梅西安的"有限移调调式"</h3>
-    <p>梅西安在《我的音乐语言技法》(1944)中把这类对称音阶系统化为<em class="term">有限移调调式</em>(modes à transpositions limitées)。其定义精确而深刻:一个调式若在移高若干半音后与<b>自身完全重合</b>,则它可用的移调数目<b>少于十二</b>。对称程度越高,移调越少。全音阶(移调数 2)与八声音阶(移调数 3)不过是其中最对称的两个特例。梅西安视这些调式为<b>色彩</b>,常与其"不可逆节奏"并置,以求一种<b>时间之外的静观</b>。以下为全部七个调式——点键盘可听其色。</p>
-    <div class="fig"><div id="messiaen"></div><div class="cap"><b>梅西安七调式一览。</b>每张键盘从 C 起呈示该调式,标出以半音计的<b>循环单元</b>与<b>移调数</b>。可见:单元越短、越对称,移调数越小;第 4–7 号皆有 6 种移调,色彩也最繁复。</div></div>
+    <h3 id="s-mess">三、梅西安的"有限移调调式"</h3>
+    <p>梅西安在《我的音乐语言技法》(1944)中把这类对称音阶系统化为<em class="term">有限移调调式</em>。定义精确:一个调式若移高若干半音后与<b>自身完全重合</b>,则其可用移调数<b>少于十二</b>——对称程度越高,移调越少。全音阶(移调数 2)与八声音阶(移调数 3)不过是其中最对称的两个。</p>
+    <p>梅西安不把它们当"音阶"用,而当<b>色彩</b>:每个调式对他都有具体的颜色联觉(如第 2 号是"紫、蓝、紫罗兰的斑驳",第 3 号是"橙、金、乳白"),他常将不同调式叠置、并与其<em class="term">不可逆节奏</em>(正读倒读相同的节奏)并用,追求一种<b>时间之外的、静止的凝视</b>——这与他的天主教信仰和对鸟鸣的迷恋一脉相通。以下为全部七个,点字母可听其色:</p>
+    <div class="fig"><div id="messiaen"></div><div class="cap"><b>梅西安七调式(自 C 起,升序)。</b>每张标出以半音计的<b>循环单元</b>与<b>移调数</b>。可见:单元越短、越对称,移调数越小;第 4–7 号皆 6 种移调,音数多、色彩最繁。第 1、2 号即全音阶与八声音阶。</div></div>
 
-    <h3>四、泛音音阶 / 利底亚属音阶(acoustic scale)</h3>
-    <p>并非一切人工音阶都来自对称。把一个低音上方<b>自然泛音列</b>的第 8–14 分音近似取整,得到 C D E F♯ G A B♭——即"利底亚(升四)+ 混合利底亚(降七)"的合成:升四来自泛音列的第 11 分音,降七来自第 7 分音。它明亮而略带野性,兼有利底亚的悬浮与属功能的张力。巴托克从民间音乐与自然声响中反复提炼之,德彪西、亚纳切克、斯克里亚宾亦用。</p>
-    <div class="fig"><div id="kb-acou"></div><div class="ctrls"><button class="play" data-play="scale-acou">▶ 泛音音阶</button></div><div class="cap"><b>泛音音阶(C D E F♯ G A B♭)。</b>其"不纯"(升四、降七)恰恰来自比纯律更本真的自然泛音——一种以物理声学反制人为音律的姿态。</div></div>
+    <h3 id="s-acou">四、泛音音阶 / 利底亚属音阶</h3>
+    <p>并非一切人工音阶都来自对称。把一个低音上方<b>自然泛音列</b>的第 8–14 分音近似取整,得 C D E F♯ G A B♭——"利底亚(升四,来自第 11 分音)+ 混合利底亚(降七,来自第 7 分音)"。它明亮而略带野性,兼有利底亚的悬浮与属功能的张力。巴托克从民间与自然声响中反复提炼之。</p>
+    <div class="fig"><div id="sv-acou"></div><div class="ctrls"><button class="play" data-play="sv-acou">▶ 泛音音阶</button></div><div class="cap"><b>泛音音阶(C D E F♯ G A B♭)。</b>其"不纯"恰来自比人为音律更本真的自然泛音——以物理声学反制人律。</div></div>
 
-    <h3>五、巴托克:轴心体系与多调式半音</h3>
-    <p>巴托克很少直接搬用现成音阶,而是构造更抽象的对称。伦德瓦伊(Lendvai)提出的<em class="term">轴心体系</em>(axis system)把十二律按功能归为三轴——主(T)、下属(S)、属(D),每轴由减七关系的四个音构成,可彼此替换。此说后世多有质疑,却极具启发。另一方面,他的<em class="term">多调式半音</em>(polymodal chromaticism):在同一主音上叠置不同调式(如同主音的利底亚与弗里几亚),十二个半音便由"调式的合成"而非"调性的半音化"得来。</p>
-    <div class="fig"><div class="svgwrap"><div id="axis-clock"></div></div><div class="ctrls"><button class="play alt" data-play="axis-t">▶ 主轴</button><button class="play alt" data-play="axis-d">▶ 属轴</button><button class="play alt" data-play="axis-s">▶ 下属轴</button></div><div class="cap"><b>轴心体系。</b>十二律按三色分为三轴,每轴四音成减七;轴内诸音可互相"代理"其功能。此图是理解巴托克对称结构的一把钥匙(亦是一桩公案)。</div></div>
+    <h3 id="s-axis">五、巴托克:轴心体系与多调式半音</h3>
+    <p>巴托克很少搬用现成音阶,而构造更抽象的对称。伦德瓦伊提出的<em class="term">轴心体系</em>把十二律按功能归为三轴——主(T)、下属(S)、属(D),每轴由减七关系的四音构成、可彼此代理(此说后世多有质疑,却极具启发)。另一面是<em class="term">多调式半音</em>:在同一主音上叠置不同调式(如同主音的利底亚与弗里几亚),十二半音由"调式的合成"而非"调性的半音化"得来。</p>
+    <div class="fig"><div class="svgwrap"><div id="axis-clock"></div></div><div class="ctrls"><button class="play g" data-play="axis-t">▶ 主轴</button><button class="play g" data-play="axis-d">▶ 属轴</button><button class="play g" data-play="axis-s">▶ 下属轴</button></div><div class="cap"><b>轴心体系。</b>十二律按三色分三轴,每轴四音成减七,轴内诸音可互相代理其功能。</div></div>
 
-    <h3>六、斯克里亚宾:神秘和弦与合成音阶</h3>
-    <p>斯克里亚宾晚期以一个<em class="term">神秘和弦</em>(mystic / Prometheus chord)取代了传统的三度叠置和声:C–F♯–B♭–E–A–D,一个以<b>四度</b>为主的六音结构。它可读作泛音列的想象性提炼,亦与全音阶、八声音阶血缘相近;由它可导出一条六声的"合成音阶"。在《普罗米修斯:火之诗》中,它既是和弦又是音阶,和声与旋律合而为一——调性引力被一种<b>静止的、悬浮的色彩</b>取代。</p>
-    <div class="fig"><div class="svgwrap"><div id="mystic-clock"></div></div><div class="ctrls"><button class="play" data-play="mystic">▶ 神秘和弦(四度叠置)</button><button class="play alt" data-play="mystic-scale">▶ 合成音阶</button></div><div class="cap"><b>神秘和弦。</b>四度叠置使它既不属于大小调、也不轻易解决;斯克里亚宾以之构筑一个"无重力"的和声世界。</div></div>
+    <h3 id="s-scriabin">六、斯克里亚宾:神秘和弦</h3>
+    <p>斯克里亚宾晚期以一个<em class="term">神秘和弦</em>(C–F♯–B♭–E–A–D,以<b>四度</b>叠置的六音)取代传统三度叠置和声。它可读作泛音列的想象性提炼,与全音阶、八声音阶血缘相近;在《普罗米修斯》中,它既是和弦又是音阶,和声与旋律合一,调性引力被一种<b>静止悬浮的色彩</b>取代。</p>
+    <div class="fig"><div class="svgwrap"><div id="mystic-clock"></div></div><div class="ctrls"><button class="play" data-play="mystic">▶ 神秘和弦(四度叠置)</button><button class="play alt" data-play="mystic-scale">▶ 合成音阶</button></div><div class="cap"><b>神秘和弦。</b>四度叠置使它既不属大小调、也不轻易解决;斯克里亚宾以之构筑"无重力"的和声世界。</div></div>
 
-    <h3>七、五声音阶及其"异域"用法</h3>
-    <p>无半音的<em class="term">五声音阶</em>(anhemitonic pentatonic,如黑键)是东亚与众多民间传统的底色;因缺半音摩擦而稳定、开阔。德彪西、拉威尔借它营造"异域"或"古风",这一姿态本身已被塔鲁斯金等纳入<b>东方主义</b>(exoticism)的批评视野:所谓"东方色彩",往往是西方音乐对他者的<b>建构</b>而非再现。</p>
-    <div class="fig"><div id="kb-penta"></div><div class="ctrls"><button class="play" data-play="scale-penta">▶ 五声音阶</button></div><div class="cap"><b>五声音阶。</b>同一批音,在中国文人音乐、苏格兰民歌与德彪西笔下承载着截然不同的意义——音阶是中性的,意义是历史与语境赋予的。</div></div>
-    <div class="def"><b>小结。</b>这些音阶的共同逻辑,是以<b>对称</b>或<b>自然泛音</b>置换大小调的功能引力。它们既是德彪西、斯特拉文斯基、巴托克、梅西安各自语言的砖石,也在观念上为下一步——彻底放弃调性中心——铺平了道路。</p></div>
+    <h3 id="s-penta">七、五声音阶及其"异域"用法</h3>
+    <p>无半音的<em class="term">五声音阶</em>(如黑键)是东亚与众多民间传统的底色,因缺半音摩擦而稳定开阔。德彪西、拉威尔借它营造"异域"或"古风"——这一姿态已被塔鲁斯金等纳入<b>东方主义</b>批评:所谓"东方色彩",往往是西方对他者的<b>建构</b>而非再现。</p>
+    <div class="fig"><div id="sv-penta"></div><div class="ctrls"><button class="play" data-play="sv-penta">▶ 五声音阶</button></div><div class="cap"><b>五声音阶。</b>同一批音,在中国文人音乐、苏格兰民歌与德彪西笔下承载截然不同的意义——音阶中性,意义由语境赋予。</div></div>
   </section>
 
-  <!-- ══════════ 二十世纪 ══════════ -->
+  <!-- ════════════ 二十世纪 ════════════ -->
   <section class="view" id="v-c20">
     <h2 class="sec"><span class="en">Saeculum XX</span>二十世纪:观念的转变</h2>
-    <p class="abstract">二十世纪音乐最深的断裂,不在多写了几个不协和音,而在<b>"音乐材料"这一概念本身的重新谈判</b>:协和与不协和的等级、主音的引力、乃至"什么算音乐"的边界,都被作曲家逐一质疑。以下择要,重在观念而非技术细节。</p>
+    <div class="flow" data-flow='[["不协和的解放","c-diss"],["无调性","c-atonal"],["十二音·序列","c-serial"],["音级集合","c-set"],["音色·织体","c-timbre"],["噪音·电子","c-elec"],["机遇·频谱","c-chance"]]'></div>
+    <p class="abstract">二十世纪音乐最深的断裂,不在多写了几个不协和音,而在<b>"音乐材料"这一概念本身的重新谈判</b>:协和与不协和的等级、主音的引力、乃至"什么算音乐"的边界,都被逐一质疑。下面尽量分段说清每一步<b>为什么</b>会发生。</p>
 
-    <h3>一、不协和的解放与无调性</h3>
-    <p>勋伯格宣称,协和与不协和只是<b>程度</b>而非<b>本质</b>的差别——不协和不过是"较远的协和",无须再被"解决"。达尔豪斯进而指出:协和/不协和的界线本就是<b>历史地移动的</b>(中世纪视三度为不协和,今人不然)。一旦这套等级被取消,以主音为中心的引力便失去地基,音乐滑向<em class="term">无调性</em>(Atonalität)——十二律一律平等,不再有"家"。勋伯格本人更愿称之为"泛调性",以强调这是<b>秩序的更替</b>而非秩序的丧失。</p>
+    <h3 id="c-diss">一、不协和的解放</h3>
+    <p>传统和声里,不协和音是"须被解决的紧张":它出现,是为了导向随后的协和。勋伯格提出一个颠覆性的判断——协和与不协和只是<b>程度</b>之别,而非<b>本质</b>之别:不协和不过是"较远的、泛音序列上更靠后的协和",人耳对它的接受只是时间问题。</p>
+    <p>达尔豪斯为此提供了历史证据:协和/不协和的界线<b>本就在移动</b>。中世纪视三度、六度为不协和,须回避或解决;文艺复兴后它们成了协和的支柱。既然这条线是历史的、可变的,那么"解放不协和"就不是破坏,而是这条线的又一次推移。</p>
+    <div class="def"><b>关键的一步。</b>一旦协和/不协和的<b>等级秩序</b>被取消,以主音为中心的整个功能引力便失去地基——因为"张力—解决"的叙事正建立在这一等级之上。音乐随之滑向下一步:无调性。</div>
 
-    <h3>二、十二音技法与序列主义</h3>
-    <p>若十二律平等,如何防止某一音悄然复辟为主音?勋伯格的解答是<em class="term">十二音技法</em>:先将十二律排成一固定次序(音列 Reihe),规定<b>用尽全部十二音之前不重复任何一个</b>,以此杜绝任何音的特权。音列有四种基本变形——原型(P)、倒影(I)、逆行(R)、倒影逆行(RI),各含十二个移调,合为一张 12×12 <b>矩阵</b>,穷尽一部作品的全部音高材料。韦伯恩以派生与对称把它推向极致,战后布列兹、巴比特等更将序列原则扩展到时值、力度与音色(整体序列主义)。</p>
-    <div class="fig"><div class="svgwrap" id="matrix"></div><div class="ctrls"><button class="play" data-play="row-p">▶ 原型 P</button><button class="play alt" data-play="row-i">▶ 倒影 I</button><button class="play alt" data-play="row-r">▶ 逆行 R</button></div><div class="cap"><b>十二音矩阵。</b>每行为一移调原型(P),每列自上而下读为逆行(R),反向则得倒影(I)与倒影逆行(RI);主对角线恒为同一音。矩阵不是作曲法,而是材料的"账本"。</div></div>
+    <h3 id="c-atonal">二、无调性(泛调性)</h3>
+    <p>当没有一个音比别的音更"稳定"、更像"家",十二个半音便一律平等,音乐不再围绕某个中心运转——这就是<em class="term">无调性</em>(Atonalität)。勋伯格本人不喜欢这个否定式的词,更愿称之为<b>"泛调性"</b>(pantonality):它强调的不是"失去了调性",而是<b>秩序的更替</b>——旧的引力中心退场,新的组织原则尚待建立。</p>
+    <p>最初的自由无调性(1908–1920,如勋伯格《期待》、韦伯恩早期小品)靠<b>动机、音色与直觉</b>维系统一,作品往往短小而强烈——因为没有调性的"长程引力"来撑起大型结构。如何在无调性中重获组织力,成了下一步的核心问题。</p>
 
-    <h3>三、后调性分析:音级集合</h3>
-    <p>调性瓦解后,分析亦需新工具。福特(Allen Forte)的<em class="term">音级集合理论</em>把音高抽象为 0–11 的数,不问调性,只问<b>音程内容</b>:哪些音的组合彼此为移调或倒影的"同类"(等价类),并以"音程向量"刻画其结构。它为无调性音乐编出一张近乎化学式的"元素周期表"。在音高时钟上,和弦与动机化为几何图形——移调即旋转,倒影即翻转。</p>
-    <div class="fig"><div class="svgwrap"><div id="pcset"></div></div><div class="cap"><b>音高时钟上的一个集合 {0,1,4,6}。</b>把音高看作钟面的点,集合的"形状"及其在旋转/翻转下的不变量,取代调性成为分析的对象。</div></div>
+    <h3 id="c-serial">三、十二音技法与序列主义</h3>
+    <p>勋伯格的解答是<em class="term">十二音技法</em>(1920s):先把十二个半音排成一个固定次序——<b>音列</b>(row / Reihe),并规定<b>用尽全部十二音之前,不重复任何一个</b>。这条铁律确保没有任何一个音能靠"多出现"而悄悄复辟为主音,平等由此得到制度保障。</p>
+    <p>音列可作四种基本变形:<b>原型</b>(P)、<b>倒影</b>(I,把每个音程上下翻转)、<b>逆行</b>(R,时间上倒放)、<b>倒影逆行</b>(RI);每种又可移到十二个高度上,合计四十八个形态,穷尽一部作品的音高材料——常排成一张 12×12 <b>矩阵</b>备查。</p>
+    <div class="fig"><div class="svgwrap" id="matrix"></div><div class="ctrls"><button class="play" data-play="row-p">▶ 原型 P</button><button class="play alt" data-play="row-i">▶ 倒影 I</button><button class="play alt" data-play="row-r">▶ 逆行 R</button></div><div class="cap"><b>十二音矩阵。</b>每行为一移调原型(P),每列自上而下读为逆行(R),反向则得倒影(I);主对角线恒为同一音。矩阵不是作曲法,而是材料的"账本"。</div></div>
+    <p>韦伯恩把音列推向极致的<b>对称与简约</b>(其音列常由几个音程单元派生而来),影响了战后一代。布列兹、施托克豪森、巴比特进而把序列原则从音高<b>扩展到时值、力度、音色</b>——每一参数都由数列控制,史称<em class="term">整体序列主义</em>(total serialism);其极端(如布列兹《结构 I》)几乎取消了作曲家的即时选择,把音乐推向纯粹的预定结构。</p>
 
-    <h3>四、材料边界的敞开</h3>
-    <p>更彻底的转变,是把"音乐材料"从<b>音高</b>扩展到<b>一切声音与时间</b>:</p>
-    <div class="def">
-      <p style="margin:.35rem 0"><b>音色与织体</b>——勋伯格的<em class="term">音色旋律</em>(Klangfarbenmelodie)让音色本身承载结构;里盖蒂、彭代雷茨基以密集<em class="term">音簇</em>与微复调,把注意力从单个音符转向<b>密度、色彩与流动的团块</b>。</p>
-      <p style="margin:.35rem 0"><b>噪音与电子</b>——从未来主义的"噪音艺术",到施托克豪森在科隆 WDR 电子音乐棚以振荡器与磁带直接<b>合成声音</b>,乐器与乐音的边界被打破(欧罗巴年鉴科隆一栏即此)。</p>
-      <p style="margin:.35rem 0"><b>机遇与不确定</b>——凯奇引入《易经》、骰子乃至<em class="term">寂静</em>(《4′33″》),把控制权部分交还给偶然与环境,逼问"什么算音乐、谁是作者"。</p>
-      <p style="margin:.35rem 0"><b>频谱</b>——格里塞、缪拉伊等把声音的<b>泛音结构本身</b>当作作曲对象,以声学分析为素材,回到"音"的物理内部——某种意义上,这与前一栏巴托克的泛音音阶遥相呼应。</p>
-    </div>
-    <p class="note">此栏从简,重在勾勒观念的地形。你若愿逐一深讲,我们可把库中莫根《二十世纪音乐》、塔鲁斯金卷四五与达尔豪斯的具体判断接进来,每一概念配可听可看的独立图示。</p>
+    <h3 id="c-set">四、后调性分析:音级集合</h3>
+    <p>调性瓦解后,分析也需新工具。福特(Allen Forte)的<em class="term">音级集合理论</em>把音高抽象为 0–11 的数,不问调性,只问<b>音程内容</b>:哪些音的组合彼此是移调或倒影的"同类"(等价类),并以"音程向量"刻画其结构。它为无调性音乐编出一张近乎化学式的"元素周期表"。</p>
+    <p>在音高时钟上,一个和弦或动机化为一个<b>几何图形</b>:移调 = 旋转,倒影 = 翻转。分析于是从"这是什么和弦"变成"这是什么形状、它如何在旋转与翻转下保持不变"。</p>
+    <div class="fig"><div class="svgwrap"><div id="pcset"></div></div><div class="cap"><b>音高时钟上的集合 {0,1,4,6}。</b>集合的"形状"及其在旋转/翻转下的不变量,取代调性成为分析的对象。</div></div>
+
+    <h3 id="c-timbre">五、音色与织体成为结构</h3>
+    <p>另一条路线绕开音高本身。勋伯格早已提出<em class="term">音色旋律</em>(Klangfarbenmelodie)的设想:让<b>音色的变化</b>像旋律一样承载结构——同一个音高在不同乐器间传递,音色的推移即是"旋律"。</p>
+    <p>到 1950–60 年代,里盖蒂与彭代雷茨基把这一思路推到极致:以密集<em class="term">音簇</em>(tone cluster)与<em class="term">微复调</em>(几十个声部的极密织体)写作,单个音符不再可辨,听众感知的是<b>密度、色彩与缓慢流动的声音团块</b>(如里盖蒂《大气层》、彭代雷茨基《广岛受难者挽歌》)。注意力从"哪个音"彻底转向"什么样的声响"。</p>
+
+    <h3 id="c-elec">六、噪音与电子:乐器边界的打破</h3>
+    <p>如果一切声响皆可为乐,那么"乐音"与"噪音"的界线也就可疑。未来主义者鲁索洛早在 1913 年就以"噪音艺术"造出发声机器。二战后,<em class="term">具体音乐</em>(musique concrète,谢弗)以录音的日常声响拼贴作曲;而在科隆的西德意志广播电台(WDR),施托克豪森以振荡器与磁带<b>直接合成</b>前所未有的声音——声音第一次可以完全脱离演奏者与乐器而存在(欧罗巴年鉴科隆一栏即此事)。电子媒介还带来对<b>时间与空间</b>的新控制:声音可被拉伸、倒放、在多声道间移动。</p>
+
+    <h3 id="c-chance">七、机遇、寂静与频谱</h3>
+    <p><b>机遇音乐。</b>凯奇走向另一极端:与其<b>控制</b>一切,不如<b>交出</b>控制。他以《易经》、骰子决定音高与时值(<em class="term">偶然音乐</em>),又以《4′33″》让演奏者不奏一音,把环境的偶然声响本身当作作品——这逼问的已不是"怎样作曲",而是"<b>什么算音乐、谁是作者、聆听是什么</b>"。</p>
+    <p><b>频谱音乐。</b>格里塞、缪拉伊等人则回到声音的物理内部:用声学分析拆解一个音的<b>泛音结构</b>,再把这结构本身当作作曲的素材与和声的来源(如格里塞《声部空间》)。这在某种意义上与本站"特殊调式"一栏里巴托克的泛音音阶遥相呼应——绕了一个世纪,作曲家又回到了泛音列。</p>
+    <div class="def"><b>回望这条线。</b>不协和的解放取消了和声的等级 → 无调性取消了主音的引力 → 十二音与序列以新规则重建秩序 → 集合论提供新的分析语言 → 音色、噪音、电子、机遇、频谱则把"音乐材料"从音高一路扩展到<b>一切声音、时间与偶然</b>。二十世纪不是"调性的崩溃",而是音乐把自己能谈论的对象,一再地重新定义。</div>
 
     <div style="margin-top:2rem" class="refs">
-      <b>参考框架</b>　Burkholder/Grout/Palisca《西方音乐史》第 10 版;Taruskin《牛津西方音乐史》;Dahlhaus《和声调性之生成研究》《十九世纪音乐》;Harold S. Powers, "Mode"(New Grove);Olivier Messiaen, <i>Technique de mon langage musical</i>(1944);Ernő Lendvai, <i>Béla Bartók: An Analysis of His Music</i>;Allen Forte, <i>The Structure of Atonal Music</i>;Robert P. Morgan《二十世纪音乐》。释义为编者整理,存疑处标注争议。
+      <b>参考框架</b>　Burkholder/Grout/Palisca《西方音乐史》第 10 版;Taruskin《牛津西方音乐史》;Dahlhaus《和声调性之生成研究》《十九世纪音乐》;Harold S. Powers, "Mode"(New Grove);Olivier Messiaen, <i>Technique de mon langage musical</i>(1944);Ernő Lendvai, <i>Béla Bartók: An Analysis of His Music</i>;Allen Forte, <i>The Structure of Atonal Music</i>;Robert P. Morgan《二十世纪音乐》;古希腊乐学部分参 M. L. West, <i>Ancient Greek Music</i> 及维基相关词条。释义为编者整理,存疑处标注争议。
     </div>
   </section>
   </main>
 
   <footer>
     Musica Theorica · Ad Fontes<br>
-    结构图示为浏览器实时生成与合成;记谱史料图取自公有领域抄本与印本(署名见图注)。<br>
-    <span style="color:var(--rubric);font-style:italic">初稿 · 内容持续校订</span>
+    音阶与和弦为浏览器实时合成(加法钢琴音色);记谱与古希腊史料图取自公有领域抄本、印本与词条(署名见图注)。<br>
+    <span style="color:var(--rubric);font-style:italic">第二稿 · 内容持续校订,欢迎逐条订正</span>
   </footer>
 </div>
 
@@ -273,41 +355,100 @@ document.getElementById('toggle').addEventListener('click',function(){
   root.setAttribute('data-theme',cur==='dark'?'light':'dark');
 });
 var tabs=document.getElementById('tabs');
-tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
-  [].forEach.call(tabs.children,function(x){x.classList.toggle('on',x===b)});
+tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;showTab(b.dataset.v);});
+function showTab(v){[].forEach.call(tabs.children,function(x){x.classList.toggle('on',x.dataset.v===v)});
   [].forEach.call(document.querySelectorAll('section.view'),function(s){s.classList.remove('on')});
-  document.getElementById('v-'+b.dataset.v).classList.add('on');
-  window.scrollTo({top:0,behavior:'smooth'});
-});
-/* audio */
+  document.getElementById('v-'+v).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+/* ---- audio: additive, piano-ish, slower ---- */
 var AC;
 function ac(){if(!AC){AC=new (window.AudioContext||window.webkitAudioContext)();}if(AC.state==='suspended')AC.resume();return AC;}
 function freq(m){return 440*Math.pow(2,(m-69)/12);}
-function tone(m,t0,dur,vol){var a=ac();var o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=freq(m);
-  var t=a.currentTime+t0;g.gain.setValueAtTime(0.0001,t);g.gain.linearRampToValueAtTime(vol||0.2,t+0.015);
-  g.gain.exponentialRampToValueAtTime(0.0006,t+dur);o.connect(g).connect(a.destination);o.start(t);o.stop(t+dur+0.05);}
-function seq(ms,step,dur){step=step||0.38;dur=dur||step*1.05;ms.forEach(function(m,i){tone(m,i*step,dur);});}
-function chord(ms,dur){dur=dur||1.6;ms.forEach(function(m){tone(m,0,dur,0.15);});}
-function playSteps(base,steps){var ms=[base],c=base;steps.forEach(function(s){c+=s;ms.push(c);});seq(ms,0.34);}
-var NAMES=['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
-function isBlack(pc){return [1,3,6,8,10].indexOf(pc)>=0;}
-var WHITEPC={0:'C',2:'D',4:'E',5:'F',7:'G',9:'A',11:'B'};
-/* keyboard */
-function keyboard(el,startMidi,whiteCount,hiSet,tonicMidi){
-  el.innerHTML='';el.className='kbd';var W=100/whiteCount;var m=startMidi;while(isBlack(m%12))m--;
-  var whites=[],mm=m;while(whites.length<whiteCount){if(!isBlack(mm%12))whites.push(mm);mm++;}
-  whites.forEach(function(wm,i){var d=document.createElement('div');d.className='wk';d.style.left=(i*W)+'%';d.style.width=W+'%';d.dataset.m=wm;
-    if(hiSet&&hiSet.has(wm))d.classList.add('hl');if(wm===tonicMidi)d.classList.add('ton');
-    if(WHITEPC[wm%12]==='C')d.textContent='C';el.appendChild(d);});
-  whites.forEach(function(wm,i){if(i===whites.length-1)return;var bm=wm+1;if(isBlack(bm%12)){var d=document.createElement('div');d.className='bk';
-    d.style.left=(i*W+W*0.66)+'%';d.style.width=(W*0.62)+'%';d.dataset.m=bm;
-    if(hiSet&&hiSet.has(bm))d.classList.add('hl');if(bm===tonicMidi)d.classList.add('ton');el.appendChild(d);}});
-  el.addEventListener('click',function(e){var k=e.target.closest('[data-m]');if(k)tone(+k.dataset.m,0,0.7);});
+function tone(m,t0,dur,vol){var a=ac();var t=a.currentTime+(t0||0);dur=dur||1.1;vol=vol||0.22;
+  var g=a.createGain();g.connect(a.destination);
+  g.gain.setValueAtTime(0.0001,t);g.gain.linearRampToValueAtTime(vol,t+0.006);
+  g.gain.exponentialRampToValueAtTime(vol*0.5,t+0.12);
+  g.gain.exponentialRampToValueAtTime(0.0004,t+dur);
+  [[1,1],[2,0.42],[3,0.22],[4,0.11],[5,0.05]].forEach(function(p){
+    var o=a.createOscillator();o.type='sine';o.frequency.value=freq(m)*p[0];
+    var gg=a.createGain();gg.gain.value=p[1];o.connect(gg).connect(g);o.start(t);o.stop(t+dur+0.05);});
 }
-function hiFrom(base,intervals){var s=new Set();intervals.forEach(function(iv){s.add(base+iv);});s.add(base+12);return s;}
-function ivFromSteps(steps){var iv=[0],c=0;steps.forEach(function(s,i){if(i<steps.length-1){c+=s;iv.push(c);}});return iv;}
-/* modes (church) */
-var MODES=[
+function seq(ms,step,dur){step=step||0.5;dur=dur||step*1.15;ms.forEach(function(m,i){tone(m,i*step,dur,0.2);});}
+function chord(ms,dur){dur=dur||1.8;ms.forEach(function(m){tone(m,0,dur,0.15);});}
+/* ---- names ---- */
+var SH=['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+var FL=['C','D♭','D','E♭','E','F','G♭','G','A♭','A','B♭','B'];
+function nm(m,flat){return (flat?FL:SH)[((m%12)+12)%12];}
+function gapLabel(d){d=Math.abs(d);if(d===1)return['半','H'];if(d===2)return['全','W'];if(d===3)return['增二','big'];if(d===4)return['大三','big'];return[d+'','big'];}
+/* ---- letter scale view ---- */
+// opts: {midis:[...], tonic:midi, flat:bool, descending:bool}
+function scaleView(el,opts){
+  el.innerHTML='';el.className='sv';var row=document.createElement('div');row.className='sv-row';
+  var ms=opts.midis;
+  ms.forEach(function(m,i){
+    var n=document.createElement('span');n.className='sv-note';n.textContent=nm(m,opts.flat);n.dataset.m=m;
+    if(m===opts.tonic||(opts.tonic!=null&&(m%12)===(opts.tonic%12)&&i===0))n.classList.add('ton');
+    n.onclick=function(){tone(m,0,0.9);};
+    row.appendChild(n);
+    if(i<ms.length-1){var g=document.createElement('span');var gl=gapLabel(ms[i+1]-m);g.className='sv-gap '+gl[1];g.textContent=gl[0];row.appendChild(g);}
+  });
+  el.appendChild(row);
+  el._play=function(){seq(ms,0.5);};
+}
+function ascMidis(base,intervals){var a=intervals.map(function(iv){return base+iv;});a.push(base+12);return a;}
+/* ---- flow / 脉络图 ---- */
+[].forEach.call(document.querySelectorAll('.flow[data-flow]'),function(el){
+  var arr=JSON.parse(el.dataset.flow);
+  arr.forEach(function(it,i){
+    var n=document.createElement('div');n.className='node';n.innerHTML=it[0];
+    n.onclick=function(){var t=document.getElementById(it[1]);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});};
+    el.appendChild(n);
+    if(i<arr.length-1){var a=document.createElement('div');a.className='arr';a.textContent='→';el.appendChild(a);}
+  });
+});
+/* ---- Pythagoras ratios ---- */
+(function(){var host=document.getElementById('ratios');if(!host)return;
+  var data=[['2 : 1','八度','octave',[60,72]],['3 : 2','五度','fifth',[60,67]],['4 : 3','四度','fourth',[60,65]]];
+  var wrap=document.createElement('div');wrap.className='ctrls';
+  data.forEach(function(d){var b=document.createElement('button');b.className='play alt';b.innerHTML=d[0]+' <span style="opacity:.8">'+d[1]+'</span>';b.onclick=(function(ms){return function(){chord(ms,1.6);};})(d[3]);wrap.appendChild(b);});
+  host.appendChild(wrap);
+})();
+/* ---- tetrachord genera ---- */
+(function(){var host=document.getElementById('genera');if(!host)return;
+  // descending from E(64) down a fourth to B(59)
+  var gen=[['自然属 diatonic',[64,62,60,59]],['变化属 chromatic',[64,61,60,59]],['四分音属 enharmonic',[64,60,59.5,59]]];
+  gen.forEach(function(g){
+    var d=document.createElement('div');d.style.margin='.4rem 0';
+    var lab=document.createElement('div');lab.className='hint';lab.textContent=g[0];d.appendChild(lab);
+    var ct=document.createElement('div');ct.className='ctrls';
+    var names=g[1].map(function(m){return (m%1)?nm(Math.floor(m))+'↓¼':nm(m);}).join(' – ');
+    var chips=document.createElement('span');chips.className='gletters';chips.textContent=names;chips.style.marginRight='.5rem';
+    var b=document.createElement('button');b.className='play';b.textContent='▶ 降序';b.onclick=(function(ms){return function(){seq(ms,0.55);};})(g[1]);
+    ct.appendChild(chips);ct.appendChild(b);d.appendChild(ct);host.appendChild(d);
+  });
+})();
+/* ---- Greek octave species (descending, white notes) ---- */
+function whiteDesc(top,count){var out=[],m=top;while(out.length<count){if([0,2,4,5,7,9,11].indexOf(((m%12)+12)%12)>=0)out.push(m);m--;}return out;}
+var GMODES=[
+ {n:'混合利底亚 Mixolydian',top:71,seq:'7 6 5 4 3 2 1 7',c:'B–B'},
+ {n:'利底亚 Lydian',top:72,seq:'1 7 6 5 4 3 2 1',c:'C–C'},
+ {n:'弗里几亚 Phrygian',top:74,seq:'2 1 7 6 5 4 3 2',c:'D–D'},
+ {n:'多利亚 Dorian',top:76,seq:'3 2 1 7 6 5 4 3',c:'E–E · 最"正"'},
+ {n:'下利底亚 Hypolydian',top:65,seq:'4 3 2 1 7 6 5 4',c:'F–F'},
+ {n:'下弗里几亚 Hypophrygian',top:67,seq:'5 4 3 2 1 7 6 5',c:'G–G'},
+ {n:'下多利亚 Hypodorian',top:69,seq:'6 5 4 3 2 1 7 6',c:'A–A'}
+];
+var curGmode=3;
+function drawGmode(){var mo=GMODES[curGmode];var ms=whiteDesc(mo.top,8);
+  scaleView(document.getElementById('gmode-sv'),{midis:ms,tonic:mo.top,descending:true});
+  document.getElementById('gmodechar').textContent=mo.c+' · '+ms.map(function(m){return nm(m);}).join(' ');
+  var pk=document.getElementById('gmodepick');[].forEach.call(pk.children,function(b,i){b.classList.toggle('on',i===curGmode);});
+}
+(function(){var pk=document.getElementById('gmodepick');GMODES.forEach(function(mo,i){var b=document.createElement('button');b.textContent=mo.n.split(' ')[0];b.onclick=function(){curGmode=i;drawGmode();};pk.appendChild(b);});
+  var tb=document.getElementById('gmode-table');tb.innerHTML='<tr><th>调式</th><th>笔记度数记法(降序)</th><th>白音八度</th></tr>'+
+   GMODES.map(function(mo){var ms=whiteDesc(mo.top,8);return '<tr><td class="ch">'+mo.n+'</td><td class="num">'+mo.seq+'</td><td class="gletters">'+ms.map(function(m){return nm(m);}).join(' ')+'</td></tr>';}).join('');
+  drawGmode();})();
+/* ---- medieval church modes (ascending white) ---- */
+var CMODES=[
  {n:'多利亚 (D)',t:2,iv:[0,2,3,5,7,9,10],c:'升六级 · 忧而不伤'},
  {n:'弗里几亚 (E)',t:4,iv:[0,1,3,5,7,8,10],c:'降二级 · 阴郁'},
  {n:'利底亚 (F)',t:5,iv:[0,2,4,6,7,9,11],c:'升四级 · 悬浮'},
@@ -316,12 +457,16 @@ var MODES=[
  {n:'伊奥尼亚 (C)',t:0,iv:[0,2,4,5,7,9,11],c:'= 大调'},
  {n:'洛克里亚 (B)',t:11,iv:[0,1,3,5,6,8,10],c:'减五度 · 罕作结音'}
 ];
-var curMode=0;
-function drawMode(){var mo=MODES[curMode];var base=60+mo.t;keyboard(document.getElementById('kb-mode'),60,10,hiFrom(base,mo.iv),base);
-  document.getElementById('modechar').textContent=mo.c;var pk=document.getElementById('modepick');
-  [].forEach.call(pk.children,function(b,i){b.classList.toggle('on',i===curMode);});}
-(function(){var pk=document.getElementById('modepick');MODES.forEach(function(mo,i){var b=document.createElement('button');b.textContent=mo.n;b.onclick=function(){curMode=i;drawMode();};pk.appendChild(b);});drawMode();})();
-/* circle of fifths */
+var curCmode=0;
+function drawCmode(){var mo=CMODES[curCmode];var base=60+mo.t;var ms=ascMidis(base,mo.iv);
+  scaleView(document.getElementById('cmode-sv'),{midis:ms,tonic:base});
+  document.getElementById('cmodechar').textContent=mo.c;
+  var pk=document.getElementById('cmodepick');[].forEach.call(pk.children,function(b,i){b.classList.toggle('on',i===curCmode);});}
+(function(){var pk=document.getElementById('cmodepick');CMODES.forEach(function(mo,i){var b=document.createElement('button');b.textContent=mo.n;b.onclick=function(){curCmode=i;drawCmode();};pk.appendChild(b);});drawCmode();})();
+/* ---- glarean two scales ---- */
+scaleView(document.getElementById('sv-ionian'),{midis:ascMidis(60,[0,2,4,5,7,9,11]),tonic:60});
+scaleView(document.getElementById('sv-aeolian'),{midis:ascMidis(69,[0,2,3,5,7,8,10]),tonic:69});
+/* ---- circle of fifths ---- */
 function circleOfFifths(el){var NS='http://www.w3.org/2000/svg',S=300,cx=S/2,cy=S/2;
   var maj=['C','G','D','A','E','B','F♯','D♭','A♭','E♭','B♭','F'],min=['a','e','b','f♯','c♯','g♯','d♯','b♭','f','c','g','d'];
   var pcMaj=[0,7,2,9,4,11,6,1,8,3,10,5];
@@ -332,146 +477,156 @@ function circleOfFifths(el){var NS='http://www.w3.org/2000/svg',S=300,cx=S/2,cy=
     g.appendChild(c);g.appendChild(t);if(pcs){var pc=pcs[i];g.onclick=function(){chord([60+pc,60+pc+4,60+pc+7]);};}svg.appendChild(g);});}
   ring(120,maj,true,20,pcMaj);ring(72,min,false,15,null);el.appendChild(svg);}
 circleOfFifths(document.getElementById('cof'));
-/* pc clock */
-function pcClock(el,pts,connect,colorFn,size){var NS='http://www.w3.org/2000/svg',S=size||250,cx=S/2,cy=S/2,r=S*0.37;
+/* ---- pc clock ---- */
+function pcClock(el,pts,connect,colorFn,size){var NS='http://www.w3.org/2000/svg',S=size||240,cx=S/2,cy=S/2,r=S*0.37;
   var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 '+S+' '+S);svg.setAttribute('width',S);
   for(var i=0;i<12;i++){var ang=(i/12)*2*Math.PI-Math.PI/2,x=cx+Math.cos(ang)*r,y=cy+Math.sin(ang)*r;
     var fill=colorFn?colorFn(i):'var(--card)';var c=document.createElementNS(NS,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',13);c.setAttribute('fill',fill);c.setAttribute('stroke','var(--cardline)');svg.appendChild(c);
-    var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y+4);t.setAttribute('text-anchor','middle');t.setAttribute('font-size',10);t.setAttribute('font-family','var(--sans)');t.setAttribute('fill',colorFn?'#fff':'var(--mut)');t.textContent=NAMES[i];svg.appendChild(t);}
+    var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y+4);t.setAttribute('text-anchor','middle');t.setAttribute('font-size',10);t.setAttribute('font-family','var(--sans)');t.setAttribute('fill',colorFn?'#fff':'var(--mut)');t.textContent=SH[i];svg.appendChild(t);}
   if(pts){var P=pts.map(function(pc){var a=(pc/12)*2*Math.PI-Math.PI/2;return [cx+Math.cos(a)*r,cy+Math.sin(a)*r];});
     if(connect){var poly=(connect==='closed')?P.concat([P[0]]):P;for(var j=0;j<poly.length-1;j++){var l=document.createElementNS(NS,'line');l.setAttribute('x1',poly[j][0]);l.setAttribute('y1',poly[j][1]);l.setAttribute('x2',poly[j+1][0]);l.setAttribute('y2',poly[j+1][1]);l.setAttribute('stroke','var(--rubric)');l.setAttribute('stroke-width',1.5);l.setAttribute('opacity',.5);svg.appendChild(l);}}
     pts.forEach(function(pc){var a=(pc/12)*2*Math.PI-Math.PI/2,x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;var c=document.createElementNS(NS,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',13);c.setAttribute('fill','var(--hi)');svg.appendChild(c);
-      var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y+4);t.setAttribute('text-anchor','middle');t.setAttribute('font-size',10);t.setAttribute('font-family','var(--sans)');t.setAttribute('fill','#fff');t.textContent=NAMES[pc];svg.appendChild(t);});}
+      var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y+4);t.setAttribute('text-anchor','middle');t.setAttribute('font-size',10);t.setAttribute('font-family','var(--sans)');t.setAttribute('fill','#fff');t.textContent=SH[pc];svg.appendChild(t);});}
   el.appendChild(svg);}
-/* neume shapes svg */
-function neumeSVG(el){var NS='http://www.w3.org/2000/svg',W=560,H=120;var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('width',W);
-  var items=[['punctum','∎',[[0,0]]],['virga','│',[[0,0]]],['podatus 上行',null,[[0,14],[16,-6]]],['clivis 下行',null,[[0,-6],[16,14]]],['torculus',null,[[0,10],[14,-8],[28,10]]],['porrectus',null,[[0,-8],[14,10],[28,-8]]]];
-  var xs=20;items.forEach(function(it,idx){var bx=20+idx*90,cy=44;
-    // draw squares at points, connect
-    var pts=it[2];var prev=null;
-    pts.forEach(function(p){var x=bx+p[0],y=cy+p[1];
-      var r=document.createElementNS(NS,'rect');r.setAttribute('x',x-4);r.setAttribute('y',y-4);r.setAttribute('width',8);r.setAttribute('height',8);r.setAttribute('fill','var(--rubric)');r.setAttribute('transform','rotate(12 '+x+' '+y+')');svg.appendChild(r);
-      if(prev){var l=document.createElementNS(NS,'line');l.setAttribute('x1',prev[0]);l.setAttribute('y1',prev[1]);l.setAttribute('x2',x);l.setAttribute('y2',y);l.setAttribute('stroke','var(--ink)');l.setAttribute('stroke-width',1.6);svg.appendChild(l);}prev=[x,y];});
-    var t=document.createElementNS(NS,'text');t.setAttribute('x',bx+14);t.setAttribute('y',92);t.setAttribute('text-anchor','middle');t.setAttribute('font-size',11);t.setAttribute('font-family','var(--sans)');t.setAttribute('fill','var(--mut)');t.textContent=it[0];svg.appendChild(t);});
-  el.appendChild(svg);}
-neumeSVG(document.getElementById('neume-svg'));
-/* hexachord svg */
-function hexachordSVG(el){var NS='http://www.w3.org/2000/svg',W=520,H=110;var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('width',W);
-  var syl=['ut','re','mi','fa','sol','la'];var pcs=[0,2,4,5,7,9];
-  syl.forEach(function(s,i){var x=40+i*76,y=50;var semis=(i===2);// mi-fa gap after mi (index2->3)
-    var c=document.createElementNS(NS,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',20);c.setAttribute('fill', 'var(--card)');c.setAttribute('stroke','var(--cardline)');svg.appendChild(c);
-    var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',y+5);t.setAttribute('text-anchor','middle');t.setAttribute('font-family','var(--serif)');t.setAttribute('font-size',15);t.setAttribute('fill','var(--ink)');t.textContent=s;svg.appendChild(t);
-    if(i<5){var gap=(i===2)?'半':'全';var lx=x+38;var g=document.createElementNS(NS,'text');g.setAttribute('x',lx);g.setAttribute('y',y+4);g.setAttribute('text-anchor','middle');g.setAttribute('font-size',11);g.setAttribute('font-family','var(--sans)');g.setAttribute('fill',i===2?'var(--rubric)':'var(--mut)');g.textContent=gap;svg.appendChild(g);
-      if(i===2){var bracket=document.createElementNS(NS,'text');bracket.setAttribute('x',(x+x+76)/2);bracket.setAttribute('y',88);bracket.setAttribute('text-anchor','middle');bracket.setAttribute('font-size',10);bracket.setAttribute('fill','var(--rubric)');bracket.setAttribute('font-family','var(--sans)');bracket.textContent='唯一半音';svg.appendChild(bracket);}}
+/* ---- greek notation strip (illustrative) ---- */
+function greekNot(el){var NS='http://www.w3.org/2000/svg',W=520,H=130;var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('width',W);
+  var pitches=['C','D','E','F','G','A','B','C'];
+  var instr=['Γ','Ⅼ','Ⅽ','⊏','Ϲ','Ϝ','Ⴀ','Ⴈ'];
+  var vocal=['Ο','Ν','Μ','Κ','Ι','Η','Ζ','Δ'];
+  function rowlabel(y,txt){var t=document.createElementNS(NS,'text');t.setAttribute('x',8);t.setAttribute('y',y);t.setAttribute('font-size',10);t.setAttribute('font-family','var(--sans)');t.setAttribute('fill','var(--mut)');t.textContent=txt;svg.appendChild(t);}
+  rowlabel(30,'器乐谱');rowlabel(64,'音高');rowlabel(98,'声乐谱');
+  pitches.forEach(function(p,i){var x=90+i*52;
+    var a=document.createElementNS(NS,'text');a.setAttribute('x',x);a.setAttribute('y',34);a.setAttribute('text-anchor','middle');a.setAttribute('font-size',18);a.setAttribute('fill','var(--rubric)');a.textContent=instr[i];svg.appendChild(a);
+    var b=document.createElementNS(NS,'text');b.setAttribute('x',x);b.setAttribute('y',66);b.setAttribute('text-anchor','middle');b.setAttribute('font-size',15);b.setAttribute('font-family','var(--serif)');b.setAttribute('fill','var(--ink)');b.textContent=p;b.style.cursor='pointer';b.onclick=(function(pc){return function(){tone(60+pc,0,0.8);};})([0,2,4,5,7,9,11,12][i]);svg.appendChild(b);
+    var c=document.createElementNS(NS,'text');c.setAttribute('x',x);c.setAttribute('y',100);c.setAttribute('text-anchor','middle');c.setAttribute('font-size',18);c.setAttribute('fill','var(--acc)');c.textContent=vocal[i];svg.appendChild(c);
   });
   el.appendChild(svg);}
-hexachordSVG(document.getElementById('hexachord-svg'));
-/* mensural note shapes */
+greekNot(document.getElementById('greeknot'));
+/* ---- neume stages ---- */
+function neumeStages(el){var NS='http://www.w3.org/2000/svg',W=560,H=150;var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('width',W);
+  function label(x,t){var e=document.createElementNS(NS,'text');e.setAttribute('x',x+50);e.setAttribute('y',120);e.setAttribute('text-anchor','middle');e.setAttribute('font-size',11);e.setAttribute('font-family','var(--sans)');e.setAttribute('fill','var(--ink)');e.textContent=t;svg.appendChild(e);}
+  function sub(x,t){var e=document.createElementNS(NS,'text');e.setAttribute('x',x+50);e.setAttribute('y',136);e.setAttribute('text-anchor','middle');e.setAttribute('font-size',9);e.setAttribute('font-family','var(--sans)');e.setAttribute('fill','var(--mut)');e.textContent=t;svg.appendChild(e);}
+  function mark(x,y){var r=document.createElementNS(NS,'rect');r.setAttribute('x',x-4);r.setAttribute('y',y-4);r.setAttribute('width',8);r.setAttribute('height',8);r.setAttribute('fill','var(--rubric)');r.setAttribute('transform','rotate(15 '+x+' '+y+')');svg.appendChild(r);}
+  function line(x1,y,x2,col){var l=document.createElementNS(NS,'line');l.setAttribute('x1',x1);l.setAttribute('y1',y);l.setAttribute('x2',x2);l.setAttribute('y2',y);l.setAttribute('stroke',col||'var(--mut)');l.setAttribute('stroke-width',1);svg.appendChild(l);}
+  // stage 1: floating neumes
+  [[14,50],[30,38],[46,58],[64,44],[82,54]].forEach(function(p){mark(p[0],p[1]);});label(4,'① 无线纽姆');sub(4,'只记轮廓');
+  // stage 2: one/two lines
+  var x0=200;line(x0,44,x0+100,'#b0361f');line(x0,64,x0+100,'var(--gold)');
+  [[210,44],[226,54],[244,64],[262,54],[280,44]].forEach(function(p){mark(p[0],p[1]);});label(200,'② 加一至二线');sub(200,'红F·黄c 定位');
+  // stage 3: four lines
+  var x1=400;for(var i=0;i<4;i++)line(x1,38+i*10,x1+110,'var(--mut)');
+  [[410,68],[430,58],[452,48],[474,38],[494,58]].forEach(function(p){var r=document.createElementNS(NS,'rect');r.setAttribute('x',p[0]-4);r.setAttribute('y',p[1]-4);r.setAttribute('width',8);r.setAttribute('height',8);r.setAttribute('fill','var(--rubric)');svg.appendChild(r);});label(400,'③ 四线谱');sub(400,'音高全定');
+  el.appendChild(svg);}
+neumeStages(document.getElementById('neume-stages'));
+/* ---- hexachords hard/natural/soft ---- */
+var HEX=[
+ {n:'硬六声 (G · durum)',base:67,note:'含 B♮(硬 B → ♮)'},
+ {n:'自然六声 (C · naturale)',base:60,note:'不含 B'},
+ {n:'软六声 (F · molle)',base:65,note:'含 B♭(软 B → ♭)'}
+];
+var curHex=0;
+function drawHex(){var h=HEX[curHex];var ms=[0,2,4,5,7,9].map(function(iv){return h.base+iv;});
+  scaleView(document.getElementById('hex-sv'),{midis:ms,tonic:h.base,flat:(curHex===2)});
+  // relabel with ut re mi..
+  var row=document.getElementById('hex-sv').querySelector('.sv-row');
+  var syl=['ut','re','mi','fa','sol','la'];var idx=0;
+  [].forEach.call(row.querySelectorAll('.sv-note'),function(n){n.title=syl[idx++];});
+  document.getElementById('hexchar').textContent=h.note;
+  var pk=document.getElementById('hexpick');[].forEach.call(pk.children,function(b,i){b.classList.toggle('on',i===curHex);});}
+(function(){var pk=document.getElementById('hexpick');HEX.forEach(function(h,i){var b=document.createElement('button');b.textContent=h.n;b.onclick=function(){curHex=i;drawHex();};pk.appendChild(b);});drawHex();})();
+/* ---- mensural note shapes ---- */
 function mensuralSVG(el){var NS='http://www.w3.org/2000/svg',W=560,H=120;var svg=document.createElementNS(NS,'svg');svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.setAttribute('width',W);
   var notes=[['maxima','box2'],['longa','box'],['brevis','sq'],['semibrevis','dia'],['minima','diastem'],['semiminima','diaflag']];
+  function rect(x,y,w,h,fill){var r=document.createElementNS(NS,'rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill',fill?'var(--ink)':'none');r.setAttribute('stroke','var(--ink)');r.setAttribute('stroke-width',1.4);svg.appendChild(r);}
+  function stem(x,y){var l=document.createElementNS(NS,'line');l.setAttribute('x1',x);l.setAttribute('y1',y);l.setAttribute('x2',x);l.setAttribute('y2',y-24);l.setAttribute('stroke','var(--ink)');l.setAttribute('stroke-width',1.4);svg.appendChild(l);}
+  function dia(x,y,fill){var p=document.createElementNS(NS,'polygon');p.setAttribute('points',x+','+(y-8)+' '+(x+8)+','+y+' '+x+','+(y+8)+' '+(x-8)+','+y);p.setAttribute('fill',fill?'var(--ink)':'none');p.setAttribute('stroke','var(--ink)');p.setAttribute('stroke-width',1.4);svg.appendChild(p);}
   notes.forEach(function(n,i){var x=30+i*92,y=44;
-    if(n[1]==='box2'){rect(x-16,y-7,32,14,true);}
+    if(n[1]==='box2')rect(x-16,y-7,32,14,true);
     else if(n[1]==='box'){rect(x-9,y-7,18,14,true);stem(x+9,y);}
-    else if(n[1]==='sq'){rect(x-8,y-7,16,14,false);}
-    else if(n[1]==='dia'){dia(x,y,false);}
+    else if(n[1]==='sq')rect(x-8,y-7,16,14,false);
+    else if(n[1]==='dia')dia(x,y,false);
     else if(n[1]==='diastem'){dia(x,y,false);stem(x+8,y);}
     else if(n[1]==='diaflag'){dia(x,y,true);stem(x+8,y);var f=document.createElementNS(NS,'line');f.setAttribute('x1',x+8);f.setAttribute('y1',y-24);f.setAttribute('x2',x+16);f.setAttribute('y2',y-18);f.setAttribute('stroke','var(--ink)');f.setAttribute('stroke-width',1.4);svg.appendChild(f);}
     var t=document.createElementNS(NS,'text');t.setAttribute('x',x);t.setAttribute('y',92);t.setAttribute('text-anchor','middle');t.setAttribute('font-size',11);t.setAttribute('font-family','var(--sans)');t.setAttribute('fill','var(--mut)');t.textContent=n[0];svg.appendChild(t);});
-  function rect(x,y,w,h,fill){var r=document.createElementNS(NS,'rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',w);r.setAttribute('height',h);r.setAttribute('fill',fill?'var(--ink)':'none');r.setAttribute('stroke','var(--ink)');r.setAttribute('stroke-width',1.4);svg.appendChild(r);}
-  function stem(x,y){var l=document.createElementNS(NS,'line');l.setAttribute('x1',x);l.setAttribute('y1',y);l.setAttribute('x2',x);l.setAttribute('y2',y-24);l.setAttribute('stroke','var(--ink)');l.setAttribute('stroke-width',1.4);svg.appendChild(l);}
-  function dia(x,y,fill){var p=document.createElementNS(NS,'polygon');p.setAttribute('points',(x)+','+(y-8)+' '+(x+8)+','+y+' '+x+','+(y+8)+' '+(x-8)+','+y);p.setAttribute('fill',fill?'var(--ink)':'none');p.setAttribute('stroke','var(--ink)');p.setAttribute('stroke-width',1.4);svg.appendChild(p);}
   el.appendChild(svg);}
 mensuralSVG(document.getElementById('mensural-svg'));
-/* special scales */
-var WHOLE=[0,2,4,6,8,10],OCT=[0,2,3,5,6,8,9,11],ACOU=[0,2,4,6,7,9,10],PENTA=[0,2,4,7,9];
-keyboard(document.getElementById('kb-whole'),60,8,hiFrom(60,WHOLE),60);
-keyboard(document.getElementById('kb-oct'),60,8,hiFrom(60,OCT),60);
-keyboard(document.getElementById('kb-acou'),60,8,hiFrom(60,ACOU),60);
-keyboard(document.getElementById('kb-penta'),60,8,hiFrom(60,PENTA),60);
-pcClock(document.getElementById('clock-whole'),WHOLE,'closed',null,230);
-pcClock(document.getElementById('clock-oct'),OCT,'closed',null,230);
-/* Messiaen modes */
+/* ---- special scales (letter views) ---- */
+scaleView(document.getElementById('sv-whole'),{midis:ascMidis(60,[0,2,4,6,8,10]),tonic:60});
+scaleView(document.getElementById('sv-oct'),{midis:ascMidis(60,[0,2,3,5,6,8,9,11]),tonic:60});
+scaleView(document.getElementById('sv-acou'),{midis:ascMidis(60,[0,2,4,6,7,9,10]),tonic:60});
+scaleView(document.getElementById('sv-penta'),{midis:[60,62,64,67,69,72],tonic:60});
+pcClock(document.getElementById('clock-whole'),[0,2,4,6,8,10],'closed',null,220);
+pcClock(document.getElementById('clock-oct'),[0,2,3,5,6,8,9,11],'closed',null,220);
+/* ---- Messiaen modes ---- */
 var MESS=[
- {n:'第 1 号 · 全音阶',steps:[2,2,2,2,2,2],tr:2,c:'德彪西的水与雾;增三和弦'},
- {n:'第 2 号 · 八声音阶',steps:[1,2,1,2,1,2,1,2],tr:3,c:'减七的斑斓;斯特拉文斯基'},
- {n:'第 3 号',steps:[2,1,1,2,1,1,2,1,1],tr:4,c:'全-半-半 三度循环;九音'},
- {n:'第 4 号',steps:[1,1,3,1,1,1,3,1],tr:6,c:'含增二度;八音'},
- {n:'第 5 号',steps:[1,4,1,1,4,1],tr:6,c:'含大三度跳进;六音'},
- {n:'第 6 号',steps:[2,2,1,1,2,2,1,1],tr:6,c:'全音+半音块;八音'},
+ {n:'第 1 号 · 全音阶',steps:[2,2,2,2,2,2],tr:2,c:'德彪西的水与雾'},
+ {n:'第 2 号 · 八声音阶',steps:[1,2,1,2,1,2,1,2],tr:3,c:'紫蓝斑驳;斯特拉文斯基'},
+ {n:'第 3 号',steps:[2,1,1,2,1,1,2,1,1],tr:4,c:'橙金乳白;全-半-半循环'},
+ {n:'第 4 号',steps:[1,1,3,1,1,1,3,1],tr:6,c:'含增二度'},
+ {n:'第 5 号',steps:[1,4,1,1,4,1],tr:6,c:'含大三度跳进'},
+ {n:'第 6 号',steps:[2,2,1,1,2,2,1,1],tr:6,c:'全音+半音块'},
  {n:'第 7 号',steps:[1,1,1,2,1,1,1,1,2,1],tr:6,c:'最密;十音'}
 ];
-(function(){var host=document.getElementById('messiaen');MESS.forEach(function(mo,idx){
-  var iv=ivFromSteps(mo.steps.concat([0]));// build cumulative intervals within octave
-  // recompute intervals from steps properly:
+(function(){var host=document.getElementById('messiaen');MESS.forEach(function(mo){
   var ivs=[0],c=0;for(var i=0;i<mo.steps.length-1;i++){c+=mo.steps[i];ivs.push(c);}
   var card=document.createElement('div');card.className='modecard';
-  card.innerHTML='<div class="hd"><b>'+mo.n+'</b><span class="tag">移调数 '+mo.tr+' · '+ivs.length+' 音</span></div>'+
-    '<div class="iv">半音单元:'+mo.steps.join(' – ')+'</div>';
-  var kb=document.createElement('div');card.appendChild(kb);
-  var ctr=document.createElement('div');ctr.className='ctrls';
-  var btn=document.createElement('button');btn.className='play';btn.textContent='▶ 听';btn.onclick=(function(steps){return function(){playSteps(60,steps);};})(mo.steps);
-  var hint=document.createElement('span');hint.className='hint';hint.textContent=mo.c;
-  ctr.appendChild(btn);ctr.appendChild(hint);card.appendChild(ctr);
-  host.appendChild(card);
-  keyboard(kb,60,8,hiFrom(60,ivs),60);
-});})();
-/* axis system clock */
+  card.innerHTML='<div class="hd"><b>'+mo.n+'</b><span class="tag">移调数 '+mo.tr+' · '+ivs.length+' 音</span></div><div class="hint" style="margin:.2rem 0 .4rem">半音单元 '+mo.steps.join('–')+' · '+mo.c+'</div>';
+  var sv=document.createElement('div');card.appendChild(sv);
+  scaleView(sv,{midis:ascMidis(60,ivs),tonic:60});
+  var ct=document.createElement('div');ct.className='ctrls';var b=document.createElement('button');b.className='play';b.textContent='▶ 听';b.onclick=(function(el){return function(){el._play&&el._play();};})(sv);ct.appendChild(b);card.appendChild(ct);
+  host.appendChild(card);});})();
+/* ---- axis, mystic ---- */
 var AXIS_T=[0,3,6,9],AXIS_D=[7,10,1,4],AXIS_S=[2,5,8,11];
-pcClock(document.getElementById('axis-clock'),null,false,function(i){
-  if(AXIS_T.indexOf(i)>=0)return 'var(--rubric)';
-  if(AXIS_D.indexOf(i)>=0)return 'var(--acc)';
-  return 'var(--gold)';
-},260);
-/* mystic chord clock */
+pcClock(document.getElementById('axis-clock'),null,false,function(i){if(AXIS_T.indexOf(i)>=0)return'var(--rubric)';if(AXIS_D.indexOf(i)>=0)return'var(--acc)';return'var(--gold)';},260);
 var MYSTIC=[0,6,10,4,9,2];
-pcClock(document.getElementById('mystic-clock'),MYSTIC,'open',null,250);
-/* twelve-tone */
+pcClock(document.getElementById('mystic-clock'),MYSTIC,'open',null,240);
+/* ---- twelve-tone ---- */
 var ROW=[0,11,3,4,8,7,9,5,6,1,2,10];
 function invert(r){var f=r[0];return r.map(function(p){return ((f-(p-f))%12+12)%12;});}
-pcClock(document.getElementById('pcset'),[0,1,4,6],'open',null,230);
+pcClock(document.getElementById('pcset'),[0,1,4,6],'open',null,220);
 (function(){var inv=invert(ROW),P0=ROW[0];var tbl=document.createElement('table');tbl.className='matrix';
-  for(var i=0;i<12;i++){var tr=document.createElement('tr');for(var j=0;j<12;j++){var pc=(ROW[j]+(inv[i]-ROW[0])+120)%12;var td=document.createElement('td');td.textContent=NAMES[pc];if(i===j&&pc===P0)td.className='d';tr.appendChild(td);}tbl.appendChild(tr);}
+  for(var i=0;i<12;i++){var tr=document.createElement('tr');for(var j=0;j<12;j++){var pc=(ROW[j]+(inv[i]-ROW[0])+120)%12;var td=document.createElement('td');td.textContent=SH[pc];if(i===j&&pc===P0)td.className='d';tr.appendChild(td);}tbl.appendChild(tr);}
   document.getElementById('matrix').appendChild(tbl);})();
-/* notation historical images */
+/* ---- historical images ---- */
 var NOTA={
- greek:{t:'塞基洛斯墓志铭 · 古希腊记谱残存',cr:'摄影 Artem.G · CC BY-SA 4.0'},
+ orestes:{t:'俄瑞斯忒斯纸草 · 欧里庇得斯合唱残篇(约前5世纪)',cr:'公有领域'},
+ seikilos:{t:'塞基洛斯之歌 · 原谱转写(现存最完整的古代旋律)',cr:'公有领域'},
+ systema:{t:'大完整音列体系(Systema Teleion)· 图解',cr:'CC BY-SA 3.0'},
+ corelli:{t:'科雷利《小提琴奏鸣曲》Op. 5 No. 3(1700)',cr:'公有领域'},
  neumes:{t:'圣加尔 Cantatorium · 无线纽姆(约900–910)',cr:'圣加尔修道院图书馆 Cod. Sang. 359 · CC BY-SA 4.0'},
  guidohand:{t:'圭多手 · 中世纪抄本插图',cr:'公有领域'},
- squarcialupi:{t:'Squarcialupi 抄本:兰迪尼《Così pensoso》· 15世纪初',cr:'公有领域'},
- mensural:{t:'科尔迪埃《Belle, bonne, sage》心形谱 · 尚蒂伊抄本(Ars subtilior)',cr:'CC BY-SA 3.0'},
+ mensural:{t:'科尔迪埃《Belle, bonne, sage》心形谱 · 尚蒂伊抄本',cr:'CC BY-SA 3.0'},
+ squarcialupi:{t:'Squarcialupi 抄本:兰迪尼《Così pensoso》',cr:'公有领域'},
  petrucci:{t:'佩特鲁奇《Harmonice Musices Odhecaton》· 威尼斯,1501',cr:'公有领域'}
 };
-function renderNota(){['greek','neumes','guidohand','squarcialupi','mensural','petrucci'].forEach(function(k){
-  var host=document.getElementById('nota-'+k);if(!host)return;var d=NOTA[k];
-  if(!d){host.parentElement.parentElement.style.display='none';return;}
-  host.innerHTML='<img loading="lazy" src="assets/'+k+'.jpg" alt="'+(d.t||'')+'"><figcaption><b>'+(d.t||'')+'</b> · '+d.cr+'</figcaption>';
-});}
-/* play dispatch */
+Object.keys(NOTA).forEach(function(k){var host=document.getElementById('nota-'+k);if(!host)return;var d=NOTA[k];
+  host.innerHTML='<img loading="lazy" src="assets/'+k+'.jpg" alt="'+d.t+'"><figcaption><b>'+d.t+'</b> · '+d.cr+'</figcaption>';});
+/* ---- play dispatch ---- */
+function diffs(iv){var d=[];for(var i=0;i<iv.length-1;i++)d.push(iv[i+1]-iv[i]);d.push(12-iv[iv.length-1]);return d;}
+function playIv(base,iv){seq(ascMidis(base,iv),0.5);}
 document.addEventListener('click',function(e){var b=e.target.closest('[data-play]');if(!b)return;var p=b.dataset.play;
   switch(p){
-    case 'mode':var mo=MODES[curMode];playSteps(60+mo.t,diffs(mo.iv));break;
-    case 'fifths':seq([0,7,2,9,4,11,6,1,8,3,10,5].map(function(pc){return 48+pc;}),0.26,0.28);break;
-    case 'scale-whole':playSteps(60,WHOLE.slice(1).map(function(v,i){return WHOLE[i+1]-WHOLE[i];}).concat([12-WHOLE[WHOLE.length-1]]));break;
+    case 'gmode':var gm=GMODES[curGmode];seq(whiteDesc(gm.top,8),0.5);break;
+    case 'cmode':var cm=CMODES[curCmode];playIv(60+cm.t,cm.iv);break;
+    case 'sv-ionian':seq(ascMidis(60,[0,2,4,5,7,9,11]),0.5);break;
+    case 'sv-aeolian':seq(ascMidis(69,[0,2,3,5,7,8,10]),0.5);break;
+    case 'fifths':seq([0,7,2,9,4,11,6,1,8,3,10,5].map(function(pc){return 48+pc;}),0.32,0.34);break;
+    case 'hex':var h=HEX[curHex];seq([0,2,4,5,7,9].map(function(iv){return h.base+iv;}),0.5);break;
+    case 'sv-whole':playIv(60,[0,2,4,6,8,10]);break;
     case 'chord-aug':chord([60,64,68]);break;
-    case 'scale-oct':playStepsFromIv(OCT);break;
-    case 'scale-acou':playStepsFromIv(ACOU);break;
-    case 'scale-penta':playStepsFromIv(PENTA);break;
+    case 'sv-oct':playIv(60,[0,2,3,5,6,8,9,11]);break;
+    case 'sv-acou':playIv(60,[0,2,4,6,7,9,10]);break;
+    case 'sv-penta':seq([60,62,64,67,69,72],0.5);break;
     case 'mystic':chord(MYSTIC.map(function(pc){return 60+pc;}));break;
-    case 'mystic-scale':playStepsFromIv([0,2,4,6,9,10]);break;
+    case 'mystic-scale':seq([0,2,4,6,9,10,12].map(function(pc){return 60+pc;}),0.5);break;
     case 'axis-t':chord(AXIS_T.map(function(pc){return 60+pc;}));break;
     case 'axis-d':chord(AXIS_D.map(function(pc){return 60+pc;}));break;
     case 'axis-s':chord(AXIS_S.map(function(pc){return 60+pc;}));break;
-    case 'clock-whole':case 'clock-oct':b.blur();break;
-    case 'row-p':seq(ROW.map(function(pc){return 60+pc;}),0.3,0.32);break;
-    case 'row-r':seq(ROW.slice().reverse().map(function(pc){return 60+pc;}),0.3,0.32);break;
-    case 'row-i':seq(invert(ROW).map(function(pc){return 60+pc;}),0.3,0.32);break;
+    case 'row-p':seq(ROW.map(function(pc){return 60+pc;}),0.34,0.36);break;
+    case 'row-r':seq(ROW.slice().reverse().map(function(pc){return 60+pc;}),0.34,0.36);break;
+    case 'row-i':seq(invert(ROW).map(function(pc){return 60+pc;}),0.34,0.36);break;
   }
 });
-function diffs(iv){var d=[];for(var i=0;i<iv.length-1;i++)d.push(iv[i+1]-iv[i]);d.push(12-iv[iv.length-1]);return d;}
-function playStepsFromIv(iv){playSteps(60,diffs(iv));}
-/* expose for credits injection */
-window.__setNota=function(map){NOTA=map;renderNota();};
-renderNota();
 })();
 </script>
 </body>
