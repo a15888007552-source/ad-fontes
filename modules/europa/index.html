@@ -157,6 +157,20 @@ dialog::backdrop{background:rgba(8,6,4,.62);backdrop-filter:blur(2px)}
 
 /* ── 舆图 ─────────────────────────── */
 .maplay{display:grid;grid-template-columns:minmax(330px,1.6fr) minmax(280px,.8fr);gap:22px;margin-top:22px}
+.maptl{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px;padding:11px 15px;background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.tlbtn{width:38px;height:34px;flex:none;font:15px var(--sans);background:var(--acc);color:#fff;border:1px solid var(--acc);border-radius:3px;cursor:pointer;line-height:1}
+.tlbtn:hover{filter:brightness(1.08)}
+.maptl input[type=range]{flex:1 1 200px;min-width:150px;accent-color:var(--acc);cursor:pointer;height:4px}
+.mylab{flex:none;min-width:118px;font:600 13px var(--sans);letter-spacing:.04em;color:var(--acc);text-align:center}
+.maptl .chip{flex:none}
+.maptl .chip.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.flows .flow{fill:none;stroke:var(--acc2);stroke-linecap:round;opacity:.42;mix-blend-mode:multiply}
+.cent .centhalo{fill:var(--acc);opacity:.14}
+.cent .centd{fill:var(--gold,#B98A2E);stroke:#fff;stroke-width:1.4;paint-order:stroke}
+.cent .centlab{fill:var(--gold,#B98A2E);font-family:var(--sans);font-weight:700;letter-spacing:.08em;text-anchor:middle;paint-order:stroke;stroke:var(--panel);stroke-width:3px}
+.pilg .pilr{fill:none;stroke:var(--gold,#B98A2E);opacity:.9}
+.pilg .pilstar{fill:var(--gold,#B98A2E);text-anchor:middle;paint-order:stroke;stroke:var(--panel);stroke-width:2.4px}
+.pilbadge{display:inline-block;font:600 11px var(--sans);letter-spacing:.1em;color:var(--gold,#B98A2E);border:1px solid var(--gold,#B98A2E);border-radius:2px;padding:1px 7px;margin:6px 0 2px}
 @media(max-width:920px){.maplay{grid-template-columns:1fr}}
 .mapbox{border:1px solid var(--line);background:#BFD3CE;position:relative;overflow:hidden}
 .mapbox svg{display:block;width:100%;height:auto;cursor:grab;touch-action:none}
@@ -474,6 +488,14 @@ footer{padding:30px 4vw;border-top:1px solid var(--line);font:11.5px var(--sans)
   <section class="view" id="v-map">
     <h3 class="rub">EUROPA · 音乐地理（滚轮缩放 · 拖拽平移）</h3>
     <div class="chips" id="mapchips"></div>
+    <div class="maptl" id="maptl">
+      <button class="tlbtn" id="mplay" title="播放世纪推移">▶</button>
+      <input type="range" id="myear" step="1" value="0" aria-label="世纪时间轴">
+      <span class="mylab" id="mylab">全时段</span>
+      <button class="chip" id="mflows" title="把所有音乐家的一生游历汇成迁徙流向">迁徙流向</button>
+      <button class="chip" id="mpil" title="标出音乐朝圣地">朝圣地</button>
+      <button class="chip" id="mtloff" hidden>✕ 全时段</button>
+    </div>
     <div class="maplay">
       <div class="mapbox" id="mapbox"></div>
       <aside class="mappanel" id="mappanel"><h4>点选一座城市</h4><p style="font-size:13.5px;color:var(--mut)">圆点大小对应此地活跃音乐家之多寡。点击城市可见驻留者名录与历史典故；点"绘其行迹"，其一生游历将以流动的虚线绘于图上。海岸线取自 Natural Earth 地理数据。</p></aside>
@@ -1203,8 +1225,68 @@ const REGIONS=[["HISPANIA",-4.6,39.6],["LVSITANIA",-8.4,39.2],["GALLIA",2.3,46.9
 let mapFilter="all",routeOf=null,vb={x:0,y:0,w:MW,h:MH};
 function cityList(){
   const idx={};
-  M.forEach(m=>{if(mapFilter!=="all"&&m.e!==mapFilter)return;(m.c||[]).forEach(c=>{if(!CITY[c])return;(idx[c]=idx[c]||[]).push(m)})});
+  M.forEach(m=>{if(mapFilter!=="all"&&m.e!==mapFilter)return;
+    if(mapYear!=null){const y=yrs(m);const b=Math.max(y[0]+12,y[0]);if(!(b<=mapYear&&mapYear<=y[1]))return;}
+    (m.c||[]).forEach(c=>{if(!CITY[c])return;(idx[c]=idx[c]||[]).push(m)})});
   return idx}
+/* ══════ 舆图增强 · 时间轴 / 重心 / 迁徙流向 / 朝圣地 ══════ */
+let mapYear=null,mapFlows=false,mapPil=false,mapPlay=null,mapBounds=null;
+const PILGRIM={
+  "罗马":"教廷礼拜堂与众多教堂乐职之渊薮，帕莱斯特里纳的圣城；无数作曲家来此研习复调正典。",
+  "威尼斯":"圣马可的复合唱与三大孤女院（ospedali）；从维拉尔特、加布里埃利到维瓦尔第的水城声景。",
+  "那不勒斯":"十八世纪歌剧与四大音乐院（conservatorio）的重镇，喜歌剧与美声学派的摇篮。",
+  "佛罗伦萨":"卡梅拉塔的单声歌乐实验在此催生歌剧；美第奇宫廷的人文主义音乐。",
+  "巴黎":"从圣母院乐派到吕利的宫廷歌剧、大歌剧与音乐院；欧洲乐谱出版与沙龙的中心。",
+  "维也纳":"海顿、莫扎特、贝多芬、舒伯特、勃拉姆斯与第二维也纳乐派——古典—浪漫的都城。",
+  "莱比锡":"巴赫的圣托马斯合唱学校、门德尔松创办的音乐院与格万豪斯乐团；德意志市民音乐生活的样板。",
+  "伦敦":"亨德尔的清唱剧与公开音乐会之都；海顿的伦敦交响与最早的商业音乐市场。",
+  "曼海姆":"选帝侯宫廷乐队以渐强、火箭音型与乐队纪律著称的'曼海姆乐派'，交响曲成型之地。",
+  "拜罗伊特":"瓦格纳为《尼伯龙根的指环》亲建的节日剧院，乐剧朝圣的圣地。",
+  "圣彼得堡":"'强力集团'与俄罗斯民族乐派、里姆斯基-科萨科夫的乐院；斯特拉文斯基的起点。"
+};
+function ymSpan(){if(mapBounds)return mapBounds;let lo=9999,hi=-9999;M.forEach(m=>{const y=yrs(m);if(y[0]<lo)lo=y[0];if(y[1]>hi)hi=y[1]});lo=Math.floor(lo/10)*10;hi=Math.ceil(hi/10)*10;return mapBounds=[lo,hi]}
+function ymLabel(y){return y<0?"前"+(-y)+"年":y+"年"}
+function mapFlowLayer(){
+  if(!mapFlows)return"";
+  const sc=vb.w/MW,agg={};
+  M.forEach(m=>{if(mapFilter!=="all"&&m.e!==mapFilter)return;const cs=(m.c||[]).filter(c=>CITY[c]);for(let i=0;i<cs.length-1;i++){if(cs[i]===cs[i+1])continue;const k=cs[i]+"|"+cs[i+1];agg[k]=(agg[k]||0)+1}});
+  const keys=Object.keys(agg);if(!keys.length)return"";
+  const max=Math.max.apply(null,keys.map(k=>agg[k]));
+  return`<g class="flows">`+keys.map(k=>{const kk=k.split("|"),p=PX(CITY[kk[0]][0],CITY[kk[0]][1]),q=PX(CITY[kk[1]][0],CITY[kk[1]][1]);
+    const dx=q[0]-p[0],dy=q[1]-p[1],len=Math.hypot(dx,dy)||1,bend=Math.min(len*.16,130);
+    const cx=(p[0]+q[0])/2 - dy/len*bend,cy=(p[1]+q[1])/2 + dx/len*bend;
+    const w=(1+3.4*Math.sqrt(agg[k]/max))*sc;
+    return`<path class="flow" d="M${p[0].toFixed(0)} ${p[1].toFixed(0)}Q${cx.toFixed(0)} ${cy.toFixed(0)} ${q[0].toFixed(0)} ${q[1].toFixed(0)}" style="stroke-width:${w.toFixed(2)}"/>`}).join("")+`</g>`}
+function mapTopLayer(){
+  const sc=vb.w/MW;let out="";
+  if(mapPil){out+=`<g class="pilg">`+Object.keys(PILGRIM).filter(c=>CITY[c]).map(c=>{const q=PX(CITY[c][0],CITY[c][1]);
+    return`<circle class="pilr" cx="${q[0].toFixed(0)}" cy="${q[1].toFixed(0)}" r="${(15*sc).toFixed(1)}" style="stroke-width:${(1.7*sc).toFixed(2)}"/><text class="pilstar" x="${q[0].toFixed(0)}" y="${(q[1]-17*sc).toFixed(1)}" style="font-size:${(15*sc).toFixed(1)}px">✦</text>`}).join("")+`</g>`}
+  if(mapYear!=null){const idx=cityList();let sx=0,sy=0,n=0;
+    Object.keys(idx).forEach(c=>{const w=idx[c].length,q=PX(CITY[c][0],CITY[c][1]);sx+=q[0]*w;sy+=q[1]*w;n+=w});
+    if(n){const cx=sx/n,cy=sy/n,r=11*sc;
+      out+=`<g class="cent"><circle class="centhalo" cx="${cx.toFixed(0)}" cy="${cy.toFixed(0)}" r="${(27*sc).toFixed(1)}"/><path class="centd" d="M${cx.toFixed(0)} ${(cy-r).toFixed(1)}L${(cx+r).toFixed(1)} ${cy.toFixed(0)}L${cx.toFixed(0)} ${(cy+r).toFixed(1)}L${(cx-r).toFixed(1)} ${cy.toFixed(0)}Z"/><text class="centlab" x="${cx.toFixed(0)}" y="${(cy-31*sc).toFixed(1)}" style="font-size:${(15*sc).toFixed(1)}px">重心 · ${ymLabel(mapYear)}</text></g>`}}
+  return out}
+function syncMapUI(){
+  const sp=ymSpan(),sl=$("#myear"),lab=$("#mylab"),off=$("#mtloff"),fl=$("#mflows"),pi=$("#mpil");
+  if(!sl)return;
+  sl.min=sp[0];sl.max=sp[1];
+  if(mapYear==null){lab.textContent="全时段";off.hidden=true;$("#mplay").textContent="▶"}
+  else{sl.value=mapYear;lab.textContent=ymLabel(mapYear);off.hidden=false}
+  fl.classList.toggle("on",mapFlows);pi.classList.toggle("on",mapPil)}
+function mapStop(){if(mapPlay){clearInterval(mapPlay);mapPlay=null;$("#mplay").textContent="▶"}}
+function mapUI(){
+  const sp=ymSpan(),sl=$("#myear");
+  syncMapUI();
+  sl.oninput=()=>{mapStop();mapYear=+sl.value;syncMapUI();renderMap()};
+  $("#mtloff").onclick=()=>{mapStop();mapYear=null;syncMapUI();renderMap()};
+  $("#mflows").onclick=()=>{mapFlows=!mapFlows;syncMapUI();renderMap()};
+  $("#mpil").onclick=()=>{mapPil=!mapPil;syncMapUI();renderMap()};
+  $("#mplay").onclick=()=>{
+    if(mapPlay){mapStop();return}
+    if(mapYear==null||mapYear>=sp[1])mapYear=sp[0];
+    const step=Math.max(1,Math.round((sp[1]-sp[0])/280));
+    $("#mplay").textContent="⏸";
+    mapPlay=setInterval(()=>{mapYear+=step;if(mapYear>=sp[1]){mapYear=sp[1];syncMapUI();renderMap();mapStop();return}syncMapUI();renderMap()},70)}}
 function renderMap(){
   const idx=cityList(),sc=vb.w/MW;
   let dots="",labs="",route="";
@@ -1244,7 +1326,7 @@ function renderMap(){
    <g>${REGIONS.map(r=>{const q=PX(r[1],r[2]);return `<text class="region" x="${q[0].toFixed(0)}" y="${q[1].toFixed(0)}" text-anchor="middle" style="font-size:${(21*sc).toFixed(1)}px;letter-spacing:${(6*sc).toFixed(1)}px">${r[0]}</text>`}).join("")}</g>
    <g>${(RIVERS.names||[]).map(r=>{const q=PX(r.x,r.y);return `<text class="rivlab" x="${q[0].toFixed(0)}" y="${q[1].toFixed(0)}" style="font-size:${(12.5*sc).toFixed(1)}px;stroke-width:${(2.6*sc).toFixed(1)}">${r.n}</text>`}).join("")}</g>
    <text x="${MW-460}" y="${MH-40}" font-family="Palatino Linotype,serif" font-style="italic" font-size="34" fill="#8A7F58">EVROPA · MARE MVSICAE</text>
-   ${route}${dots}${labs}</svg>`;
+   ${route}${mapFlowLayer()}${dots}${labs}${mapTopLayer()}</svg>`;
   const svg=$("#msvg");
   svg.querySelectorAll("[data-c]").forEach(el=>el.addEventListener("click",ev=>{if(!panMoved)cityPanel(el.dataset.c)}));
   bindPan(svg);
@@ -1273,6 +1355,7 @@ function zoomC(f){const c={clientX:0,clientY:0};const svg=$("#msvg"),r=svg.getBo
 function cityPanel(c){
   const idx=cityList(),ms=(idx[c]||[]).sort((a,b)=>yrs(a)[0]-yrs(b)[0]);
   $("#mappanel").innerHTML=`<h4>${c}</h4><div style="font:11px var(--sans);letter-spacing:.15em;color:var(--mut)">${CITY[c][1].toFixed(1)}°N · ${CITY[c][0].toFixed(1)}°E</div>
+  ${PILGRIM[c]?`<div class="pilbadge">✦ 音乐朝圣地</div><div class="lore" style="border-left-color:var(--gold,#B98A2E)">${PILGRIM[c]}</div>`:""}
   ${CITY[c][2]?`<div class="lore">${CITY[c][2]}</div>`:""}
   <ul>${ms.map(m=>`<li><a data-m="${m.i}">${m.n}</a> <span style="color:var(--mut);font-size:11px">${m.d}</span><small>${m.s} · <a data-r="${m.i}" style="color:#8E2C3B">绘其行迹 →</a></small></li>`).join("")||"<li>此过滤条件下暂无驻留者</li>"}</ul>`;
   $("#mappanel").querySelectorAll("a[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m));
@@ -1283,8 +1366,8 @@ function renderChips(){
    EPK.map(k=>`<button class="chip ${mapFilter===k?"on":""}" data-f="${k}">${EP[k].zh}</button>`).join("")+
    (routeOf?`<button class="chip" data-f="__clr">✕ 清除行迹（${byId[routeOf]?.n||""}）</button>`:"");
   $("#mapchips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
-    if(b.dataset.f==="__clr"){routeOf=null}else{mapFilter=b.dataset.f;routeOf=null}
-    renderChips();renderMap()});
+    if(b.dataset.f==="__clr"){routeOf=null}else{mapFilter=b.dataset.f;routeOf=null;if(typeof mapStop==="function"){mapStop();mapYear=null}}
+    renderChips();renderMap();if(typeof syncMapUI==="function")syncMapUI()});
 }
 function miniMap(cs){
   const ps=cs.map(c=>PX(CITY[c][0],CITY[c][1]));
@@ -1661,7 +1744,8 @@ function setView(v){
   const themed=v==="alm";
   $("#app").dataset.ep=themed?curEp:"atlas";
   $("#epnav").style.display=themed?"flex":"none";
-  if(v==="map"){renderChips();renderMap()}
+  if(v!=="map"&&typeof mapStop==="function")mapStop();
+  if(v==="map"){renderChips();renderMap();mapUI()}
   if(v==="tl")renderTL();
   if(v==="net"&&!net2d)init2D();
   if(v==="lin")renderLineage();
