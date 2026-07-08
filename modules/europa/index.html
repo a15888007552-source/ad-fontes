@@ -1052,6 +1052,16 @@ function renderNorton(ep){
       <div class="nroute"><h4>ROUTE · 断代线索</h4>${(n.route||[]).map(x=>`<span>${x}</span>`).join("")}<p class="mapnote">${n.cite}</p></div>
     </div></div></section>`;
 }
+/* 时代右栏配画（公有领域传世名作，与篇首画各异；均标注出处） */
+const ART2={
+ greek:{u:"assets/img/side_greek.jpg",title:"弹基萨拉琴的女子",artist:"波斯科雷阿莱 P. 范尼乌斯·辛尼斯托别墅壁画",year:"约前50–前40年",c:"庞贝近郊别墅的罗马壁画，女子怀抱七弦基萨拉——古代「音乐立法者」想象的视觉回响。"},
+ medieval:{u:"assets/img/side_medieval.jpg",title:"《圣母康蒂加》细密画",artist:"阿方索十世宫廷编纂",year:"13世纪",c:"抄本页上的安纳菲长号手；宫廷与教会以图记乐，正是中世纪音乐得以存留的媒介。"},
+ ren:{u:"assets/img/side_ren.jpg",title:"圣塞西莉亚的沉迷",artist:"拉斐尔",year:"约1516–1517",c:"音乐主保圣人脚下散落着破败的乐器，天上合唱压过尘世之音——文艺复兴的和谐理想。"},
+ baroque:{u:"assets/img/side_baroque.jpg",title:"乐师",artist:"卡拉瓦乔",year:"约1597",c:"为德尔·蒙特枢机所作的少年乐师群像，明暗对照戏剧化如通奏低音——巴洛克的感官与修辞。"},
+ classical:{u:"assets/img/side_classical.jpg",title:"梅泽坦",artist:"华托",year:"约1718–1720",c:"弹琉特而歌的喜剧角色；华丽风格（galant）的优雅、私密与一缕感伤。"},
+ romantic:{u:"assets/img/side_romantic.jpg",title:"李斯特在钢琴前",artist:"约瑟夫·丹豪泽",year:"1840",c:"贝多芬胸像俯临，乔治·桑、雨果、帕格尼尼、罗西尼环坐——浪漫主义的音乐英雄崇拜。"},
+ modern:{u:"assets/img/side_modern.jpg",title:"《春之祭》舞台设计",artist:"尼古拉·罗列赫",year:"1913",c:"斯特拉文斯基引爆巴黎的原始主义之夜；二十世纪以一场断裂开场。"}
+};
 function renderAlm(){
   const e=EP[curEp];
   const ms=M.filter(m=>m.e===curEp).sort((a,b)=>yrs(a)[0]-yrs(b)[0]);
@@ -1069,7 +1079,8 @@ function renderAlm(){
       ${String(e.intro).split(/\n\n+/).map(p=>`<p class="intro">${p}</p>`).join("")}</div>
     <div>
       <blockquote class="quote">「${e.quote}」<small>—— ${e.qs}</small></blockquote>
-      <div class="subs">${e.subs.map(s=>`<em>${s}</em>`).join("")}</div></div>
+      <div class="subs">${e.subs.map(s=>`<em>${s}</em>`).join("")}</div>
+      ${ART2[curEp]?`<figure class="artfig" style="margin-top:18px"><img loading="lazy" src="${ART2[curEp].u}" alt="${ART2[curEp].title}"><figcaption><b>${ART2[curEp].title}</b>　${ART2[curEp].artist}，${ART2[curEp].year}${ART2[curEp].c?`<br>${ART2[curEp].c}`:""}</figcaption></figure>`:""}</div>
   </div>
   ${renderNorton(curEp)}
   <div class="motif ${curEp}"></div>
