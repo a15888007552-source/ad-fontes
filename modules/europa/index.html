@@ -173,6 +173,11 @@ dialog::backdrop{background:rgba(8,6,4,.62);backdrop-filter:blur(2px)}
 .pilg .pilr{fill:none;stroke:var(--gold,#B98A2E);opacity:.9}
 .pilg .pilstar{fill:var(--gold,#B98A2E);text-anchor:middle;paint-order:stroke;stroke:var(--panel);stroke-width:2.4px}
 .pilbadge{display:inline-block;font:600 11px var(--sans);letter-spacing:.1em;color:var(--gold,#B98A2E);border:1px solid var(--gold,#B98A2E);border-radius:2px;padding:1px 7px;margin:6px 0 2px}
+.cityfig{margin:12px 0 10px;border:1px solid var(--line);background:var(--panel);padding:6px 6px 5px}
+.cityfig img{width:100%;display:block;max-height:230px;object-fit:cover;object-position:center}
+.cityfig figcaption{font-size:10.5px;color:var(--mut);margin-top:6px;line-height:1.55}
+.cityfig figcaption b{color:var(--ink);font-weight:600}
+.cityhist{font-family:var(--kai);font-size:14.5px;line-height:1.95;margin:10px 0 4px;border-left:3px solid var(--acc2);padding:4px 0 4px 13px}
 @media(max-width:920px){.maplay{grid-template-columns:1fr}}
 .mapbox{border:1px solid var(--line);background:#BFD3CE;position:relative;overflow:hidden}
 .mapbox svg{display:block;width:100%;height:auto;cursor:grab;touch-action:none}
@@ -555,7 +560,7 @@ footer{padding:30px 4vw;border-top:1px solid var(--line);font:11.5px var(--sans)
     <p class="colophon">本年鉴之分期、人名与史实框架以 Burkholder/Grout/Palisca 第十版与 Taruskin 五卷本为准绳；时代页新增的"Norton 断代史导读"据五卷诺顿断代史中译本之断代框架、目录问题意识与相关章节整理改写。十九世纪叙事参照达尔豪斯之结构史观。肖像均为公有领域之传世画作、版画、手抄本细密画或历史照片；确无传世真容者以同时代图像代之并注明，不作臆造。</p>
   </section>
 </main>
-<footer>ANNALES MUSICORUM EUROPAE · MMXXVI · 依 GROUT、TARUSKIN 与 NORTON PERIOD HISTORIES 编纂 · 肖像与画作均出自公有领域</footer>
+<footer>ANNALES MUSICORUM EUROPAE · MMXXVI · 依 GROUT、TARUSKIN 与 NORTON PERIOD HISTORIES 编纂 · 肖像与画作均出自公有领域;舆图城市地标照片采用知识共享(CC)授权、已注明摄影者与许可</footer>
 </div>
 
 <dialog id="dlg"><div class="dwrap" id="dwrap"></div></dialog>
@@ -566,7 +571,7 @@ footer{padding:30px 4vw;border-top:1px solid var(--line);font:11.5px var(--sans)
   <p class="introlede">自古希腊至二十世纪的西方音乐家交互图志——一百余位音乐家的肖像、生平与作品，织成师承与影响之网，铺陈于历史的舆图与脉络之上。分期、史实与"深读"依 <b>格劳特《西方音乐史》第十版</b>、<b>塔鲁斯金《牛津西方音乐史》</b> 与 <b>诺顿音乐断代史</b> 编纂。</p>
   <div class="introgrid" id="introgrid"></div>
   <div class="introfoot">
-    <p class="introcolo">肖像与画作均取自公有领域；确无传世真容者以同时代图像借喻并注明，不作臆造。生卒年从格劳特第十版附录。</p>
+    <p class="introcolo">肖像与画作均取自公有领域；确无传世真容者以同时代图像借喻并注明，不作臆造；舆图各城的代表建筑照片采用知识共享(CC)授权，已于图注注明摄影者与许可。生卒年从格劳特第十版附录。</p>
     <button class="introgo" id="introgo">进入年鉴 →</button>
   </div>
 </div></dialog>
@@ -1365,11 +1370,33 @@ function zoomAt(e,f){
   vb.x=px-(px-vb.x)*f;vb.y=py-(py-vb.y)*f;renderMap();
 }
 function zoomC(f){const c={clientX:0,clientY:0};const svg=$("#msvg"),r=svg.getBoundingClientRect();c.clientX=r.left+r.width/2;c.clientY=r.top+r.height/2;zoomAt(c,f)}
+/* 城市专题:代表建筑照片(CC/公有领域,注明作者与许可)+ 音乐史小传 */
+const CITYINFO={
+ "巴黎":{img:"paris",landmark:"加尼叶歌剧院",cr:"Делфина · CC BY-SA 4.0",hist:"从圣母院乐派的奥尔加农,到吕利的宫廷歌剧、拉莫与卢梭的论战,再到十九世纪“大歌剧”(Grand Opéra)与巴黎音乐院(1795)体制——柏辽兹、肖邦、李斯特、奥芬巴赫、德彪西皆在此成名。加尼叶歌剧院(1875)是第二帝国歌剧盛世的纪念碑,也是欧洲乐谱出版与沙龙文化的中心。"},
+ "维也纳":{img:"vienna",landmark:"维也纳国家歌剧院",cr:"Pezi · CC BY-SA 3.0-at",hist:"哈布斯堡宫廷音乐的中心。海顿、莫扎特、贝多芬、舒伯特、勃拉姆斯、布鲁克纳、马勒,直到勋伯格、贝尔格、韦伯恩的“第二维也纳乐派”相继在此工作——古典与浪漫的都城。国家歌剧院(1869)与金色大厅(音乐之友协会)并峙至今。"},
+ "罗马":{img:"rome",landmark:"圣彼得大教堂",cr:"Alvesgaspar · CC BY-SA 4.0",hist:"教廷礼拜堂的复调正统所在:帕莱斯特里纳在此确立“教会音乐的救赎者”形象,罗马乐派为反宗教改革的清晰复调立法。后世的清唱剧、康塔塔与卡里西米亦发端于此。无数作曲家来此研习复调正典。"},
+ "莱比锡":{img:"leipzig",landmark:"圣托马斯教堂",cr:"Tuxyso · CC BY-SA 3.0",hist:"巴赫任圣托马斯教堂乐长(1723–50)、写下《马太受难曲》与众多康塔塔之地。门德尔松在此创办德国第一所音乐院(1843)、复兴巴赫;布商大厦乐团(Gewandhaus)是德意志市民音乐生活的样板。"},
+ "伦敦":{img:"london",landmark:"皇家阿尔伯特音乐厅",cr:"Diliff · CC BY-SA 3.0",hist:"亨德尔的清唱剧之都、海顿“伦敦交响”的舞台;欧洲最早的商业音乐会与乐谱市场在此成形。皇家阿尔伯特厅(1871)与其后的“逍遥音乐会”(Proms)延续着这座城市的公众音乐生活。"},
+ "柏林":{img:"berlin",landmark:"柏林音乐厅(根德尔曼广场)",cr:"Ansgar Koreng · CC BY 3.0-de",hist:"普鲁士宫廷歌剧与 C.P.E. 巴赫的所在;门德尔松、迈耶贝尔活跃于此。申克尔设计的音乐厅 1821 年以韦伯《魔弹射手》首演揭幕;二十世纪魏玛文化下,克莱姆佩勒、勋伯格在此任教。"},
+ "圣彼得堡":{img:"petersburg",landmark:"马林斯基剧院",cr:"Sergey A. Demidov · CC BY 4.0",hist:"“强力集团”(巴拉基列夫、穆索尔斯基、鲍罗丁、里姆斯基-科萨科夫等)与俄罗斯民族乐派的据点;柴可夫斯基的芭蕾在马林斯基剧院首演,斯特拉文斯基由此启程。"},
+ "汉堡":{img:"hamburg",landmark:"易北爱乐厅",cr:"Dietmar Rabich · CC BY-SA 4.0",hist:"德国第一座公共歌剧院(1678)所在;泰勒曼与 C.P.E. 巴赫先后主持其音乐生活,门德尔松与勃拉姆斯皆生于此。当代的易北爱乐厅(2017)已成新地标。"},
+ "雅典":{img:"athens",landmark:"希罗德·阿提库斯剧场",cr:"Jebulon · CC0(公有领域)",hist:"古希腊音乐理论(毕达哥拉斯的数比、阿里斯托克塞诺斯的听觉之学)与“埃托斯”节制说的源头;悲剧合唱与竞技会的音乐在此上演。卫城南麓的希罗德·阿提库斯剧场(约161年)至今仍作音乐会之用。"},
+ "威尼斯":{img:"venice",landmark:"圣马可大教堂",cr:"Roman Bonnefoy · CC BY-SA 4.0",hist:"圣马可的复合唱(cori spezzati)在此辉煌:维拉尔特、加布里埃利叔侄以对唱与器乐开启威尼斯乐派。四大孤女院(ospedali)的器乐训练成就了维瓦尔第的协奏曲——水城的声景。"},
+ "那不勒斯":{img:"naples",landmark:"圣卡洛剧院",cr:"Diego Delso · CC BY-SA 4.0",hist:"十八世纪歌剧之都:正歌剧与喜歌剧、美声学派的摇篮。四大音乐院(conservatorio)输出 A. 斯卡拉蒂、佩尔戈莱西等。圣卡洛剧院(1737)是欧洲现存最古老、仍在运营的歌剧院之一。"},
+ "德累斯顿":{img:"dresden",landmark:"森佩尔歌剧院",cr:"Sebastian Terfloth · CC BY-SA 3.0",hist:"萨克森选帝侯宫廷乐队(欧洲最古老者之一)所在:许茨、哈塞的意大利式歌剧,韦伯的德语歌剧;瓦格纳《漂泊的荷兰人》《汤豪泽》与理查·施特劳斯多部歌剧在森佩尔歌剧院首演。"},
+ "慕尼黑":{img:"munich",landmark:"巴伐利亚国家剧院",cr:"xiquinhosilva · CC BY 2.0",hist:"巴伐利亚宫廷歌剧的中心。在路德维希二世的庇护下,瓦格纳《特里斯坦与伊索尔德》《纽伦堡的名歌手》在此国家剧院首演——乐剧史上的关键舞台。"},
+ "莫斯科":{img:"moscow",landmark:"莫斯科大剧院",cr:"Юрий Д.К. · CC BY 4.0",hist:"大剧院(Bolshoi)的芭蕾与歌剧、莫斯科音乐院的所在;柴可夫斯基、拉赫玛尼诺夫、斯克里亚宾在此求学任教,是与圣彼得堡并峙的俄罗斯音乐重镇。"},
+ "拜罗伊特":{img:"bayreuth",landmark:"拜罗伊特节日剧院",cr:"Carsten Steger · CC BY-SA 4.0",hist:"瓦格纳为上演《尼伯龙根的指环》而亲自筹建的节日剧院(1876):隐藏乐池、扇形观众席与独特声学,专为其乐剧构想而造——至今仍是瓦格纳朝圣的圣地。"},
+ "萨尔茨堡":{img:"salzburg",landmark:"萨尔茨堡大教堂",cr:"Uoaei1 · CC BY-SA 4.0",hist:"莫扎特的出生地与早年受雇于采邑大主教之地;巴洛克教堂音乐的传统深植于此。今以萨尔茨堡音乐节(1920 创办)闻名于世。"}
+};
 function cityPanel(c){
   const idx=cityList(),ms=(idx[c]||[]).sort((a,b)=>yrs(a)[0]-yrs(b)[0]);
+  const info=CITYINFO[c];
   $("#mappanel").innerHTML=`<h4>${c}</h4><div style="font:11px var(--sans);letter-spacing:.15em;color:var(--mut)">${CITY[c][1].toFixed(1)}°N · ${CITY[c][0].toFixed(1)}°E</div>
-  ${PILGRIM[c]?`<div class="pilbadge">✦ 音乐朝圣地</div><div class="lore" style="border-left-color:var(--gold,#B98A2E)">${PILGRIM[c]}</div>`:""}
-  ${CITY[c][2]?`<div class="lore">${CITY[c][2]}</div>`:""}
+  ${info?`<figure class="cityfig"><img loading="lazy" src="assets/city/${info.img}.jpg" alt="${c} · ${info.landmark||""}"><figcaption><b>${info.landmark||c}</b> · 摄影 ${info.cr}</figcaption></figure>`:""}
+  ${PILGRIM[c]?`<div class="pilbadge">✦ 音乐朝圣地</div>`:""}
+  ${info?`<div class="cityhist">${info.hist}</div>`:(PILGRIM[c]?`<div class="lore" style="border-left-color:var(--gold,#B98A2E)">${PILGRIM[c]}</div>`:"")}
+  ${!info&&CITY[c][2]?`<div class="lore">${CITY[c][2]}</div>`:""}
   <ul>${ms.map(m=>`<li><a data-m="${m.i}">${m.n}</a> <span style="color:var(--mut);font-size:11px">${m.d}</span><small>${m.s} · <a data-r="${m.i}" style="color:#8E2C3B">绘其行迹 →</a></small></li>`).join("")||"<li>此过滤条件下暂无驻留者</li>"}</ul>`;
   $("#mappanel").querySelectorAll("a[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m));
   $("#mappanel").querySelectorAll("a[data-r]").forEach(a=>a.onclick=()=>{routeOf=a.dataset.r;renderMap()});
