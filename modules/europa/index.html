@@ -1352,11 +1352,11 @@ function renderMap(){
 let panMoved=false;
 function bindPan(svg){
   let pd=null;
-  svg.addEventListener("pointerdown",e=>{pd={x:e.clientX,y:e.clientY,vx:vb.x,vy:vb.y};panMoved=false;svg.classList.add("panning");svg.setPointerCapture(e.pointerId)});
+  svg.addEventListener("pointerdown",e=>{pd={x:e.clientX,y:e.clientY,vx:vb.x,vy:vb.y,id:e.pointerId,cap:false};panMoved=false});
   svg.addEventListener("pointermove",e=>{if(!pd)return;const r=svg.getBoundingClientRect();
     const dx=(e.clientX-pd.x)*vb.w/r.width,dy=(e.clientY-pd.y)*vb.h/r.height;
-    if(Math.abs(e.clientX-pd.x)+Math.abs(e.clientY-pd.y)>4)panMoved=true;
-    vb.x=pd.vx-dx;vb.y=pd.vy-dy;svg.setAttribute("viewBox",`${vb.x} ${vb.y} ${vb.w} ${vb.h}`)});
+    if(Math.abs(e.clientX-pd.x)+Math.abs(e.clientY-pd.y)>4){panMoved=true;if(!pd.cap){pd.cap=true;svg.classList.add("panning");try{svg.setPointerCapture(pd.id)}catch(_){}}}
+    if(panMoved){vb.x=pd.vx-dx;vb.y=pd.vy-dy;svg.setAttribute("viewBox",`${vb.x} ${vb.y} ${vb.w} ${vb.h}`)}});
   const up=()=>{pd=null;svg.classList.remove("panning");if(panMoved)renderMap()};
   svg.addEventListener("pointerup",up);svg.addEventListener("pointercancel",up);
   svg.addEventListener("wheel",e=>{e.preventDefault();zoomAt(e,e.deltaY>0?1.22:0.82)},{passive:false});
@@ -1400,6 +1400,7 @@ function cityPanel(c){
   <ul>${ms.map(m=>`<li><a data-m="${m.i}">${m.n}</a> <span style="color:var(--mut);font-size:11px">${m.d}</span><small>${m.s} · <a data-r="${m.i}" style="color:#8E2C3B">绘其行迹 →</a></small></li>`).join("")||"<li>此过滤条件下暂无驻留者</li>"}</ul>`;
   $("#mappanel").querySelectorAll("a[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m));
   $("#mappanel").querySelectorAll("a[data-r]").forEach(a=>a.onclick=()=>{routeOf=a.dataset.r;renderMap()});
+  if(window.innerWidth<=920)$("#mappanel").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderChips(){
   $("#mapchips").innerHTML=`<button class="chip ${mapFilter==="all"?"on":""}" data-f="all">全部时代</button>`+
