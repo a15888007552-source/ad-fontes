@@ -22,7 +22,7 @@
 <meta name="twitter:title" content="Ad Fontes · 溯源 — 音乐学数字文献工坊">
 <meta name="twitter:description" content="一处音乐学的数字文献工坊。每一条史实都标注来源。">
 <meta name="twitter:image" content="https://a15888007552-source.github.io/ad-fontes/og.png">
-<!-- pages-refresh: 2026-07-09T09:35:00Z -->
+<!-- pages-refresh: 2026-07-09T09:45:00Z -->
 <style>
   :root{
     --paper:#f6f1e7; --ink:#201c17; --muted:#6b6157; --line:#d9cfbe;
@@ -74,6 +74,14 @@
     color:var(--rubric); background:var(--paper); padding:0 .5rem; font-size:.9rem;
   }
   .gloss{color:var(--muted); font-style:italic; font-size:.98rem; margin:0;}
+  .visit-meter{
+    display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+    margin:.85rem auto 0; padding:.28rem .72rem;
+    color:var(--muted); border:1px solid var(--line); border-radius:2px;
+    background:color-mix(in srgb,var(--card) 72%,transparent);
+    font-size:.82rem; letter-spacing:.08em;
+  }
+  .visit-meter b{color:var(--rubric); font-weight:600; letter-spacing:.04em;}
 
   /* Manifesto */
   .lede{
@@ -151,11 +159,6 @@
     margin-top:2.6rem; text-align:center; color:var(--muted); font-size:.82rem; line-height:1.9;
   }
   footer .draft{color:var(--rubric); font-style:italic;}
-  .site-count{
-    display:inline-flex; align-items:center; gap:.35rem; margin-top:.25rem;
-    color:var(--muted); letter-spacing:.04em;
-  }
-  .site-count b{color:var(--rubric); font-weight:600;}
 
   /* theme toggle */
   .toggle{
@@ -176,6 +179,7 @@
     <p class="mast-cn">溯 源</p>
     <hr class="rule">
     <p class="gloss">ad fontes — 回到本源</p>
+    <p class="visit-meter" id="busuanzi_container_site_pv">总浏览量 <b id="busuanzi_value_site_pv">--</b> 次</p>
   </header>
 
   <p class="lede">
@@ -296,8 +300,7 @@
 
   <footer>
     辛申奥　·　陕西师范大学音乐学院　·　MMXXVI<br>
-    <span class="draft">v1.0 · 2026-07-07 更新 · 内容持续校订</span><br>
-    <span class="site-count" id="busuanzi_container_site_pv">总浏览量 <b id="busuanzi_value_site_pv">--</b></span>
+    <span class="draft">v1.0 · 2026-07-07 更新 · 内容持续校订</span>
   </footer>
 </div>
 
