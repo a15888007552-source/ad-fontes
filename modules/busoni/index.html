@@ -12,64 +12,16 @@
 </style>
 </head>
 <body>
-<section class="lock" id="lock">
-  <form class="lockbox" id="unlockForm">
-    <div class="topline"><a class="home" href="../../index.html">← Ad Fontes</a><span class="mark">encrypted</span></div>
-    <h1>Studia Busoniana</h1>
-    <p class="sub">布索尼专栏已设为密码访问。输入密码后，浏览器会在本机解密页面内容。</p>
-    <div class="field">
-      <label for="pwd">访问密码</label>
-      <input id="pwd" type="password" autocomplete="current-password" autofocus>
-    </div>
-    <div class="row"><button id="unlockBtn" type="submit">解锁</button><div class="err" id="err"></div></div>
-    <p class="hint">其他模块保持公开；本页内容使用 AES-GCM 加密存放。</p>
-  </form>
-</section>
-<noscript><p class="noscript">此页面需要启用 JavaScript 才能解密访问。</p></noscript>
+<section class="lock" id="lock"><form class="lockbox" id="unlockForm"><div class="topline"><a class="home" href="../../index.html">← Ad Fontes</a><span class="mark">encrypted</span></div><h1>Studia Busoniana</h1><p class="sub">布索尼专栏已设为密码访问。输入密码后，浏览器会在本机解密页面内容。</p><div class="field"><label for="pwd">访问密码</label><input id="pwd" type="password" autocomplete="current-password" autofocus></div><div class="row"><button id="unlockBtn" type="submit">解锁</button><div class="err" id="err"></div></div><p class="hint">其他模块保持公开；本页内容使用 AES-GCM 加密存放。</p></form></section><noscript><p class="noscript">此页面需要启用 JavaScript 才能解密访问。</p></noscript>
 <script>
 const STORE_KEY='ad-fontes-busoni-password';
 function b64ToBytes(s){return Uint8Array.from(atob(s),c=>c.charCodeAt(0));}
-async function deriveKey(password,salt,iterations){
-  const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveKey']);
-  return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
-}
-async function ungzip(bytes){
-  if('DecompressionStream' in window){
-    const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
-    return new Uint8Array(await new Response(stream).arrayBuffer());
-  }
-  throw new Error('当前浏览器不支持 gzip 解压，请使用新版 Chrome、Edge 或 Safari。');
-}
-async function unlock(password){
-  const env=await fetch('payload.enc.json',{cache:'no-store'}).then(r=>r.json());
-  const salt=b64ToBytes(env.salt),iv=b64ToBytes(env.iv),tag=b64ToBytes(env.tag),data=b64ToBytes(env.data);
-  const merged=new Uint8Array(data.length+tag.length); merged.set(data); merged.set(tag,data.length);
-  const key=await deriveKey(password,salt,env.iterations);
-  const decrypted=new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv},key,merged));
-  const plain=env.compressed==='gzip'?await ungzip(decrypted):decrypted;
-  return new TextDecoder().decode(plain);
-}
-async function tryUnlock(password,manual){
-  const err=document.getElementById('err');
-  const btn=document.getElementById('unlockBtn');
-  err.textContent='正在解密...'; btn.disabled=true;
-  try{
-    const html=await unlock(password);
-    sessionStorage.setItem(STORE_KEY,password);
-    document.open(); document.write(html); document.close();
-  }catch(ex){
-    if(manual) sessionStorage.removeItem(STORE_KEY);
-    err.textContent='密码不对，或浏览器不支持本地解密。';
-    btn.disabled=false;
-    console.error(ex);
-  }
-}
-document.getElementById('unlockForm').addEventListener('submit',(e)=>{
-  e.preventDefault();
-  tryUnlock(document.getElementById('pwd').value,true);
-});
-const saved=sessionStorage.getItem(STORE_KEY);
-if(saved){document.getElementById('pwd').value=saved; tryUnlock(saved,false);}
+async function deriveKey(password,salt,iterations){const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);}
+async function ungzip(bytes){if('DecompressionStream' in window){const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));return new Uint8Array(await new Response(stream).arrayBuffer());}throw new Error('当前浏览器不支持 gzip 解压，请使用新版 Chrome、Edge 或 Safari。');}
+async function unlock(password){const env=await fetch('payload.enc.json',{cache:'no-store'}).then(r=>r.json());const salt=b64ToBytes(env.salt),iv=b64ToBytes(env.iv),tag=b64ToBytes(env.tag),data=b64ToBytes(env.data);const merged=new Uint8Array(data.length+tag.length);merged.set(data);merged.set(tag,data.length);const key=await deriveKey(password,salt,env.iterations);const decrypted=new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv},key,merged));const plain=env.compressed==='gzip'?await ungzip(decrypted):decrypted;return new TextDecoder().decode(plain);}
+async function tryUnlock(password,manual){const err=document.getElementById('err');const btn=document.getElementById('unlockBtn');err.textContent='正在解密...';btn.disabled=true;try{const html=await unlock(password);sessionStorage.setItem(STORE_KEY,password);document.open();document.write(html);document.close();}catch(ex){if(manual)sessionStorage.removeItem(STORE_KEY);err.textContent='密码不对，或浏览器不支持本地解密。';btn.disabled=false;console.error(ex);}}
+document.getElementById('unlockForm').addEventListener('submit',(e)=>{e.preventDefault();tryUnlock(document.getElementById('pwd').value,true);});
+const saved=sessionStorage.getItem(STORE_KEY);if(saved){document.getElementById('pwd').value=saved;tryUnlock(saved,false);}
 </script>
 </body>
 </html>
