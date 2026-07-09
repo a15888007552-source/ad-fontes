@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<title>Studia Busoniana ? ????</title>
+<title>Studia Busoniana · 密码访问</title>
 <style>
 :root{--paper:#f6f1e7;--ink:#201c17;--muted:#6b6157;--line:#d9cfbe;--card:#fbf8f1;--rubric:#8c2b1f;--shadow:rgba(60,40,20,.10)}
 @media(prefers-color-scheme:dark){:root{--paper:#16130f;--ink:#e9e2d4;--muted:#a79c8b;--line:#332c22;--card:#1d1913;--rubric:#d8695a;--shadow:rgba(0,0,0,.35)}}
@@ -14,18 +14,18 @@
 <body>
 <section class="lock" id="lock">
   <form class="lockbox" id="unlockForm">
-    <div class="topline"><a class="home" href="../../index.html">? Ad Fontes</a><span class="mark">encrypted</span></div>
+    <div class="topline"><a class="home" href="../../index.html">← Ad Fontes</a><span class="mark">encrypted</span></div>
     <h1>Studia Busoniana</h1>
-    <p class="sub">?????????????????????????????????</p>
+    <p class="sub">布索尼专栏已设为密码访问。输入密码后，浏览器会在本机解密页面内容。</p>
     <div class="field">
-      <label for="pwd">????</label>
+      <label for="pwd">访问密码</label>
       <input id="pwd" type="password" autocomplete="current-password" autofocus>
     </div>
-    <div class="row"><button id="unlockBtn" type="submit">??</button><div class="err" id="err"></div></div>
-    <p class="hint">??????????????? AES-GCM ?????</p>
+    <div class="row"><button id="unlockBtn" type="submit">解锁</button><div class="err" id="err"></div></div>
+    <p class="hint">其他模块保持公开；本页内容使用 AES-GCM 加密存放。</p>
   </form>
 </section>
-<noscript><p class="noscript">??????? JavaScript ???????</p></noscript>
+<noscript><p class="noscript">此页面需要启用 JavaScript 才能解密访问。</p></noscript>
 <script>
 const STORE_KEY='ad-fontes-busoni-password';
 function b64ToBytes(s){return Uint8Array.from(atob(s),c=>c.charCodeAt(0));}
@@ -38,7 +38,7 @@ async function ungzip(bytes){
     const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
     return new Uint8Array(await new Response(stream).arrayBuffer());
   }
-  throw new Error('???????? gzip ???????? Chrome?Edge ? Safari?');
+  throw new Error('当前浏览器不支持 gzip 解压，请使用新版 Chrome、Edge 或 Safari。');
 }
 async function unlock(password){
   const env=await fetch('payload.enc.json',{cache:'no-store'}).then(r=>r.json());
@@ -52,14 +52,14 @@ async function unlock(password){
 async function tryUnlock(password,manual){
   const err=document.getElementById('err');
   const btn=document.getElementById('unlockBtn');
-  err.textContent='????...'; btn.disabled=true;
+  err.textContent='正在解密...'; btn.disabled=true;
   try{
     const html=await unlock(password);
     sessionStorage.setItem(STORE_KEY,password);
     document.open(); document.write(html); document.close();
   }catch(ex){
     if(manual) sessionStorage.removeItem(STORE_KEY);
-    err.textContent='?????????????????';
+    err.textContent='密码不对，或浏览器不支持本地解密。';
     btn.disabled=false;
     console.error(ex);
   }
