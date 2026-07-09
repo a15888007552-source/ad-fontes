@@ -43,6 +43,22 @@ nav.tabs{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:
 nav.tabs button{font-family:var(--sans);font-size:.82rem;letter-spacing:.03em;background:transparent;border:1px solid transparent;color:var(--mut);padding:.4rem .75rem;border-radius:3px;cursor:pointer}
 nav.tabs button:hover{color:var(--ink)}
 nav.tabs button.on{color:var(--ink);background:var(--card);border-color:var(--cardline);box-shadow:inset 0 -2px 0 var(--rubric)}
+.finder{border:1px solid var(--cardline);background:color-mix(in srgb,var(--card) 88%,transparent);padding:1rem;margin:0 0 1.6rem;border-radius:5px}
+.findtop{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:.75rem;align-items:center}
+.findtop input{width:100%;font:1rem var(--sans);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:.72rem .85rem}
+.findtop input:focus{outline:2px solid var(--gold);outline-offset:2px}
+.findcount{font:.78rem var(--sans);color:var(--mut);white-space:nowrap}
+.findchips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.75rem}
+.findchips button{font:700 .76rem var(--sans);letter-spacing:.04em;border:1px solid var(--line);background:var(--paper);color:var(--mut);border-radius:999px;padding:.35rem .68rem;cursor:pointer}
+.findchips button:hover,.findchips button.on{border-color:var(--rubric);color:var(--rubric);background:color-mix(in srgb,var(--rubric) 8%,var(--paper))}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.65rem;margin-top:.85rem}
+.hit{border:1px solid var(--cardline);background:var(--paper);padding:.78rem .85rem;border-radius:4px;cursor:pointer;text-align:left;color:var(--ink)}
+.hit:hover{border-color:var(--rubric);box-shadow:0 6px 20px rgba(40,30,18,.08)}
+.hit b{display:block;font-size:.98rem;line-height:1.35}
+.hit p{margin:.35rem 0 0;font-size:.82rem;line-height:1.65;color:var(--mut)}
+.hit small{display:block;margin-top:.48rem;font:700 .68rem var(--sans);letter-spacing:.12em;color:var(--rubric);text-transform:uppercase}
+.empty{font:.9rem var(--sans);color:var(--mut);padding:.7rem 0 0}
+@media(max-width:680px){.findtop{grid-template-columns:1fr}.findcount{white-space:normal}.results{grid-template-columns:1fr}}
 section.view{display:none}
 section.view.on{display:block}
 h2.sec{font-size:1.55rem;margin:.2rem 0 .2rem;font-weight:600}
@@ -130,6 +146,22 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
     <button data-v="special">特殊调式</button>
     <button data-v="c20">二十世纪的转变</button>
   </nav>
+
+  <section class="finder" aria-label="乐理检索">
+    <div class="findtop">
+      <input id="finder" type="search" autocomplete="off" placeholder="检索: 调式 / 纽姆 / 六声 / 五度圈 / 十二音 / 音色 / 凯奇...">
+      <div class="findcount" id="findcount">输入关键词, 或点下面的问题轴</div>
+    </div>
+    <div class="findchips" id="findchips">
+      <button data-q="调式 调性">调式/调性</button>
+      <button data-q="记谱 纽姆 圭多 有量">记谱史</button>
+      <button data-q="音阶 梅西安 巴托克 泛音">特殊音阶</button>
+      <button data-q="十二音 序列 集合">后调性</button>
+      <button data-q="音色 噪音 电子 机遇">现代声音</button>
+      <button data-q="图示 播放">有图/可听</button>
+    </div>
+    <div class="results" id="results"></div>
+  </section>
 
   <main>
   <!-- ════════════ 调式与调性 ════════════ -->
@@ -603,8 +635,68 @@ document.addEventListener('click',function(e){var b=e.target.closest('[data-play
     case 'row-i':seq(invert(ROW).map(function(pc){return 60+pc;}),0.34,0.36);break;
   }
 });
+/* ---- comfortable search / index ---- */
+var SEARCH=[];
+function cleanText(s){return (s||'').replace(/\s+/g,' ').trim();}
+function tabName(v){var b=document.querySelector('#tabs button[data-v="'+v+'"]');return b?b.textContent:'';}
+function owningTab(el){var sec=el.closest('section.view');return sec?sec.id.replace(/^v-/,''):'';}
+function ensureId(el,i){if(!el.id)el.id='idx-'+i;return el.id;}
+function briefAfter(el){
+  var n=el.nextElementSibling,txt='';
+  while(n&&txt.length<220&&!/^H[234]$/.test(n.tagName)){
+    if(n.matches&&n.matches('p,.def,.cap'))txt+=' '+cleanText(n.textContent);
+    n=n.nextElementSibling;
+  }
+  return cleanText(txt).slice(0,210);
+}
+function buildSearch(){
+  var nodes=[].slice.call(document.querySelectorAll('section.view h3,section.view h4,section.view .fig,section.view .def'));
+  SEARCH=nodes.map(function(el,i){
+    var tab=owningTab(el),title='',body='';
+    if(/^H[34]$/.test(el.tagName)){title=cleanText(el.textContent);body=briefAfter(el);}
+    else if(el.classList.contains('fig')){var cap=el.querySelector('.cap,figcaption');title=cleanText((cap&&cap.querySelector('b')?cap.querySelector('b').textContent:'图示 / 可听例'));body=cleanText(cap?cap.textContent:el.textContent).slice(0,210);}
+    else {title='概念提示';body=cleanText(el.textContent).slice(0,210);}
+    return {id:ensureId(el,i),tab:tab,tabTitle:tabName(tab),title:title,body:body,text:(title+' '+body+' '+tabName(tab)).toLowerCase(),kind:el.classList.contains('fig')?'图示/可听':(/^H/.test(el.tagName)?'段落':'概念')};
+  }).filter(function(x){return x.title||x.body;});
+}
+function scoreHit(row,terms){
+  var score=0;
+  terms.forEach(function(t){
+    if(row.title.toLowerCase().indexOf(t)>=0)score+=4;
+    if(row.body.toLowerCase().indexOf(t)>=0)score+=2;
+    if(row.tabTitle.toLowerCase().indexOf(t)>=0)score+=1;
+  });
+  if(row.kind==='图示/可听')score+=.5;
+  return score;
+}
+function renderSearch(q){
+  var out=document.getElementById('results'),count=document.getElementById('findcount');
+  if(!out||!count)return;
+  q=cleanText(q);
+  [].forEach.call(document.querySelectorAll('#findchips button'),function(b){b.classList.toggle('on',b.dataset.q===q);});
+  var rows;
+  if(!q){
+    rows=SEARCH.filter(function(x){return x.kind==='图示/可听';}).slice(0,9);
+    count.textContent='先给你列出最适合“看得懂、听得见”的图示节点';
+  }else{
+    var terms=q.toLowerCase().split(/\s+/).filter(Boolean);
+    rows=SEARCH.map(function(r){return {r:r,s:scoreHit(r,terms)};}).filter(function(x){return x.s>0&&terms.every(function(t){return x.r.text.indexOf(t)>=0||x.r.tabTitle.toLowerCase().indexOf(t)>=0;});}).sort(function(a,b){return b.s-a.s;}).map(function(x){return x.r;}).slice(0,18);
+    count.textContent=rows.length?('找到 '+rows.length+' 个入口, 点击卡片直接跳转'):'没找到, 换个词试试: 调式、纽姆、五度圈、序列、音色';
+  }
+  out.innerHTML=rows.length?rows.map(function(r){return '<button class="hit" data-goto="'+r.id+'" data-tab="'+r.tab+'"><b>'+r.title+'</b><p>'+r.body+'</p><small>'+r.tabTitle+' · '+r.kind+'</small></button>';}).join(''):'<div class="empty">没有匹配项。可以试试“六声”“八声音阶”“有量记谱”“十二音”“凯奇”。</div>';
+}
+function initFinder(){
+  buildSearch();
+  var input=document.getElementById('finder');
+  if(!input)return;
+  input.addEventListener('input',function(){renderSearch(input.value);});
+  document.getElementById('findchips').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;input.value=b.dataset.q;renderSearch(input.value);input.focus();});
+  document.getElementById('results').addEventListener('click',function(e){var b=e.target.closest('.hit');if(!b)return;showTab(b.dataset.tab);setTimeout(function(){var target=document.getElementById(b.dataset.goto);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});},30);});
+  renderSearch('');
+}
 /* ---- init: only render the active tab ---- */
 renderTab('mode');
+initFinder();
 })();
 </script>
 </body>
