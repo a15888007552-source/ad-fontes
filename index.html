@@ -1,27 +1,7 @@
-<!doctype html>
-<html lang="zh-Hans">
-<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ad Fontes · 溯源 — 音乐学数字文献工坊</title>
 <meta name="description" content="一处音乐学的数字文献工坊。每一条史实都标注来源。">
-<meta name="author" content="辛申奥">
-<link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
-<!-- Open Graph / Twitter -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Ad Fontes · 溯源">
-<meta property="og:title" content="Ad Fontes · 溯源 — 音乐学数字文献工坊">
-<meta property="og:description" content="一处音乐学的数字文献工坊。每一条史实都标注来源。">
-<meta property="og:url" content="https://a15888007552-source.github.io/ad-fontes/">
-<meta property="og:image" content="https://a15888007552-source.github.io/ad-fontes/og.png">
-<meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ad Fontes · 溯源 — 音乐学数字文献工坊">
-<meta name="twitter:description" content="一处音乐学的数字文献工坊。每一条史实都标注来源。">
-<meta name="twitter:image" content="https://a15888007552-source.github.io/ad-fontes/og.png">
 <style>
   :root{
     --paper:#f6f1e7; --ink:#201c17; --muted:#6b6157; --line:#d9cfbe;
@@ -117,6 +97,7 @@
     border-radius:2px; border:1px solid currentColor;
   }
   .badge.live{color:var(--gold);}
+  .badge.lock{color:var(--rubric);}
   .badge.wip{color:var(--muted); opacity:.8;}
   .mod.wip{opacity:.72; cursor:default;}
   .go{margin-left:auto; color:var(--rubric); font-size:.9rem; letter-spacing:.05em;}
@@ -130,25 +111,15 @@
   }
   .principle b{color:var(--ink); font-weight:600;}
 
-  /* Citation */
-  .cite{
-    margin:2.2rem auto 0; max-width:52ch; text-align:center;
-    font-size:.82rem; color:var(--muted);
-  }
-  .cite summary{cursor:pointer; letter-spacing:.06em; color:var(--rubric); list-style:none;}
-  .cite summary::-webkit-details-marker{display:none}
-  .cite summary::before{content:"❧ "; color:var(--rubric)}
-  .cite .body{margin-top:.9rem; line-height:1.8;}
-  .cite code{
-    font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace; font-size:.86em;
-    background:var(--card); border:1px solid var(--card-line); border-radius:2px;
-    padding:.05em .35em; word-break:break-all;
-  }
-
   footer{
-    margin-top:2.6rem; text-align:center; color:var(--muted); font-size:.82rem; line-height:1.9;
+    margin-top:3rem; text-align:center; color:var(--muted); font-size:.82rem; line-height:1.9;
   }
   footer .draft{color:var(--rubric); font-style:italic;}
+  .site-count{
+    display:inline-flex; align-items:center; gap:.35rem; margin-top:.25rem;
+    color:var(--muted); letter-spacing:.04em;
+  }
+  .site-count b{color:var(--rubric); font-weight:600;}
 
   /* theme toggle */
   .toggle{
@@ -158,8 +129,6 @@
   }
   .toggle:hover{border-color:var(--rubric); color:var(--rubric);}
 </style>
-</head>
-<body>
 
 <button class="toggle" id="toggle" aria-label="切换明暗">☾ / ☀</button>
 
@@ -205,6 +174,7 @@
         <div class="mod-meta">
           <span class="src">据布索尼书信、美学文献与原著</span>
           <span class="badge live">已上线</span>
+          <span class="badge lock">密码访问</span>
           <span class="go">进入 →</span>
         </div>
       </a>
@@ -227,16 +197,16 @@
     </li>
 
     <li>
-      <a class="mod" href="modules/theory/index.html">
+      <a class="mod" href="modules/grove/index.html">
         <div class="mod-top">
           <span class="num">IV</span>
-          <h2 class="mod-title">Musica Theorica</h2>
-          <span class="mod-sub">乐理 · 看得懂、听得见</span>
+          <h2 class="mod-title">The New Grove</h2>
+          <span class="mod-sub">新格洛夫音乐与音乐家词典 · 私人加密译站</span>
         </div>
-        <p class="mod-desc">从十二个半音讲起:调式与调性、记谱的演化、作曲家自创的特殊调式,直到二十世纪音乐观念的转变。图示可交互,音阶与和弦可点击发声。</p>
+        <p class="mod-desc">《新格洛夫音乐与音乐家词典》A 字母词头的加密翻译工作台。输入密码后,可在浏览器本机解密原文、中文译文、词头索引与后续校注。</p>
         <div class="mod-meta">
-          <span class="src">据 Grout、Taruskin、Dahlhaus 与标准乐理文献整理</span>
-          <span class="badge live">已上线</span>
+          <span class="src">据 The New Grove Dictionary of Music and Musicians · AES-GCM encrypted</span>
+          <span class="badge live">加密上线</span>
           <span class="go">进入 →</span>
         </div>
       </a>
@@ -246,21 +216,6 @@
       <div class="mod wip">
         <div class="mod-top">
           <span class="num">V</span>
-          <h2 class="mod-title">The New Grove</h2>
-          <span class="mod-sub">新格洛夫音乐与音乐家词典 · 私人加密译站</span>
-        </div>
-        <p class="mod-desc">《新格洛夫音乐与音乐家词典》A 字母词头的加密翻译工作台:原文、中文译文、词头索引与校注,在浏览器本机解密。因版权所限,仅作私人校订之用,暂不公开。</p>
-        <div class="mod-meta">
-          <span class="src">据 The New Grove Dictionary of Music and Musicians</span>
-          <span class="badge wip">校订中 · 暂不公开</span>
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <div class="mod wip">
-        <div class="mod-top">
-          <span class="num">VI</span>
           <h2 class="mod-title">Dahlhaus · Musikästhetik</h2>
           <span class="mod-sub">达尔豪斯《音乐美学》· 汉译与检索</span>
         </div>
@@ -277,18 +232,10 @@
     <b>编辑原则</b>　本站不收录无来源的断言。凡涉生卒、事件、评断,皆注明所据文献;存疑者标注争议,不替读者定谳。
   </p>
 
-  <details class="cite">
-    <summary>如何引用本站</summary>
-    <div class="body">
-      辛申奥编．<i>Ad Fontes · 溯源——音乐学数字文献工坊</i>．陕西师范大学音乐学院,2026．<br>
-      <code>https://a15888007552-source.github.io/ad-fontes/</code><br>
-      引用具体模块或词条时,请注明模块名与访问日期。本站持续校订,重要修订将于版本号标注。
-    </div>
-  </details>
-
   <footer>
     辛申奥　·　陕西师范大学音乐学院　·　MMXXVI<br>
-    <span class="draft">v1.0 · 2026-07-07 更新 · 内容持续校订</span>
+    <span class="draft">编辑中 · 内容持续校订</span><br>
+    <span class="site-count" id="busuanzi_container_site_pv">总浏览量 <b id="busuanzi_value_site_pv">--</b></span>
   </footer>
 </div>
 
@@ -306,5 +253,4 @@
     });
   })();
 </script>
-</body>
-</html>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
