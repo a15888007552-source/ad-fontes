@@ -130,6 +130,32 @@
   .riposo{padding:26px 24px;font-size:16px}
   .riposo b{font-family:var(--font-display);font-style:italic;font-size:22px;color:var(--verde)}
 
+  /* ---------- strip: 本周七天 ---------- */
+  #strip{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:10px;
+    overflow:hidden;box-shadow:var(--shadow)}
+  .strip-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;padding:14px 22px;
+    background:var(--card2);border-bottom:1px solid var(--line)}
+  .strip-head .no{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.2em;color:var(--oro)}
+  .strip-head b{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:20px}
+  .strip-head .nota{font-size:12.5px;color:var(--muted)}
+  .strip-head a{margin-left:auto;font-family:var(--font-mono);font-size:12.5px;white-space:nowrap}
+  .strip-day{display:grid;grid-template-columns:76px 1fr 1fr;gap:4px 16px;padding:11px 22px;
+    border-bottom:1px dashed var(--line);font-size:14px;align-items:start}
+  .strip-day:last-child{border-bottom:none}
+  .strip-day .d{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);white-space:nowrap;padding-top:2px}
+  .strip-day .lb{display:block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;
+    color:var(--oro);margin-bottom:1px}
+  .strip-day.oggi{background:var(--verde-soft)}
+  .strip-day.oggi .d{color:var(--verde);font-weight:700}
+  .strip-day.oggi .d::after{content:" ←今天";letter-spacing:0}
+  .strip-day.riposo{opacity:.62}
+  .strip-day.riposo .r{grid-column:2 / 4;font-style:italic;color:var(--muted);font-size:13.5px}
+  @media(max-width:640px){
+    .strip-day{grid-template-columns:1fr;gap:1px;padding:12px 18px}
+    .strip-day .d{color:var(--verde);font-weight:600;margin-bottom:3px}
+    .strip-day.riposo .r{grid-column:1}
+  }
+
   /* ---------- regole ---------- */
   .regole{counter-reset:regola;display:grid;grid-template-columns:1fr 1fr;gap:14px}
   @media(max-width:760px){.regole{grid-template-columns:1fr}}
@@ -219,7 +245,8 @@
   .risorsa a{font-family:var(--font-mono);font-size:12px;word-break:break-all}
 
   /* ---------- esame ---------- */
-  .track{position:relative;margin:56px 6px 90px;height:6px;border-radius:3px;
+  /* 左右留出 tag 半宽(65px),否则末端 tag 会戳出容器、把 body 撑出横向滚动 */
+  .track{position:relative;margin:56px 70px 90px;height:6px;border-radius:3px;
     background:linear-gradient(90deg,var(--line) 0 74%,var(--verde-soft) 74% 100%)}
   .track .zone{position:absolute;top:-26px;left:76%;font-family:var(--font-mono);
     font-size:11px;color:var(--verde);letter-spacing:.08em;white-space:nowrap}
@@ -290,8 +317,9 @@
 <section id="oggi"><div class="wrap">
   <div class="kicker">Oggi · 今天</div>
   <h2>打开这页,先看这里</h2>
-  <p class="lede">下面这块牌子每天自动换:今天是第几周、写什么题、跑哪张口语卡。九个格子全勾上,今天就赢了。勾选记录存在本机浏览器里。</p>
+  <p class="lede">第一块牌子每天自动换:今天是第几周、写什么题、跑哪张口语卡。九个格子全勾上,今天就赢了(勾选记录存在本机浏览器里)。第二块是<b>本周全景</b>——整周每天的任务一次看全,不用往下翻。要看某一周的语法靶点、教材页码和周六关卡,点右上角「本周详解」。</p>
   <div class="card" id="oggi-card"><!-- JS 填充 --></div>
+  <div id="strip"><!-- JS 填充 --></div>
 </div></section>
 
 <!-- ======================= DIAGNOSI ======================= -->
@@ -1093,6 +1121,51 @@ OBIETTIVO: 25-30 stimoli in 12 minuti. ALLA FINE: quanti giusti su quanti totali
     });
     refresh();
   }
+
+  /* ---------- 本周七天 strip ---------- */
+  function parseISO(s){ var p=s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function dayList(a,b){ var out=[], d=parseISO(a), e=parseISO(b);
+    while(d<=e){ out.push(iso(d)); d.setDate(d.getDate()+1); } return out; }
+
+  (function(){
+    var el=document.getElementById('strip');
+    if(!el) return;
+    var arts=document.querySelectorAll('article.week');
+    arts.forEach(function(a,i){ if(!a.id) a.id='wk'+i; });
+
+    var idx=-1;
+    for(var i=0;i<WEEKS.length;i++){ if(tISO>=WEEKS[i][0] && tISO<=WEEKS[i][1]) idx=i; }
+    var preview=false;
+    if(idx<0){
+      if(tISO < '2026-07-17'){ idx=0; preview=true; }
+      else { el.style.display='none'; return; }
+    }
+    var wk=WEEKS[idx], parts=wk[2].split(' · ');
+    var days=dayList(wk[0], wk[1]);
+    var anchor = arts[idx] ? '#'+arts[idx].id : '#settimane';
+
+    var html='<div class="strip-head"><span class="no">'+esc(parts[0])+'</span>'+
+      '<b>'+esc(parts[1]||'')+'</b>'+
+      (preview?'<span class="nota">— 从 7月17日 开战</span>':'<span class="nota">— 本周全景</span>')+
+      '<a href="'+anchor+'">本周详解 →</a></div>';
+
+    days.forEach(function(dISO){
+      var dd=parseISO(dISO), dw=dd.getDay(), rec=D[dISO]||{};
+      var label=(dd.getMonth()+1)+'/'+dd.getDate()+' '+'日一二三四五六'.charAt(dw);
+      var isRest = rec.rest || dw===0;
+      var cls='strip-day'+(dISO===tISO?' oggi':'')+(isRest?' riposo':'');
+      if(isRest){
+        html+='<div class="'+cls+'"><span class="d">'+label+'</span>'+
+          '<span class="r">RIPOSO · 全休'+(rec.msg?' — '+esc(rec.msg):'')+'</span></div>';
+      } else {
+        var sp = rec.s ? rec.s : speakFor(dISO, dw);
+        html+='<div class="'+cls+'"><span class="d">'+label+'</span>'+
+          '<div><span class="lb">SCRIVERE 写</span>'+esc(rec.w||'见本周详解')+'</div>'+
+          '<div><span class="lb">PARLARE 说</span>'+esc(sp||'—')+'</div></div>';
+      }
+    });
+    el.innerHTML=html;
+  })();
 })();
 </script>
 
