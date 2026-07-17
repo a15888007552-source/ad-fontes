@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="意大利语暑期输出冲刺:七周计划、每日作息、口语教练指令卡、已核实资源库与诚实的B2路线。Ad Fontes 模块VI。">
+<meta name="author" content="辛申奥">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f2f1e8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1512" media="(prefers-color-scheme: dark)">
+<title>Operazione VOCE · 意大利语暑期作战计划</title>
+<style>
+  :root{
+    --bg:#f2f1e8; --card:#faf9f2; --card2:#edecdf;
+    --ink:#212820; --muted:#6b7263; --line:#d9d8c8;
+    --verde:#1a6647; --verde-deep:#134b34; --verde-soft:#e2ebe2;
+    --oro:#a9812e; --oro-soft:#f0e8d2;
+    --rosso:#a63d33; --rosso-soft:#f0dfda;
+    --shadow:0 1px 3px rgba(32,40,32,.08),0 8px 28px rgba(32,40,32,.06);
+    --font-display:"Bodoni MT",Didot,"Bodoni 72",Georgia,"Source Han Serif SC","Noto Serif SC",SimSun,serif;
+    --font-body:"Segoe UI",system-ui,"Microsoft YaHei","PingFang SC",sans-serif;
+    --font-mono:Consolas,"Cascadia Code","Courier New",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0f1512; --card:#161f1a; --card2:#1c2620;
+      --ink:#e7e4d6; --muted:#96a091; --line:#2a342c;
+      --verde:#5cb58c; --verde-deep:#8fd3b3; --verde-soft:#1b2a22;
+      --oro:#d3a94f; --oro-soft:#2b2415;
+      --rosso:#d67f70; --rosso-soft:#33201b;
+      --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1512; --card:#161f1a; --card2:#1c2620;
+    --ink:#e7e4d6; --muted:#96a091; --line:#2a342c;
+    --verde:#5cb58c; --verde-deep:#8fd3b3; --verde-soft:#1b2a22;
+    --oro:#d3a94f; --oro-soft:#2b2415;
+    --rosso:#d67f70; --rosso-soft:#33201b;
+    --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.3);
+  }
+  :root[data-theme="light"]{
+    --bg:#f2f1e8; --card:#faf9f2; --card2:#edecdf;
+    --ink:#212820; --muted:#6b7263; --line:#d9d8c8;
+    --verde:#1a6647; --verde-deep:#134b34; --verde-soft:#e2ebe2;
+    --oro:#a9812e; --oro-soft:#f0e8d2;
+    --rosso:#a63d33; --rosso-soft:#f0dfda;
+    --shadow:0 1px 3px rgba(32,40,32,.08),0 8px 28px rgba(32,40,32,.06);
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font-body);
+    line-height:1.75;margin:0;font-size:15.5px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+  a{color:var(--verde);text-decoration:none}
+  a:hover{text-decoration:underline}
+  ::selection{background:var(--verde);color:var(--bg)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  .hero .eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;
+    color:var(--oro);text-transform:uppercase;margin-bottom:18px}
+  .fermata{display:block;margin:0 0 -6px 6px}
+  .hero h1{font-family:var(--font-display);font-weight:500;font-style:italic;
+    font-size:clamp(56px,10vw,104px);line-height:.95;margin:0;letter-spacing:.01em;text-wrap:balance}
+  .hero h1 .op{display:block;font-style:normal;font-size:clamp(15px,2.4vw,21px);
+    letter-spacing:.55em;font-weight:400;color:var(--muted);margin-bottom:10px;text-transform:uppercase}
+  .hero .sub{max-width:62ch;margin:26px 0 6px;font-size:17px}
+  .hero .sub strong{color:var(--verde)}
+  .hero .meta{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);margin-top:4px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);margin-top:36px}
+  .stat{background:var(--card);padding:18px 20px}
+  .stat b{display:block;font-family:var(--font-display);font-size:34px;font-weight:500;
+    line-height:1.1;color:var(--verde);font-variant-numeric:tabular-nums}
+  .stat span{font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+
+  /* ---------- nav ---------- */
+  nav.chips{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 0;overflow-x:auto}
+  nav.chips .row{display:flex;gap:8px;max-width:1020px;margin:0 auto;padding:0 22px;white-space:nowrap}
+  nav.chips a{font-size:13px;padding:5px 13px;border:1px solid var(--line);border-radius:999px;
+    color:var(--ink);background:var(--card);flex:0 0 auto}
+  nav.chips a:hover{border-color:var(--verde);color:var(--verde);text-decoration:none}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0 8px}
+  .kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.24em;color:var(--oro);
+    text-transform:uppercase;margin-bottom:8px}
+  h2{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,4vw,38px);
+    margin:0 0 8px;line-height:1.15;text-wrap:balance}
+  h2 em{font-style:italic;color:var(--verde)}
+  .lede{max-width:68ch;color:var(--muted);margin:0 0 28px;font-size:15.5px}
+  h3{font-size:17px;margin:0 0 10px;font-weight:600}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:22px 24px;box-shadow:var(--shadow)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  ul.tight{margin:8px 0;padding-left:20px}
+  ul.tight li{margin:7px 0}
+  .note{font-size:13.5px;color:var(--muted)}
+  .pill{display:inline-block;font-size:11.5px;font-family:var(--font-mono);letter-spacing:.06em;
+    padding:2px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);
+    background:var(--card2);vertical-align:middle}
+  .pill.ok{color:var(--verde);border-color:var(--verde);background:var(--verde-soft)}
+  .pill.warn{color:var(--oro);border-color:var(--oro);background:var(--oro-soft)}
+  .pill.no{color:var(--rosso);border-color:var(--rosso);background:var(--rosso-soft)}
+  .callout{border-left:3px solid var(--verde);background:var(--verde-soft);
+    padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0}
+  .callout.rosso{border-color:var(--rosso);background:var(--rosso-soft)}
+  .callout.oro{border-color:var(--oro);background:var(--oro-soft)}
+
+  /* ---------- oggi widget ---------- */
+  #oggi .card{padding:0;overflow:hidden}
+  .oggi-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;
+    padding:20px 24px;border-bottom:1px solid var(--line);background:var(--card2)}
+  .oggi-head .data{font-family:var(--font-display);font-size:26px;font-style:italic}
+  .oggi-head .settimana{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--oro)}
+  .oggi-body{padding:20px 24px}
+  .oggi-task{display:grid;grid-template-columns:88px 1fr;gap:6px 14px;margin-bottom:18px;font-size:15px}
+  .oggi-task dt{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:.08em;padding-top:3px}
+  .oggi-task dd{margin:0}
+  .checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:6px}
+  .checks label{display:flex;gap:10px;align-items:flex-start;padding:9px 12px;border:1px solid var(--line);
+    border-radius:8px;cursor:pointer;font-size:14px;background:var(--card)}
+  .checks label:hover{border-color:var(--verde)}
+  .checks input{accent-color:var(--verde);margin-top:4px;flex:0 0 auto}
+  .checks label.done{opacity:.55;text-decoration:line-through}
+  .oggi-progress{margin-top:14px;font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
+  .riposo{padding:26px 24px;font-size:16px}
+  .riposo b{font-family:var(--font-display);font-style:italic;font-size:22px;color:var(--verde)}
+
+  /* ---------- regole ---------- */
+  .regole{counter-reset:regola;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.regole{grid-template-columns:1fr}}
+  .regola{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .regola::before{counter-increment:regola;content:counter(regola,upper-roman);
+    font-family:var(--font-display);font-style:italic;font-size:26px;color:var(--oro);display:block;line-height:1}
+  .regola b{display:block;margin:6px 0 4px;font-size:15.5px}
+  .regola p{margin:0;font-size:14px;color:var(--muted)}
+
+  /* ---------- giornata ---------- */
+  .blocco{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:16px}
+  .blocco-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;
+    padding:14px 22px;background:var(--card2);border-bottom:1px solid var(--line)}
+  .blocco-head b{font-size:16px}
+  .blocco-head .ora{font-family:var(--font-mono);font-size:13px;color:var(--verde);letter-spacing:.05em}
+  .slot{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:11px 22px;border-bottom:1px dashed var(--line);font-size:14.5px}
+  .slot:last-child{border-bottom:none}
+  .slot .t{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);white-space:nowrap;padding-top:2px}
+  .slot b{color:var(--verde)}
+  @media(max-width:560px){.slot{grid-template-columns:1fr;gap:2px}}
+  .totale{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:4px 0 8px}
+  .totale .big{font-family:var(--font-display);font-size:30px;font-style:italic;color:var(--verde)}
+
+  /* ---------- settimane ---------- */
+  .week{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:22px;
+    overflow:hidden;box-shadow:var(--shadow)}
+  .week.current{border-color:var(--oro);box-shadow:0 0 0 1px var(--oro),var(--shadow)}
+  .week-head{padding:18px 24px 14px;border-bottom:1px solid var(--line);background:var(--card2);
+    display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
+  .week-no{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;color:var(--oro)}
+  .week-dates{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+  .week-head h3{flex-basis:100%;margin:2px 0 0;font-family:var(--font-display);font-weight:500;
+    font-size:24px;line-height:1.2}
+  .week-head h3 em{font-style:italic;color:var(--verde);font-size:19px}
+  .badge-now{display:none;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;
+    background:var(--oro);color:var(--bg);padding:3px 10px;border-radius:999px;margin-left:auto}
+  .week.current .badge-now{display:inline-block}
+  .week-body{padding:8px 24px 20px}
+  .wk{padding:14px 0;border-bottom:1px dashed var(--line)}
+  .wk:last-child{border-bottom:none}
+  .wk .lbl{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.18em;color:var(--oro);
+    text-transform:uppercase;margin-bottom:6px}
+  .wk ul,.wk ol{margin:4px 0 0;padding-left:20px}
+  .wk li{margin:6px 0;font-size:14.5px}
+  .wk li i{color:var(--muted);font-style:normal;font-size:13px}
+  .giorni li b{font-family:var(--font-mono);font-weight:600;font-size:12.5px;color:var(--verde);margin-right:4px}
+  .wk.test{background:var(--verde-soft);margin:0 -24px -20px;padding:14px 24px 18px;border-bottom:none}
+  .wk.test .lbl{color:var(--verde)}
+  .milestone{background:var(--oro-soft);border:1px dashed var(--oro);border-radius:8px;
+    padding:10px 14px;font-size:14px;margin-top:10px}
+  .milestone b{color:var(--oro)}
+
+  /* ---------- arsenale ---------- */
+  details.parola{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+  details.parola summary{cursor:pointer;padding:15px 20px;font-size:15.5px;font-weight:600;
+    list-style:none;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+  details.parola summary::-webkit-details-marker{display:none}
+  details.parola summary::before{content:"+";font-family:var(--font-display);font-size:20px;color:var(--oro);
+    line-height:1;flex:0 0 auto}
+  details.parola[open] summary::before{content:"−"}
+  details.parola summary .quando{font-size:12.5px;color:var(--muted);font-weight:400}
+  .parola-body{padding:0 20px 18px}
+  .parola-body .uso{font-size:13.5px;color:var(--muted);margin:0 0 12px}
+  pre.prompt{background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:14px 16px;
+    font-family:var(--font-body);font-size:13.5px;line-height:1.65;white-space:pre-wrap;margin:0;
+    max-height:340px;overflow-y:auto}
+  .copy-row{display:flex;justify-content:flex-end;margin:8px 0 6px}
+  button.copy{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.05em;cursor:pointer;
+    background:var(--verde);color:var(--bg);border:none;border-radius:999px;padding:6px 16px}
+  button.copy:hover{background:var(--verde-deep)}
+  button.copy:focus-visible,a:focus-visible,.checks label:focus-within,summary:focus-visible{
+    outline:2px solid var(--oro);outline-offset:2px}
+  table{border-collapse:collapse;width:100%;font-size:13.5px}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+  th,td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;min-width:120px}
+  th{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);background:var(--card2);white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  td b.si{color:var(--verde)} td b.no{color:var(--rosso)}
+  .rotazione td{font-size:13px}
+
+  /* ---------- risorse ---------- */
+  .risorsa{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+  .risorsa .top{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;margin-bottom:6px}
+  .risorsa .top b{font-size:15px}
+  .risorsa .come{font-size:13.5px;color:var(--muted);margin:4px 0 0}
+  .risorsa a{font-family:var(--font-mono);font-size:12px;word-break:break-all}
+
+  /* ---------- esame ---------- */
+  .track{position:relative;margin:56px 6px 90px;height:6px;border-radius:3px;
+    background:linear-gradient(90deg,var(--line) 0 74%,var(--verde-soft) 74% 100%)}
+  .track .zone{position:absolute;top:-26px;left:76%;font-family:var(--font-mono);
+    font-size:11px;color:var(--verde);letter-spacing:.08em;white-space:nowrap}
+  .track .dot{position:absolute;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;
+    border-radius:50%;background:var(--card);border:3px solid var(--verde)}
+  .track .dot.rosso{border-color:var(--rosso)}
+  .track .dot.oro{border-color:var(--oro)}
+  .track .tag{position:absolute;transform:translateX(-50%);text-align:center;width:130px;font-size:11.5px;line-height:1.45}
+  .track .tag.up{bottom:16px} .track .tag.down{top:16px}
+  .track .tag b{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.04em}
+  .track .tag i{color:var(--muted);font-style:normal;font-size:10.5px}
+  @media(max-width:700px){.track{display:none}}
+  .decisioni li{margin:10px 0}
+  .decisioni b{font-family:var(--font-mono);font-size:13px;color:var(--oro)}
+
+  footer{border-top:1px solid var(--line);margin-top:70px;padding:28px 0 60px;
+    font-size:13px;color:var(--muted)}
+  footer .firma{font-family:var(--font-display);font-style:italic;font-size:17px;color:var(--ink)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero h1,.hero .sub,.stats{animation:su .7s ease both}
+    .hero .sub{animation-delay:.12s}.stats{animation-delay:.22s}
+    @keyframes su{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  }
+
+  /* module chrome (Ad Fontes integration) */
+  .theme-toggle{position:fixed;top:12px;right:14px;z-index:60;background:var(--card);
+    border:1px solid var(--line);color:var(--muted);border-radius:3px;padding:5px 10px;
+    font:inherit;font-size:12px;cursor:pointer;letter-spacing:.1em}
+  .theme-toggle:hover{border-color:var(--verde);color:var(--verde)}
+  nav.chips a.home{border-color:var(--oro);color:var(--oro)}
+</style>
+</head>
+<body>
+<button class="theme-toggle" id="theme-toggle" aria-label="切换明暗">☾ / ☀</button>
+
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Piano d'estate MMXXVI · 辛申奥 专用 · 目标 B2</div>
+    <h1>
+      <span class="op">Operazione</span>
+      <svg class="fermata" width="72" height="34" viewBox="0 0 72 34" aria-hidden="true">
+        <path d="M4 30 A32 26 0 0 1 68 30" fill="none" stroke="var(--oro)" stroke-width="3.2" stroke-linecap="round"/>
+        <circle cx="36" cy="26" r="4.4" fill="var(--oro)"/>
+      </svg>
+      VOCE
+    </h1>
+    <p class="sub">你不是没学会——你只练了一半。一年的《新视线1》给你装满了<strong>识别通道</strong>:看得懂、认得出。但「会一门语言」走的是另一条路——<strong>提取通道</strong>:闭卷写出来、张口说出来。这条路你一米都没修。标题上那个记号是<em>延长记号 fermata</em>:这个暑假,停在「说」这个音上,直到它响亮为止。</p>
+    <p class="meta">2026.07.17 → 09.05 · 每日 10:00–12:00 + 下午/晚上 ≈2h15m · 周日全休</p>
+    <div class="stats">
+      <div class="stat"><b>50</b><span>天 · 其中43个全负荷学习日</span></div>
+      <div class="stat"><b>≈165</b><span>小时有效学时(不含泡耳朵)</span></div>
+      <div class="stat"><b>42+</b><span>篇闭卷作文 · 7道周六关卡</span></div>
+      <div class="stat"><b>1</b><span>条不画饼的 B2 时间线(2027.4 首考)</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="chips"><div class="row">
+  <a class="home" href="../../index.html">← Ad Fontes</a>
+  <a href="#oggi">今日</a><a href="#diagnosi">诊断</a><a href="#regole">军规</a>
+  <a href="#giornata">每日作息</a><a href="#settimane">七周地图</a><a href="#arsenale">口语军械库</a>
+  <a href="#risorse">资源库</a><a href="#esame">B2路线</a><a href="#dopo">开学后</a>
+</div></nav>
+
+<!-- ======================= OGGI ======================= -->
+<section id="oggi"><div class="wrap">
+  <div class="kicker">Oggi · 今天</div>
+  <h2>打开这页,先看这里</h2>
+  <p class="lede">下面这块牌子每天自动换:今天是第几周、写什么题、跑哪张口语卡。九个格子全勾上,今天就赢了。勾选记录存在本机浏览器里。</p>
+  <div class="card" id="oggi-card"><!-- JS 填充 --></div>
+</div></section>
+
+<!-- ======================= DIAGNOSI ======================= -->
+<section id="diagnosi"><div class="wrap">
+  <div class="kicker">La diagnosi · 诊断</div>
+  <h2>三个症状,一个病根</h2>
+  <p class="lede">「语法看了忘」「写不出句子」「说不出话」——听起来是三件事,其实是同一件:你所有的学习动作(看课文、看语法表、背单词)都在往<b>识别通道</b>里存货,而考试和真实对话调用的是<b>提取通道</b>。认知科学里这叫提取练习效应:见过一百遍 ≠ 能提取一次。词汇量是你的资产,一年的阅读没有白费——但从今天起,学习动作全部换向。</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>过去一年(识别通道)</h3>
+      <ul class="tight">
+        <li>看课文 → 懂了 → 翻页</li>
+        <li>看语法表 → 「哦原来如此」→ 三天后清零</li>
+        <li>背单词 → 认得 → 用不出</li>
+        <li>gpt-live 顺着你 → 舒服 → 没长进</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>这个暑假(提取通道)</h3>
+      <ul class="tight">
+        <li><b>每天一篇闭卷写作</b> → 写错 → 才翻书 → 错句进弹药库</li>
+        <li><b>每天30分钟强指令口语</b> → AI被迫全意语、正常语速、逢错必纠</li>
+        <li><b>Anki只做句卡</b> → 中文面→出声说出意语整句才许翻面</li>
+        <li><b>每天15分钟影子跟读</b> → 练口腔肌肉和语调,不管语法</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">《新视线1》的新角色:从「老师」降级为<b>答案册</b>。你不再「学」它——你先闭卷输出,写错了再回去查它。练习册(p.183–241)和语法附录(p.242)从今天起比正文有用。</div>
+</div></section>
+
+<!-- ======================= REGOLE ======================= -->
+<section id="regole"><div class="wrap">
+  <div class="kicker">Le regole · 军规</div>
+  <h2>六条军规,违反任何一条计划就废</h2>
+  <p class="lede">这套计划由四个课程模块合成,又被一个专门的审校流程拆过一遍——超载的砍了,画饼的删了。剩下的每一条都有理由,别自作主张加练。</p>
+  <div class="regole">
+    <div class="regola"><b>先闭卷,再翻书</b><p>永远让「想不起来」先发生。默写、造句、写作全部闭卷完成后才许核对。翻着书写出来的句子,大脑不记账。</p></div>
+    <div class="regola"><b>错误驱动,不预习</b><p>语法只在你写错、说错之后才回锅。错句清单(笔误+口误共用一份)是全营最重要的文件,每天早上第一件事就是重写昨天的错句。</p></div>
+    <div class="regola"><b>语块可以预支</b><p>mi piace / mi è piaciuta / mi alzo 这些形态会出现在教学周之前——先当固定语块整句背用,机制到那一周再补。这不是漏洞,是设计,别觉得被糊弄。</p></div>
+    <div class="regola"><b>到点就停</b><p>Anki 到80张停,写作到时停,口语只跑当日指定的那一张卡、绝不叠加。超时不是勤奋,是偷明天的精力。你的短板是收尾,不是开头。</p></div>
+    <div class="regola"><b>周日全休,失败降负</b><p>周日是训练的一部分——大脑在休息时固化语法。周六关卡没过:当场订正+48小时内补测;连续两周没过:砍一半范围重测。永远不许用「加练」惩罚自己。</p></div>
+    <div class="regola"><b>进步用耳朵确认</b><p>每篇作文写完朗读录音;7/25 的1分钟自我介绍是第0号基线录音,每两周回放对比一次。坚持不靠意志力,靠听见自己变强。</p></div>
+  </div>
+</div></section>
+
+<!-- ======================= GIORNATA ======================= -->
+<section id="giornata"><div class="wrap">
+  <div class="kicker">La giornata · 每日作息</div>
+  <h2>一天只有一种过法</h2>
+  <p class="lede">审校时把原方案的任务加总,发现要4.8–5.3小时——超预算。下面是合并后的唯一版本:<b>4小时15分钟</b>,一分钟不多。答辩周(7/17–7/21)不用这张表,见第0周卡片。</p>
+
+  <div class="blocco">
+    <div class="blocco-head"><b>上午 · 主战场:写</b><span class="ora">10:00 – 12:00 · 120分钟 · 雷打不动</span></div>
+    <div class="slot"><span class="t">10:00–10:15</span><div><b>Anki 句型卡</b> — 只做产出方向:看中文提示→先出声说出→再写关键部分→才翻面。复习上限<b>80张</b>,到点强制停。(第5周起到期量会涨到80–100张,届时启动应急模式:只做当周语法标签。)</div></div>
+    <div class="slot"><span class="t">10:15–10:25</span><div><b>错句重写</b> — 白纸凭记忆重写昨天被Claude标红的3句 + 昨天口语「Facciamo il punto」揪出的3句,口头书面各过一遍。连续两天写对的,从错句清单划掉。</div></div>
+    <div class="slot"><span class="t">10:25–10:40</span><div><b>变位冲刺</b> — 当周指定动词×当周时态,白纸计时默写方阵。错的格子当场朗读3遍并造1句。</div></div>
+    <div class="slot"><span class="t">10:40–11:00</span><div><b>语法回锅</b> — 翻当周教材页+附录p.242,读当天1–2个语法点,每条规则闭卷自造2个真句(禁止抄例句),造完开卷核对。</div></div>
+    <div class="slot"><span class="t">11:00–11:30</span><div><b>当日写作</b> — 先用意语列3个关键词提纲→限时闭卷写完当天题目(第0–4周25分钟,第5–6周30分钟)→大声朗读全文并录音。</div></div>
+    <div class="slot"><span class="t">11:30–11:45</span><div><b>Claude 批改</b> — 用军械库里那条固定批改指令。逐条过错误,只看不抄。</div></div>
+    <div class="slot"><span class="t">11:45–12:00</span><div><b>收割入库</b> — 从改对的句子里挑5–8句做成Anki句卡(每周新卡上限50张,宁缺毋滥);写1行意语日志(Oggi ho scritto… ho sbagliato…)。</div></div>
+  </div>
+
+  <div class="blocco">
+    <div class="blocco-head"><b>下午 · 第二战场:说</b><span class="ora">建议 16:00 – 17:30 · 90分钟</span></div>
+    <div class="slot"><span class="t">16:00–16:15</span><div><b>影子跟读(15分钟5遍法)</b> — 开嗓。流程见军械库。周六此槽=本周6段连读的周测录音。</div></div>
+    <div class="slot"><span class="t">16:15–16:45</span><div><b>gpt-live 当日指定卡</b> — 30分钟,只跑轮换表指定的那一张。结束前必喊 <b>«Facciamo il punto»</b>,3个典型错误抄进错句清单。某语法点当天连错3次→当日卡换成⑧号快速操练卡(替换,不叠加)。</div></div>
+    <div class="slot"><span class="t">16:45–17:30</span><div><b>练习册</b> — p.183–241 当周单元。<b>周六此槽=周关卡测试</b>。</div></div>
+  </div>
+
+  <div class="blocco">
+    <div class="blocco-head"><b>晚上 · 后勤:读转说</b><span class="ora">建议 21:00 – 21:45 · 45分钟</span></div>
+    <div class="slot"><span class="t">21:00–21:30</span><div><b>阅读转输出</b> — Italiano Bello 分级故事 / Vikidia 音乐词条 / 歌剧梗概,三选一。读完<b>合上页面</b>,写3句意语复述发Claude,或向gpt-live口头复述——每次阅读都强制转成输出。</div></div>
+    <div class="slot"><span class="t">21:30–21:45</span><div><b>清点</b> — 欧路生词本清一遍(只把「想主动用」的词导去Anki);瞄一眼明天的写作题,用意语想3个关键词。</div></div>
+  </div>
+
+  <div class="totale">
+    <span class="big">= 4h 15m</span>
+    <span class="note">另:走路吃饭时挂 Italiano Automatico 泡耳朵,随便听,<b>不计入学时</b>,也不许做笔记。</span>
+  </div>
+  <div class="callout oro"><b>周日:0分钟。</b>不写、不背、不上课。只许干两件事:听歌剧、把泡耳朵播客当背景音。这是军规第五条,不是建议。</div>
+</div></section>
+
+<!-- ======================= SETTIMANE ======================= -->
+<section id="settimane"><div class="wrap">
+  <div class="kicker">Le sette settimane · 七周作战地图</div>
+  <h2>从「我叫什么」到 <em>120词四时态作文</em></h2>
+  <p class="lede">语法顺序不按课本、按输出频率:现在时地基 → 近过去时骨架 → 未完成过去时关节 → 代词 → 自反/命令式 → 将来/条件式。每周绑定教材页码,周六下午过关卡,周日躺平。当前周会自动亮起来。</p>
+
+  <!-- W0 -->
+  <article class="week" data-start="2026-07-17" data-end="2026-07-26">
+    <div class="week-head"><span class="week-no">SETTIMANA 0</span><span class="week-dates">7/17 五 – 7/26 日(含7/21答辩)</span><span class="badge-now">本周</span>
+      <h3>低火重启 · <em>Riscaldamento</em></h3></div>
+    <div class="week-body">
+      <div class="wk"><div class="lbl">特殊日程</div>
+        <ul class="tight">
+          <li><b>7/17–7/20(答辩优先)</b>:每天≤40分钟 — 变位默写5' + 微写作15' + 朗读录音3' + 可选卡①口语10–15'(只做开口脱敏,不求质量)。审校特别嘱咐:原方案这几天就超载,已砍半,别加回去。</li>
+          <li><b>7/21(二)答辩日:意大利语全休。</b>In bocca al lupo!(祝答辩顺利)</li>
+          <li><b>7/22(三)起</b>:启动上面的完整每日作息。</li>
+        </ul>
+      </div>
+      <div class="wk"><div class="lbl">教材挂钩</div>
+        <p style="margin:0;font-size:14.5px">U0 <i>Benvenuti</i> p.1–10(essere/avere、名形配合)+ U1 p.11–24只读语法框;<b>附录p.242</b>的essere/avere与三组规则动词变位表——本周唯一允许反复翻的页。</p></div>
+      <div class="wk"><div class="lbl">语法靶点</div>
+        <ul class="tight">
+          <li><b>essere / avere 现在时全人称</b> — 每天白纸2分钟默写全变位,再各造3个关于自己的真句(Sono un musicologo. Ho una presentazione martedì.),不许抄书。</li>
+          <li><b>三组规则动词现在时</b> — 锁定9个高频动词:studiare, suonare, ascoltare, leggere, scrivere, prendere, dormire, capire, finire。每天挑3个各写1句真事。</li>
+          <li><b>名词-形容词配合</b> — 列「我书桌上的东西」10个名词短语(la partitura nuova, i libri italiani…),配合全对才算完成。</li>
+        </ul></div>
+      <div class="wk"><div class="lbl">每日写作(微量)</div>
+        <ul class="tight giorni">
+          <li><b>7/17</b> Mi presento — 5句自我介绍,约40词 <i>(Mi chiamo… / Studio musicologia a Xi'an.)</i></li>
+          <li><b>7/18</b> La mia giornata in 5 frasi — 5个规则动词写流水账,40词 <i>(alle otto 钟点表达)</i></li>
+          <li><b>7/19</b> 机动日:补漏或休息(答辩优先)</li>
+          <li><b>7/20</b> Domani ho una presentazione — 3句,25词,全周最轻 <i>(essere nervoso 注意配合)</i></li>
+          <li><b>7/22</b> Adesso sono libero — 答辩结束!现在感觉如何,35词,全用现在时 <i>(finalmente!)</i></li>
+          <li><b>7/23</b> Il mio pianoforte — 练琴习惯,35词 <i>(spesso / ogni giorno / di solito)</i></li>
+          <li><b>7/24</b> La mia estate — 暑假每天做什么,50词 <i>(tutti i giorni / la mattina)</i></li>
+        </ul></div>
+      <div class="wk"><div class="lbl">口语处方</div>
+        <p style="margin:0;font-size:14.5px">7/22起每天<b>卡① 20分钟</b>(第一次先花2分钟把整张卡念/贴给它)。
+        <span class="milestone" style="display:block"><b>本周里程碑:</b>7/25 脱稿连续说1分钟自我介绍并录音——卡壳≤3秒、≥8个完整句。这段录音是<b>第0号基线</b>,存好,9月要靠它见证进步。本周独白题:①Mi presento。</span></p></div>
+      <div class="wk test"><div class="lbl">周六关卡 · 7/25 下午</div>
+        <ul class="tight">
+          <li>essere+avere 现在时全变位默写,零错误(封闭默写,零容忍不放宽);</li>
+          <li>9个热身动词随机抽6个各写1个真句,变位+配合错误≤2处;</li>
+          <li>无资料写50词自我介绍并朗读录音(=第0号基线)。</li>
+        </ul>
+        <p class="note" style="margin:6px 0 0">未过:当场订正,48小时内只补测未过项。7/26(日)全休。</p></div>
+    </div>
+  </article>
+
+  <!-- W1 -->
+  <article class="week" data-start="2026-07-27" data-end="2026-08-02">
+    <div class="week-head"><span class="week-no">SETTIMANA 1</span><span class="week-dates">7/27 一 – 8/2 日</span><span class="badge-now">本周</span>
+      <h3>现在时提速 · <em>Il presente automatico</em></h3></div>
+    <div class="week-body">
+      <div class="wk"><div class="lbl">教材挂钩</div>
+        <p style="margin:0;font-size:14.5px">U1 p.11 + U2 p.25(不规则动词/情态动词/前置词/时间表达)+ U3 p.39(缩合前置词/c'è, ci sono/部分冠词);练习册U1–U3部分每天做半页;p.242不规则动词表。</p></div>
+      <div class="wk"><div class="lbl">语法靶点</div>
+        <ul class="tight">
+          <li><b>8个高频不规则动词</b>(andare, fare, stare, uscire, venire, bere, sapere, dire)— 「动词方阵」白纸计时默写8×6人称,目标5分钟全对;当日写作强制用其中3个。</li>
+          <li><b>情态动词 potere/volere/dovere + 不定式</b> — 每天早上写3句真实计划(Oggi devo finire… Voglio scrivere…),当晚验收是否做到。</li>
+          <li><b>前置词与缩合前置词</b> — 写「我在西安的移动轨迹」10个位置短句(vado in biblioteca, studio alla scrivania),错的做成Anki挖空卡。</li>
+          <li><b>c'è / ci sono + 部分冠词</b> — 每天口头描述眼前房间5句再写下来。</li>
+        </ul></div>
+      <div class="wk"><div class="lbl">每日写作</div>
+        <ul class="tight giorni">
+          <li><b>一</b> Una giornata da studente di musicologia — ≥8个不同动词、含2个不规则,55词</li>
+          <li><b>二</b> Devo, voglio, posso — 三大战线(备考/文献/练琴)各2句,55词,每个情态动词≥2次</li>
+          <li><b>三</b> La mia scrivania — 书桌,55词 <i>(sulla scrivania, accanto al computer)</i></li>
+          <li><b>四</b> Xi'an, la mia città — 向意大利朋友介绍西安,60词 <i>(una città antica e moderna)</i></li>
+          <li><b>五</b> Che cosa ascolto — 听什么音乐、为什么,60词 <i>(mi piace / mi piacciono 先当语块用)</i></li>
+          <li><b>六</b> Un'email a un professore italiano — 自我介绍+说明在研究布索尼,60词 <i>(Lei尊称 + posso chiederLe)</i></li>
+        </ul></div>
+      <div class="wk"><div class="lbl">口语处方</div>
+        <p style="margin:0;font-size:14.5px">一/三/五 <b>卡①</b>(靶点:现在时+情态+前置词)· 二/四/六 <b>卡②</b>(生存场景:同一场景演两遍)。
+        <span class="milestone" style="display:block"><b>里程碑:</b>点餐/问路/购物三大场景各撑满3分钟不掉线。独白题:②La mia giornata、③La mia stanza(各1分钟)。</span></p></div>
+      <div class="wk test"><div class="lbl">周六关卡 · 8/1 下午</div>
+        <ul class="tight">
+          <li>8个不规则动词方阵默写,48格错≤3格;</li>
+          <li>10句中译意(情态3/前置词4/c'è·ci sono 3),≥8句语法全对;</li>
+          <li>无资料25分钟写60词《La mia settimana》交Claude批改,每百词错误≤10处。</li>
+        </ul></div>
+    </div>
+  </article>
+
+  <!-- W2 -->
+  <article class="week" data-start="2026-08-03" data-end="2026-08-09">
+    <div class="week-head"><span class="week-no">SETTIMANA 2</span><span class="week-dates">8/3 一 – 8/9 日</span><span class="badge-now">本周</span>
+      <h3>开口讲过去 · <em>Raccontare al passato</em></h3></div>
+    <div class="week-body">
+      <div class="wk"><div class="lbl">教材挂钩</div>
+        <p style="margin:0;font-size:14.5px">U4 <i>Al bar</i> p.53–68(passato prossimo全套:助动词选择/不规则分词/时间副词/情态动词近过去时);练习册U4全部做完;p.242不规则分词表。<b>这是全暑假最重要的一周</b>——B1/B2口语和写作的一半分数压在这个时态上。</p></div>
+      <div class="wk"><div class="lbl">语法靶点</div>
+        <ul class="tight">
+          <li><b>avere型</b> — 每晚睡前把当天3件事写成 ho+分词句(Ho letto venti pagine.),累积成暑期日志。</li>
+          <li><b>essere型 + 分词性数配合</b> — 默写「essere家族」16动词清单(andare, venire, partire, arrivare, uscire, tornare, rimanere, nascere…),每天用4个写真句,分词词尾红笔自查。</li>
+          <li><b>15个不规则分词</b>(fatto, letto, scritto, visto, preso, messo, detto, aperto, chiuso, stato, venuto, rimasto, sceso, vinto, perso)— 抽认表计时2分钟全对;每篇作文强制用≥4个。</li>
+          <li><b>时间副词</b>(ieri, …fa, già, non…ancora, appena)— 每天1句 Ho appena finito… + 1句 Non ho ancora…,套在真实备考进度上。</li>
+        </ul></div>
+      <div class="wk"><div class="lbl">每日写作</div>
+        <ul class="tight giorni">
+          <li><b>一</b> Ieri — 昨天流水账,8–10个动词、两种助动词混用,65词</li>
+          <li><b>二</b> La mia difesa — 复盘7/21答辩(准备/上场/提问/结果),70词 <i>(prima / poi / alla fine)</i></li>
+          <li><b>三</b> L'ultima opera che ho ascoltato — 最近听的歌剧,70词 <i>(mi è piaciuta 性数配合,先当语块)</i></li>
+          <li><b>四</b> Come ho scoperto Busoni — 怎么遇见布索尼,70词 <i>(ho deciso di + 不定式)</i></li>
+          <li><b>五</b> Una settimana di studio — 一周学习盘点,75词 <i>(già / non…ancora / appena)</i></li>
+          <li><b>六</b> Un viaggio — 一次真实出行,75词 <i>(sono partito, sono arrivato, sono rimasto…)</i></li>
+        </ul></div>
+      <div class="wk"><div class="lbl">口语处方</div>
+        <p style="margin:0;font-size:14.5px">一/三/五 <b>卡③过去时审讯室</b> · 二/四 <b>卡②</b> · 六 <b>卡③</b>+抽查。
+        <span class="milestone" style="display:block"><b>里程碑:</b>用passato prossimo连续口述「昨天」60秒,卡壳≤5秒;20个高频动词的PP形态1秒内脱口(周六让gpt-live计时抽查)。独白题:④Cosa ho fatto ieri(90秒,每天换内容重复练)。</span></p></div>
+      <div class="wk test"><div class="lbl">周六关卡 · 8/8 下午</div>
+        <ul class="tight">
+          <li>10分钟白纸:essere型/avere型各5句真事,≥6个不规则分词——助动词+配合错误<b>≤2处</b>(审校放宽:原「零错误」不现实),当场订正,48小时内补测;</li>
+          <li>60秒口述昨天(对卡③),卡壳≤5秒;</li>
+          <li>20动词PP计时抽查通过。</li>
+        </ul></div>
+    </div>
+  </article>
+
+  <!-- W3 -->
+  <article class="week" data-start="2026-08-10" data-end="2026-08-16">
+    <div class="week-head"><span class="week-no">SETTIMANA 3</span><span class="week-dates">8/10 一 – 8/16 日</span><span class="badge-now">本周</span>
+      <h3>背景与事件 · <em>Sfondo e azione</em></h3></div>
+    <div class="week-body">
+      <div class="wk"><div class="lbl">教材挂钩</div>
+        <p style="margin:0;font-size:14.5px">U7 <i>Al cinema</i> p.98–112(imperfetto/两种过去时对比/trapassato prossimo);练习册U7全部做完;p.242核对essere→ero, fare→facevo, bere→bevevo, dire→dicevo。</p></div>
+      <div class="wk"><div class="lbl">语法靶点</div>
+        <ul class="tight">
+          <li><b>imperfetto变位</b> — 3分钟白纸默写6动词全人称,连续两天全对即毕业。</li>
+          <li><b>imperfetto=背景/习惯 vs passato prossimo=事件</b> — 每天1个「Mentre+imperfetto, PP」句 + 1个「Da bambino+imperfetto / ora+presente」对比句,必须是真事。</li>
+          <li><b>触发词雷达</b> — mentre, sempre, di solito, da bambino ↔ improvvisamente, un giorno, ieri。翻出第2周《Ieri》,往里加3句imperfetto背景(天气/心情/环境)——体验「给照片加底色」。</li>
+          <li><b>trapassato prossimo</b>(识别+仿写即可)— 每天仿写1句 Quando sono arrivato, la lezione era già cominciata.</li>
+        </ul></div>
+      <div class="wk"><div class="lbl">每日写作</div>
+        <ul class="tight giorni">
+          <li><b>一</b> Da bambino — 童年怎么开始学音乐,80词 <i>(suonavo, mi piaceva)</i></li>
+          <li><b>二</b> Il giorno della difesa 2.0 — 重写答辩日:先铺背景再推事件,85词 <i>(imperfetto≥4 + PP≥4)</i></li>
+          <li><b>三</b> Mentre studiavo… — 练琴/读文献被打断的经历,80词 <i>(Mentre从句≥2组)</i></li>
+          <li><b>四</b> La prima volta all'opera — 第一次现场听歌剧,85词 <i>(era / c'era / sembrava → è cominciato)</i></li>
+          <li><b>五</b> Busoni da giovane — 布索尼青年小传(内容你烂熟),85词 <i>(era, viveva, suonava, viaggiava)</i></li>
+          <li><b>六</b> Prima e adesso — 本科 vs 研究生,90词 <i>(prima+imperfetto / adesso+presente ≥4组)</i></li>
+        </ul></div>
+      <div class="wk"><div class="lbl">口语处方</div>
+        <p style="margin:0;font-size:14.5px">一 <b>卡③</b>复访 · 二/五 <b>卡④图片描述</b>(挑歌剧舞台剧照!)· 四/六 <b>卡⑤时态对决</b>(周四起,imperfetto已教)。
+        <span class="milestone" style="display:block"><b>里程碑:</b>描述一张陌生图片90秒不断流并顶住5个追问;era, c'era, faceva, avevo, andavo, volevo 开始上口。独白题:⑨Quando ero al liceo、⑦Il mio compositore preferito(各2分钟)。</span></p></div>
+      <div class="wk test"><div class="lbl">周六关卡 · 8/15 下午</div>
+        <ul class="tight">
+          <li>自备中文小故事(背景+3个连续事件)15分钟译意,时态选择错≤2处(Claude只判时态);</li>
+          <li>U7课后+练习册「时态二选一」限时10分钟,正确率≥85%。</li>
+        </ul></div>
+    </div>
+  </article>
+
+  <!-- W4 -->
+  <article class="week" data-start="2026-08-17" data-end="2026-08-23">
+    <div class="week-head"><span class="week-no">SETTIMANA 4</span><span class="week-dates">8/17 一 – 8/23 日</span><span class="badge-now">本周</span>
+      <h3>把句子变短 · <em>I pronomi in azione</em></h3></div>
+    <div class="week-body">
+      <div class="wk"><div class="lbl">教材挂钩</div>
+        <p style="margin:0;font-size:14.5px">U8 <i>Fare la spesa</i> p.113–128(直接宾语代词/ne/复合时态配合 l'ho comprata/ce l'ho)+ U10 p.145–164 间接宾语代词部分;练习册U8与U10代词部分;p.181自我总测试代词题预做。</p></div>
+      <div class="wk"><div class="lbl">语法靶点</div>
+        <ul class="tight">
+          <li><b>直宾代词 lo/la/li/le</b> — 每天5组自问自答:Hai letto l'articolo? — Sì, l'ho letto. 四个性数全覆盖。</li>
+          <li><b>复合时态配合</b>(l'ho lett<b>a</b>, li ho vist<b>i</b>)— 把第2周旧作文的5句改写成代词版,分词词尾必须跟着改。</li>
+          <li><b>ne</b> — 每天2句真实问答:Quante pagine hai letto? — Ne ho lette venti.</li>
+          <li><b>间宾代词 mi/ti/gli/le/Le</b> — 每天3句导师往来:Gli ho mandato il capitolo. Mi ha risposto subito.</li>
+          <li><b>ce l'ho</b> — 对gpt-live做2分钟快问快答,练到不经大脑。</li>
+        </ul></div>
+      <div class="wk"><div class="lbl">每日写作</div>
+        <ul class="tight giorni">
+          <li><b>一</b> L'ho già fatto — 本周待办逐项代词自答,90词 <i>(La tesina? L'ho iniziata.)</i></li>
+          <li><b>二</b> La partitura sul mio tavolo — 正在读的乐谱/文献,90词 <i>(l'ho comprata + ne)</i></li>
+          <li><b>三</b> Il mio relatore — 写导师:建议/往来/回复,95词 <i>(Mi ha consigliato di…, Gli ho mandato…)</i></li>
+          <li><b>四</b> Bilancio del mio italiano — 备考大盘点,95词 <i>(Ne ho scritte più di venti)</i></li>
+          <li><b>五</b> Un regalo musicale — 一件音乐礼物,95词 <i>(Mi ha regalato un CD e l'ho ascoltato subito)</i> · 晚上顺手让Claude出明天关卡的20句翻译题</li>
+          <li><b>六</b> Intervista immaginaria a Busoni — 虚拟采访布索尼三问三答,100词 <i>(Maestro, quando l'ha scritta?)</i></li>
+        </ul></div>
+      <div class="wk"><div class="lbl">口语处方</div>
+        <p style="margin:0;font-size:14.5px">一/三/五 <b>卡⑤</b>(混合时态叙事继续压)· 二/四/六 <b>卡⑧快速操练</b>(靶子依次:直宾+配合 → ne → 间宾)。
+        <span class="milestone" style="display:block"><b>里程碑:</b>讲一个完整的过去故事2分钟(imperfetto铺背景+PP推事件),让AI只统计时态错误,全场≤5处。独白题:⑥Al supermercato(ne)、⑩Un viaggio che ho fatto。</span></p></div>
+      <div class="wk test"><div class="lbl">周六关卡 · 8/22 下午</div>
+        <ul class="tight">
+          <li>20句中译意限时15分钟(10直宾/5ne/5间宾,全复合时态,周五晚已让Claude出好):代词+配合错误≤3处;</li>
+          <li>教材p.181自我总测试代词部分,正确率≥80%。</li>
+        </ul>
+        <p class="note" style="margin:6px 0 0">未达标:第5周把卡⑧的代词靶子再排两轮(替换当日卡,不加时)。</p></div>
+    </div>
+  </article>
+
+  <!-- W5 -->
+  <article class="week" data-start="2026-08-24" data-end="2026-08-30">
+    <div class="week-head"><span class="week-no">SETTIMANA 5</span><span class="week-dates">8/24 一 – 8/30 日</span><span class="badge-now">本周</span>
+      <h3>日常自动挡 · <em>Riflessivi e imperativi</em></h3></div>
+    <div class="week-body">
+      <div class="wk"><div class="lbl">教材挂钩</div>
+        <p style="margin:0;font-size:14.5px">U9 p.129–144(自反动词现在时与复合时态/无人称si)+ U10 p.145–164(命令式:规则/不规则/否定/与代词连用);练习册U9、U10。<b>本周起写作时间放宽到30分钟</b>(字数上了100词,审校批准)。</p></div>
+      <div class="wk"><div class="lbl">语法靶点</div>
+        <ul class="tight">
+          <li><b>自反动词现在时</b>(svegliarsi, alzarsi, prepararsi, mettersi a, concentrarsi)— 把第1周《我的一天》重写成含≥5个自反动词的版本,对照旧稿看进步。</li>
+          <li><b>自反复合时态</b>(mi sono svegliato)— 每天3句「今天早上」真句,essere助动词+配合红笔自查。</li>
+          <li><b>无人称 si</b> — 每天2句规则句:In biblioteca non si può parlare. In musicologia si leggono molte fonti.</li>
+          <li><b>命令式 tu/Lei 式</b>(含否定、与代词连用 leggilo / si accomodi)— 每天给学弟学妹写3条建议:Leggi il Grout! Ascoltala due volte!</li>
+        </ul></div>
+      <div class="wk"><div class="lbl">每日写作</div>
+        <ul class="tight giorni">
+          <li><b>一</b> La mia routine, versione riflessiva — ≥5个自反动词,100词</li>
+          <li><b>二</b> Stamattina — 今晨的过去时版routine,100词 <i>(mi sono alzato alle sette)</i></li>
+          <li><b>三</b> Come si studia la musicologia — 向外行解释音乐学怎么学,105词 <i>(si leggono le fonti…)</i></li>
+          <li><b>四</b> Consigli per l'esame B2 — 给未来考生(其实是自己)的8条军规,105词 <i>(Scrivi ogni giorno! Non avere paura!)</i></li>
+          <li><b>五</b> Come ascoltare un'opera per la prima volta — 听懂一部歌剧的步骤指南,110词 <i>(Prima leggi il libretto, poi ascoltala!)</i></li>
+          <li><b>六</b> Una domenica a Xi'an — 给意大利朋友排西安一日游,110词 <i>(命令式全篇统一 tu 或 Lei)</i></li>
+        </ul></div>
+      <div class="wk"><div class="lbl">口语处方</div>
+        <p style="margin:0;font-size:14.5px">一/三 <b>卡⑥观点交锋</b>(靶点:连接词,条件式下周才算)· 二/四 <b>卡⑧</b>(靶子:自反过去时→命令式+代词)· 五 <b>卡⑤</b>复访 · 六 <b>卡⑦CILS全真模拟 第1次</b>。
+        <span class="milestone" style="display:block"><b>里程碑:</b>与AI就一个话题对轰3回合,secondo me / però / quindi / anche se 各用≥1次;周六模拟第1次,四维评分如实记下——<b>预期3分上下,这不是失败,是基线</b>。独白题:⑤La mia settimana(自反)、⑩复练。</span></p></div>
+      <div class="wk test"><div class="lbl">周六关卡 · 8/29 下午</div>
+        <ul class="tight">
+          <li>自反10句(现在时5+复合时态5),助动词+配合错误≤2处,当场订正;</li>
+          <li>卡⑦模拟第1次完成并记录四维分数;</li>
+          <li>p.181自反+命令式部分≥80%。</li>
+        </ul></div>
+    </div>
+  </article>
+
+  <!-- W6 -->
+  <article class="week" data-start="2026-08-31" data-end="2026-09-06">
+    <div class="week-head"><span class="week-no">SETTIMANA 6</span><span class="week-dates">8/31 一 – 9/5 六(9/6 日全休·毕业)</span><span class="badge-now">本周</span>
+      <h3>计划与愿望·总装 · <em>Futuro e condizionale</em></h3></div>
+    <div class="week-body">
+      <div class="wk"><div class="lbl">教材挂钩</div>
+        <p style="margin:0;font-size:14.5px">U5 p.69–82(futuro semplice+composto/一类条件句)+ U11 p.165–180(condizionale semplice+composto);练习册U5/U11;<b>p.181自我总测试整卷留给周六</b>。</p></div>
+      <div class="wk"><div class="lbl">语法靶点</div>
+        <ul class="tight">
+          <li><b>futuro semplice</b>(不规则:sarò, avrò, andrò, farò, potrò, dovrò, verrò)— 每天3句开学后计划真句;不规则形态白纸1分钟默写。</li>
+          <li><b>一类条件句</b> Se+futuro/futuro — 每天2句备考条件句:Se scriverò ogni giorno, passerò il B2.</li>
+          <li><b>condizionale 功能句</b>(vorrei, mi piacerebbe, potresti, sarebbe)— 写「学术愿望×3+生活愿望×3」清单,全部条件式开头,贴在书桌前。</li>
+          <li><b>条件式礼貌语域</b> — 把第1周教授邮件升级成正式版(Vorrei chiederLe…, Le sarei grato se…),两版对比体会语域差。</li>
+        </ul></div>
+      <div class="wk"><div class="lbl">每日写作</div>
+        <ul class="tight giorni">
+          <li><b>一</b> Il prossimo semestre — 研二上计划,110词 <i>(futuro≥6个、含3个不规则)</i></li>
+          <li><b>二</b> Se passerò il B2… — 过了怎样、没过怎么办,115词 <i>(一类条件句≥3组)</i></li>
+          <li><b>三</b> Vorrei studiare in Italia — 访学愿望:城市/档案/课程,115词 <i>(condizionale≥5个)</i></li>
+          <li><b>四</b> Un'email formale a un archivio — 向意大利档案馆询问布索尼资料的正式邮件,115词 <i>(Vorrei chiederLe se… + Le)</i></li>
+          <li><b>五</b> Il mio futuro da musicologo — 十年后的自己,120词 <i>(Fra dieci anni avrò finito il dottorato)</i></li>
+          <li><b>六(上午)</b> 总装题 Il mio percorso con l'italiano — 120词:过去怎么学(两种过去时)/现在什么水平(现在时)/考试计划(将来时)/最终愿望(条件式)。<b>这就是你第一篇B1/B2作文的原型。</b></li>
+        </ul></div>
+      <div class="wk"><div class="lbl">口语处方</div>
+        <p style="margin:0;font-size:14.5px">一/五 <b>卡⑥</b>(条件式正式入靶)· 二 <b>卡⑧</b>(靶子:条件式)· 三 <b>卡⑤</b> · 四 <b>独白抽题演练</b>(12题库随机抽,30秒准备说3分钟)· 六 <b>卡⑦模拟 第2次</b>。
+        <span class="milestone" style="display:block"><b>里程碑:</b>模拟第2次四维总分高于第1次;随机抽独白题即兴说3分钟,含一段过去时叙事+一段个人观点。独白题:⑧Cosa farò a settembre、⑪Un mese libero in Italia、⑫Un'opera che consiglio(压轴)。</span></p></div>
+      <div class="wk test"><div class="lbl">期末三关 · 9/5 周六下午</div>
+        <ul class="tight">
+          <li><b>写:</b>40分钟无资料写140–160词模拟作文《Racconta un'esperienza importante del passato e parla dei tuoi progetti futuri》,四大时态体系全部出现,交Claude按CILS B1标准打分,语法项≥60%;</li>
+          <li><b>卷:</b>p.181自我总测试整卷限时45分钟,正确率≥85%;</li>
+          <li><b>说:</b>卡⑦模拟第2次,总分>第1次;自由对话10分钟,卡死或求救≤3次。</li>
+        </ul>
+        <p class="note" style="margin:6px 0 0">三关全过=激活阶段毕业。把9/5的录音和7/25的基线录音放在一起听——那就是你的暑假。</p></div>
+    </div>
+  </article>
+</div></section>
+
+<!-- ======================= ARSENALE ======================= -->
+<section id="arsenale"><div class="wrap">
+  <div class="kicker">L'arsenale orale · 口语军械库</div>
+  <h2>让 gpt-live 停止把你当小学生</h2>
+  <p class="lede">它给你讲得太简单,是因为你没给它下死命令。下面8张指令卡,每张就是一次会话的开场白:进语音模式前,先把整张卡的意大利语指令<b>粘贴到文字对话里</b>(或切语音后原文念给它),然后开始。它若中途降速降难,喊一声 <b>«Regole!»</b>。每天只跑轮换表指定的那一张,30分钟,结束前必喊 <b>«Facciamo il punto»</b>——它会报出你今天3个典型错误,抄进错句清单,明早10:15重写。这就是口语的错误闭环,和写作共用一份清单。</p>
+
+  <div class="tablewrap" style="margin-bottom:26px"><table class="rotazione">
+    <tr><th>周</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th></tr>
+    <tr><td><b>W0</b></td><td colspan="5">7/22起每天 卡① 20'(答辩前:可选10–15')</td><td>卡① + 基线录音</td></tr>
+    <tr><td><b>W1</b></td><td>卡①</td><td>卡②</td><td>卡①</td><td>卡②</td><td>卡①</td><td>卡②</td></tr>
+    <tr><td><b>W2</b></td><td>卡③</td><td>卡②</td><td>卡③</td><td>卡②</td><td>卡③</td><td>卡③+PP抽查</td></tr>
+    <tr><td><b>W3</b></td><td>卡③</td><td>卡④</td><td>卡⑤</td><td>卡⑤</td><td>卡④</td><td>卡⑤</td></tr>
+    <tr><td><b>W4</b></td><td>卡⑤</td><td>卡⑧直宾</td><td>卡⑤</td><td>卡⑧ne</td><td>卡⑤</td><td>卡⑧间宾</td></tr>
+    <tr><td><b>W5</b></td><td>卡⑥</td><td>卡⑧自反</td><td>卡⑥</td><td>卡⑧命令式</td><td>卡⑤</td><td><b>卡⑦模拟#1</b></td></tr>
+    <tr><td><b>W6</b></td><td>卡⑥</td><td>卡⑧条件式</td><td>卡⑤</td><td>独白抽题</td><td>卡⑥</td><td><b>卡⑦模拟#2</b></td></tr>
+  </table></div>
+  <p class="note" style="margin-top:-14px;margin-bottom:22px">通用替换规则:某语法点当天连错3次 → 当日卡换成卡⑧、靶子=该语法点。是<b>替换</b>,不是加练。</p>
+
+  <details class="parola"><summary>卡① 自由对话·全程纠错 <span class="quando">W0–W1 主力 · 现在时+情态+前置词</span></summary>
+    <div class="parola-body"><p class="uso">刚开口的前两周用。话题:日常、大学、音乐。结束前说 Facciamo il punto。</p>
+    <div class="copy-row"><button class="copy" data-target="pc1">复制指令</button></div>
+    <pre class="prompt" id="pc1">Da adesso sei il mio coach di conversazione italiana. REGOLE FISSE, NON NEGOZIABILI:
+1. Parla SOLO italiano, dall'inizio alla fine. Mai cinese, mai inglese. Se io cambio lingua, di' solo 'In italiano, per favore' e aspetta.
+2. Velocità QUASI NATURALE (circa il 90% di un nativo). Non rallentare, non scandire sillaba per sillaba. Se non capisco, prima ripeti la stessa frase identica; solo al secondo tentativo semplifica le parole, MAI la velocità.
+3. Chi sono: capisco bene l'italiano (A2 completo, ottimo vocabolario passivo, studente universitario di musicologia), ma la mia produzione orale è molto debole. NON trattarmi da principiante assoluto: niente mini-lezioni, niente tono da maestra d'asilo, niente 'Bravissimo!' dopo ogni frase.
+4. Io parlo almeno il 70% del tempo. Le tue battute: massimo 2-3 frasi + UNA domanda. Se rispondo con meno di 2 frasi, di' 'Di più' e aspetta in silenzio.
+5. PROTOCOLLO DI CORREZIONE: (a) lasciami SEMPRE finire la frase; (b) poi ripeti tu la mia frase in versione corretta; (c) di' 'Ripeti' e io la ridico per intero; (d) solo dopo continua. Correggi TUTTI gli errori grammaticali, non solo quelli gravi.
+6. Quando dico 'FACCIAMO IL PUNTO': elenca i 3 errori più tipici di oggi nel formato 'hai detto X → si dice Y → regola in una riga', poi dammi 3 frasi-test dello stesso tipo da produrre subito.
+OBIETTIVO GRAMMATICALE DI OGGI: presente indicativo (regolari + irregolari: andare, fare, venire, uscire, bere), verbi modali (potere/volere/dovere) e preposizioni (a/in/di/da/per). Temi: la mia giornata, l'università, la musica che studio. Fammi almeno 15 domande in 25 minuti. Comincia tu con la prima domanda, subito.</pre></div>
+  </details>
+
+  <details class="parola"><summary>卡② 生存角色扮演:点餐/问路/购物 <span class="quando">W1–W2 · 同场景演两遍</span></summary>
+    <div class="parola-body"><p class="uso">专治「背了课文开口就死」:先演一遍(轻纠错)→复盘全部错误→原场景重演第二遍,这次必须干净。</p>
+    <div class="copy-row"><button class="copy" data-target="pc2">复制指令</button></div>
+    <pre class="prompt" id="pc2">Sei il mio partner di roleplay in italiano. REGOLE FISSE: solo italiano, sempre; velocità quasi naturale, non rallentare; io sono A2 con buon vocabolario passivo ma produzione debole — niente lezioni teoriche, niente complimenti di cortesia; io parlo almeno il 70% del tempo.
+OGGI: UN roleplay per volta. All'inizio io scelgo la scena: (A) al bar / al ristorante, (B) chiedere indicazioni per strada, (C) fare la spesa o comprare in un negozio. Tu resti SEMPRE nel personaggio (cameriere, passante, commesso) e inserisci SEMPRE una complicazione realistica: il piatto è finito, la strada è chiusa, non hai il resto, il prodotto è difettoso.
+CORREZIONE IN DUE FASI: durante la scena correggi SOLO gli errori che bloccano la comunicazione; tutti gli altri li annoti in silenzio. Finita la scena: (1) elenchi ogni errore nel formato 'hai detto X → si dice Y'; (2) io ripeto ogni frase corretta; (3) RIFACCIAMO la stessa scena una seconda volta, e stavolta devo farla pulita.
+OBIETTIVI GRAMMATICALI: vorrei + infinito, il partitivo (del pane, dell'acqua, degli spiccioli), 'quanto costa / quanto viene', c'è/ci sono, imperativo per le indicazioni (vada dritto, giri a destra, prenda la seconda).
+ALLA FINE (quando dico 'facciamo il punto'): i 3 errori più tipici con correzione e regola in una riga. Chiedimi ora quale scena scelgo.</pre></div>
+  </details>
+
+  <details class="parola"><summary>卡③ 过去时审讯室 <span class="quando">W2–W3 核心 · passato prossimo</span></summary>
+    <div class="parola-body"><p class="uso">AI扮演穷追不舍的采访者,每个回答追问两次,用现在时讲过去会被当场喝止。练到PP脱口而出为止。</p>
+    <div class="copy-row"><button class="copy" data-target="pc3">复制指令</button></div>
+    <pre class="prompt" id="pc3">Sei un intervistatore italiano curioso e insistente. REGOLE FISSE: solo italiano; velocità quasi naturale, mai rallentare; io sono A2 con produzione debole, non trattarmi da principiante; io parlo almeno il 70% del tempo; lasciami sempre finire la frase prima di correggere, poi dammi la versione corretta, di' 'Ripeti', e io la ridico intera.
+MISSIONE DI OGGI: farmi raccontare il passato. Temi: ieri, lo scorso weekend, l'ultimo viaggio, l'ultimo concerto che ho sentito. Per OGNI mia risposta fai 2 domande di approfondimento (A che ora? Con chi? E poi cosa è successo? Perché?). Non accettare MAI risposte vaghe di una frase.
+REGOLA DURA: se uso il presente per parlare del passato, fermami SUBITO con 'Al passato!' e fammi rifare la frase al passato prossimo.
+OBIETTIVI GRAMMATICALI: passato prossimo — scelta essere/avere, participi irregolari (fatto, visto, preso, stato, venuto, letto, scritto, messo, detto, bevuto), accordo con essere (sono andato, siamo rimasti), espressioni di tempo (ieri sera, due giorni fa, l'anno scorso).
+Quando dico 'FACCIAMO IL PUNTO': i 3 errori più tipici (frase sbagliata → frase corretta → regola in una riga) + 3 frasi-test al passato da produrre subito. Comincia: prima domanda su ieri.</pre></div>
+  </details>
+
+  <details class="parola"><summary>卡④ 图片描述+盲听重构 <span class="quando">W3–W4 · CILS图片题雏形</span></summary>
+    <div class="parola-body"><p class="uso">你自选一张照片或歌剧舞台剧照,AI看不见——你描述90秒,它靠提问重建画面并复述;复述错的地方=你没讲清的地方。</p>
+    <div class="copy-row"><button class="copy" data-target="pc4">复制指令</button></div>
+    <pre class="prompt" id="pc4">Facciamo un esercizio di descrizione. REGOLE FISSE: solo italiano; velocità quasi naturale; io sono A2 con buon lessico passivo, produzione debole; niente lodi vuote; correzione sempre così: mi lasci finire → mi dai la versione corretta → dico io 'ripeto' e la ridico intera.
+STRUTTURA DELL'ESERCIZIO:
+1. Io ho davanti una foto o un quadro che TU NON PUOI VEDERE. La descrivo per 90 secondi circa: in questa fase NON interrompermi mai, anche se sbaglio.
+2. Poi tu mi fai 5 domande precise per ricostruire l'immagine: posizioni, colori, quante persone, cosa stanno facendo, che atmosfera c'è.
+3. Poi provi a riassumere l'immagine in 3 frasi. Io ti dico cosa hai capito bene e cosa no: dove hai capito male, significa che io ho descritto male, e tu mi fai riformulare quel punto.
+4. Solo alla fine: correzione completa dei miei errori, uno per uno, e io ripeto ogni frase corretta.
+OBIETTIVI GRAMMATICALI: c'è / ci sono, preposizioni di luogo (a destra di, a sinistra, sotto, sopra, davanti a, dietro, in fondo, al centro), accordo nome-aggettivo, stare + gerundio (sta suonando, stanno parlando).
+Quando dico 'FACCIAMO IL PUNTO': i 3 errori più tipici con correzione e regola in una riga. Dimmi quando sei pronto e io comincio a descrivere.</pre></div>
+  </details>
+
+  <details class="parola"><summary>卡⑤ 两种过去时·叙事对决 <span class="quando">W3(周四起)–W6 · B1/B2最大得分点</span></summary>
+    <div class="parola-body"><p class="uso">三段式:习惯与背景(imperfetto)→单次事件(passato prossimo)→混合陷阱题。这是中国考生最大失分点,练它。</p>
+    <div class="copy-row"><button class="copy" data-target="pc5">复制指令</button></div>
+    <pre class="prompt" id="pc5">Sei il mio allenatore per i tempi del passato. REGOLE FISSE: solo italiano; velocità quasi naturale, mai rallentare; io sono A2+, non trattarmi da principiante; io parlo almeno il 70% del tempo; mi lasci finire → versione corretta → 'Ripeti' → io la ridico.
+SESSIONE IN TRE PARTI:
+PARTE 1 (descrizione e abitudini → IMPERFETTO): domande tipo 'Com'era la tua scuola? Cosa facevi di solito d'estate quando eri bambino? Che musica ascoltavi?'
+PARTE 2 (episodio unico → PASSATO PROSSIMO): 'Racconta UNA volta che ti è successo qualcosa di strano / la prima volta che hai sentito un'opera dal vivo.'
+PARTE 3 (domande TRAPPOLA che mescolano i due tempi): 'Mentre studiavi, cosa è successo? Che tempo faceva quando sei arrivato? Perché hai smesso, cosa volevi fare?'
+REGOLA DURA: ogni volta che sbaglio la scelta del tempo, fermami appena finisco la frase, dimmi quale tempo serviva e PERCHÉ in una sola riga (sfondo/abitudine = imperfetto; azione conclusa = passato prossimo), e fammi rifare la frase.
+Quando dico 'FACCIAMO IL PUNTO': i 3 errori più tipici + 3 frasi-test miste da produrre subito. Comincia dalla Parte 1.</pre></div>
+  </details>
+
+  <details class="parola"><summary>卡⑥ 观点交锋·AI唱反调 <span class="quando">W5–W6 · 连接词+条件式</span></summary>
+    <div class="parola-body"><p class="uso">AI永远站你对立面,逼你用连接词组织≥3句反驳,不够长就被喝令 «Sviluppa»。可自带音乐学话题。</p>
+    <div class="copy-row"><button class="copy" data-target="pc6">复制指令</button></div>
+    <pre class="prompt" id="pc6">Sei il mio sparring partner per il dibattito in italiano. REGOLE FISSE: solo italiano; velocità naturale; io sono uno studente universitario di musicologia con A2+ solido — parlami da adulto, di temi da adulto; io parlo almeno il 70% del tempo; correzione: mi lasci finire il turno → versione corretta delle frasi sbagliate → io le ripeto → si continua il dibattito.
+COME FUNZIONA: io propongo una tesi, oppure scegli tu tra queste: 'La musica classica è roba da vecchi', 'Meglio la musica dal vivo che su Spotify', 'L'intelligenza artificiale può comporre vera musica', 'La vita in città è meglio della vita in campagna', 'Studiare all'università serve ancora'.
+Tu prendi SEMPRE la posizione contraria alla mia, qualunque essa sia, e mi contraddici con 1-2 argomenti brevi e concreti. Io devo rispondere con ALMENO 3 frasi usando i connettivi: secondo me, però, quindi, anche se, per esempio, da una parte... dall'altra, non sono d'accordo perché. Se rispondo con meno di 3 frasi, di' solo 'Sviluppa' e aspetta. Minimo 3 round per tema, poi si cambia tema.
+OBIETTIVI GRAMMATICALI: connettivi argomentativi + condizionale (direi, sarebbe meglio, potremmo, mi piacerebbe).
+Quando dico 'FACCIAMO IL PUNTO': i 3 errori più tipici + il connettivo che non ho mai usato e che dovrei usare di più. Chiedimi la mia tesi.</pre></div>
+  </details>
+
+  <details class="parola"><summary>卡⑦ CILS口语全真模拟 <span class="quando">W5周六 + W6周六 · 各一次</span></summary>
+    <div class="parola-body"><p class="uso">角色扮演3分钟+独白2分钟(30秒准备),全程无救援,考后四维打分并直言距B2差什么。第1次预期3分上下——那是基线,不是审判。</p>
+    <div class="copy-row"><button class="copy" data-target="pc7">复制指令</button></div>
+    <pre class="prompt" id="pc7">Sei un esaminatore ufficiale della prova orale CILS. Da questo momento: SOLO italiano, velocità naturale da esaminatore vero, tono professionale e distaccato, ZERO aiuti durante le prove, zero complimenti di cortesia.
+SIMULAZIONE COMPLETA:
+PARTE 1 — DIALOGO/ROLEPLAY (3 minuti): scegli tu una situazione tipo esame (fare un reclamo in un negozio, organizzare un viaggio con un amico, chiedere informazioni per un corso, un colloquio per un lavoretto). Me la presenti in due frasi e si parte subito. Durante il dialogo NON correggermi: comportati solo da interlocutore.
+PARTE 2 — MONOLOGO (2 minuti): mi dai UN tema (esempi: 'Un'esperienza che ti ha cambiato', 'La musica nella tua vita', 'Una città che vorresti visitare e perché') e 30 secondi per pensare. Poi parlo SOLO io per 2 minuti: non intervenire mai, nemmeno se sbaglio o mi blocco; se mi fermo prima del tempo, di' solo 'Continua'.
+DOPO LE DUE PROVE — VALUTAZIONE DA ESAMINATORE: dai un voto da 1 a 5 per ciascun criterio, con una riga di motivazione: (1) efficacia comunicativa, (2) correttezza morfosintattica, (3) ricchezza lessicale, (4) pronuncia e fluenza. Poi: i 3 errori più gravi con correzione, e dimmi ESATTAMENTE, in modo brutale e onesto, cosa mi manca oggi per un B2 e su cosa lavorare questa settimana.
+Comincia: presentami la situazione della Parte 1.</pre></div>
+  </details>
+
+  <details class="parola"><summary>卡⑧ 语法弹药·快速转换操练 <span class="quando">W4起按轮换表 · 或任何语法点连错3次时替换当日卡</span></summary>
+    <div class="parola-body"><p class="uso">军训式:AI每10–15秒一个刺激句,你即时变形,错了立刻改口重来。每次只选一个靶子。</p>
+    <div class="copy-row"><button class="copy" data-target="pc8">复制指令</button></div>
+    <pre class="prompt" id="pc8">Modalità DRILL: sei un istruttore, ritmo serrato, ZERO chiacchiere, zero spiegazioni lunghe. Solo italiano, velocità naturale.
+COME FUNZIONA: all'inizio io scelgo UN bersaglio grammaticale tra questi (uno solo per sessione):
+(1) pronomi diretti + passato prossimo con accordo — tu: 'Hai comprato i biglietti?' → io: 'Sì, li ho comprati' / 'No, non li ho comprati';
+(2) NE — tu: 'Quante sinfonie ha scritto Beethoven?' → io: 'Ne ha scritte nove';
+(3) imperativo + pronomi — tu: 'Devo comprare il pane?' → io: 'Sì, compralo!' / 'No, non comprarlo!';
+(4) riflessivi al passato — tu: 'A che ora ti sei alzato ieri?' → risposta completa;
+(5) condizionale — tu mi dai una situazione → io: 'Al posto tuo, farei... / vorrei... / sarebbe meglio...'.
+Tu spari uno stimolo ogni 10-15 secondi. Io trasformo. Se sbaglio: dammi SUBITO la forma giusta in mezza frase, io la ripeto, si va avanti — e dopo 2-3 turni mi ripresenti lo STESSO tipo di stimolo per verificare che ora lo faccio giusto. Varia i nomi (maschile/femminile, singolare/plurale) per forzare l'accordo.
+OBIETTIVO: 25-30 stimoli in 12 minuti. ALLA FINE: quanti giusti su quanti totali, e i 3 errori ricorrenti con la regola in una riga. Chiedimi quale bersaglio scelgo.</pre></div>
+  </details>
+
+  <div class="card" style="margin-top:26px">
+    <h3>Claude 批改·固定指令(每天 11:30 用)</h3>
+    <div class="copy-row"><button class="copy" data-target="pcc">复制指令</button></div>
+    <pre class="prompt" id="pcc">请按 CILS B1 标准批改下面这篇意大利语短文。要求:
+1. 错误分四类列表:动词变位 / 性数配合 / 代词 / 用词与搭配;
+2. 每个错误给:原句 → 正确版 → 一句话规则;
+3. 最后给一版地道范文(保持我的内容和长度,别拔高词汇);
+4. 不要夸我,直接说问题。
+短文:
+[粘贴今天的作文]</pre>
+  </div>
+
+  <div class="grid2" style="margin-top:26px">
+    <div class="card">
+      <h3>影子跟读 · 15分钟5遍法</h3>
+      <p class="note" style="margin-top:0">练口腔肌肉、语流和语调——跟读时禁止查词、禁止抠语法。选材:45–90秒、带全文的音频,盲听懂60–70%正合适。W0–W2用《新视线1》U4–U11课文录音(内容熟、免查词);W3起换 EasyItalianNews / Podcast Italiano;W6可试RAI短讯。</p>
+      <ol class="tight" style="font-size:14px">
+        <li><b>盲听1遍</b>抓大意,用一句意语自答 di cosa parla;</li>
+        <li><b>看文本精听1遍</b>,标三样:连读、重音、拿不准的读音;</li>
+        <li><b>逐句暂停跟读1遍</b>,最难的1–2句单独抠2遍,复制语调曲线而不只是读对;</li>
+        <li><b>同步影子1–2遍</b>:不看文本,落后原声0.5–1秒,跟丢不停、下一句接上;</li>
+        <li><b>录音对比</b>只查三点:重音位置 / 双辅音够不够长(fatto≠fato, anno≠ano)/ 句尾升降。挑最差2处各重练3遍,收工。</li>
+      </ol>
+      <p class="note">周六:本周6段连读录一段「周测音频」,命名 settimana2.m4a 存档。跟读材料里的好句式(a dire il vero / insomma / ci ho messo due ore)每周摘3–5条进Anki,当天口语里强行用出来至少一次。</p>
+    </div>
+    <div class="card">
+      <h3>独白题库 · 12题(自言自语用)</h3>
+      <p class="note" style="margin-top:0">洗澡、走路、做饭时对自己说。编号会出现在每周卡片里。</p>
+      <ul class="tight" style="font-size:13.5px">
+        <li>① Mi presento — 1分钟 · W0</li>
+        <li>② La mia giornata di oggi — 1分钟 · W1</li>
+        <li>③ La mia stanza — 1分钟(c'è/ci sono+方位) · W1</li>
+        <li>④ Cosa ho fatto ieri — 90秒(强制3个essere助动词句) · W2</li>
+        <li>⑨ Quando ero al liceo — 2分钟(纯imperfetto) · W3</li>
+        <li>⑦ Il mio compositore preferito — 2分钟(讲布索尼:è nato nel 1866, ha scritto…) · W3–W4</li>
+        <li>⑥ Al supermercato — 1分钟(部分冠词+ne) · W4</li>
+        <li>⑩ Un viaggio che ho fatto — 2分钟(混合时态) · W4–W5</li>
+        <li>⑤ La mia settimana all'università — 90秒(自反) · W5</li>
+        <li>⑧ Cosa farò a settembre — 90秒(futuro) · W6</li>
+        <li>⑪ Un mese libero in Italia — 2分钟(condizionale) · W6</li>
+        <li>⑫ Un'opera che consiglio — 3分钟(描述+叙事+论证,压轴) · W6</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Anki 弹药库规程</h3>
+    <ul class="tight" style="font-size:14px">
+      <li><b>只做句卡,禁止孤立单词卡</b>——你缺的不是词汇是句法通路。两种卡型:①产出卡:正面中文情境(「告诉导师你把章节发给他了」)→背面 Gli ho mandato il capitolo.,先出声说出才许翻面;说不出整句但结构对=Hard,结构错才=Again。②语法决策挖空卡:Ieri (io/andare) ___ in biblioteca. → sono andato——只挖决策点(助动词/分词词尾/代词/前置词),绝不挖内容词。</li>
+      <li><b>卡片唯一来源</b>:每天11:45从Claude批改后的正确句里收割5–8张——都是你亲手写错又改对的句子,记忆钩子最深。每周新卡≤50张。</li>
+      <li><b>标签管理</b>:presente / pp-avere / pp-essere / imperfetto / pronomi / riflessivi / futuro / condizionale。周六关卡前按当周标签定向复习。</li>
+      <li><b>连错3次的水蛭卡不删</b>——当天写作里强制用一次该句型,用对了才恢复队列。</li>
+      <li><b>每天只在10:00–10:15碰Anki</b>,复习上限80张,超时即停。第5周起到期量上涨,启动「只做当周标签」应急模式。</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ======================= RISORSE ======================= -->
+<section id="risorse"><div class="wrap">
+  <div class="kicker">Le risorse · 资源库</div>
+  <h2>每一条都在 2026年7月 联网核实过</h2>
+  <p class="lede">由资源agent推荐、再由独立的核查agent逐条抽查(名称/链接/是否停更/难度定位),没有一条是凭记忆写的。标注了大陆访问情况。</p>
+
+  <h3 style="margin-top:8px">听力 · Ascolto</h3>
+  <div class="risorsa"><div class="top"><b>EasyItalianNews.com</b><span class="pill ok">✓ 已核实·周三更</span><span class="pill">A2–B1</span><span class="pill">国内直连</span><span class="pill warn">影子跟读主材料</span></div>
+    <a href="https://easyitaliannews.com/" target="_blank" rel="noopener">easyitaliannews.com</a>
+    <p class="come">每周二/四/六出刊,全文+整篇录音,免费。W3起作为影子跟读固定材料:选1–2段(约150词)走5遍法。新闻句式重复率高,是治「看得懂说不出」的第一味药。可邮件订阅。</p></div>
+  <div class="risorsa"><div class="top"><b>Podcast Italiano(Davide Gemello)</b><span class="pill ok">✓ 已核实·活跃</span><span class="pill">分级 A1→C1</span><span class="pill">官网/播客端直连</span></div>
+    <a href="https://www.podcastitaliano.com/" target="_blank" rel="noopener">podcastitaliano.com</a>
+    <p class="come">按 principiante/intermedio/avanzato 分层,大量集数有免费全文文字稿。7月从 principiante 建立信心,8月起每周3集 intermedio 成为精听主力:盲听→读稿圈生词→再听→挑1分钟片段跟读。</p></div>
+  <div class="risorsa"><div class="top"><b>Easy Italian(街头采访)</b><span class="pill ok">✓ 已核实</span><span class="pill">B1·真实语速</span><span class="pill warn">YouTube需梯子</span><span class="pill ok">B站57集合集</span></div>
+    <a href="https://www.youtube.com/easyitalian" target="_blank" rel="noopener">youtube.com/easyitalian</a> · <a href="https://www.bilibili.com/video/BV1Yu411y78c/" target="_blank" rel="noopener">B站备份 BV1Yu411y78c</a>
+    <p class="come">米兰街头真人采访,意英双字幕,每集7–10分钟。8月起每天1集:先关字幕硬听,再开字幕逐句回放。这是从「教材语速」跳到「意大利人语速」的必经之路。配套闲聊播客(Katie&Matteo)就是标准的A2–B1对话播客,播客app可订阅。</p></div>
+  <div class="risorsa"><div class="top"><b>Coffee Break Italian</b><span class="pill ok">✓ 已核实·仍更新</span><span class="pill">A2 保底</span><span class="pill">播客端直连</span></div>
+    <a href="https://coffeebreaklanguages.com/coffeebreakitalian/" target="_blank" rel="noopener">coffeebreaklanguages.com</a>
+    <p class="come">答辩周(7/17–7/21)的轻负担材料:每天20分钟一集,从第2季主课程听起,Francesca说完例句暂停→出声复述。带英语讲解,适合唤醒语法;8月起降级为泛听,别恋战。</p></div>
+  <div class="risorsa"><div class="top"><b>News in Slow Italian (Intermediate)</b><span class="pill ok">✓ 已核实·周更</span><span class="pill">B1 慢速新闻</span><span class="pill">播客端较稳</span></div>
+    <a href="https://www.newsinslowitalian.com/home/news/intermediate" target="_blank" rel="noopener">newsinslowitalian.com</a>
+    <p class="come">每周五当「听力周测」:只听不看稿约15分钟,听完用意语向gpt-live口头概括2句。免费部分够用,先别买会员。</p></div>
+  <div class="risorsa"><div class="top"><b>Learn Italian with Lucrezia</b><span class="pill ok">✓ 已核实·活跃</span><span class="pill">A2–B1</span><span class="pill no">需梯子</span></div>
+    <a href="https://www.youtube.com/@lucreziaoddone" target="_blank" rel="noopener">youtube.com/@lucreziaoddone</a>
+    <p class="come">看「vlog in italiano semplice」系列:语速放慢、发音极清楚、全程意语字幕。第一遍开字幕,第二遍关字幕,抄3个「我也能用上」的句型进Anki,次日口语里用出来。不便翻墙就用上面Easy Italian的B站合集替代。</p></div>
+  <div class="risorsa"><div class="top"><b>Italiano Automatico</b><span class="pill ok">✓ 已核实·周更</span><span class="pill">B1 泡耳朵</span><span class="pill">播客端直连</span></div>
+    <a href="https://podcasts.apple.com/us/podcast/italiano-automatico-podcast/id698154514" target="_blank" rel="noopener">Apple Podcasts</a>
+    <p class="come">走路、吃饭、睡前当背景放:不做笔记、不查词、不计入学时。任务只有一个——让耳朵每天泡在意语里30分钟以上。</p></div>
+
+  <h3>阅读 · Lettura(每晚21:00那一档用)</h3>
+  <div class="risorsa"><div class="top"><b>Italiano Bello</b><span class="pill ok">✓ 已核实</span><span class="pill">A2/B1 分级故事·带音频</span><span class="pill">国内直连</span></div>
+    <a href="https://italiano-bello.com/" target="_blank" rel="noopener">italiano-bello.com</a>
+    <p class="come">免费「Letture & racconti」按CEFR分级(A2约80篇、B1约70篇)。每晚读一篇,读完<b>立刻合上</b>,写3句意语复述发Claude——把每次阅读强制转成输出。8月升B1篇目。</p></div>
+  <div class="risorsa"><div class="top"><b>Vikidia italiano(儿童百科)</b><span class="pill ok">✓ 已核实</span><span class="pill">A2–B1</span><span class="pill">国内直连</span></div>
+    <a href="https://it.vikidia.org/" target="_blank" rel="noopener">it.vikidia.org</a>
+    <p class="come">「儿童版意语维基」,句短词基础,且不在维基媒体域名下——正好补上Wikipedia被墙的缺口。优先搜 musica、opera、violino、Mozart 这类本行词条,读完改写成2–3句「向朋友介绍」。</p></div>
+  <div class="risorsa"><div class="top"><b>Wikipedia italiana 音乐词条</b><span class="pill ok">✓ 可用</span><span class="pill">B1–B2 挑战·只读首段</span><span class="pill no">需梯子</span></div>
+    <a href="https://it.wikipedia.org/wiki/Ferruccio_Busoni" target="_blank" rel="noopener">it.wikipedia.org — Ferruccio Busoni</a>
+    <p class="come">你的专业是最好的语料:Ferruccio Busoni、Arlecchino (Busoni)、neoclassicismo (musica) 这些词条你背景知识满格,读意语首段毫不吃力还白捡论文术语。每周3条、每条只读lead段15分钟,漂亮长句抄下来仿写。</p></div>
+  <div class="risorsa"><div class="top"><b>Libretti d'opera italiani</b><span class="pill ok">✓ 已核实</span><span class="pill">B1·只读剧情梗概</span><span class="pill">国内直连</span></div>
+    <a href="https://www.librettidopera.it/" target="_blank" rel="noopener">librettidopera.it</a>
+    <p class="come">意大利歌剧脚本库,每部配现代意语剧情梗概(argomento)。剧本正文是古意语,现在别碰;每周挑一部你熟的(《费加罗》《唐璜》)读argomento 15分钟→关页面→向gpt-live口头复述剧情3分钟。内容你烂熟,注意力全给语言——这是音乐学研究生独有的作弊器。</p></div>
+
+  <h3>工具 · Strumenti</h3>
+  <div class="risorsa"><div class="top"><b>Reverso Coniugatore</b><span class="pill">变位查询</span><span class="pill">国内一般直连</span></div>
+    <a href="https://conjugator.reverso.net/conjugation-italian.html" target="_blank" rel="noopener">conjugator.reverso.net</a>
+    <p class="come">写作时没把握的变位立即查,查完在句子里用对再继续。变位不是背表背会的,是写错-订正循环练会的。</p></div>
+  <div class="risorsa"><div class="top"><b>欧路词典(意语库)/ 意大利语助手</b><span class="pill">意汉双解·生词本</span><span class="pill">国内直连</span></div>
+    <a href="https://dict.eudic.net/" target="_blank" rel="noopener">dict.eudic.net</a>
+    <p class="come">所有阅读圈出的生词划词入生词本,每晚21:30清一遍——只把「想主动用」的词导去Anki做输出卡,纯认读词留在生词本靠重复遇见解决,别做双份卡。</p></div>
+  <div class="risorsa"><div class="top"><b>Reverso Context</b><span class="pill">真实搭配查询</span><span class="pill">国内一般直连</span></div>
+    <a href="https://context.reverso.net/translation/" target="_blank" rel="noopener">context.reverso.net</a>
+    <p class="come">专治中式意语:想说「参加考试」别逐词直译,先来这里看真实语料(是 fare un esame,不是 partecipare a un esame)。每天交作文前自查3个没把握的搭配。</p></div>
+  <div class="risorsa"><div class="top"><b>Anki 共享牌组:15000 Italian sentences (part 1)</b><span class="pill">整句·按词频排序</span></div>
+    <a href="https://ankiweb.net/shared/info/1713927804" target="_blank" rel="noopener">ankiweb.net/shared/info/1713927804</a>
+    <p class="come">备用弹药(主力永远是你自己错句收割的卡):装好后把模板反过来用——正面英文、背面意语,先出声说出整句才翻面。说不出的句子=语法缺口,当场回《新视线1》对应单元补5分钟。</p></div>
+</div></section>
+
+<!-- ======================= ESAME ======================= -->
+<section id="esame"><div class="wrap">
+  <div class="kicker">L'esame · B2路线</div>
+  <h2>先算数学,再谈梦想</h2>
+  <p class="lede">你反感被糊弄,所以这一节先说难听的:欧标从你现在的水平(接受性A2)到B2,需要约<b>400–450小时</b>有效学时。暑假全力打完是165小时;开学后每天只剩1–1.5小时。据此,唯一诚实的结论是——</p>
+
+  <div class="callout rosso"><b>2026年12月3日的CILS B2:别报。</b>届时你累计约255–270小时,距应考下限还差100小时以上,写作口语到不了线,报名费大概率白花。任何「2026年内考过B2」的方案都是画饼——那需要开学后每天维持3小时以上,和研一学期现实冲突。唯一例外:9月中旬全真模拟写作口语双过60%(概率极低),才在10月24日截止前考虑。</div>
+
+  <div class="track">
+    <span class="zone">← 350–450h · B2应考区间 →</span>
+    <span class="dot" style="left:37%"></span><span class="tag up" style="left:37%"><b>2026.09.01</b>≈165h<br><i>输出激活完成·B1在望</i></span>
+    <span class="dot rosso" style="left:60%"></span><span class="tag down" style="left:60%"><b>2026.12.03</b>≈270h<br><i>CILS场·数学不成立,不报</i></span>
+    <span class="dot" style="left:88%"></span><span class="tag up" style="left:88%"><b>2027.02底</b>≈400h<br><i>寒假冲刺后·进入区间</i></span>
+    <span class="dot oro" style="left:97%"></span><span class="tag down" style="left:97%"><b>2027.04中</b>≈440h<br><i>CILS B2 首考 ★</i></span>
+  </div>
+
+  <div class="tablewrap"><table>
+    <tr><th></th><th>CILS Due-B2 ★主攻</th><th>CELI 3 (B2)</th><th>PLIDA B2</th></tr>
+    <tr><td><b>主办</b></td><td>锡耶纳外国人大学</td><td>佩鲁贾外国人大学</td><td>但丁协会</td></tr>
+    <tr><td><b>结构</b></td><td>5科各20分:听/读/语法/写/说,全程约4小时,单科≥11/20全过才发证</td><td>笔试(读写2h15m+语言运用/听力1h10m)+口试15分钟;口语权重<b>30%</b></td><td>4科各30分(无独立语法科),单科≥18/30</td></tr>
+    <tr><td><b>补考机制</b></td><td><b class="si">最友好:</b>挂科可「资本化」,18个月内只补挂掉的单科</td><td>挂掉部分1年内可补(缴全费70%)</td><td>无单科资本化,整体重考</td></tr>
+    <tr><td><b>大陆考点</b></td><td>最多(北京/上海/重庆/成都/广州等20余城;西安待核实,最坏重庆/成都高铁可达)</td><td>偏北方(北京/郑州/济南/成都等);西安无</td><td>北京/上海/广州/重庆/武汉(西安待核实)</td></tr>
+    <tr><td><b>场次(参照2026)</b></td><td>4月/6月/12月</td><td>6月/11月(3月多为低级别)</td><td>3月/6月/11月(3月是三者唯一初春成人场)</td></tr>
+    <tr><td><b>对你的适配</b></td><td><b class="si">★ 你的偏科结构(输入强输出弱)最需要「挂一两科可单补」的容错;音乐学院(AFAM)预注册通用</b></td><td><b class="no">口语权重30%正打在你最弱处,不选</b></td><td>备选:若寒假冲刺超预期,2027年3月中场(重庆)可抢跑,但挂科成本高</td></tr>
+  </table></div>
+
+  <h3 style="margin-top:28px">决断点日历(不是愿望,是闹钟)</h3>
+  <ul class="tight decisioni">
+    <li><b>2026.09.15前后</b> — 用CILS官网例卷做一次完整B1/B2摸底。目的不是报12月,是标定秋季轨道的起点。</li>
+    <li><b>2026.10.24</b> — 12月场报名截止日。按计划:让它过去,不心疼。</li>
+    <li><b>2027.01中</b> — 寒假冲刺开始前做真题模考:四科均稳过60% → 可搏3月中PLIDA(重庆);否则锁定4月CILS,一分钱不浪费。</li>
+    <li><b>2027.03中</b> — CILS 4月场报名(2027日历公布后立即确认日期;报名前发邮件核实西安有无考点,最坏订重庆/成都的高铁票)。</li>
+    <li><b>2027.06</b> — 收网:4月全过则结束;挂1–2科,用资本化机制只补挂科。<b>2027年6月拿下B2证书,是诚实且大概率可达的时点。</b></li>
+  </ul>
+</div></section>
+
+<!-- ======================= DOPO ======================= -->
+<section id="dopo"><div class="wrap">
+  <div class="kicker">Dopo l'estate · 开学以后</div>
+  <h2>9月1日,你会是什么水平</h2>
+  <p class="lede">把话说在前头,省得9月失望:七周后你<b>不是B2,也还不是完整的B1</b>。你会是——就日常话题连续说3分钟不卡死、150词短文错误密度砍半、四大时态体系能在同一篇作文里各就各位。这叫「输出激活完成,B1在望」。对一个两个月前的哑巴来说,这是脱胎换骨;谁跟你说能更快,谁就是在糊弄你。</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>学期维持轨道(9–12月,每天1–1.5h)</h3>
+      <ul class="tight" style="font-size:14px">
+        <li><b>教材换代:</b>买《新视线意大利语2》(B1),推进到全书2/3以上——congiuntivo(虚拟式)、二三类条件句、被动、gerundio、组合代词全套,这些B2语法都在里面,暑期七周不碰它们是设计,不是遗漏。</li>
+        <li><b>Anki:</b>每天20分钟,雷打不动(这是暑期资产的保值机制)。</li>
+        <li><b>口语:</b>每周≥3次gpt-live各30分钟(卡①/⑥轮换)+ 每月1次卡⑦模拟。</li>
+        <li><b>写作:</b>每周2篇交Claude批改,字数向150–180词爬。</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>寒假二次冲刺(2027.01中–02底,每天3–4h)</h3>
+      <ul class="tight" style="font-size:14px">
+        <li>转入B2题型专项:CILS官网 esempi di prove 真题限时套卷;</li>
+        <li>写作按B2题型(正式信函/议论短文)每周3篇;</li>
+        <li>口语按考试格式(看图叙述+话题独白)每天演练;</li>
+        <li>2月底累计约380–420小时 → 进入应考区间,4月中首考。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:22px">最后一句:你一年读下来的词汇量和阅读底子不是沉没成本,它是你暑假敢按这个强度推进的本钱——多数A2学习者做不了每天一篇闭卷写作,你做得了,因为看得懂批改。<b>现在,去把7月17日的第一篇《Mi presento》写了。</b></div>
+</div></section>
+
+<footer><div class="wrap">
+  <p class="firma">Operazione VOCE — perché l'italiano che capisci diventi l'italiano che parli.</p>
+  <p>生成于 2026-07-16 · 依据:《新视线意大利语1》(Nuovo Progetto Italiano 1 中文版)全书结构 + 四模块课程设计 + 独立审校(超载/排期/画饼三项已修正) + 资源联网逐条核实。<br>
+  勾选记录只存在本机浏览器。周六关卡成绩和每两周的录音对比,建议记在纸质本上——那是你自己的战报。</p>
+</div></footer>
+
+<script>
+(function(){
+  /* ---------- copy buttons ---------- */
+  document.querySelectorAll('button.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.dataset.target);
+      var txt = el ? el.innerText : '';
+      function ok(){ var o=btn.textContent; btn.textContent='已复制 ✓'; setTimeout(function(){btn.textContent=o;},1600); }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(ok, function(){ fallback(); });
+      } else { fallback(); }
+      function fallback(){
+        var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta);
+        ta.select(); try{ document.execCommand('copy'); ok(); }catch(e){} document.body.removeChild(ta);
+      }
+    });
+  });
+
+  /* ---------- date helpers ---------- */
+  function iso(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+  var today = new Date(); var tISO = iso(today);
+
+  /* ---------- highlight current week ---------- */
+  document.querySelectorAll('.week').forEach(function(w){
+    if(tISO >= w.dataset.start && tISO <= w.dataset.end){ w.classList.add('current'); }
+  });
+
+  /* ---------- OGGI data ---------- */
+  var SPEAK_W1=['','卡① 20–30分钟','卡②','卡①','卡②','卡①','卡②'];
+  var SPEAK_W2=['','卡③','卡②','卡③','卡②','卡③','卡③ + 20动词PP抽查'];
+  var SPEAK_W3=['','卡③(复访)','卡④','卡⑤','卡⑤','卡④','卡⑤'];
+  var SPEAK_W4=['','卡⑤','卡⑧(靶:直宾+配合)','卡⑤','卡⑧(靶:ne)','卡⑤','卡⑧(靶:间宾)'];
+  var SPEAK_W5=['','卡⑥','卡⑧(靶:自反过去)','卡⑥','卡⑧(靶:命令式)','卡⑤(复访)','卡⑦ CILS模拟 #1'];
+  var SPEAK_W6=['','卡⑥','卡⑧(靶:条件式)','卡⑤','独白抽题演练(30秒准备说3分钟)','卡⑥','卡⑦ CILS模拟 #2'];
+  var D = {
+    '2026-07-16':{rest:true, msg:'明天开战。今晚只做一件事:把Anki装好、把《新视线1》放到书桌上。'},
+    '2026-07-17':{w:'Mi presento — 5句自我介绍,约40词',s:'可选 卡① 10–15分钟(脱敏)',lite:true},
+    '2026-07-18':{w:'La mia giornata in 5 frasi — 40词',s:'可选 卡① 10–15分钟',lite:true},
+    '2026-07-19':{w:'机动日:补漏或休息(答辩优先)',s:'休',lite:true},
+    '2026-07-20':{w:'Domani ho una presentazione — 25词,全周最轻',s:'可选 卡① 10分钟',lite:true},
+    '2026-07-21':{rest:true, msg:'答辩日。意大利语全休。In bocca al lupo!'},
+    '2026-07-22':{w:'Adesso sono libero — 35词(全用现在时)',s:'卡① 20分钟'},
+    '2026-07-23':{w:'Il mio pianoforte — 35词',s:'卡① 20分钟'},
+    '2026-07-24':{w:'La mia estate — 50词',s:'卡① 20分钟'},
+    '2026-07-25':{w:'周六关卡(变位默写/抽句/50词自我介绍)+ 第0号基线录音',s:'卡① + 1分钟自我介绍录音'},
+    '2026-07-26':{rest:true},
+    '2026-07-27':{w:'Una giornata da studente di musicologia — 55词'},
+    '2026-07-28':{w:'Devo, voglio, posso — 55词'},
+    '2026-07-29':{w:'La mia scrivania — 55词'},
+    '2026-07-30':{w:"Xi'an, la mia città — 60词"},
+    '2026-07-31':{w:'Che cosa ascolto — 60词'},
+    '2026-08-01':{w:"Un'email a un professore italiano — 60词 + 周六关卡"},
+    '2026-08-02':{rest:true},
+    '2026-08-03':{w:'Ieri — 65词(两种助动词混用)'},
+    '2026-08-04':{w:'La mia difesa — 70词(复盘答辩日)'},
+    '2026-08-05':{w:"L'ultima opera che ho ascoltato — 70词"},
+    '2026-08-06':{w:'Come ho scoperto Busoni — 70词'},
+    '2026-08-07':{w:'Una settimana di studio — 75词'},
+    '2026-08-08':{w:'Un viaggio — 75词 + 周六关卡(PP十句+口述60秒)'},
+    '2026-08-09':{rest:true},
+    '2026-08-10':{w:'Da bambino — 80词(imperfetto)'},
+    '2026-08-11':{w:'Il giorno della difesa 2.0 — 85词(背景+事件)'},
+    '2026-08-12':{w:'Mentre studiavo… — 80词'},
+    '2026-08-13':{w:"La prima volta all'opera — 85词"},
+    '2026-08-14':{w:'Busoni da giovane — 85词'},
+    '2026-08-15':{w:'Prima e adesso — 90词 + 周六关卡(时态翻译+二选一)'},
+    '2026-08-16':{rest:true},
+    '2026-08-17':{w:"L'ho già fatto — 90词(代词自答)"},
+    '2026-08-18':{w:'La partitura sul mio tavolo — 90词'},
+    '2026-08-19':{w:'Il mio relatore — 95词(间宾代词)'},
+    '2026-08-20':{w:'Bilancio del mio italiano — 95词(ne)'},
+    '2026-08-21':{w:'Un regalo musicale — 95词 · 晚:让Claude出明天的20句翻译题'},
+    '2026-08-22':{w:'Intervista immaginaria a Busoni — 100词 + 周六关卡(20句翻译+p.181代词)'},
+    '2026-08-23':{rest:true},
+    '2026-08-24':{w:'La mia routine, versione riflessiva — 100词(写作放宽到30分钟)'},
+    '2026-08-25':{w:'Stamattina — 100词(自反过去时)'},
+    '2026-08-26':{w:'Come si studia la musicologia — 105词(无人称si)'},
+    '2026-08-27':{w:"Consigli per l'esame B2 — 105词(命令式)"},
+    '2026-08-28':{w:"Come ascoltare un'opera per la prima volta — 110词"},
+    '2026-08-29':{w:'Una domenica a Xi\'an — 110词 + 周六关卡 + CILS模拟#1'},
+    '2026-08-30':{rest:true},
+    '2026-08-31':{w:'Il prossimo semestre — 110词(futuro)'},
+    '2026-09-01':{w:'Se passerò il B2… — 115词(一类条件句)'},
+    '2026-09-02':{w:'Vorrei studiare in Italia — 115词(condizionale)'},
+    '2026-09-03':{w:"Un'email formale a un archivio — 115词(正式语域)"},
+    '2026-09-04':{w:'Il mio futuro da musicologo — 120词'},
+    '2026-09-05':{w:'上午:总装题 Il mio percorso con l\'italiano — 120词 · 下午:期末三关'},
+    '2026-09-06':{rest:true, msg:'毕业。把9/5的录音和7/25的基线放在一起听——那就是你的暑假。Complimenti, dottore.'}
+  };
+  function speakFor(dISO, dow){
+    if(dISO>='2026-07-27' && dISO<='2026-08-02') return SPEAK_W1[dow]||'';
+    if(dISO>='2026-08-03' && dISO<='2026-08-09') return SPEAK_W2[dow]||'';
+    if(dISO>='2026-08-10' && dISO<='2026-08-16') return SPEAK_W3[dow]||'';
+    if(dISO>='2026-08-17' && dISO<='2026-08-23') return SPEAK_W4[dow]||'';
+    if(dISO>='2026-08-24' && dISO<='2026-08-30') return SPEAK_W5[dow]||'';
+    if(dISO>='2026-08-31' && dISO<='2026-09-06') return SPEAK_W6[dow]||'';
+    return '';
+  }
+  var WEEKS=[['2026-07-17','2026-07-26','SETTIMANA 0 · 低火重启'],
+             ['2026-07-27','2026-08-02','SETTIMANA 1 · 现在时提速'],
+             ['2026-08-03','2026-08-09','SETTIMANA 2 · 开口讲过去'],
+             ['2026-08-10','2026-08-16','SETTIMANA 3 · 背景与事件'],
+             ['2026-08-17','2026-08-23','SETTIMANA 4 · 代词攻坚'],
+             ['2026-08-24','2026-08-30','SETTIMANA 5 · 自反与命令式'],
+             ['2026-08-31','2026-09-06','SETTIMANA 6 · 总装与验收']];
+  var CHECKS=[
+    'Anki 句卡 ≤80张(15\')','错句重写:昨日笔误+口误(10\')','变位冲刺方阵(15\')',
+    '语法回锅·闭卷造句(20\')','当日写作 → Claude批改 → 收割入库(55\')',
+    '影子跟读 5遍法(15\')','gpt-live 当日卡 + Facciamo il punto(30\')',
+    '练习册 / 周六=关卡(45\')','晚间阅读转输出 + 清点(45\')'];
+  var LITE_CHECKS=['变位默写(5\')','微写作(15\')','朗读录音(3\')','可选:卡①口语脱敏(10–15\')'];
+
+  var card = document.getElementById('oggi-card');
+  var d = D[tISO];
+  var dow = today.getDay(); // 0=Sun
+  var wLabel=''; for(var i=0;i<WEEKS.length;i++){ if(tISO>=WEEKS[i][0]&&tISO<=WEEKS[i][1]) wLabel=WEEKS[i][2]; }
+  var dateStr = (today.getMonth()+1)+'月'+today.getDate()+'日 · 周'+'日一二三四五六'.charAt(dow);
+  var giorniIt=['domenica','lunedì','martedì','mercoledì','giovedì','venerdì','sabato'];
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  if(tISO>'2026-09-06'){
+    card.innerHTML='<div class="riposo"><b>La campagna è finita.</b><br>暑期战役已结束——转入「开学以后」的维持轨道:每天Anki 20分钟、每周3次口语、每周2篇写作、《新视线2》推进。下一个闹钟:9月中旬CILS摸底。</div>';
+  } else if(tISO<'2026-07-16'){
+    card.innerHTML='<div class="riposo"><b>开战日:7月17日。</b><br>第一项任务:Mi presento,5句自我介绍。</div>';
+  } else if(d && d.rest){
+    card.innerHTML='<div class="oggi-head"><span class="data">'+giorniIt[dow]+'</span><span>'+dateStr+'</span><span class="settimana">'+wLabel+'</span></div>'+
+      '<div class="riposo"><b>RIPOSO — 今天全休。</b><br>'+esc(d.msg||'大脑在休息时固化语法。只许泡耳朵、听歌剧。明天见。')+'</div>';
+  } else if(dow===0){
+    card.innerHTML='<div class="oggi-head"><span class="data">domenica</span><span>'+dateStr+'</span><span class="settimana">'+wLabel+'</span></div>'+
+      '<div class="riposo"><b>RIPOSO — 周日全休(军规第五条)。</b><br>只许泡耳朵、听歌剧。想学习?去听《阿尔莱基诺》,就当没学。</div>';
+  } else {
+    var checks = (d&&d.lite)?LITE_CHECKS:CHECKS;
+    var speak = (d&&d.s)?d.s:speakFor(tISO,dow);
+    var html='<div class="oggi-head"><span class="data">'+giorniIt[dow]+'</span><span>'+dateStr+'</span><span class="settimana">'+(wLabel||'')+'</span></div>'+
+      '<div class="oggi-body"><dl class="oggi-task">'+
+      '<dt>今日写作</dt><dd>'+esc(d?d.w:'见本周卡片')+'</dd>'+
+      (speak?('<dt>今日口语</dt><dd>'+esc(speak)+'</dd>'):'')+
+      ((d&&d.lite)?'<dt>模式</dt><dd>答辩周轻量模式:合计≤40分钟,答辩优先。</dd>':'')+
+      '</dl><div class="checks" id="oggi-checks">';
+    checks.forEach(function(c,i){ html+='<label><input type="checkbox" data-i="'+i+'"><span>'+esc(c)+'</span></label>'; });
+    html+='</div><div class="oggi-progress" id="oggi-progress"></div></div>';
+    card.innerHTML=html;
+
+    var key='voce-'+tISO;
+    var saved=[]; try{ saved=JSON.parse(localStorage.getItem(key)||'[]'); }catch(e){}
+    var boxes=card.querySelectorAll('input[type=checkbox]');
+    function refresh(){
+      var n=0; boxes.forEach(function(b){ b.closest('label').classList.toggle('done',b.checked); if(b.checked)n++; });
+      var p=document.getElementById('oggi-progress');
+      p.textContent = n+' / '+boxes.length+(n===boxes.length?' — Giornata vinta. 今天赢了。':'');
+    }
+    boxes.forEach(function(b,i){
+      if(saved[i]) b.checked=true;
+      b.addEventListener('change',function(){
+        var arr=[]; boxes.forEach(function(x){arr.push(x.checked?1:0);});
+        try{ localStorage.setItem(key,JSON.stringify(arr)); }catch(e){}
+        refresh();
+      });
+    });
+    refresh();
+  }
+})();
+</script>
+
+<script>
+(function(){
+  var t=document.getElementById('theme-toggle'),root=document.documentElement;
+  t.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){cur=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
