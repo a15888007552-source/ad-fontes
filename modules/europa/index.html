@@ -40,8 +40,8 @@ header.mast{padding:18px 4vw 13px;border-bottom:1px solid var(--line);display:fl
 .archive-orbis{position:relative;flex:0 0 auto;width:clamp(58px,6.2vw,78px);aspect-ratio:1;border-radius:50%;padding:3px;background:#0B1113;box-shadow:0 0 0 1px var(--line),0 8px 24px rgba(8,6,4,.18);contain:layout paint}
 .archive-orbis::before,.archive-orbis::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
 .archive-orbis::before{inset:6px;border:1px solid rgba(233,217,168,.34)}
-.archive-orbis::after{inset:-5px;border:1px solid var(--line);border-left-color:transparent;border-bottom-color:var(--acc)}
-.archive-orbis img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;filter:saturate(.88) contrast(1.04)}
+.archive-orbis::after{inset:-7px;border:1px solid rgba(201,162,39,.38);background:repeating-conic-gradient(from 0deg,rgba(233,217,168,.82) 0 1.4deg,transparent 1.4deg 15deg);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));transform-origin:center}
+.archive-orbis img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;filter:saturate(.88) contrast(1.04);transform-origin:center;backface-visibility:hidden}
 .mast .tblock h1{font-family:var(--dfont);font-size:clamp(21px,3vw,32px);margin:0;letter-spacing:.06em;font-weight:600}
 .mast .lat{font-style:italic;color:var(--mut);font-size:13px;letter-spacing:.12em}
 .mast .stats{font:11px var(--sans);letter-spacing:.14em;color:var(--mut);margin-top:3px}
@@ -366,10 +366,13 @@ canvas#net{display:block;width:100%;height:660px;cursor:grab}
   .hero:hover::before{animation:heroSheen 900ms var(--ease-out) both}
 }
 @media(prefers-reduced-motion:no-preference){
-  .archive-orbis img,.intro-orbis img{animation:orbisBreathe 14s ease-in-out infinite alternate;will-change:transform}
-  .archive-orbis::after,.intro-orbis::before{animation:orbisTurn 44s linear infinite;will-change:transform}
+  .archive-orbis img{animation:orbisWheel 22s linear infinite;will-change:transform}
+  .archive-orbis::after{animation:orbisTurn 34s linear infinite reverse;will-change:transform}
+  .intro-orbis img{animation:orbisBreathe 14s ease-in-out infinite alternate;will-change:transform}
+  .intro-orbis::before{animation:orbisTurn 44s linear infinite;will-change:transform}
   .motif::after{animation:motifPass 16s ease-in-out infinite;will-change:transform}
   section.view.on>:first-child{animation:viewArrive var(--motion-view) var(--ease-out) both}
+  @keyframes orbisWheel{to{transform:rotate(1turn)}}
   @keyframes orbisBreathe{from{transform:scale(1.01)}to{transform:scale(1.045)}}
   @keyframes orbisTurn{to{transform:rotate(1turn)}}
   @keyframes motifPass{0%,62%{transform:translate3d(0,0,0) skewX(-18deg)}82%,100%{transform:translate3d(760%,0,0) skewX(-18deg)}}
