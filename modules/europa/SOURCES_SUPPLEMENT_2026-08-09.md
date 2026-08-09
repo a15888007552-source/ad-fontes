@@ -45,3 +45,11 @@
 - 最终提示词要点：`museum-quality copperplate musical cosmograph; exactly seven luminous epoch nodes; concentric orbital staff lines; midnight vellum; oxblood, antique gold and restrained lapis; no text, letters, numerals, human faces, portraits, logos or watermark; clearly original contemporary decorative artwork`。
 - 原始生成图为 1254 × 1254 PNG；网页版本缩为 640 × 640 WebP（质量 82，109,028 bytes，SHA-256 `E56EA35249E2C63D80660ACF339B06E4516938F5AA5BB7CE929E4B01D675D4E7`）。同一资源同时复用于标题纹章和导览页，不额外下载第二张大图。
 - 新增动效限于 `transform` 与 `opacity`：阅读进度线、左上角纹章顺时针匀速轮盘自转与刻度外环慢速反转、导览纹章缓慢呼吸、时代纹样扫光、视图首元素入场和悬停高光；`prefers-reduced-motion: reduce` 时全部停用，标签页进入后台时暂停循环动画。轮盘只复用现有 WebP 与两个合成层，不增加图片或逐帧脚本；原有逐卡片 `mousemove + getBoundingClientRect()` 的三维倾斜已删除，改为 CSS 合成层轻抬升，以减少主线程负担。
+
+## 长文阅读、图谱反馈与按需加载
+
+- 时代导论没有增写新的历史判断，而是把原有三段学术正文重新组织为“本章先读—分层小标题—关键结论”的在线阅读结构。段前摘要与结论均由本页既有正文截取生成，避免摘要层产生一套未经文献支持的新叙述；正文仍保持完整。
+- “史学争鸣”改用原生 `<details>` / `<summary>`：默认显示论题与首句观点摘要，展开后显示完整论据和原有参考文献。键盘与屏幕阅读器可直接识别展开状态，不依赖额外框架。
+- 人物点击统一进入非阻塞的右侧详情抽屉。选中人物、关系邻点、二维关系路径和年表条目共享同一选择状态；详情面板记录选择来源，并提供“在地图中定位”“在年表中定位”“在星图中定位”三条跨视图动作。地图的行迹状态、检索无结果、术语空筛选、二维图谱加载失败和 WebGL 不可用均有文字说明与恢复按钮。
+- 原先内嵌于 HTML 的 D3 v7.9.0 与 3d-force-graph v1.80.0 供应商代码拆为 `assets/js/d3.v7.9.0.min.js` 和 `assets/js/3d-force-graph-1.80.0.min.js`；经换行归一化比对，脚本内容与拆分前一致，没有改写第三方库。D3 仅在首次进入“星丛”视图时载入，3D 库仅在主动点击“立体星丛”后载入；资源保持本地同源，不增加 CDN 依赖。
+- 拆分前 `index.html` 为 2,543,215 bytes；完成本轮阅读与交互改造后为 975,504 bytes，仍比原文件少 1,567,711 bytes。二维星图只为重点人物或高关系度节点建立肖像纹理，同步预迭代由 160 次降为 90 次；3D 取消每 30 ms 永久转动镜头，改为有界预热/冷却，并在离开星图视图时暂停渲染。所有 HTML 图片统一采用异步解码，非首屏人物与城市图继续懒加载。
