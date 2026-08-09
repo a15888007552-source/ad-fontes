@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Musica Theorica · 乐理 — Ad Fontes</title>
-<meta name="description" content="偏学术的乐理:古希腊乐学、调式与调性、记谱法的演化、特殊调式与二十世纪。以字母音阶(可点击、钢琴音色)与史料图讲解,每栏附脉络图。">
+<meta name="description" content="一座可听、可操作、可溯源的音乐理论工坊：声音与调律、调式与调性、和声与声部、节奏与形式、记谱史、特殊音阶及二十世纪分析。">
 <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/theory/index.html">
 <link rel="icon" href="../../favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Musica Theorica · 乐理">
-<meta property="og:description" content="古希腊乐学 · 调式与调性 · 记谱法的演化 · 特殊调式 · 二十世纪。字母音阶可点击发声,史料图溯源。">
+<meta property="og:description" content="从声波、调律和节拍出发，通向调式、和声、形式、记谱与后调性分析；七条路径，图示可操作，概念可听见。">
 <style>
 :root{
   --paper:#f6f1e7;--ink:#201c17;--mut:#6b6157;--line:#d9cfbe;--rubric:#8c2b1f;
@@ -39,10 +39,12 @@ header{text-align:center;margin-bottom:1.1rem}
 .lede{color:var(--mut);font-style:italic;text-align:center;max-width:56ch;margin:1rem auto 0;font-size:.97rem}
 .rule{width:56px;height:1px;background:var(--line);border:0;margin:1.3rem auto;position:relative}
 .rule::after{content:"❧";position:absolute;top:-.85em;left:50%;transform:translateX(-50%);color:var(--rubric);background:var(--paper);padding:0 .5rem;font-size:.85rem}
-nav.tabs{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -1rem 1.4rem;padding:.5rem 1rem;display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center}
+nav.tabs{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:0 -1rem 1.4rem;padding:.5rem 1rem;display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center}
 nav.tabs button{font-family:var(--sans);font-size:.82rem;letter-spacing:.03em;background:transparent;border:1px solid transparent;color:var(--mut);padding:.4rem .75rem;border-radius:3px;cursor:pointer}
 nav.tabs button:hover{color:var(--ink)}
 nav.tabs button.on{color:var(--ink);background:var(--card);border-color:var(--cardline);box-shadow:inset 0 -2px 0 var(--rubric)}
+nav.tabs button:focus-visible,.play:focus-visible,.pick button:focus-visible,.route:focus-visible,.lab-btn:focus-visible,.form-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media(max-width:720px){nav.tabs{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}nav.tabs button{flex:0 0 auto;min-height:42px}}
 .finder{border:1px solid var(--cardline);background:color-mix(in srgb,var(--card) 88%,transparent);padding:1rem;margin:0 0 1.6rem;border-radius:5px}
 .findtop{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:.75rem;align-items:center}
 .findtop input{width:100%;font:1rem var(--sans);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:.72rem .85rem}
@@ -122,11 +124,51 @@ table.sc .num{font-family:var(--mono);color:var(--acc);letter-spacing:.08em}
 .matrix td.d{background:color-mix(in srgb,var(--gold) 20%,transparent);color:var(--ink);font-weight:700}
 .refs{font-size:.82rem;color:var(--mut);line-height:1.75;max-width:80ch}
 .refs b{color:var(--ink)}
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:0 0 1.25rem}
+.route{appearance:none;text-align:left;border:1px solid var(--cardline);background:var(--card);color:var(--ink);padding:.8rem .9rem;cursor:pointer;border-radius:4px;min-height:92px;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.route:hover{transform:translateY(-2px);border-color:var(--rubric)}
+.route b{display:block;font:.78rem var(--sans);letter-spacing:.12em;color:var(--rubric);margin-bottom:.25rem}
+.route span{font-size:.82rem;line-height:1.55;color:var(--mut)}
+@media(max-width:720px){.routes{grid-template-columns:1fr}.route{min-height:0}}
+.labgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:1.2rem 0}
+.lab{border:1px solid var(--cardline);background:var(--card);border-radius:4px;padding:1rem;min-width:0}
+.lab h4{margin:0 0 .35rem}
+.lab p{font-size:.88rem;color:var(--mut);margin:.35rem 0 .8rem}
+.lab-wide{grid-column:1/-1}
+@media(max-width:760px){.labgrid{grid-template-columns:1fr}.lab-wide{grid-column:auto}}
+.lab-actions{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.lab-btn,.form-btn{font:700 .76rem var(--sans);letter-spacing:.03em;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:3px;padding:.43rem .65rem;cursor:pointer;min-height:38px}
+.lab-btn:hover,.lab-btn.on,.form-btn:hover,.form-btn.on{border-color:var(--rubric);color:var(--rubric);background:color-mix(in srgb,var(--rubric) 7%,var(--paper))}
+.readout{font:.78rem/1.65 var(--sans);color:var(--mut);border-top:1px solid var(--cardline);margin-top:.8rem;padding-top:.65rem;min-height:2.6rem}
+.readout b{color:var(--ink)}
+.partials{display:grid;grid-template-columns:repeat(12,minmax(34px,1fr));gap:.28rem;align-items:end;min-height:190px;margin:.8rem 0}
+.partial{appearance:none;border:1px solid var(--cardline);background:linear-gradient(to top,color-mix(in srgb,var(--acc) 34%,var(--card)) var(--h),var(--card) var(--h));color:var(--ink);border-radius:3px;padding:.4rem .12rem;height:calc(58px + var(--h));cursor:pointer;font:700 .68rem/1.3 var(--sans);display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:.2rem}
+.partial span{color:var(--mut);font-size:.58rem;font-weight:500}
+.partial:hover{border-color:var(--rubric)}
+@media(max-width:720px){.partials{grid-template-columns:repeat(6,1fr);min-height:0}.partial{height:110px}}
+.compare{display:grid;grid-template-columns:auto 1fr;gap:.28rem .75rem;align-items:baseline;font:.8rem var(--sans)}
+.compare dt{color:var(--rubric);font-weight:700}.compare dd{margin:0;color:var(--mut)}
+.chordbank{display:grid;grid-template-columns:repeat(7,minmax(54px,1fr));gap:.35rem}
+@media(max-width:640px){.chordbank{grid-template-columns:repeat(4,1fr)}}
+.voicegrid{display:grid;grid-template-columns:56px repeat(3,1fr);border:1px solid var(--cardline);font:.78rem var(--sans);margin:.7rem 0}
+.voicegrid>*{padding:.42rem;border-right:1px solid var(--cardline);border-bottom:1px solid var(--cardline);text-align:center}
+.voicegrid>*:nth-child(4n){border-right:0}.voicegrid .head{background:color-mix(in srgb,var(--gold) 10%,var(--card));font-weight:700;color:var(--ink)}
+.meter-stage{display:flex;gap:.35rem;align-items:end;min-height:76px;margin:.65rem 0}
+.pulse{flex:1;min-width:18px;height:42px;background:var(--line);border-radius:2px;transform-origin:bottom;transition:height .15s ease,background .15s ease}
+.pulse.strong{height:70px;background:var(--rubric)}.pulse.group{height:56px;background:var(--gold)}
+.poly{display:grid;gap:.5rem;margin:.7rem 0}.poly-row{display:grid;gap:.35rem}.poly-row.three{grid-template-columns:repeat(3,1fr)}.poly-row.two{grid-template-columns:repeat(2,1fr)}.poly-row i{display:block;height:14px;border-radius:99px;background:var(--acc);opacity:.8}.poly-row.two i{background:var(--rubric)}
+.formmap{display:flex;gap:.28rem;align-items:stretch;overflow-x:auto;margin:.75rem 0;padding-bottom:.25rem}
+.formcell{min-width:82px;min-height:70px;border:1px solid var(--cardline);background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.4rem;text-align:center;font:700 .78rem var(--sans);color:var(--ink)}
+.formcell small{font-weight:400;color:var(--mut);margin-top:.2rem}.formarr{align-self:center;color:var(--gold)}
+.research-note{margin:2.5rem 0 0;border:1px solid var(--cardline);background:var(--card);padding:1rem 1.1rem;border-radius:4px}
+.research-note summary{cursor:pointer;font:700 .82rem var(--sans);letter-spacing:.08em;color:var(--rubric)}
+.research-note ol{padding-left:1.25rem;margin:.8rem 0 0}.research-note li{margin:.5rem 0;font-size:.83rem;color:var(--mut)}.research-note a{font-weight:600}
 footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-align:center;color:var(--mut);font-size:.8rem;line-height:1.9}
 .toggle{position:fixed;top:.8rem;right:.8rem;background:var(--paper);border:1px solid var(--line);color:var(--mut);border-radius:2px;padding:.3rem .55rem;font:inherit;font-size:.72rem;cursor:pointer;letter-spacing:.1em;z-index:30}
 .toggle:hover{border-color:var(--rubric);color:var(--rubric)}
 .hint{font-family:var(--sans);font-size:.75rem;color:var(--mut);font-style:normal}
 .gletters{font-family:var(--mono);letter-spacing:.15em;color:var(--acc)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
@@ -136,36 +178,109 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
   <header>
     <h1 class="mast">Musica&nbsp;Theorica<span class="dot">.</span></h1>
     <p class="mast-cn">乐 理</p>
-    <p class="lede">不作零基础普及,而以史与论为经纬。音阶以字母呈示,点击任意音名或「▶」即可听见(钢琴音色);每栏首列脉络图,可点跳转。</p>
+    <p class="lede">不是一张术语清单，而是一座把声音材料、历史制度与分析方法接起来的工坊。七条路径均可检索；标有「▶」的频率、音程、和弦与节拍可以直接听见。</p>
     <hr class="rule">
   </header>
 
   <nav class="tabs" id="tabs">
-    <button data-v="mode" class="on">调式与调性</button>
+    <button data-v="foundation" class="on">声音与调律</button>
+    <button data-v="mode">调式与调性</button>
+    <button data-v="harmony">和声与声部</button>
+    <button data-v="rhythm">节奏与形式</button>
     <button data-v="notation">记谱法的演化</button>
     <button data-v="special">特殊调式</button>
     <button data-v="c20">二十世纪的转变</button>
   </nav>
 
+  <div class="routes" aria-label="三条阅读路径">
+    <button class="route" data-route="foundation"><b>01 · 从耳朵出发</b><span>频率与泛音 → 音程与调律 → 调式 → 和声。先听出材料，再学习名称。</span></button>
+    <button class="route" data-route="notation"><b>02 · 沿历史阅读</b><span>古希腊字母谱 → 纽姆与谱线 → 有量记谱 → 调性与现代声音。</span></button>
+    <button class="route" data-route="harmony"><b>03 · 为分析而读</b><span>声部进行 → 终止式与形式功能 → 音级集合 → 十二音序列。</span></button>
+  </div>
+
   <section class="finder" aria-label="乐理检索">
     <div class="findtop">
-      <input id="finder" type="search" autocomplete="off" placeholder="检索: 调式 / 纽姆 / 六声 / 五度圈 / 十二音 / 音色 / 凯奇...">
+      <input id="finder" type="search" autocomplete="off" placeholder="检索：泛音 / 调律 / 终止式 / 复节奏 / 纽姆 / 十二音 / 音色…">
       <div class="findcount" id="findcount">输入关键词, 或点下面的问题轴</div>
     </div>
     <div class="findchips" id="findchips">
+      <button data-q="频率 泛音 音程 调律">声音/调律</button>
       <button data-q="调式 调性">调式/调性</button>
+      <button data-q="和声 声部 终止式">和声/声部</button>
+      <button data-q="节奏 节拍 形式">节奏/形式</button>
       <button data-q="记谱 纽姆 圭多 有量">记谱史</button>
       <button data-q="音阶 梅西安 巴托克 泛音">特殊音阶</button>
       <button data-q="十二音 序列 集合">后调性</button>
-      <button data-q="音色 噪音 电子 机遇">现代声音</button>
-      <button data-q="图示 播放">有图/可听</button>
+      <button data-q="图示 可听 播放">有图/可听</button>
     </div>
     <div class="results" id="results"></div>
   </section>
 
   <main>
+  <!-- ════════════ 声音与调律 ════════════ -->
+  <section class="view on" id="v-foundation">
+    <h2 class="sec"><span class="en">Sonus &amp; Temperamentum</span>声音与调律</h2>
+    <div class="flow" data-flow='[["振动与频率","f-sound"],["泛音列","f-harmonics"],["音程","f-interval"],["调律与音律","f-tuning"],["音色","f-timbre"]]'></div>
+    <p class="abstract">乐理并不从纸上的 C 大调开始，而从一个更根本的问题开始：连续的声波怎样被听成有高低、有色彩、可重复的“音”？<em class="term">频率</em>提供音高的物理坐标，<em class="term">泛音结构</em>参与塑造音色，<em class="term">音程</em>描述两个音的关系，而<em class="term">调律</em>决定这些关系在一件乐器上如何取舍。这里先把“自然声学”与“历史制度”分开，再说明二者怎样相遇。</p>
+
+    <h3 id="f-sound">一、一个音不是一条线：频率、响度、音色与时间</h3>
+    <p>在理想条件下，频率是每秒振动次数，以赫兹（Hz）计；A4=440 Hz 表示一秒约振动 440 次。频率加倍通常被听作升高一个八度，所以音高知觉更接近<b>比值与对数</b>，而非频率的等差。响度主要与振幅和听觉响应有关；音色则涉及频谱包络、起音、衰减、噪声成分和演奏方式。把“音高、响度、音色、时值”当成彼此独立的四个旋钮，只是一种分析便利，真实声音会让它们相互牵动。</p>
+    <div class="def"><b>辨析。</b>“基频”是周期声中最低的共同频率；“第一泛音”通常指基频以上的下一个分音，也就是<b>第二谐波</b>。中文写作中“泛音”“谐波”“分音”经常混用，本站在图中统一写“第 n 分音 / n 倍频”，避免编号错一位。</div>
+
+    <h3 id="f-harmonics">二、泛音列：同一音里的纵深</h3>
+    <p>近似周期的乐音可以分解为基频 <i>f</i> 与整数倍频 2<i>f</i>、3<i>f</i>、4<i>f</i>……的叠加。第 2、3、4、5、6 分音依次勾勒出八度、五度与大三和弦的近似轮廓，但真实乐器并不都严格“谐和”：厚弦、钟、锣与许多打击乐器的分音会偏离整数倍。泛音列因此不是一套命令所有音乐遵守的“自然和声法”，而是解释周期声、音色与若干协和关系的重要声学模型。</p>
+    <div class="fig" id="harmonic-lab">
+      <div class="partials" id="partials" aria-label="前十二个分音，可点击试听"></div>
+      <div class="lab-actions"><button class="play" id="play-partials">▶ 依次听 1–12 分音</button><button class="play alt" id="stack-partials">▶ 叠成一个音色</button></div>
+      <div class="readout" id="partial-readout">基音取 C2≈65.41 Hz。每一柱给出分音序号、最近的十二平均律音名及偏差；点柱可单听。</div>
+      <div class="cap"><b>泛音列不是十二平均律音阶。</b>第 7、11 分音与钢琴键上的最近音相差明显；这正说明“自然倍频”与“固定十二键”的坐标并不重合。</div>
+    </div>
+
+    <h3 id="f-interval">三、音程：距离、比值与拼写</h3>
+    <p>“音程”至少有三层含义：谱面上按字母名计数的<b>级数</b>（C–E 是三度），半音数量决定的<b>性质</b>（C–E♭ 是小三度，C–E 是大三度），以及声学上的<b>频率比</b>。在十二平均律里，一个半音的频率比恒为 2<sup>1/12</sup>；在纯律里，同名音程可能取 3:2、5:4、6:5 等简单比。三种描述回答的问题不同，不宜互相替代。</p>
+    <div class="labgrid">
+      <div class="lab">
+        <h4>音程实验台</h4>
+        <p>先选音程，再比较“先后出现”的旋律音程与“同时出现”的和声音程。</p>
+        <div class="lab-actions" id="interval-picks"></div>
+        <div class="lab-actions" style="margin-top:.55rem"><button class="play" id="interval-melodic">▶ 旋律</button><button class="play alt" id="interval-harmonic">▶ 和声</button></div>
+        <div class="readout" id="interval-readout"></div>
+      </div>
+      <div class="lab">
+        <h4>转位不是倒放</h4>
+        <p>把低音移高八度，音程级数相加为九：三度转为六度、四度转为五度。完全音程仍为完全；大与小互换；增与减互换。</p>
+        <dl class="compare">
+          <dt>m3 ↔ M6</dt><dd>小三度与大六度，半音数 3 ↔ 9</dd>
+          <dt>M3 ↔ m6</dt><dd>大三度与小六度，半音数 4 ↔ 8</dd>
+          <dt>P4 ↔ P5</dt><dd>纯四度与纯五度，半音数 5 ↔ 7</dd>
+          <dt>A4 ↔ d5</dt><dd>增四度与减五度，钢琴上等音但拼写和功能不同</dd>
+        </dl>
+      </div>
+    </div>
+
+    <h3 id="f-tuning">四、调律：不能同时满足的圆</h3>
+    <p>若连续叠置十二个纯五度（3:2）再折回同一音区，结果不会恰好等于七个八度（2:1）；二者相差约 23.46 音分，即“毕达哥拉斯音差”。键盘若要在十二个调上都可用，就必须分配这份误差。十二平均律把八度等分为十二份，使每个半音都取 2<sup>1/12</sup>；它换来转调对称，却让除八度外的音程都略偏离简单整数比。</p>
+    <div class="fig labgrid">
+      <div class="lab">
+        <h4>大三度：5:4 与 12-TET</h4>
+        <p>纯律大三度约 386.31 音分；十二平均律大三度为 400 音分，相差约 13.69 音分。</p>
+        <div class="lab-actions"><button class="lab-btn" data-tune="third-just">▶ 纯律 5:4</button><button class="lab-btn" data-tune="third-et">▶ 平均律 400¢</button></div>
+      </div>
+      <div class="lab">
+        <h4>纯五度：3:2 与 12-TET</h4>
+        <p>纯五度约 701.96 音分；十二平均律五度为 700 音分，误差较小，约 1.96 音分。</p>
+        <div class="lab-actions"><button class="lab-btn" data-tune="fifth-just">▶ 纯律 3:2</button><button class="lab-btn" data-tune="fifth-et">▶ 平均律 700¢</button></div>
+      </div>
+      <div class="cap lab-wide"><b>应听什么？</b>比较持续音中的拍频与粗糙度，而不是把某一种调律简单判成“好听”或“正确”。合唱、弦乐、管风琴、钢琴与电子音乐面对的是不同的可调性、音色与转调条件。</div>
+    </div>
+
+    <h3 id="f-timbre">五、音色：频谱之外还有起音</h3>
+    <p>两个声音即使基频相同，只要各分音的强弱、噪声比例或起音形态不同，听感就会不同。钢琴的锤击瞬态、单簧管低音区偏强的奇数分音、弓弦的持续驱动，都参与塑造音色。二十世纪的配器、电子音乐与频谱音乐，正是把传统乐理常当作“外衣”的音色，提升为可组织的结构参数。</p>
+    <div class="refs"><b>本栏在线据本：</b><a href="https://phys.unsw.edu.au/jw/musFAQ.html">新南威尔士大学 Music Acoustics</a> 对频率、泛音与平均律的说明；<a href="https://viva.pressbooks.pub/openmusictheory/chapter/intervals/">Open Music Theory：Intervals</a>。公式与音分值由编者按定义计算，试听由浏览器实时合成。</div>
+  </section>
+
   <!-- ════════════ 调式与调性 ════════════ -->
-  <section class="view on" id="v-mode">
+  <section class="view" id="v-mode">
     <h2 class="sec"><span class="en">Modus &amp; Tonalitas</span>调式与调性</h2>
     <div class="flow" data-flow='[["古希腊乐学","g-greek"],["八教会调式","g-medieval"],["格拉雷安十二调式","g-glarean"],["调式→调性","g-tonality"]]'></div>
     <p class="abstract">"调式"与"调性"常被混用,却是两套组织原则。<em class="term">调式</em>(modus)是旋律性的:由一批音级、一个作为归宿的<em class="term">结音</em>(finalis)与一段音域(ambitus)界定;<em class="term">调性</em>(tonalitas)是和声性的:以主音为引力中心,由和弦的<b>功能</b>(主—下属—属)驱动张力与解决。西方乐理的这条主线,起于古希腊人对"数"与"音"的思辨。</p>
@@ -227,12 +342,117 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
     <h3 id="g-tonality">四、从调式到调性:功能和声的生成(科雷利—拉莫)</h3>
     <p>真正的转变不在音阶,而在<b>和声获得了功能</b>。约 1680–1720 年,<em class="term">科雷利</em>(Arcangelo Corelli)在其三重奏鸣曲与《大协奏曲》(Op. 6)中,以清晰的<b>属—主</b>进行、模进与终止式,把和声写成有方向、会"回家"的语法——他常被称作"调性句法之父"。其《小提琴奏鸣曲》Op. 5(1700)风行全欧,成为大小调语汇的范本。</p>
     <div class="fig"><figure class="hist" id="nota-corelli"></figure><div class="cap"><b>科雷利《小提琴奏鸣曲》Op. 5 No. 3(1700)。</b>清晰的功能低音与终止式,是成熟大小调语法的早期典范;数字低音标记着和声的功能骨架。</div></div>
-    <p>1722 年,<em class="term">拉莫</em>(Rameau)《和声学》为这套实践提供了理论:以<em class="term">基础低音</em>(basse fondamentale)与和弦转位说明,一切和声可归为主(T)、下属(S)、属(D)三种功能的运动。达尔豪斯《和声调性之生成研究》则提醒:modality 向 tonality 的过渡渐进而多线,不可读作单一"发现"。其结果是<em class="term">调性</em>——以主音为引力中心的功能层级,并以<b>五度圈</b>为其调空间的地图。</p>
+    <p>1722 年，<em class="term">拉莫</em>（Rameau）《和声学》以<em class="term">基础低音</em>（basse fondamentale）和和弦转位，为既有实践提供了新的理论统一；今日常说的 T–S–D 三功能标签，则主要由十九世纪里曼功能论系统化，不能倒写成拉莫原有的完整体系。达尔豪斯《和声调性之生成研究》进一步提醒：modality 向 tonality 的过渡渐进而多线，不可读作某一人的单一“发现”。成熟调性最终形成以主音为中心、由和声与终止建立层级的调空间；五度圈只是这张空间的一种地图。</p>
     <div class="fig">
       <div class="svgwrap"><div id="cof"></div></div>
       <div class="ctrls"><button class="play alt" data-play="fifths">▶ 沿五度圈上行</button></div>
       <div class="cap"><b>五度圈。</b>外圈大调、内圈其关系小调(共用调号);顺时针每步加一升号,逆时针每步加一降号。点任一调听其主三和弦。它把十二律统一为一个封闭的功能系统。</div>
     </div>
+  </section>
+
+  <!-- ════════════ 和声与声部 ════════════ -->
+  <section class="view" id="v-harmony">
+    <h2 class="sec"><span class="en">Harmonia &amp; Ductus Vocum</span>和声与声部</h2>
+    <div class="flow" data-flow='[["复调与对位","h-counterpoint"],["和弦与转位","h-chords"],["功能与终止","h-function"],["声部进行","h-voice"],["离调与半音化","h-chromatic"]]'></div>
+    <p class="abstract">和声不是“若干和弦名称的总和”。它同时描述三个层面：垂直方向上哪些音组成一个和弦，水平方向上每个声部怎样移动，以及更长时间尺度上某个和弦承担何种句法功能。只看罗马数字会丢掉声部；只看声部又可能看不见调性方向。分析的任务是在两者之间往返。</p>
+
+    <h3 id="h-counterpoint">一、先有线，后有块：对位与和声的两种视角</h3>
+    <p>文艺复兴复调首先把音乐理解为多条旋律线的协调：协和与不协和受拍位、预备和解决约束，纵向和弦常是声部相遇的结果。通奏低音实践、和弦转位观与十八世纪基础低音理论，才逐步强化“和弦作为单位”的听觉。二者不是前后替代：巴赫的音乐既能按声部进行阅读，也能按功能低音阅读；真正有解释力的分析通常同时保留这两张图。</p>
+    <div class="def"><b>四套常被混为一谈的语言。</b>扎利诺与富克斯式对位讨论声部关系；数字低音提示低音之上的音程配置；拉莫以基础低音和转位把同一和弦归为一个根音；十九世纪罗马数字与里曼功能论又分别强调音级位置和 T–S–D 功能。它们的历史、对象与用途不同。</div>
+
+    <h3 id="h-chords">二、和弦、三和弦与转位</h3>
+    <p>在大小调语境中，三和弦可由隔级叠置的三个音构成。C 大调七个音级上的自然三和弦依次为：大、小、小、大、大、小、减。根音并不等同于最低音；把三音或五音置于低声部只改变<b>转位</b>，不改变和弦身份。这个“等价类”观念是拉莫基础低音理论的重要一步。</p>
+    <div class="fig">
+      <div class="chordbank" id="chordbank" aria-label="C大调音级三和弦"></div>
+      <div class="readout" id="chord-readout">点按 I–vii°，听 C 大调音级三和弦；再比较同一和弦的原位、第一转位与第二转位。</div>
+      <div class="lab-actions"><button class="lab-btn" data-inversion="0">▶ C–E–G</button><button class="lab-btn" data-inversion="1">▶ E–G–C</button><button class="lab-btn" data-inversion="2">▶ G–C–E</button></div>
+      <div class="cap"><b>“叠三度”是拼写规则，不是声响外形。</b>实际配器中音可以重复、移位、省略；识别和弦要综合音级拼写、低音、声部方向和语境。</div>
+    </div>
+
+    <h3 id="h-function">三、功能与终止：和声怎样成为句法</h3>
+    <p>在普通实践调性中，主功能建立或延长中心，前属功能把音乐导向属，属功能则以导音和五级低音加强归主倾向。但“终止式”并非两个和弦的机械标签；它是一个乐句或段落的<b>和声、旋律、节奏与形式共同抵达</b>的时刻。相同的 V–I 若出现在乐句中部，可能只是一段进行而非终止。</p>
+    <div class="fig labgrid">
+      <div class="lab">
+        <h4>四种终止方向</h4>
+        <div class="lab-actions" id="cadence-picks">
+          <button class="lab-btn" data-cadence="auth">▶ 正格 V–I</button>
+          <button class="lab-btn" data-cadence="half">▶ 半终止 …–V</button>
+          <button class="lab-btn" data-cadence="deceptive">▶ 阻碍 V–vi</button>
+          <button class="lab-btn" data-cadence="plagal">▶ 变格 IV–I</button>
+        </div>
+        <div class="readout" id="cadence-readout">选择一种终止，观察“抵达”是完成、悬置还是转向。</div>
+      </div>
+      <div class="lab">
+        <h4>功能链不是唯一语法</h4>
+        <p>古调式复调、布鲁斯、爵士、流行循环、电影配乐和许多非西方传统，不能被 T–S–D 单一模型充分解释。功能分析有效的前提，是作品确实以主音层级和导向性终止组织时间。</p>
+        <dl class="compare">
+          <dt>Tonic</dt><dd>建立、延长或重新确认中心</dd>
+          <dt>Predominant</dt><dd>离开主功能并准备属功能</dd>
+          <dt>Dominant</dt><dd>制造朝向主音的强烈倾向</dd>
+        </dl>
+      </div>
+    </div>
+
+    <h3 id="h-voice">四、声部进行：每个音都要有去处</h3>
+    <p>“V–I”只告诉我们两个和弦的根音关系；真正被听见的是多个声部各自的路径。常见策略包括保留共同音、让其余声部尽量级进、使导音趋向主音、让七和弦的七音下行解决，并避免声部交叉。它们不是脱离风格的自然法，而是普通实践写作中维持独立线条与清晰功能的约定。</p>
+    <div class="fig">
+      <div class="voicegrid" id="voicegrid" aria-label="I V I四声部进行"></div>
+      <div class="lab-actions"><button class="play" id="play-voices">▶ 听 I–V–I</button><button class="play alt" id="play-soprano">▶ 只听上声部</button></div>
+      <div class="cap"><b>从方块回到线。</b>示例让共同音 G 保留，E→D→E 与 C→B→C 作级进；低音承担 C→G→C 的根音运动。一个好连接不是“和弦按对了”，而是每条线都有可说明的方向。</div>
+    </div>
+
+    <h3 id="h-chromatic">五、离调、转调与半音化</h3>
+    <p><em class="term">离调</em>通常暂时借用另一个音级的属和弦或导和弦，使局部音级短暂获得“像主音一样”的强调；<em class="term">转调</em>则使新调获得足够的结构确认，常伴随枢纽和弦、属功能与终止。十九世纪的增六和弦、拿波里和弦、共同音减七和弦及等音转调，进一步把调性空间拉远。判定“色彩变化”还是“调性更替”，必须看持续时间、终止、主题与形式位置，不能只凭一个临时升降号。</p>
+    <div class="refs"><b>本栏在线据本：</b><a href="https://openmusictheory.github.io/cadenceTypes">Open Music Theory：Classical cadence types</a>；历史原典可对读 <a href="https://gallica.bnf.fr/ark:/12148/btv1b86232459">拉莫《和声学》(1722)，法国国家图书馆</a> 与 <a href="https://digital.library.unt.edu/ark:/67531/metadc25955/">扎利诺《和声教程》(1562)，北德州大学数字馆</a>。</div>
+  </section>
+
+  <!-- ════════════ 节奏与形式 ════════════ -->
+  <section class="view" id="v-rhythm">
+    <h2 class="sec"><span class="en">Rhythmus &amp; Forma</span>节奏与形式</h2>
+    <div class="flow" data-flow='[["脉搏与节奏","r-pulse"],["节拍层级","r-meter"],["加法与复节奏","r-additive"],["超节拍与乐句","r-hypermeter"],["形式功能","r-form"]]'></div>
+    <p class="abstract">节奏不是“音符长短”，形式也不是“字母排列”。节奏组织事件发生的时点与持续，节拍把其中一部分听成强弱循环；乐句、终止与超节拍把循环扩展到数小节；形式则在更长时间里组织陈述、对比、过渡、发展与回归。它们是同一条时间轴上的不同尺度。</p>
+
+    <h3 id="r-pulse">一、脉搏、节奏、拍子与速度</h3>
+    <p><em class="term">脉搏</em>是可感的等时参照；<em class="term">节奏</em>是事件相对于时间的分布；<em class="term">节拍</em>把脉搏组织成周期性的强弱层级；<em class="term">速度</em>说明参照脉搏进行得多快。乐谱上的拍号只是一种记写提示，不能自动保证听者按它感知节拍。切分、延音、弱起和重音错位，正是在“写下的格子”与“听到的重心”之间制造张力。</p>
+
+    <h3 id="r-meter">二、节拍实验台：简单、复合与不对称</h3>
+    <div class="fig">
+      <div class="lab-actions" id="meter-picks"></div>
+      <div class="meter-stage" id="meter-stage" aria-label="节拍重音格"></div>
+      <div class="lab-actions"><button class="play" id="play-meter">▶ 播放一小节</button><button class="play alt" id="play-meter-loop">▶ 播放两小节</button></div>
+      <div class="readout" id="meter-readout"></div>
+      <div class="cap"><b>6/8 不是“六个一样重的八分音符”。</b>它常被听作两拍，每拍三分；5/8、7/8 则常通过 2+3、3+2、2+2+3 等分组获得方向。分组是听觉与演奏的组织，不只是拍号算术。</div>
+    </div>
+
+    <h3 id="r-additive">三、加法节奏、切分与复节奏</h3>
+    <p>加法节奏把一个周期组织成不等长小组，如 3+3+2；切分把事件或延音放在层级较弱的位置，并让它越过预期强拍；复节奏则让两种等分同时成立。下面的 3:2 不是把五个音平均塞进一小节，而是同一时间跨度被一层三等分、另一层二等分。</p>
+    <div class="labgrid">
+      <div class="lab">
+        <h4>加法分组</h4>
+        <div class="lab-actions"><button class="lab-btn" data-group="3,3,2">▶ 3+3+2</button><button class="lab-btn" data-group="2,3">▶ 2+3</button><button class="lab-btn" data-group="2,2,3">▶ 2+2+3</button></div>
+        <div class="readout">每组第一击加重。听同样数量的细分，怎样因边界不同而形成不同方向。</div>
+      </div>
+      <div class="lab">
+        <h4>3:2 复节奏</h4>
+        <div class="poly" aria-hidden="true"><div class="poly-row three"><i></i><i></i><i></i></div><div class="poly-row two"><i></i><i></i></div></div>
+        <div class="lab-actions"><button class="play" id="play-poly">▶ 同时播放 3:2</button></div>
+        <div class="readout">高音每 2/3 秒一次；低音每 1 秒一次；两层在 2 秒后重新重合。</div>
+      </div>
+    </div>
+
+    <h3 id="r-hypermeter">四、超节拍、乐句与终止</h3>
+    <p>强弱关系可以越过小节线：若四小节被听成“强—弱—较强—弱”的更高层循环，每小节便像一个“超拍”。这种<em class="term">超节拍</em>通常不直接写在谱面上，而由和声循环、动机重复、织体变化与终止位置共同提示。乐句扩充、删节与重释会扰动原本规则的四小节感；因此“四小节乐句”是常见规范，不是普遍定律。</p>
+    <div class="def"><b>分析顺序。</b>先标出实际的事件与终止，再提出强弱层级；不要因为看见四小节就预先宣布 4 小节超节拍。节拍与形式首先是听觉假说，谱面只是证据之一。</div>
+
+    <h3 id="r-form">五、形式：身份、功能与过程</h3>
+    <p>形式分析既问“这段材料是不是回来过”（身份），也问“它此刻在做什么”（功能）。主部、对比部是核心材料；引子、连接、展开、尾声则常承担准备、过渡、扰动与收束。下面的字母图只是入口，卡片下方同时给出时间功能，避免把奏鸣曲、回旋曲等压扁成几何模板。</p>
+    <div class="fig">
+      <div class="lab-actions" id="form-picks"></div>
+      <div class="formmap" id="formmap" aria-label="形式功能图"></div>
+      <div class="readout" id="form-readout"></div>
+      <div class="cap"><b>形式不是装盒。</b>同一段落可以同时承担多个功能，边界也可能含混；分析应说明证据——主题、调性、终止、织体、节奏与规模——而不是只贴名称。</div>
+    </div>
+    <div class="refs"><b>本栏在线据本：</b><a href="https://viva.pressbooks.pub/openmusictheory/chapter/meter/">Open Music Theory：Simple Meter and Time Signatures</a>、<a href="https://viva.pressbooks.pub/openmusictheory/chapter/hypermeter2/">Hypermeter</a> 与 <a href="https://viva.pressbooks.pub/openmusictheory/chapter/formal-sections-in-general/">Formal Sections in General</a>。</div>
   </section>
 
   <!-- ════════════ 记谱法的演化 ════════════ -->
@@ -365,15 +585,26 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
     <div class="def"><b>回望这条线。</b>不协和的解放取消了和声的等级 → 无调性取消了主音的引力 → 十二音与序列以新规则重建秩序 → 集合论提供新的分析语言 → 音色、噪音、电子、机遇、频谱则把"音乐材料"从音高一路扩展到<b>一切声音、时间与偶然</b>。二十世纪不是"调性的崩溃",而是音乐把自己能谈论的对象,一再地重新定义。</div>
 
     <div style="margin-top:2rem" class="refs">
-      <b>参考框架</b>　Burkholder/Grout/Palisca《西方音乐史》第 10 版;Taruskin《牛津西方音乐史》;Dahlhaus《和声调性之生成研究》《十九世纪音乐》;Harold S. Powers, "Mode"(New Grove);Olivier Messiaen, <i>Technique de mon langage musical</i>(1944);Ernő Lendvai, <i>Béla Bartók: An Analysis of His Music</i>;Allen Forte, <i>The Structure of Atonal Music</i>;Robert P. Morgan《二十世纪音乐》;古希腊乐学部分参 M. L. West, <i>Ancient Greek Music</i> 及维基相关词条。释义为编者整理,存疑处标注争议。
+      <b>参考框架</b>　Burkholder/Grout/Palisca《西方音乐史》第 10 版；Taruskin《牛津西方音乐史》；Dahlhaus《和声调性之生成研究》《十九世纪音乐》；Harold S. Powers, “Mode”（<i>New Grove</i>）；Olivier Messiaen, <i>Technique de mon langage musical</i>（1944）；Ernő Lendvai, <i>Béla Bartók: An Analysis of His Music</i>；Allen Forte, <i>The Structure of Atonal Music</i>；Robert P. Morgan《二十世纪音乐》；古希腊乐学参 M. L. West, <i>Ancient Greek Music</i>。释义为编者综合整理，存在学术分歧处不作唯一化判断。
     </div>
   </section>
+
+  <details class="research-note">
+    <summary>本次扩充的资料路径与使用边界</summary>
+    <ol>
+      <li><a href="https://viva.pressbooks.pub/openmusictheory/">Open Music Theory, Version 2</a>：用于本科乐理的概念核对与课程结构参照；本站重新组织叙述与交互，不复制其例题或谱例。</li>
+      <li><a href="https://phys.unsw.edu.au/jw/musFAQ.html">UNSW Music Acoustics</a>：用于核对频率、泛音、拍频与十二平均律的声学关系。试听为近似合成，不等同于真实乐器测量。</li>
+      <li><a href="https://www.loc.gov/collections/moldenhauer-archives/articles-and-essays/guide-to-archives/music-history/">美国国会图书馆：Music History from Primary Sources</a>：用于复核纽姆、谱线、有量记谱与早期印刷的历史链条。</li>
+      <li><a href="https://gallica.bnf.fr/ark:/12148/btv1b86232459">Rameau, <i>Traité de l’harmonie</i>（1722）</a>、<a href="https://digital.library.unt.edu/ark:/67531/metadc25955/">Zarlino, <i>Le istitutioni harmoniche</i>（1562）</a>：作为和声理论原典入口；页面中的历史概括仍以现代研究框架解释。</li>
+      <li>十二音、集合论、特殊音阶与二十世纪材料沿用页面所列专著。本站不把分析工具写成作曲家的唯一意图，也不把某一理论体系冒充普遍音乐语法。</li>
+    </ol>
+  </details>
   </main>
 
   <footer>
     Musica Theorica · Ad Fontes<br>
     音阶与和弦为浏览器实时合成(加法钢琴音色);记谱与古希腊史料图取自公有领域抄本、印本与词条(署名见图注)。<br>
-    <span style="color:var(--rubric);font-style:italic">第二稿 · 内容持续校订,欢迎逐条订正</span>
+    <span style="color:var(--rubric);font-style:italic">第三稿 · 2026-08-09 · 内容持续校订，欢迎逐条订正</span>
   </footer>
 </div>
 
@@ -406,6 +637,15 @@ function tone(m,t0,dur,vol){var a=ac();var t=a.currentTime+(t0||0);dur=dur||1.1;
 }
 function seq(ms,step,dur){step=step||0.5;dur=dur||step*1.15;ms.forEach(function(m,i){tone(m,i*step,dur,0.2);});}
 function chord(ms,dur){dur=dur||1.8;ms.forEach(function(m){tone(m,0,dur,0.15);});}
+function toneHz(hz,t0,dur,vol,type){var a=ac();var t=a.currentTime+(t0||0);dur=dur||1.1;vol=vol||0.16;
+  var o=a.createOscillator(),g=a.createGain();o.type=type||'sine';o.frequency.setValueAtTime(hz,t);o.connect(g).connect(a.destination);
+  g.gain.setValueAtTime(0.0001,t);g.gain.linearRampToValueAtTime(vol,t+0.008);g.gain.exponentialRampToValueAtTime(Math.max(.0002,vol*.42),t+Math.min(.14,dur*.3));g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+  o.start(t);o.stop(t+dur+.04);
+}
+function chordHz(hzs,dur){hzs.forEach(function(hz,i){toneHz(hz,0,dur||1.8,.14/(1+i*.16));});}
+function chordAt(ms,t0,dur,vol){ms.forEach(function(m){tone(m,t0,dur||1.25,vol||.12);});}
+function chordSeq(chords,step){step=step||.85;chords.forEach(function(ms,i){chordAt(ms,i*step,step*.95,.11);});}
+function clickTone(t0,accent,pitch){var a=ac(),t=a.currentTime+(t0||0),o=a.createOscillator(),g=a.createGain();o.type='triangle';o.frequency.value=pitch||(accent?1320:880);o.connect(g).connect(a.destination);g.gain.setValueAtTime(accent ? .18 : .09,t);g.gain.exponentialRampToValueAtTime(.0001,t+.075);o.start(t);o.stop(t+.08);}
 /* ---- names ---- */
 var SH=['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
 var FL=['C','D♭','D','E♭','E','F','G♭','G','A♭','A','B♭','B'];
@@ -540,7 +780,68 @@ var AXIS_T=[0,3,6,9],AXIS_D=[7,10,1,4],AXIS_S=[2,5,8,11];
 var MYSTIC=[0,6,10,4,9,2];
 var ROW=[0,11,3,4,8,7,9,5,6,1,2,10];
 function invert(r){var f=r[0];return r.map(function(p){return ((f-(p-f))%12+12)%12;});}
+var INTERVALS=[
+ {n:'m2',zh:'小二度',s:1,ratio:'16:15 / 2^(1/12)'},{n:'M2',zh:'大二度',s:2,ratio:'9:8 / 2^(2/12)'},
+ {n:'m3',zh:'小三度',s:3,ratio:'6:5 / 2^(3/12)'},{n:'M3',zh:'大三度',s:4,ratio:'5:4 / 2^(4/12)'},
+ {n:'P4',zh:'纯四度',s:5,ratio:'4:3 / 2^(5/12)'},{n:'A4',zh:'增四度',s:6,ratio:'√2'},
+ {n:'P5',zh:'纯五度',s:7,ratio:'3:2 / 2^(7/12)'},{n:'m6',zh:'小六度',s:8,ratio:'8:5 / 2^(8/12)'},
+ {n:'M6',zh:'大六度',s:9,ratio:'5:3 / 2^(9/12)'},{n:'m7',zh:'小七度',s:10,ratio:'9:5 / 2^(10/12)'},
+ {n:'M7',zh:'大七度',s:11,ratio:'15:8 / 2^(11/12)'},{n:'P8',zh:'纯八度',s:12,ratio:'2:1'}];
+var curInterval=6;
+var DIATONIC_CHORDS=[
+ {r:'I',n:'C 大',ms:[60,64,67]},{r:'ii',n:'D 小',ms:[62,65,69]},{r:'iii',n:'E 小',ms:[64,67,71]},
+ {r:'IV',n:'F 大',ms:[65,69,72]},{r:'V',n:'G 大',ms:[67,71,74]},{r:'vi',n:'A 小',ms:[69,72,76]},{r:'vii°',n:'B 减',ms:[71,74,77]}];
+var METERS=[
+ {n:'2/4',a:[2,1],d:'简单二拍：两拍一循环，第一拍最强。'},
+ {n:'3/4',a:[2,1,1],d:'简单三拍：一强两弱；圆舞曲常以此为基本拍号。'},
+ {n:'4/4',a:[2,1,1.45,1],d:'简单四拍：第一拍强，第三拍常有次强层级。'},
+ {n:'6/8',a:[2,1,1,1.45,1,1],d:'复合二拍：六个八分细分组织成 3+3，重心在第 1、4 个细分。'},
+ {n:'5/8',a:[2,1,1.45,1,1],d:'不对称五细分：此处示范 2+3；也可按 3+2 组织。'},
+ {n:'7/8',a:[2,1,1.45,1,1.45,1,1],d:'不对称七细分：此处示范 2+2+3，分组可因作品而变。'}];
+var curMeter=3;
+var FORMS={
+ period:{n:'乐句期',cells:[['A1','前句'],['HC','悬置'],['A2','后句'],['PAC','完成']],d:'前句与后句形成问答；关键不只在材料相似，也在半终止与正格终止的不同闭合程度。'},
+ binary:{n:'二部曲式',cells:[['A','陈述·离主'],[':||','反复'],['B','续行·归主']],d:'A、B 两部常各自反复；调性方向与终止比“有没有新主题”更能说明二部关系。'},
+ ternary:{n:'三部曲式',cells:[['A','主部'],['B','对比'],["A′",'回归']],d:'第三段的回归通常不是机械复制；配器、调性、装饰或长度变化可使 A′ 同时具有记忆与更新。'},
+ rondo:{n:'回旋曲式',cells:[['A','叠部'],['B','插部'],['A','回归'],['C','远对比'],['A','回归']],d:'稳定叠部多次返回，插部提供对比；具体作品可能扩成七部或与奏鸣原则结合。'},
+ sonata:{n:'奏鸣原则',cells:[['呈示','对立调区'],['展开','碎片·游移'],['再现','主调重组'],['尾声','可选']],d:'奏鸣曲式不是单纯 ABA：核心是呈示中的调性分化，经过展开后在再现中重新组织并解决。'}
+};
 /* ---- per-tab builders (lazy) ---- */
+function buildFoundation(){
+  var base=65.40639132514966,host=document.getElementById('partials'),read=document.getElementById('partial-readout');
+  for(var n=1;n<=12;n++)(function(k){var hz=base*k,m=69+12*Math.log(hz/440)/Math.LN2,nearest=Math.round(m),cents=(m-nearest)*100;
+    var b=document.createElement('button');b.className='partial';b.style.setProperty('--h',(16+Math.round(72*Math.log(k+1)/Math.log(13)))+'px');b.innerHTML='<b>'+k+'</b>'+nm(nearest)+'<span>'+(cents>=0?'+':'')+cents.toFixed(0)+'¢</span>';
+    b.title='第 '+k+' 分音 · '+hz.toFixed(2)+' Hz';b.onclick=function(){toneHz(hz,0,1.05,.18);read.innerHTML='<b>第 '+k+' 分音</b> · '+hz.toFixed(2)+' Hz · 最近音 '+nm(nearest)+' · 相对十二平均律 '+(cents>=0?'+':'')+cents.toFixed(1)+' 音分';};host.appendChild(b);
+  })(n);
+  document.getElementById('play-partials').onclick=function(){for(var i=1;i<=12;i++)toneHz(base*i,(i-1)*.2,.25,.12/Math.pow(i,.3));};
+  document.getElementById('stack-partials').onclick=function(){for(var i=1;i<=12;i++)toneHz(base*i,0,2,.16/Math.pow(i,1.04));};
+  var picks=document.getElementById('interval-picks');INTERVALS.forEach(function(iv,i){var b=document.createElement('button');b.className='lab-btn';b.textContent=iv.n;b.title=iv.zh;b.onclick=function(){curInterval=i;drawInterval();};picks.appendChild(b);});
+  function drawInterval(){var iv=INTERVALS[curInterval];[].forEach.call(picks.children,function(b,i){b.classList.toggle('on',i===curInterval);});document.getElementById('interval-readout').innerHTML='<b>'+iv.zh+' '+iv.n+'</b> · '+iv.s+' 个半音 · 常见比值/平均律表示：'+iv.ratio+' · C–'+nm(60+iv.s);}
+  document.getElementById('interval-melodic').onclick=function(){var s=INTERVALS[curInterval].s;seq([60,60+s],.62,.7);};
+  document.getElementById('interval-harmonic').onclick=function(){var s=INTERVALS[curInterval].s;chord([60,60+s],1.8);};drawInterval();
+  document.getElementById('v-foundation').addEventListener('click',function(e){var b=e.target.closest('[data-tune]');if(!b)return;var c=261.6255653005986,t=b.dataset.tune,ratio=t.indexOf('third')===0?(t.indexOf('just')>0?5/4:Math.pow(2,4/12)):(t.indexOf('just')>0?3/2:Math.pow(2,7/12));chordHz([c,c*ratio],2.2);});
+}
+function buildHarmony(){
+  var bank=document.getElementById('chordbank'),out=document.getElementById('chord-readout');
+  DIATONIC_CHORDS.forEach(function(x){var b=document.createElement('button');b.className='lab-btn';b.innerHTML='<b>'+x.r+'</b><br><span style="font-weight:400">'+x.n+'</span>';b.onclick=function(){chord(x.ms,1.6);out.innerHTML='<b>'+x.r+' · '+x.n+'</b> · '+x.ms.map(function(m){return nm(m);}).join('–');};bank.appendChild(b);});
+  document.getElementById('v-harmony').addEventListener('click',function(e){var inv=e.target.closest('[data-inversion]');if(inv){var v=+inv.dataset.inversion,sets=[[60,64,67],[64,67,72],[67,72,76]];chord(sets[v],1.7);return;}var c=e.target.closest('[data-cadence]');if(!c)return;
+    var C={auth:{cs:[[62,65,69],[67,71,74,77],[60,64,67,72]],t:'正格终止：前属→属→主，若上声部归主音且两和弦均原位，可形成完全正格终止。'},half:{cs:[[60,64,67],[65,69,72],[67,71,74]],t:'半终止：乐句停在属和弦，方向被悬置，常要求后句继续。'},deceptive:{cs:[[65,69,72],[67,71,74,77],[69,72,76]],t:'阻碍终止：属和弦不归主而转向 vi；导向成立，预期的闭合却被改写。'},plagal:{cs:[[65,69,72],[60,64,67]],t:'变格终止：IV–I 的闭合较少依赖导音；实际终止强度仍取决于旋律、低音与形式位置。'}}[c.dataset.cadence];chordSeq(C.cs,.82);document.getElementById('cadence-readout').textContent=C.t;
+  });
+  var rows=[['声部','I','V','I'],['高声部','E','D','E'],['内声部','C','B','C'],['内声部','G','G','G'],['低声部','C','G','C']],vg=document.getElementById('voicegrid');rows.forEach(function(r,ri){r.forEach(function(x){var d=document.createElement('div');d.textContent=x;if(ri===0||x==='声部')d.className='head';vg.appendChild(d);});});
+  var progression=[[48,60,64,67],[43,59,62,67],[48,60,64,67]];document.getElementById('play-voices').onclick=function(){chordSeq(progression,.9);};document.getElementById('play-soprano').onclick=function(){seq([64,62,64],.9,1);};
+}
+function buildRhythm(){
+  var picks=document.getElementById('meter-picks'),stage=document.getElementById('meter-stage'),read=document.getElementById('meter-readout');
+  METERS.forEach(function(m,i){var b=document.createElement('button');b.className='lab-btn';b.textContent=m.n;b.onclick=function(){curMeter=i;drawMeter();};picks.appendChild(b);});
+  function drawMeter(){var m=METERS[curMeter];[].forEach.call(picks.children,function(b,i){b.classList.toggle('on',i===curMeter);});stage.innerHTML='';m.a.forEach(function(a){var p=document.createElement('i');p.className='pulse'+(a>=1.8?' strong':(a>1.2?' group':''));stage.appendChild(p);});read.innerHTML='<b>'+m.n+'</b> · '+m.d;}
+  function playMeter(bars){var m=METERS[curMeter],step=.29;for(var bar=0;bar<bars;bar++)m.a.forEach(function(a,i){clickTone((bar*m.a.length+i)*step,a>=1.8,a>1.2?1120:880);});}
+  document.getElementById('play-meter').onclick=function(){playMeter(1);};document.getElementById('play-meter-loop').onclick=function(){playMeter(2);};drawMeter();
+  document.getElementById('v-rhythm').addEventListener('click',function(e){var b=e.target.closest('[data-group]');if(!b)return;var groups=b.dataset.group.split(',').map(Number),i=0;groups.forEach(function(g){for(var n=0;n<g;n++){clickTone(i*.19,n===0,n===0?1240:820);i++;}});});
+  document.getElementById('play-poly').onclick=function(){[0,2/3,4/3].forEach(function(t){clickTone(t,true,1260);});[0,1].forEach(function(t){clickTone(t,true,620);});};
+  var fp=document.getElementById('form-picks'),fm=document.getElementById('formmap'),fr=document.getElementById('form-readout'),keys=Object.keys(FORMS),cur='sonata';
+  keys.forEach(function(k){var b=document.createElement('button');b.className='form-btn';b.textContent=FORMS[k].n;b.onclick=function(){cur=k;drawForm();};fp.appendChild(b);});
+  function drawForm(){var f=FORMS[cur];[].forEach.call(fp.children,function(b,i){b.classList.toggle('on',keys[i]===cur);});fm.innerHTML='';f.cells.forEach(function(c,i){var d=document.createElement('div');d.className='formcell';d.innerHTML=c[0]+'<small>'+c[1]+'</small>';fm.appendChild(d);if(i<f.cells.length-1){var a=document.createElement('span');a.className='formarr';a.textContent='→';fm.appendChild(a);}});fr.innerHTML='<b>'+f.n+'</b> · '+f.d;}drawForm();
+}
 function buildMode(){
   var host=document.getElementById('ratios');
   var data=[['2 : 1','八度',[60,72]],['3 : 2','五度',[60,67]],['4 : 3','四度',[60,65]]];
@@ -596,7 +897,7 @@ function buildC20(){
 }
 var rendered={};
 function renderTab(v){if(rendered[v])return;rendered[v]=1;
-  if(v==='mode')buildMode();else if(v==='notation')buildNotation();else if(v==='special')buildSpecial();else if(v==='c20')buildC20();}
+  if(v==='foundation')buildFoundation();else if(v==='mode')buildMode();else if(v==='harmony')buildHarmony();else if(v==='rhythm')buildRhythm();else if(v==='notation')buildNotation();else if(v==='special')buildSpecial();else if(v==='c20')buildC20();}
 /* ---- historical images (cheap; imgs lazy-load) ---- */
 var NOTA={
  orestes:{t:'俄瑞斯忒斯纸草 · 欧里庇得斯合唱残篇(约前5世纪)',cr:'公有领域'},
@@ -681,9 +982,9 @@ function renderSearch(q){
   }else{
     var terms=q.toLowerCase().split(/\s+/).filter(Boolean);
     rows=SEARCH.map(function(r){return {r:r,s:scoreHit(r,terms)};}).filter(function(x){return x.s>0&&terms.every(function(t){return x.r.text.indexOf(t)>=0||x.r.tabTitle.toLowerCase().indexOf(t)>=0;});}).sort(function(a,b){return b.s-a.s;}).map(function(x){return x.r;}).slice(0,18);
-    count.textContent=rows.length?('找到 '+rows.length+' 个入口, 点击卡片直接跳转'):'没找到, 换个词试试: 调式、纽姆、五度圈、序列、音色';
+    count.textContent=rows.length?('找到 '+rows.length+' 个入口, 点击卡片直接跳转'):'没找到, 换个词试试：泛音、调律、终止式、节拍、纽姆、五度圈、序列、音色';
   }
-  out.innerHTML=rows.length?rows.map(function(r){return '<button class="hit" data-goto="'+r.id+'" data-tab="'+r.tab+'"><b>'+r.title+'</b><p>'+r.body+'</p><small>'+r.tabTitle+' · '+r.kind+'</small></button>';}).join(''):'<div class="empty">没有匹配项。可以试试“六声”“八声音阶”“有量记谱”“十二音”“凯奇”。</div>';
+  out.innerHTML=rows.length?rows.map(function(r){return '<button class="hit" data-goto="'+r.id+'" data-tab="'+r.tab+'"><b>'+r.title+'</b><p>'+r.body+'</p><small>'+r.tabTitle+' · '+r.kind+'</small></button>';}).join(''):'<div class="empty">没有匹配项。可以试试“泛音”“声部进行”“复节奏”“六声”“有量记谱”“十二音”。</div>';
 }
 function initFinder(){
   buildSearch();
@@ -695,7 +996,8 @@ function initFinder(){
   renderSearch('');
 }
 /* ---- init: only render the active tab ---- */
-renderTab('mode');
+[].forEach.call(document.querySelectorAll('[data-route]'),function(b){b.addEventListener('click',function(){showTab(b.dataset.route);});});
+renderTab('foundation');
 initFinder();
 })();
 </script>

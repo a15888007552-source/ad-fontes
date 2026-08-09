@@ -5,6 +5,8 @@
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/europa/">
 <title>欧罗巴音乐家年鉴 · Annales Musicorum Europae</title>
+<meta name="description" content="欧罗巴音乐家年鉴：与华夏音乐家年鉴组成 Ad Fontes 第一模块的镜像双卷。">
+<script>try{var __mirrorDirection=sessionStorage.getItem('ad-fontes-yearbook-direction');if(__mirrorDirection)document.documentElement.dataset.mirror=__mirrorDirection}catch(e){}</script>
 <style>
 :root{
   --serif:"Palatino Linotype",Palatino,Georgia,"Songti SC",SimSun,serif;
@@ -472,8 +474,38 @@ canvas#net{display:block;width:100%;height:660px;cursor:grab}
 @media(min-width:1800px){body{zoom:1.12}}
 @media(min-width:2300px){body{zoom:1.28}}
 footer{padding:30px 4vw;border-top:1px solid var(--line);font:11.5px var(--sans);letter-spacing:.1em;color:var(--mut)}
+/* ── 第一模块：欧罗巴 / 华夏镜像双卷 ── */
+@view-transition{navigation:auto}
+#app{view-transition-name:yearbook-page}
+.mirror-switch{view-transition-name:yearbook-switch;position:fixed;z-index:1000;left:50%;bottom:16px;transform:translateX(-50%);display:grid;grid-template-columns:1fr 34px 1fr;grid-template-rows:auto auto;align-items:center;width:min(390px,calc(100vw - 24px));min-height:52px;padding:6px 8px 5px;color:#eee4d1;background:#17130f;border:1px solid #806a42;box-shadow:0 8px 24px rgba(0,0,0,.24);text-decoration:none;font-family:var(--sans);letter-spacing:.08em;isolation:isolate;contain:layout paint;transform-origin:center;will-change:transform}
+.mirror-switch::before{content:"";position:absolute;inset:5px;border:1px solid rgba(231,211,169,.2);pointer-events:none}
+.mirror-word{position:relative;z-index:1;text-align:center;font-size:12px;padding:5px 3px;color:#a99b84;transition:color .18s ease,background .18s ease}
+.mirror-word[aria-current="page"]{color:#fff7e6;background:#8c2b1f}
+.mirror-axis{position:relative;z-index:1;text-align:center;color:#d3b36c;font-size:18px;line-height:1;transform:perspective(120px) rotateY(18deg)}
+.mirror-caption{grid-column:1/-1;text-align:center;font-size:9px;line-height:1.1;color:#9e9078;letter-spacing:.24em;padding-top:2px}
+.mirror-switch:hover{border-color:#d3b36c}.mirror-switch:hover .mirror-word:not([aria-current="page"]){color:#fff7e6}
+.mirror-switch:focus-visible{outline:3px solid #d3b36c;outline-offset:3px}
+::view-transition-group(yearbook-page){animation-duration:.54s;perspective:1600px}
+::view-transition-image-pair(yearbook-page){overflow:visible;background:#17130f}
+html[data-mirror="to-sinica"]::view-transition-old(yearbook-page){transform-origin:left center;animation:yearbook-out-left .26s cubic-bezier(.55,.05,.9,.35) both}
+html[data-mirror="to-sinica"]::view-transition-new(yearbook-page){transform-origin:right center;animation:yearbook-in-right .42s cubic-bezier(.16,1,.3,1) .1s both}
+html[data-mirror="to-europa"]::view-transition-old(yearbook-page){transform-origin:right center;animation:yearbook-out-right .26s cubic-bezier(.55,.05,.9,.35) both}
+html[data-mirror="to-europa"]::view-transition-new(yearbook-page){transform-origin:left center;animation:yearbook-in-left .42s cubic-bezier(.16,1,.3,1) .1s both}
+@keyframes yearbook-out-left{to{opacity:.22;transform:translate3d(-3%,0,0) rotateY(72deg) scale(.985)}}
+@keyframes yearbook-in-right{from{opacity:.18;transform:translate3d(3%,0,0) rotateY(-72deg) scale(.985)}to{opacity:1;transform:none}}
+@keyframes yearbook-out-right{to{opacity:.22;transform:translate3d(3%,0,0) rotateY(-72deg) scale(.985)}}
+@keyframes yearbook-in-left{from{opacity:.18;transform:translate3d(-3%,0,0) rotateY(72deg) scale(.985)}to{opacity:1;transform:none}}
+.mirror-leaving[data-mirror="to-sinica"] #app{transform-origin:left center;animation:yearbook-out-left .2s cubic-bezier(.55,.05,.9,.35) both;will-change:transform,opacity}
+.mirror-leaving[data-mirror="to-europa"] #app{transform-origin:right center;animation:yearbook-out-right .2s cubic-bezier(.55,.05,.9,.35) both;will-change:transform,opacity}
+.mirror-enter[data-mirror="to-sinica"] #app{transform-origin:right center;animation:yearbook-in-right .36s cubic-bezier(.16,1,.3,1) both;will-change:transform,opacity}
+.mirror-enter[data-mirror="to-europa"] #app{transform-origin:left center;animation:yearbook-in-left .36s cubic-bezier(.16,1,.3,1) both;will-change:transform,opacity}
+@media(max-width:640px){.mirror-switch{bottom:9px;min-height:48px}.mirror-caption{display:none}}
+@media(prefers-reduced-motion:reduce){.mirror-switch,#app{animation:none!important;transition:none!important}::view-transition-old(yearbook-page),::view-transition-new(yearbook-page){animation:none!important}}
 </style>
 
+<a class="mirror-switch" href="sinica.html" data-mirror-to="to-sinica" aria-label="镜像翻卷至中国音乐家年鉴">
+  <span class="mirror-word" aria-current="page">欧罗巴卷</span><span class="mirror-axis" aria-hidden="true">⇄</span><span class="mirror-word">华夏卷</span><small class="mirror-caption">ANNALIUM SPECULUM · 一键镜像翻卷</small>
+</a>
 <div id="app" data-ep="greek">
 <header class="mast">
   <div class="tblock">
@@ -1890,5 +1922,23 @@ renderEpnav();renderAlm();
 if(location.hash){readHash()}
 else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)setTimeout(showIntro,350)}
 </script>
-
+<script>
+(function(){
+  const link=document.querySelector('[data-mirror-to]');if(!link)return;
+  const dir=__mirrorDirection||'';
+  const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(dir&&!('onpageswap' in window)&&!reduced)document.documentElement.classList.add('mirror-enter');
+  link.addEventListener('click',function(e){
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button>0)return;
+    e.preventDefault();const next=link.dataset.mirrorTo;
+    try{sessionStorage.setItem('ad-fontes-yearbook-direction',next)}catch(err){}
+    document.documentElement.dataset.mirror=next;
+    if(reduced||'onpageswap' in window){location.href=link.href;return;}
+    document.documentElement.classList.add('mirror-leaving');
+    setTimeout(function(){location.href=link.href},190);
+  });
+  addEventListener('pageshow',function(){setTimeout(function(){document.documentElement.classList.remove('mirror-enter');try{sessionStorage.removeItem('ad-fontes-yearbook-direction')}catch(e){}},850)},{once:true});
+})();
+</script>
+</body>
 </html>
