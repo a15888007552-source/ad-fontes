@@ -29,3 +29,12 @@
 ## 数据同步范围
 
 人物对象只写入一次，年鉴卡片、搜索、年表、地图、平面关系星图、3D 星图和人物详情均由同一数据源生成。关系数据同时用于平面/3D 星图和谱系连线；班凯耶里接入年鉴已有的博洛尼亚坐标，并新增比贝尔早年任职地克罗梅日什；历史事件补入 1557、1598、1676、1730 四个节点，并重写 1600 年歌剧起源节点。关系说明对没有直接交往证据的比较一律写明“非史实交往”或“并非确证师承”。
+
+## 克罗梅日什城市图景
+
+比贝尔条目新增的克罗梅日什原已有地图坐标与城市说明，但没有城市画廊。本次补齐三张代表性建筑照片，并在网页端以既有城市轮播组件呈现。照片均下载为本地静态资源，仅作等比例缩小与 JPEG 压缩，没有使用生成式图像改造建筑或景观。
+
+- 世界遗产背景：[Gardens and Castle at Kroměříž](https://whc.unesco.org/en/list/860/)，UNESCO World Heritage Centre。用于核对大主教宫与花园作为同一遗产整体及 1998 年列入《世界遗产名录》。
+- `kromeriz.jpg`：[Kroměříž - Sněmovní náměstí - View East on Kroměříž Archbishop's Palace.jpg](https://commons.wikimedia.org/wiki/File:Krom%C4%9B%C5%99%C3%AD%C5%BE_-_Sn%C4%9Bmovn%C3%AD_n%C3%A1m%C4%9Bst%C3%AD_-_View_East_on_Krom%C4%9B%C5%99%C3%AD%C5%BE_Archbishop%27s_Palace.jpg)，Txllxt TxllxT，CC BY-SA 4.0。
+- `kromeriz2.jpg`：[Colonnade in Flower Garden (Kroměříž).jpg](https://commons.wikimedia.org/wiki/File:Colonnade_in_Flower_Garden_(Krom%C4%9B%C5%99%C3%AD%C5%BE).jpg)，Radosław Botev，CC BY 3.0 pl。
+- `kromeriz3.jpg`：[Sněmovní náměstí (Kroměříž) - Church of Saint Maurice.jpg](https://commons.wikimedia.org/wiki/File:Sn%C4%9Bmovn%C3%AD_n%C3%A1m%C4%9Bst%C3%AD_(Krom%C4%9B%C5%99%C3%AD%C5%BE)_-_Church_of_Saint_Maurice.jpg)，Sylwia Botev，CC BY 3.0 pl。
