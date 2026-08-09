@@ -38,3 +38,10 @@
 - `kromeriz.jpg`：[Kroměříž - Sněmovní náměstí - View East on Kroměříž Archbishop's Palace.jpg](https://commons.wikimedia.org/wiki/File:Krom%C4%9B%C5%99%C3%AD%C5%BE_-_Sn%C4%9Bmovn%C3%AD_n%C3%A1m%C4%9Bst%C3%AD_-_View_East_on_Krom%C4%9B%C5%99%C3%AD%C5%BE_Archbishop%27s_Palace.jpg)，Txllxt TxllxT，CC BY-SA 4.0。
 - `kromeriz2.jpg`：[Colonnade in Flower Garden (Kroměříž).jpg](https://commons.wikimedia.org/wiki/File:Colonnade_in_Flower_Garden_(Krom%C4%9B%C5%99%C3%AD%C5%BE).jpg)，Radosław Botev，CC BY 3.0 pl。
 - `kromeriz3.jpg`：[Sněmovní náměstí (Kroměříž) - Church of Saint Maurice.jpg](https://commons.wikimedia.org/wiki/File:Sn%C4%9Bmovn%C3%AD_n%C3%A1m%C4%9Bst%C3%AD_(Krom%C4%9B%C5%99%C3%AD%C5%BE)_-_Church_of_Saint_Maurice.jpg)，Sylwia Botev，CC BY 3.0 pl。
+
+## 原创界面视觉与性能边界
+
+- `original-musical-cosmograph.webp`：使用 Codex 内置 Imagegen 创作的“音乐宇宙纹章”。画面以七个轨道节点分别暗示古希腊里拉琴、中世纪记谱、文艺复兴琉特琴、巴洛克小提琴、古典键盘、浪漫主义乐队曲线与现代声波。它只作为界面装饰和视觉识别，不作为人物肖像、历史场景或任何学术论据。
+- 最终提示词要点：`museum-quality copperplate musical cosmograph; exactly seven luminous epoch nodes; concentric orbital staff lines; midnight vellum; oxblood, antique gold and restrained lapis; no text, letters, numerals, human faces, portraits, logos or watermark; clearly original contemporary decorative artwork`。
+- 原始生成图为 1254 × 1254 PNG；网页版本缩为 640 × 640 WebP（质量 82，109,028 bytes，SHA-256 `E56EA35249E2C63D80660ACF339B06E4516938F5AA5BB7CE929E4B01D675D4E7`）。同一资源同时复用于标题纹章和导览页，不额外下载第二张大图。
+- 新增动效限于 `transform` 与 `opacity`：阅读进度线、纹章缓慢呼吸与外环旋转、时代纹样扫光、视图首元素入场和悬停高光；`prefers-reduced-motion: reduce` 时全部停用，标签页进入后台时暂停循环动画。原有逐卡片 `mousemove + getBoundingClientRect()` 的三维倾斜已删除，改为 CSS 合成层轻抬升，以减少主线程负担。

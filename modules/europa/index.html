@@ -12,6 +12,9 @@
   --serif:"Palatino Linotype",Palatino,Georgia,"Songti SC",SimSun,serif;
   --kai:"KaiTi","STKaiti","Palatino Linotype",serif;
   --sans:"Segoe UI","Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --motion-fast:180ms;
+  --motion-view:380ms;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -31,13 +34,22 @@ body{font-family:var(--serif);background:#0F0D0B;color:#E8DFD0;line-height:1.75}
 #app[data-ep=modern],#dlg[data-ep=modern]{font-family:var(--sans)}
 
 /* ── 骨架 ─────────────────────────────── */
-header.mast{padding:24px 4vw 13px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
+.chronograph-progress{position:fixed;z-index:1200;top:0;left:0;width:100%;height:2px;pointer-events:none;transform:scaleX(0);transform-origin:left center;will-change:transform;background:linear-gradient(90deg,#8C2B1F 0%,#C9A227 58%,#E9D9A8 100%);box-shadow:0 0 8px rgba(201,162,39,.42)}
+header.mast{padding:18px 4vw 13px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;position:relative;isolation:isolate;overflow:hidden}
+.mast-brand{display:flex;align-items:center;gap:clamp(10px,1.4vw,16px);min-width:min(100%,350px)}
+.archive-orbis{position:relative;flex:0 0 auto;width:clamp(58px,6.2vw,78px);aspect-ratio:1;border-radius:50%;padding:3px;background:#0B1113;box-shadow:0 0 0 1px var(--line),0 8px 24px rgba(8,6,4,.18);contain:layout paint}
+.archive-orbis::before,.archive-orbis::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.archive-orbis::before{inset:6px;border:1px solid rgba(233,217,168,.34)}
+.archive-orbis::after{inset:-5px;border:1px solid var(--line);border-left-color:transparent;border-bottom-color:var(--acc)}
+.archive-orbis img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;filter:saturate(.88) contrast(1.04)}
 .mast .tblock h1{font-family:var(--dfont);font-size:clamp(21px,3vw,32px);margin:0;letter-spacing:.06em;font-weight:600}
 .mast .lat{font-style:italic;color:var(--mut);font-size:13px;letter-spacing:.12em}
 .mast .stats{font:11px var(--sans);letter-spacing:.14em;color:var(--mut);margin-top:3px}
 nav.views{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
-nav.views button{font:600 13px/1 var(--sans);letter-spacing:.14em;padding:9px 15px;background:none;border:1px solid var(--line);color:var(--mut);cursor:pointer}
+nav.views button{font:600 13px/1 var(--sans);letter-spacing:.14em;padding:9px 15px;background:none;border:1px solid var(--line);color:var(--mut);cursor:pointer;position:relative;overflow:hidden;transition:transform var(--motion-fast) var(--ease-out),border-color var(--motion-fast),color var(--motion-fast),background-color var(--motion-fast)}
+nav.views button::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:1px;background:currentColor;opacity:.55;transform:scaleX(0);transition:transform var(--motion-fast) var(--ease-out)}
 nav.views button.on{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+nav.views button.on::after{transform:scaleX(1)}
 nav.views button:focus-visible,.epnav button:focus-visible,.chip:focus-visible,.search input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 
 .search{position:relative}
@@ -50,11 +62,13 @@ nav.views button:focus-visible,.epnav button:focus-visible,.chip:focus-visible,.
 .sres .sn{font-size:14px}.sres small{display:block;color:var(--mut);font-size:11px;font-family:var(--sans)}
 
 .epnav{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--line)}
-.epnav button{flex:1 1 110px;font-family:var(--serif);background:none;border:none;border-right:1px solid var(--line);color:var(--mut);padding:12px 6px 10px;cursor:pointer;text-align:center}
+.epnav button{flex:1 1 110px;font-family:var(--serif);background:none;border:none;border-right:1px solid var(--line);color:var(--mut);padding:12px 6px 10px;cursor:pointer;text-align:center;position:relative;overflow:hidden;transition:color var(--motion-fast),background-color var(--motion-fast)}
+.epnav button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--acc);transform:scaleX(0);transition:transform 260ms var(--ease-out)}
 .epnav button:last-child{border-right:none}
 .epnav b{display:block;font-size:15px;font-weight:600}
 .epnav i{display:block;font-style:normal;font-size:10.5px;letter-spacing:.08em;margin-top:3px;opacity:.75}
-.epnav button.on{color:var(--ink);background:var(--panel);box-shadow:inset 0 -3px 0 var(--acc)}
+.epnav button.on{color:var(--ink);background:var(--panel)}
+.epnav button.on::after{transform:scaleX(1)}
 
 main{padding:0 4vw 90px;max-width:1560px;margin:0 auto}
 section.view{display:none}section.view.on{display:block}
@@ -101,8 +115,10 @@ h3.rub{font-family:var(--sans);font-size:13px;letter-spacing:.3em;color:var(--mu
 
 /* ── 音乐家卡片 ───────────────────────── */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:14px;margin-top:16px}
-.card{background:var(--panel);border:1px solid var(--line);cursor:pointer;position:relative;transition:border-color .2s;overflow:hidden}
+.card{background:var(--panel);border:1px solid var(--line);cursor:pointer;position:relative;transition:border-color .2s;overflow:hidden;contain:paint}
+.card::after{content:"";position:absolute;z-index:3;inset:-15% auto -15% -54%;width:34%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(246,239,220,.13),transparent);transform:translate3d(-160%,0,0) skewX(-16deg);transition:transform 560ms var(--ease-out)}
 .card:hover{border-color:var(--acc)}
+.card:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-color:var(--acc)}
 @media(prefers-reduced-motion:no-preference){
   .card{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease,border-color .2s}
   .card.in{opacity:1;transform:none;transition:transform .16s ease-out,opacity .5s ease,border-color .2s}
@@ -240,18 +256,19 @@ canvas#net{display:block;width:100%;height:660px;cursor:grab}
 #app[data-ep=atlas],#dlg[data-ep=atlas]{--disp:'Cinzel','Palatino Linotype',serif}
 
 /* ── v3: 名画英雄区 ─────────────────── */
-.hero{position:relative;height:min(56vh,500px);margin:24px 0 0;background-size:cover;background-position:center 28%;border:1px solid var(--line);overflow:hidden}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.22) 0%,rgba(10,8,6,.02) 38%,rgba(11,9,6,.82) 100%)}
+.hero{position:relative;height:min(56vh,500px);margin:24px 0 0;background-size:cover;background-position:center 28%;border:1px solid var(--line);overflow:hidden;contain:paint;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:2;top:0;bottom:0;left:-58%;width:42%;pointer-events:none;background:linear-gradient(104deg,transparent 12%,rgba(233,217,168,.18) 48%,transparent 82%);transform:translate3d(0,0,0) skewX(-12deg)}
+.hero::after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,rgba(10,8,6,.22) 0%,rgba(10,8,6,.02) 38%,rgba(11,9,6,.82) 100%)}
 @media(prefers-reduced-motion:no-preference){
-  .hero>.heropan{position:absolute;inset:-4% -2%;background:inherit;background-size:cover;background-position:center 28%;transform:scale(1.06);animation:heroken 18s ease-in-out infinite alternate}
+  .hero>.heropan{position:absolute;inset:-4% -2%;background:inherit;background-size:cover;background-position:center 28%;transform:scale(1.06);animation:heroken 18s ease-in-out infinite alternate;will-change:transform}
   @keyframes heroken{from{transform:scale(1.06) translateY(0)}to{transform:scale(1.12) translateY(-1.6%)}}
 }
-.heroinner{position:absolute;left:clamp(18px,3.5vw,44px);right:clamp(18px,3.5vw,44px);bottom:22px;z-index:2}
+.heroinner{position:absolute;left:clamp(18px,3.5vw,44px);right:clamp(18px,3.5vw,44px);bottom:22px;z-index:3}
 .herolat{font-family:var(--disp);font-size:clamp(24px,4.2vw,52px);letter-spacing:.2em;line-height:1;color:#E9D9A8;opacity:.92;text-shadow:0 2px 16px rgba(0,0,0,.6)}
 #app[data-ep=modern] .herolat{font-weight:900;letter-spacing:.3em}
 .heroinner h2{font-family:var(--dfont);font-size:clamp(30px,4.6vw,54px);margin:4px 0 2px;color:#F6EFDC;line-height:1.12;text-wrap:balance;font-weight:600;text-shadow:0 2px 14px rgba(0,0,0,.6)}
 .heroinner .span{color:#E8D9A8;font-size:14px;letter-spacing:.24em;font-family:var(--sans);font-weight:600}
-.artcredit{position:absolute;right:14px;bottom:9px;z-index:3;font:11.5px var(--sans);letter-spacing:.05em;color:#EDE3C9;opacity:.9;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.artcredit{position:absolute;right:14px;bottom:9px;z-index:4;font:11.5px var(--sans);letter-spacing:.05em;color:#EDE3C9;opacity:.9;text-shadow:0 1px 8px rgba(0,0,0,.8)}
 
 /* ── v3: 史学争鸣 ─────────────────── */
 .debates{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
@@ -320,7 +337,12 @@ canvas#net{display:block;width:100%;height:660px;cursor:grab}
 /* ── v3.7: 导览/凡例卡 ─────────────── */
 #intro{border:none;background:none;max-width:none;width:auto;padding:0}
 #intro::backdrop{background:rgba(8,6,4,.74);backdrop-filter:blur(4px)}
-.introwrap{position:relative;width:min(94vw,720px);max-height:90vh;overflow-y:auto;background:var(--panel,#F2EBD8);color:var(--ink,#35301F);border:1px solid var(--line,#C6BA92);border-top:5px solid var(--acc,#7A2E1D);padding:38px clamp(24px,5vw,54px) 30px}
+.introwrap{position:relative;width:min(94vw,760px);max-height:90vh;overflow-y:auto;overflow-x:hidden;background:var(--panel,#F2EBD8);color:var(--ink,#35301F);border:1px solid var(--line,#C6BA92);border-top:5px solid var(--acc,#7A2E1D);padding:38px clamp(24px,5vw,54px) 30px}
+.introbrand{display:grid;grid-template-columns:minmax(0,1fr) 176px;gap:clamp(20px,4vw,36px);align-items:center;margin-bottom:22px}
+.intro-orbis{position:relative;margin:0;width:176px;justify-self:end}
+.intro-orbis::before{content:"";position:absolute;inset:-7px;border:1px solid var(--line);border-radius:50%;border-top-color:var(--acc);border-right-color:transparent;pointer-events:none}
+.intro-orbis img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;background:#0B1113;box-shadow:0 14px 34px rgba(18,13,8,.22)}
+.intro-orbis figcaption{margin-top:9px;text-align:center;font:10.5px/1.45 var(--sans);letter-spacing:.08em;color:var(--mut)}
 .introlat{font:600 12px var(--sans);letter-spacing:.32em;color:var(--acc,#7A2E1D)}
 .introwrap h2{font-family:var(--dfont,serif);font-size:clamp(28px,5vw,40px);margin:6px 0 14px;font-weight:600;letter-spacing:.04em}
 .introlede{font-size:15.5px;line-height:1.9;color:var(--ink);margin:0 0 22px;max-width:60ch}
@@ -332,6 +354,33 @@ canvas#net{display:block;width:100%;height:660px;cursor:grab}
 .introcolo{font-size:11.5px;color:var(--mut);line-height:1.7;margin:0;flex:1 1 340px}
 .introgo{font:600 14px var(--sans);letter-spacing:.08em;background:var(--acc);color:var(--bg);border:none;padding:12px 26px;cursor:pointer}
 .introgo:hover{opacity:.88}
+
+/* ── 原创档案纹章与轻量动效 ───────────── */
+.motif{position:relative;overflow:hidden}
+.motif::after{content:"";position:absolute;inset:0 auto 0 -24%;width:18%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(246,239,220,.42),transparent);transform:translate3d(0,0,0) skewX(-18deg)}
+@supports(content-visibility:auto){.card{content-visibility:auto;contain-intrinsic-size:auto 330px}}
+@media(hover:hover) and (pointer:fine){
+  nav.views button:hover{transform:translateY(-1px);border-color:var(--acc);color:var(--ink)}
+  .card.in:hover{transform:translateY(-4px)}
+  .card:hover::after{transform:translate3d(620%,0,0) skewX(-16deg)}
+  .hero:hover::before{animation:heroSheen 900ms var(--ease-out) both}
+}
+@media(prefers-reduced-motion:no-preference){
+  .archive-orbis img,.intro-orbis img{animation:orbisBreathe 14s ease-in-out infinite alternate;will-change:transform}
+  .archive-orbis::after,.intro-orbis::before{animation:orbisTurn 44s linear infinite;will-change:transform}
+  .motif::after{animation:motifPass 16s ease-in-out infinite;will-change:transform}
+  section.view.on>:first-child{animation:viewArrive var(--motion-view) var(--ease-out) both}
+  @keyframes orbisBreathe{from{transform:scale(1.01)}to{transform:scale(1.045)}}
+  @keyframes orbisTurn{to{transform:rotate(1turn)}}
+  @keyframes motifPass{0%,62%{transform:translate3d(0,0,0) skewX(-18deg)}82%,100%{transform:translate3d(760%,0,0) skewX(-18deg)}}
+  @keyframes heroSheen{to{transform:translate3d(390%,0,0) skewX(-12deg)}}
+  @keyframes viewArrive{from{opacity:.35;transform:translateY(10px)}to{opacity:1;transform:none}}
+}
+html.motion-paused .archive-orbis img,html.motion-paused .intro-orbis img,html.motion-paused .archive-orbis::after,html.motion-paused .intro-orbis::before,html.motion-paused .motif::after,html.motion-paused .heropan,html.motion-paused .route{animation-play-state:paused!important}
+@media(max-width:720px){
+  header.mast{padding-top:15px}.mast-brand{min-width:0}.archive-orbis{width:52px}
+  .introbrand{grid-template-columns:1fr}.intro-orbis{width:128px;justify-self:center;order:-1}.intro-orbis figcaption{font-size:9.5px}
+}
 
 /* IMSLP 乐谱链接 */
 .imslp{margin:10px 0 0}
@@ -503,15 +552,19 @@ html[data-mirror="to-europa"]::view-transition-new(yearbook-page){transform-orig
 @media(prefers-reduced-motion:reduce){.mirror-switch,#app{animation:none!important;transition:none!important}::view-transition-old(yearbook-page),::view-transition-new(yearbook-page){animation:none!important}}
 </style>
 
+<div class="chronograph-progress" id="chronograph" aria-hidden="true"></div>
 <a class="mirror-switch" href="sinica.html" data-mirror-to="to-sinica" aria-label="镜像翻卷至中国音乐家年鉴">
   <span class="mirror-word" aria-current="page">欧罗巴卷</span><span class="mirror-axis" aria-hidden="true">⇄</span><span class="mirror-word">华夏卷</span><small class="mirror-caption">ANNALIUM SPECULUM · 一键镜像翻卷</small>
 </a>
 <div id="app" data-ep="greek">
 <header class="mast">
-  <div class="tblock">
-    <h1>欧罗巴音乐家年鉴</h1>
-    <div class="lat">ANNALES&nbsp;MUSICORUM&nbsp;EUROPAE</div>
-    <div class="stats" id="stats"></div>
+  <div class="mast-brand">
+    <div class="archive-orbis" aria-hidden="true"><img src="assets/img/original-musical-cosmograph.webp?v=1" width="640" height="640" decoding="async" fetchpriority="low" alt=""></div>
+    <div class="tblock">
+      <h1>欧罗巴音乐家年鉴</h1>
+      <div class="lat">ANNALES&nbsp;MUSICORUM&nbsp;EUROPAE</div>
+      <div class="stats" id="stats"></div>
+    </div>
   </div>
   <nav class="views" id="views">
     <button data-v="alm" class="on">年 鉴</button>
@@ -603,18 +656,21 @@ html[data-mirror="to-europa"]::view-transition-new(yearbook-page){transform-orig
     <p class="colophon">本年鉴之分期、人名与史实框架以 Burkholder/Grout/Palisca 第十版与 Taruskin 五卷本为准绳；时代页新增的"Norton 断代史导读"据五卷诺顿断代史中译本之断代框架、目录问题意识与相关章节整理改写。十九世纪叙事参照达尔豪斯之结构史观。肖像均为公有领域之传世画作、版画、手抄本细密画或历史照片；确无传世真容者以同时代图像代之并注明，不作臆造。</p>
   </section>
 </main>
-<footer>ANNALES MUSICORUM EUROPAE · MMXXVI · 依 GROUT、TARUSKIN 与 NORTON PERIOD HISTORIES 编纂 · 肖像与画作均出自公有领域;舆图城市地标照片采用知识共享(CC)授权、已注明摄影者与许可</footer>
+<footer>ANNALES MUSICORUM EUROPAE · MMXXVI · 依 GROUT、TARUSKIN 与 NORTON PERIOD HISTORIES 编纂 · 史料肖像与画作均出自公有领域；舆图地标照片采用知识共享(CC)授权；原创纹章仅作界面装饰</footer>
 </div>
 
 <dialog id="dlg"><div class="dwrap" id="dwrap"></div></dialog>
 <dialog id="intro"><div class="introwrap">
   <button class="dclose" id="introx" aria-label="关闭">✕</button>
-  <div class="introlat">ANNALES MUSICORUM EUROPAE</div>
-  <h2>欧罗巴音乐家年鉴</h2>
-  <p class="introlede">自古希腊至二十世纪的西方音乐家交互图志——一百余位音乐家的肖像、生平与作品，织成师承与影响之网，铺陈于历史的舆图与脉络之上。分期、史实与"深读"依 <b>格劳特《西方音乐史》第十版</b>、<b>塔鲁斯金《牛津西方音乐史》</b> 与 <b>诺顿音乐断代史</b> 编纂。</p>
+  <div class="introbrand">
+    <div><div class="introlat">ANNALES MUSICORUM EUROPAE</div>
+      <h2>欧罗巴音乐家年鉴</h2>
+      <p class="introlede">自古希腊至二十世纪的西方音乐家交互图志——一百余位音乐家的肖像、生平与作品，织成师承与影响之网，铺陈于历史的舆图与脉络之上。分期、史实与"深读"依 <b>格劳特《西方音乐史》第十版</b>、<b>塔鲁斯金《牛津西方音乐史》</b> 与 <b>诺顿音乐断代史</b> 编纂。</p></div>
+    <figure class="intro-orbis"><img src="assets/img/original-musical-cosmograph.webp?v=1" width="640" height="640" decoding="async" alt=""><figcaption>原创音乐宇宙纹章 · 装饰视觉，非史料图像</figcaption></figure>
+  </div>
   <div class="introgrid" id="introgrid"></div>
   <div class="introfoot">
-    <p class="introcolo">肖像与画作均取自公有领域；确无传世真容者以同时代图像借喻并注明，不作臆造；舆图各城的代表建筑照片采用知识共享(CC)授权，已于图注注明摄影者与许可。生卒年从格劳特第十版附录。</p>
+    <p class="introcolo">肖像与历史画作均取自公有领域；确无传世真容者以同时代图像借喻并注明，不作臆造；舆图地标照片采用知识共享(CC)授权。顶部“音乐宇宙纹章”为生成式原创装饰，仅承担界面识别，不充作历史图像。生卒年从格劳特第十版附录。</p>
     <button class="introgo" id="introgo">进入年鉴 →</button>
   </div>
 </div></dialog>
@@ -1041,6 +1097,21 @@ for(const k in SCHOL){if(SCHOL[k]&&SCHOL[k].essay&&EP[k])EP[k].intro=SCHOL[k].es
 const EPK=Object.keys(EP);
 const $=s=>document.querySelector(s);
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const chronograph=$("#chronograph");
+let chronographFrame=0;
+function paintChronograph(){
+  chronographFrame=0;
+  const root=document.documentElement,max=Math.max(0,root.scrollHeight-innerHeight);
+  const progress=max?Math.min(1,Math.max(0,scrollY/max)):0;
+  chronograph.style.transform=`scaleX(${progress.toFixed(4)})`;
+}
+function queueChronograph(){if(!chronographFrame)chronographFrame=requestAnimationFrame(paintChronograph)}
+addEventListener("scroll",queueChronograph,{passive:true});
+addEventListener("resize",queueChronograph,{passive:true});
+document.addEventListener("visibilitychange",()=>{
+  document.documentElement.classList.toggle("motion-paused",document.hidden);
+  if(!document.hidden)queueChronograph();
+});
 
 /* ══════════ 师承谱系 ══════════ */
 const LINEAGES=[
@@ -1131,15 +1202,6 @@ function observe(){
   io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.08});
   document.querySelectorAll(".card:not(.in)").forEach(c=>io.observe(c));
 }
-function tilt(){
-  if(RM)return;
-  document.querySelectorAll(".card").forEach(c=>{
-    c.addEventListener("mousemove",e=>{const r=c.getBoundingClientRect();
-      const rx=((e.clientY-r.top)/r.height-.5)*-6.5,ry=((e.clientX-r.left)/r.width-.5)*6.5;
-      c.style.transform=`rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-3px)`});
-    c.addEventListener("mouseleave",()=>{c.style.transform=""});
-  });
-}
 function renderNorton(ep){
   const n=NORTON_GUIDE&&NORTON_GUIDE[ep];
   if(!n)return "";
@@ -1199,7 +1261,7 @@ function renderAlm(){
       ${m.norton?`<span class="nortonmark">Norton note</span><span class="nortonbrief">${m.norton.split("；")[0].slice(0,82)}${m.norton.length>82?"…":""}</span>`:""}
       <span class="sch">${m.s}</span></div>
     </article>`).join("")}</div>`;
-  observe();tilt();
+  observe();queueChronograph();
 }
 
 /* ══════════ 音乐学发展 · 数据 ══════════ */
@@ -1918,6 +1980,7 @@ function setView(v){
   if(v==="musio"&&!musioDone){renderMusio();musioDone=true}
   if(v==="gl")renderGloss();
   setHash("v="+v);
+  queueChronograph();
 }
 $("#views").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setView(b.dataset.v)});
 $("#epnav").addEventListener("click",e=>{
@@ -1971,6 +2034,7 @@ window.addEventListener("popstate",()=>{if(!location.hash){$("#dlg").open&&$("#d
 
 /* ══════════ 启动 ══════════ */
 renderEpnav();renderAlm();
+queueChronograph();
 if(location.hash){readHash()}
 else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)setTimeout(showIntro,350)}
 </script>
