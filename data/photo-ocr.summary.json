@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T18:16:32+08:00",
+  "file_count": 644,
+  "by_kind": {
+    "info_panel": 160,
+    "no_text": 115,
+    "object_or_text": 270,
+    "possible_info_panel": 33,
+    "title_panel": 66
+  },
+  "output": "C:\\Users\\GusGumee\\.cursor\\projects\\empty-window\\data\\photo-ocr.jsonl"
+}
