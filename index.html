@@ -1,310 +1,417 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="zh-CN" data-theme="nocturne">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ad Fontes · 溯源 — 音乐学数字文献工坊</title>
-<meta name="description" content="一处音乐学的数字文献工坊。每一条史实都标注来源。">
-<meta name="author" content="辛申奥">
-<link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
-<!-- Open Graph / Twitter -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Ad Fontes · 溯源">
-<meta property="og:title" content="Ad Fontes · 溯源 — 音乐学数字文献工坊">
-<meta property="og:description" content="一处音乐学的数字文献工坊。每一条史实都标注来源。">
-<meta property="og:url" content="https://a15888007552-source.github.io/ad-fontes/">
-<meta property="og:image" content="https://a15888007552-source.github.io/ad-fontes/og.png">
-<meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ad Fontes · 溯源 — 音乐学数字文献工坊">
-<meta name="twitter:description" content="一处音乐学的数字文献工坊。每一条史实都标注来源。">
-<meta name="twitter:image" content="https://a15888007552-source.github.io/ad-fontes/og.png">
-<!-- pages-refresh: 2026-08-10T00:00:00Z -->
-<style>
-  :root{
-    --paper:#f6f1e7; --ink:#201c17; --muted:#6b6157; --line:#d9cfbe;
-    --rubric:#8c2b1f; --card:#fbf8f1; --card-line:#e5dccb; --shadow:rgba(60,40,20,.10);
-    --gold:#9a7b2e;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --paper:#16130f; --ink:#e9e2d4; --muted:#a79c8b; --line:#332c22;
-      --rubric:#d8695a; --card:#1d1913; --card-line:#332c22; --shadow:rgba(0,0,0,.4);
-      --gold:#c9a54e;
-    }
-  }
-  :root[data-theme="light"]{
-    --paper:#f6f1e7; --ink:#201c17; --muted:#6b6157; --line:#d9cfbe;
-    --rubric:#8c2b1f; --card:#fbf8f1; --card-line:#e5dccb; --shadow:rgba(60,40,20,.10); --gold:#9a7b2e;
-  }
-  :root[data-theme="dark"]{
-    --paper:#16130f; --ink:#e9e2d4; --muted:#a79c8b; --line:#332c22;
-    --rubric:#d8695a; --card:#1d1913; --card-line:#332c22; --shadow:rgba(0,0,0,.4); --gold:#c9a54e;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:"Georgia","Songti SC","STSong","SimSun","Noto Serif CJK SC",serif;
-    line-height:1.7; text-rendering:optimizeLegibility;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:760px; margin:0 auto; padding:clamp(2.2rem,5vw,4.5rem) clamp(1.2rem,5vw,2rem) 4rem;}
-
-  header{text-align:center; margin-bottom:2.6rem;}
-  .mast-latin{
-    font-size:clamp(2.6rem,9vw,4.2rem); letter-spacing:.16em; font-weight:400;
-    margin:0; line-height:1; text-transform:uppercase;
-  }
-  .mast-latin .dot{color:var(--rubric)}
-  .mast-cn{
-    font-size:clamp(1.15rem,4vw,1.5rem); letter-spacing:.5em; color:var(--muted);
-    margin:.9rem 0 0; padding-left:.5em;
-  }
-  .rule{
-    width:64px; height:1px; background:var(--line); border:0; margin:1.6rem auto;
-    position:relative;
-  }
-  .rule::after{
-    content:"❧"; position:absolute; top:-.85em; left:50%; transform:translateX(-50%);
-    color:var(--rubric); background:var(--paper); padding:0 .5rem; font-size:.9rem;
-  }
-  .gloss{color:var(--muted); font-style:italic; font-size:.98rem; margin:0;}
-  .lede{
-    font-size:1.06rem; color:var(--ink); margin:2.4rem auto 3.2rem; max-width:44ch;
-    text-align:justify; hyphens:auto;
-  }
-  .lede .drop{
-    float:left; font-size:3.1rem; line-height:.82; padding:.16em .12em 0 0;
-    color:var(--rubric); font-weight:600;
-  }
-  .sec-h{
-    font-size:.82rem; letter-spacing:.32em; text-transform:uppercase; color:var(--muted);
-    text-align:center; margin:0 0 1.6rem; font-weight:400;
-  }
-  .mods{list-style:none; padding:0; margin:0; display:grid; gap:1.1rem;}
-  .mod{
-    display:block; text-decoration:none; color:inherit;
-    background:var(--card); border:1px solid var(--card-line); border-radius:3px;
-    padding:1.35rem 1.5rem 1.4rem; position:relative;
-    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
-  }
-  a.mod:hover{border-color:var(--rubric); transform:translateY(-2px); box-shadow:0 8px 24px var(--shadow);}
-  .mod-top{display:flex; align-items:baseline; gap:.7rem; margin-bottom:.35rem; flex-wrap:wrap;}
-  .num{
-    font-size:.9rem; letter-spacing:.15em; color:var(--rubric); font-variant:small-caps;
-    min-width:1.4em;
-  }
-  .mod-title{font-size:1.22rem; margin:0; font-weight:600;}
-  .mod-sub{font-size:.86rem; color:var(--muted); font-style:italic; margin-left:.2rem;}
-  .mod-desc{color:var(--muted); font-size:.97rem; margin:.15rem 0 0; padding-left:calc(1.4em + .7rem);}
-  .mod-meta{
-    padding-left:calc(1.4em + .7rem); margin-top:.7rem;
-    display:flex; gap:1rem; align-items:center; font-size:.8rem; flex-wrap:wrap;
-  }
-  .src{color:var(--muted); letter-spacing:.02em;}
-  .badge{
-    font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; padding:.2em .6em;
-    border-radius:2px; border:1px solid currentColor;
-  }
-  .badge.live{color:var(--gold);}
-  .badge.lock{color:var(--rubric);}
-  .badge.wip{color:var(--muted); opacity:.8;}
-  .mod.wip{opacity:.72; cursor:default;}
-  .go{margin-left:auto; color:var(--rubric); font-size:.9rem; letter-spacing:.05em;}
-  .mod.wip .go{display:none;}
-  .principle{
-    margin-top:3.4rem; padding-top:1.8rem; border-top:1px solid var(--line);
-    font-size:.95rem; color:var(--muted); text-align:center; max-width:52ch;
-    margin-left:auto; margin-right:auto;
-  }
-  .principle b{color:var(--ink); font-weight:600;}
-  .cite{
-    margin:2.2rem auto 0; max-width:52ch; text-align:center;
-    font-size:.82rem; color:var(--muted);
-  }
-  .cite summary{cursor:pointer; letter-spacing:.06em; color:var(--rubric); list-style:none;}
-  .cite summary::-webkit-details-marker{display:none}
-  .cite summary::before{content:"❧ "; color:var(--rubric)}
-  .cite .body{margin-top:.9rem; line-height:1.8;}
-  .cite code{
-    font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace; font-size:.86em;
-    background:var(--card); border:1px solid var(--card-line); border-radius:2px;
-    padding:.05em .35em; word-break:break-all;
-  }
-  footer{
-    margin-top:2.6rem; text-align:center; color:var(--muted); font-size:.82rem; line-height:1.9;
-  }
-  footer .draft{color:var(--rubric); font-style:italic;}
-  .site-count{
-    display:inline-flex; align-items:center; gap:.35rem; margin-top:.8rem;
-    color:var(--muted); letter-spacing:.04em; font-size:.82rem;
-  }
-  .site-count b{color:var(--rubric); font-weight:600;}
-  .toggle{
-    position:fixed; top:1rem; right:1rem; background:transparent; border:1px solid var(--line);
-    color:var(--muted); border-radius:2px; padding:.35rem .6rem; font:inherit; font-size:.75rem;
-    cursor:pointer; letter-spacing:.1em;
-  }
-  .toggle:hover{border-color:var(--rubric); color:var(--rubric);}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="可追溯的西方音乐史 AI 档案馆：人物、作品、乐谱、历史录音、音乐学著作与版权状态。">
+  <title>欧罗巴音乐档案馆 · AI Librarian</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1713'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-size='38' fill='%23d5ad62'%3E%C3%86%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css?v=0.9.24">
+  <link rel="stylesheet" href="assets/motion.css?v=0.9.22">
+  <script type="module" src="assets/media-policy.mjs?v=0.1.0"></script>
+  <script defer src="assets/rights-gate.js?v=0.2.7"></script>
+  <script defer src="assets/catalog.js?v=0.3.1"></script>
+  <script defer src="assets/score-leads.js?v=0.1.33"></script>
+  <script defer src="assets/recording-leads.js?v=0.1.37"></script>
+  <script defer src="assets/work-paths.js?v=0.1.60"></script>
+  <script defer src="assets/performance-events.js?v=0.1.34"></script>
+  <script defer src="assets/musician-agents.js?v=0.2.65"></script>
+  <script defer src="assets/musician-evidence.js?v=0.2.65"></script>
+  <script defer src="assets/musician-agent-runtime.js?v=0.2.65"></script>
+  <script defer src="assets/agent-gateway-client.js?v=0.1.0"></script>
+  <script defer src="assets/app.js?v=0.9.50"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
 
-<button class="toggle" id="toggle" aria-label="切换明暗">☾ / ☀</button>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
 
-<div class="wrap">
-  <header>
-    <h1 class="mast-latin">Ad&nbsp;Fontes<span class="dot">.</span></h1>
-    <p class="mast-cn">溯 源</p>
-    <hr class="rule">
-    <p class="gloss">ad fontes — 回到本源</p>
-    <p class="site-count" id="busuanzi_container_site_pv">总浏览量 <b id="busuanzi_value_site_pv">--</b> 次</p>
+  <header class="site-header">
+    <button class="icon-button mobile-only" id="nav-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="side-nav">
+      <span aria-hidden="true">☰</span>
+    </button>
+
+    <a class="brand" href="#home" data-view-link="home" aria-label="返回档案馆首页">
+      <span class="brand-mark" aria-hidden="true">Æ</span>
+      <span>
+        <strong>欧罗巴音乐档案馆</strong>
+        <small>Annales Musicorum Europae</small>
+      </span>
+    </a>
+
+    <label class="global-search" id="global-search" for="global-search-input">
+      <span class="sr-only">检索人物、作品和资源</span>
+      <span aria-hidden="true">⌕</span>
+      <input id="global-search-input" type="search" autocomplete="off" placeholder="检索人物、作品、体裁、编制或版本…">
+      <kbd>/</kbd>
+    </label>
+
+    <div class="header-actions">
+      <span class="system-state" title="当前为本地证据检索演示">
+        <i aria-hidden="true"></i>
+        本地演示
+      </span>
+      <button class="icon-button mobile-only" id="search-toggle" type="button" aria-label="打开全局检索" aria-expanded="false" aria-controls="global-search">
+        <span aria-hidden="true">⌕</span>
+      </button>
+      <button class="button button-accent" id="open-librarian" type="button" aria-controls="librarian" aria-expanded="false">
+        <span aria-hidden="true">✦</span> 问 AI 馆员
+      </button>
+    </div>
   </header>
 
-  <p class="lede">
-    <span class="drop">这</span>是一处音乐学的数字文献工坊。每一个模块都是一件独立的研究工具,而非科普读物;其中每一条史实、每一句判断,都标注它所依据的来源。名字取自文艺复兴人文主义者的口号 <i>ad fontes</i>——回到本源。
-  </p>
+  <div class="app-shell">
+    <aside class="side-nav" id="side-nav" aria-label="档案馆栏目">
+      <div class="nav-section">
+        <p class="nav-label">探索</p>
+        <nav>
+          <button class="nav-item is-active" type="button" data-view="home"><span>⌂</span>总览</button>
+          <button class="nav-item" type="button" data-view="atlas"><span>◎</span>年鉴核心</button>
+          <button class="nav-item" type="button" data-view="scores"><span>𝄞</span>乐谱</button>
+          <button class="nav-item" type="button" data-view="recordings"><span>◉</span>历史录音</button>
+          <button class="nav-item" type="button" data-view="writings"><span>¶</span>音乐学著作</button>
+        </nav>
+      </div>
 
-  <p class="sec-h">Modules · 模块</p>
+      <div class="nav-section">
+        <p class="nav-label">专题馆藏</p>
+        <nav>
+          <button class="nav-item" type="button" data-view="beilin"><span>VI</span>石墨长安</button>
+        </nav>
+      </div>
 
-  <ul class="mods">
-    <li>
-      <a class="mod" href="modules/europa/index.html">
-        <div class="mod-top">
-          <span class="num">I</span>
-          <h2 class="mod-title">Annales Musicorum</h2>
-          <span class="mod-sub">欧罗巴 ↔ 华夏音乐家年鉴</span>
-        </div>
-        <p class="mod-desc">两部并列的交互年鉴：欧罗巴卷以音乐家为经，华夏卷以人、曲、器、书、制五类条目为纬。一键镜像翻卷，不混编，也不把一部硬塞进另一部。</p>
-        <div class="mod-meta">
-          <span class="src">欧罗巴据 Grout、Taruskin · 华夏据杨荫浏、孙继南、汪毓和、刘再生</span>
-          <span class="badge live">已上线</span>
-          <span class="go">翻开双卷 →</span>
-        </div>
-      </a>
-    </li>
+      <div class="nav-section">
+        <p class="nav-label">可信度</p>
+        <nav>
+          <button class="nav-item" type="button" data-view="rights"><span>◇</span>权利台账</button>
+        </nav>
+      </div>
 
-    <li>
-      <a class="mod" href="modules/busoni/index.html">
-        <div class="mod-top">
-          <span class="num">II</span>
-          <h2 class="mod-title">Studia Busoniana</h2>
-          <span class="mod-sub">布索尼专栏</span>
-        </div>
-        <p class="mod-desc">布索尼研究合集。现收《布索尼美学·脉络与观念地图》:起源、时间与书信脉络、观念总结、术语索引、证据链与原文库;《肖像尝试》译注等渐次补入。</p>
-        <div class="mod-meta">
-          <span class="src">据布索尼书信、美学文献与原著</span>
-          <span class="badge live">已上线</span>
-          <span class="badge lock">密码访问</span>
-          <span class="go">进入 →</span>
-        </div>
-      </a>
-    </li>
+      <div class="nav-note">
+        <span class="eyebrow">平台原则</span>
+        <p>每一次回答都要回到具体版本、来源位置与权利证据。</p>
+        <button class="text-button" type="button" data-view="rights">查看五层权利模型 →</button>
+      </div>
+    </aside>
 
-    <li>
-      <a class="mod" href="modules/proceedings/index.html">
-        <div class="mod-top">
-          <span class="num">III</span>
-          <h2 class="mod-title">Conventus Musicologicus Occidentalis</h2>
-          <span class="mod-sub">西方音乐学会第八届年会 · 数字纪要</span>
-        </div>
-        <p class="mod-desc">依据会议手册、论文述要、发言人幻灯片与现场照片整理而成的交互式年会纪要。收录全部发言与展板,可按主题、会期、会场、发言人和关键词检索导览。</p>
-        <div class="mod-meta">
-          <span class="src">据中国音乐家协会西方音乐学会第八届年会材料</span>
-          <span class="badge live">已上线</span>
-          <span class="go">进入 →</span>
-        </div>
-      </a>
-    </li>
+    <main id="main-content" tabindex="-1">
+      <section class="view is-active" id="view-home" data-view-panel="home" aria-labelledby="home-title">
+        <div class="home-stage person-hall-stage">
+          <div class="home-stage-grain" aria-hidden="true"></div>
+          <div class="home-stage-glow" aria-hidden="true"></div>
 
-    <li>
-      <a class="mod" href="modules/theory/index.html">
-        <div class="mod-top">
-          <span class="num">IV</span>
-          <h2 class="mod-title">Musica Theorica</h2>
-          <span class="mod-sub">乐理 · 看得懂、听得见</span>
-        </div>
-        <p class="mod-desc">从可听的声音出发：频率与泛音、音程与调律、调式与调性、和声与声部、节奏与形式、记谱史及二十世纪转变。七条路径可检索，声学、和弦与节拍实验均可直接试听。</p>
-        <div class="mod-meta">
-          <span class="src">据 Grout、Taruskin、Dahlhaus、Open Music Theory 与声学原典整理</span>
-          <span class="badge live">已上线</span>
-          <span class="go">进入 →</span>
-        </div>
-      </a>
-    </li>
+          <section class="people-stage person-hall" aria-labelledby="home-title">
+            <div class="hall-heading">
+              <div>
+                <h1 id="home-title" class="sr-only">人物展厅</h1>
+                <p class="hall-guide sr-only">选一位音乐家</p>
+              </div>
+              <div class="carousel-controls" aria-label="人物轮播控制">
+                <span class="carousel-position" id="carousel-position">01 / 06</span>
+                <button class="carousel-arrow" id="people-carousel-prev" type="button" aria-label="上一位音乐家">←</button>
+                <button class="carousel-arrow" id="people-carousel-next" type="button" aria-label="下一位音乐家">→</button>
+              </div>
+            </div>
 
-    <li>
-      <a class="mod" href="modules/philosophy/index.html">
-        <div class="mod-top">
-          <span class="num">V</span>
-          <h2 class="mod-title">Musica Philosophica</h2>
-          <span class="mod-sub">音乐哲学 · 达尔豪斯著作译读</span>
+            <div class="people-carousel-shell">
+              <div class="people-grid" id="people-grid" role="list" tabindex="0" aria-label="人物展厅，可左右滑动选择人物"></div>
+            </div>
+
+            <div class="hall-bottom-rail people-stage-footer">
+              <div class="home-active-caption" aria-live="polite">
+                <span class="home-active-index" id="home-active-index">01</span>
+                <div>
+                  <strong id="home-active-name">费鲁乔·布索尼</strong>
+                  <small id="home-active-meta">Ferruccio Busoni · 1866—1924</small>
+                </div>
+              </div>
+              <div class="carousel-dots" id="people-carousel-dots" aria-label="选择人物"></div>
+            </div>
+          </section>
+
+          <!-- Static validation keeps these legacy hooks; hidden so they cannot compete with the hall. -->
+          <div class="home-compatibility-hooks" hidden aria-hidden="true">
+            <span id="people-count">0</span>
+            <button id="home-ai-entry" type="button">问 AI 馆员</button>
+            <div id="quick-prompts"></div>
+          </div>
         </div>
-        <p class="mod-desc">从达尔豪斯开始:逐页翻译并标注原书页码,把译文、概念史、审美范畴与批判性分析组织成可检索、可追溯的音乐哲学阅读台。</p>
-        <div class="mod-meta">
-          <span class="src">《绝对音乐的理念》第一章已译 · 四书思想图谱</span>
-          <span class="badge live">已上线</span>
-          <span class="go">进入 →</span>
+      </section>
+
+      <section class="view archive-view" id="view-atlas" data-view-panel="atlas" aria-labelledby="atlas-view-title" hidden>
+        <h1 class="sr-only" id="atlas-view-title">欧罗巴音乐家年鉴九视图</h1>
+        <div class="atlas-shell-header">
+          <nav class="atlas-breadcrumb" aria-label="年鉴当前位置">
+            <span>欧罗巴音乐档案馆</span><i aria-hidden="true">›</i><strong>年鉴核心</strong><i aria-hidden="true">›</i><b id="atlas-current-view-label">年鉴</b>
+          </nav>
+          <div class="toolbar-actions atlas-toolbar-actions">
+            <button class="button button-ghost" id="copy-atlas-link" type="button">复制深链</button>
+            <button class="button button-ghost" id="reload-atlas" type="button">重新载入</button>
+            <button class="button button-light" id="fullscreen-atlas" type="button">全屏查看</button>
+          </div>
         </div>
-      </a>
-    </li>
-
-    <li>
-      <a class="mod" href="modules/museum-atlas/index.html">
-        <div class="mod-top">
-          <span class="num">VI</span>
-          <h2 class="mod-title">石墨长安</h2>
-          <span class="mod-sub">西安碑林博物馆数字档案</span>
+        <div class="atlas-view-rail" id="atlas-view-rail" role="tablist" aria-label="欧罗巴音乐家年鉴九视图">
+          <button type="button" role="tab" aria-selected="true" aria-controls="atlas-frame" tabindex="0" data-atlas-view="alm"><span>01</span>年鉴</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="atlas-frame" tabindex="-1" data-atlas-view="tl"><span>02</span>年表</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="atlas-frame" tabindex="-1" data-atlas-view="map"><span>03</span>舆图</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="atlas-frame" tabindex="-1" data-atlas-view="net"><span>04</span>星丛</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="atlas-frame" tabindex="-1" data-atlas-view="lin"><span>05</span>师承</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="atlas-frame" tabindex="-1" data-atlas-view="hist"><span>06</span>史脉</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="atlas-frame" tabindex="-1" data-atlas-view="musio"><span>07</span>音乐学</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="atlas-frame" tabindex="-1" data-atlas-view="gl"><span>08</span>术语</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="atlas-frame" tabindex="-1" data-atlas-view="bib"><span>09</span>文献</button>
         </div>
-        <p class="mod-desc">以 644 张现场照片整理的西安碑林专题：从省份、城市、博物馆三层入口进入 180 件文物名录，保留展签、校读与多图浏览路径。</p>
-        <div class="mod-meta">
-          <span class="src">据西安碑林博物馆现场影像与馆方资料整理</span>
-          <span class="badge live">已上线</span>
-          <span class="go">进入 →</span>
+        <div class="atlas-context-bar" aria-live="polite">
+          <div><span>当前路径</span><strong id="atlas-current-path">年鉴核心 / 年鉴</strong><small id="atlas-current-description">七时代分章与音乐家名录。</small></div>
+          <button class="text-button" id="atlas-return-person" type="button" hidden>返回人物档案 →</button>
         </div>
-      </a>
-    </li>
-  </ul>
+        <div class="archive-frame-wrap">
+          <div class="frame-placeholder" id="atlas-placeholder">
+            <span class="loader" aria-hidden="true"></span>
+            <p>年鉴核心将在首次打开时载入</p>
+          </div>
+          <iframe id="atlas-frame" title="欧罗巴音乐家年鉴原始应用" data-src="reference/欧罗巴音乐家年鉴.original.html"></iframe>
+        </div>
+      </section>
 
-  <p class="principle">
-    <b>编辑原则</b>　本站不收录无来源的断言。凡涉生卒、事件、评断,皆注明所据文献;存疑者标注争议,不替读者定谳。
-  </p>
+      <section class="view archive-view beilin-view" id="view-beilin" data-view-panel="beilin" aria-labelledby="beilin-view-title" hidden>
+        <h1 class="sr-only" id="beilin-view-title">西安碑林博物馆数字档案</h1>
+        <div class="atlas-shell-header beilin-shell-header">
+          <nav class="atlas-breadcrumb" aria-label="碑林专题当前位置">
+            <span>AD FONTES 数字档案馆</span><i aria-hidden="true">›</i><strong>石刻专题</strong><i aria-hidden="true">›</i><b>西安碑林</b>
+          </nav>
+          <div class="toolbar-actions atlas-toolbar-actions">
+            <a class="button button-ghost" href="modules/beilin/main.html" target="_blank" rel="noreferrer">单独打开</a>
+            <button class="button button-ghost" id="reload-beilin" type="button">重新载入</button>
+            <button class="button button-light" id="fullscreen-beilin" type="button">全屏查看</button>
+          </div>
+        </div>
+        <div class="atlas-context-bar beilin-context-bar" aria-live="polite">
+          <div>
+            <span>当前馆藏</span>
+            <strong>石墨 长安 · 180 件文物</strong>
+            <small>展签校读置于小卡右侧；音乐相关礼器、诗碑与视觉材料另设专题解读。</small>
+          </div>
+          <span class="beilin-evidence-note">445 张文物影像 · 199 张展签/题名牌仅作文字证据</span>
+        </div>
+        <div class="archive-frame-wrap beilin-frame-wrap">
+          <div class="frame-placeholder" id="beilin-placeholder">
+            <span class="loader" aria-hidden="true"></span>
+            <p>碑林文物模块将在首次打开时载入</p>
+          </div>
+          <iframe
+            id="beilin-frame"
+            title="VI 石墨长安总馆"
+            data-src="modules/beilin/main.html?embed=1"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          ></iframe>
+        </div>
+      </section>
 
-  <details class="cite">
-    <summary>如何引用本站</summary>
-    <div class="body">
-      辛申奥编．<i>Ad Fontes · 溯源——音乐学数字文献工坊</i>．陕西师范大学音乐学院,2026．<br>
-      <code>https://a15888007552-source.github.io/ad-fontes/</code><br>
-      引用具体模块或词条时,请注明模块名与访问日期。本站持续校订,重要修订将于版本号标注。
-      <br><br>
-      若要进入石刻专题，请访问：<code>https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/</code>
-    </div>
-  </details>
+      <section class="view" id="view-scores" data-view-panel="scores" aria-labelledby="scores-title" hidden>
+        <div class="view-heading">
+          <p class="eyebrow">PARTITURAE · 版本优先</p>
+          <h1 id="scores-title">乐谱目录</h1>
+          <p>作品进入公版，不代表现代校订、编曲、注释和版式同时公版。这里以“具体版本”为最小记录单位。</p>
+        </div>
+        <div class="filter-bar" data-filter-for="score"></div>
+        <div class="catalog-grid" id="score-catalog"></div>
+        <section class="score-leads-panel" aria-labelledby="score-leads-title">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">IMSLP / SOURCE LEADS</p>
+              <h2 id="score-leads-title">谱本候选 · 先看来源，再决定入库</h2>
+            </div>
+            <span class="section-meta">候选不等于托管许可</span>
+          </div>
+          <p class="lead-intro">这些是已记录具体作品、版本和文件页的研究线索；在同源文件签名、地域与人工权利复核完成前，只提供机构外链，不生成站内预览或下载。</p>
+          <div class="score-leads-grid" id="score-leads"></div>
+        </section>
+      </section>
 
-  <footer>
-    辛申奥　·　陕西师范大学音乐学院　·　MMXXVI<br>
-    <span class="draft">v1.1 · 2026-08-09 更新 · 内容持续校订</span>
-  </footer>
-</div>
+      <section class="view" id="view-recordings" data-view-panel="recordings" aria-labelledby="recordings-title" hidden>
+        <div class="view-heading">
+          <p class="eyebrow">PHONOGRAPHICA · 分层核权</p>
+          <h1 id="recordings-title">历史录音</h1>
+          <p>分别记录作品、表演、录音制作者、数字化版本和开放地域。年代只是一条线索，不是授权证明。</p>
+        </div>
+        <div class="filter-bar" data-filter-for="recording"></div>
+        <div class="catalog-grid" id="recording-catalog"></div>
+        <section class="recording-leads-panel" aria-labelledby="recording-leads-title">
+          <div class="section-heading compact-heading">
+            <div>
+              <p class="eyebrow">DAHR / MUSEUM CATALOGUES</p>
+              <h2 id="recording-leads-title">录音候选 · 先登记母带，再谈播放</h2>
+            </div>
+            <span class="section-meta">目录元数据不等于音频许可</span>
+          </div>
+          <p class="lead-intro">这些是已回到具体矩阵号或馆藏号的历史录音线索；当前只提供权威目录外链，不生成播放、预览、下载或站内音频文件。录音、表演、唱片/母带、数字转录和地域权利仍需逐条人工核对。</p>
+          <div class="recording-leads-grid" id="recording-leads"></div>
+        </section>
+      </section>
 
-<script>
-  (function(){
-    var t = document.getElementById('toggle');
-    var root = document.documentElement;
-    t.addEventListener('click', function(){
-      var cur = root.getAttribute('data-theme');
-      if(!cur){
-        var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        cur = dark ? 'dark' : 'light';
-      }
-      root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
-    });
-  })();
-</script>
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <section class="view" id="view-writings" data-view-panel="writings" aria-labelledby="writings-title" hidden>
+        <div class="view-heading">
+          <p class="eyebrow">SCRIPTA · 原文与解释分开</p>
+          <h1 id="writings-title">音乐学著作</h1>
+          <p>现代著作默认先收书目、摘要和合法外链；只有公版依据或书面许可明确时才托管全文。</p>
+        </div>
+        <div class="filter-bar" data-filter-for="writing"></div>
+        <div class="catalog-grid" id="writing-catalog"></div>
+      </section>
+
+      <section class="view" id="view-rights" data-view-panel="rights" aria-labelledby="rights-title" hidden>
+        <div class="view-heading rights-heading">
+          <div>
+            <p class="eyebrow">IURA · RIGHTS LEDGER</p>
+            <h1 id="rights-title">权利台账</h1>
+            <p>任何文件进入播放、下载或 AI 语料库之前，都要能回答：哪个版本、谁的权利、在哪个地区、凭什么使用。</p>
+          </div>
+          <div class="rights-score"><strong id="rights-decision-count">0</strong><span>已完成证据判定</span></div>
+        </div>
+
+        <div class="rights-model" aria-label="五层权利模型">
+          <div><b>01</b><strong>作品</strong><span>作曲、歌词、合作作者</span></div>
+          <div><b>02</b><strong>版本</strong><span>校订、编曲、翻译、注释</span></div>
+          <div><b>03</b><strong>表演</strong><span>演奏者、指挥、乐团</span></div>
+          <div><b>04</b><strong>录音</strong><span>制作者、母带、数字修复</span></div>
+          <div><b>05</b><strong>地域</strong><span>中国、美国、欧盟及其他</span></div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">示范资源权利审核状态</caption>
+            <thead><tr><th>记录</th><th>类型</th><th>权利状态</th><th>开放闸门</th><th>可用方式</th><th>缺失证据</th></tr></thead>
+            <tbody id="rights-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="search-results" id="search-results" aria-labelledby="search-results-title" aria-live="polite" hidden>
+        <div class="view-heading">
+          <p class="eyebrow">QUAERERE · 全局检索</p>
+          <h1 id="search-results-title">检索结果</h1>
+          <p id="search-summary"></p>
+        </div>
+        <div class="search-toolbar" aria-label="检索结果筛选与排序">
+          <div class="search-toolbar-summary">
+            <strong id="search-result-count">0</strong>
+            <span id="search-query-label">条记录</span>
+          </div>
+          <div class="search-filter-group" role="group" aria-label="按资料类型、时期和权利筛选">
+            <button class="filter-chip is-active" type="button" data-search-filter="all">全部</button>
+            <button class="filter-chip" type="button" data-search-filter="person">人物</button>
+            <button class="filter-chip" type="button" data-search-filter="era">时期</button>
+            <button class="filter-chip" type="button" data-search-filter="score">乐谱</button>
+            <button class="filter-chip" type="button" data-search-filter="recording">录音</button>
+            <button class="filter-chip" type="button" data-search-filter="performance">演出</button>
+            <button class="filter-chip" type="button" data-search-filter="work">作品路径</button>
+            <button class="filter-chip" type="button" data-search-filter="writing">著作</button>
+            <button class="filter-chip" type="button" data-search-filter="evidence">证据</button>
+            <button class="filter-chip" type="button" data-search-filter="rights">权利</button>
+          </div>
+          <label class="search-sort">排序
+            <select id="search-sort" aria-label="检索结果排序">
+              <option value="relevance">相关度</option>
+              <option value="name">名称</option>
+              <option value="date">年代</option>
+            </select>
+          </label>
+        </div>
+        <div class="catalog-grid" id="search-results-grid"></div>
+      </section>
+    </main>
+
+    <aside class="librarian" id="librarian" aria-label="AI 音乐学馆员" aria-hidden="false">
+      <div class="librarian-header">
+        <div>
+          <span class="eyebrow">AI LIBRARIAN</span>
+          <h2>音乐学馆员</h2>
+        </div>
+        <button class="icon-button" id="close-librarian" type="button" aria-label="关闭 AI 馆员">×</button>
+      </div>
+
+      <div class="model-notice">
+        <span><i></i> 本地证据 · 可选模型网关</span>
+        <small>未配置时安全回退本地回答</small>
+      </div>
+
+      <div class="conversation" id="conversation" aria-live="polite">
+        <article class="message message-assistant">
+          <span class="message-avatar" aria-hidden="true">Æ</span>
+          <div>
+            <p>你可以让我找乐谱、历史录音或音乐学著作，也可以提出美学问题。当前原型只会依据示范目录回答，并明确告诉你缺了什么证据。</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="source-tray" id="source-tray" hidden>
+        <div class="source-tray-head"><strong>本次证据</strong><span id="source-count">0 条</span></div>
+        <div id="source-items"></div>
+      </div>
+
+      <div class="source-tray lead-source-tray" id="lead-source-tray" hidden>
+        <div class="source-tray-head"><strong>谱本候选来源</strong><span id="lead-source-count">0 条</span></div>
+        <div id="lead-source-items"></div>
+      </div>
+
+      <div class="source-tray lead-source-tray recording-source-tray" id="recording-source-tray" hidden>
+        <div class="source-tray-head"><strong>录音候选来源</strong><span id="recording-source-count">0 条</span></div>
+        <div id="recording-source-items"></div>
+      </div>
+
+      <div class="source-tray work-path-source-tray" id="work-path-source-tray" hidden>
+        <div class="source-tray-head"><strong>作品—版本路径</strong><span id="work-path-source-count">0 条</span></div>
+        <div id="work-path-source-items"></div>
+      </div>
+
+      <div class="research-tray" id="research-tray" hidden>
+        <div class="source-tray-head"><strong>人物研究证据</strong><span id="research-count">0 条</span></div>
+        <div id="research-items"></div>
+      </div>
+
+      <form class="librarian-form" id="librarian-form">
+        <label class="sr-only" for="librarian-input">输入问题</label>
+        <textarea id="librarian-input" rows="2" placeholder="问一个可核查的问题…"></textarea>
+        <div>
+          <small>回答将区分事实、解释与推断</small>
+          <button type="submit" aria-label="发送问题">↗</button>
+        </div>
+      </form>
+    </aside>
+  </div>
+
+  <dialog class="resource-detail" id="resource-detail" aria-labelledby="resource-detail-title" aria-describedby="resource-detail-summary">
+    <article class="resource-dossier">
+      <header class="dossier-header">
+        <div>
+          <p class="eyebrow" id="resource-detail-kicker">RESOURCE DOSSIER · 资源卷宗</p>
+          <h2 id="resource-detail-title">资源详情</h2>
+          <p id="resource-detail-summary"></p>
+        </div>
+        <button class="icon-button dossier-close" id="close-resource-detail" type="button" aria-label="关闭资源详情">×</button>
+      </header>
+
+      <div class="dossier-body" id="resource-detail-body"></div>
+    </article>
+  </dialog>
+
+  <dialog class="person-detail" id="person-detail" aria-labelledby="person-detail-title" aria-describedby="person-detail-summary">
+    <article class="person-dossier">
+      <header class="dossier-header">
+        <div>
+          <p class="eyebrow" id="person-detail-kicker">PERSON DOSSIER · 人物档案</p>
+          <h2 id="person-detail-title">人物档案</h2>
+          <p id="person-detail-summary"></p>
+        </div>
+        <button class="icon-button dossier-close" id="close-person-detail" type="button" aria-label="关闭人物档案">×</button>
+      </header>
+      <div class="dossier-body" id="person-detail-body"></div>
+    </article>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
