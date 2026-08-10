@@ -2,15 +2,18 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0; url=../museum-atlas/index.html" />
+    <meta http-equiv="refresh" content="0;url=main.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>石墨长安 · 跳转中</title>
-    <link rel="canonical" href="../museum-atlas/index.html" />
+    <link rel="canonical" href="main.html" />
     <script>
-      location.replace("../museum-atlas/index.html");
+      (function() {
+        var target = 'main.html' + (location.search || '') + (location.hash || '');
+        location.replace(target);
+      })();
     </script>
   </head>
   <body>
-    <p>页面正在跳转到 <a href="../museum-atlas/index.html">石墨长安</a>。</p>
+    <p>页面正在跳转到 <a href="main.html">石墨长安</a>。</p>
   </body>
 </html>
