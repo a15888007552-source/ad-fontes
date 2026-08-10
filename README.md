@@ -10,13 +10,16 @@
 |---|------|------|------|
 | I | **Annales Musicorum Europae · 欧罗巴音乐家年鉴** | 一百位音乐家的交互年鉴,据 Grout《西方音乐史》与 Taruskin《牛津西方音乐史》 | 已上线 |
 | II | **Busoni《肖像尝试》译注** | 布索尼论歌剧文献的全文汉译与笺注 | 建设中 |
+| VI | **石墨长安 · 西安碑林博物馆数字档案** | 644 张现场照片整理的碑林专题，包含 180 件文物名录 | 已上线 |
 
 ## 结构
 
 ```
-index.html              厂牌门面
+index.html                   厂牌门面
 modules/
-  europa/index.html     模块一(自包含单文件)
+  europa/index.html          模块一(自包含单文件)
+  museum-atlas/index.html     总馆入口
+  beilin/index.html           碑林专题跳转入口
 ```
 
 ## 编辑原则
@@ -29,3 +32,4 @@ modules/
 - [ ] 将 `cite` 引注在页面上渲染为可见的规范引用
 - [ ] 模块二:布索尼《肖像尝试》译注
 - [ ] 发布到 GitHub Pages
+- [ ] 让仓库根目录默认指向总馆入口或专题首页
