@@ -318,15 +318,51 @@ function applyFilters() {
   renderCards();
 }
 
-function addImageFallback(image) {
-  image.addEventListener(
-    "error",
-    () => {
-      image.style.opacity = "0.18";
-      image.alt = `${image.alt}（图片载入失败）`;
-    },
-    { once: true },
-  );
+function resolveImageSources(photo, preferred = []) {
+  const sources = [];
+  const push = (path) => {
+    const resolved = projectUrl(path);
+    if (!path || sources.includes(resolved)) return;
+    sources.push(resolved);
+  };
+  preferred.forEach(push);
+  push(photo?.preview);
+  push(photo?.original);
+  return sources;
+}
+
+function setImageWithFallback(image, photo, preferred = []) {
+  const sources = resolveImageSources(photo, preferred);
+  if (!sources.length) return;
+
+  if (image.__fallbackHandler) {
+    image.removeEventListener("error", image.__fallbackHandler);
+    image.__fallbackHandler = null;
+  }
+
+  image.style.opacity = "1";
+  image.dataset.imageFallbackIndex = "0";
+  image.__fallbackOriginalAlt = image.alt;
+
+  const onImageError = () => {
+    const nextIndex = Number(image.dataset.imageFallbackIndex || 0) + 1;
+    if (nextIndex < sources.length) {
+      image.dataset.imageFallbackIndex = String(nextIndex);
+      image.src = sources[nextIndex];
+      return;
+    }
+
+    image.style.opacity = "0.18";
+    image.alt = `${image.__fallbackOriginalAlt || image.alt}（图片载入失败）`;
+    if (image.__fallbackHandler) {
+      image.removeEventListener("error", image.__fallbackHandler);
+      image.__fallbackHandler = null;
+    }
+  };
+
+  image.__fallbackHandler = onImageError;
+  image.addEventListener("error", onImageError);
+  image.src = sources[0];
 }
 
 function createCard(group, index) {
@@ -345,7 +381,7 @@ function createCard(group, index) {
     ? group.main_photo
     : displayPhotos[0] || null;
   if (cardPhoto) {
-    image.src = projectUrl(cardPhoto.thumb);
+    setImageWithFallback(image, cardPhoto, [cardPhoto.thumb, cardPhoto.preview]);
     image.alt = `${group.name}现场文物照片`;
   } else {
     imageWrap.classList.add("is-editorial-placeholder");
@@ -354,7 +390,6 @@ function createCard(group, index) {
   }
   image.loading = index < 12 ? "eager" : "lazy";
   image.decoding = "async";
-  addImageFallback(image);
   imageWrap.append(image);
   if (!cardPhoto) imageWrap.append(makeElement("span", "card-placeholder-note", "主题视觉 · 非文物照片"));
 
@@ -452,13 +487,13 @@ function selectPhoto(index, updateLightbox = false) {
   state.currentPhotoIndex = ((index % count) + count) % count;
   const photo = selectedPhoto();
 
-  const nextSource = new URL(projectUrl(photo.preview), window.location.href).href;
+  const nextSource = new URL(projectUrl(photo.preview || photo.original), window.location.href).href;
   if (elements.detailMainImage.src !== nextSource) {
     elements.openLightbox.classList.add("is-changing");
     const finishChange = () => elements.openLightbox.classList.remove("is-changing");
     elements.detailMainImage.addEventListener("load", finishChange, { once: true });
     window.setTimeout(finishChange, 520);
-    elements.detailMainImage.src = projectUrl(photo.preview);
+    setImageWithFallback(elements.detailMainImage, photo, [photo.preview, photo.original]);
   }
   elements.detailMainImage.alt = `${group.name}：${formatRole(photo.role)}，照片${photo.sequence}`;
   elements.galleryRoleLabel.textContent = formatRole(photo.role);
@@ -482,11 +517,10 @@ function renderThumbs(group) {
     button.setAttribute("aria-label", `查看${formatRole(photo.role)}，${photo.filename}`);
     button.setAttribute("aria-current", String(index === state.currentPhotoIndex));
     const image = document.createElement("img");
-    image.src = projectUrl(photo.thumb);
+    setImageWithFallback(image, photo, [photo.thumb, photo.preview]);
     image.alt = "";
     image.loading = "lazy";
     image.decoding = "async";
-    addImageFallback(image);
     button.append(image, makeElement("span", "", formatRole(photo.role)));
     button.addEventListener("click", () => selectPhoto(index));
     fragment.append(button);
