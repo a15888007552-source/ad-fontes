@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ad Fontes 模块入口页" />
+    <title>Ad Fontes · 模块</title>
+    <style>
+      :root {
+        --bg: #f3ecdf;
+        --paper: #fffaf2;
+        --ink: #241c18;
+        --muted: #6f5b4d;
+        --accent: #b55f45;
+        --accent-2: #c69a55;
+        --line: rgba(36, 28, 24, 0.12);
+        --shadow: 0 24px 70px rgba(45, 28, 17, 0.12);
+        --serif: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+        --sans: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        font-family: var(--sans);
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 10%, rgba(198, 154, 85, 0.14), transparent 22%),
+          radial-gradient(circle at 90% 12%, rgba(181, 95, 69, 0.10), transparent 18%),
+          linear-gradient(180deg, #faf4e8 0%, var(--bg) 100%);
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .wrap {
+        width: min(1120px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 28px 0 40px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 28px;
+      }
+
+      .brand {
+        display: grid;
+        gap: 4px;
+      }
+
+      .brand strong {
+        font-family: var(--serif);
+        font-weight: 600;
+        letter-spacing: 0.14em;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+      }
+
+      .home-link {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .hero {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+        align-items: stretch;
+      }
+
+      .panel {
+        background: rgba(255, 251, 244, 0.92);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-main {
+        padding: clamp(28px, 4vw, 54px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-main::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 14px 0 12px;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(44px, 6vw, 84px);
+        line-height: 0.96;
+      }
+
+      .lead {
+        max-width: 62ch;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 16px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #fff8ef;
+      }
+
+      .btn-secondary {
+        border-color: rgba(36, 28, 24, 0.14);
+        background: rgba(255, 251, 244, 0.78);
+      }
+
+      .cards {
+        display: grid;
+        gap: 14px;
+        padding: 22px;
+      }
+
+      .card {
+        padding: 20px;
+        border-radius: 22px;
+        background: rgba(248, 243, 232, 0.82);
+        border: 1px solid rgba(36, 28, 24, 0.08);
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 1.5rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .link-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .link-list a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 54px;
+        padding: 0 16px;
+        border-radius: 16px;
+        background: var(--paper);
+        border: 1px solid rgba(36, 28, 24, 0.12);
+      }
+
+      .footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 640px) {
+        .wrap { width: min(100vw - 18px, 100%); }
+        .topbar { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="topbar">
+        <div class="brand">
+          <strong>Ad Fontes · 模块</strong>
+          <span>总馆与各专题的目录页</span>
+        </div>
+        <a class="home-link" href="/ad-fontes/">返回总馆首页</a>
+      </header>
+
+      <main class="hero">
+        <section class="panel hero-main">
+          <div class="eyebrow">Modules · 2026</div>
+          <h1>模块入口</h1>
+          <p class="lead">
+            这里是 Ad Fontes 的模块总页。以后所有分馆、专题、城市页都可以从这里继续展开。
+            当前先放入西安碑林专题，后续再逐步加入其他省份和博物馆。
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/ad-fontes/modules/beilin/index.html">进入西安碑林专题</a>
+            <a class="btn btn-secondary" href="/ad-fontes/">回到总馆首页</a>
+          </div>
+        </section>
+
+        <aside class="panel cards">
+          <div class="card">
+            <h2>当前模块</h2>
+            <p>西安碑林博物馆专题已经接入，可以直接浏览文物名录。</p>
+            <div class="link-list">
+              <a href="/ad-fontes/modules/beilin/index.html"><span>西安碑林专题</span><span>→</span></a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>后续扩展</h2>
+            <p>以后你拍到别的馆，只要继续在这里加新的模块文件夹即可。</p>
+          </div>
+        </aside>
+      </main>
+
+      <p class="footer">Ad Fontes · 模块入口</p>
+    </div>
+  </body>
+</html>
