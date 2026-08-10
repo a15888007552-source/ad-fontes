@@ -1,19 +1,369 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="refresh" content="0;url=main.html" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>石墨长安 · 跳转中</title>
-    <link rel="canonical" href="main.html" />
-    <script>
-      (function() {
-        var target = 'main.html' + (location.search || '') + (location.hash || '');
-        location.replace(target);
-      })();
-    </script>
+    <meta
+      name="description"
+      content="Ad Fontes 石刻专题：以644张现场照片整理的西安碑林博物馆个人数字文物档案，收录180件碑刻、墓志、拓本、礼乐器与石雕。"
+    />
+    <meta name="theme-color" content="#171714" />
+    <title>石墨 长安｜西安碑林博物馆数字档案 · Ad Fontes</title>
+    <link rel="icon" href="../../assets/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../../styles.css?v=4.1" />
+    <script src="../../app.js?v=4.1" defer></script>
   </head>
   <body>
-    <p>页面正在跳转到 <a href="main.html">石墨长安</a>。</p>
+    <a class="skip-link" href="#catalog">跳至文物名录</a>
+
+    <header class="hero" id="top">
+      <nav class="top-nav" aria-label="主导航">
+        <a class="wordmark" href="#top" aria-label="返回首页">
+          <span class="seal" aria-hidden="true">碑</span>
+          <span class="wordmark-copy">
+            <strong>AD FONTES · 石刻专题</strong>
+            <small>西安碑林博物馆数字档案</small>
+          </span>
+        </a>
+        <div class="top-nav-links">
+          <a href="#top">网站介绍</a>
+          <a href="#museum">省份</a>
+          <a href="#themes">城市</a>
+          <a href="#catalog">博物馆</a>
+          <a class="platform-return" href="../../index.html#beilin" target="_top">主站入口 ↗</a>
+        </div>
+      </nav>
+
+      <div class="hero-image" role="img" aria-label="西安碑林博物馆大门实景"></div>
+      <div class="hero-museum-name" aria-label="西安碑林博物馆">
+        <span>XI’AN BEILIN MUSEUM</span>
+        <strong>西安碑林博物馆</strong>
+      </div>
+      <div class="hero-panel">
+        <p class="eyebrow">个人田野影像档案 · 2026</p>
+        <h1 aria-label="石 墨 长 安"><span>石墨</span><span>长安</span></h1>
+        <p class="hero-lead">
+          从碑身、字口、拓片与器物细节进入一座可以检索的石刻书法史。180 件对象逐一校读，展签转为文字，文物照片回到观看中心。
+        </p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#catalog">进入 180 件文物名录 <span aria-hidden="true">↓</span></a>
+          <a class="secondary-action" href="#themes">按主题浏览</a>
+        </div>
+      </div>
+      <p class="hero-credit">
+        馆门摄影：Kcx36，2023 ·
+        <a
+          href="https://commons.wikimedia.org/wiki/File:%E8%A5%BF%E5%AE%89%E7%A2%91%E6%9E%97%E5%8D%9A%E7%89%A9%E9%A6%86%E5%A4%A7%E9%97%A8_2023-09-29.jpg"
+          target="_blank"
+          rel="noreferrer"
+        >CC BY-SA 4.0</a>
+      </p>
+    </header>
+
+    <main>
+      <section class="museum-section" id="museum" aria-labelledby="museum-title">
+        <div class="section-index" aria-hidden="true">01</div>
+        <div class="museum-copy">
+          <p class="section-kicker">省份索引 · 陕西</p>
+          <h2 id="museum-title">从关中碑石进入陕西文化地理</h2>
+          <div class="museum-columns">
+            <p>
+              陕西是这批石刻材料的地理起点，也是理解西安碑林的重要背景。关中地区长期承载都城、礼制、教育与碑刻收藏等多重历史层次，因此“省份”这一层先把作品放回区域文化史。
+            </p>
+            <p>
+              这一区块不展开对象细节，而是提供省域层面的阅读框架：先辨认陕西，再进入城市西安，最后落到博物馆与具体文物。这样更符合从宏观到微观的浏览顺序。
+            </p>
+          </div>
+          <a class="text-link" href="https://www.beilin-museum.com/" target="_blank" rel="noreferrer">
+            查阅西安碑林博物馆官网 <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <dl class="museum-stats" aria-label="档案统计">
+          <div>
+            <dt id="artifactStat">180</dt>
+            <dd>件 / 组文物</dd>
+          </div>
+          <div>
+            <dt id="photoStat">644</dt>
+            <dd>张现场照片</dd>
+          </div>
+          <div>
+            <dt id="specialStat">2</dt>
+            <dd>组禁止出境展览文物</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="theme-section" id="themes" aria-labelledby="themes-title">
+        <header class="theme-heading">
+          <div>
+            <p class="section-kicker">城市索引 · 西安</p>
+            <h2 id="themes-title">从城墙、孔庙到碑林博物馆</h2>
+          </div>
+          <p class="theme-intro" id="theme-disclaimer">
+            这部分承接省份之后的城市层：把西安作为碑林材料的城市语境，再导向具体博物馆。真正的文物内容仍集中在下方名录。
+          </p>
+        </header>
+
+        <div class="theme-grid" aria-describedby="theme-disclaimer">
+          <button class="theme-card theme-card-stele" type="button" data-theme-category="碑">
+            <img src="../../assets/editorial/theme-stele.webp" alt="" loading="lazy" decoding="async" />
+            <span class="theme-card-shade" aria-hidden="true"></span>
+            <span class="theme-card-copy">
+              <small>01 · 网站介绍</small>
+              <strong>总览</strong>
+              <span>先看结构，再进入专题</span>
+            </span>
+          </button>
+
+          <button class="theme-card theme-card-inscription" type="button" data-theme-category="碑文">
+            <img src="../../assets/editorial/theme-inscription.webp" alt="" loading="lazy" decoding="async" />
+            <span class="theme-card-shade" aria-hidden="true"></span>
+            <span class="theme-card-copy">
+              <small>02 · 省份</small>
+              <strong>陕西</strong>
+              <span>以省级文化地理为入口</span>
+            </span>
+          </button>
+
+          <button class="theme-card theme-card-epitaph" type="button" data-theme-category="墓志">
+            <img src="../../assets/editorial/theme-epitaph.webp" alt="" loading="lazy" decoding="async" />
+            <span class="theme-card-shade" aria-hidden="true"></span>
+            <span class="theme-card-copy">
+              <small>03 · 城市</small>
+              <strong>西安</strong>
+              <span>从城市专题进入博物馆群</span>
+            </span>
+          </button>
+
+          <button class="theme-card theme-card-objects" type="button" data-theme-category="古董/文物">
+            <img src="../../assets/editorial/theme-objects.webp" alt="" loading="lazy" decoding="async" />
+            <span class="theme-card-shade" aria-hidden="true"></span>
+            <span class="theme-card-copy">
+              <small>04 · 博物馆</small>
+              <strong>西安碑林博物馆</strong>
+              <span>最终进入文物名录与详情</span>
+            </span>
+          </button>
+
+          <button class="theme-card theme-card-special" type="button" data-theme-category="禁止出国（境）展览文物">
+            <img src="../../assets/editorial/theme-special.webp" alt="" loading="lazy" decoding="async" />
+            <span class="theme-card-shade" aria-hidden="true"></span>
+            <span class="theme-card-copy">
+              <small>05 · 学术重点</small>
+              <strong>重点档案</strong>
+              <span>可继续扩展到更多专题</span>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+        <div class="catalog-heading">
+          <div>
+            <p class="section-kicker">博物馆索引 · 西安碑林博物馆</p>
+            <h2 id="catalog-title">180 件文物名录</h2>
+          </div>
+          <p class="catalog-intro">
+            这是四类顺序的最后一层：从网站介绍、省份、城市，落到博物馆与具体文物。卡片左侧保留文物缩略图，右侧呈现名称、年代与校读后的展签摘录。
+          </p>
+        </div>
+
+        <div class="catalog-controls" id="catalogControls">
+          <label class="search-field" for="searchInput">
+            <span>检索</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="输入碑名、年代、书体或人物……"
+              autocomplete="off"
+            />
+            <kbd>/</kbd>
+          </label>
+          <div class="category-tabs" id="categoryTabs" role="group" aria-label="按类别筛选"></div>
+          <div class="control-row">
+            <label for="sortSelect">排序</label>
+            <select id="sortSelect">
+              <option value="sequence">参观顺序</option>
+              <option value="name">名称</option>
+              <option value="photos">照片数量</option>
+            </select>
+            <button id="musicOnly" class="music-filter-button" type="button" aria-pressed="false">
+              <span aria-hidden="true">♪</span> 音乐关联 <b id="musicFilterCount">0</b>
+            </button>
+            <button id="clearFilters" class="quiet-button" type="button">清除筛选</button>
+            <p class="result-count" id="resultCount" aria-live="polite">正在读取档案……</p>
+          </div>
+        </div>
+
+        <div class="catalog-grid" id="catalogGrid" aria-live="polite" aria-busy="true"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <p>没有找到匹配的文物。</p>
+          <button class="text-button" type="button" data-clear-search>清除检索词</button>
+        </div>
+        <div class="load-error" id="loadError" hidden>
+          <strong>档案数据未能载入。</strong>
+          <p>请确认网站通过本地服务器打开，并刷新页面。</p>
+        </div>
+      </section>
+
+      <section class="method-section" id="method" aria-labelledby="method-title">
+        <div class="section-index" aria-hidden="true">05</div>
+        <div>
+          <p class="section-kicker">展签文字、校读与资料来源，各有自己的证据边界</p>
+          <h2 id="method-title">这份档案怎样整理</h2>
+        </div>
+        <ol class="method-steps">
+          <li>
+            <span>拍摄顺序</span>
+            <p>保留相机原文件名、时间与照片序号；644张入选照片逐张计算校验值，原图不覆盖、不重编码。</p>
+          </li>
+          <li>
+            <span>对象归组</span>
+            <p>结合正照、反照、侧照、局部与介绍牌判断边界；连续展柜或组合陈列不机械按固定张数切分。</p>
+          </li>
+          <li>
+            <span>资料分层</span>
+            <p>现场展签识别眼前对象；馆方对象页补充形制与流传；维基百科及其他博物馆页面只作人物、作品或制度背景，不把拓本与原碑混作同一件实物。</p>
+          </li>
+        </ol>
+        <aside class="method-note">
+          <strong>校读提醒</strong>
+            <p>展签与题名牌照片不进入文物画廊，只作为文字证据保存。卡片摘录已经过清理；折叠区仍保留原始OCR，正式引用前须回看展签原图逐字核对。</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-mark">
+        <span class="seal" aria-hidden="true">碑</span>
+        <div>
+          <strong>石墨长安</strong>
+          <p>西安碑林博物馆个人影像档案</p>
+        </div>
+      </div>
+      <div class="footer-sources">
+        <p>资料入口</p>
+        <a href="https://www.beilin-museum.com/" target="_blank" rel="noreferrer">博物馆官网</a>
+        <a href="https://www.beilin-museum.com/index.php?a=index&amp;aid=2577&amp;c=View&amp;m=home" target="_blank" rel="noreferrer">大秦景教碑</a>
+        <a href="https://www.beilin-museum.com/index.php?a=index&amp;aid=142&amp;c=View&amp;m=home" target="_blank" rel="noreferrer">昭陵六骏</a>
+      </div>
+      <p class="footer-note">现场拍摄：2026-08-09 · 数据版本：v4 · Ad Fontes 石刻专题</p>
+    </footer>
+
+    <dialog class="artifact-dialog" id="artifactDialog" aria-labelledby="detailTitle">
+      <article class="detail-shell">
+        <header class="detail-header">
+          <div>
+            <p class="detail-category" id="detailCategory"></p>
+            <h2 id="detailTitle"></h2>
+            <p class="detail-period" id="detailPeriod"></p>
+          </div>
+          <button class="icon-button close-button" id="closeDetail" type="button" aria-label="关闭文物详情">×</button>
+        </header>
+
+        <div class="detail-gallery">
+          <button class="main-image-button" id="openLightbox" type="button" aria-label="查看高清原图">
+            <span class="gallery-art-layer" aria-hidden="true"></span>
+            <span class="gallery-side-note gallery-side-note-left" aria-hidden="true">
+              <small id="galleryCategoryLabel"></small>
+              <strong id="galleryArtifactLabel"></strong>
+            </span>
+            <span class="gallery-side-note gallery-side-note-right" aria-hidden="true">
+              <small>本张影像</small>
+              <strong id="galleryRoleLabel"></strong>
+              <em>中央为现场原图<br />背景为 AI 主题环境</em>
+            </span>
+            <img id="detailMainImage" alt="" />
+            <span class="gallery-empty-note" id="galleryEmptyNote" hidden>
+              <strong>本组未拍摄文物本体</strong>
+              <small>展签已转为文字证据<br />背景为主题视觉，不是文物影像</small>
+            </span>
+            <span class="gallery-art-disclosure" id="galleryArtDisclosure">AI 主题环境 · 原图未修改</span>
+            <span class="zoom-hint" id="zoomHint">点击查看原图</span>
+          </button>
+          <div class="photo-thumbs" id="photoThumbs" role="list" aria-label="文物照片"></div>
+          <div class="image-caption" id="imageCaption"></div>
+        </div>
+
+        <div class="detail-body">
+          <aside class="fact-panel" aria-label="基本信息">
+            <dl id="factList"></dl>
+            <div class="subitems" id="subitemsBlock" hidden>
+              <h3>组合内容</h3>
+              <ul id="subitemsList"></ul>
+            </div>
+          </aside>
+
+          <div class="research-copy">
+            <section>
+              <p class="research-index">I</p>
+              <h3>历史背景</h3>
+              <p id="historyText"></p>
+            </section>
+            <section>
+              <p class="research-index">II</p>
+              <h3>形制与工艺</h3>
+              <p id="formText"></p>
+            </section>
+            <section>
+              <p class="research-index">III</p>
+              <h3>历史贡献</h3>
+              <p id="contributionText"></p>
+            </section>
+            <section>
+              <p class="research-index">IV</p>
+              <h3>怎么看这件文物</h3>
+              <p id="viewingGuideText"></p>
+            </section>
+            <section class="music-research" id="musicResearch" hidden>
+              <p class="music-tier" id="musicTier"></p>
+              <p class="research-index" aria-hidden="true">♪</p>
+              <h3 id="musicTitle"></h3>
+              <p id="musicSummary"></p>
+              <ul id="musicDetails"></ul>
+              <p class="music-boundary" id="musicBoundary"></p>
+            </section>
+          </div>
+        </div>
+
+        <section class="source-section">
+          <div>
+            <p class="section-kicker">证据分层</p>
+            <h3>展签文字、校读与资料来源</h3>
+          </div>
+          <div class="source-list" id="sourceList"></div>
+          <details class="ocr-details">
+            <summary>校勘用：展开原始展签 OCR 转录</summary>
+            <p class="ocr-warning">自动识别可能有漏字、错字和行序错误，不能直接作为正式引文。</p>
+            <pre id="ocrText"></pre>
+          </details>
+        </section>
+
+        <footer class="detail-footer">
+          <button class="detail-nav-button" id="previousArtifact" type="button"><span aria-hidden="true">←</span> 上一件</button>
+          <p id="detailPosition"></p>
+          <button class="detail-nav-button" id="nextArtifact" type="button">下一件 <span aria-hidden="true">→</span></button>
+        </footer>
+      </article>
+    </dialog>
+
+    <dialog class="lightbox" id="lightbox" aria-label="高清照片查看器">
+      <div class="lightbox-toolbar">
+        <p id="lightboxCaption"></p>
+        <div>
+          <button id="toggleZoom" type="button">1:1 原尺寸</button>
+          <a id="openOriginal" target="_blank" rel="noreferrer">新窗口打开原图 ↗</a>
+          <button id="closeLightbox" class="icon-button" type="button" aria-label="关闭高清查看器">×</button>
+        </div>
+      </div>
+      <div class="lightbox-stage" id="lightboxStage">
+        <button class="lightbox-arrow previous" id="previousPhoto" type="button" aria-label="上一张照片">←</button>
+        <img id="lightboxImage" alt="" />
+        <button class="lightbox-arrow next" id="nextPhoto" type="button" aria-label="下一张照片">→</button>
+      </div>
+    </dialog>
+
+    <noscript>此网站需要 JavaScript 才能读取文物档案与打开多角度图集。</noscript>
   </body>
 </html>
