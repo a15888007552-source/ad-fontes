@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2a0d0c" />
+    <meta name="description" content="中国国家博物馆个人参观档案主页：国博简介与文物卡片。" />
+    <title>中国国家博物馆 · 文物卡片</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="回到主页">
+        <span class="brand-mark">国</span>
+        <span class="brand-copy">
+          <strong>中国国家博物馆</strong>
+          <small>MY BEIJING ARCHIVE</small>
+        </span>
+      </a>
+      <a class="official-button" href="https://www.chnmuseum.cn/" target="_blank" rel="noreferrer">
+        进入国博官网 <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <p class="eyebrow"><span></span>北京 · 天安门东侧 · 离线个人参观档案</p>
+          <h1 id="hero-title">中国国家<br /><em>博物馆</em></h1>
+          <p class="hero-intro">
+            中国国家博物馆是代表国家收藏、研究、展示、阐释中华文化代表性物证的最高历史文化艺术殿堂，也是保存民族集体记忆、传承国家文化基因的国家文化客厅。
+          </p>
+          <div class="hero-actions">
+            <a class="official-button official-button-large" href="https://www.chnmuseum.cn/" target="_blank" rel="noreferrer">
+              访问中国国家博物馆官方网站 <span aria-hidden="true">↗</span>
+            </a>
+            <a class="jump-link" href="#objects">往下看文物卡片 <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="image-boundary">背景：项目生成图 · 卡片图片：本人参观拍摄</p>
+        </div>
+        <div class="hero-seal" aria-hidden="true"><span>国</span><span>博</span><i></i></div>
+      </section>
+
+      <section class="objects-section" id="objects" aria-labelledby="objects-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow eyebrow-dark"><span></span>MY VISIT / SELECTED OBJECTS</p>
+            <h2 id="objects-title">我在国博看到的文物</h2>
+            <p class="section-lede">外面先看一张图。点击相应卡片，再打开这件文物的介绍。</p>
+          </div>
+          <p class="object-count" id="object-count">18 张照片卡</p>
+        </div>
+
+        <div class="object-grid" id="object-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div><span class="footer-mark">国</span><strong>中国国家博物馆 · 文物卡片</strong></div>
+      <p>离线主页 / 第一轮</p>
+    </footer>
+
+    <dialog class="object-dialog" id="object-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="关闭介绍">×</button>
+      <div class="dialog-image-wrap"><img id="dialog-image" src="" alt="" /></div>
+      <div class="dialog-copy">
+        <p class="dialog-kicker" id="dialog-kicker"></p>
+        <h2 id="dialog-title"></h2>
+        <p class="dialog-description" id="dialog-description"></p>
+        <div class="dialog-tags" id="dialog-tags"></div>
+        <p class="dialog-boundary" id="dialog-boundary"></p>
+        <a class="dialog-source" id="dialog-source" href="#" target="_blank" rel="noreferrer">查看国博官方条目 <span aria-hidden="true">↗</span></a>
+      </div>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
