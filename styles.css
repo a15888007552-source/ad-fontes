@@ -2232,12 +2232,7 @@ dialog::backdrop {
   letter-spacing: 0.28em;
 }
 
-.hero-panel {
-  left: 32%;
-  bottom: 44px;
-  width: min(690px, calc(100% - 56px));
-  transform: translateX(-50%);
-  padding: clamp(26px, 3vw, 42px);
+.hero-panel { left: clamp(330px, 25%, 520px); bottom: 44px; width: min(620px, calc(100% - 48px)); transform: translateX(-50%); padding: 42px 48px 38px;
   border: 1px solid rgba(250, 249, 245, 0.26);
   border-left: 3px solid #b84736;
   background: rgba(19, 19, 16, 0.84);
@@ -3109,3 +3104,4 @@ dialog::backdrop {
     transition: none !important;
   }
 }
+ @media (min-width: 721px) { .hero-panel h1 { font-size: clamp(72px, 5.5vw, 96px); } .hero-lead { max-width: 510px; font-size: 15px; } }
