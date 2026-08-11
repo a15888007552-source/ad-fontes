@@ -7,6 +7,35 @@ const DATA_URL = projectUrl("data/artifact-groups.json");
 const IS_EMBEDDED = new URLSearchParams(window.location.search).get("embed") === "1";
 const HIDDEN_DOCUMENT_ROLES = new Set(["label", "title"]);
 
+const IMAGE_VARIANTS = {
+  thumb: { directory: "thumb", width: 320 },
+  preview: { directory: "web", width: 1280 },
+  large: { directory: "large", width: 2200 },
+};
+
+const RESPONSIVE_IMAGE_PROFILES = {
+  card: {
+    variants: ["thumb"],
+    sizes: "(max-width: 620px) 88px, 112px",
+    fallbacks: ["thumb", "preview", "original"],
+  },
+  thumbnail: {
+    variants: ["thumb"],
+    sizes: "82px",
+    fallbacks: ["thumb", "preview", "original"],
+  },
+  detail: {
+    variants: ["thumb", "preview", "large"],
+    sizes: "(max-width: 1120px) calc(100vw - 44px), min(45vw, 640px)",
+    fallbacks: ["preview", "original"],
+  },
+  lightbox: {
+    variants: ["large"],
+    sizes: "100vw",
+    fallbacks: ["preview", "original"],
+  },
+};
+
 document.body.classList.toggle("is-embedded", IS_EMBEDDED);
 
 const CATEGORY_ORDER = [
@@ -53,6 +82,10 @@ const RESEARCH_STATUS_LABELS = {
   curated_from_label: "已校读 · 现场展签",
 };
 
+const LIGHTBOX_MIN_ZOOM = 1;
+const LIGHTBOX_MAX_ZOOM = 5;
+const LIGHTBOX_ZOOM_STEP = 0.2;
+
 const state = {
   catalog: null,
   groups: [],
@@ -64,6 +97,7 @@ const state = {
   currentArtifact: null,
   currentPhotos: [],
   currentPhotoIndex: 0,
+  lightboxScale: 1,
 };
 
 const elements = {
@@ -331,6 +365,29 @@ function resolveImageSources(photo, preferred = []) {
   return sources;
 }
 
+function photoStem(photo) {
+  const filename = String(photo?.filename || photo?.original?.split("/").pop() || "");
+  return filename.replace(/\.[^.]+$/, "");
+}
+
+function photoVariantUrl(photo, variantName, extension = "webp") {
+  const variant = IMAGE_VARIANTS[variantName];
+  const stem = photoStem(photo);
+  if (!variant || !stem) return "";
+  return projectUrl(`assets/photos/${variant.directory}/${stem}.${extension}`);
+}
+
+function photoFallbacks(photo, names) {
+  return names
+    .map((name) => {
+      if (name === "original") return photo?.original;
+      if (name === "thumb") return photo?.thumb || photoVariantUrl(photo, "thumb", "jpg");
+      if (name === "preview") return photo?.preview || photoVariantUrl(photo, "preview", "jpg");
+      return "";
+    })
+    .filter(Boolean);
+}
+
 function setImageWithFallback(image, photo, preferred = []) {
   const sources = resolveImageSources(photo, preferred);
   if (!sources.length) return;
@@ -345,6 +402,13 @@ function setImageWithFallback(image, photo, preferred = []) {
   image.__fallbackOriginalAlt = image.alt;
 
   const onImageError = () => {
+    if (image.hasAttribute("srcset")) {
+      image.removeAttribute("srcset");
+      image.removeAttribute("sizes");
+      image.src = sources[0];
+      return;
+    }
+
     const nextIndex = Number(image.dataset.imageFallbackIndex || 0) + 1;
     if (nextIndex < sources.length) {
       image.dataset.imageFallbackIndex = String(nextIndex);
@@ -365,6 +429,38 @@ function setImageWithFallback(image, photo, preferred = []) {
   image.src = sources[0];
 }
 
+function setResponsiveImage(image, photo, profileName) {
+  const profile = RESPONSIVE_IMAGE_PROFILES[profileName];
+  if (!profile) {
+    setImageWithFallback(image, photo);
+    return;
+  }
+
+  const srcset = profile.variants
+    .map((variantName) => {
+      const url = photoVariantUrl(photo, variantName);
+      const width = IMAGE_VARIANTS[variantName]?.width;
+      return url && width ? `${url} ${width}w` : "";
+    })
+    .filter(Boolean)
+    .join(", ");
+
+  if (srcset) {
+    image.srcset = srcset;
+    image.sizes = profile.sizes;
+  } else {
+    image.removeAttribute("srcset");
+    image.removeAttribute("sizes");
+  }
+
+  if (photo?.display_width && photo?.display_height) {
+    image.width = Number(photo.display_width);
+    image.height = Number(photo.display_height);
+  }
+
+  setImageWithFallback(image, photo, photoFallbacks(photo, profile.fallbacks));
+}
+
 function createCard(group, index) {
   const card = makeElement("article", `artifact-card${group.special_status ? " special" : ""}`);
   const button = makeElement("button", "artifact-card-button");
@@ -381,15 +477,16 @@ function createCard(group, index) {
     ? group.main_photo
     : displayPhotos[0] || null;
   if (cardPhoto) {
-    setImageWithFallback(image, cardPhoto, [cardPhoto.thumb, cardPhoto.preview]);
     image.alt = `${group.name}现场文物照片`;
+    setResponsiveImage(image, cardPhoto, "card");
   } else {
     imageWrap.classList.add("is-editorial-placeholder");
     image.src = projectUrl(THEME_ART[group.category] || THEME_ART["古董/文物"]);
     image.alt = `${group.name}主题视觉占位，本组没有文物本体照片`;
   }
-  image.loading = index < 12 ? "eager" : "lazy";
+  image.loading = "lazy";
   image.decoding = "async";
+  image.fetchPriority = "low";
   imageWrap.append(image);
   if (!cardPhoto) imageWrap.append(makeElement("span", "card-placeholder-note", "主题视觉 · 非文物照片"));
 
@@ -487,13 +584,14 @@ function selectPhoto(index, updateLightbox = false) {
   state.currentPhotoIndex = ((index % count) + count) % count;
   const photo = selectedPhoto();
 
-  const nextSource = new URL(projectUrl(photo.preview || photo.original), window.location.href).href;
-  if (elements.detailMainImage.src !== nextSource) {
+  const nextPhotoKey = `${group.id}:${photo.sequence}`;
+  if (elements.detailMainImage.dataset.photoKey !== nextPhotoKey) {
     elements.openLightbox.classList.add("is-changing");
     const finishChange = () => elements.openLightbox.classList.remove("is-changing");
     elements.detailMainImage.addEventListener("load", finishChange, { once: true });
     window.setTimeout(finishChange, 520);
-    setImageWithFallback(elements.detailMainImage, photo, [photo.preview, photo.original]);
+    elements.detailMainImage.dataset.photoKey = nextPhotoKey;
+    setResponsiveImage(elements.detailMainImage, photo, "detail");
   }
   elements.detailMainImage.alt = `${group.name}：${formatRole(photo.role)}，照片${photo.sequence}`;
   elements.galleryRoleLabel.textContent = formatRole(photo.role);
@@ -517,10 +615,11 @@ function renderThumbs(group) {
     button.setAttribute("aria-label", `查看${formatRole(photo.role)}，${photo.filename}`);
     button.setAttribute("aria-current", String(index === state.currentPhotoIndex));
     const image = document.createElement("img");
-    setImageWithFallback(image, photo, [photo.thumb, photo.preview]);
     image.alt = "";
     image.loading = "lazy";
     image.decoding = "async";
+    image.fetchPriority = "low";
+    setResponsiveImage(image, photo, "thumbnail");
     button.append(image, makeElement("span", "", formatRole(photo.role)));
     button.addEventListener("click", () => selectPhoto(index));
     fragment.append(button);
@@ -659,6 +758,9 @@ function renderDetail(group) {
     selectPhoto(mainIndex);
   } else {
     elements.detailMainImage.removeAttribute("src");
+    elements.detailMainImage.removeAttribute("srcset");
+    elements.detailMainImage.removeAttribute("sizes");
+    delete elements.detailMainImage.dataset.photoKey;
     elements.detailMainImage.alt = "";
     elements.galleryRoleLabel.textContent = "无文物本体照片";
     elements.imageCaption.textContent = "本组仅有展签或题名墙记录：照片已转为文字证据，不进入文物画廊。";
@@ -706,9 +808,9 @@ function updateLightboxImage() {
   const photo = selectedPhoto();
   const group = state.currentArtifact;
   if (!photo || !group) return;
-  elements.lightboxStage.classList.remove("is-zoomed");
-  elements.toggleZoom.textContent = "1:1 原尺寸";
-  elements.lightboxImage.src = projectUrl(photo.original);
+  setLightboxZoom(LIGHTBOX_MIN_ZOOM);
+  elements.lightboxImage.dataset.usingOriginal = "false";
+  setResponsiveImage(elements.lightboxImage, photo, "lightbox");
   elements.lightboxImage.alt = `${group.name}高清原图：${formatRole(photo.role)}`;
   elements.lightboxCaption.textContent = `${group.name} · ${formatRole(photo.role)} · ${photo.filename} · ${state.currentPhotoIndex + 1}/${state.currentPhotos.length}`;
   elements.openOriginal.href = projectUrl(photo.original);
@@ -725,12 +827,49 @@ function navigatePhoto(direction) {
   selectPhoto(state.currentPhotoIndex + direction, true);
 }
 
-function toggleZoom() {
-  const zoomed = elements.lightboxStage.classList.toggle("is-zoomed");
-  elements.toggleZoom.textContent = zoomed ? "适合窗口" : "1:1 原尺寸";
-  if (!zoomed) {
+function setLightboxZoom(scale) {
+  const clampedScale = Math.min(
+    LIGHTBOX_MAX_ZOOM,
+    Math.max(LIGHTBOX_MIN_ZOOM, Number(scale) || LIGHTBOX_MIN_ZOOM),
+  );
+  if (!Number.isFinite(clampedScale)) return;
+
+  state.lightboxScale = clampedScale;
+
+  if (
+    state.lightboxScale > LIGHTBOX_MIN_ZOOM &&
+    elements.lightboxImage.dataset.usingOriginal !== "true"
+  ) {
+    const photo = selectedPhoto();
+    if (photo?.original) {
+      elements.lightboxImage.dataset.usingOriginal = "true";
+      elements.lightboxImage.removeAttribute("srcset");
+      elements.lightboxImage.removeAttribute("sizes");
+      setImageWithFallback(elements.lightboxImage, photo, [photo.original]);
+    }
+  }
+
+  elements.lightboxImage.style.transform = `scale(${state.lightboxScale})`;
+  elements.lightboxStage.classList.toggle("is-zoomed", state.lightboxScale > LIGHTBOX_MIN_ZOOM);
+  elements.toggleZoom.textContent = state.lightboxScale > LIGHTBOX_MIN_ZOOM ? "适合窗口" : "1:1 原尺寸";
+
+  if (state.lightboxScale <= LIGHTBOX_MIN_ZOOM) {
     elements.lightboxStage.scrollTo({ top: 0, left: 0 });
   }
+}
+
+function handleLightboxWheel(event) {
+  if (!elements.lightbox.open || !state.currentArtifact || !state.currentPhotos.length) return;
+  event.preventDefault();
+
+  const nextScale = state.lightboxScale + (event.deltaY < 0 ? LIGHTBOX_ZOOM_STEP : -LIGHTBOX_ZOOM_STEP);
+  setLightboxZoom(nextScale);
+}
+
+function toggleZoom() {
+  setLightboxZoom(
+    state.lightboxScale > LIGHTBOX_MIN_ZOOM ? LIGHTBOX_MIN_ZOOM : Math.min(2, LIGHTBOX_MAX_ZOOM),
+  );
 }
 
 function bindEvents() {
@@ -782,6 +921,7 @@ function bindEvents() {
   elements.nextPhoto.addEventListener("click", () => navigatePhoto(1));
   elements.toggleZoom.addEventListener("click", toggleZoom);
   elements.lightboxImage.addEventListener("click", toggleZoom);
+  elements.lightboxStage.addEventListener("wheel", handleLightboxWheel, { passive: false });
 
   elements.artifactDialog.addEventListener("click", (event) => {
     if (event.target === elements.artifactDialog) closeArtifact();

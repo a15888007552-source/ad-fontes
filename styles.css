@@ -510,7 +510,7 @@ img {
   left: clamp(22px, 4vw, 52px);
   bottom: clamp(24px, 4vw, 48px);
   display: grid;
-  gap: 6px;
+  gap: 4px;
   max-width: calc(100% - 44px);
 }
 
@@ -519,6 +519,8 @@ img {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.18em;
+  line-height: 1.2;
+  max-width: 100%;
 }
 
 .theme-card-copy strong {
@@ -526,12 +528,16 @@ img {
   font-size: clamp(32px, 4vw, 64px);
   font-weight: 500;
   letter-spacing: 0.06em;
-  line-height: 1;
+  line-height: 0.95;
+  word-break: keep-all;
+  max-width: 100%;
 }
 
 .theme-card-copy > span {
   color: rgba(250, 249, 245, 0.7);
   font-size: 11px;
+  line-height: 1.4;
+  max-width: 100%;
 }
 
 .theme-card-copy b {
@@ -1538,6 +1544,8 @@ dialog::backdrop {
   max-height: calc(100svh - 100px);
   object-fit: contain;
   cursor: zoom-in;
+  transform-origin: center center;
+  transform: scale(1);
 }
 
 .lightbox-stage.is-zoomed {
@@ -1945,6 +1953,51 @@ dialog::backdrop {
   }
 }
 
+/* v5.0 · responsive image delivery and low-end rendering safeguards */
+.hero-image {
+  background-image: url("assets/hero/beilin-gate.jpg");
+  background-image: image-set(
+    url("assets/hero/beilin-gate-960.webp") type("image/webp") 1x,
+    url("assets/hero/beilin-gate.jpg") type("image/jpeg") 1x
+  );
+}
+
+.artifact-card {
+  contain: layout paint style;
+  content-visibility: auto;
+}
+
+.card-image-wrap img,
+.photo-thumb img,
+.main-image-button img,
+.lightbox-stage img {
+  backface-visibility: hidden;
+}
+
+@media (min-width: 900px) {
+  .hero-image {
+    background-image: url("assets/hero/beilin-gate.jpg");
+    background-image: image-set(
+      url("assets/hero/beilin-gate-1600.webp") type("image/webp") 1x,
+      url("assets/hero/beilin-gate.jpg") type("image/jpeg") 1x
+    );
+  }
+}
+
+@media (hover: none), (pointer: coarse), (update: slow) {
+  .artifact-card:hover,
+  .artifact-card-button:hover .card-image-wrap img,
+  .artifact-card-button:focus-visible .card-image-wrap img,
+  .theme-card:hover img {
+    filter: none;
+    transform: none;
+  }
+
+  .corner-orbit {
+    animation: none;
+  }
+}
+
 /* v4.1 · strict separation between documentary signage and object imagery */
 
 /* v4.2 · compact image-led catalog cards */
@@ -2317,7 +2370,13 @@ dialog::backdrop {
 }
 
 .theme-card-copy strong {
-  font-size: clamp(26px, 2.5vw, 38px);
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1;
+}
+
+.theme-card-copy > span {
+  font-size: 11px;
+  line-height: 1.35;
 }
 
 .theme-card-note {
