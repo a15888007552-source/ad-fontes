@@ -33,3 +33,9 @@ modules/
 - [ ] 模块二:布索尼《肖像尝试》译注
 - [ ] 发布到 GitHub Pages
 - [ ] 让仓库根目录默认指向总馆入口或专题首页
+
+## Shao Music Desk
+
+新增的远程音乐生成入口位于 `modules/shao/index.html`。入口页不把 GPU 页面嵌进 GitHub Pages，而是通过新标签页打开远程音乐台，以避免 HTTPS 页面拦截 HTTP GPU 地址。
+
+使用时先在优云智算启动同一台 `host` 实例，再从 Ad Fontes 首页的 “Shao Music Desk” 栏目进入；生成结束后及时下载音频，并关闭 GPU 实例以停止计费。
