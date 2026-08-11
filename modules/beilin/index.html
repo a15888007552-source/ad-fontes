@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -10,8 +10,17 @@
     <meta name="theme-color" content="#171714" />
     <title>石墨 长安｜西安碑林博物馆数字档案 · Ad Fontes</title>
     <link rel="icon" href="../../assets/icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../../styles.css?v=4.1" />
-    <script src="../../app.js?v=4.1" defer></script>
+    <link
+      rel="preload"
+      as="image"
+      href="../../assets/hero/beilin-gate-960.webp"
+      imagesrcset="../../assets/hero/beilin-gate-960.webp 960w, ../../assets/hero/beilin-gate-1600.webp 1600w"
+      imagesizes="100vw"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="../../styles.css?v=5.0" />
+    <script src="../../app.js?v=5.0" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#catalog">跳至文物名录</a>
@@ -107,52 +116,52 @@
 
         <div class="theme-grid" aria-describedby="theme-disclaimer">
           <button class="theme-card theme-card-stele" type="button" data-theme-category="碑">
-            <img src="../../assets/editorial/theme-stele.webp" alt="" loading="lazy" decoding="async" />
+            <img src="../../assets/editorial/theme-stele.webp" srcset="../../assets/editorial/theme-stele-640.webp 640w, ../../assets/editorial/theme-stele-960.webp 960w, ../../assets/editorial/theme-stele.webp 1672w" sizes="(max-width: 620px) calc(100vw - 36px), (max-width: 1120px) calc(50vw - 24px), 300px" width="1672" height="941" alt="" loading="lazy" decoding="async" fetchpriority="low" />
             <span class="theme-card-shade" aria-hidden="true"></span>
             <span class="theme-card-copy">
-              <small>01 · 网站介绍</small>
-              <strong>总览</strong>
-              <span>先看结构，再进入专题</span>
+              <small>01 · 入口</small>
+              <strong>碑</strong>
+              <span>碑刻与石器入门入口</span>
             </span>
           </button>
 
           <button class="theme-card theme-card-inscription" type="button" data-theme-category="碑文">
-            <img src="../../assets/editorial/theme-inscription.webp" alt="" loading="lazy" decoding="async" />
+            <img src="../../assets/editorial/theme-inscription.webp" srcset="../../assets/editorial/theme-inscription-640.webp 640w, ../../assets/editorial/theme-inscription-960.webp 960w, ../../assets/editorial/theme-inscription.webp 1672w" sizes="(max-width: 620px) calc(100vw - 36px), (max-width: 1120px) calc(50vw - 24px), 300px" width="1672" height="941" alt="" loading="lazy" decoding="async" fetchpriority="low" />
             <span class="theme-card-shade" aria-hidden="true"></span>
             <span class="theme-card-copy">
-              <small>02 · 省份</small>
-              <strong>陕西</strong>
-              <span>以省级文化地理为入口</span>
+              <small>02 · 专题</small>
+              <strong>碑文</strong>
+              <span>文字信息与时代脉络</span>
             </span>
           </button>
 
           <button class="theme-card theme-card-epitaph" type="button" data-theme-category="墓志">
-            <img src="../../assets/editorial/theme-epitaph.webp" alt="" loading="lazy" decoding="async" />
+            <img src="../../assets/editorial/theme-epitaph.webp" srcset="../../assets/editorial/theme-epitaph-640.webp 640w, ../../assets/editorial/theme-epitaph-960.webp 960w, ../../assets/editorial/theme-epitaph.webp 1672w" sizes="(max-width: 620px) calc(100vw - 36px), (max-width: 1120px) calc(50vw - 24px), 300px" width="1672" height="941" alt="" loading="lazy" decoding="async" fetchpriority="low" />
             <span class="theme-card-shade" aria-hidden="true"></span>
             <span class="theme-card-copy">
-              <small>03 · 城市</small>
-              <strong>西安</strong>
-              <span>从城市专题进入博物馆群</span>
+              <small>03 · 专题</small>
+              <strong>墓志</strong>
+              <span>墓志铭与历史纪念信息</span>
             </span>
           </button>
 
           <button class="theme-card theme-card-objects" type="button" data-theme-category="古董/文物">
-            <img src="../../assets/editorial/theme-objects.webp" alt="" loading="lazy" decoding="async" />
+            <img src="../../assets/editorial/theme-objects.webp" srcset="../../assets/editorial/theme-objects-640.webp 640w, ../../assets/editorial/theme-objects-960.webp 960w, ../../assets/editorial/theme-objects.webp 1672w" sizes="(max-width: 620px) calc(100vw - 36px), (max-width: 1120px) calc(50vw - 24px), 300px" width="1672" height="941" alt="" loading="lazy" decoding="async" fetchpriority="low" />
             <span class="theme-card-shade" aria-hidden="true"></span>
             <span class="theme-card-copy">
-              <small>04 · 博物馆</small>
-              <strong>西安碑林博物馆</strong>
-              <span>最终进入文物名录与详情</span>
+              <small>04 · 资料</small>
+              <strong>古董/文物</strong>
+              <span>实物清单与图像索引</span>
             </span>
           </button>
 
           <button class="theme-card theme-card-special" type="button" data-theme-category="禁止出国（境）展览文物">
-            <img src="../../assets/editorial/theme-special.webp" alt="" loading="lazy" decoding="async" />
+            <img src="../../assets/editorial/theme-special.webp" srcset="../../assets/editorial/theme-special-640.webp 640w, ../../assets/editorial/theme-special-960.webp 960w, ../../assets/editorial/theme-special.webp 1672w" sizes="(max-width: 620px) calc(100vw - 36px), (max-width: 1120px) calc(50vw - 24px), 300px" width="1672" height="941" alt="" loading="lazy" decoding="async" fetchpriority="low" />
             <span class="theme-card-shade" aria-hidden="true"></span>
             <span class="theme-card-copy">
-              <small>05 · 学术重点</small>
-              <strong>重点档案</strong>
-              <span>可继续扩展到更多专题</span>
+              <small>05 · 专题</small>
+              <strong>禁止出境展览文物</strong>
+              <span>出境限制与重点文献</span>
             </span>
           </button>
         </div>
@@ -274,7 +283,7 @@
               <strong id="galleryRoleLabel"></strong>
               <em>中央为现场原图<br />背景为 AI 主题环境</em>
             </span>
-            <img id="detailMainImage" alt="" />
+            <img id="detailMainImage" alt="" loading="eager" decoding="async" />
             <span class="gallery-empty-note" id="galleryEmptyNote" hidden>
               <strong>本组未拍摄文物本体</strong>
               <small>展签已转为文字证据<br />背景为主题视觉，不是文物影像</small>
@@ -359,7 +368,7 @@
       </div>
       <div class="lightbox-stage" id="lightboxStage">
         <button class="lightbox-arrow previous" id="previousPhoto" type="button" aria-label="上一张照片">←</button>
-        <img id="lightboxImage" alt="" />
+        <img id="lightboxImage" alt="" loading="eager" decoding="async" />
         <button class="lightbox-arrow next" id="nextPhoto" type="button" aria-label="下一张照片">→</button>
       </div>
     </dialog>

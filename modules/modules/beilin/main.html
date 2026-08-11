@@ -2,15 +2,20 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0;url=../beilin/index.html" />
     <script>
-      const qs = window.location.search || "";
-      const hash = window.location.hash || "";
-      window.location.replace("../beilin/index.html" + qs + hash);
+      (() => {
+        const target = '/ad-fontes/modules/beilin/index.html';
+        const qs = window.location.search || '';
+        const hash = window.location.hash || '';
+        const next = `${target}${qs}${hash}`;
+        if (window.location.pathname !== '/ad-fontes/modules/beilin/index.html') {
+          window.location.replace(next);
+        }
+      })();
     </script>
-    <title>页面跳转中…</title>
+    <title>石墨长安｜入口</title>
   </head>
   <body>
-    <p>正在跳转到 <a href="../beilin/index.html">碑林专题页</a>。</p>
+    <p>正在跳转到 <a href="/ad-fontes/modules/beilin/index.html">西安碑林博物馆专题</a>。</p>
   </body>
 </html>
