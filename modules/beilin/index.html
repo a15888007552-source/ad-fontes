@@ -20,6 +20,334 @@
       fetchpriority="high"
     />
     <link rel="stylesheet" href="../../styles.css?v=5.0" />
+    <style id="beilin-mobile-overrides">
+      @media (max-width: 720px) {
+        html { scroll-padding-top: 76px; }
+
+        body { overflow-x: hidden; }
+
+        .hero {
+          height: min(760px, 100svh);
+          min-height: 650px;
+          max-height: none;
+        }
+
+        .top-nav {
+          top: 10px;
+          width: calc(100% - 20px);
+          min-height: 58px;
+          padding: 8px 10px;
+          gap: 10px;
+        }
+
+        .wordmark {
+          min-width: 0;
+          gap: 8px;
+        }
+
+        .seal {
+          width: 29px;
+          height: 29px;
+          flex: 0 0 auto;
+          font-size: 16px;
+        }
+
+        .wordmark-copy {
+          min-width: 0;
+        }
+
+        .wordmark-copy strong {
+          display: block;
+          overflow: hidden;
+          font-size: 10px;
+          letter-spacing: 0.05em;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .wordmark-copy small {
+          display: block;
+          overflow: hidden;
+          font-size: 8px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .top-nav-links {
+          flex: 0 0 auto;
+        }
+
+        .top-nav-links a:not(.platform-return) {
+          display: none;
+        }
+
+        .top-nav-links .platform-return {
+          font-size: 10px;
+          white-space: nowrap;
+        }
+
+        .hero-image {
+          background-position: 58% center;
+        }
+
+        .hero-museum-name {
+          top: 92px;
+          right: 18px;
+          left: 18px;
+          align-items: flex-start;
+          text-align: left;
+          transform: none;
+          animation: beilinMobileNameIn 520ms both cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .hero-museum-name strong {
+          font-size: clamp(26px, 8vw, 34px);
+          line-height: 1.12;
+        }
+
+        .hero-panel {
+          right: 12px;
+          bottom: 20px;
+          left: 12px;
+          width: auto;
+          padding: 22px 18px 20px;
+          transform: none;
+          animation: beilinMobilePanelIn 620ms 80ms both cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .hero .eyebrow {
+          margin-bottom: 12px;
+          font-size: 10px;
+          letter-spacing: 0.14em;
+          text-align: left;
+        }
+
+        .hero h1 {
+          justify-content: flex-start;
+          gap: clamp(20px, 8vw, 34px);
+          font-size: clamp(52px, 16vw, 76px);
+          line-height: 0.95;
+        }
+
+        .hero-lead {
+          margin: 16px 0 18px;
+          font-size: 13px;
+          line-height: 1.72;
+        }
+
+        .hero-actions {
+          justify-content: flex-start;
+          align-items: stretch;
+          gap: 8px;
+        }
+
+        .primary-action,
+        .secondary-action {
+          min-height: 44px;
+          padding: 10px 12px;
+          font-size: 10px;
+        }
+
+        .hero-credit {
+          right: 18px;
+          bottom: 6px;
+          left: 18px;
+          overflow: hidden;
+          font-size: 9px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .museum-section,
+        .method-section,
+        .theme-section,
+        .catalog-section {
+          width: calc(100% - 36px);
+          padding: 64px 0;
+        }
+
+        .museum-section,
+        .method-section {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .museum-copy h2,
+        .theme-heading h2,
+        .catalog-heading h2,
+        .method-section h2 {
+          font-size: clamp(32px, 9.5vw, 44px);
+          line-height: 1.12;
+        }
+
+        .museum-columns {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .museum-columns p,
+        .theme-intro,
+        .catalog-intro,
+        .method-steps p {
+          font-size: 13px;
+          line-height: 1.8;
+        }
+
+        .museum-stats {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 8px;
+        }
+
+        .museum-stats div {
+          padding: 12px 8px;
+        }
+
+        .museum-stats dt {
+          font-size: 26px;
+        }
+
+        .museum-stats dd {
+          font-size: 10px;
+          line-height: 1.4;
+        }
+
+        .theme-heading,
+        .catalog-heading {
+          display: block;
+        }
+
+        .theme-intro,
+        .catalog-intro {
+          max-width: none;
+          margin: 16px 0 0;
+        }
+
+        .theme-grid,
+        .catalog-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .theme-card {
+          min-height: 168px;
+          aspect-ratio: 1.55;
+        }
+
+        .theme-card-copy {
+          padding: 18px;
+        }
+
+        .theme-card-copy strong {
+          font-size: 38px;
+        }
+
+        .theme-card-copy > span {
+          font-size: 12px;
+        }
+
+        .category-tabs {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          padding-bottom: 4px;
+          scrollbar-width: thin;
+        }
+
+        .category-tabs button {
+          flex: 0 0 auto;
+          min-height: 40px;
+        }
+
+        .control-row {
+          grid-template-columns: auto minmax(0, 1fr);
+          gap: 8px;
+        }
+
+        .control-row label { grid-column: 1; }
+        #sortSelect { grid-column: 2; min-width: 0; }
+        #musicOnly,
+        #clearFilters { min-height: 42px; }
+        .result-count { grid-column: 1 / -1; margin-left: 0; }
+
+        .artifact-card-button {
+          grid-template-columns: 112px minmax(0, 1fr);
+          gap: 12px;
+          padding: 10px;
+        }
+
+        .card-image-wrap {
+          min-height: 132px;
+          aspect-ratio: 4 / 5;
+        }
+
+        .card-copy {
+          min-width: 0;
+          padding: 4px 4px 4px 0;
+        }
+
+        .card-copy h3 {
+          font-size: 19px;
+          line-height: 1.25;
+        }
+
+        .card-excerpt p {
+          display: -webkit-box;
+          overflow: hidden;
+          font-size: 12px;
+          line-height: 1.65;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+        }
+
+        .card-footer {
+          flex-wrap: wrap;
+          gap: 6px;
+          font-size: 10px;
+        }
+
+        .detail-shell {
+          width: 100vw;
+          max-width: none;
+          min-height: 100vh;
+          border-radius: 0;
+        }
+
+        .detail-header {
+          padding: 14px 16px;
+        }
+
+        .detail-gallery {
+          padding: 0 16px;
+        }
+
+        .detail-body {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+
+        .research-copy section,
+        .research-copy .music-research {
+          padding-left: 0;
+        }
+
+        .research-copy .music-research {
+          padding: 20px !important;
+        }
+
+        .source-section {
+          padding: 28px 16px;
+        }
+
+        @keyframes beilinMobileNameIn {
+          from { opacity: 0; transform: translate3d(0, -10px, 0); }
+          to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+
+        @keyframes beilinMobilePanelIn {
+          from { opacity: 0; transform: translate3d(0, 18px, 0); }
+          to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+      }
+    </style>
     <script src="../../app.js?v=5.0" defer></script>
   </head>
   <body>
@@ -73,14 +401,14 @@
       <section class="museum-section" id="museum" aria-labelledby="museum-title">
         <div class="section-index" aria-hidden="true">01</div>
         <div class="museum-copy">
-          <p class="section-kicker">省份索引 · 陕西</p>
-          <h2 id="museum-title">从关中碑石进入陕西文化地理</h2>
-          <div class="museum-columns">
+            <p class="section-kicker">博物馆介绍 · 西安碑林博物馆</p>
+            <h2 id="museum-title">西安碑林博物馆：从孔庙旧址到石刻艺术殿堂</h2>
+            <div class="museum-columns">
             <p>
-              陕西是这批石刻材料的地理起点，也是理解西安碑林的重要背景。关中地区长期承载都城、礼制、教育与碑刻收藏等多重历史层次，因此“省份”这一层先把作品放回区域文化史。
+              西安碑林博物馆是在西安孔庙古建筑群基础上扩建而成的专题艺术博物馆。碑林始建于北宋元祐二年（1087），最初为保存唐代《开成石经》《石台孝经》及历代名碑而设；经过宋、元、明、清至今的保护、迁建与增藏，形成了以孔庙古建、碑林和石刻艺术展陈为骨架的收藏、研究与展示体系。
             </p>
             <p>
-              这一区块不展开对象细节，而是提供省域层面的阅读框架：先辨认陕西，再进入城市西安，最后落到博物馆与具体文物。这样更符合从宏观到微观的浏览顺序。
+              对这份影像档案而言，碑林不是城市导航的最后一站，而是文物进入公共收藏、研究和观看的制度场所。碑、碑文、墓志、古董/文物与禁止出境展览文物在这里共同构成一座石刻文献库，也把书法史、宗教史、社会史与中外文化交流史放在同一条观看路径上。
             </p>
           </div>
           <a class="text-link" href="https://www.beilin-museum.com/" target="_blank" rel="noreferrer">

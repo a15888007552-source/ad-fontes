@@ -2233,7 +2233,7 @@ dialog::backdrop {
 }
 
 .hero-panel {
-  left: 50%;
+  left: 32%;
   bottom: 44px;
   width: min(690px, calc(100% - 56px));
   transform: translateX(-50%);
