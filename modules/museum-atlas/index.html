@@ -1,375 +1,1277 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh-CN" data-active-province="beijing">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>唐色遗珍 · 总馆</title>
+    <meta name="theme-color" content="#9d1d26" />
+    <meta
+      name="description"
+      content="中国博物馆行记总馆：按北京、陕西、河南浏览个人博物馆影像档案，再进入每一座博物馆的专题网站。"
+    />
+    <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/index.html" />
+    <link rel="icon" href="../../assets/icon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="assets/beijing-palace.webp" fetchpriority="high" />
+    <title>中国博物馆行记 · 总馆｜Ad Fontes</title>
     <style>
       :root {
         color-scheme: light;
-        --bg: #f3ecdf;
-        --paper: #f8f3e8;
-        --paper-strong: #fff9ef;
-        --ink: #221b17;
-        --muted: #6e5b4d;
-        --line: rgba(34, 27, 23, 0.14);
-        --accent: #b55f45;
-        --accent-2: #c69a55;
-        --shadow: 0 24px 70px rgba(45, 28, 17, 0.12);
-        --serif: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+        --ink: #191513;
+        --muted: #746b63;
+        --paper: #f6f2eb;
+        --paper-strong: #fffdf8;
+        --paper-deep: #e8e1d8;
+        --line: rgba(25, 21, 19, 0.14);
+        --line-strong: rgba(25, 21, 19, 0.24);
+        --red: #9d1d26;
+        --red-dark: #6f1017;
+        --blue: #245d91;
+        --shadow-soft: 0 24px 70px rgba(28, 20, 15, 0.1);
+        --shadow-card: 0 18px 40px rgba(28, 20, 15, 0.13);
+        --serif: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
         --sans: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
       }
 
       * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--paper);
+      }
+
       body {
+        min-width: 320px;
         margin: 0;
-        min-height: 100vh;
-        font-family: var(--sans);
         color: var(--ink);
         background:
-          radial-gradient(circle at 12% 8%, rgba(198, 154, 85, 0.16), transparent 20%),
-          radial-gradient(circle at 88% 12%, rgba(181, 95, 69, 0.12), transparent 18%),
-          linear-gradient(180deg, #faf4e8 0%, var(--bg) 100%);
+          radial-gradient(circle at 12% 12%, rgba(157, 29, 38, 0.055), transparent 24rem),
+          radial-gradient(circle at 88% 46%, rgba(36, 93, 145, 0.04), transparent 26rem),
+          var(--paper);
+        font-family: var(--sans);
+        line-height: 1.5;
+      }
+
+      body::before {
+        position: fixed;
+        z-index: -1;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        opacity: 0.34;
+        background-image: linear-gradient(rgba(30, 23, 18, 0.026) 1px, transparent 1px);
+        background-size: 100% 5px;
+        mix-blend-mode: multiply;
       }
 
       a { color: inherit; text-decoration: none; }
-      .shell {
-        width: min(1400px, calc(100vw - 40px));
-        margin: 0 auto;
-        padding: 24px 0 40px;
+      button { color: inherit; font: inherit; }
+      img { display: block; max-width: 100%; }
+      ::selection { color: #fff9f0; background: var(--red); }
+
+      .skip-link {
+        position: fixed;
+        z-index: 20;
+        top: 12px;
+        left: 12px;
+        transform: translateY(-150%);
+        padding: 10px 14px;
+        color: #fff;
+        background: var(--ink);
+        border-radius: 999px;
       }
 
-      .topbar {
+      .skip-link:focus { transform: translateY(0); }
+
+      .site-shell {
+        width: min(1480px, calc(100% - 36px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        z-index: 10;
+        top: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 20px;
-        padding: 12px 0 22px;
+        gap: 24px;
+        min-height: 74px;
+        padding: 14px 0;
+        transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      .site-header.is-scrolled {
+        border-bottom: 1px solid var(--line);
+        background: rgba(246, 242, 235, 0.88);
+        box-shadow: 0 12px 28px rgba(28, 20, 15, 0.06);
+        backdrop-filter: blur(16px);
       }
 
       .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        min-width: max-content;
+      }
+
+      .brand-mark {
         display: grid;
-        gap: 4px;
-      }
-
-      .brand strong {
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        color: #fffaf0;
+        background: var(--red);
+        border-radius: 50% 50% 46% 46%;
         font-family: var(--serif);
-        letter-spacing: 0.18em;
         font-size: 18px;
+        line-height: 1;
+        box-shadow: 0 5px 12px rgba(157, 29, 38, 0.2);
       }
 
-      .brand span {
-        color: var(--muted);
-        font-size: 12px;
+      .brand-copy {
+        display: grid;
+        gap: 1px;
+      }
+
+      .brand-copy strong {
+        font-family: var(--serif);
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.09em;
+      }
+
+      .brand-copy small,
+      .header-index,
+      .hero-kicker,
+      .section-kicker,
+      .meta-label,
+      .card-status,
+      .province-code,
+      .route-step-index,
+      .hero-credit,
+      .footer-label {
+        font-family: var(--mono);
         letter-spacing: 0.12em;
+        text-transform: uppercase;
       }
 
-      .navlinks {
+      .brand-copy small {
+        color: var(--muted);
+        font-size: 9px;
+      }
+
+      .main-nav {
         display: flex;
-        gap: 18px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+        align-items: center;
+        gap: clamp(14px, 2.2vw, 32px);
         color: var(--muted);
         font-size: 13px;
       }
 
-      .navlinks a:hover { color: var(--ink); }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.48fr);
-        gap: 18px;
-        align-items: stretch;
-        min-height: 72vh;
-      }
-
-      .hero-copy,
-      .hero-aside,
-      .panel,
-      .card {
-        background: rgba(255, 251, 244, 0.92);
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(10px);
-      }
-
-      .hero-copy {
+      .main-nav a {
         position: relative;
-        overflow: hidden;
-        padding: clamp(28px, 3.6vw, 52px);
-        border-radius: 28px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+        padding: 8px 0;
       }
 
-      .hero-copy::before {
-        content: "";
+      .main-nav a::after {
         position: absolute;
+        right: 0;
+        bottom: 2px;
         left: 0;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: linear-gradient(180deg, var(--accent), var(--accent-2));
+        height: 1px;
+        content: "";
+        background: var(--red);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 180ms ease;
       }
 
-      .eyebrow {
-        color: var(--accent);
-        font-size: 12px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        font-weight: 700;
+      .main-nav a:hover,
+      .main-nav a:focus-visible { color: var(--ink); }
+
+      .main-nav a:hover::after,
+      .main-nav a:focus-visible::after {
+        transform: scaleX(1);
+        transform-origin: left;
       }
 
-      h1 {
-        margin: 14px 0 12px;
-        font-family: var(--serif);
-        font-size: clamp(58px, 7vw, 96px);
-        line-height: 0.96;
-        letter-spacing: 0.02em;
-        font-weight: 500;
+      .header-index {
+        color: var(--red);
+        font-size: 10px;
         white-space: nowrap;
       }
 
-      .lead {
-        max-width: 66ch;
-        margin: 0;
-        color: var(--muted);
-        font-size: 16px;
-        line-height: 1.9;
-      }
-
-      .actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 24px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 46px;
-        padding: 0 18px;
-        border-radius: 999px;
-        border: 1px solid transparent;
-        transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-      }
-
-      .btn:hover { transform: translateY(-1px); }
-      .btn-primary {
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #fff8ef;
-        box-shadow: 0 12px 28px rgba(181, 95, 69, 0.22);
-      }
-      .btn-secondary {
-        border-color: rgba(34, 27, 23, 0.16);
-        background: rgba(255, 251, 244, 0.78);
-      }
-
-      .stats {
+      .hero {
+        position: relative;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 28px;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.38fr);
+        align-items: stretch;
+        min-height: min(780px, calc(100svh - 92px));
+        overflow: hidden;
+        color: #fffaf4;
+        background: #69131a;
+        border-radius: 2px;
+        box-shadow: var(--shadow-soft);
+        isolation: isolate;
+      }
+
+      .hero-photo {
+        position: absolute;
+        z-index: -2;
+        inset: 0;
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 49%;
+        filter: saturate(0.82) contrast(1.06);
       }
 
-      .stat {
-        padding: 16px;
-        border-radius: 18px;
-        background: rgba(246, 239, 227, 0.74);
-        border: 1px solid rgba(34, 27, 23, 0.08);
+      .hero::before {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(82, 8, 15, 0.9) 0%, rgba(107, 14, 22, 0.68) 37%, rgba(100, 16, 22, 0.16) 73%, rgba(49, 7, 11, 0.46) 100%),
+          linear-gradient(0deg, rgba(44, 6, 10, 0.8), transparent 38%);
       }
 
-      .stat strong {
-        display: block;
-        font-size: 1.6rem;
-        margin-bottom: 4px;
-        color: var(--accent);
+      .hero::after {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        opacity: 0.35;
+        background-image:
+          linear-gradient(90deg, transparent 0 24%, rgba(255, 247, 225, 0.16) 24% 24.1%, transparent 24.1% 49%, rgba(255, 247, 225, 0.12) 49% 49.1%, transparent 49.1%),
+          linear-gradient(rgba(255, 247, 225, 0.08) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 46px;
+        mix-blend-mode: screen;
       }
 
-      .stat span {
-        color: var(--muted);
-        font-size: 0.92rem;
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        min-height: 100%;
+        padding: clamp(34px, 7vw, 104px) clamp(24px, 6vw, 90px) clamp(34px, 6vw, 86px);
       }
 
-      .hero-aside {
-        border-radius: 28px;
-        padding: 22px;
-        display: grid;
-        gap: 14px;
-        align-content: start;
-      }
-
-      .aside-title {
-        color: var(--accent);
-        font-size: 12px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
+      .hero-kicker {
+        margin: 0;
+        color: #f6dcb4;
+        font-size: 10px;
         font-weight: 700;
       }
 
-      .panel {
-        border-radius: 24px;
-        padding: 22px;
+      .hero h1 {
+        max-width: 760px;
+        margin: 18px 0 18px;
+        font-family: var(--serif);
+        font-size: clamp(56px, 9.2vw, 132px);
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        line-height: 0.98;
+        text-wrap: balance;
       }
 
-      .panel h2 {
-        margin: 0 0 10px;
+      .hero h1 em {
+        display: block;
+        color: #f2d3a5;
+        font-size: 0.6em;
+        font-style: normal;
+        letter-spacing: 0.16em;
+      }
+
+      .hero-lead {
+        max-width: 44em;
+        margin: 0;
+        color: rgba(255, 247, 231, 0.86);
+        font-size: clamp(15px, 1.35vw, 18px);
+        line-height: 1.9;
+        text-wrap: pretty;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-height: 46px;
+        padding: 0 18px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font-size: 13px;
+        transition: transform 170ms ease, background 170ms ease, border-color 170ms ease;
+      }
+
+      .button:hover { transform: translateY(-2px); }
+
+      .button-primary {
+        color: #631018;
+        background: #f7d9ac;
+        box-shadow: 0 10px 24px rgba(40, 5, 10, 0.18);
+      }
+
+      .button-primary:hover { background: #fff0ce; }
+
+      .button-ghost {
+        color: #fffaf4;
+        border-color: rgba(255, 250, 240, 0.4);
+        background: rgba(66, 8, 15, 0.14);
+      }
+
+      .button-ghost:hover { border-color: #f7d9ac; background: rgba(66, 8, 15, 0.42); }
+
+      .hero-credit {
+        margin: 26px 0 0;
+        color: rgba(255, 247, 231, 0.68);
+        font-size: 9px;
+        line-height: 1.8;
+      }
+
+      .hero-credit a { text-decoration: underline; text-underline-offset: 3px; }
+
+      .hero-ledger {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 100%;
+        padding: 30px;
+        border-left: 1px solid rgba(255, 248, 232, 0.22);
+        background: rgba(42, 7, 12, 0.42);
+        backdrop-filter: blur(8px);
+      }
+
+      .ledger-kicker {
+        margin: 0;
+        color: #f7d9ac;
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .ledger-title {
+        margin: 14px 0 32px;
         font-family: var(--serif);
-        font-size: 1.9rem;
+        font-size: clamp(25px, 3vw, 40px);
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      .route {
+        display: grid;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .route-step {
+        position: relative;
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 14px;
+        padding: 0 0 24px;
+      }
+
+      .route-step:not(:last-child)::before {
+        position: absolute;
+        top: 28px;
+        bottom: 0;
+        left: 14px;
+        width: 1px;
+        content: "";
+        background: rgba(255, 248, 232, 0.26);
+      }
+
+      .route-step-index {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        width: 29px;
+        height: 29px;
+        color: #681018;
+        background: #f7d9ac;
+        border-radius: 50%;
+        font-size: 9px;
+        font-weight: 700;
+      }
+
+      .route-step strong {
+        display: block;
+        margin: 2px 0 4px;
+        font-family: var(--serif);
+        font-size: 18px;
         font-weight: 500;
       }
 
-      .panel p {
-        margin: 0;
-        color: var(--muted);
+      .route-step span:last-child {
+        display: block;
+        color: rgba(255, 247, 231, 0.68);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .ledger-note {
+        margin: 22px 0 0;
+        padding-top: 18px;
+        color: rgba(255, 247, 231, 0.68);
+        border-top: 1px solid rgba(255, 248, 232, 0.22);
+        font-size: 12px;
         line-height: 1.8;
       }
 
-      .link-card {
+      .explorer {
+        padding: clamp(74px, 10vw, 140px) 0 38px;
+      }
+
+      .section-heading {
         display: grid;
-        gap: 8px;
+        grid-template-columns: 72px minmax(0, 1fr) minmax(240px, 0.6fr);
+        gap: 24px;
+        align-items: start;
       }
 
-      .link-card a {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 54px;
-        padding: 0 16px;
-        border-radius: 16px;
-        background: var(--paper-strong);
-        border: 1px solid rgba(34, 27, 23, 0.12);
-        transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      .section-number {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        color: var(--red);
+        border: 1px solid rgba(157, 29, 38, 0.34);
+        border-radius: 50%;
+        font-family: var(--mono);
+        font-size: 12px;
       }
 
-      .link-card a:hover {
-        transform: translateY(-1px);
-        border-color: rgba(181, 95, 69, 0.26);
-        background: #fffaf3;
+      .section-kicker {
+        margin: 0 0 12px;
+        color: var(--red);
+        font-size: 10px;
+        font-weight: 700;
       }
 
-      .section {
-        margin-top: 18px;
+      .section-heading h2,
+      .province-intro h2 {
+        max-width: 14em;
+        margin: 0;
+        font-family: var(--serif);
+        font-size: clamp(34px, 5vw, 68px);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        line-height: 1.08;
+      }
+
+      .section-heading > p {
+        max-width: 34em;
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+
+      .province-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 54px;
+      }
+
+      .province-tab {
+        position: relative;
+        min-height: 132px;
+        overflow: hidden;
+        padding: 20px;
+        color: #fffaf4;
+        text-align: left;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        cursor: pointer;
+        isolation: isolate;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .province-tab::before {
+        position: absolute;
+        z-index: -2;
+        inset: 0;
+        content: "";
+        background-image: var(--tab-image);
+        background-position: center;
+        background-size: cover;
+        filter: saturate(0.8);
+        transition: transform 260ms ease, filter 260ms ease;
+      }
+
+      .province-tab::after {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        content: "";
+        background: var(--tab-overlay);
+      }
+
+      .province-tab:hover,
+      .province-tab:focus-visible,
+      .province-tab[aria-selected="true"] {
+        border-color: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 18px 34px rgba(32, 24, 18, 0.18);
+        transform: translateY(-3px);
+      }
+
+      .province-tab:hover::before,
+      .province-tab:focus-visible::before { filter: saturate(1); transform: scale(1.04); }
+
+      .province-tab[data-province="beijing"] {
+        --tab-image: url("assets/beijing-palace.webp");
+        --tab-overlay: linear-gradient(135deg, rgba(131, 10, 23, 0.9), rgba(75, 7, 12, 0.35));
+      }
+
+      .province-tab[data-province="shaanxi"] {
+        --tab-image: url("assets/shaanxi-hero.webp");
+        --tab-overlay: linear-gradient(135deg, rgba(13, 13, 12, 0.91), rgba(30, 24, 19, 0.42));
+      }
+
+      .province-tab[data-province="henan"] {
+        --tab-image: url("assets/henan-hero.webp");
+        --tab-overlay: linear-gradient(135deg, rgba(15, 65, 107, 0.84), rgba(41, 92, 135, 0.24));
+      }
+
+      .province-tab small {
+        display: block;
+        margin-bottom: 16px;
+        color: rgba(255, 250, 240, 0.78);
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .province-tab strong {
+        display: block;
+        font-family: var(--serif);
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+      }
+
+      .province-tab span {
+        display: block;
+        margin-top: 3px;
+        color: rgba(255, 250, 240, 0.76);
+        font-size: 11px;
+      }
+
+      .province-tab .tab-arrow {
+        position: absolute;
+        right: 18px;
+        bottom: 16px;
+        margin: 0;
+        color: #fff;
+        font-family: var(--mono);
+        font-size: 16px;
+      }
+
+      .province-list {
+        display: grid;
+        gap: 70px;
+        margin-top: 34px;
+      }
+
+      .province-panel {
+        --accent: var(--red);
+        --accent-dark: var(--red-dark);
+        --panel: #f3e5d8;
+        --panel-strong: #fffaf1;
+        --panel-ink: #2c1817;
+        --panel-muted: #80645a;
+        --panel-line: rgba(95, 28, 25, 0.17);
+        position: relative;
+        overflow: hidden;
+        background: var(--panel);
+        border: 1px solid var(--panel-line);
+        box-shadow: var(--shadow-soft);
+        scroll-margin-top: 92px;
+      }
+
+      .province-panel::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 42%;
+        height: 100%;
+        pointer-events: none;
+        content: "";
+        opacity: 0.2;
+        background-image: repeating-linear-gradient(0deg, transparent 0 20px, rgba(50, 29, 22, 0.12) 21px, transparent 22px 42px);
+        mask-image: linear-gradient(90deg, transparent, #000);
+      }
+
+      .province-panel[data-province="shaanxi"] {
+        --accent: #d4a776;
+        --accent-dark: #151513;
+        --panel: #1c1b18;
+        --panel-strong: #292722;
+        --panel-ink: #f0e8dc;
+        --panel-muted: #bdb3a6;
+        --panel-line: rgba(231, 220, 204, 0.17);
+        color: var(--panel-ink);
+        background: #171714;
+      }
+
+      .province-panel[data-province="shaanxi"]::before {
+        width: 52%;
+        opacity: 0.3;
+        background-image: url("assets/shaanxi-paper.webp");
+        background-position: center;
+        background-size: cover;
+        mask-image: linear-gradient(90deg, transparent, #000 52%);
+      }
+
+      .province-panel[data-province="henan"] {
+        --accent: #1c5b91;
+        --accent-dark: #16466f;
+        --panel: #eaf1f5;
+        --panel-strong: #fdfefe;
+        --panel-ink: #132e48;
+        --panel-muted: #5d7486;
+        --panel-line: rgba(28, 91, 145, 0.2);
+        color: var(--panel-ink);
+        background: #eaf1f5;
+      }
+
+      .province-panel[data-province="henan"]::before {
+        width: 50%;
+        opacity: 0.25;
+        background-image: url("assets/henan-porcelain.webp");
+        background-position: center;
+        background-size: cover;
+        mask-image: linear-gradient(90deg, transparent, #000 55%);
+      }
+
+      .province-panel-head {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 84px minmax(0, 1fr) minmax(220px, 0.48fr);
+        gap: 24px;
+        align-items: start;
+        padding: clamp(26px, 4.6vw, 60px);
+      }
+
+      .province-code {
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .province-intro h2 { color: var(--panel-ink); font-size: clamp(33px, 4.5vw, 64px); }
+
+      .province-panel .section-kicker { color: var(--accent); }
+
+      .province-intro p:last-child {
+        max-width: 36em;
+        margin: 20px 0 0;
+        color: var(--panel-muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+
+      .province-facts {
+        display: grid;
+        gap: 14px;
+        margin-top: 5px;
+        padding-left: 22px;
+        border-left: 1px solid var(--panel-line);
+      }
+
+      .province-fact strong {
+        display: block;
+        color: var(--accent);
+        font-family: var(--serif);
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .province-fact span {
+        display: block;
+        margin-top: 4px;
+        color: var(--panel-muted);
+        font-size: 12px;
+      }
+
+      .museum-grid {
+        position: relative;
+        z-index: 1;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
+        gap: 14px;
+        padding: 0 clamp(18px, 2.6vw, 34px) clamp(18px, 2.6vw, 34px);
       }
 
-      .card {
-        border-radius: 24px;
-        padding: 20px;
+      .museum-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 340px;
+        overflow: hidden;
+        color: var(--panel-ink);
+        background: var(--panel-strong);
+        border: 1px solid var(--panel-line);
+        transition: transform 190ms ease, box-shadow 190ms ease, border-color 190ms ease;
       }
 
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 1.2rem;
+      .museum-card--link:hover,
+      .museum-card--link:focus-visible {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-card);
+        transform: translateY(-5px);
       }
 
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.8;
+      .card-media {
+        position: relative;
+        min-height: 205px;
+        overflow: hidden;
+        background: var(--panel);
       }
 
-      .footer {
-        margin-top: 24px;
-        color: var(--muted);
-        font-size: 12px;
+      .card-media::after {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background: linear-gradient(180deg, transparent 42%, rgba(15, 12, 10, 0.43));
+      }
+
+      .card-media img {
+        width: 100%;
+        height: 100%;
+        min-height: 205px;
+        object-fit: cover;
+        filter: saturate(0.88);
+        transition: transform 500ms ease, filter 300ms ease;
+      }
+
+      .museum-card--link:hover .card-media img,
+      .museum-card--link:focus-visible .card-media img {
+        filter: saturate(1.04);
+        transform: scale(1.045);
+      }
+
+      .card-media--red {
+        background:
+          linear-gradient(135deg, rgba(255, 225, 179, 0.08), transparent 46%),
+          repeating-linear-gradient(90deg, transparent 0 34px, rgba(255, 218, 184, 0.1) 35px, transparent 36px),
+          #861b26;
+      }
+
+      .card-media--red::before {
+        position: absolute;
+        top: 26px;
+        left: 24%;
+        width: 48%;
+        height: 66%;
+        content: "故";
+        color: rgba(255, 228, 188, 0.22);
+        border: 1px solid rgba(255, 224, 182, 0.25);
+        border-radius: 50%;
+        font-family: var(--serif);
+        font-size: 118px;
+        line-height: 1.15;
         text-align: center;
       }
 
-      @media (max-width: 1080px) {
-        .hero { grid-template-columns: 1fr; }
-        .section { grid-template-columns: 1fr; }
+      .card-media--ink {
+        background:
+          linear-gradient(140deg, rgba(212, 167, 118, 0.2), transparent 48%),
+          url("assets/shaanxi-paper.webp") center / cover,
+          #20201d;
+      }
+
+      .card-media--blue {
+        background:
+          linear-gradient(140deg, rgba(255, 255, 255, 0.18), transparent 48%),
+          url("assets/henan-porcelain.webp") center / cover,
+          #e8f0f5;
+      }
+
+      .card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 19px 20px 18px;
+      }
+
+      .card-status {
+        display: inline-flex;
+        align-items: center;
+        min-height: 20px;
+        padding: 0 8px;
+        color: var(--accent);
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        font-size: 8px;
+        font-weight: 700;
+      }
+
+      .card-title {
+        margin: 14px 0 6px;
+        font-family: var(--serif);
+        font-size: clamp(22px, 2.3vw, 32px);
+        font-weight: 500;
+        line-height: 1.14;
+      }
+
+      .card-location {
+        margin: 0;
+        color: var(--panel-muted);
+        font-size: 12px;
+      }
+
+      .card-description {
+        max-width: 35em;
+        margin: 13px 0 0;
+        color: var(--panel-muted);
+        font-size: 13px;
+        line-height: 1.75;
+      }
+
+      .card-cta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        width: 100%;
+        margin-top: auto;
+        padding-top: 18px;
+        color: var(--accent);
+        font-size: 12px;
+      }
+
+      .card-cta span:last-child {
+        font-family: var(--mono);
+        font-size: 18px;
+      }
+
+      .museum-card--soon { opacity: 0.84; }
+
+      .museum-card--soon .card-media { min-height: 205px; }
+
+      .museum-card--soon .card-media::before {
+        position: absolute;
+        inset: 24px;
+        content: "";
+        border: 1px solid currentColor;
+        opacity: 0.18;
+      }
+
+      .card-media--blue + .card-body,
+      .province-panel[data-province="henan"] .card-body { color: #163b5e; }
+
+      .province-panel[data-province="shaanxi"] .card-media::after {
+        background: linear-gradient(180deg, transparent 38%, rgba(8, 8, 7, 0.68));
+      }
+
+      .province-panel[data-province="henan"] .card-media::after {
+        background: linear-gradient(180deg, transparent 40%, rgba(13, 47, 75, 0.36));
+      }
+
+      .next-note {
+        display: grid;
+        grid-template-columns: 72px minmax(0, 1fr) auto;
+        gap: 24px;
+        align-items: center;
+        margin: 34px 0 0;
+        padding: 24px 0 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .next-note p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+      .next-note strong { color: var(--ink); font-family: var(--serif); font-size: 20px; font-weight: 500; }
+
+      .next-note .next-places {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .next-places span {
+        padding: 7px 10px;
+        color: var(--muted);
+        border: 1px dashed var(--line-strong);
+        border-radius: 999px;
+        font-size: 11px;
+      }
+
+      .site-footer {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 24px;
+        align-items: end;
+        margin: 110px 0 24px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+
+      .footer-label { margin: 0 0 7px; color: var(--red); font-size: 9px; }
+      .footer-title { margin: 0; font-family: var(--serif); font-size: 24px; font-weight: 500; }
+      .footer-copy { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+      .footer-link { justify-self: end; color: var(--red); font-size: 12px; text-decoration: underline; text-underline-offset: 4px; }
+
+      :focus-visible {
+        outline: 3px solid rgba(247, 217, 172, 0.96);
+        outline-offset: 4px;
+      }
+
+      @media (max-width: 980px) {
+        .hero { grid-template-columns: 1fr; min-height: auto; }
+        .hero-copy { min-height: 620px; }
+        .hero-ledger { min-height: auto; padding: 28px clamp(24px, 6vw, 90px) 34px; border-top: 1px solid rgba(255, 248, 232, 0.22); border-left: 0; }
+        .route { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+        .route-step { grid-template-columns: 30px 1fr; padding: 0; }
+        .route-step:not(:last-child)::before { top: 14px; right: -14px; bottom: auto; left: auto; width: 14px; height: 1px; }
+        .ledger-note { margin-top: 26px; }
+        .section-heading { grid-template-columns: 60px minmax(0, 1fr); }
+        .section-heading > p { grid-column: 2; }
+        .province-panel-head { grid-template-columns: 68px minmax(0, 1fr); }
+        .province-facts { grid-column: 2; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 18px 0 0; border-top: 1px solid var(--panel-line); border-left: 0; }
+        .next-note { grid-template-columns: 60px 1fr; }
+        .next-note .next-places { grid-column: 2; justify-content: flex-start; }
       }
 
       @media (max-width: 700px) {
-        .shell { width: min(100vw - 18px, 100%); padding-top: 10px; }
-        .topbar { flex-direction: column; align-items: flex-start; }
-        h1 { white-space: normal; font-size: clamp(48px, 15vw, 74px); }
-        .stats { grid-template-columns: 1fr; }
+        .site-shell { width: min(100% - 20px, 1480px); }
+        .site-header { gap: 14px; min-height: 64px; }
+        .main-nav { display: none; }
+        .header-index { margin-left: auto; }
+        .hero-copy { min-height: 610px; padding: 34px 24px 40px; }
+        .hero h1 { font-size: clamp(54px, 17vw, 84px); }
+        .hero h1 em { font-size: 0.55em; letter-spacing: 0.1em; }
+        .hero-lead { font-size: 14px; line-height: 1.8; }
+        .hero-ledger { padding: 26px 24px 30px; }
+        .route { display: grid; grid-template-columns: 1fr; gap: 0; }
+        .route-step { grid-template-columns: 30px 1fr; padding-bottom: 20px; }
+        .route-step:not(:last-child)::before { top: 28px; right: auto; bottom: 0; left: 14px; width: 1px; height: auto; }
+        .ledger-title { margin-bottom: 24px; }
+        .explorer { padding-top: 76px; }
+        .section-heading { grid-template-columns: 48px minmax(0, 1fr); gap: 14px; }
+        .section-number { width: 42px; height: 42px; }
+        .section-heading h2 { font-size: clamp(36px, 12vw, 56px); }
+        .section-heading > p { grid-column: 2; font-size: 13px; }
+        .province-tabs { grid-template-columns: 1fr; gap: 8px; margin-top: 36px; }
+        .province-tab { min-height: 100px; padding: 17px; }
+        .province-tab small { margin-bottom: 9px; }
+        .province-tab strong { font-size: 27px; }
+        .province-tab .tab-arrow { right: 16px; bottom: 20px; }
+        .province-list { gap: 40px; margin-top: 20px; }
+        .province-panel-head { grid-template-columns: 1fr; gap: 10px; padding: 28px 20px 24px; }
+        .province-code { order: -1; }
+        .province-intro h2 { font-size: clamp(34px, 12vw, 58px); }
+        .province-intro p:last-child { margin-top: 14px; font-size: 13px; }
+        .province-facts { grid-column: auto; gap: 8px; padding-top: 17px; }
+        .province-fact strong { font-size: 23px; }
+        .province-fact span { font-size: 10px; }
+        .museum-grid { grid-template-columns: 1fr; padding: 0 12px 12px; }
+        .museum-card { min-height: 320px; }
+        .card-media, .museum-card--soon .card-media { min-height: 182px; }
+        .card-media img { min-height: 182px; }
+        .next-note { grid-template-columns: 1fr; gap: 10px; margin-top: 20px; padding-top: 20px; }
+        .next-note .next-places { grid-column: auto; }
+        .site-footer { grid-template-columns: 1fr; gap: 13px; margin-top: 74px; }
+        .footer-link { justify-self: start; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
       }
     </style>
   </head>
   <body>
-    <div class="shell">
-      <header class="topbar">
-        <div class="brand">
-          <strong>唐色遗珍 · 总馆</strong>
-          <span>陕西文物志与碑林专题的入口</span>
-        </div>
-        <nav class="navlinks" aria-label="导航">
-          <a href="../index.html">Ad Fontes</a>
-          <a href="#links">入口</a>
-          <a href="#intro">总览</a>
+    <a class="skip-link" href="#provinces">跳到省份索引</a>
+
+    <div class="site-shell">
+      <header class="site-header" id="top">
+        <a class="brand" href="#top" aria-label="回到中国博物馆行记总馆首页">
+          <span class="brand-mark" aria-hidden="true">馆</span>
+          <span class="brand-copy">
+            <strong>中国博物馆行记</strong>
+            <small>MUSEUM ATLAS · AD FONTES</small>
+          </span>
+        </a>
+        <nav class="main-nav" aria-label="总馆导航">
+          <a href="#provinces">省份索引</a>
+          <a href="#route">浏览路径</a>
+          <a href="#footer">关于总馆</a>
         </nav>
+        <span class="header-index">01 / 03 provinces</span>
       </header>
 
-      <main class="hero" id="intro">
-        <section class="hero-copy">
-          <div class="eyebrow">Museum atlas · 2026</div>
-          <h1>唐色遗珍</h1>
-          <p class="lead">
-            这是总馆入口。你可以从这里进入西安碑林专题，也可以把它继续扩展成陕西文物志的总门户。
-            当前总馆保留为一个独立页面，避免点击时刷新同一页。
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="../index.html">返回 Ad Fontes 首页</a>
-            <a class="btn btn-secondary" href="#links">查看入口</a>
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <img class="hero-photo" src="assets/beijing-palace.webp" alt="故宫博物院俯瞰景象" />
+          <div class="hero-copy">
+            <p class="hero-kicker">AD FONTES / MUSEUM ATLAS / 2026</p>
+            <h1 id="hero-title">中国<br /><em>博物馆行记</em></h1>
+            <p class="hero-lead">
+              把每一次走进博物馆的照片，放回它所属的省份与城市。先选一处地方，再进入一座博物馆，最后抵达一份可以继续阅读的个人档案。
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#provinces">从省份开始 <span aria-hidden="true">↓</span></a>
+              <a class="button button-ghost" href="../beilin/index.html">直接进入碑林专题 <span aria-hidden="true">↗</span></a>
+            </div>
+            <p class="hero-credit">北京主题背景：用户提供的故宫博物院现场图 · 作为总馆第一站视觉</p>
           </div>
-          <div class="stats">
-            <div class="stat">
-              <strong>01</strong>
-              <span>总馆入口</span>
+
+          <aside class="hero-ledger" id="route" aria-label="访客浏览路径">
+            <p class="ledger-kicker">Visitor route / 访客路径</p>
+            <h2 class="ledger-title">从地图进入<br />一座具体的馆。</h2>
+            <ol class="route">
+              <li class="route-step">
+                <span class="route-step-index">01</span>
+                <span><strong>选择省份</strong><span>北京 · 陕西 · 河南</span></span>
+              </li>
+              <li class="route-step">
+                <span class="route-step-index">02</span>
+                <span><strong>选择博物馆</strong><span>卡片先告诉你，哪一座已经开放。</span></span>
+              </li>
+              <li class="route-step">
+                <span class="route-step-index">03</span>
+                <span><strong>进入专题站</strong><span>从总馆离开，去看一份完整的照片档案。</span></span>
+              </li>
+            </ol>
+            <p class="ledger-note">这是一个持续生长的总目录。下一次旅行，只需要把新的省份和照片接进来。</p>
+          </aside>
+        </section>
+
+        <section class="explorer" id="provinces" aria-labelledby="province-heading">
+          <div class="section-heading">
+            <span class="section-number" aria-hidden="true">01</span>
+            <div>
+              <p class="section-kicker">Province index / 省份索引</p>
+              <h2 id="province-heading">先选省份，<br />再进入博物馆。</h2>
             </div>
-            <div class="stat">
-              <strong>180</strong>
-              <span>碑林文物档案</span>
-            </div>
-            <div class="stat">
-              <strong>644</strong>
-              <span>现场照片</span>
+            <p>
+              三个省份先以三种气质建立入口：北京的朱墙与中国红，陕西的碑石与墨色，河南的瓷白与青花。每一块卡片都可以继续扩展为独立专题站。
+            </p>
+          </div>
+
+          <div class="province-tabs" role="tablist" aria-label="选择省份">
+            <button class="province-tab" type="button" role="tab" aria-selected="true" aria-controls="province-beijing" data-province="beijing">
+              <small>01 / vermilion city</small>
+              <strong>北京</strong>
+              <span>朱墙、宫门与城市中心</span>
+              <span class="tab-arrow" aria-hidden="true">↘</span>
+            </button>
+            <button class="province-tab" type="button" role="tab" aria-selected="false" aria-controls="province-shaanxi" data-province="shaanxi">
+              <small>02 / ink & stone</small>
+              <strong>陕西</strong>
+              <span>碑石、拓片与关中文脉</span>
+              <span class="tab-arrow" aria-hidden="true">↘</span>
+            </button>
+            <button class="province-tab" type="button" role="tab" aria-selected="false" aria-controls="province-henan" data-province="henan">
+              <small>03 / porcelain blue</small>
+              <strong>河南</strong>
+              <span>考古、陶瓷与中原记忆</span>
+              <span class="tab-arrow" aria-hidden="true">↘</span>
+            </button>
+          </div>
+
+          <div class="province-list">
+            <article class="province-panel" id="province-beijing" data-province="beijing" aria-labelledby="beijing-title">
+              <header class="province-panel-head">
+                <span class="province-code">01 / 北京</span>
+                <div class="province-intro">
+                  <p class="section-kicker">中国红 / vermilion</p>
+                  <h2 id="beijing-title">从朱墙开始，<br />看一座城的收藏。</h2>
+                  <p>北京是总馆的第一张背景图：先从城市的轴线、宫门与博物馆群开始，留下今后每一次进馆的入口。</p>
+                </div>
+                <div class="province-facts" aria-label="北京目录信息">
+                  <div class="province-fact"><strong>02</strong><span>馆藏入口</span></div>
+                  <div class="province-fact"><strong>01</strong><span>主题色</span></div>
+                  <div class="province-fact"><strong>待续</strong><span>专题状态</span></div>
+                </div>
+              </header>
+              <div class="museum-grid">
+                <article class="museum-card museum-card--soon" aria-label="故宫博物院专题站筹备中">
+                  <div class="card-media"><img src="assets/beijing-palace.webp" alt="故宫博物院建筑群" loading="lazy" decoding="async" /></div>
+                  <div class="card-body">
+                    <span class="card-status">待上传 / preparing</span>
+                    <h3 class="card-title">故宫博物院</h3>
+                    <p class="card-location">北京 · 故宫</p>
+                    <p class="card-description">总馆首屏的背景来自这里；等照片资料整理完成，它会成为北京的第一座专题站。</p>
+                    <div class="card-cta"><span>专题站筹备中</span><span aria-hidden="true">—</span></div>
+                  </div>
+                </article>
+                <article class="museum-card museum-card--soon" aria-label="中国国家博物馆专题站筹备中">
+                  <div class="card-media card-media--red" aria-hidden="true"></div>
+                  <div class="card-body">
+                    <span class="card-status">待拍摄 / next visit</span>
+                    <h3 class="card-title">中国国家博物馆</h3>
+                    <p class="card-location">北京 · 天安门东</p>
+                    <p class="card-description">以国家级收藏为线索的第二个北京入口，保留位置，等待下一次现场照片与专题整理。</p>
+                    <div class="card-cta"><span>专题站筹备中</span><span aria-hidden="true">—</span></div>
+                  </div>
+                </article>
+              </div>
+            </article>
+
+            <article class="province-panel" id="province-shaanxi" data-province="shaanxi" aria-labelledby="shaanxi-title">
+              <header class="province-panel-head">
+                <span class="province-code">02 / 陕西</span>
+                <div class="province-intro">
+                  <p class="section-kicker">墨色 / ink & stone</p>
+                  <h2 id="shaanxi-title">让碑石自己<br />把时间说出来。</h2>
+                  <p>陕西这一栏以墨色压低背景，把视线交给石刻、拓片和现场细节。西安碑林博物馆专题站已经可以进入。</p>
+                </div>
+                <div class="province-facts" aria-label="陕西目录信息">
+                  <div class="province-fact"><strong>02</strong><span>馆藏入口</span></div>
+                  <div class="province-fact"><strong>墨</strong><span>主题色</span></div>
+                  <div class="province-fact"><strong>01</strong><span>已开放专题</span></div>
+                </div>
+              </header>
+              <div class="museum-grid">
+                <a class="museum-card museum-card--link" href="../beilin/index.html" aria-label="进入西安碑林博物馆专题站">
+                  <div class="card-media">
+                    <img src="../../assets/hero/beilin-gate.jpg" alt="西安碑林博物馆大门" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="card-body">
+                    <span class="card-status">已开放 / open archive</span>
+                    <h3 class="card-title">西安碑林博物馆</h3>
+                    <p class="card-location">陕西 · 西安</p>
+                    <p class="card-description">644 张现场照片、180 组对象与可检索的石刻档案，从总馆进入完整专题。</p>
+                    <div class="card-cta"><span>进入专题站</span><span aria-hidden="true">↗</span></div>
+                  </div>
+                </a>
+                <article class="museum-card museum-card--soon" aria-label="陕西历史博物馆专题站筹备中">
+                  <div class="card-media card-media--ink" aria-hidden="true"></div>
+                  <div class="card-body">
+                    <span class="card-status">待整理 / preparing</span>
+                    <h3 class="card-title">陕西历史博物馆</h3>
+                    <p class="card-location">陕西 · 西安</p>
+                    <p class="card-description">先用一块墨色卡片保留它的位置，未来可接入新的展览现场、器物照片和阅读笔记。</p>
+                    <div class="card-cta"><span>专题站筹备中</span><span aria-hidden="true">—</span></div>
+                  </div>
+                </article>
+              </div>
+            </article>
+
+            <article class="province-panel" id="province-henan" data-province="henan" aria-labelledby="henan-title">
+              <header class="province-panel-head">
+                <span class="province-code">03 / 河南</span>
+                <div class="province-intro">
+                  <p class="section-kicker">青花瓷 / porcelain blue</p>
+                  <h2 id="henan-title">在瓷白与青花之间，<br />走进中原。</h2>
+                  <p>河南以青花瓷色建立第三种气质：清亮、克制，但保留考古材料的重量，为以后上传器物与展厅照片留出呼吸。</p>
+                </div>
+                <div class="province-facts" aria-label="河南目录信息">
+                  <div class="province-fact"><strong>02</strong><span>馆藏入口</span></div>
+                  <div class="province-fact"><strong>青</strong><span>主题色</span></div>
+                  <div class="province-fact"><strong>待续</strong><span>专题状态</span></div>
+                </div>
+              </header>
+              <div class="museum-grid">
+                <article class="museum-card museum-card--soon" aria-label="河南博物院专题站筹备中">
+                  <div class="card-media">
+                    <img src="assets/henan-hero.webp" alt="青花瓷器与博物馆展厅氛围" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="card-body">
+                    <span class="card-status">待上传 / preparing</span>
+                    <h3 class="card-title">河南博物院</h3>
+                    <p class="card-location">河南 · 郑州</p>
+                    <p class="card-description">青花主题的第一张占位卡。未来把郑州现场照片接入这里，再从卡片进入独立网站。</p>
+                    <div class="card-cta"><span>专题站筹备中</span><span aria-hidden="true">—</span></div>
+                  </div>
+                </article>
+                <article class="museum-card museum-card--soon" aria-label="洛阳博物馆专题站筹备中">
+                  <div class="card-media card-media--blue" aria-hidden="true"></div>
+                  <div class="card-body">
+                    <span class="card-status">待拍摄 / next visit</span>
+                    <h3 class="card-title">洛阳博物馆</h3>
+                    <p class="card-location">河南 · 洛阳</p>
+                    <p class="card-description">为中原古都保留一个轻盈的入口，等待下一次旅行把照片、路线和观察补进来。</p>
+                    <div class="card-cta"><span>专题站筹备中</span><span aria-hidden="true">—</span></div>
+                  </div>
+                </article>
+              </div>
+            </article>
+          </div>
+
+          <div class="next-note" aria-label="后续扩展提示">
+            <span class="section-number" aria-hidden="true">02</span>
+            <p><strong>下一站：</strong>总馆结构已经准备好，新的省份只需要增加一个主题面板和对应的博物馆卡片。</p>
+            <div class="next-places" aria-label="未来省份占位">
+              <span>四川 / later</span>
+              <span>山东 / later</span>
+              <span>浙江 / later</span>
             </div>
           </div>
         </section>
-
-        <aside class="hero-aside" id="links">
-          <div class="aside-title">快捷入口</div>
-          <div class="panel">
-            <h2>总馆与专题的分工</h2>
-            <p>
-              总馆负责整个项目的入口、说明和分馆导航；碑林专题负责当前的西安碑林博物馆深度档案。
-            </p>
-          </div>
-          <div class="link-card">
-            <a href="../index.html"><span>回到 Ad Fontes 首页</span><span>↗</span></a>
-            <a href="../beilin/index.html"><span>西安碑林博物馆专题</span><span>→</span></a>
-          </div>
-          <div class="panel">
-            <h2>后续可继续扩展</h2>
-            <p>如果你后面继续拍别的馆，我们可以把北京、河南、陕西其他博物馆都挂进这个总馆里。</p>
-          </div>
-        </aside>
       </main>
 
-      <section class="section" aria-label="说明">
-        <article class="card">
-          <h3>总馆用法</h3>
-          <p>把它当成“主目录”，而不是当前专题本身。这样站点根目录就能先进入总馆，再分流到各专题。</p>
-        </article>
-        <article class="card">
-          <h3>专题入口</h3>
-          <p>当前碑林页面就是一个专题分馆，承接今天拍摄的碑林资料和卡片式浏览需求。</p>
-        </article>
-      </section>
-
-      <p class="footer">唐色遗珍 · 总馆 · 2026</p>
+      <footer class="site-footer" id="footer">
+        <div>
+          <p class="footer-label">Ad Fontes / Museum Atlas</p>
+          <p class="footer-title">把照片放回地方。</p>
+        </div>
+        <p class="footer-copy">第一期目录：北京 · 陕西 · 河南<br />总馆负责导航，专题站负责深入记录。</p>
+        <a class="footer-link" href="../beilin/index.html">进入西安碑林专题 ↗</a>
+      </footer>
     </div>
+
+    <script>
+      (() => {
+        const header = document.querySelector('.site-header');
+        const tabs = [...document.querySelectorAll('.province-tab')];
+        const panels = [...document.querySelectorAll('.province-panel')];
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const setActiveProvince = (province) => {
+          document.documentElement.dataset.activeProvince = province;
+          tabs.forEach((tab) => {
+            const isActive = tab.dataset.province === province;
+            tab.setAttribute('aria-selected', String(isActive));
+          });
+        };
+
+        tabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            const province = tab.dataset.province;
+            const panel = document.getElementById(`province-${province}`);
+            setActiveProvince(province);
+            panel?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+          });
+        });
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) setActiveProvince(visible.target.dataset.province);
+          }, { rootMargin: '-26% 0px -55% 0px', threshold: [0.1, 0.35, 0.6] });
+          panels.forEach((panel) => observer.observe(panel));
+        }
+
+        const syncHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 18);
+        syncHeader();
+        window.addEventListener('scroll', syncHeader, { passive: true });
+      })();
+    </script>
   </body>
 </html>
