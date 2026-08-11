@@ -1,0 +1,43 @@
+{
+  "visible_photo_count": 445,
+  "hidden_roles": [
+    "label",
+    "title"
+  ],
+  "source_bytes": 6858651403,
+  "variant_bytes": 295422654,
+  "reduction_percent_vs_original_per_initial_request": 95.69,
+  "variants": [
+    {
+      "directory": "thumb",
+      "max_edge": 320,
+      "format": "JPEG",
+      "quality": 78
+    },
+    {
+      "directory": "thumb",
+      "max_edge": 320,
+      "format": "WEBP",
+      "quality": 72
+    },
+    {
+      "directory": "web",
+      "max_edge": 1280,
+      "format": "JPEG",
+      "quality": 82
+    },
+    {
+      "directory": "web",
+      "max_edge": 1280,
+      "format": "WEBP",
+      "quality": 78
+    },
+    {
+      "directory": "large",
+      "max_edge": 2200,
+      "format": "WEBP",
+      "quality": 82
+    }
+  ],
+  "failures": []
+}
