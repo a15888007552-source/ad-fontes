@@ -349,7 +349,110 @@
       }
     </style>
     <script src="../../app.js?v=5.0" defer></script>
-  </head>
+  <style id="beilin-mobile-polish-v2">
+@media (max-width: 720px) {
+  :root { --mobile-gutter: 16px; }
+  html { overflow-x: hidden; scroll-padding-top: 0; }
+  body { min-width: 0; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+  .hero { height: min(700px, 100svh); min-height: 600px; max-height: none; }
+  .top-nav { top: max(10px, env(safe-area-inset-top)); width: calc(100% - 24px); min-height: 54px; padding: 8px 10px; }
+  .wordmark { gap: 8px; min-width: 0; }
+  .seal { width: 30px; height: 30px; flex: 0 0 auto; font-size: 17px; }
+  .wordmark-copy { min-width: 0; }
+  .wordmark-copy strong, .wordmark-copy small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .wordmark-copy strong { font-size: 11px; letter-spacing: 0.06em; }
+  .wordmark-copy small { font-size: 7px; letter-spacing: 0.04em; }
+  .top-nav-links { flex: 0 0 auto; gap: 0; }
+  .top-nav-links a:not(.platform-return) { display: none; }
+  .top-nav-links .platform-return { display: inline-flex; min-height: 44px; align-items: center; padding: 0 4px; font-size: 10px; white-space: nowrap; }
+  .hero-museum-name { top: 88px; right: var(--mobile-gutter); left: var(--mobile-gutter); align-items: flex-start; text-align: left; }
+  .hero-museum-name span { font-size: 8px; letter-spacing: 0.2em; }
+  .hero-museum-name strong { max-width: 100%; font-size: clamp(26px, 7.8vw, 36px); letter-spacing: 0.1em; line-height: 1.12; }
+  .hero-panel { right: var(--mobile-gutter); bottom: 20px; left: var(--mobile-gutter); width: auto; padding: 22px 18px 18px; transform: none; animation: none; }
+  .hero .eyebrow { margin-bottom: 8px; font-size: 9px; letter-spacing: 0.14em; text-align: left; }
+  .hero h1 { display: flex; width: 100%; max-width: 100%; align-items: baseline; justify-content: flex-start; gap: clamp(16px, 5vw, 24px); margin-top: 0; font-size: clamp(48px, 14vw, 64px); line-height: 0.94; }
+  .hero h1 span { flex: 0 0 auto; letter-spacing: 0.02em; text-indent: 0; white-space: nowrap; }
+  .hero-lead { max-width: none; margin: 15px 0 16px; font-size: 12px; line-height: 1.75; }
+  .hero-actions { justify-content: flex-start; gap: 8px; }
+  .primary-action, .secondary-action { min-height: 44px; padding: 10px 12px; font-size: 11px; }
+  .hero-credit { display: none; }
+  .museum-section, .method-section { display: grid; width: calc(100% - 32px); grid-template-columns: 1fr; gap: 14px; padding: 56px 0 62px; }
+  .section-index { width: 48px; padding-top: 2px; font-size: 11px; }
+  .museum-copy h2, .method-section h2, .catalog-heading h2, .theme-heading h2 { max-width: 100%; font-size: clamp(30px, 8.8vw, 40px); letter-spacing: 0; line-height: 1.18; white-space: normal; }
+  .museum-columns { grid-template-columns: 1fr; gap: 18px; margin: 24px 0 22px; font-size: 15px; line-height: 1.85; }
+  .museum-stats { margin-top: 24px; }
+  .museum-stats div { grid-template-columns: 62px 1fr; gap: 12px; padding: 13px 0; }
+  .museum-stats dt { font-size: 30px; }
+  .museum-stats dd { font-size: 12px; line-height: 1.5; }
+  .theme-section, .catalog-section { padding: 58px var(--mobile-gutter); }
+  .theme-heading, .catalog-heading { display: block; margin-bottom: 24px; }
+  .theme-intro, .catalog-intro { margin-top: 14px; font-size: 14px; line-height: 1.8; }
+  .theme-grid { grid-template-columns: 1fr; grid-auto-rows: 178px; gap: 10px; }
+  .theme-card, .theme-card-stele, .theme-card-inscription, .theme-card-epitaph, .theme-card-objects, .theme-card-special { grid-column: span 1; grid-row: span 1; min-height: 178px; }
+  .theme-card-copy { right: 16px; bottom: 16px; left: 16px; }
+  .theme-card-copy strong { font-size: clamp(25px, 7vw, 34px); }
+  .catalog-heading h2 { font-size: clamp(32px, 9vw, 42px); }
+  .catalog-controls { position: static; margin-bottom: 22px; padding: 12px 0 14px; }
+  .search-field { grid-template-columns: auto minmax(0, 1fr); gap: 8px; padding-bottom: 9px; }
+  .search-field input { min-width: 0; font-size: 14px; }
+  .search-field kbd { display: none; }
+  .category-tabs { flex-wrap: nowrap; margin-right: calc(var(--mobile-gutter) * -1); padding-right: var(--mobile-gutter); overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .category-tabs::-webkit-scrollbar { display: none; }
+  .category-button, .quiet-button, .music-filter-button, .control-row select { min-height: 44px; }
+  .category-button { flex: 0 0 auto; white-space: nowrap; }
+  .control-row { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px; align-items: center; }
+  .control-row select { min-width: 0; width: 100%; }
+  .result-count { grid-column: 1 / -1; margin: 2px 0 0; text-align: right; }
+  .catalog-grid { grid-template-columns: 1fr; gap: 10px; }
+  .artifact-card { min-height: 154px; }
+  .artifact-card-button { grid-template-columns: 92px minmax(0, 1fr); min-height: 154px; }
+  .artifact-card-button > .card-image-wrap { width: 92px; min-height: 154px; }
+  .card-corner-effect { display: none; }
+  .card-copy { display: flex; min-width: 0; align-items: flex-start; justify-content: flex-start; justify-items: initial; gap: 0; padding: 12px 12px 10px; text-align: left; }
+  .card-meta { justify-content: flex-start; margin-bottom: 5px; font-size: 9px; }
+  .card-copy h3 { max-width: 100%; font-size: 17px; line-height: 1.25; white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .card-period { max-width: 100%; margin-top: 5px; font-size: 11px; line-height: 1.45; white-space: normal; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .card-excerpt { margin-top: 6px; padding-top: 6px; }
+  .card-excerpt p { font-size: 11px; line-height: 1.5; -webkit-line-clamp: 2; }
+  .card-footer { margin-top: auto; padding-top: 6px; }
+  .special-marker, .music-marker { min-height: 22px; padding: 2px 5px; font-size: 8px; }
+  .artifact-dialog { width: 100vw; max-width: none; height: 100svh; max-height: 100svh; margin: 0; overflow: auto; }
+  .detail-shell { display: block; min-height: 100%; }
+  .detail-header { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; padding: max(16px, env(safe-area-inset-top)) 16px 14px; }
+  .detail-header h2 { font-size: clamp(27px, 8vw, 34px); line-height: 1.2; }
+  .detail-period { margin-top: 8px; font-size: 12px; }
+  .icon-button { width: 44px; height: 44px; font-size: 24px; }
+  .detail-gallery { display: block; padding: 14px 16px 12px; }
+  .main-image-button, .main-image-button img { height: min(44svh, 400px); min-height: 220px; }
+  .photo-thumbs { gap: 7px; margin-top: 10px; padding-bottom: 3px; overflow-x: auto; overscroll-behavior-x: contain; }
+  .photo-thumb { width: 74px; flex: 0 0 auto; }
+  .detail-body { display: block; padding: 24px 16px 36px; }
+  .fact-panel { margin-bottom: 24px; }
+  .fact-panel dl { grid-template-columns: 1fr; }
+  .fact-panel dl div { grid-template-columns: 76px minmax(0, 1fr); gap: 10px; }
+  .research-copy { gap: 24px; }
+  .research-copy section { padding-left: 0; }
+  .research-copy h3, .source-section h3 { margin-bottom: 8px; font-size: 22px; line-height: 1.3; }
+  .research-copy section > p:last-child, .music-research > #musicSummary { font-size: 15px; line-height: 1.85; }
+  .research-copy .music-research { margin: 16px 0 0; padding: 20px 16px; }
+  .source-section { padding: 28px 16px; }
+  .source-item { min-height: 0; padding: 14px 0; }
+}
+@media (max-width: 380px) {
+  .hero { min-height: 560px; }
+  .hero-panel { padding: 20px 16px 16px; }
+  .hero h1 { gap: 14px; font-size: 47px; }
+  .artifact-card-button { grid-template-columns: 84px minmax(0, 1fr); }
+  .artifact-card-button > .card-image-wrap { width: 84px; }
+  .card-copy { padding-right: 10px; }
+}
+@media (max-width: 720px) and (orientation: landscape) {
+  .hero { height: 560px; min-height: 560px; }
+  .hero-museum-name { top: 76px; }
+  .hero-panel { right: 22px; bottom: 18px; left: 22px; }
+}
+</style>
+</head>
   <body>
     <a class="skip-link" href="#catalog">跳至文物名录</a>
 
