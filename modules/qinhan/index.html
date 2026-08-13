@@ -136,8 +136,45 @@
           </dl>
           <div class="queen-actions">
             <button type="button" data-open-id="queen-seal">查看三张现场记录</button>
+            <a href="#seal-3d">查看 3D 数字重建 ↗</a>
             <a href="https://www.sxhm.com/collections/detail/466.html" target="_blank" rel="noreferrer">馆方藏品页 ↗</a>
           </div>
+        </div>
+      </section>
+
+      <section class="seal-viewer-section" id="seal-3d" aria-labelledby="seal-3d-title">
+        <div class="seal-viewer-intro">
+          <p class="eyebrow dark">03A / DIGITAL RECONSTRUCTION</p>
+          <h2 id="seal-3d-title">皇后之玺 · 360°</h2>
+          <p>拖动模型查看方形印台、螭虎钮与印面关系。模型依据 DSC_2586—2587 现场照片和公开形制资料重建，用于观看与研究，不等同于馆方三维扫描。</p>
+          <div class="seal-viewer-facts" aria-label="3D 模型说明">
+            <span>PHOTO-BASED</span><span>LOW-POLY STUDY MODEL</span><span>DRAG TO ROTATE</span>
+          </div>
+        </div>
+        <div class="seal-viewer-layout">
+          <div class="seal-viewer-stage" data-seal-viewer>
+            <canvas id="seal-viewer" aria-label="皇后之玺数字重建，可拖动旋转查看" tabindex="0"></canvas>
+            <div class="seal-viewer-grid" aria-hidden="true"></div>
+            <div class="seal-viewer-badge">PHOTO-BASED RECONSTRUCTION <span>拖动旋转</span></div>
+            <div class="seal-viewer-status" id="seal-viewer-status" aria-live="polite">模型已就绪 · 拖动查看</div>
+          </div>
+          <aside class="seal-viewer-notes">
+            <div>
+              <p class="eyebrow dark">VIEW CONTROLS</p>
+              <h3>看清形制，保留边界</h3>
+              <p>白玉底座与螭虎钮按照片比例做简化表达；印面笔画是示意性浮雕，不把照片中无法辨认的细节补写成事实。</p>
+            </div>
+            <div class="seal-viewer-controls" role="group" aria-label="3D 查看控制">
+              <button type="button" data-seal-view="reset">重置视角</button>
+              <button type="button" data-seal-view="top">看螭虎钮</button>
+              <button type="button" data-seal-view="seal">看印面</button>
+            </div>
+            <dl class="seal-viewer-legend">
+              <div><dt>依据</dt><dd>DSC_2586—2587</dd></div>
+              <div><dt>性质</dt><dd>数字重建 · 非馆方扫描</dd></div>
+              <div><dt>操作</dt><dd>鼠标 / 手指拖动 · 滚轮缩放</dd></div>
+            </dl>
+          </aside>
         </div>
       </section>
 
@@ -147,7 +184,7 @@
             <p class="eyebrow dark">04 / CATALOGUE · 34 ENTRIES</p>
             <h2 id="archive-title">文物图像目录</h2>
           </div>
-          <p>三十四个文物条目依拍摄顺序排列。每个条目合并同一文物或同类对象的正面、侧面、局部与展签；卡片用于辨认，详情中提供较完整的形制说明、历史语境、观看提示和证据边界。说明屏、展签与参考文献墙只作为证据保留，不进入文物目录。</p>
+          <p>三十四个文物条目依拍摄顺序排列。每个条目合并同一文物或同类对象的正面、侧面、局部与展签；卡片用于辨认，详情中提供较完整的形制说明、历史语境、观看提示和证据边界。说明屏、展签与参考文献墙只作为证据保留，不进入文物目录。<a class="archive-3d-link" href="#seal-3d">先看皇后之玺 3D 数字重建 ↗</a></p>
         <div class="archive-total" id="archive-count">34 个文物条目 · 324 张对象图 · 184 张证据图</div>
         </div>
 
@@ -226,5 +263,6 @@
     </dialog>
 
     <script src="app.js?v=20260813-motion2"></script>
+    <script src="seal-viewer.js?v=20260813-model2"></script>
   </body>
 </html>

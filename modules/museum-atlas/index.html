@@ -94,7 +94,7 @@
       opacity: 0.24;
       pointer-events: none;
       transform: translate3d(0, 0, 0) scale(1);
-      animation: ambient-drift 24s ease-in-out infinite alternate;
+      animation: ambient-drift 32s ease-in-out 1 alternate;
       will-change: transform;
     }
 
@@ -341,6 +341,20 @@
     .motion-ready .site-nav .nav-item:nth-child(3) { animation-delay: 140ms; }
     .motion-ready .site-nav .nav-item:nth-child(4) { animation-delay: 200ms; }
 
+    .motion-ready .site-header::after {
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+      left: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      content: "";
+      opacity: .64;
+      transform: scaleX(.2);
+      transform-origin: center;
+      animation: header-line-in 900ms 360ms cubic-bezier(.16,.82,.2,1) both;
+    }
+
     .cover {
       position: relative;
       isolation: isolate;
@@ -362,8 +376,8 @@
       content: "";
       opacity: 0.65;
       pointer-events: none;
-      transform: translate3d(var(--cover-light-x, 0px), var(--cover-light-y, 0px), 0);
-      transition: transform 500ms cubic-bezier(0.2, 0.78, 0.22, 1), background 260ms ease;
+      transform: translate3d(0, 0, 0);
+      transition: background 260ms ease;
     }
 
     .cover-copy {
@@ -422,6 +436,29 @@
       align-items: end;
     }
 
+    .cover-stamp {
+      transform: translate3d(0, var(--stamp-y, 0px), 0);
+      transition: box-shadow 300ms ease, transform 420ms cubic-bezier(0.2, 0.78, 0.22, 1);
+    }
+
+    .cover-stamp::after {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+      content: "";
+      opacity: 0;
+      transform: scale(.94);
+      transition: opacity 260ms ease, transform 560ms cubic-bezier(.16,.82,.2,1);
+      pointer-events: none;
+    }
+
+    .cover-stamp:hover::after,
+    .cover-stamp:focus-within::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
     .cover-index {
       align-self: start;
       padding-top: 2px;
@@ -458,9 +495,8 @@
       border: 1px solid var(--line);
       background: var(--surface);
       box-shadow: var(--shadow);
-      transform: perspective(900px) rotateX(var(--stamp-rx, 0deg)) rotateY(var(--stamp-ry, 0deg)) translate3d(0, var(--stamp-y, 0px), 0);
-      transition: box-shadow 300ms ease, transform 180ms cubic-bezier(0.2, 0.78, 0.22, 1);
-      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      transition: box-shadow 300ms ease, transform 420ms cubic-bezier(0.2, 0.78, 0.22, 1);
     }
 
     .cover-stamp::before {
@@ -571,6 +607,10 @@
       background: var(--surface);
     }
 
+    .province-tab[aria-selected="true"] strong {
+      color: var(--accent);
+    }
+
     .province-tab[aria-selected="true"]::after {
       background: transparent;
     }
@@ -640,6 +680,14 @@
       animation: copy-rise-in 620ms 360ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
     }
 
+    .province-panel.is-entering .museum-card {
+      animation: museum-card-in 540ms 420ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
+    }
+
+    .province-panel.is-entering .museum-card:nth-child(2) {
+      animation-delay: 500ms;
+    }
+
     .chapter-hero {
       position: relative;
       min-height: 390px;
@@ -658,8 +706,8 @@
       min-height: 390px;
       object-fit: cover;
       filter: var(--image-filter);
-      transform: translate3d(var(--hero-pointer-x, 0px), calc(var(--hero-pointer-y, 0px) + var(--hero-scroll-y, 0px)), 0) scale(calc(1.018 + var(--hero-hover-scale, 0)));
-      transition: filter 260ms ease, transform 180ms cubic-bezier(0.2, 0.75, 0.25, 1);
+      transform: translate3d(0, var(--hero-scroll-y, 0px), 0) scale(calc(1.018 + var(--hero-hover-scale, 0)));
+      transition: filter 260ms ease, transform 420ms cubic-bezier(0.2, 0.75, 0.25, 1);
       will-change: transform;
     }
 
@@ -690,8 +738,7 @@
       left: 44px;
       max-width: 560px;
       color: var(--on-image);
-      transform: translate3d(var(--copy-pointer-x, 0px), var(--copy-pointer-y, 0px), 0);
-      will-change: transform;
+      transform: translate3d(0, 0, 0);
     }
 
     .chapter-hero-copy .chapter-kicker {
@@ -740,9 +787,8 @@
       color: rgba(255, 247, 233, 0.84);
       font-size: 10px;
       text-align: right;
-      transform: translate3d(var(--caption-pointer-x, 0px), var(--caption-pointer-y, 0px), 0);
-      transition: transform 220ms cubic-bezier(0.2, 0.78, 0.22, 1);
-      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      transition: opacity 220ms ease;
     }
 
     .motion-ready .reveal-on-scroll {
@@ -855,7 +901,7 @@
       position: absolute;
       z-index: 2;
       inset: 0;
-      background: radial-gradient(circle at var(--card-x, 50%) var(--card-y, 50%), color-mix(in srgb, var(--accent) 16%, transparent), transparent 38%);
+      background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 38%);
       content: "";
       opacity: 0;
       pointer-events: none;
@@ -874,6 +920,27 @@
     .museum-card--link:focus-visible::after,
     .museum-card--soon:hover::after {
       opacity: 1;
+    }
+
+    .museum-card--link::before {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      background: var(--accent);
+      content: "";
+      opacity: .2;
+      transform: scaleY(.25);
+      transform-origin: center;
+      transition: opacity 220ms ease, transform 420ms cubic-bezier(.16,.82,.2,1);
+    }
+
+    .museum-card--link:hover::before,
+    .museum-card--link:focus-visible::before {
+      opacity: 1;
+      transform: scaleY(1);
     }
 
     .card-media {
@@ -1039,6 +1106,11 @@
       to { opacity: 1; translate: 0 0; }
     }
 
+    @keyframes header-line-in {
+      from { opacity: 0; transform: scaleX(.05); }
+      to { opacity: .64; transform: scaleX(1); }
+    }
+
     @keyframes title-line-in {
       from { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(8px); }
       to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
@@ -1057,6 +1129,11 @@
     @keyframes copy-rise-in {
       from { opacity: 0; translate: 0 18px; }
       to { opacity: 1; translate: 0 0; }
+    }
+
+    @keyframes museum-card-in {
+      from { opacity: 0; transform: translate3d(0, 16px, 0); }
+      to { opacity: 1; transform: translate3d(0, 0, 0); }
     }
 
     @media (max-width: 900px) {
@@ -1279,6 +1356,12 @@
         opacity: 1 !important;
         transform: none !important;
       }
+
+      .motion-ready .site-header::after {
+        animation: none !important;
+        opacity: .64;
+        transform: none;
+      }
     }
   </style>
 </head>
@@ -1493,14 +1576,10 @@
       const indicator = document.querySelector(".province-indicator");
       const progress = document.querySelector(".motion-progress span");
       const cover = document.querySelector(".cover");
-      const coverStamp = document.querySelector(".cover-stamp");
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-      const tiltStates = new Map();
       const motion = { raf: 0, panelTimer: 0, scrollState: "top" };
 
       const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-      const lerp = (from, to, amount) => from + (to - from) * amount;
 
       const schedule = () => {
         if (motion.raf || document.hidden) return;
@@ -1596,55 +1675,6 @@
         schedule();
       };
 
-      const registerTilt = (element, kind) => {
-        const state = { x: 0, y: 0, targetX: 0, targetY: 0, kind };
-        tiltStates.set(element, state);
-        element.addEventListener("pointermove", (event) => {
-          if (!finePointer || reducedMotion.matches) return;
-          const rect = element.getBoundingClientRect();
-          state.targetX = clamp((event.clientX - rect.left) / rect.width * 2 - 1, -1, 1);
-          state.targetY = clamp((event.clientY - rect.top) / rect.height * 2 - 1, -1, 1);
-          schedule();
-        });
-        element.addEventListener("pointerleave", () => {
-          state.targetX = 0;
-          state.targetY = 0;
-          schedule();
-        });
-      };
-
-      if (coverStamp) registerTilt(coverStamp, "stamp");
-      panels.forEach((panel) => {
-        const hero = panel.querySelector(".chapter-hero");
-        if (hero) registerTilt(hero, "hero");
-      });
-
-      document.querySelectorAll(".museum-card").forEach((card) => {
-        card.addEventListener("pointermove", (event) => {
-          if (!finePointer || reducedMotion.matches) return;
-          const rect = card.getBoundingClientRect();
-          card.style.setProperty("--card-x", `${((event.clientX - rect.left) / rect.width) * 100}%`);
-          card.style.setProperty("--card-y", `${((event.clientY - rect.top) / rect.height) * 100}%`);
-        });
-        card.addEventListener("pointerleave", () => {
-          card.style.removeProperty("--card-x");
-          card.style.removeProperty("--card-y");
-        });
-      });
-
-      if (cover) {
-        cover.addEventListener("pointermove", (event) => {
-          if (!finePointer || reducedMotion.matches) return;
-          const rect = cover.getBoundingClientRect();
-          cover.style.setProperty("--cover-light-x", `${(event.clientX - rect.left) - rect.width * 0.5}px`);
-          cover.style.setProperty("--cover-light-y", `${(event.clientY - rect.top) - rect.height * 0.5}px`);
-        });
-        cover.addEventListener("pointerleave", () => {
-          cover.style.setProperty("--cover-light-x", "0px");
-          cover.style.setProperty("--cover-light-y", "0px");
-        });
-      }
-
       const renderMotion = () => {
         motion.raf = 0;
         const scrollMax = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
@@ -1662,26 +1692,6 @@
           cover.style.setProperty("--cover-scroll-shift", `${Math.max(-30, -window.scrollY * 0.045)}px`);
         }
 
-        let settling = false;
-        tiltStates.forEach((state, element) => {
-          state.x = lerp(state.x, state.targetX, 0.16);
-          state.y = lerp(state.y, state.targetY, 0.16);
-          if (Math.abs(state.x - state.targetX) > 0.002 || Math.abs(state.y - state.targetY) > 0.002) settling = true;
-
-          if (state.kind === "stamp") {
-            element.style.setProperty("--stamp-rx", `${state.y * -4.2}deg`);
-            element.style.setProperty("--stamp-ry", `${state.x * 5.4}deg`);
-            element.style.setProperty("--stamp-y", `${state.y * -2}px`);
-          } else {
-            element.style.setProperty("--hero-pointer-x", `${state.x * 8}px`);
-            element.style.setProperty("--hero-pointer-y", `${state.y * 6}px`);
-            element.style.setProperty("--copy-pointer-x", `${state.x * 2.4}px`);
-            element.style.setProperty("--copy-pointer-y", `${state.y * 1.6}px`);
-            element.style.setProperty("--caption-pointer-x", `${state.x * -2}px`);
-            element.style.setProperty("--caption-pointer-y", `${state.y * -1.2}px`);
-          }
-        });
-
         const activePanel = panels.find((panel) => !panel.hidden);
         const activeHero = activePanel && activePanel.querySelector(".chapter-hero");
         if (activeHero && !reducedMotion.matches) {
@@ -1690,7 +1700,6 @@
           activeHero.style.setProperty("--hero-scroll-y", `${centreOffset * -18}px`);
         }
 
-        if (settling) schedule();
       };
 
       tabs.forEach((tab, index) => {
