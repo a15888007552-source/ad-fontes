@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-12T19:58:05+08:00",
+  "file_count": 512,
+  "by_kind": {
+    "info_panel": 9,
+    "no_text": 177,
+    "object_or_text": 154,
+    "possible_info_panel": 65,
+    "title_panel": 107
+  },
+  "output": "C:\\Users\\GusGumee\\Documents\\ChatGPT\\网站\\qinhan-museum\\data\\photo-ocr.jsonl"
+}
