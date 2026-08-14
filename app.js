@@ -65,6 +65,7 @@ const ROLE_LABELS = {
   side: "侧面",
   detail: "局部",
   component: "组内单件",
+  reference: "资料图",
   label: "介绍",
   title: "题名",
 };
@@ -74,12 +75,14 @@ const SOURCE_LAYER_LABELS = {
   museum_official_collection_page: "馆方对象资料",
   wikipedia_overview: "维基百科概述",
   museum_context_page: "博物馆语境资料",
+  user_pdf: "用户提供 PDF",
 };
 
 const RESEARCH_STATUS_LABELS = {
   curated_from_label_museum_and_context_sources: "已校读 · 展签 + 馆方 + 背景资料",
   curated_from_label_and_context_sources: "已校读 · 展签 + 背景资料",
   curated_from_label: "已校读 · 现场展签",
+  curated_from_user_pdf: "已校读 · 用户提供 PDF",
 };
 
 const LIGHTBOX_MIN_ZOOM = 1;
@@ -124,6 +127,7 @@ const elements = {
   galleryCategoryLabel: document.querySelector("#galleryCategoryLabel"),
   galleryArtifactLabel: document.querySelector("#galleryArtifactLabel"),
   galleryRoleLabel: document.querySelector("#galleryRoleLabel"),
+  galleryImageNote: document.querySelector("#galleryImageNote"),
   galleryEmptyNote: document.querySelector("#galleryEmptyNote"),
   galleryArtDisclosure: document.querySelector("#galleryArtDisclosure"),
   zoomHint: document.querySelector("#zoomHint"),
@@ -465,7 +469,8 @@ function createCard(group, index) {
   const card = makeElement("article", `artifact-card${group.special_status ? " special" : ""}`);
   const button = makeElement("button", "artifact-card-button");
   button.type = "button";
-  button.setAttribute("aria-label", `打开${group.name}详情，共${artifactPhotoCount(group)}张文物照片`);
+  const cardImageKind = imageKindLabel(group, group.main_photo);
+  button.setAttribute("aria-label", "打开" + group.name + "详情，共" + artifactPhotoCount(group) + "张" + cardImageKind);
   button.addEventListener("click", () => {
     window.location.hash = group.id;
   });
@@ -477,7 +482,7 @@ function createCard(group, index) {
     ? group.main_photo
     : displayPhotos[0] || null;
   if (cardPhoto) {
-    image.alt = `${group.name}现场文物照片`;
+    image.alt = group.name + imageKindLabel(group, cardPhoto);
     setResponsiveImage(image, cardPhoto, "card");
   } else {
     imageWrap.classList.add("is-editorial-placeholder");
@@ -506,7 +511,7 @@ function createCard(group, index) {
   const title = makeElement("h3", "", group.name);
   const period = makeElement("p", "card-period", group.period_label || "年代见现场展签");
   const excerpt = makeElement("div", "card-excerpt");
-  excerpt.append(makeElement("span", "card-excerpt-label", "展签校读"));
+  excerpt.append(makeElement("span", "card-excerpt-label", group.image_source === "user_pdf" ? "资料页校读" : "展签校读"));
   excerpt.append(makeElement("p", "", cardExcerpt(group)));
   const footer = makeElement("div", "card-footer");
   const flags = makeElement("span", "card-flags");
@@ -520,7 +525,9 @@ function createCard(group, index) {
     makeElement(
       "span",
       "card-photo-count",
-      artifactPhotoCount(group) ? `文物图 ${artifactPhotoCount(group)}` : "仅有文字证据",
+      artifactPhotoCount(group)
+        ? (isSupplementalImage(group, cardPhoto) ? "资料图" : "文物图") + " " + artifactPhotoCount(group)
+        : "仅有文字证据",
     ),
     flags,
     makeElement("span", "card-enter", "进入 →"),
@@ -571,6 +578,18 @@ function setStats() {
 function formatRole(role) {
   return ROLE_LABELS[role] || role || "照片";
 }
+function isSupplementalImage(group, photo) {
+  return group?.image_source === "user_pdf" || photo?.source_type === "user_pdf";
+}
+
+function imageKindLabel(group, photo) {
+  return isSupplementalImage(group, photo) ? "PDF资料图" : "现场文物照片";
+}
+
+function imageEvidenceLabel(group, photo) {
+  if (!isSupplementalImage(group, photo)) return "拍摄序号 " + (photo?.sequence ?? "—");
+  return photo?.source_label || group?.image_source_label || "用户提供 PDF 资料图";
+}
 
 function selectedPhoto() {
   return state.currentPhotos[state.currentPhotoIndex] || null;
@@ -593,9 +612,9 @@ function selectPhoto(index, updateLightbox = false) {
     elements.detailMainImage.dataset.photoKey = nextPhotoKey;
     setResponsiveImage(elements.detailMainImage, photo, "detail");
   }
-  elements.detailMainImage.alt = `${group.name}：${formatRole(photo.role)}，照片${photo.sequence}`;
+  elements.detailMainImage.alt = group.name + "：" + formatRole(photo.role) + "，" + imageKindLabel(group, photo);
   elements.galleryRoleLabel.textContent = formatRole(photo.role);
-  elements.imageCaption.textContent = `${formatRole(photo.role)} · ${photo.filename} · 拍摄序号 ${photo.sequence} · ${photo.display_width} × ${photo.display_height}`;
+  elements.imageCaption.textContent = formatRole(photo.role) + " · " + photo.filename + " · " + imageEvidenceLabel(group, photo) + " · " + photo.display_width + " × " + photo.display_height;
 
   elements.photoThumbs.querySelectorAll(".photo-thumb").forEach((thumb, thumbIndex) => {
     thumb.setAttribute("aria-current", String(thumbIndex === state.currentPhotoIndex));
@@ -640,12 +659,20 @@ function renderFacts(group) {
   const labelSequences = group.label_photo_sequences?.length
     ? group.label_photo_sequences.join("、")
     : group.label_photo_sequence || "—";
+  const evidenceTerm = group.image_source === "user_pdf" ? "资料来源" : "展签依据";
+  const evidenceDescription = group.image_source === "user_pdf"
+    ? group.image_source_label || "用户提供 PDF 资料图"
+    : "摄影序号 " + labelSequences + " · 已提取为卡片文字";
+  const imageTerm = group.image_source === "user_pdf" ? "PDF资料图" : "文物影像";
+  const imageDescription = group.image_source === "user_pdf"
+    ? artifactPhotoCount(group) + " 张（不属于现场拍摄）"
+    : artifactPhotoCount(group) + " 张（展签与题名牌不进入画廊）";
   const rows = [
     factRow("类别", categoryLabel(group.category)),
     factRow("年代", group.period_label),
     factRow("形制 / 书体", form),
-    factRow("文物影像", `${artifactPhotoCount(group)} 张（展签与题名牌不进入画廊）`),
-    factRow("展签依据", `摄影序号 ${labelSequences} · 已提取为卡片文字`),
+    factRow(imageTerm, imageDescription),
+    factRow(evidenceTerm, evidenceDescription),
     factRow("校读状态", RESEARCH_STATUS_LABELS[group.research?.status] || "现场档案"),
   ];
   if (group.music_focus) {
@@ -678,7 +705,7 @@ function renderSources(group) {
       makeElement("p", "source-layer", SOURCE_LAYER_LABELS[source.layer] || source.layer),
     );
     const link = makeElement("a", "", source.label);
-    link.href = source.url;
+    link.href = projectUrl(source.url);
     link.target = "_blank";
     link.rel = "noreferrer";
     item.append(link, makeElement("p", "", source.note || source.scope || ""));
@@ -747,8 +774,17 @@ function renderDetail(group) {
   elements.galleryEmptyNote.hidden = hasArtifactPhotos;
   elements.detailMainImage.hidden = !hasArtifactPhotos;
   elements.galleryArtDisclosure.textContent = hasArtifactPhotos
-    ? "AI 主题环境 · 原图未修改"
+    ? isSupplementalImage(group, selectedPhoto())
+      ? "用户提供 PDF 资料图 · 原图未修改"
+      : "AI 主题环境 · 原图未修改"
     : "AI 主题环境 · 非文物影像";
+  if (elements.galleryImageNote) {
+    elements.galleryImageNote.innerHTML = hasArtifactPhotos && isSupplementalImage(group, selectedPhoto())
+      ? "图像来自用户提供 PDF 资料页<br />背景为 AI 主题环境"
+      : hasArtifactPhotos
+        ? "中央为现场原图<br />背景为 AI 主题环境"
+        : "没有现场文物原图<br />背景为 AI 主题环境";
+  }
   elements.zoomHint.textContent = hasArtifactPhotos ? "点击查看原图" : "无可打开的文物原图";
   elements.openLightbox.setAttribute(
     "aria-label",
@@ -812,7 +848,7 @@ function updateLightboxImage() {
   elements.lightboxImage.dataset.usingOriginal = "false";
   setResponsiveImage(elements.lightboxImage, photo, "lightbox");
   elements.lightboxImage.alt = `${group.name}高清原图：${formatRole(photo.role)}`;
-  elements.lightboxCaption.textContent = `${group.name} · ${formatRole(photo.role)} · ${photo.filename} · ${state.currentPhotoIndex + 1}/${state.currentPhotos.length}`;
+  elements.lightboxCaption.textContent = group.name + " · " + formatRole(photo.role) + " · " + photo.filename + " · " + imageEvidenceLabel(group, photo) + " · " + (state.currentPhotoIndex + 1) + "/" + state.currentPhotos.length;
   elements.openOriginal.href = projectUrl(photo.original);
 }
 

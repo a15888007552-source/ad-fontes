@@ -1,23 +1,23 @@
 {
   "schema_version": 4,
   "generated_at": "2026-08-10T01:11:44+08:00",
-  "source": "644 visitor photographs + on-site labels + Xi'an Beilin Museum object pages + checked Wikipedia and museum context pages",
+  "source": "644 visitor photographs + on-site labels + Xi'an Beilin Museum object pages + checked Wikipedia and museum context pages + one user-provided PDF reference image for 景云铜钟",
   "method": {
     "grouping": "photo order, OCR label detection, and visual review of 14 contact sheets",
     "evidence_boundary": "on-site label identifies the displayed object; official object pages supplement; Wikipedia and other museums provide labelled context only; OCR is discovery text, not a citable transcription",
-    "coverage": "every included photograph is assigned exactly once"
+    "coverage": "every included visitor photograph is assigned exactly once; the supplemental PDF image is kept outside the visitor-photo count"
   },
   "photo_count": 644,
-  "group_count": 180,
+  "group_count": 181,
   "assigned_photo_count": 644,
-  "display_photo_count": 445,
+  "display_photo_count": 446,
   "music_focus_count": 15,
   "categories": {
     "碑文": 63,
     "碑": 55,
     "墓志": 42,
     "古董/文物": 18,
-    "禁止出国（境）展览文物": 2
+    "禁止出国（境）展览文物": 3
   },
   "groups": [
     {
@@ -20183,6 +20183,100 @@
       "review_flags": [
         "no_official_object_page_matched"
       ]
+    },
+    {
+        "id":  "artifact-181",
+        "name":  "景云铜钟",
+        "name_candidates":  [
+                                "景云铜钟",
+                                "景云钟"
+                            ],
+        "category":  "禁止出国（境）展览文物",
+        "special_status":  "禁止出国（境）展览文物",
+        "subitems":  [
+    
+                     ],
+        "period_label":  "唐景云二年（711）",
+        "form_labels":  [
+                            "青铜器",
+                            "铸造",
+                            "钟身铸有骈体铭文"
+                        ],
+        "label_description_ocr":  "用户提供的《195件禁止出国出境文物》资料页：景云铜钟，序号45，现藏西安碑林博物馆。",
+        "label_text_ocr":  "景云铜钟\n序号 45\n类别 青铜器\n时代 唐代\n批次 首批（2002）\n形制/尺寸 通高247厘米；口径165厘米；重量约6000千克\n历史 铸于唐睿宗景云二年（公元711年）；距今约1315年\n出土/发现 传世品\n材质/工艺 铜质、金属；铸造\n主题/要点 唐代铜钟；景龙观沿革；李旦书铭\n现藏 西安碑林博物馆",
+        "label_photo_sequences":  [
+    
+                                  ],
+        "label_photo_sequence":  null,
+        "sequence_start":  645,
+        "sequence_end":  645,
+        "photo_count":  1,
+        "display_photo_count":  1,
+        "hidden_document_photo_count":  0,
+        "image_source":  "user_pdf",
+        "image_source_file":  "195件禁止出国出境文物.pdf",
+        "image_source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
+        "main_photo":  {
+                           "sequence":  "PDF-185",
+                           "filename":  "195件禁止出国出境文物.pdf · 印刷页185图版",
+                           "role":  "reference",
+                           "source_type":  "user_pdf",
+                           "source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
+                           "thumb":  "assets/photos/thumb/jingyun-bronze-bell.webp",
+                           "preview":  "assets/photos/web/jingyun-bronze-bell.webp",
+                           "original":  "assets/photos/original/jingyun-bronze-bell.webp",
+                           "sha256":  "20f33cb89382313d01093de48018a317cf5e8184d831ca4302d88af13f5c3f9c",
+                           "captured_at":  null,
+                           "display_width":  1139,
+                           "display_height":  1716
+                       },
+        "photos":  [
+                       {
+                           "sequence":  "PDF-185",
+                           "filename":  "195件禁止出国出境文物.pdf · 印刷页185图版",
+                           "role":  "reference",
+                           "source_type":  "user_pdf",
+                           "source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
+                           "thumb":  "assets/photos/thumb/jingyun-bronze-bell.webp",
+                           "preview":  "assets/photos/web/jingyun-bronze-bell.webp",
+                           "original":  "assets/photos/original/jingyun-bronze-bell.webp",
+                           "sha256":  "20f33cb89382313d01093de48018a317cf5e8184d831ca4302d88af13f5c3f9c",
+                           "captured_at":  null,
+                           "display_width":  1139,
+                           "display_height":  1716
+                       }
+                   ],
+        "card_excerpt":  "唐景云二年（711）铸造，现藏西安碑林。首批禁止出国（境）展览文物名录第45号。",
+        "card_excerpt_basis":  "user_provided_pdf",
+        "research":  {
+                         "history":  "资料页记载，景云铜钟铸于唐睿宗景云二年（711），列入首批（2002）禁止出国（境）展览文物名录第45号，现藏西安碑林博物馆。",
+                         "form_and_craft":  "青铜铸造，通高247厘米、口径165厘米，重量约6000千克。钟身分区铸饰纹样，并留有景龙观沿革与李旦书写的骈体铭文。",
+                         "contribution":  "景云铜钟把唐代宫观沿革、巨型青铜铸造与帝王书写共同留在一件器物上，也是西安碑林三件首批禁止出国（境）展览文物之一。",
+                         "viewing_guide":  "先看钟体比例与分区，再看兽钮、乳钉、纹饰和铭文面；本条使用的是 PDF 资料图，不替代现场细部观察。",
+                         "sources":  [
+                                         {
+                                             "label":  "图像来源 · 用户提供的《195件禁止出国出境文物》PDF（印刷页185）",
+                                             "url":  "assets/photos/original/jingyun-bronze-bell.webp",
+                                             "layer":  "user_pdf",
+                                             "scope":  "image_only",
+                                             "note":  "网站使用 PDF 第195页（印刷页185）中的景云铜钟图版；PDF页面图注标注图片来源为维基百科。"
+                                         },
+                                         {
+                                             "label":  "资料页文字依据 · 用户提供的《195件禁止出国出境文物》PDF（印刷页185）",
+                                             "url":  "assets/photos/original/jingyun-bronze-bell.webp",
+                                             "layer":  "user_pdf",
+                                             "scope":  "object_metadata",
+                                             "note":  "名称、序号45、年代、尺寸、批次、材质和馆藏按该页资料表录入；图像仅作资料图，不冒充现场拍摄。"
+                                         }
+                                     ],
+                         "status":  "curated_from_user_pdf",
+                         "method_note":  "本条对象识别、基本信息和图像均以用户提供的 PDF 资料页为依据；页面图注另标图片来源为维基百科，未将其表述为现场照片。"
+                     },
+        "music_focus":  null,
+        "review_flags":  [
+                             "supplemental_image_from_user_pdf",
+                             "not_a_visitor_photograph"
+                         ]
     }
   ]
 }
