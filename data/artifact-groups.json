@@ -20218,7 +20218,7 @@
         "image_source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
         "main_photo":  {
                            "sequence":  "PDF-185",
-                           "filename":  "195件禁止出国出境文物.pdf · 印刷页185图版",
+                           "filename":  "jingyun-bronze-bell.webp",
                            "role":  "reference",
                            "source_type":  "user_pdf",
                            "source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
@@ -20233,7 +20233,7 @@
         "photos":  [
                        {
                            "sequence":  "PDF-185",
-                           "filename":  "195件禁止出国出境文物.pdf · 印刷页185图版",
+                           "filename":  "jingyun-bronze-bell.webp",
                            "role":  "reference",
                            "source_type":  "user_pdf",
                            "source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
