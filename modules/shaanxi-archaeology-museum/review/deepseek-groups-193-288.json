@@ -1,0 +1,476 @@
+{
+  "groups": [
+    {
+      "start": 193,
+      "end": 197,
+      "title": "杂剧图（数字复原）",
+      "label_sequences": [
+        195
+      ],
+      "display_sequences": [
+        193,
+        194,
+        196,
+        197
+      ],
+      "label_text": "杂剧图（数字复原）；宋（960-1279年）；2009年韩城盘乐村壁画墓M218；墓室西壁，共17人，分乐队和演员两部分，再现北宋杂剧末泥、引戏、副净、副末、装孤五角色，为迄今规模最大、最完整、最生动的宋代戏剧绘画资料。",
+      "confidence": "high"
+    },
+    {
+      "start": 198,
+      "end": 207,
+      "title": "仪鱼、伏听、金鸡、玉犬",
+      "label_sequences": [
+        200
+      ],
+      "display_sequences": [
+        198,
+        199,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207
+      ],
+      "label_text": "仪鱼、伏听、金鸡、玉犬；北宋元丰五年（1082）；2018年神木店塔镇高氏家族墓M7；图像位于西壁墓口南北两侧壁面，属墓葬禳煞神煞形象组合，墓主多为庶民富户。",
+      "confidence": "high"
+    },
+    {
+      "start": 208,
+      "end": 213,
+      "title": "出行仪仗图（数字复原）",
+      "label_sequences": [
+        208
+      ],
+      "display_sequences": [
+        209,
+        210,
+        211,
+        212,
+        213
+      ],
+      "label_text": "出行仪仗图（数字复原）；唐（618-907年）；2022年西安浐灞生态区白杨寨墓地M1373；墓道两壁绘祥云、青龙、白虎，甬道两壁绘开路童子、八人抬担、牛车、骑马者等出行仪仗，墓主应为刘弘规家族成员，年代为晚唐至唐末期。",
+      "confidence": "high"
+    },
+    {
+      "start": 214,
+      "end": 216,
+      "title": "文吏进谒图",
+      "label_sequences": [
+        214
+      ],
+      "display_sequences": [
+        215,
+        216
+      ],
+      "label_text": "文吏进谒图；唐开元十二年（724）；1995年渭南蒲城惠庄太子墓。",
+      "confidence": "high"
+    },
+    {
+      "start": 217,
+      "end": 220,
+      "title": "女吏图",
+      "label_sequences": [
+        218
+      ],
+      "display_sequences": [
+        217,
+        219,
+        220
+      ],
+      "label_text": "女吏图；唐天宝元年（742）；2000年蒲城三合村唐惠陵；图像位于第一天井西壁，3人分前后面南而立，墓主李宪为睿宗之子，让皇太子位与李隆基，后追封让皇帝。",
+      "confidence": "high"
+    },
+    {
+      "start": 221,
+      "end": 224,
+      "title": "舞女图",
+      "label_sequences": [
+        221
+      ],
+      "display_sequences": [
+        222,
+        223,
+        224
+      ],
+      "label_text": "舞女图；唐永昌元年（689）；1995年高陵马家湾村李晦夫妇墓；图像位于西侧室东壁中部，李晦为皇室贵胄，墓葬残长46.3米，由长斜坡墓道、7个天井、6个过洞、3条甬道、呈“品”字形排列的3个墓室和墓上封土组成。",
+      "confidence": "high"
+    },
+    {
+      "start": 225,
+      "end": 229,
+      "title": "门吏图·一胡人六僧人图",
+      "label_sequences": [
+        225
+      ],
+      "display_sequences": [
+        226,
+        227,
+        228,
+        229
+      ],
+      "label_text": "门吏图及一胡人六僧人图（一胡人与六僧人礼拜舍利塔）；北朝（386-581年）；2011年靖边八大梁墓地M1；壁画具浓郁宗教色彩和胡风因素，为北朝壁画墓中罕见塔的图像。",
+      "confidence": "medium"
+    },
+    {
+      "start": 230,
+      "end": 232,
+      "title": "邠王与郭将军宴饮图",
+      "label_sequences": [
+        230
+      ],
+      "display_sequences": [
+        231,
+        232
+      ],
+      "label_text": "邠王与郭将军宴饮图；东汉（25-220年）；2000年旬邑百子村东汉墓；图像位于墓室后室西壁，顶部饰朱红帷幔，间饰组绶，第1人墨书“□将军”戴进贤冠着黑衣，第2人墨书“郭□将军”戴进贤冠着红衣，2人对坐宴饮，其后为躬立的属吏。",
+      "confidence": "medium"
+    },
+    {
+      "start": 233,
+      "end": 235,
+      "title": "亭长女儿图",
+      "label_sequences": [
+        233
+      ],
+      "display_sequences": [
+        234,
+        235
+      ],
+      "label_text": "亭长女儿图；东汉（25-220年）；2000年旬邑百子村东汉墓；图像位于墓室东边侧室墓壁，图为“亭长”的女儿站于树下，“亭长”另绘于墓门内侧甬道。",
+      "confidence": "high"
+    },
+    {
+      "start": 236,
+      "end": 238,
+      "title": "力士图",
+      "label_sequences": [
+        236,
+        237
+      ],
+      "display_sequences": [
+        238
+      ],
+      "label_text": "力士图（定边郝滩东汉墓，神话传说题材）；东汉；2003年定边郝滩四十里铺东汉墓群一带出土；OCR仅存“力士图”“神话传说”“定边郝滩东汉墓”等残句，具体定名与年代待核。",
+      "confidence": "low"
+    },
+    {
+      "start": 239,
+      "end": 242,
+      "title": "车马出行图",
+      "label_sequences": [
+        239
+      ],
+      "display_sequences": [
+        240,
+        241,
+        242
+      ],
+      "label_text": "车马出行图；新莽—东汉（公元9-220年）；2003年定边郝滩四十里铺东汉墓群；图像位于墓室东壁，为汉代常见壁画题材，画面呈青绿色底，车舆马匹以黑表现，搭配白、红、蓝颜料，体现汉代绘画“透视”意识进步。",
+      "confidence": "high"
+    },
+    {
+      "start": 243,
+      "end": 245,
+      "title": "彩绘陶楼",
+      "label_sequences": [
+        243
+      ],
+      "display_sequences": [
+        244,
+        245
+      ],
+      "label_text": "彩绘陶楼（Painted pottery model of watchtower）；西晋（266-317年）；2002年西安长安区陕西师范大学新校区西晋墓；陶楼建筑模型外表面以彩绘装饰模仿壁画。",
+      "confidence": "high"
+    },
+    {
+      "start": 246,
+      "end": 246,
+      "title": "陶釜、陶灶、联体釜灶",
+      "label_sequences": [
+        246
+      ],
+      "display_sequences": [],
+      "label_text": "陶釜、陶灶、联体釜灶；仰韶中期（距今5700-5000年）；2008年西安高陵区杨官寨遗址北区环壕G8-2段；2008年西安高陵区杨官寨遗址北区W31。",
+      "confidence": "high"
+    },
+    {
+      "start": 247,
+      "end": 247,
+      "title": "单耳带流陶杯、高颈陶壶",
+      "label_sequences": [
+        247
+      ],
+      "display_sequences": [],
+      "label_text": "单耳带流陶杯、高颈陶壶；约距今6780-6080年；出土信息OCR残损待核。",
+      "confidence": "low"
+    },
+    {
+      "start": 248,
+      "end": 249,
+      "title": "玉铲、玉钺、石串珠",
+      "label_sequences": [
+        248,
+        249
+      ],
+      "display_sequences": [],
+      "label_text": "玉铲、玉钺、石串珠；仰韶中期（距今5700-5000年）；2010年西安高陵区杨官寨遗址北区H652；2018年西安高陵区杨官寨遗址东区墓地M302；2016年西安出土。",
+      "confidence": "medium"
+    },
+    {
+      "start": 250,
+      "end": 250,
+      "title": "蚌饰、陶环、石环、石串珠",
+      "label_sequences": [
+        250
+      ],
+      "display_sequences": [],
+      "label_text": "蚌饰、陶环、石环、石串珠；仰韶中期（距今5700-5000年）；2009年西安高陵区杨官寨遗址北区环壕H900、H548，2015年西安高陵区杨官寨遗址东区墓地M71；出土信息OCR多有残损待核。",
+      "confidence": "low"
+    },
+    {
+      "start": 251,
+      "end": 253,
+      "title": "浮雕蛙纹陶釜",
+      "label_sequences": [
+        251,
+        252,
+        253
+      ],
+      "display_sequences": [],
+      "label_text": "浮雕蛙纹陶釜；仰韶中期（距今5700-5000年）；2009年西安高陵区杨官寨遗址北区环壕H900。",
+      "confidence": "high"
+    },
+    {
+      "start": 254,
+      "end": 255,
+      "title": "陶轮盘形器",
+      "label_sequences": [
+        254,
+        255
+      ],
+      "display_sequences": [],
+      "label_text": "陶轮盘形器（Pottery wheel-shaped device）；仰韶中期（距今5700-5000年）；2006年西安高陵区杨官寨遗址南区H402。",
+      "confidence": "high"
+    },
+    {
+      "start": 256,
+      "end": 258,
+      "title": "浮雕人面饰残陶器",
+      "label_sequences": [
+        256,
+        257
+      ],
+      "display_sequences": [
+        258
+      ],
+      "label_text": "浮雕人面饰残陶器；仰韶晚期（距今5000—4800年）；2004年西安高陵区杨官寨遗址南区H84。",
+      "confidence": "medium"
+    },
+    {
+      "start": 259,
+      "end": 260,
+      "title": "朱砂人面饰残陶器",
+      "label_sequences": [
+        259
+      ],
+      "display_sequences": [
+        260
+      ],
+      "label_text": "朱砂人面饰残陶器；年代与出土信息OCR缺失待核。",
+      "confidence": "low"
+    },
+    {
+      "start": 261,
+      "end": 263,
+      "title": "镂空人面覆盆形器",
+      "label_sequences": [
+        261,
+        262,
+        263
+      ],
+      "display_sequences": [],
+      "label_text": "镂空人面覆盆形器（亦见“镂空人面陶豆”残句）；仰韶中期（距今5700-5000年）；2008年西安高陵区杨官寨遗址北区环壕G8-2段。",
+      "confidence": "medium"
+    },
+    {
+      "start": 264,
+      "end": 264,
+      "title": "狗跖骨、猪下颌骨",
+      "label_sequences": [
+        264
+      ],
+      "display_sequences": [],
+      "label_text": "狗跖骨、猪下颌骨、猪左下颌骨、雌性猪左下颌骨；仰韶中期（距今5700-5000年）；2008年西安高陵区杨官寨遗址北区环壕G8-2段。",
+      "confidence": "medium"
+    },
+    {
+      "start": 265,
+      "end": 265,
+      "title": "猪下颌骨与狗骨标本",
+      "label_sequences": [
+        265
+      ],
+      "display_sequences": [],
+      "label_text": "雌性猪左下颌骨、猪下颌骨、猪左下颌骨、狗跖骨、狗右跟骨、狗尺桡骨、狗肱骨、狗下颌骨；仰韶中期（距今5700-5000年）；2008年西安高陵区杨官寨遗址北区环壕G8-2段、H776段。",
+      "confidence": "high"
+    },
+    {
+      "start": 266,
+      "end": 267,
+      "title": "马鹿左额骨、鹤胸骨、梅花鹿右下颌骨",
+      "label_sequences": [
+        267
+      ],
+      "display_sequences": [
+        266
+      ],
+      "label_text": "马鹿左额骨、鹤胸骨、梅花鹿右下颌骨、獐左肱骨、梅花鹿左股骨、圆顶珠蚌；仰韶中期（距今5700-5000年）；2008年西安高陵区杨官寨遗址北区环壕G8-2段、G8-1段，2015年西安高陵区杨官寨遗址东区墓地M6。",
+      "confidence": "medium"
+    },
+    {
+      "start": 268,
+      "end": 270,
+      "title": "神面立柱石雕",
+      "label_sequences": [
+        271
+      ],
+      "display_sequences": [
+        268,
+        269,
+        270
+      ],
+      "label_text": "神面立柱石雕；龙山晚期至夏代早期（距今4300-3800年）；2019年神木石峁遗址皇城台。",
+      "confidence": "high"
+    },
+    {
+      "start": 272,
+      "end": 273,
+      "title": "神面立柱石雕（续）",
+      "label_sequences": [],
+      "display_sequences": [
+        272,
+        273
+      ],
+      "label_text": "神面立柱石雕（延续编号，无独立展签文字）。",
+      "confidence": "low"
+    },
+    {
+      "start": 274,
+      "end": 274,
+      "title": "“人射马”石雕",
+      "label_sequences": [
+        274
+      ],
+      "display_sequences": [],
+      "label_text": "“人射马”石雕；龙山晚期至夏代早期（距今4300-3800年）；2019年神木石峁遗址皇城台。",
+      "confidence": "high"
+    },
+    {
+      "start": 275,
+      "end": 276,
+      "title": "口簧",
+      "label_sequences": [
+        275,
+        276
+      ],
+      "display_sequences": [],
+      "label_text": "口簧（含现代口簧对比）；石峁出土口簧为龙山晚期至夏代早期遗物，被赋予沟通人神、祭祀先祖功能，演奏者口含口簧通过口腔与乐器结合发出声音，为石峁巫觋实现交于神明、祭祀祖先、驱鬼禳神的重要手段；使用方式与结构见展板：簧舌、拉孔、簧鞘；石峁口簧与现代口簧使用方法对比展示。",
+      "confidence": "medium"
+    },
+    {
+      "start": 277,
+      "end": 278,
+      "title": "陶球哨、骨管哨",
+      "label_sequences": [
+        277,
+        278
+      ],
+      "display_sequences": [],
+      "label_text": "陶球哨、骨管哨（OCR另见“陶味哨”残字，应为陶球哨）；龙山晚期至夏代早期（距今4300-3800年）；2017年神木石峁遗址皇城台。",
+      "confidence": "high"
+    },
+    {
+      "start": 279,
+      "end": 280,
+      "title": "骨针及骨针制作链相关遗物",
+      "label_sequences": [
+        279,
+        280
+      ],
+      "display_sequences": [],
+      "label_text": "骨针（Bone needles）；龙山晚期至夏代早期（距今4300-3800年）；2017年神木石峁遗址皇城台；另展板示骨针制作链：切割、去头、打磨、磨制、开孔、残件，及砺石（骨针制作细磨器）。",
+      "confidence": "medium"
+    },
+    {
+      "start": 281,
+      "end": 282,
+      "title": "刻辞卜骨",
+      "label_sequences": [
+        281,
+        282
+      ],
+      "display_sequences": [],
+      "label_text": "刻辞卜骨（OCR题名“刻辞卜印”应为“刻辞卜骨”）；2004年岐山周公庙遗址庙王村西H1、H2、H117、H118，2008年岐山周公庙遗址祝家巷北G2；卜辞涉“周”“周公”“薄姑”等；文物出差中，期待与您相见。",
+      "confidence": "medium"
+    },
+    {
+      "start": 283,
+      "end": 284,
+      "title": "卜骨",
+      "label_sequences": [
+        283,
+        284
+      ],
+      "display_sequences": [],
+      "label_text": "卜骨（Divination bone）；西周（公元前1046-前771年）；2004年岐山周公庙遗址T5H45①、庙王村西H1（16），2007年岐山周公庙遗址H7、H752/H703，2008年岐山周公庙遗址祝家巷北G2；文物出差中。",
+      "confidence": "medium"
+    },
+    {
+      "start": 285,
+      "end": 285,
+      "title": "甲骨",
+      "label_sequences": [
+        285
+      ],
+      "display_sequences": [],
+      "label_text": "甲骨（ORACLE BONES）；岐山周公庙遗址庙王村西和祝家巷北共出土8000余件，以卜甲为主、卜骨较少，龟腹甲居多、背甲少见；背面钻凿，卜甲多为长凿方钻，卜骨多猫眼钻；示例卜辞见2004年岐山周公庙遗址庙王村西H11。",
+      "confidence": "high"
+    },
+    {
+      "start": 286,
+      "end": 286,
+      "title": "岐山周公庙遗址",
+      "label_sequences": [
+        286
+      ],
+      "display_sequences": [],
+      "label_text": "岐山周公庙遗址（THE DUKE OF ZHOU TEMPLE AT QISHAN）；遗址位于岐山县城北凤凰山南麓，面积约4.5平方千米，商周时期遗存达3.7平方千米；发现夯土建筑基址、壕沟、铸铜及制陶作坊、墓地等；出土刻辞甲骨2500余字，为全国发现西周甲骨文字最多的遗址；遗址年代：公元前12世纪—前771年；发掘时间：2004-2011年；发掘地点：宝鸡市岐山县凤鸣镇；发掘单位：陕西省考古研究院、北京大学、宝鸡市考古研究所；荣誉：2008年度全国十大考古新发现、2007-2008年度田野考古奖一等奖。",
+      "confidence": "high"
+    },
+    {
+      "start": 287,
+      "end": 287,
+      "title": "弦纹鼎、铜戈（残）、云纹镳、兽首辖、陶瓿、陶器盖",
+      "label_sequences": [
+        287
+      ],
+      "display_sequences": [],
+      "label_text": "弦纹鼎、铜戈（残）、云纹镳（biao）、兽首辖（xia）、陶瓿（bu）、陶器盖；西周（公元前1046-前771年）；2015/2016年西安长安区斗门街道花园村M12。",
+      "confidence": "high"
+    },
+    {
+      "start": 288,
+      "end": 288,
+      "title": "骨板、蚌刀、骨锤",
+      "label_sequences": [
+        288
+      ],
+      "display_sequences": [],
+      "label_text": "骨板、蚌刀、骨锤；西周（公元前1046-前771年）；2016年西安长安区斗门街道花园村H242；另见“H24！”应为H242之OCR残误。",
+      "confidence": "medium"
+    }
+  ]
+}

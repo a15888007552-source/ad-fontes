@@ -1,0 +1,27 @@
+#other.catalog-only {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+#other.catalog-only #artifact-catalog-root {
+  width: 100%;
+  min-height: 0;
+  padding-top: clamp(34px, 4vw, 68px);
+}
+
+#other.catalog-only .artifact-catalog-toolbar {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  #other.catalog-only #artifact-catalog-root {
+    padding-top: 24px;
+  }
+}

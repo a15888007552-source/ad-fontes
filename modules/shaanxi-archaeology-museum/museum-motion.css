@@ -1,0 +1,536 @@
+:root {
+  --museum-ink: #172019;
+  --museum-cinnabar: #b9412f;
+  --museum-gold: #c7a35d;
+  --museum-paper: #f2eee4;
+  --museum-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Opening: a short ink curtain, seal impression and ruled-line reveal. */
+.museum-opening {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #efe9dc;
+  background:
+    radial-gradient(circle at 17% 22%, rgba(185, 65, 47, 0.18), transparent 31%),
+    radial-gradient(circle at 82% 68%, rgba(199, 163, 93, 0.12), transparent 35%),
+    #101713;
+  transition: clip-path 900ms var(--museum-ease), opacity 700ms ease;
+  clip-path: inset(0 0 0 0);
+}
+
+.museum-opening::before,
+.museum-opening::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  pointer-events: none;
+}
+
+.museum-opening::before {
+  opacity: 0.22;
+  background-image:
+    repeating-radial-gradient(ellipse at 50% 50%, transparent 0 39px, rgba(232, 219, 190, 0.16) 40px 41px, transparent 42px 70px),
+    linear-gradient(96deg, transparent 49.75%, rgba(232, 219, 190, 0.11) 50%, transparent 50.25%);
+  transform: rotate(-7deg) scale(1.15);
+  animation: openingContour 7s linear infinite;
+}
+
+.museum-opening::after {
+  opacity: 0.11;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.46'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.museum-opening.is-leaving {
+  clip-path: inset(0 0 100% 0);
+  opacity: 0.98;
+}
+
+.museum-opening-inner {
+  position: relative;
+  z-index: 2;
+  width: min(760px, calc(100% - 48px));
+  text-align: center;
+}
+
+.museum-opening-seal {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  aspect-ratio: 1;
+  margin: 0 auto 24px;
+  border: 2px solid #df6a50;
+  color: #f0c2ac;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", serif;
+  font-size: 2.7rem;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(1.55) rotate(-9deg);
+  filter: blur(5px);
+  animation: sealImprint 720ms 180ms var(--museum-ease) forwards;
+}
+
+.museum-opening-overline {
+  margin: 0 0 18px;
+  color: rgba(240, 229, 207, 0.62);
+  font-family: "Times New Roman", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: openingFade 500ms 530ms ease forwards;
+}
+
+.museum-opening-title {
+  margin: 0;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", serif;
+  font-size: clamp(3.7rem, 8.5vw, 8.2rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0.05em;
+  clip-path: inset(0 100% 0 0);
+  animation: openingWrite 920ms 610ms var(--museum-ease) forwards;
+}
+
+.museum-opening-title span {
+  display: block;
+  margin-top: 0.08em;
+  color: #d0aa65;
+}
+
+.museum-opening-rule {
+  position: relative;
+  width: min(430px, 72%);
+  height: 1px;
+  margin: 31px auto 22px;
+  overflow: visible;
+  background: rgba(228, 211, 178, 0.25);
+}
+
+.museum-opening-rule i {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: linear-gradient(90deg, transparent, var(--museum-gold), transparent);
+  transform: scaleX(0);
+  animation: openingRule 760ms 1.18s var(--museum-ease) forwards;
+}
+
+.museum-opening-caption {
+  margin: 0;
+  color: rgba(240, 229, 207, 0.72);
+  font-family: "FangSong", "STFangsong", serif;
+  font-size: 1rem;
+  letter-spacing: 0.32em;
+  opacity: 0;
+  animation: openingFade 500ms 1.4s ease forwards;
+}
+
+.museum-opening-skip {
+  position: fixed;
+  right: 24px;
+  bottom: 22px;
+  z-index: 3;
+  min-width: 72px;
+  min-height: 44px;
+  border: 0;
+  color: rgba(240, 229, 207, 0.66);
+  background: transparent;
+  font: 0.78rem/1 "FangSong", serif;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+}
+
+.museum-opening-skip:hover,
+.museum-opening-skip:focus-visible {
+  color: #fff2dc;
+  outline: 1px solid rgba(199, 163, 93, 0.55);
+  outline-offset: 6px;
+}
+
+.museum-opening-active {
+  overflow: hidden;
+}
+
+/* Recompose the museum title as an editorial object instead of two huge plain lines. */
+.about-card .feature-copy {
+  position: relative;
+  isolation: isolate;
+  max-width: 1180px;
+  padding-top: clamp(62px, 7vw, 128px);
+  padding-bottom: clamp(62px, 7vw, 128px);
+}
+
+.about-card .feature-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 3%;
+  left: -5%;
+  width: min(770px, 72vw);
+  aspect-ratio: 1.55;
+  opacity: 0.45;
+  background:
+    repeating-radial-gradient(ellipse at 42% 52%, transparent 0 46px, rgba(77, 70, 56, 0.07) 47px 48px, transparent 49px 76px),
+    radial-gradient(circle at 34% 48%, rgba(185, 65, 47, 0.08), transparent 48%);
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+#about-title {
+  display: grid;
+  grid-template-columns: max-content minmax(72px, 1fr);
+  grid-template-areas:
+    "kicker rule"
+    "primary primary"
+    "secondary secondary";
+  column-gap: 24px;
+  width: min(100%, 1040px);
+  max-width: none;
+  margin: 0.35em 0 0.5em;
+  font-size: initial;
+  line-height: 1;
+}
+
+.about-title-kicker {
+  grid-area: kicker;
+  align-self: center;
+  color: var(--museum-cinnabar);
+  font-family: "FangSong", "STFangsong", serif;
+  font-size: clamp(0.95rem, 1.1vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  white-space: nowrap;
+}
+
+.about-title-rule {
+  grid-area: rule;
+  align-self: center;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(185, 65, 47, 0.8), rgba(185, 65, 47, 0.08) 65%, transparent);
+  transform-origin: left center;
+}
+
+.about-title-primary {
+  position: relative;
+  z-index: 1;
+  grid-area: primary;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 0.12em;
+  color: var(--museum-ink);
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "FZKai-Z03", serif;
+  font-size: clamp(5.5rem, 8vw, 10.25rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.about-title-primary::after {
+  content: attr(data-echo);
+  position: absolute;
+  z-index: -1;
+  inset: 0 auto auto 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(185, 65, 47, 0.25);
+  transform: translate(0.085em, 0.08em);
+  pointer-events: none;
+}
+
+.about-title-secondary {
+  grid-area: secondary;
+  justify-self: end;
+  margin-top: 0.16em;
+  padding: 0 0.08em 0.15em 0.25em;
+  border-bottom: 1px solid rgba(23, 32, 25, 0.38);
+  color: #2b302a;
+  font-family: "FangSong", "STFangsong", "Songti SC", serif;
+  font-size: clamp(3rem, 4.5vw, 5.7rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+.about-card .feature-copy > p:not(.eyebrow) {
+  max-width: 54em;
+  font-size: clamp(1.12rem, 1.23vw, 1.48rem);
+  line-height: 1.9;
+}
+
+/* Scroll reveal and top progress indicator. */
+.museum-scroll-progress {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--museum-cinnabar), var(--museum-gold));
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.museum-opening-active .museum-scroll-progress {
+  opacity: 0;
+}
+
+.motion-ready .reveal-item {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translate3d(0, 34px, 0);
+  clip-path: inset(0 0 9% 0);
+  transition:
+    opacity 720ms var(--museum-ease) var(--reveal-delay, 0ms),
+    transform 820ms var(--museum-ease) var(--reveal-delay, 0ms),
+    filter 760ms ease var(--reveal-delay, 0ms),
+    clip-path 820ms var(--museum-ease) var(--reveal-delay, 0ms);
+}
+
+.motion-ready .reveal-item.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.motion-ready .about-card.is-visible .about-title-kicker {
+  animation: titleKicker 620ms 260ms var(--museum-ease) both;
+}
+
+.motion-ready .about-card.is-visible .about-title-rule {
+  animation: titleRule 820ms 380ms var(--museum-ease) both;
+}
+
+.motion-ready .about-card.is-visible .about-title-primary {
+  animation: titleBrush 900ms 300ms var(--museum-ease) both;
+}
+
+.motion-ready .about-card.is-visible .about-title-secondary {
+  animation: titleSecondary 760ms 540ms var(--museum-ease) both;
+}
+
+/* Hero atmosphere follows the pointer without moving the photograph itself. */
+.theme-card {
+  isolation: isolate;
+}
+
+.theme-card > :not(.museum-motion-field) {
+  position: relative;
+  z-index: 2;
+}
+
+.museum-motion-field {
+  position: absolute;
+  z-index: 1;
+  inset: -12%;
+  opacity: 0.62;
+  background:
+    radial-gradient(circle at 28% 44%, rgba(185, 65, 47, 0.21), transparent 27%),
+    radial-gradient(circle at 72% 54%, rgba(199, 163, 93, 0.13), transparent 33%);
+  transform: translate3d(var(--field-x, 0), var(--field-y, 0), 0) scale(1.06);
+  transition: transform 800ms var(--museum-ease);
+  pointer-events: none;
+}
+
+.theme-card #theme-title .title-line {
+  text-shadow: 0 0 28px rgba(217, 177, 111, 0.1);
+  transition: color 350ms ease, text-shadow 350ms ease, transform 350ms var(--museum-ease);
+}
+
+.theme-card:hover #theme-title .title-line:last-child {
+  color: #d8b77a;
+  text-shadow: 0 0 35px rgba(217, 177, 111, 0.22);
+  transform: translateX(0.045em);
+}
+
+/* Object-card interaction: warm reflected light, lift and clearer image. */
+.artifact-catalog-card {
+  position: relative;
+  isolation: isolate;
+  transition: transform 260ms var(--museum-ease), border-color 260ms ease, box-shadow 260ms ease;
+}
+
+.artifact-catalog-card::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(circle 190px at var(--card-x, 50%) var(--card-y, 50%), rgba(221, 184, 108, 0.2), transparent 68%);
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.artifact-catalog-card:hover,
+.artifact-catalog-card:focus-within {
+  border-color: rgba(199, 163, 93, 0.62);
+  box-shadow: 0 18px 40px rgba(7, 10, 8, 0.2);
+}
+
+.motion-ready .artifact-catalog-card.reveal-item.is-visible:hover,
+.motion-ready .artifact-catalog-card.reveal-item.is-visible:focus-within {
+  transform: translate3d(0, -6px, 0);
+}
+
+.artifact-catalog-card:hover::after,
+.artifact-catalog-card:focus-within::after {
+  opacity: 1;
+}
+
+.artifact-card-media img,
+.treasure-main-image img,
+.treasure-thumbs img {
+  transition: transform 650ms var(--museum-ease), filter 450ms ease;
+}
+
+.artifact-catalog-card:hover .artifact-card-media img {
+  transform: scale(1.035);
+  filter: contrast(1.04) saturate(1.04);
+}
+
+.treasure-main-image:hover img,
+.treasure-thumbs:hover img {
+  transform: scale(1.025);
+}
+
+@keyframes openingContour {
+  to { transform: rotate(-7deg) scale(1.15) translate3d(22px, -16px, 0); }
+}
+
+@keyframes sealImprint {
+  0% { opacity: 0; transform: scale(1.55) rotate(-9deg); filter: blur(5px); }
+  62% { opacity: 1; transform: scale(0.94) rotate(1deg); filter: blur(0); }
+  100% { opacity: 1; transform: scale(1) rotate(0); filter: blur(0); }
+}
+
+@keyframes openingWrite {
+  from { clip-path: inset(0 100% 0 0); transform: translateX(-18px); }
+  to { clip-path: inset(0 0 0 0); transform: translateX(0); }
+}
+
+@keyframes openingRule {
+  to { transform: scaleX(1); }
+}
+
+@keyframes openingFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes titleKicker {
+  from { opacity: 0; letter-spacing: 0.65em; transform: translateX(-16px); }
+  to { opacity: 1; letter-spacing: 0.32em; transform: translateX(0); }
+}
+
+@keyframes titleRule {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes titleBrush {
+  from { opacity: 0; clip-path: inset(0 100% 0 0); transform: translateX(-20px); }
+  to { opacity: 1; clip-path: inset(0 0 0 0); transform: translateX(0); }
+}
+
+@keyframes titleSecondary {
+  from { opacity: 0; transform: translate3d(28px, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 760px) {
+  .museum-opening-inner {
+    width: calc(100% - 32px);
+  }
+
+  .museum-opening-title {
+    font-size: clamp(3.25rem, 17vw, 5.2rem);
+  }
+
+  .museum-opening-overline {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+  }
+
+  .museum-opening-caption {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+  }
+
+  .about-card .feature-copy {
+    padding-top: 48px;
+    padding-bottom: 54px;
+  }
+
+  #about-title {
+    grid-template-columns: max-content minmax(34px, 1fr);
+    column-gap: 12px;
+    width: 100%;
+    margin-bottom: 0.72em;
+  }
+
+  .about-title-kicker {
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+  }
+
+  .about-title-primary {
+    margin-top: 0.2em;
+    font-size: clamp(4.4rem, 23vw, 6.2rem);
+    letter-spacing: 0.02em;
+  }
+
+  .about-title-secondary {
+    justify-self: start;
+    margin-top: 0.3em;
+    padding-left: 0;
+    font-size: clamp(2.55rem, 12.5vw, 4rem);
+    letter-spacing: 0.12em;
+  }
+
+  .about-card .feature-copy > p:not(.eyebrow) {
+    font-size: 1.06rem;
+    line-height: 1.78;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .artifact-catalog-card::after {
+    display: none;
+  }
+
+  .artifact-catalog-card:hover,
+  .motion-ready .artifact-catalog-card.reveal-item.is-visible:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .museum-opening,
+  .museum-motion-field,
+  .museum-scroll-progress {
+    display: none !important;
+  }
+
+  .motion-ready .reveal-item,
+  .motion-ready .reveal-item.is-visible,
+  .motion-ready .about-card.is-visible .about-title-kicker,
+  .motion-ready .about-card.is-visible .about-title-rule,
+  .motion-ready .about-card.is-visible .about-title-primary,
+  .motion-ready .about-card.is-visible .about-title-secondary {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    clip-path: none;
+    animation: none;
+    transition: none;
+  }
+}

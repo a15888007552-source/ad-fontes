@@ -1,0 +1,407 @@
+{
+  "groups": [
+    {
+      "start": 1,
+      "end": 2,
+      "title": "（无OCR，需人工核对）",
+      "label_sequences": [],
+      "display_sequences": [
+        1,
+        2
+      ],
+      "label_text": "",
+      "confidence": "low"
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "title": "录簋",
+      "label_sequences": [
+        3
+      ],
+      "display_sequences": [
+        4
+      ],
+      "label_text": "录簋（Bronze food vessel (xu) of Lu）；西周（公元前1046年－前771年）；1982年西安灞桥区三殿村西汉王许墓",
+      "confidence": "medium"
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "title": "玉琮",
+      "label_sequences": [
+        6
+      ],
+      "display_sequences": [
+        5
+      ],
+      "label_text": "玉琮（Jade tube (cong)）；新石器时代陶寺文化（距今4400-3800年）；2005年韩城梁带村芮国墓地M27",
+      "confidence": "high"
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "title": "玉璧",
+      "label_sequences": [
+        8
+      ],
+      "display_sequences": [
+        7
+      ],
+      "label_text": "玉璧（Jade disc (bi)）；新石器时代齐家文化（距今4300-3700年）；2007年韩城梁带村芮国墓地M560",
+      "confidence": "high"
+    },
+    {
+      "start": 9,
+      "end": 12,
+      "title": "立鸟玉佩",
+      "label_sequences": [
+        9,
+        11
+      ],
+      "display_sequences": [
+        10,
+        12
+      ],
+      "label_text": "立鸟玉佩（Jade pendant in the form of a standing bird）；商（公元前1600-前1046年）；2007年韩城梁带村芮国墓地",
+      "confidence": "medium"
+    },
+    {
+      "start": 13,
+      "end": 16,
+      "title": "玉戈",
+      "label_sequences": [
+        13
+      ],
+      "display_sequences": [
+        14,
+        15,
+        16
+      ],
+      "label_text": "玉戈（Jade dagger-axe (ge)）；商（公元前1600-前1046年）；2005年韩城梁带村芮国墓地M27",
+      "confidence": "high"
+    },
+    {
+      "start": 17,
+      "end": 19,
+      "title": "球腹簋",
+      "label_sequences": [
+        17
+      ],
+      "display_sequences": [
+        18,
+        19
+      ],
+      "label_text": "球腹簋（Bronze food vessel (gui) with a spherical belly）；商代晚期至西周早期；2013年宝鸡石鼓山墓地M4；石鼓山考古队藏",
+      "confidence": "medium"
+    },
+    {
+      "start": 20,
+      "end": 22,
+      "title": "红烧土",
+      "label_sequences": [
+        20
+      ],
+      "display_sequences": [
+        21,
+        22
+      ],
+      "label_text": "红烧土（宫殿建筑遗址采样）；2020年咸阳秦都区永安堡村陶窑采样，刻有东汉“建初”年号及工匠名",
+      "confidence": "medium"
+    },
+    {
+      "start": 23,
+      "end": 25,
+      "title": "夯土",
+      "label_sequences": [
+        23
+      ],
+      "display_sequences": [
+        24,
+        25
+      ],
+      "label_text": "夯土；2021年秦咸阳城6号宫殿建筑遗址采样",
+      "confidence": "medium"
+    },
+    {
+      "start": 26,
+      "end": 28,
+      "title": "五花土",
+      "label_sequences": [
+        26
+      ],
+      "display_sequences": [
+        27,
+        28
+      ],
+      "label_text": "五花土；2021年咸阳渭城区底张墓地采样",
+      "confidence": "high"
+    },
+    {
+      "start": 29,
+      "end": 31,
+      "title": "原始生土",
+      "label_sequences": [
+        29
+      ],
+      "display_sequences": [
+        30,
+        31
+      ],
+      "label_text": "原始生土；2021年咸阳渭城区底张墓地采样",
+      "confidence": "medium"
+    },
+    {
+      "start": 32,
+      "end": 32,
+      "title": "灰坑土",
+      "label_sequences": [
+        32
+      ],
+      "display_sequences": [],
+      "label_text": "灰坑土；2021年泾阳蒋刘仰韶时期遗址H8采样",
+      "confidence": "high"
+    },
+    {
+      "start": 33,
+      "end": 35,
+      "title": "城子崖——山东历城县龙山镇之黑陶文化遗址",
+      "label_sequences": [
+        33,
+        34,
+        35
+      ],
+      "display_sequences": [],
+      "label_text": "《城子崖——山东历城县龙山镇之黑陶文化遗址》；傅斯年、李济、董作宾、梁思永、吴金鼎、郭宝钧、刘屿霞著；国立中央研究院历史语言研究所；中华民国二十三年（1934）",
+      "confidence": "medium"
+    },
+    {
+      "start": 36,
+      "end": 41,
+      "title": "《考古图》",
+      "label_sequences": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "display_sequences": [],
+      "label_text": "《考古图》（北宋）吕大临撰，亦政堂藏板，清乾隆十七年（1752）重刻本",
+      "confidence": "high"
+    },
+    {
+      "start": 42,
+      "end": 44,
+      "title": "西安半坡遗址考古",
+      "label_sequences": [
+        42,
+        44
+      ],
+      "display_sequences": [
+        43
+      ],
+      "label_text": "西安半坡遗址；考古扬帆，中国考古学走向成熟",
+      "confidence": "low"
+    },
+    {
+      "start": 45,
+      "end": 47,
+      "title": "御手俑",
+      "label_sequences": [
+        45
+      ],
+      "display_sequences": [
+        46,
+        47
+      ],
+      "label_text": "御手俑（Terracotta figure of a charioteer）；秦（公元前221-前206年）；2000年秦始皇帝陵园K0006陪葬坑（文吏坑）",
+      "confidence": "high"
+    },
+    {
+      "start": 48,
+      "end": 50,
+      "title": "文吏俑",
+      "label_sequences": [
+        48
+      ],
+      "display_sequences": [
+        49,
+        50
+      ],
+      "label_text": "文吏俑（Terracotta figure of a civil official）；秦（公元前221-前206年）；2000年秦始皇帝陵园K0006陪葬坑（文吏俑坑）",
+      "confidence": "high"
+    },
+    {
+      "start": 51,
+      "end": 52,
+      "title": "跽坐俑",
+      "label_sequences": [
+        51
+      ],
+      "display_sequences": [
+        52
+      ],
+      "label_text": "跽坐俑（Terracotta figure in a kneeling position）；秦（公元前221-前206年）；1979年秦始皇帝陵园马厩坑",
+      "confidence": "medium"
+    },
+    {
+      "start": 53,
+      "end": 56,
+      "title": "鸿雁折枝花纹银杯",
+      "label_sequences": [
+        53,
+        55
+      ],
+      "display_sequences": [
+        54,
+        56
+      ],
+      "label_text": "鸿雁折枝花纹银杯（Silver cup with swan goose and floral sprays）；唐景龙二年（708）；1994年西安长安区南里王村韦洵墓",
+      "confidence": "medium"
+    },
+    {
+      "start": 57,
+      "end": 58,
+      "title": "三彩执壶",
+      "label_sequences": [
+        57
+      ],
+      "display_sequences": [
+        58
+      ],
+      "label_text": "三彩执壶（Tri-color (sancai) glazed ewer）；唐（公元618-907年）；1991年西安长安区南里王村M132",
+      "confidence": "high"
+    },
+    {
+      "start": 59,
+      "end": 64,
+      "title": "楔形细石核",
+      "label_sequences": [
+        59,
+        61,
+        63
+      ],
+      "display_sequences": [
+        60,
+        62,
+        64
+      ],
+      "label_text": "楔形细石核（Wedge-shaped stone core）；西藏阿里曲龙遗址布让曲拉地点等；早期金属时代晚段（距今2000-1600年）",
+      "confidence": "medium"
+    },
+    {
+      "start": 65,
+      "end": 68,
+      "title": "四兽铭文铜镜",
+      "label_sequences": [
+        65,
+        67
+      ],
+      "display_sequences": [
+        66,
+        68
+      ],
+      "label_text": "四兽铭文铜镜（Bronze mirror with four animals and inscription）；唐（公元618-907年）；1994年西安长安区南里王村唐墓",
+      "confidence": "medium"
+    },
+    {
+      "start": 69,
+      "end": 71,
+      "title": "三彩双鱼瓶",
+      "label_sequences": [
+        69,
+        72
+      ],
+      "display_sequences": [
+        70,
+        71,
+        73
+      ],
+      "label_text": "三彩双鱼瓶（Tri-color (sancai) glazed twin-fish-shaped bottle）；唐（公元618-907年）；1992年西安长安区南里王村唐墓",
+      "confidence": "medium"
+    },
+    {
+      "start": 74,
+      "end": 75,
+      "title": "青釉四系罐",
+      "label_sequences": [
+        75
+      ],
+      "display_sequences": [
+        74
+      ],
+      "label_text": "青釉四系罐（Green-glazed jar with four lugs）；唐（公元618-907年）；1992年西安长安区南里王村唐墓M154",
+      "confidence": "medium"
+    },
+    {
+      "start": 76,
+      "end": 77,
+      "title": "（编号16，无OCR展签可辨）",
+      "label_sequences": [],
+      "display_sequences": [
+        76,
+        77
+      ],
+      "label_text": "",
+      "confidence": "low"
+    },
+    {
+      "start": 78,
+      "end": 80,
+      "title": "蓝琉璃碗",
+      "label_sequences": [
+        78
+      ],
+      "display_sequences": [
+        79,
+        80
+      ],
+      "label_text": "蓝琉璃碗（Blue glass bowl）；唐贞观二十二年（648）；1985年咸阳韩家村窦诞墓",
+      "confidence": "medium"
+    },
+    {
+      "start": 81,
+      "end": 81,
+      "title": "绿琉璃碗",
+      "label_sequences": [
+        81
+      ],
+      "display_sequences": [],
+      "label_text": "绿琉璃碗（Green glass bowl）；唐贞观二十二年（648）；1985年咸阳韩家村窦诞墓",
+      "confidence": "medium"
+    },
+    {
+      "start": 82,
+      "end": 83,
+      "title": "八环白玉蹀躞带",
+      "label_sequences": [
+        83
+      ],
+      "display_sequences": [
+        82
+      ],
+      "label_text": "八环白玉蹀躞带（White jade diexie belt with eight lappet fittings）；北周宣政元年（578）；1988年咸阳底张湾村若干云墓",
+      "confidence": "high"
+    },
+    {
+      "start": 84,
+      "end": 90,
+      "title": "北周王德衡墓铜器组",
+      "label_sequences": [
+        85,
+        88
+      ],
+      "display_sequences": [
+        84,
+        86,
+        87,
+        89,
+        90
+      ],
+      "label_text": "铜鼎、铜簋、铜甗、铜釜、铜钵、龙首柄铜鐎、铜唾壶、五足铜炉、铜辟雍砚、宝珠钮盖细颈铜瓶；北周建德五年（576）；1988年咸阳底张湾村王德衡墓",
+      "confidence": "medium"
+    }
+  ]
+}

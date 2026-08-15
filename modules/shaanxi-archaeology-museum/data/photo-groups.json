@@ -1,0 +1,6262 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-08-13T17:32:12+08:00",
+  "source_directory": "D:\\西安博物馆图片",
+  "photo_count": 521,
+  "group_count": 128,
+  "classification_rule": "保持拍摄顺序，按正面/侧面/局部/名称介绍分组；名称介绍照片只作文字索引。",
+  "categories": [
+    "早期文明与礼器",
+    "考古现场材料",
+    "考古史与文献",
+    "秦汉与帝陵",
+    "隋唐器物",
+    "青铜礼器",
+    "墓葬与图像",
+    "音乐与礼制",
+    "铭刻与文字",
+    "金银器与饰品"
+  ],
+  "groups": [
+    {
+      "id": "photo-group-001",
+      "number": 1,
+      "sequence_start": 1,
+      "sequence_end": 3,
+      "category": "早期文明与礼器",
+      "title": "青铜食器（盨）",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 1,
+          "filename": "DSC_2625.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 2,
+          "filename": "DSC_2626.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 3,
+          "filename": "DSC_2627.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 3,
+      "label_text": "录 | Bronze food vessel(xu) of Lu | 西周（公元前1046年－前771年） | 1982年西安灞桥区三殿村西汉王许墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-002",
+      "number": 2,
+      "sequence_start": 4,
+      "sequence_end": 6,
+      "category": "早期文明与礼器",
+      "title": "玉琮",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 4,
+          "filename": "DSC_2628.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 5,
+          "filename": "DSC_2629.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 6,
+          "filename": "DSC_2630.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 6,
+      "label_text": "玉琮 | Jade tube(cong) | 新石器时代陶寺文化（距今4400一3800年） | 2005年韩城柔带村首国基地M27",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-003",
+      "number": 3,
+      "sequence_start": 7,
+      "sequence_end": 8,
+      "category": "早期文明与礼器",
+      "title": "玉璧",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 7,
+          "filename": "DSC_2631.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 8,
+          "filename": "DSC_2632.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 1,
+      "label_photo_sequence": 8,
+      "label_text": "玉璧 | Jadedisc(bi) | 新石器时代齐家文化（距今4300一3700年） | 2007年韩城梁带村芮国基地M560",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-004",
+      "number": 4,
+      "sequence_start": 9,
+      "sequence_end": 11,
+      "category": "早期文明与礼器",
+      "title": "立鸟玉佩、玉杖首",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 9,
+          "filename": "DSC_2633.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 10,
+          "filename": "DSC_2634.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 11,
+          "filename": "DSC_2635.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 11,
+      "label_text": "立鸟玉佩 | 玉杖首 | Jade pendant in the form of a standing bird | Jade scepter head | 商（公元前1600-前1046年） | 商（公元前1600一前1046年） | 2007年韩城柔带村芮国基地M502 | 2007年韩城粱带村芦国基地M560",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-005",
+      "number": 5,
+      "sequence_start": 12,
+      "sequence_end": 13,
+      "category": "早期文明与礼器",
+      "title": "玉戈",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 12,
+          "filename": "DSC_2636.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 13,
+          "filename": "DSC_2637.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 1,
+      "label_photo_sequence": 13,
+      "label_text": "玉戈 | Jade dagger-axe(ge) | 商（公元前1600-前1046年） | 2005年韩城梁带村芮国墓地M27",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-006",
+      "number": 6,
+      "sequence_start": 14,
+      "sequence_end": 17,
+      "category": "早期文明与礼器",
+      "title": "球腹簋",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 14,
+          "filename": "DSC_2638.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 15,
+          "filename": "DSC_2639.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 16,
+          "filename": "DSC_2641.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 17,
+          "filename": "DSC_2642.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 17,
+      "label_text": "球腹篮 | Bronze food vessel (gui) with | a spherical belly | 商代晚期至西周早期 | 2013年宝鸡石鼓山墓地M4 | 石鼓山考古队藏",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-007",
+      "number": 7,
+      "sequence_start": 18,
+      "sequence_end": 20,
+      "category": "考古现场材料",
+      "title": "红烧土",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 18,
+          "filename": "DSC_2643.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 19,
+          "filename": "DSC_2644.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 20,
+          "filename": "DSC_2645.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 20,
+      "label_text": "请勿触摸 | DONOT TOUCHPLEASE | 红烧土 | 富殿建筑遗址采样。 | 2020年咸阳秦都区永安堡村陶窑采样，刻有东汉 | 且缝隙较少的人工压制混合 | “建初”年号及工匠名。 | 通过夯土层的辨认确定人 | 红烧土指遗址中经过火烧形成的坚硬土块，多出现 | 成墙等。 | 于窑址、灶坑、建筑类遗迹中。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-008",
+      "number": 8,
+      "sequence_start": 21,
+      "sequence_end": 23,
+      "category": "考古现场材料",
+      "title": "夯土",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 21,
+          "filename": "DSC_2646.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 22,
+          "filename": "DSC_2647.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 23,
+          "filename": "DSC_2648.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 23,
+      "label_text": "请勿触摸 | DONOTTOUCHPLEASE | 夯土 | 红烧 | 2021年秦咸阳城6号宫殿建筑遗址采样。 | 201 | 回填后所形 | 夯土，指结实、密度大且缝隙较少的人工压制混合 | 五花土等。 | 土块。田野考古中，一般通过夯土层的辨认确定人 | 打，有明 | 工大型建筑，如宫殿基础、城墙等。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-009",
+      "number": 9,
+      "sequence_start": 24,
+      "sequence_end": 26,
+      "category": "考古现场材料",
+      "title": "五花土",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 24,
+          "filename": "DSC_2649.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 25,
+          "filename": "DSC_2651.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 26,
+          "filename": "DSC_2652.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 26,
+      "label_text": "五花土 | 夯士 | 2021年咸阳渭城区底张墓地采样。 | 20 | 五花土，指挖穿多种颜色的土层，融合回填后所形 | 女 | 成的土，可分为墓葬五花土、建筑遗址五花土等。 | 墓葬封土、建筑遗址等五花土一般经过夯打，有明 | 显夯层。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-010",
+      "number": 10,
+      "sequence_start": 27,
+      "sequence_end": 29,
+      "category": "考古现场材料",
+      "title": "原始生土",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 27,
+          "filename": "DSC_2653.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 28,
+          "filename": "DSC_2655.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 29,
+          "filename": "DSC_2656.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 29,
+      "label_text": "009 | 原始生土 | 五 | 2021年咸阳渭城区底张墓地采样。 | 埋古代 | 原始生土，指没有人为活动扰动过的原生自然堆积 | 含物为 | 土层，土色一致，结构完整，颜色因地区不同可分 | 为黄色、红褐色、深褐色等，通常不属于考古学探 | 索和研究的范围。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-011",
+      "number": 11,
+      "sequence_start": 30,
+      "sequence_end": 32,
+      "category": "考古现场材料",
+      "title": "灰坑土",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 30,
+          "filename": "DSC_2657.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 31,
+          "filename": "DSC_2658.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 32,
+          "filename": "DSC_2660.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 32,
+      "label_text": "灰坑土 | 2021年泾阳蒋刘仰韶时期遗址H8采样。 | 灰坑是考古遗址中最为常见的坑状遗迹，因填理古代 | 人类灰黑色废弃堆积而得名。灰坑内丰富的包含物为 | 研究古代先民生产生活提#了重要资料。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-012",
+      "number": 12,
+      "sequence_start": 33,
+      "sequence_end": 35,
+      "category": "考古史与文献",
+      "title": "中国考古报告集",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 33,
+          "filename": "DSC_2661.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 34,
+          "filename": "DSC_2662.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 35,
+          "filename": "DSC_2663.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 35,
+      "label_text": "报告 | 告 | 《国立北平研究院第七年工作报告》 | 《国立北平研究院第六年工作报告》 | The Seventh YearWorkReportof the National Academy | ofBeiping.September9th,1936. | TheSixth Year WorkReport of the National Academyof | Beiping.September9th,1935. | 1936年9月9日印制 | 1935年9月9日印制",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-013",
+      "number": 13,
+      "sequence_start": 36,
+      "sequence_end": 41,
+      "category": "考古史与文献",
+      "title": "《考古图》与金石学",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 36,
+          "filename": "DSC_2664.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 37,
+          "filename": "DSC_2665.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 38,
+          "filename": "DSC_2666.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 39,
+          "filename": "DSC_2667.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 40,
+          "filename": "DSC_2668.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 41,
+          "filename": "DSC_2669.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 41,
+      "label_text": "五寸半 | 《考古图》 | Lu Dalin. Kaogutu (llustrated Antiques Atlas). | Yizhengtang version,reprinted in 1753. | （北宋）吕大临撰，亦政堂藏板 | 清乾隆十七年（1752）重刻本",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-014",
+      "number": 14,
+      "sequence_start": 42,
+      "sequence_end": 44,
+      "category": "考古史与文献",
+      "title": "考古史展板与遗址",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 42,
+          "filename": "DSC_2670.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 43,
+          "filename": "DSC_2671.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 44,
+          "filename": "DSC_2672.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 44,
+      "label_text": "1949- | 1978 | 5年 | 考古扬帆 | THEWAVEOF | 国考古学走向成熟开辟了广阔 | 续考古服务国计 | 释中华文明起源和历史发展 | 同频共振，历经了“抢救性考 | SERVINGTHENATIONALDEVELOPMENTWITH | RESUMEDARCHAEOLOGY | ”的过程。在建立古代文化 | 只，并将学术研究为导向的大 | 建国之初，因战争西中断多年的中国考古字连位复，国家高度量 | ，揭示了中华五千年文明多 | 建设中国特色、中国风格、中 | 守卫精神家园助力。 | 函→",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-015",
+      "number": 15,
+      "sequence_start": 45,
+      "sequence_end": 48,
+      "category": "秦汉与帝陵",
+      "title": "御手俑、文吏俑",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 45,
+          "filename": "DSC_2673.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 46,
+          "filename": "DSC_2674.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 47,
+          "filename": "DSC_2675.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 48,
+          "filename": "DSC_2676.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 48,
+      "label_text": "018 | 文吏俑 | Terracotta figure of a civilofficial | 秦（公元前221一前206年） | 2000年秦始皇帝陵园k0006陪葬坑（文更俑坑）",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-016",
+      "number": 16,
+      "sequence_start": 49,
+      "sequence_end": 51,
+      "category": "秦汉与帝陵",
+      "title": "坐俑",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 49,
+          "filename": "DSC_2677.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 50,
+          "filename": "DSC_2678.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 51,
+          "filename": "DSC_2679.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 51,
+      "label_text": "坐俑 | Terracottafigure inakneelingposition | 秦（公元前221一前206） | 1979年秦始皇帝陵园马厨坑",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-017",
+      "number": 17,
+      "sequence_start": 52,
+      "sequence_end": 55,
+      "category": "隋唐器物",
+      "title": "鸿雁折枝花纹银杯、三彩执壶",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 52,
+          "filename": "DSC_2680.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 53,
+          "filename": "DSC_2681.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 54,
+          "filename": "DSC_2682.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 55,
+          "filename": "DSC_2683.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 55,
+      "label_text": "彩绘贴金 | 三彩执壶 | Painted tomb warr | 花纹银杯 | Tri-color(sancai) glazedewer | goose andfloral sprays | 唐（公元618-9 | 唐（公元618-907年） | 1994年西安长 | 1991年西安长安区南里王村M132 | 区南里王村韦淘墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-018",
+      "number": 18,
+      "sequence_start": 56,
+      "sequence_end": 57,
+      "category": "隋唐器物",
+      "title": "彩绘贴金武士俑、天王俑",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 56,
+          "filename": "DSC_2684.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 57,
+          "filename": "DSC_2685.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 1,
+      "label_photo_sequence": 57,
+      "label_text": "三彩执壶 | 彩绘贴金武士俑 | 彩绘贴金天王俑 | Tri-color(sancai) glazed ewer | Painted tomb warrior with gilding decoration | Painted tomb guardian as Heavenly King | (lokapala) with gilding decoration | 唐（公元618-907年） | 1991年西安长安区南里王村M132 | 1994年西安长安区南里王村唐墓 | 1991年西安长安区南里王村M20",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-019",
+      "number": 19,
+      "sequence_start": 58,
+      "sequence_end": 61,
+      "category": "考古现场材料",
+      "title": "西藏阿里细石器与玻璃珠",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 58,
+          "filename": "DSC_2686.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 59,
+          "filename": "DSC_2687.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 60,
+          "filename": "DSC_2688.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 61,
+          "filename": "DSC_2690.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 61,
+      "label_text": "楔形细石核 | Mu | 水晶细石叶 | Wedge-shaped stone core | 拇指盖形水晶刮削器 | Crystalmicrolithicflake | Thumbnail-shaped crystal scraper | 早期金属时代晚段（距今2000-1600年） | 20 | 2018年西藏阿里曲龙遗址布让曲拉地点 | 196号岩画",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-020",
+      "number": 20,
+      "sequence_start": 62,
+      "sequence_end": 65,
+      "category": "早期文明与礼器",
+      "title": "早期小型遗物与玉石材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 62,
+          "filename": "DSC_2691.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 63,
+          "filename": "DSC_2692.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 64,
+          "filename": "DSC_2693.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 65,
+          "filename": "DSC_2694.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 65,
+      "label_text": "四兽铭文铜镜 | 仕女坐像 | Bronze mirror with four animals and inscription | Statue of a seated lady | 唐（公元618—907年） | 唐（公元618-907年） | 1995年西安长安区南里王村唐墓 | 1994年西安长安区南里王村唐",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-021",
+      "number": 21,
+      "sequence_start": 66,
+      "sequence_end": 69,
+      "category": "早期文明与礼器",
+      "title": "陶塑与小型器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 66,
+          "filename": "DSC_2695.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 67,
+          "filename": "DSC_2696.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 68,
+          "filename": "DSC_2697.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 69,
+          "filename": "DSC_2698.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 69,
+      "label_text": "白釉执壶 | 三彩双鱼瓶 | White-glazed porcelain ewer | 仕女坐像 | Tri-color (sancai) glazed twin-fish-shaped bottle | Statueofa seatedlady | 唐（公元618-907年） | 1991年西安长安区南里王村唐墓 | 1992年西安长安区南里王村唐墓 | 1994年西安长安区南里王村唐墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-022",
+      "number": 22,
+      "sequence_start": 70,
+      "sequence_end": 72,
+      "category": "隋唐器物",
+      "title": "白釉器物（一）",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 70,
+          "filename": "DSC_2699.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 71,
+          "filename": "DSC_2701.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 72,
+          "filename": "DSC_2702.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 72,
+      "label_text": "三彩双鱼瓶 | 白釉执壶 | 青釉四系罐 | Tri-color(sancai) glazed twin-fish-shaped bottle | White-glazed porcelain ewer | Green-glazed jarwithfour lugs | 唐（公元618-907年） | 1992年西安长安区南里王村唐墓 | 1991年西安长安区南里王村唐墓 | 1992年西安长安区南里王村唐墓M15",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-023",
+      "number": 23,
+      "sequence_start": 73,
+      "sequence_end": 75,
+      "category": "隋唐器物",
+      "title": "白釉器物（二）",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 73,
+          "filename": "DSC_2703.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 74,
+          "filename": "DSC_2704.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 75,
+          "filename": "DSC_2705.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 75,
+      "label_text": "青釉四系罐 | ainewer | Green-glazed jarwith fourlugs | 年） | 唐（公元618-907年） | 南里王村唐墓 | 1992年西安长安区南里王村唐墓M154",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-024",
+      "number": 24,
+      "sequence_start": 76,
+      "sequence_end": 78,
+      "category": "隋唐器物",
+      "title": "玻璃与蓝釉器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 76,
+          "filename": "DSC_2706.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 77,
+          "filename": "DSC_2707.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 78,
+          "filename": "DSC_2708.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 78,
+      "label_text": "141516 | 蓝琉璃碗 | Blue glassbowl | 唐贞观二十二年（648） | 玻璃 | 1985年咸阳韩家村窦诞墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-025",
+      "number": 25,
+      "sequence_start": 79,
+      "sequence_end": 81,
+      "category": "隋唐器物",
+      "title": "绿釉器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 79,
+          "filename": "DSC_2709.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 80,
+          "filename": "DSC_2710.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 81,
+          "filename": "DSC_2711.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 81,
+      "label_text": "绿琉璃碗 | Greemglass iomil | 唐贞观二十二年（648） | 985年威阳韩家村窦证基",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-026",
+      "number": 26,
+      "sequence_start": 82,
+      "sequence_end": 85,
+      "category": "早期文明与礼器",
+      "title": "饰品与小型器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 82,
+          "filename": "DSC_2712.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 83,
+          "filename": "DSC_2713.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 84,
+          "filename": "DSC_2714.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 85,
+          "filename": "DSC_2715.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 85,
+      "label_text": "④铜（fu) | 铜钵 | 龙首柄铜鐵（jiao） | 铜唾壶 | 五足铜炉 | ①铜（yan） | ② | 铜辟雍砚 | 宝珠钮盖细颈铜瓶 | Bronze piyong ink palette | Bronze cauldron (fu) | Bronze bowl | Bronze stea | (ue/) JeL | withlotus-budknobonlid | 北周建德五年（576） | 北周建德五年（576) | 1988年咸阳底张湾村王德衡墓 | 1988年威阳底张湾村王",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-027",
+      "number": 27,
+      "sequence_start": 86,
+      "sequence_end": 88,
+      "category": "青铜礼器",
+      "title": "青铜器组合（一）",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 86,
+          "filename": "DSC_2716.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 87,
+          "filename": "DSC_2718.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 88,
+          "filename": "DSC_2719.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 88,
+      "label_text": "铜鼎 | Bronze ritual rectangular cauldron (ding) | vessel(gui) | 西周（公元前1046年一前771年） | 46年一前771年） | 2001年渭南华县东阳墓地M81 | 县东阳墓地M68",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-028",
+      "number": 28,
+      "sequence_start": 89,
+      "sequence_end": 94,
+      "category": "青铜礼器",
+      "title": "青铜礼器组合（二）",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 89,
+          "filename": "DSC_2720.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 90,
+          "filename": "DSC_2722.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 91,
+          "filename": "DSC_2724.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 92,
+          "filename": "DSC_2725.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 93,
+          "filename": "DSC_2726.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 94,
+          "filename": "DSC_2727.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 94,
+      "label_text": "铜鼎 | 铜鉴 | Bronze ritual tripod cauldron(ding) | Bronze water vessel(jian) | 西周（公元前1046年一前771年） | 2001年渭南华县东阳墓地M134 | 2001年渭南华县东阳墓地M153",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-029",
+      "number": 29,
+      "sequence_start": 95,
+      "sequence_end": 96,
+      "category": "早期文明与礼器",
+      "title": "陶器组合（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 95,
+          "filename": "DSC_2728.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 96,
+          "filename": "DSC_2729.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 1,
+      "label_photo_sequence": 96,
+      "label_text": "",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-030",
+      "number": 30,
+      "sequence_start": 97,
+      "sequence_end": 99,
+      "category": "隋唐器物",
+      "title": "白釉器物组合",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 97,
+          "filename": "DSC_2731.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 98,
+          "filename": "DSC_2732.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 99,
+          "filename": "DSC_2733.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 99,
+      "label_text": "白釉辟雍砚 | 白釉贴花盘 | 白釉碟 | White-glazed piyonginkpalette | White-glazeddishwithfloralapplique | White-glazed dish | 隋大业元年（605） | 2006年西安长安区郭杜镇李裕墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-031",
+      "number": 31,
+      "sequence_start": 100,
+      "sequence_end": 102,
+      "category": "隋唐器物",
+      "title": "组玉佩",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 100,
+          "filename": "DSC_2734.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 101,
+          "filename": "DSC_2735.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 102,
+          "filename": "DSC_2736.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 102,
+      "label_text": "组玉佩 | Assemblage ofjade pendante | 唐总章二年（669） | 2004年西北大学长安校区刘智夫妇墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-032",
+      "number": 32,
+      "sequence_start": 103,
+      "sequence_end": 106,
+      "category": "隋唐器物",
+      "title": "八曲葵花形螺钿铜镜",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 103,
+          "filename": "DSC_2737.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 104,
+          "filename": "DSC_2738.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 105,
+          "filename": "DSC_2740.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 106,
+          "filename": "DSC_2741.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 106,
+      "label_text": "029 | 八曲葵花形螺钿铜镜 | Eight-lobed bronze miror | with mother-of-pearl inlay | 唐开元二十四年（736） | 铜、漆、贝 | 2001年西安理工大学曲江校区李墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-033",
+      "number": 33,
+      "sequence_start": 107,
+      "sequence_end": 108,
+      "category": "墓葬与图像",
+      "title": "镇墓俑",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 107,
+          "filename": "DSC_2742.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 108,
+          "filename": "DSC_2743.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 1,
+      "label_photo_sequence": 108,
+      "label_text": "镇墓俑 | Figure of tomb guardian | 唐（公元618-907年） | 2003年西安长安区郭杜镇唐墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-034",
+      "number": 34,
+      "sequence_start": 109,
+      "sequence_end": 110,
+      "category": "考古现场材料",
+      "title": "人类牙齿化石",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 109,
+          "filename": "DSC_2744.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 110,
+          "filename": "DSC_2745.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 1,
+      "label_photo_sequence": 110,
+      "label_text": "人类牙齿化石 | Human tooth fossil | Homo sapiens | 旧石器时代 | 2018年南郑疥疙洞遗址",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-035",
+      "number": 35,
+      "sequence_start": 111,
+      "sequence_end": 112,
+      "category": "考古现场材料",
+      "title": "犀牛牙齿、剑齿象牙齿与鹿角",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 111,
+          "filename": "DSC_2746.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 112,
+          "filename": "DSC_2747.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 1,
+      "label_photo_sequence": 112,
+      "label_text": "11 | 12 | 犀牛牙齿 | 剑齿象牙齿 | 鹿角 | 13 | Tooth of Stegodon | 旧石器时代 | 2018年南郑疥疙洞遗址",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-036",
+      "number": 36,
+      "sequence_start": 113,
+      "sequence_end": 114,
+      "category": "考古现场材料",
+      "title": "细石叶",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 113,
+          "filename": "DSC_2748.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 114,
+          "filename": "DSC_2749.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 1,
+      "label_photo_sequence": 114,
+      "label_text": "细石叶 | Microblade | 旧石器时代 | 2006年宜川龙王迪遗址",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-037",
+      "number": 37,
+      "sequence_start": 115,
+      "sequence_end": 120,
+      "category": "考古现场材料",
+      "title": "旧石器与小型遗物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 115,
+          "filename": "DSC_2750.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 116,
+          "filename": "DSC_2751.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 117,
+          "filename": "DSC_2752.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 118,
+          "filename": "DSC_2753.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 119,
+          "filename": "DSC_2754.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 120,
+          "filename": "DSC_2755.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 120,
+      "label_text": "旧石器时代 | 2006年宜川龙3",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-038",
+      "number": 38,
+      "sequence_start": 121,
+      "sequence_end": 126,
+      "category": "早期文明与礼器",
+      "title": "陶器与展签（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 121,
+          "filename": "DSC_2756.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 122,
+          "filename": "DSC_2757.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 123,
+          "filename": "DSC_2758.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 124,
+          "filename": "DSC_2759.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 125,
+          "filename": "DSC_2760.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 126,
+          "filename": "DSC_2761.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 126,
+      "label_text": "印度野牛左角 | 猪左下颌骨 | 普氏野马下颌骨（残） | 苏门犀右第川掌骨（残） | Left antlerofa Bos gaurus | Left mandile of a pig | Mandile ofa Equus ferus przewalskil | Sus domesticus | Right ll metacarpus of a | 前仰韶第三期文化遗存 | 前仰韶第二期文化遗存 | 前仰韶时期",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-039",
+      "number": 39,
+      "sequence_start": 127,
+      "sequence_end": 132,
+      "category": "早期文明与礼器",
+      "title": "史前陶器组合（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 127,
+          "filename": "DSC_2762.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 128,
+          "filename": "DSC_2763.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 129,
+          "filename": "DSC_2764.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 130,
+          "filename": "DSC_2765.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 131,
+          "filename": "DSC_2766.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 132,
+          "filename": "DSC_2767.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 132,
+      "label_text": "4000",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-040",
+      "number": 40,
+      "sequence_start": 133,
+      "sequence_end": 138,
+      "category": "早期文明与礼器",
+      "title": "陶器与祭祀遗物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 133,
+          "filename": "DSC_2768.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 134,
+          "filename": "DSC_2769.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 135,
+          "filename": "DSC_2770.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 136,
+          "filename": "DSC_2771.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 137,
+          "filename": "DSC_2773.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 138,
+          "filename": "DSC_2774.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 138,
+      "label_text": "动物形鼎 | Animal-shaped cauldron(ding) | 仰韶时期（距今6800-4800年） | 2009年蓝田新街遗址H149",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-041",
+      "number": 41,
+      "sequence_start": 139,
+      "sequence_end": 144,
+      "category": "考古现场材料",
+      "title": "石器与工具组合（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 139,
+          "filename": "DSC_2775.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 140,
+          "filename": "DSC_2776.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 141,
+          "filename": "DSC_2777.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 142,
+          "filename": "DSC_2778.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 143,
+          "filename": "DSC_2779.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 144,
+          "filename": "DSC_2780.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 144,
+      "label_text": "O",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-042",
+      "number": 42,
+      "sequence_start": 145,
+      "sequence_end": 151,
+      "category": "考古现场材料",
+      "title": "早期遗物与骨器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 145,
+          "filename": "DSC_2781.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 146,
+          "filename": "DSC_2782.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 147,
+          "filename": "DSC_2783.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 148,
+          "filename": "DSC_2784.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 149,
+          "filename": "DSC_2785.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 150,
+          "filename": "DSC_2786.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 151,
+          "filename": "DSC_2787.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 6,
+      "label_photo_sequence": 151,
+      "label_text": "®",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-043",
+      "number": 43,
+      "sequence_start": 152,
+      "sequence_end": 158,
+      "category": "青铜礼器",
+      "title": "青铜器与陶器展陈（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 152,
+          "filename": "DSC_2788.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 153,
+          "filename": "DSC_2789.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 154,
+          "filename": "DSC_2790.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 155,
+          "filename": "DSC_2791.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 156,
+          "filename": "DSC_2792.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 157,
+          "filename": "DSC_2793.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 158,
+          "filename": "DSC_2794.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 6,
+      "label_photo_sequence": 158,
+      "label_text": "图（用1046-71年）) | 2002年执风开家基均M4",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-044",
+      "number": 44,
+      "sequence_start": 159,
+      "sequence_end": 162,
+      "category": "早期文明与礼器",
+      "title": "饰品与货币组合（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 159,
+          "filename": "DSC_2795.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 160,
+          "filename": "DSC_2796.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 161,
+          "filename": "DSC_2797.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 162,
+          "filename": "DSC_2798.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 162,
+      "label_text": "骨帮 | 海贝 | 牙器 | Bone spade-shaped plow(si) | Cowrie shell | Tooth tool | 西周（公元前1046一前771年） | 西周（公元前1046-前771年） | 2014年岐山贺家村北凤雏建筑群H103 | 2014年岐山贺家村北凤雏建筑群H17 | 1103 | 2014年岐山贺家村北凤维建筑群H103",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-045",
+      "number": 45,
+      "sequence_start": 163,
+      "sequence_end": 169,
+      "category": "早期文明与礼器",
+      "title": "玉石与骨器组合（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 163,
+          "filename": "DSC_2799.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 164,
+          "filename": "DSC_2800.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 165,
+          "filename": "DSC_2801.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 166,
+          "filename": "DSC_2802.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 167,
+          "filename": "DSC_2803.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 168,
+          "filename": "DSC_2804.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 169,
+          "filename": "DSC_2805.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 6,
+      "label_photo_sequence": 169,
+      "label_text": "④ | 市（残） | 铜环 | 0马镇 | 铜鱼 | 玉伏兽 | 玉龙 | 玉蝉 | 玉柄形器 | Bronze ring | 玉鸟 | cheekplece (blao) | Jade crouching animal | 玉鱼 | ad (inc | Bronze flsh | Jade dragon | é[e] | Jade cicada | Handle-shaped Jade tablet | Jade fish | 046-前771年） | 西周（公元前1046一前771年） | 西周（公元前1046-前771年） | 2012年扶风姚家基地M34 | 2012年扶风姚家基地M30 | 2012年扶风姚家基地M16 | 2012年扶风姚家基地M17 | 2012年扶风姚家基地M18 | 2012年扶风姚家基地M23 | 1012年",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-046",
+      "number": 46,
+      "sequence_start": 170,
+      "sequence_end": 176,
+      "category": "墓葬与图像",
+      "title": "墓葬与考古复原模型（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 170,
+          "filename": "DSC_2806.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 171,
+          "filename": "DSC_2807.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 172,
+          "filename": "DSC_2808.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 173,
+          "filename": "DSC_2809.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 174,
+          "filename": "DSC_2810.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 175,
+          "filename": "DSC_2811.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 176,
+          "filename": "DSC_2812.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 6,
+      "label_photo_sequence": 176,
+      "label_text": "旺",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-047",
+      "number": 47,
+      "sequence_start": 177,
+      "sequence_end": 184,
+      "category": "青铜礼器",
+      "title": "青铜构件与纹饰（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 177,
+          "filename": "DSC_2813.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 178,
+          "filename": "DSC_2814.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 179,
+          "filename": "DSC_2815.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 180,
+          "filename": "DSC_2816.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 181,
+          "filename": "DSC_2817.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 182,
+          "filename": "DSC_2818.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 183,
+          "filename": "DSC_2819.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 184,
+          "filename": "DSC_2820.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 7,
+      "label_photo_sequence": 184,
+      "label_text": "量地（车林立钱下） | 绿松石片 | 绿松石蝉 | Turquoise pieces | Turquoise cicadas | 西周（公元前1046年一前771年） | 绿松石 | 2014年周原遗址贺家车马坑K1",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-048",
+      "number": 48,
+      "sequence_start": 185,
+      "sequence_end": 192,
+      "category": "考古史与文献",
+      "title": "早期遗物与展板（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 185,
+          "filename": "DSC_2821.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 186,
+          "filename": "DSC_2822.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 187,
+          "filename": "DSC_2823.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 188,
+          "filename": "DSC_2824.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 189,
+          "filename": "DSC_2825.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 190,
+          "filename": "DSC_2826.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 191,
+          "filename": "DSC_2827.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 192,
+          "filename": "DSC_2828.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 7,
+      "label_photo_sequence": 192,
+      "label_text": "八",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-049",
+      "number": 49,
+      "sequence_start": 193,
+      "sequence_end": 195,
+      "category": "墓葬与图像",
+      "title": "杂剧图（数字复原）",
+      "status": "展签/现场已留线索",
+      "tags": [
+        "戏剧史",
+        "音乐史"
+      ],
+      "photos": [
+        {
+          "sequence": 193,
+          "filename": "DSC_2829.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 194,
+          "filename": "DSC_2830.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 195,
+          "filename": "DSC_2831.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 195,
+      "label_text": "杂剧图（数字复原） | Mural of Zaju(printed version) | 宋（960-1279年） | 别身着红色或黄色圆领广袖宽衫，束带，内有衬领斜着耸 | 2009年韩城盘乐村壁画墓M218 | 起。大鼓色一名，戴簪花无脚头，身着灰色团领宽衫，腰 | 图像位于墓室西壁。杂剧图共17人，分为乐队和演员两 | 系黑色罗巾，双袖半卷起，两小臂大部裸露，双手击鼓。拍 | 部分，完整再现了北宋杂剧的末泥、引戏、副净、副末、装 | 板色一名，头戴花展脚噗头，着红色团领宽衫，右手扶拍 | 孤五个角色。中间四人，围绕一把椅子进行戏剧动作。右方 | 板置于右肩，左臂下垂，左手笼袖内，静立。杖鼓色一名， | 三人，一人戴簪花展脚头，身着广袖圆领黄袍，秉静 | 头戴簪花展脚头，身着黄色团领宽衫，腰系黑色罗巾，双 | 立，其神情显示未进入剧情。最右方两位头戴团冠、身穿彩 | 袖半卷起，两小臂大部裸露，双手敛于胸前，静立。杂剧演 | 裙外罩、对襟旋袄、双手持笙的女乐手，应即《武林旧事》 | 出的壁画场面，揭开了北宋杂剧演出是否有乐队伴奏的谜 | 所谓的“笙色”。画面左方九人，显系乐队成员。由左向右 | 底。这是迄今为止发现的规模最大、最完整、最生动的宋代 | 排列：六人为筆色，皆手持筆，头戴花展脚头，分 | 戏剧绘画资料，史料价值极高。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-050",
+      "number": 50,
+      "sequence_start": 196,
+      "sequence_end": 200,
+      "category": "墓葬与图像",
+      "title": "仪鱼、伏听、金鸡、玉犬",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 196,
+          "filename": "DSC_2832.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 197,
+          "filename": "DSC_2833.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 198,
+          "filename": "DSC_2834.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 199,
+          "filename": "DSC_2836.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 200,
+          "filename": "DSC_2837.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 200,
+      "label_text": "仪鱼、伏听、金鸡、玉犬 | Mural of Yiyu,Futing,arooster and adog | 北宋元丰五年（1082） | 2018年神木店塔镇高氏家族墓M7 | 图像位于西壁墓口南北两侧壁面。仪鱼，人面轮浑圆饱满，而色红润，鱼 | 身部分用墨线勾勒，鱼鳍全部施以黄彩；伏听，圆脸蓄胡，头戴黑色候头，身着 | 圆领袍衫，俯身态，头置于一手后，另一手撑地，神色悠闲状；金鸡，浑身色彩 | 鲜亮，以黄色为主，加以红色点缀，尾巴翘起，给人一种暴之感；玉犬，犬身 | 壮硕，双耳微起，咬牙嘴，怒目向前，姿态凶猛。这四种形象属于墓葬裤煞， | 即古人丧葬观念中与吉凶相关的神，是北宋墓葬壁画中神煞形象组合的核心部 | 分。出现该种形象组合的壁画墓墓主多为庶民富户。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-051",
+      "number": 51,
+      "sequence_start": 201,
+      "sequence_end": 204,
+      "category": "墓葬与图像",
+      "title": "北宋墓葬壁画（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 201,
+          "filename": "DSC_2838.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 202,
+          "filename": "DSC_2839.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 203,
+          "filename": "DSC_2840.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 204,
+          "filename": "DSC_2841.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 204,
+      "label_text": "",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-052",
+      "number": 52,
+      "sequence_start": 205,
+      "sequence_end": 208,
+      "category": "墓葬与图像",
+      "title": "出行仪仗图（数字复原）",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 205,
+          "filename": "DSC_2844.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 206,
+          "filename": "DSC_2845.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 207,
+          "filename": "DSC_2846.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 208,
+          "filename": "DSC_2847.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 208,
+      "label_text": "出行仪仗图（数字复原） | Mural of honor guards in procession (printed version) | 唐（618-907年） | 墓道两壁绘有祥云、青龙、白虎。甬道两壁以壁 | 2022年西安沪浦生态区白杨寨墓地M1373 | 龛为界，南侧绘开路童子、八人抬担、牛车、骑马者 | 该墓为穴墓道单室穹顶砖室墓，整体平面近“刀”形，水 | 等出行仪仗。北侧绘侍女。墓室东壁为乐舞图、杂戏 | 莫室三部 | 图，人物均站立，乐器有笛子、拍板、大鼓、铜 | 平总长14.06米。墓葬顶部已被破坏，仅存墓道、甬道、 | 分，墓道为穴土扩结构，甬道为砖砌甬道，砖券拱顶 | 室为先 | 等。墓室北壁仅残存东部备茶图，可见一桌，桌上有 | 携主护，再用条砖垫砌。墓主应为刘弘规家族成员，年代为晚唐至 | 海棠盏、盏托、四曲长杯等。东侧一侍女持执壶立于 | 唐末期。刘弘规为唐宪宗时期“权宦”，拥立新君、蓄养假子，家 | 火炉旁，其下为一拂犬。墓室西壁残存一角，可见 | 族成员深刻影响了晚唐时期政治变迁。 | 惟帐，内为山石竹笋。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-053",
+      "number": 53,
+      "sequence_start": 209,
+      "sequence_end": 212,
+      "category": "墓葬与图像",
+      "title": "墓葬壁画图像（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 209,
+          "filename": "DSC_2849.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 210,
+          "filename": "DSC_2850.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 211,
+          "filename": "DSC_2851.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 212,
+          "filename": "DSC_2854.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 212,
+      "label_text": "卧狮图 | PELE",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-054",
+      "number": 54,
+      "sequence_start": 213,
+      "sequence_end": 216,
+      "category": "墓葬与图像",
+      "title": "墓葬壁画人物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 213,
+          "filename": "DSC_2855.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 214,
+          "filename": "DSC_2856.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 215,
+          "filename": "DSC_2857.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 216,
+          "filename": "DSC_2858.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 216,
+      "label_text": "文更进谒图 | Mural of civil officials paying a call | 唐开元十二年（724） | 1995年渭南蒲城惠庄太子墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-055",
+      "number": 55,
+      "sequence_start": 217,
+      "sequence_end": 220,
+      "category": "墓葬与图像",
+      "title": "墓葬壁画细部（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 217,
+          "filename": "DSC_2859.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 218,
+          "filename": "DSC_2860.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 219,
+          "filename": "DSC_2861.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 220,
+          "filename": "DSC_2862.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 220,
+      "label_text": "女吏图 | Mural of female officials | 唐天宝元年（742） | 2000年蒲城三合村唐惠陵 | 素面丝帛，长及足面，神情十分恭谦。第2 | 柳眉秀目，粉面涂脂，唇色鲜红， | 墓葬全长59米，地上有覆斗形封土，边长60米，高14米，地下由斜坡墓道 | 头履，肩搭披帛，袖拢双手拱于胸前。 | 3过洞、7天井、6壁盒、甬道和墓室六部分组成，是目前考古发掘的盛唐时期最 | 侍立， | 残高1.7米， | 头部画面己残 | 高等级墓葬。墓主李宪为睿宗之子，因将皇太子位让与李隆基，后追封让皇 | 左侧似挂攀囊 | 葬于天宝元年（742） | 图像位于第一天井西壁，画面中3人分前后面南而立，南端第1人高1.7米，头 | 下系红色高腰曳地长 | 面如满月，凤目桃腮，上着白色交领小儒衫 | 双腕处搭垂淡绿色 | 披发单警 | 足穿白色高头履，肩裹白色披帛，双手拢袖内拱于胸前，",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-056",
+      "number": 56,
+      "sequence_start": 221,
+      "sequence_end": 224,
+      "category": "墓葬与图像",
+      "title": "壁画与墓室材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 221,
+          "filename": "DSC_2863.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 222,
+          "filename": "DSC_2864.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 223,
+          "filename": "DSC_2865.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 224,
+          "filename": "DSC_2866.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 224,
+      "label_text": "大梁墓地北朝壁画墓M | 用发掘，距统万 | 为斜坡墓道单 | 1时期的统万城 | 刷白灰浆水绘 | 宗教气氛浓郁 | 日月星辰和 | 承",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-057",
+      "number": 57,
+      "sequence_start": 225,
+      "sequence_end": 228,
+      "category": "墓葬与图像",
+      "title": "壁画展陈（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 225,
+          "filename": "DSC_2867.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 226,
+          "filename": "DSC_2868.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 227,
+          "filename": "DSC_2869.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 228,
+          "filename": "DSC_2870.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 228,
+      "label_text": "门吏图 | 七人物图 | Mural of official for guarding gate | Mural of one foreigner and six Buddhist monks | 有一个纵长方形盒。塔两侧上部为二飞天，侧身 | 图像位于墓室北壁。画面大体可分为三部 | 相对而飞。塔下部为一侧身而跪的胡人形象和六 | 北朝（386-581年） | 分：第一部分为东、西两端的简约山林轮廓及奔 | 名立姿僧人。七人身后有一面西侧身吐舌而蹲的 | 2011年靖边八大梁墓地M1 | 跑的鹿和的虎等动物。第二部分为东端山林 | 虎与一条侧身面西行走的龙。龙与东侧飞天之间 | 动物内侧的门吏。手执环首仪刀下端，刀首伸至 | 有一组相对而立的动物，似鼠。六名立姿僧人下 | 2011年陕西省靖边县统万城周边发现北朝壁 | 右肩外，垂系细穗。第三部分为门吏至西端山林 | 面可见体量较大的纵向细长茎莲花与桃形火焰纹 | 画墓，墓葬具有浓郁的宗教色彩和胡风因素。仿石 | 之间的部分，主要表现胡僧礼拜舍利塔的场面。 | 摩尼宝珠图案，但大部被淤层覆盖，难以辨识。 | 的墓门、墓室内的仿木结构以及精美的壁画都独 | 该部分画面西侧为一棵大树，树西侧画面以舍利 | 具特色。壁画不仅有大量的宗教因素，还出现了胡 | 塔为中心，正面中下部为拱门，门两侧偏上部分别 | 人的形象，更为特别的是出现了塔的图像，在北朝 | 时代的壁画墓中极为罕见。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-058",
+      "number": 58,
+      "sequence_start": 229,
+      "sequence_end": 232,
+      "category": "墓葬与图像",
+      "title": "壁画人物与色彩（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 229,
+          "filename": "DSC_2871.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 230,
+          "filename": "DSC_2872.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 231,
+          "filename": "DSC_2873.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 232,
+          "filename": "DSC_2874.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 232,
+      "label_text": "王与郭将军宴饮图 | Mural of Bin Wang and General Guoenjoying a feast | 东汉（25-220年） | 2000年旬邑百子村东汉墓 | 图像位于墓室后室西壁，顶部饰朱红帷慢，间饰组绶。第1人墨书 | “口口将军”，戴进贤冠，着黑衣，腰悬印绥；第2人墨书“郭口将 | 军”，戴进贤冠，着红衣，腰悬印绥，2人对坐宴饮。其后躬立的第3~ | 工”，算得上是中国历史上早期的自画像。第8人身前墨书“诸口 | 主人“#王” | 郭姓将军 | 朱姓官吏师工 | 属更？ | 使”“口王”。车马出行位于后室西壁最北端的下部，马首向南，驾 | 小史 | 王姓官更赵姓官更 | 双辕，车舆有翻板扣合于轮上，车舆中间有一华盖柄，御手坐于后舆， | 戴冠，冠后墨书“王御吏”。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-059",
+      "number": 59,
+      "sequence_start": 233,
+      "sequence_end": 236,
+      "category": "墓葬与图像",
+      "title": "壁画说明材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 233,
+          "filename": "DSC_2875.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 234,
+          "filename": "DSC_2876.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 235,
+          "filename": "DSC_2877.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 236,
+          "filename": "DSC_2878.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 236,
+      "label_text": "邢王力士图",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-060",
+      "number": 60,
+      "sequence_start": 237,
+      "sequence_end": 240,
+      "category": "墓葬与图像",
+      "title": "壁画与墓葬材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 237,
+          "filename": "DSC_2879.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 238,
+          "filename": "DSC_2881.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 239,
+          "filename": "DSC_2882.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 240,
+          "filename": "DSC_2883.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 240,
+      "label_text": "车马出行图 | Mural of chariot and horse | 新莽一东汉（公元9-220年） | 2003年定边郝滩四十里铺东汉墓群 | 图像位于墓室东壁，是汉代常见的壁画题材，多用来表现墓主人生前的身份 | 地位或仕途经历。画面形象简约而极具张力，马嘴喷张、毛竖立、前蹄高举， | 一位绿衣女主人安坐车中，身旁一黑衣男子驾车前行，有三只鸿雁在天空一字排 | 开飞翔。壁画底色以青绿色（经检测分析为绿士）为衬托，车舆和马匹的毛都 | 以黑色表现，搭配白、红、蓝等颜料绘制不同内容，整体上呈现热烈愉悦的装饰 | 氛围。从车轮的表现手法上来看，战国至汉初的车轮往往仅见一轮，西汉中期始 | 见两轮，而这幅画面上里侧一轮微高并微前于外轮，体现出汉代绘画空间中“透 | 视”意识的进步。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-061",
+      "number": 61,
+      "sequence_start": 241,
+      "sequence_end": 243,
+      "category": "墓葬与图像",
+      "title": "墓葬建筑构件（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 241,
+          "filename": "DSC_2884.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 242,
+          "filename": "DSC_2885.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 243,
+          "filename": "DSC_2886.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 243,
+      "label_text": "彩绘陶 | Painted potterymodel of watchtower | 西晋（266-317年） | 2002年西安长安区陕西师范大学新校区西晋墓 | 除了宫室壁画外，大户人家也普遍绘制壁画。考古发掘墓葬出土的 | 陶楼建筑模型，有的外表面会以彩绘装饰模仿壁画。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-062",
+      "number": 62,
+      "sequence_start": 244,
+      "sequence_end": 246,
+      "category": "早期文明与礼器",
+      "title": "陶器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 244,
+          "filename": "DSC_2887.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 245,
+          "filename": "DSC_2888.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 246,
+          "filename": "DSC_2889.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 246,
+      "label_text": "陶釜 | 陶灶 | 联体釜灶 | Pottery cauldron | Pottery stove | Joinedcauldronandstove | 仰韶中期（距今5700-5000年） | 2008年西安高陵区杨官寨遗址北区环壕G8-2段 | 陶 | 2008年西安高陵区杨官寨遗址北区W31",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-063",
+      "number": 63,
+      "sequence_start": 247,
+      "sequence_end": 249,
+      "category": "早期文明与礼器",
+      "title": "石器与玉石材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 247,
+          "filename": "DSC_2890.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 248,
+          "filename": "DSC_2891.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 249,
+          "filename": "DSC_2892.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 249,
+      "label_text": "玉铲 | 2 | 玉钱 | Jade spade | Jadeaxe (yue) | 仰韶中期（距今5700-5000年） | 宝2010年西安高陵区杨官寨遗址北区H652 | 宝2018年西安高陵区杨官寨遗址东区墓地M302 | 石串珠 | String of st | 仰韶中期 | 右2016年西安",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-064",
+      "number": 64,
+      "sequence_start": 250,
+      "sequence_end": 252,
+      "category": "早期文明与礼器",
+      "title": "环形器与饰品（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 250,
+          "filename": "DSC_2893.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 251,
+          "filename": "DSC_2894.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 252,
+          "filename": "DSC_2895.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 252,
+      "label_text": "浮雕蛙纹陶釜 | Pottery cauldronIMul withrelet | atien ef freg | 你超中期（距今5700-5000年） | 2009年西安高地区格官事进址地区环场H90",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-065",
+      "number": 65,
+      "sequence_start": 253,
+      "sequence_end": 255,
+      "category": "早期文明与礼器",
+      "title": "陶器（第二组，待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 253,
+          "filename": "DSC_2896.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 254,
+          "filename": "DSC_2897.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 255,
+          "filename": "DSC_2898.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 255,
+      "label_text": "陶轮盘形器 | Potterywheel-shaped device | 仰韶中期（距今5700-5000年） | 2006年西安高陵区杨官寨遗址南区H402",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-066",
+      "number": 66,
+      "sequence_start": 256,
+      "sequence_end": 258,
+      "category": "墓葬与图像",
+      "title": "墓葬器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 256,
+          "filename": "DSC_2899.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 257,
+          "filename": "DSC_2900.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 258,
+          "filename": "DSC_2901.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 258,
+      "label_text": "浮雕人面饰残陶器 | 仰韶晚期（距今5000—4800年） | 2004年西安高陵区杨官寨通址南区H84",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-067",
+      "number": 67,
+      "sequence_start": 259,
+      "sequence_end": 261,
+      "category": "早期文明与礼器",
+      "title": "陶器组合（第三组，待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 259,
+          "filename": "DSC_2902.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 260,
+          "filename": "DSC_2904.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 261,
+          "filename": "DSC_2905.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 261,
+      "label_text": "楼空人面陶豆",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-068",
+      "number": 68,
+      "sequence_start": 262,
+      "sequence_end": 264,
+      "category": "早期文明与礼器",
+      "title": "祭祀与器物组合（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 262,
+          "filename": "DSC_2906.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 263,
+          "filename": "DSC_2907.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 264,
+          "filename": "DSC_2908.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 264,
+      "label_text": "4 | 狗跖骨 | 猪下颌骨 | 猪左下颌骨 | 雌性猪左下颌骨 | Mandibte eta pig | Left mandible eta pig | Loftmandible of a female pig | 3 | 传能中期（E今5700-5000年） | 你超中期（月今5700-5",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-069",
+      "number": 69,
+      "sequence_start": 265,
+      "sequence_end": 267,
+      "category": "早期文明与礼器",
+      "title": "石雕与兽面（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 265,
+          "filename": "DSC_2909.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 266,
+          "filename": "DSC_2910.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 267,
+          "filename": "DSC_2911.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 267,
+      "label_text": "马鹿左额骨 | 鹤胸骨 | 3 | 梅花鹿右下颌骨 | Left frontalboneofared deer | Sternumofacrane | Right mandible ofa sika deer | Ceruselaphus | Cervus mippon | 仰韶中期（更今5700-5000年） | 仰韶中期（距今5700-5000年） | 2008年西安高陵区杨官寨遗址北区环壕G8-2段 | 2008年西安高陵区杨官寨遗址北区环墩G8-2段 | 圆顶珠蚌 | 5樟左肱骨 | 梅花鹿左股骨 | Linio | Left humerusof a water deer | Left femur of a sika deer | 仰超中期（距今5700-5000年） | 2008年西安高陵区杨官寨进址北区环境G8-1段 | 青2008年西安高陵区杨官寨遗址北区环濠G8-2段 | 2015年西安高陵区杨官事遗址东区基地MG",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-070",
+      "number": 70,
+      "sequence_start": 268,
+      "sequence_end": 270,
+      "category": "早期文明与礼器",
+      "title": "石雕构件（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 268,
+          "filename": "DSC_2912.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 269,
+          "filename": "DSC_2913.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 270,
+          "filename": "DSC_2914.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 270,
+      "label_text": "",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-071",
+      "number": 71,
+      "sequence_start": 271,
+      "sequence_end": 273,
+      "category": "早期文明与礼器",
+      "title": "陶器与资料牌（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 271,
+          "filename": "DSC_2915.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 272,
+          "filename": "DSC_2916.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 273,
+          "filename": "DSC_2917.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 273,
+      "label_text": "8",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-072",
+      "number": 72,
+      "sequence_start": 274,
+      "sequence_end": 276,
+      "category": "考古史与文献",
+      "title": "考古资料展板（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 274,
+          "filename": "DSC_2918.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 275,
+          "filename": "DSC_2919.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 276,
+          "filename": "DSC_2920.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 276,
+      "label_text": "1口簧 | MOUTH HARP | 出土于皇城台的口簧，被赋予沟通人神、祭祀先祖的功能。推想 | 鹰20 | 四千年前的皇城台上，演奏者口含口簧，通过口腔与乐器结合发出的“呷 | 器时代 | 呷” | “嗡嗡”声，空灵飘逸，极易产生肃穆的氛围。这种无固定格式的 | 权或曾 | 即兴演奏，随演奏者气息、口型的变化及簧舌震动的节奏，模仿动物的 | 陶鹰在 | 音律或其他复杂奇特的具有仪式感的神秘旋律，在节奏快慢、力度强弱 | 变化下产生的催化效应，成为石巫观实现交于神明、祭祀祖先、驱鬼 | 镶神的重要手段。 | 口簧的基本结构： | 簧舌 | 拉孔 | 簧鞘 | 口簧的使用方法对比： | 石步口簧 | 现代口簧",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-073",
+      "number": 73,
+      "sequence_start": 277,
+      "sequence_end": 280,
+      "category": "考古现场材料",
+      "title": "石器与工具（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 277,
+          "filename": "DSC_2921.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 278,
+          "filename": "DSC_2922.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 279,
+          "filename": "DSC_2923.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 280,
+          "filename": "DSC_2924.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 280,
+      "label_text": "去头 | 打磨 | 切割 | 砺石（骨针制作细磨器） | 骨针制作链相关遗物 | 磨制 | 残件 | 开孔 | RelaledFen | nseiBonenecdLe",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-074",
+      "number": 74,
+      "sequence_start": 281,
+      "sequence_end": 284,
+      "category": "早期文明与礼器",
+      "title": "早期遗物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 281,
+          "filename": "DSC_2925.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 282,
+          "filename": "DSC_2926.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 283,
+          "filename": "DSC_2927.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 284,
+          "filename": "DSC_2928.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 284,
+      "label_text": "卜骨 | Divination bone | 西周（公元前1046-前771年） | 2007年峡山周八庙遗址H752/H703 | 公庙遗址T5H45①",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-075",
+      "number": 75,
+      "sequence_start": 285,
+      "sequence_end": 288,
+      "category": "考古史与文献",
+      "title": "考古资料图文（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 285,
+          "filename": "DSC_2931.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 286,
+          "filename": "DSC_2932.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 287,
+          "filename": "DSC_2933.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 288,
+          "filename": "DSC_2934.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 288,
+      "label_text": "骨板 | 2蚌刀 | 3骨锤 | scute | Freshwaier musselshcll knite | Benohan | 元前1046-航771年） | 西周（公元前1046-前771年） | 西周（公元航1046-新771年） | 安长安区斗门街道花园村H242 | 2016年西安长安区头门街道代质村H24！ | 1207每安#门####",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-076",
+      "number": 76,
+      "sequence_start": 289,
+      "sequence_end": 293,
+      "category": "考古现场材料",
+      "title": "鳄鱼骨板、蚌刀",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 289,
+          "filename": "DSC_2935.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 290,
+          "filename": "DSC_2936.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 291,
+          "filename": "DSC_2937.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 292,
+          "filename": "DSC_2938.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 293,
+          "filename": "DSC_2939.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 293,
+      "label_text": "鳄鱼骨板 | 蚌刀 | 2 | Alligator scute | Freshwater mussel shell knife | 西周(公元前1046一前771年) | 西周（公元前1046一前771年） | 2016年西安长安区斗门街道花园村H242 | 2016年西安长安区斗门街道花园村H241 | 20",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-077",
+      "number": 77,
+      "sequence_start": 294,
+      "sequence_end": 298,
+      "category": "青铜礼器",
+      "title": "四耳簋",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 294,
+          "filename": "DSC_2940.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 295,
+          "filename": "DSC_2941.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 296,
+          "filename": "DSC_2942.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 297,
+          "filename": "DSC_2943.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 298,
+          "filename": "DSC_2944.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 298,
+      "label_text": "小山 | 牺尊 | 101 | Bronze animal-shaped wine vesselzun) | 商代晚期至西周早期 | 2013年宝鸡石鼓山商周基地M4 | 石鼓山考古队收藏",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-078",
+      "number": 78,
+      "sequence_start": 299,
+      "sequence_end": 302,
+      "category": "青铜礼器",
+      "title": "牺尊、附耳龙纹鼎",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 299,
+          "filename": "DSC_2945.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 300,
+          "filename": "DSC_2946.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 301,
+          "filename": "DSC_2947.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 302,
+          "filename": "DSC_2948.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 302,
+      "label_text": "附耳龙纹鼎 | 102 | Bronze ritual tripod cauldron(ding)with | folded handles anddragon decoration | 商代晚期至西周早期 | 2013年宝鸡石鼓山商周墓地M4 | 石鼓山考古队收藏",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-079",
+      "number": 79,
+      "sequence_start": 303,
+      "sequence_end": 305,
+      "category": "青铜礼器",
+      "title": "青铜食器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 303,
+          "filename": "DSC_2949.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 304,
+          "filename": "DSC_2950.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 305,
+          "filename": "DSC_2951.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 305,
+      "label_text": "青铜（fu） | Bronzefoodvessel(fu) | 商代晚期至西周早期 | 2013年宝鸡石鼓山商周墓地M4 | 石鼓山考古队收藏",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-080",
+      "number": 80,
+      "sequence_start": 306,
+      "sequence_end": 308,
+      "category": "秦汉与帝陵",
+      "title": "人物与陶塑（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 306,
+          "filename": "DSC_2952.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 307,
+          "filename": "DSC_2953.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 308,
+          "filename": "DSC_2954.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 308,
+      "label_text": "木俑 | 105 | Woodenfigure | 西周晚期 | 木 | 2007年韩城梁带村遗址M502",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-081",
+      "number": 81,
+      "sequence_start": 309,
+      "sequence_end": 311,
+      "category": "青铜礼器",
+      "title": "青铜与金属装饰（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 309,
+          "filename": "DSC_2955.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 310,
+          "filename": "DSC_2956.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 311,
+          "filename": "DSC_2957.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 311,
+      "label_text": "2006年韩城梁带村遗址M26 | 2006年韩城梁带村遗址M19 | 玉贝 | 人形玉佩 | 玉块 | 玉鱼 | Jade fish | Jade cowrie shell | Jade slit ring IJjue] | 春秋早期 | 西周晚期 | 西周晚期至春秋早期 | 玉鸟 | 玉牛 | 右脚踝饰玉 | Jade bird | 西周早期 | Jade catte | Jade ornar | aments of right ankle | 商代晚期至春秋早期 | 玉（xi) | 左脚踝饰玉 | 玉兽面 | 土有项饰、 | Jade pendant [x/] | Jade ornaments of left ankle | 黄和728颗 | 玉璧 | Jade slit ring /uel | Jade disc (b] | 新石器时代晚期",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-082",
+      "number": 82,
+      "sequence_start": 312,
+      "sequence_end": 314,
+      "category": "青铜礼器",
+      "title": "青铜器与纹饰（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 312,
+          "filename": "DSC_2958.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 313,
+          "filename": "DSC_2959.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 314,
+          "filename": "DSC_2960.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 314,
+      "label_text": "5T9 | 窃曲纹篮 | Bronzerhual fool | 春秋早期 | 2006年韩城梁带村遗址M19",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-083",
+      "number": 83,
+      "sequence_start": 315,
+      "sequence_end": 318,
+      "category": "青铜礼器",
+      "title": "青铜器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 315,
+          "filename": "DSC_2961.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 316,
+          "filename": "DSC_2962.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 317,
+          "filename": "DSC_2964.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 318,
+          "filename": "DSC_2966.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 318,
+      "label_text": "仲姜瓶（yin）",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-084",
+      "number": 84,
+      "sequence_start": 319,
+      "sequence_end": 322,
+      "category": "青铜礼器",
+      "title": "青铜器与展签（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 319,
+          "filename": "DSC_2967.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 320,
+          "filename": "DSC_2968.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 321,
+          "filename": "DSC_2969.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 322,
+          "filename": "DSC_2970.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 322,
+      "label_text": "龙纹 | Bronze spouted wine vessel[he]with | dragondecoration | 春秋早期 | 2006年韩城梁带村遗址M26",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-085",
+      "number": 85,
+      "sequence_start": 323,
+      "sequence_end": 326,
+      "category": "青铜礼器",
+      "title": "青铜器与车马器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 323,
+          "filename": "DSC_2971.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 324,
+          "filename": "DSC_2972.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 325,
+          "filename": "DSC_2973.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 326,
+          "filename": "DSC_2974.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 326,
+      "label_text": "1 | M27随葬器物",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-086",
+      "number": 86,
+      "sequence_start": 327,
+      "sequence_end": 330,
+      "category": "早期文明与礼器",
+      "title": "饰品与器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 327,
+          "filename": "DSC_2975.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 328,
+          "filename": "DSC_2976.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 329,
+          "filename": "DSC_2977.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 330,
+          "filename": "DSC_2978.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 330,
+      "label_text": "精璃 | 西周晚期 | 贝玉2009年韩城梁带村遗址M300 | 玉牌项饰 | Neck ornament with jade plaques | 2009年韩城梁带村遗址M300",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-087",
+      "number": 87,
+      "sequence_start": 331,
+      "sequence_end": 336,
+      "category": "青铜礼器",
+      "title": "青铜器（第二组，待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 331,
+          "filename": "DSC_2979.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 332,
+          "filename": "DSC_2981.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 333,
+          "filename": "DSC_2982.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 334,
+          "filename": "DSC_2983.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 335,
+          "filename": "DSC_2984.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 336,
+          "filename": "DSC_2985.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 336,
+      "label_text": "晋姑盘 | 晋婧画(yi) | Bronze watervessel[pan)with | Bronze pouring vessel (yil with | inscriptionof‘JinJi' | inscription of 'Jin Ji' | 西周晚期 | 2009年韩城梁带村遗址M300",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-088",
+      "number": 88,
+      "sequence_start": 337,
+      "sequence_end": 341,
+      "category": "青铜礼器",
+      "title": "青铜礼器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 337,
+          "filename": "DSC_2986.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 338,
+          "filename": "DSC_2987.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 339,
+          "filename": "DSC_2988.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 340,
+          "filename": "DSC_2989.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 341,
+          "filename": "DSC_2990.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 341,
+      "label_text": "垂鳞纹鼎 | 晋侯算 | Bronze ritual tripod cauldron(ding) | Bronzeritual foodvessel (guil with | withreclinatefishscaledecoration | inscriptionofJin Hou' | 西周晚期 | 铜2009年韩城梁带村遗址M300",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-089",
+      "number": 89,
+      "sequence_start": 342,
+      "sequence_end": 344,
+      "category": "音乐与礼制",
+      "title": "编钟与乐器陈列（待核）",
+      "status": "待核",
+      "tags": [
+        "音乐史",
+        "礼制"
+      ],
+      "photos": [
+        {
+          "sequence": 342,
+          "filename": "DSC_2991.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 343,
+          "filename": "DSC_2993.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 344,
+          "filename": "DSC_2994.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 344,
+      "label_text": "编钟 | Set of bronzebells[bianzhong] | 春秋（公元前770-前476年） | 2018年澄城刘家注遗址东1区M1",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-090",
+      "number": 90,
+      "sequence_start": 345,
+      "sequence_end": 349,
+      "category": "青铜礼器",
+      "title": "青铜器（第三组，待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 345,
+          "filename": "DSC_2995.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 346,
+          "filename": "DSC_2996.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 347,
+          "filename": "DSC_2997.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 348,
+          "filename": "DSC_2998.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 349,
+          "filename": "DSC_2999.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 349,
+      "label_text": "芮公鼎 | Bronze ritual tripod cauldron (ding) | with inscription of ‘Rui Gong | 春秋（公元前770－前476年） | 铜 | 2017年澄城刘家洼遗址东1区M3",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-091",
+      "number": 91,
+      "sequence_start": 350,
+      "sequence_end": 354,
+      "category": "青铜礼器",
+      "title": "青铜器与展签（第二组，待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 350,
+          "filename": "DSC_3000.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 351,
+          "filename": "DSC_3001.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 352,
+          "filename": "DSC_3002.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 353,
+          "filename": "DSC_3003.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 354,
+          "filename": "DSC_3004.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 354,
+      "label_text": "变形兽纹小罐 | Miniaturebronzejarwithstylized | animaldecoration | 春秋（公元前770一前476年） | 2009年韩城梁带村遗址M300",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-092",
+      "number": 92,
+      "sequence_start": 355,
+      "sequence_end": 359,
+      "category": "铭刻与文字",
+      "title": "石器与铭刻材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 355,
+          "filename": "DSC_3005.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 356,
+          "filename": "DSC_3006.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 357,
+          "filename": "DSC_3007.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 358,
+          "filename": "DSC_3008.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 359,
+          "filename": "DSC_3009.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 359,
+      "label_text": "铭文石馨 | 春秋中期",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-093",
+      "number": 93,
+      "sequence_start": 360,
+      "sequence_end": 363,
+      "category": "青铜礼器",
+      "title": "考古说明与青铜器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 360,
+          "filename": "DSC_3010.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 361,
+          "filename": "DSC_3011.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 362,
+          "filename": "DSC_3012.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 363,
+          "filename": "DSC_3013.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 363,
+      "label_text": "“時”字陶文的首次发现 | FIRST DISCOVERY OF THE'ZHI'CHARACTERINSCRIBED ON POTTERY | 长期以来，对“時”文化遗存的了解和认识均来自文献的记载，而 | 缺乏可靠的实物证据。血池遗址“時”字陶文的发现进一步明确了血池遗 | 址“時”文化遗存属性，各类遗迹、遗物更为历史时期考古学证史、补史 | 提供了重要的实物资料。 | “上時”文字拓片",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-094",
+      "number": 94,
+      "sequence_start": 364,
+      "sequence_end": 368,
+      "category": "铭刻与文字",
+      "title": "铭刻与石刻材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 364,
+          "filename": "DSC_3014.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 365,
+          "filename": "DSC_3015.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 366,
+          "filename": "DSC_3016.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 367,
+          "filename": "DSC_3017.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 368,
+          "filename": "DSC_3018.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 368,
+      "label_text": "刻此诏’故刻左’ | 如后嗣为之者’不称成功盛德 | 称始皇帝’其于久远也° | 皆有刻辞焉’今袭号’ | 法度量， | 元年， | 释文 | 秦二世铜诏版 | 制诏丞相斯、去疾 | ）尽始皇帝为之” | Bronze edict tablet of the second | emperor of the Qin Dynasty | 使毋疑 | （公元前209年） | ）而刻辞不 | 1982年咸阳渭城区长陵车站金属窖藏",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-095",
+      "number": 95,
+      "sequence_start": 369,
+      "sequence_end": 374,
+      "category": "铭刻与文字",
+      "title": "纹饰与石刻细部（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 369,
+          "filename": "DSC_3019.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 370,
+          "filename": "DSC_3020.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 371,
+          "filename": "DSC_3021.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 372,
+          "filename": "DSC_3022.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 373,
+          "filename": "DSC_3023.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 374,
+          "filename": "DSC_3025.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 374,
+      "label_text": "010 | ® | O | 福 | C | G",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-096",
+      "number": 96,
+      "sequence_start": 375,
+      "sequence_end": 380,
+      "category": "青铜礼器",
+      "title": "青铜与石质材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 375,
+          "filename": "DSC_3026.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 376,
+          "filename": "DSC_3027.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 377,
+          "filename": "DSC_3028.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 378,
+          "filename": "DSC_3029.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 379,
+          "filename": "DSC_3030.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 380,
+          "filename": "DSC_3031.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 380,
+      "label_text": "美速址F3",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-097",
+      "number": 97,
+      "sequence_start": 381,
+      "sequence_end": 384,
+      "category": "考古现场材料",
+      "title": "工具与器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 381,
+          "filename": "DSC_3032.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 382,
+          "filename": "DSC_3033.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 383,
+          "filename": "DSC_3034.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 384,
+          "filename": "DSC_3035.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 384,
+      "label_text": "1",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-098",
+      "number": 98,
+      "sequence_start": 385,
+      "sequence_end": 388,
+      "category": "音乐与礼制",
+      "title": "北宫乐府石磬与铭文铜匜",
+      "status": "展签/现场已留线索",
+      "tags": [
+        "音乐史",
+        "石磬",
+        "铭文"
+      ],
+      "photos": [
+        {
+          "sequence": 385,
+          "filename": "DSC_3036.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 386,
+          "filename": "DSC_3037.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 387,
+          "filename": "DSC_3038.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 388,
+          "filename": "DSC_3039.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 388,
+      "label_text": "铭文铜画（yi） | Bronze pouring vessel(yi ) | 今中府° | 十五斤十五两’二斗 | 私官二斗； | ■释文： | with inscription | 11 | 战国晚期 | 2005年西安长安区神禾原秦陵M1 | 安区神禾原秦陵M1",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-099",
+      "number": 99,
+      "sequence_start": 389,
+      "sequence_end": 392,
+      "category": "早期文明与礼器",
+      "title": "金饰、绿松石与琉璃饰件",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 389,
+          "filename": "DSC_3040.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 390,
+          "filename": "DSC_3041.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 391,
+          "filename": "DSC_3042.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 392,
+          "filename": "DSC_3043.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 392,
+      "label_text": "10 | 11 | 构件 | 心形琉璃饰件 | 嵌金泡绿松石饰 | 12 | 金带饰 | oenixornament | Heart-shaped glass ornament | Turquoise ornamentwith | Goldbeltornar | 绿松石、金 | inset gold ball | 战国晚期 | 琉璃 | 安长安区神禾原秦陵M1 | 2006年西安长安区神禾原秦陵外藏坑 K10 | 2006年西安长安区神禾原秦陵外藏坑K8 | 2005年西安长安区",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-100",
+      "number": 100,
+      "sequence_start": 393,
+      "sequence_end": 396,
+      "category": "秦汉与帝陵",
+      "title": "车马器与骨器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 393,
+          "filename": "DSC_3044.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 394,
+          "filename": "DSC_3045.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 395,
+          "filename": "DSC_3046.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 396,
+          "filename": "DSC_3047.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 396,
+      "label_text": "帝国冠长臂猿头骨",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-101",
+      "number": 101,
+      "sequence_start": 397,
+      "sequence_end": 399,
+      "category": "秦汉与帝陵",
+      "title": "石胄与青铜鸿雁",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 397,
+          "filename": "DSC_3048.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 398,
+          "filename": "DSC_3049.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 399,
+          "filename": "DSC_3050.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 399,
+      "label_text": "铜 | Bronze arrov | 秦（公元前 | 1989年秦如 | 青铜鸿雁 | Bronzeswangoose | 秦（公元前221一前206年） | 2002年秦始皇帝陵K0007陪葬坑（青铜水禽坑）",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-102",
+      "number": 102,
+      "sequence_start": 400,
+      "sequence_end": 404,
+      "category": "音乐与礼制",
+      "title": "秦代乐器部件",
+      "status": "展签/现场已留线索",
+      "tags": [
+        "音乐史",
+        "乐器考古"
+      ],
+      "photos": [
+        {
+          "sequence": 400,
+          "filename": "DSC_3051.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 401,
+          "filename": "DSC_3052.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 402,
+          "filename": "DSC_3053.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 403,
+          "filename": "DSC_3054.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 404,
+          "filename": "DSC_3055.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 404,
+      "label_text": "口铜 | 2“寺工”铭铜矛 | Bronze arrowhead | 3错金铜弩机及弩臂睡饰 | “丽山认（si）官”铭陶器盖 | 秦（公元前221-前206年） | piland tllerendcapwithgoldinlay | wg | 1989年秦始皇帝陵陵园 | 1979年秦始皇帝陵兵马佩坑 | 1978年秦始皇陵陵园 | （公元前221一前206年） | 1975年豪始童导转回建筑造址",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-103",
+      "number": 103,
+      "sequence_start": 405,
+      "sequence_end": 408,
+      "category": "秦汉与帝陵",
+      "title": "金属装饰与器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 405,
+          "filename": "DSC_3056.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 406,
+          "filename": "DSC_3057.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 407,
+          "filename": "DSC_3058.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 408,
+          "filename": "DSC_3059.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 408,
+      "label_text": "虎纹踏步 | 水管弯头 | Rectangular brickstep with tiger pattern | Connector bend of drain pipe | 西汉（公元前206一公元8年） | 西汉（公元前206-公元8年） | 2010年千阳尚家岭遗址",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-104",
+      "number": 104,
+      "sequence_start": 409,
+      "sequence_end": 412,
+      "category": "秦汉与帝陵",
+      "title": "鸟兽形器与展签（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 409,
+          "filename": "DSC_3060.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 410,
+          "filename": "DSC_3061.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 411,
+          "filename": "DSC_3062.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 412,
+          "filename": "DSC_3063.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 412,
+      "label_text": "8 | 彩绘陶狼犬 | 彩绘陶母鸡 | Painted pottery figurine of wolf dog | 四彩绘陶公鸡 | Painted pottery figurine of hen | Painted pottery figurine of cock | 西汉（公元前206-公元8年） | 1992年阳陵南区外藏坑 | 1993年阳陵南区外藏坑",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-105",
+      "number": 105,
+      "sequence_start": 413,
+      "sequence_end": 416,
+      "category": "秦汉与帝陵",
+      "title": "彩绘器物与展陈（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 413,
+          "filename": "DSC_3065.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 414,
+          "filename": "DSC_3066.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 415,
+          "filename": "DSC_3067.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 416,
+          "filename": "DSC_3069.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 416,
+      "label_text": "5 | 铜钟 | 铜钱 | Bronzebell (zhong) | Bronze axe [yue) | 西汉（公元前206-公元8年） | 西汉（公元前206一公元8年） | 西 | 铜2009年西安长安区凤栖原张安世家族墓地M8-K4 | [铜2009年西安长安区凤栖原张安世家族墓地M8-K5 | 铜200",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-106",
+      "number": 106,
+      "sequence_start": 417,
+      "sequence_end": 420,
+      "category": "墓葬与图像",
+      "title": "丧葬与玉石饰品（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 417,
+          "filename": "DSC_3070.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 418,
+          "filename": "DSC_3071.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 419,
+          "filename": "DSC_3072.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 420,
+          "filename": "DSC_3073.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 420,
+      "label_text": "19 | 铜鞘刀 | 木鞘刀 | 煤精石卧羊 | 21金耳勺 | 斐(die xie)铜带 | 18 | 20 | Knifewithbronzesheath | Knifewithwoodsheath | Jetstatuette of a crouching ram | Gold ear spool | iththirteen | 金言 | -581年) | 北周 (公元557－581 年) | 铜、木 | 北周（公元557－581年） | 北周（公元557—581年） | 北周（公元55 | 煤精 | 区陈马村孝陵 | 1994年咸阳渭城区陈马村孝陵 | 1994年咸阳渭城",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-107",
+      "number": 107,
+      "sequence_start": 421,
+      "sequence_end": 424,
+      "category": "铭刻与文字",
+      "title": "铭刻与石刻（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 421,
+          "filename": "DSC_3074.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 422,
+          "filename": "DSC_3075.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 423,
+          "filename": "DSC_3076.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 424,
+          "filename": "DSC_3077.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 424,
+      "label_text": "Y",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-108",
+      "number": 108,
+      "sequence_start": 425,
+      "sequence_end": 428,
+      "category": "早期文明与礼器",
+      "title": "祭祀与动物形器（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 425,
+          "filename": "DSC_3078.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 426,
+          "filename": "DSC_3079.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 427,
+          "filename": "DSC_3081.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 428,
+          "filename": "DSC_3082.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 428,
+      "label_text": "酒神图 | Potteryca | imageryo | 隋（公元 | 2019年月 | 北周乙莞 | 隋酒神图驮囊陶骆驼 | 153 | POTTERYCAMELWITHDIONYSIANIMAGERYONITSSADDLEBAGS,SUIDYNASTY | 骆驼两侧驮囊上各模印一组人物，形象相同。主体为一主二从的三人 | 形象，居中男性呈醉酒状。关于醉酒者身份，有希腊神话中的酒神狄奥尼索 | 斯、大力士赫拉克勒斯、酒神随从西勒诺斯或萨提尔以及古印度的财神俱毗 | 罗数种可能。陶骆驼应由隋大兴城内的明器作坊生产，但驮囊上模印图像则 | 可能与粟特工匠相关，反映了东西方文化的交流与融合。 | 驮囊图案",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-109",
+      "number": 109,
+      "sequence_start": 429,
+      "sequence_end": 432,
+      "category": "早期文明与礼器",
+      "title": "金属器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 429,
+          "filename": "DSC_3083.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 430,
+          "filename": "DSC_3084.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 431,
+          "filename": "DSC_3085.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 432,
+          "filename": "DSC_3086.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 432,
+      "label_text": "8",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-110",
+      "number": 110,
+      "sequence_start": 433,
+      "sequence_end": 435,
+      "category": "隋唐器物",
+      "title": "透影白瓷杯与考古项目展板",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 433,
+          "filename": "DSC_3087.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 434,
+          "filename": "DSC_3090.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 435,
+          "filename": "DSC_3091.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 435,
+      "label_text": "昭陵北司马门遗址：2003年度全国十大考古新 | 桥陵遗址：2007-2008年度田野考古奖-等奖 | 渭",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-111",
+      "number": 111,
+      "sequence_start": 436,
+      "sequence_end": 441,
+      "category": "隋唐器物",
+      "title": "唐代建筑构件：鸱吻、兽面脊头瓦与鸱尾",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 436,
+          "filename": "DSC_3092.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 437,
+          "filename": "DSC_3093.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 438,
+          "filename": "DSC_3094.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 439,
+          "filename": "DSC_3095.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 440,
+          "filename": "DSC_3096.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 441,
+          "filename": "DSC_3097.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 441,
+      "label_text": "尾 | Chiwei (roof ridge end ornament) | 唐（公元618-907年） | 2008年蒲城唐桥陵南门西阀",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-112",
+      "number": 112,
+      "sequence_start": 442,
+      "sequence_end": 446,
+      "category": "隋唐器物",
+      "title": "唐代墓葬器物与展签：琉璃佩、谥册、印玺、铜镜",
+      "status": "展签/现场已留线索",
+      "tags": [
+        "唐代器物",
+        "琉璃器",
+        "墓葬文书",
+        "印玺",
+        "铜镜"
+      ],
+      "photos": [
+        {
+          "sequence": 442,
+          "filename": "DSC_3098.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 443,
+          "filename": "DSC_3099.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 444,
+          "filename": "DSC_3100.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 445,
+          "filename": "DSC_3101.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 446,
+          "filename": "DSC_3102.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 446,
+      "label_text": "发掘单位：陕西省考古研究所 | 1 | 大隋丰宁公 | 餘贤王汤绿 | 香姬沐车 | 弘聲先瑶 | 盛超加池 | 早东惠接 | 露子質潤 | 摧内鏡王 | 华正圆树 | 童家柔開 | 首室情花 | 仁傍问焙 | 双鸾双鸟葵花镜 | Flower-shapedmirror withdecorationof | twoluanphoenixesandtwobirds | 月恭史灼 | 唐（618-907年） | 1990年西安长安区韦曲镇隔丰宁公主 | 松娣六禮 | 杨静徽暨唐韦国照合牌基 | 闫如珈李 | 引天既浆 | 凉孫价芳 | “大业六年三月十五日",
+      "evidence_boundary": "照片按相机顺序与现场展签归组；本组名称来自现场展签，不使用外部文物目录的分类或等级。"
+    },
+    {
+      "id": "photo-group-113",
+      "number": 113,
+      "sequence_start": 447,
+      "sequence_end": 450,
+      "category": "隋唐器物",
+      "title": "隋唐墓葬器物：绿釉蟠龙博山炉与白釉长颈瓶",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 447,
+          "filename": "DSC_3103.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 448,
+          "filename": "DSC_3104.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 449,
+          "filename": "DSC_3105.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 450,
+          "filename": "DSC_3106.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 450,
+      "label_text": "白釉长颈瓶 | White-glazedbottlewith longneck | 隋大业六年（610） | 1990年西安长安区韦曲镇隋丰宁公主 | 杨静徽暨唐韦圆照合葬墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-114",
+      "number": 114,
+      "sequence_start": 451,
+      "sequence_end": 455,
+      "category": "铭刻与文字",
+      "title": "墓志与文字材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 451,
+          "filename": "DSC_3107.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 452,
+          "filename": "DSC_3108.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 453,
+          "filename": "DSC_3109.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 454,
+          "filename": "DSC_3110.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 455,
+          "filename": "DSC_3111.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 455,
+      "label_text": "罗婉顺墓志并盖 | Epitaph and the cover of Luo Wanshun | 唐天宝六年（747） | 2020年咸阳渭城区龚东村唐元大谦、罗婉顺夫妇墓",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-115",
+      "number": 115,
+      "sequence_start": 456,
+      "sequence_end": 462,
+      "category": "墓葬与图像",
+      "title": "唐昭容上官氏墓志相关材料",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 456,
+          "filename": "DSC_3112.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 457,
+          "filename": "DSC_3113.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 458,
+          "filename": "DSC_3114.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 459,
+          "filename": "DSC_3117.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 460,
+          "filename": "DSC_3118.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 461,
+          "filename": "DSC_3119.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 462,
+          "filename": "DSC_3121.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 6,
+      "label_photo_sequence": 462,
+      "label_text": "上官婉儿墓志铭 | 铭 | 序 | 五八新阁 | 於覆为光請先姿苦季書門公庭泉够秦子投教曾高不夫大 | 湘開方 | 都自命倾她市肆帝无绍十婕 | 倚数以父業谋成州洗城祖情可道唐 | 随二禮冒 | 好惜位自储，天三好 | 郎奇吐庭富利都马出公弘民储之故 | 百十葬銘 | 安再其而存愛明為 | 天運纳芝不南纲督中心吐随 | 之之妙姨 | 骨回赠锋 | 三市退宝命事游 | 水百鸡左期堂操上書一萬後於者婷 | 源 | 而日官亡 | 宗方用 | 潜神人天 | 都解先千侈以拉柱舍播绪王 | 子个上 | 山道 | 梁定太身 | 帝社許路 | 為龍资 | 開印事牛贵石彈国人平委府 | 乌储坤富 | 倾系 | 於平务 | 道皇暨制掩欲元通暨 | 国塞资周不技於楚秘江江記 | 楚之得氏 | 珠冠！ | 其雍公舍 | 於太 | 坚未假以年借明 | 公裳唯王易水精国書之南室 | 上禁之墓 | 沉宽 | 韵州主辛 | 勘子 | 贞之赋册於神 | 食近舌府交而物公少教授象 | 官人而 | 圆交 | 虞冲宫广許略臣為能助 | 飞舜落局生高一食监秘通軍 | 大矣远铭 | 折契 | 限传際 | 跆规車求次容为的她詩 | 三 | 落人有视令邑銀祖襄 | 天时元 | 玉公 | 客晏入之费堂容應書 | 千 | 万物今以典三青儀大州 | 国光宝 | 碎侯 | 茂春 | 居聖驾請事胎以卒無 | 户金寻本名梅籍千光夫趣 | 生前 | 速相 | 道络秋 | 危上土之落不容逾苑 | 訪關之源和困户禄皇學管 | 得鲍之 | 城缝 | 卿五四 | 以智宇医题行泣氏司 | 以之士 | 美宝波大朝借府 | 姓後精 | 甫爱 | 洪百十 | 安代御而计血侮星据 | 荒前方流天而错大晋五属 | 心千者 | 四七 | 爱哀救出無極弄火拾 | 陈遠振冠書福综海行府車华 | 相戴造 | 松贤 | 原遣 | 险阮政縣幸西圆 | 得 | 無國宽满步極理中泰文州其化 | 摄明 | 禮使 | 而先出絲名出扣權 | 其 | 復石风 | 於宫於崖书軍长 | 女一取 | 静是 | 也吊皇 | 泰天後之上心摇先菁 | 藤門昂 | 华察煙岸侍東三史 | 鸡她之 | 聪光 | 且不宫命動之竭動皇華 | 城之昂宸屋商霞山御阁奕金滨好西 | 墙锋 | 陪思展下請诚 | 之外千极收佐藏高同祭曳籍 | 胎姓灸 | 墨盆 | 八盲臨 | 亦屠移之气 | 乳要 | 槐显里有问使中酒银部 | 帝上 | 千宫 | 卦網 | 後害胜請伏降皇迈 | 藏德之侍遗望文木书弘入替 | 皇官用 | 年間 | 清天黎魂饮而 | 梅心楼 | 之流驹奉受相章则网文侍持 | 后龍框 | 紅以聖 | 禁斯焦始鸽理 | 秘进稻马 | 遇全操下馆载尚 | 富面撞 | 微得 | 前大意 | 委應事就而言给臣舊组 | 府同光重麟盛作三學清書 | 贵上陶 | 而唐韩 | 運極連死且言迎布织 | 空以人道至良品士长吐 | 動邦 | 花合 | 韭景悼 | 於 | 外平莫将撑新成 | 餘豪望在龍於弓赠給坂部！ | 庸人合 | 颂符 | 雲爱 | 感表至除欲救其 | 竹幸属膜一及楼跨中事之郎 | 之也贵 | 金元适 | 坤皇欲請镇中募立人錦 | 簡赠楚心於輝縣言中衣中 | 不其消 | 之黄回王霸水会太冠興。 | 丝先息 | 二其 | 石幸 | 更基倾退之草爱疾 | 死因、享年、葬时、 | 仕宦经历 | 世系 | 发篇辞籍贯 | 葬地、帽傅(fengfui) | 墓志文 | EPITAPHINSCRIPTIONS | 墓志文是一种固定格式的文体。由“序”和“铭”两部分组成，“序”是墓志 | 文的主体内容，介绍墓主的籍贯、世系、仕宦经历、死因、享年、葬时葬地、赠等 | 内容。序文之后有“铭”，用韵文赞颂志主的功绩，表达生者对死者的哀悼。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-116",
+      "number": 116,
+      "sequence_start": 463,
+      "sequence_end": 466,
+      "category": "铭刻与文字",
+      "title": "器物与墓志说明（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 463,
+          "filename": "DSC_3122.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 464,
+          "filename": "DSC_3123.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 465,
+          "filename": "DSC_3124.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 466,
+          "filename": "DSC_3125.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 466,
+      "label_text": "竖九层直塔形钮 | 罐身八等分，贴饰浮雕 | 象头、兽面各4个 | 周18瓣仰莲 | 一周贴模制浮雕象头3个 | 束腰形座 | 周13瓣覆莲 | 一周分8格，格内贴模制 | 覆盆形座 | 浮雕象头及兽面相间排列 | 节慰太子墓出土塔式罐",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-117",
+      "number": 117,
+      "sequence_start": 467,
+      "sequence_end": 470,
+      "category": "墓葬与图像",
+      "title": "壁画与文献图像（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 467,
+          "filename": "DSC_3128.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 468,
+          "filename": "DSC_3129.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 469,
+          "filename": "DSC_3130.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 470,
+          "filename": "DSC_3131.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 470,
+      "label_text": "马球图 | MURAL OFPOLO MATCH | 2004年出土于陕西省富 | 平县北吕村唐嗣虢王李邕墓。 | 壁画位于墓葬前甬道西 | 壁，描绘了击打马球的精彩瞬 | 间。骑者视线皆聚焦于下方马 | 球，挥杆击球，动感十足。",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-118",
+      "number": 118,
+      "sequence_start": 471,
+      "sequence_end": 475,
+      "category": "隋唐器物",
+      "title": "器物与展签（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 471,
+          "filename": "DSC_3132.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 472,
+          "filename": "DSC_3133.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 473,
+          "filename": "DSC_3134.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 474,
+          "filename": "DSC_3135.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 475,
+          "filename": "DSC_3136.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 475,
+      "label_text": "2 | 白釉执壶 | 龙形柄石铛(cheng) | 白釉绿彩盘 | 青釉碗 | White-glazed ewer | 4 | 5 | 银 | Tripodteaboilingvesselwith | White-glazedplatewith green | dragon-shapedhandle | Green-glazed bowl | mottles | Silv | 唐贞元十四年 (798) | 瓷2020年西安雁塔区月登阁村唐杜华墓 | 唐贞元十四年(798) | 2020年西安雁塔区月登阁村唐杜华墓 | 唐 | 瓷 | 银2020",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-119",
+      "number": 119,
+      "sequence_start": 476,
+      "sequence_end": 480,
+      "category": "铭刻与文字",
+      "title": "器物与铭刻展陈（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 476,
+          "filename": "DSC_3137.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 477,
+          "filename": "DSC_3138.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 478,
+          "filename": "DSC_3139.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 479,
+          "filename": "DSC_3140.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 480,
+          "filename": "DSC_3141.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 480,
+      "label_text": "铭文石馨 | Stone chime(qing) with inscription | 北宋崇宁元年 | (1102) | 2008年蓝田吕氏家族墓园M26",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-120",
+      "number": 120,
+      "sequence_start": 481,
+      "sequence_end": 484,
+      "category": "金银器与饰品",
+      "title": "元代金饰与仙人龟鹤齐寿带柄镜",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 481,
+          "filename": "DSC_3142.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 482,
+          "filename": "DSC_3143.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 483,
+          "filename": "DSC_3144.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 484,
+          "filename": "DSC_3145.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 4032,
+          "source_height": 6048
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 484,
+      "label_text": "1 | 仙人龟鹤齐寿带柄镜 | 金嵌绿松石“天茄”耳坠 | HandledmlrrorwithImageof longevity: | 金累丝镶绿松石耳坠 | immortals,tortolseandcrane | Gold eardrops Inlald with'tlanqle-shaped | 宾 | turquolse | 元（公元1271-1368年） | 2009年西安长安区夏股村M16 | 2009年西安长安区夏殿村M19 | 2009年西安长安区夏股村M19 | “满池娇”金警 | 虎纹折股金钗 | Gold halrpin with'manchllao'deslgn | 连钱纹折股金钗 | Goldhalrpinwithch/dragonand | tiger decoration and bentend | Gold hairpin withinterlinkedcoi | decoration andbentend",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-121",
+      "number": 121,
+      "sequence_start": 485,
+      "sequence_end": 487,
+      "category": "隋唐器物",
+      "title": "唐代耀州窑器物与窑址标本",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 485,
+          "filename": "DSC_3146.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 486,
+          "filename": "DSC_3147.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 487,
+          "filename": "DSC_3148.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 487,
+      "label_text": "三彩枕 | 褐黄釉犀牛枕 | 三彩行炉 | 中三彩深腹碗 | 2素烧犀牛枕 | 7素烧双鱼瓶标本 | Yellow-brown-glazedpillowin | Tri-color glazed (sancai) | Tri-color glazed(sancai) | Unglazedpillowintheform | Sample:unglazed | Tri-color glazed[sancailpillow | the form of rhinoceros | incense burner | bowlwithdeepbody | of rhinoceros | twin-fish-shapedbottle | 唐（公元618-907年） | 唐 | （公元618-907年） | 铜川黄堡耀州窑遗址 | 1985年铜川黄堡耀州窑遗址 | 1986年铜川黄堡耀州密遗址 | 1984年铜川黄堡耀州窑遗址",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-122",
+      "number": 122,
+      "sequence_start": 488,
+      "sequence_end": 492,
+      "category": "秦汉与帝陵",
+      "title": "秦始皇陵铜水禽",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 488,
+          "filename": "DSC_3149.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 489,
+          "filename": "DSC_3150.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 490,
+          "filename": "DSC_3151.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 491,
+          "filename": "DSC_3152.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 492,
+          "filename": "DSC_3153.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 4,
+      "label_photo_sequence": 492,
+      "label_text": "356彩绘卧姿铜鸿雁 | ①8彩绘立姿铜鸿雁 | Painted bronzeswan goose ina crouching position | Painted bronze swan gooseina standing position | ②0彩绘卧姿铜天鹅 | 彩绘立姿铜天鹅 | Painted bronzeswaninacrouchingposition | Paintedbronze swaninastandingposition | 秦 | 2002年秦始皇帝陵园K0007陪葬坑出士 | 态各异的原 | 等小件器物 | 土二层台上， | 单、数量最多的 | 表面装饰工艺均 | 秦始皇帝陵园K0007陪葬坑平面图",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-123",
+      "number": 123,
+      "sequence_start": 493,
+      "sequence_end": 495,
+      "category": "青铜礼器",
+      "title": "青铜铸造工艺（范铸成型）",
+      "status": "展签/现场已留线索",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 493,
+          "filename": "DSC_3154.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 494,
+          "filename": "DSC_3155.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 495,
+          "filename": "DSC_3156.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 495,
+      "label_text": "工艺是中国青铜时代青 | 铸造方法，因其多范块 | 其原理是将铜液浇注 | 成的铸型中，凝固成 | 多主要有制模、制范 | 寿、铸后加工等。 | 兽面纹铜鼎 | Bronze ritual tripodcauldron[ding)with | animalmaskdesign | 范铸成型 | 西周 | 1998年宝鸡市渭滨区峪泉村M5出土",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-124",
+      "number": 124,
+      "sequence_start": 496,
+      "sequence_end": 498,
+      "category": "铭刻与文字",
+      "title": "文字材料与器物（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 496,
+          "filename": "DSC_3157.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 4032,
+          "source_height": 6048
+        },
+        {
+          "sequence": 497,
+          "filename": "DSC_3158.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 498,
+          "filename": "DSC_3159.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 2,
+      "label_photo_sequence": 498,
+      "label_text": "簡皓生长盛郊長自阿田 | 王西之聚明舒玉洋 | 野芳生栈 | 稻麻陈天之彩为马 | 生路北京烟胀业之是 | 萬有子点作极养 | 16 | 一年昌青之商",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-125",
+      "number": 125,
+      "sequence_start": 499,
+      "sequence_end": 504,
+      "category": "铭刻与文字",
+      "title": "文字与器物展陈（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 499,
+          "filename": "DSC_3160.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 500,
+          "filename": "DSC_3161.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 501,
+          "filename": "DSC_3162.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 502,
+          "filename": "DSC_3163.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 503,
+          "filename": "DSC_3164.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 504,
+          "filename": "DSC_3165.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 504,
+      "label_text": "13 | ①六曲葵花形螺钿铜镜 | 3鎏金银锁 | 陶卧马 | 16陶鸡 | 9蚕形玉握 | Sixfoldlobateblossom-shapedmirrorwith | Silver lock | Ceramichorse,lying | apedhand-heldjadefound | mother-of-pearlinlays | 猪形玉握 | 鸟兽葡萄纹内弧八角形银背铜镜 | 陶卧牛 | 陶卧猪 | Hand-held jadegravegoodshaped | Bronze mirrorwithsilverback | Ceramic cow,lying | Ceramic pig.lying | likeapigletfoundinLiChu'stomb",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-126",
+      "number": 126,
+      "sequence_start": 505,
+      "sequence_end": 508,
+      "category": "铭刻与文字",
+      "title": "文献与石刻材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 505,
+          "filename": "DSC_3166.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 506,
+          "filename": "DSC_3167.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 507,
+          "filename": "DSC_3168.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 508,
+          "filename": "DSC_3169.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 3,
+      "label_photo_sequence": 508,
+      "label_text": "福",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-127",
+      "number": 127,
+      "sequence_start": 509,
+      "sequence_end": 514,
+      "category": "铭刻与文字",
+      "title": "文献与纹饰材料（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 509,
+          "filename": "DSC_3170.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 510,
+          "filename": "DSC_3171.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 511,
+          "filename": "DSC_3172.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 512,
+          "filename": "DSC_3173.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 513,
+          "filename": "DSC_3174.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 514,
+          "filename": "DSC_3175.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 5,
+      "label_photo_sequence": 514,
+      "label_text": "朵云地团集云雁人物金银彩绣罗巾 | Gauze kerchief with gold and silver threads | embroideryof cloud,gooseand figure | 唐 | 1987年宝鸡市扶风县法门寺塔基地宫出主",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    },
+    {
+      "id": "photo-group-128",
+      "number": 128,
+      "sequence_start": 515,
+      "sequence_end": 521,
+      "category": "隋唐器物",
+      "title": "末段器物与展签（待核）",
+      "status": "待核",
+      "tags": [],
+      "photos": [
+        {
+          "sequence": 515,
+          "filename": "DSC_3176.JPG",
+          "role": "正面/主视",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 516,
+          "filename": "DSC_3177.JPG",
+          "role": "侧面",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 517,
+          "filename": "DSC_3179.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 518,
+          "filename": "DSC_3180.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 519,
+          "filename": "DSC_3181.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 520,
+          "filename": "DSC_3182.JPG",
+          "role": "局部/细节",
+          "display": true,
+          "source_width": 6048,
+          "source_height": 4032
+        },
+        {
+          "sequence": 521,
+          "filename": "DSC_3183.JPG",
+          "role": "名称/介绍",
+          "display": false,
+          "source_width": 6048,
+          "source_height": 4032
+        }
+      ],
+      "display_photo_count": 6,
+      "label_photo_sequence": 521,
+      "label_text": "银七子漆盒 | Small lacquer boxeswith silverrim | (asetofseven) | 西汉 | 2009年西安市长安区凤栖原张安世家族墓M1出土",
+      "evidence_boundary": "照片按相机顺序与现场展签线索归组；名称未被展签或资料可靠确认时保留待核标记。"
+    }
+  ],
+  "review": {
+    "uncertain_group_count": 79,
+    "label_text_group_count": 125,
+    "note": "第一版分组索引；后续可按展签核对逐组修订，不需要重新处理原图。"
+  }
+}

@@ -1,0 +1,467 @@
+{
+  "groups": [
+    {
+      "start": 91,
+      "end": 96,
+      "title": "铜篮（簋）与铜鼎",
+      "label_sequences": [
+        91
+      ],
+      "display_sequences": [
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "label_text": "铜篮（簋）；铜鼎；西周（公元前1046年—前771年）；2001年渭南华县东阳墓地M81、M134",
+      "confidence": "low"
+    },
+    {
+      "start": 97,
+      "end": 99,
+      "title": "白釉四系鸡首壶、白釉杯、白釉辟雍砚、白釉贴花盘、白釉碟",
+      "label_sequences": [
+        97,
+        98,
+        99
+      ],
+      "display_sequences": [],
+      "label_text": "白釉四系鸡首壶、白釉杯、白釉辟雍砚、白釉贴花盘、白釉碟；隋大业元年（605）；2006年西安长安区郭杜镇李裕墓",
+      "confidence": "high"
+    },
+    {
+      "start": 100,
+      "end": 102,
+      "title": "组玉佩",
+      "label_sequences": [
+        100,
+        102
+      ],
+      "display_sequences": [
+        101
+      ],
+      "label_text": "组玉佩；唐总章二年（669）；2004年西北大学长安校区刘智夫妇墓",
+      "confidence": "high"
+    },
+    {
+      "start": 103,
+      "end": 107,
+      "title": "八曲葵花形螺钿铜镜",
+      "label_sequences": [
+        103,
+        106
+      ],
+      "display_sequences": [
+        104,
+        105,
+        107
+      ],
+      "label_text": "八曲葵花形螺钿铜镜；唐开元二十四年（736）；铜、漆、贝；2001年西安理工大学曲江校区李墓",
+      "confidence": "high"
+    },
+    {
+      "start": 108,
+      "end": 109,
+      "title": "镇墓俑",
+      "label_sequences": [
+        108
+      ],
+      "display_sequences": [
+        109
+      ],
+      "label_text": "镇墓俑；唐（公元618-907年）；2003年西安长安区郭杜镇唐墓",
+      "confidence": "high"
+    },
+    {
+      "start": 110,
+      "end": 112,
+      "title": "人类牙齿化石、犀牛牙齿、剑齿象牙齿、鹿角",
+      "label_sequences": [
+        110,
+        112
+      ],
+      "display_sequences": [
+        111
+      ],
+      "label_text": "人类牙齿化石（Homo sapiens）、犀牛牙齿、剑齿象牙齿、鹿角；旧石器时代；2018年南郑疥疙洞遗址",
+      "confidence": "medium"
+    },
+    {
+      "start": 113,
+      "end": 114,
+      "title": "细石叶",
+      "label_sequences": [
+        113,
+        114
+      ],
+      "display_sequences": [],
+      "label_text": "细石叶；旧石器时代；2006年宜川龙王迪遗址",
+      "confidence": "high"
+    },
+    {
+      "start": 115,
+      "end": 116,
+      "title": "更新剥片面石片与细石核",
+      "label_sequences": [
+        115,
+        116
+      ],
+      "display_sequences": [],
+      "label_text": "更新剥片面石片、细石核；旧石器时代；2006年宜川龙王迪遗址",
+      "confidence": "medium"
+    },
+    {
+      "start": 117,
+      "end": 119,
+      "title": "雕刻器、尖状器",
+      "label_sequences": [
+        118,
+        119
+      ],
+      "display_sequences": [
+        117
+      ],
+      "label_text": "雕刻器（Burin）、尖状器（Point)；旧石器时代；2006年宜川龙王迪遗址",
+      "confidence": "medium"
+    },
+    {
+      "start": 120,
+      "end": 121,
+      "title": "石片",
+      "label_sequences": [
+        121
+      ],
+      "display_sequences": [
+        120
+      ],
+      "label_text": "石片（Flake）；旧石器时代；宜川龙王迪遗址",
+      "confidence": "medium"
+    },
+    {
+      "start": 122,
+      "end": 126,
+      "title": "金丝猴颅骨（残）、黑熊右上颌骨（残）、印度野牛左角、猪左下颌骨、普氏野马下颌骨（残）、苏门犀右第Ⅲ掌骨（残）",
+      "label_sequences": [
+        122,
+        124,
+        125
+      ],
+      "display_sequences": [
+        123,
+        126
+      ],
+      "label_text": "金丝猴颅骨（残）、黑熊右上颌骨（残）、印度野牛左角、猪左下颌骨、普氏野马下颌骨（残）、苏门犀右第Ⅲ掌骨（残）；前仰韶第二、三期文化遗存；2002年宝鸡关桃园遗址H142、H206等",
+      "confidence": "medium"
+    },
+    {
+      "start": 127,
+      "end": 134,
+      "title": "葫芦口双耳彩陶壶、折腹罐、彩陶钵",
+      "label_sequences": [
+        127,
+        129,
+        131
+      ],
+      "display_sequences": [
+        128,
+        130,
+        132,
+        133,
+        134
+      ],
+      "label_text": "葫芦口双耳彩陶壶、折腹罐、彩陶钵；仰韶时期（距今6800-4800年）；1988年合阳吴家营遗址M1",
+      "confidence": "high"
+    },
+    {
+      "start": 135,
+      "end": 137,
+      "title": "陶鼓",
+      "label_sequences": [
+        135
+      ],
+      "display_sequences": [
+        136,
+        137
+      ],
+      "label_text": "陶鼓；仰韶时期（距今6800-4800年）；1992年千阳丰头遗址H2",
+      "confidence": "high"
+    },
+    {
+      "start": 138,
+      "end": 144,
+      "title": "动物形鼎、陶祖、玉笋",
+      "label_sequences": [
+        138,
+        140,
+        142
+      ],
+      "display_sequences": [
+        139,
+        141,
+        143,
+        144
+      ],
+      "label_text": "动物形鼎；仰韶时期；2009年蓝田新街遗址H149。陶祖；仰韶时期。玉笋；龙山时期；2009-2010年至新（?）遗址",
+      "confidence": "low"
+    },
+    {
+      "start": 145,
+      "end": 146,
+      "title": "彩陶瓮",
+      "label_sequences": [
+        145
+      ],
+      "display_sequences": [
+        146
+      ],
+      "label_text": "彩陶瓮；仰韶时期（距今6800-4800年）；1997年华县泉护村遗址H1073a",
+      "confidence": "high"
+    },
+    {
+      "start": 147,
+      "end": 147,
+      "title": "石臼",
+      "label_sequences": [
+        147
+      ],
+      "display_sequences": [],
+      "label_text": "石臼；龙山时期（距今4800-4000年）；2003年佳县石摞摞山石城H3",
+      "confidence": "low"
+    },
+    {
+      "start": 148,
+      "end": 148,
+      "title": "玉柄形器、玉饰、玉环、玉刀、玉锥形器、玉镇、穿孔坠饰",
+      "label_sequences": [
+        148
+      ],
+      "display_sequences": [],
+      "label_text": "玉柄形器（残）、玉饰（残）、玉环（残）、玉刀、玉锥形器、玉镇、穿孔坠饰；龙山时期（距今4800-4000年）；2019年府谷寨山遗址M2、M4、1999年神木新华遗址M27",
+      "confidence": "low"
+    },
+    {
+      "start": 149,
+      "end": 151,
+      "title": "骨匕、骨针、骨簪（残）、陶拍、穿孔石刀",
+      "label_sequences": [
+        149
+      ],
+      "display_sequences": [
+        150,
+        151
+      ],
+      "label_text": "骨匕、骨针、骨簪（残）、陶拍、穿孔石刀；龙山时期（距今4800-4000年）",
+      "confidence": "high"
+    },
+    {
+      "start": 152,
+      "end": 159,
+      "title": "李家铸铜作坊展板（周原出土青铜器与铸铜遗存）",
+      "label_sequences": [
+        152,
+        153,
+        157
+      ],
+      "display_sequences": [
+        154,
+        155,
+        156,
+        158,
+        159
+      ],
+      "label_text": "周原出土有数量众多的精美青铜器，李家铸铜作坊发现铸铜原料铜饼、陶范等；含铜觯、铜卣、铜盉、铜尊、戉方鼎等；西周（公元前1046-前771年）；2002年扶风齐家墓地M4",
+      "confidence": "low"
+    },
+    {
+      "start": 160,
+      "end": 163,
+      "title": "金箔、玉片、玉管、骨镞、绿松石、骨铲、海贝、牙器",
+      "label_sequences": [
+        160,
+        162
+      ],
+      "display_sequences": [
+        161,
+        163
+      ],
+      "label_text": "金箔、玉片、玉管、骨镞、绿松石、骨铲、海贝、牙器；西周（公元前1046-前771年）；2014年岐山贺家村北凤雏建筑群H103、H107、H5、H131、H17等",
+      "confidence": "high"
+    },
+    {
+      "start": 164,
+      "end": 166,
+      "title": "盖弓银饰（残）",
+      "label_sequences": [
+        165
+      ],
+      "display_sequences": [
+        164,
+        166
+      ],
+      "label_text": "盖弓银饰（残）；西周（公元前1046-前771年）",
+      "confidence": "low"
+    },
+    {
+      "start": 167,
+      "end": 172,
+      "title": "玉伏兽、玉龙、玉蝉、玉柄形器、玉鸟、玉鱼、铜环、铜马镳、铜鱼等",
+      "label_sequences": [
+        167,
+        169
+      ],
+      "display_sequences": [
+        168,
+        170,
+        171,
+        172
+      ],
+      "label_text": "玉伏兽、玉龙、玉蝉、玉柄形器、玉鸟、玉鱼、铜环、铜马镳、铜鱼等；西周（公元前1046-前771年）；2012年扶风姚家墓地M16、M17、M18、M23、M30、M34",
+      "confidence": "medium"
+    },
+    {
+      "start": 173,
+      "end": 174,
+      "title": "贺家铜轮牙马车（展板）",
+      "label_sequences": [
+        173
+      ],
+      "display_sequences": [
+        174
+      ],
+      "label_text": "贺家铜轮牙马车（CHARIOT WITH BRONZE FELLOES AT HEJIA）；2014年岐山贺家村西周车马坑；室内实验室考古与文物保护",
+      "confidence": "high"
+    },
+    {
+      "start": 175,
+      "end": 176,
+      "title": "铜翣",
+      "label_sequences": [
+        175
+      ],
+      "display_sequences": [
+        176
+      ],
+      "label_text": "铜翣（Bronze sheet ornament, sha）；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "medium"
+    },
+    {
+      "start": 177,
+      "end": 177,
+      "title": "嵌绿松石青铜马络饰",
+      "label_sequences": [
+        177
+      ],
+      "display_sequences": [],
+      "label_text": "嵌绿松石青铜马络饰；绿松石、铜；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "high"
+    },
+    {
+      "start": 178,
+      "end": 181,
+      "title": "嵌绿松石青铜马面、嵌绿松石青铜马镳、马衔、嵌绿松石青铜游环、嵌绿松石青铜方形扁平饰、绿松石青铜泡",
+      "label_sequences": [
+        178,
+        179,
+        180
+      ],
+      "display_sequences": [
+        181
+      ],
+      "label_text": "嵌绿松石青铜马面、嵌绿松石青铜马镳、马衔、嵌绿松石青铜游环、嵌绿松石青铜方形扁平饰、绿松石青铜泡；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "high"
+    },
+    {
+      "start": 182,
+      "end": 182,
+      "title": "嵌绿松石青铜（衔）饰",
+      "label_sequences": [
+        182
+      ],
+      "display_sequences": [],
+      "label_text": "嵌绿松石青铜（衔）饰（Bronze horse harness ornament, xian）；绿松石、铜；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "medium"
+    },
+    {
+      "start": 183,
+      "end": 183,
+      "title": "玉器组合（车舆四维）与青铜兽面（车舆后栏）",
+      "label_sequences": [
+        183
+      ],
+      "display_sequences": [],
+      "label_text": "玉器组合（车舆四维）、青铜兽面（车舆后栏）；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "medium"
+    },
+    {
+      "start": 184,
+      "end": 184,
+      "title": "绿松石片与绿松石蝉",
+      "label_sequences": [
+        184
+      ],
+      "display_sequences": [],
+      "label_text": "绿松石片、绿松石蝉；绿松石；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "high"
+    },
+    {
+      "start": 185,
+      "end": 185,
+      "title": "青铜龙（车轼立柱下）",
+      "label_sequences": [
+        185
+      ],
+      "display_sequences": [],
+      "label_text": "青铜龙（车轼立柱下）；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "medium"
+    },
+    {
+      "start": 186,
+      "end": 186,
+      "title": "嵌绿松石青铜辖及辖、嵌绿松石青铜辕首饰、青铜（爵）饰",
+      "label_sequences": [
+        186
+      ],
+      "display_sequences": [],
+      "label_text": "嵌绿松石青铜辖（wei）及辖（xia）、嵌绿松石青铜辕首饰、青铜（爵）饰；绿松石、铜；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "low"
+    },
+    {
+      "start": 187,
+      "end": 187,
+      "title": "青铜镞",
+      "label_sequences": [
+        187
+      ],
+      "display_sequences": [],
+      "label_text": "青铜镞（Bronze arrowhead）；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "high"
+    },
+    {
+      "start": 188,
+      "end": 189,
+      "title": "嵌绿松石青铜衡末饰、嵌绿松石青铜銮铃、嵌绿松石青铜辖饰",
+      "label_sequences": [
+        188,
+        189
+      ],
+      "display_sequences": [],
+      "label_text": "嵌绿松石青铜衡末饰、嵌绿松石青铜銮铃、嵌绿松石青铜辖饰；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "low"
+    },
+    {
+      "start": 190,
+      "end": 192,
+      "title": "青铜铃",
+      "label_sequences": [
+        191
+      ],
+      "display_sequences": [
+        190,
+        192
+      ],
+      "label_text": "青铜铃；西周；2014年周原遗址贺家车马坑K1",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "groups": [
+    {
+      "start": 289,
+      "end": 293,
+      "title": "鳄鱼骨板、蚌刀",
+      "label_sequences": [
+        289
+      ],
+      "display_sequences": [
+        290,
+        291,
+        292,
+        293
+      ],
+      "label_text": "鳄鱼骨板、蚌刀；西周（公元前1046—前771年）；2016年西安长安区斗门街道花园村H242、H241",
+      "confidence": "high"
+    },
+    {
+      "start": 294,
+      "end": 297,
+      "title": "四耳簋",
+      "label_sequences": [
+        294
+      ],
+      "display_sequences": [
+        295,
+        296,
+        297
+      ],
+      "label_text": "四耳簋；商代晚期至西周早期；2013年宝鸡石鼓山商周墓地M4；石鼓山考古队收藏",
+      "confidence": "high"
+    },
+    {
+      "start": 298,
+      "end": 298,
+      "title": "牺尊",
+      "label_sequences": [
+        298
+      ],
+      "display_sequences": [],
+      "label_text": "牺尊；商代晚期至西周早期；2013年宝鸡石鼓山商周墓地M4；石鼓山考古队收藏",
+      "confidence": "high"
+    },
+    {
+      "start": 299,
+      "end": 304,
+      "title": "附耳龙纹鼎",
+      "label_sequences": [
+        299,
+        302
+      ],
+      "display_sequences": [
+        300,
+        301,
+        303,
+        304
+      ],
+      "label_text": "附耳龙纹鼎；商代晚期至西周早期；2013年宝鸡石鼓山商周墓地M4；石鼓山考古队收藏",
+      "confidence": "high"
+    },
+    {
+      "start": 305,
+      "end": 307,
+      "title": "青铜簠",
+      "label_sequences": [
+        305
+      ],
+      "display_sequences": [
+        306,
+        307
+      ],
+      "label_text": "青铜簠（fu）；商代晚期至西周早期；2013年宝鸡石鼓山商周墓地M4；石鼓山考古队收藏",
+      "confidence": "medium"
+    },
+    {
+      "start": 308,
+      "end": 308,
+      "title": "木俑",
+      "label_sequences": [
+        308
+      ],
+      "display_sequences": [],
+      "label_text": "木俑；西周晚期；木；2007年韩城梁带村遗址M502",
+      "confidence": "high"
+    },
+    {
+      "start": 309,
+      "end": 309,
+      "title": "七璜联珠组玉佩",
+      "label_sequences": [
+        309
+      ],
+      "display_sequences": [],
+      "label_text": "七璜联珠组玉佩，含左右手玉腕饰、玉臂饰；春秋早期；2006年韩城梁带村遗址M29",
+      "confidence": "medium"
+    },
+    {
+      "start": 310,
+      "end": 310,
+      "title": "玉管项饰、玉牌项饰及玉饰件",
+      "label_sequences": [
+        310
+      ],
+      "display_sequences": [],
+      "label_text": "玉管项饰、玉牌项饰、左右手腕饰、臂饰、玉握饰；春秋早期；2006年韩城梁带村遗址M29等",
+      "confidence": "medium"
+    },
+    {
+      "start": 311,
+      "end": 311,
+      "title": "玉贝、人形玉佩、玉鱼等玉饰件",
+      "label_sequences": [
+        311
+      ],
+      "display_sequences": [],
+      "label_text": "玉贝、人形玉佩、玉玦、玉鱼、玉鸟、玉牛、玉兽面、玉璧、左右踝饰玉等；西周晚期至春秋早期；2006年韩城梁带村遗址M26、M19等",
+      "confidence": "medium"
+    },
+    {
+      "start": 312,
+      "end": 312,
+      "title": "组玉佩饰",
+      "label_sequences": [
+        312
+      ],
+      "display_sequences": [],
+      "label_text": "组玉佩饰；梁带村M19和M26为M27芮国国君两位夫人墓，出土项饰、腕饰、耳饰、手握等大量玉器，七璜连珠组佩由7件玉璜和728颗红玛瑙珠串联而成，达国君配置级别",
+      "confidence": "high"
+    },
+    {
+      "start": 313,
+      "end": 317,
+      "title": "窃曲纹簋",
+      "label_sequences": [
+        313,
+        314,
+        317
+      ],
+      "display_sequences": [
+        315,
+        316
+      ],
+      "label_text": "窃曲纹簋；春秋早期；2006年韩城梁带村遗址M19",
+      "confidence": "high"
+    },
+    {
+      "start": 318,
+      "end": 320,
+      "title": "仲姜甗",
+      "label_sequences": [
+        318,
+        320
+      ],
+      "display_sequences": [
+        319
+      ],
+      "label_text": "仲姜甗（yan）；春秋早期；2006年韩城梁带村遗址M26",
+      "confidence": "medium"
+    },
+    {
+      "start": 321,
+      "end": 324,
+      "title": "龙纹盉",
+      "label_sequences": [
+        321,
+        322,
+        323
+      ],
+      "display_sequences": [
+        324
+      ],
+      "label_text": "龙纹盉（he）；春秋早期；2006年韩城梁带村遗址M26",
+      "confidence": "high"
+    },
+    {
+      "start": 325,
+      "end": 325,
+      "title": "仲姜壶",
+      "label_sequences": [
+        325
+      ],
+      "display_sequences": [],
+      "label_text": "仲姜壶；春秋早期；2006年韩城梁带村遗址M26",
+      "confidence": "high"
+    },
+    {
+      "start": 326,
+      "end": 327,
+      "title": "M27随葬器物",
+      "label_sequences": [
+        326,
+        327
+      ],
+      "display_sequences": [],
+      "label_text": "M27随葬器物：兽面金龙、方形金环、圆形金泡、金丝圈、素面双龙金环、镂空双龙金环、三角形金饰、金牛首衔环、镂空螭纹金饰、玉韘、金韘、铁戈等；春秋早期；2006年韩城梁带村遗址M27",
+      "confidence": "high"
+    },
+    {
+      "start": 328,
+      "end": 332,
+      "title": "梯形牌组玉佩",
+      "label_sequences": [
+        328,
+        329,
+        330
+      ],
+      "display_sequences": [
+        331,
+        332
+      ],
+      "label_text": "梯形牌组玉佩；西周晚期；2009年韩城梁带村遗址M300",
+      "confidence": "high"
+    },
+    {
+      "start": 333,
+      "end": 340,
+      "title": "晋妀盘、晋妀匜",
+      "label_sequences": [
+        333,
+        336
+      ],
+      "display_sequences": [
+        334,
+        335,
+        337,
+        338,
+        339,
+        340
+      ],
+      "label_text": "晋妀盘、晋妀匜（yi）；西周晚期；2009年韩城梁带村遗址M300",
+      "confidence": "high"
+    },
+    {
+      "start": 341,
+      "end": 343,
+      "title": "垂鳞纹鼎、晋侯簋",
+      "label_sequences": [
+        341
+      ],
+      "display_sequences": [
+        342,
+        343
+      ],
+      "label_text": "垂鳞纹鼎、晋侯簋；西周晚期；2009年韩城梁带村遗址M300",
+      "confidence": "medium"
+    },
+    {
+      "start": 344,
+      "end": 345,
+      "title": "编钟",
+      "label_sequences": [
+        344
+      ],
+      "display_sequences": [
+        345
+      ],
+      "label_text": "编钟；春秋（公元前770—前476年）；2018年澄城刘家洼遗址东1区M1",
+      "confidence": "high"
+    },
+    {
+      "start": 346,
+      "end": 348,
+      "title": "编磬",
+      "label_sequences": [
+        346
+      ],
+      "display_sequences": [
+        347,
+        348
+      ],
+      "label_text": "编磬；春秋（公元前770—前476年）；石；2018年澄城刘家洼遗址东1区M1",
+      "confidence": "high"
+    },
+    {
+      "start": 349,
+      "end": 350,
+      "title": "芮公鼎",
+      "label_sequences": [
+        349
+      ],
+      "display_sequences": [
+        350
+      ],
+      "label_text": "芮公鼎；春秋（公元前770—前476年）；铜；2017年澄城刘家洼遗址东1区M3",
+      "confidence": "high"
+    },
+    {
+      "start": 351,
+      "end": 353,
+      "title": "龙纹小罍、窃曲纹罐",
+      "label_sequences": [
+        351
+      ],
+      "display_sequences": [
+        352,
+        353
+      ],
+      "label_text": "龙纹小罍（lei）、窃曲纹罐；春秋（公元前770—前476年）；龙纹小罍2009年韩城梁带村遗址M300，窃曲纹罐2006年韩城梁带村遗址M27",
+      "confidence": "high"
+    },
+    {
+      "start": 354,
+      "end": 355,
+      "title": "变形兽纹小罐",
+      "label_sequences": [
+        354
+      ],
+      "display_sequences": [
+        355
+      ],
+      "label_text": "变形兽纹小罐；春秋（公元前770—前476年）；2009年韩城梁带村遗址M300",
+      "confidence": "high"
+    },
+    {
+      "start": 356,
+      "end": 357,
+      "title": "象牙削盒",
+      "label_sequences": [
+        356
+      ],
+      "display_sequences": [
+        357
+      ],
+      "label_text": "象牙削盒；春秋（公元前770—前476年）；2006年韩城梁带村遗址M19",
+      "confidence": "high"
+    },
+    {
+      "start": 358,
+      "end": 360,
+      "title": "铭文石磬",
+      "label_sequences": [
+        358
+      ],
+      "display_sequences": [
+        359,
+        360
+      ],
+      "label_text": "铭文石磬；春秋中期",
+      "confidence": "medium"
+    },
+    {
+      "start": 361,
+      "end": 361,
+      "title": "铭文石磬",
+      "label_sequences": [
+        361
+      ],
+      "display_sequences": [],
+      "label_text": "铭文石磬；春秋中期；石；1977—1986年宝鸡凤翔区秦公一号大墓",
+      "confidence": "high"
+    },
+    {
+      "start": 362,
+      "end": 362,
+      "title": "“上畤”刻文陶片",
+      "label_sequences": [
+        362
+      ],
+      "display_sequences": [],
+      "label_text": "“畤”字陶文陶片；战国至西汉；2016年宝鸡凤翔区雍山血池秦汉祭祀遗址",
+      "confidence": "medium"
+    },
+    {
+      "start": 363,
+      "end": 365,
+      "title": "“畤”字陶文的首次发现（展板）",
+      "label_sequences": [
+        363,
+        364,
+        365
+      ],
+      "display_sequences": [],
+      "label_text": "“畤”字陶文的首次发现；血池遗址“畤”字陶文明确血池遗址“畤”文化遗存属性；“上畤”刻文陶片，战国至西汉，2016年宝鸡凤翔区雍山血池秦汉祭祀遗址",
+      "confidence": "high"
+    },
+    {
+      "start": 366,
+      "end": 366,
+      "title": "秦始皇铜诏版（残）",
+      "label_sequences": [
+        366
+      ],
+      "display_sequences": [],
+      "label_text": "秦始皇铜诏版（残）；秦（公元前221年）；1962年咸阳渭城区长陵车站金属窖藏",
+      "confidence": "high"
+    },
+    {
+      "start": 367,
+      "end": 368,
+      "title": "秦二世铜诏版",
+      "label_sequences": [
+        367,
+        368
+      ],
+      "display_sequences": [],
+      "label_text": "秦二世铜诏版（残）；秦（公元前209年）；1982年咸阳渭城区长陵车站金属窖藏",
+      "confidence": "high"
+    },
+    {
+      "start": 369,
+      "end": 371,
+      "title": "夔龙纹大瓦当",
+      "label_sequences": [
+        369,
+        371
+      ],
+      "display_sequences": [
+        370
+      ],
+      "label_text": "夔（kui）龙纹大瓦当；秦（公元前221—前206年）；1993年兴平侯村黄山宫遗址",
+      "confidence": "high"
+    },
+    {
+      "start": 372,
+      "end": 376,
+      "title": "龙纹空心砖",
+      "label_sequences": [
+        376
+      ],
+      "display_sequences": [
+        372,
+        373,
+        374,
+        375
+      ],
+      "label_text": "龙纹空心砖；秦（公元前221—前206年）；1980年咸阳渭城区牛羊村秦咸阳城宫殿遗址",
+      "confidence": "high"
+    },
+    {
+      "start": 377,
+      "end": 380,
+      "title": "“北宫乐府”石磬",
+      "label_sequences": [
+        377,
+        378,
+        379
+      ],
+      "display_sequences": [
+        380
+      ],
+      "label_text": "“北宫乐府”石磬；秦（公元前221—前206年）；2018年咸阳渭城区胡家沟府库建筑遗址F3；出土时存约600余公斤碎块，表面有火烧和砸击痕迹，侧面有“北宫乐府”、数字编号、音律等文字，是秦代设立乐府机构及北宫的实物证据",
+      "confidence": "high"
+    },
+    {
+      "start": 381,
+      "end": 382,
+      "title": "石磬残块",
+      "label_sequences": [
+        381
+      ],
+      "display_sequences": [
+        382
+      ],
+      "label_text": "石磬残块；秦（公元前221—前206年）；2018年咸阳渭城区胡家沟府库建筑遗址F3",
+      "confidence": "high"
+    },
+    {
+      "start": 383,
+      "end": 384,
+      "title": "神禾原秦陵园平面图",
+      "label_sequences": [
+        383
+      ],
+      "display_sequences": [
+        384
+      ],
+      "label_text": "神禾原秦陵园平面图；神禾原秦陵发掘",
+      "confidence": "high"
+    }
+  ]
+}

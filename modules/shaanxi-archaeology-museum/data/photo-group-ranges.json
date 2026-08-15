@@ -1,0 +1,922 @@
+{
+  "schema_version": 1,
+  "source": "D:\\西安博物馆图片",
+  "rule": "保持拍摄顺序，按正面/侧面/局部/名称介绍分组；名称介绍照片只作文字索引。",
+  "groups": [
+    {
+      "start": 1,
+      "end": 3,
+      "title": "青铜食器（盨）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 4,
+      "end": 6,
+      "title": "玉琮",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "title": "玉璧",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 9,
+      "end": 11,
+      "title": "立鸟玉佩、玉杖首",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 12,
+      "end": 13,
+      "title": "玉戈",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 14,
+      "end": 17,
+      "title": "球腹簋",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 18,
+      "end": 20,
+      "title": "红烧土",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 21,
+      "end": 23,
+      "title": "夯土",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 24,
+      "end": 26,
+      "title": "五花土",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 27,
+      "end": 29,
+      "title": "原始生土",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 30,
+      "end": 32,
+      "title": "灰坑土",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 33,
+      "end": 35,
+      "title": "中国考古报告集",
+      "category": "考古史与文献",
+      "tags": []
+    },
+    {
+      "start": 36,
+      "end": 41,
+      "title": "《考古图》与金石学",
+      "category": "考古史与文献",
+      "tags": []
+    },
+    {
+      "start": 42,
+      "end": 44,
+      "title": "考古史展板与遗址",
+      "category": "考古史与文献",
+      "tags": []
+    },
+    {
+      "start": 45,
+      "end": 48,
+      "title": "御手俑、文吏俑",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 49,
+      "end": 51,
+      "title": "坐俑",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 52,
+      "end": 55,
+      "title": "鸿雁折枝花纹银杯、三彩执壶",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 56,
+      "end": 57,
+      "title": "彩绘贴金武士俑、天王俑",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 58,
+      "end": 61,
+      "title": "西藏阿里细石器与玻璃珠",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 62,
+      "end": 65,
+      "title": "早期小型遗物与玉石材料（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 66,
+      "end": 69,
+      "title": "陶塑与小型器物（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 70,
+      "end": 72,
+      "title": "白釉器物（一）",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 73,
+      "end": 75,
+      "title": "白釉器物（二）",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 76,
+      "end": 78,
+      "title": "玻璃与蓝釉器物（待核）",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 79,
+      "end": 81,
+      "title": "绿釉器物（待核）",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 82,
+      "end": 85,
+      "title": "饰品与小型器物（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 86,
+      "end": 88,
+      "title": "青铜器组合（一）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 89,
+      "end": 94,
+      "title": "青铜礼器组合（二）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 95,
+      "end": 96,
+      "title": "陶器组合（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 97,
+      "end": 99,
+      "title": "白釉器物组合",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 100,
+      "end": 102,
+      "title": "组玉佩",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 103,
+      "end": 106,
+      "title": "八曲葵花形螺钿铜镜",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 107,
+      "end": 108,
+      "title": "镇墓俑",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 109,
+      "end": 110,
+      "title": "人类牙齿化石",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 111,
+      "end": 112,
+      "title": "犀牛牙齿、剑齿象牙齿与鹿角",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 113,
+      "end": 114,
+      "title": "细石叶",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 115,
+      "end": 120,
+      "title": "旧石器与小型遗物（待核）",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 121,
+      "end": 126,
+      "title": "陶器与展签（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 127,
+      "end": 132,
+      "title": "史前陶器组合（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 133,
+      "end": 138,
+      "title": "陶器与祭祀遗物（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 139,
+      "end": 144,
+      "title": "石器与工具组合（待核）",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 145,
+      "end": 151,
+      "title": "早期遗物与骨器（待核）",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 152,
+      "end": 158,
+      "title": "青铜器与陶器展陈（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 159,
+      "end": 162,
+      "title": "饰品与货币组合（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 163,
+      "end": 169,
+      "title": "玉石与骨器组合（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 170,
+      "end": 176,
+      "title": "墓葬与考古复原模型（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 177,
+      "end": 184,
+      "title": "青铜构件与纹饰（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 185,
+      "end": 192,
+      "title": "早期遗物与展板（待核）",
+      "category": "考古史与文献",
+      "tags": []
+    },
+    {
+      "start": 193,
+      "end": 195,
+      "title": "杂剧图（数字复原）",
+      "category": "墓葬与图像",
+      "tags": [
+        "戏剧史",
+        "音乐史"
+      ]
+    },
+    {
+      "start": 196,
+      "end": 200,
+      "title": "仪鱼、伏听、金鸡、玉犬",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 201,
+      "end": 204,
+      "title": "北宋墓葬壁画（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 205,
+      "end": 208,
+      "title": "出行仪仗图（数字复原）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 209,
+      "end": 212,
+      "title": "墓葬壁画图像（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 213,
+      "end": 216,
+      "title": "墓葬壁画人物（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 217,
+      "end": 220,
+      "title": "墓葬壁画细部（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 221,
+      "end": 224,
+      "title": "壁画与墓室材料（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 225,
+      "end": 228,
+      "title": "壁画展陈（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 229,
+      "end": 232,
+      "title": "壁画人物与色彩（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 233,
+      "end": 236,
+      "title": "壁画说明材料（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 237,
+      "end": 240,
+      "title": "壁画与墓葬材料（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 241,
+      "end": 243,
+      "title": "墓葬建筑构件（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 244,
+      "end": 246,
+      "title": "陶器（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 247,
+      "end": 249,
+      "title": "石器与玉石材料（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 250,
+      "end": 252,
+      "title": "环形器与饰品（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 253,
+      "end": 255,
+      "title": "陶器（第二组，待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 256,
+      "end": 258,
+      "title": "墓葬器物（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 259,
+      "end": 261,
+      "title": "陶器组合（第三组，待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 262,
+      "end": 264,
+      "title": "祭祀与器物组合（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 265,
+      "end": 267,
+      "title": "石雕与兽面（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 268,
+      "end": 270,
+      "title": "石雕构件（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 271,
+      "end": 273,
+      "title": "陶器与资料牌（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 274,
+      "end": 276,
+      "title": "考古资料展板（待核）",
+      "category": "考古史与文献",
+      "tags": []
+    },
+    {
+      "start": 277,
+      "end": 280,
+      "title": "石器与工具（待核）",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 281,
+      "end": 284,
+      "title": "早期遗物（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 285,
+      "end": 288,
+      "title": "考古资料图文（待核）",
+      "category": "考古史与文献",
+      "tags": []
+    },
+    {
+      "start": 289,
+      "end": 293,
+      "title": "鳄鱼骨板、蚌刀",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 294,
+      "end": 298,
+      "title": "四耳簋",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 299,
+      "end": 302,
+      "title": "牺尊、附耳龙纹鼎",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 303,
+      "end": 305,
+      "title": "青铜食器（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 306,
+      "end": 308,
+      "title": "人物与陶塑（待核）",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 309,
+      "end": 311,
+      "title": "青铜与金属装饰（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 312,
+      "end": 314,
+      "title": "青铜器与纹饰（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 315,
+      "end": 318,
+      "title": "青铜器（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 319,
+      "end": 322,
+      "title": "青铜器与展签（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 323,
+      "end": 326,
+      "title": "青铜器与车马器（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 327,
+      "end": 330,
+      "title": "饰品与器物（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 331,
+      "end": 336,
+      "title": "青铜器（第二组，待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 337,
+      "end": 341,
+      "title": "青铜礼器（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 342,
+      "end": 344,
+      "title": "编钟与乐器陈列（待核）",
+      "category": "音乐与礼制",
+      "tags": [
+        "音乐史",
+        "礼制"
+      ]
+    },
+    {
+      "start": 345,
+      "end": 349,
+      "title": "青铜器（第三组，待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 350,
+      "end": 354,
+      "title": "青铜器与展签（第二组，待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 355,
+      "end": 359,
+      "title": "石器与铭刻材料（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 360,
+      "end": 363,
+      "title": "考古说明与青铜器（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 364,
+      "end": 368,
+      "title": "铭刻与石刻材料（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 369,
+      "end": 374,
+      "title": "纹饰与石刻细部（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 375,
+      "end": 380,
+      "title": "青铜与石质材料（待核）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 381,
+      "end": 384,
+      "title": "工具与器物（待核）",
+      "category": "考古现场材料",
+      "tags": []
+    },
+    {
+      "start": 385,
+      "end": 388,
+      "title": "北宫乐府石磬与铭文铜匜",
+      "category": "音乐与礼制",
+      "tags": [
+        "音乐史",
+        "石磬",
+        "铭文"
+      ]
+    },
+    {
+      "start": 389,
+      "end": 392,
+      "title": "金饰、绿松石与琉璃饰件",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 393,
+      "end": 396,
+      "title": "车马器与骨器（待核）",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 397,
+      "end": 399,
+      "title": "石胄与青铜鸿雁",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 400,
+      "end": 404,
+      "title": "秦代乐器部件",
+      "category": "音乐与礼制",
+      "tags": [
+        "音乐史",
+        "乐器考古"
+      ]
+    },
+    {
+      "start": 405,
+      "end": 408,
+      "title": "金属装饰与器物（待核）",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 409,
+      "end": 412,
+      "title": "鸟兽形器与展签（待核）",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 413,
+      "end": 416,
+      "title": "彩绘器物与展陈（待核）",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 417,
+      "end": 420,
+      "title": "丧葬与玉石饰品（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 421,
+      "end": 424,
+      "title": "铭刻与石刻（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 425,
+      "end": 428,
+      "title": "祭祀与动物形器（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 429,
+      "end": 432,
+      "title": "金属器物（待核）",
+      "category": "早期文明与礼器",
+      "tags": []
+    },
+    {
+      "start": 433,
+      "end": 435,
+      "title": "透影白瓷杯与考古项目展板",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 436,
+      "end": 441,
+      "title": "唐代建筑构件：鸱吻、兽面脊头瓦与鸱尾",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 442,
+      "end": 446,
+      "title": "唐代墓葬器物与展签：琉璃佩、谥册、印玺、铜镜",
+      "category": "隋唐器物",
+      "tags": [
+        "唐代器物",
+        "琉璃器",
+        "墓葬文书",
+        "印玺",
+        "铜镜"
+      ]
+    },
+    {
+      "start": 447,
+      "end": 450,
+      "title": "隋唐墓葬器物：绿釉蟠龙博山炉与白釉长颈瓶",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 451,
+      "end": 455,
+      "title": "墓志与文字材料（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 456,
+      "end": 462,
+      "title": "唐昭容上官氏墓志相关材料",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 463,
+      "end": 466,
+      "title": "器物与墓志说明（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 467,
+      "end": 470,
+      "title": "壁画与文献图像（待核）",
+      "category": "墓葬与图像",
+      "tags": []
+    },
+    {
+      "start": 471,
+      "end": 475,
+      "title": "器物与展签（待核）",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 476,
+      "end": 480,
+      "title": "器物与铭刻展陈（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 481,
+      "end": 484,
+      "title": "元代金饰与仙人龟鹤齐寿带柄镜",
+      "category": "金银器与饰品",
+      "tags": []
+    },
+    {
+      "start": 485,
+      "end": 487,
+      "title": "唐代耀州窑器物与窑址标本",
+      "category": "隋唐器物",
+      "tags": []
+    },
+    {
+      "start": 488,
+      "end": 492,
+      "title": "秦始皇陵铜水禽",
+      "category": "秦汉与帝陵",
+      "tags": []
+    },
+    {
+      "start": 493,
+      "end": 495,
+      "title": "青铜铸造工艺（范铸成型）",
+      "category": "青铜礼器",
+      "tags": []
+    },
+    {
+      "start": 496,
+      "end": 498,
+      "title": "文字材料与器物（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 499,
+      "end": 504,
+      "title": "文字与器物展陈（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 505,
+      "end": 508,
+      "title": "文献与石刻材料（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 509,
+      "end": 514,
+      "title": "文献与纹饰材料（待核）",
+      "category": "铭刻与文字",
+      "tags": []
+    },
+    {
+      "start": 515,
+      "end": 521,
+      "title": "末段器物与展签（待核）",
+      "category": "隋唐器物",
+      "tags": []
+    }
+  ]
+}

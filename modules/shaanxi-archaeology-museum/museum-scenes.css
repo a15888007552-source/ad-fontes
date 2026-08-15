@@ -1,0 +1,102 @@
+/* Generated editorial scenes: static, responsive and deliberately non-photographic. */
+.about-card {
+  background-color: #eee6d6;
+  background-image:
+    linear-gradient(90deg, rgba(247, 243, 234, 0.93) 0%, rgba(247, 243, 234, 0.78) 47%, rgba(247, 243, 234, 0.34) 100%),
+    url("assets/backgrounds/archaeology-field-wide.webp");
+  background-image:
+    linear-gradient(90deg, rgba(247, 243, 234, 0.93) 0%, rgba(247, 243, 234, 0.78) 47%, rgba(247, 243, 234, 0.34) 100%),
+    image-set(
+      url("assets/backgrounds/archaeology-field-960.webp") 1x,
+      url("assets/backgrounds/archaeology-field-wide.webp") 2x
+    );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#artifact-catalog-root {
+  background-color: #eee7d9;
+  background-image:
+    linear-gradient(rgba(246, 242, 233, 0.48), rgba(246, 242, 233, 0.76)),
+    url("assets/backgrounds/archaeology-field-wide.webp");
+  background-image:
+    linear-gradient(rgba(246, 242, 233, 0.48), rgba(246, 242, 233, 0.76)),
+    image-set(
+      url("assets/backgrounds/archaeology-field-960.webp") 1x,
+      url("assets/backgrounds/archaeology-field-wide.webp") 2x
+    );
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.treasure-card {
+  background-color: #0d1511;
+  background-image:
+    linear-gradient(90deg, rgba(8, 13, 10, 0.32), rgba(10, 17, 13, 0.72)),
+    url("assets/backgrounds/archaeology-gallery-wide.webp");
+  background-image:
+    linear-gradient(90deg, rgba(8, 13, 10, 0.32), rgba(10, 17, 13, 0.72)),
+    image-set(
+      url("assets/backgrounds/archaeology-gallery-960.webp") 1x,
+      url("assets/backgrounds/archaeology-gallery-wide.webp") 2x
+    );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.museum-opening-lite {
+  background-color: #0d1511;
+  background-image:
+    linear-gradient(rgba(7, 12, 9, 0.55), rgba(10, 17, 13, 0.66)),
+    url("assets/backgrounds/archaeology-gallery-wide.webp");
+  background-image:
+    linear-gradient(rgba(7, 12, 9, 0.55), rgba(10, 17, 13, 0.66)),
+    image-set(
+      url("assets/backgrounds/archaeology-gallery-960.webp") 1x,
+      url("assets/backgrounds/archaeology-gallery-wide.webp") 2x
+    );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+footer,
+.site-footer {
+  background-color: #0d1511;
+  background-image:
+    linear-gradient(rgba(8, 13, 10, 0.74), rgba(8, 13, 10, 0.88)),
+    url("assets/backgrounds/archaeology-gallery-wide.webp");
+  background-position: center 58%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 760px) {
+  .about-card {
+    background-image:
+      linear-gradient(rgba(247, 243, 234, 0.8), rgba(247, 243, 234, 0.88)),
+      url("assets/backgrounds/archaeology-field-960.webp");
+    background-position: 72% center;
+  }
+
+  #artifact-catalog-root {
+    background-image:
+      linear-gradient(rgba(246, 242, 233, 0.6), rgba(246, 242, 233, 0.8)),
+      url("assets/backgrounds/archaeology-field-960.webp");
+    background-position: 68% top;
+    background-size: auto 540px;
+  }
+
+  .treasure-card,
+  .museum-opening-lite,
+  footer,
+  .site-footer {
+    background-image:
+      linear-gradient(rgba(7, 12, 9, 0.62), rgba(10, 17, 13, 0.75)),
+      url("assets/backgrounds/archaeology-gallery-960.webp");
+    background-position: 56% center;
+  }
+}

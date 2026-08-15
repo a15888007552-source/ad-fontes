@@ -1,0 +1,657 @@
+{
+  "groups": [
+    {
+      "start": 385,
+      "end": 385,
+      "title": "金柄铁削、错银铜器座（底面）及铺首、“内史之印”封泥、“北宫乐府”石磬",
+      "label_sequences": [
+        385
+      ],
+      "display_sequences": [],
+      "label_text": "金柄铁削；错银铜器座（底面）及铺首；‘内史之印’封泥；‘北宫乐府’石磬；战国晚期；2005年西安长安区神禾原秦陵M1",
+      "confidence": "high"
+    },
+    {
+      "start": 386,
+      "end": 388,
+      "title": "铭文铜匜（yi）",
+      "label_sequences": [
+        386,
+        388
+      ],
+      "display_sequences": [
+        387
+      ],
+      "label_text": "铭文铜匜（yi）；战国晚期；2005年西安长安区神禾原秦陵M1；有释文",
+      "confidence": "high"
+    },
+    {
+      "start": 389,
+      "end": 392,
+      "title": "金带饰、金花饰、嵌金泡绿松石饰、心形琉璃饰件",
+      "label_sequences": [
+        389,
+        390,
+        391,
+        392
+      ],
+      "display_sequences": [],
+      "label_text": "金带饰；金花饰；嵌金泡绿松石饰；心形琉璃饰件；战国晚期；2005-2006年西安长安区神禾原秦陵M1及外藏坑K8/K10",
+      "confidence": "medium"
+    },
+    {
+      "start": 393,
+      "end": 393,
+      "title": "铜軎（wei）、鎏银铜辖、鎏金兽面纹铜节约、银合页、鎏金铜络饰、鎏金铜盖弓帽",
+      "label_sequences": [
+        393
+      ],
+      "display_sequences": [],
+      "label_text": "铜軎（wei）；鎏银铜辖；鎏金兽面纹铜节约；银合页；鎏金铜络饰；鎏金铜盖弓帽；战国晚期；2005-2006年西安长安区神禾原秦陵M1及外藏坑K2/K5/K8/K10",
+      "confidence": "high"
+    },
+    {
+      "start": 394,
+      "end": 396,
+      "title": "帝国冠长臂猿头骨",
+      "label_sequences": [
+        394
+      ],
+      "display_sequences": [
+        395,
+        396
+      ],
+      "label_text": "帝国冠长臂猿头骨；年代及出土地待核",
+      "confidence": "low"
+    },
+    {
+      "start": 397,
+      "end": 397,
+      "title": "石胄、石铠甲",
+      "label_sequences": [
+        397
+      ],
+      "display_sequences": [],
+      "label_text": "石胄；石铠甲；秦（公元前221-前206年）；1998年秦始皇帝陵园K9801陪葬坑（石铠甲坑）",
+      "confidence": "high"
+    },
+    {
+      "start": 398,
+      "end": 398,
+      "title": "石铠甲（局部）",
+      "label_sequences": [],
+      "display_sequences": [
+        398
+      ],
+      "label_text": "石铠甲（局部）；秦（公元前221-前206年）；1998年秦始皇帝陵园K9801陪葬坑（石铠甲坑）",
+      "confidence": "medium"
+    },
+    {
+      "start": 399,
+      "end": 399,
+      "title": "青铜鸿雁",
+      "label_sequences": [
+        399
+      ],
+      "display_sequences": [],
+      "label_text": "青铜鸿雁；秦（公元前221-前206年）；2002年秦始皇帝陵K0007陪葬坑（青铜水禽坑）",
+      "confidence": "high"
+    },
+    {
+      "start": 400,
+      "end": 403,
+      "title": "铜棒（乐器击打器）、喇叭状骨器（乐器部件）、骨圈（乐器部件）、圆筒形骨器、柱状铜器",
+      "label_sequences": [
+        400,
+        401,
+        403
+      ],
+      "display_sequences": [
+        402
+      ],
+      "label_text": "铜棒（乐器击打器）；喇叭状骨器（乐器部件）；骨圈（乐器部件）；圆筒形骨器；柱状铜器；秦（公元前221-前206年）；2002年秦始皇帝陵K0007陪葬坑（青铜水禽坑）",
+      "confidence": "high"
+    },
+    {
+      "start": 404,
+      "end": 404,
+      "title": "“寺工”铭铜矛、错金铜弩机及弩臂铜饰、铜镞、“丽山飤（si）官”铭陶器盖",
+      "label_sequences": [
+        404
+      ],
+      "display_sequences": [],
+      "label_text": "铜镞；‘寺工’铭铜矛；错金铜弩机及弩臂铜饰；‘丽山飤（si）官’铭陶器盖；秦（公元前221-前206年）；1975-1989年秦始皇帝陵陵园及兵马俑坑等",
+      "confidence": "medium"
+    },
+    {
+      "start": 405,
+      "end": 405,
+      "title": "错金铜弩机及弩臂铜饰（局部）",
+      "label_sequences": [],
+      "display_sequences": [
+        405
+      ],
+      "label_text": "错金铜弩机及弩臂铜饰（局部）；秦（公元前221-前206年）；秦始皇帝陵陵园出土",
+      "confidence": "low"
+    },
+    {
+      "start": 406,
+      "end": 406,
+      "title": "金牌饰",
+      "label_sequences": [
+        406
+      ],
+      "display_sequences": [],
+      "label_text": "金牌饰；西汉（公元前206-公元8年）；2001年西安雁塔区缪家寨马腾空墓地M15；长方形拱形，长20宽8厘米，有长方形孔以玛瑙板填补，纹样为人骑巨龙、奔牛、奔马、卧熊，具鄂尔多斯及斯基泰文化特征",
+      "confidence": "high"
+    },
+    {
+      "start": 407,
+      "end": 408,
+      "title": "虎纹踏步、水管弯头",
+      "label_sequences": [
+        407,
+        408
+      ],
+      "display_sequences": [],
+      "label_text": "虎纹踏步；水管弯头；西汉（公元前206-公元8年）；2010年千阳尚家岭遗址",
+      "confidence": "high"
+    },
+    {
+      "start": 409,
+      "end": 410,
+      "title": "虎纹踏步、水管弯头（局部）",
+      "label_sequences": [],
+      "display_sequences": [
+        409,
+        410
+      ],
+      "label_text": "虎纹踏步、水管弯头（局部）；西汉（公元前206-公元8年）；2010年千阳尚家岭遗址",
+      "confidence": "low"
+    },
+    {
+      "start": 411,
+      "end": 412,
+      "title": "彩绘陶狼犬、彩绘陶母鸡、彩绘陶公鸡",
+      "label_sequences": [
+        411
+      ],
+      "display_sequences": [
+        412
+      ],
+      "label_text": "彩绘陶狼犬；彩绘陶母鸡；彩绘陶公鸡；西汉（公元前206-公元8年）；1992/1993年阳陵南区外藏坑",
+      "confidence": "high"
+    },
+    {
+      "start": 413,
+      "end": 413,
+      "title": "彩绘陶动物（局部）",
+      "label_sequences": [],
+      "display_sequences": [
+        413
+      ],
+      "label_text": "彩绘陶动物（局部）；西汉（公元前206-公元8年）；阳陵南区外藏坑",
+      "confidence": "low"
+    },
+    {
+      "start": 414,
+      "end": 415,
+      "title": "彩绘陶仓",
+      "label_sequences": [
+        414
+      ],
+      "display_sequences": [
+        415
+      ],
+      "label_text": "彩绘陶仓；西汉早期；2020年泾阳大堡子墓地北II区M68",
+      "confidence": "high"
+    },
+    {
+      "start": 416,
+      "end": 416,
+      "title": "铜钟、铜钺、铜钱",
+      "label_sequences": [
+        416
+      ],
+      "display_sequences": [],
+      "label_text": "铜钟；铜钺；铜钱；西汉（公元前206-公元8年）；2009年西安长安区凤栖原张安世家族墓地M8-K4/K5",
+      "confidence": "high"
+    },
+    {
+      "start": 417,
+      "end": 417,
+      "title": "侍女俑、武士俑、玉瑗",
+      "label_sequences": [
+        417
+      ],
+      "display_sequences": [],
+      "label_text": "侍女俑；武士俑；玉瑗；北周（公元557-581年）；1994年咸阳渭城区陈马村孝陵；待核",
+      "confidence": "low"
+    },
+    {
+      "start": 418,
+      "end": 421,
+      "title": "玉璧、十三环蹀躞（diexie）铜带、铜鞘刀、木鞘刀、煤精石卧羊、金耳勺",
+      "label_sequences": [
+        418,
+        419,
+        420
+      ],
+      "display_sequences": [
+        421
+      ],
+      "label_text": "玉璧；十三环蹀躞（diexie）铜带；铜鞘刀；木鞘刀；煤精石卧羊；金耳勺；北周（公元557-581年）；1994年咸阳渭城区陈马村孝陵",
+      "confidence": "high"
+    },
+    {
+      "start": 422,
+      "end": 422,
+      "title": "孝陵出土器物（局部）",
+      "label_sequences": [],
+      "display_sequences": [
+        422
+      ],
+      "label_text": "孝陵出土器物（局部）；北周（公元557-581年）；1994年咸阳渭城区陈马村孝陵",
+      "confidence": "low"
+    },
+    {
+      "start": 423,
+      "end": 424,
+      "title": "北周武帝孝陵志",
+      "label_sequences": [
+        423
+      ],
+      "display_sequences": [
+        424
+      ],
+      "label_text": "北周武帝孝陵志；北周（公元557-581年）；1994年咸阳渭城区陈马村孝陵",
+      "confidence": "high"
+    },
+    {
+      "start": 425,
+      "end": 425,
+      "title": "釉陶连枝灯",
+      "label_sequences": [
+        425
+      ],
+      "display_sequences": [],
+      "label_text": "釉陶连枝灯；十六国（公元304-439年）；2019年咸阳渭城区城刘墓地M2",
+      "confidence": "medium"
+    },
+    {
+      "start": 426,
+      "end": 429,
+      "title": "酒神图驮囊陶骆驼",
+      "label_sequences": [
+        426,
+        428
+      ],
+      "display_sequences": [
+        427,
+        429
+      ],
+      "label_text": "酒神图驮囊陶骆驼；隋（公元581-618年）；2019年西安长安区茅坡墓地M21；骆驼两侧驮囊上各模印一组人物，居中男性呈醉酒状，关于醉酒者身份有狄奥尼索斯、赫拉克勒斯、西勒诺斯、俱毗罗等说法，陶骆驼由隋大兴城明器作坊生产，驮囊图像可能与粟特工匠相关",
+      "confidence": "high"
+    },
+    {
+      "start": 430,
+      "end": 431,
+      "title": "石棺鎏金铜提手",
+      "label_sequences": [
+        430
+      ],
+      "display_sequences": [
+        431
+      ],
+      "label_text": "石棺鎏金铜提手；隋（公元581-618年）；2005年潼关税村隋墓",
+      "confidence": "high"
+    },
+    {
+      "start": 432,
+      "end": 432,
+      "title": "石棺鎏金铜提手（局部）",
+      "label_sequences": [],
+      "display_sequences": [
+        432
+      ],
+      "label_text": "石棺鎏金铜提手（局部）；隋（公元581-618年）；2005年潼关税村隋墓",
+      "confidence": "low"
+    },
+    {
+      "start": 433,
+      "end": 433,
+      "title": "透影白瓷杯",
+      "label_sequences": [
+        433
+      ],
+      "display_sequences": [],
+      "label_text": "透影白瓷杯；年代及出土地待核",
+      "confidence": "low"
+    },
+    {
+      "start": 434,
+      "end": 435,
+      "title": "昭陵北司马门遗址、桥陵遗址（展板）",
+      "label_sequences": [
+        434
+      ],
+      "display_sequences": [
+        435
+      ],
+      "label_text": "昭陵北司马门遗址：2003年度全国十大考古新发现；桥陵遗址：2007-2008年度田野考古奖一等奖",
+      "confidence": "medium"
+    },
+    {
+      "start": 436,
+      "end": 437,
+      "title": "鸱吻",
+      "label_sequences": [
+        436
+      ],
+      "display_sequences": [
+        437
+      ],
+      "label_text": "鸱吻；唐（公元618-907年）；2009年蒲城唐泰陵东南角阙",
+      "confidence": "high"
+    },
+    {
+      "start": 438,
+      "end": 439,
+      "title": "兽面脊头瓦",
+      "label_sequences": [
+        438
+      ],
+      "display_sequences": [
+        439
+      ],
+      "label_text": "兽面脊头瓦；唐（公元618-907年）；2011年蒲城唐光陵东门北阙",
+      "confidence": "high"
+    },
+    {
+      "start": 440,
+      "end": 440,
+      "title": "兽面脊头瓦（局部）",
+      "label_sequences": [],
+      "display_sequences": [
+        440
+      ],
+      "label_text": "兽面脊头瓦（局部）；唐（公元618-907年）；2011年蒲城唐光陵东门北阙",
+      "confidence": "low"
+    },
+    {
+      "start": 441,
+      "end": 442,
+      "title": "鸱尾",
+      "label_sequences": [
+        441
+      ],
+      "display_sequences": [
+        442
+      ],
+      "label_text": "鸱尾；唐（公元618-907年）；2008年蒲城唐桥陵南门西阙",
+      "confidence": "high"
+    },
+    {
+      "start": 443,
+      "end": 443,
+      "title": "龙凤纹琉璃佩、恭应皇后谥册、恭应皇后之宝、奉天皇帝之宝（展牌）",
+      "label_sequences": [
+        443
+      ],
+      "display_sequences": [],
+      "label_text": "龙凤纹琉璃佩：唐文德元年（888），1995年乾县唐靖陵地宫；恭应皇后谥册：唐至德元年（756），2003年临潼新丰镇唐齐陵；恭应皇后之宝：唐至德元年（756），2003年临潼新丰镇唐齐陵；奉天皇帝之宝：唐至德元年（756），2003年临潼新丰镇唐齐陵",
+      "confidence": "high"
+    },
+    {
+      "start": 444,
+      "end": 444,
+      "title": "恭应皇后谥册、恭应皇后之宝（局部）",
+      "label_sequences": [],
+      "display_sequences": [
+        444
+      ],
+      "label_text": "恭应皇后谥册、恭应皇后之宝（局部）；唐至德元年（756）；2003年临潼新丰镇唐齐陵",
+      "confidence": "low"
+    },
+    {
+      "start": 445,
+      "end": 445,
+      "title": "龙凤纹琉璃璧",
+      "label_sequences": [
+        445
+      ],
+      "display_sequences": [],
+      "label_text": "龙凤纹琉璃璧；唐文德元年（888）；1995年乾县唐靖陵地宫",
+      "confidence": "high"
+    },
+    {
+      "start": 446,
+      "end": 447,
+      "title": "双鸾双鸟葵花镜",
+      "label_sequences": [
+        446,
+        447
+      ],
+      "display_sequences": [],
+      "label_text": "双鸾双鸟葵花镜；唐（618-907年）；1990年西安长安区韦曲镇隋丰宁公主杨静徽暨唐韦圆照合葬墓；镜铭大业六年三月十五日",
+      "confidence": "high"
+    },
+    {
+      "start": 448,
+      "end": 448,
+      "title": "绿釉蟠龙博山炉",
+      "label_sequences": [
+        448
+      ],
+      "display_sequences": [],
+      "label_text": "绿釉蟠龙博山炉；隋大业六年（610）；1990年西安长安区韦曲镇隋丰宁公主杨静徽暨唐韦圆照合葬墓",
+      "confidence": "high"
+    },
+    {
+      "start": 449,
+      "end": 450,
+      "title": "白釉长颈瓶",
+      "label_sequences": [
+        449,
+        450
+      ],
+      "display_sequences": [],
+      "label_text": "白釉长颈瓶；隋大业六年（610）；1990年西安长安区韦曲镇隋丰宁公主杨静徽暨唐韦圆照合葬墓",
+      "confidence": "high"
+    },
+    {
+      "start": 451,
+      "end": 454,
+      "title": "罗婉顺墓志并盖",
+      "label_sequences": [
+        451,
+        452,
+        453,
+        454
+      ],
+      "display_sequences": [],
+      "label_text": "罗婉顺墓志并盖；唐天宝六年（747）；2020年咸阳渭城区龚东村唐元大谦、罗婉顺夫妇墓；志文漫漶，OCR辨识度低",
+      "confidence": "low"
+    },
+    {
+      "start": 455,
+      "end": 457,
+      "title": "罗婉顺墓志并盖（展牌）",
+      "label_sequences": [
+        455
+      ],
+      "display_sequences": [
+        456,
+        457
+      ],
+      "label_text": "罗婉顺墓志并盖；唐天宝六年（747）；2020年咸阳渭城区龚东村唐元大谦、罗婉顺夫妇墓",
+      "confidence": "high"
+    },
+    {
+      "start": 458,
+      "end": 459,
+      "title": "唐昭容上官氏墓志并盖（展牌）",
+      "label_sequences": [
+        458
+      ],
+      "display_sequences": [
+        459
+      ],
+      "label_text": "唐昭容上官氏墓志并盖；唐景云元年（710）；2013年咸阳渭城区邓村唐昭容上官氏墓",
+      "confidence": "high"
+    },
+    {
+      "start": 460,
+      "end": 460,
+      "title": "唐昭容上官氏墓志并盖",
+      "label_sequences": [
+        460
+      ],
+      "display_sequences": [],
+      "label_text": "唐昭容上官氏墓志并盖；唐景云元年（710）；2013年咸阳渭城区邓村唐昭容上官氏墓",
+      "confidence": "high"
+    },
+    {
+      "start": 461,
+      "end": 461,
+      "title": "唐昭容上官氏墓（展板）",
+      "label_sequences": [
+        461
+      ],
+      "display_sequences": [],
+      "label_text": "唐昭容上官氏墓；唐景云元年（710）；2013年咸阳渭城区北杜街道邓村；斜坡墓道单室砖券墓，出土随葬器物200余件，墓主为上官婉儿",
+      "confidence": "high"
+    },
+    {
+      "start": 462,
+      "end": 462,
+      "title": "上官婉儿墓志铭",
+      "label_sequences": [
+        462
+      ],
+      "display_sequences": [],
+      "label_text": "上官婉儿墓志铭；唐景云元年（710）；2013年咸阳渭城区邓村唐昭容上官氏墓；墓志文由“序”和“铭”两部分组成",
+      "confidence": "medium"
+    },
+    {
+      "start": 463,
+      "end": 463,
+      "title": "塔式罐（说明展板）、太子哀册（局部）",
+      "label_sequences": [
+        463
+      ],
+      "display_sequences": [],
+      "label_text": "塔式罐说明；太子哀册；唐景云元年（710）；1995年富平南牌（节愍太子墓）",
+      "confidence": "low"
+    },
+    {
+      "start": 464,
+      "end": 469,
+      "title": "塔式罐",
+      "label_sequences": [
+        464,
+        465,
+        466
+      ],
+      "display_sequences": [
+        467,
+        468,
+        469
+      ],
+      "label_text": "塔式罐；唐景云元年（710）；1995年富平南牌节愍太子墓出土；盖钮形似塔，多彩绘陶质并贴塑仰覆莲瓣、兽首等装饰，专用于随葬，置于墓室西北角或与镇墓俑相邻，具有供奉礼仪性质，流行于盛、中唐时期",
+      "confidence": "high"
+    },
+    {
+      "start": 470,
+      "end": 470,
+      "title": "马球图（壁画）",
+      "label_sequences": [
+        470
+      ],
+      "display_sequences": [],
+      "label_text": "马球图（壁画）；2004年出土于陕西省富平县北吕村唐嗣虢王李邕墓，位于墓葬前甬道西壁，描绘击打马球的精彩瞬间",
+      "confidence": "high"
+    },
+    {
+      "start": 471,
+      "end": 471,
+      "title": "银镊、高足银杯、莲瓣龙纹银碗、青釉碗（展牌）",
+      "label_sequences": [
+        471
+      ],
+      "display_sequences": [],
+      "label_text": "银镊；高足银杯；莲瓣龙纹银碗；青釉碗；唐永隆二年（681）；2010年西安长安区岔道口村唐李孝则墓；唐贞元十四年（798）；2020年西安雁塔区月登阁村唐杜华墓",
+      "confidence": "low"
+    },
+    {
+      "start": 472,
+      "end": 472,
+      "title": "银镊、高足银杯、莲瓣龙纹银碗",
+      "label_sequences": [
+        472
+      ],
+      "display_sequences": [],
+      "label_text": "银镊；高足银杯；莲瓣龙纹银碗；唐永隆二年（681）；2010年西安长安区岔道口村唐李孝则墓",
+      "confidence": "high"
+    },
+    {
+      "start": 473,
+      "end": 473,
+      "title": "青釉碗、鎏金铜长柄叉形器、鎏金铜火箸",
+      "label_sequences": [
+        473
+      ],
+      "display_sequences": [],
+      "label_text": "青釉碗；鎏金铜长柄叉形器；鎏金铜火箸；唐贞元十四年（798）；2020年西安雁塔区月登阁村唐杜华墓",
+      "confidence": "medium"
+    },
+    {
+      "start": 474,
+      "end": 474,
+      "title": "白釉执壶、龙形柄石铛（cheng）",
+      "label_sequences": [
+        474
+      ],
+      "display_sequences": [],
+      "label_text": "白釉执壶；龙形柄石铛（cheng）；唐贞元十四年（798）；2020年西安雁塔区月登阁村唐杜华墓",
+      "confidence": "high"
+    },
+    {
+      "start": 475,
+      "end": 475,
+      "title": "白釉执壶、龙形柄石铛（cheng）、白釉绿彩盘、青釉碗、银器",
+      "label_sequences": [
+        475
+      ],
+      "display_sequences": [],
+      "label_text": "白釉执壶；龙形柄石铛（cheng）；白釉绿彩盘；青釉碗；银器；唐贞元十四年（798）；2020年西安雁塔区月登阁村唐杜华墓",
+      "confidence": "high"
+    },
+    {
+      "start": 476,
+      "end": 479,
+      "title": "铭文石敦（dui）",
+      "label_sequences": [
+        476,
+        477,
+        478
+      ],
+      "display_sequences": [
+        479
+      ],
+      "label_text": "铭文石敦（dui）；北宋元祐八年（1093）；2008年蓝田吕氏家族墓园M2；铭文内容OCR辨识度低",
+      "confidence": "medium"
+    },
+    {
+      "start": 480,
+      "end": 480,
+      "title": "铭文石磬",
+      "label_sequences": [
+        480
+      ],
+      "display_sequences": [],
+      "label_text": "铭文石磬；北宋崇宁元年（1102）；2008年蓝田吕氏家族墓园M26",
+      "confidence": "high"
+    }
+  ]
+}

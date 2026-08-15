@@ -1,0 +1,257 @@
+{
+  "groups": [
+    {
+      "start": 481,
+      "end": 484,
+      "title": "仙人龟鹤齐寿带柄镜",
+      "label_sequences": [
+        481
+      ],
+      "display_sequences": [
+        482,
+        483,
+        484
+      ],
+      "label_text": "仙人龟鹤齐寿带柄镜；元（公元1271-1368年）；2009年西安长安区夏殿村M16出土",
+      "confidence": "high"
+    },
+    {
+      "start": 485,
+      "end": 486,
+      "title": "褐黄釉器盖",
+      "label_sequences": [
+        485
+      ],
+      "display_sequences": [
+        486
+      ],
+      "label_text": "褐黄釉器盖；唐（公元618-907年）；1986年铜川黄堡耀州窑遗址出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 487,
+      "end": 487,
+      "title": "三彩枕",
+      "label_sequences": [
+        487
+      ],
+      "display_sequences": [],
+      "label_text": "三彩枕；唐（公元618-907年）；铜川黄堡耀州窑遗址出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 488,
+      "end": 490,
+      "title": "彩绘卧姿铜鸿雁",
+      "label_sequences": [
+        488
+      ],
+      "display_sequences": [
+        489,
+        490
+      ],
+      "label_text": "彩绘卧姿铜鸿雁；秦；2002年秦始皇帝陵园K0007陪葬坑出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 491,
+      "end": 491,
+      "title": "彩绘立姿铜天鹅",
+      "label_sequences": [],
+      "display_sequences": [
+        491
+      ],
+      "label_text": "彩绘立姿铜天鹅；秦；2002年秦始皇帝陵园K0007陪葬坑出土",
+      "confidence": "low"
+    },
+    {
+      "start": 492,
+      "end": 492,
+      "title": "秦始皇帝陵园K0007陪葬坑出土彩绘铜鸿雁、铜天鹅",
+      "label_sequences": [
+        492
+      ],
+      "display_sequences": [],
+      "label_text": "彩绘卧姿铜鸿雁、彩绘立姿铜鸿雁、彩绘卧姿铜天鹅、彩绘立姿铜天鹅；秦；2002年秦始皇帝陵园K0007陪葬坑出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 493,
+      "end": 494,
+      "title": "范铸工艺",
+      "label_sequences": [
+        493
+      ],
+      "display_sequences": [
+        494
+      ],
+      "label_text": "范铸工艺；兽面纹铜鼎；西周；1998年宝鸡市渭滨区峪泉村M5出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 495,
+      "end": 496,
+      "title": "兽面纹铜鼎",
+      "label_sequences": [],
+      "display_sequences": [
+        495,
+        496
+      ],
+      "label_text": "兽面纹铜鼎；西周；1998年宝鸡市渭滨区峪泉村M5出土",
+      "confidence": "low"
+    },
+    {
+      "start": 497,
+      "end": 499,
+      "title": "李倕冠饰及身体装饰组佩",
+      "label_sequences": [
+        497
+      ],
+      "display_sequences": [
+        498,
+        499
+      ],
+      "label_text": "李倕冠饰、身体装饰组佩；2001年西安市雁塔区孟村李倕墓出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 500,
+      "end": 500,
+      "title": "李倕墓志",
+      "label_sequences": [
+        500
+      ],
+      "display_sequences": [],
+      "label_text": "李倕墓志；唐；2001年西安市雁塔区孟村李倕墓出土",
+      "confidence": "high"
+    },
+    {
+      "start": 501,
+      "end": 503,
+      "title": "唐李倕墓出土文物（一组19件）",
+      "label_sequences": [
+        503
+      ],
+      "display_sequences": [
+        501,
+        502
+      ],
+      "label_text": "双系白釉瓷罐、铜釜、铜提梁罐、三足白釉瓷铛、银碗、铜熨斗等一组19件；唐；2001年西安市雁塔区孟村李倕墓出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 504,
+      "end": 504,
+      "title": "六曲葵花形螺钿铜镜",
+      "label_sequences": [
+        504
+      ],
+      "display_sequences": [],
+      "label_text": "六曲葵花形螺钿铜镜、鎏金银锁、陶卧马、陶鸡、蚕形玉握、猪形玉握、鸟兽葡萄纹内弧八角形银背铜镜、陶卧牛、陶卧猪；唐；李倕墓出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 505,
+      "end": 506,
+      "title": "鎏金银锁",
+      "label_sequences": [],
+      "display_sequences": [
+        505,
+        506
+      ],
+      "label_text": "鎏金银锁；唐；李倕墓出土",
+      "confidence": "low"
+    },
+    {
+      "start": 507,
+      "end": 508,
+      "title": "泥银菱纹罗长裤",
+      "label_sequences": [
+        507
+      ],
+      "display_sequences": [
+        508
+      ],
+      "label_text": "泥银菱纹罗长裤；唐；1987年宝鸡市扶风县法门寺塔基地宫出土",
+      "confidence": "high"
+    },
+    {
+      "start": 509,
+      "end": 510,
+      "title": "绢地墨书楞严经咒",
+      "label_sequences": [
+        509
+      ],
+      "display_sequences": [
+        510
+      ],
+      "label_text": "绢地墨书楞严经咒；唐；1987年宝鸡市扶风县法门寺塔基地宫出土",
+      "confidence": "high"
+    },
+    {
+      "start": 511,
+      "end": 513,
+      "title": "盘云鹤蹙金绣罗袱",
+      "label_sequences": [
+        511
+      ],
+      "display_sequences": [
+        512,
+        513
+      ],
+      "label_text": "盘云鹤蹙金绣罗袱；唐；1987年宝鸡市扶风县法门寺塔基地宫出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 514,
+      "end": 515,
+      "title": "朵云地团窠云雁人物金银彩绣罗巾",
+      "label_sequences": [
+        514
+      ],
+      "display_sequences": [
+        515
+      ],
+      "label_text": "朵云地团窠云雁人物金银彩绣罗巾；唐；1987年宝鸡市扶风县法门寺塔基地宫出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 516,
+      "end": 518,
+      "title": "蹙金绣残片",
+      "label_sequences": [
+        516
+      ],
+      "display_sequences": [
+        517,
+        518
+      ],
+      "label_text": "蹙金绣残片；唐；1987年宝鸡市扶风县法门寺塔基地宫出土",
+      "confidence": "medium"
+    },
+    {
+      "start": 519,
+      "end": 520,
+      "title": "荷花纹银平脱漆盒",
+      "label_sequences": [
+        519
+      ],
+      "display_sequences": [
+        520
+      ],
+      "label_text": "荷花纹银平脱漆盒（附复原图）；唐；2001年西安市雁塔区孟村李倕墓出土",
+      "confidence": "high"
+    },
+    {
+      "start": 521,
+      "end": 521,
+      "title": "银七子漆盒",
+      "label_sequences": [
+        521
+      ],
+      "display_sequences": [],
+      "label_text": "银七子漆盒；西汉；2009年西安市长安区凤栖原张安世家族墓M1出土",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+:root {
+  --museum-ink: #172019;
+  --museum-cinnabar: #b9412f;
+  --museum-gold: #c7a35d;
+  --museum-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Lightweight opening: opacity and small transforms only. */
+.museum-opening-lite {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  color: #efe9dc;
+  background: linear-gradient(135deg, #101713 0%, #18241d 58%, #111713 100%);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 480ms ease, transform 620ms var(--museum-ease);
+}
+
+.museum-opening-lite::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(transparent, rgba(199, 163, 93, 0.5), transparent);
+  transform: scaleY(0);
+  animation: liteRule 620ms 180ms var(--museum-ease) forwards;
+}
+
+.museum-opening-lite.is-leaving {
+  opacity: 0;
+  transform: translate3d(0, -14px, 0);
+  pointer-events: none;
+}
+
+.museum-opening-lite__inner {
+  position: relative;
+  z-index: 1;
+  width: min(700px, calc(100% - 40px));
+  text-align: center;
+}
+
+.museum-opening-lite__seal {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  aspect-ratio: 1;
+  margin: 0 auto 22px;
+  border: 2px solid #d4664e;
+  color: #efb49f;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", serif;
+  font-size: 2.4rem;
+  opacity: 0;
+  transform: scale(1.18);
+  animation: liteSeal 500ms 120ms var(--museum-ease) forwards;
+}
+
+.museum-opening-lite__title {
+  margin: 0;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", serif;
+  font-size: clamp(3.4rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  animation: liteRise 600ms 300ms var(--museum-ease) forwards;
+}
+
+.museum-opening-lite__title span {
+  display: block;
+  margin-top: 0.1em;
+  color: #d0aa65;
+}
+
+.museum-opening-lite__caption {
+  margin: 24px 0 0;
+  color: rgba(239, 233, 220, 0.68);
+  font-family: "FangSong", "STFangsong", serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.3em;
+  opacity: 0;
+  animation: liteFade 420ms 680ms ease forwards;
+}
+
+.museum-opening-lite__skip {
+  position: fixed;
+  right: 22px;
+  bottom: 20px;
+  z-index: 2;
+  min-width: 64px;
+  min-height: 44px;
+  border: 0;
+  color: rgba(239, 233, 220, 0.7);
+  background: transparent;
+  font: 0.8rem/1 "FangSong", serif;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+}
+
+.museum-opening-lite__skip:hover,
+.museum-opening-lite__skip:focus-visible {
+  color: #fff3dc;
+  outline: 1px solid rgba(199, 163, 93, 0.5);
+  outline-offset: 5px;
+}
+
+.museum-opening-active {
+  overflow: hidden;
+}
+
+/* Editorial museum title: compact hierarchy, no oversized two-line block. */
+.about-card .feature-copy {
+  position: relative;
+  max-width: 1140px;
+  padding-top: clamp(58px, 6vw, 104px);
+  padding-bottom: clamp(58px, 6vw, 104px);
+}
+
+.about-card .feature-copy::before {
+  content: "";
+  position: absolute;
+  top: clamp(54px, 6vw, 100px);
+  bottom: clamp(54px, 6vw, 100px);
+  left: -22px;
+  width: 1px;
+  background: linear-gradient(var(--museum-cinnabar), rgba(185, 65, 47, 0.08));
+  pointer-events: none;
+}
+
+#about-title {
+  display: grid;
+  grid-template-columns: max-content minmax(50px, 1fr);
+  grid-template-areas:
+    "kicker rule"
+    "primary primary"
+    "secondary secondary";
+  column-gap: 20px;
+  width: min(100%, 960px);
+  max-width: none;
+  margin: 0.3em 0 0.58em;
+  font-size: initial;
+  line-height: 1;
+}
+
+.about-title-kicker {
+  grid-area: kicker;
+  align-self: center;
+  color: var(--museum-cinnabar);
+  font-family: "FangSong", "STFangsong", serif;
+  font-size: clamp(0.9rem, 1vw, 1.12rem);
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  white-space: nowrap;
+}
+
+.about-title-rule {
+  grid-area: rule;
+  align-self: center;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(185, 65, 47, 0.75), transparent 72%);
+}
+
+.about-title-primary {
+  position: relative;
+  z-index: 1;
+  grid-area: primary;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 0.13em;
+  color: var(--museum-ink);
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", serif;
+  font-size: clamp(4.8rem, 6.8vw, 8.5rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.about-title-primary::after {
+  content: attr(data-echo);
+  position: absolute;
+  z-index: -1;
+  inset: 0 auto auto 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(185, 65, 47, 0.22);
+  transform: translate(0.075em, 0.07em);
+  pointer-events: none;
+}
+
+.about-title-secondary {
+  grid-area: secondary;
+  justify-self: end;
+  margin-top: 0.18em;
+  padding: 0 0.08em 0.14em 0.2em;
+  border-bottom: 1px solid rgba(23, 32, 25, 0.35);
+  color: #2b302a;
+  font-family: "FangSong", "STFangsong", "Songti SC", serif;
+  font-size: clamp(2.8rem, 4vw, 5.1rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+}
+
+.about-card .feature-copy > p:not(.eyebrow) {
+  max-width: 54em;
+  font-size: clamp(1.08rem, 1.18vw, 1.4rem);
+  line-height: 1.88;
+}
+
+/* Lightweight reveal: no blur, no clip-path, no continuous texture animation. */
+.motion-lite-ready .motion-lite-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 520ms ease var(--motion-delay, 0ms),
+    transform 620ms var(--museum-ease) var(--motion-delay, 0ms);
+}
+
+.motion-lite-ready .motion-lite-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.museum-scroll-progress-lite {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--museum-cinnabar), var(--museum-gold));
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* One-shot hover feedback instead of pointer-follow repainting. */
+.artifact-catalog-card {
+  position: relative;
+  isolation: isolate;
+  transition: transform 220ms var(--museum-ease), border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.artifact-catalog-card::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  background: linear-gradient(108deg, transparent 34%, rgba(221, 184, 108, 0.14) 49%, transparent 64%);
+  transform: translate3d(-120%, 0, 0);
+  transition: transform 620ms var(--museum-ease);
+  pointer-events: none;
+}
+
+.artifact-catalog-card:hover,
+.artifact-catalog-card:focus-within {
+  border-color: rgba(199, 163, 93, 0.58);
+  box-shadow: 0 14px 32px rgba(7, 10, 8, 0.16);
+  transform: translate3d(0, -4px, 0);
+}
+
+.artifact-catalog-card:hover::after,
+.artifact-catalog-card:focus-within::after {
+  transform: translate3d(120%, 0, 0);
+}
+
+.artifact-card-media img,
+.treasure-main-image img,
+.treasure-thumbs img {
+  transition: transform 420ms var(--museum-ease);
+}
+
+.artifact-catalog-card:hover .artifact-card-media img,
+.treasure-main-image:hover img,
+.treasure-thumbs:hover img {
+  transform: scale(1.025);
+}
+
+@keyframes liteRule {
+  to { transform: scaleY(1); }
+}
+
+@keyframes liteSeal {
+  from { opacity: 0; transform: scale(1.18); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes liteRise {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes liteFade {
+  to { opacity: 1; }
+}
+
+@media (max-width: 760px) {
+  .museum-opening-lite__title {
+    font-size: clamp(3.1rem, 16.5vw, 5rem);
+  }
+
+  .about-card .feature-copy {
+    padding-top: 46px;
+    padding-bottom: 52px;
+  }
+
+  .about-card .feature-copy::before {
+    display: none;
+  }
+
+  #about-title {
+    grid-template-columns: max-content minmax(28px, 1fr);
+    column-gap: 10px;
+    width: 100%;
+  }
+
+  .about-title-kicker {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  .about-title-primary {
+    margin-top: 0.22em;
+    font-size: clamp(4rem, 21vw, 5.7rem);
+    letter-spacing: 0.01em;
+  }
+
+  .about-title-secondary {
+    justify-self: start;
+    margin-top: 0.3em;
+    padding-left: 0;
+    font-size: clamp(2.35rem, 11.8vw, 3.7rem);
+    letter-spacing: 0.1em;
+  }
+
+  .about-card .feature-copy > p:not(.eyebrow) {
+    font-size: 1.04rem;
+    line-height: 1.76;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .artifact-catalog-card::after {
+    display: none;
+  }
+
+  .artifact-catalog-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .museum-opening-lite,
+  .museum-scroll-progress-lite {
+    display: none !important;
+  }
+
+  .motion-lite-ready .motion-lite-reveal,
+  .motion-lite-ready .motion-lite-reveal.is-visible,
+  .artifact-catalog-card,
+  .artifact-catalog-card::after,
+  .artifact-card-media img,
+  .treasure-main-image img,
+  .treasure-thumbs img {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+}

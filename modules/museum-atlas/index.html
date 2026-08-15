@@ -8,7 +8,7 @@
   <title>中国博物馆行记 · Museum Atlas</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23a92e31'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='%23fff7e9'%3E%E9%A4%86%3C/text%3E%3C/svg%3E" />
   <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/index.html" />
-  <link rel="preload" as="image" href="assets/beijing-palace.webp" />
+  <link rel="preload" as="image" href="assets/beijing-palace-hero.webp" />
   <style>
     :root {
       --page: #f1e7dc;
@@ -93,9 +93,7 @@
       content: "";
       opacity: 0.24;
       pointer-events: none;
-      transform: translate3d(0, 0, 0) scale(1);
-      animation: ambient-drift 32s ease-in-out 1 alternate;
-      will-change: transform;
+      transform: none;
     }
 
     .motion-progress {
@@ -117,7 +115,6 @@
       transform: scaleX(var(--scroll-progress));
       transform-origin: left center;
       transition: background-color 260ms ease;
-      will-change: transform;
     }
 
     body,
@@ -172,15 +169,15 @@
       z-index: 30;
       top: 0;
       border-bottom: 1px solid var(--line);
-      background: color-mix(in srgb, var(--page) 92%, transparent);
-      backdrop-filter: blur(0);
-      transition: background-color 280ms ease, box-shadow 280ms ease, backdrop-filter 280ms ease;
+      background: color-mix(in srgb, var(--page) 96%, transparent);
+      backdrop-filter: none;
+      transition: background-color 180ms ease, box-shadow 180ms ease;
     }
 
     html[data-scroll-state="scrolled"] .site-header {
-      background: color-mix(in srgb, var(--page) 78%, transparent);
+      background: color-mix(in srgb, var(--page) 94%, transparent);
       box-shadow: 0 10px 28px color-mix(in srgb, var(--ink) 10%, transparent);
-      backdrop-filter: blur(14px) saturate(1.08);
+      backdrop-filter: none;
     }
 
     .header-main {
@@ -341,20 +338,6 @@
     .motion-ready .site-nav .nav-item:nth-child(3) { animation-delay: 140ms; }
     .motion-ready .site-nav .nav-item:nth-child(4) { animation-delay: 200ms; }
 
-    .motion-ready .site-header::after {
-      position: absolute;
-      right: 0;
-      bottom: -1px;
-      left: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      content: "";
-      opacity: .64;
-      transform: scaleX(.2);
-      transform-origin: center;
-      animation: header-line-in 900ms 360ms cubic-bezier(.16,.82,.2,1) both;
-    }
-
     .cover {
       position: relative;
       isolation: isolate;
@@ -376,14 +359,13 @@
       content: "";
       opacity: 0.65;
       pointer-events: none;
-      transform: translate3d(0, 0, 0);
-      transition: background 260ms ease;
+      transform: none;
+      transition: background 180ms ease;
     }
 
     .cover-copy {
       max-width: 590px;
-      transform: translate3d(0, var(--cover-scroll-shift, 0px), 0);
-      will-change: transform;
+      transform: none;
     }
 
     .cover-copy .section-kicker {
@@ -402,8 +384,7 @@
     .cover-title > span,
     .cover-title em > span {
       display: inline-block;
-      transform: translate3d(0, 0, 0);
-      will-change: transform;
+      transform: none;
     }
 
     .motion-ready .cover-title > span,
@@ -434,29 +415,6 @@
       grid-template-columns: 92px minmax(0, 1fr);
       gap: 18px;
       align-items: end;
-    }
-
-    .cover-stamp {
-      transform: translate3d(0, var(--stamp-y, 0px), 0);
-      transition: box-shadow 300ms ease, transform 420ms cubic-bezier(0.2, 0.78, 0.22, 1);
-    }
-
-    .cover-stamp::after {
-      position: absolute;
-      z-index: 2;
-      inset: 0;
-      border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
-      content: "";
-      opacity: 0;
-      transform: scale(.94);
-      transition: opacity 260ms ease, transform 560ms cubic-bezier(.16,.82,.2,1);
-      pointer-events: none;
-    }
-
-    .cover-stamp:hover::after,
-    .cover-stamp:focus-within::after {
-      opacity: 1;
-      transform: scale(1);
     }
 
     .cover-index {
@@ -495,8 +453,8 @@
       border: 1px solid var(--line);
       background: var(--surface);
       box-shadow: var(--shadow);
-      transform: translate3d(0, 0, 0);
-      transition: box-shadow 300ms ease, transform 420ms cubic-bezier(0.2, 0.78, 0.22, 1);
+      transform: none;
+      transition: box-shadow 220ms ease;
     }
 
     .cover-stamp::before {
@@ -607,10 +565,6 @@
       background: var(--surface);
     }
 
-    .province-tab[aria-selected="true"] strong {
-      color: var(--accent);
-    }
-
     .province-tab[aria-selected="true"]::after {
       background: transparent;
     }
@@ -652,8 +606,7 @@
     .chapter-panels {
       overflow: hidden;
       padding: 38px 0 78px;
-      transition: height 620ms cubic-bezier(0.16, 0.82, 0.2, 1);
-      will-change: height;
+      transition: height 420ms cubic-bezier(0.16, 0.82, 0.2, 1);
     }
 
     .province-panel[hidden] {
@@ -661,31 +614,23 @@
     }
 
     .province-panel.is-entering {
-      animation: chapter-panel-in 760ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
+      animation: chapter-panel-in 560ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
     }
 
     .province-panel.is-entering .chapter-hero {
-      animation: chapter-hero-in 820ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
+      animation: chapter-hero-in 600ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
     }
 
     .province-panel.is-entering .chapter-hero-copy {
-      animation: copy-rise-in 700ms 180ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
+      animation: copy-rise-in 520ms 120ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
     }
 
     .province-panel.is-entering .chapter-brief {
-      animation: copy-rise-in 620ms 280ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
+      animation: copy-rise-in 480ms 190ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
     }
 
     .province-panel.is-entering .chapter-content {
-      animation: copy-rise-in 620ms 360ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
-    }
-
-    .province-panel.is-entering .museum-card {
-      animation: museum-card-in 540ms 420ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
-    }
-
-    .province-panel.is-entering .museum-card:nth-child(2) {
-      animation-delay: 500ms;
+      animation: copy-rise-in 480ms 260ms cubic-bezier(0.16, 0.82, 0.2, 1) both;
     }
 
     .chapter-hero {
@@ -696,8 +641,7 @@
       border: 1px solid var(--line);
       background: var(--surface);
       box-shadow: var(--shadow);
-      transform: translate3d(0, 0, 0);
-      will-change: transform, clip-path;
+      contain: paint;
     }
 
     .chapter-hero > img {
@@ -706,9 +650,8 @@
       min-height: 390px;
       object-fit: cover;
       filter: var(--image-filter);
-      transform: translate3d(0, var(--hero-scroll-y, 0px), 0) scale(calc(1.018 + var(--hero-hover-scale, 0)));
-      transition: filter 260ms ease, transform 420ms cubic-bezier(0.2, 0.75, 0.25, 1);
-      will-change: transform;
+      transform: scale(calc(1.018 + var(--hero-hover-scale, 0)));
+      transition: filter 220ms ease, transform 220ms cubic-bezier(0.2, 0.75, 0.25, 1);
     }
 
     .chapter-hero:hover > img {
@@ -738,7 +681,7 @@
       left: 44px;
       max-width: 560px;
       color: var(--on-image);
-      transform: translate3d(0, 0, 0);
+      transform: none;
     }
 
     .chapter-hero-copy .chapter-kicker {
@@ -787,15 +730,13 @@
       color: rgba(255, 247, 233, 0.84);
       font-size: 10px;
       text-align: right;
-      transform: translate3d(0, 0, 0);
-      transition: opacity 220ms ease;
+      transform: none;
     }
 
     .motion-ready .reveal-on-scroll {
       opacity: 0;
       transform: translate3d(0, 24px, 0);
       transition: opacity 700ms cubic-bezier(0.16, 0.82, 0.2, 1), transform 700ms cubic-bezier(0.16, 0.82, 0.2, 1);
-      will-change: opacity, transform;
     }
 
     .motion-ready .reveal-on-scroll.is-visible {
@@ -901,7 +842,7 @@
       position: absolute;
       z-index: 2;
       inset: 0;
-      background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 38%);
+      background: radial-gradient(circle at var(--card-x, 50%) var(--card-y, 50%), color-mix(in srgb, var(--accent) 16%, transparent), transparent 38%);
       content: "";
       opacity: 0;
       pointer-events: none;
@@ -922,27 +863,6 @@
       opacity: 1;
     }
 
-    .museum-card--link::before {
-      position: absolute;
-      z-index: 3;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 2px;
-      background: var(--accent);
-      content: "";
-      opacity: .2;
-      transform: scaleY(.25);
-      transform-origin: center;
-      transition: opacity 220ms ease, transform 420ms cubic-bezier(.16,.82,.2,1);
-    }
-
-    .museum-card--link:hover::before,
-    .museum-card--link:focus-visible::before {
-      opacity: 1;
-      transform: scaleY(1);
-    }
-
     .card-media {
       min-height: 126px;
       overflow: hidden;
@@ -956,7 +876,6 @@
       object-fit: cover;
       filter: var(--image-filter);
       transition: filter 420ms ease, transform 520ms cubic-bezier(0.16, 0.82, 0.2, 1);
-      will-change: transform;
     }
 
     .museum-card:hover .card-media img,
@@ -1091,11 +1010,6 @@
       color: var(--accent);
     }
 
-    @keyframes ambient-drift {
-      0% { transform: translate3d(-1%, -1%, 0) scale(1); }
-      100% { transform: translate3d(2%, 1.5%, 0) scale(1.04); }
-    }
-
     @keyframes motion-rise-in {
       from { opacity: 0; translate: 0 18px; }
       to { opacity: 1; translate: 0 0; }
@@ -1106,14 +1020,9 @@
       to { opacity: 1; translate: 0 0; }
     }
 
-    @keyframes header-line-in {
-      from { opacity: 0; transform: scaleX(.05); }
-      to { opacity: .64; transform: scaleX(1); }
-    }
-
     @keyframes title-line-in {
-      from { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(8px); }
-      to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+      from { opacity: 0; transform: translate3d(0, 18px, 0); }
+      to { opacity: 1; transform: translate3d(0, 0, 0); }
     }
 
     @keyframes chapter-panel-in {
@@ -1122,18 +1031,13 @@
     }
 
     @keyframes chapter-hero-in {
-      from { opacity: 0.32; clip-path: inset(0 0 9% 0); transform: translate3d(0, 18px, 0) scale(0.985); }
-      to { opacity: 1; clip-path: inset(0 0 0 0); transform: translate3d(0, 0, 0) scale(1); }
+      from { opacity: 0.32; transform: translate3d(0, 12px, 0) scale(0.99); }
+      to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
     }
 
     @keyframes copy-rise-in {
       from { opacity: 0; translate: 0 18px; }
       to { opacity: 1; translate: 0 0; }
-    }
-
-    @keyframes museum-card-in {
-      from { opacity: 0; transform: translate3d(0, 16px, 0); }
-      to { opacity: 1; transform: translate3d(0, 0, 0); }
     }
 
     @media (max-width: 900px) {
@@ -1356,12 +1260,6 @@
         opacity: 1 !important;
         transform: none !important;
       }
-
-      .motion-ready .site-header::after {
-        animation: none !important;
-        opacity: .64;
-        transform: none;
-      }
     }
   </style>
 </head>
@@ -1378,7 +1276,7 @@
             <p class="micro-label">AD FONTES / MUSEUM ATLAS</p>
             <h1>中国博物馆行记</h1>
             <p class="latin-label">ITINERARIA MUSEORUM SINARUM</p>
-            <p class="header-stats">03 省份 · 05 座馆 · 03 个已上线专题</p>
+            <p class="header-stats">03 省份 · 05 座馆 · 02 个已上线专题</p>
           </div>
         </div>
         <nav class="site-nav" aria-label="总馆导航">
@@ -1409,7 +1307,7 @@
           <span>北京<br />陕西<br />河南</span>
         </div>
         <figure class="cover-stamp">
-          <img src="assets/beijing-palace.webp" alt="北京故宫博物院建筑群俯瞰景象" fetchpriority="high" />
+          <img src="assets/beijing-palace-hero.webp" alt="北京故宫博物院建筑群俯瞰景象" fetchpriority="high" decoding="async" width="2400" height="1600" />
           <figcaption>北京 · 第一张照片</figcaption>
         </figure>
       </div>
@@ -1439,7 +1337,7 @@
     <section class="chapter-panels page-frame" aria-live="polite">
       <article class="province-panel" id="panel-beijing" role="tabpanel" tabindex="0" aria-labelledby="tab-beijing" data-province="beijing">
         <figure class="chapter-hero chapter-hero--beijing">
-          <img src="assets/beijing-palace.webp" alt="北京故宫博物院建筑群" loading="lazy" decoding="async" />
+          <img src="assets/beijing-palace-hero.webp" alt="北京故宫博物院建筑群" loading="lazy" decoding="async" width="2400" height="1600" />
           <div class="chapter-hero-copy">
             <p class="chapter-kicker">01 / BEIJING · 北京</p>
             <h2>从宫墙到<br /><em>城市中轴</em></h2>
@@ -1459,7 +1357,7 @@
             <div class="content-heading"><h3 id="beijing-museums">MUSEA</h3><span>北京 · 博物馆入口</span></div>
             <div class="museum-list">
               <article class="museum-card museum-card--soon" aria-label="故宫博物院专题站筹备中">
-                <div class="card-media"><img src="assets/beijing-palace.webp" alt="故宫博物院建筑群" loading="lazy" decoding="async" /></div>
+                <div class="card-media"><img src="assets/beijing-palace-hero.webp" alt="故宫博物院建筑群" loading="lazy" decoding="async" width="2400" height="1600" /></div>
                 <div class="museum-card-body"><span class="card-status">IN PREPARATION</span><h4>故宫博物院</h4><p>北京 · 宫城与器物</p><span class="card-arrow">专题筹备中</span></div>
               </article>
               <a class="museum-card museum-card--link" href="../../guobo-museum/index.html" aria-label="进入中国国家博物馆专题站">
@@ -1502,16 +1400,16 @@
                 <div class="card-media"><img src="../../assets/hero/beilin-gate.jpg" alt="西安碑林博物馆大门" loading="lazy" decoding="async" /></div>
                 <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>西安碑林博物馆</h4><p>西安 · 碑刻与书法</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
-              <a class="museum-card museum-card--link" href="../qinhan/index.html" aria-label="进入陕西历史博物馆秦汉馆专题站">
-                <div class="card-media"><img src="../qinhan/assets/processed/crop/queen-seal.webp" alt="陕西历史博物馆秦汉馆皇后之玺" loading="lazy" decoding="async" /></div>
-                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>陕西历史博物馆秦汉馆</h4><p>西咸新区 · 秦汉文明</p><span class="card-arrow">进入专题 ↗</span></div>
+              <a class="museum-card museum-card--link" href="../shaanxi-archaeology-museum/index.html" aria-label="进入陕西考古博物馆专题站">
+                <div class="card-media"><img src="assets/shaanxi-hero.webp" alt="陕西考古博物馆专题入口" loading="lazy" decoding="async" /></div>
+                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>陕西考古博物馆</h4><p>西安 · 考古圣地</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
             </div>
           </section>
           <aside class="chapter-note">
             <p class="section-kicker">A NOTE ON THIS CHAPTER</p>
             <blockquote>墨色越深，时间越近</blockquote>
-            <p>从碑林的石与纸，走向秦汉馆的制度、城市与器物</p>
+            <p>这一章先留给碑林 下一次去西安，再把新的照片接上来</p>
             <div class="note-index"><span>陕西 / 02</span><span>INK BLACK</span></div>
           </aside>
         </div>
@@ -1574,16 +1472,13 @@
       const tabs = Array.from(document.querySelectorAll(".province-tab"));
       const panels = Array.from(document.querySelectorAll(".province-panel"));
       const indicator = document.querySelector(".province-indicator");
-      const progress = document.querySelector(".motion-progress span");
-      const cover = document.querySelector(".cover");
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const motion = { raf: 0, panelTimer: 0, scrollState: "top" };
+      const motion = { raf: 0, panelTimer: 0, scrollState: "top", scrollMax: 1 };
 
       const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-
       const schedule = () => {
         if (motion.raf || document.hidden) return;
-        motion.raf = window.requestAnimationFrame(renderMotion);
+        motion.raf = window.requestAnimationFrame(renderScroll);
       };
 
       const moveIndicator = (tab) => {
@@ -1653,7 +1548,7 @@
           motion.panelTimer = window.setTimeout(() => {
             stage.style.height = "";
             nextPanel.classList.remove("is-entering");
-          }, 860);
+          }, 700);
           revealPanelContent(nextPanel, true);
         } else {
           panels.forEach((panel) => {
@@ -1664,7 +1559,7 @@
           if (root.classList.contains("motion-ready") && !reducedMotion.matches) {
             void nextPanel.offsetWidth;
             nextPanel.classList.add("is-entering");
-            motion.panelTimer = window.setTimeout(() => nextPanel.classList.remove("is-entering"), 920);
+            motion.panelTimer = window.setTimeout(() => nextPanel.classList.remove("is-entering"), 720);
           }
         }
 
@@ -1675,31 +1570,20 @@
         schedule();
       };
 
-      const renderMotion = () => {
+      const updateScrollRange = () => {
+        motion.scrollMax = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      };
+
+      const renderScroll = () => {
         motion.raf = 0;
-        const scrollMax = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-        const scrollProgress = clamp(window.scrollY / scrollMax, 0, 1);
+        const scrollProgress = clamp(window.scrollY / motion.scrollMax, 0, 1);
         root.style.setProperty("--scroll-progress", scrollProgress.toFixed(4));
-        if (progress) progress.style.transform = `scaleX(${scrollProgress})`;
 
         const nextScrollState = window.scrollY > 24 ? "scrolled" : "top";
         if (motion.scrollState !== nextScrollState) {
           motion.scrollState = nextScrollState;
           root.dataset.scrollState = nextScrollState;
         }
-
-        if (cover) {
-          cover.style.setProperty("--cover-scroll-shift", `${Math.max(-30, -window.scrollY * 0.045)}px`);
-        }
-
-        const activePanel = panels.find((panel) => !panel.hidden);
-        const activeHero = activePanel && activePanel.querySelector(".chapter-hero");
-        if (activeHero && !reducedMotion.matches) {
-          const rect = activeHero.getBoundingClientRect();
-          const centreOffset = clamp((rect.top + rect.height * 0.5 - window.innerHeight * 0.5) / (window.innerHeight * 0.8), -1, 1);
-          activeHero.style.setProperty("--hero-scroll-y", `${centreOffset * -18}px`);
-        }
-
       };
 
       tabs.forEach((tab, index) => {
@@ -1719,6 +1603,7 @@
       window.addEventListener("scroll", schedule, { passive: true });
       window.addEventListener("resize", () => {
         moveIndicator(tabs.find((tab) => tab.getAttribute("aria-selected") === "true"));
+        updateScrollRange();
         schedule();
       }, { passive: true });
       document.addEventListener("visibilitychange", () => {
@@ -1727,6 +1612,7 @@
 
       root.classList.add("motion-ready");
       setActiveProvince(root.dataset.activeProvince || "beijing", false, false);
+      updateScrollRange();
       window.requestAnimationFrame(() => {
         moveIndicator(tabs.find((tab) => tab.getAttribute("aria-selected") === "true"));
         schedule();
