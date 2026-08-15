@@ -11,6 +11,7 @@
   "group_count": 181,
   "assigned_photo_count": 644,
   "display_photo_count": 446,
+  "supplemental_image_count": 1,
   "music_focus_count": 15,
   "categories": {
     "碑文": 63,
@@ -18666,7 +18667,7 @@
         "viewing_guide": "先看题额、整体比例与碑制，再看正文、题名与文字分区；放大后比较字口、刻痕和磨损区，避免把风化误当书风。最后回到展签核对年代、书写者和立碑目的。",
         "sources": [
           {
-            "label": "西安碑林博物馆：博物馆简介",
+            "label": "现场展签文字依据 · 西安碑林博物馆：博物馆简介",
             "url": "https://www.beilin-museum.com/index.php?a=index&aid=2424&c=View&m=home",
             "layer": "local_label_photo",
             "scope": "this_displayed_object",
@@ -20185,98 +20186,105 @@
       ]
     },
     {
-        "id":  "artifact-181",
-        "name":  "景云铜钟",
-        "name_candidates":  [
-                                "景云铜钟",
-                                "景云钟"
-                            ],
-        "category":  "禁止出国（境）展览文物",
-        "special_status":  "禁止出国（境）展览文物",
-        "subitems":  [
-    
-                     ],
-        "period_label":  "唐景云二年（711）",
-        "form_labels":  [
-                            "青铜器",
-                            "铸造",
-                            "钟身铸有骈体铭文"
-                        ],
-        "label_description_ocr":  "用户提供的《195件禁止出国出境文物》资料页：景云铜钟，序号45，现藏西安碑林博物馆。",
-        "label_text_ocr":  "景云铜钟\n序号 45\n类别 青铜器\n时代 唐代\n批次 首批（2002）\n形制/尺寸 通高247厘米；口径165厘米；重量约6000千克\n历史 铸于唐睿宗景云二年（公元711年）；距今约1315年\n出土/发现 传世品\n材质/工艺 铜质、金属；铸造\n主题/要点 唐代铜钟；景龙观沿革；李旦书铭\n现藏 西安碑林博物馆",
-        "label_photo_sequences":  [
-    
-                                  ],
-        "label_photo_sequence":  null,
-        "sequence_start":  645,
-        "sequence_end":  645,
-        "photo_count":  1,
-        "display_photo_count":  1,
-        "hidden_document_photo_count":  0,
-        "image_source":  "user_pdf",
-        "image_source_file":  "195件禁止出国出境文物.pdf",
-        "image_source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
-        "main_photo":  {
-                           "sequence":  "PDF-185",
-                           "filename":  "jingyun-bronze-bell.webp",
-                           "role":  "reference",
-                           "source_type":  "user_pdf",
-                           "source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
-                           "thumb":  "assets/photos/thumb/jingyun-bronze-bell.webp",
-                           "preview":  "assets/photos/web/jingyun-bronze-bell.webp",
-                           "original":  "assets/photos/original/jingyun-bronze-bell.webp",
-                           "sha256":  "20f33cb89382313d01093de48018a317cf5e8184d831ca4302d88af13f5c3f9c",
-                           "captured_at":  null,
-                           "display_width":  1139,
-                           "display_height":  1716
-                       },
-        "photos":  [
-                       {
-                           "sequence":  "PDF-185",
-                           "filename":  "jingyun-bronze-bell.webp",
-                           "role":  "reference",
-                           "source_type":  "user_pdf",
-                           "source_label":  "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
-                           "thumb":  "assets/photos/thumb/jingyun-bronze-bell.webp",
-                           "preview":  "assets/photos/web/jingyun-bronze-bell.webp",
-                           "original":  "assets/photos/original/jingyun-bronze-bell.webp",
-                           "sha256":  "20f33cb89382313d01093de48018a317cf5e8184d831ca4302d88af13f5c3f9c",
-                           "captured_at":  null,
-                           "display_width":  1139,
-                           "display_height":  1716
-                       }
-                   ],
-        "card_excerpt":  "唐景云二年（711）铸造，现藏西安碑林。首批禁止出国（境）展览文物名录第45号。",
-        "card_excerpt_basis":  "user_provided_pdf",
-        "research":  {
-                         "history":  "资料页记载，景云铜钟铸于唐睿宗景云二年（711），列入首批（2002）禁止出国（境）展览文物名录第45号，现藏西安碑林博物馆。",
-                         "form_and_craft":  "青铜铸造，通高247厘米、口径165厘米，重量约6000千克。钟身分区铸饰纹样，并留有景龙观沿革与李旦书写的骈体铭文。",
-                         "contribution":  "景云铜钟把唐代宫观沿革、巨型青铜铸造与帝王书写共同留在一件器物上，也是西安碑林三件首批禁止出国（境）展览文物之一。",
-                         "viewing_guide":  "先看钟体比例与分区，再看兽钮、乳钉、纹饰和铭文面；本条使用的是 PDF 资料图，不替代现场细部观察。",
-                         "sources":  [
-                                         {
-                                             "label":  "图像来源 · 用户提供的《195件禁止出国出境文物》PDF（印刷页185）",
-                                             "url":  "assets/photos/original/jingyun-bronze-bell.webp",
-                                             "layer":  "user_pdf",
-                                             "scope":  "image_only",
-                                             "note":  "网站使用 PDF 第195页（印刷页185）中的景云铜钟图版；PDF页面图注标注图片来源为维基百科。"
-                                         },
-                                         {
-                                             "label":  "资料页文字依据 · 用户提供的《195件禁止出国出境文物》PDF（印刷页185）",
-                                             "url":  "assets/photos/original/jingyun-bronze-bell.webp",
-                                             "layer":  "user_pdf",
-                                             "scope":  "object_metadata",
-                                             "note":  "名称、序号45、年代、尺寸、批次、材质和馆藏按该页资料表录入；图像仅作资料图，不冒充现场拍摄。"
-                                         }
-                                     ],
-                         "status":  "curated_from_user_pdf",
-                         "method_note":  "本条对象识别、基本信息和图像均以用户提供的 PDF 资料页为依据；页面图注另标图片来源为维基百科，未将其表述为现场照片。"
-                     },
-        "music_focus":  null,
-        "review_flags":  [
-                             "supplemental_image_from_user_pdf",
-                             "not_a_visitor_photograph"
-                         ]
+      "id": "artifact-181",
+      "name": "景云铜钟",
+      "name_candidates": ["景云铜钟", "景云钟", "景龙观钟", "迎祥观钟"],
+      "category": "禁止出国（境）展览文物",
+      "special_status": "禁止出国（境）展览文物",
+      "subitems": [],
+      "period_label": "唐景云二年（711）",
+      "form_labels": ["青铜器", "铜锡合金", "分段铸造", "32枚钟乳", "18格纹饰", "钟身铸有骈体铭文"],
+      "label_description_ocr": "用户提供的《195件禁止出国出境文物》资料页：景云铜钟，序号45，现藏西安碑林博物馆。",
+      "label_text_ocr": "景云铜钟\n序号 45\n类别 青铜器\n时代 唐代\n批次 首批（2002）\n形制/尺寸 通高247厘米；口径165厘米；重量约6000千克\n历史 铸于唐睿宗景云二年（公元711年）；距今约1315年\n出土/发现 传世品\n材质/工艺 铜质、金属；铸造\n主题/要点 唐代铜钟；景龙观沿革；李旦书铭\n现藏 西安碑林博物馆",
+      "label_photo_sequences": [],
+      "label_photo_sequence": null,
+      "sequence_start": 645,
+      "sequence_end": 645,
+      "photo_count": 1,
+      "display_photo_count": 1,
+      "hidden_document_photo_count": 0,
+      "image_source": "user_pdf",
+      "image_source_file": "195件禁止出国出境文物.pdf",
+      "image_source_label": "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
+      "main_photo": {
+        "sequence": "PDF-185",
+        "filename": "jingyun-bronze-bell.webp",
+        "role": "reference",
+        "source_type": "user_pdf",
+        "source_label": "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
+        "thumb": "assets/photos/thumb/jingyun-bronze-bell.webp",
+        "preview": "assets/photos/web/jingyun-bronze-bell.webp",
+        "original": "assets/photos/original/jingyun-bronze-bell.webp",
+        "sha256": "20f33cb89382313d01093de48018a317cf5e8184d831ca4302d88af13f5c3f9c",
+        "captured_at": null,
+        "display_width": 1139,
+        "display_height": 1716
+      },
+      "photos": [
+        {
+          "sequence": "PDF-185",
+          "filename": "jingyun-bronze-bell.webp",
+          "role": "reference",
+          "source_type": "user_pdf",
+          "source_label": "用户提供的《195件禁止出国出境文物.pdf》· PDF第195页（印刷页185）",
+          "thumb": "assets/photos/thumb/jingyun-bronze-bell.webp",
+          "preview": "assets/photos/web/jingyun-bronze-bell.webp",
+          "original": "assets/photos/original/jingyun-bronze-bell.webp",
+          "sha256": "20f33cb89382313d01093de48018a317cf5e8184d831ca4302d88af13f5c3f9c",
+          "captured_at": null,
+          "display_width": 1139,
+          "display_height": 1716
+        }
+      ],
+      "card_excerpt": "铸于唐景云二年（711）的景龙观钟，通高2.47米、重约6吨；钟身铸有李旦亲撰亲书的18行292字铭文，1953年移藏西安碑林。",
+      "card_excerpt_basis": "user_provided_pdf",
+      "research": {
+        "history": "景云铜钟不是一件脱离城市的唐代大器。它铸于唐睿宗景云二年（711），原悬于长安景龙观钟楼，因此又称景龙观钟；开元以后景龙观改称迎祥观，文献中也可见迎祥观钟之名。明代西安城扩建、钟楼迁至今址后，这口钟一度承担城市报时功能；1953年移入陕西省博物馆，即今天的西安碑林博物馆。2002年，它被列入首批禁止出国（境）展览文物。关于铸钟缘起，资料常联系唐睿宗巡游周至、夜梦祥云的故事；这一层属于传说性叙事，应与钟身铭文和馆方形制资料分开阅读。",
+        "form_and_craft": "钟高247厘米，腹围486厘米，口径165厘米，重约6000千克。公开馆方资料将它描述为铜锡合金铸造，钟体上锐下侈，钟口呈六角弧形，铸模与铜铸弥合痕迹仍可见。钟身自上而下分为三层，每层六格，以蔓草纹带和几何纹分隔，格内布置飞天、翔鹤、走狮、腾龙、朱雀、独角独腿牛等纹样，四角又有祥云。32枚蒲牢形钟乳均布于钟身，既是装饰，也承担调节音律的作用。关于铸模数量，公开资料有“25块铜模”和“5段、26块铸模”两种表述；本条保留这一差异，不把尚有异文的数字写成唯一结论。",
+        "contribution": "景云铜钟的价值至少叠合了四层：它连接唐代皇家道观与长安城市空间；它把巨型铜钟的分段铸造、合金工艺和调音设计留在一件可见的器物上；它把唐睿宗李旦的亲撰亲书直接铸入钟身；它还经历了从道观钟楼、城市报时到博物馆收藏的使用与迁移。钟身正面铭文共18行、292字，字体为稍参篆隶的楷书，内容涉及景龙观沿革、铸钟经过、道教观念与对钟的赞颂。因此它不能只被当成“漂亮的铜钟”或一件书法载体，而应同时放在宗教史、城市史、铸造技术史和帝王书写史中观看。",
+        "viewing_guide": "先把它当作一件巨型礼仪与报时器，而不是先把它缩成一张书法图：先看钟体比例、上锐下侈的轮廓和六角弧口；再沿三层十八格观察纹样分区，以及32枚钟乳的均布关系；最后把视线收回铭文区，辨认18行布局和楷书中参篆隶的笔意。可以继续追问三件事：景龙观为何需要这样一口钟，钟的声音如何进入城市秩序，李旦为何把宫观沿革和铸钟经过写在器物上。本条使用的是 PDF 资料图，不能替代现场尺度、铸痕、表面细节或钟声的观察；这些问题需要结合馆内实物与馆方高清资料。",
+        "sources": [
+          {
+            "label": "图像来源 · 用户提供的《195件禁止出国出境文物》PDF（印刷页185）",
+            "url": "assets/photos/original/jingyun-bronze-bell.webp",
+            "layer": "user_pdf",
+            "scope": "image_only",
+            "note": "网站使用 PDF 第195页（印刷页185）中的景云铜钟图版；PDF页面图注标注图片来源为维基百科。"
+          },
+          {
+            "label": "资料页文字依据 · 用户提供的《195件禁止出国出境文物》PDF（印刷页185）",
+            "url": "assets/photos/original/jingyun-bronze-bell.webp",
+            "layer": "user_pdf",
+            "scope": "object_metadata",
+            "note": "名称、序号45、年代、尺寸、批次、材质和馆藏按该页资料表录入；图像仅作资料图，不冒充现场拍摄。"
+          },
+          {
+            "label": "西安碑林博物馆：景云钟",
+            "url": "https://www.beilin-museum.com/index.php?a=index&aid=153&c=View&m=home",
+            "layer": "museum_official_collection_page",
+            "scope": "this_object",
+            "note": "馆方对象页用于核对尺寸、三层十八格纹饰、32枚钟乳、铭文行数与字数，以及1953年移藏碑林的沿革。"
+          },
+          {
+            "label": "陕西省文物局：景云钟",
+            "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202410/t20241016_3063373.html",
+            "layer": "museum_context_page",
+            "scope": "this_object",
+            "note": "用于补充景龙观、迎祥观、明代迁移至西安钟楼报时和首批禁止出境文物名录等公共收藏语境。"
+          },
+          {
+            "label": "宝鸡市文物局：首批禁止出国（境）展览文物——景云铜钟",
+            "url": "https://wwj.baoji.gov.cn/zzzb/wbwy/202505/t20250521_1150476.html",
+            "layer": "museum_context_page",
+            "scope": "this_object",
+            "note": "用于交叉核对铜锡合金、六角弧口、32枚钟乳、18格纹饰与李旦铭文等公开资料；传说性铸钟缘起不作为唯一历史事实。"
+          }
+        ],
+        "status": "curated_from_user_pdf_and_museum_sources",
+        "method_note": "本条的图像和 PDF 展签信息来自用户提供的资料页；形制、迁藏沿革和铭文信息再与西安碑林博物馆、陕西省文物局及宝鸡市文物局公开页面交叉核对。PDF页面图注另标图片来源为维基百科，网站仍将该图明确标为资料图，未将其表述为现场照片。"
+      },
+      "music_focus": null,
+      "review_flags": ["supplemental_image_from_user_pdf", "not_a_visitor_photograph"]
     }
   ]
 }
