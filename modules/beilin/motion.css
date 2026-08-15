@@ -1,0 +1,250 @@
+:root {
+  --beilin-motion-ease: cubic-bezier(.16, 1, .3, 1);
+}
+
+body.beilin-intro-active {
+  height: 100svh;
+  overflow: hidden;
+}
+
+/* The opening uses the Beilin palette: paper, cinnabar, and ink. */
+.beilin-intro {
+  position: fixed;
+  z-index: 3000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--white);
+  isolation: isolate;
+  animation: beilin-intro-safety-hide 0s 4.5s forwards;
+}
+
+.beilin-intro::before {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: .16;
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 5px, rgba(250, 249, 245, .08) 6px),
+    repeating-linear-gradient(90deg, transparent 0 7px, rgba(0, 0, 0, .08) 8px);
+  mix-blend-mode: overlay;
+}
+
+.beilin-intro-panel {
+  position: absolute;
+  inset: 0;
+  transform: translate3d(0, 0, 0);
+  transform-origin: bottom;
+  will-change: transform;
+}
+
+.beilin-intro-panel-a { background: var(--paper); }
+.beilin-intro-panel-b { background: var(--cinnabar); transform: translateY(10%); }
+.beilin-intro-panel-c { background: var(--ink); transform: translateY(20%); }
+
+.beilin-intro-mark {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  gap: 13px;
+  min-width: min(680px, calc(100% - 48px));
+  text-align: center;
+  animation: beilin-intro-mark-in .85s var(--beilin-motion-ease) both;
+}
+
+.beilin-intro-mark::before,
+.beilin-intro-mark::after {
+  position: absolute;
+  top: 50%;
+  width: min(22vw, 300px);
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(239, 177, 159, .78));
+}
+
+.beilin-intro-mark::before { right: calc(100% + 28px); }
+.beilin-intro-mark::after { left: calc(100% + 28px); transform: rotate(180deg); }
+
+.beilin-intro-kicker {
+  color: #efb19f;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .28em;
+}
+
+.beilin-intro-mark strong {
+  font-family: var(--serif);
+  font-size: clamp(2.9rem, 7vw, 7rem);
+  font-weight: 500;
+  letter-spacing: .22em;
+  line-height: 1;
+  text-indent: .22em;
+}
+
+.beilin-intro-mark em {
+  color: rgba(250, 249, 245, .72);
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: .3em;
+}
+
+.beilin-intro-stamp {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border: 1px solid #efb19f;
+  color: #efb19f;
+  font-family: var(--serif);
+  font-size: 17px;
+  font-style: normal;
+  transform: translateX(-50%) rotate(-7deg);
+}
+
+.beilin-intro-side {
+  position: absolute;
+  z-index: 5;
+  right: 24px;
+  bottom: 24px;
+  color: rgba(250, 249, 245, .56);
+  font-size: 9px;
+  letter-spacing: .2em;
+  writing-mode: vertical-rl;
+}
+
+.beilin-intro.is-leaving .beilin-intro-mark {
+  animation: beilin-intro-mark-out .48s ease-in both;
+}
+
+.beilin-intro.is-leaving .beilin-intro-panel-a {
+  animation: beilin-intro-curtain 1.05s .3s cubic-bezier(.77, 0, .18, 1) both;
+}
+
+.beilin-intro.is-leaving .beilin-intro-panel-b {
+  animation: beilin-intro-curtain 1.05s .16s cubic-bezier(.77, 0, .18, 1) both;
+}
+
+.beilin-intro.is-leaving .beilin-intro-panel-c {
+  animation: beilin-intro-curtain 1.05s cubic-bezier(.77, 0, .18, 1) both;
+}
+
+/* Hold the existing hero entrance until the curtain has cleared. */
+html.beilin-intro-live .hero-museum-name,
+html.beilin-intro-live .hero-panel,
+html.beilin-intro-live .hero h1 span {
+  animation-play-state: paused;
+}
+
+html.beilin-intro-live .top-nav {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+html.beilin-intro-complete .top-nav {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .55s var(--beilin-motion-ease), transform .7s var(--beilin-motion-ease);
+}
+
+html.beilin-intro-complete .hero-museum-name {
+  animation: beilin-hero-name-in .76s .08s both var(--beilin-motion-ease);
+}
+
+html.beilin-intro-complete .hero-panel {
+  animation: beilin-hero-panel-in .82s .18s both var(--beilin-motion-ease);
+}
+
+html.beilin-intro-complete .hero h1 span {
+  animation: beilin-hero-title-in .72s both var(--beilin-motion-ease);
+}
+
+html.beilin-intro-complete .hero h1 span:first-child { animation-delay: .36s; }
+html.beilin-intro-complete .hero h1 span:last-child { animation-delay: .44s; }
+
+@keyframes beilin-intro-mark-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes beilin-intro-mark-out {
+  to { opacity: 0; transform: translateY(-16px); }
+}
+
+@keyframes beilin-intro-curtain {
+  to { transform: translateY(-110%); }
+}
+
+@keyframes beilin-intro-safety-hide {
+  to { visibility: hidden; pointer-events: none; }
+}
+
+@keyframes beilin-hero-name-in {
+  from { opacity: 0; transform: translate3d(-50%, -16px, 0); }
+  to { opacity: 1; transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes beilin-hero-name-in-mobile {
+  from { opacity: 0; transform: translate3d(0, -16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes beilin-hero-panel-in {
+  from { opacity: 0; transform: translate3d(-50%, 26px, 0); }
+  to { opacity: 1; transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes beilin-hero-panel-in-mobile {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes beilin-hero-title-in {
+  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 720px) {
+  .beilin-intro-mark {
+    min-width: 0;
+    width: calc(100% - 40px);
+    gap: 10px;
+  }
+
+  .beilin-intro-mark::before,
+  .beilin-intro-mark::after {
+    width: 15vw;
+  }
+
+  .beilin-intro-mark::before { right: calc(100% + 12px); }
+  .beilin-intro-mark::after { left: calc(100% + 12px); }
+
+  .beilin-intro-kicker { font-size: 8px; letter-spacing: .18em; }
+  .beilin-intro-mark strong { font-size: clamp(2.5rem, 13vw, 4.6rem); }
+  .beilin-intro-mark em { font-size: 9px; letter-spacing: .18em; }
+  .beilin-intro-stamp { top: -38px; }
+  .beilin-intro-side { right: 12px; bottom: 16px; font-size: 8px; }
+
+  /* The mobile layout already owns the horizontal position; do not let the
+     desktop entrance keyframes reintroduce translateX(-50%). */
+  html.beilin-intro-complete .hero-museum-name {
+    animation-name: beilin-hero-name-in-mobile;
+  }
+
+  html.beilin-intro-complete .hero-panel {
+    animation-name: beilin-hero-panel-in-mobile;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beilin-intro { display: none !important; }
+  body.beilin-intro-active { height: auto; overflow: auto; }
+  html.beilin-intro-live .top-nav,
+  html.beilin-intro-complete .top-nav { opacity: 1; transform: none; transition: none; }
+}

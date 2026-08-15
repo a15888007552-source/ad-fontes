@@ -183,6 +183,7 @@ function registerReveal(element, delay = 0) {
 }
 
 function setupMotion() {
+  setupBeilinIntro();
   if (!motionAllowed) return;
   document.documentElement.classList.add("js-motion");
 
@@ -222,6 +223,35 @@ function setupMotion() {
       { passive: true },
     );
   }
+}
+
+function setupBeilinIntro() {
+  const intro = document.querySelector(".beilin-intro");
+  if (!intro) return;
+
+  const forceIntro = new URLSearchParams(window.location.search).get("intro") === "1";
+  const seen = sessionStorage.getItem("beilin-intro-seen");
+  const skipIntro = !motionAllowed || (!forceIntro && seen);
+  if (skipIntro) {
+    intro.remove();
+    document.documentElement.classList.add("beilin-intro-complete");
+    return;
+  }
+
+  const isMobile = window.innerWidth <= 720;
+  const leaveAt = isMobile ? 760 : 1050;
+  const finishAt = isMobile ? 1720 : 2150;
+  document.documentElement.classList.add("beilin-intro-live");
+  document.body.classList.add("beilin-intro-active");
+
+  window.setTimeout(() => intro.classList.add("is-leaving"), leaveAt);
+  window.setTimeout(() => {
+    intro.remove();
+    document.body.classList.remove("beilin-intro-active");
+    document.documentElement.classList.remove("beilin-intro-live");
+    document.documentElement.classList.add("beilin-intro-complete");
+    sessionStorage.setItem("beilin-intro-seen", "1");
+  }, finishAt);
 }
 
 function animateNumber(element, target) {
