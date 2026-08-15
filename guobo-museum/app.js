@@ -151,6 +151,72 @@ const dialogDescription = document.querySelector("#dialog-description");
 const dialogTags = document.querySelector("#dialog-tags");
 const dialogBoundary = document.querySelector("#dialog-boundary");
 const dialogSource = document.querySelector("#dialog-source");
+const opening = document.querySelector("#opening");
+const skipOpening = document.querySelector("#skip-opening");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const motionAllowed = !reducedMotion && !navigator.connection?.saveData;
+let openingClosed = false;
+let openingLeaveTimer;
+let openingFinishTimer;
+
+function setOpeningComplete() {
+  document.body.classList.remove("guobo-intro-active");
+  document.documentElement.classList.remove("guobo-intro-live");
+  document.documentElement.classList.add("guobo-intro-complete");
+  try {
+    sessionStorage.setItem("guobo-intro-seen", "1");
+  } catch {
+    // A blocked sessionStorage should not prevent the page from opening.
+  }
+}
+
+function removeOpening() {
+  opening?.remove();
+  setOpeningComplete();
+  document.removeEventListener("keydown", handleOpeningKeydown, true);
+}
+
+function closeOpening() {
+  if (!opening || openingClosed) return;
+  openingClosed = true;
+  window.clearTimeout(openingLeaveTimer);
+  window.clearTimeout(openingFinishTimer);
+  opening.classList.add("is-leaving");
+  opening.setAttribute("aria-hidden", "true");
+  setOpeningComplete();
+  window.setTimeout(removeOpening, motionAllowed ? 1120 : 40);
+}
+
+function handleOpeningKeydown(event) {
+  if (event.key === "Escape") closeOpening();
+}
+
+function setupOpening() {
+  if (!opening) return;
+
+  const forceOpening = new URLSearchParams(window.location.search).get("intro") === "1";
+  const seen = sessionStorage.getItem("guobo-intro-seen");
+  if (!motionAllowed || (!forceOpening && seen)) {
+    removeOpening();
+    return;
+  }
+
+  const isMobile = window.innerWidth <= 720;
+  const leaveAt = isMobile ? 760 : 1050;
+  const finishAt = isMobile ? 1720 : 2150;
+  document.documentElement.classList.add("guobo-intro-live");
+  document.body.classList.add("guobo-intro-active");
+  skipOpening?.addEventListener("click", closeOpening);
+  opening.addEventListener("click", (event) => {
+    if (event.target === opening) closeOpening();
+  });
+  document.addEventListener("keydown", handleOpeningKeydown, true);
+  window.requestAnimationFrame(() => skipOpening?.focus({ preventScroll: true }));
+  openingLeaveTimer = window.setTimeout(() => opening.classList.add("is-leaving"), leaveAt);
+  openingFinishTimer = window.setTimeout(removeOpening, finishAt);
+}
+
+setupOpening();
 
 function renderCards() {
   count.textContent = `${objectItems.length} 张照片卡`;

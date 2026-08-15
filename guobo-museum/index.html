@@ -7,8 +7,26 @@
     <meta name="description" content="中国国家博物馆个人参观档案主页：国博简介与文物卡片。" />
     <title>中国国家博物馆 · 文物卡片</title>
     <link rel="stylesheet" href="styles.css" />
+    <noscript><style>.opening-screen{display:none!important}body.guobo-intro-active{overflow:auto!important}</style></noscript>
   </head>
-  <body>
+  <body class="guobo-intro-active">
+    <div class="opening-screen" id="opening" role="dialog" aria-modal="true" aria-labelledby="opening-title" aria-describedby="opening-subtitle" tabindex="-1">
+      <div class="opening-glow" aria-hidden="true"></div>
+      <div class="opening-panel opening-panel-left" aria-hidden="true"></div>
+      <div class="opening-panel opening-panel-right" aria-hidden="true"></div>
+      <div class="opening-frame" aria-hidden="true"></div>
+      <div class="opening-center">
+        <div class="opening-seal" aria-hidden="true"><span>国</span><i></i></div>
+        <p class="opening-kicker">MY BEIJING ARCHIVE / 01</p>
+        <p class="opening-english">NATIONAL MUSEUM OF CHINA</p>
+        <h1 id="opening-title">中国国家<br /><em>博物馆</em></h1>
+        <p id="opening-subtitle">在展柜与记忆之间，打开一页北京参观档案</p>
+      </div>
+      <div class="opening-meta">
+        <span>BEIJING · TIAN'ANMEN EAST</span>
+        <button id="skip-opening" type="button">跳过开场 <span aria-hidden="true">↗</span></button>
+      </div>
+    </div>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="回到主页">
         <span class="brand-mark">国</span>
