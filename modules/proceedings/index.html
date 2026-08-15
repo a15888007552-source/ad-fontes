@@ -307,9 +307,69 @@ footer .fnote{max-width:70ch;margin:0 auto 8px;line-height:1.7}
   .panel-head,.panel-body{padding-left:18px;padding-right:18px}
 }
 
+/* ---------- opening sequence: the conference hall lights up ---------- */
+body.proceedings-opening-active{overflow:hidden}
+#proceedings-opening{position:fixed;inset:0;z-index:1600;display:grid;place-items:center;overflow:hidden;isolation:isolate;background:#170c0c;color:#f7ead9;opacity:1;visibility:visible;transition:opacity .58s ease,visibility 0s linear 0s}
+#proceedings-opening.is-leaving{opacity:0;pointer-events:none;visibility:hidden}
+#proceedings-opening.is-done{display:none}
+#proceedings-opening::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 18%,rgba(240,190,100,.2),transparent 29%),linear-gradient(180deg,#3b1615 0%,#1c0c0d 58%,#0b0809 100%)}
+#proceedings-opening::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.34;background:linear-gradient(90deg,transparent 49.9%,rgba(239,203,145,.25) 50%,transparent 50.1%),repeating-linear-gradient(0deg,transparent 0 32px,rgba(242,213,169,.06) 33px 34px);mask-image:linear-gradient(180deg,black,transparent 85%)}
+.proceedings-opening-skip{position:absolute;right:clamp(18px,4vw,52px);bottom:clamp(18px,4vw,40px);z-index:9;border:1px solid rgba(244,216,164,.44);background:rgba(18,8,9,.46);color:#efd29c;padding:9px 14px;font:600 11px/1 var(--sans);letter-spacing:.17em;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.proceedings-opening-skip:hover,.proceedings-opening-skip:focus-visible{background:rgba(154,123,63,.22);border-color:#f0d299;color:#fff5e6;outline:2px solid rgba(240,210,153,.32);outline-offset:3px}
+.proceedings-opening-stage{position:relative;width:min(92vw,1120px);height:min(82vh,720px);display:grid;place-items:center;overflow:hidden;border:1px solid rgba(225,187,112,.22);box-shadow:0 0 0 10px rgba(225,187,112,.035),0 20px 70px rgba(0,0,0,.35);perspective:1000px}
+.proceedings-opening-frame{position:absolute;inset:7% 8%;border:1px solid rgba(237,207,150,.22);border-bottom:0;border-radius:48% 48% 0 0;box-shadow:inset 0 0 45px rgba(247,211,144,.07);pointer-events:none}
+.proceedings-opening-frame::before{content:"";position:absolute;inset:12px;border:1px solid rgba(237,207,150,.11);border-bottom:0;border-radius:48% 48% 0 0}
+.proceedings-opening-arch{position:absolute;left:50%;top:13%;width:min(70vw,760px);height:59%;transform:translateX(-50%);border:1px solid rgba(241,207,142,.28);border-bottom:0;border-radius:50% 50% 0 0;box-shadow:0 0 44px rgba(225,175,80,.1),inset 0 0 42px rgba(225,175,80,.07)}
+.proceedings-opening-arch::after{content:"";position:absolute;left:50%;top:0;width:1px;height:100%;background:linear-gradient(rgba(241,207,142,.26),transparent);opacity:.5}
+.proceedings-opening-copy{position:relative;z-index:3;width:min(80vw,650px);text-align:center;opacity:0;transform:translateY(18px);animation:proceedings-opening-copy-in .86s cubic-bezier(.16,1,.3,1) .44s both}
+.proceedings-opening-copy .kicker{display:block;color:#e8bb7f;font:600 10px/1.4 var(--sans);letter-spacing:.36em;margin-left:.36em}
+.proceedings-opening-copy h1{font-family:var(--serif);font-size:clamp(28px,5vw,56px);line-height:1.17;letter-spacing:.12em;margin:17px 0 14px;font-weight:700;text-shadow:0 5px 24px rgba(0,0,0,.55)}
+.proceedings-opening-copy p{margin:0;color:rgba(247,226,187,.72);font:11px/1.5 var(--sans);letter-spacing:.27em;margin-left:.27em}
+.proceedings-opening-year{display:grid;place-items:center;width:72px;aspect-ratio:1;margin:0 auto 18px;border:1px solid rgba(238,201,132,.68);border-radius:50%;color:#f1c982;font:600 15px/1 var(--sans);letter-spacing:.16em;padding-left:.16em;box-shadow:0 0 0 7px rgba(235,196,120,.05),0 0 30px rgba(235,196,120,.16);animation:proceedings-opening-year 1.2s ease-out .5s both}
+.proceedings-opening-light{position:absolute;left:50%;top:5%;z-index:2;width:min(70vw,800px);height:70%;transform:translateX(-50%);pointer-events:none;opacity:.7;animation:proceedings-opening-light 1.4s ease-in-out infinite alternate}
+.proceedings-opening-light::before,.proceedings-opening-light::after{content:"";position:absolute;top:0;width:42%;height:92%;filter:blur(2px);opacity:.22}
+.proceedings-opening-light::before{left:0;background:linear-gradient(116deg,rgba(247,201,114,.45),transparent 61%);transform:skewX(-13deg)}
+.proceedings-opening-light::after{right:0;background:linear-gradient(244deg,rgba(247,201,114,.45),transparent 61%);transform:skewX(13deg)}
+.proceedings-opening-staff{position:absolute;z-index:1;width:min(37vw,360px);height:112px;border-top:1px solid rgba(246,220,169,.24);border-bottom:1px solid rgba(246,220,169,.2);opacity:0;animation:proceedings-opening-staff-in .9s ease-out .7s both}
+.proceedings-opening-staff::before{content:"";position:absolute;inset:25px 0;background:repeating-linear-gradient(0deg,transparent 0 16px,rgba(246,220,169,.3) 17px 18px)}
+.proceedings-opening-staff::after{content:"♪   ♫   ♩";position:absolute;top:31px;left:18px;color:rgba(248,214,154,.58);font:33px/1.5 var(--serif);letter-spacing:.18em;white-space:nowrap}
+.proceedings-opening-staff--left{left:2%;transform:rotate(-7deg)}
+.proceedings-opening-staff--right{right:2%;transform:rotate(7deg) scaleX(-1)}
+.proceedings-opening-curtain{position:absolute;top:-2%;bottom:-2%;z-index:5;width:51%;background:repeating-linear-gradient(90deg,#25090a 0 12px,#4b1214 12px 23px,#2c090a 23px 38px,#58191a 38px 46px);box-shadow:0 0 34px rgba(0,0,0,.56);animation-duration:1.5s;animation-timing-function:cubic-bezier(.16,1,.3,1);animation-fill-mode:both}
+.proceedings-opening-curtain::after{content:"";position:absolute;inset:0;opacity:.46;background:linear-gradient(90deg,rgba(0,0,0,.48),transparent 22%,rgba(255,208,141,.12) 51%,transparent 78%,rgba(0,0,0,.42))}
+.proceedings-opening-curtain--left{left:0;transform-origin:left center;animation-name:proceedings-opening-curtain-left}
+.proceedings-opening-curtain--right{right:0;transform-origin:right center;animation-name:proceedings-opening-curtain-right}
+@keyframes proceedings-opening-copy-in{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes proceedings-opening-year{from{opacity:0;transform:scale(.65) rotate(-24deg)}to{opacity:1;transform:none}}
+@keyframes proceedings-opening-light{from{opacity:.46;transform:translateX(-50%) scaleX(.9)}to{opacity:.9;transform:translateX(-50%) scaleX(1.04)}}
+@keyframes proceedings-opening-staff-in{from{opacity:0;transform:translateY(18px) rotate(-7deg)}to{opacity:.72;transform:translateY(0) rotate(-7deg)}}
+@keyframes proceedings-opening-curtain-left{from{transform:translateX(0)}to{transform:translateX(-103%)}}
+@keyframes proceedings-opening-curtain-right{from{transform:translateX(0)}to{transform:translateX(103%)}}
+@media(max-width:720px){.proceedings-opening-stage{height:min(78vh,600px)}.proceedings-opening-frame{inset:6% 4%}.proceedings-opening-arch{top:18%;width:92vw;height:48%}.proceedings-opening-staff{width:48vw;height:84px;opacity:.6}.proceedings-opening-staff::after{font-size:22px;top:26px;left:8px}.proceedings-opening-staff--left{left:-15%}.proceedings-opening-staff--right{right:-15%}.proceedings-opening-copy h1{letter-spacing:.07em}.proceedings-opening-copy p{letter-spacing:.13em}.proceedings-opening-year{width:60px;margin-bottom:13px}}
+@media(prefers-reduced-motion:reduce){#proceedings-opening{display:none!important}.proceedings-opening-copy,.proceedings-opening-year,.proceedings-opening-light,.proceedings-opening-staff,.proceedings-opening-curtain{animation:none!important}}
+
 </style>
 </head>
-<body>
+<body class="proceedings-opening-active">
+
+<div id="proceedings-opening" role="dialog" aria-modal="true" aria-labelledby="proceedings-opening-title">
+  <div class="proceedings-opening-stage">
+    <div class="proceedings-opening-frame" aria-hidden="true"></div>
+    <div class="proceedings-opening-arch" aria-hidden="true"></div>
+    <div class="proceedings-opening-light" aria-hidden="true"></div>
+    <div class="proceedings-opening-staff proceedings-opening-staff--left" aria-hidden="true"></div>
+    <div class="proceedings-opening-staff proceedings-opening-staff--right" aria-hidden="true"></div>
+    <div class="proceedings-opening-copy">
+      <div class="proceedings-opening-year">2026</div>
+      <span class="kicker">AD FONTES · DIGITAL PROCEEDINGS</span>
+      <h1 id="proceedings-opening-title">西方音乐学会<br>第八届年会</h1>
+      <p>BEIJING · 26—27 JUN 2026 · RAISE THE CURTAIN</p>
+    </div>
+    <div class="proceedings-opening-curtain proceedings-opening-curtain--left" aria-hidden="true"></div>
+    <div class="proceedings-opening-curtain proceedings-opening-curtain--right" aria-hidden="true"></div>
+  </div>
+  <button class="proceedings-opening-skip" id="proceedings-opening-skip" type="button">跳过开场</button>
+</div>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -791,6 +851,35 @@ const App = {
 };
 
 document.addEventListener('DOMContentLoaded',()=>App.init());
+</script>
+<script>
+(function(){
+  const opening=document.getElementById("proceedings-opening");
+  if(!opening)return;
+  const skip=document.getElementById("proceedings-opening-skip");
+  const reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const saveData=!!(navigator.connection&&navigator.connection.saveData);
+  const force=new URLSearchParams(location.search).get("intro")==="1";
+  const key="proceedings-opening-seen";
+  let seen=false;
+  try{seen=sessionStorage.getItem(key)==="1"}catch(e){}
+  let finished=false;
+  function finish(){
+    if(finished)return;
+    finished=true;
+    opening.classList.add("is-leaving");
+    document.body.classList.remove("proceedings-opening-active");
+    window.setTimeout(function(){opening.classList.add("is-done");opening.remove()},640);
+  }
+  skip&&skip.addEventListener("click",finish);
+  window.addEventListener("keydown",function(e){if(e.key==="Escape"&&!finished){e.preventDefault();finish()}},false);
+  if(reduced||saveData||(!force&&seen)){finish();return;}
+  try{sessionStorage.setItem(key,"1")}catch(e){}
+  const mobile=window.matchMedia&&window.matchMedia("(max-width:720px)").matches;
+  window.setTimeout(function(){if(!finished)opening.classList.add("is-leaving")},mobile?1080:1450);
+  window.setTimeout(finish,mobile?1820:2440);
+  skip&&skip.focus({preventScroll:true});
+})();
 </script>
 </body>
 </html>

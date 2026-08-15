@@ -655,7 +655,67 @@ html[data-mirror="to-europa"]::view-transition-new(yearbook-page){transform-orig
 .mirror-enter[data-mirror="to-europa"] #app{transform-origin:left center;animation:yearbook-in-left .36s cubic-bezier(.16,1,.3,1) both;will-change:transform,opacity}
 @media(max-width:640px){.mirror-switch{bottom:9px;min-height:48px}.mirror-caption{display:none}}
 @media(prefers-reduced-motion:reduce){.mirror-switch,#app{animation:none!important;transition:none!important}::view-transition-old(yearbook-page),::view-transition-new(yearbook-page){animation:none!important}}
+
+/* ---------- opening sequence: rotating and cut-open Europa seal ---------- */
+body.europa-opening-active{overflow:hidden}
+#europa-opening{position:fixed;inset:0;z-index:1800;display:grid;place-items:center;overflow:hidden;isolation:isolate;background:#0a0e11;color:#f0e4c7;opacity:1;visibility:visible;transition:opacity .62s var(--ease-out),visibility 0s linear 0s}
+#europa-opening::before{content:"";position:absolute;inset:-15%;background:radial-gradient(circle at 50% 45%,rgba(184,142,66,.16),transparent 34%),radial-gradient(circle at 20% 20%,rgba(59,88,104,.2),transparent 32%),linear-gradient(135deg,#0a0e11 0%,#131c20 48%,#080b0d 100%);z-index:-2}
+#europa-opening::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.48;background:linear-gradient(90deg,transparent 49.92%,rgba(235,211,155,.3) 50%,transparent 50.08%),linear-gradient(0deg,transparent 49.92%,rgba(235,211,155,.18) 50%,transparent 50.08%),repeating-radial-gradient(circle at 50% 50%,transparent 0 92px,rgba(221,190,119,.09) 93px 94px,transparent 95px 148px);mask-image:linear-gradient(180deg,transparent,black 18%,black 82%,transparent)}
+#europa-opening.is-leaving{opacity:0;pointer-events:none;visibility:hidden}
+#europa-opening.is-done{display:none}
+.europa-opening-skip{position:absolute;right:clamp(18px,4vw,52px);bottom:clamp(18px,4vw,42px);border:1px solid rgba(233,214,166,.42);background:rgba(10,14,17,.45);color:#dfc995;padding:9px 14px;font:600 11px/1 var(--sans);letter-spacing:.18em;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.europa-opening-skip:hover,.europa-opening-skip:focus-visible{background:rgba(201,162,39,.18);border-color:#dfc995;color:#fff5d7;outline:2px solid rgba(223,201,149,.38);outline-offset:3px}
+.europa-opening-stage{position:relative;width:min(90vw,840px);height:min(79vh,650px);display:grid;place-items:center;perspective:1300px}
+.europa-opening-orbit{position:absolute;inset:8% 18%;border:1px solid rgba(223,201,149,.22);border-radius:50%;transform:rotate(-16deg);animation:europa-opening-orbit 9s linear infinite}
+.europa-opening-orbit::before,.europa-opening-orbit::after{content:"";position:absolute;inset:9%;border:1px dashed rgba(223,201,149,.2);border-radius:50%}
+.europa-opening-orbit::after{inset:23%;border-style:solid;border-color:rgba(97,145,158,.24);transform:rotate(56deg)}
+.europa-opening-crosshair{position:absolute;width:min(48vw,420px);aspect-ratio:1;border:1px solid rgba(223,201,149,.12);border-radius:50%;animation:europa-opening-breathe 3.6s ease-in-out infinite alternate}
+.europa-opening-crosshair::before,.europa-opening-crosshair::after{content:"";position:absolute;background:rgba(223,201,149,.25)}
+.europa-opening-crosshair::before{left:50%;top:-12%;width:1px;height:124%}
+.europa-opening-crosshair::after{top:50%;left:-12%;height:1px;width:124%}
+.europa-opening-medallion{position:relative;width:min(52vw,322px);aspect-ratio:1;transform-style:preserve-3d;filter:drop-shadow(0 24px 35px rgba(0,0,0,.46));animation:europa-opening-medallion-in 1.55s var(--ease-out) both}
+.europa-opening-medallion::before{content:"";position:absolute;inset:-9px;border:1px solid rgba(232,209,154,.46);border-radius:50%;box-shadow:0 0 0 7px rgba(232,209,154,.04),0 0 34px rgba(188,139,54,.18);animation:europa-opening-ring 1.4s var(--ease-out) both}
+.europa-opening-slice{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(245,222,164,.58);background-image:url("./europa-orbit-seal.png");background-position:center;background-size:cover;box-shadow:inset 0 0 22px rgba(0,0,0,.38);backface-visibility:hidden;animation-duration:1.38s;animation-timing-function:var(--ease-out);animation-fill-mode:both}
+.europa-opening-slice--nw{clip-path:polygon(0 0,50% 0,50% 50%,0 50%);animation-name:europa-opening-nw}
+.europa-opening-slice--ne{clip-path:polygon(50% 0,100% 0,100% 50%,50% 50%);animation-name:europa-opening-ne}
+.europa-opening-slice--sw{clip-path:polygon(0 50%,50% 50%,50% 100%,0 100%);animation-name:europa-opening-sw}
+.europa-opening-slice--se{clip-path:polygon(50% 50%,100% 50%,100% 100%,50% 100%);animation-name:europa-opening-se}
+.europa-opening-caption{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);width:min(92vw,560px);text-align:center;opacity:0;animation:europa-opening-caption-in .72s var(--ease-out) .68s both}
+.europa-opening-caption .kicker{display:block;color:#d4b56f;font:600 10px/1.4 var(--sans);letter-spacing:.42em;margin-left:.42em}
+.europa-opening-caption h1{font-family:var(--serif);font-size:clamp(28px,5vw,54px);line-height:1.1;letter-spacing:.15em;margin:12px 0 7px;font-weight:600;text-shadow:0 3px 18px rgba(0,0,0,.48)}
+.europa-opening-caption p{margin:0;color:rgba(241,226,190,.68);font:11px/1.5 var(--sans);letter-spacing:.3em;margin-left:.3em}
+@keyframes europa-opening-orbit{to{transform:rotate(344deg)}}
+@keyframes europa-opening-breathe{from{transform:scale(.94);opacity:.56}to{transform:scale(1.04);opacity:1}}
+@keyframes europa-opening-ring{from{transform:scale(.58) rotate(-40deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes europa-opening-medallion-in{0%{transform:rotateY(-68deg) rotateZ(-18deg) scale(.54);opacity:0}32%{transform:rotateY(16deg) rotateZ(7deg) scale(1.02);opacity:1}66%{transform:rotateY(-6deg) rotateZ(-2deg) scale(.98)}100%{transform:rotateY(0) rotateZ(0) scale(1);opacity:1}}
+@keyframes europa-opening-nw{0%{transform:translate3d(0,0,34px) rotateZ(-2deg) rotateY(-75deg);opacity:0}38%{opacity:1}100%{transform:translate3d(-15px,-12px,18px) rotateZ(-13deg) rotateY(0)}}
+@keyframes europa-opening-ne{0%{transform:translate3d(0,0,34px) rotateZ(2deg) rotateY(75deg);opacity:0}38%{opacity:1}100%{transform:translate3d(15px,-12px,18px) rotateZ(13deg) rotateY(0)}}
+@keyframes europa-opening-sw{0%{transform:translate3d(0,0,34px) rotateZ(2deg) rotateY(-75deg);opacity:0}38%{opacity:1}100%{transform:translate3d(-15px,12px,18px) rotateZ(13deg) rotateY(0)}}
+@keyframes europa-opening-se{0%{transform:translate3d(0,0,34px) rotateZ(-2deg) rotateY(75deg);opacity:0}38%{opacity:1}100%{transform:translate3d(15px,12px,18px) rotateZ(-13deg) rotateY(0)}}
+@keyframes europa-opening-caption-in{from{opacity:0;transform:translate(-50%,18px)}to{opacity:1;transform:translate(-50%,0)}}
+@media(max-width:640px){.europa-opening-stage{height:min(78vh,560px)}.europa-opening-orbit{inset:10% 4%}.europa-opening-caption{bottom:3%}.europa-opening-caption h1{letter-spacing:.1em}.europa-opening-caption p{letter-spacing:.17em}.europa-opening-skip{font-size:10px;padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){#europa-opening{display:none!important}.europa-opening-orbit,.europa-opening-crosshair,.europa-opening-medallion,.europa-opening-slice,.europa-opening-medallion::before,.europa-opening-caption{animation:none!important}}
 </style>
+
+<body class="europa-opening-active">
+<div id="europa-opening" role="dialog" aria-modal="true" aria-labelledby="europa-opening-title">
+  <div class="europa-opening-stage">
+    <div class="europa-opening-orbit" aria-hidden="true"></div>
+    <div class="europa-opening-crosshair" aria-hidden="true"></div>
+    <div class="europa-opening-medallion" aria-hidden="true">
+      <div class="europa-opening-slice europa-opening-slice--nw"></div>
+      <div class="europa-opening-slice europa-opening-slice--ne"></div>
+      <div class="europa-opening-slice europa-opening-slice--sw"></div>
+      <div class="europa-opening-slice europa-opening-slice--se"></div>
+    </div>
+    <div class="europa-opening-caption">
+      <span class="kicker">AD FONTES · DICTIONARIUM EUROPAE</span>
+      <h1 id="europa-opening-title">欧罗巴词典</h1>
+      <p>ANNALES MUSICORUM EUROPAE · OPEN THE ARCHIVE</p>
+    </div>
+  </div>
+  <button class="europa-opening-skip" id="europa-opening-skip" type="button">跳过开场</button>
+</div>
 
 <div class="chronograph-progress" id="chronograph" aria-hidden="true"></div>
 <div class="selection-toast" id="selection-toast" role="status" aria-live="polite"></div>
@@ -2307,7 +2367,7 @@ window.addEventListener("popstate",()=>{if(!location.hash){$("#dlg").open&&$("#d
 renderEpnav();renderAlm();
 queueChronograph();
 if(location.hash){readHash()}
-else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)setTimeout(showIntro,350)}
+else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)setTimeout(showIntro,2700)}
 </script>
 <script>
 (function(){
@@ -2325,6 +2385,35 @@ else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)s
     setTimeout(function(){location.href=link.href},190);
   });
   addEventListener('pageshow',function(){setTimeout(function(){document.documentElement.classList.remove('mirror-enter');try{sessionStorage.removeItem('ad-fontes-yearbook-direction')}catch(e){}},850)},{once:true});
+})();
+</script>
+<script>
+(function(){
+  const opening=document.getElementById("europa-opening");
+  if(!opening)return;
+  const skip=document.getElementById("europa-opening-skip");
+  const reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const saveData=!!(navigator.connection&&navigator.connection.saveData);
+  const force=new URLSearchParams(location.search).get("intro")==="1";
+  const key="europa-opening-seen";
+  let seen=false;
+  try{seen=sessionStorage.getItem(key)==="1"}catch(e){}
+  let finished=false;
+  function finish(){
+    if(finished)return;
+    finished=true;
+    opening.classList.add("is-leaving");
+    document.body.classList.remove("europa-opening-active");
+    window.setTimeout(function(){opening.classList.add("is-done");opening.remove()},680);
+  }
+  skip&&skip.addEventListener("click",finish);
+  window.addEventListener("keydown",function(e){if(e.key==="Escape"&&!finished){e.preventDefault();finish()}},false);
+  if(reduced||saveData||(!force&&seen)){finish();return;}
+  try{sessionStorage.setItem(key,"1")}catch(e){}
+  const mobile=window.matchMedia&&window.matchMedia("(max-width:640px)").matches;
+  window.setTimeout(function(){if(!finished)opening.classList.add("is-leaving")},mobile?960:1220);
+  window.setTimeout(finish,mobile?1760:2260);
+  skip&&skip.focus({preventScroll:true});
 })();
 </script>
 </body>
