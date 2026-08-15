@@ -822,7 +822,7 @@
 
     .museum-list {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
       padding-top: 14px;
     }
@@ -1463,6 +1463,27 @@
     }
   }
 </style>
+<style id="atlas-scope-refinement">
+  /* The existing first Shaanxi hero image remains the chapter background. */
+  #panel-shaanxi .chapter-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #province-cover-image {
+    transition: opacity .22s ease, transform .34s ease;
+  }
+
+  #province-cover-image.is-switching {
+    opacity: .2;
+    transform: scale(1.02);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #province-cover-image {
+      transition: none;
+    }
+  }
+</style>
 </head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴">
@@ -1519,8 +1540,8 @@
           <span>北京<br />陕西<br />河南</span>
         </div>
         <figure class="cover-stamp">
-          <img src="assets/beijing-palace-hero.webp" alt="北京故宫博物院建筑群俯瞰景象" fetchpriority="high" decoding="async" width="2400" height="1600" />
-          <figcaption>北京 · 第一张照片</figcaption>
+          <img id="province-cover-image" data-cover-key="beijing" src="assets/beijing-palace-hero.webp" alt="北京故宫博物院建筑群俯瞰景象" fetchpriority="high" decoding="async" width="2400" height="1600" data-cover-beijing="assets/beijing-palace-hero.webp" data-cover-shaanxi="assets/ai-xian-bell-tower.png" data-cover-henan="assets/henan-hero.webp" />
+          <figcaption id="province-cover-caption">北京 · 第一张照片</figcaption>
         </figure>
       </div>
     </section>
@@ -1613,7 +1634,7 @@
                 <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>西安碑林博物馆</h4><p>西安 · 碑刻与书法</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
               <a class="museum-card museum-card--link" href="../shaanxi-archaeology-museum/index.html" aria-label="进入陕西考古博物馆专题站">
-                <div class="card-media"><img src="assets/shaanxi-hero.webp" alt="陕西考古博物馆专题入口" loading="lazy" decoding="async" /></div>
+                <div class="card-media"><img src="assets/ai-dayanta-card.png" alt="大雁塔 AI 氛围图" loading="lazy" decoding="async" /></div>
                 <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>陕西考古博物馆</h4><p>西安 · 考古圣地</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
               <a class="museum-card museum-card--link" href="../qinhan/index.html" aria-label="进入陕西历史博物馆秦汉馆专题站">
@@ -1625,12 +1646,6 @@
                 <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>中国青铜器博物院</h4><p>宝鸡 · 周秦青铜文明</p><span class="card-arrow">进入专题 ↗</span></div>
               </a></div>
           </section>
-          <aside class="chapter-note">
-            <p class="section-kicker">A NOTE ON THIS CHAPTER</p>
-            <blockquote>墨色越深，时间越近</blockquote>
-            <p>这一章把碑林、秦汉馆、陕西考古博物馆与中国青铜器博物院放在同一条陕西观看路径上。</p>
-            <div class="note-index"><span>陕西 / 02</span><span>INK BLACK</span></div>
-          </aside>
         </div>
       </article>
 
@@ -1859,5 +1874,50 @@
       window.setTimeout(finish, 1650);
     })();
   </script>
+<script id="atlas-province-cover-script">
+  (() => {
+    const image = document.getElementById("province-cover-image");
+    const caption = document.getElementById("province-cover-caption");
+    if (!image || !caption) return;
+
+    const covers = {
+      beijing: {
+        src: image.dataset.coverBeijing,
+        alt: "北京故宫博物院建筑群俯瞰景象",
+        caption: "北京 · 第一张照片"
+      },
+      shaanxi: {
+        src: image.dataset.coverShaanxi,
+        alt: "西安钟楼 AI 氛围图",
+        caption: "陕西 · 西安钟楼"
+      },
+      henan: {
+        src: image.dataset.coverHenan,
+        alt: "河南篇章现场氛围图",
+        caption: "河南 · 第一张照片"
+      }
+    };
+
+    const render = () => {
+      const key = document.documentElement.dataset.activeProvince || "beijing";
+      const data = covers[key] || covers.beijing;
+      caption.textContent = data.caption;
+      if (image.dataset.coverKey === key) return;
+      image.classList.add("is-switching");
+      window.setTimeout(() => {
+        image.src = data.src;
+        image.alt = data.alt;
+        image.dataset.coverKey = key;
+        image.classList.remove("is-switching");
+      }, 160);
+    };
+
+    new MutationObserver(render).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-active-province"]
+    });
+    render();
+  })();
+</script>
 </body>
 </html>
