@@ -1,0 +1,3 @@
+exclude:
+  - assets/photos/original
+  - assets/photos/original/**
