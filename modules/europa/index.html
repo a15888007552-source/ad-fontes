@@ -656,56 +656,50 @@ html[data-mirror="to-europa"]::view-transition-new(yearbook-page){transform-orig
 @media(max-width:640px){.mirror-switch{bottom:9px;min-height:48px}.mirror-caption{display:none}}
 @media(prefers-reduced-motion:reduce){.mirror-switch,#app{animation:none!important;transition:none!important}::view-transition-old(yearbook-page),::view-transition-new(yearbook-page){animation:none!important}}
 
-/* ---------- opening sequence: camera-aperture reveal ---------- */
+/* ---------- opening sequence: rotating disc dispersal ---------- */
 body.europa-opening-active{overflow:hidden}
 #europa-opening{position:fixed;inset:0;z-index:1800;display:grid;place-items:center;overflow:hidden;isolation:isolate;background:#080b0e;color:#f0e4c7;opacity:1;visibility:visible;transition:opacity .68s var(--ease-out),visibility 0s linear 0s}
-#europa-opening::before{content:"";position:absolute;inset:-18%;z-index:-2;background:radial-gradient(circle at 50% 45%,rgba(206,161,76,.15),transparent 24%),radial-gradient(circle at 50% 50%,rgba(52,80,91,.2),transparent 46%),linear-gradient(145deg,#070a0c 0%,#111a1e 52%,#060809 100%)}
-#europa-opening::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.28;background:radial-gradient(circle at 50% 50%,transparent 0 25%,rgba(222,190,117,.13) 25.2% 25.35%,transparent 25.6% 42%,rgba(222,190,117,.08) 42.2% 42.35%,transparent 42.7%),linear-gradient(90deg,transparent 49.94%,rgba(235,211,155,.17) 50%,transparent 50.06%),linear-gradient(0deg,transparent 49.94%,rgba(235,211,155,.12) 50%,transparent 50.06%);mask-image:linear-gradient(180deg,transparent,black 16%,black 84%,transparent)}
+#europa-opening::before{content:"";position:absolute;inset:-18%;z-index:-1;background:radial-gradient(circle at 50% 44%,rgba(190,145,61,.12),transparent 27%),radial-gradient(circle at 50% 52%,rgba(46,78,87,.16),transparent 52%),linear-gradient(145deg,#06090b 0%,#11191d 54%,#050708 100%)}
+#europa-opening::after{display:none}
 #europa-opening.is-leaving{opacity:0;pointer-events:none;visibility:hidden}
 #europa-opening.is-done{display:none}
 .europa-opening-skip{position:absolute;right:clamp(18px,4vw,52px);bottom:clamp(18px,4vw,42px);z-index:10;border:1px solid rgba(233,214,166,.42);background:rgba(8,11,14,.52);color:#dfc995;padding:9px 14px;font:600 11px/1 var(--sans);letter-spacing:.18em;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
 .europa-opening-skip:hover,.europa-opening-skip:focus-visible{background:rgba(201,162,39,.18);border-color:#dfc995;color:#fff5d7;outline:2px solid rgba(223,201,149,.38);outline-offset:3px}
 .europa-opening-stage{position:relative;width:min(92vw,820px);height:min(82vh,680px);display:grid;place-items:center;perspective:1400px}
-.europa-opening-lens{position:relative;width:min(67vw,430px);aspect-ratio:1;display:grid;place-items:center;transform-style:preserve-3d;filter:drop-shadow(0 28px 38px rgba(0,0,0,.5));animation:europa-lens-arrive 1.05s var(--ease-out) both}
-.europa-opening-lens::before{content:"";position:absolute;inset:-8%;border:1px solid rgba(230,202,139,.42);border-radius:50%;box-shadow:0 0 0 8px rgba(230,202,139,.04),0 0 40px rgba(190,143,55,.18);animation:europa-lens-ring-in 1.25s var(--ease-out) both}
-.europa-opening-lens::after{content:"";position:absolute;inset:-1%;border:1px solid rgba(105,147,153,.28);border-radius:50%;transform:rotate(22deg) scale(.94);pointer-events:none}
-.europa-aperture{position:relative;width:88%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 48% 44%,#1f2b2e 0%,#10171a 48%,#050708 100%);box-shadow:inset 0 0 0 1px rgba(238,211,153,.55),inset 0 0 0 7px rgba(0,0,0,.48),inset 0 0 42px rgba(0,0,0,.75);isolation:isolate;transform:rotate(-7deg);animation:europa-aperture-body 2.1s var(--ease-out) both}
-.europa-aperture-image{position:absolute;inset:7%;z-index:1;border-radius:50%;overflow:hidden;clip-path:circle(6% at 50% 50%);animation:europa-aperture-image-open 1.72s var(--ease-out) .04s both}
-.europa-aperture-image img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;filter:saturate(.94) contrast(1.04);user-select:none;-webkit-user-drag:none}
-.europa-aperture-blades{position:absolute;inset:5%;z-index:3;pointer-events:none}
-.europa-aperture-blade{position:absolute;left:50%;top:50%;width:58%;height:25%;margin-top:-12.5%;transform-origin:0 50%;clip-path:polygon(0 50%,86% 0,100% 50%,86% 100%);background:linear-gradient(110deg,rgba(4,7,8,.98) 0%,rgba(17,25,27,.93) 56%,rgba(191,146,61,.47) 100%);filter:drop-shadow(0 2px 3px rgba(0,0,0,.6));opacity:.98;animation:europa-aperture-blade-open 1.72s var(--ease-out) both}
-.europa-aperture-core{position:absolute;left:50%;top:50%;z-index:4;width:23%;aspect-ratio:1;transform:translate(-50%,-50%) scale(1);border-radius:50%;background:#030506;border:1px solid rgba(238,211,153,.58);box-shadow:0 0 0 7px rgba(4,7,8,.82),0 0 28px rgba(0,0,0,.72);animation:europa-aperture-core-open 1.72s var(--ease-out) both}
-.europa-aperture-ring{position:absolute;inset:3%;z-index:5;border:1px solid rgba(235,210,156,.32);border-radius:50%;box-shadow:inset 0 0 20px rgba(0,0,0,.34);pointer-events:none}
-.europa-aperture-reflection{position:absolute;inset:8%;z-index:6;border-radius:50%;pointer-events:none;background:linear-gradient(126deg,rgba(255,255,255,.16),transparent 17% 64%,rgba(159,207,213,.07) 77%,transparent 87%);mix-blend-mode:screen;opacity:0;animation:europa-aperture-reflection-in 1.05s var(--ease-out) 1.18s both}
-.europa-opening-caption{position:absolute;left:50%;bottom:3%;transform:translateX(-50%);width:min(92vw,620px);text-align:center;opacity:0;animation:europa-opening-caption-in .72s var(--ease-out) 1.18s both}
+.europa-opening-disc{position:relative;width:min(72vw,470px);aspect-ratio:1;display:grid;place-items:center;transform-style:preserve-3d;filter:drop-shadow(0 28px 38px rgba(0,0,0,.5));will-change:transform;animation:europa-opening-disc-spin 3.2s var(--ease-out) both}
+.europa-opening-base{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;filter:saturate(.96) contrast(1.04);will-change:opacity;animation:europa-opening-disc-fade 3.2s linear both}
+.europa-opening-fragments{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.europa-opening-fragment{position:absolute;inset:0;display:block;border-radius:50%;background:url("./europa-orbit-seal.png") center/100% 100% no-repeat;opacity:0;will-change:transform,opacity;-webkit-mask:conic-gradient(from var(--angle),#000 0 30deg,transparent 30deg 360deg);mask:conic-gradient(from var(--angle),#000 0 30deg,transparent 30deg 360deg);animation:europa-fragment-scatter 1.68s var(--ease-out) calc(1.22s + var(--delay)) both}
+.europa-opening-caption{position:absolute;left:50%;bottom:3%;transform:translateX(-50%);width:min(92vw,620px);text-align:center;opacity:0;animation:europa-opening-caption-in .72s var(--ease-out) 2.24s both}
 .europa-opening-caption .kicker{display:block;color:#d4b56f;font:600 10px/1.4 var(--sans);letter-spacing:.42em;margin-left:.42em}
 .europa-opening-caption h1{font-family:var(--serif);font-size:clamp(28px,5vw,54px);line-height:1.1;letter-spacing:.15em;margin:12px 0 7px;font-weight:600;text-shadow:0 3px 18px rgba(0,0,0,.48)}
 .europa-opening-caption p{margin:0;color:rgba(241,226,190,.68);font:11px/1.5 var(--sans);letter-spacing:.3em;margin-left:.3em}
-@keyframes europa-lens-arrive{from{opacity:0;transform:scale(.58) rotateY(-32deg) rotateZ(-12deg)}to{opacity:1;transform:none}}
-@keyframes europa-lens-ring-in{from{opacity:0;transform:scale(.72) rotate(-30deg)}to{opacity:1;transform:none}}
-@keyframes europa-aperture-body{0%{transform:rotate(-7deg) scale(.92)}100%{transform:rotate(0) scale(1)}}
-@keyframes europa-aperture-image-open{0%,12%{clip-path:circle(6% at 50% 50%)}38%{clip-path:circle(24% at 50% 50%)}72%{clip-path:circle(47% at 50% 50%)}100%{clip-path:circle(68% at 50% 50%)}}
-@keyframes europa-aperture-blade-open{0%,12%{transform:rotate(calc(var(--i) * 45deg)) translateX(-1px) rotate(-15deg);opacity:.98}56%{transform:rotate(calc(var(--i) * 45deg + 3deg)) translateX(25px) rotate(-11deg);opacity:.88}100%{transform:rotate(calc(var(--i) * 45deg + 7deg)) translateX(68px) rotate(-6deg);opacity:.24}}
-@keyframes europa-aperture-core-open{0%,12%{transform:translate(-50%,-50%) scale(1);opacity:1}62%{transform:translate(-50%,-50%) scale(.48);opacity:.76}100%{transform:translate(-50%,-50%) scale(.18);opacity:.24}}
-@keyframes europa-aperture-reflection-in{from{opacity:0;transform:rotate(-16deg) scale(.86)}to{opacity:.5;transform:none}}
+@keyframes europa-opening-disc-spin{0%{opacity:0;transform:scale(.78) rotate(-28deg)}12%{opacity:1;transform:scale(.94) rotate(0deg)}52%{opacity:1;transform:scale(1) rotate(190deg)}78%{opacity:1;transform:scale(1.015) rotate(315deg)}100%{opacity:1;transform:scale(1.02) rotate(360deg)}}
+@keyframes europa-opening-disc-fade{0%,12%,56%{opacity:1}78%{opacity:.48}100%{opacity:0}}
+@keyframes europa-fragment-scatter{0%,16%{opacity:0;transform:rotate(0deg) translateY(0) rotate(0deg) scale(1)}27%{opacity:.98;transform:rotate(0deg) translateY(0) rotate(0deg) scale(1)}100%{opacity:0;transform:rotate(calc(var(--angle) + var(--twist))) translateY(calc(-1 * var(--scatter))) rotate(var(--twist)) scale(.78)}}
 @keyframes europa-opening-caption-in{from{opacity:0;transform:translate(-50%,18px)}to{opacity:1;transform:translate(-50%,0)}}
-@media(max-width:640px){.europa-opening-stage{height:min(80vh,590px)}.europa-opening-lens{width:min(74vw,360px)}.europa-opening-caption{bottom:3%}.europa-opening-caption h1{letter-spacing:.1em}.europa-opening-caption p{letter-spacing:.17em}.europa-opening-skip{font-size:10px;padding:10px 12px}}
-@media(prefers-reduced-motion:reduce){#europa-opening{display:none!important}.europa-opening-lens,.europa-opening-lens::before,.europa-aperture,.europa-aperture-image,.europa-aperture-blade,.europa-aperture-core,.europa-aperture-reflection,.europa-opening-caption{animation:none!important}}
+@media(max-width:640px){.europa-opening-stage{height:min(80vh,590px)}.europa-opening-disc{width:min(78vw,360px)}.europa-opening-caption{bottom:3%}.europa-opening-caption h1{letter-spacing:.1em}.europa-opening-caption p{letter-spacing:.17em}.europa-opening-skip{font-size:10px;padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){#europa-opening{display:none!important}.europa-opening-disc,.europa-opening-base,.europa-opening-fragment,.europa-opening-caption{animation:none!important}}
 </style>
 
 <body class="europa-opening-active">
 <div id="europa-opening" role="dialog" aria-modal="true" aria-labelledby="europa-opening-title">
   <div class="europa-opening-stage">
-    <div class="europa-opening-lens" aria-hidden="true">
-      <div class="europa-aperture">
-        <div class="europa-aperture-image"><img src="./europa-orbit-seal.png" width="1254" height="1254" decoding="async" alt="" draggable="false"></div>
-        <div class="europa-aperture-blades">
-          <i class="europa-aperture-blade" style="--i:0"></i><i class="europa-aperture-blade" style="--i:1"></i><i class="europa-aperture-blade" style="--i:2"></i><i class="europa-aperture-blade" style="--i:3"></i>
-          <i class="europa-aperture-blade" style="--i:4"></i><i class="europa-aperture-blade" style="--i:5"></i><i class="europa-aperture-blade" style="--i:6"></i><i class="europa-aperture-blade" style="--i:7"></i>
-        </div>
-        <div class="europa-aperture-core"></div>
-        <div class="europa-aperture-ring"></div>
-        <div class="europa-aperture-reflection"></div>
+    <div class="europa-opening-disc" aria-hidden="true">
+      <img class="europa-opening-base" src="./europa-orbit-seal.png" width="1254" height="1254" decoding="async" alt="" draggable="false">
+      <div class="europa-opening-fragments">
+        <i class="europa-opening-fragment" style="--angle:0deg;--scatter:54px;--twist:-13deg;--delay:0s"></i>
+        <i class="europa-opening-fragment" style="--angle:30deg;--scatter:72px;--twist:9deg;--delay:.03s"></i>
+        <i class="europa-opening-fragment" style="--angle:60deg;--scatter:48px;--twist:-8deg;--delay:.07s"></i>
+        <i class="europa-opening-fragment" style="--angle:90deg;--scatter:84px;--twist:14deg;--delay:.02s"></i>
+        <i class="europa-opening-fragment" style="--angle:120deg;--scatter:62px;--twist:-11deg;--delay:.09s"></i>
+        <i class="europa-opening-fragment" style="--angle:150deg;--scatter:78px;--twist:7deg;--delay:.04s"></i>
+        <i class="europa-opening-fragment" style="--angle:180deg;--scatter:57px;--twist:-15deg;--delay:.11s"></i>
+        <i class="europa-opening-fragment" style="--angle:210deg;--scatter:88px;--twist:10deg;--delay:.05s"></i>
+        <i class="europa-opening-fragment" style="--angle:240deg;--scatter:52px;--twist:-7deg;--delay:.08s"></i>
+        <i class="europa-opening-fragment" style="--angle:270deg;--scatter:76px;--twist:12deg;--delay:.01s"></i>
+        <i class="europa-opening-fragment" style="--angle:300deg;--scatter:64px;--twist:-10deg;--delay:.06s"></i>
+        <i class="europa-opening-fragment" style="--angle:330deg;--scatter:82px;--twist:8deg;--delay:.1s"></i>
       </div>
     </div>
     <div class="europa-opening-caption">
@@ -2367,7 +2361,7 @@ window.addEventListener("popstate",()=>{if(!location.hash){$("#dlg").open&&$("#d
 renderEpnav();renderAlm();
 queueChronograph();
 if(location.hash){readHash()}
-else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)setTimeout(showIntro,3500)}
+else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)setTimeout(showIntro,4600)}
 </script>
 <script>
 (function(){
@@ -2411,8 +2405,8 @@ else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)s
   if(reduced||saveData||(!force&&seen)){finish();return;}
   try{sessionStorage.setItem(key,"1")}catch(e){}
   const mobile=window.matchMedia&&window.matchMedia("(max-width:640px)").matches;
-  window.setTimeout(function(){if(!finished)opening.classList.add("is-leaving")},mobile?1420:1740);
-  window.setTimeout(finish,mobile?2180:2580);
+  window.setTimeout(function(){if(!finished)opening.classList.add("is-leaving")},mobile?2920:3260);
+  window.setTimeout(finish,mobile?3600:3940);
   skip&&skip.focus({preventScroll:true});
 })();
 </script>
