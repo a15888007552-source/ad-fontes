@@ -1262,8 +1262,220 @@
       }
     }
   </style>
+<style id="atlas-opening-motion">
+  :root {
+    --atlas-opening-ink: #111514;
+    --atlas-opening-paper: #eee9dc;
+    --atlas-opening-copper: #c86b52;
+  }
+
+  body {
+    background-image:
+      linear-gradient(135deg, rgba(12, 16, 15, .94), rgba(24, 27, 25, .84)),
+      url("assets/museum-atlas-ai-cover.png");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: fixed, fixed;
+    background-blend-mode: normal, soft-light;
+  }
+
+  html.atlas-opening-active,
+  body.atlas-opening-active {
+    overflow: hidden;
+  }
+
+  .atlas-opening {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    color: var(--atlas-opening-paper);
+    background:
+      linear-gradient(135deg, rgba(9, 12, 11, .82), rgba(20, 23, 21, .94)),
+      url("assets/museum-atlas-ai-cover.png") center / cover no-repeat;
+    opacity: 1;
+    transition: opacity 780ms cubic-bezier(.22, .8, .24, 1), visibility 780ms linear;
+  }
+
+  .atlas-opening.is-complete {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .atlas-opening__wash,
+  .atlas-opening__grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .atlas-opening__wash {
+    background:
+      radial-gradient(circle at 50% 48%, rgba(200, 107, 82, .18), transparent 30%),
+      linear-gradient(90deg, transparent 0 49.92%, rgba(238, 233, 220, .14) 50%, transparent 50.08%);
+    mix-blend-mode: screen;
+  }
+
+  .atlas-opening__grid {
+    opacity: .22;
+    background-image:
+      linear-gradient(rgba(238, 233, 220, .16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(238, 233, 220, .16) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, transparent, black 24%, black 76%, transparent);
+    animation: atlas-opening-grid 1800ms ease-out both;
+  }
+
+  .atlas-opening__content {
+    position: relative;
+    z-index: 1;
+    width: min(720px, calc(100vw - 48px));
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: atlas-opening-rise 920ms cubic-bezier(.16, .82, .2, 1) 120ms forwards;
+  }
+
+  .atlas-opening__mark {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+    width: 64px;
+    height: 64px;
+    padding: 7px;
+    border: 1px solid rgba(238, 233, 220, .68);
+    color: var(--atlas-opening-paper);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    letter-spacing: .05em;
+  }
+
+  .atlas-opening__mark span {
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(200, 107, 82, .75);
+  }
+
+  .atlas-opening__mark i {
+    position: absolute;
+    right: -13px;
+    bottom: -13px;
+    width: 22px;
+    height: 22px;
+    border-right: 1px solid var(--atlas-opening-copper);
+    border-bottom: 1px solid var(--atlas-opening-copper);
+    transform: rotate(45deg);
+    animation: atlas-opening-seal 1100ms ease-out 260ms both;
+  }
+
+  .atlas-opening__eyebrow,
+  .atlas-opening__caption {
+    margin: 30px 0 0;
+    color: rgba(238, 233, 220, .68);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+  }
+
+  .atlas-opening h1 {
+    margin: 28px 0 18px;
+    color: var(--atlas-opening-paper);
+    font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+    font-size: clamp(48px, 8vw, 112px);
+    font-weight: 400;
+    letter-spacing: .08em;
+    line-height: .98;
+  }
+
+  .atlas-opening h1 em {
+    color: #d9a188;
+    font-style: normal;
+  }
+
+  .atlas-opening__caption {
+    margin-top: 0;
+    color: rgba(238, 233, 220, .74);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: .16em;
+  }
+
+  .atlas-opening__progress {
+    width: min(260px, 60vw);
+    height: 1px;
+    margin: 34px auto 0;
+    overflow: hidden;
+    background: rgba(238, 233, 220, .2);
+  }
+
+  .atlas-opening__progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--atlas-opening-copper);
+    transform: translateX(-100%);
+    animation: atlas-opening-progress 1300ms cubic-bezier(.22, .8, .24, 1) 180ms forwards;
+  }
+
+  @keyframes atlas-opening-rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes atlas-opening-grid {
+    from { opacity: 0; transform: scale(1.08); }
+    to { opacity: .22; transform: scale(1); }
+  }
+
+  @keyframes atlas-opening-seal {
+    from { opacity: 0; transform: rotate(45deg) translate(8px, -8px); }
+    to { opacity: 1; transform: rotate(45deg) translate(0, 0); }
+  }
+
+  @keyframes atlas-opening-progress {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+
+  @media (max-width: 640px) {
+    .atlas-opening__content {
+      width: min(480px, calc(100vw - 34px));
+    }
+
+    .atlas-opening h1 {
+      font-size: clamp(42px, 14vw, 72px);
+      letter-spacing: .04em;
+    }
+
+    .atlas-opening__eyebrow {
+      letter-spacing: .18em;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .atlas-opening {
+      display: none;
+    }
+  }
+</style>
 </head>
 <body>
+  <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴">
+    <div class="atlas-opening__wash" aria-hidden="true"></div>
+    <div class="atlas-opening__grid" aria-hidden="true"></div>
+    <div class="atlas-opening__content">
+      <div class="atlas-opening__mark" aria-hidden="true"><span>国</span><span>博</span><i></i></div>
+      <p class="atlas-opening__eyebrow">AD FONTES / MUSEUM ATLAS</p>
+      <h1>从一张图<br /><em>进入一座馆</em></h1>
+      <p class="atlas-opening__caption">四座博物馆 · 四条观看路径</p>
+      <div class="atlas-opening__progress" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
   <div class="motion-progress" aria-hidden="true"><span></span></div>
   <a class="skip-link" href="#provinces">跳到省份选择</a>
 
@@ -1624,6 +1836,27 @@
         moveIndicator(tabs.find((tab) => tab.getAttribute("aria-selected") === "true"));
         schedule();
       });
+    })();
+  </script>
+  <script>
+    (() => {
+      const opening = document.getElementById("atlas-opening");
+      if (!opening) return;
+      const root = document.documentElement;
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduced) {
+        opening.remove();
+        return;
+      }
+      root.classList.add("atlas-opening-active");
+      document.body.classList.add("atlas-opening-active");
+      const finish = () => {
+        opening.classList.add("is-complete");
+        root.classList.remove("atlas-opening-active");
+        document.body.classList.remove("atlas-opening-active");
+        window.setTimeout(() => opening.remove(), 900);
+      };
+      window.setTimeout(finish, 1650);
     })();
   </script>
 </body>
