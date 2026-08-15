@@ -1484,6 +1484,41 @@
     }
   }
 </style>
+<style id="atlas-province-color-refinement">
+  /* Each province gets its own page atmosphere; the shared dark atlas background no longer masks it. */
+  html[data-active-province="beijing"] body {
+    background-color: #8d292f;
+    background-image:
+      linear-gradient(135deg, rgba(76, 18, 23, .94), rgba(169, 46, 49, .76)),
+      url("assets/beijing-palace-hero.webp");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: fixed, fixed;
+    background-blend-mode: normal, multiply;
+  }
+
+  html[data-active-province="shaanxi"] body {
+    background-color: #1d1c1a;
+    background-image:
+      linear-gradient(135deg, rgba(10, 12, 11, .9), rgba(42, 37, 28, .76)),
+      url("assets/shaanxi-hero.webp");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: fixed, fixed;
+    background-blend-mode: normal, multiply;
+  }
+
+  html[data-active-province="henan"] body {
+    background-color: #1c5873;
+    background-image:
+      linear-gradient(135deg, rgba(9, 39, 55, .92), rgba(37, 107, 155, .72)),
+      url("assets/henan-hero.webp");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: fixed, fixed;
+    background-blend-mode: normal, multiply;
+  }
+</style>
 </head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴">
@@ -1610,7 +1645,7 @@
 
       <article class="province-panel" id="panel-shaanxi" role="tabpanel" tabindex="0" aria-labelledby="tab-shaanxi" data-province="shaanxi" hidden>
         <figure class="chapter-hero chapter-hero--shaanxi">
-          <img src="assets/shaanxi-hero.webp" alt="陕西碑石与墨色纸本氛围" loading="lazy" decoding="async" />
+          <img src="assets/ai-dayanta-card.png" alt="大雁塔 AI 氛围图" loading="lazy" decoding="async" />
           <div class="chapter-hero-copy">
             <p class="chapter-kicker">02 / SHAANXI · 陕西</p>
             <h2>让时间<br /><em>留下墨痕</em></h2>
@@ -1634,7 +1669,7 @@
                 <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>西安碑林博物馆</h4><p>西安 · 碑刻与书法</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
               <a class="museum-card museum-card--link" href="../shaanxi-archaeology-museum/index.html" aria-label="进入陕西考古博物馆专题站">
-                <div class="card-media"><img src="assets/ai-dayanta-card.png" alt="大雁塔 AI 氛围图" loading="lazy" decoding="async" /></div>
+                <div class="card-media"><img src="assets/shaanxi-hero.webp" alt="陕西考古博物馆专题入口" loading="lazy" decoding="async" /></div>
                 <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>陕西考古博物馆</h4><p>西安 · 考古圣地</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
               <a class="museum-card museum-card--link" href="../qinhan/index.html" aria-label="进入陕西历史博物馆秦汉馆专题站">
