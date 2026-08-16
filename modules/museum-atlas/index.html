@@ -1485,16 +1485,38 @@
   }
 </style>
 <style id="atlas-province-color-refinement">
-  /* Each province gets its own page atmosphere; the shared dark atlas background no longer masks it. */
+  /* Province atmospheres stay distinct without sacrificing text contrast. */
   html[data-active-province="beijing"] body {
-    background-color: #8d292f;
+    background-color: #7f2028;
     background-image:
-      linear-gradient(135deg, rgba(76, 18, 23, .94), rgba(169, 46, 49, .76)),
+      linear-gradient(135deg, rgba(94, 18, 24, .985), rgba(145, 31, 38, .965)),
       url("assets/beijing-palace-hero.webp");
     background-size: cover, cover;
     background-position: center, center;
     background-attachment: fixed, fixed;
-    background-blend-mode: normal, multiply;
+    background-blend-mode: normal, soft-light;
+  }
+
+  html[data-active-province="beijing"] .header-main,
+  html[data-active-province="beijing"] .province-indicator,
+  html[data-active-province="beijing"] .province-rail,
+  html[data-active-province="beijing"] .chapter-note,
+  html[data-active-province="beijing"] .chapter-hero-copy,
+  html[data-active-province="beijing"] .chapter-hero-caption,
+  html[data-active-province="beijing"] .cover-copy {
+    color: #fff3e2;
+    text-shadow: 0 1px 2px rgba(35, 7, 10, .72);
+  }
+
+  html[data-active-province="beijing"] .province-rail,
+  html[data-active-province="beijing"] .chapter-note,
+  html[data-active-province="beijing"] .cover-copy {
+    background: rgba(70, 12, 17, .24);
+  }
+
+  html[data-active-province="beijing"] .province-tab:not(.is-active) {
+    color: rgba(255, 243, 226, .86);
+    text-shadow: 0 1px 2px rgba(35, 7, 10, .72);
   }
 
   html[data-active-province="shaanxi"] body {
