@@ -1870,6 +1870,119 @@
     }
   }
 </style>
+<style id="atlas-readable-atlas-theme">
+  /* Beijing keeps its vermilion identity, but information sits on readable layers. */
+  html[data-active-province="beijing"] .site-header,
+  html[data-active-province="beijing"] .cover,
+  html[data-active-province="beijing"] .province-rail,
+  html[data-active-province="beijing"] .chapter-brief,
+  html[data-active-province="beijing"] .chapter-content {
+    color: #fff4e6;
+  }
+
+  html[data-active-province="beijing"] .site-header {
+    background: rgba(54, 8, 13, .46);
+    border-bottom-color: rgba(255, 239, 218, .2);
+  }
+
+  html[data-active-province="beijing"] .site-header :is(.micro-label, .brand-copy h1, .latin-label, .header-stats, .site-nav a, .header-subline p, .header-subline a) {
+    color: rgba(255, 244, 230, .9);
+    text-shadow: 0 1px 2px rgba(44, 5, 10, .7);
+  }
+
+  html[data-active-province="beijing"] .cover-copy {
+    padding: clamp(24px, 4vw, 48px);
+    background: rgba(55, 8, 13, .52);
+    border-left: 2px solid #e7b87a;
+    box-shadow: 0 18px 54px rgba(46, 4, 9, .2);
+  }
+
+  html[data-active-province="beijing"] .cover-copy :is(.section-kicker, .cover-title, .cover-lede) {
+    color: #fff4e6;
+    text-shadow: 0 2px 4px rgba(44, 5, 10, .65);
+  }
+
+  html[data-active-province="beijing"] .cover-title em {
+    color: #f0bf83;
+    text-shadow: 0 2px 4px rgba(44, 5, 10, .7);
+  }
+
+  html[data-active-province="beijing"] .cover-index :is(.micro-label, strong, span) {
+    color: #f1c990;
+    text-shadow: 0 1px 3px rgba(44, 5, 10, .72);
+  }
+
+  html[data-active-province="beijing"] .province-rail {
+    background: rgba(53, 8, 13, .54);
+    border-top-color: rgba(255, 244, 230, .22);
+    border-bottom-color: rgba(255, 244, 230, .22);
+  }
+
+  html[data-active-province="beijing"] .province-tab:not(.is-active) :is(small, strong) {
+    color: rgba(255, 244, 230, .78);
+    text-shadow: 0 1px 3px rgba(44, 5, 10, .75);
+  }
+
+  html[data-active-province="beijing"] .province-tab.is-active {
+    color: #34201d;
+    background: #f7efe3;
+    box-shadow: 0 8px 20px rgba(46, 4, 9, .16);
+  }
+
+  html[data-active-province="beijing"] .province-tab.is-active :is(small, strong) {
+    color: #34201d;
+    text-shadow: none;
+  }
+
+  html[data-active-province="beijing"] .chapter-brief {
+    background: rgba(52, 8, 13, .42);
+    border-top-color: rgba(255, 244, 230, .2);
+    border-bottom-color: rgba(255, 244, 230, .18);
+  }
+
+  html[data-active-province="beijing"] .chapter-brief :is(.brief-copy, .brief-meta dt) {
+    color: rgba(255, 244, 230, .84);
+    text-shadow: 0 1px 2px rgba(44, 5, 10, .72);
+  }
+
+  html[data-active-province="beijing"] .chapter-brief :is(.brief-copy strong, .brief-meta dd) {
+    color: #f1c990;
+    text-shadow: 0 1px 2px rgba(44, 5, 10, .72);
+  }
+
+  html[data-active-province="beijing"] .chapter-content {
+    padding: clamp(24px, 4vw, 46px);
+    background: rgba(52, 8, 13, .34);
+    border-top: 1px solid rgba(255, 244, 230, .18);
+  }
+
+  html[data-active-province="beijing"] .content-heading :is(h3, span) {
+    color: #f4d1a4;
+    text-shadow: 0 1px 2px rgba(44, 5, 10, .7);
+  }
+
+  html[data-active-province="beijing"] .museum-card {
+    color: #34201d;
+    background: #f7efe3;
+    box-shadow: 0 12px 26px rgba(46, 4, 9, .13);
+  }
+
+  html[data-active-province="beijing"] .museum-card :is(.card-status, h4, p, .card-arrow) {
+    color: #34201d;
+    text-shadow: none;
+  }
+
+  html[data-active-province="beijing"] .museum-card :is(.card-status, .card-arrow) {
+    color: #a92e31;
+  }
+
+  @media (max-width: 760px) {
+    html[data-active-province="beijing"] .cover-copy,
+    html[data-active-province="beijing"] .chapter-content {
+      padding: 22px;
+    }
+  }
+</style>
 </head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴" tabindex="0">
