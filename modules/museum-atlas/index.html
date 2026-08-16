@@ -1541,6 +1541,30 @@
     background-blend-mode: normal, multiply;
   }
 </style>
+<style id="atlas-museum-layout-refinement">
+  /* The atlas leads with the museums; chapter notes no longer reserve a dead side column. */
+  .province-panel .chapter-content {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .province-panel .museum-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    padding-top: 14px;
+  }
+
+  .province-panel .museum-card {
+    min-width: 0;
+  }
+
+  @media (max-width: 760px) {
+    .province-panel .museum-list {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
 </head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴">
@@ -1656,12 +1680,6 @@
               </a>
             </div>
           </section>
-          <aside class="chapter-note">
-            <p class="section-kicker">A NOTE ON THIS CHAPTER</p>
-            <blockquote>红色不是装饰，是方向</blockquote>
-            <p>把城市的秩序放进照片里，也把下一座馆留在路上</p>
-            <div class="note-index"><span>北京 / 01</span><span>VERMILION</span></div>
-          </aside>
         </div>
       </article>
 
@@ -1737,12 +1755,6 @@
               </article>
             </div>
           </section>
-          <aside class="chapter-note">
-            <p class="section-kicker">A NOTE ON THIS CHAPTER</p>
-            <blockquote>留白不是空，是器物的回声</blockquote>
-            <p>河南这一章先保留一块干净的底色，等真正走进展厅时再填入照片</p>
-            <div class="note-index"><span>河南 / 03</span><span>PORCELAIN BLUE</span></div>
-          </aside>
         </div>
       </article>
     </section>
