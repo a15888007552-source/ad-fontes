@@ -200,6 +200,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .motion-ready .photo-credit { opacity: 0; animation: fade-in .7s .8s ease-out forwards; }
 .motion-ready .reveal { opacity: 0; transform: translateY(18px); transition: opacity .72s ease, transform .72s cubic-bezier(.22,.8,.25,1); transition-delay: var(--reveal-delay, 0ms); }
 .motion-ready .reveal.is-visible { opacity: 1; transform: none; }
+.motion-ready .reveal:target { opacity: 1; transform: none; }
 .object-card.card-enter { animation: card-in .42s var(--card-delay, 0ms) cubic-bezier(.22,.8,.25,1) both; }
 .object-dialog { opacity: 0; transform: translateY(12px) scale(.985); transition: opacity .28s ease, transform .28s cubic-bezier(.22,.8,.25,1); }
 .object-dialog[open], .object-dialog.is-open { opacity: 1; transform: none; }
