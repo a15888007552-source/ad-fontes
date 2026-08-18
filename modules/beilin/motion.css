@@ -248,3 +248,47 @@ html.beilin-intro-complete .hero h1 span:last-child { animation-delay: .44s; }
   html.beilin-intro-live .top-nav,
   html.beilin-intro-complete .top-nav { opacity: 1; transform: none; transition: none; }
 }
+
+/* --------------------------------------------------------------------------
+   对称版式（桌面 ≥ 721px）
+   馆名与主面板共居同一垂直中轴；主题卡标题统一单行、不再被裁切。
+   -------------------------------------------------------------------------- */
+@media (min-width: 721px) {
+  .hero-museum-name {
+    top: 96px;
+    right: auto;
+    left: 50%;
+    align-items: center;
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  .hero-museum-name strong {
+    letter-spacing: 0.22em;
+  }
+
+  .hero-museum-name span {
+    letter-spacing: 0.3em;
+  }
+
+  .hero-panel {
+    left: 50%;
+    bottom: 48px;
+    width: min(640px, calc(100% - 48px));
+    padding: 40px 48px 36px;
+    border-left: 1px solid rgba(250, 249, 245, 0.26);
+    border-top: 3px solid #b84736;
+    transform: translateX(-50%);
+  }
+
+  .hero h1 {
+    gap: clamp(28px, 3.4vw, 56px);
+  }
+
+  .theme-card-copy strong {
+    font-size: clamp(18px, 1.5vw, 25px);
+    letter-spacing: 0.04em;
+    line-height: 1.08;
+    white-space: nowrap;
+  }
+}
