@@ -1,0 +1,66 @@
+name: history-shrink
+on:
+  workflow_dispatch:
+    inputs:
+      path:
+        description: "从全部历史中移除的路径"
+        default: "assets/photos/original"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  shrink:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install git-filter-repo
+        run: |
+          curl -sL -o /tmp/git-filter-repo https://raw.githubusercontent.com/newren/git-filter-repo/main/git-filter-repo
+          chmod +x /tmp/git-filter-repo
+          git config --global user.name "Ad Fontes Maintainer"
+          git config --global user.email "actions@users.noreply.github.com"
+
+      - name: Clone full history (no checkout)
+        run: |
+          git clone --no-checkout https://github.com/a15888007552-source/ad-fontes.git /tmp/repo
+          cd /tmp/repo
+          echo "BRANCHES: $(git branch -r | tr '\n' ' ')"
+          echo "TREE_BEFORE=$(git rev-parse HEAD^{tree})" >> "$GITHUB_ENV"
+          echo "HEAD_SHA_BEFORE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Rewrite history (remove path from every commit)
+        run: |
+          cd /tmp/repo
+          /tmp/git-filter-repo --invert-paths --path "${{ inputs.path }}" --force
+          echo "TREE_AFTER=$(git rev-parse HEAD^{tree})" >> "$GITHUB_ENV"
+          echo "HEAD_SHA_AFTER=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "NEW HISTORY SIZE: $(du -sh .git | cut -f1)"
+
+      - name: Safety check (HEAD tree must be unchanged)
+        run: |
+          if [ "$TREE_BEFORE" != "$TREE_AFTER" ]; then
+            echo "ABORT: HEAD tree changed during rewrite ($TREE_BEFORE -> $TREE_AFTER)"; exit 1
+          fi
+          echo "OK: HEAD tree identical ($TREE_BEFORE)"
+
+      - name: Force push all branches
+        run: |
+          cd /tmp/repo
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/a15888007552-source/ad-fontes.git"
+          git push --force origin --all
+          git push --force origin --tags || true
+
+      - name: Report
+        run: |
+          cd /tmp/repo
+          echo "=== 新历史前 3 条提交 ==="
+          git log --oneline -3
+          echo "=== 新历史大小 ==="
+          du -sh .git
+          echo "=== 确认原图已从历史移除 ==="
+          if git rev-list --objects --all | grep -q "assets/photos/original/"; then
+            echo "WARNING: 历史中仍存在原图对象"
+          else
+            echo "OK: 历史中已无原图对象"
+          fi
