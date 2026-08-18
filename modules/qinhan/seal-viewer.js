@@ -60,12 +60,28 @@
     }
   };
 
-  const addBase = () => {
+  const addBox = (cx, cy, cz, width, height, depth, color, label = "jade") => {
+    const corners = [
+      [-width / 2, -depth / 2], [width / 2, -depth / 2],
+      [width / 2, depth / 2], [-width / 2, depth / 2],
+    ];
+    const top = corners.map(([x, z]) => [cx + x, cy + height / 2, cz + z]);
+    const bottom = corners.map(([x, z]) => [cx + x, cy - height / 2, cz + z]);
+    addFace(top, color, label);
+    addFace(bottom.slice().reverse(), color, label);
+    for (let i = 0; i < 4; i += 1) {
+      const next = (i + 1) % 4;
+      addFace([top[i], top[next], bottom[next], bottom[i]], color, label);
+    }
+  };
+
+  /* 印台：近方形白玉印台，四面略收分，符合汉代玉玺的比例 */
+  const addSealBody = () => {
+    const bodyHeight = 0.72;
     const rings = [
-      { y: 0, half: 0.58 },
-      { y: 0.08, half: 0.7 },
-      { y: 0.52, half: 0.7 },
-      { y: 0.62, half: 0.59 },
+      { y: -bodyHeight / 2, half: 0.5 },
+      { y: bodyHeight / 2 - 0.06, half: 0.47 },
+      { y: bodyHeight / 2, half: 0.47 },
     ];
     const ring = ({ y, half }) => [
       [-half, y, -half], [half, y, -half], [half, y, half], [-half, y, half],
@@ -75,38 +91,61 @@
       const b = ring(rings[i + 1]);
       for (let side = 0; side < 4; side += 1) {
         const next = (side + 1) % 4;
-        addFace([a[side], a[next], b[next], b[side]], i === 0 ? "#c7b88e" : "#d9cba6", "jade");
+        addFace([a[side], a[next], b[next], b[side]], i === 0 ? "#e6ddc8" : "#ece4d1", "jade");
       }
     }
-    addFace(ring(rings[0]).slice().reverse(), "#b9a978", "jade");
-    addFace(ring(rings[rings.length - 1]), "#e2d6b5", "jade");
+    addFace(ring(rings[0]).slice().reverse(), "#ddd2b6", "jade");
+    addFace(ring(rings[rings.length - 1]), "#f5efe1", "jade");
   };
 
-  const addSealStrokes = () => {
-    const stroke = "#8b493a";
-    const bars = [
-      [-0.34, -0.34, 0.2, 0.045, 0], [-0.34, -0.08, 0.27, 0.045, 0],
-      [-0.34, 0.2, 0.18, 0.045, 0], [0.02, -0.34, 0.32, 0.045, 0],
-      [0.18, -0.08, 0.22, 0.045, Math.PI / 2], [0.16, 0.2, 0.28, 0.045, 0],
-      [0.36, -0.2, 0.16, 0.045, Math.PI / 2], [0.36, 0.22, 0.14, 0.045, Math.PI / 2],
-    ];
-    bars.forEach(([x, z, length, width, angle]) => addPrism(x, -0.026, z, length, 0.018, width, stroke, angle, "seal"));
+  /* 螭虎钮：弓背、昂首、四足收拢的蹲踞姿态，用环形截面沿拱弧扫出躯体 */
+  const addArchedBody = () => {
+    const R = 0.18;
+    const rx = 0.145;
+    const ry = 0.115;
+    const baseY = 0.36;
+    const steps = 14;
+    const ringSteps = 10;
+    const centerAt = (theta) => [0, baseY + R * (1 - Math.cos(theta)), R * Math.sin(theta)];
+    for (let i = 0; i < steps; i += 1) {
+      const t0 = -1.08 + (i / steps) * 2.16;
+      const t1 = -1.08 + ((i + 1) / steps) * 2.16;
+      for (let j = 0; j < ringSteps; j += 1) {
+        const p0 = (j / ringSteps) * TAU;
+        const p1 = ((j + 1) / ringSteps) * TAU;
+        const pt = (t, p) => {
+          const c = centerAt(t);
+          return [
+            c[0] + rx * Math.cos(p),
+            c[1] + ry * Math.sin(p) * Math.cos(t),
+            c[2] + ry * Math.sin(p) * Math.sin(t),
+          ];
+        };
+        addFace([pt(t0, p0), pt(t0, p1), pt(t1, p1), pt(t1, p0)], "#f0e9d8", "jade");
+      }
+    }
+  };
+
+  const addChiTiger = () => {
+    addArchedBody();
+    /* 头部与吻部 */
+    addEllipsoid(0, 0.6, -0.26, 0.145, 0.125, 0.16, "#f0e9d8", 6, 9, "jade");
+    addEllipsoid(0, 0.555, -0.42, 0.085, 0.06, 0.09, "#eae0c9", 5, 8, "jade");
+    /* 双耳 */
+    addEllipsoid(-0.08, 0.7, -0.24, 0.04, 0.06, 0.028, "#ece3cc", 4, 7, "jade");
+    addEllipsoid(0.08, 0.7, -0.24, 0.04, 0.06, 0.028, "#ece3cc", 4, 7, "jade");
+    /* 短尾 */
+    addEllipsoid(0, 0.62, 0.235, 0.052, 0.082, 0.06, "#ece3cc", 5, 8, "jade");
+    /* 四足 */
+    addPrism(-0.16, 0.36, -0.135, 0.09, 0.1, 0.09, "#e6dcc4", -0.18, "jade");
+    addPrism(0.16, 0.36, -0.135, 0.09, 0.1, 0.09, "#e6dcc4", 0.18, "jade");
+    addPrism(-0.16, 0.36, 0.135, 0.09, 0.1, 0.09, "#e6dcc4", -0.18, "jade");
+    addPrism(0.16, 0.36, 0.135, 0.09, 0.1, 0.09, "#e6dcc4", 0.18, "jade");
   };
 
   const buildModel = () => {
-    addBase();
-    addSealStrokes();
-    addEllipsoid(0, 0.82, 0.02, 0.43, 0.31, 0.36, "#d8cba8", 7, 12, "jade");
-    addEllipsoid(0, 1.18, -0.04, 0.31, 0.25, 0.28, "#e0d2ad", 7, 12, "jade");
-    addEllipsoid(0, 1.31, -0.19, 0.19, 0.13, 0.16, "#d2c39d", 6, 10, "jade");
-    addEllipsoid(-0.19, 1.27, 0.03, 0.12, 0.12, 0.12, "#c6b58a", 6, 9, "jade");
-    addEllipsoid(0.19, 1.27, 0.03, 0.12, 0.12, 0.12, "#c6b58a", 6, 9, "jade");
-    addPrism(-0.23, 1.42, 0, 0.12, 0.18, 0.08, "#c6b58a", -0.24, "jade");
-    addPrism(0.23, 1.42, 0, 0.12, 0.18, 0.08, "#c6b58a", 0.24, "jade");
-    addEllipsoid(-0.27, 0.67, 0.08, 0.16, 0.13, 0.16, "#bfae82", 6, 9, "jade");
-    addEllipsoid(0.27, 0.67, 0.08, 0.16, 0.13, 0.16, "#bfae82", 6, 9, "jade");
-    addEllipsoid(-0.29, 1.05, 0.18, 0.08, 0.08, 0.08, "#b49f73", 5, 8, "jade");
-    addEllipsoid(0.29, 1.05, 0.18, 0.08, 0.08, 0.08, "#b49f73", 5, 8, "jade");
+    addSealBody();
+    addChiTiger();
   };
 
   const transform = ([x, y, z]) => {
@@ -147,9 +186,9 @@
     if (!width || !height) return;
     ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
     ctx.clearRect(0, 0, width, height);
-    const scale = Math.min(width, height) * 0.31 * state.zoom;
+    const scale = Math.min(width, height) * 0.36 * state.zoom;
     const cx = width / 2;
-    const cy = height * 0.61;
+    const cy = height * 0.585;
     const projected = faces.map((face) => {
       const points = face.points.map(transform);
       const depth = points.reduce((sum, point) => sum + point[2], 0) / points.length;
@@ -167,6 +206,34 @@
       ctx.lineWidth = face.label === "seal" ? 1.1 : 0.65;
       ctx.stroke();
     });
+
+    /* 印面：自下方观看时，在印台上按 2×2 排布“皇后之玺”四字（示意标注） */
+    if (state.pitch > 0.5) {
+      const faceY = -0.3605;
+      const q = (sx, sz) => transform([sx * 0.25, faceY, sz * 0.25]);
+      const toScreen = ([x, y]) => [cx + x * scale, cy - y * scale];
+      const tl = toScreen(q(-1, -1));
+      const tr = toScreen(q(1, -1));
+      const bl = toScreen(q(-1, 1));
+      const br = toScreen(q(1, 1));
+      const size = Math.max(8, Math.hypot(tr[0] - tl[0], tr[1] - tl[1]) * 0.95);
+      const angle = Math.atan2(tr[1] - tl[1], tr[0] - tl[0]);
+      ctx.save();
+      ctx.font = `600 ${size}px "STKaiti","KaiTi","STSong","SimSun",serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      [["皇", tl], ["后", tr], ["之", bl], ["玺", br]].forEach(([ch, p]) => {
+        ctx.save();
+        ctx.translate(p[0], p[1]);
+        ctx.rotate(angle);
+        ctx.fillStyle = "rgba(139, 73, 58, .85)";
+        ctx.fillText(ch, 0, 1.5);
+        ctx.fillStyle = "rgba(139, 73, 58, .95)";
+        ctx.fillText(ch, 0, 0);
+        ctx.restore();
+      });
+      ctx.restore();
+    }
 
     if (state.pitch > 0.52) {
       ctx.save();
