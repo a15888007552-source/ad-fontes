@@ -6,7 +6,9 @@
     <meta name="theme-color" content="#2a0d0c" />
     <meta name="description" content="中国国家博物馆个人参观档案主页：国博简介与文物卡片。" />
     <title>中国国家博物馆 · 文物卡片</title>
+    <link rel="icon" href="assets/brand-emblem.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
+    <style id="museum-brand-emblem">.brand-mark,.footer-mark{overflow:hidden;background:var(--red-950)}.brand-mark img,.footer-mark img{display:block;width:84%;height:84%;object-fit:contain}</style>
     <noscript><style>.opening-screen{display:none!important}body.guobo-intro-active{overflow:auto!important}</style></noscript>
   </head>
   <body class="guobo-intro-active">
@@ -29,7 +31,7 @@
     </div>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="回到主页">
-        <span class="brand-mark">国</span>
+        <span class="brand-mark" aria-hidden="true"><img src="assets/brand-emblem.png" alt="" /></span>
         <span class="brand-copy">
           <strong>中国国家博物馆</strong>
           <small>MY BEIJING ARCHIVE</small>
@@ -75,7 +77,7 @@
     </main>
 
     <footer class="footer">
-      <div><span class="footer-mark">国</span><strong>中国国家博物馆 · 文物卡片</strong></div>
+      <div><span class="footer-mark" aria-hidden="true"><img src="assets/brand-emblem.png" alt="" /></span><strong>中国国家博物馆 · 文物卡片</strong></div>
       <p>离线主页 / 第一轮</p>
     </footer>
 

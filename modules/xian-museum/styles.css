@@ -46,6 +46,7 @@ a { color: inherit; }
 .topbar { min-height: 70px; position: sticky; z-index: 10; top: 0; display: flex; align-items: center; gap: 24px; padding: 10px max(20px, calc((100% - 1200px) / 2)); border-bottom: 1px solid color-mix(in srgb, var(--line) 80%, transparent); color: var(--ink); background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(13px); }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 190px; color: inherit; text-decoration: none; }
 .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; color: #f9f4e7; background: var(--green); font: 600 19px/1 var(--serif); }
+.brand-mark img { display: block; width: 88%; height: 88%; object-fit: contain; }
 .brand-type { display: flex; flex-direction: column; gap: 2px; }
 .brand-type b { font: 600 15px/1.2 var(--serif); letter-spacing: .08em; }
 .brand-type small { color: var(--muted); font: 700 8px/1 var(--sans); letter-spacing: .2em; }

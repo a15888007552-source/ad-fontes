@@ -101,6 +101,7 @@ img { max-width: 100%; }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; white-space: nowrap; }
 .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; color: #fff7e9; background: var(--red); font: 600 18px/1 var(--serif); }
+.brand-mark img { display: block; width: 88%; height: 88%; object-fit: contain; }
 .brand-type { display: grid; gap: 1px; }
 .brand-type b { font: 600 14px/1.25 var(--sans); letter-spacing: .08em; }
 .brand-type small { color: var(--muted); font: 600 8px/1.2 var(--sans); letter-spacing: .18em; }
