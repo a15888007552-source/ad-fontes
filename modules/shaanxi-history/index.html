@@ -7,7 +7,7 @@
   <meta name="description" content="陕西历史博物馆观物档案：以现场器物影像、展签文字和公开馆藏资料构成的文物检索网站。">
   <meta name="theme-color" content="#171512">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?rev=20260818-museumgate2">
+  <link rel="stylesheet" href="styles.css?rev=20260818-treasures1">
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -28,6 +28,7 @@
     </a>
     <nav class="top-nav" aria-label="主导航">
       <a href="#museum">关于本馆</a>
+      <a href="#treasures">国宝八章</a>
       <a href="#collection">文物检索</a>
       <a href="#special">文明以止</a>
     </nav>
@@ -73,10 +74,27 @@
       <p class="museum-photo-note">陕西历史博物馆本馆正门</p>
     </section>
 
+    <section class="treasures section" id="treasures" aria-labelledby="treasures-title">
+      <div class="page-width">
+        <div class="treasures-head">
+          <div class="section-label gold"><span>02</span><p>EIGHT TREASURES</p></div>
+          <div class="treasures-title">
+            <p class="eyebrow">禁止出境展览文物</p>
+            <h2 id="treasures-title">国宝八章</h2>
+          </div>
+          <div class="treasures-intro">
+            <p>八件国宝并非同一种“唐代华丽”的反复：金银器与玛瑙杯保存宫廷宴饮和跨区域工艺，三彩骆驼留下乐舞与商旅的形象，倒流壶以内部水道展示耀州窑匠人的巧思；四幅墓室壁画则把仪仗、游猎、建筑和宫廷生活铺陈为完整场景。</p>
+            <button class="treasures-all" type="button" data-filter-jump="forbidden">在检索中查看八件文物 <span>→</span></button>
+          </div>
+        </div>
+        <div class="treasure-grid" id="treasure-grid" aria-label="八件禁止出境展览文物"></div>
+      </div>
+    </section>
+
     <section class="collection section" id="collection">
       <div class="page-width">
         <div class="collection-head">
-          <div class="section-label"><span>02</span><p>OBJECT INDEX</p></div>
+          <div class="section-label"><span>03</span><p>OBJECT INDEX</p></div>
           <div><h2>文物检索</h2><p>一件文物一条记录。说明牌只用于提取名称、时代与来源，不在图组中展示。</p></div>
         </div>
 
@@ -102,7 +120,7 @@
     </section>
 
     <section class="special page-width section" id="special">
-      <div class="section-label gold"><span>03</span><p>SPECIAL EXHIBITION</p></div>
+      <div class="section-label gold"><span>04</span><p>SPECIAL EXHIBITION</p></div>
       <div class="special-copy">
         <div><p class="eyebrow">文明以止</p><h2>希腊化时期的黄金艺术</h2></div>
         <div><p>特展集中展出黄金首饰、货币、随身小像和彩陶。阿佛洛狄忒、厄洛斯、缪斯等人物与头带、耳环、项链的佩戴结构一同进入条目说明；现场照片与基本陈列分开检索。</p><button class="text-button" type="button" data-filter-jump="greek">查看特展文物 <span>→</span></button></div>
@@ -111,7 +129,7 @@
     </section>
 
     <section class="method page-width section" id="method">
-      <div class="section-label"><span>04</span><p>ARCHIVE METHOD</p></div>
+      <div class="section-label"><span>05</span><p>ARCHIVE METHOD</p></div>
       <div class="method-grid">
         <article><b>中心器物</b><p>同一画面出现多件文物时，只取画面中心的主体；边缘邻近器物不参与命名。</p></article>
         <article><b>展签分离</b><p>说明牌只提供文字证据。纯说明牌不进入卡片或详情图组；器物与展签同框时，只保留器物区域。</p></article>
@@ -142,6 +160,6 @@
   </dialog>
 
   <script src="data.js?rev=20260817-sourced-cards4"></script>
-  <script src="app.js?rev=20260817-museumgate1"></script>
+  <script src="app.js?rev=20260818-treasures1"></script>
 </body>
 </html>

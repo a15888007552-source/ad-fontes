@@ -186,6 +186,36 @@
     bindItemButtons(grid);
   }
 
+  function activateCategory(category) {
+    activeFilter = "all";
+    activeCategory = category;
+    searchInput.value = "";
+    document.querySelectorAll("[data-filter]").forEach((chip) => chip.classList.toggle("active", chip.dataset.filter === "all"));
+    renderCategories();
+    render();
+    document.getElementById("collection")?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  }
+
+  function renderRoutes() {
+    const holder = document.getElementById("route-grid");
+    if (!holder) return;
+    const routes = [
+      { number: "I", title: "青铜铭辞", category: "青铜礼器", itemId: "xian-048-5024", image: "assets/photos/focus-5024.webp", note: "从永盂、乙鼎与申父庚盉的器形和铭文，辨认西周礼制中的册命、宴飨与家族记忆。" },
+      { number: "II", title: "汉家日用", category: "生活器用", itemId: "xian-018-4907", image: "assets/photos/focus-4907.webp", note: "羊灯、席镇、行灶与博山炉把视线引向汉代居室：照明、熏香、坐席和炊事皆有具体形制。" },
+      { number: "III", title: "石上梵影", category: "佛教造像", itemId: "xian-028-4955", image: "assets/photos/focus-4955.webp", note: "由北朝造像碑至唐代坐佛，题记、背光与尊像组合记录佛教艺术在长安地区的落地过程。" },
+      { number: "IV", title: "彩釉长安", category: "陶俑与雕塑", itemId: "xian-057-5058", image: "assets/photos/focus-5058.webp", note: "腾空马、蓝釉驴与彩绘陶俑保留姿态、服饰和釉色，也显出唐代城市交通与外来文化的踪迹。" },
+    ];
+    holder.innerHTML = routes.map((route) => {
+      const count = items.filter((item) => item.category === route.category).length;
+      return `<article class="route-card">
+        <button class="route-object" type="button" data-item-id="${escapeHtml(route.itemId)}" aria-label="打开${escapeHtml(route.title)}代表文物详情"><img src="${escapeHtml(route.image)}" alt="${escapeHtml(route.title)}代表文物" loading="lazy"><span>${escapeHtml(route.number)}</span></button>
+        <div class="route-copy"><small>${escapeHtml(route.category)} · ${count} 件</small><h3>${escapeHtml(route.title)}</h3><p>${escapeHtml(route.note)}</p><button class="route-enter" type="button" data-route-category="${escapeHtml(route.category)}">沿此径浏览 ${count} 件文物 <span>→</span></button></div>
+      </article>`;
+    }).join("");
+    bindItemButtons(holder);
+    holder.querySelectorAll("[data-route-category]").forEach((button) => button.addEventListener("click", () => activateCategory(button.dataset.routeCategory)));
+  }
+
   function metaHtml(item) {
     const values = [
       ["时代", item.period || "年代未完整识读"],
@@ -329,6 +359,7 @@
   setStats();
   renderCategories();
   bindFilters();
+  renderRoutes();
   render();
   document.querySelector(".featured-open")?.addEventListener("click", () => openItem("xian-001-painted-mirror"));
 }());

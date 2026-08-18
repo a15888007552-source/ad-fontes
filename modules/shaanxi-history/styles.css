@@ -138,7 +138,7 @@ img { max-width: 100%; }
 .photo-credit { position: absolute; right: max(18px, calc((100vw - 1320px) / 2)); bottom: 14px; max-width: min(92vw, 760px); margin: 0; color: rgba(255,255,255,.62); font: 400 9px/1.5 var(--sans); text-align: right; }
 .photo-credit a { text-decoration: underline; text-underline-offset: 2px; }
 
-.section { padding-block: 82px; border-bottom: 1px solid var(--line); }
+.section { padding-block: 82px; border-bottom: 1px solid var(--line); scroll-margin-top: 68px; }
 .section-label { min-width: 126px; display: flex; align-items: center; gap: 12px; color: var(--muted); }
 .section-label span { color: var(--red); font: 700 10px/1 var(--mono); }
 .section-label p { margin: 0; font: 700 9px/1.4 var(--sans); letter-spacing: .18em; }
@@ -177,6 +177,30 @@ h2, h3 { font-weight: 500; }
 .museum-facts h3 { margin: 0 0 10px; color: var(--red); font: 700 12px/1.4 var(--sans); letter-spacing: .1em; }
 .museum-facts p { margin: 0; color: color-mix(in srgb, var(--ink) 78%, var(--muted)); font-size: 14px; line-height: 1.9; }
 .museum-photo-note { position: absolute; z-index: 2; right: max(18px, calc((100vw - 1320px) / 2)); bottom: 12px; margin: 0; padding: 4px 7px; color: rgba(255,255,255,.88); background: rgba(20,17,13,.5); font: 500 9px/1.3 var(--sans); letter-spacing: .06em; backdrop-filter: blur(7px); }
+
+.treasures { position: relative; overflow: hidden; color: #f6ead6; background: #171411; }
+.treasures::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 12% 8%, rgba(174,45,34,.24), transparent 34%), radial-gradient(circle at 88% 94%, rgba(182,139,70,.17), transparent 32%), url("assets/generated/archive-texture-v1.webp") center / cover no-repeat; opacity: .58; mix-blend-mode: screen; }
+.treasures > .page-width { position: relative; z-index: 1; }
+.treasures-head { display: grid; grid-template-columns: 150px minmax(260px,.7fr) minmax(440px,1.3fr); gap: 42px; align-items: end; margin-bottom: 38px; }
+.treasures-title .eyebrow { color: #d7ad61; }
+.treasures-title h2 { margin: 4px 0 0; font-size: clamp(42px,5.8vw,82px); font-weight: 500; line-height: .98; letter-spacing: -.075em; }
+.treasures-intro { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 28px; align-items: end; }
+.treasures-intro p { margin: 0; color: rgba(246,234,214,.72); font-size: 13px; line-height: 1.95; }
+.treasures-all { min-height: 44px; padding: 0 0 4px; border: 0; border-bottom: 1px solid rgba(215,173,97,.72); color: #e3bd79; background: none; cursor: pointer; font: 700 10px/1.3 var(--sans); white-space: nowrap; }
+.treasures-all:hover, .treasures-all:focus-visible { color: #fff1d3; border-color: #fff1d3; outline: 0; }
+.treasure-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid rgba(239,214,169,.25); border-left: 1px solid rgba(239,214,169,.25); }
+.treasure-card { min-width: 0; display: grid; grid-template-rows: clamp(210px,18vw,310px) 1fr; padding: 0; border: 0; border-right: 1px solid rgba(239,214,169,.25); border-bottom: 1px solid rgba(239,214,169,.25); color: inherit; background: rgba(255,248,234,.035); text-align: left; cursor: pointer; }
+.treasure-image { position: relative; display: block; overflow: hidden; background: #0b0908; }
+.treasure-image::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent,rgba(8,7,6,.82)); }
+.treasure-image img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.9) contrast(1.04); transition: transform .45s cubic-bezier(.22,.8,.25,1), filter .3s ease; }
+.treasure-image b { position: absolute; z-index: 2; top: 14px; left: 14px; padding: 6px 7px; color: #f3d9a9; background: rgba(8,7,6,.72); font: 700 9px/1 var(--mono); }
+.treasure-copy { min-width: 0; display: flex; flex-direction: column; padding: 20px 20px 18px; }
+.treasure-meta { color: #c99645; font: 700 9px/1.4 var(--sans); letter-spacing: .08em; }
+.treasure-copy strong { display: block; margin-top: 9px; font-size: clamp(18px,1.55vw,24px); font-weight: 500; line-height: 1.35; letter-spacing: -.035em; }
+.treasure-note { display: block; margin-top: 12px; color: rgba(246,234,214,.66); font-size: 11px; line-height: 1.8; }
+.treasure-copy i { display: block; margin-top: auto; padding-top: 20px; color: #d7ad61; font: 600 9px/1.3 var(--sans); font-style: normal; letter-spacing: .04em; }
+.treasure-card:hover, .treasure-card:focus-visible { position: relative; z-index: 1; background: rgba(180,52,38,.14); outline: 2px solid #b43d2f; outline-offset: -2px; }
+.treasure-card:hover img, .treasure-card:focus-visible img { transform: scale(1.035); filter: saturate(1) contrast(1.06); }
 
 .collection { position: relative; isolation: isolate; overflow: hidden; background: var(--paper-deep); }
 .collection::before { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: url("assets/generated/archive-texture-v1.webp") center top / cover no-repeat; opacity: .18; mix-blend-mode: multiply; mask-image: linear-gradient(180deg, #000 0, rgba(0,0,0,.72) 28%, transparent 72%); }
@@ -307,6 +331,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .motion-ready .photo-credit { opacity: 0; animation: fade-in .7s .8s ease-out forwards; }
 .motion-ready .reveal { opacity: 0; transform: translateY(18px); transition: opacity .72s ease, transform .72s cubic-bezier(.22,.8,.25,1); transition-delay: var(--reveal-delay, 0ms); }
 .motion-ready .reveal.is-visible { opacity: 1; transform: none; }
+.motion-ready .reveal:target { opacity: 1; transform: none; }
 .object-card.card-enter { animation: card-in .42s var(--card-delay, 0ms) cubic-bezier(.22,.8,.25,1) both; }
 .object-dialog { opacity: 0; transform: translateY(12px) scale(.985); transition: opacity .28s ease, transform .28s cubic-bezier(.22,.8,.25,1); }
 .object-dialog[open], .object-dialog.is-open { opacity: 1; transform: none; }
@@ -342,6 +367,9 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   .hero-inner { grid-template-columns: 1fr; }
   .hero-stats { justify-self: start; }
   .museum, .special, .method, .collection-head { grid-template-columns: 118px minmax(0, 1fr); gap: 26px; }
+  .treasures-head { grid-template-columns: 118px minmax(220px,.7fr) minmax(360px,1.3fr); gap: 26px; }
+  .treasure-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .treasure-card { grid-template-rows: 300px 1fr; }
   .object-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 10px; }
   .object-card { grid-template-rows: auto minmax(190px, 1fr); }
   .special-copy { grid-template-columns: 1fr; gap: 22px; }
@@ -366,6 +394,11 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   .photo-credit { right: 12px; bottom: 9px; font-size: 8px; }
   .section { padding-block: 58px; }
   .museum, .special, .method, .collection-head { grid-template-columns: 1fr; gap: 20px; }
+  .treasures-head { grid-template-columns: 1fr; gap: 18px; }
+  .treasures-intro { grid-template-columns: 1fr; gap: 14px; }
+  .treasures-all { justify-self: start; }
+  .treasure-grid { grid-template-columns: 1fr; }
+  .treasure-card { grid-template-rows: 300px auto; }
   .section-label { min-width: 0; }
   .section-title-row { align-items: start; flex-direction: column; margin-bottom: 24px; }
   .section-title-row h2, .collection-head h2, .special h2 { font-size: 27px; }

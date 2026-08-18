@@ -7,7 +7,7 @@
   <meta name="description" content="西安博物院观物档案：以现场器物影像、展签文字和公开资料整理的文物检索网站。">
   <meta name="theme-color" content="#1a2522">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?rev=20260818-anchorfix1">
+  <link rel="stylesheet" href="styles.css?rev=20260818-routes1">
 </head>
 <body>
   <div class="opening" id="opening" role="dialog" aria-modal="true" aria-label="西安博物院开场">
@@ -22,6 +22,7 @@
     </a>
     <nav class="top-nav" aria-label="主导航">
       <a href="#museum">关于本馆</a>
+      <a href="#routes">长安四径</a>
       <a href="#collection">文物检索</a>
       <a href="#featured">镇馆之镜</a>
     </nav>
@@ -72,10 +73,21 @@
       </div>
     </section>
 
+    <section class="routes section" id="routes" aria-labelledby="routes-title">
+      <div class="page-width">
+        <div class="routes-head">
+          <div class="section-label"><span>02</span><p>FOUR ROUTES</p></div>
+          <div><p class="eyebrow">从器物进入城市史</p><h2 id="routes-title">长安四径</h2></div>
+          <p>不必先通读六十六条档案。四条短径分别从铭文、日用器、造像和釉色出发，把器物放回礼制、居室、寺院与城市交通之中。</p>
+        </div>
+        <div class="route-grid" id="route-grid" aria-label="四条馆藏主题路线"></div>
+      </div>
+    </section>
+
     <section class="collection section" id="collection">
       <div class="page-width">
         <div class="collection-head">
-          <div class="section-label"><span>02</span><p>OBJECT INDEX</p></div>
+          <div class="section-label"><span>03</span><p>OBJECT INDEX</p></div>
           <div><h2>文物检索</h2><p>按时代、门类与专题浏览西安博物院藏品；点击卡片可查看器形、工艺、出土信息和历史背景。</p></div>
         </div>
 
@@ -121,6 +133,6 @@
   </dialog>
 
   <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?rev=20260818-routes1"></script>
 </body>
 </html>
