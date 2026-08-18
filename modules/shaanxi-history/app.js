@@ -12,12 +12,15 @@
   const activeQuery = document.getElementById("active-query");
   const dialog = document.getElementById("object-dialog");
   const dialogImage = document.getElementById("dialog-image");
+  const dialogImageWrap = document.getElementById("dialog-image-wrap");
+  const zoomLevel = document.getElementById("zoom-level");
   const galleryStrip = document.getElementById("gallery-strip");
   let activeFilter = "all";
   let activeCategory = "all";
   let lastFocusedElement = null;
   let titleFitFrame = 0;
   const reduceMotion = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const zoomState = { scale: 1, x: 0, y: 0, dragging: false, pointerId: null, startX: 0, startY: 0, originX: 0, originY: 0 };
   const IMAGE_REV = "20260817-polish1";
 
   function initMotion() {
@@ -74,6 +77,75 @@
   const cssUrl = (value) => encodeURI(String(value || "")).replace(/['()]/g, (character) => `%${character.charCodeAt(0).toString(16)}`);
   const cardCoverFor = (item) => assetFor(`assets/card-covers/${String(item.id).replace(/[^A-Za-z0-9_-]+/g, "-")}.webp`);
   const hasTag = (item, tag) => Array.isArray(item.tags) && item.tags.includes(tag);
+
+  function applyImageZoom() {
+    dialogImageWrap.style.setProperty("--zoom-scale", zoomState.scale.toFixed(3));
+    dialogImageWrap.style.setProperty("--zoom-x", `${zoomState.x.toFixed(1)}px`);
+    dialogImageWrap.style.setProperty("--zoom-y", `${zoomState.y.toFixed(1)}px`);
+    dialogImageWrap.classList.toggle("is-zoomed", zoomState.scale > 1.001);
+    dialogImageWrap.classList.toggle("is-dragging", zoomState.dragging);
+    zoomLevel.textContent = `${Math.round(zoomState.scale * 100)}%`;
+  }
+
+  function clampZoomPan() {
+    const rect = dialogImageWrap.getBoundingClientRect();
+    const maxX = Math.max(0, rect.width * (zoomState.scale - 1) / 2);
+    const maxY = Math.max(0, rect.height * (zoomState.scale - 1) / 2);
+    zoomState.x = Math.max(-maxX, Math.min(maxX, zoomState.x));
+    zoomState.y = Math.max(-maxY, Math.min(maxY, zoomState.y));
+    if (zoomState.scale <= 1.001) { zoomState.scale = 1; zoomState.x = 0; zoomState.y = 0; }
+  }
+
+  function setImageZoom(nextScale, clientX, clientY) {
+    const previous = zoomState.scale;
+    const next = Math.max(1, Math.min(6, nextScale));
+    if (Number.isFinite(clientX) && Number.isFinite(clientY) && previous > 0) {
+      const rect = dialogImageWrap.getBoundingClientRect();
+      const pointX = (clientX - rect.left - rect.width / 2 - zoomState.x) / previous;
+      const pointY = (clientY - rect.top - rect.height / 2 - zoomState.y) / previous;
+      zoomState.x = clientX - rect.left - rect.width / 2 - pointX * next;
+      zoomState.y = clientY - rect.top - rect.height / 2 - pointY * next;
+    }
+    zoomState.scale = next;
+    clampZoomPan();
+    applyImageZoom();
+  }
+
+  function resetImageZoom() {
+    Object.assign(zoomState, { scale: 1, x: 0, y: 0, dragging: false, pointerId: null });
+    applyImageZoom();
+  }
+
+  function initImageZoom() {
+    if (!dialogImageWrap || !zoomLevel) return;
+    dialogImageWrap.addEventListener("wheel", (event) => {
+      if (!dialogImage.getAttribute("src")) return;
+      event.preventDefault();
+      setImageZoom(zoomState.scale * Math.exp(-event.deltaY * 0.0015), event.clientX, event.clientY);
+    }, { passive: false });
+    dialogImageWrap.querySelector("[data-zoom-in]")?.addEventListener("click", () => setImageZoom(zoomState.scale * 1.3));
+    dialogImageWrap.querySelector("[data-zoom-out]")?.addEventListener("click", () => setImageZoom(zoomState.scale / 1.3));
+    dialogImageWrap.querySelector("[data-zoom-reset]")?.addEventListener("click", resetImageZoom);
+    dialogImageWrap.addEventListener("dblclick", (event) => { if (!event.target.closest(".zoom-toolbar")) resetImageZoom(); });
+    dialogImageWrap.addEventListener("pointerdown", (event) => {
+      if (event.pointerType !== "mouse" || event.button !== 0 || zoomState.scale <= 1 || event.target.closest(".zoom-toolbar")) return;
+      zoomState.dragging = true; zoomState.pointerId = event.pointerId; zoomState.startX = event.clientX; zoomState.startY = event.clientY; zoomState.originX = zoomState.x; zoomState.originY = zoomState.y;
+      dialogImageWrap.setPointerCapture(event.pointerId); applyImageZoom();
+    });
+    dialogImageWrap.addEventListener("pointermove", (event) => {
+      if (!zoomState.dragging || event.pointerId !== zoomState.pointerId) return;
+      zoomState.x = zoomState.originX + event.clientX - zoomState.startX; zoomState.y = zoomState.originY + event.clientY - zoomState.startY; clampZoomPan(); applyImageZoom();
+    });
+    const endDrag = (event) => { if (event.pointerId !== zoomState.pointerId) return; zoomState.dragging = false; zoomState.pointerId = null; applyImageZoom(); };
+    dialogImageWrap.addEventListener("pointerup", endDrag); dialogImageWrap.addEventListener("pointercancel", endDrag);
+    dialogImageWrap.addEventListener("keydown", (event) => {
+      if (["+", "="].includes(event.key)) { event.preventDefault(); setImageZoom(zoomState.scale * 1.3); }
+      if (event.key === "-") { event.preventDefault(); setImageZoom(zoomState.scale / 1.3); }
+      if (event.key === "0") { event.preventDefault(); resetImageZoom(); }
+    });
+    window.addEventListener("resize", () => { clampZoomPan(); applyImageZoom(); }, { passive: true });
+    resetImageZoom();
+  }
   const sequenceOrder = (item) => Number(item.sequenceOrder ?? item.sequence ?? 9999);
   const displayNumber = (item) => item.displayNumber || (Number.isFinite(Number(item.sequence)) ? String(item.sequence).padStart(3, "0") : "—");
   const textFor = (item) => [
@@ -255,6 +327,7 @@
   }
 
   function setDialogImage(photo, index, total) {
+    resetImageZoom();
     const source = assetFor(photo?.focus || photo?.src);
     dialogImage.src = source;
     dialogImage.alt = photo?.label || "文物器物图";
@@ -318,6 +391,7 @@
   }
 
   function closeDialog() {
+    resetImageZoom();
     dialog.classList.remove("is-open");
     if (dialog.open && typeof dialog.close === "function") dialog.close();
     else dialog.removeAttribute("open");
@@ -455,6 +529,7 @@
   });
 
   initMotion();
+  initImageZoom();
   setStats();
   renderCategories();
   render();

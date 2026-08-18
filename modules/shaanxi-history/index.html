@@ -145,7 +145,12 @@
     <div class="dialog-shell">
       <button class="dialog-close" id="dialog-close" type="button" aria-label="关闭详情">×</button>
       <div class="dialog-media">
-        <div class="dialog-image-wrap"><img id="dialog-image" alt=""><span class="dialog-sequence" id="dialog-sequence"></span></div>
+        <div class="dialog-image-wrap" id="dialog-image-wrap" tabindex="0" aria-label="文物图片：鼠标滚轮缩放，放大后拖动查看，双击复位">
+          <img id="dialog-image" alt="" draggable="false">
+          <span class="dialog-sequence" id="dialog-sequence"></span>
+          <div class="zoom-toolbar" aria-label="图片缩放控制"><button type="button" data-zoom-out aria-label="缩小图片">−</button><button type="button" data-zoom-reset id="zoom-level" aria-label="复位图片">100%</button><button type="button" data-zoom-in aria-label="放大图片">＋</button></div>
+          <span class="zoom-hint">滚轮缩放 · 拖动查看 · 双击复位</span>
+        </div>
         <div class="gallery-strip" id="gallery-strip" aria-label="该文物的器物视图"></div>
       </div>
       <div class="dialog-content">
@@ -160,6 +165,6 @@
   </dialog>
 
   <script src="data.js?rev=20260817-sourced-cards4"></script>
-  <script src="app.js?rev=20260818-treasures1"></script>
+  <script src="app.js?rev=20260818-imagezoom1"></script>
 </body>
 </html>
