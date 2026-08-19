@@ -1983,6 +1983,700 @@
     }
   }
 </style>
+<style id="museum-atlas3d-styles">
+  /* 第一版：陕西馆舍的固定镜头空间样片。模型用 CSS 体块表达，后续可逐馆替换为正式 GLB / SVG 资产。 */
+  .museum-atlas3d {
+    --atlas-ink: #f2e8d4;
+    --atlas-muted: rgba(242, 232, 212, .64);
+    --atlas-line: rgba(242, 232, 212, .18);
+    --atlas-gold: #c6a879;
+    --atlas-terracotta: #b97859;
+    position: relative;
+    margin: clamp(34px, 5vw, 64px) 0 10px;
+    padding: clamp(22px, 3.4vw, 38px);
+    overflow: hidden;
+    border: 1px solid rgba(238, 231, 217, .19);
+    background:
+      radial-gradient(circle at 18% 12%, rgba(198, 168, 121, .12), transparent 27%),
+      radial-gradient(circle at 84% 76%, rgba(185, 120, 89, .09), transparent 31%),
+      linear-gradient(145deg, #24231f 0%, #171816 72%, #101211 100%);
+    color: var(--atlas-ink);
+    box-shadow: 0 26px 76px rgba(0, 0, 0, .28);
+    isolation: isolate;
+  }
+
+  .museum-atlas3d::before,
+  .museum-atlas3d::after {
+    position: absolute;
+    pointer-events: none;
+    content: "";
+  }
+
+  .museum-atlas3d::before {
+    z-index: -1;
+    inset: 0;
+    opacity: .14;
+    background-image:
+      linear-gradient(90deg, transparent 49.9%, rgba(242, 232, 212, .55) 50%, transparent 50.1%),
+      linear-gradient(rgba(242, 232, 212, .22) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242, 232, 212, .22) 1px, transparent 1px);
+    background-size: 100% 100%, 64px 64px, 64px 64px;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  }
+
+  .museum-atlas3d::after {
+    right: 24px;
+    bottom: 20px;
+    width: 76px;
+    height: 76px;
+    border: 1px solid rgba(198, 168, 121, .38);
+    border-radius: 50%;
+    opacity: .55;
+  }
+
+  .museum-atlas3d__header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 22px;
+    margin-bottom: 18px;
+  }
+
+  .museum-atlas3d__kicker {
+    margin: 0 0 8px;
+    color: var(--atlas-gold);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  .museum-atlas3d__title {
+    margin: 0;
+    color: var(--atlas-ink);
+    font-family: var(--serif);
+    font-size: clamp(1.55rem, 3vw, 2.35rem);
+    font-weight: 500;
+    letter-spacing: -.06em;
+    line-height: 1.05;
+  }
+
+  .museum-atlas3d__intro {
+    max-width: 34em;
+    margin: 0;
+    color: var(--atlas-muted);
+    font-size: 12px;
+    line-height: 1.75;
+    text-align: right;
+  }
+
+  .museum-atlas3d__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 16px;
+    margin: 0 0 14px;
+    color: var(--atlas-muted);
+    font-size: 10px;
+    letter-spacing: .06em;
+  }
+
+  .museum-atlas3d__legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .museum-atlas3d__legend i {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+  }
+
+  .museum-atlas3d__legend .is-complete i {
+    background: var(--atlas-gold);
+    color: var(--atlas-gold);
+    box-shadow: 0 0 12px rgba(198, 168, 121, .44);
+  }
+
+  .museum-atlas3d__legend .is-half i {
+    color: var(--atlas-terracotta);
+    background: repeating-linear-gradient(135deg, transparent 0 2px, currentColor 3px 4px);
+  }
+
+  .museum-atlas3d__scene {
+    position: relative;
+    min-height: clamp(520px, 54vw, 660px);
+    overflow: hidden;
+    border: 1px solid var(--atlas-line);
+    background:
+      radial-gradient(ellipse at 50% 71%, rgba(198, 168, 121, .11), transparent 46%),
+      linear-gradient(180deg, rgba(216, 196, 160, .06), transparent 29%),
+      #111514;
+    perspective: 1180px;
+    perspective-origin: 50% 23%;
+    transform-style: preserve-3d;
+    overflow: hidden;
+  }
+
+  .museum-atlas3d__scene::before {
+    position: absolute;
+    inset: 7% 6% 4%;
+    border: 1px solid rgba(198, 168, 121, .13);
+    content: "";
+    pointer-events: none;
+    transform: skewY(-8deg) rotateX(58deg) translateY(9%);
+    transform-origin: center bottom;
+  }
+
+  .museum-atlas3d__scene::after {
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    color: rgba(242, 232, 212, .37);
+    content: "N  ·  34°16′  E  ·  108°56′";
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 9px;
+    letter-spacing: .12em;
+    pointer-events: none;
+  }
+
+  .museum-atlas3d__stage {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    pointer-events: none;
+  }
+
+  .museum-atlas3d__stage .museum-node {
+    pointer-events: auto;
+  }
+
+  .museum-atlas3d__plane {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+  }
+
+  .museum-atlas3d__floor {
+    position: absolute;
+    right: 5%;
+    bottom: -11%;
+    left: 5%;
+    height: 55%;
+    border: 1px solid rgba(198, 168, 121, .23);
+    background:
+      linear-gradient(90deg, transparent 49.7%, rgba(198, 168, 121, .23) 50%, transparent 50.3%),
+      repeating-linear-gradient(0deg, transparent 0 42px, rgba(198, 168, 121, .13) 43px 44px),
+      repeating-linear-gradient(90deg, transparent 0 74px, rgba(198, 168, 121, .11) 75px 76px),
+      linear-gradient(145deg, rgba(198, 168, 121, .14), rgba(22, 25, 22, .66));
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .36);
+    opacity: .68;
+    transform: rotateX(63deg) translateZ(-56px) translateY(15%);
+    transform-origin: center bottom;
+  }
+
+  .museum-atlas3d__depth-line {
+    position: absolute;
+    left: 7%;
+    width: 86%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(198, 168, 121, .34), transparent);
+    opacity: .7;
+    pointer-events: none;
+    transform: rotateX(63deg) translateZ(-38px);
+    transform-origin: center;
+  }
+
+  .museum-atlas3d__depth-line--one { top: 57%; }
+  .museum-atlas3d__depth-line--two { top: 42%; opacity: .42; }
+  .museum-atlas3d__depth-line--three { top: 29%; opacity: .25; }
+
+  .museum-node {
+    position: absolute;
+    top: var(--node-y);
+    left: var(--node-x);
+    z-index: var(--node-order);
+    width: var(--node-width, 174px);
+    height: var(--node-height, 170px);
+    pointer-events: auto;
+    transform: translate(-50%, -50%) translateZ(var(--node-z)) scale(var(--node-scale));
+    transform-style: preserve-3d;
+    transition: filter 260ms ease, transform 320ms cubic-bezier(.2, .8, .2, 1);
+  }
+
+  .museum-node--back {
+    --node-width: 142px;
+    --node-height: 145px;
+    --node-scale: .84;
+    --node-hover-scale: .9;
+    filter: saturate(.74) brightness(.83);
+  }
+
+  .museum-node--back[data-museum-id="zhouyuan"] { --node-width: 138px; }
+  .museum-node--middle { --node-hover-scale: 1; }
+  .museum-node--front { --node-hover-scale: 1.08; }
+  .museum-node--middle[data-museum-id="qin"] { --node-width: 166px; }
+  .museum-node--middle[data-museum-id="famensi"] { --node-width: 166px; }
+  .museum-node--middle[data-museum-id="beilin"] { --node-width: 170px; }
+
+  .museum-node.is-selected .museum-node__badge {
+    background: var(--atlas-gold);
+    color: #171816;
+  }
+
+  .museum-node[data-status="half"] .museum-model {
+    filter: saturate(.72);
+  }
+
+  .museum-node[data-status="half"] .museum-node__label {
+    color: #ead3b5;
+  }
+
+  .museum-node--middle {
+    --node-width: 160px;
+    --node-height: 156px;
+    --node-scale: .93;
+    filter: saturate(.86) brightness(.93);
+  }
+
+  .museum-node--front {
+    --node-width: 205px;
+    --node-height: 192px;
+    --node-scale: 1.04;
+  }
+
+  .museum-node:hover,
+  .museum-node:has(.museum-node__hit:focus-visible),
+  .museum-node.is-selected {
+    filter: saturate(1.08) brightness(1.08) drop-shadow(0 15px 18px rgba(0, 0, 0, .36));
+    transform: translate(-50%, -53%) translateZ(calc(var(--node-z) + 26px)) scale(var(--node-hover-scale));
+  }
+
+  .museum-node__hit {
+    position: absolute;
+    inset: -14px;
+    display: block;
+    width: calc(100% + 28px);
+    height: calc(100% + 28px);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    text-align: center;
+    transform-style: preserve-3d;
+  }
+
+  .museum-node__hit::before {
+    position: absolute;
+    right: 5%;
+    bottom: 11px;
+    left: 5%;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .36);
+    content: "";
+    filter: blur(6px);
+    opacity: .8;
+    transform: rotateX(66deg) translateZ(-4px);
+  }
+
+  .museum-node__hit:focus-visible {
+    outline: 1px solid var(--atlas-gold);
+    outline-offset: 7px;
+  }
+
+  .museum-model {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    width: 142px;
+    height: 126px;
+    transform: translateX(-50%) translateZ(14px);
+    transform-style: preserve-3d;
+  }
+
+  .museum-node--front .museum-model { width: 174px; height: 148px; }
+  .museum-node--back .museum-model { width: 118px; height: 108px; bottom: 26px; }
+
+  .museum-part {
+    position: absolute;
+    display: block;
+    opacity: 1;
+    transform-origin: center bottom;
+  }
+
+  .museum-part--foundation {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 16px;
+    border: 1px solid color-mix(in srgb, var(--museum-accent) 64%, #151715);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--museum-accent) 62%, #dfcda7), color-mix(in srgb, var(--museum-wall) 82%, #111));
+    clip-path: polygon(5% 10%, 95% 10%, 100% 70%, 90% 100%, 10% 100%, 0 70%);
+  }
+
+  .museum-part--body {
+    right: 12%;
+    bottom: 13px;
+    left: 12%;
+    height: 57%;
+    border: 1px solid color-mix(in srgb, var(--museum-accent) 46%, #171916);
+    background:
+      linear-gradient(90deg, rgba(255, 245, 218, .13), transparent 18% 82%, rgba(0, 0, 0, .2)),
+      linear-gradient(180deg, color-mix(in srgb, var(--museum-wall) 91%, white), var(--museum-wall));
+    box-shadow: inset 0 -15px 0 rgba(0, 0, 0, .13), 5px 5px 0 rgba(0, 0, 0, .16);
+    clip-path: polygon(3% 0, 97% 0, 100% 100%, 0 100%);
+  }
+
+  .museum-part--columns {
+    right: 16%;
+    bottom: 17px;
+    left: 16%;
+    height: 47%;
+    background: repeating-linear-gradient(90deg, transparent 0 11px, color-mix(in srgb, var(--museum-accent) 66%, #f4e8ca) 11px 14px, transparent 14px 24px);
+    border-bottom: 5px solid color-mix(in srgb, var(--museum-accent) 68%, #30291e);
+    opacity: .8;
+  }
+
+  .museum-part--roof {
+    right: -5%;
+    bottom: 63%;
+    left: -5%;
+    height: 35px;
+    border-bottom: 5px solid color-mix(in srgb, var(--museum-accent) 76%, #131513);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--museum-roof) 92%, white), var(--museum-roof));
+    clip-path: polygon(0 70%, 50% 0, 100% 70%, 95% 100%, 5% 100%);
+    filter: drop-shadow(0 4px 0 rgba(0, 0, 0, .22));
+  }
+
+  .museum-part--trim {
+    right: 4%;
+    bottom: 59%;
+    left: 4%;
+    height: 8px;
+    background: color-mix(in srgb, var(--museum-accent) 70%, #e7d4aa);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, .22);
+  }
+
+  .museum-part--sign {
+    bottom: 39%;
+    left: 50%;
+    display: grid;
+    width: 45px;
+    height: 17px;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--museum-accent) 74%, #1d1c18);
+    background: color-mix(in srgb, var(--museum-accent) 55%, #24221c);
+    color: #f6dfb4;
+    font-family: var(--serif);
+    font-size: 9px;
+    letter-spacing: .08em;
+    transform: translateX(-50%);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+  }
+
+  .museum-part--tower {
+    right: 33%;
+    bottom: 22px;
+    left: 33%;
+    height: 74%;
+    border: 1px solid color-mix(in srgb, var(--museum-accent) 54%, #141613);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--museum-wall) 78%, #111), var(--museum-wall), color-mix(in srgb, var(--museum-wall) 75%, white));
+    box-shadow: inset 0 -8px 0 rgba(0, 0, 0, .16);
+    clip-path: polygon(9% 0, 91% 0, 100% 100%, 0 100%);
+  }
+
+  .museum-part--tower-roof {
+    right: 22%;
+    bottom: 89%;
+    left: 22%;
+    height: 22px;
+    background: var(--museum-roof);
+    clip-path: polygon(0 76%, 50% 0, 100% 76%, 91% 100%, 9% 100%);
+  }
+
+  .museum-part--scaffold {
+    right: 3%;
+    bottom: 17px;
+    left: 3%;
+    display: none;
+    height: 74%;
+    border: 1px dashed color-mix(in srgb, var(--museum-accent) 80%, #dfb28d);
+    background: repeating-linear-gradient(90deg, transparent 0 18px, color-mix(in srgb, var(--museum-accent) 70%, transparent) 19px 21px), repeating-linear-gradient(0deg, transparent 0 21px, color-mix(in srgb, var(--museum-accent) 50%, transparent) 22px 24px);
+    opacity: .52;
+  }
+
+  .museum-model--bronze {
+    --museum-wall: #354844;
+    --museum-roof: #9c6d46;
+    --museum-accent: #c39b57;
+  }
+  .museum-model--history {
+    --museum-wall: #6e493a;
+    --museum-roof: #9b3c2f;
+    --museum-accent: #d2a75f;
+  }
+  .museum-model--beilin {
+    --museum-wall: #5c5445;
+    --museum-roof: #313b35;
+    --museum-accent: #bda975;
+  }
+  .museum-model--archaeology {
+    --museum-wall: #8a806d;
+    --museum-roof: #4e5d59;
+    --museum-accent: #c5a56f;
+  }
+  .museum-model--qinhan {
+    --museum-wall: #8b806e;
+    --museum-roof: #5e655e;
+    --museum-accent: #d0ad72;
+  }
+  .museum-model--xian {
+    --museum-wall: #837664;
+    --museum-roof: #6b4d3e;
+    --museum-accent: #c7a86e;
+  }
+  .museum-model--qin,
+  .museum-model--famensi,
+  .museum-model--zhouyuan {
+    --museum-wall: #6f6858;
+    --museum-roof: #4d554e;
+    --museum-accent: #bf8c63;
+  }
+
+  .museum-model--history .museum-part--tower,
+  .museum-model--xian .museum-part--tower { display: block; }
+  .museum-model--history .museum-part--tower-roof,
+  .museum-model--xian .museum-part--tower-roof { display: block; }
+  .museum-model--bronze .museum-part--body { clip-path: polygon(7% 0, 93% 0, 100% 89%, 92% 100%, 8% 100%, 0 89%); }
+  .museum-model--archaeology .museum-part--roof,
+  .museum-model--qinhan .museum-part--roof { clip-path: polygon(0 35%, 90% 0, 100% 67%, 89% 100%, 4% 100%); }
+  .museum-model--beilin .museum-part--body { background: repeating-linear-gradient(90deg, var(--museum-wall) 0 18px, color-mix(in srgb, var(--museum-wall) 70%, #181a18) 19px 21px); }
+  .museum-model--qin .museum-part--body,
+  .museum-model--famensi .museum-part--body,
+  .museum-model--zhouyuan .museum-part--body { opacity: .5; }
+  .museum-model--qin .museum-part--roof,
+  .museum-model--famensi .museum-part--roof,
+  .museum-model--zhouyuan .museum-part--roof { opacity: .28; border-bottom-style: dashed; }
+  .museum-model--qin .museum-part--scaffold,
+  .museum-model--famensi .museum-part--scaffold,
+  .museum-model--zhouyuan .museum-part--scaffold { display: block; }
+  .museum-model--qin .museum-part--sign::after,
+  .museum-model--famensi .museum-part--sign::after,
+  .museum-model--zhouyuan .museum-part--sign::after { content: "未完"; }
+
+  .museum-node[data-status="half"] .museum-node__badge {
+    border-color: rgba(191, 140, 99, .65);
+    color: #d9a17c;
+  }
+
+  .museum-node__badge {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    display: inline-block;
+    padding: 3px 7px;
+    border: 1px solid rgba(198, 168, 121, .54);
+    background: rgba(15, 18, 16, .7);
+    color: #d8bd89;
+    font-size: 8px;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  .museum-node__label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    padding: 6px 7px 7px;
+    background: linear-gradient(180deg, transparent, rgba(9, 12, 11, .84) 28%);
+    color: #f3e6cf;
+    font-family: var(--serif);
+    font-size: clamp(10px, 1.05vw, 13px);
+    line-height: 1.25;
+    text-shadow: 0 1px 4px #000;
+  }
+
+  .museum-node--back .museum-node__label { font-size: 10px; }
+
+  .museum-node.is-assembling .museum-part {
+    animation-name: museum-assemble;
+    animation-duration: 620ms;
+    animation-timing-function: cubic-bezier(.15, .72, .22, 1);
+    animation-fill-mode: both;
+  }
+
+  .museum-node.is-assembling .museum-part--foundation { animation-delay: 0ms; }
+  .museum-node.is-assembling .museum-part--body { animation-delay: 130ms; }
+  .museum-node.is-assembling .museum-part--columns { animation-delay: 260ms; }
+  .museum-node.is-assembling .museum-part--roof { animation-delay: 400ms; }
+  .museum-node.is-assembling .museum-part--trim { animation-delay: 510ms; }
+  .museum-node.is-assembling .museum-part--sign,
+  .museum-node.is-assembling .museum-part--tower,
+  .museum-node.is-assembling .museum-part--tower-roof { animation-delay: 620ms; }
+
+  @keyframes museum-assemble {
+    0% {
+      opacity: 0;
+      filter: blur(2px) saturate(.45);
+      transform: translate3d(var(--scatter-x, -28px), var(--scatter-y, 24px), var(--scatter-z, -12px)) rotate(var(--scatter-r, -9deg)) scale(.72);
+    }
+    62% {
+      opacity: 1;
+      filter: blur(0) saturate(1.15);
+      transform: translate3d(3px, -3px, 12px) rotate(2deg) scale(1.04);
+    }
+    100% {
+      opacity: 1;
+      filter: none;
+      transform: translate3d(0, 0, 0) rotate(0) scale(1);
+    }
+  }
+
+  .museum-atlas3d__brief {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: center;
+    margin-top: 14px;
+    padding: 16px 18px;
+    border: 1px solid var(--atlas-line);
+    background: rgba(12, 15, 14, .52);
+  }
+
+  .museum-atlas3d__brief-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--atlas-gold);
+    font-size: 9px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  .museum-atlas3d__brief h3 {
+    margin: 0;
+    color: var(--atlas-ink);
+    font-family: var(--serif);
+    font-size: clamp(1.15rem, 2.2vw, 1.7rem);
+    font-weight: 500;
+  }
+
+  .museum-atlas3d__brief p {
+    max-width: 62em;
+    margin: 4px 0 0;
+    color: var(--atlas-muted);
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .museum-atlas3d__brief-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .museum-atlas3d__detail,
+  .museum-atlas3d__topic {
+    min-height: 42px;
+    padding: 10px 13px;
+    border: 1px solid rgba(198, 168, 121, .62);
+    background: rgba(198, 168, 121, .12);
+    color: #e7ce9c;
+    cursor: pointer;
+    font-size: 11px;
+    letter-spacing: .04em;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+  }
+
+  .museum-atlas3d__detail:hover,
+  .museum-atlas3d__detail:focus-visible,
+  .museum-atlas3d__topic:hover,
+  .museum-atlas3d__topic:focus-visible {
+    background: var(--atlas-gold);
+    color: #171816;
+  }
+
+  .museum-atlas3d__topic[aria-disabled="true"] {
+    border-color: rgba(242, 232, 212, .22);
+    color: rgba(242, 232, 212, .46);
+    cursor: default;
+  }
+
+  .museum-atlas3d__hint {
+    margin: 11px 0 0;
+    color: rgba(242, 232, 212, .44);
+    font-size: 10px;
+    letter-spacing: .03em;
+  }
+
+  .museum-atlas3d__dialog {
+    width: min(560px, calc(100vw - 28px));
+    padding: 0;
+    border: 1px solid rgba(198, 168, 121, .52);
+    background: #211f1a;
+    color: var(--atlas-ink);
+    box-shadow: 0 24px 90px rgba(0, 0, 0, .58);
+  }
+
+  .museum-atlas3d__dialog::backdrop { background: rgba(8, 10, 9, .72); backdrop-filter: blur(5px); }
+
+  .museum-atlas3d__dialog-inner { padding: clamp(22px, 5vw, 36px); }
+  .museum-atlas3d__dialog-kicker { margin: 0 0 10px; color: var(--atlas-gold); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+  .museum-atlas3d__dialog h3 { margin: 0; font-family: var(--serif); font-size: clamp(1.6rem, 5vw, 2.25rem); font-weight: 500; letter-spacing: -.05em; }
+  .museum-atlas3d__dialog-meta { margin: 8px 0 20px; color: rgba(242, 232, 212, .58); font-size: 11px; }
+  .museum-atlas3d__dialog-copy { margin: 0; color: rgba(242, 232, 212, .82); font-size: 13px; line-height: 1.9; }
+  .museum-atlas3d__dialog-facts { display: grid; gap: 7px; margin: 20px 0 0; padding: 16px 0 0; border-top: 1px solid var(--atlas-line); color: rgba(242, 232, 212, .63); font-size: 11px; }
+  .museum-atlas3d__dialog-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 25px; }
+  .museum-atlas3d__dialog-close { min-height: 42px; padding: 9px 13px; border: 1px solid rgba(242, 232, 212, .28); background: transparent; color: var(--atlas-ink); cursor: pointer; font-size: 11px; }
+  .museum-atlas3d__dialog-link { display: inline-flex; align-items: center; min-height: 42px; padding: 9px 13px; border: 1px solid rgba(198, 168, 121, .7); color: #e7ce9c; font-size: 11px; }
+
+  @media (max-width: 760px) {
+    .museum-atlas3d { padding: 20px 14px 18px; }
+    .museum-atlas3d__header { display: block; }
+    .museum-atlas3d__intro { margin-top: 12px; text-align: left; }
+    .museum-atlas3d__scene { min-height: 620px; }
+    .museum-node { width: var(--node-width); height: var(--node-height); }
+    .museum-node--back { --node-scale: .72; }
+    .museum-node--middle { --node-scale: .82; }
+    .museum-node--front { --node-scale: .92; }
+    .museum-atlas3d__brief { grid-template-columns: 1fr; }
+    .museum-atlas3d__brief-actions { justify-content: flex-start; }
+    .museum-atlas3d__detail, .museum-atlas3d__topic { flex: 1 1 150px; }
+    .museum-node--back .museum-node__label { font-size: 9px; }
+  }
+
+  @media (max-width: 520px) {
+    .museum-atlas3d__scene { min-height: 690px; }
+    .museum-atlas3d__scene::after { font-size: 8px; }
+    .museum-node--front { --node-width: 170px; --node-height: 174px; }
+    .museum-node--middle { --node-width: 136px; --node-height: 142px; }
+    .museum-node--back { --node-width: 108px; --node-height: 120px; }
+    .museum-node--front .museum-model { width: 146px; height: 132px; }
+    .museum-node--middle .museum-model { width: 118px; height: 111px; }
+    .museum-node--back .museum-model { width: 92px; height: 88px; }
+    .museum-node__hit { inset: -10px; width: calc(100% + 20px); height: calc(100% + 20px); }
+    .museum-node__badge { font-size: 7px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .museum-atlas3d__scene,
+    .museum-node,
+    .museum-atlas3d__detail,
+    .museum-atlas3d__topic { transition: none !important; }
+    .museum-node.is-assembling .museum-part { animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important; }
+    .museum-atlas3d__scene::before { display: none; }
+  }
+</style>
 </head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴" tabindex="0">
@@ -2119,7 +2813,7 @@
           <p class="brief-copy"><strong>陕西 · 墨色</strong> 字留在石上，照片把它带回今天</p>
           <dl class="brief-meta">
             <div><dt>主题</dt><dd>碑刻 / 时间</dd></div>
-            <div><dt>馆数</dt><dd>06 座</dd></div>
+            <div><dt>馆数</dt><dd>09 座</dd></div>
           </dl>
         </div>
         <div class="chapter-content reveal-on-scroll">
@@ -2150,6 +2844,54 @@
                 <div class="card-media"><img src="../xian-museum/assets/hero-pagoda.webp" alt="西安博物院小雁塔专题入口" loading="lazy" decoding="async" /></div>
                 <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>西安博物院</h4><p>西安 · 小雁塔与城市文脉</p><span class="card-arrow">进入专题 ↗</span></div>
               </a></div>
+            <section class="museum-atlas3d" aria-labelledby="museum-atlas3d-title">
+              <div class="museum-atlas3d__header">
+                <div>
+                  <p class="museum-atlas3d__kicker">陕西馆舍 / FIXED CAMERA STUDY</p>
+                  <h3 class="museum-atlas3d__title" id="museum-atlas3d-title">让时间留下墨痕</h3>
+                </div>
+                <p class="museum-atlas3d__intro">九座馆舍被放进同一张时间地形图。镜头固定，建筑保持完成；移入或点按一座馆，看它从地基向上重新汇聚。</p>
+              </div>
+              <div class="museum-atlas3d__legend" aria-label="图例">
+                <span class="is-complete"><i aria-hidden="true"></i>完整建成 · 移入播放装配</span>
+                <span class="is-half"><i aria-hidden="true"></i>半施工 · 结构线保留未完</span>
+              </div>
+              <div class="museum-atlas3d__scene" id="museum-atlas3d-scene" aria-label="陕西九座博物馆固定镜头三维展陈图">
+                <div class="museum-atlas3d__stage" id="museum-atlas3d-stage">
+                  <div class="museum-atlas3d__plane" aria-hidden="true">
+                    <div class="museum-atlas3d__floor"></div>
+                    <div class="museum-atlas3d__depth-line museum-atlas3d__depth-line--one"></div>
+                    <div class="museum-atlas3d__depth-line museum-atlas3d__depth-line--two"></div>
+                    <div class="museum-atlas3d__depth-line museum-atlas3d__depth-line--three"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="museum-atlas3d__brief" aria-live="polite">
+                <div>
+                  <span class="museum-atlas3d__brief-label">当前观看</span>
+                  <h3 id="museum-atlas3d-current">陕西九馆 · 总览</h3>
+                  <p id="museum-atlas3d-copy">前排是中国青铜器博物院与陕西历史博物馆；中排落在碑林与未完工的时间节点；最后一排把考古、秦汉与城市记忆接到远方。</p>
+                </div>
+                <div class="museum-atlas3d__brief-actions">
+                  <button class="museum-atlas3d__detail" id="museum-atlas3d-detail" type="button" disabled aria-disabled="true">选择一座馆查看详情</button>
+                  <span class="museum-atlas3d__topic" aria-disabled="true">3D 建筑研究样片</span>
+                </div>
+              </div>
+              <p class="museum-atlas3d__hint">桌面端：把鼠标移到建筑上播放一次装配；移动端：点按一座馆直接查看详情。已上线专题可从详情页进入。</p>
+              <dialog class="museum-atlas3d__dialog" id="museum-atlas3d-dialog" aria-labelledby="museum-atlas3d-dialog-title">
+                <div class="museum-atlas3d__dialog-inner">
+                  <p class="museum-atlas3d__dialog-kicker" id="museum-atlas3d-dialog-status">陕西馆舍 / MUSEUM ATLAS</p>
+                  <h3 id="museum-atlas3d-dialog-title">博物馆详情</h3>
+                  <p class="museum-atlas3d__dialog-meta" id="museum-atlas3d-dialog-meta"></p>
+                  <p class="museum-atlas3d__dialog-copy" id="museum-atlas3d-dialog-copy"></p>
+                  <div class="museum-atlas3d__dialog-facts" id="museum-atlas3d-dialog-facts"></div>
+                  <div class="museum-atlas3d__dialog-actions">
+                    <button class="museum-atlas3d__dialog-close" type="button">返回展陈</button>
+                    <a class="museum-atlas3d__dialog-link" id="museum-atlas3d-dialog-link" href="#">进入专题 ↗</a>
+                  </div>
+                </div>
+              </dialog>
+            </section>
           </section>
         </div>
       </article>
@@ -2428,6 +3170,121 @@
       attributeFilter: ["data-active-province"]
     });
     render();
+  })();
+</script>
+<script id="museum-atlas3d-script">
+  (() => {
+    const scene = document.getElementById("museum-atlas3d-scene");
+    const sceneStage = document.getElementById("museum-atlas3d-stage");
+    const detailButton = document.getElementById("museum-atlas3d-detail");
+    const currentTitle = document.getElementById("museum-atlas3d-current");
+    const currentCopy = document.getElementById("museum-atlas3d-copy");
+    const dialog = document.getElementById("museum-atlas3d-dialog");
+    if (!scene || !sceneStage || !detailButton || !currentTitle || !currentCopy || !dialog) return;
+
+    const museums = [
+      { id: "archaeology", name: "陕西考古博物馆", city: "西安 · 终南山北麓", tier: "后排 / 考古现场", status: "built", variant: "archaeology", x: "17%", y: "24%", z: "-40px", order: 2, scatter: ["-26px", "-25px", "9deg"], summary: "把田野、发掘、修复与展示连成一条线的考古学科专题博物馆。", facts: ["主题：考古圣地 · 华章陕西", "建筑与展陈共同强调遗址、地层和研究过程", "专题：馆舍与现场图录",], link: "../shaanxi-archaeology-museum/index.html" },
+      { id: "qinhan", name: "陕西历史博物馆·秦汉馆", city: "西安 · 秦汉新城", tier: "后排 / 秦汉文明", status: "built", variant: "qinhan", x: "39%", y: "20%", z: "-48px", order: 1, scatter: ["28px", "-19px", "-8deg"], summary: "毗邻秦咸阳城遗址公园，专门讲述秦汉文明的缘起、发展与历史贡献。", facts: ["定位：陕西历史博物馆“一馆两区”之一", "建筑群以层叠台地和灰瓦体量形成辨识度", "专题：秦汉馆藏影录",], link: "../qinhan/index.html" },
+      { id: "xian", name: "西安博物院", city: "西安 · 荐福寺历史文化景区", tier: "后排 / 城市文脉", status: "built", variant: "xian", x: "63%", y: "22%", z: "-44px", order: 4, scatter: ["-28px", "-27px", "7deg"], summary: "博物馆、小雁塔与荐福寺共同构成一处连接城市历史的文化景区。", facts: ["核心景观：小雁塔与荐福寺", "陈列以西安地区历代出土文物为主体", "专题：小雁塔与城市文脉",], link: "../xian-museum/index.html" },
+      { id: "zhouyuan", name: "周原博物馆", city: "宝鸡 · 周原遗址", tier: "后排 / 半施工", status: "half", variant: "zhouyuan", x: "84%", y: "28%", z: "-30px", order: 3, scatter: ["24px", "-24px", "-9deg"], summary: "保留为未完工的时间节点：地基、结构线与局部屋面先行，等待资料与正式模型继续补全。", facts: ["当前状态：半施工展示", "视觉重点：周原遗址语境与青铜文明线索", "本版暂不播放完整装配动画",], link: "" },
+      { id: "qin", name: "秦始皇帝陵博物院", city: "西安 · 临潼", tier: "中排 / 半施工", status: "half", variant: "qin", x: "23%", y: "51%", z: "10px", order: 5, scatter: ["-25px", "20px", "8deg"], summary: "以秦陵遗址、兵马俑坑与博物馆群为核心的世界遗产展示空间。此处先以未完工结构表达其重量感。", facts: ["当前状态：半施工展示", "视觉重点：台地、坑体与秩序化体量", "本版暂不播放完整装配动画",], link: "" },
+      { id: "beilin", name: "西安碑林博物院", city: "西安 · 孔庙旧址", tier: "中排 / 石刻与书法", status: "built", variant: "beilin", x: "50%", y: "47%", z: "0px", order: 7, scatter: ["28px", "18px", "-8deg"], summary: "以孔庙古建、碑林和石刻艺术展陈为骨架，保存书写留在石上的时间。", facts: ["始建：北宋元祐二年（1087）", "专题已上线：石墨长安 · 西安碑林博物馆数字档案", "进入专题可浏览现场影像与文物名录",], link: "../beilin/index.html" },
+      { id: "famensi", name: "法门寺", city: "宝鸡 · 扶风", tier: "中排 / 半施工", status: "half", variant: "famensi", x: "77%", y: "50%", z: "12px", order: 6, scatter: ["-22px", "22px", "8deg"], summary: "保留为半施工的礼制与佛教建筑节点：塔、殿和台基暂以结构线相连。", facts: ["当前状态：半施工展示", "视觉重点：塔式标志与院落秩序", "本版暂不播放完整装配动画",], link: "" },
+      { id: "bronze", name: "中国青铜器博物院", city: "宝鸡 · 周秦青铜文明", tier: "前排 / 青铜文明", status: "built", variant: "bronze", x: "31%", y: "77%", z: "70px", order: 10, scatter: ["-32px", "23px", "-9deg"], summary: "以周秦青铜器为核心收藏与研究线索，把宝鸡放回西周文明的一处关键现场。", facts: ["前身可追溯至 1956 年宝鸡市博物馆", "常设展主线：青铜铸文明 · 周秦文明之光", "专题：青铜器与周秦文明现场档案",], link: "../baoji/index.html" },
+      { id: "history", name: "陕西历史博物馆", city: "西安 · 小寨东路", tier: "前排 / 周秦汉唐", status: "built", variant: "history", x: "69%", y: "76%", z: "74px", order: 11, scatter: ["30px", "22px", "9deg"], summary: "中央殿堂与四隅崇楼以现代博物馆功能重新解释唐风气象，连接陕西古代文明的长时段叙事。", facts: ["新馆于 1991 年建成开放", "收藏、研究、保护与公众展示连在同一条文化脉络上", "专题：陕西历史博物馆观物档案",], link: "../shaanxi-history/index.html" },
+    ];
+
+    const part = (className, text = "") => `<i class="museum-part museum-part--${className}">${text}</i>`;
+    const modelMarkup = (museum) => {
+      const tower = ["history", "xian", "famensi"].includes(museum.variant)
+        ? `${part("tower")}${part("tower-roof")}`
+        : "";
+      const scaffold = museum.status === "half" ? part("scaffold") : "";
+      return `<span class="museum-model museum-model--${museum.variant}">${part("foundation")}${part("body")}${part("columns")}${part("roof")}${part("trim")}${tower}${part("sign", museum.variant === "bronze" ? "青铜" : museum.variant === "history" ? "陕历博" : museum.variant === "beilin" ? "碑林" : museum.variant === "qinhan" ? "秦汉" : museum.variant === "archaeology" ? "考古" : museum.variant === "xian" ? "西安" : museum.variant === "qin" ? "秦陵" : museum.variant === "famensi" ? "法门" : "周原")}${scaffold}</span>`;
+    };
+
+    const statusText = (museum) => museum.status === "built" ? "完整建成" : "半施工";
+    const nodes = museums.map((museum) => {
+      const [sx, sy, sr] = museum.scatter;
+      const article = document.createElement("article");
+      article.className = `museum-node museum-node--${museum.tier.startsWith("前") ? "front" : museum.tier.startsWith("中") ? "middle" : "back"}`;
+      article.dataset.museumId = museum.id;
+      article.dataset.status = museum.status;
+      article.style.cssText = `--node-x:${museum.x};--node-y:${museum.y};--node-z:${museum.z};--node-order:${museum.order};--scatter-x:${sx};--scatter-y:${sy};--scatter-r:${sr};`;
+      article.innerHTML = `<button class="museum-node__hit" type="button" aria-label="${museum.name}，${statusText(museum)}。按 Enter 查看详情${museum.status === "built" ? "并播放建造动画" : ""}"><span class="museum-node__badge">${museum.status === "built" ? "BUILT" : "IN BUILD"}</span>${modelMarkup(museum)}<span class="museum-node__label">${museum.name}</span></button>`;
+      sceneStage.append(article);
+      return article;
+    });
+
+    let selected = null;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const briefDefault = { title: "陕西九馆 · 总览", copy: "前排是中国青铜器博物院与陕西历史博物馆；中排落在碑林与未完工的时间节点；最后一排把考古、秦汉与城市记忆接到远方。" };
+    const setSelected = (node, replay = false) => {
+      const museum = museums.find((item) => item.id === node.dataset.museumId);
+      if (!museum) return;
+      selected = museum;
+      nodes.forEach((item) => item.classList.toggle("is-selected", item === node));
+      currentTitle.textContent = museum.name;
+      currentCopy.textContent = `${museum.tier} · ${museum.summary}`;
+      detailButton.disabled = false;
+      detailButton.removeAttribute("aria-disabled");
+      detailButton.textContent = `查看 ${museum.name} 详情`;
+      if (replay && museum.status === "built" && !prefersReduced.matches) {
+        node.classList.remove("is-assembling");
+        void node.offsetWidth;
+        node.classList.add("is-assembling");
+      }
+    };
+
+    const openDetails = () => {
+      if (!selected || dialog.open) return;
+      const museum = selected;
+      document.getElementById("museum-atlas3d-dialog-status").textContent = `${museum.city} / ${statusText(museum)}`;
+      document.getElementById("museum-atlas3d-dialog-title").textContent = museum.name;
+      document.getElementById("museum-atlas3d-dialog-meta").textContent = `${museum.tier} · 固定镜头建筑研究样片`;
+      document.getElementById("museum-atlas3d-dialog-copy").textContent = museum.summary;
+      document.getElementById("museum-atlas3d-dialog-facts").innerHTML = museum.facts.map((fact) => `<div>— ${fact}</div>`).join("");
+      const link = document.getElementById("museum-atlas3d-dialog-link");
+      if (museum.link) {
+        link.href = museum.link;
+        link.hidden = false;
+      } else {
+        link.hidden = true;
+      }
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else dialog.setAttribute("open", "");
+    };
+
+    nodes.forEach((node) => {
+      const hit = node.querySelector(".museum-node__hit");
+      hit.addEventListener("pointerenter", () => setSelected(node, true));
+      hit.addEventListener("focus", () => setSelected(node, false));
+      hit.addEventListener("click", () => {
+        setSelected(node, true);
+        openDetails();
+      });
+    });
+    detailButton.addEventListener("click", openDetails);
+    dialog.querySelector(".museum-atlas3d__dialog-close").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener("close", () => {
+      const selectedNode = nodes.find((node) => node.dataset.museumId === selected?.id);
+      selectedNode?.querySelector(".museum-node__hit")?.focus({ preventScroll: true });
+    });
+
+    if (prefersReduced.matches) nodes.forEach((node) => node.classList.remove("is-assembling"));
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && dialog.open) dialog.close();
+      if (event.key === "Escape" && selected && !dialog.open) {
+        selected = null;
+        nodes.forEach((node) => node.classList.remove("is-selected"));
+        currentTitle.textContent = briefDefault.title;
+        currentCopy.textContent = briefDefault.copy;
+        detailButton.disabled = true;
+        detailButton.setAttribute("aria-disabled", "true");
+        detailButton.textContent = "选择一座馆查看详情";
+      }
+    });
   })();
 </script>
 </body>
