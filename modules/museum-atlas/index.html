@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-active-province="beijing">
+<html lang="zh-CN" data-active-province="shaanxi">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2355,7 +2355,8 @@
       });
 
       root.classList.add("motion-ready");
-      setActiveProvince(root.dataset.activeProvince || "beijing", false, false);
+      const requestedProvince = new URLSearchParams(window.location.search).get("province") || (location.hash === "#shaanxi" ? "shaanxi" : root.dataset.activeProvince || "beijing");
+      setActiveProvince(requestedProvince, false, false);
       updateScrollRange();
       window.requestAnimationFrame(() => {
         moveIndicator(tabs.find((tab) => tab.getAttribute("aria-selected") === "true"));
