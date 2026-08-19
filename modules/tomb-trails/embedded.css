@@ -1,0 +1,7 @@
+body.is-embedded .masthead,
+body.is-embedded .museum-nav,
+body.is-embedded .site-foot { display: none; }
+body.is-embedded .site-shell { width: 100%; padding: 0; }
+body.is-embedded .trail { border: 0; box-shadow: none; }
+body.is-embedded .trail-head { padding: 22px clamp(18px, 4vw, 42px) 16px; }
+body.is-embedded .swipe-hint { padding-bottom: 18px; }
