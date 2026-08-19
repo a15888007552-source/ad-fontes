@@ -1,0 +1,662 @@
+{
+  "舞阳": [
+    {
+      "src": "assets/city/huaxia/wuyang-01.jpg",
+      "alt": "舞阳 · 20250527 Bone flute in the Henan Museum",
+      "caption": "20250527 Bone flute in the Henan Museum",
+      "credit": "Yumeto · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:20250527_Bone_flute_in_the_Henan_Museum.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wuyang-02.jpg",
+      "alt": "舞阳 · Peiligang Culture objects (6200-5500 BC), Jiahu site, Wuyang, Henan",
+      "caption": "Peiligang Culture objects (6200-5500 BC), Jiahu site, Wuyang, Henan",
+      "credit": "Furius · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Peiligang_Culture_objects_%286200-5500_BC%29%2C_Jiahu_site%2C_Wuyang%2C_Henan.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wuyang-03.jpg",
+      "alt": "舞阳 · Pots, Peiligang Culture (6200-5500 BC), Jiahu site, Wuyang, Henan",
+      "caption": "Pots, Peiligang Culture (6200-5500 BC), Jiahu site, Wuyang, Henan",
+      "credit": "Furius · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Pots%2C_Peiligang_Culture_%286200-5500_BC%29%2C_Jiahu_site%2C_Wuyang%2C_Henan.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "安阳": [
+    {
+      "src": "assets/city/huaxia/anyang-01.jpg",
+      "alt": "安阳 · Yinxu Royal Tombs (53565240593)",
+      "caption": "Yinxu Royal Tombs (53565240593)",
+      "credit": "xiquinhosilva · CC BY 2.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Yinxu_Royal_Tombs_%2853565240593%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/anyang-02.jpg",
+      "alt": "安阳 · Fu Hao Tomb and Statue, c. 1200 BC, Reign of King Wu Ding, Shang Dynasty",
+      "caption": "Fu Hao Tomb and Statue, c. 1200 BC, Reign of King Wu Ding, Shang Dynasty",
+      "credit": "Gary Todd · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Fu_Hao_Tomb_and_Statue%2C_c._1200_BC%2C_Reign_of_King_Wu_Ding%2C_Shang_Dynasty.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/anyang-03.jpg",
+      "alt": "安阳 · Shang Jade Phoenix, Fu Hao Tomb, c. 1200 BC",
+      "caption": "Shang Jade Phoenix, Fu Hao Tomb, c. 1200 BC",
+      "credit": "Gary Todd · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Shang_Jade_Phoenix%2C_Fu_Hao_Tomb%2C_c._1200_BC.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "临淄": [
+    {
+      "src": "assets/city/huaxia/linzi-01.jpg",
+      "alt": "临淄 · Linzi model 2010 06 06",
+      "caption": "Linzi model 2010 06 06",
+      "credit": "Rolfmueller · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Linzi_model_2010_06_06.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/linzi-02.jpg",
+      "alt": "临淄 · Sacrificial horsepit linzi 2010 06 06",
+      "caption": "Sacrificial horsepit linzi 2010 06 06",
+      "credit": "Rolfmueller · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Sacrificial_horsepit_linzi_2010_06_06.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/linzi-03.jpg",
+      "alt": "临淄 · Linzi sewer 2010 06 06",
+      "caption": "Linzi sewer 2010 06 06",
+      "credit": "Rolfmueller · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Linzi_sewer_2010_06_06.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "曲阜": [
+    {
+      "src": "assets/city/huaxia/qufu-01.jpg",
+      "alt": "曲阜 · Kong Miao - Dacheng Dian - P1050686",
+      "caption": "Kong Miao - Dacheng Dian - P1050686",
+      "credit": "User:Vmenkov · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Kong_Miao_-_Dacheng_Dian_-_P1050686.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/qufu-02.jpg",
+      "alt": "曲阜 · Confuciusmansionqufu",
+      "caption": "Confuciusmansionqufu",
+      "credit": "Rolf Müller ( User:Rolfmueller ) · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Confuciusmansionqufu.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/qufu-03.jpg",
+      "alt": "曲阜 · Qufu temple of yan sculpture 2010 06 05",
+      "caption": "Qufu temple of yan sculpture 2010 06 05",
+      "credit": "Rolfmueller · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Qufu_temple_of_yan_sculpture_2010_06_05.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "侯马": [
+    {
+      "src": "assets/city/huaxia/houma-01.jpg",
+      "alt": "侯马 · 20250602 Houma covenants in the Shanxi Museum (111551)",
+      "caption": "20250602 Houma covenants in the Shanxi Museum (111551)",
+      "credit": "Yumeto · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:20250602_Houma_covenants_in_the_Shanxi_Museum_%28111551%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/houma-02.jpg",
+      "alt": "侯马 · Houma Railway Station 20250502",
+      "caption": "Houma Railway Station 20250502",
+      "credit": "1969社论 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Houma_Railway_Station_20250502.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/houma-03.jpg",
+      "alt": "侯马 · Houma Mengshu",
+      "caption": "Houma Mengshu",
+      "credit": "不详（春秋时期） · Public domain · <a href=\"https://commons.wikimedia.org/wiki/File:Houma_Mengshu.png\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "随州": [
+    {
+      "src": "assets/city/huaxia/suizhou-01.jpg",
+      "alt": "随州 · Tomb of Marquis Yi of Zeng (10166010194)",
+      "caption": "Tomb of Marquis Yi of Zeng (10166010194)",
+      "credit": "Gary Todd  from Xinzheng, China · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Tomb_of_Marquis_Yi_of_Zeng_%2810166010194%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/suizhou-02.jpg",
+      "alt": "随州 · 湖北省随州市叶家山111号墓出土-蟠龙纹盖青铜罍-西周（前1046-前771）-随州市博物馆藏 2024-10-31",
+      "caption": "湖北省随州市叶家山111号墓出土-蟠龙纹盖青铜罍-西周（前1046-前771）-随州市博物馆藏 2024-10-31",
+      "credit": "Kcx36 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E6%B9%96%E5%8C%97%E7%9C%81%E9%9A%8F%E5%B7%9E%E5%B8%82%E5%8F%B6%E5%AE%B6%E5%B1%B1111%E5%8F%B7%E5%A2%93%E5%87%BA%E5%9C%9F-%E8%9F%A0%E9%BE%99%E7%BA%B9%E7%9B%96%E9%9D%92%E9%93%9C%E7%BD%8D-%E8%A5%BF%E5%91%A8%EF%BC%88%E5%89%8D1046-%E5%89%8D771%EF%BC%89-%E9%9A%8F%E5%B7%9E%E5%B8%82%E5%8D%9A%E7%89%A9%E9%A6%86%E8%97%8F_2024-10-31.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/suizhou-03.jpg",
+      "alt": "随州 · At American Museum of Natural History 2024 155",
+      "caption": "At American Museum of Natural History 2024 155",
+      "credit": "Photograph by  Mike Peel  ( www.mikepeel.net ). · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:At_American_Museum_of_Natural_History_2024_155.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "荆州": [
+    {
+      "src": "assets/city/huaxia/jingzhou-01.jpg",
+      "alt": "荆州 · Muraille Est de Jingzhou",
+      "caption": "Muraille Est de Jingzhou",
+      "credit": "Popolon · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Muraille_Est_de_Jingzhou.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/jingzhou-02.jpg",
+      "alt": "荆州 · Jingzhou Wenmiao 2014.04.20 10-29-43",
+      "caption": "Jingzhou Wenmiao 2014.04.20 10-29-43",
+      "credit": "Zhangzhugang · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Jingzhou_Wenmiao_2014.04.20_10-29-43.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/jingzhou-03.jpg",
+      "alt": "荆州 · 荆州张居正纪故居 - panoramio",
+      "caption": "荆州张居正纪故居 - panoramio",
+      "credit": "guan · CC BY 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E8%8D%86%E5%B7%9E%E5%BC%A0%E5%B1%85%E6%AD%A3%E7%BA%AA%E6%95%85%E5%B1%85_-_panoramio.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "长沙": [
+    {
+      "src": "assets/city/huaxia/changsha-01.jpg",
+      "alt": "长沙 · Mawangduihanmu",
+      "caption": "Mawangduihanmu",
+      "credit": "The original uploader was  Juansheng  at  Chinese Wikipedia . · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Mawangduihanmu.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/changsha-02.jpg",
+      "alt": "长沙 · 麓山寺碑亭",
+      "caption": "麓山寺碑亭",
+      "credit": "Lectern · Public domain · <a href=\"https://commons.wikimedia.org/wiki/File:%E9%BA%93%E5%B1%B1%E5%AF%BA%E7%A2%91%E4%BA%AD.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/changsha-03.jpg",
+      "alt": "长沙 · 岳麓书院讲堂2026.2",
+      "caption": "岳麓书院讲堂2026.2",
+      "credit": "ScareCriterion12 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%B2%B3%E9%BA%93%E4%B9%A6%E9%99%A2%E8%AE%B2%E5%A0%822026.2.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "长安": [
+    {
+      "src": "assets/city/huaxia/changan-01.jpg",
+      "alt": "长安（今西安）· 大明宫国家遗址公园",
+      "caption": "大明宫国家遗址公园（历史长安 · 今西安）",
+      "credit": "xiquinhosilva · CC BY 2.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Daming_Palace_National_Heritage_Park_01.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/changan-02.jpg",
+      "alt": "长安（今西安）· 大明宫丹凤门",
+      "caption": "大明宫丹凤门（历史长安 · 今西安）",
+      "credit": "xiquinhosilva · CC BY 2.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Daming_Palace_National_Heritage_Park_-_Danfeng_Gate_01.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/changan-03.jpg",
+      "alt": "长安（今西安）· 西安钟楼",
+      "caption": "西安钟楼（历史长安所在城市）",
+      "credit": "Wang Zhongyin · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:The_Bell_Tower_of_Xi%27an.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "洛阳": [
+    {
+      "src": "assets/city/huaxia/luoyang-01.jpg",
+      "alt": "洛阳 · Longmen Grottoes - September 2011 (6154722394)",
+      "caption": "Longmen Grottoes - September 2011 (6154722394)",
+      "credit": "kevinmcgill  from Den Bosch, Netherlands · CC BY-SA 2.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Longmen_Grottoes_-_September_2011_%286154722394%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/luoyang-02.jpg",
+      "alt": "洛阳 · White Horse Temple, Luoyang, Henan, China - panoramio",
+      "caption": "White Horse Temple, Luoyang, Henan, China - panoramio",
+      "credit": "Randy Rambo · CC BY 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:White_Horse_Temple%2C_Luoyang%2C_Henan%2C_China_-_panoramio.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/luoyang-03.jpg",
+      "alt": "洛阳 · 20251018 Han-Wei Luoyang Ancient City Site Museum",
+      "caption": "20251018 Han-Wei Luoyang Ancient City Site Museum",
+      "credit": "Windmemories · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:20251018_Han-Wei_Luoyang_Ancient_City_Site_Museum.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "开封": [
+    {
+      "src": "assets/city/huaxia/kaifeng-01.jpg",
+      "alt": "开封 · Iron Pagoda, Kaifeng - 14053257123",
+      "caption": "Iron Pagoda, Kaifeng - 14053257123",
+      "credit": "Gary Lee Todd, Ph.D. · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Iron_Pagoda%2C_Kaifeng_-_14053257123.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/kaifeng-02.jpg",
+      "alt": "开封 · Dragon Pavilion 02",
+      "caption": "Dragon Pavilion 02",
+      "credit": "Gary Todd · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Dragon_Pavilion_02.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/kaifeng-03.jpg",
+      "alt": "开封 · Kaifeng, or the Ancient City of Cathay, June 9, 2011 - panoramio",
+      "caption": "Kaifeng, or the Ancient City of Cathay, June 9, 2011 - panoramio",
+      "credit": "Randy Rambo · CC BY 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Kaifeng%2C_or_the_Ancient_City_of_Cathay%2C_June_9%2C_2011_-_panoramio.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "沁阳": [
+    {
+      "src": "assets/city/huaxia/qinyang-01.jpg",
+      "alt": "沁阳 · 20240824 Qinyang Museum",
+      "caption": "20240824 Qinyang Museum",
+      "credit": "Windmemories · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:20240824_Qinyang_Museum.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/qinyang-02.jpg",
+      "alt": "沁阳 · 20240824 Dharani Pillar 01",
+      "caption": "20240824 Dharani Pillar 01",
+      "credit": "Windmemories · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:20240824_Dharani_Pillar_01.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/qinyang-03.jpg",
+      "alt": "沁阳 · 20240824 Stupa of Duke of Bin 02",
+      "caption": "20240824 Stupa of Duke of Bin 02",
+      "credit": "Windmemories · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:20240824_Stupa_of_Duke_of_Bin_02.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "大同": [
+    {
+      "src": "assets/city/huaxia/datong-01.jpg",
+      "alt": "大同 · Datong Huayan Si 2013.08.29 08-24-19",
+      "caption": "Datong Huayan Si 2013.08.29 08-24-19",
+      "credit": "Zhangzhugang · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Datong_Huayan_Si_2013.08.29_08-24-19.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/datong-02.jpg",
+      "alt": "大同 · Shanhua Temple 1",
+      "caption": "Shanhua Temple 1",
+      "credit": "Zeus1234 · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Shanhua_Temple_1.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/datong-03.jpg",
+      "alt": "大同 · Main Hall of Huayan Temple (Datong) 2",
+      "caption": "Main Hall of Huayan Temple (Datong) 2",
+      "credit": "Dudva · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Main_Hall_of_Huayan_Temple_%28Datong%29_2.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "武威": [
+    {
+      "src": "assets/city/huaxia/wuwei-01.jpg",
+      "alt": "武威 · Wuwei Han Dynasty tombs IGP4642",
+      "caption": "Wuwei Han Dynasty tombs IGP4642",
+      "credit": "w0zny · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Wuwei_Han_Dynasty_tombs_IGP4642.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wuwei-02.jpg",
+      "alt": "武威 · WuweiTemple",
+      "caption": "WuweiTemple",
+      "credit": "User:Doron · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:WuweiTemple.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wuwei-03.jpg",
+      "alt": "武威 · Wuwei Temple Luoshi IGP4535",
+      "caption": "Wuwei Temple Luoshi IGP4535",
+      "credit": "w0zny · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Wuwei_Temple_Luoshi_IGP4535.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "库车": [
+    {
+      "src": "assets/city/huaxia/kuqa-01.jpg",
+      "alt": "库车 · Kizil caves 2006 10 01",
+      "caption": "Kizil caves 2006 10 01",
+      "credit": "Rolfmueller · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Kizil_caves_2006_10_01.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/kuqa-02.jpg",
+      "alt": "库车 · 20240323 Kuqa Mosque 25",
+      "caption": "20240323 Kuqa Mosque 25",
+      "credit": "Windmemories · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:20240323_Kuqa_Mosque_25.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/kuqa-03.jpg",
+      "alt": "库车 · Kuqa May 2007 427",
+      "caption": "Kuqa May 2007 427",
+      "credit": "G41rn8 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Kuqa_May_2007_427.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "敦煌": [
+    {
+      "src": "assets/city/huaxia/dunhuang-01.jpg",
+      "alt": "敦煌 · Mogao Caves Exterior And Chambers",
+      "caption": "Mogao Caves Exterior And Chambers",
+      "credit": "Flickr user: eviltomthai · CC BY 2.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Mogao_Caves_Exterior_And_Chambers.jpeg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/dunhuang-02.jpg",
+      "alt": "敦煌 · 敦煌莫高窟",
+      "caption": "敦煌莫高窟",
+      "credit": "Kunwang1990 · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E6%95%A6%E7%85%8C%E8%8E%AB%E9%AB%98%E7%AA%9F.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/dunhuang-03.jpg",
+      "alt": "敦煌 · Dunhuang Mogao Ku 2013.12.31 12-30-18",
+      "caption": "Dunhuang Mogao Ku 2013.12.31 12-30-18",
+      "credit": "Zhangzhugang · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Dunhuang_Mogao_Ku_2013.12.31_12-30-18.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "成都": [
+    {
+      "src": "assets/city/huaxia/chengdu-01.jpg",
+      "alt": "成都 · Daci-Temple",
+      "caption": "Daci-Temple",
+      "credit": "AlexHe34 · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Daci-Temple.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/chengdu-02.jpg",
+      "alt": "成都 · Pavilion - Wenshu Monastery - Chengdu, China - DSC04995",
+      "caption": "Pavilion - Wenshu Monastery - Chengdu, China - DSC04995",
+      "credit": "Daderot · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:Pavilion_-_Wenshu_Monastery_-_Chengdu%2C_China_-_DSC04995.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/chengdu-03.jpg",
+      "alt": "成都 · Thousand Buddha Pagoda base, side 2 of 6 - Wenshu Monastery - Chengdu, China - DSC05016",
+      "caption": "Thousand Buddha Pagoda base, side 2 of 6 - Wenshu Monastery - Chengdu, China - DSC05016",
+      "credit": "Daderot · Public domain · <a href=\"https://commons.wikimedia.org/wiki/File:Thousand_Buddha_Pagoda_base%2C_side_2_of_6_-_Wenshu_Monastery_-_Chengdu%2C_China_-_DSC05016.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "重庆": [
+    {
+      "src": "assets/city/huaxia/chongqing-01.jpg",
+      "alt": "重庆 · Ciqikou18",
+      "caption": "Ciqikou18",
+      "credit": "Gisling · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Ciqikou18.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/chongqing-02.jpg",
+      "alt": "重庆 · 宝轮寺1",
+      "caption": "宝轮寺1",
+      "credit": "Joelfeng · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%AE%9D%E8%BD%AE%E5%AF%BA1.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/chongqing-03.jpg",
+      "alt": "重庆 · Old dwelling in Ciqikou, Chongqing",
+      "caption": "Old dwelling in Ciqikou, Chongqing",
+      "credit": "Jpbowen · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Old_dwelling_in_Ciqikou%2C_Chongqing.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "武汉": [
+    {
+      "src": "assets/city/huaxia/wuhan-01.jpg",
+      "alt": "武汉 · Hubei Provincial Museum",
+      "caption": "Hubei Provincial Museum",
+      "credit": "No machine-readable author provided.  风之清扬  assumed (based on copyright claims). · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Hubei_Provincial_Museum.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wuhan-02.jpg",
+      "alt": "武汉 · Yellow Crane Tower 61447-Wuhan (49150680222)",
+      "caption": "Yellow Crane Tower 61447-Wuhan (49150680222)",
+      "credit": "xiquinhosilva · CC BY 2.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Yellow_Crane_Tower_61447-Wuhan_%2849150680222%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wuhan-03.jpg",
+      "alt": "武汉 · Tomb of Marquis Yi of Zeng in Hubei Provincial Museum",
+      "caption": "Tomb of Marquis Yi of Zeng in Hubei Provincial Museum",
+      "credit": "No machine-readable author provided.  风之清扬  assumed (based on copyright claims). · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Tomb_of_Marquis_Yi_of_Zeng_in_Hubei_Provincial_Museum.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "扬州": [
+    {
+      "src": "assets/city/huaxia/yangzhou-01.jpg",
+      "alt": "扬州 · Daming Si - gate - P1070124",
+      "caption": "Daming Si - gate - P1070124",
+      "credit": "User:Vmenkov · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Daming_Si_-_gate_-_P1070124.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/yangzhou-02.jpg",
+      "alt": "扬州 · Qiling Ta - P1070134",
+      "caption": "Qiling Ta - P1070134",
+      "credit": "User:Vmenkov · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Qiling_Ta_-_P1070134.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/yangzhou-03.jpg",
+      "alt": "扬州 · Great Hall, Daming Temple, Yangzhou",
+      "caption": "Great Hall, Daming Temple, Yangzhou",
+      "credit": "Huangchenhai · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Great_Hall%2C_Daming_Temple%2C_Yangzhou.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "南京": [
+    {
+      "src": "assets/city/huaxia/nanjing-01.jpg",
+      "alt": "南京 · 2024Apr - Nanjing City Wall (south section) - img 01",
+      "caption": "2024Apr - Nanjing City Wall (south section) - img 01",
+      "credit": "Chainwit. · CC BY 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:2024Apr_-_Nanjing_City_Wall_%28south_section%29_-_img_01.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/nanjing-02.jpg",
+      "alt": "南京 · MingXiaoLing-CSMTZZM",
+      "caption": "MingXiaoLing-CSMTZZM",
+      "credit": "Marcus Hsu · CC BY-SA 1.0 · <a href=\"https://commons.wikimedia.org/wiki/File:MingXiaoLing-CSMTZZM.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/nanjing-03.jpg",
+      "alt": "南京 · 南京人文之旅-孝陵金水桥 - panoramio",
+      "caption": "南京人文之旅-孝陵金水桥 - panoramio",
+      "credit": "鲍向阳 · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%8D%97%E4%BA%AC%E4%BA%BA%E6%96%87%E4%B9%8B%E6%97%85-%E5%AD%9D%E9%99%B5%E9%87%91%E6%B0%B4%E6%A1%A5_-_panoramio.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "苏州": [
+    {
+      "src": "assets/city/huaxia/suzhou-01.jpg",
+      "alt": "苏州 · Suzhou - humble administrators garden - overcast",
+      "caption": "Suzhou - humble administrators garden - overcast",
+      "credit": "Peripitus · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Suzhou_-_humble_administrators_garden_-_overcast.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/suzhou-02.jpg",
+      "alt": "苏州 · Humble Administrators Garden 1",
+      "caption": "Humble Administrators Garden 1",
+      "credit": "Chinatravelsavvy · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Humble_Administrators_Garden_1.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/suzhou-03.jpg",
+      "alt": "苏州 · Dragon wall of humble administrators garden",
+      "caption": "Dragon wall of humble administrators garden",
+      "credit": "Gurdjieff · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Dragon_wall_of_humble_administrators_garden.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "无锡": [
+    {
+      "src": "assets/city/huaxia/wuxi-01.jpg",
+      "alt": "无锡 · Lu Zhi's ancestral temple in Wuxi Huishan ancient town",
+      "caption": "Lu Zhi's ancestral temple in Wuxi Huishan ancient town",
+      "credit": "記小三 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Lu_Zhi%27s_ancestral_temple_in_Wuxi_Huishan_ancient_town.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wuxi-02.jpg",
+      "alt": "无锡 · Fan Zhongyan's ancestral temple in Wuxi Huishan ancient town",
+      "caption": "Fan Zhongyan's ancestral temple in Wuxi Huishan ancient town",
+      "credit": "記小三 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Fan_Zhongyan%27s_ancestral_temple_in_Wuxi_Huishan_ancient_town.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wuxi-03.jpg",
+      "alt": "无锡 · Ni Zan's ancestral temple in Wuxi Huishan ancient town",
+      "caption": "Ni Zan's ancestral temple in Wuxi Huishan ancient town",
+      "credit": "記小三 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Ni_Zan%27s_ancestral_temple_in_Wuxi_Huishan_ancient_town.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "江阴": [
+    {
+      "src": "assets/city/huaxia/jiangyin-01.jpg",
+      "alt": "江阴 · 江阴博物馆 2017冬",
+      "caption": "江阴博物馆 2017冬",
+      "credit": "白色瑰宝 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E6%B1%9F%E9%98%B4%E5%8D%9A%E7%89%A9%E9%A6%86_2017%E5%86%AC.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/jiangyin-02.jpg",
+      "alt": "江阴 · 江阴博物馆大厅",
+      "caption": "江阴博物馆大厅",
+      "credit": "白色瑰宝 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E6%B1%9F%E9%98%B4%E5%8D%9A%E7%89%A9%E9%A6%86%E5%A4%A7%E5%8E%85.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/jiangyin-03.jpg",
+      "alt": "江阴 · 江阴博物馆 碑刻陈列",
+      "caption": "江阴博物馆 碑刻陈列",
+      "credit": "白色瑰宝 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E6%B1%9F%E9%98%B4%E5%8D%9A%E7%89%A9%E9%A6%86_%E7%A2%91%E5%88%BB%E9%99%88%E5%88%97.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "上海": [
+    {
+      "src": "assets/city/huaxia/shanghai-01.jpg",
+      "alt": "上海 · Gate of the Yuyuan Garden by d'n'c in Shanghai",
+      "caption": "Gate of the Yuyuan Garden by d'n'c in Shanghai",
+      "credit": "d'n'c  from Yuyuan, Shanghai · CC BY-SA 2.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Gate_of_the_Yuyuan_Garden_by_d%27n%27c_in_Shanghai.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/shanghai-02.jpg",
+      "alt": "上海 · Yuyuan garden Dragon wall",
+      "caption": "Yuyuan garden Dragon wall",
+      "credit": "J. Patrick Fischer · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Yuyuan_garden_Dragon_wall.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/shanghai-03.jpg",
+      "alt": "上海 · 2014.11.16.121015 Pagoda Yuyuan Park Shanghai",
+      "caption": "2014.11.16.121015 Pagoda Yuyuan Park Shanghai",
+      "credit": "Hermann Luyken · CC0 · <a href=\"https://commons.wikimedia.org/wiki/File:2014.11.16.121015_Pagoda_Yuyuan_Park_Shanghai.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "杭州": [
+    {
+      "src": "assets/city/huaxia/hangzhou-01.jpg",
+      "alt": "杭州 · Leifeng Pagoda",
+      "caption": "Leifeng Pagoda",
+      "credit": "作者未标注 · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Leifeng_Pagoda.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/hangzhou-02.jpg",
+      "alt": "杭州 · Lingyin si",
+      "caption": "Lingyin si",
+      "credit": "Denis Yuen · CC BY-SA 2.5 · <a href=\"https://commons.wikimedia.org/wiki/File:Lingyin_si.JPG\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/hangzhou-03.jpg",
+      "alt": "杭州 · Leifeng Pagoda (20240729)",
+      "caption": "Leifeng Pagoda (20240729)",
+      "credit": "HoweyYuan · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Leifeng_Pagoda_%2820240729%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "温州": [
+    {
+      "src": "assets/city/huaxia/wenzhou-01.jpg",
+      "alt": "温州 · 江心寺",
+      "caption": "江心寺",
+      "credit": "Aiolos · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:WenZhouJiangXinSi.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wenzhou-02.jpg",
+      "alt": "温州 · 江心屿西塔与凌云桥",
+      "caption": "江心屿西塔与凌云桥",
+      "credit": "江上清风1961 · CC BY 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E6%B1%9F%E5%BF%83%E5%B1%BF%E7%9A%84%E8%A5%BF%E5%A1%94%E4%B8%8E%E5%87%8C%E4%BA%91%E6%A1%A5_-_panoramio.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/wenzhou-03.jpg",
+      "alt": "温州 · 江心屿舍利塔",
+      "caption": "江心屿木鱼老和尚舍利塔",
+      "credit": "wanghongliu · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E6%B8%A9%E5%B7%9E%E6%B1%9F%E5%BF%83%E5%B1%BF_%E6%9C%A8%E9%B1%BC%E8%80%81%E5%92%8C%E5%B0%9A%E8%88%8D%E5%88%A9%E5%A1%94_sarira_pagoda_-_panoramio.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "泉州": [
+    {
+      "src": "assets/city/huaxia/quanzhou-01.jpg",
+      "alt": "泉州 · Quanzhou Wenmiao 20120229-01",
+      "caption": "Quanzhou Wenmiao 20120229-01",
+      "credit": "Zhangzhugang · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Quanzhou_Wenmiao_20120229-01.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/quanzhou-02.jpg",
+      "alt": "泉州 · The courtyard of Quanzhou Kaiyuan Temple 20170727",
+      "caption": "The courtyard of Quanzhou Kaiyuan Temple 20170727",
+      "credit": "Tyg728 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:The_courtyard_of_Quanzhou_Kaiyuan_Temple_20170727.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/quanzhou-03.jpg",
+      "alt": "泉州 · Quanzhou Confucian Temple Dacheng Hall 2019 (3)",
+      "caption": "Quanzhou Confucian Temple Dacheng Hall 2019 (3)",
+      "credit": "ScareCriterion12 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Quanzhou_Confucian_Temple_Dacheng_Hall_2019_%283%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "广州": [
+    {
+      "src": "assets/city/huaxia/guangzhou-01.jpg",
+      "alt": "广州 · The Chen Clan's Academy",
+      "caption": "The Chen Clan's Academy",
+      "credit": "David Chen  东北虎(Manchurian Tiger)  11:32, 11 April 2008 (UTC) · CC BY 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:The_Chen_Clan%27s_Academy.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/guangzhou-02.jpg",
+      "alt": "广州 · Guangxiaosi",
+      "caption": "Guangxiaosi",
+      "credit": "David Chen  User:Iamdavidtheking  12:44, 11 April 2008 (UTC) · CC BY 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Guangxiaosi.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/guangzhou-03.jpg",
+      "alt": "广州 · Guangzhou Liwan Chen Jia Citang 2024-09-02 14.30.59",
+      "caption": "Guangzhou Liwan Chen Jia Citang 2024-09-02 14.30.59",
+      "credit": "古海岸遗址 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Guangzhou_Liwan_Chen_Jia_Citang_2024-09-02_14.30.59.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "北京": [
+    {
+      "src": "assets/city/huaxia/beijing-01.jpg",
+      "alt": "北京 · Ancient Beijing observatory 07",
+      "caption": "Ancient Beijing observatory 07",
+      "credit": "user:kallgan · Public domain · <a href=\"https://commons.wikimedia.org/wiki/File:Ancient_Beijing_observatory_07.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/beijing-02.jpg",
+      "alt": "北京 · 北京古观象台2023.5 (2)",
+      "caption": "北京古观象台2023.5 (2)",
+      "credit": "ScareCriterion12 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E5%8F%A4%E8%A7%82%E8%B1%A1%E5%8F%B02023.5_%282%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/beijing-03.jpg",
+      "alt": "北京 · 北京古观象台2023.5 (1)",
+      "caption": "北京古观象台2023.5 (1)",
+      "credit": "ScareCriterion12 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E5%8F%A4%E8%A7%82%E8%B1%A1%E5%8F%B02023.5_%281%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "天津": [
+    {
+      "src": "assets/city/huaxia/tianjin-01.jpg",
+      "alt": "天津 · 天津广东会馆2023.3 (3)",
+      "caption": "天津广东会馆2023.3 (3)",
+      "credit": "ScareCriterion12 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E6%B4%A5%E5%B9%BF%E4%B8%9C%E4%BC%9A%E9%A6%862023.3_%283%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/tianjin-02.jpg",
+      "alt": "天津 · 天津广东会馆2023.3 (5)",
+      "caption": "天津广东会馆2023.3 (5)",
+      "credit": "ScareCriterion12 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E6%B4%A5%E5%B9%BF%E4%B8%9C%E4%BC%9A%E9%A6%862023.3_%285%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/tianjin-03.jpg",
+      "alt": "天津 · 天津广东会馆2023.3 (2)",
+      "caption": "天津广东会馆2023.3 (2)",
+      "credit": "ScareCriterion12 · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%A4%A9%E6%B4%A5%E5%B9%BF%E4%B8%9C%E4%BC%9A%E9%A6%862023.3_%282%29.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "延安": [
+    {
+      "src": "assets/city/huaxia/yanan-01.jpg",
+      "alt": "延安 · 延安革命纪念馆正门",
+      "caption": "延安革命纪念馆正门",
+      "credit": "Ghrkya · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:%E5%BB%B6%E5%AE%89%E9%9D%A9%E5%91%BD%E7%BA%AA%E5%BF%B5%E9%A6%86%E6%AD%A3%E9%97%A8.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/yanan-02.jpg",
+      "alt": "延安 · 延安革命纪念馆",
+      "caption": "延安革命纪念馆",
+      "credit": "源義信 · CC BY 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:2023-10-09_%E5%BB%B6%E5%AE%89%E9%9D%A9%E5%91%BD%E7%BA%AA%E5%BF%B5%E9%A6%86_Yan%27an_Revolutionary_Memorial_Hall_02.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/yanan-03.jpg",
+      "alt": "延安 · 延安革命纪念馆",
+      "caption": "延安革命纪念馆（另一视图）",
+      "credit": "源義信 · CC BY 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:2023-10-09_%E5%BB%B6%E5%AE%89%E9%9D%A9%E5%91%BD%E7%BA%AA%E5%BF%B5%E9%A6%86_Yan%27an_Revolutionary_Memorial_Hall_01.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ],
+  "台北": [
+    {
+      "src": "assets/city/huaxia/taipei-01.jpg",
+      "alt": "台北 · Dadaocheng Building",
+      "caption": "Dadaocheng Building",
+      "credit": "Allervous · CC BY-SA 4.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Dadaocheng_Building.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/taipei-02.jpg",
+      "alt": "台北 · Longshan Temple, Taipei 01",
+      "caption": "Longshan Temple, Taipei 01",
+      "credit": "Bernard Gagnon · CC BY-SA 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:Longshan_Temple%2C_Taipei_01.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    },
+    {
+      "src": "assets/city/huaxia/taipei-03.jpg",
+      "alt": "台北 · National Taiwan Museum front 20070912",
+      "caption": "National Taiwan Museum front 20070912",
+      "credit": "Taiwan Junior · CC BY 3.0 · <a href=\"https://commons.wikimedia.org/wiki/File:National_Taiwan_Museum_front_20070912.jpg\" target=\"_blank\" rel=\"noopener\">Commons</a>"
+    }
+  ]
+}
