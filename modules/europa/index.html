@@ -108,14 +108,11 @@ section.view{display:none}section.view.on{display:block}
 .ephead .art-extension{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:saturate(.68) contrast(.88);opacity:.66;transform:scale(1.015)}
 .ephead .art-original-frame{position:relative;z-index:2;display:grid;place-items:center;max-width:78%;max-height:calc(100% - 28px);padding:6px;background:var(--panel);border:1px solid color-mix(in srgb,var(--ink) 24%,var(--line));box-shadow:0 1px 2px rgba(0,0,0,.12),0 12px 28px rgba(0,0,0,.18)}
 .ephead .art-original{display:block;width:auto;max-width:100%;max-height:320px;height:auto;object-fit:contain}
-.ephead .artlabel{position:absolute;z-index:3;padding:5px 8px;font:700 9.5px/1.3 var(--sans);letter-spacing:.08em}
-.ephead .artlabel--extension{top:9px;left:9px;color:var(--mut);background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px dashed var(--line)}
-.ephead .artlabel--original{right:5px;bottom:5px;color:var(--panel);background:color-mix(in srgb,var(--ink) 88%,transparent)}
 .artfig figcaption{font-size:11.5px;color:var(--mut);margin-top:8px;line-height:1.65}
 .artfig .art-provenance{display:inline-block;margin-top:4px;color:var(--mut);font-size:10.5px}
 @media(max-width:640px){
   .ephead .artstage{height:auto;min-height:0;padding:12px;background:var(--panel)}
-  .ephead .art-extension,.ephead .artlabel--extension,.ephead .artstage::after{display:none}
+  .ephead .art-extension,.ephead .artstage::after{display:none}
   .ephead .art-original-frame{max-width:100%;max-height:none;box-shadow:none}
   .ephead .art-original{max-width:100%;max-height:none}
 }
@@ -1461,8 +1458,8 @@ function renderChapterRail(ep,e){
     <blockquote class="quote">「${e.quote}」<small>—— ${e.qs}</small></blockquote>
     ${sideArt?`<figure class="artfig${hasExtension?" artfig--extended":""}">
       <div class="artstage${hasExtension?" artstage--extended":" artstage--matte"}">
-        ${hasExtension?`<img class="art-extension" loading="lazy" decoding="async" src="${sideArt.extension}" alt="" aria-hidden="true"><span class="artlabel artlabel--extension">AI 补景 · 非历史原作</span>`:""}
-        <div class="art-original-frame"><img class="art-original" loading="lazy" decoding="async" src="${sideArt.u}" alt="${sideArt.title}"><span class="artlabel artlabel--original">原作图像 · 未经改动</span></div>
+        ${hasExtension?`<img class="art-extension" loading="lazy" decoding="async" src="${sideArt.extension}" alt="" aria-hidden="true">`:""}
+        <div class="art-original-frame"><img class="art-original" loading="lazy" decoding="async" src="${sideArt.u}" alt="${sideArt.title}"></div>
       </div>
       <figcaption><b>${sideArt.title}</b>　${sideArt.artist}，${sideArt.year}${sideArt.c?`<br>${sideArt.c}`:""}${hasExtension?`<br><span class="art-provenance">原作保持完整比例，未裁切、未改绘；外围为 AI 生成展示背景，不属于历史作品。</span>`:""}</figcaption>
     </figure>`:""}
