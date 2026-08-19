@@ -73,7 +73,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3886 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3884—DSC_3885，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3884—DSC_3885",
+          "url": null
+        }
+      ],
       "displayNumber": "001",
       "sequenceOrder": 1.0
     },
@@ -128,8 +133,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_3890 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3888—DSC_3889，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E8%93%9D%E7%94%B0%E4%BA%BA",
-          "label": "维基百科：蓝田人"
+          "label": "维基百科：蓝田人",
+          "url": "https://zh.wikipedia.org/wiki/%E8%93%9D%E7%94%B0%E4%BA%BA"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_3888—DSC_3889",
+          "url": null
         }
       ],
       "displayNumber": "002",
@@ -178,7 +187,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3892 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3891，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3891",
+          "url": null
+        }
+      ],
       "displayNumber": "003",
       "sequenceOrder": 3.0
     },
@@ -237,7 +251,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_3895—DSC_3899；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3895—DSC_3899",
+          "url": null
+        }
+      ],
       "displayNumber": "004",
       "sequenceOrder": 4.0
     },
@@ -290,7 +309,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3904 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3902—DSC_3903，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3902—DSC_3903",
+          "url": null
+        }
+      ],
       "displayNumber": "006",
       "sequenceOrder": 6.0
     },
@@ -337,7 +361,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_3905；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3905",
+          "url": null
+        }
+      ],
       "displayNumber": "007A",
       "sequenceOrder": 7.0
     },
@@ -390,7 +419,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_3909—DSC_3910；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3909—DSC_3910",
+          "url": null
+        }
+      ],
       "displayNumber": "007B",
       "sequenceOrder": 7.1
     },
@@ -437,7 +471,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3915 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3914，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3914",
+          "url": null
+        }
+      ],
       "displayNumber": "008",
       "sequenceOrder": 8.0
     },
@@ -490,7 +529,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_3917—DSC_3918；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3917—DSC_3918",
+          "url": null
+        }
+      ],
       "displayNumber": "009",
       "sequenceOrder": 9.0
     },
@@ -551,8 +595,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_3925 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3921—DSC_3924，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E5%A7%9C%E5%AF%A8%E9%81%97%E5%9D%80",
-          "label": "维基百科：姜寨遗址"
+          "label": "维基百科：姜寨遗址",
+          "url": "https://zh.wikipedia.org/wiki/%E5%A7%9C%E5%AF%A8%E9%81%97%E5%9D%80"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_3921—DSC_3924",
+          "url": null
         }
       ],
       "displayNumber": "010",
@@ -607,7 +655,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_3926—DSC_3927；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3926—DSC_3927",
+          "url": null
+        }
+      ],
       "displayNumber": "011",
       "sequenceOrder": 11.0
     },
@@ -662,8 +715,12 @@ window.SHAANXI_DATA = {
       "evidence": "器物图为 DSC_3930—DSC_3931；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%AE%98%E5%AF%A8%E9%81%97%E5%9D%80",
-          "label": "维基百科：杨官寨遗址"
+          "label": "维基百科：杨官寨遗址",
+          "url": "https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%AE%98%E5%AF%A8%E9%81%97%E5%9D%80"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_3930—DSC_3931",
+          "url": null
         }
       ],
       "displayNumber": "012",
@@ -718,7 +775,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3936 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3933—DSC_3935，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3933—DSC_3935",
+          "url": null
+        }
+      ],
       "displayNumber": "013",
       "sequenceOrder": 13.0
     },
@@ -771,7 +833,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_3937—DSC_3938；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3937—DSC_3938",
+          "url": null
+        }
+      ],
       "displayNumber": "014",
       "sequenceOrder": 14.0
     },
@@ -820,8 +887,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_3942 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3941，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E5%B3%81%E9%81%97%E5%9D%80",
-          "label": "维基百科：石峁遗址"
+          "label": "维基百科：石峁遗址",
+          "url": "https://zh.wikipedia.org/wiki/%E7%9F%B3%E5%B3%81%E9%81%97%E5%9D%80"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_3941",
+          "url": null
         }
       ],
       "displayNumber": "015",
@@ -878,8 +949,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_3946 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3944—DSC_3945，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://baike.baidu.com/item/%E5%9F%8E%E5%9B%BA%E9%93%9C%E5%99%A8%E7%BE%A4",
-          "label": "百度百科：城固铜器群"
+          "label": "百度百科：城固铜器群",
+          "url": "https://baike.baidu.com/item/%E5%9F%8E%E5%9B%BA%E9%93%9C%E5%99%A8%E7%BE%A4"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_3944—DSC_3945",
+          "url": null
         }
       ],
       "displayNumber": "016",
@@ -930,8 +1005,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_3948 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3947，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://baike.baidu.com/item/%E5%9F%8E%E5%9B%BA%E9%93%9C%E5%99%A8%E7%BE%A4",
-          "label": "百度百科：城固铜器群"
+          "label": "百度百科：城固铜器群",
+          "url": "https://baike.baidu.com/item/%E5%9F%8E%E5%9B%BA%E9%93%9C%E5%99%A8%E7%BE%A4"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_3947",
+          "url": null
         }
       ],
       "displayNumber": "017",
@@ -992,7 +1071,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3954 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3949—DSC_3951，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3949—DSC_3951",
+          "url": null
+        }
+      ],
       "displayNumber": "018",
       "sequenceOrder": 18.0
     },
@@ -1045,7 +1129,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3960 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3957—DSC_3959，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3957—DSC_3959",
+          "url": null
+        }
+      ],
       "displayNumber": "019",
       "sequenceOrder": 19.0
     },
@@ -1104,7 +1193,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3964 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3961—DSC_3963，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3961—DSC_3963",
+          "url": null
+        }
+      ],
       "displayNumber": "020",
       "sequenceOrder": 20.0
     },
@@ -1151,7 +1245,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3966 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3965，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3965",
+          "url": null
+        }
+      ],
       "displayNumber": "021",
       "sequenceOrder": 21.0
     },
@@ -1204,7 +1303,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_3973—DSC_3974；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3973—DSC_3974",
+          "url": null
+        }
+      ],
       "displayNumber": "022",
       "sequenceOrder": 22.0
     },
@@ -1257,7 +1361,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3978 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3976—DSC_3977，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3976—DSC_3977",
+          "url": null
+        }
+      ],
       "displayNumber": "023",
       "sequenceOrder": 23.0
     },
@@ -1310,7 +1419,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_3979—DSC_3980；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3979—DSC_3980",
+          "url": null
+        }
+      ],
       "displayNumber": "024",
       "sequenceOrder": 24.0
     },
@@ -1367,8 +1481,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_3986 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3984—DSC_3985，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E5%91%A8%E5%8E%9F",
-          "label": "维基百科：周原"
+          "label": "维基百科：周原",
+          "url": "https://zh.wikipedia.org/wiki/%E5%91%A8%E5%8E%9F"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_3984—DSC_3985",
+          "url": null
         }
       ],
       "displayNumber": "025",
@@ -1423,7 +1541,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3990 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3987—DSC_3988，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3987—DSC_3988",
+          "url": null
+        }
+      ],
       "displayNumber": "026",
       "sequenceOrder": 26.0
     },
@@ -1476,7 +1599,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3994 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3991—DSC_3993，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3991—DSC_3993",
+          "url": null
+        }
+      ],
       "displayNumber": "027",
       "sequenceOrder": 27.0
     },
@@ -1529,7 +1657,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_3997 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3995—DSC_3996，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3995—DSC_3996",
+          "url": null
+        }
+      ],
       "displayNumber": "028",
       "sequenceOrder": 28.0
     },
@@ -1582,7 +1715,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4000 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_3998—DSC_3999，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_3998—DSC_3999",
+          "url": null
+        }
+      ],
       "displayNumber": "029",
       "sequenceOrder": 29.0
     },
@@ -1635,7 +1773,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4004 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4002—DSC_4003，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4002—DSC_4003",
+          "url": null
+        }
+      ],
       "displayNumber": "030",
       "sequenceOrder": 30.0
     },
@@ -1688,7 +1831,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4007 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4005—DSC_4006，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4005—DSC_4006",
+          "url": null
+        }
+      ],
       "displayNumber": "031",
       "sequenceOrder": 31.0
     },
@@ -1741,7 +1889,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4011 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4008—DSC_4009，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4008—DSC_4009",
+          "url": null
+        }
+      ],
       "displayNumber": "032",
       "sequenceOrder": 32.0
     },
@@ -1794,7 +1947,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4013 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4012—DSC_4013，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4012—DSC_4013",
+          "url": null
+        }
+      ],
       "displayNumber": "033",
       "sequenceOrder": 33.0
     },
@@ -1847,7 +2005,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4017 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4015—DSC_4016，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4015—DSC_4016",
+          "url": null
+        }
+      ],
       "displayNumber": "034",
       "sequenceOrder": 34.0
     },
@@ -1906,7 +2069,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4021 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4018—DSC_4020，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4018—DSC_4020",
+          "url": null
+        }
+      ],
       "displayNumber": "035",
       "sequenceOrder": 35.0
     },
@@ -1959,7 +2127,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4027 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4025—DSC_4026，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4025—DSC_4026",
+          "url": null
+        }
+      ],
       "displayNumber": "036",
       "sequenceOrder": 36.0
     },
@@ -2012,7 +2185,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4030 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4028—DSC_4029，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4028—DSC_4029",
+          "url": null
+        }
+      ],
       "displayNumber": "037",
       "sequenceOrder": 37.0
     },
@@ -2073,7 +2251,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4034 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4031—DSC_4033，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4031—DSC_4033",
+          "url": null
+        }
+      ],
       "displayNumber": "038",
       "sequenceOrder": 38.0
     },
@@ -2132,7 +2315,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4039 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4036—DSC_4038，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4036—DSC_4038",
+          "url": null
+        }
+      ],
       "displayNumber": "039",
       "sequenceOrder": 39.0
     },
@@ -2191,7 +2379,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4043 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4040—DSC_4042，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4040—DSC_4042",
+          "url": null
+        }
+      ],
       "displayNumber": "040",
       "sequenceOrder": 40.0
     },
@@ -2244,7 +2437,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4046 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4044—DSC_4045，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4044—DSC_4045",
+          "url": null
+        }
+      ],
       "displayNumber": "041",
       "sequenceOrder": 41.0
     },
@@ -2291,7 +2489,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4048 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4047，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4047",
+          "url": null
+        }
+      ],
       "displayNumber": "042",
       "sequenceOrder": 42.0
     },
@@ -2344,7 +2547,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4051 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4049—DSC_4050，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4049—DSC_4050",
+          "url": null
+        }
+      ],
       "displayNumber": "043",
       "sequenceOrder": 43.0
     },
@@ -2397,7 +2605,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4054 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4052—DSC_4053，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4052—DSC_4053",
+          "url": null
+        }
+      ],
       "displayNumber": "044",
       "sequenceOrder": 44.0
     },
@@ -2452,7 +2665,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4058 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4055—DSC_4056，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4055—DSC_4056",
+          "url": null
+        }
+      ],
       "displayNumber": "045",
       "sequenceOrder": 45.0
     },
@@ -2511,7 +2729,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4061 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4059—DSC_4061，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4059—DSC_4061",
+          "url": null
+        }
+      ],
       "displayNumber": "046",
       "sequenceOrder": 46.0
     },
@@ -2570,7 +2793,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4065 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4062—DSC_4064，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4062—DSC_4064",
+          "url": null
+        }
+      ],
       "displayNumber": "047",
       "sequenceOrder": 47.0
     },
@@ -2629,7 +2857,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4070 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4066—DSC_4068，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4066—DSC_4068",
+          "url": null
+        }
+      ],
       "displayNumber": "048",
       "sequenceOrder": 48.0
     },
@@ -2688,7 +2921,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4071—DSC_4073；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4071—DSC_4073",
+          "url": null
+        }
+      ],
       "displayNumber": "049",
       "sequenceOrder": 49.0
     },
@@ -2747,7 +2985,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4078 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4075—DSC_4077，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4075—DSC_4077",
+          "url": null
+        }
+      ],
       "displayNumber": "051",
       "sequenceOrder": 51.0
     },
@@ -2800,7 +3043,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4081 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4079—DSC_4080，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4079—DSC_4080",
+          "url": null
+        }
+      ],
       "displayNumber": "052",
       "sequenceOrder": 52.0
     },
@@ -2853,7 +3101,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4084 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4082—DSC_4083，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4082—DSC_4083",
+          "url": null
+        }
+      ],
       "displayNumber": "053",
       "sequenceOrder": 53.0
     },
@@ -2912,7 +3165,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4089 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4086—DSC_4088，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4086—DSC_4088",
+          "url": null
+        }
+      ],
       "displayNumber": "054",
       "sequenceOrder": 54.0
     },
@@ -2959,7 +3217,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4092 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4090，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4090",
+          "url": null
+        }
+      ],
       "displayNumber": "055",
       "sequenceOrder": 55.0
     },
@@ -3012,7 +3275,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4095 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4093—DSC_4094，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4093—DSC_4094",
+          "url": null
+        }
+      ],
       "displayNumber": "056",
       "sequenceOrder": 56.0
     },
@@ -3065,7 +3333,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4099 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4097—DSC_4098，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4097—DSC_4098",
+          "url": null
+        }
+      ],
       "displayNumber": "057",
       "sequenceOrder": 57.0
     },
@@ -3124,7 +3397,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4104 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4101—DSC_4103，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4101—DSC_4103",
+          "url": null
+        }
+      ],
       "displayNumber": "058",
       "sequenceOrder": 58.0
     },
@@ -3189,7 +3467,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4110 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4105—DSC_4109，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4105—DSC_4109",
+          "url": null
+        }
+      ],
       "displayNumber": "059",
       "sequenceOrder": 59.0
     },
@@ -3242,7 +3525,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4113 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4111—DSC_4112，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4111—DSC_4112",
+          "url": null
+        }
+      ],
       "displayNumber": "060",
       "sequenceOrder": 60.0
     },
@@ -3301,7 +3589,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4117 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4114—DSC_4116，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4114—DSC_4116",
+          "url": null
+        }
+      ],
       "displayNumber": "061",
       "sequenceOrder": 61.0
     },
@@ -3378,7 +3671,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4125 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4118—DSC_4124，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4118—DSC_4124",
+          "url": null
+        }
+      ],
       "displayNumber": "062",
       "sequenceOrder": 62.0
     },
@@ -3437,7 +3735,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4129 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4126—DSC_4128，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4126—DSC_4128",
+          "url": null
+        }
+      ],
       "displayNumber": "063",
       "sequenceOrder": 63.0
     },
@@ -3484,7 +3787,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4131 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4130，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4130",
+          "url": null
+        }
+      ],
       "displayNumber": "064",
       "sequenceOrder": 64.0
     },
@@ -3531,7 +3839,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4133 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4132，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4132",
+          "url": null
+        }
+      ],
       "displayNumber": "065",
       "sequenceOrder": 65.0
     },
@@ -3578,7 +3891,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4135 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4134，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4134",
+          "url": null
+        }
+      ],
       "displayNumber": "066",
       "sequenceOrder": 66.0
     },
@@ -3643,7 +3961,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4140 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4136—DSC_4139，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4136—DSC_4139",
+          "url": null
+        }
+      ],
       "displayNumber": "067",
       "sequenceOrder": 67.0
     },
@@ -3690,7 +4013,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4142 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4141，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4141",
+          "url": null
+        }
+      ],
       "displayNumber": "068",
       "sequenceOrder": 68.0
     },
@@ -3737,7 +4065,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4144 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4143，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4143",
+          "url": null
+        }
+      ],
       "displayNumber": "069",
       "sequenceOrder": 69.0
     },
@@ -3784,7 +4117,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4146 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4145，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4145",
+          "url": null
+        }
+      ],
       "displayNumber": "070",
       "sequenceOrder": 70.0
     },
@@ -3831,7 +4169,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4150 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4148，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4148",
+          "url": null
+        }
+      ],
       "displayNumber": "071",
       "sequenceOrder": 71.0
     },
@@ -3878,7 +4221,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4153 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4152，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4152",
+          "url": null
+        }
+      ],
       "displayNumber": "072",
       "sequenceOrder": 72.0
     },
@@ -3931,7 +4279,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4156 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4154—DSC_4155，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4154—DSC_4155",
+          "url": null
+        }
+      ],
       "displayNumber": "073",
       "sequenceOrder": 73.0
     },
@@ -3986,7 +4339,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4160 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4158—DSC_4159，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4158—DSC_4159",
+          "url": null
+        }
+      ],
       "displayNumber": "074",
       "sequenceOrder": 74.0
     },
@@ -4033,7 +4391,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4162 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4162，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4162",
+          "url": null
+        }
+      ],
       "displayNumber": "075",
       "sequenceOrder": 75.0
     },
@@ -4080,7 +4443,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4165 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4164，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4164",
+          "url": null
+        }
+      ],
       "displayNumber": "076",
       "sequenceOrder": 76.0
     },
@@ -4133,7 +4501,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4169 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4167—DSC_4168，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4167—DSC_4168",
+          "url": null
+        }
+      ],
       "displayNumber": "077",
       "sequenceOrder": 77.0
     },
@@ -4186,7 +4559,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4172 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4170—DSC_4171，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4170—DSC_4171",
+          "url": null
+        }
+      ],
       "displayNumber": "078",
       "sequenceOrder": 78.0
     },
@@ -4233,7 +4611,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4174 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4173，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4173",
+          "url": null
+        }
+      ],
       "displayNumber": "079",
       "sequenceOrder": 79.0
     },
@@ -4280,7 +4663,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4176 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4175，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4175",
+          "url": null
+        }
+      ],
       "displayNumber": "080",
       "sequenceOrder": 80.0
     },
@@ -4327,7 +4715,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4180 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4177，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4177",
+          "url": null
+        }
+      ],
       "displayNumber": "081",
       "sequenceOrder": 81.0
     },
@@ -4380,7 +4773,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4183 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4181—DSC_4182，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4181—DSC_4182",
+          "url": null
+        }
+      ],
       "displayNumber": "082",
       "sequenceOrder": 82.0
     },
@@ -4439,7 +4837,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4188 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4184—DSC_4187，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4184—DSC_4187",
+          "url": null
+        }
+      ],
       "displayNumber": "083",
       "sequenceOrder": 83.0
     },
@@ -4492,7 +4895,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4191 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4189—DSC_4190，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4189—DSC_4190",
+          "url": null
+        }
+      ],
       "displayNumber": "084",
       "sequenceOrder": 84.0
     },
@@ -4539,7 +4947,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4194 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4193，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4193",
+          "url": null
+        }
+      ],
       "displayNumber": "085",
       "sequenceOrder": 85.0
     },
@@ -4592,7 +5005,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4197 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4195—DSC_4196，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4195—DSC_4196",
+          "url": null
+        }
+      ],
       "displayNumber": "086",
       "sequenceOrder": 86.0
     },
@@ -4645,7 +5063,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4198—DSC_4199；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4198—DSC_4199",
+          "url": null
+        }
+      ],
       "displayNumber": "087",
       "sequenceOrder": 87.0
     },
@@ -4698,7 +5121,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4201—DSC_4202；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4201—DSC_4202",
+          "url": null
+        }
+      ],
       "displayNumber": "088",
       "sequenceOrder": 88.0
     },
@@ -4763,7 +5191,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4204—DSC_4208；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4204—DSC_4208",
+          "url": null
+        }
+      ],
       "displayNumber": "089",
       "sequenceOrder": 89.0
     },
@@ -4816,7 +5249,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4210—DSC_4211；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4210—DSC_4211",
+          "url": null
+        }
+      ],
       "displayNumber": "090",
       "sequenceOrder": 90.0
     },
@@ -4863,7 +5301,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4214 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4213，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4213",
+          "url": null
+        }
+      ],
       "displayNumber": "091",
       "sequenceOrder": 91.0
     },
@@ -4910,7 +5353,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4216 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4215，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4215",
+          "url": null
+        }
+      ],
       "displayNumber": "092",
       "sequenceOrder": 92.0
     },
@@ -4957,7 +5405,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4218 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4217，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4217",
+          "url": null
+        }
+      ],
       "displayNumber": "093",
       "sequenceOrder": 93.0
     },
@@ -5010,7 +5463,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4222 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4219—DSC_4221，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4219—DSC_4221",
+          "url": null
+        }
+      ],
       "displayNumber": "094",
       "sequenceOrder": 94.0
     },
@@ -5057,7 +5515,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4224 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4223，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4223",
+          "url": null
+        }
+      ],
       "displayNumber": "095",
       "sequenceOrder": 95.0
     },
@@ -5104,7 +5567,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4226 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4225，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4225",
+          "url": null
+        }
+      ],
       "displayNumber": "096",
       "sequenceOrder": 96.0
     },
@@ -5157,7 +5625,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4229 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4227—DSC_4228，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4227—DSC_4228",
+          "url": null
+        }
+      ],
       "displayNumber": "097",
       "sequenceOrder": 97.0
     },
@@ -5204,7 +5677,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4231 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4230，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4230",
+          "url": null
+        }
+      ],
       "displayNumber": "098",
       "sequenceOrder": 98.0
     },
@@ -5281,7 +5759,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4238 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4232—DSC_4238，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4232—DSC_4238",
+          "url": null
+        }
+      ],
       "displayNumber": "099",
       "sequenceOrder": 99.0
     },
@@ -5340,7 +5823,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4239—DSC_4241；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4239—DSC_4241",
+          "url": null
+        }
+      ],
       "displayNumber": "100",
       "sequenceOrder": 100.0
     },
@@ -5387,7 +5875,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4244 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4243，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4243",
+          "url": null
+        }
+      ],
       "displayNumber": "101",
       "sequenceOrder": 101.0
     },
@@ -5440,7 +5933,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4247 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4245—DSC_4246，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4245—DSC_4246",
+          "url": null
+        }
+      ],
       "displayNumber": "102",
       "sequenceOrder": 102.0
     },
@@ -5487,7 +5985,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4249 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4248，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4248",
+          "url": null
+        }
+      ],
       "displayNumber": "103",
       "sequenceOrder": 103.0
     },
@@ -5534,7 +6037,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4251 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4250，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4250",
+          "url": null
+        }
+      ],
       "displayNumber": "104",
       "sequenceOrder": 104.0
     },
@@ -5581,7 +6089,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4253 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4252，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4252",
+          "url": null
+        }
+      ],
       "displayNumber": "105",
       "sequenceOrder": 105.0
     },
@@ -5628,7 +6141,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4255；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4255",
+          "url": null
+        }
+      ],
       "displayNumber": "105A",
       "sequenceOrder": 105.5
     },
@@ -5675,7 +6193,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4257；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4257",
+          "url": null
+        }
+      ],
       "displayNumber": "106",
       "sequenceOrder": 106.0
     },
@@ -5724,16 +6247,16 @@ window.SHAANXI_DATA = {
       "evidence": "馆藏单位依据陕西省公开珍贵文物名录核对；币面释读参照中国国家博物馆同类藏品。图片为源義信拍摄的陕西历史博物馆展览照片，依 CC BY 4.0 使用。",
       "sources": [
         {
-          "url": "https://wwj.shaanxi.gov.cn/zfxxgk/fdzdgknr/tjxx/202506/P020250624574830954353.pdf",
-          "label": "陕西省国有可移动文物收藏单位珍贵文物名录（陕西历史博物馆）"
+          "label": "陕西省国有可移动文物收藏单位珍贵文物名录（陕西历史博物馆）",
+          "url": "https://wwj.shaanxi.gov.cn/zfxxgk/fdzdgknr/tjxx/202506/P020250624574830954353.pdf"
         },
         {
-          "url": "https://www.chnmuseum.cn/zp/zpml/hb/202008/t20200824_247117.shtml",
-          "label": "中国国家博物馆：库思老二世银币图像与币制参考"
+          "label": "中国国家博物馆：库思老二世银币图像与币制参考",
+          "url": "https://www.chnmuseum.cn/zp/zpml/hb/202008/t20200824_247117.shtml"
         },
         {
-          "url": "https://commons.wikimedia.org/wiki/File:2023-10-10_%E9%99%95%E8%A5%BF%E5%8E%86%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A6%86%E5%B1%95%E8%A7%88_Collections_of_the_Shaanxi_History_Museum_219.jpg",
-          "label": "Wikimedia Commons：陕西历史博物馆馆内展示图"
+          "label": "Wikimedia Commons：陕西历史博物馆馆内展示图",
+          "url": "https://commons.wikimedia.org/wiki/File:2023-10-10_%E9%99%95%E8%A5%BF%E5%8E%86%E5%8F%B2%E5%8D%9A%E7%89%A9%E9%A6%86%E5%B1%95%E8%A7%88_Collections_of_the_Shaanxi_History_Museum_219.jpg"
         }
       ],
       "displayNumber": "107",
@@ -5782,7 +6305,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4259；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4259",
+          "url": null
+        }
+      ],
       "displayNumber": "107A",
       "sequenceOrder": 107.1
     },
@@ -5829,7 +6357,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4261；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4261",
+          "url": null
+        }
+      ],
       "displayNumber": "107B",
       "sequenceOrder": 107.2
     },
@@ -5876,7 +6409,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4264 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4263，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4263",
+          "url": null
+        }
+      ],
       "displayNumber": "108",
       "sequenceOrder": 108.0
     },
@@ -5935,7 +6473,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4268 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4265—DSC_4267，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4265—DSC_4267",
+          "url": null
+        }
+      ],
       "displayNumber": "109",
       "sequenceOrder": 109.0
     },
@@ -5988,7 +6531,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4276 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4273—DSC_4275，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4273—DSC_4275",
+          "url": null
+        }
+      ],
       "displayNumber": "110",
       "sequenceOrder": 110.0
     },
@@ -6035,7 +6583,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4278 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4277，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4277",
+          "url": null
+        }
+      ],
       "displayNumber": "111",
       "sequenceOrder": 111.0
     },
@@ -6082,7 +6635,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4281 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4280，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4280",
+          "url": null
+        }
+      ],
       "displayNumber": "112",
       "sequenceOrder": 112.0
     },
@@ -6129,7 +6687,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4283 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4282，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4282",
+          "url": null
+        }
+      ],
       "displayNumber": "113",
       "sequenceOrder": 113.0
     },
@@ -6176,7 +6739,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4285 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4284，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4284",
+          "url": null
+        }
+      ],
       "displayNumber": "114",
       "sequenceOrder": 114.0
     },
@@ -6229,7 +6797,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4286—DSC_4287；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4286—DSC_4287",
+          "url": null
+        }
+      ],
       "displayNumber": "115A",
       "sequenceOrder": 115.0
     },
@@ -6282,7 +6855,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4289—DSC_4290；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4289—DSC_4290",
+          "url": null
+        }
+      ],
       "displayNumber": "115B",
       "sequenceOrder": 115.1
     },
@@ -6329,7 +6907,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4292；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4292",
+          "url": null
+        }
+      ],
       "displayNumber": "115C",
       "sequenceOrder": 115.2
     },
@@ -6376,7 +6959,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4296 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4295，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4295",
+          "url": null
+        }
+      ],
       "displayNumber": "116",
       "sequenceOrder": 116.0
     },
@@ -6423,7 +7011,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4299 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4298，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4298",
+          "url": null
+        }
+      ],
       "displayNumber": "117",
       "sequenceOrder": 117.0
     },
@@ -6482,7 +7075,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4303 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4300—DSC_4302，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4300—DSC_4302",
+          "url": null
+        }
+      ],
       "displayNumber": "118",
       "sequenceOrder": 118.0
     },
@@ -6529,7 +7127,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4305 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4304，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4304",
+          "url": null
+        }
+      ],
       "displayNumber": "119",
       "sequenceOrder": 119.0
     },
@@ -6576,7 +7179,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4307 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4306，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4306",
+          "url": null
+        }
+      ],
       "displayNumber": "120",
       "sequenceOrder": 120.0
     },
@@ -6629,7 +7237,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4309 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4308—DSC_4309，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4308—DSC_4309",
+          "url": null
+        }
+      ],
       "displayNumber": "121",
       "sequenceOrder": 121.0
     },
@@ -6682,7 +7295,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4312 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4311—DSC_4312，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4311—DSC_4312",
+          "url": null
+        }
+      ],
       "displayNumber": "122",
       "sequenceOrder": 122.0
     },
@@ -6735,7 +7353,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4317 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4315—DSC_4316，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4315—DSC_4316",
+          "url": null
+        }
+      ],
       "displayNumber": "123",
       "sequenceOrder": 123.0
     },
@@ -6782,7 +7405,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4319 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4318，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4318",
+          "url": null
+        }
+      ],
       "displayNumber": "124",
       "sequenceOrder": 124.0
     },
@@ -6841,7 +7469,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4322—DSC_4324；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4322—DSC_4324",
+          "url": null
+        }
+      ],
       "displayNumber": "125",
       "sequenceOrder": 125.0
     },
@@ -6888,7 +7521,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4330 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4329，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4329",
+          "url": null
+        }
+      ],
       "displayNumber": "126",
       "sequenceOrder": 126.0
     },
@@ -6941,7 +7579,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4333 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4331—DSC_4332，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4331—DSC_4332",
+          "url": null
+        }
+      ],
       "displayNumber": "127",
       "sequenceOrder": 127.0
     },
@@ -6988,7 +7631,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4335 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4334，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4334",
+          "url": null
+        }
+      ],
       "displayNumber": "128",
       "sequenceOrder": 128.0
     },
@@ -7041,7 +7689,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4339 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4336—DSC_4337，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4336—DSC_4337",
+          "url": null
+        }
+      ],
       "displayNumber": "129",
       "sequenceOrder": 129.0
     },
@@ -7096,7 +7749,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4342 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4340—DSC_4341，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4340—DSC_4341",
+          "url": null
+        }
+      ],
       "displayNumber": "130",
       "sequenceOrder": 130.0
     },
@@ -7151,7 +7809,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4349 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4344—DSC_4345，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4344—DSC_4345",
+          "url": null
+        }
+      ],
       "displayNumber": "131",
       "sequenceOrder": 131.0
     },
@@ -7204,7 +7867,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4354 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4352—DSC_4353，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4352—DSC_4353",
+          "url": null
+        }
+      ],
       "displayNumber": "132",
       "sequenceOrder": 132.0
     },
@@ -7251,7 +7919,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4356 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4355，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4355",
+          "url": null
+        }
+      ],
       "displayNumber": "133",
       "sequenceOrder": 133.0
     },
@@ -7298,7 +7971,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4358 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4357，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4357",
+          "url": null
+        }
+      ],
       "displayNumber": "134",
       "sequenceOrder": 134.0
     },
@@ -7345,7 +8023,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4360 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4359，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4359",
+          "url": null
+        }
+      ],
       "displayNumber": "135",
       "sequenceOrder": 135.0
     },
@@ -7392,7 +8075,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4362 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4361，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4361",
+          "url": null
+        }
+      ],
       "displayNumber": "136",
       "sequenceOrder": 136.0
     },
@@ -7439,7 +8127,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4364 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4363，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4363",
+          "url": null
+        }
+      ],
       "displayNumber": "137",
       "sequenceOrder": 137.0
     },
@@ -7486,7 +8179,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4366 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4365，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4365",
+          "url": null
+        }
+      ],
       "displayNumber": "138",
       "sequenceOrder": 138.0
     },
@@ -7533,7 +8231,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4368 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4367，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4367",
+          "url": null
+        }
+      ],
       "displayNumber": "139",
       "sequenceOrder": 139.0
     },
@@ -7580,7 +8283,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4370 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4369，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4369",
+          "url": null
+        }
+      ],
       "displayNumber": "140",
       "sequenceOrder": 140.0
     },
@@ -7633,7 +8341,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4375 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4371—DSC_4374，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4371—DSC_4374",
+          "url": null
+        }
+      ],
       "displayNumber": "141",
       "sequenceOrder": 141.0
     },
@@ -7680,7 +8393,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4378 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4376，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4376",
+          "url": null
+        }
+      ],
       "displayNumber": "142",
       "sequenceOrder": 142.0
     },
@@ -7733,7 +8451,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4381 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4379—DSC_4380，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4379—DSC_4380",
+          "url": null
+        }
+      ],
       "displayNumber": "143",
       "sequenceOrder": 143.0
     },
@@ -7786,7 +8509,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4383—DSC_4384；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4383—DSC_4384",
+          "url": null
+        }
+      ],
       "displayNumber": "144",
       "sequenceOrder": 144.0
     },
@@ -7835,8 +8563,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4387 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4386，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F",
-          "label": "维基百科：何家村唐代窖藏"
+          "label": "维基百科：何家村唐代窖藏",
+          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_4386",
+          "url": null
         }
       ],
       "displayNumber": "145",
@@ -7891,7 +8623,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4388—DSC_4389；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4388—DSC_4389",
+          "url": null
+        }
+      ],
       "displayNumber": "146",
       "sequenceOrder": 146.0
     },
@@ -7958,12 +8695,16 @@ window.SHAANXI_DATA = {
       "evidence": "器物图为 DSC_4391—DSC_4592；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202204/t20220407_2216580.html",
-          "label": "陕西历史博物馆 / 陕西省文物局公开资料"
+          "label": "陕西历史博物馆 / 陕西省文物局公开资料",
+          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202204/t20220407_2216580.html"
         },
         {
-          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F",
-          "label": "维基百科：何家村唐代窖藏"
+          "label": "维基百科：何家村唐代窖藏",
+          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_4391—DSC_4592",
+          "url": null
         }
       ],
       "displayNumber": "147",
@@ -8012,7 +8753,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4396 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4395，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4395",
+          "url": null
+        }
+      ],
       "displayNumber": "148",
       "sequenceOrder": 148.0
     },
@@ -8059,7 +8805,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4398 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4397，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4397",
+          "url": null
+        }
+      ],
       "displayNumber": "149",
       "sequenceOrder": 149.0
     },
@@ -8106,7 +8857,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4401 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4399，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4399",
+          "url": null
+        }
+      ],
       "displayNumber": "150",
       "sequenceOrder": 150.0
     },
@@ -8153,7 +8909,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4403 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4402，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4402",
+          "url": null
+        }
+      ],
       "displayNumber": "151",
       "sequenceOrder": 151.0
     },
@@ -8200,7 +8961,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4405 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4404，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4404",
+          "url": null
+        }
+      ],
       "displayNumber": "152",
       "sequenceOrder": 152.0
     },
@@ -8253,7 +9019,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4408 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4406—DSC_4407，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4406—DSC_4407",
+          "url": null
+        }
+      ],
       "displayNumber": "153",
       "sequenceOrder": 153.0
     },
@@ -8300,7 +9071,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4410 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4409，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4409",
+          "url": null
+        }
+      ],
       "displayNumber": "154",
       "sequenceOrder": 154.0
     },
@@ -8353,7 +9129,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4413 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4411—DSC_4412，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4411—DSC_4412",
+          "url": null
+        }
+      ],
       "displayNumber": "155",
       "sequenceOrder": 155.0
     },
@@ -8402,8 +9183,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4417 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4416，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F",
-          "label": "维基百科：何家村唐代窖藏"
+          "label": "维基百科：何家村唐代窖藏",
+          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_4416",
+          "url": null
         }
       ],
       "displayNumber": "156",
@@ -8458,7 +9243,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4422 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4418—DSC_4419，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4418—DSC_4419",
+          "url": null
+        }
+      ],
       "displayNumber": "157",
       "sequenceOrder": 157.0
     },
@@ -8511,7 +9301,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4425 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4423—DSC_4424，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4423—DSC_4424",
+          "url": null
+        }
+      ],
       "displayNumber": "158",
       "sequenceOrder": 158.0
     },
@@ -8564,7 +9359,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4428 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4426—DSC_4427，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4426—DSC_4427",
+          "url": null
+        }
+      ],
       "displayNumber": "159",
       "sequenceOrder": 159.0
     },
@@ -8617,7 +9417,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4431 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4429—DSC_4430，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4429—DSC_4430",
+          "url": null
+        }
+      ],
       "displayNumber": "160",
       "sequenceOrder": 160.0
     },
@@ -8664,7 +9469,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4433 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4432，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4432",
+          "url": null
+        }
+      ],
       "displayNumber": "161",
       "sequenceOrder": 161.0
     },
@@ -8717,7 +9527,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4436 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4434—DSC_4435，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4434—DSC_4435",
+          "url": null
+        }
+      ],
       "displayNumber": "162",
       "sequenceOrder": 162.0
     },
@@ -8764,7 +9579,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4438 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4437，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4437",
+          "url": null
+        }
+      ],
       "displayNumber": "163",
       "sequenceOrder": 163.0
     },
@@ -8811,7 +9631,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4440 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4439，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4439",
+          "url": null
+        }
+      ],
       "displayNumber": "164",
       "sequenceOrder": 164.0
     },
@@ -8881,12 +9706,16 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4445 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4441—DSC_4444，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://www.sxhm.com/collections/detail/509.html",
-          "label": "陕西历史博物馆 / 陕西省文物局公开资料"
+          "label": "陕西历史博物馆 / 陕西省文物局公开资料",
+          "url": "https://www.sxhm.com/collections/detail/509.html"
         },
         {
-          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html",
-          "label": "国家文物主管部门公布的禁止出境展览文物目录"
+          "label": "国家文物主管部门公布的禁止出境展览文物目录",
+          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html"
+        },
+        {
+          "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
         }
       ],
       "displayNumber": "165",
@@ -8941,7 +9770,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4447 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4446—DSC_4447，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4446—DSC_4447",
+          "url": null
+        }
+      ],
       "displayNumber": "166",
       "sequenceOrder": 166.0
     },
@@ -8994,7 +9828,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4449 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4448—DSC_4449，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4448—DSC_4449",
+          "url": null
+        }
+      ],
       "displayNumber": "167",
       "sequenceOrder": 167.0
     },
@@ -9041,7 +9880,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4450 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4450，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4450",
+          "url": null
+        }
+      ],
       "displayNumber": "168",
       "sequenceOrder": 168.0
     },
@@ -9094,7 +9938,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4452—DSC_4453；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4452—DSC_4453",
+          "url": null
+        }
+      ],
       "displayNumber": "169",
       "sequenceOrder": 169.0
     },
@@ -9147,7 +9996,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4455—DSC_4682；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4455—DSC_4682",
+          "url": null
+        }
+      ],
       "displayNumber": "170",
       "sequenceOrder": 170.0
     },
@@ -9194,7 +10048,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4458 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4457，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4457",
+          "url": null
+        }
+      ],
       "displayNumber": "171",
       "sequenceOrder": 171.0
     },
@@ -9241,7 +10100,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4460 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4459，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4459",
+          "url": null
+        }
+      ],
       "displayNumber": "172",
       "sequenceOrder": 172.0
     },
@@ -9288,7 +10152,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4462 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4461，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4461",
+          "url": null
+        }
+      ],
       "displayNumber": "173",
       "sequenceOrder": 173.0
     },
@@ -9335,7 +10204,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4464 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4463，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4463",
+          "url": null
+        }
+      ],
       "displayNumber": "174",
       "sequenceOrder": 174.0
     },
@@ -9382,7 +10256,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4467 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4466，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4466",
+          "url": null
+        }
+      ],
       "displayNumber": "175",
       "sequenceOrder": 175.0
     },
@@ -9429,7 +10308,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4470 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4469，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4469",
+          "url": null
+        }
+      ],
       "displayNumber": "176",
       "sequenceOrder": 176.0
     },
@@ -9476,7 +10360,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4472 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4471，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4471",
+          "url": null
+        }
+      ],
       "displayNumber": "177",
       "sequenceOrder": 177.0
     },
@@ -9523,7 +10412,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4474 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4473，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4473",
+          "url": null
+        }
+      ],
       "displayNumber": "178",
       "sequenceOrder": 178.0
     },
@@ -9582,7 +10476,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4479 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4476—DSC_4479，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4476—DSC_4479",
+          "url": null
+        }
+      ],
       "displayNumber": "179",
       "sequenceOrder": 179.0
     },
@@ -9635,7 +10534,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4481 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4480—DSC_4481，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4480—DSC_4481",
+          "url": null
+        }
+      ],
       "displayNumber": "180",
       "sequenceOrder": 180.0
     },
@@ -9682,7 +10586,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4484 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4482，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4482",
+          "url": null
+        }
+      ],
       "displayNumber": "181",
       "sequenceOrder": 181.0
     },
@@ -9729,7 +10638,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4486 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4485，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4485",
+          "url": null
+        }
+      ],
       "displayNumber": "182",
       "sequenceOrder": 182.0
     },
@@ -9776,7 +10690,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4488 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4487，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4487",
+          "url": null
+        }
+      ],
       "displayNumber": "183",
       "sequenceOrder": 183.0
     },
@@ -9829,7 +10748,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4492 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4489—DSC_4490，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4489—DSC_4490",
+          "url": null
+        }
+      ],
       "displayNumber": "184",
       "sequenceOrder": 184.0
     },
@@ -9876,7 +10800,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4494 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4493，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4493",
+          "url": null
+        }
+      ],
       "displayNumber": "185",
       "sequenceOrder": 185.0
     },
@@ -9923,7 +10852,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4496 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4495，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4495",
+          "url": null
+        }
+      ],
       "displayNumber": "186",
       "sequenceOrder": 186.0
     },
@@ -9970,7 +10904,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4499 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4498，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4498",
+          "url": null
+        }
+      ],
       "displayNumber": "187",
       "sequenceOrder": 187.0
     },
@@ -10017,7 +10956,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4502 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4501，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4501",
+          "url": null
+        }
+      ],
       "displayNumber": "188",
       "sequenceOrder": 188.0
     },
@@ -10064,7 +11008,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4504 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4503，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4503",
+          "url": null
+        }
+      ],
       "displayNumber": "189",
       "sequenceOrder": 189.0
     },
@@ -10111,7 +11060,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4506 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4505，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4505",
+          "url": null
+        }
+      ],
       "displayNumber": "190",
       "sequenceOrder": 190.0
     },
@@ -10158,7 +11112,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4508 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4507，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4507",
+          "url": null
+        }
+      ],
       "displayNumber": "191",
       "sequenceOrder": 191.0
     },
@@ -10211,7 +11170,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4511 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4509—DSC_4510，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4509—DSC_4510",
+          "url": null
+        }
+      ],
       "displayNumber": "192",
       "sequenceOrder": 192.0
     },
@@ -10258,7 +11222,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4513 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4512，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4512",
+          "url": null
+        }
+      ],
       "displayNumber": "193",
       "sequenceOrder": 193.0
     },
@@ -10305,7 +11274,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4515 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4514，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4514",
+          "url": null
+        }
+      ],
       "displayNumber": "194",
       "sequenceOrder": 194.0
     },
@@ -10352,7 +11326,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4517 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4516，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4516",
+          "url": null
+        }
+      ],
       "displayNumber": "195",
       "sequenceOrder": 195.0
     },
@@ -10421,12 +11400,16 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4523 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4518—DSC_4521，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://www.sxhm.com/collections/detail/508.html",
-          "label": "陕西历史博物馆 / 陕西省文物局公开资料"
+          "label": "陕西历史博物馆 / 陕西省文物局公开资料",
+          "url": "https://www.sxhm.com/collections/detail/508.html"
         },
         {
-          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html",
-          "label": "国家文物主管部门公布的禁止出境展览文物目录"
+          "label": "国家文物主管部门公布的禁止出境展览文物目录",
+          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html"
+        },
+        {
+          "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
         }
       ],
       "displayNumber": "196",
@@ -10475,7 +11458,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4525 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4524，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4524",
+          "url": null
+        }
+      ],
       "displayNumber": "197",
       "sequenceOrder": 197.0
     },
@@ -10522,7 +11510,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4527 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4526，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4526",
+          "url": null
+        }
+      ],
       "displayNumber": "198",
       "sequenceOrder": 198.0
     },
@@ -10569,7 +11562,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4531 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4530，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4530",
+          "url": null
+        }
+      ],
       "displayNumber": "200",
       "sequenceOrder": 200.0
     },
@@ -10616,7 +11614,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4533 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4532，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4532",
+          "url": null
+        }
+      ],
       "displayNumber": "201",
       "sequenceOrder": 201.0
     },
@@ -10663,7 +11666,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4539 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4538，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4538",
+          "url": null
+        }
+      ],
       "displayNumber": "202",
       "sequenceOrder": 202.0
     },
@@ -10710,7 +11718,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4540 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4540，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4540",
+          "url": null
+        }
+      ],
       "displayNumber": "203",
       "sequenceOrder": 203.0
     },
@@ -10757,7 +11770,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4543 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4542，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4542",
+          "url": null
+        }
+      ],
       "displayNumber": "204",
       "sequenceOrder": 204.0
     },
@@ -10804,7 +11822,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4545 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4544，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4544",
+          "url": null
+        }
+      ],
       "displayNumber": "205",
       "sequenceOrder": 205.0
     },
@@ -10851,7 +11874,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4547 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4546，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4546",
+          "url": null
+        }
+      ],
       "displayNumber": "206",
       "sequenceOrder": 206.0
     },
@@ -10904,7 +11932,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4550 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4548—DSC_4549，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4548—DSC_4549",
+          "url": null
+        }
+      ],
       "displayNumber": "207",
       "sequenceOrder": 207.0
     },
@@ -10957,7 +11990,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4553 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4551—DSC_4552，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4551—DSC_4552",
+          "url": null
+        }
+      ],
       "displayNumber": "208",
       "sequenceOrder": 208.0
     },
@@ -11010,7 +12048,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4556 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4554—DSC_4555，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4554—DSC_4555",
+          "url": null
+        }
+      ],
       "displayNumber": "209",
       "sequenceOrder": 209.0
     },
@@ -11063,7 +12106,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4559 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4557—DSC_4558，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4557—DSC_4558",
+          "url": null
+        }
+      ],
       "displayNumber": "210",
       "sequenceOrder": 210.0
     },
@@ -11110,7 +12158,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4561 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4560，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4560",
+          "url": null
+        }
+      ],
       "displayNumber": "211",
       "sequenceOrder": 211.0
     },
@@ -11199,7 +12252,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4571 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4562—DSC_4570，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4562—DSC_4570",
+          "url": null
+        }
+      ],
       "displayNumber": "212",
       "sequenceOrder": 212.0
     },
@@ -11248,8 +12306,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4573 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4572，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F",
-          "label": "维基百科：何家村唐代窖藏"
+          "label": "维基百科：何家村唐代窖藏",
+          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_4572",
+          "url": null
         }
       ],
       "displayNumber": "213",
@@ -11304,7 +12366,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4576 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4574—DSC_4575，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4574—DSC_4575",
+          "url": null
+        }
+      ],
       "displayNumber": "214",
       "sequenceOrder": 214.0
     },
@@ -11353,8 +12420,12 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4578 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4577，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F",
-          "label": "维基百科：何家村唐代窖藏"
+          "label": "维基百科：何家村唐代窖藏",
+          "url": "https://zh.wikipedia.org/wiki/%E4%BD%95%E5%AE%B6%E6%9D%91%E5%94%90%E4%BB%A3%E7%AA%96%E8%97%8F"
+        },
+        {
+          "label": "现场展签与原始照片：DSC_4577",
+          "url": null
         }
       ],
       "displayNumber": "215",
@@ -11403,7 +12474,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4580 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4579，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4579",
+          "url": null
+        }
+      ],
       "displayNumber": "216",
       "sequenceOrder": 216.0
     },
@@ -11450,7 +12526,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4582 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4581，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4581",
+          "url": null
+        }
+      ],
       "displayNumber": "217",
       "sequenceOrder": 217.0
     },
@@ -11503,7 +12584,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4585 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4583—DSC_4584，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4583—DSC_4584",
+          "url": null
+        }
+      ],
       "displayNumber": "218",
       "sequenceOrder": 218.0
     },
@@ -11556,7 +12642,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4588 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4586—DSC_4587，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4586—DSC_4587",
+          "url": null
+        }
+      ],
       "displayNumber": "219",
       "sequenceOrder": 219.0
     },
@@ -11603,7 +12694,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4590 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4589，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4589",
+          "url": null
+        }
+      ],
       "displayNumber": "220",
       "sequenceOrder": 220.0
     },
@@ -11658,8 +12754,8 @@ window.SHAANXI_DATA = {
       "evidence": "DSC_4594—DSC_4595 记录的是同一件椭圆形双耳银羽觞；现场序列没有保留下一个可读展签画面，名称、时代与出土信息据陕西历史博物馆公开藏品页校订。两张现场器物图均保留，未把后续孔雀纹顶银方盒的展签借作其名称依据。",
       "sources": [
         {
-          "url": "https://www.sxhm.com/collections/detail/9943.html",
-          "label": "陕西历史博物馆 / 陕西省文物局公开资料"
+          "label": "陕西历史博物馆 / 陕西省文物局公开资料",
+          "url": "https://www.sxhm.com/collections/detail/9943.html"
         }
       ],
       "displayNumber": "222",
@@ -11732,7 +12828,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4603 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4598—DSC_4602，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4598—DSC_4602",
+          "url": null
+        }
+      ],
       "displayNumber": "223",
       "sequenceOrder": 223.0
     },
@@ -11779,7 +12880,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4605 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4604，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4604",
+          "url": null
+        }
+      ],
       "displayNumber": "224",
       "sequenceOrder": 224.0
     },
@@ -11832,7 +12938,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4608 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4606—DSC_4607，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4606—DSC_4607",
+          "url": null
+        }
+      ],
       "displayNumber": "225",
       "sequenceOrder": 225.0
     },
@@ -11887,7 +12998,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4611 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4609—DSC_4610，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4609—DSC_4610",
+          "url": null
+        }
+      ],
       "displayNumber": "226",
       "sequenceOrder": 226.0
     },
@@ -11963,12 +13079,16 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4618 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4613—DSC_4617，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202204/t20220407_2216581.html",
-          "label": "陕西历史博物馆 / 陕西省文物局公开资料"
+          "label": "陕西历史博物馆 / 陕西省文物局公开资料",
+          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202204/t20220407_2216581.html"
         },
         {
-          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html",
-          "label": "国家文物主管部门公布的禁止出境展览文物目录"
+          "label": "国家文物主管部门公布的禁止出境展览文物目录",
+          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html"
+        },
+        {
+          "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
         }
       ],
       "displayNumber": "227",
@@ -12023,7 +13143,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4621 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4619—DSC_4620，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4619—DSC_4620",
+          "url": null
+        }
+      ],
       "displayNumber": "228",
       "sequenceOrder": 228.0
     },
@@ -12076,7 +13201,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4626 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4624—DSC_4625，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4624—DSC_4625",
+          "url": null
+        }
+      ],
       "displayNumber": "229",
       "sequenceOrder": 229.0
     },
@@ -12129,7 +13259,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4629 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4627—DSC_4628，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4627—DSC_4628",
+          "url": null
+        }
+      ],
       "displayNumber": "230",
       "sequenceOrder": 230.0
     },
@@ -12178,8 +13313,8 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4660 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4659，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://www.sxhm.com/info/announcement/detail/15952.html",
-          "label": "陕西历史博物馆 / 陕西省文物局公开资料"
+          "label": "陕西历史博物馆 / 陕西省文物局公开资料",
+          "url": "https://www.sxhm.com/info/announcement/detail/15952.html"
         }
       ],
       "displayNumber": "231",
@@ -12234,7 +13369,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "器物图为 DSC_4663—DSC_4664；名称、时代与来源由相邻展签核对，展签画面不作为器物封面。原始照片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4663—DSC_4664",
+          "url": null
+        }
+      ],
       "displayNumber": "232",
       "sequenceOrder": 232.0
     },
@@ -12287,7 +13427,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4668 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4666—DSC_4667，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4666—DSC_4667",
+          "url": null
+        }
+      ],
       "displayNumber": "233",
       "sequenceOrder": 233.0
     },
@@ -12340,7 +13485,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4671 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4669—DSC_4670，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4669—DSC_4670",
+          "url": null
+        }
+      ],
       "displayNumber": "234",
       "sequenceOrder": 234.0
     },
@@ -12387,7 +13537,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4673 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4672，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4672",
+          "url": null
+        }
+      ],
       "displayNumber": "235",
       "sequenceOrder": 235.0
     },
@@ -12468,12 +13623,16 @@ window.SHAANXI_DATA = {
       "evidence": "名称、时代与来源优先取自 DSC_4681 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4675—DSC_4680，现场原片保存在 F:\\DCIM\\102NCZ_F。",
       "sources": [
         {
-          "url": "https://www.sxhm.com/collections/detail/512.html",
-          "label": "陕西历史博物馆 / 陕西省文物局公开资料"
+          "label": "陕西历史博物馆 / 陕西省文物局公开资料",
+          "url": "https://www.sxhm.com/collections/detail/512.html"
         },
         {
-          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html",
-          "label": "国家文物主管部门公布的禁止出境展览文物目录"
+          "label": "国家文物主管部门公布的禁止出境展览文物目录",
+          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html"
+        },
+        {
+          "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
         }
       ],
       "displayNumber": "236",
@@ -12522,7 +13681,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4685 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4684，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4684",
+          "url": null
+        }
+      ],
       "displayNumber": "238",
       "sequenceOrder": 238.0
     },
@@ -12569,7 +13733,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4687 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4686，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4686",
+          "url": null
+        }
+      ],
       "displayNumber": "239",
       "sequenceOrder": 239.0
     },
@@ -12616,7 +13785,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4689 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4688，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4688",
+          "url": null
+        }
+      ],
       "displayNumber": "240",
       "sequenceOrder": 240.0
     },
@@ -12663,7 +13837,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4691 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4690，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4690",
+          "url": null
+        }
+      ],
       "displayNumber": "241",
       "sequenceOrder": 241.0
     },
@@ -12710,7 +13889,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4693 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4692，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4692",
+          "url": null
+        }
+      ],
       "displayNumber": "242",
       "sequenceOrder": 242.0
     },
@@ -12757,7 +13941,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4695 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4694，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4694",
+          "url": null
+        }
+      ],
       "displayNumber": "243",
       "sequenceOrder": 243.0
     },
@@ -12804,7 +13993,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4698 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4697，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4697",
+          "url": null
+        }
+      ],
       "displayNumber": "244",
       "sequenceOrder": 244.0
     },
@@ -12857,7 +14051,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4701 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4699—DSC_4700，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4699—DSC_4700",
+          "url": null
+        }
+      ],
       "displayNumber": "245",
       "sequenceOrder": 245.0
     },
@@ -12904,7 +14103,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4703 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4702，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4702",
+          "url": null
+        }
+      ],
       "displayNumber": "246",
       "sequenceOrder": 246.0
     },
@@ -12951,7 +14155,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4705 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4704，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4704",
+          "url": null
+        }
+      ],
       "displayNumber": "247",
       "sequenceOrder": 247.0
     },
@@ -13004,7 +14213,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4708 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4706—DSC_4707，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4706—DSC_4707",
+          "url": null
+        }
+      ],
       "displayNumber": "248",
       "sequenceOrder": 248.0
     },
@@ -13051,7 +14265,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4710 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4709，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4709",
+          "url": null
+        }
+      ],
       "displayNumber": "249",
       "sequenceOrder": 249.0
     },
@@ -13140,7 +14359,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4719 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4711—DSC_4718，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4711—DSC_4718",
+          "url": null
+        }
+      ],
       "displayNumber": "250",
       "sequenceOrder": 250.0
     },
@@ -13201,7 +14425,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4724 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4720—DSC_4722，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4720—DSC_4722",
+          "url": null
+        }
+      ],
       "displayNumber": "251",
       "sequenceOrder": 251.0
     },
@@ -13248,7 +14477,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4726 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4725，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4725",
+          "url": null
+        }
+      ],
       "displayNumber": "252",
       "sequenceOrder": 252.0
     },
@@ -13303,7 +14537,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4729 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4728—DSC_4729，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4728—DSC_4729",
+          "url": null
+        }
+      ],
       "displayNumber": "253",
       "sequenceOrder": 253.0
     },
@@ -13350,7 +14589,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4731 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4730，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4730",
+          "url": null
+        }
+      ],
       "displayNumber": "254",
       "sequenceOrder": 254.0
     },
@@ -13399,7 +14643,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4736 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4735，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4735",
+          "url": null
+        }
+      ],
       "displayNumber": "255",
       "sequenceOrder": 255.0
     },
@@ -13448,7 +14697,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4739 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4738，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4738",
+          "url": null
+        }
+      ],
       "displayNumber": "256",
       "sequenceOrder": 256.0
     },
@@ -13503,7 +14757,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4742 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4740—DSC_4741，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4740—DSC_4741",
+          "url": null
+        }
+      ],
       "displayNumber": "257",
       "sequenceOrder": 257.0
     },
@@ -13552,7 +14811,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4744 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4743，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4743",
+          "url": null
+        }
+      ],
       "displayNumber": "258",
       "sequenceOrder": 258.0
     },
@@ -13601,7 +14865,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4746 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4745，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4745",
+          "url": null
+        }
+      ],
       "displayNumber": "259",
       "sequenceOrder": 259.0
     },
@@ -13650,7 +14919,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4749 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4747，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4747",
+          "url": null
+        }
+      ],
       "displayNumber": "260",
       "sequenceOrder": 260.0
     },
@@ -13699,7 +14973,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4751 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4750，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4750",
+          "url": null
+        }
+      ],
       "displayNumber": "261",
       "sequenceOrder": 261.0
     },
@@ -13748,7 +15027,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4753 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4752，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4752",
+          "url": null
+        }
+      ],
       "displayNumber": "262",
       "sequenceOrder": 262.0
     },
@@ -13797,7 +15081,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4757 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4756，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4756",
+          "url": null
+        }
+      ],
       "displayNumber": "263",
       "sequenceOrder": 263.0
     },
@@ -13852,7 +15141,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4760 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4758—DSC_4759，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4758—DSC_4759",
+          "url": null
+        }
+      ],
       "displayNumber": "264",
       "sequenceOrder": 264.0
     },
@@ -13901,7 +15195,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4763 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4762，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4762",
+          "url": null
+        }
+      ],
       "displayNumber": "265",
       "sequenceOrder": 265.0
     },
@@ -13950,7 +15249,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4766 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4765，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4765",
+          "url": null
+        }
+      ],
       "displayNumber": "266",
       "sequenceOrder": 266.0
     },
@@ -13999,7 +15303,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4769 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4768，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4768",
+          "url": null
+        }
+      ],
       "displayNumber": "267",
       "sequenceOrder": 267.0
     },
@@ -14048,7 +15357,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4773 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4772，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4772",
+          "url": null
+        }
+      ],
       "displayNumber": "268",
       "sequenceOrder": 268.0
     },
@@ -14097,7 +15411,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4775 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4774，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4774",
+          "url": null
+        }
+      ],
       "displayNumber": "269",
       "sequenceOrder": 269.0
     },
@@ -14158,7 +15477,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4780 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4776—DSC_4779，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4776—DSC_4779",
+          "url": null
+        }
+      ],
       "displayNumber": "270",
       "sequenceOrder": 270.0
     },
@@ -14208,7 +15532,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4782 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4781，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4781",
+          "url": null
+        }
+      ],
       "displayNumber": "271",
       "sequenceOrder": 271.0
     },
@@ -14257,7 +15586,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4785 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4783，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4783",
+          "url": null
+        }
+      ],
       "displayNumber": "272",
       "sequenceOrder": 272.0
     },
@@ -14306,7 +15640,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4787 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4786，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4786",
+          "url": null
+        }
+      ],
       "displayNumber": "273",
       "sequenceOrder": 273.0
     },
@@ -14355,7 +15694,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4789 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4788，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4788",
+          "url": null
+        }
+      ],
       "displayNumber": "274",
       "sequenceOrder": 274.0
     },
@@ -14405,7 +15749,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4791 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4790，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4790",
+          "url": null
+        }
+      ],
       "displayNumber": "275",
       "sequenceOrder": 275.0
     },
@@ -14454,7 +15803,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4794 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4793，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4793",
+          "url": null
+        }
+      ],
       "displayNumber": "276",
       "sequenceOrder": 276.0
     },
@@ -14503,7 +15857,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4797 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4795，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4795",
+          "url": null
+        }
+      ],
       "displayNumber": "277",
       "sequenceOrder": 277.0
     },
@@ -14558,7 +15917,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4802 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4800—DSC_4801，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4800—DSC_4801",
+          "url": null
+        }
+      ],
       "displayNumber": "278",
       "sequenceOrder": 278.0
     },
@@ -14607,7 +15971,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4804 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4803，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4803",
+          "url": null
+        }
+      ],
       "displayNumber": "279",
       "sequenceOrder": 279.0
     },
@@ -14656,7 +16025,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4806 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4805，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4805",
+          "url": null
+        }
+      ],
       "displayNumber": "280",
       "sequenceOrder": 280.0
     },
@@ -14705,7 +16079,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4808 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4807，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4807",
+          "url": null
+        }
+      ],
       "displayNumber": "281",
       "sequenceOrder": 281.0
     },
@@ -14754,7 +16133,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4811 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4810，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4810",
+          "url": null
+        }
+      ],
       "displayNumber": "282",
       "sequenceOrder": 282.0
     },
@@ -14809,7 +16193,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4821 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4819—DSC_4820，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4819—DSC_4820",
+          "url": null
+        }
+      ],
       "displayNumber": "283",
       "sequenceOrder": 283.0
     },
@@ -14864,7 +16253,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4825 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4822—DSC_4823，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4822—DSC_4823",
+          "url": null
+        }
+      ],
       "displayNumber": "284",
       "sequenceOrder": 284.0
     },
@@ -14914,7 +16308,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4831 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4830，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4830",
+          "url": null
+        }
+      ],
       "displayNumber": "285",
       "sequenceOrder": 285.0
     },
@@ -14963,7 +16362,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4833 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4832，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4832",
+          "url": null
+        }
+      ],
       "displayNumber": "286",
       "sequenceOrder": 286.0
     },
@@ -15012,7 +16416,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4835 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4834，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4834",
+          "url": null
+        }
+      ],
       "displayNumber": "287",
       "sequenceOrder": 287.0
     },
@@ -15061,7 +16470,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4838 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4836，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4836",
+          "url": null
+        }
+      ],
       "displayNumber": "288",
       "sequenceOrder": 288.0
     },
@@ -15116,7 +16530,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4845 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4841—DSC_4843，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4841—DSC_4843",
+          "url": null
+        }
+      ],
       "displayNumber": "289",
       "sequenceOrder": 289.0
     },
@@ -15171,7 +16590,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4848 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4846—DSC_4847，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4846—DSC_4847",
+          "url": null
+        }
+      ],
       "displayNumber": "290",
       "sequenceOrder": 290.0
     },
@@ -15220,7 +16644,12 @@ window.SHAANXI_DATA = {
         }
       ],
       "evidence": "名称、时代与来源优先取自 DSC_4850 中与画面中心器物对应的展签；说明牌只用于文字提取，不作为文物图片展示。可见器物图为 DSC_4849，现场原片保存在 F:\\DCIM\\102NCZ_F。",
-      "sources": [],
+      "sources": [
+        {
+          "label": "现场展签与原始照片：DSC_4849",
+          "url": null
+        }
+      ],
       "displayNumber": "291",
       "sequenceOrder": 291.0
     },
@@ -15272,16 +16701,20 @@ window.SHAANXI_DATA = {
       "evidence": "此图为用户补入的资料图，不是本次现场拍摄；用于补齐未展出或未能现场拍摄的四件壁画条目。",
       "sources": [
         {
-          "url": "https://www.sxhm.com/collections/detail/507.html",
-          "label": "公开馆藏 / 文物局资料"
+          "label": "公开馆藏 / 文物局资料",
+          "url": "https://www.sxhm.com/collections/detail/507.html"
         },
         {
-          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html",
-          "label": "国家文物主管部门公布的禁止出境展览文物目录"
+          "label": "国家文物主管部门公布的禁止出境展览文物目录",
+          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html"
         },
         {
-          "url": "https://zh.wikipedia.org/wiki/%E7%AB%A0%E6%80%80%E5%A4%AA%E5%AD%90",
-          "label": "维基百科：李贤（唐朝）"
+          "label": "维基百科：李贤（唐朝）",
+          "url": "https://zh.wikipedia.org/wiki/%E7%AB%A0%E6%80%80%E5%A4%AA%E5%AD%90"
+        },
+        {
+          "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
         }
       ]
     },
@@ -15333,12 +16766,16 @@ window.SHAANXI_DATA = {
       "evidence": "此图为用户补入的资料图，不是本次现场拍摄；用于补齐未展出或未能现场拍摄的四件壁画条目。",
       "sources": [
         {
-          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202406/t20240626_2334318.html",
-          "label": "公开馆藏 / 文物局资料"
+          "label": "公开馆藏 / 文物局资料",
+          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202406/t20240626_2334318.html"
         },
         {
-          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html",
-          "label": "国家文物主管部门公布的禁止出境展览文物目录"
+          "label": "国家文物主管部门公布的禁止出境展览文物目录",
+          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html"
+        },
+        {
+          "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
         }
       ]
     },
@@ -15390,16 +16827,20 @@ window.SHAANXI_DATA = {
       "evidence": "此图为用户补入的资料图，不是本次现场拍摄；用于补齐未展出或未能现场拍摄的四件壁画条目。",
       "sources": [
         {
-          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202411/t20241122_3212521.html",
-          "label": "公开馆藏 / 文物局资料"
+          "label": "公开馆藏 / 文物局资料",
+          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202411/t20241122_3212521.html"
         },
         {
-          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html",
-          "label": "国家文物主管部门公布的禁止出境展览文物目录"
+          "label": "国家文物主管部门公布的禁止出境展览文物目录",
+          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html"
         },
         {
-          "url": "https://zh.wikipedia.org/wiki/%E6%87%BF%E5%BE%B7%E5%A4%AA%E5%AD%90",
-          "label": "维基百科：李重润"
+          "label": "维基百科：李重润",
+          "url": "https://zh.wikipedia.org/wiki/%E6%87%BF%E5%BE%B7%E5%A4%AA%E5%AD%90"
+        },
+        {
+          "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
         }
       ]
     },
@@ -15451,12 +16892,16 @@ window.SHAANXI_DATA = {
       "evidence": "此图为用户补入的资料图，不是本次现场拍摄；用于补齐未展出或未能现场拍摄的四件壁画条目。",
       "sources": [
         {
-          "url": "https://www.sxhm.com/collections/detail/510.html",
-          "label": "公开馆藏 / 文物局资料"
+          "label": "公开馆藏 / 文物局资料",
+          "url": "https://www.sxhm.com/collections/detail/510.html"
         },
         {
-          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html",
-          "label": "国家文物主管部门公布的禁止出境展览文物目录"
+          "label": "国家文物主管部门公布的禁止出境展览文物目录",
+          "url": "https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html"
+        },
+        {
+          "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
         }
       ]
     }
