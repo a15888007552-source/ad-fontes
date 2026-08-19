@@ -67,3 +67,13 @@
 - `padua2.jpg`：圣儒斯蒂娜圣殿（Basilica di Santa Giustina），Didier Descouens 摄影；用户提供图片，页面在帕多瓦音乐地理城市画廊中标注摄影者。
 - `padua3.jpg`：理性宫（Palazzo della Ragione），Didier Descouens 摄影；用户提供图片，页面在帕多瓦音乐地理城市画廊中标注摄影者。
 - 三张帕多瓦照片均接入地图的城市专题轮播；图片只做本地 JPEG 压缩与等比例缩放，未使用生成式图像改造。
+
+## 时代配画的独立 AI 补景（2026-08-19）
+
+本次新增四张用户提供的 AI 生成展示背景，用于解决时代篇章右栏中纵向原作两侧留白过大的排版问题。它们不是原作的无缝扩图，也不被当作历史图像的一部分：原作文件继续以完整比例、独立画框和“原作图像 · 未经改动”标签显示；AI 图片仅作为降低饱和度的外围展示层，并以“AI 补景 · 非历史原作”常驻标注。
+
+- `side_greek_extension.jpg`：对应古希腊时代的用户提供 AI 展示背景；原作 `side_greek.jpg` 保持不变。
+- `side_medieval_extension.jpg`：对应中世纪《圣母康蒂加》细密画的用户提供 AI 展示背景；原作 `side_medieval.jpg` 保持不变。
+- `side_ren_extension.jpg`：对应文艺复兴《圣塞西莉亚的沉迷》的用户提供 AI 展示背景；原作 `side_ren.jpg` 保持不变。
+- `side_classical_extension.jpg`：对应古典主义《梅泽坦》的用户提供 AI 展示背景；原作 `side_classical.jpg` 保持不变。
+- 桌面端以“补景背景—独立原作框—图注”的博物馆式分层陈列；640px 以下移动端隐藏 AI 补景，仅保留完整原作，避免小屏降低原作辨识度。

@@ -103,8 +103,22 @@ section.view{display:none}section.view.on{display:block}
 .artfig{margin:0;border:1px solid var(--line);background:var(--panel);padding:10px 10px 8px}
 .artfig img{width:100%;display:block}
 .ephead .artfig{max-width:none;margin:0}
-.ephead .artfig img{width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center;background:var(--bg);margin:0}
+.ephead .artstage{position:relative;display:grid;place-items:center;height:clamp(300px,28vw,360px);overflow:hidden;isolation:isolate;background:var(--bg)}
+.ephead .artstage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,color-mix(in srgb,var(--bg) 34%,transparent),transparent 24%,transparent 76%,color-mix(in srgb,var(--bg) 34%,transparent))}
+.ephead .art-extension{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:saturate(.68) contrast(.88);opacity:.66;transform:scale(1.015)}
+.ephead .art-original-frame{position:relative;z-index:2;display:grid;place-items:center;max-width:78%;max-height:calc(100% - 28px);padding:6px;background:var(--panel);border:1px solid color-mix(in srgb,var(--ink) 24%,var(--line));box-shadow:0 1px 2px rgba(0,0,0,.12),0 12px 28px rgba(0,0,0,.18)}
+.ephead .art-original{display:block;width:auto;max-width:100%;max-height:320px;height:auto;object-fit:contain}
+.ephead .artlabel{position:absolute;z-index:3;padding:5px 8px;font:700 9.5px/1.3 var(--sans);letter-spacing:.08em}
+.ephead .artlabel--extension{top:9px;left:9px;color:var(--mut);background:color-mix(in srgb,var(--panel) 88%,transparent);border:1px dashed var(--line)}
+.ephead .artlabel--original{right:5px;bottom:5px;color:var(--panel);background:color-mix(in srgb,var(--ink) 88%,transparent)}
 .artfig figcaption{font-size:11.5px;color:var(--mut);margin-top:8px;line-height:1.65}
+.artfig .art-provenance{display:inline-block;margin-top:4px;color:var(--mut);font-size:10.5px}
+@media(max-width:640px){
+  .ephead .artstage{height:auto;min-height:0;padding:12px;background:var(--panel)}
+  .ephead .art-extension,.ephead .artlabel--extension,.ephead .artstage::after{display:none}
+  .ephead .art-original-frame{max-width:100%;max-height:none;box-shadow:none}
+  .ephead .art-original{max-width:100%;max-height:none}
+}
 .eprail-card{border:1px solid var(--line);border-color:var(--line);background:var(--panel);background:color-mix(in srgb,var(--panel) 94%,var(--acc) 6%);padding:15px 17px}
 .eprail-kicker{display:block;font:700 10px/1.2 var(--sans);letter-spacing:.2em;color:var(--acc);text-transform:uppercase;margin-bottom:9px}
 .eprail-card h3{font-family:var(--dfont);font-size:20px;line-height:1.3;margin:0 0 10px;color:var(--ink)}
@@ -1430,20 +1444,28 @@ function renderNorton(ep){
 }
 /* 时代右栏配画（公有领域传世名作，与篇首画各异；均标注出处） */
 const ART2={
- greek:{u:"assets/img/side_greek.jpg",title:"弹基萨拉琴的女子",artist:"波斯科雷阿莱 P. 范尼乌斯·辛尼斯托别墅壁画",year:"约前50–前40年",c:"庞贝近郊别墅的罗马壁画，女子怀抱七弦基萨拉——古代「音乐立法者」想象的视觉回响。"},
- medieval:{u:"assets/img/side_medieval.jpg",title:"《圣母康蒂加》细密画",artist:"阿方索十世宫廷编纂",year:"13世纪",c:"抄本页上的安纳菲长号手；宫廷与教会以图记乐，正是中世纪音乐得以存留的媒介。"},
- ren:{u:"assets/img/side_ren.jpg",title:"圣塞西莉亚的沉迷",artist:"拉斐尔",year:"约1516–1517",c:"音乐主保圣人脚下散落着破败的乐器，天上合唱压过尘世之音——文艺复兴的和谐理想。"},
+ greek:{u:"assets/img/side_greek.jpg",title:"弹基萨拉琴的女子",artist:"波斯科雷阿莱 P. 范尼乌斯·辛尼斯托别墅壁画",year:"约前50–前40年",c:"庞贝近郊别墅的罗马壁画，女子怀抱七弦基萨拉——古代「音乐立法者」想象的视觉回响。",extension:"assets/img/side_greek_extension.jpg"},
+ medieval:{u:"assets/img/side_medieval.jpg",title:"《圣母康蒂加》细密画",artist:"阿方索十世宫廷编纂",year:"13世纪",c:"抄本页上的安纳菲长号手；宫廷与教会以图记乐，正是中世纪音乐得以存留的媒介。",extension:"assets/img/side_medieval_extension.jpg"},
+ ren:{u:"assets/img/side_ren.jpg",title:"圣塞西莉亚的沉迷",artist:"拉斐尔",year:"约1516–1517",c:"音乐主保圣人脚下散落着破败的乐器，天上合唱压过尘世之音——文艺复兴的和谐理想。",extension:"assets/img/side_ren_extension.jpg"},
  baroque:{u:"assets/img/side_baroque.jpg",title:"乐师",artist:"卡拉瓦乔",year:"约1597",c:"为德尔·蒙特枢机所作的少年乐师群像，明暗对照戏剧化如通奏低音——巴洛克的感官与修辞。"},
- classical:{u:"assets/img/side_classical.jpg",title:"梅泽坦",artist:"华托",year:"约1718–1720",c:"弹琉特而歌的喜剧角色；华丽风格（galant）的优雅、私密与一缕感伤。"},
+ classical:{u:"assets/img/side_classical.jpg",title:"梅泽坦",artist:"华托",year:"约1718–1720",c:"弹琉特而歌的喜剧角色；华丽风格（galant）的优雅、私密与一缕感伤。",extension:"assets/img/side_classical_extension.jpg"},
  romantic:{u:"assets/img/side_romantic.jpg",title:"李斯特在钢琴前",artist:"约瑟夫·丹豪泽",year:"1840",c:"贝多芬胸像俯临，乔治·桑、雨果、帕格尼尼、罗西尼环坐——浪漫主义的音乐英雄崇拜。"},
  modern:{u:"assets/img/side_modern.jpg",title:"《春之祭》舞台设计",artist:"尼古拉·罗列赫",year:"1913",c:"斯特拉文斯基引爆巴黎的原始主义之夜；二十世纪以一场断裂开场。"}
 };
 function renderChapterRail(ep,e){
   const events=(e.events||[]).slice(0,3);
   const topics=(e.subs||[]).slice(0,6);
+  const sideArt=ART2[ep];
+  const hasExtension=Boolean(sideArt&&sideArt.extension);
   return `<div class="eprail">
     <blockquote class="quote">「${e.quote}」<small>—— ${e.qs}</small></blockquote>
-    ${ART2[ep]?`<figure class="artfig"><img loading="lazy" decoding="async" src="${ART2[ep].u}" alt="${ART2[ep].title}"><figcaption><b>${ART2[ep].title}</b>　${ART2[ep].artist}，${ART2[ep].year}${ART2[ep].c?`<br>${ART2[ep].c}`:""}</figcaption></figure>`:""}
+    ${sideArt?`<figure class="artfig${hasExtension?" artfig--extended":""}">
+      <div class="artstage${hasExtension?" artstage--extended":" artstage--matte"}">
+        ${hasExtension?`<img class="art-extension" loading="lazy" decoding="async" src="${sideArt.extension}" alt="" aria-hidden="true"><span class="artlabel artlabel--extension">AI 补景 · 非历史原作</span>`:""}
+        <div class="art-original-frame"><img class="art-original" loading="lazy" decoding="async" src="${sideArt.u}" alt="${sideArt.title}"><span class="artlabel artlabel--original">原作图像 · 未经改动</span></div>
+      </div>
+      <figcaption><b>${sideArt.title}</b>　${sideArt.artist}，${sideArt.year}${sideArt.c?`<br>${sideArt.c}`:""}${hasExtension?`<br><span class="art-provenance">原作保持完整比例，未裁切、未改绘；外围为 AI 生成展示背景，不属于历史作品。</span>`:""}</figcaption>
+    </figure>`:""}
     <section class="eprail-card"><span class="eprail-kicker">CHAPTER ROUTE · 本章路线</span><h3>${e.zh}的时间坐标</h3><ul class="eprail-list">${events.map(v=>`<li><b>${v[0]}</b><span>${v[1]}</span></li>`).join("")}</ul><p class="eprail-more">前三个节点 · 完整大事记见下方</p></section>
     <section class="eprail-card eprail-note"><span class="eprail-kicker">KEYWORDS · 阅读关键词</span><p class="eprail-keywords">${topics.map(x=>`<span class="term-chip">${x}</span>`).join("")}</p></section>
     <p class="eprail-more">主题词用于定位下方的史学争鸣与音乐家名录。</p>
