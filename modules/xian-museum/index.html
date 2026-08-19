@@ -8,11 +8,11 @@
   <meta name="theme-color" content="#1a2522">
   <link rel="icon" href="assets/brand-emblem.png" type="image/png">
   <link rel="stylesheet" href="styles.css?rev=20260818-routes1-logo1">
-  <style id="opening-brand-emblem">.opening-emblem{display:block;width:clamp(72px,8vw,108px);height:clamp(72px,8vw,108px);margin:0 0 18px;object-fit:contain}@media(max-width:760px){.opening-emblem{width:72px;height:72px;margin-bottom:14px}}</style>
+  <link rel="stylesheet" href="../tomb-trails/host.css">
 </head>
 <body>
   <div class="opening" id="opening" role="dialog" aria-modal="true" aria-label="西安博物院开场">
-    <div class="opening-copy"><img class="opening-emblem" src="assets/brand-emblem.png" alt=""><span>XI’AN MUSEUM · OBJECT ATLAS</span><h2>镜中长安</h2><p>由一面汉镜进入西安的器物、墓葬与城市遗存</p><button id="opening-enter" type="button">进入展厅 <i>↘</i></button></div>
+    <div class="opening-copy"><span>XI’AN MUSEUM · OBJECT ATLAS</span><h2>镜中长安</h2><p>由一面汉镜进入西安的器物、墓葬与城市遗存</p><button id="opening-enter" type="button">进入展厅 <i>↘</i></button></div>
     <button class="opening-skip" id="opening-skip" type="button">跳过动画</button>
   </div>
   <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -111,7 +111,11 @@
       </div>
     </section>
 
-  </main>
+  <section class="museum-tomb-trails" aria-labelledby="museum-tomb-trails-title">
+    <div class="museum-tomb-trails-heading"><p class="museum-tomb-trails-kicker">ARCHAEOLOGICAL CONTEXT</p><h2 id="museum-tomb-trails-title">墓葬与遗址历史脉络</h2><p>本馆相关墓葬、遗址与碑刻的发现、发掘及馆藏关联。</p></div>
+    <iframe src="../tomb-trails/index.html?museum=xian&amp;embed=1" title="西安博物院墓葬与遗址历史脉络" loading="lazy"></iframe>
+  </section>
+</main>
 
   <footer class="site-footer page-width"><span>西安博物院 · 观物档案</span><span>馆藏器物 / 荐福寺遗址 / 小雁塔</span><a href="#overview">回到顶部 ↑</a></footer>
 
@@ -140,8 +144,5 @@
 
   <script src="data.js"></script>
   <script src="app.js?rev=20260818-imagezoom1"></script>
-<script src="../../assets/editorial/provenance-trails.js?v=20260819" defer></script>
-  </body>
+</body>
 </html>
-
-
