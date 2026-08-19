@@ -8,6 +8,7 @@
   <title>中国博物馆行记 · Museum Atlas</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23a92e31'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='%23fff7e9'%3E%E9%A4%86%3C/text%3E%3C/svg%3E" />
   <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/index.html" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
   <link rel="preload" as="image" href="assets/beijing-palace-hero.webp" />
   <style>
     :root {
@@ -1982,6 +1983,9 @@
       padding: 22px;
     }
   }
+  .museum-map-section{margin:48px auto 0;padding:clamp(22px,4vw,44px);width:min(1320px,calc(100% - 32px));background:linear-gradient(145deg,#e9efe9,#f8f5ed);border:1px solid rgba(47,91,78,.22);border-radius:26px;box-shadow:0 22px 60px rgba(27,45,38,.10)}
+  .museum-map-header{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:18px}.museum-map-kicker{margin:0 0 7px;color:#37695a;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.museum-map-header h3{margin:0;font:500 clamp(28px,4vw,48px)/1.1 "Noto Serif SC","Source Han Serif SC",serif;letter-spacing:-.055em;color:#243b34}.museum-map-intro{max-width:430px;margin:0;color:#5b6f66;font-size:13px;line-height:1.85}.museum-map-shell{position:relative;height:min(62vw,610px);min-height:410px;overflow:hidden;border:1px solid rgba(37,69,59,.28);border-radius:18px;background:#dfe8df}.museum-map{position:absolute;inset:0}.museum-map-note{position:absolute;z-index:2;left:14px;bottom:14px;padding:7px 10px;color:#37584d;background:rgba(248,250,245,.85);border:1px solid rgba(47,91,78,.22);border-radius:9px;backdrop-filter:blur(8px);font-size:11px}.museum-map-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;color:#5b6f66;font-size:11px}.museum-map-legend span{display:inline-flex;align-items:center;gap:6px}.museum-map-legend i{width:8px;height:8px;border-radius:50%;background:#a34c34;box-shadow:0 0 0 3px rgba(163,76,52,.15)}.museum-map-legend i.building{border-radius:2px;background:#7f9e8d;box-shadow:0 0 0 3px rgba(127,158,141,.16)}.maplibregl-popup-content{font-family:Inter,"Microsoft YaHei",sans-serif;padding:14px 16px;color:#243b34}.museum-popup-title{font-family:"Noto Serif SC","Source Han Serif SC",serif;font-size:17px;margin:0 0 4px}.museum-popup-meta{font-size:11px;color:#667a70;margin:0 0 10px}.museum-popup-link{font-size:11px;color:#8b4b35;text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:680px){.museum-map-header{display:block}.museum-map-intro{margin-top:12px}.museum-map-shell{min-height:440px;height:112vw}}
 </style></head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴" tabindex="0">
@@ -2151,6 +2155,14 @@
               </a></div>
           </section>
         </div>
+        <section class="museum-map-section" aria-labelledby="museum-map-title">
+          <div class="museum-map-header">
+            <div><p class="museum-map-kicker">REAL MAP / OPEN BUILDING DATA</p><h3 id="museum-map-title">陕西馆舍，放回真实地图</h3></div>
+            <p class="museum-map-intro">不是效果图：底图与建筑轮廓来自开放地图数据，楼块按真实建筑高度拉起。点开六馆，查看位置与专题入口。</p>
+          </div>
+          <div class="museum-map-shell"><div id="museum-map" class="museum-map" aria-label="陕西六座博物馆真实地图与三维建筑"></div><span class="museum-map-note">开放地图 · 建筑高度拉伸 · 无商业地图密钥</span></div>
+          <div class="museum-map-legend" aria-label="地图图例"><span><i class="building"></i>真实建筑轮廓</span><span><i></i>六馆点位</span></div>
+        </section>
       </article>
 
       <article class="province-panel" id="panel-henan" role="tabpanel" tabindex="0" aria-labelledby="tab-henan" data-province="henan" hidden>
@@ -2428,5 +2440,34 @@
     });
     render();
   })();
-</script></body>
+</script>
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script id="museum-map-script">
+    (() => {
+      const points = [
+        {name:'陕西历史博物馆',city:'西安 · 小寨东路',coords:[108.9637,34.2367],href:'../shaanxi-history/index.html'},
+        {name:'西安碑林博物馆',city:'西安 · 孔庙旧址',coords:[108.9545,34.2523],href:'../beilin/index.html'},
+        {name:'西安博物院',city:'西安 · 荐福寺历史文化景区',coords:[108.9468,34.2380],href:'../xian-museum/index.html'},
+        {name:'陕西历史博物馆秦汉馆',city:'西咸新区秦汉新城',coords:[108.8090,34.4380],href:'../qinhan/index.html'},
+        {name:'陕西考古博物馆',city:'西安 · 长安区',coords:[108.8010,34.0790],href:'../shaanxi-archaeology-museum/index.html'},
+        {name:'中国青铜器博物院',city:'宝鸡 · 中华石鼓园',coords:[107.1475,34.3607],href:'../baoji/index.html'}
+      ];
+      let map;
+      const init = () => {
+        const el = document.getElementById('museum-map');
+        if (!el || map || !window.maplibregl) return;
+        map = new maplibregl.Map({container:el,style:'https://tiles.openfreemap.org/styles/liberty',center:[108.55,34.25],zoom:8.35,pitch:48,bearing:-12,antialias:true,attributionControl:true});
+        map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'top-right');
+        points.forEach((p) => {
+          const popup = new maplibregl.Popup({offset:18,maxWidth:'240px'}).setHTML(`<h3 class="museum-popup-title">${p.name}</h3><p class="museum-popup-meta">${p.city}</p><a class="museum-popup-link" href="${p.href}">进入专题 ↗</a>`);
+          new maplibregl.Marker({color:'#a34c34'}).setLngLat(p.coords).setPopup(popup).addTo(map);
+        });
+        map.on('load', () => map.resize());
+      };
+      const observe = () => { if(document.documentElement.dataset.activeProvince === 'shaanxi'){init(); if(map) setTimeout(()=>map.resize(),120)} };
+      const start = () => { observe(); new MutationObserver(observe).observe(document.documentElement,{attributes:true,attributeFilter:['data-active-province']}); };
+      if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
+    })();
+  </script>
+</body>
 </html>
