@@ -107,6 +107,9 @@ const elements = {
   formText: document.querySelector("#formText"),
   contributionText: document.querySelector("#contributionText"),
   viewingGuideText: document.querySelector("#viewingGuideText"),
+  inscriptionResearch: document.querySelector("#inscriptionResearch"),
+  inscriptionExcerptText: document.querySelector("#inscriptionExcerptText"),
+  inscriptionTranslationText: document.querySelector("#inscriptionTranslationText"),
   musicResearch: document.querySelector("#musicResearch"),
   musicTier: document.querySelector("#musicTier"),
   musicTitle: document.querySelector("#musicTitle"),
@@ -678,6 +681,16 @@ function renderDetail(group) {
   elements.formText.textContent = group.research?.form_and_craft || "形制与工艺信息见现场照片。";
   elements.contributionText.textContent = group.research?.contribution || "本条目的研究价值尚待补充。";
   elements.viewingGuideText.textContent = group.research?.viewing_guide || "请结合整体、局部与展签照片分层观察。";
+  const inscription = group.inscription;
+  if (inscription && elements.inscriptionResearch) {
+    elements.inscriptionExcerptText.textContent = inscription.excerpt || "";
+    elements.inscriptionTranslationText.textContent = inscription.translation || "";
+    elements.inscriptionResearch.hidden = false;
+  } else if (elements.inscriptionResearch) {
+    elements.inscriptionExcerptText.textContent = "";
+    elements.inscriptionTranslationText.textContent = "";
+    elements.inscriptionResearch.hidden = true;
+  }
   const musicFocus = group.music_focus;
   if (musicFocus) {
     elements.musicTier.textContent = musicFocus.tier_label || "音乐关联";
