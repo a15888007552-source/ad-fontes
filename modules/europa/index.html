@@ -74,8 +74,11 @@ main{padding:0 4vw 90px;max-width:1560px;margin:0 auto}
 section.view{display:none}section.view.on{display:block}
 
 /* ── 时代篇章头 ───────────────────────── */
-.ephead{display:grid;grid-template-columns:minmax(300px,1.12fr) minmax(280px,.88fr);gap:44px;padding:44px 0 28px;align-items:start}
-@media(max-width:900px){.ephead{grid-template-columns:1fr}}
+.ephead{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:clamp(22px,3vw,44px);padding:44px 0 28px;align-items:start}
+.epcopy,.eprail{min-width:0}
+.eprail{display:grid;gap:16px;align-content:start}
+.eprail>.quote,.eprail>.artfig{grid-column:1/-1}
+@media(max-width:1024px){.ephead{grid-template-columns:1fr}.eprail{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 .ephead h2{font-family:var(--dfont);font-size:clamp(30px,4.4vw,52px);margin:0 0 4px;line-height:1.15;text-wrap:balance;font-weight:600}
 .ephead .span{font-size:13px;letter-spacing:.22em;color:var(--acc);font-family:var(--sans);font-weight:600}
 .ephead .theme{margin-top:9px;font-size:14.5px;color:var(--mut)}
@@ -99,9 +102,24 @@ section.view{display:none}section.view.on{display:block}
 .read-takeaway p{font-size:15.5px;line-height:1.82;margin:0}
 .artfig{margin:0;border:1px solid var(--line);background:var(--panel);padding:10px 10px 8px}
 .artfig img{width:100%;display:block}
-.ephead .artfig{max-width:360px;margin:18px auto 0}
-.ephead .artfig img{width:auto;max-width:100%;max-height:440px;margin:0 auto}
+.ephead .artfig{max-width:none;margin:0}
+.ephead .artfig img{width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center;background:var(--bg);margin:0}
 .artfig figcaption{font-size:11.5px;color:var(--mut);margin-top:8px;line-height:1.65}
+.eprail-card{border:1px solid var(--line);border-color:var(--line);background:var(--panel);background:color-mix(in srgb,var(--panel) 94%,var(--acc) 6%);padding:15px 17px}
+.eprail-kicker{display:block;font:700 10px/1.2 var(--sans);letter-spacing:.2em;color:var(--acc);text-transform:uppercase;margin-bottom:9px}
+.eprail-card h3{font-family:var(--dfont);font-size:20px;line-height:1.3;margin:0 0 10px;color:var(--ink)}
+.eprail-card p{font-size:14px;line-height:1.75;margin:0;color:var(--ink)}
+.eprail-list{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.eprail-list li{display:grid;grid-template-columns:minmax(48px,max-content) minmax(0,1fr);gap:9px;align-items:start;border-top:1px solid var(--line);border-top-color:color-mix(in srgb,var(--line) 72%,transparent);padding-top:8px;font-size:13px;line-height:1.55}
+.eprail-list li:first-child{border-top:0;padding-top:0}
+.eprail-list b{font:700 11px/1.4 var(--sans);letter-spacing:.08em;color:var(--acc2)}
+.eprail-list span{color:var(--ink)}
+.eprail-more{margin-top:11px!important;font:11px/1.45 var(--sans)!important;letter-spacing:.06em;color:var(--mut)!important}
+.eprail-note{border-left:3px solid var(--acc2);background:var(--panel)}
+.eprail-keywords{display:flex;flex-wrap:wrap;gap:6px!important}
+.term-chip{display:inline-block;border:1px solid var(--line);background:var(--bg);padding:5px 8px;font:11.5px/1.35 var(--sans);letter-spacing:.03em;color:var(--mut)}
+@media(max-width:1024px){.eprail{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:560px){.eprail{grid-template-columns:1fr}.eprail>.quote,.eprail>.artfig{grid-column:auto}}
 .artfig figcaption b{color:var(--ink);font-weight:600}
 #app[data-ep=baroque] .artfig{border:3px double var(--acc)}
 #app[data-ep=medieval] .artfig{border:2px solid var(--gold)}
@@ -1420,6 +1438,17 @@ const ART2={
  romantic:{u:"assets/img/side_romantic.jpg",title:"李斯特在钢琴前",artist:"约瑟夫·丹豪泽",year:"1840",c:"贝多芬胸像俯临，乔治·桑、雨果、帕格尼尼、罗西尼环坐——浪漫主义的音乐英雄崇拜。"},
  modern:{u:"assets/img/side_modern.jpg",title:"《春之祭》舞台设计",artist:"尼古拉·罗列赫",year:"1913",c:"斯特拉文斯基引爆巴黎的原始主义之夜；二十世纪以一场断裂开场。"}
 };
+function renderChapterRail(ep,e){
+  const events=(e.events||[]).slice(0,3);
+  const topics=(e.subs||[]).slice(0,6);
+  return `<div class="eprail">
+    <blockquote class="quote">「${e.quote}」<small>—— ${e.qs}</small></blockquote>
+    ${ART2[ep]?`<figure class="artfig"><img loading="lazy" decoding="async" src="${ART2[ep].u}" alt="${ART2[ep].title}"><figcaption><b>${ART2[ep].title}</b>　${ART2[ep].artist}，${ART2[ep].year}${ART2[ep].c?`<br>${ART2[ep].c}`:""}</figcaption></figure>`:""}
+    <section class="eprail-card"><span class="eprail-kicker">CHAPTER ROUTE · 本章路线</span><h3>${e.zh}的时间坐标</h3><ul class="eprail-list">${events.map(v=>`<li><b>${v[0]}</b><span>${v[1]}</span></li>`).join("")}</ul><p class="eprail-more">前三个节点 · 完整大事记见下方</p></section>
+    <section class="eprail-card eprail-note"><span class="eprail-kicker">KEYWORDS · 阅读关键词</span><p class="eprail-keywords">${topics.map(x=>`<span class="term-chip">${x}</span>`).join("")}</p></section>
+    <p class="eprail-more">主题词用于定位下方的史学争鸣与音乐家名录。</p>
+  </div>`;
+}
 function renderAlm(){
   const e=EP[curEp];
   const ms=M.filter(m=>m.e===curEp).sort((a,b)=>yrs(a)[0]-yrs(b)[0]);
@@ -1431,14 +1460,12 @@ function renderAlm(){
       <div class="herolat">${e.en}</div><h2>${e.zh}</h2></div>
     <div class="artcredit">底图 — 《${art.title}》 ${art.artist}，${art.year}</div></div>`:""}
   <div class="ephead">
-    <div>
+    <div class="epcopy">
       <div class="theme">本章视觉主题 — <b>${e.theme}</b>${art&&art.note?`；篇首画 — ${art.note}`:""}</div>
       ${EPCITE[curEp]?`<div class="theme">本章文献 — ${EPCITE[curEp]}</div>`:""}
-      ${renderChapterIntro(e)}</div>
-    <div>
-      <blockquote class="quote">「${e.quote}」<small>—— ${e.qs}</small></blockquote>
-      <div class="subs">${e.subs.map(s=>`<em>${s}</em>`).join("")}</div>
-      ${ART2[curEp]?`<figure class="artfig" style="margin-top:18px"><img loading="lazy" decoding="async" src="${ART2[curEp].u}" alt="${ART2[curEp].title}"><figcaption><b>${ART2[curEp].title}</b>　${ART2[curEp].artist}，${ART2[curEp].year}${ART2[curEp].c?`<br>${ART2[curEp].c}`:""}</figcaption></figure>`:""}</div>
+      ${renderChapterIntro(e)}
+    </div>
+    ${renderChapterRail(curEp,e)}
   </div>
   ${renderNorton(curEp)}
   <div class="motif ${curEp}"></div>
