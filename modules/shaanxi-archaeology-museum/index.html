@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="catalog-direct.css?v=20260815-direct1" />
     <link rel="stylesheet" href="museum-scenes.css?v=20260815-scenes1" />
     <style id="museum-brand-emblem">.brand-mark{overflow:hidden;background:#17211e}.brand-mark img{display:block;width:88%;height:88%;object-fit:contain}</style>
-  </head>
+  <link rel="stylesheet" href="../tomb-trails/host.css">
+</head>
   <body>
     <header class="site-header">
       <a class="brand" href="#theme" aria-label="回到主题">
@@ -122,7 +123,11 @@
         </div>
         <div class="artifact-grid" id="artifact-grid" aria-live="polite"></div>
       </section>
-    </main>
+  <section class="museum-tomb-trails" aria-labelledby="museum-tomb-trails-title">
+    <div class="museum-tomb-trails-heading"><p class="museum-tomb-trails-kicker">ARCHAEOLOGICAL CONTEXT</p><h2 id="museum-tomb-trails-title">墓葬与遗址历史脉络</h2><p>本馆相关墓葬、遗址与碑刻的发现、发掘及馆藏关联。</p></div>
+    <iframe src="../tomb-trails/index.html?museum=archaeology&amp;embed=1" title="陕西考古博物馆墓葬与遗址历史脉络" loading="lazy"></iframe>
+  </section>
+</main>
 
     <footer class="site-footer">
       <span>陕西考古博物馆 · 个人现场图录</span>
@@ -146,7 +151,6 @@
     <script defer src="data/artifacts-data.js?v=20260815-embedded1"></script>
     <script defer src="photo-catalog.js?v=20260815-cards4-embedded"></script>
     <script defer src="museum-motion-lite.js?v=20260815-lite1"></script>
-  <script src="../../assets/editorial/provenance-trails.js?v=20260819" defer></script>
   </body>
 </html>
 
