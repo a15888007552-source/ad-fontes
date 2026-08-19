@@ -2160,7 +2160,7 @@
             <div><p class="museum-map-kicker">REAL MAP / OPEN BUILDING DATA</p><h3 id="museum-map-title">陕西馆舍，放回真实地图</h3></div>
             <p class="museum-map-intro">不是效果图：底图与建筑轮廓来自开放地图数据，楼块按真实建筑高度拉起。点开六馆，查看位置与专题入口。</p>
           </div>
-          <div class="museum-map-shell"><div id="museum-map" class="museum-map" aria-label="陕西六座博物馆真实地图与三维建筑"></div><span class="museum-map-note">开放地图 · 建筑高度拉伸 · 无商业地图密钥</span></div>
+          <div class="museum-map-shell"><div id="museum-map" class="museum-map" aria-label="陕西六座博物馆真实地图与三维建筑"></div><span class="museum-map-note">OpenFreeMap / OSM · AWS Terrain · 无商业地图密钥</span></div>
           <div class="museum-map-legend" aria-label="地图图例"><span><i class="building"></i>真实建筑轮廓</span><span><i></i>六馆点位</span></div>
         </section>
       </article>
@@ -2457,13 +2457,22 @@
       const init = () => {
         const el = document.getElementById('museum-map');
         if (!el || map || !window.maplibregl) return;
-        map = new maplibregl.Map({container:el,style:'https://tiles.openfreemap.org/styles/liberty',center:[108.55,34.25],zoom:8.35,pitch:48,bearing:-12,antialias:true,attributionControl:true});
+        map = new maplibregl.Map({container:el,style:'https://tiles.openfreemap.org/styles/bright',center:[108.55,34.28],zoom:8.05,pitch:58,bearing:-18,antialias:true,attributionControl:true});
         map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'top-right');
         points.forEach((p) => {
           const popup = new maplibregl.Popup({offset:18,maxWidth:'240px'}).setHTML(`<h3 class="museum-popup-title">${p.name}</h3><p class="museum-popup-meta">${p.city}</p><a class="museum-popup-link" href="${p.href}">进入专题 ↗</a>`);
           new maplibregl.Marker({color:'#a34c34'}).setLngLat(p.coords).setPopup(popup).addTo(map);
         });
-        map.on('load', () => map.resize());
+        map.on('load', () => {
+          map.addSource('terrain-dem', {type:'raster-dem',tiles:['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],tileSize:256,maxzoom:15,encoding:'terrarium',attribution:'Elevation: AWS Terrain Tiles'});
+          map.setTerrain({source:'terrain-dem',exaggeration:1.35});
+          if (map.getLayer('building-3d')) map.setPaintProperty('building-3d','fill-extrusion-color','#9b9588');
+          if (map.getLayer('building')) map.setPaintProperty('building','fill-color','#b6b0a2');
+          if (map.getLayer('water')) map.setPaintProperty('water','fill-color','#b8c9c5');
+          if (map.getLayer('park')) map.setPaintProperty('park','fill-color','#c3d0bf');
+          if (map.getLayer('landcover-wood')) map.setPaintProperty('landcover-wood','fill-color','#b4c3b0');
+          map.resize();
+        });
       };
       const observe = () => { if(document.documentElement.dataset.activeProvince === 'shaanxi'){init(); if(map) setTimeout(()=>map.resize(),120)} };
       const start = () => { observe(); new MutationObserver(observe).observe(document.documentElement,{attributes:true,attributeFilter:['data-active-province']}); };
