@@ -10,7 +10,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3186",
       "number": "01",
       "title": "兽面纹甗",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -72,8 +72,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "兽面纹甗：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面纹甗 · 商末周初 · 1958年渭滨区桑园堡出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "兽面纹点（yan）\n时代：商末周初\n来源：1958年渭滨区桑园堡出土\n收藏单位：中国青铜器博物院\nSteamer(yan)with animal-facepattern\nLateShang and EarlyZhou Period\nExcavatedfromSangyuanbuVillage.WeibinDistrict in 1958\nCollection ofBaoji BronzeWareMuseum",
       "inscriptionFocus": false,
@@ -96,21 +96,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1958年渭滨区桑园堡出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "兽面纹甗：先从侧面确认甑、鬲与箅部的层次，再看足部和兽面纹局部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=1958年渭滨区桑园堡出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "兽面纹甗：先看上部甑、下部鬲与中间箅部的组合；侧面照片重点核对足部、腹部与口沿的连接。",
+        "evidence": "标签事实：period=商末周初，findspot=1958年渭滨区桑园堡出土，collection=中国青铜器博物院",
+        "history": "兽面纹甗的器类线索在于甑、鬲与箅部的组合；本组具体时代、出土地和收藏单位以展签字段为准。"
       }
     },
     {
       "id": "photo-group-3190",
       "number": "02",
       "title": "高足杯",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -172,8 +171,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "高足杯：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "高足杯 · 商代 · 1973年扶风县法门镇美阳村出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "高足杯\n时代：商代\n来源：1973年扶风县法门镇美阳村出士\n收藏单位：扶风县博物馆\nStemCup\nShangDynasty\nExcavated from Meiyangcun Village,Famen Town,Fufeng County in 19\nCollection ofBaoji Fufeng County Museum",
       "inscriptionFocus": false,
@@ -196,21 +195,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1973年扶风县法门镇美阳村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "高足杯：先看杯口与杯身，再核对足或柄的连接和表面磨损。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商代，findspot=1973年扶风县法门镇美阳村出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "高足杯：看口部、杯身与足或柄的连接，再核对表面纹饰和磨损。",
+        "evidence": "标签事实：period=商代，findspot=1973年扶风县法门镇美阳村出土，collection=扶风县博物馆",
+        "history": "高足杯以口部、杯身和足或柄的关系为主要线索；器物用途不由照片单独推断。"
       }
     },
     {
       "id": "photo-group-3194",
       "number": "03",
       "title": "兽面纹斝",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -272,8 +270,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "兽面纹斝：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面纹斝 · 商代 · 麟游县出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "兽面纹晕（jia）\n时代：商代\n来源：麟游县出土\n收藏单位：中国青铜器博物院\nWine heating vessel (jia) with animal-face pattern\nShangDynasty\nExcavatedfromLinyouCounty\nCollection ofBaoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -296,21 +294,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "麟游县出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "兽面纹斝：先看三足和柱状口沿，再沿腹部纹带观察铸造转折。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商代，findspot=麟游县出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "兽面纹斝：三足、柱状口沿和腹部是主要辨识点；再对照兽面纹或其他主纹带的分区。",
+        "evidence": "标签事实：period=商代，findspot=麟游县出土，collection=中国青铜器博物院",
+        "history": "兽面纹斝属酒器，三足与柱状口沿是主要识别线索；具体礼仪场景不由单张照片外推。"
       }
     },
     {
       "id": "photo-group-3198",
       "number": "04",
       "title": "乳钉纹簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -372,8 +369,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "乳钉纹簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "乳钉纹簋 · 商代 · 1973年扶风县法门镇美阳村出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "乳钉纹篮（gui）\n时代：商代\n来源：1973年扶风县法门镇美阳村出土\n收藏单位：扶风县博物馆\nFood container (gui)with boss pattern\nShangDynasty\nExcavated from Meiyangcun Village,FamenTown,Fufeng County in 1973\nCollection of Baoji Fufeng County Muscum",
       "inscriptionFocus": false,
@@ -396,13 +393,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1973年扶风县法门镇美阳村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看正面判断腹部和双耳，再用侧面确认圈足；局部重点放在乳钉纹的起止、足部转折和铸造痕迹。",
         "inscription": "",
         "significance": "乳钉纹簋适合观察商周礼器如何把容量、组合关系与纹饰秩序合在一起：器形承担礼食功能，纹饰把等级与仪式感固定在器表。",
         "decoration": "",
         "form": "这类器物通常有圆腹、双耳与圈足，口沿与腹部的比例决定庄重感；乳钉纹以规整突起形成颗粒状节奏，既填充器表，也强化光线在青铜锈色上的起伏。",
-        "evidence": "标签事实：period=商代，findspot=1973年扶风县法门镇美阳村出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=商代，findspot=1973年扶风县法门镇美阳村出土，collection=扶风县博物馆",
         "history": "簋是青铜时代盛放黍、稷等熟食的礼器，乳钉纹指器表以突起乳钉组成的装饰。宝鸡一带商末周初墓葬、窖藏中常见鼎簋成组出现，说明它不只是日用盛器，更嵌在祭祀、宴飨与身份秩序之中。"
       }
     },
@@ -410,7 +406,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3205",
       "number": "05",
       "title": "兽面纹觚",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -459,8 +455,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "兽面纹觚：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面纹觚 · 现场照片 3205—3206。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "",
       "inscriptionFocus": false,
@@ -479,21 +475,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3205—3206",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "兽面纹觚：先看正面器身比例，再用侧面核对喇叭口、圈足与纹带。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "兽面纹觚：先看细长器身、喇叭口与圈足，再核对主纹带和器身转折。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "兽面纹觚属酒器，细长器身、喇叭口与圈足构成基本辨识线索；纹饰和出土组合以现场资料为准。"
       }
     },
     {
       "id": "photo-group-3218",
       "number": "06",
       "title": "云纹分裆鬲",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -542,8 +537,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "云纹分裆鬲：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "云纹分裆鬲 · 商代 · 1972年岐山县京当镇京当村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "云纹分裆隔\n时代：商代\n来源：1972年岐山县京当镇京当村出士\n收藏单位：中国青铜器博物院\nHollow-legged tripod (li) with cloud pattern\nShangDynasty\nExcavated in Jingdang Village. Jingdang Town. Qishan County in 1972\nCollection ofBaoji Bronze Ware Muscum",
       "inscriptionFocus": false,
@@ -566,21 +561,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1972年岐山县京当镇京当村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "云纹分裆鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商代，findspot=1972年岐山县京当镇京当村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "云纹分裆鬲：重点看分裆或袋足、腹部与口沿的连接；侧面照片用于核对足部结构。",
+        "evidence": "标签事实：period=商代，findspot=1972年岐山县京当镇京当村出土，collection=中国青铜器博物院",
+        "history": "云纹分裆鬲的分裆或袋足与炊煮功能有关；本件具体用途和组合关系仍以展签、照片共同核对。"
       }
     },
     {
       "id": "photo-group-3222",
       "number": "07",
       "title": "乳钉纹鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -642,8 +636,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "乳钉纹鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "乳钉纹鼎 · 商代晚期 · 征集 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "乳钉纹鼎\n时代：商代晚期\n来源：征集\n收藏单位：中国青铜器博物院\nRitual vessel (ding) with boss pattern\nLate Shang Period\nCollected from publie\nCollectionofBaojiBronzeWareMuseum",
       "inscriptionFocus": false,
@@ -666,13 +660,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "征集"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看足和耳确定鼎的类型，再沿口沿—腹部—圈足移动；局部优先检查扉棱、主纹带、底部铸痕和可能的铭文位置。",
         "inscription": "",
         "significance": "鼎最值得看的是器形、纹饰和铭文怎样共同表达使用者的身份；带纪年或器主名的鼎，能把礼器放回具体的王年、家族与事件之中。",
         "decoration": "",
         "form": "鼎的基本识别点是腹、耳、足三部分；圆鼎与方鼎的口腹关系不同，分裆、附耳、带盖等变化会改变使用方式与视觉重心。可从足的数量与分布、耳的安装位置、腹部是否有扉棱判断形制。",
-        "evidence": "标签事实：period=商代晚期，findspot=征集，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=商代晚期，findspot=征集，collection=中国青铜器博物院",
         "history": "鼎在商周礼制中兼具炊煮、盛食与祭祀功能，宝鸡周原及其周边墓葬、窖藏所见鼎类，常被放在理解宗族、宴飨和政治秩序的核心位置。乳钉纹以突起乳钉组成纹带，是商代晚期铜鼎的常见装饰。"
       }
     },
@@ -680,7 +673,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3226",
       "number": "08",
       "title": "鲜纹鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -755,8 +748,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "鲜纹鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "鲜纹鼎 · 商代 · 1968年渭滨区桑园堡出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "鲜纹鼎\n时代：商代\n来源：1968年清滨区集园堡出主\n收藏单位：中国青铜器博物院\nRitual vesset Coug wtth chenda pattern\nShang Byhesty\nENeated fom SamgytanbuVttageWeibnBisfietm19ss\nCBlhecthon of BaoffBroneWafeMhuseum",
       "inscriptionFocus": false,
@@ -779,21 +772,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1968年渭滨区桑园堡出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "鲜纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商代，findspot=1968年渭滨区桑园堡出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "鲜纹鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=商代，findspot=1968年渭滨区桑园堡出土，collection=中国青铜器博物院",
+        "history": "鲜纹鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3232",
       "number": "09",
       "title": "目雷纹分裆鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -842,8 +834,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "目雷纹分裆鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "目雷纹分裆鼎 · 商代 · 1958年渭滨区桑园堡出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "日雷纹分裆鼎\n时代：商代\n来源：1958年渭滨区桑园堡出士\n收藏单位：中国青铜器博物院\nTripod (ding) with split crotch and eye and thunder patterns\nShangDynasty\nExcavated from SangyuanbuVillage,Weibm District in19s8\nCollection of Baoji BronzeWare Museum",
       "inscriptionFocus": false,
@@ -866,21 +858,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1958年渭滨区桑园堡出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "目雷纹分裆鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商代，findspot=1958年渭滨区桑园堡出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "目雷纹分裆鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=商代，findspot=1958年渭滨区桑园堡出土，collection=中国青铜器博物院",
+        "history": "目雷纹分裆鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3235",
       "number": "10",
       "title": "涡纹鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -942,8 +933,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "涡纹鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "涡纹鼎 · 商代 · 1958年渭滨区桑园堡出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "涡纹鼎\n时代：商代\n来源：1958年渭滨区桑园堡出土\n收藏单位：中国青铜器博物院\nRitual vessel (ding) with whirl pattern\nShangDynasty\nExcavated from Sangyuanbu Village.Weibin Districtin 1958\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -966,21 +957,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1958年渭滨区桑园堡出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "涡纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商代，findspot=1958年渭滨区桑园堡出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "涡纹鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=商代，findspot=1958年渭滨区桑园堡出土，collection=中国青铜器博物院",
+        "history": "涡纹鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3243",
       "number": "11",
       "title": "亚共庚父丁尊",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1055,8 +1045,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "亚共庚父丁尊：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "亚共庚父丁尊 · 商末周初 · 2012年渭滨区石鼓山墓地一号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "亚共庚父丁尊\n时代：商末周初\n来源：2012年渭滨区石梦山墓地一号墓出土\n收藏单位：宝鸡市清滨区博物馆\nDrinking veswei (zun)\nLale Shang and Fary ZhoxuPeriox",
       "inscriptionFocus": false,
@@ -1079,21 +1069,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "亚共庚父丁尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地一号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "亚共庚父丁尊：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地一号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "亚共庚父丁尊属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3249",
       "number": "12",
       "title": "户方彝",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1155,8 +1144,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "户方彝：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "户方彝 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "户方彝yi\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地三号墓出土\n收藏单位：宝鸡市渭滨区博物馆\nSquare wine container (yi) inscribed with “Hu Fang\"\nLate Shang and Early Zhou Period\nExcavated from No.3 Tomb of Shigushan Cemetery,Weibin District in 2012\nCollection of Baoji Weibin District Museum",
       "inscriptionFocus": false,
@@ -1179,21 +1168,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "户方彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "户方彝：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "户方彝属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3255",
       "number": "13",
       "title": "龙纹禁与兽面纹斗",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1242,8 +1230,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "龙纹禁与兽面纹斗：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "龙纹禁与兽面纹斗 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "龙纹禁\n兽面纹斗\n时代：商末周初\n时代：商末周初\n来源：2012年渭滨区石枝山墓地三号墓出土\n来源：2012年渭滨区石枝山\n收藏单位：宝鸡市清滨区博物馆\nAltartairg pte\nL.adle (dou) decor\nLateShangand EantyZhou Peciod\nExcnad fioi No3Tonb of Shigu",
       "inscriptionFocus": false,
@@ -1266,21 +1254,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "龙纹禁与兽面纹斗：先看承托面和器座，再用侧面确认附加结构与受力关系。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "龙纹禁与兽面纹斗：先看承托面、器座与附加结构，再用侧面照片核对受力关系。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "龙纹禁与兽面纹斗的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3263",
       "number": "14",
       "title": "冉父乙卣",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1342,8 +1329,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "冉父乙卣：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "冉父乙卣 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "冉父乙南you\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地三号墓出土\n收藏单位：宝鸡市渭滨区博物馆\nWine container (you) of Ran Fu\nLate Shang and Early Zhou Period\nExcavated from No.3Tomb of Shigushan Cemetery,WeibinDistrict in2012\nCollection of Baoji Weibin District Museum",
       "inscriptionFocus": false,
@@ -1366,21 +1353,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "冉父乙卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "冉父乙卣：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "冉父乙卣属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3268",
       "number": "15",
       "title": "父戊尊",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1442,8 +1428,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "父戊尊：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "父戊尊 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "父姿尊\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地三号墓出土\n收藏单位：宝鸡市渭滨区博物馆\nWine vessel (zun) inscribed with\"Fu Gur\nLate Shang and Early Zhou Period\nExcavated fromNo.3Tomb of ShigushanCemetery.WeibinDistriet im2012\nCollection of Baoji WeibinDistrictMuseum",
       "inscriptionFocus": false,
@@ -1466,21 +1452,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "父戊尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "父戊尊：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "父戊尊属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3273",
       "number": "16",
       "title": "守卣",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1529,8 +1514,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "守卣：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "守卣 · 商末周初 · 2012年渭滨区石鼓山墓地一号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "守南you\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地一号墓出土\n收藏单位：宝鸡市渭滨区博物馆\nWine container (rou) inscribed with the clan sign of “Shou\"\nLate Shang and Early Zhou Period\nExcavated from No.1 Tomb of Shigushan Cemetery,Weibin District in 2012\nCollection of Baoji Weibin District Museum",
       "inscriptionFocus": false,
@@ -1553,21 +1538,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "守卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地一号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "守卣：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地一号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "守卣属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3278",
       "number": "17",
       "title": "冉盉",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1616,8 +1600,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "冉盉：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "冉盉 · 现场照片 3278—3279。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "家族青铜器的重要原因\n防墓葬中\n宝鸡地区西部作为传\n统的非姬姓周人聚居地，其石\n些青铜器往往作为联姻\n鼓山、戴家湾以及弹国墓地中\n征，见证了当时家族间\n出士的商代青钢器，部分便是\n系与合作。\n灭商之后作为分器或战利品被\n赐予当地功臣的。",
       "inscriptionFocus": false,
@@ -1636,21 +1620,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3278—3279",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "冉盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "冉盉：重点看流、鋬、足和腹部的连接，侧面照片可帮助确认倾注结构。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "冉盉的流、鋬、足决定了器物的倾注结构；其礼仪用途和出土组合不超出展签与馆方记录。"
       }
     },
     {
       "id": "photo-group-3282",
       "number": "18",
       "title": "重父乙卣",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1712,8 +1695,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "重父乙卣：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "重父乙卣 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "重父乙\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地三号墓出士\n收藏单位：宝鸡市渭滨区博物馆\nWine container (yon) inseribed with“Zhong Fu Yr\"\nLate Shang and Early Zhou Period\nExcavated fromNo.3Tombof ShigushanCemeteryWeibinDistrictin2012\nCollection ofBaoji WeibinDistrict Museum",
       "inscriptionFocus": false,
@@ -1736,21 +1719,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "重父乙卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "重父乙卣：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "重父乙卣属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3286",
       "number": "19",
       "title": "正鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1812,8 +1794,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "正鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "正鼎 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "正鼎\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地三号墓出土\n收藏单位：宝鸡市渭滨区博物馆\nRitual vessel (ding) Inseribed with“Zheng\"\nLate Shang and Early Zhou Period\nExcavated fromNo.3TombofShigushanCemetery.WeibinDistrictin2012\nCollection ofBaoji Weibin District Museum",
       "inscriptionFocus": false,
@@ -1836,21 +1818,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "正鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "正鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "正鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3290",
       "number": "20",
       "title": "父甲壶",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1899,8 +1880,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "父甲壶：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "父甲壶 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "父甲壶\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地三号墓出士\n收藏单位：宝鸡市渭滨区博物馆\nWinevessel(hu)\nLate Shang and Early ZhouPeriod\nExcavated from No.3Tomb of Shigushan Cemetery,WeibinDistrict in2012\nCollection of Baoji WeibinDistrict Museum",
       "inscriptionFocus": false,
@@ -1923,21 +1904,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "父甲壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "父甲壶：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "父甲壶的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3293",
       "number": "21",
       "title": "乳钉纹鼎与鸟纹觯",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -1986,8 +1966,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "乳钉纹鼎与鸟纹觯：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "乳钉纹鼎与鸟纹觯 · 商末周初 · 2012年渭滨区石鼓山墓地一号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "乳钉纹鼎\n鸟纹（zhi）\n时代：商末周初\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地一号墓出土\n来源：2012年渭滨区石鼓山墓地三号墓出土\n收藏单位：宝鸡市渭滨区博物馆\n收藏单位：宝鸡市渭滨区博物馆\nWinevessel (zhi)withbird-pattern\nRitualvessel(ding)withbosspattern\nLate Shang and Early Zhou Period\nLateShangandEarlyZhouPeriod\nExcavated from No.3 Tomb of Shigushan Cemetery,Weibin District in 2012\nExcavatedfromNo.1TombofShigushanCemeter\nCollection ofBaoji WeibinDistrict Museum\nCollection ofBaoji WeibinDistrictMuseum",
       "inscriptionFocus": false,
@@ -2010,21 +1990,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "乳钉纹鼎与鸟纹觯：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地一号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "乳钉纹鼎与鸟纹觯：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地一号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "乳钉纹鼎与鸟纹觯的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3300",
       "number": "22",
       "title": "鸟父甲鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -2099,8 +2078,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "鸟父甲鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "鸟父甲鼎 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "鸟父甲鼎\n时代：商末周初\n来源：2012年渭滨区石鼓山墓地三号墓出土\n收藏单位：宝鸡市渭滨区博物馆\nTripod (ding) with carved signs\nLate Shang and Early Zhou Period\nExcavated from No.3 tomb of Shigushan Cemetery,WeibinDistrict in 2012\nCollection of Baoji WeibinDistrict Museum",
       "inscriptionFocus": false,
@@ -2123,21 +2102,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "鸟父甲鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "鸟父甲鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "鸟父甲鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3306",
       "number": "23",
       "title": "亚羌父乙罍",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -2199,8 +2177,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "亚羌父乙罍：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "亚羌父乙罍 · 商末周初 · 2012年渭滨区石鼓山墓地三号墓出土 · 宝鸡市渭滨区博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "亚羌父乙（）\n时代：商未周初\n来源：2012年渭滨区石鼓山墓地三号墓出土\n收藏单位：宝鸡市清滨区博物馆\nWine container (lei) inscribed with “Ya Qiang Fu Yr\nLate Shang and Early Zhou Period\nExcavatedfromNo.3Tomb fShigushan CemeeryWeibinDistrict in2012\nCollection ofBaoji Weibin District Museum",
       "inscriptionFocus": false,
@@ -2223,21 +2201,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "亚羌父乙罍：侧面先看肩部和深腹的转折，正面再核对口沿与纹饰带。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "亚羌父乙罍：关注口沿、肩部、深腹与圈足的转折，侧面照片用于核对器体比例。",
+        "evidence": "标签事实：period=商末周初，findspot=2012年渭滨区石鼓山墓地三号墓出土，collection=宝鸡市渭滨区博物馆",
+        "history": "亚羌父乙罍属于大型容器类，肩部、深腹和圈足是观察重点；具体用途不以名称单独判断。"
       }
     },
     {
       "id": "photo-group-3310",
       "number": "24",
       "title": "联裆陶鬲",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ceramic",
       "categoryLabel": "陶瓷与杂器",
       "musicFocus": false,
@@ -2299,8 +2276,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "联裆陶鬲：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "联裆陶鬲 · 西周 · 2018年渭滨区马营镇旭光村四号墓出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "联裆陶隔（i）\n时代：西周\n来源：2018年渭滨区马营镇旭光村四号墓出土\n收藏单位：宝鸡市考古研究所\nPottery tripod (li)with connected crotches\nWesternZhou\nExcavated fromNo.4Tomb inXuguangcunVillage,MayingTown,WeibinDistrictin2018\nCollectionofBaoji InstituteofArchaeology",
       "inscriptionFocus": false,
@@ -2323,13 +2300,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2018年渭滨区马营镇旭光村四号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看材料和结构，再看表面工艺；小型陶器优先使用裁切图，避免被展柜和背景比例误导。",
         "inscription": "",
         "significance": "把陶瓷与建筑构件单独列出，可以避免和青铜礼器混在一起，也能看到宝鸡地区物质文化从礼制重器向日常技术的延伸。",
         "decoration": "",
         "form": "这类器物的形制重点在胎体、口沿、系耳与支撑面；联裆指三足之间相连不分裆，是陶鬲与铜鬲共通的形态特征，便于在火上受热。",
-        "evidence": "标签事实：period=西周，findspot=2018年渭滨区马营镇旭光村四号墓出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=2018年渭滨区马营镇旭光村四号墓出土，collection=宝鸡市考古研究所",
         "history": "联裆陶鬲不属于青铜礼器主线，而是展览中用于补足生活与跨时期材料谱系的器物，其年代与用途以介绍牌为准。"
       }
     },
@@ -2337,7 +2313,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3314",
       "number": "25",
       "title": "交父壬簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -2386,8 +2362,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "交父壬簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "交父壬簋 · 西周 · 2019年渭滨区马营镇旭光村七十四号墓出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "交（yao）父壬篮\n(gui)\n时代：西周\n来源：2019年渭滨区马营镇旭光村七十四号墓出士\n收藏单位：宝鸡市考古研究所\nFood container(gui)with inscription\nWestemZhou\nExcavatedfromNo.74Tomb inXuguangcunVillage.MayingTown,WeibinDistrict in2019\nCollectionofBaoji InstituteofArchaeology",
       "inscriptionFocus": false,
@@ -2410,21 +2386,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2019年渭滨区马营镇旭光村七十四号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "交父壬簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2019年渭滨区马营镇旭光村七十四号墓出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "交父壬簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=2019年渭滨区马营镇旭光村七十四号墓出土，collection=宝鸡市考古研究所",
+        "history": "交父壬簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3317",
       "number": "26",
       "title": "覃鬲",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -2473,8 +2448,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "覃鬲：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "覃鬲 · 西周 · 2019年渭滨区马营镇旭光村二十六号墓出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "覃（qin）隔\n时代：西周\n来源：2019年渭滨区马营镇旭光村二十六号墓出土\n收藏单位：宝鸡市考古研究所\nWestemZhou\nExcavated fromNo.26Tomb inXuguangcunVillage.Maying Town,WeibinDistrict in2019\nCollection of Baoji Institute ofArchacology",
       "inscriptionFocus": false,
@@ -2497,21 +2472,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2019年渭滨区马营镇旭光村二十六号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "覃鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2019年渭滨区马营镇旭光村二十六号墓出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "覃鬲：重点看分裆或袋足、腹部与口沿的连接；侧面照片用于核对足部结构。",
+        "evidence": "标签事实：period=西周，findspot=2019年渭滨区马营镇旭光村二十六号墓出土，collection=宝鸡市考古研究所",
+        "history": "覃鬲的分裆或袋足与炊煮功能有关；本件具体用途和组合关系仍以展签、照片共同核对。"
       }
     },
     {
       "id": "photo-group-3320",
       "number": "27",
       "title": "兽面纹鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -2560,8 +2534,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "兽面纹鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面纹鼎 · 西周 · 2019年渭滨区马营镇旭光村七十四号墓出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "兽面纹鼎\n时代：西周\n来源：2019年渭滨区马营镇旭光村七十四号墓出土\n收藏单位：宝鸡市考古研究所\nBronze tripod (ding)with animal-face pattern\nWestemZhou\nExcavated fromNo.74Tomb inXuguangcunVillage,MayingTown,WeibinDistrict in 2019\nCollectionofBaoji InstituteofArchacology",
       "inscriptionFocus": false,
@@ -2584,21 +2558,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2019年渭滨区马营镇旭光村七十四号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "兽面纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2019年渭滨区马营镇旭光村七十四号墓出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "兽面纹鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=2019年渭滨区马营镇旭光村七十四号墓出土，collection=宝鸡市考古研究所",
+        "history": "兽面纹鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3323",
       "number": "28",
       "title": "当卢",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -2634,8 +2607,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "当卢：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "当卢 · 西周 · 2019年渭滨区马营镇旭光村十三号墓出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "铜（ben）\n当卢\n时代：西周\n时代：西周\n来源：2019年渭滨区马营镇旭光村十三号墓出\n来源：2018年渭滨区马营镇旭光村三号墓出土\n收藏单位：宝鸡市考古研究所\n收藏单位：宝鸡市考古研究所\nBronze wide adze\nHorse face piece\nWestem Zhou\nWesterm Zhou\nExcavated from No.13Tomb in Xuguangcun\nExcavated from No.3Tomb inXuguangcunVillage,MayingTown,WeibinDistrict in2018\nCollection ofBaoji Institute of Archacology\nCollectionofBaoji InstituteofArchacology",
       "inscriptionFocus": false,
@@ -2658,13 +2631,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2019年渭滨区马营镇旭光村十三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先找出受力或使用部位（背面的固定结构、正面的装饰面），再看纹饰与铸造细节。",
+        "viewing": "当卢：先找刃部或受力、连接部位，再看正背面装饰；具体用途以展签为准。",
         "inscription": "",
         "significance": "兵器与车马器显示青铜技术不只服务于祭祀礼器，也参与军事组织、交通和身份展演，是理解周秦社会结构的另一条入口。",
         "decoration": "",
         "form": "车马器要看连接、受力和装饰位置：当卢以镂孔或背钉固定于马具，正面作兽面或几何形装饰，兼具护具与仪仗功能。",
-        "evidence": "标签事实：period=西周，findspot=2019年渭滨区马营镇旭光村十三号墓出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=2019年渭滨区马营镇旭光村十三号墓出土，collection=宝鸡市考古研究所",
         "history": "当卢是系于马头部的车马饰件，属兵器或车马器。宝鸡周秦墓葬中，戈、剑、弩机、当卢、轭饰等常与军事技术、车战和贵族身份同时出现，器物的功能不能与墓葬组合关系分开理解。"
       }
     },
@@ -2747,7 +2719,7 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "逨盘：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
+      "summary": "逨盘 · 西周晚期 · 2003年眉县马家镇杨家村窖藏出土 · 中国青铜器博物院。",
       "status": "四宝索引 / 现场照片已校正",
       "hasObjectPhoto": true,
       "treasureId": "lai-pan",
@@ -2772,13 +2744,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看盘体轮廓与四兽足，再辨读盘底铭文；注意展签注明本件为复制品，文字细部以正式拓本为准。",
         "inscription": "",
         "significance": "逨盘铭文的时间跨度和信息密度在出土西周青铜器中极为突出，馆方称其为\"青铜史书\"或\"中华第一盘\"，是新中国成立以来发现的代表性长铭器。",
         "decoration": "",
         "form": "宽阔的浅腹、外张的双耳和四只兽足构成基本形制；盘底长篇铭文把家族世系、王室政治与礼器使用联系在一起。",
-        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院",
         "history": "逨盘出自眉县杨家村西周青铜器窖藏，是用于沃盥礼仪的青铜盘，展签注明此为复制品，原器为窖藏重器。盘底二十一行三百七十二字铭文，追述单氏家族从文王至宣王辅佐十二位周王的经历，涉及征伐、理政和山林资源管理。"
       }
     },
@@ -2786,7 +2757,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3333",
       "number": "30",
       "title": "四十二年逨鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -2848,8 +2819,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "四十二年逨鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "四十二年逨鼎 · 西周晚期 · 2003年眉县马家镇杨家村窖藏出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "四十二年迷（i）鼎\n时代：西周晚期\n来源：2003年眉县马家镇杨家村窖藏出土\n收藏单位：中国青铜器博物院\nRitual vessel (ding) of Lai (made in the 42nd year during King Xuan’s Reign)\nLateWestermZhou`\nExcavatedfromthehoardinYangiacunVillage,MajiaTownMeixianCountyin2003\nCollectionofBaojiBronzeWareMuseum",
       "inscriptionFocus": true,
@@ -2872,13 +2843,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看三足与立耳，再读腹内铭文；可与同窖藏逨盘、四十三年逨鼎对照，观察同一家族铜器的铭文连贯性。",
         "inscription": "",
         "significance": "纪年铭文把逨器群放回宣王时期的王年与册命制度之中，对西周晚期册命格式与官员职掌研究有直接价值。",
         "decoration": "",
         "form": "立耳、深腹、三蹄足，腹饰环带纹；鼎内壁铸长篇铭文，与四十三年逨鼎、逨盘等构成逨器群的铭文系统。",
-        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院",
         "history": "四十二年逨鼎与逨盘同出杨家村窖藏，铭文记宣王四十二年对逨的册命与赏赐，属逨器群中带明确纪年的一件。"
       }
     },
@@ -2886,7 +2856,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3337",
       "number": "31",
       "title": "天孟",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -2948,8 +2918,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "天孟：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "天孟 · 西周晚期 · 2003年眉县马家镇杨家村窖藏出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "天孟\n时代：西周晚期\n来源：2003年眉县马家镇杨家村答藏出\n收藏单位：中国青铜器博物院\nWater vessel (u) inscribed with\"Tiar\"\nLateWestemZliou\nExcavated romthehoard inYngacViaMaaTownMeixianCountyn2003\nCollection of Baoji Bronze Ware Museun",
       "inscriptionFocus": false,
@@ -2972,21 +2942,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "天孟：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "天孟：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院",
+        "history": "天孟的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3342",
       "number": "32",
       "title": "此鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3048,8 +3017,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "此鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "此鼎 · 西周 · 1975年岐山县京当镇董家村一号窖藏出土 · 岐山县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "此鼎\n时代：西周\n来源：1975年岐山县京当镇董家村一号窖藏出土\n收藏单位：岐山县博物馆\nRitualvessel(ding)ofCi\nWestemZhou\nExcavated from theNo.1hoardinDongiacunVillageJingdangTown,QishanCountyin1975\nCollection ofBaojiQishanCountyMuseum",
       "inscriptionFocus": false,
@@ -3072,21 +3041,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "此鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "此鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆",
+        "history": "此鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3346",
       "number": "33",
       "title": "此簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3135,8 +3103,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "此簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "此簋 · 西周 · 1975年岐山县京当镇董家村一号窖藏出土 · 岐山县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "此篮（gu）\n时代：西周\n来源：1975年岐山县京当镇董家村一号窖藏出土\n收藏单位：岐山县博物馆\nFood container(gui)of Ci\nWestemZhou\nExcavatcd from the No.1 hoard in Dongjiacun Village,Jingdang Town,Qishan County in 1975\nCollection of Baoji Qishan County Museum",
       "inscriptionFocus": false,
@@ -3159,21 +3127,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "此簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "此簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆",
+        "history": "此簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3350",
       "number": "34",
       "title": "公臣簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3235,8 +3202,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "公臣簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "公臣簋 · 西周 · 1975年岐山县京当镇董家村一号窖藏出土 · 岐山县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "公臣篮（gui）\n时代：西周\n来源：1975年岐山县京当镇董家村一号窖藏出土\n收藏单位：岐山县博物馆\nFood container(gui) inscribedwith“GongChen\"\nWesternZhou\nExcavated from the No.1 hoard inDongjiacunVillage,JingdangTown,Qishan County in1975\nCollectionofBaojiQishanCountyMuseum",
       "inscriptionFocus": true,
@@ -3259,21 +3226,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "公臣簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "公臣簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆",
+        "history": "公臣簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3354",
       "number": "35",
       "title": "昔鸡爵",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3322,8 +3288,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "昔鸡爵：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "昔鸡爵 · 西周 · 2014年岐山县京当镇贺家村北墓地出土 · 岐山县周原博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "昔鸡爵\n时代：西周\n来源：2014年岐山县京当镇贺家村北墓地出土\n收藏单位：岐山县周原博物馆\nWestemZhou\nExcavated fromNorth of HejiacunVillageJingdangTown.QishanCountyin2014\nCollection of Qishan ZhouyuanMuseum",
       "inscriptionFocus": false,
@@ -3346,21 +3312,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2014年岐山县京当镇贺家村北墓地出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "昔鸡爵：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2014年岐山县京当镇贺家村北墓地出土，collection=岐山县周原博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "昔鸡爵：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=2014年岐山县京当镇贺家村北墓地出土，collection=岐山县周原博物馆",
+        "history": "昔鸡爵属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3357",
       "number": "36",
       "title": "昔鸡觯",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3396,8 +3361,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "昔鸡觯：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "昔鸡觯 · 西周 · 2014年岐山县京当镇贺家村北墓地出土 · 岐山县周原博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "昔鸡解（\n时代：西周\n来源：2014年岐山县京当镇贺家村北墓地出土\n收藏单位：岐山县周原博物馆\nWestemZhou\nExcavtdmoHjauillagngdnwisaCoutn014\nCollectionofQishanZhouyuan Museum",
       "inscriptionFocus": false,
@@ -3420,14 +3385,13 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2014年岐山县京当镇贺家村北墓地出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "昔鸡觯：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2014年岐山县京当镇贺家村北墓地出土，collection=岐山县周原博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "昔鸡觯：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=2014年岐山县京当镇贺家村北墓地出土，collection=岐山县周原博物馆",
+        "history": "昔鸡觯属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
@@ -3470,8 +3434,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "铜鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据展签与器物序列整理",
+      "summary": "铜鼎 · 西周 · 2014年岐山县京当镇贺家村北墓地出土 · 岐山县周原博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "韩候的丰厚赏赐。\n铜鼎\n来源：2014年楼山县京当镇贺家村北墓地出士\n时代：西周\n收藏单位：岐山最周原博物馆\nh of Heja",
       "inscriptionFocus": false,
@@ -3494,21 +3458,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2014年岐山县京当镇贺家村北墓地出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "铜鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2014年岐山县京当镇贺家村北墓地出土，collection=岐山县周原博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "铜鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=2014年岐山县京当镇贺家村北墓地出土，collection=岐山县周原博物馆",
+        "history": "铜鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3372",
       "number": "38",
       "title": "单叔鬲",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3557,8 +3520,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "单叔鬲：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "单叔鬲 · 西周晚期 · 2003年眉县马家镇杨家村窖藏出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "单叔隔（i）\n时代：西周晚期\n来源：2003年眉县马家镇杨家村窖藏出士\n收藏单位：中国青铜器博物院\nHollow-legged tripod(li) inscribed with“Shan Shu\"\nLate WestemZhou\nExcavatedfromthehoardinYangjiacunVillageMajiaTownMixianCountyin2003\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -3581,21 +3544,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "单叔鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "单叔鬲：重点看分裆或袋足、腹部与口沿的连接；侧面照片用于核对足部结构。",
+        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院",
+        "history": "单叔鬲的分裆或袋足与炊煮功能有关；本件具体用途和组合关系仍以展签、照片共同核对。"
       }
     },
     {
       "id": "photo-group-3375",
       "number": "39",
       "title": "善夫伯辛父鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3657,8 +3619,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "善夫伯辛父鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "善夫伯辛父鼎 · 西周 · 1975年岐山县京当镇董家村一号窖藏出土 · 岐山县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "善夫伯辛父鼎\n时代：西周\n来源：1975年岐山县京当镇董家村一号窖藏出土\n收藏单位：岐山县博物馆\nRitualvessel(ding)inscribedwith“ShanFuBoXinFu\"\nWestemZhou\nExcavated from theNo.1hoard inDongjiacunVillage,JingdangTown,Qishan County in1975\nCollection ofBaojiQishan CountyMuseum",
       "inscriptionFocus": false,
@@ -3681,21 +3643,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "善夫伯辛父鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "善夫伯辛父鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆",
+        "history": "善夫伯辛父鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3379",
       "number": "40",
       "title": "善夫旅伯鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3744,8 +3705,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "善夫旅伯鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "善夫旅伯鼎 · 西周 · 1975年岐山县京当镇董家村一号窖藏出土 · 岐山县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "善夫旅伯鼎\n时代：西周\n来源：1975年岐山县京当镇董家村一号窖藏出土\n收藏单位：岐山县博物馆\nRitual vessel(ding) inscribedwith“Shan Fu lyu Bo”\nWestemZhou\nExcavated fromtheNo.1hoard inDongjiacunVillage,JingdangTown.QishanCounty in1975\nCollectionofBaojiQishanCountyMuscum",
       "inscriptionFocus": false,
@@ -3768,21 +3729,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "善夫旅伯鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "善夫旅伯鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆",
+        "history": "善夫旅伯鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3386",
       "number": "41",
       "title": "仲南父盉",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -3831,8 +3791,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "仲南父盉：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "仲南父盉 · 西周 · 1975年岐山县京当镇董家村一号窖藏出土 · 岐山县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 182,
@@ -3868,14 +3828,13 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "仲南父盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "仲南父盉：重点看流、鋬、足和腹部的连接，侧面照片可帮助确认倾注结构。",
+        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆",
+        "history": "仲南父盉的流、鋬、足决定了器物的倾注结构；其礼仪用途和出土组合不超出展签与馆方记录。"
       }
     },
     {
@@ -3918,8 +3877,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "单五父壶：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据展签与器物序列整理",
+      "summary": "单五父壶 · 现场照片 3390—3391。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 186,
@@ -3951,21 +3910,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3390—3391",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "单五父壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "单五父壶：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "单五父壶的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3393",
       "number": "43",
       "title": "微伯鬲",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4014,8 +3972,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "微伯鬲：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "微伯鬲 · 西周 · 1976年扶风县法门镇庄白村一号窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "微伯隔（i）\n时代：西周\n来源：1976年扶风县法门镇庄白村一号窖藏出土\n收藏单位：宝鸡周原博物院\nWestemZhou\nExcavated from theNo.1 hoard inZhuangbaicunVillage,FamenTown,FufengCounty in 1976\nCollection ofBaojiZhouyuanMuscum",
       "inscriptionFocus": false,
@@ -4038,21 +3996,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "微伯鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "微伯鬲：重点看分裆或袋足、腹部与口沿的连接；侧面照片用于核对足部结构。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院",
+        "history": "微伯鬲的分裆或袋足与炊煮功能有关；本件具体用途和组合关系仍以展签、照片共同核对。"
       }
     },
     {
       "id": "photo-group-3396",
       "number": "44",
       "title": "癫盆",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4114,8 +4071,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "癫盆：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "癫盆 · 西周 · 1976年扶风县法门镇庄白村一号窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "癫（xing）盆\n时代：西周\n来源：1976年扶风县法门镇庄白村一号窖藏出土\n收藏单位：宝鸡周原博物院\nWatervessel(pen) inscribedwith“Xing\nWesternZhou\nExcavatedfromtheNo.IhoardinZhuangbaicunVillage,FamenTown,FufengCounty in1976\nCollection ofBaojiZhouyuanMuscum",
       "inscriptionFocus": false,
@@ -4138,21 +4095,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "癫盆：从口沿沿腹壁看到底部，注意承托面和残损位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "癫盆：从口沿、腹壁和底部观察承托关系，具体用途以展签为准。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院",
+        "history": "癫盆的口沿、腹壁与底部保存了容纳或承托信息；具体功能以展签记录为准。"
       }
     },
     {
       "id": "photo-group-3400",
       "number": "45",
       "title": "癫钟",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "music",
       "categoryLabel": "乐器与礼乐",
       "musicFocus": true,
@@ -4201,8 +4157,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "音乐与礼乐重点：癫钟。按现场顺序归档，优先观察器形分区、悬挂结构与铭文位置。",
-      "status": "名称依据后置展签校正",
+      "summary": "癫钟 · 西周 · 1976年扶风县法门镇庄白村一号窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "癫（xing）钟\n时代：西周\n来源：1976年扶风县法门镇庄白村一号窖藏出土\n收藏单位：宝鸡周原博物院\nChime bell inscribed with “Xing”\nWesternZhou\nExcavated from theNo.1hoard inZhuangbaicunVillage.FamenTownFufengCounty in1976\nCollection of Baoji Zhouyuan Museum",
       "inscriptionFocus": false,
@@ -4225,13 +4181,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看单件钟体的钲、鼓、篆、枚分区，再看多件钟的大小递次和悬挂关系；铭文局部先确认字口位置与行列，不以模糊OCR代替释读。",
         "inscription": "",
         "significance": "这些器物把声音变成可见的制度：铭文告诉人们谁在何种礼仪中铸钟，器形和组合让权力、身份与秩序获得听觉形式。",
         "decoration": "",
         "form": "钟体的钲、鼓、篆、枚、舞和旋共同决定发声与悬挂；编钟通过一组大小相次的钟形成音高序列，癫钟铭文记\"癫\"作器，与微氏家族铜器群相关联。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院",
         "history": "癫钟（器主\"癫\"即\"兴\"）属西周礼乐系统中的声音器物，出自庄白一号窖藏。钟、镈与编钟并非脱离仪式的独奏乐器，形制、数量、悬挂方式和铭文往往与王室、诸侯、祭祀和宴飨秩序相连。"
       }
     },
@@ -4239,7 +4194,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3404",
       "number": "46",
       "title": "癫簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4288,8 +4243,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "癫簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "癫簋 · 西周 · 1976年扶风县法门镇庄白村一号窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "癫（xng盒(gu)\n时代：西周\n来源：1976年扶风县法门镇庄白村一号窖藏出士\n收藏单位：宝鸡周原博物院\nFood container (gui) inscribed with“Xing”\nWestemZhou\nExcavatdfmtho.oarZhuagbaicuVillageFameTowFngCout9\nCollection of Baoji Zhouyuan Museum",
       "inscriptionFocus": false,
@@ -4312,21 +4267,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "癫簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "癫簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院",
+        "history": "癫簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3415",
       "number": "47",
       "title": "四十三年逨鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4375,8 +4329,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "四十三年逨鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "四十三年逨鼎 · 西周晚期 · 2003年眉县马家镇杨家村窖藏出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "四十三年速（i）鼎\n时代：西周晚期\n来源：2003年眉县马家镇杨家村窖藏出土\n收藏单位：中国青铜器博物院\nRitual vessel (ding) of Lai (made in the 43rd year during King Xuan's Reign)\nLateWestemZhou\nExcavated from the hoard inYangjiacunVillage,MajiaTown,Meixian County in 2003\nCollection ofBaojiBronzeWareMuseum",
       "inscriptionFocus": true,
@@ -4399,13 +4353,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看三足与立耳，再读腹内铭文，可与四十二年逨鼎对照比较两次册命的内容差异。",
         "inscription": "",
         "significance": "纪年铭文为西周晚期册命制度与王年研究提供标准材料，与四十二年逨鼎、逨盘共同构成逨器群的完整铭文序列。",
         "decoration": "",
         "form": "立耳、深腹、三蹄足，腹饰环带纹；腹内壁铸长篇铭文，记册命时间、官职与赏赐。",
-        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院",
         "history": "四十三年逨鼎与逨盘等共出杨家村窖藏，铭文记宣王四十三年对逨的册命，属逨器群带明确纪年的一件。"
       }
     },
@@ -4413,7 +4366,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3420",
       "number": "48",
       "title": "带盖龙纹鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4475,8 +4428,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "带盖龙纹鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "带盖龙纹鼎 · 西周 · 1981年金台区纸坊头国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "带盖龙纹鼎\n时代：西周\n来源：1981年金台区纸坊头国墓地一号墓出土\n收藏单位：中国青铜器博物院\nRitualvessel(ding)with lid and dragonpattern\nWesternZhou\nExcavated fromNo.I tomb inZhifangtouVillage ofYuguo Cemetery,Jintai District in1981\nCollection ofBaojiBronzeWareMuseum",
       "inscriptionFocus": false,
@@ -4499,21 +4452,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "带盖龙纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "带盖龙纹鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头国墓地一号墓出土，collection=中国青铜器博物院",
+        "history": "带盖龙纹鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3424",
       "number": "49",
       "title": "周曹卣",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4575,8 +4527,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "周曹卣：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "周曹卣 · 西周 · 1970年渭滨区茹家庄西周遗址出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "周曹）\n时代：西周\n来源：1970年渭滨区茹家庄西周遗址出土\n收藏单位：中国青铜器博物院\nWine container (ten) of Zhou\nWestemZhou\nEei\nCollectiohofBaojiBronzeWareMuiseum",
       "inscriptionFocus": false,
@@ -4599,21 +4551,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1970年渭滨区茹家庄西周遗址出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "周曹卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1970年渭滨区茹家庄西周遗址出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "周曹卣：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=1970年渭滨区茹家庄西周遗址出土，collection=中国青铜器博物院",
+        "history": "周曹卣属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3429",
       "number": "50",
       "title": "南官簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4662,8 +4613,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "南官簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "南官簋 · 西周 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "南官篮（）\n时代：西周\n收藏单位：中国青铜器博物院\nFoog sontainer (gmi of Nangong\nWestem Zhou\nExeayaed fiom Nolom inujiazhuangVillageof Yugu9Cemetery,WeibinDisuictin197A\nCollectiongf BaojiBronzeWareMuseum",
       "inscriptionFocus": false,
@@ -4685,21 +4636,20 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "西周"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "南官簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "南官簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，collection=中国青铜器博物院",
+        "history": "南官簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3433",
       "number": "51",
       "title": "楚公钟",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "music",
       "categoryLabel": "乐器与礼乐",
       "musicFocus": true,
@@ -4748,8 +4698,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "音乐与礼乐重点：楚公钟。按现场顺序归档，优先观察器形分区、悬挂结构与铭文位置。",
-      "status": "名称依据后置展签校正",
+      "summary": "楚公钟 · 西周 · 1998年扶风县法门镇召陈村窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "楚公钟\n时代：西周\n来源：1998年扶风县法门镇召陈村奢藏出土\n收藏单位：宝鸡周原博物院\nChime bell ofDuke Chu\nWesternZhow\nExcavated fron thehoard inS\nCollectfioni of Baoji Zhouy",
       "inscriptionFocus": false,
@@ -4772,13 +4722,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1998年扶风县法门镇召陈村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看钟体的钲鼓篆枚分区，再读钲部铭文；注意窖藏共出器物构成的礼乐组合。",
         "inscription": "",
         "significance": "楚公钟是研究西周楚史、楚与周关系及礼乐制度的重要实物，铭文与窖藏背景使其成为楚文化早期史料。",
         "decoration": "",
         "form": "甬钟形制，钟体分区（钲、鼓、篆、枚）完整，铭文铸于钲部；悬挂结构与合瓦形钟体决定其音响。",
-        "evidence": "标签事实：period=西周，findspot=1998年扶风县法门镇召陈村窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1998年扶风县法门镇召陈村窖藏出土，collection=宝鸡周原博物院",
         "history": "楚公钟出自扶风召陈村窖藏，铭文记楚公作钟。西周时期楚君铸钟而钟出周原，反映楚与周王室之间通过礼乐器物发生的联系。"
       }
     },
@@ -4786,7 +4735,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3437",
       "number": "52",
       "title": "丹叔番盂",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4835,8 +4784,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "丹叔番盂：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "丹叔番盂 · 西周 · 2000年扶风县法门镇黄堆村出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "丹叔番盂\n时代：西周\n来源：2000年扶风县法门镇黄堆村出土\n收藏单位：宝鸡周原博物院\nWater vessel (yu) of Danshufan\nWestemZhou\nExcavatgiFfgCot\nCollection of Baoji Zhouyuan Muscum",
       "inscriptionFocus": false,
@@ -4859,21 +4808,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2000年扶风县法门镇黄堆村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "丹叔番盂：从口沿沿腹壁看到底部，注意承托面和残损位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2000年扶风县法门镇黄堆村出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "丹叔番盂：从口沿、腹壁和底部观察承托关系，具体用途以展签为准。",
+        "evidence": "标签事实：period=西周，findspot=2000年扶风县法门镇黄堆村出土，collection=宝鸡周原博物院",
+        "history": "丹叔番盂的口沿、腹壁与底部保存了容纳或承托信息；具体功能以展签记录为准。"
       }
     },
     {
       "id": "photo-group-3443",
       "number": "53",
       "title": "仲鬲",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -4922,8 +4870,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "仲鬲：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "仲鬲 · 西周 · 1975年铜件厂拣选 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "仲隔（i\n时代：西周\n来源：1975年铜件厂抹选\n收藏单位：中国青铜器博物院\nCooking vessel (li) of Guozhong\nWestermZhou\nSelected fromCopperComponentsFactoryin1975\nCollection ofBaoji BronzeWareMuseum",
       "inscriptionFocus": false,
@@ -4946,21 +4894,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年铜件厂拣选"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "仲鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年铜件厂拣选，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "仲鬲：重点看分裆或袋足、腹部与口沿的连接；侧面照片用于核对足部结构。",
+        "evidence": "标签事实：period=西周，findspot=1975年铜件厂拣选，collection=中国青铜器博物院",
+        "history": "仲鬲的分裆或袋足与炊煮功能有关；本件具体用途和组合关系仍以展签、照片共同核对。"
       }
     },
     {
       "id": "photo-group-3447",
       "number": "54",
       "title": "戈伯鬲",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -5009,8 +4956,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "title_panel"
       },
       "labelText": "",
-      "summary": "戈伯鬲：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "戈伯鬲 · 西周 · 1981年金台区纸坊头。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "失（z）伯隔（i)\n时代：西周\n来源：1981年金台区纸坊头\nHollow-legged tripod (li) of Zebo",
       "inscriptionFocus": false,
@@ -5032,21 +4979,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先找出受力或使用部位，再看纹饰与铸造细节；剑看茎格首刃，戈看援内穿，车马器看连接面与装饰面。",
+        "viewing": "戈伯鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
-        "significance": "这些器物显示青铜技术不只服务于祭祀礼器，也参与军事组织、交通和身份展演，是理解周秦社会结构的另一条入口。",
+        "significance": "",
         "decoration": "",
-        "form": "兵器看刃部、援、内、胡、穿、茎、格等结构；车马器看连接、受力和装饰位置。",
-        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头；名称依据后置介绍牌与照片顺序校正。",
-        "history": "兵器与车马器直接服务于战争、出行与身份礼仪，宝鸡周秦墓葬中戈、剑、弩机、当卢、轭饰等常与贵族身份同时出现。"
+        "form": "戈伯鬲：重点看分裆或袋足、腹部与口沿的连接；侧面照片用于核对足部结构。",
+        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头",
+        "history": "戈伯鬲的分裆或袋足与炊煮功能有关；本件具体用途和组合关系仍以展签、照片共同核对。"
       }
     },
     {
       "id": "photo-group-3451",
       "number": "55",
       "title": "卜甲",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "inscription",
       "categoryLabel": "文字与铭文",
       "musicFocus": false,
@@ -5082,8 +5028,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "卜甲：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "卜甲 · 西周 · 2004年岐山县周公庙出土 · 周原考古队。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "卜甲\n时代：西周\n来源：2004年岐山县周公庙出土\n收藏单位：周原考古队\nOraclebone\nWesterm Zhou\nExcavated from the siteof ZhougongMiao.Qishan County in 2004\nCollection of ZhouyuanArchaeological Team",
       "inscriptionFocus": false,
@@ -5106,13 +5052,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2004年岐山县周公庙出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看甲面的钻凿痕迹与兆纹走向，再找刻辞字口；字形细小，宜配合放大镜观察。",
         "inscription": "",
         "significance": "西周甲骨是甲骨学的重要分支，周公庙卜甲为研究西周早期占卜制度、祭祀活动与文字使用提供了直接材料。",
         "decoration": "",
         "form": "龟甲经整治、钻凿后灼烧，据兆纹判断吉凶；刻辞记占卜内容、结果与验辞，字口细密。",
-        "evidence": "标签事实：period=西周，findspot=2004年岐山县周公庙出土，collection=周原考古队；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=2004年岐山县周公庙出土，collection=周原考古队",
         "history": "卜甲出土于岐山周公庙遗址，属西周占卜用甲骨。周公庙遗址以出土带字甲骨著称，是研究西周甲骨占卜制度与周原政治活动的关键材料。"
       }
     },
@@ -5120,7 +5065,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3454",
       "number": "56",
       "title": "瑙生尊",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -5182,8 +5127,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "瑙生尊：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "瑙生尊 · 西周 · 2006年扶风县城关镇五郡西村窖藏出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "瑪（dio）生尊\n时代：西周\n来源：2006年扶风县城关镇五郡西村窖藏出土\n收藏单位：扶风县博物馆\nWine vessel (zun) of Diaosheng\nWestemZhou\nExcavatedfromthehoardinWujunxicunVillageChengguanTownFuengCountyin2006\nCollection ofBaoji FufengCountyMuseum",
       "inscriptionFocus": false,
@@ -5206,21 +5151,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2006年扶风县城关镇五郡西村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "瑙生尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2006年扶风县城关镇五郡西村窖藏出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "瑙生尊：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=2006年扶风县城关镇五郡西村窖藏出土，collection=扶风县博物馆",
+        "history": "瑙生尊属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3459",
       "number": "57",
       "title": "宰兽簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -5269,8 +5213,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "宰兽簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "宰兽簋 · 现场照片 3459—3460。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "",
       "inscriptionFocus": false,
@@ -5289,14 +5233,13 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3459—3460",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "宰兽簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "宰兽簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "宰兽簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
@@ -5352,7 +5295,7 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "何尊：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
+      "summary": "何尊 · 现场照片 3465—3467。",
       "status": "四宝索引 / 现场照片已校正",
       "treasureId": "he-zun",
       "hasObjectPhoto": true,
@@ -5386,13 +5329,12 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3465—3467",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看方体与扉棱的结构，再找底内铭文；铭文位置在器底，观展时可结合拓本辨读\"宅兹中国\"四字。",
         "inscription": "",
         "significance": "\"宅兹中国\"把\"中国\"概念的出现上溯至西周初年，何尊因此成为金文与历史地理研究的标志性器物。",
         "decoration": "",
         "form": "圆口方体，器腹饰饕餮纹与四道扉棱，器形兼具尊与方彝的特征；底内铸铭文12行122字，铭文书体为西周早期金文典型风格。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
         "history": "何尊是西周早期青铜尊，1963年宝鸡贾村镇出土，现藏中国青铜器博物院，为国家首批禁止出境展览文物。器底铭文122字，记成王五年营建成周的诰命，其中\"宅兹中国\"一句为\"中国\"一词最早的青铜器铭文证据，是研究西周初年政治地理与都城营建的核心史料。"
       }
     },
@@ -5400,7 +5342,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3471",
       "number": "59",
       "title": "强伯盉",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -5449,8 +5391,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "强伯盉：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "强伯盉 · 西周 · 1974年渭滨区茹家庄国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 247,
@@ -5486,21 +5428,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "强伯盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "强伯盉：重点看流、鋬、足和腹部的连接，侧面照片可帮助确认倾注结构。",
+        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄国墓地一号墓出土，collection=中国青铜器博物院",
+        "history": "强伯盉的流、鋬、足决定了器物的倾注结构；其礼仪用途和出土组合不超出展签与馆方记录。"
       }
     },
     {
       "id": "photo-group-3476",
       "number": "60",
       "title": "兽面纹双耳方座盒",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -5536,8 +5477,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "兽面纹双耳方座盒：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面纹双耳方座盒 · 现场照片 3476—3477。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 251,
@@ -5569,21 +5510,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3476—3477",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "兽面纹双耳方座盒：先看承托面和器座，再用侧面确认附加结构与受力关系。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "兽面纹双耳方座盒：先看承托面、器座与附加结构，再用侧面照片核对受力关系。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "兽面纹双耳方座盒的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3479",
       "number": "61",
       "title": "兽面纹双耳方座簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -5619,8 +5559,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "兽面纹双耳方座簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面纹双耳方座簋 · 西周 · 1980年渭滨区竹园沟强国墓地十三号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 254,
@@ -5656,21 +5596,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地十三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "兽面纹双耳方座簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地十三号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "兽面纹双耳方座簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地十三号墓出土，collection=中国青铜器博物院",
+        "history": "兽面纹双耳方座簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3484",
       "number": "62",
       "title": "目雷纹带盖双耳簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -5706,8 +5645,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "目雷纹带盖双耳簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "目雷纹带盖双耳簋 · 西周 · 1980年渭滨区竹园沟国墓地十三号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 257,
@@ -5743,14 +5682,13 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟国墓地十三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "目雷纹带盖双耳簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟国墓地十三号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "目雷纹带盖双耳簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟国墓地十三号墓出土，collection=中国青铜器博物院",
+        "history": "目雷纹带盖双耳簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
@@ -5832,7 +5770,7 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "㝬簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
+      "summary": "㝬簋 · 西周 · 1978年扶风县法门镇齐村窖藏出土 · 扶风县博物馆。",
       "status": "四宝索引 / 现场照片已校正",
       "treasureId": "hu-gui",
       "hasObjectPhoto": true,
@@ -5870,13 +5808,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年扶风县法门镇齐村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看方座与双耳的等级感，再读簋内铭文；注意铭文中的\"㝬\"字即厉王名，可与《史记·周本纪》对照。",
         "inscription": "",
         "significance": "㝬簋铭文与《诗经》\"王用享于帝\"等文献可相印证，是研究西周晚期礼制、王权与宗庙祭祀的直接史料。",
         "decoration": "",
         "form": "器形为方座双耳簋，腹饰环带纹，方座四面亦有纹饰；簋内底铸铭文124字，书体为西周晚期标准金文。",
-        "evidence": "标签事实：period=西周，findspot=1978年扶风县法门镇齐村窖藏出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1978年扶风县法门镇齐村窖藏出土，collection=扶风县博物馆",
         "history": "㝬簋出自扶风齐村窖藏，是西周晚期厉王自作之器，㝬即周厉王名。簋内底铭文124字，记厉王\"㝬作宝簋\"及对先祖、先王的追述，是现存少数周王自作青铜器之一，为国家禁止出境展览文物。"
       }
     },
@@ -5884,7 +5821,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3505",
       "number": "64",
       "title": "董甗",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -5933,8 +5870,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "董甗：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "董甗 · 西周 · 1975年扶风县法门镇庄白村墓葬出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "威（dong）（yan）\n时代：西周\n来源：1975年扶风县法门镇庄白村墓葬出土\n收藏单位：扶风县博物馆\nSteamer(yan)of Dong\nWesternZhou\nExcavated from the tomb inZhuangbaicunVillage,Famen Town,FufengCounty in 1975\nCollection ofBaoji Fufeng CountyMuseum",
       "inscriptionFocus": false,
@@ -5957,21 +5894,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年扶风县法门镇庄白村墓葬出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "董甗：先从侧面确认甑、鬲与箅部的层次，再看足部和兽面纹局部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年扶风县法门镇庄白村墓葬出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "董甗：先看上部甑、下部鬲与中间箅部的组合；侧面照片重点核对足部、腹部与口沿的连接。",
+        "evidence": "标签事实：period=西周，findspot=1975年扶风县法门镇庄白村墓葬出土，collection=扶风县博物馆",
+        "history": "董甗的器类线索在于甑、鬲与箅部的组合；本组具体时代、出土地和收藏单位以展签字段为准。"
       }
     },
     {
       "id": "photo-group-3508",
       "number": "65",
       "title": "人面盾饰",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -6007,8 +5943,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "人面盾饰：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "人面盾饰 · 西周 · 1976年岐山县贺家村砖厂四号墓出土 · 岐山县周原博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "人面盾饰\n时代：西周\n来源：1976年岐山县贺家村砖厂四号墓出土\n收藏单位：岐山县周原博物馆\nShield ornament with human-face\nWestern Zhou\nExcavated fromNo.4 tombin Hejiacunbrickyard,QishanCounty in 1976\nCollection of Qishan Zhouyuan Museum",
       "inscriptionFocus": false,
@@ -6031,13 +5967,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年岐山县贺家村砖厂四号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看正面人面五官的铸造，再找背面的固定结构，判断其在盾牌上的安装方式。",
         "inscription": "",
         "significance": "兵器与车马器显示青铜技术不只服务于祭祀礼器，也参与军事组织、交通和身份展演。",
         "decoration": "",
         "form": "青铜质，作人面形，五官以浮雕表现，背面有固定结构；作为盾的装饰件，兼具护具与仪仗功能。",
-        "evidence": "标签事实：period=西周，findspot=1976年岐山县贺家村砖厂四号墓出土，collection=岐山县周原博物馆；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1976年岐山县贺家村砖厂四号墓出土，collection=岐山县周原博物馆",
         "history": "人面盾饰属兵器或车马器，出土于岐山贺家村四号墓。盾饰装于盾牌表面，以人面纹增强威吓与身份象征，功能不能与墓葬组合关系分开理解。"
       }
     },
@@ -6045,7 +5980,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3510",
       "number": "66",
       "title": "或方鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -6107,8 +6042,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "或方鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "或方鼎 · 西周 · 1975年扶风县法门镇庄白村墓葬出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "或（dong）方鼎\n代：西周\n原：1975年扶风县法门镇庄白村墓葬出土\n单位：扶风县博物馆\ngular ritual vesscl（ding)ofDong",
       "inscriptionFocus": false,
@@ -6131,21 +6066,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年扶风县法门镇庄白村墓葬出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "或方鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年扶风县法门镇庄白村墓葬出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "或方鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1975年扶风县法门镇庄白村墓葬出土，collection=扶风县博物馆",
+        "history": "或方鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3515",
       "number": "67",
       "title": "兽头",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "other",
       "categoryLabel": "其他器物",
       "musicFocus": false,
@@ -6194,8 +6128,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "兽头：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽头 · 现场照片 3515—3516。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "",
       "inscriptionFocus": false,
@@ -6214,21 +6148,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3515—3516",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认功能与使用方式，再看纹饰与铸造或制作痕迹。",
+        "viewing": "兽头：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
-        "significance": "它们在礼器之外补充了日常、装饰与信仰的观察维度。",
+        "significance": "",
         "decoration": "",
-        "form": "形制依功能而定，镜看钮座纹饰，饰件看连接结构，明器看模拟对象。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "此类器物功能多样，涵盖镜、饰件、明器等，以实物结构与展签信息为准。"
+        "form": "兽头：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "兽头的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3518",
       "number": "68",
       "title": "兽头轭饰",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -6251,8 +6184,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "兽头轭饰：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽头轭饰 · 西周 · 1980年渭滨区竹园沟强国墓地十三号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 279,
@@ -6288,13 +6221,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地十三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看正面兽首造型与背面套接结构，判断其安装部位。",
         "inscription": "",
         "significance": "车马器显示青铜技术参与交通与身份展演，是理解周秦社会结构的另一条入口。",
         "decoration": "",
         "form": "兽头形装饰，背部有套接结构，用于固定于轭木或车衡；正面兽首以铸造表现。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地十三号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地十三号墓出土，collection=中国青铜器博物院",
         "history": "兽头轭饰是系于车衡或马轭上的青铜饰件，属车马器。宝鸡周秦墓葬中轭饰等车马器常与贵族身份同时出现，功能不能与墓葬组合关系分开理解。"
       }
     },
@@ -6302,7 +6234,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3520",
       "number": "69",
       "title": "刖人守门方鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -6351,8 +6283,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "刖人守门方鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "刖人守门方鼎 · 西周 · 1988年渭滨区茹家庄窖藏出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 281,
@@ -6388,13 +6320,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1988年渭滨区茹家庄窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "重点看腹下小门中的刖人形象与门扉的开合结构，再看附耳与四足。",
         "inscription": "",
         "significance": "刖人守门形象直接反映西周刑罚制度，是铜器上少见的刑徒图像，兼有礼器功能与制度史料价值。",
         "decoration": "",
         "form": "方体、附耳、四足，腹下双扇小门可开合，门扉铸刖人像；鼎身与门饰构成器物叙事的特殊组合。",
-        "evidence": "标签事实：period=西周，findspot=1988年渭滨区茹家庄窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1988年渭滨区茹家庄窖藏出土，collection=中国青铜器博物院",
         "history": "刖人守门方鼎出自茹家庄窖藏，器形为附耳方鼎，鼎腹下设小门，门扉铸一受过刖刑（断足）的守门人形象，故得名。刖人形象是研究西周刑罚与刑徒制度的罕见图像材料。"
       }
     },
@@ -6402,7 +6333,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3524",
       "number": "70",
       "title": "朕彝",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -6464,8 +6395,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "朕彝：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "朕彝 · 西周 · 1975年岐山县京当镇董家村一号窖藏出土 · 岐山县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "朕(zhen)画\n时代：西周\n来源：1975年岐山县京当镇董家村一号窖藏出土\n收藏单位：岐山县博物馆\n此为复\nWater vessel (yi) inscribed with “Zhen”\nWestermZhou\nExcavated fromNo.1 hoard inDongjiacunVillageJingdangTown,QishanCounty in1975\nCollection ofBaoji Qishan CountyMuseum",
       "inscriptionFocus": false,
@@ -6488,21 +6419,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "朕彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "朕彝：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村一号窖藏出土，collection=岐山县博物馆",
+        "history": "朕彝属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3528",
       "number": "71",
       "title": "四叶目纹鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -6551,8 +6481,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "四叶目纹鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "四叶目纹鼎 · 西周 · 1980年渭滨区竹园沟国墓地七号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "四叶目纹鼎\n时代：西周\n来源：1980年渭滨区竹园沟国墓地七号墓出士\n收藏单位：中国青铜器博物院\nWinevessel（ding)bearing eyepattern with four petals\nWestermZhou\nExcavated fromNo.7 tomb inZhuyuangouVillageofYuguo Cemetery,WeibinDistrict in1980\nCollection of Baoji Bronze WareMuseum",
       "inscriptionFocus": false,
@@ -6575,21 +6505,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟国墓地七号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "四叶目纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟国墓地七号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "四叶目纹鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟国墓地七号墓出土，collection=中国青铜器博物院",
+        "history": "四叶目纹鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3531",
       "number": "72",
       "title": "微伯兴匕",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -6638,8 +6567,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "微伯兴匕：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "微伯兴匕 · 西周 · 1976年扶风县法门镇庄白村一号窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "微伯兴匕（甲）\n微伯兴匕（乙）\n时代：西周\n时代：西周\n来源：1976年扶风县法门镇庄白村一号窖藏出土\n来源：1976年扶风县法门镇庄白村一号窖藏出土\n收藏单位：宝鸡周原博物院\n收藏单位：宝鸡周原博物院\nWesternZhou\nWestemZhou\nExcavatedfromtheNo.1hoardinZhuangbaicunVillage,FamenTownFufengCountyin1976\nExcavated from theNo.1 hoard inZhuangbaicunVillageFamenTownFufengCountyin 1976\nCollectionofBaoji ZhouyuanMuseum\nCollectionofBaoji ZhouyuanMuseum",
       "inscriptionFocus": false,
@@ -6662,13 +6591,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看柄与勺的比例及铭文位置，理解其在食器组合中的挹取功能。",
         "inscription": "",
         "significance": "匕类铜器传世较少，微伯兴匕为研究西周食器组合与进食方式提供了实物。",
         "decoration": "",
         "form": "青铜质，柄与勺部一体铸成；微伯兴匕铭文记器主\"微伯兴\"，与癫钟、癫簋等同属微氏家族铸器。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院",
         "history": "微伯兴匕（甲、乙两件）为挹取食物的匕，属食器附件，与微氏家族铜器群同出庄白一号窖藏。匕以长柄接浅勺，用于盛取黍稷或羹食。"
       }
     },
@@ -6676,7 +6604,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3538",
       "number": "73",
       "title": "父辛盘",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -6712,8 +6640,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "父辛盘：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "父辛盘 · 现场照片 3538。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "H\n父辛盘\n时心：西周\n来源：1080年滨滨区竹园为造国量\n软藏单位：室码青钢路",
       "inscriptionFocus": false,
@@ -6732,21 +6660,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3538",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "父辛盘：先看浅腹和耳足，再看盘底或器身的铭文、磨损与铸痕。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "父辛盘：先看浅腹、耳足和盘底的连接，再核对内底或器身是否保留铭文。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "父辛盘以浅腹和承托面为主要形制线索；其使用情境要结合铭文、出土地点和同组器物判断。"
       }
     },
     {
       "id": "photo-group-3541",
       "number": "74",
       "title": "兽面纹盉",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -6808,8 +6735,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "兽面纹盉：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面纹盉 · 西周 · 1980年渭滨区竹园沟鱼国墓地十三号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "兽面纹（h）\n时代：西周\n来源：1980年渭滨区竹园沟鱼国墓地十三号墓出土\n收藏单位：中国青铜器博物院\nWinevessel (he)with animal-face pattern\nWesternZhou\nCollection ofBaoji BronzeWare Museum\n18",
       "inscriptionFocus": false,
@@ -6832,21 +6759,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟鱼国墓地十三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "兽面纹盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟鱼国墓地十三号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "兽面纹盉：重点看流、鋬、足和腹部的连接，侧面照片可帮助确认倾注结构。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟鱼国墓地十三号墓出土，collection=中国青铜器博物院",
+        "history": "兽面纹盉的流、鋬、足决定了器物的倾注结构；其礼仪用途和出土组合不超出展签与馆方记录。"
       }
     },
     {
       "id": "photo-group-3546",
       "number": "75",
       "title": "涡纹罍",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -6908,8 +6834,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "涡纹罍：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "涡纹罍 · 西周 · 1997年扶风县法门镇齐家村出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "涡纹墨（i）\n时代：西周\n来源：1997年扶风县法门镇齐家村出土\n收藏单位：宝鸡周原博物院\nWine container (lei) with whirl pattern\nWestermZhou\nExcavated from Qijiacun Village, Famen Town, Fufeng County in 1997\nCollection ofBaoji ZhouyuanMuseum",
       "inscriptionFocus": false,
@@ -6932,21 +6858,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1997年扶风县法门镇齐家村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "涡纹罍：侧面先看肩部和深腹的转折，正面再核对口沿与纹饰带。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1997年扶风县法门镇齐家村出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "涡纹罍：关注口沿、肩部、深腹与圈足的转折，侧面照片用于核对器体比例。",
+        "evidence": "标签事实：period=西周，findspot=1997年扶风县法门镇齐家村出土，collection=宝鸡周原博物院",
+        "history": "涡纹罍属于大型容器类，肩部、深腹和圈足是观察重点；具体用途不以名称单独判断。"
       }
     },
     {
       "id": "photo-group-3551",
       "number": "76",
       "title": "云纹编钟",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "music",
       "categoryLabel": "乐器与礼乐",
       "musicFocus": true,
@@ -6995,8 +6920,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "音乐与礼乐重点：云纹编钟。按现场顺序归档，优先观察器形分区、悬挂结构与铭文位置。",
-      "status": "名称依据后置展签校正",
+      "summary": "云纹编钟 · 西周 · 1980年渭滨区竹园沟強国墓地七号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "云纹编钟\n时代：西周\n来源：1980年渭滨区竹园沟強国墓地七号墓出\n收藏单位：中国青铜器博物院\nChimeBllwithloud pattern\nWestem Zhou\nPOXE",
       "inscriptionFocus": false,
@@ -7019,13 +6944,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟強国墓地七号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看钟体的钲鼓篆枚分区与云纹，再看多件钟的大小递次与悬挂结构。",
         "inscription": "",
         "significance": "西周早期编钟是礼乐制度形成期的实物，竹园沟墓地出土编钟为研究強国贵族礼乐等级提供了材料。",
         "decoration": "",
         "form": "甬钟形制，钟体分区（钲、鼓、篆、枚）完整，饰云纹；合瓦形钟体可发双音，悬挂于钟架。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟強国墓地七号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟強国墓地七号墓出土，collection=中国青铜器博物院",
         "history": "云纹编钟出土于竹园沟強国墓地七号墓，是西周早期墓葬中的编钟组合。编钟以大小相次成列，用于宗庙与宴飨礼乐。"
       }
     },
@@ -7033,7 +6957,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3554",
       "number": "77",
       "title": "兽面纹镜",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "other",
       "categoryLabel": "其他器物",
       "musicFocus": false,
@@ -7082,8 +7006,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "兽面纹镜：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面纹镜 · 西周 · 1980年渭滨区竹园沟渔国墓地十三号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "兽面纹镜（nho）\n时代：西周\n来源：1980年湾滨区竹园沟渔国墓地十三号墓出土\n收藏单位：宝鸡青调器博物院\nPenr）fa\nZiWi9",
       "inscriptionFocus": false,
@@ -7106,21 +7030,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟渔国墓地十三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认功能与使用方式，再看纹饰与铸造或制作痕迹。",
+        "viewing": "兽面纹镜：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
-        "significance": "它们在礼器之外补充了日常、装饰与信仰的观察维度。",
+        "significance": "",
         "decoration": "",
-        "form": "形制依功能而定，镜看钮座纹饰，饰件看连接结构，明器看模拟对象。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟渔国墓地十三号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "此类器物功能多样，涵盖镜、饰件、明器等，以实物结构与展签信息为准。"
+        "form": "兽面纹镜：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟渔国墓地十三号墓出土，collection=中国青铜器博物院",
+        "history": "兽面纹镜的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3558",
       "number": "78",
       "title": "夔纹斗",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7169,8 +7092,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "夔纹斗：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "夔纹斗 · 西周 · 1976年扶风县法门镇庄白村一号窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "夔（kui）纹斗\n时代：西周\n来源：1976年扶风县法门镇庄白村一号窖藏出士\n收藏单位：宝鸡周原博物院\nLadle (dou) with kui-dragon pattern\nW\nestem Zhou",
       "inscriptionFocus": false,
@@ -7193,21 +7116,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "夔纹斗：看斗部与柄的连接，再核对纹饰面和握持方向。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "夔纹斗：观察斗部、柄与连接处，再核对纹饰面和使用方向。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院",
+        "history": "夔纹斗的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3561",
       "number": "79",
       "title": "顾首龙纹尊",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7269,8 +7191,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "顾首龙纹尊：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "顾首龙纹尊 · 西周 · 渭滨区神农镇峪泉村周墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "顾首龙纹尊\n时代：西周\n来源：渭滨区神农镇峪泉村周墓出土\n收藏单位：中国青铜器博物院\nWinevessel(cun)with turning-backdragon motif\nWestemZhou\nExcavatedfromZhoutombinYuquancunVilageShennongTownWeibinDisrict\nCollectionofBaoji BronzeWareMuseum",
       "inscriptionFocus": false,
@@ -7293,21 +7215,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "渭滨区神农镇峪泉村周墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "顾首龙纹尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=渭滨区神农镇峪泉村周墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "顾首龙纹尊：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=渭滨区神农镇峪泉村周墓出土，collection=中国青铜器博物院",
+        "history": "顾首龙纹尊属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3565",
       "number": "80",
       "title": "龙纹提梁卣",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7343,8 +7264,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "龙纹提梁卣：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "龙纹提梁卣 · 西周 · 渭滨区神农镇峪泉村周墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "龙纹提梁卤（you）\n时代：西周\n来源：渭滨区神农镇峪泉村周墓出土\n收藏单位：中国青铜器博物院\nWineVessel (you)with loophandle and dragon pattern\nWestemZhou\nExcavatedfromZhou tombnYuquancunVillageShennongTownWeibinDistrict\nCollection ofBaoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -7367,21 +7288,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "渭滨区神农镇峪泉村周墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "龙纹提梁卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=渭滨区神农镇峪泉村周墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "龙纹提梁卣：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=渭滨区神农镇峪泉村周墓出土，collection=中国青铜器博物院",
+        "history": "龙纹提梁卣属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3568",
       "number": "81",
       "title": "回首龙纹卣",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7417,8 +7337,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "title_panel"
       },
       "labelText": "",
-      "summary": "回首龙纹卣：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "回首龙纹卣 · 西周 · 渭滨区神农镇峪泉村周墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "回首龙纹卤（you）\n时代：西周\n来源：渭滨区神农镇峪泉村周墓出土\n收藏单位：中国青铜器博物院\nWine vessel (you) with motif depicting a looking-back dragon\nWestemZhou\nExcavatdfromZhoutmbinuquancunVillageShennngTowWebinDisri\nCollection of Baoji BronzeWareMuseum",
       "inscriptionFocus": false,
@@ -7441,21 +7361,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "渭滨区神农镇峪泉村周墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "回首龙纹卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=渭滨区神农镇峪泉村周墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "回首龙纹卣：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=渭滨区神农镇峪泉村周墓出土，collection=中国青铜器博物院",
+        "history": "回首龙纹卣属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3571",
       "number": "82",
       "title": "强伯双耳双环簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7504,8 +7423,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "强伯双耳双环簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "强伯双耳双环簋 · 西周 · 1974年渭滨区茹家庄国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "強伯双耳双环盒（gui）\n时代：西周\n来源：1974年渭滨区茹家庄国墓地一号墓出土\n收藏单位：中国青铜器博物院\nFood container (gui)with double ring ears of Yubo\nWesternZhou\nExcavated from No.1 tomb in Rujiazhuang Village of Yuguo Cemetery Weibin District in 19\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -7528,21 +7447,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "强伯双耳双环簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "强伯双耳双环簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄国墓地一号墓出土，collection=中国青铜器博物院",
+        "history": "强伯双耳双环簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3574",
       "number": "83",
       "title": "独柱带盘鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7591,8 +7509,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "独柱带盘鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "独柱带盘鼎 · 西周 · 1974年渭滨区茹家庄强国墓地二号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "井姬独柱带盘鼎\n时代：西周\n来源：1974年渭滨区茹家庄强国墓地二号墓出士\n收藏单位：中国青铜器博物院\nDouble-eared tripod (ding) inscribed with“Xing Jr\nWestern Zhou\nExcavated from No.2 tomb in RujiazhuangVillage of Yuguo Cemetery,Weibin District in 1974\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -7615,13 +7533,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄强国墓地二号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "重点看腹下独柱与盘的连接结构，再看立耳与三足。",
         "inscription": "",
         "significance": "独柱带盘的结构在已知西周铜鼎中罕见，为研究西周早期铜器形制的多样性提供实例。",
         "decoration": "",
         "form": "立耳、深腹、三足，腹下中央一柱下接浅盘；鼎身与柱盘一体铸成，铭文记井姬。",
-        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄强国墓地二号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄强国墓地二号墓出土，collection=中国青铜器博物院",
         "history": "独柱带盘鼎出土于茹家庄強国墓地二号墓，展签又称\"井姬独柱带盘鼎\"。鼎腹下以一柱承托浅盘，形制在铜鼎中少见，盘可承接炭火或汤水，是西周早期強国墓地中具地方特色的器形。"
       }
     },
@@ -7629,7 +7546,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3577",
       "number": "84",
       "title": "井姬附耳鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7678,8 +7595,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "井姬附耳鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "井姬附耳鼎 · 西周 · 1974年渭滨区茹家庄强国墓地二号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "井姬附耳鼎\n时代：西周\n来源：1974年渭滨区茹家庄强国墓地二号墓出土\n收藏单位：中国青铜器博物院\nDouble-eared tripod (ding) inscribed with “Xing Ji\nWesternZhou\nExcavated from No.2 tomb in RujiazhuangVillage of Yuguo Cemetery,Weibin District in1974\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -7702,21 +7619,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄强国墓地二号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "井姬附耳鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄强国墓地二号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "井姬附耳鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄强国墓地二号墓出土，collection=中国青铜器博物院",
+        "history": "井姬附耳鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3580",
       "number": "85",
       "title": "井姬圆鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7765,8 +7681,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "井姬圆鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "井姬圆鼎 · 西周 · 1974年渭滨区茹家庄鱼国墓地二号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "井姬圆鼎\n时代：西周\n来源：1974年渭滨区茹家庄鱼国墓地二号墓出土\n收藏单位：中国青铜器博物院\nRound tripod (ding) inscribed with “Jing Jr\nWesternZhou\nExcavatedfrom No.2 tomb inRujiazhuangVillage of YuguoCemetery,WeibinDistrict in 1974\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -7789,21 +7705,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄鱼国墓地二号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "井姬圆鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄鱼国墓地二号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "井姬圆鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄鱼国墓地二号墓出土，collection=中国青铜器博物院",
+        "history": "井姬圆鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3583",
       "number": "86",
       "title": "史毕庚觯",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7865,8 +7780,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "史毕庚觯：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "史毕庚觯 · 西周 · 1992年渭滨区石鼓镇石嘴头村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "史姚b庚飾\n时代：西周\n来源：1992年清滨区石鼓镇石阳头村出士\n收藏单位：中国青铜器博物院\nWine vessel (hi) inseribed with “Shi Bi Geng\nWesternZhoue\nExcavated iomShizuitoucunVillage.Shigu Town.WeibinDistrictn1992\nCollection of Baojr Bronze WareMuseum",
       "inscriptionFocus": false,
@@ -7889,21 +7804,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年渭滨区石鼓镇石嘴头村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "史毕庚觯：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1992年渭滨区石鼓镇石嘴头村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "史毕庚觯：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=1992年渭滨区石鼓镇石嘴头村出土，collection=中国青铜器博物院",
+        "history": "史毕庚觯属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3588",
       "number": "87",
       "title": "昊母盆盖",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -7939,8 +7853,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "昊母盆盖：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "昊母盆盖 · 西周 · 铜件厂拣选 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "昊母盆（xu）盖\n时代：西周\n来源：铜件厂拣选\n收藏单位：中国青铜器博物院\nFood container cover (xu) inscribed with “Hao Mu\"\nWesternZhou\nSelected from Copper ComponentsFactory\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -7963,21 +7877,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "铜件厂拣选"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "昊母盆盖：从口沿沿腹壁看到底部，注意承托面和残损位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=铜件厂拣选，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "昊母盆盖：从口沿、腹壁和底部观察承托关系，具体用途以展签为准。",
+        "evidence": "标签事实：period=西周，findspot=铜件厂拣选，collection=中国青铜器博物院",
+        "history": "昊母盆盖的口沿、腹壁与底部保存了容纳或承托信息；具体功能以展签记录为准。"
       }
     },
     {
       "id": "photo-group-3590",
       "number": "88",
       "title": "成周邦父壶盖",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8013,8 +7926,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "成周邦父壶盖：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "成周邦父壶盖 · 西周。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "成周邦父壶盖\n成周邦父壶盖\n时代：西周\n吴母（）盖",
       "inscriptionFocus": false,
@@ -8035,21 +7948,20 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "西周"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "成周邦父壶盖：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "成周邦父壶盖：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "标签事实：period=西周",
+        "history": "成周邦父壶盖的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3595",
       "number": "89",
       "title": "夷王簋盖",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8111,8 +8023,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "夷王簋盖：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "夷王簋盖 · 西周 · 1978年扶风县法门镇齐家村十九号墓出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "父乙点（yan）\n时代：西周\n来源：1978年扶风县法门镇齐家村十九号墓出土\n收藏单位：宝鸡周原博物院\nSteamer (yan) inscribed with “Fu Yr”\nWesternZhou\nExcavated fromNo.19 tomb inQijiacunVillage,FamenTownFufeng County in 1978\nCollection of Baoji Zhouyuan Museum",
       "inscriptionFocus": false,
@@ -8135,21 +8047,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年扶风县法门镇齐家村十九号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "夷王簋盖：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1978年扶风县法门镇齐家村十九号墓出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "夷王簋盖：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1978年扶风县法门镇齐家村十九号墓出土，collection=宝鸡周原博物院",
+        "history": "夷王簋盖属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3599",
       "number": "90",
       "title": "作旅鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8198,8 +8109,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "作旅鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "作旅鼎 · 西周 · 1978年扶风县法门镇齐家村十九号墓出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "作旅鼎\n时代：西周\n来源：1978年扶风县法门镇齐家村十九号墓出土\n收藏单位：宝鸡周原博物院\nTripod(ding)inscribedwith“ZuoLyu\"\nWestemZhou\nExcavatedfromNo.19 tomb inQijiacunVillage,FamenTown,FufengCounty in1978\nCollection ofBaoji ZhouyuanMuseum",
       "inscriptionFocus": false,
@@ -8222,21 +8133,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年扶风县法门镇齐家村十九号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "作旅鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1978年扶风县法门镇齐家村十九号墓出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "作旅鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1978年扶风县法门镇齐家村十九号墓出土，collection=宝鸡周原博物院",
+        "history": "作旅鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3602",
       "number": "91",
       "title": "盨",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8285,8 +8195,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "盨：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "盨 · 西周 · 2003年金台区长青村出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "（bu）\n时代：西周\n来源：2003年金台区长青村出土\n收藏单位：宝鸡市考古研究所\nWinevessel (bu)\nWestemZhou\nExeavatedfromChangqingunVillageJintaiDistiti003\nCollection ofBaoji Institute of Archacology",
       "inscriptionFocus": false,
@@ -8309,21 +8219,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年金台区长青村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "盨：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2003年金台区长青村出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "盨：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "evidence": "标签事实：period=西周，findspot=2003年金台区长青村出土，collection=宝鸡市考古研究所",
+        "history": "盨的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3605",
       "number": "92",
       "title": "强伯四耳方座簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8385,8 +8294,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "强伯四耳方座簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "强伯四耳方座簋 · 西周 · 1981年金台区纸坊头国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "強伯四耳方座篮（gui）\n时代：西周\n来源：1981年金台区纸坊头国墓地一号墓出土\n收藏单位：中国青铜器博物院\nSquare-based food container(gui) with fourhandles of Yubo\nWestemZhou\nExcavated fromNo.1 tomb inZhifangtouVillage of Yuguo Cemetery.Jintai District in1981\nCollection ofBaoji BronzeWare Museum",
       "inscriptionFocus": false,
@@ -8409,21 +8318,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "强伯四耳方座簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "强伯四耳方座簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头国墓地一号墓出土，collection=中国青铜器博物院",
+        "history": "强伯四耳方座簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3609",
       "number": "93",
       "title": "伯方鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8459,8 +8367,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "伯方鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "伯方鼎 · 西周。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "伯方鼎\n时代：西周",
       "inscriptionFocus": false,
@@ -8481,21 +8389,20 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "西周"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "伯方鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "伯方鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周",
+        "history": "伯方鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3613",
       "number": "94",
       "title": "云雷纹鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8544,8 +8451,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "云雷纹鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "云雷纹鼎 · 西周 · 1981年金台区纸坊头强国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "云雷纹鼎\n时代：西周\n来源：1981年金台区纸坊头强国墓地一号墓出土\n收藏单位：中国青铜器博物院\nTripodding）withcloudandthunderpattrs\nWestemZhou\nExcaatdfrmNombZhangoVifugCDis9\nCollectionofBaojiBronze WareMuseum",
       "inscriptionFocus": false,
@@ -8568,21 +8475,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头强国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "云雷纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头强国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "云雷纹鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头强国墓地一号墓出土，collection=中国青铜器博物院",
+        "history": "云雷纹鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3617",
       "number": "95",
       "title": "分裆圆鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8618,8 +8524,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "分裆圆鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "分裆圆鼎 · 西周 · 2003年金台区长青村出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "分裆圆鼎\n时代：西周\n来源：2003年金台区长青村出土\n收藏单位：宝鸡市考古研究所\nHollow-legged round tripod (ding)\nWestern Zhou\nExcavated from ChangqingcunVillage,JintaiDistrict in2003\nCollection ofBaoji Instituteof Archaeology",
       "inscriptionFocus": false,
@@ -8642,21 +8548,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年金台区长青村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "分裆圆鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2003年金台区长青村出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "分裆圆鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=2003年金台区长青村出土，collection=宝鸡市考古研究所",
+        "history": "分裆圆鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3619",
       "number": "96",
       "title": "祖乙簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8679,8 +8584,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "祖乙簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "祖乙簋 · 西周 · 2003年金台区长青村出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 373,
@@ -8716,21 +8621,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年金台区长青村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "祖乙簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2003年金台区长青村出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "祖乙簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=2003年金台区长青村出土，collection=宝鸡市考古研究所",
+        "history": "祖乙簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3622",
       "number": "97",
       "title": "直棱纹簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8766,8 +8670,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "直棱纹簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "直棱纹簋 · 西周 · 1980年渭滨区竹园沟鱼国墓地八号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "直棱纹篮（gui）\n时代：西周\n来源：1980年渭滨区竹园沟鱼国墓地八号墓出土\n收藏单位：中国青铜器博物院\nFood container (gui) with vertical ribbing pattern\nWestermZhou\nExcavated fromNo.8 tomb inZhuyuangouVillage of YuguoCemetery.WeibinDistrict in 1980\nCollection of Baoji BronzeWare Museum",
       "inscriptionFocus": false,
@@ -8790,21 +8694,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟鱼国墓地八号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "直棱纹簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟鱼国墓地八号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "直棱纹簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟鱼国墓地八号墓出土，collection=中国青铜器博物院",
+        "history": "直棱纹簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3624",
       "number": "98",
       "title": "提梁小方彝",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8853,8 +8756,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "提梁小方彝：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "提梁小方彝 · 西周 · 1980年渭滨区竹园沟强国墓地七号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "提梁小方（i）\n时代：西周\n来源：1980年渭滨区竹园沟强国墓地七号墓出土\n收藏单位：中国青铜器博物院\nSquare wine vessel (lei) with a loop handle\nWesternZhou\nExcavated from No.7 tomb in Zhuyuangou Village of Yuguo Cemetery,Weibin District in 1980\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -8877,21 +8780,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地七号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "提梁小方彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地七号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "提梁小方彝：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地七号墓出土，collection=中国青铜器博物院",
+        "history": "提梁小方彝属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3627",
       "number": "99",
       "title": "丰公鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -8940,8 +8842,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "丰公鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "丰公鼎 · 西周 · 1980年渭滨区竹园沟国墓地七号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "丰公鼎\n时代：西周\n来源：1980年渭滨区竹园沟国墓地七号墓出土\n收藏单位：中国青铜器博物院\nWine vessel (ding) of Fenggong\nWesternZhou\nExcavated from No.7 tomb in Zhuyuangou Villageof Yuguo Cemetery,Weibin District in 1980\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -8964,21 +8866,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟国墓地七号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "丰公鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟国墓地七号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "丰公鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟国墓地七号墓出土，collection=中国青铜器博物院",
+        "history": "丰公鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3630",
       "number": "100",
       "title": "兽面泡",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -9014,8 +8915,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "兽面泡：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面泡 · 春秋 · 1987年陇县东南镇边家庄村出土 · 陇县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "兽面泡\n时代：春秋\n来源：1987年陇县东南镇边家庄村出土\n收藏单位：陇县博物馆\nHarness fittings in animal-face shape\nSpring and Autumn period\nExcavated from Bianjiazhuangcun Village,Dongnan Town,Longxian County in 1987\nCollection ofBaoji LongxianCountyMuseum",
       "inscriptionFocus": false,
@@ -9038,13 +8939,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1987年陇县东南镇边家庄村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看整体轮廓与背面固定结构，再放大边缘、磨痕和纹样。",
         "inscription": "",
         "significance": "小件装饰器物提供了不同于大型礼器的观察尺度：把个人身份、身体使用和审美偏好带入周秦物质文化。",
         "decoration": "",
         "form": "青铜泡作兽面形，正面高浮雕兽面纹，背面有桥形纽或固定结构，多用作马具或带饰。",
-        "evidence": "标签事实：period=春秋，findspot=1987年陇县东南镇边家庄村出土，collection=陇县博物馆；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=春秋，findspot=1987年陇县东南镇边家庄村出土，collection=陇县博物馆",
         "history": "兽面泡属玉石、金属装饰或车马饰件，出土于陇县边家庄村。它们体量虽小，却常与佩饰、身份、礼仪和墓葬随葬体系有关，不能因照片尺寸小就当作普通杂件。"
       }
     },
@@ -9052,7 +8952,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3632",
       "number": "101",
       "title": "钩形铜泡",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -9088,8 +8988,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "钩形铜泡：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "钩形铜泡 · 春秋 · 1987年陇县东南镇边家庄村出土 · 陇县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "钩形铜泡\n时代：春秋\n真边家庄村出士\n来源：1987年陇县东南镇边家庄村出士\n收藏单位：陇县博物馆\nue)\nHook-shaped bronze harness fitting\nSpringandAutumnperiod\nVillage,DongnanTown,Longxian County in1981\nExcavated from Bianjiazhuangcun Village,DongnanTown,Longxian County in1987\nMuseum\nCollectionofBaoji LongxianCountyMuseum",
       "inscriptionFocus": false,
@@ -9112,21 +9012,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1987年陇县东南镇边家庄村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先看整体轮廓与穿孔，再放大边缘、磨痕和纹样。",
+        "viewing": "钩形铜泡：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
-        "significance": "玉石与装饰类器物提供不同于大型礼器的观察尺度：把个人身份、身体使用和审美偏好带入周秦物质文化。",
+        "significance": "",
         "decoration": "",
-        "form": "识别重点在穿孔、佩系、对称性、磨制面与背部结构；金环、铜泡等小件看截面、边缘和固定方式。",
-        "evidence": "标签事实：period=春秋，findspot=1987年陇县东南镇边家庄村出土，collection=陇县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "玉佩、玉环、玉鸟等小件常与佩饰、身份、礼仪和墓葬随葬体系有关，不能因体量小就当作普通杂件。"
+        "form": "钩形铜泡：先看整体轮廓、穿孔或背部固定结构，再核对磨制面与纹样。",
+        "evidence": "标签事实：period=春秋，findspot=1987年陇县东南镇边家庄村出土，collection=陇县博物馆",
+        "history": "钩形铜泡属于玉石或装饰类；穿孔、背部固定结构和磨制面是判断佩系与使用方式的线索。"
       }
     },
     {
       "id": "photo-group-3634",
       "number": "102",
       "title": "蟠螭纹盘",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -9162,8 +9061,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "蟠螭纹盘：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "蟠螭纹盘 · 春秋 · 陈仓区出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "蟠（pan）螨（chi)纹盘\n时代：春秋\n来源：陈仓区出土\n收藏单位：中国青铜器博物院\nWater basin (pan) with dragon pattern\nSpring and Autumn period\nExcavated from Chencang District\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -9186,21 +9085,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "陈仓区出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "蟠螭纹盘：先看浅腹和耳足，再看盘底或器身的铭文、磨损与铸痕。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=春秋，findspot=陈仓区出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "蟠螭纹盘：先看浅腹、耳足和盘底的连接，再核对内底或器身是否保留铭文。",
+        "evidence": "标签事实：period=春秋，findspot=陈仓区出土，collection=中国青铜器博物院",
+        "history": "蟠螭纹盘以浅腹和承托面为主要形制线索；其使用情境要结合铭文、出土地点和同组器物判断。"
       }
     },
     {
       "id": "photo-group-3636",
       "number": "103",
       "title": "重环纹方壶",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -9249,8 +9147,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "重环纹方壶：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "重环纹方壶 · 春秋 · 征集 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "重环纹方壶\n时代：春秋\n来源：征集\n收藏单位：中国青铜器博物院\nSquare bronze wine jar (hu) with double-ring pattern\nSpring and Autumn period\nCollected from- public\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -9273,21 +9171,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "征集"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "重环纹方壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=春秋，findspot=征集，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "重环纹方壶：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "标签事实：period=春秋，findspot=征集，collection=中国青铜器博物院",
+        "history": "重环纹方壶的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3641",
       "number": "104",
       "title": "羽阳千岁瓦当",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ceramic",
       "categoryLabel": "陶瓷与杂器",
       "musicFocus": false,
@@ -9323,8 +9220,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "羽阳千岁瓦当：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "羽阳千岁瓦当 · 汉代 · 征集 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "男王\n羽阳千岁瓦当\n时代\n时代：汉代\n来\n来源：征集\n收藏单位：中国青铜器博物院\nTile ends inscribed with “Yu Yang Qian Sut\nHan Dynasty\nXinjie Town, Chencang District\nCollected from public\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -9347,13 +9244,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "征集"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看当面四字的篆书布局与边轮，注意文字笔画与陶质的结合。",
         "inscription": "",
         "significance": "文字瓦当为研究秦汉宫室分布与瓦当文字提供了材料，\"羽阳\"与羽阳宫的对应关系尤具史料价值。",
         "decoration": "",
         "form": "陶质圆形瓦当，当面以阳文篆书\"羽阳千岁\"四字，边轮规整；文字瓦当是汉代建筑等级与装饰的标识。",
-        "evidence": "标签事实：period=汉代，findspot=征集，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=汉代，findspot=征集，collection=中国青铜器博物院",
         "history": "羽阳千岁瓦当为汉代建筑构件，当面刻\"羽阳千岁\"四字。羽阳宫是秦汉离宫，瓦当铭文把建筑构件与宫室名称联系起来，属文字瓦当中的吉语兼宫名一类。"
       }
     },
@@ -9361,7 +9257,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3643",
       "number": "105",
       "title": "玉琮",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -9410,8 +9306,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "title_panel"
       },
       "labelText": "",
-      "summary": "玉琮：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "玉琮 · 汉代 · 1973年凤翔区长青镇出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "时代：汉代\n来源：1973年凤翔区长青镇出土\n收藏单位：中国青铜器博物院\nRitual vessel (ding) of Yuyang Palace\nHanDynasty\nExcavated from Changqing Town,Fengxiang District in 1973\nCollection ofBaoji BronzeWare Museum",
       "inscriptionFocus": false,
@@ -9434,21 +9330,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1973年凤翔区长青镇出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先看整体轮廓与穿孔，再放大边缘、磨痕和纹样。",
+        "viewing": "玉琮：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
-        "significance": "玉石与装饰类器物提供不同于大型礼器的观察尺度：把个人身份、身体使用和审美偏好带入周秦物质文化。",
+        "significance": "",
         "decoration": "",
-        "form": "识别重点在穿孔、佩系、对称性、磨制面与背部结构；金环、铜泡等小件看截面、边缘和固定方式。",
-        "evidence": "标签事实：period=汉代，findspot=1973年凤翔区长青镇出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "玉佩、玉环、玉鸟等小件常与佩饰、身份、礼仪和墓葬随葬体系有关，不能因体量小就当作普通杂件。"
+        "form": "玉琮：先看整体轮廓、穿孔或背部固定结构，再核对磨制面与纹样。",
+        "evidence": "标签事实：period=汉代，findspot=1973年凤翔区长青镇出土，collection=中国青铜器博物院",
+        "history": "玉琮属于玉石或装饰类；穿孔、背部固定结构和磨制面是判断佩系与使用方式的线索。"
       }
     },
     {
       "id": "photo-group-3649",
       "number": "106",
       "title": "秦公钟",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "music",
       "categoryLabel": "乐器与礼乐",
       "musicFocus": true,
@@ -9549,8 +9444,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "音乐与礼乐重点：秦公钟。按现场顺序归档，优先观察器形分区、悬挂结构与铭文位置。",
-      "status": "名称依据后置展签校正",
+      "summary": "秦公钟 · 春秋 · 1978年陈仓区太公庙村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "秦公钟\n时代：春秋\n来源：1978年陈仓区太公庙村出土\n收藏单位：中国青铜器博物院\nChime bells of Duke Qin\nSpring and Autumn period\nExcavated from Taigongmiaocun Village,Chencang District in 1978\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": true,
@@ -9573,13 +9468,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年陈仓区太公庙村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看钟体分区与悬挂结构，再读钲部铭文；可与秦公镈对照，理解编钟组合。",
         "inscription": "",
         "significance": "秦公钟铭文涉及秦人始封、受土与祭祀，与秦公镈、石鼓文等共同构成秦早期文字与礼制的证据链。",
         "decoration": "",
         "form": "甬钟形制，钟体钲、鼓、篆、枚分区完整，铭文铸于钲部与鼓部；合瓦形钟体可发双音。",
-        "evidence": "标签事实：period=春秋，findspot=1978年陈仓区太公庙村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=春秋，findspot=1978年陈仓区太公庙村出土，collection=中国青铜器博物院",
         "history": "秦公钟出土于陈仓太公庙村窖藏，与秦公镈同出，是春秋早期秦国国君所作编钟。铭文追述秦人先祖受命于周的世系，是研究秦早期历史与礼乐制度的核心材料。"
       }
     },
@@ -9587,7 +9481,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3656",
       "number": "107",
       "title": "秦公镈",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "music",
       "categoryLabel": "乐器与礼乐",
       "musicFocus": true,
@@ -9636,8 +9530,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "音乐与礼乐重点：秦公镈。按现场顺序归档，优先观察器形分区、悬挂结构与铭文位置。",
-      "status": "名称依据后置展签校正",
+      "summary": "秦公镈 · 春秋 · 1978年陈仓区太公庙村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "秦公钟（bo）\n时代：春秋\n来源：1978年陈仓区太公庙村出士\n收藏单位：中国青铜器博物院\nBo bells of Duke Qin\nSpring andAutumn period\nExcavated from Taigongmiaocun Village,ChencangDistrict in1978\nCollectionofBaoji Bronze Ware Museum",
       "inscriptionFocus": true,
@@ -9660,13 +9554,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年陈仓区太公庙村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看镈体与钟的形制差异（口沿平齐、体量浑厚），再读铭文。",
         "inscription": "",
         "significance": "秦公镈铭文是秦早期金文的标准材料，与秦公钟铭文互补，对秦世系、祭祀与礼乐制度研究有核心价值。",
         "decoration": "",
         "form": "镈体作椭方形，口沿平齐，顶部设环钮，钮部有龙蛇形装饰；钲部与鼓部铸铭文。",
-        "evidence": "标签事实：period=春秋，findspot=1978年陈仓区太公庙村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=春秋，findspot=1978年陈仓区太公庙村出土，collection=中国青铜器博物院",
         "history": "秦公镈与秦公钟同出太公庙窖藏，属春秋早期秦公所作礼乐重器。镈体量大于钟，悬挂演奏，铭文记秦公世系与受命之辞。"
       }
     },
@@ -9674,7 +9567,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3659",
       "number": "108",
       "title": "连珠纹扁茎剑",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -9710,8 +9603,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "连珠纹扁茎剑：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "连珠纹扁茎剑 · 春秋 · 征集 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "连珠纹扁茎剑\n格剑\n时代：春秋\n来源：征集\n收藏单位：中国青铜器博物院\n器博物院\nSword with beaded pattern and fat hilt.\nhilted and guard\nSpring and Autumn period\nCollectedfrom public\nents Factory\nCollection ofBaoji Bronze Ware Museum\nMuseum",
       "inscriptionFocus": false,
@@ -9734,13 +9627,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "征集"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看剑身起脊与刃线，再观察连珠纹与茎、格结构。",
         "inscription": "",
         "significance": "春秋青铜剑是近身格斗兵器，连珠纹装饰反映兵器向仪仗化的过渡。",
         "decoration": "",
         "form": "剑身修长，中部起脊，扁茎接剑格与剑首；连珠纹以连续乳点装饰剑身或剑格。",
-        "evidence": "标签事实：period=春秋，findspot=征集，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=春秋，findspot=征集，collection=中国青铜器博物院",
         "history": "连珠纹扁茎剑为春秋时期短兵器，剑茎扁平便于缠缑握持，剑身饰连珠纹，兼具实用与装饰。"
       }
     },
@@ -9748,7 +9640,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3664",
       "number": "109",
       "title": "环首铜削",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -9784,8 +9676,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "title_panel"
       },
       "labelText": "",
-      "summary": "环首铜削：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "环首铜削 · 春秋 · 渭滨区高家镇甘峪村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "环首铜削\n时代：春秋\n来源：渭滨区高家镇甘峪村出土\n收藏单位：中国青铜器博物院\nBronze scraper with ring handle\nSpring and Autumn period\nExcavatedfromGanyucunVillage",
       "inscriptionFocus": false,
@@ -9808,21 +9700,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "渭滨区高家镇甘峪村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先找出受力或使用部位，再看纹饰与铸造细节；剑看茎格首刃，戈看援内穿，车马器看连接面与装饰面。",
+        "viewing": "环首铜削：先找刃部或受力、连接部位，再看正背面装饰；具体用途以展签为准。",
         "inscription": "",
-        "significance": "这些器物显示青铜技术不只服务于祭祀礼器，也参与军事组织、交通和身份展演，是理解周秦社会结构的另一条入口。",
+        "significance": "",
         "decoration": "",
-        "form": "兵器看刃部、援、内、胡、穿、茎、格等结构；车马器看连接、受力和装饰位置。",
-        "evidence": "标签事实：period=春秋，findspot=渭滨区高家镇甘峪村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "兵器与车马器直接服务于战争、出行与身份礼仪，宝鸡周秦墓葬中戈、剑、弩机、当卢、轭饰等常与贵族身份同时出现。"
+        "form": "环首铜削：重点查看刃部、穿孔、背面固定结构或受力面；具体用途以展签与组合关系为准。",
+        "evidence": "标签事实：period=春秋，findspot=渭滨区高家镇甘峪村出土，collection=中国青铜器博物院",
+        "history": "环首铜削属于兵器或车马器；刃部、连接和受力结构需要与墓葬组合一起解释。"
       }
     },
     {
       "id": "photo-group-3669",
       "number": "110",
       "title": "龙纹单头齿方筒形铜构件",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "architecture",
       "categoryLabel": "建筑构件",
       "musicFocus": false,
@@ -9858,8 +9749,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "possible_info_panel"
       },
       "labelText": "",
-      "summary": "龙纹单头齿方筒形铜构件：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "龙纹单头齿方筒形铜构件 · 春秋 · 1973年凤翔区城关镇豆腐村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "龙纹单头齿方筒形铜构件\n时代：春秋\n来源：1973年凤翔区城关镇豆腐村出土\n收藏单位：中国青铜器博物院\nSquare architectural fttingwith single teeth-head and dragon pattern\nSpring and Autumn period\nExcavatefromDoufucuVilageChn",
       "inscriptionFocus": false,
@@ -9882,13 +9773,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1973年凤翔区城关镇豆腐村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看方筒的内腔与榫接面，再观察龙纹装饰，判断其在建筑中的套接部位。",
         "inscription": "",
         "significance": "凤翔雍城一带出土的青铜建筑构件，是研究春秋秦宫室建筑技术与装饰工艺的实物。",
         "decoration": "",
         "form": "方筒形，一面设龙纹装饰与单头齿榫接结构，用于套接木构件；铜质建筑构件体量厚重。",
-        "evidence": "标签事实：period=春秋，findspot=1973年凤翔区城关镇豆腐村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=春秋，findspot=1973年凤翔区城关镇豆腐村出土，collection=中国青铜器博物院",
         "history": "龙纹单头齿方筒形铜构件为春秋时期大型建筑（秦都雍城宫室）的青铜构件，出土于凤翔豆腐村。青铜建筑构件用于梁架节点或装饰部位，是秦早期宫室建筑等级的标志。"
       }
     },
@@ -9896,7 +9786,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3672",
       "number": "111",
       "title": "龙纹铜构件",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "architecture",
       "categoryLabel": "建筑构件",
       "musicFocus": false,
@@ -9945,8 +9835,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "龙纹铜构件：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "龙纹铜构件 · 春秋 · 1973年凤翔区城关镇豆腐村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "龙纹铜构件\n时代：春秋\n来源：1973年凤翔区城关镇豆腐村出土\n收藏单位：中国青铜器博物院\nBronze fitting with dragon pattern\nSpring and Autumn period\nExcavated from Doufu Village. Chengguan Town. Fengxiang District in 1973\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -9969,13 +9859,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1973年凤翔区城关镇豆腐村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看构件表面的龙纹与连接结构，理解其在木构建筑中的位置。",
         "inscription": "",
         "significance": "雍城建筑构件群反映春秋秦宫室建筑达到的高度，为研究秦建筑史提供了实物。",
         "decoration": "",
         "form": "青铜质，饰龙纹，设套接或插接结构；与方筒形构件配合使用于梁柱节点。",
-        "evidence": "标签事实：period=春秋，findspot=1973年凤翔区城关镇豆腐村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=春秋，findspot=1973年凤翔区城关镇豆腐村出土，collection=中国青铜器博物院",
         "history": "龙纹铜构件与单头齿方筒形构件同出凤翔豆腐村，属秦都雍城宫室建筑构件群，用于建筑节点的加固与装饰。"
       }
     },
@@ -9983,7 +9872,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3677",
       "number": "112",
       "title": "蒜头铜扁壶",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -10032,8 +9921,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "蒜头铜扁壶：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "蒜头铜扁壶 · 战国 · 2007年岐山县凤鸣镇四崖头村出土 · 岐山县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "蒜头铜扁壶\n时代：战国\n来源：2007年岐山县凤鸣镇四崖头村出士\n收藏单位：岐山县博物馆\nBronze fat pot (hu) with garlic-shaped mouth\nWarringStates period\nExcavated from SiyatouVillage,Fengming Town,Qishan County in2007\nCollection of Baoji Qishan County Museum",
       "inscriptionFocus": false,
@@ -10056,21 +9945,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2007年岐山县凤鸣镇四崖头村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "蒜头铜扁壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=战国，findspot=2007年岐山县凤鸣镇四崖头村出土，collection=岐山县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "蒜头铜扁壶：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "标签事实：period=战国，findspot=2007年岐山县凤鸣镇四崖头村出土，collection=岐山县博物馆",
+        "history": "蒜头铜扁壶的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3680",
       "number": "113",
       "title": "弦纹蒜头壶",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -10119,8 +10007,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "弦纹蒜头壶：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "弦纹蒜头壶 · 秦代 · 1978年陈仓区凤阁岭镇出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "弦纹蒜头壶\n时代：秦代\n来源：1978年陈仓区凤阁岭镇出土\n收藏单位：中国青铜器博物院\nGarlic-shaped mouth jar (hu) with bow string pattern\nQinDynasty\nExcavated from Fenggeling Town,Chencang District in1978\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -10143,21 +10031,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年陈仓区凤阁岭镇出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "弦纹蒜头壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=秦代，findspot=1978年陈仓区凤阁岭镇出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "弦纹蒜头壶：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "标签事实：period=秦代，findspot=1978年陈仓区凤阁岭镇出土，collection=中国青铜器博物院",
+        "history": "弦纹蒜头壶的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3685",
       "number": "114",
       "title": "素面金环",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -10199,8 +10086,8 @@ window.BAOJI_PHOTO_INDEX = {
         "cropNote": "人工裁切：小型或远景器物，原片保留。"
       },
       "labelText": "",
-      "summary": "素面金环：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "素面金环 · 春秋 · 1992年渭滨区神农镇益门堡村出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "素面金环\n时代：春秋\n来源：1992年渭滨区神农镇益门堡村出土\n收藏单位：宝鸡市考古研究所\nPlain-faced gold ring\nSpring andAutumn period\nExcavatedfromYimenbucunVillageShennong Town,WeibinDistrict in 1992\nCollection of Baoji Institute of Archacology",
       "inscriptionFocus": false,
@@ -10223,21 +10110,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年渭滨区神农镇益门堡村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先看整体轮廓与穿孔，再放大边缘、磨痕和纹样。",
+        "viewing": "素面金环：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
-        "significance": "玉石与装饰类器物提供不同于大型礼器的观察尺度：把个人身份、身体使用和审美偏好带入周秦物质文化。",
+        "significance": "",
         "decoration": "",
-        "form": "识别重点在穿孔、佩系、对称性、磨制面与背部结构；金环、铜泡等小件看截面、边缘和固定方式。",
-        "evidence": "标签事实：period=春秋，findspot=1992年渭滨区神农镇益门堡村出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
-        "history": "玉佩、玉环、玉鸟等小件常与佩饰、身份、礼仪和墓葬随葬体系有关，不能因体量小就当作普通杂件。"
+        "form": "素面金环：先看整体轮廓、穿孔或背部固定结构，再核对磨制面与纹样。",
+        "evidence": "标签事实：period=春秋，findspot=1992年渭滨区神农镇益门堡村出土，collection=宝鸡市考古研究所",
+        "history": "素面金环属于玉石或装饰类；穿孔、背部固定结构和磨制面是判断佩系与使用方式的线索。"
       }
     },
     {
       "id": "photo-group-3687",
       "number": "115",
       "title": "索状玉环",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -10279,8 +10165,8 @@ window.BAOJI_PHOTO_INDEX = {
         "cropNote": "人工裁切：小型或远景器物，原片保留。"
       },
       "labelText": "",
-      "summary": "索状玉环：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "索状玉环 · 春秋 · 1992年渭滨区神农镇益门堡村出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "索状玉环\n时代：春秋\n来源：1992年渭滨区神农镇益门堡村出土\n收藏单位：宝鸡市考古研究所\nJade rings with rope pattern\nSpring and Autumn period\nExcavated from YimenbucunVillage,Shennong Town,Weibin District in1992\nCollection of Baoji Institute of Archaeology",
       "inscriptionFocus": false,
@@ -10303,21 +10189,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年渭滨区神农镇益门堡村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先看整体轮廓与穿孔，再放大边缘、磨痕和纹样。",
+        "viewing": "索状玉环：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
-        "significance": "玉石与装饰类器物提供不同于大型礼器的观察尺度：把个人身份、身体使用和审美偏好带入周秦物质文化。",
+        "significance": "",
         "decoration": "",
-        "form": "识别重点在穿孔、佩系、对称性、磨制面与背部结构；金环、铜泡等小件看截面、边缘和固定方式。",
-        "evidence": "标签事实：period=春秋，findspot=1992年渭滨区神农镇益门堡村出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
-        "history": "玉佩、玉环、玉鸟等小件常与佩饰、身份、礼仪和墓葬随葬体系有关，不能因体量小就当作普通杂件。"
+        "form": "索状玉环：先看整体轮廓、穿孔或背部固定结构，再核对磨制面与纹样。",
+        "evidence": "标签事实：period=春秋，findspot=1992年渭滨区神农镇益门堡村出土，collection=宝鸡市考古研究所",
+        "history": "索状玉环属于玉石或装饰类；穿孔、背部固定结构和磨制面是判断佩系与使用方式的线索。"
       }
     },
     {
       "id": "photo-group-3689",
       "number": "116",
       "title": "虎形玉佩",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -10359,8 +10244,8 @@ window.BAOJI_PHOTO_INDEX = {
         "cropNote": "人工裁切：小型或远景器物，原片保留。"
       },
       "labelText": "",
-      "summary": "虎形玉佩：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "虎形玉佩 · 春秋 · 1992年渭滨区神农镇益门堡村出土 · 宝鸡市考古研究所。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "虎形玉佩\n时代：春秋\n来源：1992年渭滨区神农镇益门堡村出土\n收藏单位：宝鸡市考古研究所\nTiger-shaped jade pendant\nSpring and Autumn period\nExcavated from Yimenbucun Village,Shennong Town,Weibin District in 1992\nCollection ofBaoji InstituteofArchaeology",
       "inscriptionFocus": false,
@@ -10383,13 +10268,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年渭滨区神农镇益门堡村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看虎的造型与穿孔位置，再观察玉质与磨制工艺。",
         "inscription": "",
         "significance": "益门堡墓地出土金、玉组合，虎形玉佩是研究春秋秦地贵族服饰与玉文化的材料。",
         "decoration": "",
         "form": "玉质，透雕或线刻虎形，虎身弯曲作回首或伏卧状，有穿孔用于佩系。",
-        "evidence": "标签事实：period=春秋，findspot=1992年渭滨区神农镇益门堡村出土，collection=宝鸡市考古研究所；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=春秋，findspot=1992年渭滨区神农镇益门堡村出土，collection=宝鸡市考古研究所",
         "history": "虎形玉佩出土于益门堡村，属春秋时期佩玉。虎形佩以穿孔系佩，与益门堡墓地的金玉组合有关，反映贵族佩饰制度。"
       }
     },
@@ -10397,7 +10281,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3694",
       "number": "117",
       "title": "八年昌不韦戈",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -10446,8 +10330,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "八年昌不韦戈：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "八年昌不韦戈 · 战国 · 铜件厂拣选。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "八年昌不韦文\n时代战国成\n来源：铜件厂栋选\n收藏单位宝鸡荒铜善\nDagger-axe (ge nade hyrr Hiorerin the Sth year of Qin Duke Zheng's reign",
       "inscriptionFocus": false,
@@ -10469,13 +10353,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "铜件厂拣选"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看援、内、胡的形制与内上铭文，注意\"八年\"纪年与\"吕不韦\"题名。",
         "inscription": "",
         "significance": "吕不韦戈属秦\"物勒工名\"制度的代表，铭文为秦兵器制造与职官制度提供了纪年材料。",
         "decoration": "",
         "form": "铜质，长援、内、胡、阑结构完整，内上铸铭文，记监造机构与工官名。",
-        "evidence": "标签事实：period=战国，findspot=铜件厂拣选；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=战国，findspot=铜件厂拣选",
         "history": "八年昌不韦戈为战国晚期秦戈，铭文记\"八年，吕不韦造\"，即秦王政八年（前239年）相邦吕不韦监造之器。戈铭对研究秦兵器监造制度与吕不韦专权时期的军政有直接价值。"
       }
     },
@@ -10483,7 +10366,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3697",
       "number": "118",
       "title": "伯各卣",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -10532,8 +10415,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "伯各卣：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "伯各卣 · 西周 · 1980年渭滨区竹园沟强国墓地七号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "伯各卤（you）\n时代：西周\n来源：1980年渭滨区竹园沟强国墓地七号墓出士\n收藏单位：中国青铜器博物院\nWine vessel (yonl) of Bo Ge\nWestermZhou\nExcavatedfromNo.tmbZhyungouVillgf\nCollectionfBajironzeWaMusm",
       "inscriptionFocus": false,
@@ -10556,21 +10439,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地七号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "伯各卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地七号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "伯各卣：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地七号墓出土，collection=中国青铜器博物院",
+        "history": "伯各卣属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3700",
       "number": "119",
       "title": "四耳簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -10619,8 +10501,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "四耳簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "四耳簋 · 西周 · 1981年金台区纸坊头强国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "四耳盒（gu）\n时代：西周\n来源：1981年金台区纸坊头强国墓地一号墓出士\n收藏单位：中国青铜器博物院\ncontainer (gui) with four ears\nintai District in 1981",
       "inscriptionFocus": false,
@@ -10643,21 +10525,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头强国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "四耳簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头强国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "四耳簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头强国墓地一号墓出土，collection=中国青铜器博物院",
+        "history": "四耳簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3708",
       "number": "120",
       "title": "位至三公双夔镜",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "other",
       "categoryLabel": "其他器物",
       "musicFocus": false,
@@ -10699,8 +10580,8 @@ window.BAOJI_PHOTO_INDEX = {
         "cropNote": "人工裁切：小型或远景器物，原片保留。"
       },
       "labelText": "",
-      "summary": "位至三公双夔镜：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "位至三公双夔镜 · 东汉 · 旧藏 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "位至\n君宜高官镜\n时代：东\n来源：1\n时代：东汉\n来源：旧藏\n收藏单\n收藏单位：中国青铜器博物院\nBronz\nBronze mirror inscribed with “Jun Yi Gao Guan\nEaster\nDona\nEastern Han\nColl\nMuseum Collection\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -10723,13 +10604,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "旧藏"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看钮座与铭文布局，再观察双夔纹的对称构图。",
         "inscription": "",
         "significance": "铭文镜反映汉代对高官厚禄的祈愿与家族观念，是研究汉代铜镜铭文与社会心态的材料。",
         "decoration": "",
         "form": "圆形，圆钮，钮座外饰双夔纹与铭文带；\"位至三公\"四字分置钮两侧。",
-        "evidence": "标签事实：period=东汉，findspot=旧藏，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=东汉，findspot=旧藏，collection=中国青铜器博物院",
         "history": "位至三公双夔镜为东汉铜镜，镜背铭文\"位至三公\"为汉代吉语，双夔纹饰其间，属东汉常见铭文镜类型。"
       }
     },
@@ -10737,7 +10617,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3710",
       "number": "121",
       "title": "夔凤纹方鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -10786,8 +10666,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "夔凤纹方鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "夔凤纹方鼎 · 西周 · 岐山县凤鸣镇罗家河村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "夔（kui凤纹方鼎\n时代：西周\n来源：岐山县凤鸣镇罗家河村出土\n收藏单位：中国青铜器博物院\nRitual vessel (ding) with Kui dragon and phoenix\nWestern Zhou\nExcavated from Luojiahecun Village,Fengming Town.Qianshan County\nCollection of Baoji Bronze Ware Muscum",
       "inscriptionFocus": false,
@@ -10810,21 +10690,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "岐山县凤鸣镇罗家河村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "夔凤纹方鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=岐山县凤鸣镇罗家河村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "夔凤纹方鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=岐山县凤鸣镇罗家河村出土，collection=中国青铜器博物院",
+        "history": "夔凤纹方鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3719",
       "number": "122",
       "title": "如意云纹壶",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -10860,8 +10739,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "如意云纹壶：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "如意云纹壶 · 西周 · 1975年扶风县法门镇庄白村出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "如意云纹壶\n时代：西周\n来源：1975年扶风县法门镇庄白村出土\n收藏单位：扶风县博物馆\nWine vessel (hu)with wish-fulfilling cloud design\nWestermZhou\nExcavatedfromZhuangbaicunVillage,FamenTown,FufengCountyin1975\nCollectionofBaojiFufengCountyMuseum",
       "inscriptionFocus": false,
@@ -10884,21 +10763,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年扶风县法门镇庄白村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "如意云纹壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年扶风县法门镇庄白村出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "如意云纹壶：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "标签事实：period=西周，findspot=1975年扶风县法门镇庄白村出土，collection=扶风县博物馆",
+        "history": "如意云纹壶的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3724",
       "number": "123",
       "title": "父丁鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -10960,8 +10838,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "父丁鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "父丁鼎 · 西周 · 1974年咸阳市武功县调拨 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "父丁鼎\n时代：西周\n来源：1974年咸阳市武功县调拨\n收藏单位：中国青铜器博物院\nWine vessel (ding) of Fu Ding\nWesternZhou\nAllocated from Wugong County,Xianyang City in 1974\nCollection ofBaoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -10984,21 +10862,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年咸阳市武功县调拨"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "父丁鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1974年咸阳市武功县调拨，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "父丁鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=西周，findspot=1974年咸阳市武功县调拨，collection=中国青铜器博物院",
+        "history": "父丁鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3728",
       "number": "124",
       "title": "伯各尊",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -11047,8 +10924,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "possible_info_panel"
       },
       "labelText": "",
-      "summary": "伯各尊：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "伯各尊 · 西周 · 1980年渭滨区竹园沟渔国墓地七号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "伯各尊\n时代：西周\n来源：1980年渭滨区竹园沟渔国墓地七号墓出土\n收藏单位：中国青铜器博物院、\nWine vessel (zun) of Bo Ge\nWesternZhou\nExcavated from No.7 tomb in Zhuyuangou Village of Yuguo Cemetery,Weibin District in 1980\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -11071,21 +10948,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟渔国墓地七号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "伯各尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟渔国墓地七号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "伯各尊：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟渔国墓地七号墓出土，collection=中国青铜器博物院",
+        "history": "伯各尊属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3733",
       "number": "125",
       "title": "爬龙",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "other",
       "categoryLabel": "其他器物",
       "musicFocus": false,
@@ -11134,8 +11010,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "爬龙：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "爬龙 · 西周 · 1992年扶风县召公镇巨良村出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "爬龙\n时代：西周\n来源：1992年扶风县召公镇巨良村出土\n收藏单位：扶风县博物馆\nCrawling dragon\nWestemZhou\nExcavated from Juliang Village、Zhaogong Town,Fufeng County in 1992\nCollection of Baoji Fufeng County Museum",
       "inscriptionFocus": false,
@@ -11158,21 +11034,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年扶风县召公镇巨良村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认功能与使用方式，再看纹饰与铸造或制作痕迹。",
+        "viewing": "爬龙：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
-        "significance": "它们在礼器之外补充了日常、装饰与信仰的观察维度。",
+        "significance": "",
         "decoration": "",
-        "form": "形制依功能而定，镜看钮座纹饰，饰件看连接结构，明器看模拟对象。",
-        "evidence": "标签事实：period=西周，findspot=1992年扶风县召公镇巨良村出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "此类器物功能多样，涵盖镜、饰件、明器等，以实物结构与展签信息为准。"
+        "form": "爬龙：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "evidence": "标签事实：period=西周，findspot=1992年扶风县召公镇巨良村出土，collection=扶风县博物馆",
+        "history": "爬龙的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3736",
       "number": "126",
       "title": "三足铜鸟",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "other",
       "categoryLabel": "其他器物",
       "musicFocus": false,
@@ -11234,8 +11109,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "三足铜鸟：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "三足铜鸟 · 西周 · 1974年渭滨区茹家庄强国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "三足铜鸟\n时代：西周\n来源：1974年渭滨区茹家庄强国墓地一号墓出土\n收藏单位：中国青铜器博物院\nThree-legged bronze bird\nWesternZhou\nExcavated from No.1 tomb in Rujiazhuang Village of Yuguo Cemetery.Weibin District in 1974\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -11258,21 +11133,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄强国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认功能与使用方式，再看纹饰与铸造或制作痕迹。",
+        "viewing": "三足铜鸟：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
-        "significance": "它们在礼器之外补充了日常、装饰与信仰的观察维度。",
+        "significance": "",
         "decoration": "",
-        "form": "形制依功能而定，镜看钮座纹饰，饰件看连接结构，明器看模拟对象。",
-        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄强国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "此类器物功能多样，涵盖镜、饰件、明器等，以实物结构与展签信息为准。"
+        "form": "三足铜鸟：先看整体轮廓、穿孔或背部固定结构，再核对磨制面与纹样。",
+        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄强国墓地一号墓出土，collection=中国青铜器博物院",
+        "history": "三足铜鸟属于玉石或装饰类；穿孔、背部固定结构和磨制面是判断佩系与使用方式的线索。"
       }
     },
     {
       "id": "photo-group-3740",
       "number": "127",
       "title": "逨盉",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -11347,8 +11221,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "逨盉：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "逨盉 · 西周晚期 · 2003年眉县马家镇杨家村窖藏出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "速（ai）（hé）\n时代：西周晚期\n来源：2003年眉县马家镇杨家村窖藏出土\n收藏单位：中国青铜器博物院\nWine vessel (he) of Lai\nLate Western Zhou\nard in Yangjiacun Village,Majia Town,Meixian Countyin2003\nCollection ofBaoji Bronze Ware Museum",
       "inscriptionFocus": true,
@@ -11371,21 +11245,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "逨盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "逨盉：重点看流、鋬、足和腹部的连接，侧面照片可帮助确认倾注结构。",
+        "evidence": "标签事实：period=西周晚期，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院",
+        "history": "逨盉的流、鋬、足决定了器物的倾注结构；其礼仪用途和出土组合不超出展签与馆方记录。"
       }
     },
     {
       "id": "photo-group-3745",
       "number": "128",
       "title": "强伯双耳方座簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -11434,8 +11307,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "强伯双耳方座簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "强伯双耳方座簋 · 西周 · 1981年金台区纸坊头鱼国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "強伯双耳方座盒（gui）\n时代：西周\n来源：1981年金台区纸坊头鱼国墓地一号墓出土\n收藏单位：中国青铜器博物院\nFoodcontainer(gui)withdouble ears ofYubo\nWesternZhou\nExcavated·from No.1 tomb in Zhifangtou Village of Yuguo Cemctery.Jintai District in 1981\nCollection ofBaoji Bronze Ware Muscum",
       "inscriptionFocus": false,
@@ -11458,21 +11331,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头鱼国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "强伯双耳方座簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头鱼国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "强伯双耳方座簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1981年金台区纸坊头鱼国墓地一号墓出土，collection=中国青铜器博物院",
+        "history": "强伯双耳方座簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3748",
       "number": "129",
       "title": "重环纹彝",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -11521,8 +11393,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "重环纹彝：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "重环纹彝 · 西周 · 1976年扶风县法门镇庄白村二号窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "重环纹画（yi）\n时代：西周\n来源：1976年扶风县法门镇庄白村二号窖藏出土\n收藏单位：宝鸡周原博物院\nBronze ewer (yi) with double-ring pattern\nWesternZhou\nExcavated from theNo.2hoard inZhuangbaicunVillage,Famen Town,Fufeng Countyin1976\nCollection ofBaoji ZhouyuanMuseum",
       "inscriptionFocus": false,
@@ -11545,21 +11417,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村二号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "重环纹彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村二号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "重环纹彝：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村二号窖藏出土，collection=宝鸡周原博物院",
+        "history": "重环纹彝属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3751",
       "number": "130",
       "title": "蟠螭纹提链壶",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -11608,8 +11479,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "蟠螭纹提链壶：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "蟠螭纹提链壶 · 战国 · 征集 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "蟠(pan）（chi)纹提链壶\n时代：战国\n来源：征集\n收藏单位：中国青铜器博物院\nWine vessel (hu) with a handle chain and dragon pattern\nWarring States period\nCollected from public\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -11632,21 +11503,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "征集"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "蟠螭纹提链壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=战国，findspot=征集，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "蟠螭纹提链壶：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "标签事实：period=战国，findspot=征集，collection=中国青铜器博物院",
+        "history": "蟠螭纹提链壶的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3754",
       "number": "131",
       "title": "叔五父彝",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -11695,8 +11565,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "叔五父彝：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "叔五父彝 · 西周 · 2003年眉县马家镇杨家村窖藏出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "叔五父画（yi）\n时代：西周\n来源：2003年眉县马家镇杨家村窖藏出土\n收藏单位：中国青铜器博物院\nWatervessel (yi) of Shu Wu Fu\nWesternZhou\nExcavated fromr thehoard inYangjiacunVillageMajiaTownMeixianCountyin2003\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -11719,21 +11589,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "叔五父彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "叔五父彝：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "标签事实：period=西周，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院",
+        "history": "叔五父彝属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3757",
       "number": "132",
       "title": "云雷纹带盖簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -11782,8 +11651,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "云雷纹带盖簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "云雷纹带盖簋 · 西周。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "云雷纹带盖算\n(gui\n时代：西周\n980年渭滨区竹园\nood container (gui) and lid with cloud and thunder pattern",
       "inscriptionFocus": false,
@@ -11804,21 +11673,20 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "西周"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "云雷纹带盖簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "云雷纹带盖簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周",
+        "history": "云雷纹带盖簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3761",
       "number": "133",
       "title": "象尊",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -11867,8 +11735,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "象尊：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "象尊 · 西周 · 1974年渭滨区茹家庄鱼国墓地一号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "象尊\n时代：西周\n来源：1974年渭滨区茹家庄鱼国墓地一号墓出士\n收藏单位：中国青铜器博物院\nElephant-shaped wine vessel (zun)\nWestern Zhou\nExcavated from No.l tomb in Rujiazhuang Village of Yuguo Cemetery,Weibin District in 1974\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -11891,13 +11759,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄鱼国墓地一号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看整体象形与背部注口，再看象鼻、象牙等细部的铸造。",
         "inscription": "",
         "significance": "象尊是研究西周动物形铜器造型与铸造工艺的材料，其写实与装饰兼备的风格体现周人对动物的观察。",
         "decoration": "",
         "form": "青铜质，整器作象形，象鼻中空或作流，背设注口与盖，象身饰纹饰；动物形尊以造型取胜。",
-        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄鱼国墓地一号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1974年渭滨区茹家庄鱼国墓地一号墓出土，collection=中国青铜器博物院",
         "history": "象尊出土于茹家庄強国墓地一号墓，整体铸成象形，是西周早期动物形酒器的代表。象鼻上卷，背上开注口，兼具写实造型与实用功能。"
       }
     },
@@ -11905,7 +11772,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3764",
       "number": "134",
       "title": "兽面铜冠",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "other",
       "categoryLabel": "其他器物",
       "musicFocus": false,
@@ -11941,8 +11808,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "兽面铜冠：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽面铜冠 · 西周 · 1980年渭滨区竹园沟强国墓地十三号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "兽面铜冠\n时代：西周\n来源：1980年渭滨区竹园沟强国墓地十三号墓出士\n又茄家庄强国墓地一号墓出土\n收藏单位：中国青铜器博物院\n格博物院\nBronze horse helmet in animal-face shape\nd wine vessel (zum)\nWestern Zhou\nExcavated from No.13 tomb inZhuyuangou Viflage ofYuguo CemeteryWeibim Disrietn L980\nRajizhmgVillage ofYgo Cemetery.Weibin Distriet in1974\nCollection ofBaoji Bronze Ware Museum\nMuserim",
       "inscriptionFocus": false,
@@ -11965,13 +11832,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地十三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看正面兽面五官与背面固定结构，判断其在马具上的安装方式。",
         "inscription": "",
         "significance": "车马器显示青铜技术参与交通与身份展演，兽面造型兼具护具与仪仗功能。",
         "decoration": "",
         "form": "青铜质，兽面五官以浮雕表现，背部有固定结构，用于系挂于马具。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地十三号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地十三号墓出土，collection=中国青铜器博物院",
         "history": "兽面铜冠出土于竹园沟十三号墓，作兽面形，应为马冠（系于马头的护面饰）或仪仗装饰，属车马器。"
       }
     },
@@ -11979,7 +11845,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3766",
       "number": "135",
       "title": "兽头彝",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -12028,8 +11894,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "兽头彝：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "兽头彝 · 明代 · 旧藏 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "兽头彝(yi)\n时代：明代\n来源：旧藏\n收藏单位：扶风县博物馆\nBeast-headed wine vessel (yi)\nMingDynasty\nMuseum Collection\nCollection ofBaojiFufeng County Museum",
       "inscriptionFocus": false,
@@ -12052,13 +11918,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "旧藏"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看器形与纹饰的仿古程度，再观察铜质皮壳与铸造痕迹。",
         "inscription": "",
         "significance": "明代仿古铜器反映金石学影响下的复古审美，是研究明清仿古工艺的材料。",
         "decoration": "",
         "form": "青铜质，器形仿古代彝类，腹饰兽头纹饰，铸造与皮壳具明清仿古特征。",
-        "evidence": "标签事实：period=明代，findspot=旧藏，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=明代，findspot=旧藏，collection=扶风县博物馆",
         "history": "兽头彝为明代仿古铜器，馆藏旧物。明清仿古之风盛行，以商周器形为范本而融当代趣味，兽头彝即此类仿古作品。"
       }
     },
@@ -12066,7 +11931,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3773",
       "number": "136",
       "title": "错金银壶",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -12128,8 +11993,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "错金银壶：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "错金银壶 · 春秋 · 金台区刘家台村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "错金银壶\n时代：春秋\n来源：金台区刘家台村出土\n收藏单位：中国青铜器博物院\nSilver wine vessel (hu) inlaid with gold\nSpring and Autumn period\nExcavated from Liujiataicun Village.Jintai District\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -12152,21 +12017,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "金台区刘家台村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "错金银壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=春秋，findspot=金台区刘家台村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "错金银壶：先看颈、肩、腹与底部的比例，再核对提梁、提链或盖等附加构件。",
+        "evidence": "标签事实：period=春秋，findspot=金台区刘家台村出土，collection=中国青铜器博物院",
+        "history": "错金银壶的颈、肩、腹和底部构成基本器形；具体盛贮、陈设或礼仪用途以展签与出土组合为准。"
       }
     },
     {
       "id": "photo-group-3781",
       "number": "137",
       "title": "伯兮父盉",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -12215,8 +12079,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "title_panel"
       },
       "labelText": "",
-      "summary": "伯兮父盉：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "伯兮父盉 · 西周 · 1976年扶风县法门镇庄白村一号窖藏出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "伯兮父显（x品）\n时代：西周\n来源：1976年扶风县法门镇庄白村一号窖藏出土\n收藏单位：扶风县博物馆\nFood vessel (w) inseribed with “Be Kua Fu\"\"\nWestem Zhou\nEscavated tiom the No.1 hoard in Zhuangbaicun Village,Famen Town,Fufeng County in 1976\nCollection of Baeji Fufeng County Museum",
       "inscriptionFocus": false,
@@ -12239,21 +12103,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "伯兮父盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "伯兮父盉：重点看流、鋬、足和腹部的连接，侧面照片可帮助确认倾注结构。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=扶风县博物馆",
+        "history": "伯兮父盉的流、鋬、足决定了器物的倾注结构；其礼仪用途和出土组合不超出展签与馆方记录。"
       }
     },
     {
       "id": "photo-group-3784",
       "number": "138",
       "title": "伯威簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -12302,8 +12165,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "伯威簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "伯威簋 · 西周 · 1975年扶风县法门镇庄白村西南墓葬出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "伯威(dong)篮（gui)\n时代：西周\n来源：1975年扶风县法门镇庄白村西南墓葬出土\n收藏单位：扶风县博物馆\nFood container (gui) of Bo Dong\nWesternZhou\nExcavated from the tomb in Zhuangbaicun Village,Famen Town,Fufeng County in 1975\nCollection of Baoji Fufeng County Museum",
       "inscriptionFocus": false,
@@ -12326,21 +12189,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年扶风县法门镇庄白村西南墓葬出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "伯威簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=1975年扶风县法门镇庄白村西南墓葬出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "伯威簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=1975年扶风县法门镇庄白村西南墓葬出土，collection=扶风县博物馆",
+        "history": "伯威簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3788",
       "number": "139",
       "title": "戈簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -12376,8 +12238,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "戈簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "戈簋 · 西周 · 2006年扶风县城关镇五郡村窖藏出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "戈篮（gui)\n时代：西周\n来源：2006年扶风县城关镇五郡村窖藏出土\n收藏单位：扶风县博物馆\nFood container (gui) inscribed with “Ge\"\nWesternZhou\nExcavated from the hoard in Wujuncun Village, Chengguan Town,Fufeng County in 2006\nCollection of Baoji Fufeng County Museum",
       "inscriptionFocus": false,
@@ -12400,21 +12262,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2006年扶风县城关镇五郡村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先找出受力或使用部位，再看纹饰与铸造细节；剑看茎格首刃，戈看援内穿，车马器看连接面与装饰面。",
+        "viewing": "戈簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这些器物显示青铜技术不只服务于祭祀礼器，也参与军事组织、交通和身份展演，是理解周秦社会结构的另一条入口。",
+        "significance": "",
         "decoration": "",
-        "form": "兵器看刃部、援、内、胡、穿、茎、格等结构；车马器看连接、受力和装饰位置。",
-        "evidence": "标签事实：period=西周，findspot=2006年扶风县城关镇五郡村窖藏出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "兵器与车马器直接服务于战争、出行与身份礼仪，宝鸡周秦墓葬中戈、剑、弩机、当卢、轭饰等常与贵族身份同时出现。"
+        "form": "戈簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=2006年扶风县城关镇五郡村窖藏出土，collection=扶风县博物馆",
+        "history": "戈簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3790",
       "number": "140",
       "title": "伯湄父簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -12450,8 +12311,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "伯湄父簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "伯湄父簋 · 西周 · 2006年扶风县城关镇五郡村窖藏出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "伯湄父算\ngui\n时代：西周\n来源：2006年扶风县城关镇五郡村窖藏出±\n收藏单位：扶风县博物馆\nFood container (gui) inscribed with “Bo Mei Fur",
       "inscriptionFocus": false,
@@ -12474,21 +12335,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2006年扶风县城关镇五郡村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "伯湄父簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西周，findspot=2006年扶风县城关镇五郡村窖藏出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "伯湄父簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "标签事实：period=西周，findspot=2006年扶风县城关镇五郡村窖藏出土，collection=扶风县博物馆",
+        "history": "伯湄父簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3792",
       "number": "141",
       "title": "富贵昌盆",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -12537,8 +12397,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "富贵昌盆：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "富贵昌盆 · 西汉 · 废品公司拣选 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "富贵昌盆\n时代：西汉\n来源：废品公司选\n收藏单位：中国青铜器博物院\nWater container inscribed with “Fu Gui Chang”\nWestern Han Dynasty\nSelected from Baoji Waste Recycling Company\nCollection of Baoji Bronze Ware Museum",
       "inscriptionFocus": false,
@@ -12561,21 +12421,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "废品公司拣选"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "富贵昌盆：从口沿沿腹壁看到底部，注意承托面和残损位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=西汉，findspot=废品公司拣选，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "富贵昌盆：从口沿、腹壁和底部观察承托关系，具体用途以展签为准。",
+        "evidence": "标签事实：period=西汉，findspot=废品公司拣选，collection=中国青铜器博物院",
+        "history": "富贵昌盆的口沿、腹壁与底部保存了容纳或承托信息；具体功能以展签记录为准。"
       }
     },
     {
       "id": "photo-group-3795",
       "number": "142",
       "title": "龙形玉佩",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -12681,8 +12540,8 @@ window.BAOJI_PHOTO_INDEX = {
         "cropNote": "人工裁切：小型或远景器物，原片保留。"
       },
       "labelText": "",
-      "summary": "龙形玉佩：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "龙形玉佩 · 战国 · 宝鸡刑警队移交 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "Pei with dragon design\n龙形玉佩\n(a set of ornaments)\n战国\nWarring States Period (475-221B.C.)\n宝鸡刑警队移交\nHandover from Baoji police agency",
       "inscriptionFocus": false,
@@ -12705,21 +12564,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "宝鸡刑警队移交"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先看整体轮廓与穿孔，再放大边缘、磨痕和纹样。",
+        "viewing": "龙形玉佩：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
-        "significance": "玉石与装饰类器物提供不同于大型礼器的观察尺度：把个人身份、身体使用和审美偏好带入周秦物质文化。",
+        "significance": "",
         "decoration": "",
-        "form": "识别重点在穿孔、佩系、对称性、磨制面与背部结构；金环、铜泡等小件看截面、边缘和固定方式。",
-        "evidence": "标签事实：period=战国，findspot=宝鸡刑警队移交，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "玉佩、玉环、玉鸟等小件常与佩饰、身份、礼仪和墓葬随葬体系有关，不能因体量小就当作普通杂件。"
+        "form": "龙形玉佩：先看整体轮廓、穿孔或背部固定结构，再核对磨制面与纹样。",
+        "evidence": "标签事实：period=战国，findspot=宝鸡刑警队移交，collection=中国青铜器博物院",
+        "history": "龙形玉佩属于玉石或装饰类；穿孔、背部固定结构和磨制面是判断佩系与使用方式的线索。"
       }
     },
     {
       "id": "photo-group-3802",
       "number": "143",
       "title": "玉鸟",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -12761,8 +12619,8 @@ window.BAOJI_PHOTO_INDEX = {
         "cropNote": "人工裁切：小型或远景器物，原片保留。"
       },
       "labelText": "",
-      "summary": "玉鸟：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "玉鸟 · 西周 · 1974年宝鸡茹家庄出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "玉鸟\nBird\n西周\nWestern Zhou(11th~770B.C.)\nExcavated in Rujiazhuang villag\n1974年宝鸡茹家庄出土\n玉蚕\nSilkworm\n西周\nWestern Zhou(11th~770B.C.)\nExcavated in Rujiazhuang villa\n1974年宝鸡茹家庄出土",
       "inscriptionFocus": false,
@@ -12785,21 +12643,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年宝鸡茹家庄出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先看整体轮廓与穿孔，再放大边缘、磨痕和纹样。",
+        "viewing": "玉鸟：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
-        "significance": "玉石与装饰类器物提供不同于大型礼器的观察尺度：把个人身份、身体使用和审美偏好带入周秦物质文化。",
+        "significance": "",
         "decoration": "",
-        "form": "识别重点在穿孔、佩系、对称性、磨制面与背部结构；金环、铜泡等小件看截面、边缘和固定方式。",
-        "evidence": "标签事实：period=西周，findspot=1974年宝鸡茹家庄出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "玉佩、玉环、玉鸟等小件常与佩饰、身份、礼仪和墓葬随葬体系有关，不能因体量小就当作普通杂件。"
+        "form": "玉鸟：先看整体轮廓、穿孔或背部固定结构，再核对磨制面与纹样。",
+        "evidence": "标签事实：period=西周，findspot=1974年宝鸡茹家庄出土，collection=中国青铜器博物院",
+        "history": "玉鸟属于玉石或装饰类；穿孔、背部固定结构和磨制面是判断佩系与使用方式的线索。"
       }
     },
     {
       "id": "photo-group-3804",
       "number": "144",
       "title": "石兽面",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "jade",
       "categoryLabel": "玉石与装饰",
       "musicFocus": false,
@@ -12835,8 +12692,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "石兽面：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "石兽面 · 西周 · 1974年宝鸡茹家庄出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "Stone animal-\n石兽面\nWestern Zhou(1\n西周\nExcavated in Ruji\n1974年宝鸡茹家庄出土",
       "inscriptionFocus": false,
@@ -12859,21 +12716,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年宝鸡茹家庄出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先看整体轮廓与穿孔，再放大边缘、磨痕和纹样。",
+        "viewing": "石兽面：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
-        "significance": "玉石与装饰类器物提供不同于大型礼器的观察尺度：把个人身份、身体使用和审美偏好带入周秦物质文化。",
+        "significance": "",
         "decoration": "",
-        "form": "识别重点在穿孔、佩系、对称性、磨制面与背部结构；金环、铜泡等小件看截面、边缘和固定方式。",
-        "evidence": "标签事实：period=西周，findspot=1974年宝鸡茹家庄出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "玉佩、玉环、玉鸟等小件常与佩饰、身份、礼仪和墓葬随葬体系有关，不能因体量小就当作普通杂件。"
+        "form": "石兽面：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "evidence": "标签事实：period=西周，findspot=1974年宝鸡茹家庄出土，collection=中国青铜器博物院",
+        "history": "石兽面的可靠信息目前限于器名、展签字段和现场照片；用途与时代解释不超出这些证据。"
       }
     },
     {
       "id": "photo-group-3817",
       "number": "145",
       "title": "木子丁觯",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -12909,8 +12765,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "木子丁觯：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "木子丁觯 · 现场照片 3817。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "木子丁解\nWinevessel",
       "inscriptionFocus": false,
@@ -12929,21 +12785,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3817",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "木子丁觯：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "木子丁觯：从口沿、腹部、底部与附加构件观察器形，再核对纹饰和铭文位置。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "木子丁觯属于酒器或礼器类，口沿、腹部和附加构件是主要形制信息；具体器主和铭文以展签为准。"
       }
     },
     {
       "id": "photo-group-3829",
       "number": "146",
       "title": "旅父乙卣",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -12992,8 +12847,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "旅父乙卣：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "旅父乙卣 · 西周 · 1976年扶风县法门镇庄白一号窖藏出土 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "旅父乙氟\nWine vessel (gu) inscribed with “Lv Fu Yr”\n西周\nWesternZhou Dynasty\n1976年扶风县庄白一号窖藏出土\n旅\n【铭文释文】\nExcavated from No.1 Hoard in Zhuangbaicun Villagc,\nFufeng County in 1976\n宝鸡周原博物院藏\nCollection of Baoji Zhouyuan Muscum",
       "inscriptionFocus": true,
@@ -13016,13 +12871,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看提梁与盖的扣合，再找盖内或器内铭文。",
         "inscription": "",
         "significance": "庄白一号窖藏为研究微氏家族史提供系统材料，旅父乙卣铭文是器主族氏的记录。",
         "decoration": "",
         "form": "青铜质，卣形（提梁、盖、腹、圈足），腹饰纹饰，盖内或器内铸铭文。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白一号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白一号窖藏出土，collection=宝鸡周原博物院",
         "history": "旅父乙卣出土于庄白一号窖藏，铭文记\"旅父乙\"，属西周早期器。庄白一号窖藏是微氏家族铜器群的核心窖藏，旅父乙卣为其早期器类之一。"
       }
     },
@@ -13030,7 +12884,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3832",
       "number": "147",
       "title": "父辛鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13079,8 +12933,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "父辛鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "父辛鼎 · 西周 · 1980年渭滨区竹园沟强国墓地十三号墓出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "父辛寶。\n俩戊册乍（作）\n【铭文释文一\n父辛鼎\nTripod (ding)ofFuxin\n西周WestemZhouDynasty\n1980年渭滨区竹园沟强国墓地十三号墓出土\nExcavated fromNo.13tomb inZhuyuangou Village of Yuguo Cemetery,\nWeibinDistrict in1980\n中国青铜器博物院藏\nCollection ofBaoji BronzeWare Museum",
       "inscriptionFocus": true,
@@ -13103,13 +12957,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地十三号墓出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看腹内铭文\"父辛\"，再看耳、腹、足的比例。",
         "inscription": "",
         "significance": "日名铭文是研究西周族氏与祭祀制度的关键线索，父辛鼎为竹园沟強国墓地铜器组合的组成部分。",
         "decoration": "",
         "form": "立耳、深腹、三足，腹饰纹饰，腹内铸铭文\"父辛\"等字。",
-        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地十三号墓出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1980年渭滨区竹园沟强国墓地十三号墓出土，collection=中国青铜器博物院",
         "history": "父辛鼎出土于竹园沟十三号墓，铭文记\"父辛\"，属西周早期以日名（辛）称呼受祭者的礼器，与同墓卣、尊等构成祭器组合。"
       }
     },
@@ -13179,7 +13032,7 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "墙盘：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
+      "summary": "墙盘 · 西周 · 1976年扶风县法门镇庄白村一号窖藏出土 · 宝鸡周原博物院。",
       "status": "四宝索引 / 现场照片已校正",
       "hasObjectPhoto": true,
       "treasureId": "qiang-pan",
@@ -13204,13 +13057,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "重点读盘底284字铭文，先看前半周王世系、后半家族世系；展签注明此件为复制品时以正式拓本为准。",
         "inscription": "",
         "significance": "墙盘铭文首次以铜器自述方式记载周王世系与微氏家史，是西周历史与金文研究的核心材料。",
         "decoration": "",
         "form": "浅腹、双耳、圈足，盘底铸铭文18行284字，书体为标准西周金文，可与文献互证周王世系。",
-        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1976年扶风县法门镇庄白村一号窖藏出土，collection=宝鸡周原博物院",
         "history": "墙盘为西周中期微氏家族礼器，出土于庄白一号窖藏。盘底铭文284字，前半追颂文、武、成、康、昭、穆诸王功业，后半记微氏家族烈祖以来历事周王的世系，是现存西周铭文最长的青铜盘。"
       }
     },
@@ -13218,7 +13070,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3843",
       "number": "149",
       "title": "河间鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13254,8 +13106,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "河间鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "河间鼎 · 汉代 · 1980年铜件厂拣选 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "河间鼎\nFood container (ding)of He Jian\n汉代HanDynasty\n1980年铜件厂抹选\nSclccted from CopperComponentsFactory in 1980\n中国青铜器博物院藏\nCollectionofBaoji BronzeWareMuseum",
       "inscriptionFocus": false,
@@ -13278,21 +13130,20 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年铜件厂拣选"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "河间鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：period=汉代，findspot=1980年铜件厂拣选，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "河间鼎：观察腹、耳、足的比例与连接处，再核对纹带和是否有铭文。",
+        "evidence": "标签事实：period=汉代，findspot=1980年铜件厂拣选，collection=中国青铜器博物院",
+        "history": "河间鼎的历史信息集中在腹、耳、足和铭文位置；炊煮、盛食或祭祀用途需结合器形与出土组合判断。"
       }
     },
     {
       "id": "photo-group-3845",
       "number": "150",
       "title": "二十六年铜戈",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -13328,8 +13179,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "二十六年铜戈：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "二十六年铜戈 · 秦代 · 1978年陈仓区凤阁岭镇建河村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "（另面）武庫。\n之造’西工室阅工口\n【铭文释文】\n二十六年铜戈\n面）廿六年”\nTwenty-sixthYearBronze\n丞相守\n1978年陈仓区凤阁岭镇建河村出士\n中国青铜器博物院藏\n攀爬\nMBING",
       "inscriptionFocus": true,
@@ -13352,13 +13203,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年陈仓区凤阁岭镇建河村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看援、内、胡的形制与内上铭文，注意\"二十六年\"纪年。",
         "inscription": "",
         "significance": "秦戈铭文为秦兵器监造制度与统一进程提供了纪年材料。",
         "decoration": "",
         "form": "铜质，长援、内、胡、阑结构完整，内上铸铭文，记纪年、工官与造者。",
-        "evidence": "标签事实：period=秦代，findspot=1978年陈仓区凤阁岭镇建河村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=秦代，findspot=1978年陈仓区凤阁岭镇建河村出土，collection=中国青铜器博物院",
         "history": "二十六年铜戈出土于凤阁岭建河村，铭文记\"二十六年\"及工官造作，属秦王政二十六年（前221年）前后统一战争时期的秦戈，是秦\"物勒工名\"制度的实例。"
       }
     },
@@ -13366,7 +13216,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3847",
       "number": "151",
       "title": "丞廣弩机",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "weapon",
       "categoryLabel": "兵器与车马",
       "musicFocus": false,
@@ -13402,8 +13252,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "丞廣弩机：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "丞廣弩机 · 秦代 · 1978年陈仓区凤阁岭镇建河村出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "丞廣。\n铭文释文】\n丞廣弩机\nCrossbow inscribed with “Cheng Guang”\n秦代Qin Dynasty\n1978年陈仓区凤阁岭镇建河村出土\nExcavated from JianhecunVillage,Fenggeling\nChencang District in 1978\n中国青铜器博物院藏\nollectionofBaojiBro",
       "inscriptionFocus": true,
@@ -13426,13 +13276,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年陈仓区凤阁岭镇建河村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看望山、牙、悬刀的结构与机匣铭文，理解弩机的击发原理。",
         "inscription": "",
         "significance": "弩机铭文为秦兵器制造与职官制度提供材料，与同出铜戈共同反映秦军的标准化装备。",
         "decoration": "",
         "form": "铜质，由望山、牙、悬刀、钩心等构件组成，机匣铸铭文。",
-        "evidence": "标签事实：period=秦代，findspot=1978年陈仓区凤阁岭镇建河村出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=秦代，findspot=1978年陈仓区凤阁岭镇建河村出土，collection=中国青铜器博物院",
         "history": "丞廣弩机与二十六年铜戈同出建河村，铭文记\"丞廣\"，属秦代弩机。弩机是秦军远程兵器核心部件，铭文记录监造者。"
       }
     },
@@ -13440,7 +13289,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3853",
       "number": "152",
       "title": "无疆簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13489,8 +13338,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "无疆簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "无疆簋 · 现场照片 3853—3854。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "無疆（疆）’子子琢孫永寶用高（享）\n韩（绰）（编）臣天子，速万年\n舜屯（纯）右（祐）通录（禄）永令（命）’（眉）蕙（）\n皇考舞（）甲（叔），数，降余康\n對天子不（不）顯鲁休飘（揚）’用乍（作）朕\n首”受册’佩吕（以）出’反入堇（瑾）圭°来（敢）\n勒敷筑（夙）夕勿澧（魔）朕令（命）°\n韩畫鞘金甬、馬三（四）匹、攸（签）\n够南新虎（）熏裹、\n衰衣、赤易、馬（驹）車、（）较（较）、朱\n死。王目：速易（锡）女（汝）鹭（柜）一卤（卤）丶玄\n鲸寡’用乍（作）余我一人死不小（肖）隹（唯）\n掌乃訊庶又（有）类，母（毋）敌（敢）不中不\n井（型）’母（毋）熙，隹（唯）又（有）宕（缀）’延救\n乃事政事，母（母）数（敢）大斐不井（型））\n（夙）夕惠馥（雍）我邦大小献。掌\n耐（司）垦人，母（母）歌（敢）妄掌”虚\n【铭文释文】\n四十三年鼎\n托\nRitual Vessel (ding) of Lai\n中\n35\n(made in the 43nd year during King Xuan’s Rcign)\n中\n西周\nm/houvnast\n2003年眉县杨家村窖藏出土\n速摔（拜）（稽）",
       "inscriptionFocus": true,
@@ -13509,21 +13358,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3853—3854",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "无疆簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "无疆簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "无疆簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3856",
       "number": "153",
       "title": "董簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13572,8 +13420,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "董簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "董簋 · 现场照片 3856—3857。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "爽同林成\n干里中手至交#家\n子图孚#中代",
       "inscriptionFocus": true,
@@ -13592,21 +13440,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3856—3857",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "董簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "董簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "董簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3861",
       "number": "154",
       "title": "宽鼎",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13655,8 +13502,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "宽鼎：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "宽鼎 · 西周 · 1972年扶风县法门镇康家村出土 · 扶风县博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "yun\n永寶用高（享）\n其萬年子子琢\n曾娜（坛）乍（作）寬鼎）\n【铭文释文】\n会鼎\nRitual vessel (ding) of Hui Yun\n西周Westcm Zhou Dynasty\n1972年扶风县法门镇康家村出土\nExcavated fromKangjiacunVillage,Famcn Town,\nFufeng County in 1972\n扶风县博物馆藏\nCollection of Fufeng County Museum",
       "inscriptionFocus": true,
@@ -13679,13 +13526,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1972年扶风县法门镇康家村出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看腹内铭文与环带纹，再看三蹄足。",
         "inscription": "",
         "significance": "宽鼎铭文为研究西周晚期作器者族氏与周原铜器分布提供材料。",
         "decoration": "",
         "form": "立耳、深腹、三蹄足，腹饰环带纹，腹内铸铭文记作器者\"宽\"。",
-        "evidence": "标签事实：period=西周，findspot=1972年扶风县法门镇康家村出土，collection=扶风县博物馆；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1972年扶风县法门镇康家村出土，collection=扶风县博物馆",
         "history": "宽鼎出土于扶风康家村，铭文记\"宽\"作器，属西周晚期铜鼎。康家村一带为周原范围，出土铜器多与贵族祭祀相关。"
       }
     },
@@ -13693,7 +13539,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3864",
       "number": "155",
       "title": "昔鸡簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13742,8 +13588,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "昔鸡簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "昔鸡簋 · 西周 · 2014年岐山县京当镇贺家村北墓地出土 · 岐山县周原博物馆。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "休\n用貝\n姑于朝，\n王奴乎昔奚（雞）遗（曾）\n【铭文释文】\n昔鸡篮\n用乍\n馬。\n（作）荫（\n敢揚王\n韩侯资，\nFood Container (gui) of Xi Ji\n（尊）\n舞\n西周\nWestern Zhou Dynasty\n2014年岐山县京当镇贺家村北墓地出土\n王姒命昔鸡去南燕迎\nExcavatcd from North of 1lejiacunVillage.Jingdang Town\n娶芳姑。燕侯赠送给昔鸡\nQishan County in 2014\n贝、马，昔鸡感谢王休，\n岐山县周原博物馆藏\n作了这件尊葬。\nCollcction of Qishan Zhouyuan Muscum",
       "inscriptionFocus": true,
@@ -13766,13 +13612,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2014年岐山县京当镇贺家村北墓地出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "读器内铭文，注意\"王姒\"\"南燕\"\"芳姑\"\"贝、马\"等关键词。",
         "inscription": "",
         "significance": "昔鸡簋铭文是研究西周早期王室婚姻、燕国史与册命赏赐的直接史料。",
         "decoration": "",
         "form": "青铜质，双耳圈足簋，器内铸铭文，叙事完整，含人名、地名与赏赐内容。",
-        "evidence": "标签事实：period=西周，findspot=2014年岐山县京当镇贺家村北墓地出土，collection=岐山县周原博物馆；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=2014年岐山县京当镇贺家村北墓地出土，collection=岐山县周原博物馆",
         "history": "昔鸡簋出土于贺家村北墓地，铭文记王姒命昔鸡前往南燕迎娶芳姑，燕侯赠贝、马，昔鸡感谢王休而作尊簋。铭文记录了西周早期王室与诸侯间的婚姻聘问关系。"
       }
     },
@@ -13780,7 +13625,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3867",
       "number": "156",
       "title": "逨方鼎（复制品）",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13816,8 +13661,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "逨方鼎（复制品）：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "逨方鼎（复制品） · 西周 · 2003年眉县马家镇杨家村窖藏出土 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "e mid-Western Zhou Dynasty, the Rong\nss of the western frontier defense and the\nich the inscriptions on Dong Gui were a\nthe reign of King Mu but also recording th\nney also embody the pursuit ofpeace throu\nDI",
       "inscriptionFocus": true,
@@ -13840,13 +13685,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看方体四足与腹内铭文；复制品细部以正式著录为准。",
         "inscription": "",
         "significance": "逨器群铭文为西周晚期册命制度研究提供系统材料，方鼎形制反映等级。",
         "decoration": "",
         "form": "方体、双耳、四足，腹饰环带纹，腹内铸铭文。",
-        "evidence": "标签事实：period=西周，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=2003年眉县马家镇杨家村窖藏出土，collection=中国青铜器博物院",
         "history": "逨方鼎属杨家村窖藏逨器群，展签注明此件为复制品。方鼎在铜器中等级较高，铭文与逨盘等共同记录逨的受命与赏赐。"
       }
     },
@@ -13854,7 +13698,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3870",
       "number": "157",
       "title": "五祀卫鼎（复制品）",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13903,8 +13747,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "五祀卫鼎（复制品）：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "五祀卫鼎（复制品） · 西周 · 1975年岐山县京当镇董家村窖藏出土 · 陕西历史博物馆藏（复制品）。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "装衡田：属吊（叔）子（夙）、属有（司）（申）\n毕（厥）西疆（疆）累（迪）属田。邦君属累（逮）付\n田，华（厥）南疆（疆）累（逮）散（散）田，累（暨）政父田\n毕（厥）逆（朔）疆（朔）累（逮）属田、毕（厥）東强（疆）罪（逮）微（教）\n衡属田（四）田。過舍离（乃摘字）于毕（厥）邑，\n工隆（附）矩、内史友等，帥属（履）装\n附（司）：（司）土邑人铺、（司）馬颂人邦、刷（司）\n父题（乃）颜（囍）。吏（使）属。（乃）令参（三）有\n五田。一丼（邢）白（伯）、\n））\n舍（拾）女（汝）田五田。正题（乃）（訊）属日：\n于印（昭）大（太）室東逆梦（警）二川。日：一余\n俗父”日属日：余敦鼻（恭）王邮（恤）工（功）\n属告于井（邢）白（伯）丶白（伯）邑父、定白（伯）\n售（唯）正月初吉庚戍，衡司（以）邦君\n永寶用。售（唯）王五祀。\n乍（作）联（联）文考夏。衡甘（其）萬年\n偶犀。衡小子者逆甘（其）卿（楼）期（腊）。衡用\n、腹髮、赞（幽）腹（表）、初（荆）人敌（敢）、井（邢）人\n【铭文释文】\n五祀卫鼎\n（复制品）\nFifth-ycarritualvesscl (ding)ofWci\n西周WestcmZhouDynasty\n、白（伯）邑父、定白（伯）、意白（伯）、白（俯）催\n1975年岐山县董家村窖藏出土\nExcavatcedfrom the hoard inDongjiacunVillage.\nQishan County in 1975\n陕西历史博物馆藏\nCollcctionofShaanxi HistoryMuscum\n、意白（伯）、白（伯）\n女（放）\n【铭文大意】\n恭王五年正月初吉庚成日，卫和邦君厉向井伯等大臣报\n告，卫为了执行王美心人民劳苦之命，在昭大室东北治理二条\n河川，需动用土地，愿拿出其他土地来和厉交换，官员们问历\n是否愿意交换田亩，历同意交换，于是要厉起餐，并与三有司\n等人勤定装卫应得的田界，办理交付手续。",
       "inscriptionFocus": true,
@@ -13927,13 +13771,12 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村窖藏出土"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "读腹内铭文，注意\"裘卫\"\"邦君厉\"\"田五田\"与勘界诸臣名；复制品以拓本为准。",
         "inscription": "",
         "significance": "五祀卫鼎与同窖藏九年卫鼎等共同记录西周中期的土地交易与勘界程序，是经济史研究的核心金文材料。",
         "decoration": "",
         "form": "立耳、深腹、三蹄足，腹内铸铭文207字，叙事完整，含人名、地名与田界。",
-        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村窖藏出土，collection=陕西历史博物馆藏（复制品）；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=西周，findspot=1975年岐山县京当镇董家村窖藏出土，collection=陕西历史博物馆藏（复制品）",
         "history": "五祀卫鼎为西周恭王时期铜鼎，出土于岐山董家村窖藏，展签注明此件为复制品。铭文207字记恭王五年裘卫以田交换邦君厉之田，经井伯等大臣勘界确认，是研究西周土地交换制度的经典史料。"
       }
     },
@@ -13941,7 +13784,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3874",
       "number": "158",
       "title": "生史簋",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ritual",
       "categoryLabel": "礼器与容器",
       "musicFocus": false,
@@ -13977,8 +13820,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "生史簋：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "生史簋 · 现场照片 3874—3875。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 617,
@@ -14010,21 +13853,20 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3874—3875",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
-        "viewing": "先确认器类与基本结构（腹、耳、足或流、鋬），再看纹饰与铭文位置；多角度照片可对照观察铸造痕迹。",
+        "viewing": "生史簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
-        "significance": "这类器物是研究商周礼制、族氏与铸造工艺的基础材料，器形与铭文把使用者的身份固定在礼器之上。",
+        "significance": "",
         "decoration": "",
-        "form": "器形因器类而定：鼎看腹耳足，簋看圆腹双耳圈足，盉看流鋬足，尊卣看口腹与提梁，鬲看袋足分裆，壶盂看颈腹与圈足；纹饰以兽面、云雷、乳钉、环带等为主。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
-        "history": "青铜礼器在商周礼制中承担祭祀、宴飨与随葬功能，器类组合与铭文共同对应等级秩序；宝鸡周原及周边墓葬、窖藏所见铜器多属此类。"
+        "form": "生史簋：先看圆腹、双耳与圈足的关系，再对照纹饰分区和底部铸痕。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
+        "history": "生史簋属于盛放熟食的礼器，圆腹、双耳和圈足是与鼎簋组合相关的形制线索；具体器主与铭文以正式资料为准。"
       }
     },
     {
       "id": "photo-group-3876",
       "number": "159",
       "title": "青釉四系罐",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ceramic",
       "categoryLabel": "陶瓷与杂器",
       "musicFocus": false,
@@ -14060,8 +13902,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "object_or_text"
       },
       "labelText": "",
-      "summary": "青釉四系罐：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "青釉四系罐 · 隋代 · 中国青铜器博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "青釉四系罐\n·隋代\n·中国青铜器博物院藏\nWhiteglazedporcelainjar\n·TheSuiDynasty(581-618)\n.Collected inBaoji bronze ware museum",
       "inscriptionFocus": false,
@@ -14083,13 +13925,12 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "隋代"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看肩部四系与釉色，再观察胎釉结合与底部。",
         "inscription": "",
         "significance": "隋代青瓷罐为研究隋唐陶瓷器形与釉色演变提供材料。",
         "decoration": "",
         "form": "瓷质，施青釉，肩部四系用于穿绳，鼓腹、平底或微圈足；釉色青中泛灰。",
-        "evidence": "标签事实：period=隋代，collection=中国青铜器博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=隋代，collection=中国青铜器博物院",
         "history": "青釉四系罐为隋代青瓷，肩设四系，属日常生活储器。隋代青瓷承南北朝而发展，四系罐是常见器形。"
       }
     },
@@ -14097,7 +13938,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3878",
       "number": "160",
       "title": "朱雀灯",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ceramic",
       "categoryLabel": "陶瓷与杂器",
       "musicFocus": false,
@@ -14146,8 +13987,8 @@ window.BAOJI_PHOTO_INDEX = {
         "kind": "no_text"
       },
       "labelText": "",
-      "summary": "朱雀灯：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "朱雀灯 · 汉代 · 宝鸡周原博物院。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "labelEvidence": "朱雀灯\n·汉代\n·周原博物馆藏\nPottery lampwith scarletbirds\nColectedinZhouyuanMuseuminBa",
       "inscriptionFocus": false,
@@ -14169,13 +14010,12 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "汉代"
       },
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "看朱雀造型与灯盘的连接，再观察陶质与施彩残痕。",
         "inscription": "",
         "significance": "朱雀灯是研究汉代灯具形制与四神信仰的材料。",
         "decoration": "",
         "form": "陶质，灯盘与朱雀形座相连，朱雀作展翅或昂首状；汉代陶灯多模制后施彩或素烧。",
-        "evidence": "标签事实：period=汉代，collection=宝鸡周原博物院；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "标签事实：period=汉代，collection=宝鸡周原博物院",
         "history": "朱雀灯为汉代陶灯，灯座塑朱雀形，属明器或日用灯具。朱雀（朱鸟）为四神之一，象征南方与光明。"
       }
     },
@@ -14183,7 +14023,7 @@ window.BAOJI_PHOTO_INDEX = {
       "id": "photo-group-3881",
       "number": "161",
       "title": "陶权",
-      "titleSource": "展签校正 / 现场顺序",
+      "titleSource": "展签 / 现场顺序",
       "category": "ceramic",
       "categoryLabel": "陶瓷与杂器",
       "musicFocus": false,
@@ -14206,8 +14046,8 @@ window.BAOJI_PHOTO_INDEX = {
         }
       ],
       "labelText": "",
-      "summary": "陶权：按现场顺序归档；详情页按名称、形制、纹饰与铭文线索展开。",
-      "status": "名称依据后置展签校正",
+      "summary": "陶权 · 现场照片 3881。",
+      "status": "现场展签 / 照片顺序",
       "hasObjectPhoto": true,
       "featured": {
         "sequence": 624,
@@ -14239,13 +14079,12 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3881",
       "labelFacts": {},
       "research": {
-        "name_origin": "名称依据后置介绍牌与照片顺序校正。",
         "viewing": "先看材料和结构，再看表面工艺；小型器物优先使用裁切图观察。",
         "inscription": "",
         "significance": "把它们单独列出，可避免与青铜礼器混为一谈，也反映宝鸡物质文化从礼制重器向日常技术的延伸。",
         "decoration": "",
         "form": "形制重点在胎体、口沿、系耳、支撑面或连接面；陶器看胎釉，构件看连接结构。",
-        "evidence": "标签事实：；名称依据后置介绍牌与照片顺序校正。",
+        "evidence": "现场展签字段未稳定读取；本组名称与照片序列保留为档案证据，正式释读请回看原图。",
         "history": "陶瓷器与建筑构件补足日常生活与跨时期材料谱系，年代与用途以展签信息为准。"
       }
     }

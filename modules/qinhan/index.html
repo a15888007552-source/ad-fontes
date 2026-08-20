@@ -9,10 +9,11 @@
     <title>秦汉馆藏影录 · 陕西历史博物馆秦汉馆</title>
     <script>document.documentElement.classList.add("has-js")</script>
     <noscript><style>.page-intro{display:none!important}</style></noscript>
-    <link rel="stylesheet" href="styles.css?v=20260813-motion3" />
-    <link rel="stylesheet" href="motion.css?v=20260813-motion2" />
+    <link rel="stylesheet" href="styles.css?v=20260820-theme1" />
+    <link rel="stylesheet" href="motion.css?v=20260820-theme1" />
       <style id="museum-brand-emblem">.wordmark-emblem{display:grid;width:42px;height:42px;flex:0 0 42px;place-items:center}.wordmark-emblem img{display:block;width:100%;height:100%;object-fit:contain}.intro-emblem{display:block;width:clamp(64px,8vw,96px);height:clamp(64px,8vw,96px);margin:0 auto .25rem;object-fit:contain}@media(max-width:820px){.wordmark-emblem{width:34px;height:34px;flex-basis:34px}.intro-emblem{width:66px;height:66px}}</style>
-  </head>
+    <link rel="stylesheet" href="../tomb-trails/host.css">
+</head>
   <body id="top">
     <a class="skip-link" href="#archive">跳到文物目录</a>
 
@@ -140,47 +141,12 @@
           </dl>
           <div class="queen-actions">
             <button type="button" data-open-id="queen-seal">查看三张现场记录</button>
-            <a href="#seal-3d">查看 3D 数字重建 ↗</a>
             <a href="https://www.sxhm.com/collections/detail/466.html" target="_blank" rel="noreferrer">馆方藏品页 ↗</a>
           </div>
         </div>
       </section>
 
-      <section class="seal-viewer-section" id="seal-3d" aria-labelledby="seal-3d-title">
-        <div class="seal-viewer-intro">
-          <p class="eyebrow dark">03A / DIGITAL RECONSTRUCTION</p>
-          <h2 id="seal-3d-title">皇后之玺 · 360°</h2>
-          <p>拖动模型查看方形印台、螭虎钮与印面关系。模型依据 DSC_2586—2587 现场照片和公开形制资料重建，用于观看与研究，不等同于馆方三维扫描。</p>
-          <div class="seal-viewer-facts" aria-label="3D 模型说明">
-            <span>PHOTO-BASED</span><span>LOW-POLY STUDY MODEL</span><span>DRAG TO ROTATE</span>
-          </div>
-        </div>
-        <div class="seal-viewer-layout">
-          <div class="seal-viewer-stage" data-seal-viewer>
-            <canvas id="seal-viewer" aria-label="皇后之玺数字重建，可拖动旋转查看" tabindex="0"></canvas>
-            <div class="seal-viewer-grid" aria-hidden="true"></div>
-            <div class="seal-viewer-badge">PHOTO-BASED RECONSTRUCTION <span>拖动旋转</span></div>
-            <div class="seal-viewer-status" id="seal-viewer-status" aria-live="polite">模型已就绪 · 拖动查看</div>
-          </div>
-          <aside class="seal-viewer-notes">
-            <div>
-              <p class="eyebrow dark">VIEW CONTROLS</p>
-              <h3>看清形制，保留边界</h3>
-              <p>白玉印台与弓背螭虎钮按照片比例做简化表达；印面“皇后之玺”四字为按公开印文排布的示意标注，不把照片中无法辨认的细节补写成事实。</p>
-            </div>
-            <div class="seal-viewer-controls" role="group" aria-label="3D 查看控制">
-              <button type="button" data-seal-view="reset">重置视角</button>
-              <button type="button" data-seal-view="top">看螭虎钮</button>
-              <button type="button" data-seal-view="seal">看印面</button>
-            </div>
-            <dl class="seal-viewer-legend">
-              <div><dt>依据</dt><dd>DSC_2586—2587</dd></div>
-              <div><dt>性质</dt><dd>数字重建 · 非馆方扫描</dd></div>
-              <div><dt>操作</dt><dd>鼠标 / 手指拖动 · 滚轮缩放</dd></div>
-            </dl>
-          </aside>
-        </div>
-      </section>
+      
 
       <section class="tiger-section" id="tiger" aria-labelledby="tiger-title">
         <div class="tiger-image-wrap">
@@ -191,7 +157,7 @@
           <div class="tiger-number" aria-hidden="true">04</div>
           <p class="eyebrow dark">OBJECT FOCUS · WARRING STATES QIN</p>
           <span class="bronze-label">错金铭文 · 调兵凭证</span>
-          <h2 id="tiger-title">杜虎符</h2>
+          <h2 id="tiger-title" class="tiger-title">杜虎符</h2>
           <p class="tiger-lead">错金铭文规定调兵合符：五十人以上用兵，须会君符方可行动。</p>
           <p>杜虎符为战国晚期秦国调兵凭证，1975 年出土于西安南郊沈家桥村。全符本由左右两半合成，现存为左半，长 9.5 厘米、高 4.4 厘米。虎身错金铭文九行四十字，规定调动披甲士兵五十人以上必须会合君王所持右符，遇燔燧等紧急军情则可例外。</p>
           <p>文字把军事授权写入器物，左右契合又使命令获得物理验证；军权因而不只属于将领个人，而由中央控制的凭证程序加以约束。虎符合符制度由此成为理解秦汉军事与行政运作的直观入口。</p>
@@ -215,7 +181,7 @@
             <p class="eyebrow dark">05 / CATALOGUE · 34 ENTRIES</p>
             <h2 id="archive-title">文物图像目录</h2>
           </div>
-          <p>三十四个文物条目依拍摄顺序排列。每个条目合并同一文物或同类对象的正面、侧面、局部与展签；卡片用于辨认，详情中提供较完整的形制说明、历史语境、观看提示和证据边界。说明屏、展签与参考文献墙只作为证据保留，不进入文物目录。<a class="archive-3d-link" href="#seal-3d">先看皇后之玺 3D 数字重建 ↗</a></p>
+          <p>三十四个文物条目依拍摄顺序排列。每个条目合并同一文物或同类对象的正面、侧面、局部与展签；卡片用于辨认，详情中提供较完整的形制说明、历史语境、观看提示和证据边界。说明屏、展签与参考文献墙只作为证据保留，不进入文物目录。</p>
         <div class="archive-total" id="archive-count">34 个文物条目 · 324 张对象图 · 184 张证据图</div>
         </div>
 
@@ -234,24 +200,10 @@
         <button class="load-more" id="load-more" type="button" hidden>继续加载</button>
       </section>
 
-      <section class="method-section" id="sources" aria-labelledby="method-title">
-        <div class="method-title-wrap">
-          <p class="eyebrow">06 / IMAGE RECORD / RESEARCH NOTES</p>
-          <h2 id="method-title">图像与资料</h2>
-        </div>
-        <div class="method-copy">
-          <p>档案包含四种图像层级：列表缩略图、主体裁切图、网页完整图与 F 盘原片线索。小型文物的展示图由相机原片直接裁切，随后只做尺寸转换、轻微对比调整和保守锐化；不生成原片中不存在的文字、纹饰、断口或器形。</p>
-          <p>展签、题名墙和参考文献墙属于证据图，不作为文物主图。OCR 只用于定位可辨文字，正式释文仍需回看展签、馆方目录、考古报告或论文。网页中的“事实”“解释”和“推测”分别处理，资料不足时保留不确定性。</p>
-        </div>
-        <div class="method-steps">
-          <article><span>01</span><h3>缩略图</h3><p>目录快速浏览，延迟加载。</p></article>
-          <article><span>02</span><h3>主体裁切</h3><p>小件放大，保留裁切记录。</p></article>
-          <article><span>03</span><h3>完整构图</h3><p>查看展柜、比例与陈列语境。</p></article>
-          <article><span>04</span><h3>原片线索</h3><p>文件名、尺寸与 SHA-256。</p></article>
-        </div>
-        <div class="source-list" id="source-list"></div>
-      </section>
-    </main>
+      <section class="museum-tomb-trails" aria-label="墓葬与遗址历史脉络">
+    <iframe src="../tomb-trails/index.html?museum=qinhan&amp;embed=1" title="秦汉馆墓葬与遗址历史脉络" loading="lazy"></iframe>
+  </section>
+  </main>
 
     <footer class="footer">
       <div><span>秦汉馆藏影录</span><strong>QIN–HAN GALLERY IMAGE CATALOGUE</strong></div>
@@ -279,7 +231,24 @@
         <section class="dialog-section">
           <h3>形制与历史语境</h3>
           <p id="dialog-interpretation"></p>
-        </section>
+        </section>      <section class="method-section" id="sources" aria-labelledby="method-title">
+        <div class="method-title-wrap">
+          <p class="eyebrow">06 / IMAGE RECORD / RESEARCH NOTES</p>
+          <h2 id="method-title">图像与资料</h2>
+        </div>
+        <div class="method-copy">
+          <p>档案包含四种图像层级：列表缩略图、主体裁切图、网页完整图与 F 盘原片线索。小型文物的展示图由相机原片直接裁切，随后只做尺寸转换、轻微对比调整和保守锐化；不生成原片中不存在的文字、纹饰、断口或器形。</p>
+          <p>展签、题名墙和参考文献墙属于证据图，不作为文物主图。OCR 只用于定位可辨文字，正式释文仍需回看展签、馆方目录、考古报告或论文。网页中的“事实”“解释”和“推测”分别处理，资料不足时保留不确定性。</p>
+        </div>
+        <div class="method-steps">
+          <article><span>01</span><h3>缩略图</h3><p>目录快速浏览，延迟加载。</p></article>
+          <article><span>02</span><h3>主体裁切</h3><p>小件放大，保留裁切记录。</p></article>
+          <article><span>03</span><h3>完整构图</h3><p>查看展柜、比例与陈列语境。</p></article>
+          <article><span>04</span><h3>原片线索</h3><p>文件名、尺寸与 SHA-256。</p></article>
+        </div>
+        <div class="source-list" id="source-list"></div>
+      </section>
+
         <section class="dialog-section evidence-section">
           <h3>资料边界</h3>
           <p id="dialog-evidence"></p>
@@ -293,10 +262,7 @@
       </div>
     </dialog>
 
-    <script src="app.js?v=20260813-motion2"></script>
-    <script src="seal-viewer.js?v=20260813-model3"></script>
-  <script src="../../assets/editorial/provenance-trails.js?v=20260820-editorial1" defer></script>
-  </body>
+    <script src="app.js?v=20260820-theme1"></script>
+</body>
 </html>
-
 

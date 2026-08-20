@@ -21,7 +21,7 @@
   let titleFitFrame = 0;
   const reduceMotion = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const zoomState = { scale: 1, x: 0, y: 0, dragging: false, pointerId: null, startX: 0, startY: 0, originX: 0, originY: 0 };
-  const IMAGE_REV = "20260817-polish1";
+  const IMAGE_REV = "20260821-copy1";
 
   function initMotion() {
     document.documentElement.classList.add("motion-ready");
@@ -338,6 +338,49 @@
     document.getElementById("dialog-sequence").textContent = `${frame} · ${index + 1} / ${Math.max(total, 1)}`;
   }
 
+  /* 20260820 · compact ordinary object essays */
+  function compactEssayMarkup(item) {
+    const sections = Array.isArray(item.essay) ? item.essay : [];
+    const clean = (value) => String(value || '')
+      .split(String.fromCharCode(10)).join(' ')
+      .split(String.fromCharCode(13)).join(' ')
+      .split('  ').join(' ')
+      .trim();
+    const boilerplate = [
+      '史前聚落中的食物处理、储藏、工具制作和仪式活动，常以耐久材料留存',
+      '出土地点与地层关系决定器物年代，也使不同遗址的技术传播可以比较',
+      '这类小器物直接连接了制度名称与文书实践',
+      '观察重点包括器壁厚薄、枚与篆带等表面分区，以及敲击位置和悬置方式',
+      '正文提供制度与知识内容，纸张、版式、印记和装订记录实际使用过程',
+      '两类信息合在一起，才能判断文献的年代、用途和传播路径'
+    ];
+    const splitSentences = (value) => {
+      let text = clean(value);
+      boilerplate.forEach((phrase) => { text = text.split(phrase).join(''); });
+      return text
+        .split('。')
+        .map((part) => clean(part))
+        .filter(Boolean)
+        .map((part) => part + '。');
+    };
+    const seen = new Set();
+    const collect = (parts) => parts
+      .flatMap((part) => splitSentences(part))
+      .filter((sentence) => {
+        const key = sentence.replaceAll(' ', '');
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .join('');
+    const first = collect(sections.slice(0, 2).map((part) => part.text));
+    const second = collect(sections.slice(2).map((part) => part.text));
+    const fallback = clean(item.cardLead || item.summary || '现场图像与展签记录。');
+    return '<div class="dialog-essay compact-essay">'
+      + '<p>' + escapeHtml(first || fallback) + '</p>'
+      + '<p>' + escapeHtml(second || '观看时请按器物整体、局部和展签顺序核对；资料不足之处保留为待核。') + '</p>'
+      + '</div>';
+  }
   function openItem(id) {
     const item = itemById.get(String(id));
     if (!item) return;
@@ -352,10 +395,10 @@
       .map((tag) => `<span class="mini-tag ${escapeHtml(tag)}">${escapeHtml(tagLabel(tag))}</span>`)
       .join("");
     document.getElementById("dialog-meta").innerHTML = metaHtml(item);
-    document.getElementById("dialog-essay").innerHTML = (item.essay || [])
-      .map((part) => `<h3>${escapeHtml(part.heading)}</h3><p>${escapeHtml(part.text)}</p>`)
-      .join("");
-    const sources = (item.sources || [])
+    const essayMarkup = hasTag(item, "forbidden")
+      ? (item.essay || []).map((part) => '<h3>' + escapeHtml(part.heading) + '</h3><p>' + escapeHtml(part.text) + '</p>').join('')
+      : compactEssayMarkup(item);
+    document.getElementById("dialog-essay").innerHTML = essayMarkup;    const sources = (item.sources || [])
       .map((source) => source.url
         ? `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label || source.url)} ↗</a>`
         : escapeHtml(source.label))

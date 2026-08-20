@@ -559,3 +559,53 @@ img { display: block; max-width: 100%; }
   .reveal { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { animation: none !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+.research-essay-paragraph {
+  text-indent: 2em;
+}
+/* 20260820 · compact two-paragraph object notes. The four protected-object essays keep their own structure. */
+:root {
+  --paper-warm:#ebe2d4;
+  --ink:#2a201a;
+  --muted:#735b48;
+  --rust:#985139;
+  --bronze-light:#d6a164;
+  --line:rgba(86,55,38,.22);
+}
+body {
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 78% 18%,rgba(183,130,70,.16),transparent 26rem),
+    linear-gradient(135deg,#f3ecdf 0%,#ebe2d4 50%,#dcc8ab 100%);
+}
+.section--profile,
+.section--archive {
+  background:
+    linear-gradient(120deg,rgba(243,236,223,.94),rgba(235,226,212,.9)),
+    url("assets/generated/bronze-paper-texture-v1.webp") center/cover;
+}
+.section--treasures,
+.section--method,
+.section--sources {
+  color:#f2e8d7;
+  background:
+    linear-gradient(120deg,rgba(39,27,19,.96),rgba(75,45,27,.9)),
+    url("assets/generated/bronze-gallery-atmosphere-v1.webp") center/cover;
+}
+.dialog-copy {
+  gap:.9rem;
+  align-content:start;
+}
+.research-essay {
+  gap:.88rem;
+}
+.research-essay-paragraph {
+  max-width:62rem;
+  margin:0;
+  text-indent:2em;
+  line-height:1.86;
+  text-align:justify;
+}
+.research-evidence {
+  margin:.1rem 0 0;
+}

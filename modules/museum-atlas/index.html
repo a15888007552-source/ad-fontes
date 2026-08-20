@@ -2370,9 +2370,22 @@
       if (!opening) return;
       const root = document.documentElement;
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduced) {
+      /* 20260821 · atlas opening once per session */
+      const seenKey = "ad-fontes-museum-atlas-opening-seen";
+      let alreadySeen = false;
+      try {
+        alreadySeen = window.sessionStorage.getItem(seenKey) === "1";
+      } catch (error) {
+        alreadySeen = false;
+      }
+      if (alreadySeen || reduced) {
         opening.remove();
         return;
+      }
+      try {
+        window.sessionStorage.setItem(seenKey, "1");
+      } catch (error) {
+        // Animation remains usable when storage is unavailable.
       }
 
       root.classList.add("atlas-opening-active");

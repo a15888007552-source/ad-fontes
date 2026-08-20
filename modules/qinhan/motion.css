@@ -367,3 +367,13 @@ section[id] { scroll-margin-top: 68px; }
   .museum-figure img,
   .queen-image-wrap img { transform: none !important; }
 }
+
+/* 20260820 · Qinhan title visibility: the split characters must finish their reveal. */
+.motion-ready .queen-copy h2 .motion-char,
+.motion-ready .tiger-copy h2 .motion-char,
+.queen-copy h2 .motion-char,
+.tiger-copy h2 .motion-char {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) rotate(0) !important;
+}
