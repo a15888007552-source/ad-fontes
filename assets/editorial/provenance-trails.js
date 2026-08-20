@@ -6,7 +6,7 @@
   if (!document.querySelector('link[data-provenance-trails]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = new URL('assets/editorial/provenance-trails.css', projectRoot).href;
+    link.href = new URL('assets/editorial/provenance-trails.css?v=20260820-editorial1', projectRoot).href;
     link.dataset.provenanceTrails = 'true';
     document.head.append(link);
   }
@@ -93,7 +93,7 @@
   section.innerHTML = `
     <header class="pt-head">
       <p class="pt-eyebrow">${cfg.eyebrow}</p>
-      <h2>${cfg.title}</h2>
+      <h2 id="pt-title-${page}">${cfg.title}</h2>
       <p>${cfg.intro}</p>
     </header>
     <div class="pt-grid">${cfg.cards.map((c,i)=>`
