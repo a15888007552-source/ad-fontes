@@ -328,6 +328,54 @@ a[data-m].is-related,.xlink[data-m].is-related{box-shadow:inset 0 -1px color-mix
 .chip{font:600 12.5px var(--sans);letter-spacing:.06em;border:1px solid var(--line);background:var(--panel);color:var(--mut);padding:7px 14px;cursor:pointer}
 .chip.on{background:var(--acc);color:var(--bg);border-color:var(--acc);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--bg) 30%,transparent)}
 .mapnote{font-size:12.5px;color:var(--mut);margin-top:10px}
+.mapmodebar{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin-top:16px;padding:10px 12px;background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.mapmodecaption{font:700 11px var(--sans);letter-spacing:.14em;color:var(--mut);margin-right:3px}
+.mapmode{font:600 12.5px var(--sans);letter-spacing:.04em;border:1px solid var(--line);background:transparent;color:var(--mut);padding:7px 12px;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.mapmode:hover{border-color:var(--acc);color:var(--ink)}
+.mapmode.on{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.mapmode:focus-visible,.realmap-tools button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.mapmodehint{font:11.5px/1.5 var(--sans);color:var(--mut);margin-left:auto;max-width:34ch}
+#terrainmap{height:660px;position:relative;background:#1B1915;overflow:hidden}
+#terrainmap .maplibregl-canvas{outline:none}
+.realmap-tools{position:absolute;left:12px;top:12px;z-index:4;display:flex;flex-wrap:wrap;gap:6px;max-width:min(520px,calc(100% - 72px))}
+.realmap-tools button{font:600 11.5px var(--sans);letter-spacing:.03em;color:#F5ECD6;background:rgba(25,20,15,.82);border:1px solid rgba(245,236,214,.45);padding:7px 10px;cursor:pointer;backdrop-filter:blur(5px)}
+.realmap-tools button:hover{background:rgba(122,46,29,.92);border-color:#EAD9BC}
+.realmap-loading,.realmap-fallback{position:absolute;inset:0;z-index:3;display:grid;place-content:center;text-align:center;padding:30px;background:linear-gradient(135deg,rgba(28,21,17,.96),rgba(61,48,34,.9));color:#EAD9BC}
+.realmap-loading[hidden]{display:none}
+.realmap-loading p,.realmap-fallback p{max-width:48ch;margin:7px auto 0;font:13px/1.7 var(--sans);color:#C9B98F}
+.realmap-credit{position:absolute;left:8px;bottom:6px;z-index:4;background:rgba(20,16,12,.68);padding:3px 7px;color:#F1E6D0;font:10px/1.35 var(--sans);max-width:calc(100% - 16px)}
+.realcity{display:flex;align-items:center;gap:4px;padding:0;border:0;background:transparent;color:#FFF;cursor:pointer;text-align:left;filter:drop-shadow(0 1px 2px rgba(0,0,0,.75))}
+.realcity-dot{display:block;width:var(--dot,12px);height:var(--dot,12px);border-radius:50%;background:#C8722A;border:2px solid rgba(255,247,226,.92);box-shadow:0 0 0 2px rgba(46,29,18,.48)}
+.realcity-label{font:600 11.5px/1 var(--sans);white-space:nowrap;color:#FFF5DF;paint-order:stroke;stroke:rgba(22,17,12,.9);stroke-width:3px;stroke-linejoin:round;transition:opacity .12s}
+.realcity.no-label .realcity-label{display:none}
+.realmap-moving .realcity-label,.realmap-moving .realpoi-label{opacity:0}
+.realcity:hover .realcity-dot{background:#F1C36A;transform:scale(1.18)}
+.realcity.route .realcity-dot{background:#8E2C3B;border-color:#FFE6B5}
+.realcity.route .realcity-label{color:#FFE6B5}
+.realcity.pilgrim .realcity-dot{background:#C9A227}
+.realcity-number{font:700 10px/1 var(--sans);color:#FFE6B5;background:#8E2C3B;border-radius:50%;padding:3px;min-width:16px;text-align:center}
+.realpoi{display:flex;align-items:center;gap:4px;padding:0;border:0;background:transparent;color:#FFF;cursor:pointer;text-align:left;filter:drop-shadow(0 1px 2px rgba(0,0,0,.85))}
+.realpoi-glyph{display:grid;place-items:center;width:var(--poisize,18px);height:var(--poisize,18px);font:700 11px/1 var(--sans);color:#FFF8EF;background:#C85D4B;border:2px solid rgba(255,249,228,.96);box-shadow:0 0 0 2px rgba(35,23,16,.5);transform:rotate(45deg);transition:transform .16s,background .16s}
+.realpoi-glyph span{transform:rotate(-45deg)}
+.realpoi.music .realpoi-glyph{background:#E1A83E;color:#39230B;border-radius:50%}
+.realpoi.school .realpoi-glyph{background:#55A8B7;color:#082D35;border-radius:50%}
+.realpoi.university .realpoi-glyph{background:#A477C6;color:#21122D;border-radius:3px}
+.realpoi.home .realpoi-glyph{background:#6EA875;color:#102C17;border-radius:3px}
+.realpoi:hover .realpoi-glyph,.realpoi:focus-visible .realpoi-glyph{transform:rotate(45deg) scale(1.16);background:#FFF3C4}
+.realpoi-label{font:600 10.5px/1.15 var(--sans);white-space:nowrap;color:#FFF5DF;paint-order:stroke;stroke:rgba(22,17,12,.94);stroke-width:3px;stroke-linejoin:round;max-width:18ch;overflow:hidden;text-overflow:ellipsis;transition:opacity .12s}
+.realpoi.no-label .realpoi-label{display:none}
+.realpoi-legend{display:flex;align-items:center;flex-wrap:wrap;gap:7px 12px;font:11px/1.4 var(--sans);color:var(--mut);margin-left:auto}
+.realpoi-legend i{display:inline-grid;place-items:center;width:14px;height:14px;margin-right:3px;font-style:normal;font-size:9px;background:#C85D4B;color:#FFF8EF;border:1px solid var(--line);transform:rotate(45deg);vertical-align:-2px}
+.realpoi-legend i span{transform:rotate(-45deg)}
+.realpoi-legend .music{background:#E1A83E;color:#39230B;border-radius:50%}.realpoi-legend .school{background:#55A8B7;color:#082D35;border-radius:50%}.realpoi-legend .university{background:#A477C6;color:#21122D;border-radius:3px}.realpoi-legend .home{background:#6EA875;color:#102C17;border-radius:3px}
+.poiintro{font:12.5px/1.65 var(--sans);color:var(--mut);margin:11px 0 4px;padding:9px 11px;border:1px solid var(--line);background:var(--bg)}
+.poilist{list-style:none;margin:10px 0 0;padding:0}.poilist li{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line)}
+.poilist li:last-child{border-bottom:0}.poilist b{display:block;font:600 14px/1.35 var(--dfont);color:var(--ink)}.poilist small{display:block;margin-top:2px;font:11px/1.4 var(--sans);color:var(--mut)}
+.poiicon{display:inline-grid;place-items:center;width:15px;height:15px;margin-right:5px;font:700 9px var(--sans);background:#C85D4B;color:#FFF8EF;border:1px solid rgba(40,25,15,.6);transform:rotate(45deg);vertical-align:1px}.poiicon span{transform:rotate(-45deg)}
+.poiicon.music{background:#E1A83E;color:#39230B;border-radius:50%}.poiicon.school{background:#55A8B7;color:#082D35;border-radius:50%}.poiicon.university{background:#A477C6;color:#21122D;border-radius:3px}.poiicon.home{background:#6EA875;color:#102C17;border-radius:3px}
+.poilist button,.poi-actions button{font:600 11px var(--sans);border:1px solid var(--line);background:transparent;color:var(--acc);padding:5px 8px;cursor:pointer;white-space:nowrap}.poilist button:hover,.poi-actions button:hover{background:var(--acc);color:var(--bg)}
+.poicard{margin-top:12px}.poicard .poikicker{font:600 10.5px var(--sans);letter-spacing:.12em;color:var(--mut)}.poicard h4{margin-top:4px}.poifig{margin:12px 0 10px;border:1px solid var(--line);background:var(--bg);padding:6px}.poifig img{display:block;width:100%;max-height:220px;object-fit:cover}.poifig figcaption{font:10.5px/1.5 var(--sans);color:var(--mut);margin-top:5px}.poitext{font:14px/1.85 var(--kai);margin:10px 0}.poisection{margin:13px 0 0}.poisection h5{margin:0 0 4px;font:700 10.5px var(--sans);letter-spacing:.12em;color:var(--acc2)}.poisection p{margin:0;font:14px/1.75 var(--kai)}.poimusic{border-left:3px solid var(--gold,#B98A2E);padding:8px 11px;background:var(--bg)}.poi-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.poi-actions a{font:600 11px var(--sans);border:1px solid var(--line);color:var(--acc);padding:5px 8px;text-decoration:none}.poi-actions a:hover{background:var(--acc);color:var(--bg)}
+@media(max-width:920px){#terrainmap{height:540px}.mapmodehint{flex-basis:100%;margin-left:0}.realmap-tools{max-width:calc(100% - 22px)}}
 .viz-state{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:14px 0 0;padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--acc2);background:var(--panel);font-family:var(--sans)}
 .viz-state[hidden]{display:none}
 .viz-state-copy{min-width:0}
@@ -781,6 +829,17 @@ body.europa-opening-active{overflow:hidden}
     <h3 class="rub">EUROPA · 音乐地理（滚轮缩放 · 拖拽平移）</h3>
     <div class="chips" id="mapchips"></div>
     <div class="viz-state" id="mapstate" role="status" aria-live="polite" hidden></div>
+    <div class="mapmodebar" id="mapmodebar" role="toolbar" aria-label="地图底图模式">
+      <span class="mapmodecaption">底 图</span>
+      <button class="mapmode on" data-map-mode="research">研究地图</button>
+      <button class="mapmode" data-map-mode="terrain">实景地形 · 3D</button>
+      <button class="mapmode" data-map-mode="satellite">卫星影像</button>
+      <button class="mapmode" data-map-mode="street">街道定位</button>
+      <button class="mapmode on" id="realpoi-toggle" type="button" title="显示或隐藏建筑、音乐场所、学院与故居地点">地点标记 · 开</button>
+      <span class="realpoi-legend" aria-label="地点标记图例"><span><i><span>◆</span></i>建筑</span><span><i class="music"><span>♪</span></i>音乐场所</span><span><i class="school"><span>♫</span></i>音乐学院</span><span><i class="university"><span>▣</span></i>大学</span><span><i class="home"><span>⌂</span></i>故居</span></span>
+      <span class="mapmodehint" id="realpoi-summary" aria-live="polite"></span>
+      <span class="mapmodehint" id="realmapstatus" aria-live="polite">研究地图 · Natural Earth 海岸线 · 音乐家关系层</span>
+    </div>
     <div class="maptl" id="maptl">
       <button class="tlbtn" id="mplay" title="播放世纪推移">▶</button>
       <input type="range" id="myear" step="1" value="0" aria-label="世纪时间轴">
@@ -1695,6 +1754,226 @@ const REGIONS=[["HISPANIA",-4.6,39.6],["LVSITANIA",-8.4,39.2],["GALLIA",2.3,46.9
 
 /* ══════════ 舆图 ══════════ */
 let mapFilter="all",routeOf=null,vb={x:0,y:0,w:MW,h:MH},mapReady=false;
+let mapMode="research",realMap=null,realMapPromise=null,realMapMarkers=[],realPoiMarkers=[],realPoiOn=true,realMarkerKey="",realMapZooming=false,realMapWheelFlat=false,realMapScaleTimer=0,realMapOverlayTimer=0;
+const REAL_MAP_CENTER=[10.1,46.2];
+const REAL_MAP_STYLE=()=>(
+  {
+    version:8,
+    sources:{
+      "real-imagery":{type:"raster",tiles:["https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"],tileSize:256,maxzoom:19,attribution:"Esri, Maxar, Earthstar Geographics, and the GIS User Community"},
+      "real-street":{type:"raster",tiles:["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],tileSize:256,maxzoom:19,attribution:"© OpenStreetMap contributors"},
+      "real-dem":{type:"raster-dem",tiles:["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"],tileSize:256,maxzoom:15,encoding:"terrarium",attribution:"Terrain tiles © AWS Open Data / Mapzen"}
+    },
+    layers:[
+      {id:"real-imagery-layer",type:"raster",source:"real-imagery"},
+      {id:"real-street-layer",type:"raster",source:"real-street",layout:{visibility:"none"}}
+    ],
+    terrain:{source:"real-dem",exaggeration:1.2}
+  }
+);
+function syncMapModeUI(){
+  const bar=$("#mapmodebar");if(!bar)return;
+  bar.querySelectorAll("[data-map-mode]").forEach(b=>b.classList.toggle("on",b.dataset.mapMode===mapMode));
+  const pt=$("#realpoi-toggle");if(pt){pt.classList.toggle("on",realPoiOn);pt.textContent=`地点标记 · ${realPoiOn?"开":"关"}`}
+  const sum=$("#realpoi-summary");if(sum&&typeof allPOIs==="function"){
+    const ps=allPOIs(),n=k=>ps.filter(p=>poiKindClass(p)===k).length;
+    sum.textContent=`已编目 ${ps.length} 点 · 建筑 ${n("landmark")} · 音乐 ${n("music")} · 学院 ${n("school")} · 大学 ${n("university")} · 故居 ${n("home")}`;
+  }
+  const s=$("#realmapstatus");if(!s)return;
+  if(mapMode==="research")s.textContent="研究地图 · Natural Earth 海岸线 · 音乐家关系层";
+  else if(!realMap)s.textContent="实景层正在加载 · 首次加载会请求地图与高程瓦片";
+}
+function mapModeUI(){
+  const bar=$("#mapmodebar");if(!bar)return;
+  syncMapModeUI();
+  if(bar.dataset.bound)return;
+  bar.dataset.bound="1";
+  bar.addEventListener("click",e=>{const b=e.target.closest("[data-map-mode]");if(b)setMapMode(b.dataset.mapMode)});
+  const pt=$("#realpoi-toggle");if(pt)pt.onclick=()=>{realPoiOn=!realPoiOn;syncMapModeUI();if(realMap)renderRealMarkers()};
+}
+function setMapMode(mode){
+  if(!["research","terrain","satellite","street"].includes(mode))mode="research";
+  mapMode=mode;syncMapModeUI();
+  if(mode==="research"){
+    clearRealMapMotionTimers();realMapZooming=false;realMapWheelFlat=false;
+    if(realMap){try{realMap.remove()}catch(_){} }
+    realMap=null;realMapMarkers=[];realPoiMarkers=[];realMarkerKey="";renderMap();return;
+  }
+  renderMap();
+}
+function ensureMapLibreCss(){
+  if(document.querySelector("link[data-maplibre-css]"))return;
+  const link=document.createElement("link");link.rel="stylesheet";link.href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css";link.dataset.maplibreCss="1";document.head.appendChild(link);
+}
+function loadMapLibre(){
+  if(window.maplibregl)return Promise.resolve(window.maplibregl);
+  if(realMapPromise)return realMapPromise;
+  ensureMapLibreCss();
+  realMapPromise=new Promise((resolve,reject)=>{
+    const script=document.createElement("script");script.src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js";script.async=true;
+    script.onload=()=>window.maplibregl?resolve(window.maplibregl):reject(new Error("MapLibre 未暴露全局对象"));
+    script.onerror=()=>reject(new Error("MapLibre 资源加载失败"));document.head.appendChild(script);
+  });
+  return realMapPromise;
+}
+function renderRealFallback(){
+  clearRealMapMotionTimers();realMapZooming=false;realMapWheelFlat=false;
+  if(realMap){try{realMap.remove()}catch(_){}realMap=null;realMapMarkers=[];realPoiMarkers=[];realMarkerKey=""}
+  const box=$("#mapbox");if(!box)return;
+  box.innerHTML=`<div class="realmap-fallback" id="realmap-fallback"><div><strong>实景层暂时没有启动</strong><p>浏览器的 WebGL 或外部地图资源未能加载。你可以返回研究地图，或在网络恢复后重试。</p><button class="chip" id="realmap-retry">重试实景层</button> <button class="chip" id="realmap-research">返回研究地图</button></div></div>`;
+  $("#realmap-retry").onclick=()=>renderMap();
+  $("#realmap-research").onclick=()=>setMapMode("research");
+}
+function bindRealMapTools(){
+  const box=$("#mapbox");if(!box)return;
+  const home=box.querySelector("#realmap-home"),tilt=box.querySelector("#realmap-tilt");
+  if(home)home.onclick=()=>{if(realMap)realMap.fitBounds([[-12,35],[37,66]],{padding:35,duration:900})};
+  if(tilt)tilt.onclick=()=>{if(realMap)realMap.easeTo({pitch:realMap.getPitch()>10?0:52,bearing:realMap.getPitch()>10?0:-12,duration:650})};
+}
+function applyRealMapLayer(){
+  if(!realMap||!realMap.isStyleLoaded())return;
+  const visible=mapMode==="street"?"real-street-layer":"real-imagery-layer";
+  ["real-imagery-layer","real-street-layer"].forEach(id=>{if(realMap.getLayer(id))realMap.setLayoutProperty(id,"visibility",id===visible?"visible":"none")});
+  if(mapMode==="terrain"){
+    realMap.setTerrain({source:"real-dem",exaggeration:1.28});
+    realMap.easeTo({pitch:Math.max(42,realMap.getPitch()),bearing:realMap.getBearing()||-12,duration:450});
+  }else{
+    realMap.setTerrain(null);realMap.easeTo({pitch:0,bearing:0,duration:450});
+  }
+  updateRealMapStatus();
+}
+function updateRealMapStatus(){
+  const s=$("#realmapstatus");if(!s||!realMap)return;
+  const c=realMap.getCenter(),z=realMap.getZoom();
+  const label=mapMode==="terrain"?"实景地形 · 3D":mapMode==="satellite"?"卫星影像":mapMode==="street"?"街道定位":"研究地图";
+  s.textContent=`${label} · ${c.lat.toFixed(1)}°N ${c.lng.toFixed(1)}°E · z${z.toFixed(1)}`;
+}
+const REAL_MAP_HIDPI=2,REAL_MAP_INTERACTION_DELAY=320;
+function setRealMapPixelRatio(next){
+  if(!realMap||typeof realMap.setPixelRatio!=="function")return;
+  const ratio=next===1?1:(mapMode==="terrain"?1.5:REAL_MAP_HIDPI);
+  if(realMap.getPixelRatio()===ratio)return;
+  realMap.setPixelRatio(ratio);
+}
+function clearRealMapMotionTimers(){
+  if(realMapScaleTimer){window.clearTimeout(realMapScaleTimer);realMapScaleTimer=0}
+  if(realMapOverlayTimer){window.clearTimeout(realMapOverlayTimer);realMapOverlayTimer=0}
+}
+function requestRealMapOverlayRefresh(){
+  if(!realMap)return;
+  if(realMapOverlayTimer)window.clearTimeout(realMapOverlayTimer);
+  realMapOverlayTimer=window.setTimeout(()=>{
+    realMapOverlayTimer=0;
+    if(!realMap||realMapZooming||(typeof realMap.isMoving==="function"&&realMap.isMoving()))return;
+    renderRealMarkers();updateRealMapStatus();queuePOIsForView();
+  },120);
+}
+function handleRealMapWheel(){
+  if(!realMap)return;
+  if(realMapScaleTimer)window.clearTimeout(realMapScaleTimer);
+  if(!realMapZooming){realMapZooming=true;clearRealMapMotionTimers();
+  const box=$("#terrainmap");if(box)box.classList.add("realmap-moving");
+    if(mapMode==="terrain"&&!realMapWheelFlat){realMap.setTerrain(null);realMapWheelFlat=true}
+    setRealMapPixelRatio(1);
+  }
+  realMapScaleTimer=window.setTimeout(()=>{
+    realMapScaleTimer=0;
+    if(!realMap)return;
+    if(mapMode==="terrain"&&realMapWheelFlat){realMap.setTerrain({source:"real-dem",exaggeration:1.28});realMapWheelFlat=false}
+    else realMapWheelFlat=false;
+    setRealMapPixelRatio(REAL_MAP_HIDPI);
+    realMapZooming=false;
+    const box=$("#terrainmap");if(box)box.classList.remove("realmap-moving");
+    requestRealMapOverlayRefresh();
+  },REAL_MAP_INTERACTION_DELAY);
+}
+function bindRealMapWheelPerformance(){
+  if(!realMap)return;
+  const canvas=realMap.getCanvas();if(!canvas||canvas.dataset.realWheelPerf)return;
+  canvas.dataset.realWheelPerf="1";canvas.addEventListener("wheel",handleRealMapWheel,{passive:true});
+}
+function handleRealMapMoveEnd(){requestRealMapOverlayRefresh()}
+function realRouteGeoJSON(){
+  const m=routeOf&&byId[routeOf],cs=m?(m.c||[]).filter(c=>CITY[c]):[];
+  return{type:"FeatureCollection",features:cs.length>1?[{type:"Feature",properties:{},geometry:{type:"LineString",coordinates:cs.map(c=>[CITY[c][0],CITY[c][1]])}}]:[]};
+}
+function realFlowGeoJSON(){
+  if(!mapFlows)return{type:"FeatureCollection",features:[]};
+  const agg={};
+  M.forEach(m=>{if(mapFilter!=="all"&&m.e!==mapFilter)return;const cs=(m.c||[]).filter(c=>CITY[c]);for(let i=0;i<cs.length-1;i++){if(cs[i]===cs[i+1])continue;const k=cs[i]+"|"+cs[i+1];agg[k]=(agg[k]||0)+1}});
+  return{type:"FeatureCollection",features:Object.keys(agg).map(k=>{const cs=k.split("|");return{type:"Feature",properties:{weight:agg[k]},geometry:{type:"LineString",coordinates:cs.map(c=>[CITY[c][0],CITY[c][1]])}}})};
+}
+function ensureRealGeoLayers(){
+  if(!realMap||!realMap.isStyleLoaded())return;
+  if(!realMap.getSource("music-route"))realMap.addSource("music-route",{type:"geojson",data:realRouteGeoJSON()});
+  if(!realMap.getLayer("music-route"))realMap.addLayer({id:"music-route",type:"line",source:"music-route",paint:{"line-color":"#8E2C3B","line-width":3.2,"line-opacity":.9,"line-dasharray":[2,2]}});
+  if(!realMap.getSource("music-flows"))realMap.addSource("music-flows",{type:"geojson",data:realFlowGeoJSON()});
+  if(!realMap.getLayer("music-flows"))realMap.addLayer({id:"music-flows",type:"line",source:"music-flows",paint:{"line-color":"#C9A227","line-width":["interpolate",["linear"],["get","weight"],1,1,10,4],"line-opacity":.42,"line-dasharray":[1.5,2]}});
+  realMap.getSource("music-route").setData(realRouteGeoJSON());realMap.getSource("music-flows").setData(realFlowGeoJSON());
+}
+const POI_ZOOM=7.2;
+function renderRealMarkers(){
+  if(!realMap)return;
+  const idx=cityList(),routeCities=new Set(routeOf&&byId[routeOf]?(byId[routeOf].c||[]).filter(c=>CITY[c]):[]),routeList=[...routeCities],z=realMap.getZoom();
+  const cityKey=Object.keys(idx).map(c=>`${c}:${idx[c].length}`).join("|")+`#${routeList.join(",")}#${mapFilter}#${mapYear}#${mapPil}#${z>5.7?1:0}`;
+  const poiKey=!realPoiOn||z<POI_ZOOM?"off":allPOIs().filter(p=>Number.isFinite(p.lon)&&Number.isFinite(p.lat)).map(p=>`${p.id}:${p.lon}:${p.lat}:${p._selected?1:0}`).join("|")+`#${z>=8?1:0}`;
+  const markerKey=`${cityKey}||${poiKey}`;
+  if(realMarkerKey===markerKey)return;
+  realMarkerKey=markerKey;
+  realMapMarkers.forEach(m=>m.remove());realMapMarkers=[];
+  realPoiMarkers.forEach(m=>m.remove());realPoiMarkers=[];
+  Object.keys(idx).map(c=>({c,n:idx[c].length})).sort((a,b)=>b.n-a.n).forEach(e=>{
+    const wantLabel=routeCities.has(e.c)||z>5.7||e.n>=4||["雅典","卑尔根","圣彼得堡","那不勒斯","拜罗伊特","莫斯科"].includes(e.c);
+    const el=document.createElement("button");el.type="button";el.className="realcity"+(wantLabel?"":" no-label")+(routeCities.has(e.c)?" route":"")+(mapPil&&PILGRIM[e.c]?" pilgrim":"");
+    const size=Math.max(9,Math.min(21,9+e.n*1.25));el.style.setProperty("--dot",`${size}px`);el.setAttribute("aria-label",`${e.c} · ${e.n}人`);el.title=`${e.c} · ${e.n}人`;
+    const num=routeCities.has(e.c)?`<span class="realcity-number">${routeList.indexOf(e.c)+1}</span>`:"";
+    el.innerHTML=`${num}<span class="realcity-dot"></span><span class="realcity-label">${e.c}</span>`;
+    el.addEventListener("click",ev=>{ev.stopPropagation();cityPanel(e.c);ensureCityPOIs(e.c)});
+    realMapMarkers.push(new maplibregl.Marker({element:el,anchor:"center",pitchAlignment:"map"}).setLngLat([CITY[e.c][0],CITY[e.c][1]]).addTo(realMap));
+  });
+  if(!realPoiOn||z<POI_ZOOM)return;
+  allPOIs().filter(p=>Number.isFinite(p.lon)&&Number.isFinite(p.lat)).forEach(p=>{
+    const wantLabel=p._selected||z>=8.0;
+    const el=document.createElement("button");el.type="button";el.className=`realpoi ${poiKindClass(p)}${wantLabel?"":" no-label"}`;el.setAttribute("aria-label",`${p.city} · ${p.name} · ${poiKindLabel(p)}`);el.title=`${p.city} · ${p.name}`;
+    el.innerHTML=`<span class="realpoi-glyph"><span>${poiGlyph(p)}</span></span><span class="realpoi-label">${htmlEsc(p.name)}</span>`;
+    el.addEventListener("click",ev=>{ev.stopPropagation();p._selected=true;poiPanel(p);renderRealMarkers()});
+    realPoiMarkers.push(new maplibregl.Marker({element:el,anchor:"center",pitchAlignment:"map"}).setLngLat([p.lon,p.lat]).addTo(realMap));
+  });
+}
+function queuePOIsForView(){
+  if(!realMap||!realPoiOn||realMap.getZoom()<POI_ZOOM)return;
+  const b=realMap.getBounds(),center=realMap.getCenter();
+  const candidates=Object.keys(CITY).filter(c=>!poiCityPromises[c]&&b.contains([CITY[c][0],CITY[c][1]])).sort((a,b)=>{
+    const da=Math.hypot(CITY[a][0]-center.lng,CITY[a][1]-center.lat),db=Math.hypot(CITY[b][0]-center.lng,CITY[b][1]-center.lat);return da-db
+  }).slice(0,realMap.getZoom()>10?4:6);
+  candidates.forEach((c,i)=>setTimeout(()=>ensureCityPOIs(c),i*240));
+}
+function renderRealMap(){
+  const box=$("#mapbox");if(!box)return;
+  syncMapModeUI();
+  if(realMap&&box.querySelector("#terrainmap")){
+    setRealMapPixelRatio(REAL_MAP_HIDPI);
+    requestAnimationFrame(()=>{applyRealMapLayer();ensureRealGeoLayers();renderRealMarkers();updateRealMapStatus()});return;
+  }
+  box.innerHTML=`<div id="terrainmap" role="application" aria-label="欧洲真实地形与卫星地图"><div class="realmap-loading" id="realmap-loading"><div><strong>正在接通实景地形</strong><p>加载卫星底图与高程数据后，可拖拽、滚轮缩放并用右上角指南针调整视角。</p></div></div></div><div class="realmap-tools"><button id="realmap-home" type="button">⌂ 欧洲视野</button><button id="realmap-tilt" type="button">↗ 斜视山体</button></div><div class="realmap-credit">高清渲染（最高 2×）；底图 © Esri, Maxar, Earthstar Geographics；街道 © OpenStreetMap contributors；高程 Terrain-RGB © AWS Open Data / Mapzen</div>`;
+  bindRealMapTools();
+  loadMapLibre().then(()=>{
+    if(mapMode==="research")return;
+    try{
+      realMap=new maplibregl.Map({container:"terrainmap",style:REAL_MAP_STYLE(),center:REAL_MAP_CENTER,zoom:4.45,pitch:mapMode==="terrain"?48:0,bearing:mapMode==="terrain"?-12:0,minZoom:2,maxZoom:18,fadeDuration:0,attributionControl:{compact:true},dragRotate:true,keyboard:true});
+      realMap.addControl(new maplibregl.NavigationControl({showCompass:true,visualizePitch:true}),"top-right");
+      realMap.on("load",()=>{
+        setRealMapPixelRatio(REAL_MAP_HIDPI);
+        bindRealMapWheelPerformance();
+        const loading=$("#realmap-loading");if(loading)loading.hidden=true;
+        ensureRealGeoLayers();applyRealMapLayer();renderRealMarkers();updateRealMapStatus();queuePOIsForView();
+      });
+      realMap.on("moveend",handleRealMapMoveEnd);
+      realMap.on("error",e=>{if(e&&e.error&&/webgl|context/i.test(e.error.message||""))renderRealFallback()});
+    }catch(e){renderRealFallback()}
+  }).catch(()=>renderRealFallback());
+}
+function renderMap(){if(mapMode!=="research"){renderRealMap();return}renderResearchMap()}
 function cityList(){
   const idx={};
   M.forEach(m=>{if(mapFilter!=="all"&&m.e!==mapFilter)return;
@@ -1769,6 +2048,7 @@ function renderMapState(idx){
   state.querySelectorAll("[data-map-clear-route]").forEach(b=>b.onclick=()=>{routeOf=null;selectedCity=null;renderChips();renderMap()});
 }
 function mapUI(){
+  mapModeUI();
   const sp=ymSpan(),sl=$("#myear");
   syncMapUI();
   sl.oninput=()=>{mapStop();mapYear=+sl.value;syncMapUI();renderMap()};
@@ -1788,7 +2068,7 @@ function initMapView(){
   $("#mapbox").innerHTML=`<div class="viz-loading"><div class="viz-skeleton"><div class="viz-skeleton-orbit" aria-hidden="true"></div><p>正在铺陈海陆与城市坐标……</p></div></div>`;
   requestAnimationFrame(()=>{mapReady=true;renderMap();syncSelection()});
 }
-function renderMap(){
+function renderResearchMap(){
   const idx=cityList(),sc=vb.w/MW;
   renderMapState(idx);
   let dots="",labs="",route="";
@@ -1873,6 +2153,390 @@ CITYINFO["帕多瓦"]={
   ],
   hist:"帕多瓦是威尼托的大学与教会之城；奇科尼亚约1401年起在大教堂任职，晚期作品与乐理论在此汇聚法国新艺术与意大利十四世纪传统。"
 };
+/* ══════ 建筑 / 音乐地点 POI ══════
+   城市画廊已有的三张图作为第一层代表建筑；每个地点再以中文 Wikipedia 补充摘要、坐标和图片。
+   没有可靠坐标时不把城市中心估值冒充建筑精确点；专题地点的人工候选坐标会明确标注。 */
+/* 扩展点图片走独立静态素材仓库；Wikipedia API 仍只负责补充中文摘要与坐标。 */
+const POI_ASSET_BASE="https://a15888007552-source.github.io/ad-fontes-europa-assets/";
+const POI_ASSETS={
+  "巴黎|巴黎国立高等音乐舞蹈学院": {
+    "file": "images/poi/poi-000-4e597818af.png",
+    "credit": "Wikimedia Commons",
+    "source": "https://zh.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E%E5%9C%8B%E7%AB%8B%E9%AB%98%E7%AD%89%E9%9F%B3%E6%A8%82%E8%88%9E%E8%B9%88%E5%AD%B8%E9%99%A2"
+  },
+  "巴黎|音乐城": {
+    "file": "images/poi/poi-001-835aca1017.jpg",
+    "credit": "Wikimedia Commons · CC BY-SA 2.0 fr",
+    "source": "https://zh.wikipedia.org/wiki/%E9%9F%B3%E4%B9%90%E5%9F%8E"
+  },
+  "莱比锡|莱比锡大学": {
+    "file": "images/poi/poi-051-81b06a92d3.png",
+    "credit": "Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/Leipzig_University"
+  },
+  "纽约|哥伦比亚大学": {
+    "file": "images/poi/poi-071-43da641aee.png",
+    "credit": "Wikimedia Commons",
+    "source": "https://zh.wikipedia.org/wiki/%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%E5%A4%A7%E5%AD%A6"
+  }
+};
+const POI_WIKI={
+  "巴黎|加尼叶歌剧院":"Palais Garnier","巴黎|圣礼拜堂":"Sainte-Chapelle","巴黎|巴黎圣母院":"Notre-Dame de Paris",
+  "佛罗伦萨|花之圣母大教堂":"Cathedral of Santa Maria del Fiore","威尼斯|凤凰歌剧院":"Teatro La Fenice","威尼斯|凤凰歌剧院内部":"Teatro La Fenice",
+  "费城|音乐学会厅(Academy of Music)":"Academy of Music (Philadelphia)","费城|金梅尔中心·威瑞森厅":"Kimmel Center",
+  "新港|耶鲁伍尔西音乐厅":"Woolsey Hall","新港|耶鲁哈克尼斯塔":"Harkness Tower","新港|耶鲁斯普拉格音乐厅":"Sprague Memorial Hall",
+  "克雷莫纳|小提琴博物馆":"Museo del violino","那不勒斯|那不勒斯音乐学院":"San Pietro a Majella",
+  "维也纳|维也纳河畔剧院":"Theater an der Wien","维也纳|金色大厅(Musikverein)":"Musikverein",
+  "华沙|拉齐恩基公园·肖邦像":"Chopin Monument, Warsaw","卑尔根|特罗豪根(格里格故居)":"Troldhaugen",
+  "苏黎世|苏黎世音乐厅(Tonhalle)":"Tonhalle-Orchester Zürich","米兰|斯卡拉歌剧院":"La Scala",
+  "伦敦|皇家歌剧院":"Royal Opera House","伦敦|皇家阿尔伯特音乐厅":"Royal Albert Hall",
+  "柏林|柏林爱乐音乐厅":"Berlin Philharmonie","汉堡|易北爱乐厅":"Elbphilharmonie",
+  "拜罗伊特|拜罗伊特节日剧院":"Bayreuth Festspielhaus","波恩|贝多芬故居":"Beethoven House",
+  "萨尔茨堡|莫扎特出生地":"Mozart's Birthplace","莱比锡|圣托马斯教堂":"St. Thomas Church, Leipzig",
+  "伦敦|威斯敏斯特教堂":"Westminster Abbey","罗马|圣彼得大教堂":"St. Peter's Basilica","罗马|西斯廷礼拜堂":"Sistine Chapel","罗马|阿根廷剧院":"Teatro Argentina",
+  "莱比锡|布商大厦音乐厅":"Gewandhaus","莱比锡|门德尔松故居":"Mendelssohn House, Leipzig",
+  "萨尔茨堡|萨尔茨堡大教堂":"Salzburg Cathedral","萨尔茨堡|萨尔茨堡要塞":"Hohensalzburg Fortress",
+  "拜罗伊特|侯爵歌剧院":"Margravial Opera House","拜罗伊特|瓦格纳故居 Wahnfried":"Wahnfried",
+  "柏林|柏林音乐厅(根德尔曼广场)":"Konzerthaus Berlin","柏林|菩提树下国家歌剧院":"Berlin State Opera",
+  "布拉格|城邦剧院":"Estates Theatre","布拉格|鲁道夫音乐厅":"Rudolfinum","布拉格|布拉格国家剧院":"National Theatre (Prague)",
+  "米兰|米兰大教堂":"Milan Cathedral","米兰|威尔第音乐学院":"Milan Conservatory",
+  "纽约|卡内基音乐厅":"Carnegie Hall","纽约|大都会歌剧院(林肯中心)":"Metropolitan Opera House","纽约|百老汇剧院区":"Broadway theatre",
+  "波士顿|波士顿交响音乐厅":"Symphony Hall, Boston","波士顿|新英格兰音乐学院":"New England Conservatory",
+  "华盛顿|肯尼迪表演艺术中心":"John F. Kennedy Center for the Performing Arts","华盛顿|国会图书馆":"Library of Congress",
+  "洛杉矶|迪士尼音乐厅":"Walt Disney Concert Hall","芝加哥|芝加哥管弦乐厅":"Orchestra Hall (Chicago)",
+  "圣彼得堡|马林斯基剧院":"Mariinsky Theatre","莫斯科|莫斯科大剧院":"Bolshoi Theatre",
+  "布达佩斯|匈牙利国家歌剧院":"Hungarian State Opera House","华沙|华沙爱乐厅":"Warsaw Philharmonic",
+  "赫尔辛基|西贝柳斯音乐学院":"Sibelius Academy","布尔诺|亚纳切克剧院":"Janáček Theatre"
+};
+const POI_MUSIC={
+  "巴黎|加尼叶歌剧院":"这里是十九世纪巴黎大歌剧制度的建筑化身；德彪西、柏辽兹、肖邦等人的巴黎音乐生活，都必须放回剧院、沙龙与音乐院组成的城市网络中理解。",
+  "巴黎|巴黎圣母院":"十二、十三世纪圣母院乐派在这里及其周边形成；莱奥南与佩罗坦把礼仪歌唱扩展为可书写的大型复调。",
+  "罗马|西斯廷礼拜堂":"帕莱斯特里纳的教会复调形象与教廷礼仪传统在此交汇；它是理解罗马乐派“清晰复调”观念的关键地点。",
+  "维也纳|维也纳国家歌剧院":"从莫扎特、贝多芬到马勒与理查·施特劳斯，维也纳歌剧院把宫廷剧场、公共歌剧和现代指挥制度连在了一起。",
+  "维也纳|金色大厅(Musikverein)":"维也纳音乐之友协会的演出制度与金色大厅的声学神话，使这里成为十九世纪管弦乐公共文化的象征。",
+  "莱比锡|圣托马斯教堂":"巴赫1723年至1750年任托马斯乐长；礼拜、合唱学校与城市音乐制度在这里不是背景，而是作品生产机制本身。",
+  "伦敦|皇家阿尔伯特音乐厅":"维多利亚时代公共音乐会文化的标志性空间；“逍遥音乐会”使大型管弦乐成为大众日常生活的一部分。",
+  "拜罗伊特|拜罗伊特节日剧院":"瓦格纳为自己的乐剧建造的专用剧场；其乐池、观众席和节庆制度改变了后来歌剧剧场的观看与聆听方式。",
+  "波恩|贝多芬故居":"贝多芬出生地与纪念研究机构所在地；它把作曲家传记、手稿收藏和城市音乐记忆集中在一个可进入的地点。",
+  "萨尔茨堡|莫扎特出生地":"莫扎特1756年出生于此；如今的故居、档案与城市节庆共同塑造了“莫扎特之城”的文化记忆。",
+  "克雷莫纳|小提琴博物馆":"克雷莫纳制琴传统连接阿马蒂、瓜尔内里与斯特拉迪瓦里；这里展示的是乐器制造、演奏实践与城市工艺史的交叉。"
+};
+const POI_EXTRA={
+  "威尼斯":[{name:"威尼斯总督宫",kind:"城市建筑",wiki:"Doge's Palace",fallback:[12.340,45.434],music:"总督宫与圣马可广场共同构成威尼斯共和国的公共仪式空间；圣马可的复合唱传统必须放在这套国家—教会声景中理解。"}],
+  "克罗顿":[
+    {name:"克罗顿国家考古博物馆",kind:"城市建筑",wiki:"National Archaeological Museum of Crotone",fallback:[17.117,39.081],music:"克罗顿是毕达哥拉斯学派活动的南意大利节点；这里的音程比例传统后来被古代与中世纪乐学反复追述。"},
+    {name:"克罗顿主教座堂",kind:"城市建筑",wiki:"Crotone Cathedral",fallback:[17.119,39.081]},
+    {name:"毕达哥拉斯纪念地",kind:"音乐家纪念地",wiki:"Pythagoras",fallback:[17.117,39.083],music:"毕达哥拉斯学派把弦长比例与协和音程联系起来；此处的纪念并不等于保存了原学派建筑，而是标出其在克罗顿的思想地理。"}
+  ],
+  "宾根":[{name:"宾根主教座堂",kind:"城市建筑",wiki:"Bingen am Rhein",fallback:[7.899,49.967],music:"宾根的城市记忆与希尔德加德相连；她的修道院歌唱和神学文本构成中世纪女性音乐创作的重要见证。"}],
+  "兰斯":[{name:"马尔斯门",kind:"城市建筑",wiki:"Porte de Mars (Reims)",fallback:[4.033,49.260]}],
+  "艾森施塔特":[{name:"海顿山教堂",kind:"音乐家纪念地",wiki:"Bergkirche, Eisenstadt",fallback:[16.526,47.843],music:"海顿墓位于教堂内；埃斯特哈齐宫廷、教堂与乐队制度共同构成他近三十年创作环境。"},{name:"海顿故居",kind:"音乐家故居",wiki:"Haydn House",fallback:[16.524,47.845],music:"海顿在此度过晚年；故居把作曲家的家庭生活、地方记忆和埃斯特哈齐宫廷制度连接起来。"}],
+  "康布雷":[{name:"圣热里教堂",kind:"城市建筑",wiki:"Église Saint-Géry de Cambrai",fallback:[3.231,50.175],music:"康布雷与杜费、奥克冈等佛兰德斯复调传统相连；教会职务与城市唱诗班是十五世纪音乐流动的重要基础设施。"}],
+  "孔代":[
+    {name:"孔代城堡",kind:"城市建筑",wiki:"Condé-sur-l'Escaut",fallback:[3.593,50.455]},
+    {name:"圣瓦斯农教堂",kind:"城市建筑",wiki:"Église Saint-Wasnon de Condé-sur-l'Escaut",fallback:[3.592,50.453]},
+    {name:"孔代钟楼",kind:"城市建筑",wiki:"Beffroi de Condé-sur-l'Escaut",fallback:[3.593,50.453]}
+  ],
+  "阿维拉":[{name:"圣维森特圣殿",kind:"城市建筑",wiki:"Basílica de San Vicente, Ávila",fallback:[-4.694,40.657]}],
+  "贝济耶":[
+    {name:"贝济耶圣纳泽尔主教座堂",kind:"城市建筑",wiki:"Béziers Cathedral",fallback:[3.215,43.344]},
+    {name:"老桥",kind:"城市建筑",wiki:"Pont vieux de Béziers",fallback:[3.214,43.342]},
+    {name:"丰塞拉讷船闸",kind:"城市建筑",wiki:"Fonseranes Locks",fallback:[3.192,43.333],music:"贝济耶位于奥克语文化圈；这里更适合作为城市历史与游吟传统的地理入口，而不是直接的音乐演出场所。"}
+  ],
+  "翁弗勒尔":[{name:"圣卡特琳木教堂",kind:"城市建筑",wiki:"Saint Catherine's Church, Honfleur",fallback:[0.232,49.419]}],
+  "利摩日":[{name:"圣马夏尔修道院遗址",kind:"音乐历史地点",wiki:"Abbey of Saint Martial",fallback:[1.262,45.829],music:"利摩日圣马夏尔修道院是阿基坦复调与花唱手稿的重要中心；这里标出的是中世纪音乐书写制度的地点，而非现代演出场馆。"}],
+  "米蒂利尼":[{name:"米蒂利尼城堡",kind:"城市建筑",wiki:"Mytilene Castle",fallback:[26.555,39.105]},{name:"圣泰拉邦教堂",kind:"城市建筑",wiki:"Church of Agios Therapon",fallback:[26.555,39.105]}],
+  "列日":[
+    {name:"列日主教座堂",kind:"城市建筑",wiki:"Liège Cathedral",fallback:[5.567,50.645],music:"列日的教会机构与低地国家音乐网络相连；奇科尼亚的列日出身把这座城市带入十四、十五世纪音乐流动史。"},
+    {name:"瓦隆皇家歌剧院",kind:"音乐场所",wiki:"Opéra Royal de Wallonie",fallback:[5.568,50.645]},
+    {name:"圣巴托洛缪学院教堂",kind:"城市建筑",wiki:"Collegiate Church of Saint Bartholomew, Liège",fallback:[5.578,50.649]}
+  ],
+  "蒙斯":[{name:"圣沃德吕学院教堂",kind:"城市建筑",wiki:"Collégiale Sainte-Waudru de Mons",fallback:[3.951,50.454],music:"蒙斯所在的埃诺地区与班舒瓦等十五世纪作曲家网络相连；教堂礼仪机构是勃艮第—佛兰德斯复调流动的重要节点。"}],
+  "伍斯特":[{name:"埃尔加出生地博物馆",kind:"音乐家故居",wiki:"Elgar Birthplace Museum",fallback:[-2.159,52.208],music:"埃尔加在伍斯特郡的乡土经验进入《谜语变奏曲》等作品；此处是理解其英国地方性与帝国时代音乐语言的入口。"}]
+};
+const SPECIAL_POIS=[
+  {city:"巴黎",name:"巴黎国立高等音乐舞蹈学院",kind:"音乐学院",wiki:"Paris Conservatoire",fallback:[2.336,48.847],music:"法国国家音乐教育与考试制度的核心机构；柏辽兹、德彪西、拉威尔等人的训练与巴黎音乐职业网络都与它有关。"},
+  {city:"巴黎",name:"音乐城",kind:"音乐场所",wiki:"Cité de la musique",fallback:[2.393,48.889],music:"现代巴黎的音乐博物馆、演出与教育综合体；它把历史乐器收藏、现场演出和音乐知识传播放在同一空间。"},
+  {city:"伦敦",name:"皇家音乐学院",kind:"音乐学院",wiki:"Royal College of Music",fallback:[-0.179,51.499],music:"英国重要的高等音乐教育机构，坐落于伦敦音乐博物馆与演出场馆密集的南肯辛顿文化区。"},
+  {city:"伦敦",name:"皇家音乐学院（Royal Academy）",kind:"音乐学院",wiki:"Royal Academy of Music",fallback:[-0.151,51.523],music:"英国历史最久的音乐学院之一；其学生、教师和演出网络连接了伦敦的歌剧、交响乐与室内乐生活。"},
+  {city:"伦敦",name:"亨德尔与亨德里克斯故居",kind:"音乐家故居",wiki:"Handel & Hendrix in London",fallback:[-0.164,51.512],music:"亨德尔曾在这里生活并创作；两个世纪后吉米·亨德里克斯也住在同一带，故居把巴洛克与摇滚放进同一城市坐标。"},
+  {city:"维也纳",name:"维也纳音乐与表演艺术大学",kind:"音乐学院",wiki:"University of Music and Performing Arts Vienna",fallback:[16.366,48.201],music:"mdw是欧洲重要的音乐与表演艺术大学之一，延续维也纳作曲、演奏、指挥和歌剧教育的制度传统。"},
+  {city:"维也纳",name:"贝多芬帕斯夸拉蒂故居",kind:"音乐家故居",wiki:"Pasqualati House",fallback:[16.365,48.215],music:"贝多芬曾在此居住和工作；“英雄”时期的城市住宅、委约制度与作品形成之间，可以通过故居的空间关系具体化。"},
+  {city:"维也纳",name:"舒伯特出生地",kind:"音乐家故居",wiki:"Schubert Geburtshaus",fallback:[16.359,48.222],music:"舒伯特1797年出生于此；故居让歌曲、家庭音乐和十九世纪初维也纳市民文化不再只是抽象背景。"},
+  {city:"柏林",name:"柏林艺术大学音乐学院",kind:"音乐学院",wiki:"Berlin University of the Arts",fallback:[13.327,52.510],music:"柏林艺术大学延续德语区高等艺术教育传统，作曲、音乐理论、演奏与艺术实践在同一机构内并置。"},
+  {city:"柏林",name:"勋伯格中心",kind:"音乐家故居",wiki:"Arnold Schoenberg Center",fallback:[13.379,52.505],music:"中心保存勋伯格手稿、绘画与研究资料；它是理解十二音技术、流亡经验与现代主义思想史的资料节点。"},
+  {city:"莱比锡",name:"莱比锡音乐与戏剧学院",kind:"音乐学院",wiki:"University of Music and Theatre Leipzig",fallback:[12.371,51.334],music:"门德尔松创办的音乐教育传统在这里延续；学院与格万豪斯、歌剧院和城市合唱制度共同构成莱比锡音乐生态。"},
+  {city:"莱比锡",name:"巴赫博物馆",kind:"音乐场所",wiki:"Bach Museum, Leipzig",fallback:[12.368,51.340],music:"博物馆位于托马斯教堂旁，集中呈现巴赫家族、莱比锡城市乐职和手稿声学材料。"},
+  {city:"萨尔茨堡",name:"莫扎特大学",kind:"音乐学院",wiki:"Mozarteum University Salzburg",fallback:[13.043,47.802],music:"从莫扎特纪念传统发展而来的现代音乐与表演艺术大学；城市节庆、演奏教育和莫扎特研究在此交汇。"},
+  {city:"米兰",name:"米兰威尔第音乐学院",kind:"音乐学院",wiki:"Milan Conservatory",fallback:[9.197,45.466],music:"意大利重要的高等音乐教育机构；米兰歌剧院、出版业与声乐训练共同塑造了意大利歌剧职业制度。"},
+  {city:"米兰",name:"威尔第之家 Casa Verdi",kind:"音乐家故居",wiki:"Casa Verdi",fallback:[9.160,45.480],music:"威尔第晚年创建的音乐家安养院；它既是作曲家故居，也是意大利音乐家社会保障观念的历史见证。"},
+  {city:"罗马",name:"圣切契利亚国立学院",kind:"音乐学院",wiki:"Accademia Nazionale di Santa Cecilia",fallback:[12.456,41.929],music:"从教会音乐传统发展为现代交响乐团与音乐学院；它把罗马的礼仪遗产与现代公共音乐会连接起来。"},
+  {city:"布拉格",name:"布拉格表演艺术学院 HAMU",kind:"音乐学院",wiki:"Academy of Performing Arts in Prague",fallback:[14.405,50.087],music:"捷克高等音乐教育的核心机构，承接斯美塔那、德沃夏克以来的民族乐派与现代演奏传统。"},
+  {city:"布拉格",name:"德沃夏克博物馆",kind:"音乐家故居",wiki:"Antonín Dvořák Museum",fallback:[14.426,50.074],music:"以德沃夏克手稿、文献与纪念空间呈现捷克作曲家如何在民族语汇与国际交响体裁之间工作。"},
+  {city:"布达佩斯",name:"李斯特音乐学院",kind:"音乐学院",wiki:"Franz Liszt Academy of Music",fallback:[19.071,47.505],music:"李斯特创办的高等音乐教育机构；巴托克、柯达伊及匈牙利现代音乐教育都与此传统相连。"},
+  {city:"纽约",name:"茱莉亚学院",kind:"音乐学院",wiki:"Juilliard School",fallback:[-73.983,40.773],music:"美国最具国际影响力的表演艺术学院之一；林肯中心的剧场网络使学院训练直接连接到职业舞台。"},
+  {city:"波士顿",name:"哈佛大学",kind:"综合大学",wiki:"Harvard University",fallback:[-71.116,42.377],music:"这里不是音乐学院，而是音乐学、民族音乐学、历史音乐研究与跨学科人文学的重要综合大学节点；标记它是为了呈现音乐知识如何进入大学制度。"},
+  {city:"波士顿",name:"伯克利音乐学院",kind:"音乐学院",wiki:"Berklee College of Music",fallback:[-71.100,42.347],music:"以爵士、流行、作曲、制作和当代音乐产业教育闻名；它代表波士顿音乐教育中不同于古典学院的另一条现代路径。"},
+  {city:"新港",name:"耶鲁音乐学院",kind:"音乐学院",wiki:"Yale School of Music",fallback:[-72.928,41.312],music:"耶鲁的音乐学院与大学人文学科、演出机构共同构成美国学院音乐体系；欣德米特曾在耶鲁执教。"},
+  {city:"费城",name:"柯蒂斯音乐学院",kind:"音乐学院",wiki:"Curtis Institute of Music",fallback:[-75.170,39.950],music:"以小规模、师徒制和高强度演奏训练闻名；它是费城交响乐传统与美国职业音乐教育的重要节点。"},
+  {city:"洛杉矶",name:"南加州大学桑顿音乐学院",kind:"音乐学院",wiki:"USC Thornton School of Music",fallback:[-118.283,34.022],music:"把古典演奏、爵士、作曲、电影配乐和音乐产业教育置于洛杉矶的影视工业语境中。"},
+  {city:"圣彼得堡",name:"里姆斯基-科萨科夫音乐学院",kind:"音乐学院",wiki:"Rimsky-Korsakov Conservatory",fallback:[30.310,59.930],music:"俄罗斯最早的高等音乐教育机构之一；里姆斯基-科萨科夫的教学把民族乐派的配器与学院制度结合起来。"},
+  {city:"莫斯科",name:"柴可夫斯基音乐学院",kind:"音乐学院",wiki:"Moscow Conservatory",fallback:[37.605,55.755],music:"俄罗斯演奏、作曲与音乐理论教育的核心机构；柴可夫斯基、拉赫玛尼诺夫传统与苏联音乐生活都可在此追踪。"},
+  {city:"赫尔辛基",name:"西贝柳斯学院",kind:"音乐学院",wiki:"Sibelius Academy",fallback:[24.940,60.170],music:"芬兰最重要的高等音乐教育机构，以西贝柳斯命名；它把民族乐派记忆和现代北欧音乐训练连接起来。"},
+  {city:"布尔诺",name:"雅纳切克音乐与表演艺术学院",kind:"音乐学院",wiki:"Janáček Academy of Music and Performing Arts",fallback:[16.608,49.195],music:"以雅纳切克命名的高等艺术院校；摩拉维亚语言、民歌采录与现代歌剧传统在这里形成连续谱系。"}
+];
+const POI_KIND_OVERRIDES={
+  "帕维亚|帕维亚大学":"综合大学",
+  "克雷莫纳|小提琴博物馆":"音乐场所",
+  "克雷莫纳|克雷莫纳主教座堂":"城市建筑",
+  "布达佩斯|李斯特音乐学院":"音乐学院",
+  "赫尔辛基|西贝柳斯音乐学院":"音乐学院",
+  "魏玛|李斯特故居":"音乐家故居",
+  "艾森纳赫|巴赫故居":"音乐家故居",
+  "波恩|贝多芬故居":"音乐家故居",
+  "卑尔根|特罗豪根(格里格故居)":"音乐家故居",
+  "翁弗勒尔|萨蒂出生地":"音乐家故居",
+  "阿雷佐|圭多·达雷佐纪念像":"音乐家故居",
+  "格拉纳达|格拉纳达园林(法雅所居一带)":"音乐家故居",
+  "卢卡|普契尼故居":"音乐家故居",
+  "佩萨罗|罗西尼故居":"音乐家故居",
+  "巴伐利亚|巴赫博物馆":"音乐场所",
+  "莱比锡|巴赫博物馆":"音乐场所",
+  "苏黎世|苏黎世歌剧院":"音乐场所",
+  "苏黎世|苏黎世音乐厅(Tonhalle)":"音乐场所",
+  "贝尔加莫|多尼采蒂剧院":"音乐场所",
+  "帕尔马|帕尔马皇家歌剧院":"音乐场所",
+  "热那亚|卡洛·费利切歌剧院":"音乐场所",
+  "卡塔尼亚|贝利尼歌剧院":"音乐场所",
+  "图卢兹|国会剧院":"音乐场所",
+  "布尔诺|亚纳切克剧院":"音乐场所",
+  "纽伦堡|纽伦堡歌剧院":"音乐场所",
+  "曼海姆|曼海姆国家剧院":"音乐场所",
+  "法兰克福|法兰克福歌剧院":"音乐场所",
+  "法兰克福|法兰克福老歌剧院":"音乐场所",
+  "科隆|科隆爱乐厅":"音乐场所",
+  "克拉科夫|克拉科夫爱乐厅":"音乐场所",
+  "塔林|爱沙尼亚剧院":"音乐场所",
+  "赫尔辛基|赫尔辛基音乐中心":"音乐场所"
+};
+function poiAutoKind(a,name,city){
+  if(a&&a.kind)return a.kind;
+  const override=POI_KIND_OVERRIDES[`${city||""}|${name}`];if(override)return override;
+  if(/音乐学院|音乐大学|高等音乐|音乐与表演|音乐学校|音乐学.*院|艺术大学/.test(name))return"音乐学院";
+  if(/大学|学院/.test(name)&&/音乐|艺术|表演|音乐学/.test(name))return"音乐学院";
+  if(/大学/.test(name))return"综合大学";
+  if(/故居|出生地|出生之家|故里|旧居|纪念馆|纪念像|故宅/.test(name))return"音乐家故居";
+  if(/音乐厅|音乐中心|歌剧院|歌剧|剧院|爱乐厅|音乐馆|音乐博物馆|音乐节/.test(name))return"音乐场所";
+  return"城市建筑";
+}
+/*
+ * 重点城市的专题地点。城市卡中的三座代表建筑与这一组专题地点分开，
+ * 这样不会因为“每城三座”的限制而漏掉学院、大学、音乐场所和故居。
+ * 坐标先作为地图候选点；载入地点时优先用中文 Wikipedia 的坐标覆盖。
+ */
+const CULTURAL_POIS=[
+  {city:"巴黎",name:"索邦大学",kind:"综合大学",wiki:"Sorbonne University",fallback:[2.344,48.847],music:"索邦的音乐与音乐学研究把法国艺术史、档案学和音乐史放在同一所综合大学中。"},
+  {city:"巴黎",name:"巴黎高等音乐师范学院",kind:"音乐学院",wiki:"École Normale de Musique de Paris",fallback:[2.327,48.846],music:"巴黎重要的私人高等音乐教育机构，连接钢琴、声乐、作曲训练与城市演出职业网络。"},
+  {city:"巴黎",name:"音响与音乐研究协调研究所 IRCAM",kind:"音乐场所",wiki:"IRCAM",fallback:[2.352,48.860],music:"蓬皮杜中心旁的电子音乐与当代作曲研究机构；它把计算机音乐、声学和先锋创作接到巴黎公共文化空间。"},
+  {city:"伦敦",name:"伦敦市政厅音乐与戏剧学院",kind:"音乐学院",wiki:"Guildhall School of Music and Drama",fallback:[-0.078,51.507],music:"英国重要的表演艺术学院，学生训练与伦敦交响乐团、歌剧院和剧场生态直接相连。"},
+  {city:"伦敦",name:"三一拉邦音乐舞蹈学院",kind:"音乐学院",wiki:"Trinity Laban Conservatoire of Music and Dance",fallback:[-0.004,51.475],music:"英国音乐与舞蹈高等教育的重要机构，代表伦敦古典、爵士和当代表演教育的另一条谱系。"},
+  {city:"伦敦",name:"威格莫尔音乐厅",kind:"音乐场所",wiki:"Wigmore Hall",fallback:[-0.151,51.517],music:"伦敦室内乐演出的标志性场所，以声学、曲目深度和独奏家传统闻名。"},
+  {city:"伦敦",name:"伦敦大学金史密斯学院",kind:"综合大学",wiki:"Goldsmiths, University of London",fallback:[-0.033,51.474],music:"金史密斯学院的音乐研究连接实验作曲、声音艺术、民族音乐学与当代文化研究。"},
+  {city:"维也纳",name:"维也纳市立音乐与艺术大学",kind:"音乐学院",wiki:"Music and Arts University of the City of Vienna",fallback:[16.373,48.209],music:"维也纳市立高等音乐教育机构，覆盖演奏、作曲、音乐剧和音乐教育。"},
+  {city:"维也纳",name:"维也纳大学",kind:"综合大学",wiki:"University of Vienna",fallback:[16.360,48.213],music:"维也纳大学的音乐学与人文学研究，为理解奥地利音乐史、档案和城市文化提供综合大学节点。"},
+  {city:"维也纳",name:"金色大厅",kind:"音乐场所",wiki:"Musikverein",fallback:[16.373,48.201],music:"维也纳爱乐传统的核心演出场所；金色大厅的音响与新年音乐会已经成为现代公共音乐文化的全球符号。"},
+  {city:"维也纳",name:"维也纳国家歌剧院",kind:"音乐场所",wiki:"Vienna State Opera",fallback:[16.369,48.203],music:"欧洲歌剧院制度与维也纳歌剧传统的中心，连接莫扎特、施特劳斯和现代歌剧制作。"},
+  {city:"维也纳",name:"莫扎特公寓",kind:"音乐家故居",wiki:"Mozart Wohnhaus",fallback:[16.372,48.208],music:"莫扎特在维也纳最重要的居所之一；这里适合观察他的城市职业、出版和公共音乐会生活。"},
+  {city:"维也纳",name:"海顿故居",kind:"音乐家故居",wiki:"Haydnhaus",fallback:[16.354,48.195],music:"海顿晚年居所与维也纳市民音乐文化的见证，也保存着作曲家从宫廷制度走向公共声誉的轨迹。"},
+  {city:"柏林",name:"汉斯·艾斯勒音乐学院",kind:"音乐学院",wiki:"Hanns Eisler School of Music",fallback:[13.414,52.518],music:"柏林重要的公立音乐学院，继承德语区作曲、指挥和高等演奏教育传统。"},
+  {city:"柏林",name:"巴伦博伊姆—赛义德学院",kind:"音乐学院",wiki:"Barenboim–Said Academy",fallback:[13.389,52.514],music:"以室内乐、跨文化教育和西东合集管弦乐团理念著称的柏林新型音乐学院。"},
+  {city:"柏林",name:"柏林爱乐音乐厅",kind:"音乐场所",wiki:"Berlin Philharmonie",fallback:[13.369,52.509],music:"柏林爱乐的主场，以环绕舞台的大厅结构重塑了现代交响乐的听觉关系。"},
+  {city:"柏林",name:"柏林国家歌剧院",kind:"音乐场所",wiki:"Berlin State Opera",fallback:[13.326,52.517],music:"柏林歌剧制度的重要剧院，连接普鲁士宫廷传统、德语歌剧和现代舞台制作。"},
+  {city:"柏林",name:"柏林洪堡大学",kind:"综合大学",wiki:"Humboldt University of Berlin",fallback:[13.393,52.518],music:"柏林音乐学、艺术史和人文学研究网络的重要综合大学节点。"},
+  {city:"莱比锡",name:"托马斯教堂",kind:"音乐场所",wiki:"St. Thomas Church, Leipzig",fallback:[12.368,51.339],music:"巴赫长期任职的教堂，也是莱比锡城市乐职、合唱传统与作曲家纪念文化的核心地点。"},
+  {city:"莱比锡",name:"格万豪斯音乐厅",kind:"音乐场所",wiki:"Gewandhaus",fallback:[12.378,51.339],music:"门德尔松以来莱比锡交响乐传统的中心，连接公共音乐会、乐团制度和城市中产文化。"},
+  {city:"莱比锡",name:"门德尔松故居",kind:"音乐家故居",wiki:"Mendelssohn House",fallback:[12.380,51.333],music:"门德尔松在莱比锡最后的居所；这里连接作曲、指挥、音乐教育与格万豪斯改革。"},
+  {city:"莱比锡",name:"舒曼故居",kind:"音乐家故居",wiki:"Schumann House, Leipzig",fallback:[12.386,51.329],music:"舒曼夫妇在莱比锡生活与创作的纪念地点，提示十九世纪音乐家庭、沙龙和职业网络的关系。"},
+  {city:"莱比锡",name:"莱比锡大学",kind:"综合大学",wiki:"Leipzig University",fallback:[12.373,51.339],music:"莱比锡大学的人文学和音乐学传统，与托马斯教堂、音乐学院和城市档案共同构成研究网络。"},
+  {city:"萨尔茨堡",name:"莫扎特出生地",kind:"音乐家故居",wiki:"Mozart's Birthplace",fallback:[13.043,47.800],music:"莫扎特1756年出生的故居，连接萨尔茨堡市民家庭、宫廷音乐和后来的纪念产业。"},
+  {city:"萨尔茨堡",name:"莫扎特住宅",kind:"音乐家故居",wiki:"Mozart's Residence",fallback:[13.047,47.801],music:"莫扎特一家在萨尔茨堡的重要居所，能补足出生地之外的城市生活与音乐职业信息。"},
+  {city:"萨尔茨堡",name:"萨尔茨堡节日大剧院",kind:"音乐场所",wiki:"Großes Festspielhaus",fallback:[13.044,47.798],music:"萨尔茨堡音乐节的核心剧场，把莫扎特纪念、歌剧制作和现代节庆制度连接起来。"},
+  {city:"萨尔茨堡",name:"萨尔茨堡大学",kind:"综合大学",wiki:"University of Salzburg",fallback:[13.048,47.800],music:"萨尔茨堡的综合大学研究节点，可与莫扎特研究、音乐学和城市文化史相互参照。"},
+  {city:"米兰",name:"斯卡拉歌剧院",kind:"音乐场所",wiki:"La Scala",fallback:[9.189,45.467],music:"意大利歌剧制度的世界级剧院，连接米兰出版、歌手训练、作曲委约和观众文化。"},
+  {city:"米兰",name:"米兰大学",kind:"综合大学",wiki:"University of Milan",fallback:[9.193,45.477],music:"米兰大学的人文学和音乐学研究为歌剧史、城市文化和意大利艺术制度提供综合大学坐标。"},
+  {city:"罗马",name:"罗马歌剧院",kind:"音乐场所",wiki:"Teatro dell'Opera di Roma",fallback:[12.496,41.900],music:"罗马现代歌剧制度的中心，连接教廷城市的历史遗产与公共剧院文化。"},
+  {city:"罗马",name:"罗马第一大学",kind:"综合大学",wiki:"Sapienza University of Rome",fallback:[12.514,41.903],music:"罗马第一大学的音乐学、人文学与档案研究，为罗马礼仪音乐和现代文化史提供综合大学节点。"},
+  {city:"布拉格",name:"鲁道夫音乐厅",kind:"音乐场所",wiki:"Rudolfinum",fallback:[14.415,50.090],music:"捷克爱乐的主场，连接德沃夏克传统、国家音乐机构和布拉格公共音乐会生活。"},
+  {city:"布拉格",name:"布拉格国家歌剧院",kind:"音乐场所",wiki:"State Opera, Prague",fallback:[14.434,50.081],music:"布拉格歌剧制度和德语—捷克语舞台文化交汇的代表性剧院。"},
+  {city:"布拉格",name:"查理大学",kind:"综合大学",wiki:"Charles University",fallback:[14.416,50.088],music:"查理大学的人文学与音乐学研究，是理解波希米亚音乐史和捷克民族乐派的综合大学节点。"},
+  {city:"布达佩斯",name:"匈牙利国家歌剧院",kind:"音乐场所",wiki:"Hungarian State Opera",fallback:[19.059,47.502],music:"匈牙利歌剧、管弦乐和舞台制度的中心，连接李斯特、巴托克与柯达伊之后的公共音乐文化。"},
+  {city:"布达佩斯",name:"巴托克纪念馆",kind:"音乐家故居",wiki:"Béla Bartók Memorial House",fallback:[19.012,47.525],music:"巴托克晚年居所与纪念空间，展示民歌采集、现代作曲和流亡经验之间的联系。"},
+  {city:"布达佩斯",name:"柯达伊纪念馆",kind:"音乐家故居",wiki:"Kodály Memorial Museum",fallback:[19.063,47.507],music:"柯达伊居所与纪念资料节点，连接匈牙利民歌研究和以歌唱为核心的音乐教育改革。"},
+  {city:"布达佩斯",name:"罗兰大学",kind:"综合大学",wiki:"Eötvös Loránd University",fallback:[19.061,47.489],music:"匈牙利人文学与音乐学研究的综合大学节点，可与李斯特学院的表演教育形成对照。"},
+  {city:"纽约",name:"曼哈顿音乐学院",kind:"音乐学院",wiki:"Manhattan School of Music",fallback:[-73.961,40.813],music:"纽约重要的表演艺术学院，连接古典、爵士、作曲教育和职业舞台。"},
+  {city:"纽约",name:"曼内斯音乐学院",kind:"音乐学院",wiki:"Mannes School of Music",fallback:[-73.960,40.775],music:"纽约音乐学院体系的重要组成，位于城市演出、教育和现代音乐创作网络之中。"},
+  {city:"纽约",name:"卡内基音乐厅",kind:"音乐场所",wiki:"Carnegie Hall",fallback:[-73.980,40.765],music:"现代音乐会制度最具象征性的大厅之一，见证了欧洲音乐传统在美国公共舞台上的重建。"},
+  {city:"纽约",name:"大都会歌剧院",kind:"音乐场所",wiki:"Metropolitan Opera House",fallback:[-73.988,40.772],music:"美国歌剧制度的核心剧院，连接移民城市、明星歌唱家和国际歌剧曲目。"},
+  {city:"纽约",name:"哥伦比亚大学",kind:"综合大学",wiki:"Columbia University",fallback:[-73.962,40.807],music:"哥伦比亚大学的人文学、音乐学与跨学科研究，是纽约综合大学音乐知识网络的重要节点。"},
+  {city:"波士顿",name:"新英格兰音乐学院",kind:"音乐学院",wiki:"New England Conservatory",fallback:[-71.084,42.337],music:"美国历史悠久的音乐学院之一，与波士顿交响乐团、古典演奏和作曲教育关系密切。"},
+  {city:"波士顿",name:"波士顿交响音乐厅",kind:"音乐场所",wiki:"Symphony Hall, Boston",fallback:[-71.085,42.342],music:"波士顿交响乐团的主场，以声学设计和美国交响乐传统闻名。"},
+  {city:"波士顿",name:"波士顿大学",kind:"综合大学",wiki:"Boston University",fallback:[-71.100,42.350],music:"波士顿大学的音乐学院、艺术与人文学研究把综合大学教育接入城市的音乐职业生态。"},
+  {city:"芝加哥",name:"芝加哥大学",kind:"综合大学",wiki:"University of Chicago",fallback:[-87.599,41.789],music:"芝加哥大学的音乐学与人文学研究，在美国大学音乐史、理论和跨学科研究中具有重要位置。"},
+  {city:"芝加哥",name:"德保罗大学表演艺术学院",kind:"音乐学院",wiki:"DePaul University School of Music",fallback:[-87.627,41.925],music:"芝加哥重要的音乐与表演艺术教育节点，覆盖古典、爵士和当代职业训练。"},
+  {city:"芝加哥",name:"芝加哥交响乐中心",kind:"音乐场所",wiki:"Symphony Center",fallback:[-87.623,41.888],music:"芝加哥交响乐团的主场，代表美国城市交响乐团制度的成熟形态。"},
+  {city:"费城",name:"费城音乐学院",kind:"音乐场所",wiki:"Academy of Music, Philadelphia",fallback:[-75.165,39.948],music:"美国历史悠久的歌剧与音乐会场所，费城交响乐和歌剧文化的重要地标。"},
+  {city:"费城",name:"宾夕法尼亚大学",kind:"综合大学",wiki:"University of Pennsylvania",fallback:[-75.193,39.952],music:"宾夕法尼亚大学的人文学、音乐学与跨学科研究，为费城的大学音乐文化提供综合大学节点。"},
+  {city:"费城",name:"天普大学博耶音乐与舞蹈学院",kind:"音乐学院",wiki:"Boy­er College of Music and Dance",fallback:[-75.156,39.981],music:"费城重要的音乐与舞蹈高等教育机构，连接古典训练、爵士和城市公共文化。"},
+  {city:"洛杉矶",name:"科尔本音乐学院",kind:"音乐学院",wiki:"Colburn School",fallback:[-118.249,34.055],music:"洛杉矶面向高水平演奏家的音乐教育机构，位于华特·迪士尼音乐厅与城市艺术中心附近。"},
+  {city:"洛杉矶",name:"加州大学洛杉矶分校赫伯·阿尔珀特音乐学院",kind:"音乐学院",wiki:"UCLA Herb Alpert School of Music",fallback:[-118.442,34.072],music:"把音乐学、民族音乐学、作曲和表演教育置于洛杉矶综合大学与文化产业语境中。"},
+  {city:"洛杉矶",name:"华特·迪士尼音乐厅",kind:"音乐场所",wiki:"Walt Disney Concert Hall",fallback:[-118.249,34.055],music:"洛杉矶爱乐的主场，也是二十一世纪音乐厅建筑与城市文化复兴的标志。"},
+  {city:"洛杉矶",name:"加州大学洛杉矶分校",kind:"综合大学",wiki:"University of California, Los Angeles",fallback:[-118.442,34.073],music:"其音乐学院与综合大学研究体系共同覆盖音乐学、民族音乐学、作曲和表演。"},
+  {city:"华盛顿",name:"约翰·F·肯尼迪表演艺术中心",kind:"音乐场所",wiki:"John F. Kennedy Center for the Performing Arts",fallback:[-77.055,38.896],music:"美国国家级表演艺术中心，连接交响乐、歌剧、舞蹈和公共文化政策。"},
+  {city:"华盛顿",name:"美国国会图书馆音乐部",kind:"音乐场所",wiki:"Music Division of the Library of Congress",fallback:[-77.004,38.889],music:"美国重要的音乐文献、手稿与演出资料收藏节点，体现音乐知识的档案制度。"},
+  {city:"华盛顿",name:"乔治·华盛顿大学",kind:"综合大学",wiki:"George Washington University",fallback:[-77.046,38.899],music:"首都地区综合大学音乐研究、表演和公共文化网络的一个节点。"},
+  {city:"旧金山",name:"旧金山音乐学院",kind:"音乐学院",wiki:"San Francisco Conservatory of Music",fallback:[-122.419,37.792],music:"美国西海岸重要的高等音乐教育机构，连接歌剧、交响乐、作曲和当代音乐。"},
+  {city:"旧金山",name:"戴维斯交响音乐厅",kind:"音乐场所",wiki:"Davies Symphony Hall",fallback:[-122.420,37.776],music:"旧金山交响乐团的主场，代表美国西海岸公共交响乐传统。"},
+  {city:"匹兹堡",name:"卡内基梅隆大学音乐学院",kind:"音乐学院",wiki:"Carnegie Mellon School of Music",fallback:[-79.943,40.443],music:"匹兹堡重要的音乐、戏剧和技术交叉教育节点，连接作曲、表演与新媒体。"},
+  {city:"匹兹堡",name:"匹兹堡大学",kind:"综合大学",wiki:"University of Pittsburgh",fallback:[-79.953,40.444],music:"匹兹堡综合大学音乐研究和公共文化网络的节点。"},
+  {city:"匹兹堡",name:"海因茨音乐厅",kind:"音乐场所",wiki:"Heinz Hall",fallback:[-80.001,40.443],music:"匹兹堡交响乐与歌剧演出的重要场所。"},
+  {city:"新港",name:"耶鲁大学",kind:"综合大学",wiki:"Yale University",fallback:[-72.927,41.316],music:"耶鲁大学的音乐学、人文学和表演艺术体系与耶鲁音乐学院形成综合大学音乐网络。"},
+  {city:"圣彼得堡",name:"马林斯基剧院",kind:"音乐场所",wiki:"Mariinsky Theatre",fallback:[30.296,59.925],music:"俄罗斯歌剧、芭蕾和交响乐传统的核心剧院，连接帝国剧院制度与现代舞台。"},
+  {city:"圣彼得堡",name:"圣彼得堡国立大学",kind:"综合大学",wiki:"Saint Petersburg State University",fallback:[30.299,59.941],music:"圣彼得堡人文学、艺术史与音乐学研究的综合大学节点。"},
+  {city:"莫斯科",name:"莫斯科大剧院",kind:"音乐场所",wiki:"Bolshoi Theatre",fallback:[37.618,55.760],music:"俄罗斯歌剧与芭蕾制度的象征性剧院，连接帝国、苏联与当代舞台传统。"},
+  {city:"莫斯科",name:"格涅辛俄罗斯音乐学院",kind:"音乐学院",wiki:"Gnessin Russian Academy of Music",fallback:[37.590,55.752],music:"俄罗斯重要的音乐教育机构，覆盖演奏、作曲、音乐理论和师范传统。"},
+  {city:"赫尔辛基",name:"赫尔辛基音乐中心",kind:"音乐场所",wiki:"Helsinki Music Centre",fallback:[24.934,60.175],music:"芬兰公共音乐生活的现代中心，与赫尔辛基大学和西贝柳斯学院形成城市音乐教育与演出网络。"},
+  {city:"赫尔辛基",name:"芬兰国家歌剧院",kind:"音乐场所",wiki:"Finnish National Opera and Ballet",fallback:[24.923,60.188],music:"芬兰歌剧与芭蕾制度的核心剧院。"},
+  {city:"华沙",name:"肖邦音乐大学",kind:"音乐学院",wiki:"Chopin University of Music",fallback:[21.020,52.217],music:"波兰最高等音乐教育机构之一，延续肖邦、波兰民族乐派与现代演奏教育传统。"},
+  {city:"华沙",name:"华沙国家爱乐厅",kind:"音乐场所",wiki:"Warsaw Philharmonic",fallback:[21.009,52.229],music:"波兰国家级交响乐与钢琴文化中心，也是肖邦国际钢琴比赛的重要场所。"},
+  {city:"华沙",name:"肖邦博物馆",kind:"音乐家故居",wiki:"Chopin Museum, Warsaw",fallback:[21.033,52.239],music:"以肖邦手稿、书信和纪念空间呈现华沙与这位作曲家的城市关系。"},
+  {city:"华沙",name:"华沙大学",kind:"综合大学",wiki:"University of Warsaw",fallback:[21.019,52.239],music:"波兰人文学、艺术史与音乐学研究的综合大学节点。"},
+  {city:"克拉科夫",name:"克拉科夫音乐学院",kind:"音乐学院",wiki:"Academy of Music in Kraków",fallback:[19.927,50.061],music:"波兰重要的高等音乐教育机构，连接民族乐派、现代作曲和城市演出制度。"},
+  {city:"克拉科夫",name:"雅盖隆大学",kind:"综合大学",wiki:"Jagiellonian University",fallback:[19.924,50.061],music:"波兰古老大学与人文学研究传统的综合大学节点。"},
+  {city:"马德里",name:"马德里皇家音乐学院",kind:"音乐学院",wiki:"Real Conservatorio Superior de Música de Madrid",fallback:[-3.706,40.417],music:"西班牙国家级高等音乐教育机构，连接古典演奏、作曲和首都剧院文化。"},
+  {city:"马德里",name:"索菲亚王后音乐学院",kind:"音乐学院",wiki:"Queen Sofía School of Music",fallback:[-3.696,40.420],music:"面向高水平演奏家的国际化音乐教育机构。"},
+  {city:"马德里",name:"马德里康普顿斯大学",kind:"综合大学",wiki:"Complutense University of Madrid",fallback:[-3.716,40.449],music:"西班牙人文学、艺术史和音乐学研究的重要综合大学节点。"},
+  {city:"雅典",name:"雅典音乐学院",kind:"音乐学院",wiki:"Athens Conservatoire",fallback:[23.735,37.981],music:"希腊现代音乐教育与公共演出制度的重要机构。"},
+  {city:"雅典",name:"希腊国家歌剧院",kind:"音乐场所",wiki:"Greek National Opera",fallback:[23.723,37.982],music:"希腊歌剧、芭蕾与当代舞台艺术的国家级中心。"},
+  {city:"雅典",name:"雅典国立暨卡波季斯特里亚大学",kind:"综合大学",wiki:"National and Kapodistrian University of Athens",fallback:[23.736,37.968],music:"希腊人文学、古典学与音乐文化研究的综合大学节点。"},
+  {city:"佛罗伦萨",name:"路易吉·凯鲁比尼音乐学院",kind:"音乐学院",wiki:"Luigi Cherubini Conservatory",fallback:[11.249,43.775],music:"佛罗伦萨高等音乐教育机构，连接歌剧、作曲和托斯卡纳音乐传统。"},
+  {city:"佛罗伦萨",name:"五月音乐节剧院",kind:"音乐场所",wiki:"Teatro del Maggio Musicale Fiorentino",fallback:[11.249,43.778],music:"佛罗伦萨歌剧与交响乐节庆制度的核心剧院。"},
+  {city:"那不勒斯",name:"圣彼得罗·马耶拉音乐学院",kind:"音乐学院",wiki:"Conservatorio di San Pietro a Majella",fallback:[14.252,40.851],music:"那不勒斯四大音乐院传统的现存核心，培养了歌剧史上众多作曲家和歌唱家。"},
+  {city:"那不勒斯",name:"圣卡洛歌剧院",kind:"音乐场所",wiki:"Teatro di San Carlo",fallback:[14.249,40.838],music:"欧洲历史最悠久的持续运营歌剧院之一，那不勒斯歌剧和美声传统的中心。"},
+  {city:"那不勒斯",name:"费德里科二世大学",kind:"综合大学",wiki:"University of Naples Federico II",fallback:[14.305,40.853],music:"那不勒斯人文学、历史与音乐文化研究的综合大学节点。"},
+  {city:"威尼斯",name:"贝内德托·马尔切洛音乐学院",kind:"音乐学院",wiki:"Benedetto Marcello Conservatory",fallback:[12.327,45.436],music:"威尼斯高等音乐教育机构，延续圣马可、歌剧院和水城演出传统。"},
+  {city:"博洛尼亚",name:"博洛尼亚音乐学院",kind:"音乐学院",wiki:"Conservatorio Giovanni Battista Martini",fallback:[11.346,44.497],music:"博洛尼亚重要音乐教育机构，连接马蒂尼传统、歌剧和器乐训练。"},
+  {city:"博洛尼亚",name:"博洛尼亚大学",kind:"综合大学",wiki:"University of Bologna",fallback:[11.347,44.496],music:"欧洲最古老大学之一，博洛尼亚音乐学、人文学和历史档案研究的综合大学节点。"},
+  {city:"费拉拉",name:"弗雷斯科巴尔迪音乐学院",kind:"音乐学院",wiki:"Frescobaldi Conservatory of Ferrara",fallback:[11.619,44.837],music:"以费拉拉音乐传统命名的高等音乐教育机构，连接文艺复兴宫廷与现代音乐训练。"},
+  {city:"曼托瓦",name:"卢奇奥·坎皮亚尼音乐学院",kind:"音乐学院",wiki:"Conservatorio Lucio Campiani",fallback:[10.790,45.160],music:"曼托瓦的高等音乐教育机构，城市宫廷音乐传统的重要当代延续。"},
+  {city:"帕尔马",name:"阿里戈·博伊托音乐学院",kind:"音乐学院",wiki:"Arrigo Boito Conservatory",fallback:[10.329,44.803],music:"帕尔马高等音乐教育机构，连接威尔第传统、歌剧演出和意大利作曲训练。"},
+  {city:"热那亚",name:"尼科洛·帕格尼尼音乐学院",kind:"音乐学院",wiki:"Niccolò Paganini Conservatory",fallback:[8.946,44.405],music:"以帕格尼尼命名的热那亚音乐学院，连接小提琴传统和现代高等演奏教育。"},
+  {city:"佩萨罗",name:"罗西尼音乐学院",kind:"音乐学院",wiki:"Rossini Conservatory",fallback:[12.913,43.910],music:"佩萨罗的高等音乐教育机构，延续罗西尼故乡与歌剧节庆传统。"},
+  {city:"贝尔加莫",name:"多尼采蒂音乐学院",kind:"音乐学院",wiki:"Gaetano Donizetti Higher Institute of Musical Studies",fallback:[9.675,45.698],music:"以多尼采蒂命名的贝尔加莫音乐教育机构，连接美声歌剧和城市演出传统。"},
+  {city:"贝尔加莫",name:"多尼采蒂出生地博物馆",kind:"音乐家故居",wiki:"Donizetti Museum",fallback:[9.673,45.694],music:"多尼采蒂出生地与纪念空间，补充剧院之外的作曲家家庭与地方记忆。"},
+  {city:"卡塔尼亚",name:"贝利尼音乐学院",kind:"音乐学院",wiki:"Vincenzo Bellini Institute of Music",fallback:[15.087,37.509],music:"西西里重要的高等音乐教育机构，以贝利尼传统连接声乐、歌剧和作曲训练。"},
+  {city:"卡塔尼亚",name:"贝利尼出生地博物馆",kind:"音乐家故居",wiki:"Bellini Museum, Catania",fallback:[15.087,37.505],music:"贝利尼出生地与文献纪念空间，连接西西里城市生活和十九世纪美声歌剧。"},
+  {city:"卢卡",name:"博凯里尼音乐学院",kind:"音乐学院",wiki:"Luigi Boccherini Higher Institute of Musical Studies",fallback:[10.502,43.844],music:"卢卡高等音乐教育机构，以博凯里尼命名并延续托斯卡纳器乐传统。"},
+  {city:"图卢兹",name:"图卢兹高等音乐学院",kind:"音乐学院",wiki:"Conservatoire à rayonnement régional de Toulouse",fallback:[1.444,43.604],music:"图卢兹的高等音乐教育与表演机构，连接奥克语文化圈、歌剧和现代音乐训练。"},
+  {city:"利摩日",name:"利摩日地区音乐学院",kind:"音乐学院",wiki:"Conservatoire de Limoges",fallback:[1.263,45.833],music:"利摩日现代音乐教育机构，与圣马夏尔修道院的中世纪音乐记忆形成古今对照。"},
+  {city:"科隆",name:"科隆音乐与舞蹈学院",kind:"音乐学院",wiki:"Hochschule für Musik und Tanz Köln",fallback:[6.953,50.935],music:"德国重要的高等音乐教育机构，覆盖作曲、演奏、爵士与舞蹈。"},
+  {city:"科隆",name:"科隆大学",kind:"综合大学",wiki:"University of Cologne",fallback:[6.930,50.928],music:"科隆人文学、音乐学和战后先锋艺术研究的综合大学节点。"},
+  {city:"法兰克福",name:"法兰克福音乐与表演艺术大学",kind:"音乐学院",wiki:"Hochschule für Musik und Darstellende Kunst Frankfurt",fallback:[8.668,50.118],music:"德国重要的高等音乐与表演艺术机构，连接歌剧、交响乐和作曲教育。"},
+  {city:"法兰克福",name:"法兰克福歌德大学",kind:"综合大学",wiki:"Goethe University Frankfurt",fallback:[8.660,50.127],music:"法兰克福人文学、社会理论与音乐哲学研究的综合大学节点。"},
+  {city:"慕尼黑",name:"慕尼黑音乐与戏剧大学",kind:"音乐学院",wiki:"University of Music and Theatre Munich",fallback:[11.568,48.150],music:"巴伐利亚高等音乐教育中心，覆盖歌剧、交响乐、作曲和演奏。"},
+  {city:"慕尼黑",name:"慕尼黑大学",kind:"综合大学",wiki:"Ludwig Maximilian University of Munich",fallback:[11.582,48.150],music:"慕尼黑人文学、音乐学与艺术史研究的综合大学节点。"},
+  {city:"慕尼黑",name:"巴伐利亚国家歌剧院",kind:"音乐场所",wiki:"Bavarian State Opera",fallback:[11.571,48.139],music:"慕尼黑歌剧制度的中心，连接宫廷剧院传统和现代歌剧制作。"},
+  {city:"德累斯顿",name:"卡尔·玛丽亚·冯·韦伯音乐学院",kind:"音乐学院",wiki:"Hochschule für Musik Carl Maria von Weber",fallback:[13.732,51.051],music:"德累斯顿高等音乐教育机构，以韦伯命名并延续歌剧、指挥和器乐传统。"},
+  {city:"德累斯顿",name:"森帕歌剧院",kind:"音乐场所",wiki:"Semperoper",fallback:[13.735,51.054],music:"德累斯顿国家歌剧院与理查德·施特劳斯、瓦格纳传统相连的代表性剧场。"},
+  {city:"汉堡",name:"汉堡音乐与戏剧大学",kind:"音乐学院",wiki:"University of Music and Theatre Hamburg",fallback:[9.987,53.567],music:"汉堡高等音乐教育机构，连接北德歌剧、管弦乐和当代音乐训练。"},
+  {city:"汉堡",name:"易北爱乐音乐厅",kind:"音乐场所",wiki:"Elbphilharmonie",fallback:[9.984,53.542],music:"汉堡的新地标音乐厅，以建筑、声学和城市港口景观重塑公共音乐会经验。"},
+  {city:"汉堡",name:"勃拉姆斯博物馆",kind:"音乐家故居",wiki:"Brahms Museum, Hamburg",fallback:[9.987,53.556],music:"勃拉姆斯出生城市的纪念与文献地点，连接北德音乐家庭、出版和交响乐传统。"},
+  {city:"魏玛",name:"弗朗茨·李斯特音乐学院",kind:"音乐学院",wiki:"Franz Liszt University of Music Weimar",fallback:[11.326,50.980],music:"李斯特在魏玛建立的高等音乐教育传统，延续交响乐、钢琴和新音乐的城市记忆。"},
+  {city:"拜罗伊特",name:"拜罗伊特节日剧院",kind:"音乐场所",wiki:"Bayreuth Festspielhaus",fallback:[11.578,49.953],music:"瓦格纳音乐节专用剧院，代表主导动机、整体艺术和音乐朝圣的现代遗产。"},
+  {city:"拜罗伊特",name:"瓦格纳故居",kind:"音乐家故居",wiki:"Wahnfried",fallback:[11.572,49.949],music:"瓦格纳在拜罗伊特的住宅与墓地，连接《指环》、音乐节制度和作曲家家族记忆。"},
+  {city:"苏黎世",name:"苏黎世艺术大学",kind:"音乐学院",wiki:"Zurich University of the Arts",fallback:[8.536,47.376],music:"瑞士重要的艺术与音乐高等教育机构，覆盖表演、作曲、音乐学和跨媒体艺术。"},
+  {city:"苏黎世",name:"苏黎世大学",kind:"综合大学",wiki:"University of Zurich",fallback:[8.548,47.374],music:"苏黎世人文学、音乐学与瓦格纳流亡史研究的综合大学节点。"},
+  {city:"纽伦堡",name:"纽伦堡音乐学院",kind:"音乐学院",wiki:"Nuremberg University of Music",fallback:[11.077,49.449],music:"纽伦堡高等音乐教育机构，连接名歌手传统、歌剧和现代演奏训练。"},
+  {city:"曼海姆",name:"曼海姆音乐与表演艺术大学",kind:"音乐学院",wiki:"University of Music and Performing Arts Mannheim",fallback:[8.462,49.489],music:"曼海姆高等音乐教育机构，延续宫廷乐队、交响乐和现代表演训练传统。"},
+  {city:"布尔诺",name:"雅纳切克故居",kind:"音乐家故居",wiki:"Leoš Janáček House",fallback:[16.604,49.205],music:"雅纳切克在布尔诺生活与创作的纪念地点，连接摩拉维亚语言、民歌和现代歌剧。"},
+  {city:"布尔诺",name:"马萨里克大学",kind:"综合大学",wiki:"Masaryk University",fallback:[16.608,49.195],music:"布尔诺人文学、语言学与音乐文化研究的综合大学节点。"},
+  {city:"卑尔根",name:"格里格学院",kind:"音乐学院",wiki:"Grieg Academy",fallback:[5.322,60.392],music:"卑尔根大学的高等音乐教育机构，以格里格命名并连接北欧演奏与作曲传统。"},
+  {city:"塔林",name:"爱沙尼亚音乐与戏剧学院",kind:"音乐学院",wiki:"Estonian Academy of Music and Theatre",fallback:[24.754,59.435],music:"爱沙尼亚高等音乐教育的核心机构，连接合唱传统、作曲和当代北欧音乐。"},
+  {city:"帕多瓦",name:"帕多瓦大学",kind:"综合大学",wiki:"University of Padua",fallback:[11.876,45.406],music:"帕多瓦大学与中世纪自然哲学、医学和音乐理论传统相连，也为奇科尼亚所在的城市知识环境提供背景。"},
+  {city:"列日",name:"列日皇家音乐学院",kind:"音乐学院",wiki:"Royal Conservatory of Liège",fallback:[5.571,50.641],music:"列日高等音乐教育机构，延续低地国家教会音乐和现代比利时音乐训练传统。"},
+  {city:"列日",name:"列日大学",kind:"综合大学",wiki:"University of Liège",fallback:[5.570,50.580],music:"列日人文学、历史和音乐文化研究的综合大学节点。"}
+];
+let poiList=null,poiById={},poiCityPromises={};
+function htmlEsc(v){return String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
+function poiCleanName(n){return String(n||"").replace(/[（(].*?[）)]/g,"").replace(/内部$/," ").trim()}
+function poiKindClass(p){const k=p.kind||"城市建筑";if(/学院|音乐院/.test(k))return"school";if(/大学/.test(k))return"university";if(/故居|纪念/.test(k))return"home";if(/音乐|歌剧|剧院|音乐厅/.test(k))return"music";return"landmark"}
+function poiKindLabel(p){return p.kind||"城市建筑"}
+function poiGlyph(p){const k=poiKindClass(p);return k==="music"?"♪":k==="school"?"♫":k==="university"?"▣":k==="home"?"⌂":"◆"}
+function poiRecord(city,a,i,source){
+  const name=a.name||a.landmark||`${city}代表建筑 ${i+1}`,key=`${city}|${name}`;
+  const wiki=a.wiki||POI_WIKI[key]||poiCleanName(name);
+  const asset=POI_ASSETS[key]||null;
+  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}`:"",credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||null,source:source||"city",lat:a.lat,lon:a.lon}
+}
+function cityPOISeeds(city){
+  const info=CITYINFO[city]||{},src=info.imgs||(info.img?[info]:[]),arr=[],seen=new Set();
+  src.forEach(a=>{const name=a.landmark||`${city}代表建筑 ${arr.length+1}`,norm=poiCleanName(name);if(seen.has(norm))return;seen.add(norm);arr.push(poiRecord(city,{name,wiki:POI_WIKI[`${city}|${name}`],img:a.img,cr:a.cr},arr.length,"city"))});
+  (POI_EXTRA[city]||[]).forEach(a=>{const norm=poiCleanName(a.name);if(seen.has(norm))return;seen.add(norm);arr.push(poiRecord(city,a,arr.length,"city"))});
+  return arr.slice(0,3)
+}
+function allPOIs(){
+  if(poiList)return poiList;
+  const out=[],seen=new Set(),push=(p,source,i)=>{const key=`${p.city}|${poiCleanName(p.name)}`;if(seen.has(key))return;seen.add(key);const q=poiRecord(p.city,p,i,source);q.id="poi-"+out.length;out.push(q)};
+  Object.keys(CITY).forEach(c=>cityPOISeeds(c).forEach((p,i)=>push(p,"city",i)));
+  SPECIAL_POIS.concat(CULTURAL_POIS).forEach((p,i)=>push(p,"special",i));
+  poiList=out;poiById=Object.fromEntries(out.map(p=>[p.id,p]));return out
+}
+function cityPOIs(c){return allPOIs().filter(p=>p.city===c&&p.source==="city")}
+function specialPOIs(c){return allPOIs().filter(p=>p.city===c&&p.source==="special")}
+function wikiSearchURL(p){return `https://zh.wikipedia.org/w/index.php?search=${encodeURIComponent(p.name||p.wiki)}`}
+function wikiAPIURL(p,title){const q=new URLSearchParams({action:"query",origin:"*",format:"json",redirects:"1",prop:"coordinates|pageimages|extracts|info",inprop:"url",exintro:"1",explaintext:"1",pithumbsize:"800",titles:title||p.wiki});return `https://zh.wikipedia.org/w/api.php?${q}`}
+function wikiSearchAPIURL(p){const q=new URLSearchParams({action:"query",origin:"*",format:"json",list:"search",srnamespace:"0",srlimit:"3",srsearch:`${p.city} ${p.name}`});return `https://zh.wikipedia.org/w/api.php?${q}`}
+function resolvePOI(p){
+  if(p._promise)return p._promise;
+  p._promise=(async()=>{
+    let data=null;
+    const titles=[p.name,p.wiki].filter((title,i,a)=>title&&a.indexOf(title)===i);
+    for(const title of titles){try{const r=await fetch(wikiAPIURL(p,title));if(!r.ok)continue;const j=await r.json(),pages=j.query&&j.query.pages?Object.values(j.query.pages):[],page=pages[0];if(page&&!page.missing){data={title:page.title,fullurl:page.fullurl,extract:page.extract,thumbnail:page.thumbnail,originalimage:page.originalimage,coordinates:page.coordinates&&page.coordinates[0]};break}}catch(_) {}}
+    if(!data){try{const r=await fetch(wikiSearchAPIURL(p));if(r.ok){const j=await r.json(),hit=j.query&&j.query.search&&j.query.search[0];if(hit){const q=await fetch(wikiAPIURL(p,hit.title));if(q.ok){const x=await q.json(),pages=x.query&&x.query.pages?Object.values(x.query.pages):[],page=pages[0];if(page&&!page.missing)data={title:page.title,fullurl:page.fullurl,extract:page.extract,thumbnail:page.thumbnail,originalimage:page.originalimage,coordinates:page.coordinates&&page.coordinates[0]}}}}}catch(_) {}}
+    p.dataLang="zh";p.wikiUrl=data?.fullurl||wikiSearchURL(p);
+    if(data){p.wikiTitle=data.title||p.wiki;p.history=data.extract||"";p.imageUrl=data.originalimage?.source||data.thumbnail?.source||"";if(data.coordinates&&Number.isFinite(data.coordinates.lon)&&Number.isFinite(data.coordinates.lat)){p.lon=data.coordinates.lon;p.lat=data.coordinates.lat;p.coordSource="Wikipedia"}}
+    if(!p.history)p.history="暂未找到对应的中文 Wikipedia 摘要；如果有人工复核的候选坐标，地图仍会保留该点。";
+    if(!(Number.isFinite(p.lon)&&Number.isFinite(p.lat))&&p.fallback){p.lon=p.fallback[0];p.lat=p.fallback[1];p.coordSource="人工复核候选点";p.approx=true}
+    p.resolved=true;return p
+  })();return p._promise
+}
+function ensureCityPOIs(c){
+  allPOIs();if(poiCityPromises[c])return poiCityPromises[c];
+  poiCityPromises[c]=Promise.all(cityPOIs(c).concat(specialPOIs(c)).map(resolvePOI)).then(ps=>{if(realMap)requestRealMapOverlayRefresh();return ps});return poiCityPromises[c]
+}
+function poiCard(p){
+  const img=p.localImage||p.remoteImage||p.imageUrl,coord=Number.isFinite(p.lon)&&Number.isFinite(p.lat)?`${p.lat.toFixed(4)}°N · ${p.lon.toFixed(4)}°E`:(p.resolved?"未取得可核验坐标":"正在读取坐标"),history=p.history||"正在读取中文 Wikipedia 摘要……";
+  const music=p.music||((/音乐|歌剧|剧院|音乐厅|学院|大学|故居|纪念/.test(p.kind||"")&&p.context)?`它所在的${p.city}音乐史语境：${p.context}`:"");
+  return `<article class="poicard"><div class="poikicker"><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.city)} · ${htmlEsc(poiKindLabel(p))}</div><h4>${htmlEsc(p.name)}</h4><div style="font:11px var(--sans);letter-spacing:.08em;color:var(--mut)">${coord}${p.approx?" · 候选定位，待来源页核对":""}</div>${img?`<figure class="poifig"><img loading="lazy" src="${htmlEsc(img)}" alt="${htmlEsc(p.name)}"><figcaption>${htmlEsc(p.credit||"Wikipedia / Wikimedia Commons")}</figcaption></figure>`:`<div class="poifig" style="font:12px var(--sans);color:var(--mut);padding:18px">图片正在从 Wikipedia 读取……</div>`}<div class="poisection"><h5>建筑 / 地点史</h5><p class="poitext">${htmlEsc(history)}</p></div>${music?`<div class="poisection"><h5>与音乐 / 音乐家的关联</h5><p class="poitext poimusic">${htmlEsc(music)}</p></div>`:""}<div class="poi-actions"><button type="button" id="poi-city-back">返回${htmlEsc(p.city)}城市卡</button>${p.wikiUrl?`<a href="${htmlEsc(p.wikiUrl)}" target="_blank" rel="noopener">打开中文 Wikipedia 来源页 ↗</a>`:""}</div></article>`
+}
+function poiPanel(p){
+  const panel=$("#mappanel");if(!panel)return;panel.innerHTML=poiCard(p);const back=$("#poi-city-back");if(back)back.onclick=()=>cityPanel(p.city);
+  if(!p.resolved){resolvePOI(p).then(()=>{if(poiById[p.id]===p)poiPanel(p)})}
+  if(window.innerWidth<=920)panel.scrollIntoView({behavior:"smooth",block:"start"})
+}
+async function focusPOI(id){
+  const p=poiById[id]||allPOIs().find(x=>x.id===id);if(!p)return;poiPanel(p);if(mapMode==="research")setMapMode("terrain");await resolvePOI(p);poiPanel(p);
+  if(realMap&&Number.isFinite(p.lon)&&Number.isFinite(p.lat)){realMap.flyTo({center:[p.lon,p.lat],zoom:Math.max(13,realMap.getZoom()),pitch:mapMode==="terrain"?48:0,bearing:mapMode==="terrain"?-12:0,duration:1100,essential:true});renderRealMarkers()}
+}
+function cityPOIBlock(c){
+  const a=cityPOIs(c),b=specialPOIs(c);return `<div class="poiintro"><b>建筑与音乐地点</b><br>以下三项是本城代表性建筑；点击“实景定位”会在卫星 / 3D 地图中读取并飞到具体地点。下方另列音乐学院、大学与音乐家故居等专题地点。</div><ul class="poilist">${a.map(p=>`<li><div><b><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.name)}</b><small>${htmlEsc(poiKindLabel(p))}</small></div><button type="button" data-poi="${htmlEsc(p.id)}">实景定位</button></li>`).join("")}${b.length?`<li style="display:block;padding-bottom:4px"><b style="font-size:12px;letter-spacing:.08em;color:var(--acc2)">专题地点</b></li>`+b.map(p=>`<li><div><b><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.name)}</b><small>${htmlEsc(poiKindLabel(p))}</small></div><button type="button" data-poi="${htmlEsc(p.id)}">实景定位</button></li>`).join(""):""}</ul>`
+}
+function bindPOIList(){$("#mappanel").querySelectorAll("[data-poi]").forEach(b=>b.onclick=()=>focusPOI(b.dataset.poi))}
+function injectCityPOIs(c){
+  const panel=$("#mappanel"),list=panel&&panel.querySelector("ul");
+  if(!panel||!list||panel.querySelector(".poiintro"))return;
+  list.insertAdjacentHTML("beforebegin",cityPOIBlock(c));bindPOIList();ensureCityPOIs(c)
+}
+
 function cityGallery(c,info){
   const arr=info.imgs||[{img:info.img,landmark:info.landmark,cr:info.cr,medium:info.medium}];
   if(!arr[0]||!arr[0].img)return"";
@@ -1909,7 +2573,7 @@ function cityPanel(c){
   $("#mappanel").querySelectorAll("a[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"音乐舆图"));
   $("#mappanel").querySelectorAll("a[data-mf]").forEach(a=>a.onclick=()=>openMusioFig(a.dataset.mf));
   $("#mappanel").querySelectorAll("a[data-r]").forEach(a=>a.onclick=()=>{routeOf=a.dataset.r;selectedId=routeOf;fitRoute(routeOf);renderChips();renderMap();syncSelection();announceSelection(byId[routeOf],L.filter(l=>l[0]===routeOf||l[1]===routeOf),"音乐舆图 · 绘其行迹")});
-  bindGallery();
+  injectCityPOIs(c);bindGallery();
   if(window.innerWidth<=920)$("#mappanel").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderChips(){
