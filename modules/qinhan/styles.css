@@ -529,3 +529,8 @@ img { display: block; max-width: 100%; }
   .tiger-actions { flex-direction: column; align-items: stretch; }
   .tiger-actions a { text-align: center; }
 }
+
+.tiger-copy h2.tiger-title {
+  display: block;
+  visibility: visible;
+}

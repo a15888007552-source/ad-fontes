@@ -559,3 +559,7 @@ img { display: block; max-width: 100%; }
   .reveal { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { animation: none !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+.research-essay-paragraph {
+  text-indent: 2em;
+}

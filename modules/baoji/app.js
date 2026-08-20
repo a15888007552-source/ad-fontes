@@ -193,26 +193,29 @@
     return `<section class="label-archive"><h3>展签档案 · 现场证据</h3>${factMarkup}<p class="ocr-note">以下字段由展签照片 OCR 候选整理，只用于快速检阅；标题、时代、出土地点和收藏单位仍应回看原展签或正式图录。</p><details class="label-raw"><summary>展开原始展签候选</summary><pre>${escapeHTML(raw)}</pre></details></section>`;
   }
 
-  function researchMarkup(group) {
+    function researchMarkup(group) {
     const research = group.research || {};
-    const joinResearch = (...values) => values.filter((value) => String(value || '').trim()).join(' ');
-    const opening = joinResearch(research.name_origin, research.history);
-    const middle = joinResearch(research.form, research.decoration, research.inscription);
-    const closing = joinResearch(research.significance, research.viewing);
     const facts = group.labelFacts || {};
+    const clean = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+    const sectionMarkup = (label, value, extraClass = '') => {
+      const text = clean(value);
+      if (!text) return '';
+      const modifier = extraClass ? ` ${extraClass}` : '';
+      return `<section class="research-block${modifier}"><h3>${escapeHTML(label)}</h3><p class="research-essay-paragraph">${escapeHTML(text)}</p></section>`;
+    };
     const factRows = [
       ['时代', facts.period],
       ['来源 / 出土', facts.findspot],
       ['收藏单位', facts.collection],
       ['尺寸', facts.dimensions],
-    ].filter(([, value]) => String(value || '').trim());
+    ].filter(([, value]) => clean(value));
     const factsMarkup = factRows.length
       ? `<div class="research-facts">${factRows.map(([label, value]) => `<div class="research-fact"><span>${escapeHTML(label)}</span><b>${escapeHTML(value)}</b></div>`).join('')}</div>`
       : '';
-    const evidence = research.evidence || '名称依据展签与现场照片顺序整理。';
-    return `<div class="research-essay">${factsMarkup}<p class="research-essay-paragraph research-essay-paragraph--opening">${escapeHTML(opening)}</p><p class="research-essay-paragraph">${escapeHTML(middle)}</p><p class="research-essay-paragraph research-essay-paragraph--closing">${escapeHTML(closing)}</p><p class="research-evidence"><b>定名依据</b>${escapeHTML(evidence)}</p></div>`;
+    const objectText = [research.form, research.decoration, research.inscription].map(clean).filter(Boolean).join(' ');
+    const evidence = clean(research.evidence) || '现场展签字段与照片序列共同构成本条定名依据；正式释读请回看原图。';
+    return `<div class="research-essay">${factsMarkup}${sectionMarkup('历史关联', research.history)}${sectionMarkup('形制与工艺', objectText)}${sectionMarkup('观看重点', research.viewing)}${sectionMarkup('资料价值', research.significance)}<p class="research-evidence"><b>资料边界</b>${escapeHTML(evidence)}</p></div>`;
   }
-
   function openTreasure(item) {
     if (!item) return;
     const group = groupForTreasure(item.id);
@@ -250,8 +253,8 @@
     const main = objectPhoto(group) || photos[0];
     const sequence = group.sequenceLabel || (group.sequenceStart ? `${group.sequenceStart}—${group.sequenceEnd}` : '现场照片');
     const unitNote = Number(group.unitCount || 1) > 1 ? `；同名器物合并 ${group.unitCount} 组现场照片` : '';
-    dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(group.number || 'PHOTO GROUP')} / ${escapeHTML(group.categoryLabel || '其他器物')}</p><h2 id="dialog-title">${escapeHTML(group.title || '器物卡片')}<small>${escapeHTML(sequence)}</small></h2></div><p class="dialog-lead">${escapeHTML(group.summary || '现场器物照片按相机顺序归档。')}${escapeHTML(unitNote)}</p></div>
-      <div class="dialog-facts"><div class="dialog-fact"><span class="dialog-fact-label">类别</span><span class="dialog-fact-value">${escapeHTML(group.categoryLabel || '其他器物')}</span></div><div class="dialog-fact"><span class="dialog-fact-label">照片数</span><span class="dialog-fact-value">${photos.length} 张</span></div><div class="dialog-fact"><span class="dialog-fact-label">音乐重点</span><span class="dialog-fact-value">${group.musicFocus ? '是 · 乐器 / 礼乐' : '否'}</span></div><div class="dialog-fact"><span class="dialog-fact-label">证据状态</span><span class="dialog-fact-value">${escapeHTML(group.status || '名称依据展签与器物序列整理')}</span></div></div>
+    dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(group.number || 'PHOTO GROUP')} / ${escapeHTML(group.categoryLabel || '其他器物')}</p><h2 id="dialog-title">${escapeHTML(group.title || '器物卡片')}<small>${escapeHTML(sequence)}</small></h2></div><p class="dialog-lead">${escapeHTML(group.summary || '现场展签与照片序列记录。')}${escapeHTML(unitNote)}</p></div>
+      <div class="dialog-facts"><div class="dialog-fact"><span class="dialog-fact-label">类别</span><span class="dialog-fact-value">${escapeHTML(group.categoryLabel || '其他器物')}</span></div><div class="dialog-fact"><span class="dialog-fact-label">照片数</span><span class="dialog-fact-value">${photos.length} 张</span></div><div class="dialog-fact"><span class="dialog-fact-label">音乐重点</span><span class="dialog-fact-value">${group.musicFocus ? '是 · 乐器 / 礼乐' : '否'}</span></div><div class="dialog-fact"><span class="dialog-fact-label">证据状态</span><span class="dialog-fact-value">${escapeHTML(group.status || '现场展签 / 照片顺序')}</span></div></div>
       <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, `现场顺序 · ${filenameOf(main)}`)}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
       ${genericSequenceMarkup(group)}`;
     bindGallery();
