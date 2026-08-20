@@ -1,0 +1,14 @@
+.museum-tomb-trails{margin:clamp(48px,8vw,120px) 0 0;border-top:1px solid rgba(80,65,50,.22);background:#f2eee7;color:#201d19}
+.museum-tomb-trails-visual{height:clamp(180px,26vw,360px);border-bottom:1px solid rgba(80,65,50,.18);background-position:center;background-size:cover;background-repeat:no-repeat;position:relative}
+.museum-tomb-trails-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#161915d9 0%,#20271d98 44%,#20271d2b 100%)}
+.museum-tomb-trails--qinhan .museum-tomb-trails-visual{background-image:url("../../assets/tomb-trails/qinhan-bg.webp")}
+.museum-tomb-trails--xian .museum-tomb-trails-visual{background-image:url("../../assets/tomb-trails/xian-bg.webp")}
+.museum-tomb-trails--history .museum-tomb-trails-visual{background-image:url("../../assets/tomb-trails/history-bg.webp")}
+.museum-tomb-trails--archaeology .museum-tomb-trails-visual{background-image:url("../../assets/tomb-trails/archaeology-bg.webp")}
+.museum-tomb-trails--baoji .museum-tomb-trails-visual{background-image:url("../../assets/tomb-trails/baoji-bg.webp")}
+.museum-tomb-trails--beilin .museum-tomb-trails-visual{background-image:url("../../assets/tomb-trails/beilin-bg.webp")}
+.museum-tomb-trails-heading{width:min(1440px,100% - 40px);margin:auto;padding:clamp(36px,6vw,72px) 4px 24px}
+.museum-tomb-trails-kicker{margin:0 0 10px;color:#315f52;font:700 11px/1 Inter,"Microsoft YaHei",sans-serif;letter-spacing:.18em}
+.museum-tomb-trails h2{margin:0;font:600 clamp(30px,5vw,64px)/1.02 "Songti SC","Noto Serif CJK SC",serif;letter-spacing:-.05em}
+.museum-tomb-trails-heading p:last-child{max-width:620px;margin:16px 0 0;color:#726b62;font:14px/1.8 Inter,"Microsoft YaHei",sans-serif}
+.museum-tomb-trails iframe{display:block;width:100%;height:clamp(760px,78vw,1040px);border:0;background:#f2eee7}

@@ -8,7 +8,8 @@
   <meta name="theme-color" content="#171512">
   <link rel="icon" href="assets/brand-emblem.png" type="image/png">
   <link rel="stylesheet" href="styles.css?rev=20260818-treasures1-logo1">
-  <link rel="stylesheet" href="../../assets/editorial/provenance-trails.css" data-provenance-trails>
+  <style id="opening-brand-emblem">.opening-emblem{display:block;width:clamp(72px,8vw,104px);height:clamp(72px,8vw,104px);margin:0 auto 20px;object-fit:contain;opacity:0;transform:translateY(14px) scale(.92);animation:opening-rise .78s .18s cubic-bezier(.22,.8,.25,1) forwards}@media(max-width:600px){.opening-emblem{width:72px;height:72px;margin-bottom:15px}}</style>
+  <link rel="stylesheet" href="../tomb-trails/host.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -16,6 +17,7 @@
     <div class="opening-media" aria-hidden="true"></div>
     <div class="opening-shade" aria-hidden="true"></div>
     <div class="opening-copy">
+      <img class="opening-emblem" src="assets/brand-emblem.png" alt="" />
       <p><span>SHAANXI</span><i></i><span>OBJECT ARCHIVE</span></p>
       <strong>观物入陕</strong>
       <small>陕西历史博物馆 · 八件禁止出境文物</small>
@@ -138,7 +140,12 @@
         <article><b>重点标记</b><p>音乐关联说明具体关联位置；禁止出境标记只用于公开目录或馆方资料可支持的条目。</p></article>
       </div>
     </section>
-</main>
+    <section class="museum-tomb-trails museum-tomb-trails--shaanxi-history" aria-labelledby="museum-tomb-trails-title">
+    <div class="museum-tomb-trails-visual" aria-hidden="true"></div>
+    <div class="museum-tomb-trails-heading"><p class="museum-tomb-trails-kicker">ARCHAEOLOGICAL PROVENANCE</p><h2 id="museum-tomb-trails-title">从地下到展柜</h2><p>本馆相关墓葬与遗址：墓主人、发现与发掘、馆藏关联及资料边界。AI 生成背景图仅作视觉设计，不作考古现场证据。</p></div>
+    <iframe src="../tomb-trails/index.html?museum=history&amp;embed=1" title="陕西历史博物馆墓葬与遗址历史脉络" loading="lazy"></iframe>
+  </section>
+  </main>
 
   <footer class="site-footer page-width"><span>陕西历史博物馆 · 观物档案</span><span>现场影像 / 展签文字 / 公开资料 · AI 生成视觉仅作界面背景</span><a href="#overview">回到顶部 ↑</a></footer>
 
@@ -167,6 +174,6 @@
 
   <script src="data.js?rev=20260817-sourced-cards4"></script>
   <script src="app.js?rev=20260818-imagezoom1"></script>
-  <script src="../../assets/editorial/provenance-trails.js?v=20260820-bottom" defer></script>
 </body>
 </html>
+

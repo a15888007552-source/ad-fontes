@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles.css?v=20260813-motion3" />
     <link rel="stylesheet" href="motion.css?v=20260813-motion2" />
       <style id="museum-brand-emblem">.wordmark-emblem{display:grid;width:42px;height:42px;flex:0 0 42px;place-items:center}.wordmark-emblem img{display:block;width:100%;height:100%;object-fit:contain}.intro-emblem{display:block;width:clamp(64px,8vw,96px);height:clamp(64px,8vw,96px);margin:0 auto .25rem;object-fit:contain}@media(max-width:820px){.wordmark-emblem{width:34px;height:34px;flex-basis:34px}.intro-emblem{width:66px;height:66px}}</style>
-  <link rel="stylesheet" href="../../assets/editorial/provenance-trails.css" data-provenance-trails>
+    <link rel="stylesheet" href="../tomb-trails/host.css">
 </head>
   <body id="top">
     <a class="skip-link" href="#archive">跳到文物目录</a>
@@ -147,7 +147,41 @@
         </div>
       </section>
 
-      
+      <section class="seal-viewer-section" id="seal-3d" aria-labelledby="seal-3d-title">
+        <div class="seal-viewer-intro">
+          <p class="eyebrow dark">03A / DIGITAL RECONSTRUCTION</p>
+          <h2 id="seal-3d-title">皇后之玺 · 360°</h2>
+          <p>拖动模型查看方形印台、螭虎钮与印面关系。模型依据 DSC_2586—2587 现场照片和公开形制资料重建，用于观看与研究，不等同于馆方三维扫描。</p>
+          <div class="seal-viewer-facts" aria-label="3D 模型说明">
+            <span>PHOTO-BASED</span><span>LOW-POLY STUDY MODEL</span><span>DRAG TO ROTATE</span>
+          </div>
+        </div>
+        <div class="seal-viewer-layout">
+          <div class="seal-viewer-stage" data-seal-viewer>
+            <canvas id="seal-viewer" aria-label="皇后之玺数字重建，可拖动旋转查看" tabindex="0"></canvas>
+            <div class="seal-viewer-grid" aria-hidden="true"></div>
+            <div class="seal-viewer-badge">PHOTO-BASED RECONSTRUCTION <span>拖动旋转</span></div>
+            <div class="seal-viewer-status" id="seal-viewer-status" aria-live="polite">模型已就绪 · 拖动查看</div>
+          </div>
+          <aside class="seal-viewer-notes">
+            <div>
+              <p class="eyebrow dark">VIEW CONTROLS</p>
+              <h3>看清形制，保留边界</h3>
+              <p>白玉印台与弓背螭虎钮按照片比例做简化表达；印面“皇后之玺”四字为按公开印文排布的示意标注，不把照片中无法辨认的细节补写成事实。</p>
+            </div>
+            <div class="seal-viewer-controls" role="group" aria-label="3D 查看控制">
+              <button type="button" data-seal-view="reset">重置视角</button>
+              <button type="button" data-seal-view="top">看螭虎钮</button>
+              <button type="button" data-seal-view="seal">看印面</button>
+            </div>
+            <dl class="seal-viewer-legend">
+              <div><dt>依据</dt><dd>DSC_2586—2587</dd></div>
+              <div><dt>性质</dt><dd>数字重建 · 非馆方扫描</dd></div>
+              <div><dt>操作</dt><dd>鼠标 / 手指拖动 · 滚轮缩放</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
 
       <section class="tiger-section" id="tiger" aria-labelledby="tiger-title">
         <div class="tiger-image-wrap">
@@ -200,7 +234,30 @@
         <div class="archive-grid" id="archive-grid"></div>
         <button class="load-more" id="load-more" type="button" hidden>继续加载</button>
       </section>
-</main>
+
+      <section class="method-section" id="sources" aria-labelledby="method-title">
+        <div class="method-title-wrap">
+          <p class="eyebrow">06 / IMAGE RECORD / RESEARCH NOTES</p>
+          <h2 id="method-title">图像与资料</h2>
+        </div>
+        <div class="method-copy">
+          <p>档案包含四种图像层级：列表缩略图、主体裁切图、网页完整图与 F 盘原片线索。小型文物的展示图由相机原片直接裁切，随后只做尺寸转换、轻微对比调整和保守锐化；不生成原片中不存在的文字、纹饰、断口或器形。</p>
+          <p>展签、题名墙和参考文献墙属于证据图，不作为文物主图。OCR 只用于定位可辨文字，正式释文仍需回看展签、馆方目录、考古报告或论文。网页中的“事实”“解释”和“推测”分别处理，资料不足时保留不确定性。</p>
+        </div>
+        <div class="method-steps">
+          <article><span>01</span><h3>缩略图</h3><p>目录快速浏览，延迟加载。</p></article>
+          <article><span>02</span><h3>主体裁切</h3><p>小件放大，保留裁切记录。</p></article>
+          <article><span>03</span><h3>完整构图</h3><p>查看展柜、比例与陈列语境。</p></article>
+          <article><span>04</span><h3>原片线索</h3><p>文件名、尺寸与 SHA-256。</p></article>
+        </div>
+        <div class="source-list" id="source-list"></div>
+      </section>
+      <section class="museum-tomb-trails museum-tomb-trails--qinhan" aria-labelledby="museum-tomb-trails-title">
+    <div class="museum-tomb-trails-visual" aria-hidden="true"></div>
+    <div class="museum-tomb-trails-heading"><p class="museum-tomb-trails-kicker">ARCHAEOLOGICAL PROVENANCE</p><h2 id="museum-tomb-trails-title">从地下到展柜</h2><p>本馆相关墓葬与遗址：墓主人、发现与发掘、馆藏关联及资料边界。AI 生成背景图仅作视觉设计，不作考古现场证据。</p></div>
+    <iframe src="../tomb-trails/index.html?museum=qinhan&amp;embed=1" title="秦汉馆墓葬与遗址历史脉络" loading="lazy"></iframe>
+  </section>
+  </main>
 
     <footer class="footer">
       <div><span>秦汉馆藏影录</span><strong>QIN–HAN GALLERY IMAGE CATALOGUE</strong></div>
@@ -243,8 +300,7 @@
     </dialog>
 
     <script src="app.js?v=20260813-motion2"></script>
-    <script src="../../assets/editorial/provenance-trails.js?v=20260820-bottom" defer></script>
+    <script src="seal-viewer.js?v=20260813-model3"></script>
 </body>
 </html>
-
 
