@@ -2465,7 +2465,8 @@
         });
         map.on('load', () => {
           map.addSource('terrain-dem', {type:'raster-dem',tiles:['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],tileSize:256,maxzoom:15,encoding:'terrarium',attribution:'Elevation: AWS Terrain Tiles'});
-          map.setTerrain({source:'terrain-dem',exaggeration:1.35});
+          map.setTerrain({source:'terrain-dem',exaggeration:1.55});
+          map.addLayer({id:'terrain-hillshade',type:'hillshade',source:'terrain-dem',paint:{'hillshade-shadow-color':'#5e675f','hillshade-highlight-color':'#f5f0df','hillshade-accent-color':'#9b8f79','hillshade-exaggeration':0.55}}, 'building');
           if (map.getLayer('building-3d')) map.setPaintProperty('building-3d','fill-extrusion-color','#9b9588');
           if (map.getLayer('building')) map.setPaintProperty('building','fill-color','#b6b0a2');
           if (map.getLayer('water')) map.setPaintProperty('water','fill-color','#b8c9c5');
