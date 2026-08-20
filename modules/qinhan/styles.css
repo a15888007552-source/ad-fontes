@@ -534,3 +534,119 @@ img { display: block; max-width: 100%; }
   display: block;
   visibility: visible;
 }
+/* 20260820 · Gilt Qinhan palette. The museum exterior image remains the source image. */
+:root {
+  --paper:#ead7ad;
+  --paper-bright:#f7edcf;
+  --ink:#2a1b11;
+  --muted:#725b3d;
+  --red:#8d4731;
+  --green:#5c4323;
+  --bronze:#bd8b3f;
+  --night:#26190f;
+  --line:rgba(73,48,23,.24);
+  --line-light:rgba(247,237,207,.24);
+}
+body {
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 78% 14%,rgba(189,139,63,.16),transparent 27rem),
+    linear-gradient(135deg,#f5e8c8 0%,#ead7ad 48%,#dfc08a 100%);
+}
+.museum-section,
+.archive-section,
+.method-section {
+  color:var(--ink);
+  background:
+    linear-gradient(120deg,rgba(247,237,207,.92),rgba(234,215,173,.87)),
+    url("../tomb-trails/assets/tomb-trails/qinhan-bg.webp") center/cover fixed;
+}
+.museum-heading h2,
+.archive-intro h2,
+.method-title-wrap h2,
+.queen-copy h2,
+.tiger-copy h2,
+.exhibition-sticky h2 {
+  color:var(--ink);
+}
+.museum-prose p,
+.archive-intro > p,
+.method-copy p,
+.archive-total,
+.section-deck {
+  color:var(--muted);
+}
+.exhibition-band,
+.seal-viewer-section {
+  color:#f7edcf;
+  background:
+    linear-gradient(110deg,rgba(38,25,15,.98),rgba(76,48,22,.9)),
+    url("../tomb-trails/assets/tomb-trails/qinhan-bg.webp") center/cover fixed;
+}
+.exhibition-band p,
+.seal-viewer-section p,
+.method-section .eyebrow,
+.exhibition-subtitle {
+  color:#e5c98f;
+}
+.queen-section,
+.tiger-section {
+  background:
+    linear-gradient(125deg,rgba(246,232,195,.96),rgba(222,194,137,.92)),
+    url("../tomb-trails/assets/tomb-trails/qinhan-bg.webp") center/cover;
+}
+.queen-copy,
+.tiger-copy {
+  background:rgba(247,237,207,.78);
+}
+.queen-copy > p:not(.eyebrow),
+.tiger-copy > p:not(.eyebrow) {
+  color:#4b3826;
+}
+.queen-meta,
+.tiger-meta,
+.museum-facts {
+  border-color:var(--line);
+}
+.queen-meta div,
+.tiger-meta div,
+.museum-facts div {
+  border-color:var(--line);
+}
+.archive-tools,
+.archive-grid,
+.method-steps,
+.source-list {
+  color:var(--ink);
+}
+.object-card {
+  border-color:var(--line);
+  background:rgba(247,237,207,.84);
+}
+.object-card:hover,
+.object-card:focus-within {
+  border-color:var(--bronze);
+  box-shadow:0 14px 34px rgba(75,47,19,.15);
+}
+.text-link,
+.archive-status,
+.card-copy .card-kicker {
+  color:var(--red);
+}
+.button-light,
+.archive-tools button,
+.load-more {
+  color:#fff7e1;
+  background:var(--red);
+  border-color:var(--red);
+}
+.button-line,
+.archive-tools input,
+.archive-tools select {
+  color:var(--ink);
+  border-color:var(--line);
+  background:rgba(247,237,207,.58);
+}
+.museum-tomb-trails {
+  background:transparent;
+}
