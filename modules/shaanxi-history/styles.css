@@ -617,3 +617,16 @@ body {
     align-self:center;
   }
 }
+/* 20260821 · compact essay spacing for ordinary object records. */
+.dialog-essay.compact-essay {
+  display:grid;
+  gap:1rem;
+}
+.dialog-essay.compact-essay p {
+  margin:0;
+  color:color-mix(in srgb,var(--ink) 88%,var(--muted));
+  font-size:14px;
+  line-height:1.9;
+  text-align:justify;
+  text-indent:2em;
+}
