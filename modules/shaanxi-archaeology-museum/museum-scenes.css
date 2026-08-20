@@ -100,3 +100,139 @@ footer,
     background-position: 56% center;
   }
 }
+
+/* 20260820 · archaeology ink-green system. The first exterior photograph is intentionally untouched. */
+:root {
+  --arch-paper:#0d2a21;
+  --arch-paper-deep:#0a211a;
+  --arch-surface:#123328;
+  --arch-surface-soft:#1b4637;
+  --arch-ink:#edf6ed;
+  --arch-muted:#c4d8ca;
+  --arch-line:rgba(237,246,237,.24);
+  --arch-gold:#d2b273;
+  --arch-link:#d5ead4;
+}
+body {
+  color:var(--arch-ink);
+  background:
+    radial-gradient(circle at 82% 8%,rgba(184,215,181,.12),transparent 24rem),
+    linear-gradient(135deg,#0e3025 0%,#0b241c 52%,#081a14 100%);
+}
+.page-shell {
+  background:transparent;
+}
+.feature-card:not(.theme-card) {
+  border-color:var(--arch-line);
+  box-shadow:0 18px 48px rgba(0,0,0,.18);
+}
+.about-card,
+.treasure-card,
+.other-card,
+#artifact-catalog-root {
+  color:var(--arch-ink);
+  background-color:var(--arch-paper-deep);
+  background-image:
+    linear-gradient(110deg,rgba(8,31,23,.94),rgba(13,42,33,.82)),
+    url("assets/backgrounds/archaeology-ink.webp");
+  background-position:center;
+  background-size:cover;
+}
+.theme-card {
+  border-color:var(--arch-line);
+  background-color:#0b2a20;
+}
+.theme-card .feature-image {
+  background:#0a211a;
+}
+.theme-card .feature-copy {
+  background:linear-gradient(110deg,rgba(7,29,22,.98),rgba(12,48,37,.92));
+}
+.theme-card .feature-copy > p:not(.eyebrow):not(.lead):not(.boundary) {
+  color:rgba(237,246,237,.78);
+}
+.theme-card .boundary {
+  color:rgba(237,246,237,.58);
+  border-color:var(--arch-line);
+}
+.about-card .feature-copy,
+.treasure-card .feature-copy,
+.other-card {
+  color:var(--arch-ink);
+}
+.about-card .feature-copy > p:not(.eyebrow):not(.lead):not(.boundary),
+.treasure-card .feature-copy > p:not(.eyebrow):not(.lead):not(.boundary),
+.other-heading > p,
+.artifact-caption,
+.artifact-description {
+  color:var(--arch-muted);
+}
+.about-card h2,
+.treasure-card h2,
+.other-heading h2,
+.artifact-content h3 {
+  color:var(--arch-ink);
+}
+.about-aside,
+.treasure-media,
+.object-toolbar,
+.artifact-grid {
+  border-color:var(--arch-line);
+  background:rgba(7,31,23,.62);
+}
+.about-aside div,
+.treasure-facts,
+.treasure-facts div,
+.artifact-grid,
+.artifact-card,
+.artifact-facts,
+.artifact-facts div {
+  border-color:var(--arch-line);
+}
+.about-aside strong,
+.treasure-facts dt,
+.artifact-topline,
+.artifact-facts dt,
+.eyebrow {
+  color:var(--arch-gold);
+}
+.about-aside span,
+.treasure-facts dd,
+.artifact-facts dd,
+.artifact-source,
+.object-count {
+  color:var(--arch-muted);
+}
+.other-heading {
+  border-color:var(--arch-line);
+}
+.object-toolbar .search-box input,
+.object-filter,
+.artifact-card,
+.artifact-thumb {
+  border-color:var(--arch-line);
+  color:var(--arch-ink);
+  background:rgba(18,51,40,.76);
+}
+.object-toolbar .search-box input::placeholder {
+  color:rgba(196,216,202,.68);
+}
+.object-filter {
+  color:var(--arch-muted);
+}
+.object-filter:hover,
+.object-filter.is-active {
+  color:#0a211a;
+  border-color:var(--arch-gold);
+  background:var(--arch-gold);
+}
+.artifact-card {
+  background:rgba(10,33,26,.66);
+}
+.artifact-card .artifact-caption,
+.artifact-card .artifact-description {
+  color:var(--arch-muted);
+}
+.museum-tomb-trails--archaeology {
+  background:transparent;
+}

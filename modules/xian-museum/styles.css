@@ -389,3 +389,133 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
     white-space: normal;
   }
 }
+/* 20260820 · Xi'an teal-copper alignment. Opening and exterior source images remain unchanged. */
+:root {
+  --paper:#e6f0e9;
+  --paper-deep:#cfe1d8;
+  --surface:#f2f8f4;
+  --ink:#123430;
+  --muted:#5c756e;
+  --line:#b8d0c6;
+  --line-dark:#83a79b;
+  --green:#28675b;
+  --green-dark:#1b4e45;
+  --red:#a8483c;
+  --red-dark:#7d3029;
+  --gold:#c09a59;
+}
+body {
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 82% 12%,rgba(42,103,91,.14),transparent 25rem),
+    linear-gradient(135deg,#f2f8f4 0%,#e6f0e9 53%,#cfe1d8 100%);
+}
+.museum {
+  display:block;
+}
+.museum .section-label {
+  margin-bottom:1.5rem;
+}
+.museum-main {
+  width:100%;
+  margin-inline:0;
+}
+.museum .section-title-row {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:end;
+  gap:1.5rem;
+  margin-bottom:2rem;
+}
+.museum .section-title-row > div {
+  grid-column:2;
+  text-align:center;
+}
+.museum .section-title-row h2 {
+  margin:0;
+  color:var(--ink);
+  white-space:nowrap;
+}
+.museum .section-title-row > a {
+  grid-column:3;
+  justify-self:end;
+}
+.museum-facts {
+  width:100%;
+  border-color:var(--line-dark);
+  background:rgba(242,248,244,.82);
+}
+.museum-facts article {
+  border-color:var(--line);
+  background:rgba(242,248,244,.7);
+}
+.museum-facts article h3 {
+  color:var(--green-dark);
+}
+.museum-facts article p,
+.source-note {
+  color:var(--muted);
+}
+.featured {
+  background-color:#0d3332;
+}
+.routes {
+  background:
+    radial-gradient(circle at 88% 12%,rgba(42,103,91,.18),transparent 28rem),
+    linear-gradient(135deg,#dbeae3 0%,#cfe1d8 100%);
+}
+.collection {
+  background:var(--surface);
+}
+.collection .object-card {
+  border-color:var(--line);
+  background:rgba(242,248,244,.82);
+}
+.collection .object-card:hover,
+.collection .object-card:focus-within {
+  border-color:var(--gold);
+  box-shadow:0 18px 42px rgba(27,78,69,.14);
+}
+.collection-head h2,
+.routes-head h2 {
+  color:var(--ink);
+}
+.collection-head p,
+.routes-head > p,
+.route-copy p,
+.card-summary {
+  color:var(--muted);
+}
+.route-grid {
+  border-color:var(--line-dark);
+}
+.route-card {
+  border-color:var(--line-dark);
+  background:rgba(242,248,244,.74);
+}
+.route-copy h3 {
+  color:var(--ink);
+}
+.route-enter {
+  color:var(--green-dark);
+  border-color:var(--green);
+}
+.special,
+.method {
+  background:var(--paper-deep);
+}
+@media (max-width:760px) {
+  .museum .section-title-row {
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin-bottom:1.5rem;
+  }
+  .museum .section-title-row h2 {
+    white-space:normal;
+    text-align:center;
+  }
+  .museum .section-title-row > a {
+    align-self:center;
+  }
+}
