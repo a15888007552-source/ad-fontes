@@ -96,7 +96,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1958年渭滨区桑园堡出土"
       },
       "research": {
-        "viewing": "兽面纹甗：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "兽面纹甗：先从侧面确认甑、鬲与箅部的层次，再看足部和兽面纹局部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -195,7 +195,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1973年扶风县法门镇美阳村出土"
       },
       "research": {
-        "viewing": "高足杯：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "高足杯：先看杯口与杯身，再核对足或柄的连接和表面磨损。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -294,7 +294,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "麟游县出土"
       },
       "research": {
-        "viewing": "兽面纹斝：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "兽面纹斝：先看三足和柱状口沿，再沿腹部纹带观察铸造转折。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -475,7 +475,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3205—3206",
       "labelFacts": {},
       "research": {
-        "viewing": "兽面纹觚：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "兽面纹觚：先看正面器身比例，再用侧面核对喇叭口、圈足与纹带。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -561,7 +561,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1972年岐山县京当镇京当村出土"
       },
       "research": {
-        "viewing": "云纹分裆鬲：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "云纹分裆鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -772,7 +772,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1968年渭滨区桑园堡出土"
       },
       "research": {
-        "viewing": "鲜纹鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "鲜纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -858,7 +858,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1958年渭滨区桑园堡出土"
       },
       "research": {
-        "viewing": "目雷纹分裆鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "目雷纹分裆鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -957,7 +957,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1958年渭滨区桑园堡出土"
       },
       "research": {
-        "viewing": "涡纹鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "涡纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1069,7 +1069,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地一号墓出土"
       },
       "research": {
-        "viewing": "亚共庚父丁尊：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "亚共庚父丁尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1168,7 +1168,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "户方彝：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "户方彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1254,7 +1254,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "龙纹禁与兽面纹斗：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "龙纹禁与兽面纹斗：先看承托面和器座，再用侧面确认附加结构与受力关系。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1353,7 +1353,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "冉父乙卣：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "冉父乙卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1452,7 +1452,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "父戊尊：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "父戊尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1538,7 +1538,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地一号墓出土"
       },
       "research": {
-        "viewing": "守卣：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "守卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1620,7 +1620,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3278—3279",
       "labelFacts": {},
       "research": {
-        "viewing": "冉盉：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "冉盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1719,7 +1719,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "重父乙卣：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "重父乙卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1818,7 +1818,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "正鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "正鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1904,7 +1904,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "父甲壶：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "父甲壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -1990,7 +1990,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地一号墓出土"
       },
       "research": {
-        "viewing": "乳钉纹鼎与鸟纹觯：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "乳钉纹鼎与鸟纹觯：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -2102,7 +2102,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "鸟父甲鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "鸟父甲鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -2201,7 +2201,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2012年渭滨区石鼓山墓地三号墓出土"
       },
       "research": {
-        "viewing": "亚羌父乙罍：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "亚羌父乙罍：侧面先看肩部和深腹的转折，正面再核对口沿与纹饰带。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -2386,7 +2386,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2019年渭滨区马营镇旭光村七十四号墓出土"
       },
       "research": {
-        "viewing": "交父壬簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "交父壬簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -2472,7 +2472,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2019年渭滨区马营镇旭光村二十六号墓出土"
       },
       "research": {
-        "viewing": "覃鬲：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "覃鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -2558,7 +2558,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2019年渭滨区马营镇旭光村七十四号墓出土"
       },
       "research": {
-        "viewing": "兽面纹鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "兽面纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -2942,7 +2942,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "viewing": "天孟：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "viewing": "天孟：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3041,7 +3041,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "viewing": "此鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "此鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3127,7 +3127,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "viewing": "此簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "此簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3226,7 +3226,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "viewing": "公臣簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "公臣簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3312,7 +3312,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2014年岐山县京当镇贺家村北墓地出土"
       },
       "research": {
-        "viewing": "昔鸡爵：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "昔鸡爵：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3385,7 +3385,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2014年岐山县京当镇贺家村北墓地出土"
       },
       "research": {
-        "viewing": "昔鸡觯：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "昔鸡觯：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3458,7 +3458,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2014年岐山县京当镇贺家村北墓地出土"
       },
       "research": {
-        "viewing": "铜鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "铜鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3544,7 +3544,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "viewing": "单叔鬲：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "单叔鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3643,7 +3643,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "viewing": "善夫伯辛父鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "善夫伯辛父鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3729,7 +3729,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "viewing": "善夫旅伯鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "善夫旅伯鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3828,7 +3828,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "viewing": "仲南父盉：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "仲南父盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3910,7 +3910,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3390—3391",
       "labelFacts": {},
       "research": {
-        "viewing": "单五父壶：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "单五父壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -3996,7 +3996,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "viewing": "微伯鬲：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "微伯鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -4095,7 +4095,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "viewing": "癫盆：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "癫盆：从口沿沿腹壁看到底部，注意承托面和残损位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -4267,7 +4267,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "viewing": "癫簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "癫簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -4452,7 +4452,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头国墓地一号墓出土"
       },
       "research": {
-        "viewing": "带盖龙纹鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "带盖龙纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -4551,7 +4551,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1970年渭滨区茹家庄西周遗址出土"
       },
       "research": {
-        "viewing": "周曹卣：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "周曹卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -4636,7 +4636,7 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "西周"
       },
       "research": {
-        "viewing": "南官簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "南官簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -4808,7 +4808,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2000年扶风县法门镇黄堆村出土"
       },
       "research": {
-        "viewing": "丹叔番盂：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "丹叔番盂：从口沿沿腹壁看到底部，注意承托面和残损位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -4894,7 +4894,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年铜件厂拣选"
       },
       "research": {
-        "viewing": "仲鬲：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "仲鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -4979,7 +4979,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头"
       },
       "research": {
-        "viewing": "戈伯鬲：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "戈伯鬲：侧面优先看分裆或袋足，正面再核对腹部纹饰与口沿。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -5151,7 +5151,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2006年扶风县城关镇五郡西村窖藏出土"
       },
       "research": {
-        "viewing": "瑙生尊：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "瑙生尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -5233,7 +5233,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3459—3460",
       "labelFacts": {},
       "research": {
-        "viewing": "宰兽簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "宰兽簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -5428,7 +5428,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄国墓地一号墓出土"
       },
       "research": {
-        "viewing": "强伯盉：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "强伯盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -5510,7 +5510,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3476—3477",
       "labelFacts": {},
       "research": {
-        "viewing": "兽面纹双耳方座盒：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "兽面纹双耳方座盒：先看承托面和器座，再用侧面确认附加结构与受力关系。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -5596,7 +5596,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地十三号墓出土"
       },
       "research": {
-        "viewing": "兽面纹双耳方座簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "兽面纹双耳方座簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -5682,7 +5682,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟国墓地十三号墓出土"
       },
       "research": {
-        "viewing": "目雷纹带盖双耳簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "目雷纹带盖双耳簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -5894,7 +5894,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年扶风县法门镇庄白村墓葬出土"
       },
       "research": {
-        "viewing": "董甗：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "董甗：先从侧面确认甑、鬲与箅部的层次，再看足部和兽面纹局部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -6066,7 +6066,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年扶风县法门镇庄白村墓葬出土"
       },
       "research": {
-        "viewing": "或方鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "或方鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -6148,7 +6148,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3515—3516",
       "labelFacts": {},
       "research": {
-        "viewing": "兽头：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "viewing": "兽头：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -6419,7 +6419,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年岐山县京当镇董家村一号窖藏出土"
       },
       "research": {
-        "viewing": "朕彝：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "朕彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -6505,7 +6505,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟国墓地七号墓出土"
       },
       "research": {
-        "viewing": "四叶目纹鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "四叶目纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -6660,7 +6660,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3538",
       "labelFacts": {},
       "research": {
-        "viewing": "父辛盘：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "父辛盘：先看浅腹和耳足，再看盘底或器身的铭文、磨损与铸痕。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -6759,7 +6759,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟鱼国墓地十三号墓出土"
       },
       "research": {
-        "viewing": "兽面纹盉：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "兽面纹盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -6858,7 +6858,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1997年扶风县法门镇齐家村出土"
       },
       "research": {
-        "viewing": "涡纹罍：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "涡纹罍：侧面先看肩部和深腹的转折，正面再核对口沿与纹饰带。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7030,7 +7030,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟渔国墓地十三号墓出土"
       },
       "research": {
-        "viewing": "兽面纹镜：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "viewing": "兽面纹镜：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7116,7 +7116,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "viewing": "夔纹斗：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "夔纹斗：看斗部与柄的连接，再核对纹饰面和握持方向。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7215,7 +7215,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "渭滨区神农镇峪泉村周墓出土"
       },
       "research": {
-        "viewing": "顾首龙纹尊：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "顾首龙纹尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7288,7 +7288,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "渭滨区神农镇峪泉村周墓出土"
       },
       "research": {
-        "viewing": "龙纹提梁卣：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "龙纹提梁卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7361,7 +7361,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "渭滨区神农镇峪泉村周墓出土"
       },
       "research": {
-        "viewing": "回首龙纹卣：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "回首龙纹卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7447,7 +7447,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄国墓地一号墓出土"
       },
       "research": {
-        "viewing": "强伯双耳双环簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "强伯双耳双环簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7619,7 +7619,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄强国墓地二号墓出土"
       },
       "research": {
-        "viewing": "井姬附耳鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "井姬附耳鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7705,7 +7705,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄鱼国墓地二号墓出土"
       },
       "research": {
-        "viewing": "井姬圆鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "井姬圆鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7804,7 +7804,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年渭滨区石鼓镇石嘴头村出土"
       },
       "research": {
-        "viewing": "史毕庚觯：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "史毕庚觯：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7877,7 +7877,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "铜件厂拣选"
       },
       "research": {
-        "viewing": "昊母盆盖：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "昊母盆盖：从口沿沿腹壁看到底部，注意承托面和残损位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -7948,7 +7948,7 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "西周"
       },
       "research": {
-        "viewing": "成周邦父壶盖：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "成周邦父壶盖：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8047,7 +8047,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年扶风县法门镇齐家村十九号墓出土"
       },
       "research": {
-        "viewing": "夷王簋盖：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "夷王簋盖：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8133,7 +8133,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年扶风县法门镇齐家村十九号墓出土"
       },
       "research": {
-        "viewing": "作旅鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "作旅鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8219,7 +8219,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年金台区长青村出土"
       },
       "research": {
-        "viewing": "盨：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "viewing": "盨：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8318,7 +8318,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头国墓地一号墓出土"
       },
       "research": {
-        "viewing": "强伯四耳方座簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "强伯四耳方座簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8389,7 +8389,7 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "西周"
       },
       "research": {
-        "viewing": "伯方鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "伯方鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8475,7 +8475,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头强国墓地一号墓出土"
       },
       "research": {
-        "viewing": "云雷纹鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "云雷纹鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8548,7 +8548,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年金台区长青村出土"
       },
       "research": {
-        "viewing": "分裆圆鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "分裆圆鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8621,7 +8621,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年金台区长青村出土"
       },
       "research": {
-        "viewing": "祖乙簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "祖乙簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8694,7 +8694,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟鱼国墓地八号墓出土"
       },
       "research": {
-        "viewing": "直棱纹簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "直棱纹簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8780,7 +8780,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地七号墓出土"
       },
       "research": {
-        "viewing": "提梁小方彝：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "提梁小方彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -8866,7 +8866,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟国墓地七号墓出土"
       },
       "research": {
-        "viewing": "丰公鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "丰公鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -9012,7 +9012,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1987年陇县东南镇边家庄村出土"
       },
       "research": {
-        "viewing": "钩形铜泡：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "钩形铜泡：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -9085,7 +9085,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "陈仓区出土"
       },
       "research": {
-        "viewing": "蟠螭纹盘：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "蟠螭纹盘：先看浅腹和耳足，再看盘底或器身的铭文、磨损与铸痕。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -9171,7 +9171,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "征集"
       },
       "research": {
-        "viewing": "重环纹方壶：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "重环纹方壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -9330,7 +9330,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1973年凤翔区长青镇出土"
       },
       "research": {
-        "viewing": "玉琮：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "玉琮：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -9700,7 +9700,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "渭滨区高家镇甘峪村出土"
       },
       "research": {
-        "viewing": "环首铜削：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "环首铜削：先找刃部或受力、连接部位，再看正背面装饰；具体用途以展签为准。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -9945,7 +9945,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2007年岐山县凤鸣镇四崖头村出土"
       },
       "research": {
-        "viewing": "蒜头铜扁壶：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "蒜头铜扁壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10031,7 +10031,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1978年陈仓区凤阁岭镇出土"
       },
       "research": {
-        "viewing": "弦纹蒜头壶：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "弦纹蒜头壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10110,7 +10110,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年渭滨区神农镇益门堡村出土"
       },
       "research": {
-        "viewing": "素面金环：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "素面金环：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10189,7 +10189,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年渭滨区神农镇益门堡村出土"
       },
       "research": {
-        "viewing": "索状玉环：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "索状玉环：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10439,7 +10439,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟强国墓地七号墓出土"
       },
       "research": {
-        "viewing": "伯各卣：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "伯各卣：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10525,7 +10525,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头强国墓地一号墓出土"
       },
       "research": {
-        "viewing": "四耳簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "四耳簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10690,7 +10690,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "岐山县凤鸣镇罗家河村出土"
       },
       "research": {
-        "viewing": "夔凤纹方鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "夔凤纹方鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10763,7 +10763,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年扶风县法门镇庄白村出土"
       },
       "research": {
-        "viewing": "如意云纹壶：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "如意云纹壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10862,7 +10862,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年咸阳市武功县调拨"
       },
       "research": {
-        "viewing": "父丁鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "父丁鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -10948,7 +10948,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年渭滨区竹园沟渔国墓地七号墓出土"
       },
       "research": {
-        "viewing": "伯各尊：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "伯各尊：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -11034,7 +11034,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1992年扶风县召公镇巨良村出土"
       },
       "research": {
-        "viewing": "爬龙：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "viewing": "爬龙：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -11133,7 +11133,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年渭滨区茹家庄强国墓地一号墓出土"
       },
       "research": {
-        "viewing": "三足铜鸟：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "三足铜鸟：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -11245,7 +11245,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "viewing": "逨盉：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "逨盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -11331,7 +11331,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1981年金台区纸坊头鱼国墓地一号墓出土"
       },
       "research": {
-        "viewing": "强伯双耳方座簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "强伯双耳方座簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -11417,7 +11417,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村二号窖藏出土"
       },
       "research": {
-        "viewing": "重环纹彝：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "重环纹彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -11503,7 +11503,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "征集"
       },
       "research": {
-        "viewing": "蟠螭纹提链壶：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "蟠螭纹提链壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -11589,7 +11589,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2003年眉县马家镇杨家村窖藏出土"
       },
       "research": {
-        "viewing": "叔五父彝：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "叔五父彝：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -11673,7 +11673,7 @@ window.BAOJI_PHOTO_INDEX = {
         "period": "西周"
       },
       "research": {
-        "viewing": "云雷纹带盖簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "云雷纹带盖簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12017,7 +12017,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "金台区刘家台村出土"
       },
       "research": {
-        "viewing": "错金银壶：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "错金银壶：沿颈、肩、腹、底部查看比例，再看提梁、提链和盖部。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12103,7 +12103,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1976年扶风县法门镇庄白村一号窖藏出土"
       },
       "research": {
-        "viewing": "伯兮父盉：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "伯兮父盉：先看流与鋬的方向，再核对足部和腹部的连接关系。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12189,7 +12189,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1975年扶风县法门镇庄白村西南墓葬出土"
       },
       "research": {
-        "viewing": "伯威簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "伯威簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12262,7 +12262,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2006年扶风县城关镇五郡村窖藏出土"
       },
       "research": {
-        "viewing": "戈簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "戈簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12335,7 +12335,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "2006年扶风县城关镇五郡村窖藏出土"
       },
       "research": {
-        "viewing": "伯湄父簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "伯湄父簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12421,7 +12421,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "废品公司拣选"
       },
       "research": {
-        "viewing": "富贵昌盆：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "富贵昌盆：从口沿沿腹壁看到底部，注意承托面和残损位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12564,7 +12564,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "宝鸡刑警队移交"
       },
       "research": {
-        "viewing": "龙形玉佩：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "龙形玉佩：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12643,7 +12643,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年宝鸡茹家庄出土"
       },
       "research": {
-        "viewing": "玉鸟：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "玉鸟：先看轮廓与穿孔，再放大边缘、磨痕和背部固定结构。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12716,7 +12716,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1974年宝鸡茹家庄出土"
       },
       "research": {
-        "viewing": "石兽面：现场照片保留整体、侧面与局部信息，具体形制以展签和馆方记录为准。",
+        "viewing": "石兽面：按正面、侧面、局部顺序查看，先核对器形，再回看展签。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -12785,7 +12785,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3817",
       "labelFacts": {},
       "research": {
-        "viewing": "木子丁觯：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "木子丁觯：先看口沿和腹部，再找盖、提梁、圈足或铭文等附加信息。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -13130,7 +13130,7 @@ window.BAOJI_PHOTO_INDEX = {
         "findspot": "1980年铜件厂拣选"
       },
       "research": {
-        "viewing": "河间鼎：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "河间鼎：按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -13358,7 +13358,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3853—3854",
       "labelFacts": {},
       "research": {
-        "viewing": "无疆簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "无疆簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -13440,7 +13440,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3856—3857",
       "labelFacts": {},
       "research": {
-        "viewing": "董簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "董簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
@@ -13853,7 +13853,7 @@ window.BAOJI_PHOTO_INDEX = {
       "sequenceShortLabel": "3874—3875",
       "labelFacts": {},
       "research": {
-        "viewing": "生史簋：先核对整体、侧面与局部照片，再回看对应展签；照片不能支持的细节不作判断。",
+        "viewing": "生史簋：正面看双耳和腹部，侧面确认圈足，局部再看纹饰起止。",
         "inscription": "",
         "significance": "",
         "decoration": "",
