@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-active-province="shaanxi">
+<html lang="zh-CN" data-active-province="beijing">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2202,10 +2202,35 @@
       const root = document.documentElement;
       const stage = document.querySelector(".chapter-panels");
       const tabs = Array.from(document.querySelectorAll(".province-tab"));
+      const validProvinces = new Set(tabs.map((tab) => tab.dataset.province));
       const panels = Array.from(document.querySelectorAll(".province-panel"));
       const indicator = document.querySelector(".province-indicator");
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const motion = { raf: 0, panelTimer: 0, scrollState: "top", scrollMax: 1 };
+
+      const getProvinceFromLocation = () => {
+        const requested = new URLSearchParams(window.location.search).get("province");
+        if (validProvinces.has(requested)) return requested;
+        if (window.location.hash === "#shaanxi") return "shaanxi";
+        return "beijing";
+      };
+
+      const syncProvinceToUrl = (province) => {
+        const url = new URL(window.location.href);
+        const alreadyCurrent = url.searchParams.get("province") === province && url.hash !== "#shaanxi";
+        if (alreadyCurrent) return;
+
+        url.searchParams.set("province", province);
+        if (url.hash === "#shaanxi") {
+          url.hash = "";
+        }
+
+        window.history.pushState(
+          { province },
+          "",
+          `${url.pathname}${url.search}${url.hash}`
+        );
+      };
 
       const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
       const schedule = () => {
@@ -2244,12 +2269,14 @@
         });
       };
 
-      const setActiveProvince = (province, shouldFocus = false, animate = true) => {
+      const setActiveProvince = (province, shouldFocus = false, animate = true, syncUrl = false) => {
         const activeTab = tabs.find((tab) => tab.dataset.province === province) || tabs[0];
         const activeProvince = activeTab.dataset.province;
         const currentPanel = panels.find((panel) => !panel.hidden);
         const nextPanel = panels.find((panel) => panel.dataset.province === activeProvince) || panels[0];
         const shouldAnimate = animate && !reducedMotion.matches && currentPanel && currentPanel !== nextPanel;
+
+        if (syncUrl) syncProvinceToUrl(activeProvince);
 
         root.dataset.activeProvince = activeProvince;
 
@@ -2319,7 +2346,7 @@
       };
 
       tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => setActiveProvince(tab.dataset.province));
+        tab.addEventListener("click", () => setActiveProvince(tab.dataset.province, false, true, true));
         tab.addEventListener("keydown", (event) => {
           if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
           event.preventDefault();
@@ -2328,8 +2355,12 @@
           if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
           if (event.key === "Home") nextIndex = 0;
           if (event.key === "End") nextIndex = tabs.length - 1;
-          setActiveProvince(tabs[nextIndex].dataset.province, true);
+          setActiveProvince(tabs[nextIndex].dataset.province, true, true, true);
         });
+      });
+
+      window.addEventListener("popstate", () => {
+        setActiveProvince(getProvinceFromLocation(), false, true, false);
       });
 
       window.addEventListener("scroll", schedule, { passive: true });
@@ -2343,8 +2374,8 @@
       });
 
       root.classList.add("motion-ready");
-      const requestedProvince = new URLSearchParams(window.location.search).get("province") || (location.hash === "#shaanxi" ? "shaanxi" : root.dataset.activeProvince || "beijing");
-      setActiveProvince(requestedProvince, false, false);
+      const requestedProvince = getProvinceFromLocation();
+      setActiveProvince(requestedProvince, false, false, false);
       updateScrollRange();
       window.requestAnimationFrame(() => {
         moveIndicator(tabs.find((tab) => tab.getAttribute("aria-selected") === "true"));
