@@ -4,12 +4,12 @@
     "inventory": "data/media-inventory.json",
     "triage": "data/media-orphan-triage.json"
   },
-  "totalExternalizableFiles": 6547,
-  "totalExternalizableBytes": 982968997,
+  "totalExternalizableFiles": 4532,
+  "totalExternalizableBytes": 662070230,
   "byModule": {
     "baoji": {
-      "files": 772,
-      "bytes": 89640138
+      "files": 44,
+      "bytes": 8787910
     },
     "beilin": {
       "files": 1,
@@ -20,8 +20,8 @@
       "bytes": 100590362
     },
     "global": {
-      "files": 2279,
-      "bytes": 324251436
+      "files": 1085,
+      "bytes": 136875593
     },
     "museum-atlas": {
       "files": 10,
@@ -36,26 +36,26 @@
       "bytes": 199500311
     },
     "shaanxi-archaeology-museum": {
-      "files": 1073,
-      "bytes": 107046047
-    },
-    "shaanxi-history": {
-      "files": 7,
-      "bytes": 5817325
+      "files": 1061,
+      "bytes": 103024634
     },
     "theory": {
       "files": 9,
       "bytes": 1492768
     },
     "xian-museum": {
-      "files": 207,
-      "bytes": 130144476
+      "files": 133,
+      "bytes": 87312518
     }
   },
   "byReferenceType": {
     "css_url": {
       "files": 25,
       "bytes": 10746126
+    },
+    "dynamic_runtime": {
+      "files": 528,
+      "bytes": 71229805
     },
     "html_href": {
       "files": 10,
@@ -69,45 +69,53 @@
       "files": 15,
       "bytes": 2268298
     },
+    "js_concatenation": {
+      "files": 9,
+      "bytes": 1492768
+    },
     "js_literal": {
       "files": 175,
       "bytes": 92913824
     },
+    "js_template": {
+      "files": 211,
+      "bytes": 49753711
+    },
     "json_literal": {
-      "files": 6546,
-      "bytes": 982968705
+      "files": 1144,
+      "bytes": 170108538
     },
     "manifest": {
-      "files": 3030,
-      "bytes": 405370230
+      "files": 3547,
+      "bytes": 474406961
     },
     "other": {
-      "files": 1687,
-      "bytes": 217113310
+      "files": 1999,
+      "bytes": 238240227
     }
   },
   "byMigrationRisk": {
+    "high": {
+      "files": 528,
+      "bytes": 71229805
+    },
     "low": {
-      "files": 2854,
-      "bytes": 540752915
+      "files": 311,
+      "bytes": 148624343
     },
     "medium": {
       "files": 3693,
       "bytes": 442216082
-    },
-    "high": {
-      "files": 0,
-      "bytes": 0
     }
   },
-  "dynamicRuntimeFiles": 0,
-  "dynamicRuntimeBytes": 0,
-  "sourceOriginalFiles": 0,
-  "sourceOriginalBytes": 0,
-  "unreferencedGeneratedFiles": 0,
-  "unreferencedGeneratedBytes": 0,
-  "unknownFiles": 1,
-  "unknownBytes": 74766,
+  "dynamicRuntimeFiles": 528,
+  "dynamicRuntimeBytes": 71229805,
+  "sourceOriginalFiles": 10,
+  "sourceOriginalBytes": 15705736,
+  "unreferencedGeneratedFiles": 2002,
+  "unreferencedGeneratedBytes": 303807059,
+  "unknownFiles": 4,
+  "unknownBytes": 1460738,
   "inventoryFileCount": 6548,
   "inventoryTotalBytes": 983043763,
   "shaanxiHistoryPilot": {
@@ -117,11 +125,11 @@
       "bytes": 5817325
     },
     "externalizableMedia": {
-      "files": 7,
-      "bytes": 5817325
+      "files": 0,
+      "bytes": 0
     },
-    "staticReferencedFiles": 7,
-    "staticReferenceCount": 7,
+    "staticReferencedFiles": 0,
+    "staticReferenceCount": 0,
     "dynamicReferencedFiles": 0,
     "dynamicReferenceCount": 0,
     "cardCovers": {
@@ -136,7 +144,7 @@
       "files": 1,
       "bytes": 1306323
     },
-    "autoRewritableReferenceCount": 7,
+    "autoRewritableReferenceCount": 0,
     "resolverRequiredDynamicReferenceCount": 0
   }
 }

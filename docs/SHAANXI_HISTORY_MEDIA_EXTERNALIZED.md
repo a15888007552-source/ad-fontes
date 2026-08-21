@@ -9,6 +9,7 @@
 - Cache-Control samples: **30/30**
 - Local frozen copies present: **0**
 - Remaining Shaanxi History local media: **7 files / 5,817,325 bytes**
+- Current plan Shaanxi externalizable media: **0 files / 0 bytes**
 - Direct local runtime requests for frozen media: **0**
 - Runtime old `r2.dev` references: **0**
 
@@ -26,8 +27,8 @@
 
 - `data/shaanxi-history-externalized-media.json` is the permanent freeze source for the deleted objects.
 - `assets/...` data literals remain allowed because `assetFor()` and `shaanxiHistoryMediaUrl()` resolve them to the Worker.
-- Terminal HTTP smoke: **PASS** (6 resources checked).
-- Browser smoke: **SKIPPED** (not launched: physical memory usage 84.0% was above the 75% safety threshold)
+- Terminal HTTP smoke: **PENDING** (0 resources checked).
+- Browser smoke: **SKIPPED** (not launched: physical memory usage 80.0% was above the 75% safety threshold)
 
 Recommended Worker cache policy already verified on sampled responses:
 

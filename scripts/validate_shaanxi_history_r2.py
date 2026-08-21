@@ -23,6 +23,7 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "data" / "shaanxi-history-externalized-media.json"
+INVENTORY_PATH = ROOT / "data" / "media-inventory.json"
 PLAN_PATH = ROOT / "data" / "media-externalization-plan.json"
 SUMMARY_PATH = ROOT / "data" / "shaanxi-history-externalized-media-validation.json"
 DOC_PATH = ROOT / "docs" / "SHAANXI_HISTORY_MEDIA_EXTERNALIZED.md"
@@ -33,6 +34,8 @@ EXPECTED_FILES = 807
 EXPECTED_BYTES = 385001226
 EXPECTED_REMAINING_FILES = 7
 EXPECTED_REMAINING_BYTES = 5817325
+EXPECTED_CURRENT_PLAN_FILES = 0
+EXPECTED_CURRENT_PLAN_BYTES = 0
 SAMPLE_COUNT = 30
 CACHE_SAMPLE_COUNT = 30
 SAMPLE_SEED = 20260821
@@ -310,6 +313,7 @@ def build_document(summary: dict[str, Any]) -> str:
 - Cache-Control samples: **{cache['verified']:,}/{cache['selected']:,}**
 - Local frozen copies present: **{summary['localCopiesPresent']}**
 - Remaining Shaanxi History local media: **{summary['remainingLocalMediaFiles']:,} files / {summary['remainingLocalMediaBytes']:,} bytes**
+- Current plan Shaanxi externalizable media: **{summary['currentPlanShaanxiFiles']:,} files / {summary['currentPlanShaanxiBytes']:,} bytes**
 - Direct local runtime requests for frozen media: **{summary['directLocalRuntimeRequests']}**
 - Runtime old `r2.dev` references: **{summary['runtimeOldR2DevReferences']}**
 
@@ -421,18 +425,33 @@ def main() -> int:
             errors.append(f"data.js parse: {type(exc).__name__}")
 
     current_plan_paths: set[str] = set()
+    current_plan_bytes = 0
     if PLAN_PATH.is_file():
         current_plan = load_json(PLAN_PATH)
-        current_plan_paths = {
-            str(item.get("path", ""))
+        current_plan_rows = [
+            item
             for item in current_plan.get("externalizableMedia", [])
             if item.get("module") == "shaanxi-history"
-        }
-    if len(current_plan_paths) != EXPECTED_REMAINING_FILES:
+        ]
+        current_plan_paths = {str(item.get("path", "")) for item in current_plan_rows}
+        current_plan_bytes = sum(int(item.get("bytes", 0)) for item in current_plan_rows)
+    if len(current_plan_paths) != EXPECTED_CURRENT_PLAN_FILES:
         errors.append(
-            f"current plan Shaanxi media files {len(current_plan_paths)} != {EXPECTED_REMAINING_FILES}"
+            f"current plan Shaanxi media files {len(current_plan_paths)} != {EXPECTED_CURRENT_PLAN_FILES}"
         )
-    known_media_paths = set(manifest_paths) | current_plan_paths
+    if current_plan_bytes != EXPECTED_CURRENT_PLAN_BYTES:
+        errors.append(
+            f"current plan Shaanxi media bytes {current_plan_bytes} != {EXPECTED_CURRENT_PLAN_BYTES}"
+        )
+    current_module_paths: set[str] = set()
+    if INVENTORY_PATH.is_file():
+        current_inventory = load_json(INVENTORY_PATH)
+        current_module_paths = {
+            str(item.get("path", ""))
+            for item in current_inventory.get("files", [])
+            if item.get("module") == "shaanxi-history"
+        }
+    known_media_paths = set(manifest_paths) | current_plan_paths | current_module_paths
     data_asset_literals = [
         value for _, value in walk_strings(data_payload) if value.startswith("assets/")
     ]
@@ -595,6 +614,7 @@ def main() -> int:
         "remainingLocalMediaFiles": len(remaining_media),
         "remainingLocalMediaBytes": remaining_bytes,
         "currentPlanShaanxiFiles": len(current_plan_paths),
+        "currentPlanShaanxiBytes": current_plan_bytes,
         "workerHttpVerified": worker_http_verified,
         "contentLengthVerified": content_length_verified,
         "worker404Failures": worker_404_failures,

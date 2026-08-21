@@ -15,7 +15,8 @@
   "localCopyBytesPresent": 0,
   "remainingLocalMediaFiles": 7,
   "remainingLocalMediaBytes": 5817325,
-  "currentPlanShaanxiFiles": 7,
+  "currentPlanShaanxiFiles": 0,
+  "currentPlanShaanxiBytes": 0,
   "workerHttpVerified": 807,
   "contentLengthVerified": 807,
   "worker404Failures": 0,
@@ -63,12 +64,12 @@
   "binaryDeletions": 807,
   "browserSmoke": {
     "status": "SKIPPED",
-    "detail": "not launched: physical memory usage 84.0% was above the 75% safety threshold"
+    "detail": "not launched: physical memory usage 80.0% was above the 75% safety threshold"
   },
   "terminalHttpSmoke": {
-    "status": "PASS",
-    "resourcesChecked": 6,
-    "detail": "local HTTP smoke PASS: 6/6 resources returned 200; browser smoke SKIPPED by memory/browser safety check"
+    "status": "PENDING",
+    "resourcesChecked": 0,
+    "detail": ""
   },
   "failedObjects": []
 }

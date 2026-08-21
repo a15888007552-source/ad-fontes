@@ -9,24 +9,24 @@ repository-relative path, and no external host is configured.
 
 ## Current plan
 
-- Externalizable retained website media: **6,547 files / 982,968,997 bytes**
-- Low risk: **2,854 files / 540,752,915 bytes**
+- Externalizable retained website media: **4,532 files / 662,070,230 bytes**
+- Low risk: **311 files / 148,624,343 bytes**
 - Medium risk: **3,693 files / 442,216,082 bytes**
-- High risk: **0 files / 0 bytes**
-- Dynamic-runtime media: **0 files / 0 bytes**
-- Source originals kept separate from the first migration batch: **0 files / 0 bytes**
-- Unreferenced generated derivatives excluded from the website migration set: **0 files / 0 bytes**
+- High risk: **528 files / 71,229,805 bytes**
+- Dynamic-runtime media: **528 files / 71,229,805 bytes**
+- Source originals kept separate from the first migration batch: **10 files / 15,705,736 bytes**
+- Unreferenced generated derivatives excluded from the website migration set: **2,002 files / 303,807,059 bytes**
 
 ## Shaanxi History pilot
 
 - Total media: **7 files / 5,817,325 bytes**
-- Externalizable media: **7 files / 5,817,325 bytes**
-- Static reference files / occurrences: **7 / 7**
+- Externalizable media: **0 files / 0 bytes**
+- Static reference files / occurrences: **0 / 0**
 - Dynamic reference files / occurrences: **0 / 0**
 - `card-covers`: **0 files / 0 bytes**
 - `photos`: **6 files / 4,511,002 bytes**
 - `supplement`: **1 files / 1,306,323 bytes**
-- Automatically rewritable direct references: **7**
+- Automatically rewritable direct references: **0**
 - Dynamic references requiring the resolver: **0**
 
 ## Protocol
