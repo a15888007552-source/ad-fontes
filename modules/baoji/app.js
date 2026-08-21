@@ -10,6 +10,11 @@
     groups: Array.isArray(photoData.groups) ? photoData.groups : [],
   };
   let revealObserver = null;
+  let activeDetailId = null;
+  let lastFocusedElement = null;
+  let restoreFocusAfterDialogClose = true;
+  let introDeferred = false;
+  let introInitialized = false;
   const revealSelector = '.section-heading, .profile-story, .stat-panel, .quick-review, .treasure-card, .archive-card, .method-copy, .source-column, .site-footer';
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -80,6 +85,61 @@
 
   function groupForTreasure(id) {
     return state.groups.find((group) => group.treasureId === id);
+  }
+
+  function detailById(id) {
+    const key = String(id || '');
+    const treasure = treasureById(key);
+    if (treasure) {
+      return {
+        type: 'treasure',
+        id: treasure.id,
+        treasure,
+        group: groupForTreasure(treasure.id) || null,
+      };
+    }
+    const group = state.groups.find((item) => item.id === key) || null;
+    if (!group) return null;
+    if (group.treasureId) {
+      const linkedTreasure = treasureById(group.treasureId);
+      if (linkedTreasure) {
+        return {
+          type: 'treasure',
+          id: linkedTreasure.id,
+          treasure: linkedTreasure,
+          group,
+        };
+      }
+    }
+    return {
+      type: 'group',
+      id: group.id,
+      group,
+      treasure: null,
+    };
+  }
+
+  function getDetailFromLocation() {
+    const id = new URLSearchParams(window.location.search).get('item');
+    return id ? detailById(id) : null;
+  }
+
+  function syncItemToUrl(id) {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get('item');
+    if (id) {
+      const next = String(id);
+      if (current === next) return;
+      url.searchParams.set('item', next);
+    } else {
+      if (!current) return;
+      url.searchParams.delete('item');
+    }
+    window.history.pushState(
+      { item: id ? String(id) : null },
+      '',
+      url.pathname + url.search + url.hash
+    );
   }
 
   function objectPhoto(group) {
@@ -384,12 +444,17 @@
       + '<p class="research-essay-paragraph research-essay-paragraph--opening">' + escapeHTML(firstParts.join(' ')) + '</p>'
       + '<p class="research-essay-paragraph research-essay-paragraph--closing">' + escapeHTML(secondParts.join(' ')) + '</p>'
       + '<p class="research-evidence"><b>资料边界</b>' + escapeHTML(evidence) + '</p></div>';
-  }  function openTreasure(item) {
+  }  function openTreasure(item, {
+    syncUrl = false,
+    focusClose = true,
+    rememberFocus = true,
+  } = {}) {
     if (!item) return;
     const group = groupForTreasure(item.id);
     const values = galleryForTreasure(item, group);
     const dialogContent = $('#dialog-content');
     if (!dialogContent) return;
+    activeDetailId = item.id;
     const title = item.displayName || item.name;
     dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(item.number)} / TREASURE INDEX · ${escapeHTML(item.category)}</p><h2 id="dialog-title">${escapeHTML(title)}<small>${escapeHTML(item.pinyin)}</small></h2></div><p class="dialog-lead">${escapeHTML(item.lead)}</p></div>
       ${factsMarkup(item)}
@@ -398,7 +463,12 @@
       ${group?.labelText ? `<p class="ocr-note">现场展签 OCR 候选：${escapeHTML(group.labelText)}。此段仅用于辅助检索，未把 OCR 结果直接当作正式释文。</p>` : ''}
       ${sourcesMarkup(item)}`;
     bindGallery();
-    showDialog();
+    showDialog({
+      itemId: item.id,
+      syncUrl,
+      focusClose,
+      rememberFocus,
+    });
   }
 
   function genericSequenceMarkup(group) {
@@ -407,16 +477,21 @@
     return `<div class="photo-sequence">${photos.map((photo) => `<figure><img src="${escapeHTML(photoPath(photo, 'thumb'))}" alt="${escapeHTML(group.title)} · ${escapeHTML(photoRole(photo.role))}" loading="lazy" /><figcaption>${escapeHTML(photoRole(photo.role))}${photo.cropThumb ? ' · 人工裁切' : ''}<br />${escapeHTML(filenameOf(photo))}</figcaption></figure>`).join('')}</div>`;
   }
 
-  function openGroup(group) {
+  function openGroup(group, {
+    syncUrl = false,
+    focusClose = true,
+    rememberFocus = true,
+  } = {}) {
     if (!group) return;
     if (group.treasureId) {
       const item = treasureById(group.treasureId);
       if (item) {
-        openTreasure(item);
+        openTreasure(item, { syncUrl, focusClose, rememberFocus });
         return;
       }
     }
     const dialogContent = $('#dialog-content');
+    activeDetailId = group.id;
     const photos = group.photos || [];
     const main = objectPhoto(group) || photos[0];
     const sequence = group.sequenceLabel || (group.sequenceStart ? `${group.sequenceStart}—${group.sequenceEnd}` : '现场照片');
@@ -426,7 +501,12 @@
       <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, `现场顺序 · ${filenameOf(main)}`)}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
       ${genericSequenceMarkup(group)}`;
     bindGallery();
-    showDialog();
+    showDialog({
+      itemId: group.id,
+      syncUrl,
+      focusClose,
+      rememberFocus,
+    });
   }
 
   function bindGallery() {
@@ -550,18 +630,77 @@
     render();
   }
 
-  function showDialog() {
+  function showDialog({
+    itemId = null,
+    syncUrl = false,
+    focusClose = true,
+    rememberFocus = true,
+  } = {}) {
     const dialog = $('#detail-dialog');
     if (!dialog) return;
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else dialog.setAttribute('open', 'open');
+    const dialogAlreadyOpen = dialog.open || dialog.hasAttribute('open');
+    if (rememberFocus) lastFocusedElement = document.activeElement;
+    else lastFocusedElement = null;
+    if (!dialogAlreadyOpen) {
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', 'open');
+    }
+    if (itemId) activeDetailId = String(itemId);
+    if (focusClose) dialog.querySelector('[data-dialog-close]')?.focus();
+    if (syncUrl && itemId) syncItemToUrl(itemId);
   }
 
-  function closeDialog() {
+  function handleDialogClose() {
+    activeDetailId = null;
+    const restore = restoreFocusAfterDialogClose ? lastFocusedElement : null;
+    lastFocusedElement = null;
+    restoreFocusAfterDialogClose = true;
+    if (restore && typeof restore.focus === 'function') restore.focus();
+  }
+
+  function closeDialog({
+    syncUrl = false,
+    restoreFocus = true,
+  } = {}) {
     const dialog = $('#detail-dialog');
     if (!dialog) return;
-    if (typeof dialog.close === 'function') dialog.close();
-    else dialog.removeAttribute('open');
+    const dialogIsOpen = dialog.open || dialog.hasAttribute('open');
+    if (!dialogIsOpen) return;
+    restoreFocusAfterDialogClose = restoreFocus;
+    if (syncUrl) syncItemToUrl(null);
+    if (dialog.open && typeof dialog.close === 'function') dialog.close();
+    else {
+      dialog.removeAttribute('open');
+      handleDialogClose();
+    }
+  }
+
+  function openDetailFromLocation({ focusClose = false } = {}) {
+    const detail = getDetailFromLocation();
+    if (!detail) {
+      closeDialog({
+        syncUrl: false,
+        restoreFocus: false,
+      });
+      return false;
+    }
+    const dialog = $('#detail-dialog');
+    const dialogIsOpen = dialog?.open || dialog?.hasAttribute('open');
+    if (dialogIsOpen && activeDetailId === detail.id) return true;
+    if (detail.type === 'treasure') {
+      openTreasure(detail.treasure, {
+        syncUrl: false,
+        focusClose,
+        rememberFocus: false,
+      });
+    } else {
+      openGroup(detail.group, {
+        syncUrl: false,
+        focusClose,
+        rememberFocus: false,
+      });
+    }
+    return true;
   }
 
   function groupMatches(group) {
@@ -628,7 +767,16 @@
       const photoCount = groups.reduce((sum, group) => sum + (group.photos || []).length, 0);
       status.textContent = state.groups.length ? `已整理 ${state.groups.length} 个器物卡片 · 当前筛选 ${groups.length} 张卡片 / ${photoCount} 张照片 · 原片总数 ${photoData.sourceCount || 625} 张` : '照片目录正在生成；四件禁出文物详情已可先行阅读。';
     }
-    $$('[data-group-id]', target).forEach((button) => button.addEventListener('click', () => openGroup(state.groups.find((group) => group.id === button.dataset.groupId))));
+    $$('[data-group-id]', target).forEach((button) => button.addEventListener('click', () => {
+      const group = state.groups.find((item) => item.id === button.dataset.groupId);
+      if (group) {
+        openGroup(group, {
+          syncUrl: true,
+          focusClose: true,
+          rememberFocus: true,
+        });
+      }
+    }));
     observeReveals(target);
   }
 
@@ -645,21 +793,55 @@
       if (Array.isArray(remote.groups)) state.groups = remote.groups;
       updateFilterCounts();
       renderArchive();
+      const shouldResolveInitial = introDeferred;
+      const fallbackDetail = getDetailFromLocation();
+      if (shouldResolveInitial) {
+        if (fallbackDetail) skipIntro();
+        else startIntro();
+      }
+      if (fallbackDetail) openDetailFromLocation({ focusClose: shouldResolveInitial });
     } catch (error) {
       const status = $('#archive-status');
       if (status) status.textContent = '照片目录未加载；请通过本地服务器打开本专题，或先阅读四件禁出文物卡片。';
       renderArchive();
+      if (introDeferred) startIntro();
     }
   }
 
   function initDialog() {
     $('#treasure-grid')?.addEventListener('click', (event) => {
       const button = event.target.closest('[data-treasure-id]');
-      if (button) openTreasure(treasureById(button.dataset.treasureId));
+      if (button) {
+        openTreasure(treasureById(button.dataset.treasureId), {
+          syncUrl: true,
+          focusClose: true,
+          rememberFocus: true,
+        });
+      }
     });
-    $('[data-dialog-close]')?.addEventListener('click', closeDialog);
-    $('#detail-dialog')?.addEventListener('click', (event) => {
-      if (event.target === event.currentTarget) closeDialog();
+    $('[data-dialog-close]')?.addEventListener('click', () => closeDialog({
+      syncUrl: true,
+      restoreFocus: true,
+    }));
+    const dialog = $('#detail-dialog');
+    dialog?.addEventListener('click', (event) => {
+      if (event.target === event.currentTarget) {
+        closeDialog({
+          syncUrl: true,
+          restoreFocus: true,
+        });
+      }
+    });
+    dialog?.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      closeDialog({
+        syncUrl: true,
+        restoreFocus: true,
+      });
+    });
+    dialog?.addEventListener('close', handleDialogClose);
+    window.addEventListener('popstate', () => {
+      openDetailFromLocation({ focusClose: false });
     });
   }
 
@@ -703,6 +885,20 @@
     window.addEventListener('resize', schedule, { passive: true });
   }
 
+  function startIntro() {
+    if (introInitialized) return;
+    introDeferred = false;
+    introInitialized = true;
+    initIntro();
+  }
+
+  function skipIntro() {
+    introDeferred = false;
+    introInitialized = true;
+    $('.intro-curtain')?.remove();
+    document.body.classList.add('intro-complete');
+  }
+
   function initIntro() {
     const intro = $('.intro-curtain');
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -726,7 +922,11 @@
   }
 
   function init() {
-    initIntro();
+    const initialDetail = getDetailFromLocation();
+    const hasItemParam = new URLSearchParams(window.location.search).has('item');
+    if (initialDetail) skipIntro();
+    else if (hasItemParam && state.groups.length === 0) introDeferred = true;
+    else startIntro();
     renderTreasureCards();
     initDialog();
     initFilters();
@@ -735,6 +935,7 @@
     updateFilterCounts();
     scheduleArchiveInit();
     observeReveals();
+    if (initialDetail) openDetailFromLocation({ focusClose: true });
   }
 
   document.addEventListener('DOMContentLoaded', init, { once: true });
