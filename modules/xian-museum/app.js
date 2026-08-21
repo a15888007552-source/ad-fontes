@@ -32,6 +32,28 @@
   const assetFor = (path) => String(path || "");
   const hasTag = (item, tag) => Array.isArray(item.tags) && item.tags.includes(tag);
   const isGroup = (item) => Boolean(item && item.isGroup);
+  const PERIOD_CHRONOLOGY_RANK = new Map([
+    ["西周", 100],
+    ["战国", 200],
+    ["先秦", 250],
+    ["西汉", 300],
+    ["汉代", 300],
+    ["西魏大统三年", 400],
+    ["北周", 410],
+    ["隋大业元年", 500],
+    ["唐代", 600],
+    ["唐天宝五年", 600],
+    ["元代", 700],
+    ["明代", 800],
+    ["明清", 850],
+    ["清代", 900],
+    ["清代刻本", 900],
+    ["年代待考", 9999],
+  ]);
+  function chronologyRank(item) {
+    const period = String(item?.period || "").trim();
+    return PERIOD_CHRONOLOGY_RANK.get(period) ?? 9999;
+  }
 
   function applyImageZoom() {
     dialogImageWrap.style.setProperty("--zoom-scale", zoomState.scale.toFixed(3));
@@ -193,7 +215,7 @@
     const collator = new Intl.Collator("zh-CN");
     return [...output].sort((left, right) => {
       if (sortSelect.value === "title") return collator.compare(String(left.title), String(right.title));
-      if (sortSelect.value === "chronology") return String(left.period).localeCompare(String(right.period), "zh-CN") || (left.sequence ?? 9999) - (right.sequence ?? 9999);
+      if (sortSelect.value === "chronology") return chronologyRank(left) - chronologyRank(right) || (left.sequence ?? 9999) - (right.sequence ?? 9999);
       return (left.sequence ?? 9999) - (right.sequence ?? 9999);
     });
   }
