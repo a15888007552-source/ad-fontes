@@ -1,8 +1,8 @@
 {
   "byDirectory": [
     {
-      "bytes": 658717561,
-      "fileCount": 4268,
+      "bytes": 459217250,
+      "fileCount": 3169,
       "path": "modules"
     },
     {
@@ -14,26 +14,6 @@
       "bytes": 295577744,
       "fileCount": 2227,
       "path": "assets/photos"
-    },
-    {
-      "bytes": 199500311,
-      "fileCount": 1099,
-      "path": "modules/qinhan"
-    },
-    {
-      "bytes": 199500311,
-      "fileCount": 1099,
-      "path": "modules/qinhan/assets"
-    },
-    {
-      "bytes": 180267458,
-      "fileCount": 1024,
-      "path": "modules/qinhan/assets/photos"
-    },
-    {
-      "bytes": 167914908,
-      "fileCount": 512,
-      "path": "modules/qinhan/assets/photos/web"
     },
     {
       "bytes": 156298500,
@@ -121,11 +101,6 @@
       "path": "modules/europa/assets/city/huaxia"
     },
     {
-      "bytes": 18647354,
-      "fileCount": 72,
-      "path": "modules/qinhan/assets/processed"
-    },
-    {
       "bytes": 17561832,
       "fileCount": 20,
       "path": "assets/editorial"
@@ -139,11 +114,6 @@
       "bytes": 15770040,
       "fileCount": 589,
       "path": "modules/proceedings/assets"
-    },
-    {
-      "bytes": 12352550,
-      "fileCount": 512,
-      "path": "modules/qinhan/assets/photos/thumb"
     },
     {
       "bytes": 10194233,
@@ -161,19 +131,9 @@
       "path": "modules/proceedings/assets/photos"
     },
     {
-      "bytes": 9773742,
-      "fileCount": 36,
-      "path": "modules/qinhan/assets/processed/full"
-    },
-    {
       "bytes": 9187566,
       "fileCount": 891,
       "path": "assets/photos/thumb"
-    },
-    {
-      "bytes": 8873612,
-      "fileCount": 36,
-      "path": "modules/qinhan/assets/processed/crop"
     },
     {
       "bytes": 8683186,
@@ -321,11 +281,6 @@
       "path": "modules/shaanxi-archaeology-museum/assets/backgrounds"
     },
     {
-      "bytes": 550773,
-      "fileCount": 2,
-      "path": "modules/qinhan/assets/external"
-    },
-    {
       "bytes": 468773,
       "fileCount": 20,
       "path": "modules/proceedings/assets/slides/bideng_minghui"
@@ -373,19 +328,19 @@
   ],
   "byExtension": [
     {
-      "bytes": 559621434,
+      "bytes": 378803203,
       "extension": ".jpg",
-      "fileCount": 4646
+      "fileCount": 3620
     },
     {
-      "bytes": 372020936,
+      "bytes": 353373582,
       "extension": ".webp",
-      "fileCount": 1678
+      "fileCount": 1606
     },
     {
-      "bytes": 51400568,
+      "bytes": 51365842,
       "extension": ".png",
-      "fileCount": 221
+      "fileCount": 220
     },
     {
       "bytes": 825,
@@ -398,11 +353,6 @@
       "bytes": 324326202,
       "fileCount": 2280,
       "module": "global"
-    },
-    {
-      "bytes": 199500311,
-      "fileCount": 1099,
-      "module": "qinhan"
     },
     {
       "bytes": 130144476,
@@ -456,21 +406,21 @@
   "embeddedDataUriCount": 120,
   "embeddedDataUriOver100KBBytesApprox": 139896,
   "embeddedDataUriOver100KBCount": 1,
-  "fileCount": 6548,
+  "fileCount": 5449,
   "largeBinaryThresholdBytes": 10485760,
   "largeEmbeddedUriThresholdBytes": 102400,
   "pipelineRoleCounts": {
-    "display": 6548,
+    "display": 5449,
     "original": 45,
-    "thumb": 6548
+    "thumb": 5449
   },
-  "referencedMediaCount": 4004,
+  "referencedMediaCount": 2905,
   "suspectedOrphanBytes": 392203338,
   "suspectedOrphanCount": 2544,
   "topDirectories": [
     {
-      "bytes": 658717561,
-      "fileCount": 4268,
+      "bytes": 459217250,
+      "fileCount": 3169,
       "path": "modules"
     },
     {
@@ -484,15 +434,15 @@
       "path": "assets/photos"
     },
     {
-      "bytes": 199500311,
-      "fileCount": 1099,
-      "path": "modules/qinhan"
+      "bytes": 156298500,
+      "fileCount": 445,
+      "path": "assets/photos/large"
     },
     {
-      "bytes": 199500311,
-      "fileCount": 1099,
-      "path": "modules/qinhan/assets"
+      "bytes": 130144476,
+      "fileCount": 207,
+      "path": "modules/xian-museum"
     }
   ],
-  "totalBytes": 983043763
+  "totalBytes": 783543452
 }

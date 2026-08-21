@@ -4,8 +4,8 @@
     "inventory": "data/media-inventory.json",
     "triage": "data/media-orphan-triage.json"
   },
-  "totalExternalizableFiles": 4532,
-  "totalExternalizableBytes": 662070230,
+  "totalExternalizableFiles": 3433,
+  "totalExternalizableBytes": 462569919,
   "byModule": {
     "baoji": {
       "files": 44,
@@ -31,10 +31,6 @@
       "files": 589,
       "bytes": 15770040
     },
-    "qinhan": {
-      "files": 1099,
-      "bytes": 199500311
-    },
     "shaanxi-archaeology-museum": {
       "files": 1061,
       "bytes": 103024634
@@ -50,20 +46,20 @@
   },
   "byReferenceType": {
     "css_url": {
-      "files": 25,
-      "bytes": 10746126
+      "files": 24,
+      "bytes": 10352339
     },
     "dynamic_runtime": {
       "files": 528,
       "bytes": 71229805
     },
     "html_href": {
-      "files": 10,
-      "bytes": 816986
+      "files": 9,
+      "bytes": 782260
     },
     "html_src": {
-      "files": 30,
-      "bytes": 12269836
+      "files": 26,
+      "bytes": 11693520
     },
     "html_srcset": {
       "files": 15,
@@ -74,8 +70,8 @@
       "bytes": 1492768
     },
     "js_literal": {
-      "files": 175,
-      "bytes": 92913824
+      "files": 171,
+      "bytes": 91957688
     },
     "js_template": {
       "files": 211,
@@ -86,12 +82,12 @@
       "bytes": 170108538
     },
     "manifest": {
-      "files": 3547,
-      "bytes": 474406961
+      "files": 2523,
+      "bytes": 294139503
     },
     "other": {
-      "files": 1999,
-      "bytes": 238240227
+      "files": 903,
+      "bytes": 39325415
     }
   },
   "byMigrationRisk": {
@@ -100,12 +96,12 @@
       "bytes": 71229805
     },
     "low": {
-      "files": 311,
-      "bytes": 148624343
+      "files": 308,
+      "bytes": 148038844
     },
     "medium": {
-      "files": 3693,
-      "bytes": 442216082
+      "files": 2597,
+      "bytes": 243301270
     }
   },
   "dynamicRuntimeFiles": 528,
@@ -116,8 +112,8 @@
   "unreferencedGeneratedBytes": 303807059,
   "unknownFiles": 4,
   "unknownBytes": 1460738,
-  "inventoryFileCount": 6548,
-  "inventoryTotalBytes": 983043763,
+  "inventoryFileCount": 5449,
+  "inventoryTotalBytes": 783543452,
   "shaanxiHistoryPilot": {
     "module": "shaanxi-history",
     "totalMedia": {

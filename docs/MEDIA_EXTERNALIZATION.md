@@ -9,9 +9,9 @@ repository-relative path, and no external host is configured.
 
 ## Current plan
 
-- Externalizable retained website media: **4,532 files / 662,070,230 bytes**
-- Low risk: **311 files / 148,624,343 bytes**
-- Medium risk: **3,693 files / 442,216,082 bytes**
+- Externalizable retained website media: **3,433 files / 462,569,919 bytes**
+- Low risk: **308 files / 148,038,844 bytes**
+- Medium risk: **2,597 files / 243,301,270 bytes**
 - High risk: **528 files / 71,229,805 bytes**
 - Dynamic-runtime media: **528 files / 71,229,805 bytes**
 - Source originals kept separate from the first migration batch: **10 files / 15,705,736 bytes**

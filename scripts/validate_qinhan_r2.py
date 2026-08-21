@@ -3,7 +3,9 @@
 
 This validator never uploads, deletes, rewrites, or decodes media.  It checks
 the frozen externalization plan, the unchanged local copies, the Qin-Han data
-resolver boundary, and the public Worker response state.
+resolver boundary, and the public Worker response state.  It is the
+pre-delete/runtime-stage validator; after local Qin-Han media is removed, use
+``scripts/validate_qinhan_externalized.py`` instead.
 """
 
 from __future__ import annotations
