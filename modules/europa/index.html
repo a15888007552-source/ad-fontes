@@ -374,7 +374,7 @@ a[data-m].is-related,.xlink[data-m].is-related{box-shadow:inset 0 -1px color-mix
 .poiicon{display:inline-grid;place-items:center;width:15px;height:15px;margin-right:5px;font:700 9px var(--sans);background:#C85D4B;color:#FFF8EF;border:1px solid rgba(40,25,15,.6);transform:rotate(45deg);vertical-align:1px}.poiicon span{transform:rotate(-45deg)}
 .poiicon.music{background:#E1A83E;color:#39230B;border-radius:50%}.poiicon.school{background:#55A8B7;color:#082D35;border-radius:50%}.poiicon.university{background:#A477C6;color:#21122D;border-radius:3px}.poiicon.home{background:#6EA875;color:#102C17;border-radius:3px}
 .poilist button,.poi-actions button{font:600 11px var(--sans);border:1px solid var(--line);background:transparent;color:var(--acc);padding:5px 8px;cursor:pointer;white-space:nowrap}.poilist button:hover,.poi-actions button:hover{background:var(--acc);color:var(--bg)}
-.poicard{margin-top:12px}.poicard .poikicker{font:600 10.5px var(--sans);letter-spacing:.12em;color:var(--mut)}.poicard h4{margin-top:4px}.poifig{margin:12px 0 10px;border:1px solid var(--line);background:var(--bg);padding:6px}.poifig img{display:block;width:100%;max-height:220px;object-fit:cover}.poifig figcaption{font:10.5px/1.5 var(--sans);color:var(--mut);margin-top:5px}.poitext{font:14px/1.85 var(--kai);margin:10px 0}.poisection{margin:13px 0 0}.poisection h5{margin:0 0 4px;font:700 10.5px var(--sans);letter-spacing:.12em;color:var(--acc2)}.poisection p{margin:0;font:14px/1.75 var(--kai)}.poimusic{border-left:3px solid var(--gold,#B98A2E);padding:8px 11px;background:var(--bg)}.poi-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.poi-actions a{font:600 11px var(--sans);border:1px solid var(--line);color:var(--acc);padding:5px 8px;text-decoration:none}.poi-actions a:hover{background:var(--acc);color:var(--bg)}
+.poicard{margin-top:12px}.poicard .poikicker{font:600 10.5px var(--sans);letter-spacing:.12em;color:var(--mut)}.poicard h4{margin-top:4px}.poifig{margin:12px 0 10px;border:1px solid var(--line);background:var(--bg);padding:6px}.poifig img{display:block;width:100%;max-height:220px;object-fit:cover}.poifig figcaption{font:10.5px/1.5 var(--sans);color:var(--mut);margin-top:5px}.poisource{font:11px/1.5 var(--sans);color:var(--mut);margin:7px 0 0;padding-left:9px;border-left:2px solid var(--acc2)}.poitext{font:14px/1.85 var(--kai);margin:10px 0}.poisection{margin:13px 0 0}.poisection h5{margin:0 0 4px;font:700 10.5px var(--sans);letter-spacing:.12em;color:var(--acc2)}.poisection p{margin:0;font:14px/1.75 var(--kai)}.poimusic{border-left:3px solid var(--gold,#B98A2E);padding:8px 11px;background:var(--bg)}.poi-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.poi-actions a{font:600 11px var(--sans);border:1px solid var(--line);color:var(--acc);padding:5px 8px;text-decoration:none}.poi-actions a:hover{background:var(--acc);color:var(--bg)}
 @media(max-width:920px){#terrainmap{height:540px}.mapmodehint{flex-basis:100%;margin-left:0}.realmap-tools{max-width:calc(100% - 22px)}}
 .viz-state{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:14px 0 0;padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--acc2);background:var(--panel);font-family:var(--sans)}
 .viz-state[hidden]{display:none}
@@ -4048,6 +4048,9 @@ const POI_WIKI={
   "布达佩斯|匈牙利国家歌剧院":"Hungarian State Opera House","华沙|华沙爱乐厅":"Warsaw Philharmonic",
   "赫尔辛基|西贝柳斯音乐学院":"Sibelius Academy","布尔诺|亚纳切克剧院":"Janáček Theatre"
 };
+const POI_FOREIGN={
+  "克罗顿|克罗顿国家考古博物馆":{it:"Museo archeologico nazionale di Crotone"}
+};
 const POI_MUSIC={
   "巴黎|加尼叶歌剧院":"这里是十九世纪巴黎大歌剧制度的建筑化身；德彪西、柏辽兹、肖邦等人的巴黎音乐生活，都必须放回剧院、沙龙与音乐院组成的城市网络中理解。",
   "巴黎|巴黎圣母院":"十二、十三世纪圣母院乐派在这里及其周边形成；莱奥南与佩罗坦把礼仪歌唱扩展为可书写的大型复调。",
@@ -4320,7 +4323,7 @@ function poiRecord(city,a,i,source){
   const asset=POI_ASSETS[key]||POI_ASSETS[`${city}|${poiCleanName(name)}`]||null;
   const known=key==="伦敦|皇家阿尔伯特音乐厅"?[-0.177436,51.500944]:null;
   const loc=known||POI_LOCATION_OVERRIDES[key]||POI_LOCATION_OVERRIDES[`${city}|${poiCleanName(name)}`]||POI_LOCATIONS[key]||POI_LOCATIONS[`${city}|${poiCleanName(name)}`]||null;
-  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}`:"",credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||loc||null,source:source||"city",lat:a.lat,lon:a.lon}
+  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",foreignWiki:POI_FOREIGN[key]||POI_FOREIGN[`${city}|${poiCleanName(name)}`]||null,localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}`:"",credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||loc||null,source:source||"city",lat:a.lat,lon:a.lon}
 }
 function cityPOISeeds(city){
   const info=CITYINFO[city]||{},src=info.imgs||(info.img?[info]:[]),arr=[],seen=new Set();
@@ -4338,20 +4341,68 @@ function allPOIs(){
 function cityPOIs(c){return allPOIs().filter(p=>p.city===c&&p.source==="city")}
 function specialPOIs(c){return allPOIs().filter(p=>p.city===c&&p.source==="special")}
 function wikiSearchURL(p){return `https://zh.wikipedia.org/w/index.php?search=${encodeURIComponent(p.name||p.wiki)}`}
-function wikiAPIURLLang(p,title,lang){const q=new URLSearchParams({action:"query",origin:"*",format:"json",redirects:"1",prop:"coordinates|pageimages|extracts|info",inprop:"url",exintro:"1",explaintext:"1",pithumbsize:"800",titles:title||p.wiki});return `https://${lang}.wikipedia.org/w/api.php?${q}`}
+const WIKI_LANG_LABEL={en:"英文",fr:"法文",de:"德文",it:"意大利文",es:"西班牙文",ru:"俄文",el:"希腊文",pl:"波兰文",cs:"捷克文",hu:"匈牙利文",fi:"芬兰文",sv:"瑞典文",no:"挪威文",et:"爱沙尼亚文"};
+const WIKI_CITY_LANG={巴黎:"fr",伦敦:"en",维也纳:"de",罗马:"it",柏林:"de",莱比锡:"de",萨尔茨堡:"de",米兰:"it",克罗顿:"it",阿雷佐:"it",布拉格:"cs",布达佩斯:"hu",赫尔辛基:"fi",华沙:"pl",克拉科夫:"pl",马德里:"es",雅典:"el",佛罗伦萨:"it",那不勒斯:"it",威尼斯:"it",博洛尼亚:"it",费拉拉:"it",帕尔马:"it",热那亚:"it",佩萨罗:"it",卡塔尼亚:"it",贝尔加莫:"it",卢卡:"it",曼托瓦:"it",米蒂利尼:"el",图卢兹:"fr",利摩日:"fr",翁弗勒尔:"fr",康布雷:"fr",兰斯:"fr",列日:"fr",蒙斯:"fr",贝济耶:"fr",孔代:"fr",宾根:"de",慕尼黑:"de",德累斯顿:"de",汉堡:"de",波恩:"de",魏玛:"de",拜罗伊特:"de",纽伦堡:"de",曼海姆:"de",苏黎世:"de",伍斯特:"en",卑尔根:"no",塔林:"et",阿维拉:"es"};
+const wikiFetchCache=new Map(),wikiTranslationCache=new Map();
+function wikiAPIURLLang(p,title,lang){const prop=lang==="zh"?"coordinates|pageimages|extracts|info":"coordinates|pageimages|extracts|info|langlinks",q=new URLSearchParams({action:"query",origin:"*",format:"json",redirects:"1",prop,inprop:"url",exintro:"1",explaintext:"1",pithumbsize:"800",titles:title||p.wiki});if(lang!=="zh"){q.set("lllang","zh");q.set("lllimit","1")}return `https://${lang}.wikipedia.org/w/api.php?${q}`}
 function wikiAPIURL(p,title){return wikiAPIURLLang(p,title,"zh")}
-function wikiSearchAPIURL(p){const q=new URLSearchParams({action:"query",origin:"*",format:"json",list:"search",srnamespace:"0",srlimit:"3",srsearch:`${p.city} ${p.name}`});return `https://zh.wikipedia.org/w/api.php?${q}`}
+function wikiSearchAPIURLLang(p,lang,query){const q=new URLSearchParams({action:"query",origin:"*",format:"json",list:"search",srnamespace:"0",srlimit:"3",srsearch:query||p.wiki||p.name});return `https://${lang}.wikipedia.org/w/api.php?${q}`}
+function wikiSearchAPIURL(p){return wikiSearchAPIURLLang(p,"zh",`${p.city} ${p.name}`)}
+function wikiPageFromJSON(j,lang){const pages=j&&j.query&&j.query.pages?Object.values(j.query.pages):[],page=pages.find(x=>x&&!x.missing);if(!page)return null;return{title:page.title,fullurl:page.fullurl||page.canonicalurl||"",extract:String(page.extract||"").trim(),thumbnail:page.thumbnail,originalimage:page.originalimage,coordinates:page.coordinates&&page.coordinates[0],lang,langlinks:Array.isArray(page.langlinks)?page.langlinks:[]}}
+function wikiHasExtract(data){return !!String(data&&data.extract||"").trim()}
+async function wikiJSON(url){if(wikiFetchCache.has(url))return wikiFetchCache.get(url);try{const r=await fetch(url);if(!r.ok)return null;const j=await r.json();wikiFetchCache.set(url,j);return j}catch(_){return null}}
+async function wikiPageLang(p,title,lang){if(!title)return null;return wikiPageFromJSON(await wikiJSON(wikiAPIURLLang(p,title,lang)),lang)}
+function wikiSearchHitRelevant(p,lang,hit){const title=String(hit&&hit.title||""),snippet=String(hit&&hit.snippet||"");if(lang==="zh"){const terms=[p.name,poiCleanName(p.name),p.wiki].filter(x=>x&&/[\u3400-\u9fff]/.test(x));return terms.some(term=>title.includes(term))}const terms=String(p.wiki||p.name||"").toLowerCase().split(/[^a-zà-ÿ0-9]+/i).filter(x=>x.length>2&&!/^(the|and|of|for|house|hall|museum|church|national|royal|academy|university)$/.test(x));return !terms.length||terms.some(term=>title.toLowerCase().includes(term)||snippet.toLowerCase().includes(term))}
+async function wikiSearchPageLang(p,lang,query){const j=await wikiJSON(wikiSearchAPIURLLang(p,lang,query)),hits=j&&j.query&&j.query.search||[];for(const hit of hits){if(!wikiSearchHitRelevant(p,lang,hit))continue;const page=await wikiPageLang(p,hit.title,lang);if(page)return page}return null}
+function wikiForeignLanguages(p){const local=WIKI_CITY_LANG[p.city],preferred=p.wikiLang&&p.wikiLang!=="zh"?p.wikiLang:"",base=[preferred,local,"en","fr","de","it","es","ru","pl"];return [...new Set(base.filter(Boolean))]}
+function wikiForeignTitles(p,lang){const explicit=p.foreignWiki&&p.foreignWiki[lang],titles=[explicit,p.wiki,p.name].filter(t=>t&&!/[\u3400-\u9fff]/.test(t));return [...new Set(titles)]}
+async function wikiForeignPage(p,lang){const titles=wikiForeignTitles(p,lang),explicit=p.foreignWiki&&p.foreignWiki[lang];let candidate=null;for(const title of titles){const page=await wikiPageLang(p,title,lang);if(page){if(wikiHasExtract(page))return page;candidate=candidate||page}}const query=explicit||(lang==="en"?titles[0]:"");if(!query)return candidate;const searchPage=await wikiSearchPageLang(p,lang,query);if(searchPage&&wikiHasExtract(searchPage))return searchPage;return candidate||searchPage}
+async function wikiLinkedChinesePage(p,page){const link=(page&&page.langlinks||[]).find(x=>x&&x.lang==="zh"&&x.title);return link?wikiPageLang(p,link.title,"zh"):null}
+function wikiTextChunks(text){let rest=String(text||"").replace(/\r/g,"").trim(),out=[];while(rest.length>1600){let cut=rest.lastIndexOf(" ",1600);if(cut<900)cut=1600;out.push(rest.slice(0,cut).trim());rest=rest.slice(cut).trim()}if(rest)out.push(rest);return out}
+async function translateWikiExtract(text,lang){const chunks=wikiTextChunks(text);if(!chunks.length)return"";const out=[];for(const chunk of chunks){const key=`${lang}|${chunk}`;let translated=wikiTranslationCache.get(key)||"";if(!translated){try{const sk=`annales-wiki-zh-${encodeURIComponent(key).slice(0,180)}`,saved=sessionStorage.getItem(sk);if(saved)translated=saved}catch(_){} }if(!translated){try{const q=new URLSearchParams({client:"gtx",sl:lang||"auto",tl:"zh-CN",dt:"t",q:chunk}),r=await fetch(`https://translate.googleapis.com/translate_a/single?${q}`);if(r.ok){const j=await r.json();translated=Array.isArray(j)&&Array.isArray(j[0])?j[0].map(x=>Array.isArray(x)?x[0]:"").join("").trim():"";if(translated){wikiTranslationCache.set(key,translated);try{sessionStorage.setItem(`annales-wiki-zh-${encodeURIComponent(key).slice(0,180)}`,translated)}catch(_){} }}}catch(_){} }if(!translated)return"";out.push(translated)}return out.join("\n")}
+function mergeWikiData(primary,secondary){if(!primary)return secondary;if(!secondary)return primary;const out={...secondary,...primary};["fullurl","thumbnail","originalimage","coordinates","langlinks"].forEach(k=>{if(!out[k]&&secondary[k])out[k]=secondary[k]});return out}
 function resolvePOI(p){
   if(p._promise)return p._promise;
   p._promise=(async()=>{
-    let data=null;
+    const curated=POI_HISTORY[`${p.city}|${p.name}`]||POI_HISTORY[`${p.city}|${poiCleanName(p.name)}`]||"";
+    let data=null,historyLang="zh",translatedFrom=null;
     const titles=[p.name,p.wiki].filter((title,i,a)=>title&&a.indexOf(title)===i);
-    for(const title of titles){try{const r=await fetch(wikiAPIURL(p,title));if(!r.ok)continue;const j=await r.json(),pages=j.query&&j.query.pages?Object.values(j.query.pages):[],page=pages[0];if(page&&!page.missing){data={title:page.title,fullurl:page.fullurl,extract:page.extract,thumbnail:page.thumbnail,originalimage:page.originalimage,coordinates:page.coordinates&&page.coordinates[0]};break}}catch(_) {}}
-    if(!data){try{const r=await fetch(wikiSearchAPIURL(p));if(r.ok){const j=await r.json(),hit=j.query&&j.query.search&&j.query.search[0];if(hit){const q=await fetch(wikiAPIURL(p,hit.title));if(q.ok){const x=await q.json(),pages=x.query&&x.query.pages?Object.values(x.query.pages):[],page=pages[0];if(page&&!page.missing)data={title:page.title,fullurl:page.fullurl,extract:page.extract,thumbnail:page.thumbnail,originalimage:page.originalimage,coordinates:page.coordinates&&page.coordinates[0]}}}}}catch(_) {}}
-    if(!data||!(data.coordinates&&Number.isFinite(data.coordinates.lon)&&Number.isFinite(data.coordinates.lat))){try{const r=await fetch(wikiAPIURLLang(p,p.wiki||p.name,"en"));if(r.ok){const j=await r.json(),pages=j.query&&j.query.pages?Object.values(j.query.pages):[],page=pages[0];if(page&&!page.missing&&page.coordinates&&page.coordinates[0]){if(!data)data={};data.coordinates=page.coordinates[0]}}}catch(_) {}}
-    p.dataLang="zh";p.wikiUrl=data?.fullurl||wikiSearchURL(p);
+    for(const title of titles){const page=await wikiPageLang(p,title,"zh");if(page){data=page;if(wikiHasExtract(page))break}}
+    if(!wikiHasExtract(data)){const searchPage=await wikiSearchPageLang(p,"zh",`${p.city} ${p.name}`);if(searchPage){data=searchPage;if(wikiHasExtract(searchPage)){} }}
+    if(!wikiHasExtract(data)){const linked=await wikiLinkedChinesePage(p,data);if(linked&&wikiHasExtract(linked))data=mergeWikiData(linked,data)}
+    if(!wikiHasExtract(data)){
+      let foreign=null;
+      for(const lang of wikiForeignLanguages(p)){
+        const page=await wikiForeignPage(p,lang);
+        if(page){foreign={data:page,lang};if(wikiHasExtract(page))break}
+      }
+      if(foreign){
+        const linked=await wikiLinkedChinesePage(p,foreign.data);
+        if(linked&&wikiHasExtract(linked)){
+          data=mergeWikiData(linked,foreign.data);
+          historyLang="zh"
+        }else{
+          const zh=await translateWikiExtract(foreign.data.extract,foreign.lang);
+          if(zh){
+            data={...foreign.data,extract:zh};
+            historyLang=foreign.lang;
+            translatedFrom=foreign.data
+          }else{
+            data={...foreign.data,extract:""};
+            historyLang=foreign.lang;
+            translatedFrom=foreign.data
+          }
+        }
+      }
+    }
+    p.dataLang=historyLang;p.wikiUrl=data?.fullurl||wikiSearchURL(p);p.wikiLinkLabel=historyLang==="zh"?"打开中文 Wikipedia 来源页":`打开${WIKI_LANG_LABEL[historyLang]||"外文"} Wikipedia 原文页`;
     if(data){p.wikiTitle=data.title||p.wiki;p.history=data.extract||"";p.imageUrl=data.originalimage?.source||data.thumbnail?.source||"";if(data.coordinates&&Number.isFinite(data.coordinates.lon)&&Number.isFinite(data.coordinates.lat)){p.lon=data.coordinates.lon;p.lat=data.coordinates.lat;p.coordSource="Wikipedia"}}
-    if(!p.history)p.history=POI_HISTORY[`${p.city}|${p.name}`]||POI_HISTORY[`${p.city}|${poiCleanName(p.name)}`]||"暂未找到对应的中文 Wikipedia 摘要；如果有人工复核的候选坐标，地图仍会保留该点。";
+    if(!p.history&&curated){p.history=curated;p.historySourceLabel="年鉴编辑补充摘要"}
+    else if(p.history&&translatedFrom)p.historySourceLabel=`译自${WIKI_LANG_LABEL[historyLang]||"外文"} Wikipedia 摘要`;
+    else if(p.history&&historyLang==="zh")p.historySourceLabel="中文 Wikipedia 摘要";
+    if(!p.history&&translatedFrom){p.history=`已找到${WIKI_LANG_LABEL[historyLang]||"外文"} Wikipedia 条目，但自动中文译文暂时未返回；可以打开来源页查看原文。`;p.historySourceLabel=`已找到${WIKI_LANG_LABEL[historyLang]||"外文"} Wikipedia 条目`}
+    if(!p.history)p.history="尚未找到可提取的 Wikipedia 导言摘要；地图仍保留已复核的位置。";
+    if(!p.historySourceLabel)p.historySourceLabel="Wikipedia 条目摘要";
     if(!(Number.isFinite(p.lon)&&Number.isFinite(p.lat))&&p.fallback){p.lon=p.fallback[0];p.lat=p.fallback[1];p.coordSource="人工复核候选点";p.approx=true}
     p.resolved=true;return p
   })();return p._promise
@@ -4361,9 +4412,9 @@ function ensureCityPOIs(c){
   poiCityPromises[c]=Promise.all(cityPOIs(c).concat(specialPOIs(c)).map(resolvePOI)).then(ps=>{if(realMap)requestRealMapOverlayRefresh();return ps});return poiCityPromises[c]
 }
 function poiCard(p){
-  const img=p.localImage||p.remoteImage||p.imageUrl,coord=Number.isFinite(p.lon)&&Number.isFinite(p.lat)?`${p.lat.toFixed(4)}°N · ${p.lon.toFixed(4)}°E`:(p.resolved?"未取得可核验坐标":"正在读取坐标"),history=p.history||"正在读取中文 Wikipedia 摘要……";
+  const img=p.localImage||p.remoteImage||p.imageUrl,coord=Number.isFinite(p.lon)&&Number.isFinite(p.lat)?`${p.lat.toFixed(4)}°N · ${p.lon.toFixed(4)}°E`:(p.resolved?"未取得可核验坐标":"正在读取坐标"),history=p.history||"正在读取 Wikipedia 摘要并翻译成中文……",source=p.historySourceLabel?`<div class="poisource">${htmlEsc(p.historySourceLabel)}</div>`:"",wikiLinkLabel=p.wikiLinkLabel||"打开 Wikipedia 来源页";
   const music=p.music||((/音乐|歌剧|剧院|音乐厅|学院|大学|故居|纪念/.test(p.kind||"")&&p.context)?`它所在的${p.city}音乐史语境：${p.context}`:"");
-  return `<article class="poicard"><div class="poikicker"><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.city)} · ${htmlEsc(poiKindLabel(p))}</div><h4>${htmlEsc(p.name)}</h4><div style="font:11px var(--sans);letter-spacing:.08em;color:var(--mut)">${coord}${p.approx?" · 候选定位，待来源页核对":""}</div>${img?`<figure class="poifig"><img loading="lazy" src="${htmlEsc(img)}" alt="${htmlEsc(p.name)}"><figcaption>${htmlEsc(p.credit||"Wikipedia / Wikimedia Commons")}</figcaption></figure>`:`<div class="poifig" style="font:12px var(--sans);color:var(--mut);padding:18px">图片正在从 Wikipedia 读取……</div>`}<div class="poisection"><h5>建筑 / 地点史</h5><p class="poitext">${htmlEsc(history)}</p></div>${music?`<div class="poisection"><h5>与音乐 / 音乐家的关联</h5><p class="poitext poimusic">${htmlEsc(music)}</p></div>`:""}<div class="poi-actions"><button type="button" id="poi-city-back">返回${htmlEsc(p.city)}城市卡</button>${p.wikiUrl?`<a href="${htmlEsc(p.wikiUrl)}" target="_blank" rel="noopener">打开中文 Wikipedia 来源页 ↗</a>`:""}</div></article>`
+  return `<article class="poicard"><div class="poikicker"><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.city)} · ${htmlEsc(poiKindLabel(p))}</div><h4>${htmlEsc(p.name)}</h4><div style="font:11px var(--sans);letter-spacing:.08em;color:var(--mut)">${coord}${p.approx?" · 候选定位，待来源页核对":""}</div>${img?`<figure class="poifig"><img loading="lazy" src="${htmlEsc(img)}" alt="${htmlEsc(p.name)}"><figcaption>${htmlEsc(p.credit||"Wikipedia / Wikimedia Commons")}</figcaption></figure>`:`<div class="poifig" style="font:12px var(--sans);color:var(--mut);padding:18px">图片正在从 Wikipedia 读取……</div>`}<div class="poisection"><h5>建筑 / 地点史</h5>${source}<p class="poitext">${htmlEsc(history)}</p></div>${music?`<div class="poisection"><h5>与音乐 / 音乐家的关联</h5><p class="poitext poimusic">${htmlEsc(music)}</p></div>`:""}<div class="poi-actions"><button type="button" id="poi-city-back">返回${htmlEsc(p.city)}城市卡</button>${p.wikiUrl?`<a href="${htmlEsc(p.wikiUrl)}" target="_blank" rel="noopener">${htmlEsc(wikiLinkLabel)} ↗</a>`:""}</div></article>`
 }
 function poiPanel(p){
   const panel=$("#mappanel");if(!panel)return;panel.innerHTML=poiCard(p);const back=$("#poi-city-back");if(back)back.onclick=()=>cityPanel(p.city);
