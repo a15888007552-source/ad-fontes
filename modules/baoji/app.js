@@ -201,20 +201,24 @@
       .split(String.fromCharCode(13)).join(' ')
       .split('  ').join(' ')
       .trim();
+    const stripLeadPunctuation = (value) => String(value || '')
+      .replace(/^[\s:：，,、；;。．·—–-]+/, '')
+      .trim();
     const stripTitle = (value) => {
       let text = clean(value);
       const prefixes = [clean(group.title), '此鼎：', '此器：', '本件：', '此物：'].filter(Boolean);
       prefixes.some((prefix) => {
         if (!text.startsWith(prefix)) return false;
-        text = text.slice(prefix.length).trim();
+        text = stripLeadPunctuation(text.slice(prefix.length));
+        if (prefix === clean(group.title) && text.startsWith('的')) text = text.slice(1).trim();
         return true;
       });
       ['历史信息：', '历史关联：', '形制与工艺：', '形制：', '工艺：', '观看重点：', '资料价值：'].some((prefix) => {
         if (!text.startsWith(prefix)) return false;
-        text = text.slice(prefix.length).trim();
+        text = stripLeadPunctuation(text.slice(prefix.length));
         return true;
       });
-      return text;
+      return stripLeadPunctuation(text);
     };
     const isTemplate = (value, needles) => {
       const text = clean(value);

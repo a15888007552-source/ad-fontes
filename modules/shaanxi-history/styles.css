@@ -617,6 +617,7 @@ body {
     align-self:center;
   }
 }
+
 /* 20260821 · compact essay spacing for ordinary object records. */
 .dialog-essay.compact-essay {
   display:grid;
@@ -751,5 +752,73 @@ body {
   .special-card {
     min-height:0;
     grid-template-rows:220px auto;
+  }
+}
+
+/* 20260821 · final width and title pass for the 文明以止 band. */
+.special.page-width {
+  width:var(--page);
+  max-width:none;
+}
+
+.special-copy {
+  min-width:0;
+  grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+  gap:clamp(28px,5vw,76px);
+}
+
+.special-copy > div {
+  min-width:0;
+}
+
+.special-copy h2 {
+  max-width:none;
+  font-size:clamp(30px,3.2vw,52px);
+  line-height:1.12;
+  letter-spacing:-.045em;
+  white-space:nowrap;
+}
+
+.special-copy > div:last-child > p {
+  max-width:42em;
+}
+
+.special-preview {
+  width:100%;
+  align-items:stretch;
+}
+
+.special-card {
+  min-height:286px;
+}
+
+@media (max-width:1080px) {
+  .special-copy {
+    grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+    gap:28px;
+  }
+
+  .special-copy h2 {
+    font-size:clamp(28px,3.8vw,44px);
+  }
+}
+
+@media (max-width:760px) {
+  .special.page-width {
+    width:calc(100% - 32px);
+  }
+
+  .special-copy {
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .special-copy h2 {
+    font-size:clamp(30px,9vw,46px);
+    white-space:normal;
+  }
+
+  .special-card {
+    min-height:0;
   }
 }

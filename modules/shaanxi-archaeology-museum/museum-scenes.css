@@ -305,3 +305,65 @@ body {
       url("assets/generated/archaeology-atmosphere-v2-960.webp");
   }
 }
+
+/* 20260821 · catalogue titles must remain readable on the ink-green field. */
+#artifact-catalog-root {
+  color:#f4f1e6;
+}
+
+#artifact-catalog-root .artifact-catalog-intro h2,
+#artifact-catalog-root .artifact-catalog-intro > p,
+#artifact-catalog-root .artifact-catalog-toolbar,
+#artifact-catalog-root .artifact-catalog-toolbar label > span,
+#artifact-catalog-root .artifact-catalog-toolbar p {
+  color:#edf4eb;
+}
+
+#artifact-catalog-root .artifact-catalog-toolbar input,
+#artifact-catalog-root .artifact-catalog-toolbar select {
+  color:#fff8e8;
+  background:rgba(8,31,24,.9);
+  border-color:rgba(237,246,237,.38);
+}
+
+#artifact-catalog-root .artifact-catalog-toolbar input::placeholder {
+  color:rgba(232,241,232,.78);
+}
+
+#artifact-catalog-root .artifact-catalog-card {
+  color:#f4f1e6;
+  background:rgba(7,29,22,.95);
+  border-color:rgba(237,246,237,.3);
+}
+
+#artifact-catalog-root .artifact-catalog-card:hover,
+#artifact-catalog-root .artifact-catalog-card:focus-visible {
+  background:rgba(12,50,37,.98);
+  border-color:#e1bd73;
+}
+
+#artifact-catalog-root .artifact-card-copy {
+  background:linear-gradient(110deg,rgba(7,29,22,.98),rgba(13,51,39,.94));
+}
+
+#artifact-catalog-root .artifact-card-kicker,
+#artifact-catalog-root .artifact-card-kicker span:first-child,
+#artifact-catalog-root .artifact-card-period,
+#artifact-catalog-root .artifact-card-summary,
+#artifact-catalog-root .artifact-card-footer {
+  color:#dce9df;
+}
+
+#artifact-catalog-root .artifact-card-kicker span:last-child,
+#artifact-catalog-root .artifact-card-footer span:last-child {
+  color:#f0c772;
+}
+
+#artifact-catalog-root .artifact-catalog-card h3 {
+  color:#fff8e8;
+  text-shadow:0 1px 10px rgba(0,0,0,.24);
+}
+
+#artifact-catalog-root .artifact-card-footer {
+  border-color:rgba(237,246,237,.25);
+}
