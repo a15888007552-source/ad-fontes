@@ -374,7 +374,7 @@ a[data-m].is-related,.xlink[data-m].is-related{box-shadow:inset 0 -1px color-mix
 .poiicon{display:inline-grid;place-items:center;width:15px;height:15px;margin-right:5px;font:700 9px var(--sans);background:#C85D4B;color:#FFF8EF;border:1px solid rgba(40,25,15,.6);transform:rotate(45deg);vertical-align:1px}.poiicon span{transform:rotate(-45deg)}
 .poiicon.music{background:#E1A83E;color:#39230B;border-radius:50%}.poiicon.school{background:#55A8B7;color:#082D35;border-radius:50%}.poiicon.university{background:#A477C6;color:#21122D;border-radius:3px}.poiicon.home{background:#6EA875;color:#102C17;border-radius:3px}
 .poilist button,.poi-actions button{font:600 11px var(--sans);border:1px solid var(--line);background:transparent;color:var(--acc);padding:5px 8px;cursor:pointer;white-space:nowrap}.poilist button:hover,.poi-actions button:hover{background:var(--acc);color:var(--bg)}
-.poicard{margin-top:12px}.poicard .poikicker{font:600 10.5px var(--sans);letter-spacing:.12em;color:var(--mut)}.poicard h4{margin-top:4px}.poifig{margin:12px 0 10px;border:1px solid var(--line);background:var(--bg);padding:6px}.poifig img{display:block;width:100%;max-height:220px;object-fit:cover}.poifig figcaption{font:10.5px/1.5 var(--sans);color:var(--mut);margin-top:5px}.poisource{font:11px/1.5 var(--sans);color:var(--mut);margin:7px 0 0;padding-left:9px;border-left:2px solid var(--acc2)}.poitext{font:14px/1.85 var(--kai);margin:10px 0}.poisection{margin:13px 0 0}.poisection h5{margin:0 0 4px;font:700 10.5px var(--sans);letter-spacing:.12em;color:var(--acc2)}.poisection p{margin:0;font:14px/1.75 var(--kai)}.poimusic{border-left:3px solid var(--gold,#B98A2E);padding:8px 11px;background:var(--bg)}.poi-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.poi-actions a{font:600 11px var(--sans);border:1px solid var(--line);color:var(--acc);padding:5px 8px;text-decoration:none}.poi-actions a:hover{background:var(--acc);color:var(--bg)}
+.poicard{margin-top:12px}.poicard .poikicker{font:600 10.5px var(--sans);letter-spacing:.12em;color:var(--mut)}.poicard h4{margin-top:4px}.poifig{margin:12px 0 10px;border:1px solid var(--line);background:var(--bg);padding:6px}.poifig img{display:block;width:100%;max-height:220px;object-fit:cover}.poifig figcaption{font:10.5px/1.5 var(--sans);color:var(--mut);margin-top:5px}.poiimagine{font:700 11px/1.5 var(--sans);color:#9a3f2f;margin:-4px 0 9px;padding-left:9px;border-left:2px solid #9a3f2f}.poisource{font:11px/1.5 var(--sans);color:var(--mut);margin:7px 0 0;padding-left:9px;border-left:2px solid var(--acc2)}.poitext{font:14px/1.85 var(--kai);margin:10px 0}.poisection{margin:13px 0 0}.poisection h5{margin:0 0 4px;font:700 10.5px var(--sans);letter-spacing:.12em;color:var(--acc2)}.poisection p{margin:0;font:14px/1.75 var(--kai)}.poimusic{border-left:3px solid var(--gold,#B98A2E);padding:8px 11px;background:var(--bg)}.poi-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.poi-actions a{font:600 11px var(--sans);border:1px solid var(--line);color:var(--acc);padding:5px 8px;text-decoration:none}.poi-actions a:hover{background:var(--acc);color:var(--bg)}
 @media(max-width:920px){#terrainmap{height:540px}.mapmodehint{flex-basis:100%;margin-left:0}.realmap-tools{max-width:calc(100% - 22px)}}
 .viz-state{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:14px 0 0;padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--acc2);background:var(--panel);font-family:var(--sans)}
 .viz-state[hidden]{display:none}
@@ -2157,12 +2157,9 @@ CITYINFO["帕多瓦"]={
    城市画廊已有的三张图作为第一层代表建筑；每个地点再以中文 Wikipedia 补充摘要、坐标和图片。
    没有可靠坐标时不把城市中心估值冒充建筑精确点；专题地点的人工候选坐标会明确标注。 */
 /* 扩展点图片走独立静态素材仓库；Wikipedia API 仍只负责补充中文摘要与坐标。 */
-const POI_IMAGE_NEEDS_USER={
-  "雅典|希罗德·阿提库斯剧场": "图片带明显 AI photo 标记，不能作为已核验实景图公开上线；请提供无标记原图。",
-  "宾根|希尔德加德受神启像(《认识主道》抄本)": "图片带 Getty Images 水印，不能直接公开发布；请提供无水印且有授权的版本。"
-};
+const POI_IMAGE_NEEDS_USER={};
 const POI_ASSET_BASE="https://a15888007552-source.github.io/ad-fontes-europa-assets/";
-const POI_ASSET_VERSION="20260821-user-attachments-22";
+const POI_ASSET_VERSION="20260821-user-attachments-24-ai-label";
 const POI_ASSETS={
   "巴黎|巴黎国立高等音乐舞蹈学院": {
     "file": "images/poi/poi-000-4e597818af.jpg",
@@ -3989,6 +3986,12 @@ const POI_ASSETS={
     "credit": "用户提供实景图（顺序 17）",
     "source": "用户提供附件；原始来源/许可待补"
   },
+  "雅典|希罗德·阿提库斯剧场": {
+    "file": "images/poi/user/poi-user-202.png",
+    "credit": "用户提供实景图（顺序 18）",
+    "source": "用户提供附件；原始来源/许可待补",
+    "label": "AI创作"
+  },
   "雅典|雅典音乐厅": {
     "file": "images/poi/user/poi-user-203.png",
     "credit": "用户提供实景图（顺序 19）",
@@ -4003,6 +4006,12 @@ const POI_ASSETS={
     "file": "images/poi/user/poi-user-212.png",
     "credit": "用户提供实景图（顺序 21）",
     "source": "用户提供附件；原始来源/许可待补"
+  },
+  "宾根|希尔德加德受神启像(《认识主道》抄本)": {
+    "file": "images/poi/user/poi-user-213.png",
+    "credit": "用户提供实景图（顺序 22）",
+    "source": "用户提供附件；原始来源/许可待补",
+    "label": "AI创作"
   },
   "佛罗伦萨|佩尔戈拉剧院": {
     "file": "images/poi/user/poi-user-221.png",
@@ -4319,7 +4328,7 @@ function poiRecord(city,a,i,source){
   const imageNeedsUser=POI_IMAGE_NEEDS_USER[key]||POI_IMAGE_NEEDS_USER[`${city}|${poiCleanName(name)}`]||"";
   const known=key==="伦敦|皇家阿尔伯特音乐厅"?[-0.177436,51.500944]:null;
   const loc=known||POI_LOCATION_OVERRIDES[key]||POI_LOCATION_OVERRIDES[`${city}|${poiCleanName(name)}`]||POI_LOCATIONS[key]||POI_LOCATIONS[`${city}|${poiCleanName(name)}`]||null;
-  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",foreignWiki:POI_FOREIGN[key]||POI_FOREIGN[`${city}|${poiCleanName(name)}`]||null,localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}?v=${POI_ASSET_VERSION}`:"",imageNeedsUser,credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||loc||null,source:source||"city",lat:a.lat,lon:a.lon}
+  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",foreignWiki:POI_FOREIGN[key]||POI_FOREIGN[`${city}|${poiCleanName(name)}`]||null,localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}?v=${POI_ASSET_VERSION}`:"",imageNeedsUser,credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",imageLabel:asset?.label||"",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||loc||null,source:source||"city",lat:a.lat,lon:a.lon}
 }
 function cityPOISeeds(city){
   const info=CITYINFO[city]||{},src=info.imgs||(info.img?[info]:[]),arr=[],seen=new Set();
@@ -4410,8 +4419,8 @@ function ensureCityPOIs(c){
 function poiCard(p){
   const imageBlocked=!!p.imageNeedsUser,img=imageBlocked?"":(p.localImage||p.remoteImage||p.imageUrl),coord=Number.isFinite(p.lon)&&Number.isFinite(p.lat)?`${p.lat.toFixed(4)}°N · ${p.lon.toFixed(4)}°E`:(p.resolved?"未取得可核验坐标":"正在读取坐标"),history=p.history||"正在读取 Wikipedia 摘要并翻译成中文……",source=p.historySourceLabel?`<div class="poisource">${htmlEsc(p.historySourceLabel)}</div>`:"",wikiLinkLabel=p.wikiLinkLabel||"打开 Wikipedia 来源页";
   const music=p.music||((/音乐|歌剧|剧院|音乐厅|学院|大学|故居|纪念/.test(p.kind||"")&&p.context)?`它所在的${p.city}音乐史语境：${p.context}`:"");
-  const imageMarkup=imageBlocked?`<div class="poifig" style="font:12px var(--sans);color:var(--mut);padding:18px">暂无可靠的真实地点实景图。${htmlEsc(p.imageNeedsUser)}</div>`:img?`<figure class="poifig"><img loading="lazy" src="${htmlEsc(img)}" alt="${htmlEsc(p.name)}"><figcaption>${htmlEsc(p.credit||"Wikimedia Commons")}</figcaption></figure>`:`<div class="poifig" style="font:12px var(--sans);color:var(--mut);padding:18px">图片正在从 Wikimedia 缓存读取……</div>`;
-  return `<article class="poicard"><div class="poikicker"><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.city)} · ${htmlEsc(poiKindLabel(p))}</div><h4>${htmlEsc(p.name)}</h4><div style="font:11px var(--sans);letter-spacing:.08em;color:var(--mut)">${coord}${p.approx?" · 候选定位，待来源页核对":""}</div>${imageMarkup}<div class="poisection"><h5>建筑 / 地点史</h5>${source}<p class="poitext">${htmlEsc(history)}</p></div>${music?`<div class="poisection"><h5>与音乐 / 音乐家的关联</h5><p class="poitext poimusic">${htmlEsc(music)}</p></div>`:""}<div class="poi-actions"><button type="button" id="poi-city-back">返回${htmlEsc(p.city)}城市卡</button>${p.wikiUrl?`<a href="${htmlEsc(p.wikiUrl)}" target="_blank" rel="noopener">${htmlEsc(wikiLinkLabel)} ↗</a>`:""}</div></article>`
+  const imageLabel=p.imageLabel?`<div class="poiimagine">${htmlEsc(p.imageLabel)}</div>`:"";
+  return `<article class="poicard"><div class="poikicker"><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.city)} · ${htmlEsc(poiKindLabel(p))}</div><h4>${htmlEsc(p.name)}</h4><div style="font:11px var(--sans);letter-spacing:.08em;color:var(--mut)">${coord}${p.approx?" · 候选定位，待来源页核对":""}</div>${imageMarkup}${imageLabel}<div class="poisection"><h5>建筑 / 地点史</h5>${source}<p class="poitext">${htmlEsc(history)}</p></div>${music?`<div class="poisection"><h5>与音乐 / 音乐家的关联</h5><p class="poitext poimusic">${htmlEsc(music)}</p></div>`:""}<div class="poi-actions"><button type="button" id="poi-city-back">返回${htmlEsc(p.city)}城市卡</button>${p.wikiUrl?`<a href="${htmlEsc(p.wikiUrl)}" target="_blank" rel="noopener">${htmlEsc(wikiLinkLabel)} ↗</a>`:""}</div></article>`
 }
 function poiPanel(p){
   const panel=$("#mappanel");if(!panel)return;panel.innerHTML=poiCard(p);const back=$("#poi-city-back");if(back)back.onclick=()=>cityPanel(p.city);
