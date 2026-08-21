@@ -61,7 +61,7 @@ img { max-width: 100%; }
   background: #100e0b;
 }
 .opening-media {
-  --opening-art: url("assets/generated/opening-eight-treasures-v1.webp");
+  --opening-art: url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/generated/opening-eight-treasures-v1.webp");
   position: absolute;
   z-index: -3;
   inset: -4%;
@@ -119,7 +119,7 @@ img { max-width: 100%; }
   display: flex;
   align-items: end;
   color: #fff8ea;
-  background: var(--night) url("assets/generated/hero-atmosphere-v1.webp") center 47% / cover no-repeat;
+  background: var(--night) url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/generated/hero-atmosphere-v1.webp") center 47% / cover no-repeat;
 }
 .hero::after { content: ""; position: absolute; left: max(24px, calc((100vw - 1320px) / 2)); bottom: 42px; width: min(300px, 32vw); height: 1px; background: rgba(231,195,129,.72); transform: scaleX(0); transform-origin: left; pointer-events: none; }
 .hero-shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(10, 8, 6, .82) 0%, rgba(10, 8, 6, .45) 46%, rgba(10, 8, 6, .12) 78%), linear-gradient(0deg, rgba(8, 6, 4, .76), transparent 58%); }
@@ -151,7 +151,7 @@ h2, h3 { font-weight: 500; }
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: var(--paper) url("assets/hero-museum.webp") center 57% / cover no-repeat;
+  background: var(--paper) url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/hero-museum.webp") center 57% / cover no-repeat;
 }
 .museum-section::before {
   content: "";
@@ -180,7 +180,7 @@ h2, h3 { font-weight: 500; }
 .museum-photo-note { position: absolute; z-index: 2; right: max(18px, calc((100vw - 1320px) / 2)); bottom: 12px; margin: 0; padding: 4px 7px; color: rgba(255,255,255,.88); background: rgba(20,17,13,.5); font: 500 9px/1.3 var(--sans); letter-spacing: .06em; backdrop-filter: blur(7px); }
 
 .treasures { position: relative; overflow: hidden; color: #f6ead6; background: #171411; }
-.treasures::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 12% 8%, rgba(174,45,34,.24), transparent 34%), radial-gradient(circle at 88% 94%, rgba(182,139,70,.17), transparent 32%), url("assets/generated/archive-texture-v1.webp") center / cover no-repeat; opacity: .58; mix-blend-mode: screen; }
+.treasures::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 12% 8%, rgba(174,45,34,.24), transparent 34%), radial-gradient(circle at 88% 94%, rgba(182,139,70,.17), transparent 32%), url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/generated/archive-texture-v1.webp") center / cover no-repeat; opacity: .58; mix-blend-mode: screen; }
 .treasures > .page-width { position: relative; z-index: 1; }
 .treasures-head { display: grid; grid-template-columns: 150px minmax(260px,.7fr) minmax(440px,1.3fr); gap: 42px; align-items: end; margin-bottom: 38px; }
 .treasures-title .eyebrow { color: #d7ad61; }
@@ -204,7 +204,7 @@ h2, h3 { font-weight: 500; }
 .treasure-card:hover img, .treasure-card:focus-visible img { transform: scale(1.035); filter: saturate(1) contrast(1.06); }
 
 .collection { position: relative; isolation: isolate; overflow: hidden; background: var(--paper-deep); }
-.collection::before { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: url("assets/generated/archive-texture-v1.webp") center top / cover no-repeat; opacity: .18; mix-blend-mode: multiply; mask-image: linear-gradient(180deg, #000 0, rgba(0,0,0,.72) 28%, transparent 72%); }
+.collection::before { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/generated/archive-texture-v1.webp") center top / cover no-repeat; opacity: .18; mix-blend-mode: multiply; mask-image: linear-gradient(180deg, #000 0, rgba(0,0,0,.72) 28%, transparent 72%); }
 :root[data-theme="dark"] .collection::before { opacity: .1; mix-blend-mode: screen; }
 .collection > .page-width { width: var(--collection-page); max-width: none; position: relative; z-index: 1; }
 .collection-head { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 42px; align-items: end; margin-bottom: 28px; }
@@ -298,7 +298,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .dialog-close { position: absolute; z-index: 4; top: 12px; right: 12px; width: 44px; height: 44px; border: 1px solid var(--line); color: var(--ink); background: color-mix(in srgb, var(--paper) 92%, transparent); cursor: pointer; font-size: 22px; line-height: 1; }
 .dialog-close:hover, .dialog-close:focus-visible { border-color: var(--red); color: var(--red); outline: 2px solid color-mix(in srgb, var(--red) 20%, transparent); }
 .dialog-media { min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 8px; padding: 14px; background: #171512; }
-.dialog-image-wrap { min-width: 0; min-height: 0; position: relative; isolation: isolate; display: grid; place-items: center; overflow: hidden; background: #0d0c0a url("assets/card-museum-underlay.png") center / cover no-repeat; }
+.dialog-image-wrap { min-width: 0; min-height: 0; position: relative; isolation: isolate; display: grid; place-items: center; overflow: hidden; background: #0d0c0a url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/card-museum-underlay.png") center / cover no-repeat; }
 .dialog-image-wrap::before { content: ""; position: absolute; z-index: 0; inset: -12%; background-image: var(--dialog-bg, none); background-position: center; background-size: cover; filter: blur(25px) brightness(.42) saturate(.74); opacity: .78; transform: scale(1.12); }
 .dialog-image-wrap::after { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 46%, transparent 36%, rgba(7, 6, 5, .2) 100%); }
 .dialog-image-wrap img { position: relative; z-index: 2; width: 100%; height: 100%; display: block; object-fit: contain; filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .2)); transform: translate3d(var(--zoom-x,0px),var(--zoom-y,0px),0) scale(var(--zoom-scale,1)); transform-origin: center; transition: transform .12s ease-out; user-select: none; -webkit-user-drag: none; }
@@ -394,7 +394,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 
 @media (max-width: 760px) {
   :root { --page: calc(100% - 24px); }
-  .opening-media { --opening-art: url("assets/generated/opening-eight-treasures-mobile-v1.webp"); }
+  .opening-media { --opening-art: url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/generated/opening-eight-treasures-mobile-v1.webp"); }
   .opening-media::before { filter: blur(24px) brightness(.38) saturate(.68); }
   .topbar { min-height: 58px; padding: 8px 12px; }
   .brand-type small { display: none; }

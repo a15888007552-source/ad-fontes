@@ -69,12 +69,14 @@
     "'": "&#39;",
     '"': "&quot;",
   }[char]));
+  const isCompleteMediaUrl = (value) => /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(value);
   const assetFor = (path) => {
     const value = String(path || "");
-    if (!value || /^(?:data:|blob:|https?:)/i.test(value)) return value;
-    return `${value}${value.includes("?") ? "&" : "?"}rev=${IMAGE_REV}`;
+    if (!value || isCompleteMediaUrl(value)) return value;
+    const resolved = shaanxiHistoryMediaUrl(value);
+    return `${resolved}${resolved.includes("?") ? "&" : "?"}rev=${IMAGE_REV}`;
   };
-  const cssUrl = (value) => encodeURI(String(value || "")).replace(/['()]/g, (character) => `%${character.charCodeAt(0).toString(16)}`);
+  const cssUrl = (value) => encodeURI(String(shaanxiHistoryMediaUrl(value) || "")).replace(/['()]/g, (character) => `%${character.charCodeAt(0).toString(16)}`);
   const cardCoverFor = (item) => assetFor(`assets/card-covers/${String(item.id).replace(/[^A-Za-z0-9_-]+/g, "-")}.webp`);
   const hasTag = (item, tag) => Array.isArray(item.tags) && item.tags.includes(tag);
 
