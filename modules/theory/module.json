@@ -1,0 +1,10 @@
+{
+  "id": "theory",
+  "title": "Musica Theorica · 乐理 — Ad Fontes",
+  "subtitle": "一座可听、可操作、可溯源的音乐理论工坊：声音与调律、调式与调性、和声与声部、节奏与形式、记谱史、特殊音阶及二十世纪分析。",
+  "type": "research-tool",
+  "status": "published",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "maintainer": "辛申奥"
+}
