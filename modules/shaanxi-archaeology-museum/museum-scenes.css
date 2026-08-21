@@ -367,3 +367,50 @@ body {
 #artifact-catalog-root .artifact-card-footer {
   border-color:rgba(237,246,237,.25);
 }
+
+/* 20260821 · the live catalogue is mounted in #artifact-grid; keep every
+   object title readable even when the legacy catalogue stylesheet loads. */
+#artifact-grid.artifact-grid {
+  color:#f4f1e6;
+  background:rgba(7,29,22,.72);
+}
+
+#artifact-grid.artifact-grid .artifact-catalog-card {
+  color:#f4f1e6;
+  background:rgba(7,29,22,.95);
+  border-color:rgba(237,246,237,.3);
+}
+
+#artifact-grid.artifact-grid .artifact-catalog-card:hover,
+#artifact-grid.artifact-grid .artifact-catalog-card:focus-visible {
+  background:rgba(12,50,37,.98);
+  border-color:#e1bd73;
+}
+
+#artifact-grid.artifact-grid .artifact-card-copy {
+  color:#f4f1e6;
+  background:linear-gradient(110deg,rgba(7,29,22,.98),rgba(13,51,39,.94));
+}
+
+#artifact-grid.artifact-grid .artifact-card-kicker,
+#artifact-grid.artifact-grid .artifact-card-kicker span:first-child,
+#artifact-grid.artifact-grid .artifact-card-period,
+#artifact-grid.artifact-grid .artifact-card-summary,
+#artifact-grid.artifact-grid .artifact-card-footer {
+  color:#dce9df !important;
+}
+
+#artifact-grid.artifact-grid .artifact-card-kicker span:last-child,
+#artifact-grid.artifact-grid .artifact-card-footer span:last-child {
+  color:#f0c772 !important;
+}
+
+#artifact-grid.artifact-grid .artifact-catalog-card h3,
+#artifact-grid.artifact-grid .artifact-card-copy h3 {
+  color:#fff8e8 !important;
+  text-shadow:0 1px 10px rgba(0,0,0,.24);
+}
+
+#artifact-grid.artifact-grid .artifact-card-footer {
+  border-color:rgba(237,246,237,.25);
+}

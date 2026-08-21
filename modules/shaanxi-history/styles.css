@@ -756,8 +756,9 @@ body {
 }
 
 /* 20260821 · final width and title pass for the 文明以止 band. */
-.special.page-width {
-  width:var(--page);
+.special.page-width,
+.method.page-width {
+  width:var(--collection-page);
   max-width:none;
 }
 
@@ -804,7 +805,8 @@ body {
 }
 
 @media (max-width:760px) {
-  .special.page-width {
+  .special.page-width,
+  .method.page-width {
     width:calc(100% - 32px);
   }
 
