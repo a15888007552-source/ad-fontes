@@ -9,25 +9,25 @@ repository-relative path, and no external host is configured.
 
 ## Current plan
 
-- Externalizable retained website media: **5,339 files / 1,047,071,456 bytes**
-- Low risk: **822 files / 479,416,475 bytes**
+- Externalizable retained website media: **6,547 files / 982,968,997 bytes**
+- Low risk: **2,854 files / 540,752,915 bytes**
 - Medium risk: **3,693 files / 442,216,082 bytes**
-- High risk: **824 files / 125,438,899 bytes**
-- Dynamic-runtime media: **824 files / 125,438,899 bytes**
-- Source originals kept separate from the first migration batch: **11 files / 17,012,059 bytes**
-- Unreferenced generated derivatives excluded from the website migration set: **2,002 files / 303,807,059 bytes**
+- High risk: **0 files / 0 bytes**
+- Dynamic-runtime media: **0 files / 0 bytes**
+- Source originals kept separate from the first migration batch: **0 files / 0 bytes**
+- Unreferenced generated derivatives excluded from the website migration set: **0 files / 0 bytes**
 
 ## Shaanxi History pilot
 
-- Total media: **814 files / 390,818,551 bytes**
-- Externalizable media: **807 files / 385,001,226 bytes**
-- Static reference files / occurrences: **511 / 518**
-- Dynamic reference files / occurrences: **296 / 296**
-- `card-covers`: **296 files / 54,209,094 bytes**
-- `photos`: **505 files / 325,407,336 bytes**
-- `supplement`: **6 files / 7,573,711 bytes**
-- Automatically rewritable direct references: **518**
-- Dynamic references requiring the resolver: **296**
+- Total media: **7 files / 5,817,325 bytes**
+- Externalizable media: **7 files / 5,817,325 bytes**
+- Static reference files / occurrences: **7 / 7**
+- Dynamic reference files / occurrences: **0 / 0**
+- `card-covers`: **0 files / 0 bytes**
+- `photos`: **6 files / 4,511,002 bytes**
+- `supplement`: **1 files / 1,306,323 bytes**
+- Automatically rewritable direct references: **7**
+- Dynamic references requiring the resolver: **0**
 
 ## Protocol
 
