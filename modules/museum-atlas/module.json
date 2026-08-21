@@ -1,0 +1,10 @@
+{
+  "id": "museum-atlas",
+  "title": "中国博物馆行记 · Museum Atlas",
+  "subtitle": "中国博物馆行记：按省份进入个人博物馆照片与专题",
+  "type": "atlas",
+  "status": "published",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "maintainer": "辛申奥"
+}

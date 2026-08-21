@@ -1,0 +1,8 @@
+/*
+ * Opt-in shared tokens for future module migrations.
+ * Existing pages do not import this file in v1, so their visual output is unchanged.
+ */
+:root {
+  --af-font-serif: "Palatino Linotype", Palatino, Georgia, serif;
+  --af-font-sans: "Segoe UI", Arial, sans-serif;
+}

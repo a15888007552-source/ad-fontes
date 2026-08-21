@@ -1,0 +1,10 @@
+{
+  "id": "shaanxi-archaeology-museum",
+  "title": "陕西考古博物馆 · 现场图录",
+  "subtitle": "陕西考古博物馆现场图录：主题、馆介绍、重点对象与逐件文物卡片。",
+  "type": "catalog",
+  "status": "published",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "maintainer": "辛申奥"
+}

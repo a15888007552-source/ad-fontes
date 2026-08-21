@@ -1,0 +1,10 @@
+{
+  "id": "shao",
+  "title": "韶元音乐台 · Ad Fontes",
+  "subtitle": "Ad Fontes 的 Shao 远程音乐生成工作台入口与使用说明。",
+  "type": "tool",
+  "status": "published",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "maintainer": "辛申奥"
+}

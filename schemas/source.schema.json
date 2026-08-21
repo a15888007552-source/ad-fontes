@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://a15888007552-source.github.io/ad-fontes/schemas/source.schema.json",
+  "title": "Ad Fontes structured source record",
+  "type": "object",
+  "required": [
+    "id",
+    "author",
+    "title"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "edition": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "year": {
+      "type": [
+        "string",
+        "integer"
+      ]
+    },
+    "locator": {
+      "type": "object",
+      "properties": {
+        "chapter": {
+          "type": "string"
+        },
+        "page": {
+          "type": [
+            "string",
+            "integer"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
