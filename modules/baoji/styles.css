@@ -609,3 +609,11 @@ body {
 .research-evidence {
   margin:.1rem 0 0;
 }
+
+/* 20260821 · restore the original four-treasure gallery atmosphere. */
+.section--treasures {
+  color:var(--paper);
+  background:
+    linear-gradient(90deg,rgba(22,23,19,.86),rgba(22,23,19,.57) 54%,rgba(22,23,19,.78)),
+    url("assets/generated/bronze-gallery-atmosphere-v1.webp") 50% 50% / cover no-repeat;
+}

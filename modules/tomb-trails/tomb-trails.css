@@ -7,6 +7,6 @@ body[data-museum="qinhan"] .masthead{--hero-image:url("../../assets/tomb-trails/
 body[data-museum="qinhan"]{--context-image:url("../../assets/tomb-trails/qinhan-bg.webp")}
 body[data-museum="xian"]{--context-image:url("../../assets/tomb-trails/xian-bg.webp")}
 body[data-museum="history"]{--context-image:url("../../assets/tomb-trails/history-bg.webp")}
-body[data-museum="archaeology"]{--context-image:url("../../assets/tomb-trails/archaeology-bg.webp")}
+body[data-museum="archaeology"]{--context-image:url("../shaanxi-archaeology-museum/assets/generated/archaeology-atmosphere-v2.webp")}
 body[data-museum="baoji"]{--context-image:url("../../assets/tomb-trails/baoji-bg.webp")}
 body[data-museum="beilin"]{--context-image:url("../../assets/tomb-trails/beilin-bg.webp")}

@@ -589,6 +589,25 @@ body {
 .exhibition-subtitle {
   color:#e5c98f;
 }
+
+/* 20260821 · keep the exhibition title legible on the gilt-dark background. */
+.exhibition-band .exhibition-sticky h2 {
+  color:#fff4d6;
+  text-shadow:0 3px 28px rgba(0,0,0,.46);
+}
+.exhibition-band .eyebrow {
+  color:#efc86f;
+}
+.exhibition-band .exhibition-copy p {
+  color:#f0dfbd;
+}
+.exhibition-band .exhibition-copy .lead {
+  color:#fff8e8;
+}
+.exhibition-band .chapter-index span {
+  color:#f1cc7d;
+  border-color:rgba(255,244,214,.34);
+}
 .queen-section,
 .tiger-section {
   background:
