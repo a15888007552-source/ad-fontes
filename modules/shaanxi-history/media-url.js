@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_PREFIX = "modules/shaanxi-history/";
-  const R2_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev";
+  const WORKER_PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev";
   const resolve = root && root.resolveMediaUrl;
 
   if (typeof resolve !== "function") {
@@ -27,12 +27,12 @@
 
     return resolve(toRepoRelativePath(value), {
       mode: "external",
-      baseUrl: R2_PUBLIC_BASE,
+      baseUrl: WORKER_PUBLIC_BASE,
     });
   }
 
   root.shaanxiHistoryMediaUrl = shaanxiHistoryMediaUrl;
   root.ShaanxiHistoryMedia = root.ShaanxiHistoryMedia || {};
-  root.ShaanxiHistoryMedia.baseUrl = R2_PUBLIC_BASE;
+  root.ShaanxiHistoryMedia.baseUrl = WORKER_PUBLIC_BASE;
   root.ShaanxiHistoryMedia.resolve = shaanxiHistoryMediaUrl;
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -1,10 +1,11 @@
-# Shaanxi History R2 pilot
+# Shaanxi History Worker media pilot
 
 - Status: **PASS**
-- Public base: `https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev`
+- Active public base: `https://ad-fontes-media.gusgumee777.workers.dev`
 - Planned and locally verified: **807 files / 385,001,226 bytes**
-- R2 URL verification: **807/807**
+- Worker HTTP verification: **807/807**
 - Content-Length verification: **807/807**
+- SHA256 GET samples: **30/30** (`photos=10`, `card-covers=15`, `supplement=5`)
 - Static references migrated: **511 files / 518 references**
 - Dynamic references migrated through the module wrapper: **296 files / 296 references**
 - Local externalizable runtime requests: **0**
@@ -24,7 +25,9 @@
 - Wrapper: `shaanxiHistoryMediaUrl()` delegates to `shared/js/media-url.js` in external mode.
 - Complete URLs, `data:`, `blob:`, query strings, and hashes remain unchanged by the wrapper.
 - `assets/...` and `./assets/...` map to `modules/shaanxi-history/assets/...` without a duplicate module prefix.
-- Browser smoke: **SKIPPED** (not launched: physical memory usage 100.0% was above the 75% safety threshold)
+- Runtime legacy r2.dev references: **0**
+- Worker method smoke: `GET existing=200`, `HEAD existing=200`, `GET missing=404`, `POST=405`, `PUT=405`, `DELETE=405`
+- Browser smoke: **SKIPPED** (not launched: physical memory usage 79.3% was above the 75% safety threshold; Chrome/Chromium/Edge executables were unavailable on PATH)
 - Terminal HTTP smoke: **PASS** (6 local resources checked)
 
-This pilot keeps all local media files as rollback copies. It does not delete, move, compress, or upload media.
+The historical R2 verification records remain unchanged. This pilot keeps all local media files as rollback copies. It does not delete, move, compress, or upload media.

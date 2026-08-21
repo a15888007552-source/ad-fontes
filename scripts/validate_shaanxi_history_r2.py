@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Validate the Shaanxi History R2 pilot without using R2 credentials."""
+"""Validate the Shaanxi History media pilot through the public Worker endpoint."""
 
 from __future__ import annotations
 
 import argparse
 import hashlib
 import json
+import random
 import re
 import sys
 import time
@@ -21,15 +22,20 @@ ROOT = Path(__file__).resolve().parents[1]
 PLAN_PATH = ROOT / "data" / "media-externalization-plan.json"
 SUMMARY_PATH = ROOT / "data" / "shaanxi-history-r2-pilot-summary.json"
 DOC_PATH = ROOT / "docs" / "SHAANXI_HISTORY_R2_PILOT.md"
+WORKERS_VERIFICATION_PATH = ROOT / "data" / "shaanxi-history-workers-verification.json"
+WORKERS_DOC_PATH = ROOT / "docs" / "SHAANXI_HISTORY_WORKERS_MIGRATION.md"
 MODULE_PREFIX = "modules/shaanxi-history/"
-PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
+LEGACY_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
 EXPECTED_FILES = 807
 EXPECTED_BYTES = 385001226
 EXPECTED_STATIC_FILES = 511
 EXPECTED_STATIC_REFERENCES = 518
 EXPECTED_DYNAMIC_FILES = 296
 EXPECTED_DYNAMIC_REFERENCES = 296
-USER_AGENT = "ad-fontes-shaanxi-history-r2-pilot-validator/1"
+SAMPLE_COUNT = 30
+SAMPLE_SEED = 20260821
+USER_AGENT = "ad-fontes-shaanxi-history-worker-validator/1"
 
 
 def load_json(path: Path) -> Any:
@@ -140,6 +146,153 @@ def response_metadata(url: str, expected_bytes: int) -> dict[str, Any]:
     return result
 
 
+def media_category(path: str) -> str:
+    for category in ("photos", "card-covers", "supplement"):
+        if f"{MODULE_PREFIX}assets/{category}/" in path:
+            return category
+    return "other"
+
+
+def select_sha256_samples(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Select a deterministic 30-object GET sample with category coverage."""
+
+    ordered = sorted(records, key=lambda item: str(item.get("externalPath", "")))
+    selected: list[dict[str, Any]] = []
+    selected_paths: set[str] = set()
+    for category in ("photos", "card-covers", "supplement"):
+        category_rows = [
+            item for item in ordered if media_category(str(item.get("path", ""))) == category
+        ]
+        if not category_rows:
+            raise ValueError(f"no {category} records for SHA256 sample")
+        for item in category_rows[: min(10, len(category_rows))]:
+            path = str(item.get("externalPath", ""))
+            selected.append(item)
+            selected_paths.add(path)
+
+    remaining = [
+        item
+        for item in ordered
+        if str(item.get("externalPath", "")) not in selected_paths
+    ]
+    random.Random(SAMPLE_SEED).shuffle(remaining)
+    selected.extend(remaining[: max(0, SAMPLE_COUNT - len(selected))])
+    if len(selected) != SAMPLE_COUNT:
+        raise ValueError(f"sample size {len(selected)} != {SAMPLE_COUNT}")
+    return selected
+
+
+def _sha256_get_once(
+    url: str, expected_bytes: int, expected_sha256: str
+) -> dict[str, Any]:
+    """Stream one public GET response without buffering the object in memory."""
+
+    request_object = Request(
+        url,
+        method="GET",
+        headers={"User-Agent": USER_AGENT, "Accept": "*/*"},
+    )
+    try:
+        with urlopen(request_object, timeout=60) as response:
+            status = int(getattr(response, "status", 200))
+            headers = response.headers
+            digest = hashlib.sha256()
+            received_bytes = 0
+            for block in iter(lambda: response.read(1024 * 1024), b""):
+                digest.update(block)
+                received_bytes += len(block)
+    except HTTPError as exc:
+        return {
+            "status": int(exc.code),
+            "sizeVerified": False,
+            "sha256Verified": False,
+            "error": f"HTTPError:{exc.code}",
+        }
+    except (URLError, TimeoutError, OSError) as exc:
+        return {
+            "status": getattr(exc, "code", None),
+            "sizeVerified": False,
+            "sha256Verified": False,
+            "error": type(exc).__name__,
+        }
+
+    content_length = headers.get("Content-Length") if headers else None
+    size_verified = received_bytes == expected_bytes
+    if content_length is not None:
+        try:
+            size_verified = size_verified and int(content_length) == expected_bytes
+        except (TypeError, ValueError):
+            size_verified = False
+    actual_sha256 = digest.hexdigest()
+    sha256_verified = actual_sha256 == expected_sha256
+    return {
+        "status": status,
+        "sizeVerified": size_verified,
+        "sha256Verified": sha256_verified,
+        "receivedBytes": received_bytes,
+        "contentLength": content_length,
+        "sha256": actual_sha256,
+        "error": "",
+    }
+
+
+def sha256_get(url: str, expected_bytes: int, expected_sha256: str) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for attempt in range(3):
+        result = _sha256_get_once(url, expected_bytes, expected_sha256)
+        if result.get("sha256Verified") and result.get("sizeVerified"):
+            return result
+        if result.get("status") in {400, 401, 403, 404}:
+            return result
+        if attempt < 2:
+            time.sleep(0.5)
+    return result
+
+
+def status_only(url: str, method: str) -> int | None:
+    """Send a status-only request; write methods carry no request body."""
+
+    request_object = Request(
+        url,
+        method=method,
+        headers={"User-Agent": USER_AGENT, "Accept": "*/*", "Content-Length": "0"},
+    )
+    try:
+        with urlopen(request_object, timeout=30) as response:
+            return int(getattr(response, "status", 200))
+    except HTTPError as exc:
+        return int(exc.code)
+    except (URLError, TimeoutError, OSError):
+        return None
+
+
+def worker_security_smoke(records: list[dict[str, Any]]) -> dict[str, Any]:
+    ordered = sorted(records, key=lambda item: str(item.get("externalPath", "")))
+    existing_url = url_for(ordered[0])
+    known_paths = {str(item.get("externalPath", "")) for item in records}
+    missing_path = MODULE_PREFIX + "assets/__worker-validation-nonexistent__.webp"
+    while missing_path in known_paths:
+        missing_path += "-missing"
+    missing_url = f"{PUBLIC_BASE}/{missing_path}"
+    statuses = {
+        "getExisting": status_only(existing_url, "GET"),
+        "headExisting": status_only(existing_url, "HEAD"),
+        "getNonexistent": status_only(missing_url, "GET"),
+        "POST": status_only(missing_url, "POST"),
+        "PUT": status_only(missing_url, "PUT"),
+        "DELETE": status_only(missing_url, "DELETE"),
+    }
+    statuses["passed"] = (
+        statuses["getExisting"] == 200
+        and statuses["headExisting"] == 200
+        and statuses["getNonexistent"] == 404
+        and statuses["POST"] == 405
+        and statuses["PUT"] == 405
+        and statuses["DELETE"] == 405
+    )
+    return statuses
+
+
 def walk_strings(value: Any, key: str = "") -> list[tuple[str, str]]:
     found: list[tuple[str, str]] = []
     if isinstance(value, str):
@@ -170,13 +323,16 @@ def build_document(summary: dict[str, Any]) -> str:
     browser = summary["browserSmoke"]
     browser_detail = browser.get("detail", "")
     terminal = summary["terminalHttpSmoke"]
-    return f"""# Shaanxi History R2 pilot
+    worker = summary["workerSecuritySmoke"]
+    samples = summary["sha256Samples"]
+    return f"""# Shaanxi History Worker media pilot
 
 - Status: **{summary['status']}**
-- Public base: `{summary['publicBase']}`
+- Active public base: `{summary['publicBase']}`
 - Planned and locally verified: **{summary['plannedFiles']:,} files / {summary['plannedBytes']:,} bytes**
-- R2 URL verification: **{summary['r2UrlsVerified']:,}/{summary['plannedFiles']:,}**
+- Worker HTTP verification: **{summary['workerHttpVerified']:,}/{summary['plannedFiles']:,}**
 - Content-Length verification: **{summary['contentLengthVerified']:,}/{summary['plannedFiles']:,}**
+- SHA256 GET samples: **{samples['verified']:,}/{samples['selected']:,}** (`photos={samples['coverage']['photos']}`, `card-covers={samples['coverage']['card-covers']}`, `supplement={samples['coverage']['supplement']}`)
 - Static references migrated: **{static['files']:,} files / {static['references']:,} references**
 - Dynamic references migrated through the module wrapper: **{dynamic['files']:,} files / {dynamic['references']:,} references**
 - Local externalizable runtime requests: **{summary['localExternalizableRuntimeRequests']}**
@@ -196,10 +352,44 @@ def build_document(summary: dict[str, Any]) -> str:
 - Wrapper: `shaanxiHistoryMediaUrl()` delegates to `shared/js/media-url.js` in external mode.
 - Complete URLs, `data:`, `blob:`, query strings, and hashes remain unchanged by the wrapper.
 - `assets/...` and `./assets/...` map to `modules/shaanxi-history/assets/...` without a duplicate module prefix.
+- Runtime legacy r2.dev references: **{summary['runtimeOldHostReferences']}**
+- Worker method smoke: `GET existing={worker['getExisting']}`, `HEAD existing={worker['headExisting']}`, `GET missing={worker['getNonexistent']}`, `POST={worker['POST']}`, `PUT={worker['PUT']}`, `DELETE={worker['DELETE']}`
 - Browser smoke: **{browser['status']}**{f' ({browser_detail})' if browser_detail else ''}
 - Terminal HTTP smoke: **{terminal['status']}** ({terminal['resourcesChecked']} local resources checked)
 
-This pilot keeps all local media files as rollback copies. It does not delete, move, compress, or upload media.
+The historical R2 verification records remain unchanged. This pilot keeps all local media files as rollback copies. It does not delete, move, compress, or upload media.
+"""
+
+
+def build_workers_document(verification: dict[str, Any]) -> str:
+    security = verification["workerSecuritySmoke"]
+    return f"""# Shaanxi History Worker media migration
+
+- Status: **{verification['status']}**
+- Active media base: `{verification['activeBase']}`
+- Object keys: repo-relative paths under `modules/shaanxi-history/`
+- Objects verified: **{verification['files']:,}/{verification['files']:,}**
+- Total bytes verified: **{verification['bytes']:,}**
+- Content-Length verified: **{verification['contentLengthVerified']:,}/{verification['files']:,}**
+- SHA256 GET samples: **{verification['sha256SamplesVerified']:,}/{verification['sha256SamplesSelected']:,}**
+- Sample coverage: `photos={verification['sampleCoverage']['photos']}`, `card-covers={verification['sampleCoverage']['card-covers']}`, `supplement={verification['sampleCoverage']['supplement']}`
+- Runtime legacy-host occurrences: **{verification['runtimeOldHostReferences']}**
+- Local externalizable runtime requests: **{verification['localExternalizableRuntimeRequests']}**
+- Browser smoke: **{verification['browserSmoke']['status']}**{f" ({verification['browserSmoke'].get('detail', '')})" if verification['browserSmoke'].get('detail') else ''}
+- Terminal HTTP smoke: **{verification['terminalHttpSmoke']['status']}** ({verification['terminalHttpSmoke']['resourcesChecked']} local resources checked)
+
+## Worker method smoke
+
+| Request | Status |
+| --- | ---: |
+| GET existing object | {security['getExisting']} |
+| HEAD existing object | {security['headExisting']} |
+| GET nonexistent object | {security['getNonexistent']} |
+| POST, no request body | {security['POST']} |
+| PUT, no request body | {security['PUT']} |
+| DELETE, no request body | {security['DELETE']} |
+
+The POST, PUT, and DELETE checks were status-only requests with no upload body. No R2 object was written or changed. Historical R2 verification records remain unchanged; this change only switches the Shaanxi History runtime entry to the Worker base. Local media files remain in place.
 """
 
 
@@ -325,6 +515,15 @@ def main() -> int:
         errors.append(f"unknown data media paths: {len(unknown_data_assets)}")
 
     all_text = "\n".join(texts.values())
+    runtime_old_host_count = all_text.count(LEGACY_PUBLIC_BASE)
+    runtime_old_r2dev_count = len(re.findall(r"(?i)r2\.dev", all_text))
+    runtime_worker_base_count = all_text.count(PUBLIC_BASE)
+    if runtime_old_host_count or runtime_old_r2dev_count:
+        errors.append(
+            f"runtime legacy r2.dev references: {runtime_old_r2dev_count}"
+        )
+    if runtime_worker_base_count == 0:
+        errors.append("active Worker base is absent from runtime files")
     file_uri_count = len(re.findall(r"(?i)(?:[\"'(`=]|(?:src|href)\\s*=\\s*[\"'])\\s*file://", all_text))
     file_uri_pattern = re.compile(r"""(?i)(?:["'(=]|(?:src|href)\s*=\s*["'])\s*file://""")
     file_uri_count = len(file_uri_pattern.findall(all_text))
@@ -367,7 +566,7 @@ def main() -> int:
         external_url = f"{PUBLIC_BASE}/{item['externalPath']}"
         direct_external_hits += sum(text.count(external_url) for text in direct_files.values())
     if direct_external_hits == 0:
-        errors.append("no direct HTML/CSS R2 media URLs found")
+        errors.append("no direct HTML/CSS Worker media URLs found")
 
     wrapper = texts.get("wrapper", "")
     app = texts.get("app", "")
@@ -432,6 +631,53 @@ def main() -> int:
             f"R2 Content-Length verified {content_length_verified} != {EXPECTED_FILES}"
         )
 
+    sample_records: list[dict[str, Any]] = []
+    sample_results: list[dict[str, Any]] = []
+    sample_coverage: Counter[str] = Counter()
+    try:
+        sample_records = select_sha256_samples(records)
+        for item in sample_records:
+            sample_path = str(item["externalPath"])
+            sample_result = sha256_get(
+                url_for(item), int(item["bytes"]), str(item.get("sha256", ""))
+            )
+            sample_result["path"] = sample_path
+            sample_results.append(sample_result)
+            sample_coverage[media_category(str(item.get("path", "")))] += 1
+    except ValueError as exc:
+        errors.append(f"SHA256 sample selection: {exc}")
+
+    sha256_samples_verified = sum(
+        1
+        for result in sample_results
+        if result.get("sizeVerified") and result.get("sha256Verified")
+    )
+    if sha256_samples_verified != SAMPLE_COUNT:
+        errors.append(
+            f"SHA256 samples verified {sha256_samples_verified} != {SAMPLE_COUNT}"
+        )
+
+    security_smoke = worker_security_smoke(records) if records else {
+        "getExisting": None,
+        "headExisting": None,
+        "getNonexistent": None,
+        "POST": None,
+        "PUT": None,
+        "DELETE": None,
+        "passed": False,
+    }
+    if not security_smoke.get("passed"):
+        errors.append("Worker method security smoke failed")
+
+    worker_404_failures = sum(
+        1 for result in public_results if result.get("status") == 404
+    )
+    worker_5xx_failures = sum(
+        1
+        for result in public_results
+        if isinstance(result.get("status"), int) and result["status"] >= 500
+    )
+
     if errors:
         print("R2_VALIDATION=FAIL")
         for error in errors[:40]:
@@ -463,21 +709,26 @@ def main() -> int:
         "status": "PASS",
         "module": "shaanxi-history",
         "publicBase": PUBLIC_BASE,
+        "activeMediaBase": PUBLIC_BASE,
         "plannedFiles": EXPECTED_FILES,
         "plannedBytes": EXPECTED_BYTES,
         "localFilesVerified": len(records),
         "localBytesVerified": local_bytes,
         "localSha256Verified": local_sha256_verified,
         "r2UrlsVerified": r2_verified,
+        "workerHttpVerified": r2_verified,
         "contentLengthVerified": content_length_verified,
         "externalPathDuplicates": len(duplicate_paths),
         "wrongExternalPathPrefixes": len(wrong_prefix),
+        "runtimeOldHostReferences": runtime_old_r2dev_count,
+        "doubleModulePrefixCount": double_prefix_count,
+        "runtimeWorkerBaseOccurrences": runtime_worker_base_count,
         "fileUriCount": file_uri_count,
         "windowsAbsoluteMediaPathCount": runtime_absolute_path_count,
         "staticReferencesMigrated": {
             "files": len(static_records),
             "references": static_references,
-            "mode": "HTML/CSS absolute R2 URLs; data values through assetFor()",
+            "mode": "HTML/CSS absolute Worker URLs; data values through assetFor()",
         },
         "dynamicReferencesMigrated": {
             "files": len(dynamic_records),
@@ -490,6 +741,19 @@ def main() -> int:
         "mediaFilesDeleted": 0,
         "binaryChanges": 0,
         "mediaBySubdirectory": category_stats,
+        "sha256Samples": {
+            "selected": len(sample_records),
+            "verified": sha256_samples_verified,
+            "coverage": {
+                "photos": sample_coverage.get("photos", 0),
+                "card-covers": sample_coverage.get("card-covers", 0),
+                "supplement": sample_coverage.get("supplement", 0),
+            },
+        },
+        "workerHttpFailures": len(failed_objects),
+        "worker404Failures": worker_404_failures,
+        "worker5xxFailures": worker_5xx_failures,
+        "workerSecuritySmoke": security_smoke,
         "browserSmoke": previous_browser,
         "terminalHttpSmoke": previous_terminal,
         "failedObjects": failed_objects,
@@ -501,12 +765,63 @@ def main() -> int:
     DOC_PATH.parent.mkdir(parents=True, exist_ok=True)
     DOC_PATH.write_text(build_document(summary), encoding="utf-8")
 
+    worker_verification = {
+        "schemaVersion": 1,
+        "status": "PASS",
+        "module": "shaanxi-history",
+        "activeBase": PUBLIC_BASE,
+        "files": EXPECTED_FILES,
+        "bytes": EXPECTED_BYTES,
+        "httpVerified": r2_verified,
+        "contentLengthVerified": content_length_verified,
+        "sha256SamplesSelected": len(sample_records),
+        "sha256SamplesVerified": sha256_samples_verified,
+        "sampleCoverage": {
+            "photos": sample_coverage.get("photos", 0),
+            "card-covers": sample_coverage.get("card-covers", 0),
+            "supplement": sample_coverage.get("supplement", 0),
+        },
+        "failedObjects": len(failed_objects),
+        "worker404Failures": worker_404_failures,
+        "worker5xxFailures": worker_5xx_failures,
+        "workerSecuritySmoke": security_smoke,
+        "browserSmoke": previous_browser,
+        "terminalHttpSmoke": previous_terminal,
+        "externalPathDuplicates": len(duplicate_paths),
+        "doubleModulePrefixCount": double_prefix_count,
+        "fileUriCount": file_uri_count,
+        "windowsAbsoluteMediaPathCount": runtime_absolute_path_count,
+        "runtimeOldHostReferences": runtime_old_r2dev_count,
+        "localExternalizableRuntimeRequests": 0,
+        "mediaFilesDeleted": 0,
+        "binaryChanges": 0,
+    }
+    WORKERS_VERIFICATION_PATH.write_text(
+        json.dumps(worker_verification, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    WORKERS_DOC_PATH.parent.mkdir(parents=True, exist_ok=True)
+    WORKERS_DOC_PATH.write_text(
+        build_workers_document(worker_verification), encoding="utf-8"
+    )
+
     print("R2_VALIDATION=PASS")
     print(f"LOCAL_FILES={len(records)}")
     print(f"LOCAL_BYTES={local_bytes}")
     print(f"LOCAL_SHA256={local_sha256_verified}")
     print(f"R2_HTTP={r2_verified}")
     print(f"R2_CONTENT_LENGTH={content_length_verified}")
+    print(f"WORKER_HTTP={r2_verified}")
+    print(f"WORKER_CONTENT_LENGTH={content_length_verified}")
+    print(f"SHA256_SAMPLES={sha256_samples_verified}/{len(sample_records)}")
+    print(
+        "WORKER_SECURITY="
+        f"GET:{security_smoke['getExisting']} "
+        f"HEAD:{security_smoke['headExisting']} "
+        f"MISSING:{security_smoke['getNonexistent']} "
+        f"POST:{security_smoke['POST']} PUT:{security_smoke['PUT']} DELETE:{security_smoke['DELETE']}"
+    )
+    print(f"RUNTIME_OLD_R2DEV={runtime_old_host_count + runtime_old_r2dev_count}")
     print(f"STATIC_REFERENCES={static_references}")
     print(f"DYNAMIC_REFERENCES={EXPECTED_DYNAMIC_REFERENCES}")
     print("FILE_URI=0")

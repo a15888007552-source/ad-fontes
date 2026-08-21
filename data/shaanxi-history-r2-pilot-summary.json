@@ -2,22 +2,27 @@
   "schemaVersion": 1,
   "status": "PASS",
   "module": "shaanxi-history",
-  "publicBase": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev",
+  "publicBase": "https://ad-fontes-media.gusgumee777.workers.dev",
+  "activeMediaBase": "https://ad-fontes-media.gusgumee777.workers.dev",
   "plannedFiles": 807,
   "plannedBytes": 385001226,
   "localFilesVerified": 807,
   "localBytesVerified": 385001226,
   "localSha256Verified": 807,
   "r2UrlsVerified": 807,
+  "workerHttpVerified": 807,
   "contentLengthVerified": 807,
   "externalPathDuplicates": 0,
   "wrongExternalPathPrefixes": 0,
+  "runtimeOldHostReferences": 0,
+  "doubleModulePrefixCount": 0,
+  "runtimeWorkerBaseOccurrences": 11,
   "fileUriCount": 0,
   "windowsAbsoluteMediaPathCount": 0,
   "staticReferencesMigrated": {
     "files": 511,
     "references": 518,
-    "mode": "HTML/CSS absolute R2 URLs; data values through assetFor()"
+    "mode": "HTML/CSS absolute Worker URLs; data values through assetFor()"
   },
   "dynamicReferencesMigrated": {
     "files": 296,
@@ -43,9 +48,30 @@
       "bytes": 6267388
     }
   },
+  "sha256Samples": {
+    "selected": 30,
+    "verified": 30,
+    "coverage": {
+      "photos": 10,
+      "card-covers": 15,
+      "supplement": 5
+    }
+  },
+  "workerHttpFailures": 0,
+  "worker404Failures": 0,
+  "worker5xxFailures": 0,
+  "workerSecuritySmoke": {
+    "getExisting": 200,
+    "headExisting": 200,
+    "getNonexistent": 404,
+    "POST": 405,
+    "PUT": 405,
+    "DELETE": 405,
+    "passed": true
+  },
   "browserSmoke": {
     "status": "SKIPPED",
-    "detail": "not launched: physical memory usage 100.0% was above the 75% safety threshold"
+    "detail": "not launched: physical memory usage 79.3% was above the 75% safety threshold; Chrome/Chromium/Edge executables were unavailable on PATH"
   },
   "terminalHttpSmoke": {
     "status": "PASS",

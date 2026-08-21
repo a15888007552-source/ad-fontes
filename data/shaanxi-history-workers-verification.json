@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "module": "shaanxi-history",
+  "activeBase": "https://ad-fontes-media.gusgumee777.workers.dev",
+  "files": 807,
+  "bytes": 385001226,
+  "httpVerified": 807,
+  "contentLengthVerified": 807,
+  "sha256SamplesSelected": 30,
+  "sha256SamplesVerified": 30,
+  "sampleCoverage": {
+    "photos": 10,
+    "card-covers": 15,
+    "supplement": 5
+  },
+  "failedObjects": 0,
+  "worker404Failures": 0,
+  "worker5xxFailures": 0,
+  "workerSecuritySmoke": {
+    "getExisting": 200,
+    "headExisting": 200,
+    "getNonexistent": 404,
+    "POST": 405,
+    "PUT": 405,
+    "DELETE": 405,
+    "passed": true
+  },
+  "browserSmoke": {
+    "status": "SKIPPED",
+    "detail": "not launched: physical memory usage 79.3% was above the 75% safety threshold; Chrome/Chromium/Edge executables were unavailable on PATH"
+  },
+  "terminalHttpSmoke": {
+    "status": "PASS",
+    "resourcesChecked": 6,
+    "failures": 0,
+    "oldDirectLocalMedia": 0
+  },
+  "externalPathDuplicates": 0,
+  "doubleModulePrefixCount": 0,
+  "fileUriCount": 0,
+  "windowsAbsoluteMediaPathCount": 0,
+  "runtimeOldHostReferences": 0,
+  "localExternalizableRuntimeRequests": 0,
+  "mediaFilesDeleted": 0,
+  "binaryChanges": 0
+}
