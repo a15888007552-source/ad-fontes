@@ -1,6 +1,6 @@
 # MEDIA ORPHAN TRIAGE
 
-- Input suspected orphans: **2,840** / **446,412,432 bytes (425.73 MiB)**
+- Input suspected orphans: **2,544** / **392,203,338 bytes (374.03 MiB)**
 - No media file was deleted, moved, compressed, renamed, or re-encoded.
 - probable_unused is a review label only; source_original and generated_derivative are not deletion approvals.
 
@@ -9,11 +9,11 @@
 | Classification | Files | Bytes |
 |---|---:|---:|
 | confirmed_referenced | 0 | 0 (0 B) |
-| probable_dynamic_reference | 824 | 125,438,899 (119.63 MiB) |
-| source_original | 11 | 17,012,059 (16.22 MiB) |
+| probable_dynamic_reference | 528 | 71,229,805 (67.93 MiB) |
+| source_original | 10 | 15,705,736 (14.98 MiB) |
 | generated_derivative | 2,002 | 303,807,059 (289.73 MiB) |
 | probable_unused | 0 | 0 (0 B) |
-| unknown | 3 | 154,415 (150.80 KiB) |
+| unknown | 4 | 1,460,738 (1.39 MiB) |
 
 ## By module
 
@@ -21,10 +21,10 @@
 |---|---:|---:|---:|---:|
 | global | 1,195 | 187,450,609 | 0 | 0 |
 | baoji | 728 | 80,852,228 | 0 | 0 |
-| shaanxi-history | 303 | 60,026,419 | 0 | 54,209,094 |
 | europa | 211 | 49,753,711 | 0 | 49,753,711 |
 | xian-museum | 74 | 42,831,958 | 0 | 0 |
 | shaanxi-archaeology-museum | 320 | 24,004,739 | 0 | 19,983,326 |
+| shaanxi-history | 7 | 5,817,325 | 0 | 0 |
 | theory | 9 | 1,492,768 | 0 | 1,492,768 |
 
 ## High-confidence probable_unused
@@ -39,14 +39,14 @@
 
 ## Source originals and generated derivatives
 
-- source_original: **11** / **17,012,059 bytes (16.22 MiB)**
+- source_original: **10** / **15,705,736 bytes (14.98 MiB)**
 - generated_derivative: **2,002** / **303,807,059 bytes (289.73 MiB)**
-- probable_dynamic_reference rescues: **824** / **125,438,899 bytes (119.63 MiB)**
+- probable_dynamic_reference rescues: **528** / **71,229,805 bytes (67.93 MiB)**
 - Exact second-pass static references: **0** / **0 bytes**
 
 ## Variant families
 
-- Families involving suspected orphans: **977**
+- Families involving suspected orphans: **976**
 - Referenced web/display/thumb siblings are recorded explicitly; unreferenced members remain review items.
 
 | Family key | Members | Referenced members | Bytes |
@@ -70,7 +70,6 @@
 | assets/photos/dsc_1492 | 5 | 2 | 1,505,392 |
 | assets/photos/dsc_1380 | 5 | 2 | 1,445,100 |
 | assets/photos/dsc_1603 | 5 | 2 | 1,408,293 |
-| modules/shaanxi-history/assets/supplement/persian_khosrau_ii_silver_coin | 2 | 1 | 1,397,365 |
 | assets/photos/dsc_1951 | 5 | 3 | 1,382,453 |
 | assets/photos/dsc_1768 | 5 | 3 | 1,366,223 |
 | assets/photos/dsc_1494 | 5 | 2 | 1,365,065 |
@@ -151,6 +150,7 @@
 | assets/photos/dsc_1580 | 5 | 2 | 964,787 |
 | assets/photos/dsc_1725 | 5 | 2 | 962,542 |
 | assets/photos/dsc_1425 | 5 | 2 | 955,794 |
+| assets/photos/dsc_1450 | 5 | 2 | 954,146 |
 
 ## Priority directories by potential storage action
 
@@ -169,7 +169,7 @@ The first rows are probable_unused release candidates. generated_derivative rows
 | Directory | Orphans | Bytes | Dynamic | Source original bytes | Generated derivative bytes | High-confidence probable_unused bytes |
 |---|---:|---:|---:|---:|---:|---:|
 | assets/photos | 1,182 | 165,639,006 | 0 | 0 | 165,639,006 | 0 |
-| modules/shaanxi-history/assets | 303 | 60,026,419 | 296 | 1,306,323 | 4,511,002 | 0 |
+| modules/shaanxi-history/assets | 7 | 5,817,325 | 0 | 0 | 4,511,002 | 0 |
 | modules/qinhan/assets | 0 | 0 | 0 | 0 | 0 | 0 |
 | modules/xian-museum/assets | 74 | 42,831,958 | 0 | 0 | 42,831,958 | 0 |
 | modules/shaanxi-archaeology-museum/assets | 309 | 20,062,716 | 308 | 0 | 0 | 0 |
@@ -178,7 +178,7 @@ The first rows are probable_unused release candidates. generated_derivative rows
 
 ### Suitable to keep in website repository
 
-- modules — 258,961,823 bytes; suspected orphan 1,645 / 258,961,823 bytes; dynamic rescue 824
+- modules — 204,752,729 bytes; suspected orphan 1,349 / 204,752,729 bytes; dynamic rescue 528
 - assets — 180,932,540 bytes; suspected orphan 1,187 / 180,932,540 bytes
 - assets/photos — 165,639,006 bytes; suspected orphan 1,182 / 165,639,006 bytes
 - assets/photos/large — 109,484,634 bytes; suspected orphan 292 / 109,484,634 bytes
@@ -186,8 +186,8 @@ The first rows are probable_unused release candidates. generated_derivative rows
 - modules/baoji/assets — 80,852,228 bytes; suspected orphan 728 / 80,852,228 bytes
 - modules/baoji/assets/photos — 74,514,539 bytes; suspected orphan 723 / 74,514,539 bytes
 - modules/baoji/assets/photos/web — 68,522,041 bytes; suspected orphan 358 / 68,522,041 bytes
-- modules/shaanxi-history — 60,026,419 bytes; suspected orphan 303 / 60,026,419 bytes; dynamic rescue 296
-- modules/shaanxi-history/assets — 60,026,419 bytes; suspected orphan 303 / 60,026,419 bytes; dynamic rescue 296
+- assets/photos/web — 52,488,208 bytes; suspected orphan 445 / 52,488,208 bytes
+- modules/europa — 49,753,711 bytes; suspected orphan 211 / 49,753,711 bytes; dynamic rescue 211
 
 ### Web/display-only candidates
 
@@ -199,19 +199,15 @@ The first rows are probable_unused release candidates. generated_derivative rows
 
 ### Originals-out-of-repository candidates
 
-- modules — 258,961,823 bytes; suspected orphan 1,645 / 258,961,823 bytes; dynamic rescue 824
 - assets — 180,932,540 bytes; suspected orphan 1,187 / 180,932,540 bytes
-- modules/shaanxi-history — 60,026,419 bytes; suspected orphan 303 / 60,026,419 bytes; dynamic rescue 296
-- modules/shaanxi-history/assets — 60,026,419 bytes; suspected orphan 303 / 60,026,419 bytes; dynamic rescue 296
 - assets/editorial — 15,293,534 bytes; suspected orphan 5 / 15,293,534 bytes
 - guobo-museum — 6,443,303 bytes; suspected orphan 7 / 6,443,303 bytes
 - guobo-museum/assets — 6,443,303 bytes; suspected orphan 7 / 6,443,303 bytes
-- modules/shaanxi-history/assets/supplement — 1,306,323 bytes; suspected orphan 1 / 1,306,323 bytes
 - guobo-museum/assets/photos — 412,202 bytes; suspected orphan 5 / 412,202 bytes
 
 ### Needs later manual confirmation
 
-- modules — 258,961,823 bytes; suspected orphan 1,645 / 258,961,823 bytes; dynamic rescue 824
+- modules — 204,752,729 bytes; suspected orphan 1,349 / 204,752,729 bytes; dynamic rescue 528
 - assets — 180,932,540 bytes; suspected orphan 1,187 / 180,932,540 bytes
 - assets/photos — 165,639,006 bytes; suspected orphan 1,182 / 165,639,006 bytes
 - assets/photos/large — 109,484,634 bytes; suspected orphan 292 / 109,484,634 bytes
@@ -219,8 +215,8 @@ The first rows are probable_unused release candidates. generated_derivative rows
 - modules/baoji/assets — 80,852,228 bytes; suspected orphan 728 / 80,852,228 bytes
 - modules/baoji/assets/photos — 74,514,539 bytes; suspected orphan 723 / 74,514,539 bytes
 - modules/baoji/assets/photos/web — 68,522,041 bytes; suspected orphan 358 / 68,522,041 bytes
-- modules/shaanxi-history — 60,026,419 bytes; suspected orphan 303 / 60,026,419 bytes; dynamic rescue 296
-- modules/shaanxi-history/assets — 60,026,419 bytes; suspected orphan 303 / 60,026,419 bytes; dynamic rescue 296
+- assets/photos/web — 52,488,208 bytes; suspected orphan 445 / 52,488,208 bytes
+- modules/xian-museum — 42,831,958 bytes; suspected orphan 74 / 42,831,958 bytes
 
 ## Guardrails
 

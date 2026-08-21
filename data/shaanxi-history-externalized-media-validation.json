@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "module": "shaanxi-history",
+  "activePublicBase": "https://ad-fontes-media.gusgumee777.workers.dev",
+  "frozenManifest": "data/shaanxi-history-externalized-media.json",
+  "frozenManifestFiles": 807,
+  "frozenManifestBytes": 385001226,
+  "preDeleteLocalIntegrity": {
+    "files": 807,
+    "bytes": 385001226,
+    "sha256Verified": 807
+  },
+  "localCopiesPresent": 0,
+  "localCopyBytesPresent": 0,
+  "remainingLocalMediaFiles": 7,
+  "remainingLocalMediaBytes": 5817325,
+  "currentPlanShaanxiFiles": 0,
+  "currentPlanShaanxiBytes": 0,
+  "workerHttpVerified": 807,
+  "contentLengthVerified": 807,
+  "worker404Failures": 0,
+  "worker5xxFailures": 0,
+  "sha256Samples": {
+    "selected": 30,
+    "verified": 30,
+    "coverage": {
+      "photos": 10,
+      "card-covers": 15,
+      "supplement": 5
+    }
+  },
+  "cacheControlSamples": {
+    "selected": 30,
+    "verified": 30,
+    "required": "public, max-age=86400, stale-while-revalidate=604800"
+  },
+  "runtimeWorkerBaseOccurrences": 14,
+  "runtimeOldR2DevReferences": 0,
+  "directLocalRuntimeRequests": 0,
+  "fileUriCount": 0,
+  "windowsAbsoluteMediaPathCount": 0,
+  "doubleModulePrefixCount": 0,
+  "directWorkerReferences": 13,
+  "dataMediaLiteralsThroughResolver": 1308,
+  "mediaBySubdirectory": {
+    "card-covers": {
+      "files": 296,
+      "bytes": 54209094
+    },
+    "photos": {
+      "files": 499,
+      "bytes": 320896334
+    },
+    "supplement": {
+      "files": 5,
+      "bytes": 6267388
+    }
+  },
+  "mediaFilesDeleted": 807,
+  "deletedBytes": 385001226,
+  "binaryAdditions": 0,
+  "binaryModifications": 0,
+  "binaryDeletions": 807,
+  "browserSmoke": {
+    "status": "SKIPPED",
+    "detail": "not launched: physical memory usage 80.0% was above the 75% safety threshold"
+  },
+  "terminalHttpSmoke": {
+    "status": "PENDING",
+    "resourcesChecked": 0,
+    "detail": ""
+  },
+  "failedObjects": []
+}

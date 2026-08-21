@@ -89,11 +89,23 @@ EXCLUDED_DIRECTORY_NAMES = {
 AUDIT_OUTPUT_PATHS = {
     "data/media-inventory.json",
     "data/media-audit-summary.json",
+    "data/media-externalization-plan.json",
+    "data/media-externalization-summary.json",
     "data/media-orphan-triage.json",
     "data/media-orphan-summary.json",
     "data/media-prune-plan.json",
+    "data/shaanxi-history-externalized-media.json",
+    "data/shaanxi-history-externalized-media-validation.json",
+    "data/shaanxi-history-r2-pilot-summary.json",
+    "data/shaanxi-history-r2-verification.json",
+    "data/shaanxi-history-workers-verification.json",
     "docs/MEDIA_AUDIT.md",
+    "docs/MEDIA_EXTERNALIZATION.md",
     "docs/MEDIA_ORPHAN_TRIAGE.md",
+    "docs/SHAANXI_HISTORY_MEDIA_EXTERNALIZED.md",
+    "docs/SHAANXI_HISTORY_R2_MIGRATION.md",
+    "docs/SHAANXI_HISTORY_R2_PILOT.md",
+    "docs/SHAANXI_HISTORY_WORKERS_MIGRATION.md",
 }
 
 LARGE_EMBEDDED_URI_BYTES = 100 * 1024

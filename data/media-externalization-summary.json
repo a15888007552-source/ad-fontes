@@ -4,8 +4,8 @@
     "inventory": "data/media-inventory.json",
     "triage": "data/media-orphan-triage.json"
   },
-  "totalExternalizableFiles": 5339,
-  "totalExternalizableBytes": 1047071456,
+  "totalExternalizableFiles": 4532,
+  "totalExternalizableBytes": 662070230,
   "byModule": {
     "baoji": {
       "files": 44,
@@ -39,10 +39,6 @@
       "files": 1061,
       "bytes": 103024634
     },
-    "shaanxi-history": {
-      "files": 807,
-      "bytes": 385001226
-    },
     "theory": {
       "files": 9,
       "bytes": 1492768
@@ -54,20 +50,20 @@
   },
   "byReferenceType": {
     "css_url": {
-      "files": 31,
-      "bytes": 14319052
+      "files": 25,
+      "bytes": 10746126
     },
     "dynamic_runtime": {
-      "files": 824,
-      "bytes": 125438899
+      "files": 528,
+      "bytes": 71229805
     },
     "html_href": {
-      "files": 11,
-      "bytes": 872470
+      "files": 10,
+      "bytes": 816986
     },
     "html_src": {
-      "files": 32,
-      "bytes": 12818558
+      "files": 30,
+      "bytes": 12269836
     },
     "html_srcset": {
       "files": 15,
@@ -78,20 +74,20 @@
       "bytes": 1492768
     },
     "js_literal": {
-      "files": 679,
-      "bytes": 420077546
+      "files": 175,
+      "bytes": 92913824
     },
     "js_template": {
-      "files": 507,
-      "bytes": 103962805
+      "files": 211,
+      "bytes": 49753711
     },
     "json_literal": {
       "files": 1144,
       "bytes": 170108538
     },
     "manifest": {
-      "files": 3843,
-      "bytes": 528616055
+      "files": 3547,
+      "bytes": 474406961
     },
     "other": {
       "files": 1999,
@@ -100,55 +96,55 @@
   },
   "byMigrationRisk": {
     "high": {
-      "files": 824,
-      "bytes": 125438899
+      "files": 528,
+      "bytes": 71229805
     },
     "low": {
-      "files": 822,
-      "bytes": 479416475
+      "files": 311,
+      "bytes": 148624343
     },
     "medium": {
       "files": 3693,
       "bytes": 442216082
     }
   },
-  "dynamicRuntimeFiles": 824,
-  "dynamicRuntimeBytes": 125438899,
-  "sourceOriginalFiles": 11,
-  "sourceOriginalBytes": 17012059,
+  "dynamicRuntimeFiles": 528,
+  "dynamicRuntimeBytes": 71229805,
+  "sourceOriginalFiles": 10,
+  "sourceOriginalBytes": 15705736,
   "unreferencedGeneratedFiles": 2002,
   "unreferencedGeneratedBytes": 303807059,
-  "unknownFiles": 3,
-  "unknownBytes": 154415,
-  "inventoryFileCount": 7355,
-  "inventoryTotalBytes": 1368044989,
+  "unknownFiles": 4,
+  "unknownBytes": 1460738,
+  "inventoryFileCount": 6548,
+  "inventoryTotalBytes": 983043763,
   "shaanxiHistoryPilot": {
     "module": "shaanxi-history",
     "totalMedia": {
-      "files": 814,
-      "bytes": 390818551
+      "files": 7,
+      "bytes": 5817325
     },
     "externalizableMedia": {
-      "files": 807,
-      "bytes": 385001226
+      "files": 0,
+      "bytes": 0
     },
-    "staticReferencedFiles": 511,
-    "staticReferenceCount": 518,
-    "dynamicReferencedFiles": 296,
-    "dynamicReferenceCount": 296,
+    "staticReferencedFiles": 0,
+    "staticReferenceCount": 0,
+    "dynamicReferencedFiles": 0,
+    "dynamicReferenceCount": 0,
     "cardCovers": {
-      "files": 296,
-      "bytes": 54209094
+      "files": 0,
+      "bytes": 0
     },
     "photos": {
-      "files": 505,
-      "bytes": 325407336
+      "files": 6,
+      "bytes": 4511002
     },
     "supplement": {
-      "files": 6,
-      "bytes": 7573711
+      "files": 1,
+      "bytes": 1306323
     },
-    "autoRewritableReferenceCount": 518,
-    "resolverRequiredDynamicReferenceCount": 296
+    "autoRewritableReferenceCount": 0,
+    "resolverRequiredDynamicReferenceCount": 0
   }
 }

@@ -1,24 +1,9 @@
 {
   "byDirectory": [
     {
-      "bytes": 1043718787,
-      "fileCount": 5075,
+      "bytes": 658717561,
+      "fileCount": 4268,
       "path": "modules"
-    },
-    {
-      "bytes": 390818551,
-      "fileCount": 814,
-      "path": "modules/shaanxi-history"
-    },
-    {
-      "bytes": 390818551,
-      "fileCount": 814,
-      "path": "modules/shaanxi-history/assets"
-    },
-    {
-      "bytes": 325407336,
-      "fileCount": 505,
-      "path": "modules/shaanxi-history/assets/photos"
     },
     {
       "bytes": 314056911,
@@ -131,11 +116,6 @@
       "path": "modules/baoji/assets/photos/web"
     },
     {
-      "bytes": 54209094,
-      "fileCount": 296,
-      "path": "modules/shaanxi-history/assets/card-covers"
-    },
-    {
       "bytes": 40169800,
       "fileCount": 99,
       "path": "modules/europa/assets/city/huaxia"
@@ -226,11 +206,6 @@
       "path": "modules/europa/assets/img"
     },
     {
-      "bytes": 7573711,
-      "fileCount": 6,
-      "path": "modules/shaanxi-history/assets/supplement"
-    },
-    {
       "bytes": 6681306,
       "fileCount": 12,
       "path": "modules/shaanxi-archaeology-museum/review/contact-sheets"
@@ -246,6 +221,16 @@
       "path": "modules/baoji/assets/photos/thumbs"
     },
     {
+      "bytes": 5817325,
+      "fileCount": 7,
+      "path": "modules/shaanxi-history"
+    },
+    {
+      "bytes": 5817325,
+      "fileCount": 7,
+      "path": "modules/shaanxi-history/assets"
+    },
+    {
       "bytes": 5715563,
       "fileCount": 188,
       "path": "modules/proceedings/assets/slides"
@@ -254,6 +239,11 @@
       "bytes": 5192425,
       "fileCount": 28,
       "path": "modules/baoji/assets/photos/crops"
+    },
+    {
+      "bytes": 4511002,
+      "fileCount": 6,
+      "path": "modules/shaanxi-history/assets/photos"
     },
     {
       "bytes": 1546519,
@@ -281,9 +271,9 @@
       "path": "modules/theory/assets"
     },
     {
-      "bytes": 1367364,
-      "fileCount": 4,
-      "path": "modules/shaanxi-history/assets/generated"
+      "bytes": 1306323,
+      "fileCount": 1,
+      "path": "modules/shaanxi-history/assets/supplement"
     },
     {
       "bytes": 1265558,
@@ -383,19 +373,19 @@
   ],
   "byExtension": [
     {
-      "bytes": 749078008,
-      "extension": ".webp",
-      "fileCount": 2479
-    },
-    {
-      "bytes": 565797780,
+      "bytes": 559621434,
       "extension": ".jpg",
-      "fileCount": 4650
+      "fileCount": 4646
     },
     {
-      "bytes": 53168376,
+      "bytes": 372020936,
+      "extension": ".webp",
+      "fileCount": 1678
+    },
+    {
+      "bytes": 51400568,
       "extension": ".png",
-      "fileCount": 223
+      "fileCount": 221
     },
     {
       "bytes": 825,
@@ -404,11 +394,6 @@
     }
   ],
   "byModule": [
-    {
-      "bytes": 390818551,
-      "fileCount": 814,
-      "module": "shaanxi-history"
-    },
     {
       "bytes": 324326202,
       "fileCount": 2280,
@@ -450,6 +435,11 @@
       "module": "museum-atlas"
     },
     {
+      "bytes": 5817325,
+      "fileCount": 7,
+      "module": "shaanxi-history"
+    },
+    {
       "bytes": 1492768,
       "fileCount": 9,
       "module": "theory"
@@ -466,43 +456,43 @@
   "embeddedDataUriCount": 120,
   "embeddedDataUriOver100KBBytesApprox": 139896,
   "embeddedDataUriOver100KBCount": 1,
-  "fileCount": 7355,
+  "fileCount": 6548,
   "largeBinaryThresholdBytes": 10485760,
   "largeEmbeddedUriThresholdBytes": 102400,
   "pipelineRoleCounts": {
-    "display": 7355,
-    "original": 117,
-    "thumb": 7355
+    "display": 6548,
+    "original": 45,
+    "thumb": 6548
   },
-  "referencedMediaCount": 4515,
-  "suspectedOrphanBytes": 446412432,
-  "suspectedOrphanCount": 2840,
+  "referencedMediaCount": 4004,
+  "suspectedOrphanBytes": 392203338,
+  "suspectedOrphanCount": 2544,
   "topDirectories": [
     {
-      "bytes": 1043718787,
-      "fileCount": 5075,
+      "bytes": 658717561,
+      "fileCount": 4268,
       "path": "modules"
-    },
-    {
-      "bytes": 390818551,
-      "fileCount": 814,
-      "path": "modules/shaanxi-history"
-    },
-    {
-      "bytes": 390818551,
-      "fileCount": 814,
-      "path": "modules/shaanxi-history/assets"
-    },
-    {
-      "bytes": 325407336,
-      "fileCount": 505,
-      "path": "modules/shaanxi-history/assets/photos"
     },
     {
       "bytes": 314056911,
       "fileCount": 2251,
       "path": "assets"
+    },
+    {
+      "bytes": 295577744,
+      "fileCount": 2227,
+      "path": "assets/photos"
+    },
+    {
+      "bytes": 199500311,
+      "fileCount": 1099,
+      "path": "modules/qinhan"
+    },
+    {
+      "bytes": 199500311,
+      "fileCount": 1099,
+      "path": "modules/qinhan/assets"
     }
   ],
-  "totalBytes": 1368044989
+  "totalBytes": 983043763
 }
