@@ -117,6 +117,8 @@ html.guobo-intro-complete .topbar, html.guobo-intro-complete .hero-inner, html.g
 .official-button { display: inline-flex; align-items: center; gap: .9rem; min-height: 42px; padding: .55rem .9rem; border: 1px solid var(--gold); color: var(--red-950); background: var(--gold); font-size: .72rem; letter-spacing: .08em; transition: transform 180ms ease, background 180ms ease; }
 .official-button:hover, .official-button:focus-visible { transform: translateY(-2px); background: var(--gold-soft); }
 .official-button span, .dialog-source span { font-size: 1rem; }
+.atlas-link { display: inline-flex; align-items: center; min-height: 42px; margin-left: auto; margin-right: .85rem; padding: .3rem .15rem; border-bottom: 1px solid color-mix(in oklch, var(--gold) 58%, transparent); color: var(--gold-soft); font-family: var(--mono); font-size: .62rem; letter-spacing: .08em; white-space: nowrap; transition: color 180ms ease, border-color 180ms ease; }
+.atlas-link:hover, .atlas-link:focus-visible { color: white; border-color: white; outline: 0; }
 
 .hero { position: relative; min-height: min(790px, 100svh); display: flex; align-items: center; isolation: isolate; overflow: hidden; background: var(--red-950) url("assets/generated/hero-lacquer-gold.png") center / cover no-repeat; }
 .hero-overlay { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(31, 7, 7, .36) 0%, rgba(31, 7, 7, .12) 50%, rgba(31, 7, 7, .28) 100%); }
@@ -194,6 +196,7 @@ h1 em { color: var(--gold); font-style: normal; }
   .opening-meta { right: 1.5rem; bottom: 1.5rem; left: 1.5rem; align-items: flex-start; flex-direction: column; gap: .75rem; font-size: .5rem; }
   .topbar { position: absolute; padding: .9rem 1rem; }
   .topbar > .official-button { display: none; }
+  .atlas-link { min-height: 38px; margin-right: 0; font-size: .55rem; letter-spacing: .05em; }
   .brand-mark { width: 2.35rem; height: 2.35rem; font-size: 1.15rem; }
   .brand-copy strong { font-size: .76rem; letter-spacing: .08em; }
   .brand-copy small { font-size: .5rem; }
