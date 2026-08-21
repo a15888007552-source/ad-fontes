@@ -2157,6 +2157,32 @@ CITYINFO["帕多瓦"]={
    城市画廊已有的三张图作为第一层代表建筑；每个地点再以中文 Wikipedia 补充摘要、坐标和图片。
    没有可靠坐标时不把城市中心估值冒充建筑精确点；专题地点的人工候选坐标会明确标注。 */
 /* 扩展点图片走独立静态素材仓库；Wikipedia API 仍只负责补充中文摘要与坐标。 */
+const POI_IMAGE_NEEDS_USER={
+  "莱比锡|莱比锡音乐与戏剧学院": "目前没有找到能确认属于该学院主楼的可靠实景图；搜索结果容易混入其他学校或 Logo。",
+  "芝加哥|德保罗大学表演艺术学院": "没有找到能确认对应表演艺术学院建筑的清晰实景图。",
+  "费城|天普大学博耶音乐与舞蹈学院": "没有找到能确认对应博耶音乐与舞蹈学院建筑的清晰实景图。",
+  "华盛顿|美国国会图书馆音乐部": "现有候选主要是馆内藏品或室内阅读空间；没有把音乐部所在位置和外景可靠对应起来。",
+  "匹兹堡|卡内基梅隆大学音乐学院": "没有找到能确认对应音乐学院建筑的可靠实景图。",
+  "新港|耶鲁大学": "目前没有在该条目上找到既能代表耶鲁大学又不是 Logo/校徽的稳定候选图。",
+  "威尼斯|贝内德托·马尔切洛音乐学院": "没有找到能确认属于该音乐学院的清晰建筑外景。",
+  "曼托瓦|卢奇奥·坎皮亚尼音乐学院": "已确认学校地址位于旧兵营建筑内，但没有找到可以放心代表该校的清晰实景图。",
+  "贝尔加莫|多尼采蒂音乐学院": "没有找到能确认对应学院主楼的可靠实景图。",
+  "卡塔尼亚|贝利尼音乐学院": "现有素材主要是管风琴/室内物件，没有找到可放心代表学院建筑的外景。",
+  "卢卡|博凯里尼音乐学院": "没有找到能确认对应音乐学院建筑的可靠实景图。",
+  "利摩日|利摩日地区音乐学院": "搜索结果容易混入修道院手稿、展品或其他利摩日建筑；尚未找到可靠遗址实景。",
+  "德累斯顿|卡尔·玛丽亚·冯·韦伯音乐学院": "没有找到能确认对应学院建筑的可靠实景图。",
+  "塔林|爱沙尼亚音乐与戏剧学院": "没有找到能确认对应学院建筑的清晰实景图。",
+  "利摩日|圣马夏尔修道院遗址": "没有找到能准确对应遗址位置的可靠实景图。",
+  "洛杉矶|好莱坞露天剧场": "目前候选图多为演出、人物或舞台照片，没有找到适合作为地点主图的场地外景。",
+  "新港|耶鲁斯普拉格音乐厅": "目前只有门牌/铭牌近景；没有找到已确认是该建筑整体外观的可靠图。",
+  "雅典|希罗德·阿提库斯剧场": "当前缓存没有可靠实景候选；暂不使用演出人物或舞台图。",
+  "雅典|雅典音乐厅": "Commons 中较清楚的素材主要是 Logo、花园/人行道或室内图，建筑外景候选分辨率和对应关系不足。",
+  "克罗顿|卡波·科隆纳神庙遗址": "没有找到能稳定确认对应遗址的清晰实景图。",
+  "宾根|鼠塔与莱茵河": "没有找到能同时清楚呈现鼠塔和准确地点关系的可靠实景图。",
+  "宾根|希尔德加德受神启像(《认识主道》抄本)": "现有素材本身是手稿插图，不是可作为地点主图的现实场所；需要你提供遗址/纪念地点实景。",
+  "佛罗伦萨|佩尔戈拉剧院": "没有找到能确认对应剧院外观的可靠实景图。",
+  "凡尔赛|凡尔赛皇家歌剧院": "Commons 主要是剧院内部或历史绘画；目前没有找到适合作为主图的建筑外景。"
+};
 const POI_ASSET_BASE="https://a15888007552-source.github.io/ad-fontes-europa-assets/";
 const POI_ASSETS={
   "巴黎|巴黎国立高等音乐舞蹈学院": {
@@ -4201,9 +4227,10 @@ function poiRecord(city,a,i,source){
   const name=a.name||a.landmark||`${city}代表建筑 ${i+1}`,key=`${city}|${name}`;
   const wiki=a.wiki||POI_WIKI[key]||poiCleanName(name);
   const asset=POI_ASSETS[key]||POI_ASSETS[`${city}|${poiCleanName(name)}`]||null;
+  const imageNeedsUser=POI_IMAGE_NEEDS_USER[key]||POI_IMAGE_NEEDS_USER[`${city}|${poiCleanName(name)}`]||"";
   const known=key==="伦敦|皇家阿尔伯特音乐厅"?[-0.177436,51.500944]:null;
   const loc=known||POI_LOCATION_OVERRIDES[key]||POI_LOCATION_OVERRIDES[`${city}|${poiCleanName(name)}`]||POI_LOCATIONS[key]||POI_LOCATIONS[`${city}|${poiCleanName(name)}`]||null;
-  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",foreignWiki:POI_FOREIGN[key]||POI_FOREIGN[`${city}|${poiCleanName(name)}`]||null,localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}`:"",credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||loc||null,source:source||"city",lat:a.lat,lon:a.lon}
+  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",foreignWiki:POI_FOREIGN[key]||POI_FOREIGN[`${city}|${poiCleanName(name)}`]||null,localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}`:"",imageNeedsUser,credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||loc||null,source:source||"city",lat:a.lat,lon:a.lon}
 }
 function cityPOISeeds(city){
   const info=CITYINFO[city]||{},src=info.imgs||(info.img?[info]:[]),arr=[],seen=new Set();
@@ -4276,7 +4303,7 @@ function resolvePOI(p){
       }
     }
     p.dataLang=historyLang;p.wikiUrl=data?.fullurl||wikiSearchURL(p);p.wikiLinkLabel=historyLang==="zh"?"打开中文 Wikipedia 来源页":`打开${WIKI_LANG_LABEL[historyLang]||"外文"} Wikipedia 原文页`;
-    if(data){p.wikiTitle=data.title||p.wiki;p.history=data.extract||"";p.imageUrl=data.originalimage?.source||data.thumbnail?.source||"";if(data.coordinates&&Number.isFinite(data.coordinates.lon)&&Number.isFinite(data.coordinates.lat)){p.lon=data.coordinates.lon;p.lat=data.coordinates.lat;p.coordSource="Wikipedia"}}
+    if(data){p.wikiTitle=data.title||p.wiki;p.history=data.extract||"";p.imageUrl=p.imageNeedsUser?"":(data.originalimage?.source||data.thumbnail?.source||"");if(data.coordinates&&Number.isFinite(data.coordinates.lon)&&Number.isFinite(data.coordinates.lat)){p.lon=data.coordinates.lon;p.lat=data.coordinates.lat;p.coordSource="Wikipedia"}}
     if(!p.history&&curated){p.history=curated;p.historySourceLabel="年鉴编辑补充摘要"}
     else if(p.history&&translatedFrom)p.historySourceLabel=`译自${WIKI_LANG_LABEL[historyLang]||"外文"} Wikipedia 摘要`;
     else if(p.history&&historyLang==="zh")p.historySourceLabel="中文 Wikipedia 摘要";
@@ -4292,9 +4319,10 @@ function ensureCityPOIs(c){
   poiCityPromises[c]=Promise.all(cityPOIs(c).concat(specialPOIs(c)).map(resolvePOI)).then(ps=>{if(realMap)requestRealMapOverlayRefresh();return ps});return poiCityPromises[c]
 }
 function poiCard(p){
-  const img=p.localImage||p.remoteImage||p.imageUrl,coord=Number.isFinite(p.lon)&&Number.isFinite(p.lat)?`${p.lat.toFixed(4)}°N · ${p.lon.toFixed(4)}°E`:(p.resolved?"未取得可核验坐标":"正在读取坐标"),history=p.history||"正在读取 Wikipedia 摘要并翻译成中文……",source=p.historySourceLabel?`<div class="poisource">${htmlEsc(p.historySourceLabel)}</div>`:"",wikiLinkLabel=p.wikiLinkLabel||"打开 Wikipedia 来源页";
+  const imageBlocked=!!p.imageNeedsUser,img=imageBlocked?"":(p.localImage||p.remoteImage||p.imageUrl),coord=Number.isFinite(p.lon)&&Number.isFinite(p.lat)?`${p.lat.toFixed(4)}°N · ${p.lon.toFixed(4)}°E`:(p.resolved?"未取得可核验坐标":"正在读取坐标"),history=p.history||"正在读取 Wikipedia 摘要并翻译成中文……",source=p.historySourceLabel?`<div class="poisource">${htmlEsc(p.historySourceLabel)}</div>`:"",wikiLinkLabel=p.wikiLinkLabel||"打开 Wikipedia 来源页";
   const music=p.music||((/音乐|歌剧|剧院|音乐厅|学院|大学|故居|纪念/.test(p.kind||"")&&p.context)?`它所在的${p.city}音乐史语境：${p.context}`:"");
-  return `<article class="poicard"><div class="poikicker"><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.city)} · ${htmlEsc(poiKindLabel(p))}</div><h4>${htmlEsc(p.name)}</h4><div style="font:11px var(--sans);letter-spacing:.08em;color:var(--mut)">${coord}${p.approx?" · 候选定位，待来源页核对":""}</div>${img?`<figure class="poifig"><img loading="lazy" src="${htmlEsc(img)}" alt="${htmlEsc(p.name)}"><figcaption>${htmlEsc(p.credit||"Wikipedia / Wikimedia Commons")}</figcaption></figure>`:`<div class="poifig" style="font:12px var(--sans);color:var(--mut);padding:18px">图片正在从 Wikipedia 读取……</div>`}<div class="poisection"><h5>建筑 / 地点史</h5>${source}<p class="poitext">${htmlEsc(history)}</p></div>${music?`<div class="poisection"><h5>与音乐 / 音乐家的关联</h5><p class="poitext poimusic">${htmlEsc(music)}</p></div>`:""}<div class="poi-actions"><button type="button" id="poi-city-back">返回${htmlEsc(p.city)}城市卡</button>${p.wikiUrl?`<a href="${htmlEsc(p.wikiUrl)}" target="_blank" rel="noopener">${htmlEsc(wikiLinkLabel)} ↗</a>`:""}</div></article>`
+  const imageMarkup=imageBlocked?`<div class="poifig" style="font:12px var(--sans);color:var(--mut);padding:18px">暂无可靠的真实地点实景图。${htmlEsc(p.imageNeedsUser)}</div>`:img?`<figure class="poifig"><img loading="lazy" src="${htmlEsc(img)}" alt="${htmlEsc(p.name)}"><figcaption>${htmlEsc(p.credit||"Wikimedia Commons")}</figcaption></figure>`:`<div class="poifig" style="font:12px var(--sans);color:var(--mut);padding:18px">图片正在从 Wikimedia 缓存读取……</div>`;
+  return `<article class="poicard"><div class="poikicker"><span class="poiicon ${poiKindClass(p)}"><span>${poiGlyph(p)}</span></span>${htmlEsc(p.city)} · ${htmlEsc(poiKindLabel(p))}</div><h4>${htmlEsc(p.name)}</h4><div style="font:11px var(--sans);letter-spacing:.08em;color:var(--mut)">${coord}${p.approx?" · 候选定位，待来源页核对":""}</div>${imageMarkup}<div class="poisection"><h5>建筑 / 地点史</h5>${source}<p class="poitext">${htmlEsc(history)}</p></div>${music?`<div class="poisection"><h5>与音乐 / 音乐家的关联</h5><p class="poitext poimusic">${htmlEsc(music)}</p></div>`:""}<div class="poi-actions"><button type="button" id="poi-city-back">返回${htmlEsc(p.city)}城市卡</button>${p.wikiUrl?`<a href="${htmlEsc(p.wikiUrl)}" target="_blank" rel="noopener">${htmlEsc(wikiLinkLabel)} ↗</a>`:""}</div></article>`
 }
 function poiPanel(p){
   const panel=$("#mappanel");if(!panel)return;panel.innerHTML=poiCard(p);const back=$("#poi-city-back");if(back)back.onclick=()=>cityPanel(p.city);
