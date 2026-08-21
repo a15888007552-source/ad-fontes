@@ -762,6 +762,14 @@ body {
   max-width:none;
 }
 
+/* 20260821 · remove the orphaned left rail from sections 04/05. The heading,
+   preview cards and archive cards now share one clean left edge. */
+.special,
+.method {
+  grid-template-columns:1fr;
+  gap:0;
+}
+
 .special-copy {
   min-width:0;
   grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
@@ -785,6 +793,7 @@ body {
 }
 
 .special-preview {
+  grid-column:1;
   width:100%;
   align-items:stretch;
 }
