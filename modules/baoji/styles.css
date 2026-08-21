@@ -492,8 +492,16 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 720px) {
   .page-shell { width: min(100% - 36px, 600px); }
-  .site-header { padding: .8rem 18px; }
-  .site-nav { gap: .75rem; font-size: .56rem; }
+  .site-header {
+    gap: 1rem;
+    padding: .8rem 18px;
+  }
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .5rem .75rem;
+    font-size: .56rem;
+  }
   .brand-text strong { font-size: .78rem; }
   .brand-text small { display: none; }
   .intro-curtain-frame { width: calc(100% - 28px); height: calc(100% - 28px); }
