@@ -18,6 +18,7 @@
   let activeFilter = "all";
   let activeCategory = "all";
   let lastFocusedElement = null;
+  let restoreFocusAfterDialogClose = true;
   let titleFitFrame = 0;
   const reduceMotion = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const zoomState = { scale: 1, x: 0, y: 0, dragging: false, pointerId: null, startX: 0, startY: 0, originX: 0, originY: 0 };
@@ -212,7 +213,11 @@
   function bindItemButtons(scope) {
     if (!scope) return;
     scope.querySelectorAll("[data-item-id]").forEach((button) => {
-      button.addEventListener("click", () => openItem(button.dataset.itemId));
+      button.addEventListener("click", () => openItem(button.dataset.itemId, {
+        syncUrl: true,
+        focusClose: true,
+        rememberFocus: true,
+      }));
     });
   }
 
@@ -381,10 +386,36 @@
       + '<p>' + escapeHtml(second || '观看时请按器物整体、局部和展签顺序核对；资料不足之处保留为待核。') + '</p>'
       + '</div>';
   }
-  function openItem(id) {
+  function getItemFromLocation() {
+    const id = new URLSearchParams(window.location.search).get("item");
+    return id && itemById.has(id) ? id : null;
+  }
+
+  function syncItemToUrl(id) {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get("item");
+
+    if (id) {
+      const next = String(id);
+      if (current === next) return;
+      url.searchParams.set("item", next);
+    } else {
+      if (!current) return;
+      url.searchParams.delete("item");
+    }
+
+    window.history.pushState(
+      { item: id ? String(id) : null },
+      "",
+      `${url.pathname}${url.search}${url.hash}`
+    );
+  }
+
+  function openItem(id, { syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
     const item = itemById.get(String(id));
     if (!item) return;
-    lastFocusedElement = document.activeElement;
+    const dialogAlreadyOpen = dialog.open || dialog.hasAttribute("open");
+    if (rememberFocus) lastFocusedElement = document.activeElement;
     const photos = Array.isArray(item.photos) ? item.photos.filter((photo) => photo && (photo.focus || photo.src)) : [];
     const title = document.getElementById("dialog-title");
     document.getElementById("dialog-kicker").textContent = [item.category || "观物档案", item.period || ""].filter(Boolean).join(" · ");
@@ -423,21 +454,27 @@
       galleryStrip.innerHTML = "";
     }
 
-    if (dialog.open && typeof dialog.close === "function") dialog.close();
-    if (typeof dialog.showModal === "function") dialog.showModal();
-    else dialog.setAttribute("open", "");
+    if (!dialogAlreadyOpen) {
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else dialog.setAttribute("open", "");
+    }
     dialog.setAttribute("aria-modal", "true");
     requestAnimationFrame(() => {
       dialog.classList.add("is-open");
-      document.getElementById("dialog-close")?.focus();
+      if (focusClose) document.getElementById("dialog-close")?.focus();
     });
+    if (syncUrl) syncItemToUrl(item.id);
   }
 
-  function closeDialog() {
+  function closeDialog({ syncUrl = false, restoreFocus = true } = {}) {
     resetImageZoom();
+    const dialogIsOpen = dialog.open || dialog.hasAttribute("open");
+    if (!dialogIsOpen) return;
+    restoreFocusAfterDialogClose = restoreFocus;
     dialog.classList.remove("is-open");
     if (dialog.open && typeof dialog.close === "function") dialog.close();
     else dialog.removeAttribute("open");
+    if (syncUrl) syncItemToUrl(null);
   }
 
   function renderSpecialPreview() {
@@ -547,21 +584,39 @@
     renderCategories();
     render();
   });
-  document.getElementById("dialog-close").addEventListener("click", closeDialog);
+  document.getElementById("dialog-close").addEventListener("click", () => closeDialog({ syncUrl: true, restoreFocus: true }));
   dialog.addEventListener("close", () => {
     dialog.classList.remove("is-open");
     dialog.removeAttribute("aria-modal");
-    const restore = lastFocusedElement;
+    const restore = restoreFocusAfterDialogClose ? lastFocusedElement : null;
     lastFocusedElement = null;
+    restoreFocusAfterDialogClose = true;
     if (restore && typeof restore.focus === "function") restore.focus();
   });
-  dialog.addEventListener("click", (event) => { if (event.target === dialog) closeDialog(); });
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) closeDialog({ syncUrl: true, restoreFocus: true });
+  });
+  dialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeDialog({ syncUrl: true, restoreFocus: true });
+  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "/" && document.activeElement !== searchInput) {
       event.preventDefault();
       searchInput.focus();
     }
-    if (event.key === "Escape") closeDialog();
+    if (event.key === "Escape" && (dialog.open || dialog.hasAttribute("open"))) {
+      event.preventDefault();
+      closeDialog({ syncUrl: true, restoreFocus: true });
+    }
+  });
+  window.addEventListener("popstate", () => {
+    const requestedItem = getItemFromLocation();
+    if (requestedItem) {
+      openItem(requestedItem, { syncUrl: false, focusClose: false, rememberFocus: false });
+    } else {
+      closeDialog({ syncUrl: false, restoreFocus: false });
+    }
   });
 
   const themeToggle = document.getElementById("theme-toggle");
@@ -595,5 +650,13 @@
   renderSpecialPreview();
   // Start the visible duration only after the heavy archive grid has finished
   // its synchronous first render; otherwise the timer can expire before paint.
-  initOpening();
+  const requestedItem = getItemFromLocation();
+  if (requestedItem) {
+    const root = document.documentElement;
+    document.getElementById("opening-screen")?.remove();
+    root.classList.remove("intro-enabled", "intro-playing");
+    openItem(requestedItem, { syncUrl: false, focusClose: true, rememberFocus: false });
+  } else {
+    initOpening();
+  }
 }());
