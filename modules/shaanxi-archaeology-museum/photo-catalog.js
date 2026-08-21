@@ -22,11 +22,44 @@
   let zoom = 1;
   let currentPage = 1;
   const pageSize = 12;
+  let lastFocusedElement = null;
+  let restoreFocusAfterDialogClose = true;
 
   const dialog = document.createElement("dialog");
   dialog.className = "artifact-dialog";
   dialog.setAttribute("aria-label", "文物详情");
   document.body.append(dialog);
+
+  function artifactById(id) {
+    return artifacts.find(
+      (artifact) => artifact.id === String(id)
+    ) || null;
+  }
+
+  function getItemFromLocation() {
+    const id = new URLSearchParams(window.location.search).get("item");
+    return id && artifactById(id) ? id : null;
+  }
+
+  function syncItemToUrl(id) {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get("item");
+
+    if (id) {
+      const next = String(id);
+      if (current === next) return;
+      url.searchParams.set("item", next);
+    } else {
+      if (!current) return;
+      url.searchParams.delete("item");
+    }
+
+    window.history.pushState(
+      { item: id ? String(id) : null },
+      "",
+      url.pathname + url.search + url.hash
+    );
+  }
 
   const factRow = (label, value) => value
     ? `<div class="artifact-fact"><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`
@@ -129,9 +162,23 @@
     resetZoom();
   }
 
-  function openArtifact(artifact) {
+  function openArtifact(
+    artifact,
+    {
+      syncUrl = false,
+      focusClose = true,
+      rememberFocus = true
+    } = {}
+  ) {
+    if (!artifact) return;
+    const dialogAlreadyOpen = dialog.open || dialog.hasAttribute("open");
     activeArtifact = artifact;
     activePhoto = 0;
+    if (rememberFocus) {
+      lastFocusedElement = document.activeElement;
+    } else {
+      lastFocusedElement = null;
+    }
     const facts = [
       factRow("类别", artifact.category),
       factRow("时代", artifact.period),
@@ -172,9 +219,44 @@
           <aside class="artifact-evidence"><strong>资料边界</strong><p>${escapeHtml(artifact.evidence_note)}</p></aside>
         </article>
       </div>`;
-    dialog.showModal();
+    if (!dialogAlreadyOpen) {
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute("open", "");
+      }
+    }
     document.body.classList.add("catalog-dialog-open");
     resetZoom();
+    if (focusClose) dialog.querySelector("[data-dialog-close]")?.focus();
+    if (syncUrl) syncItemToUrl(artifact.id);
+  }
+
+  function handleDialogClose() {
+    activeArtifact = null;
+    document.body.classList.remove("catalog-dialog-open");
+    const restore = restoreFocusAfterDialogClose ? lastFocusedElement : null;
+    lastFocusedElement = null;
+    restoreFocusAfterDialogClose = true;
+    if (restore && typeof restore.focus === "function") restore.focus();
+  }
+
+  function closeArtifact(
+    {
+      syncUrl = false,
+      restoreFocus = true
+    } = {}
+  ) {
+    const dialogIsOpen = dialog.open || dialog.hasAttribute("open");
+    if (!dialogIsOpen) return;
+    restoreFocusAfterDialogClose = restoreFocus;
+    if (syncUrl) syncItemToUrl(null);
+    if (dialog.open && typeof dialog.close === "function") {
+      dialog.close();
+    } else {
+      dialog.removeAttribute("open");
+      handleDialogClose();
+    }
   }
 
   root.addEventListener("input", (event) => {
@@ -185,7 +267,16 @@
   });
   root.addEventListener("click", (event) => {
     const card = event.target.closest("[data-artifact-id]");
-    if (card) openArtifact(artifacts.find((item) => item.id === card.dataset.artifactId));
+    if (card) {
+      const artifact = artifactById(card.dataset.artifactId);
+      if (artifact) {
+        openArtifact(artifact, {
+          syncUrl: true,
+          focusClose: true,
+          rememberFocus: true
+        });
+      }
+    }
   });
   root.addEventListener("keydown", (event) => {
     if ((event.key === "Enter" || event.key === " ") && event.target.matches("[data-artifact-id]")) {
@@ -195,21 +286,41 @@
   });
 
   dialog.addEventListener("click", (event) => {
-    if (event.target === dialog || event.target.closest("[data-dialog-close]")) dialog.close();
+    if (event.target === dialog || event.target.closest("[data-dialog-close]")) {
+      closeArtifact({ syncUrl: true, restoreFocus: true });
+      return;
+    }
     const photoButton = event.target.closest("[data-photo-index]");
     if (photoButton) selectPhoto(Number(photoButton.dataset.photoIndex));
     if (event.target.closest("[data-zoom-in]")) setZoom(zoom + 0.25);
     if (event.target.closest("[data-zoom-out]")) setZoom(zoom - 0.25);
     if (event.target.closest("[data-zoom-reset]")) resetZoom();
   });
+  dialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeArtifact({ syncUrl: true, restoreFocus: true });
+  });
   dialog.addEventListener("wheel", (event) => {
     if (!event.target.closest(".artifact-dialog-stage")) return;
     event.preventDefault();
     setZoom(zoom + (event.deltaY < 0 ? 0.2 : -0.2));
   }, { passive: false });
-  dialog.addEventListener("close", () => {
-    activeArtifact = null;
-    document.body.classList.remove("catalog-dialog-open");
+  dialog.addEventListener("close", handleDialogClose);
+
+  window.addEventListener("popstate", () => {
+    const id = getItemFromLocation();
+    if (id) {
+      openArtifact(artifactById(id), {
+        syncUrl: false,
+        focusClose: false,
+        rememberFocus: false
+      });
+    } else {
+      closeArtifact({
+        syncUrl: false,
+        restoreFocus: false
+      });
+    }
   });
 
   async function loadArtifactData() {
@@ -245,6 +356,14 @@
         <div class="artifact-catalog-grid"></div>
         <nav class="artifact-catalog-pager" data-artifact-pager aria-label="文物目录分页"></nav>`;
       renderCards();
+      const requestedItem = getItemFromLocation();
+      if (requestedItem) {
+        openArtifact(artifactById(requestedItem), {
+          syncUrl: false,
+          focusClose: true,
+          rememberFocus: false
+        });
+      }
     })
     .catch((error) => {
       root.innerHTML = `<p class="artifact-load-error"><strong>文物目录载入失败。</strong><br>请确认通过本地服务器打开页面，并刷新重试。<small>${escapeHtml(error.message)}</small></p>`;
