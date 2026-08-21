@@ -2184,6 +2184,7 @@ const POI_IMAGE_NEEDS_USER={
   "凡尔赛|凡尔赛皇家歌剧院": "Commons 主要是剧院内部或历史绘画；目前没有找到适合作为主图的建筑外景。"
 };
 const POI_ASSET_BASE="https://a15888007552-source.github.io/ad-fontes-europa-assets/";
+const POI_ASSET_VERSION="20260821-183442";
 const POI_ASSETS={
   "巴黎|巴黎国立高等音乐舞蹈学院": {
     "file": "images/poi/poi-000-4e597818af.jpg",
@@ -4230,7 +4231,7 @@ function poiRecord(city,a,i,source){
   const imageNeedsUser=POI_IMAGE_NEEDS_USER[key]||POI_IMAGE_NEEDS_USER[`${city}|${poiCleanName(name)}`]||"";
   const known=key==="伦敦|皇家阿尔伯特音乐厅"?[-0.177436,51.500944]:null;
   const loc=known||POI_LOCATION_OVERRIDES[key]||POI_LOCATION_OVERRIDES[`${city}|${poiCleanName(name)}`]||POI_LOCATIONS[key]||POI_LOCATIONS[`${city}|${poiCleanName(name)}`]||null;
-  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",foreignWiki:POI_FOREIGN[key]||POI_FOREIGN[`${city}|${poiCleanName(name)}`]||null,localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}`:"",imageNeedsUser,credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||loc||null,source:source||"city",lat:a.lat,lon:a.lon}
+  return{id:"poi-"+encodeURIComponent(city+"-"+name+"-"+i),city,name,kind:poiAutoKind(a,name,city),wiki,wikiLang:"zh",foreignWiki:POI_FOREIGN[key]||POI_FOREIGN[`${city}|${poiCleanName(name)}`]||null,localImage:a.img?`assets/city/${a.img}.jpg?${IMGV}`:"",remoteImage:asset?`${POI_ASSET_BASE}${asset.file}?v=${POI_ASSET_VERSION}`:"",imageNeedsUser,credit:a.cr||asset?.credit||"Wikipedia / Wikimedia Commons",music:a.music||POI_MUSIC[key]||"",context:(CITYINFO[city]&&CITYINFO[city].hist)||((CITY[city]&&CITY[city][2])||""),fallback:a.fallback||loc||null,source:source||"city",lat:a.lat,lon:a.lon}
 }
 function cityPOISeeds(city){
   const info=CITYINFO[city]||{},src=info.imgs||(info.img?[info]:[]),arr=[],seen=new Set();
