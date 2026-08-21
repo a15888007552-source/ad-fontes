@@ -82,7 +82,7 @@ function cardTemplate(group, index) {
     <article class="object-card${group.featured ? " is-featured" : ""}" style="--card-order:${index % 12}">
       <button type="button" data-open-id="${escapeHTML(group.id)}" aria-label="打开${escapeHTML(group.title)}详情">
         <span class="card-image">
-          <img src="${escapeHTML(group.main_image)}" alt="${escapeHTML(group.title)}的主体裁切图" loading="lazy" decoding="async" />
+          <img src="${escapeHTML(qinhanMediaUrl(group.main_image))}" alt="${escapeHTML(group.title)}的主体裁切图" loading="lazy" decoding="async" />
           <span class="image-process">${escapeHTML(group.processing.method)} · 非生成式</span>
         </span>
         <span class="card-copy">
@@ -156,7 +156,7 @@ function openGroup(id, pushHistory = false) {
 function setDialogImage(view, customPhoto = null) {
   const group = state.activeGroup;
   if (!group) return;
-  const nextSource = customPhoto ? customPhoto.web : view === "full" ? group.full_image : group.main_image;
+  const nextSource = qinhanMediaUrl(customPhoto ? customPhoto.web : view === "full" ? group.full_image : group.main_image);
   const nextAlt = customPhoto
     ? `${group.title} · ${customPhoto.role_label} · ${customPhoto.filename}`
     : `${group.title} · ${view === "full" ? "完整构图" : "主体裁切"}`;
@@ -176,7 +176,7 @@ function renderThumbnails(group) {
   const visiblePhotos = group.gallery.filter((photo) => photo.role !== "label");
   elements.thumbnails.innerHTML = visiblePhotos.map((photo) => `
     <button type="button" data-photo-sequence="${photo.sequence}" aria-label="查看${escapeHTML(photo.role_label)} ${escapeHTML(photo.filename)}">
-      <img src="${escapeHTML(photo.thumb)}" alt="" loading="lazy" decoding="async" />
+      <img src="${escapeHTML(qinhanMediaUrl(photo.thumb))}" alt="" loading="lazy" decoding="async" />
       <span>${escapeHTML(photo.role_label)} · ${escapeHTML(photo.filename)}</span>
     </button>
   `).join("");

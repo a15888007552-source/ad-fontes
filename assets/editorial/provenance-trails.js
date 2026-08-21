@@ -2,7 +2,12 @@
   const scriptUrl = document.currentScript?.src || new URL('assets/editorial/provenance-trails.js', document.baseURI).href;
   const projectRoot = new URL('../../', scriptUrl);
   const page = location.pathname.match(/\/modules\/([^/]+)\//)?.[1];
-  const img = (path) => new URL(path, projectRoot).href;
+  const img = (path) => {
+    if (page === 'qinhan' && typeof window.qinhanMediaUrl === 'function') {
+      return window.qinhanMediaUrl(path);
+    }
+    return new URL(path, projectRoot).href;
+  };
   if (!document.querySelector('link[data-provenance-trails]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';

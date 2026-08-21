@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED",
+  "module": "qinhan",
+  "activePublicBase": "https://ad-fontes-media.gusgumee777.workers.dev",
+  "plannedFiles": 1099,
+  "plannedBytes": 199500311,
+  "localMediaFiles": 1099,
+  "localMediaBytes": 199500311,
+  "staticWorkerReferenceOccurrences": 9,
+  "staticWorkerUniqueFiles": 5,
+  "staticWorkerPaths": [
+    "modules/qinhan/assets/brand-emblem.png",
+    "modules/qinhan/assets/external/qinhan-museum-aerial-li-yibo.jpg",
+    "modules/qinhan/assets/external/qinhan-museum-aerial-zou-hong.jpg",
+    "modules/qinhan/assets/processed/crop/du-tiger-tally.webp",
+    "modules/qinhan/assets/processed/crop/queen-seal.webp"
+  ],
+  "dynamicMediaFieldValues": 1096,
+  "dynamicUniqueFiles": 1096,
+  "dynamicFieldCounts": {
+    "main_image": 36,
+    "full_image": 36,
+    "thumb": 512,
+    "web": 512
+  },
+  "totalUniqueRuntimeMediaFiles": 1099,
+  "runtimeCoverageMissing": [],
+  "runtimeCoverageExtra": [],
+  "workerHttpVerified": 0,
+  "contentLengthVerified": 0,
+  "worker404Failures": 0,
+  "worker5xxFailures": 0,
+  "sha256Samples": {
+    "selected": 40,
+    "verified": 0,
+    "coverage": {}
+  },
+  "cacheControlSamples": {
+    "selected": 40,
+    "verified": 0,
+    "required": "public, max-age=86400, stale-while-revalidate=604800"
+  },
+  "directLocalRuntimeRequests": 0,
+  "runtimeOldR2DevReferences": 0,
+  "runtimeR2DevOccurrences": 0,
+  "workerBaseOccurrences": 10,
+  "doubleModulePrefixCount": 0,
+  "fileUriCount": 0,
+  "windowsAbsolutePathCount": 0,
+  "preloads": {
+    "count": 2,
+    "highPriorityCount": 1
+  },
+  "terminalHttpSmoke": {
+    "status": "PASS",
+    "resourcesChecked": 9,
+    "detail": "local HTTP smoke: 9 resources, all HTTP 200"
+  },
+  "provenanceMediaFiles": 4,
+  "provenanceWorkerResolved": 4,
+  "provenanceLocalRuntimeRequests": 0,
+  "provenanceResolverChecks": {
+    "qinhanDatasetPresent": true,
+    "qinhanUsesMediaResolver": true,
+    "qinhanResolverCall": true,
+    "nonQinhanLocalFallback": true
+  },
+  "runtimeRoutingStatus": "PASS",
+  "terminalNetworkStatus": "BLOCKED",
+  "terminalNetworkDetail": "Python single URL HTTP 403; curl.exe single URL exit 28; terminal network path to workers.dev unavailable",
+  "previousUploadVerification": {
+    "historical": true,
+    "status": "PASS",
+    "files": 1099,
+    "bytes": 199500311,
+    "http": 1099,
+    "contentLength": 1099,
+    "sha256Samples": 40,
+    "cacheControlSamples": 40
+  },
+  "browserSmoke": {
+    "status": "PASS",
+    "detail": "Chrome/Playwright: provenance 4/4 Worker HTTP 200; representative runtime regression passed; terminal Worker revalidation remains blocked",
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "provenanceMedia": 4,
+    "provenanceMediaLoaded": 4,
+    "provenanceWorkerHttp": 4,
+    "provenanceLocalRequests": 0,
+    "mediaFailures": 0,
+    "archiveDialogsChecked": 3,
+    "cropFullSwitch": "PASS"
+  },
+  "binaryMediaChanges": 0,
+  "verificationBlockers": [
+    "Worker HTTP verified 0 != 1099",
+    "Worker Content-Length verified 0 != 1099",
+    "SHA256 samples verified 0 != 40",
+    "SHA256 sample family missing: photos",
+    "SHA256 sample family missing: processed-crop",
+    "SHA256 sample family missing: processed-full",
+    "SHA256 sample family missing: external",
+    "Cache-Control samples verified 0 != 40"
+  ],
+  "workerVerificationSkipped": true,
+  "failedObjectCount": 0,
+  "unverifiedObjectCount": 1099,
+  "failedObjectExamples": []
+}

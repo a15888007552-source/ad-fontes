@@ -44,7 +44,7 @@ img { display: block; max-width: 100%; }
 .header-meta a { padding-bottom: .14rem; border-bottom: 1px solid rgba(255, 255, 255, .5); text-decoration: none; }
 
 .hero { position: relative; min-height: 100svh; overflow: hidden; color: #fff; background: #0f1312; isolation: isolate; }
-.hero-image { position: absolute; z-index: -3; inset: 0; background: url("assets/external/qinhan-museum-aerial-zou-hong.jpg") center 46% / cover no-repeat; transform: scale(1.025); animation: hero-breathe 18s ease-in-out infinite alternate; }
+.hero-image { position: absolute; z-index: -3; inset: 0; background: url("https://ad-fontes-media.gusgumee777.workers.dev/modules/qinhan/assets/external/qinhan-museum-aerial-zou-hong.jpg") center 46% / cover no-repeat; transform: scale(1.025); animation: hero-breathe 18s ease-in-out infinite alternate; }
 .hero-scrim { position: absolute; z-index: -2; inset: 0; background: linear-gradient(90deg, rgba(9, 13, 12, .88) 0%, rgba(9, 13, 12, .52) 48%, rgba(9, 13, 12, .28) 75%, rgba(9, 13, 12, .58) 100%), linear-gradient(0deg, rgba(9, 13, 12, .72), transparent 55%); }
 .hero::after { position: absolute; z-index: -1; inset: 66px 0 0; content: ""; opacity: .12; background: linear-gradient(90deg, transparent calc(50% - .5px), rgba(255, 255, 255, .7) 50%, transparent calc(50% + .5px)); pointer-events: none; }
 .hero-copy { position: relative; z-index: 2; display: flex; min-height: 100svh; flex-direction: column; justify-content: center; width: min(1420px, calc(100% - 10vw)); margin: 0 auto; padding: 8.5rem 0 9rem; }
