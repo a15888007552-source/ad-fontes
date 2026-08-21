@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "status": "BLOCKED",
+  "module": "qinhan",
+  "activePublicBase": "https://ad-fontes-media.gusgumee777.workers.dev",
+  "plannedFiles": 1099,
+  "plannedBytes": 199500311,
+  "localMediaFiles": 1099,
+  "localMediaBytes": 199500311,
+  "staticWorkerReferenceOccurrences": 9,
+  "staticWorkerUniqueFiles": 5,
+  "staticWorkerPaths": [
+    "modules/qinhan/assets/brand-emblem.png",
+    "modules/qinhan/assets/external/qinhan-museum-aerial-li-yibo.jpg",
+    "modules/qinhan/assets/external/qinhan-museum-aerial-zou-hong.jpg",
+    "modules/qinhan/assets/processed/crop/du-tiger-tally.webp",
+    "modules/qinhan/assets/processed/crop/queen-seal.webp"
+  ],
+  "dynamicMediaFieldValues": 1096,
+  "dynamicUniqueFiles": 1096,
+  "dynamicFieldCounts": {
+    "main_image": 36,
+    "full_image": 36,
+    "thumb": 512,
+    "web": 512
+  },
+  "totalUniqueRuntimeMediaFiles": 1099,
+  "runtimeCoverageMissing": [],
+  "runtimeCoverageExtra": [],
+  "workerHttpVerified": 0,
+  "contentLengthVerified": 0,
+  "worker404Failures": 0,
+  "worker5xxFailures": 0,
+  "sha256Samples": {
+    "selected": 40,
+    "verified": 0,
+    "coverage": {}
+  },
+  "cacheControlSamples": {
+    "selected": 40,
+    "verified": 0,
+    "required": "public, max-age=86400, stale-while-revalidate=604800"
+  },
+  "directLocalRuntimeRequests": 0,
+  "runtimeOldR2DevReferences": 0,
+  "runtimeR2DevOccurrences": 0,
+  "workerBaseOccurrences": 10,
+  "doubleModulePrefixCount": 0,
+  "fileUriCount": 0,
+  "windowsAbsolutePathCount": 0,
+  "preloads": {
+    "count": 2,
+    "highPriorityCount": 1
+  },
+  "terminalHttpSmoke": {
+    "status": "PASS",
+    "resourcesChecked": 9,
+    "detail": "local HTTP smoke: 9 resources, all HTTP 200"
+  },
+  "browserSmoke": {
+    "status": "SKIPPED",
+    "detail": "not launched: physical memory 80.9%; Chrome/Chromium unavailable on PATH"
+  },
+  "binaryMediaChanges": 0,
+  "verificationBlockers": [
+    "Worker HTTP verified 0 != 1099",
+    "Worker Content-Length verified 0 != 1099",
+    "SHA256 samples verified 0 != 40",
+    "SHA256 sample family missing: photos",
+    "SHA256 sample family missing: processed-crop",
+    "SHA256 sample family missing: processed-full",
+    "SHA256 sample family missing: external",
+    "Cache-Control samples verified 0 != 40"
+  ],
+  "failedObjectCount": 1099,
+  "failedObjectExamples": [
+    {
+      "path": "modules/qinhan/assets/brand-emblem.png",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/external/qinhan-museum-aerial-li-yibo.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/external/qinhan-museum-aerial-zou-hong.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2009.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2011.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2013.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2014.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2015.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2016.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2017.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2018.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2025.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2027.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2028.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2030.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2031.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2032.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2033.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2034.jpg",
+      "status": null,
+      "error": "URLError"
+    },
+    {
+      "path": "modules/qinhan/assets/photos/thumb/DSC_2035.jpg",
+      "status": null,
+      "error": "URLError"
+    }
+  ]
+}
