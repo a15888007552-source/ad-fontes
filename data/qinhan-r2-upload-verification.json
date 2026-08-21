@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "module": "qinhan",
+  "tool": "rclone",
+  "bucket": "ad-fontes-media",
+  "objectKeyPrefix": "modules/qinhan/",
+  "files": 1099,
+  "bytes": 199500311,
+  "publicBase": "https://ad-fontes-media.gusgumee777.workers.dev",
+  "localExists": 1099,
+  "localBytes": 199500311,
+  "localSha256Verified": 1099,
+  "uploadedFiles": 1099,
+  "uploadedBytes": 199500311,
+  "httpVerified": 1099,
+  "contentLengthVerified": 1099,
+  "http404Failures": 0,
+  "http5xxFailures": 0,
+  "sha256SamplesSelected": 40,
+  "sha256SamplesVerified": 40,
+  "sha256SampleDirectoryCoverage": {
+    "external": 1,
+    "other": 1,
+    "photos/thumb": 14,
+    "photos/web": 20,
+    "processed/crop": 3,
+    "processed/full": 1
+  },
+  "contentTypeSamplesSelected": 40,
+  "contentTypeSamplesVerified": 40,
+  "cacheControlSamplesSelected": 40,
+  "cacheControlSamplesVerified": 40,
+  "requiredCacheControl": "public, max-age=86400, stale-while-revalidate=604800",
+  "nonexistentObjectStatus": 404,
+  "doubleModulePrefixCount": 0,
+  "fileUrlCount": 0,
+  "windowsAbsolutePathCount": 0,
+  "failedObjectCount": 0,
+  "mediaDirectories": [
+    {
+      "path": "external",
+      "files": 2,
+      "bytes": 550773
+    },
+    {
+      "path": "other",
+      "files": 1,
+      "bytes": 34726
+    },
+    {
+      "path": "photos/thumb",
+      "files": 512,
+      "bytes": 12352550
+    },
+    {
+      "path": "photos/web",
+      "files": 512,
+      "bytes": 167914908
+    },
+    {
+      "path": "processed/crop",
+      "files": 36,
+      "bytes": 8873612
+    },
+    {
+      "path": "processed/full",
+      "files": 36,
+      "bytes": 9773742
+    }
+  ],
+  "generatedAt": "2026-08-21T14:20:55.424781+00:00"
+}
