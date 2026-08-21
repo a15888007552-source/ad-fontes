@@ -1,9 +1,9 @@
 # MEDIA AUDIT
 
-- Media files: **7,357**
-- Total media size: **1,370,614,791 bytes (1.28 GiB)**
+- Media files: **7,355**
+- Total media size: **1,368,044,989 bytes (1.27 GiB)**
 - Referenced media: **4,515**
-- Suspected orphan media: **2,842** / **448,982,234 bytes (428.18 MiB)**; nothing was deleted.
+- Suspected orphan media: **2,840** / **446,412,432 bytes (425.73 MiB)**; nothing was deleted.
 - Embedded image data URIs: **120** / **3,809,658 approximate bytes (3.63 MiB)**
 - Embedded data URIs over 100 KiB: **1** / **139,896 approximate bytes**
 
@@ -11,7 +11,7 @@
 
 | Extension | Files | Bytes |
 |---|---:|---:|
-| `.webp` | 2,481 | 751,647,810 |
+| `.webp` | 2,479 | 749,078,008 |
 | `.jpg` | 4,650 | 565,797,780 |
 | `.png` | 223 | 53,168,376 |
 | `.svg` | 3 | 825 |
@@ -28,7 +28,7 @@
 | `europa` | 501 | 100,590,362 |
 | `baoji` | 772 | 89,640,138 |
 | `proceedings` | 589 | 15,770,040 |
-| `museum-atlas` | 12 | 11,252,988 |
+| `museum-atlas` | 10 | 8,683,186 |
 | `theory` | 9 | 1,492,768 |
 | `beilin` | 1 | 32,908 |
 
@@ -36,7 +36,7 @@
 
 | Directory | Files (recursive) | Bytes (recursive) |
 |---|---:|---:|
-| `modules` | 5,077 | 1,046,288,589 |
+| `modules` | 5,075 | 1,043,718,787 |
 | `modules/shaanxi-history` | 814 | 390,818,551 |
 | `modules/shaanxi-history/assets` | 814 | 390,818,551 |
 | `modules/shaanxi-history/assets/photos` | 505 | 325,407,336 |
@@ -84,23 +84,23 @@
 | 11 | `modules/museum-atlas/assets/ai-dayanta-card.png` | `.png` | 2,577,177 | `museum-atlas` | yes |
 | 12 | `modules/xian-museum/assets/photos/focus-4943.webp` | `.webp` | 2,421,768 | `xian-museum` | yes |
 | 13 | `modules/museum-atlas/assets/ai-xian-bell-tower.png` | `.png` | 2,302,246 | `museum-atlas` | yes |
-| 14 | `modules/museum-atlas/assets/beijing-palace.webp` | `.webp` | 2,299,902 | `museum-atlas` | no |
-| 15 | `modules/baoji/assets/generated/bronze-paper-texture-v1.png` | `.png` | 2,211,383 | `baoji` | no |
-| 16 | `modules/baoji/assets/generated/treasures-opening-tableau-v1.png` | `.png` | 2,071,792 | `baoji` | no |
-| 17 | `modules/shaanxi-history/assets/photos/focus-4762.webp` | `.webp` | 2,058,884 | `shaanxi-history` | yes |
-| 18 | `modules/xian-museum/assets/photos/focus-5116.webp` | `.webp` | 1,895,224 | `xian-museum` | yes |
-| 19 | `modules/shaanxi-history/assets/supplement/quelou.jpg` | `.jpg` | 1,842,855 | `shaanxi-history` | yes |
-| 20 | `modules/baoji/assets/generated/bronze-gallery-atmosphere-v1.png` | `.png` | 1,832,635 | `baoji` | no |
-| 21 | `modules/xian-museum/assets/photos/focus-4963.webp` | `.webp` | 1,780,180 | `xian-museum` | yes |
-| 22 | `modules/shaanxi-history/assets/photos/focus-3971.webp` | `.webp` | 1,744,718 | `shaanxi-history` | no |
-| 23 | `modules/xian-museum/assets/photos/focus-4941.webp` | `.webp` | 1,734,916 | `xian-museum` | no |
-| 24 | `modules/xian-museum/assets/photos/focus-4942.webp` | `.webp` | 1,721,516 | `xian-museum` | no |
-| 25 | `modules/shaanxi-history/assets/card-museum-underlay.png` | `.png` | 1,712,324 | `shaanxi-history` | yes |
-| 26 | `modules/shaanxi-history/assets/photos/focus-3957.webp` | `.webp` | 1,697,420 | `shaanxi-history` | yes |
-| 27 | `modules/shaanxi-history/assets/photos/focus-3959.webp` | `.webp` | 1,695,140 | `shaanxi-history` | yes |
-| 28 | `modules/xian-museum/assets/photos/focus-5120.webp` | `.webp` | 1,646,270 | `xian-museum` | yes |
-| 29 | `modules/shaanxi-history/assets/photos/focus-4552.webp` | `.webp` | 1,637,524 | `shaanxi-history` | yes |
-| 30 | `modules/xian-museum/assets/photos/focus-5047.webp` | `.webp` | 1,624,374 | `xian-museum` | yes |
+| 14 | `modules/baoji/assets/generated/bronze-paper-texture-v1.png` | `.png` | 2,211,383 | `baoji` | no |
+| 15 | `modules/baoji/assets/generated/treasures-opening-tableau-v1.png` | `.png` | 2,071,792 | `baoji` | no |
+| 16 | `modules/shaanxi-history/assets/photos/focus-4762.webp` | `.webp` | 2,058,884 | `shaanxi-history` | yes |
+| 17 | `modules/xian-museum/assets/photos/focus-5116.webp` | `.webp` | 1,895,224 | `xian-museum` | yes |
+| 18 | `modules/shaanxi-history/assets/supplement/quelou.jpg` | `.jpg` | 1,842,855 | `shaanxi-history` | yes |
+| 19 | `modules/baoji/assets/generated/bronze-gallery-atmosphere-v1.png` | `.png` | 1,832,635 | `baoji` | no |
+| 20 | `modules/xian-museum/assets/photos/focus-4963.webp` | `.webp` | 1,780,180 | `xian-museum` | yes |
+| 21 | `modules/shaanxi-history/assets/photos/focus-3971.webp` | `.webp` | 1,744,718 | `shaanxi-history` | no |
+| 22 | `modules/xian-museum/assets/photos/focus-4941.webp` | `.webp` | 1,734,916 | `xian-museum` | no |
+| 23 | `modules/xian-museum/assets/photos/focus-4942.webp` | `.webp` | 1,721,516 | `xian-museum` | no |
+| 24 | `modules/shaanxi-history/assets/card-museum-underlay.png` | `.png` | 1,712,324 | `shaanxi-history` | yes |
+| 25 | `modules/shaanxi-history/assets/photos/focus-3957.webp` | `.webp` | 1,697,420 | `shaanxi-history` | yes |
+| 26 | `modules/shaanxi-history/assets/photos/focus-3959.webp` | `.webp` | 1,695,140 | `shaanxi-history` | yes |
+| 27 | `modules/xian-museum/assets/photos/focus-5120.webp` | `.webp` | 1,646,270 | `xian-museum` | yes |
+| 28 | `modules/shaanxi-history/assets/photos/focus-4552.webp` | `.webp` | 1,637,524 | `shaanxi-history` | yes |
+| 29 | `modules/xian-museum/assets/photos/focus-5047.webp` | `.webp` | 1,624,374 | `xian-museum` | yes |
+| 30 | `modules/shaanxi-history/assets/photos/focus-3962.webp` | `.webp` | 1,604,358 | `shaanxi-history` | yes |
 
 ## Duplicate media
 
@@ -126,7 +126,6 @@ Only the conservative `suspected_orphan` label is used. No file is deleted or mo
 | `assets/editorial/theme-stele.png` | 2,898,979 | `global` | `9698f6ff1479c1197014c771e267e85bf6e21b5d9734b2b78aae44c8ff676feb` |
 | `guobo-museum/assets/generated/resonance-divider.png` | 2,886,765 | `global` | `9997636e9a21c70a2803a447ff3b830afed5f0deb6f770a782ab35a1d1dc6f32` |
 | `assets/editorial/theme-objects.png` | 2,771,986 | `global` | `b7474741d8b7d44fac85aa3adfa0e2b7199720a912dc68fed3e5ca8b8ca9d1f0` |
-| `modules/museum-atlas/assets/beijing-palace.webp` | 2,299,902 | `museum-atlas` | `edd8ffba9f81221d7a37173f0a385b061eef81c12b3f44a94b7245ad7c875490` |
 | `modules/baoji/assets/generated/bronze-paper-texture-v1.png` | 2,211,383 | `baoji` | `0e1dc0b9b21b9cc2ad47b764deff94f298e73b63ced0900dec3893a75d3c5dec` |
 | `modules/baoji/assets/generated/treasures-opening-tableau-v1.png` | 2,071,792 | `baoji` | `3db36c96f47d3086c9c4806f1f7706192adfb68221fe72b52ccfacb58729e39e` |
 | `modules/baoji/assets/generated/bronze-gallery-atmosphere-v1.png` | 1,832,635 | `baoji` | `4acc7be598fe132f00ab090cb9b1663c00f9ec6b7d38d9b8de572fdc9237f5aa` |
@@ -169,6 +168,7 @@ Only the conservative `suspected_orphan` label is used. No file is deleted or mo
 | `modules/xian-museum/assets/photos/focus-5088.webp` | 745,936 | `xian-museum` | `e2a9227d97465cbb97123743b326bb3ed54ac7bac94e6f6be4e6ec83d6e915ce` |
 | `modules/shaanxi-history/assets/photos/focus-4320.webp` | 740,598 | `shaanxi-history` | `0fe3475a6ae018afb7e9cc72930b1b6b563fd37bec3f62abd9ed9b60f21b50f3` |
 | `assets/photos/large/DSC_1429.webp` | 735,960 | `global` | `af0d26376dbe7ac3f63250bf43df4784613a5977716a71f57d9a5f6631209001` |
+| `assets/photos/large/DSC_1519.webp` | 732,374 | `global` | `0a2f71c776b4180d4687bf6c1996cc5804f55609de8c5122bc41d760966c78f3` |
 
 ## Embedded data URIs
 
@@ -233,9 +233,9 @@ Roles use extension, byte size, and path/reference metadata only; no dimensions,
 
 | Role | File count |
 |---|---:|
-| `thumb` candidate | 7,357 |
-| `display` candidate | 7,357 |
-| `original` candidate | 118 |
+| `thumb` candidate | 7,355 |
+| `display` candidate | 7,355 |
+| `original` candidate | 117 |
 
 ## Git storage candidates
 
@@ -252,7 +252,7 @@ Files are flagged for review when they are >= 10.00 MiB, duplicate-content membe
 
 ## Priority directories
 
-1. `modules` — 5,077 files, 1,046,288,589 bytes (997.82 MiB).
+1. `modules` — 5,075 files, 1,043,718,787 bytes (995.37 MiB).
 2. `modules/shaanxi-history` — 814 files, 390,818,551 bytes (372.71 MiB).
 3. `modules/shaanxi-history/assets` — 814 files, 390,818,551 bytes (372.71 MiB).
 4. `modules/shaanxi-history/assets/photos` — 505 files, 325,407,336 bytes (310.33 MiB).

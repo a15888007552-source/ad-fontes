@@ -5,49 +5,13 @@
   },
   "byDirectory": [
     {
-      "bytes": 261531625,
-      "dynamicReferenceBytes": 123946131,
-      "fileCount": 1647,
+      "bytes": 258961823,
+      "dynamicReferenceBytes": 125438899,
+      "fileCount": 1645,
       "generatedDerivativeBytes": 132136952,
-      "highConfidenceProbableUnusedBytes": 3505179,
+      "highConfidenceProbableUnusedBytes": 0,
       "path": "modules",
-      "probableUnusedBytes": 3505179
-    },
-    {
-      "bytes": 2569802,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 2,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 2569802,
-      "path": "modules/museum-atlas",
-      "probableUnusedBytes": 2569802
-    },
-    {
-      "bytes": 2569802,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 2,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 2569802,
-      "path": "modules/museum-atlas/assets",
-      "probableUnusedBytes": 2569802
-    },
-    {
-      "bytes": 1492768,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 9,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 935377,
-      "path": "modules/theory",
-      "probableUnusedBytes": 935377
-    },
-    {
-      "bytes": 1492768,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 9,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 935377,
-      "path": "modules/theory/assets",
-      "probableUnusedBytes": 935377
+      "probableUnusedBytes": 0
     },
     {
       "bytes": 180932540,
@@ -347,6 +311,24 @@
       "probableUnusedBytes": 0
     },
     {
+      "bytes": 1492768,
+      "dynamicReferenceBytes": 1492768,
+      "fileCount": 9,
+      "generatedDerivativeBytes": 0,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/theory",
+      "probableUnusedBytes": 0
+    },
+    {
+      "bytes": 1492768,
+      "dynamicReferenceBytes": 1492768,
+      "fileCount": 9,
+      "generatedDerivativeBytes": 0,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/theory/assets",
+      "probableUnusedBytes": 0
+    },
+    {
       "bytes": 1306323,
       "dynamicReferenceBytes": 0,
       "fileCount": 1,
@@ -571,37 +553,6 @@
       "module": "shaanxi-archaeology-museum"
     },
     {
-      "bytes": 2569802,
-      "classifications": {
-        "confirmed_referenced": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "generated_derivative": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "probable_dynamic_reference": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "probable_unused": {
-          "bytes": 2569802,
-          "fileCount": 2
-        },
-        "source_original": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "unknown": {
-          "bytes": 0,
-          "fileCount": 0
-        }
-      },
-      "fileCount": 2,
-      "module": "museum-atlas"
-    },
-    {
       "bytes": 1492768,
       "classifications": {
         "confirmed_referenced": {
@@ -613,20 +564,20 @@
           "fileCount": 0
         },
         "probable_dynamic_reference": {
-          "bytes": 0,
-          "fileCount": 0
+          "bytes": 1492768,
+          "fileCount": 9
         },
         "probable_unused": {
-          "bytes": 935377,
-          "fileCount": 7
+          "bytes": 0,
+          "fileCount": 0
         },
         "source_original": {
           "bytes": 0,
           "fileCount": 0
         },
         "unknown": {
-          "bytes": 557391,
-          "fileCount": 2
+          "bytes": 0,
+          "fileCount": 0
         }
       },
       "fileCount": 9,
@@ -640,9 +591,9 @@
       "fileCount": 0
     },
     {
-      "bytes": 123946131,
+      "bytes": 125438899,
       "classification": "probable_dynamic_reference",
-      "fileCount": 815
+      "fileCount": 824
     },
     {
       "bytes": 17012059,
@@ -655,14 +606,14 @@
       "fileCount": 2002
     },
     {
-      "bytes": 3505179,
+      "bytes": 0,
       "classification": "probable_unused",
-      "fileCount": 9
+      "fileCount": 0
     },
     {
-      "bytes": 711806,
+      "bytes": 154415,
       "classification": "unknown",
-      "fileCount": 5
+      "fileCount": 3
     }
   ],
   "classificationDefinitions": {
@@ -683,34 +634,34 @@
       "fileCount": 2002
     },
     "probable_dynamic_reference": {
-      "bytes": 123946131,
-      "fileCount": 815
+      "bytes": 125438899,
+      "fileCount": 824
     },
     "probable_unused": {
-      "bytes": 3505179,
-      "fileCount": 9
+      "bytes": 0,
+      "fileCount": 0
     },
     "source_original": {
       "bytes": 17012059,
       "fileCount": 11
     },
     "unknown": {
-      "bytes": 711806,
-      "fileCount": 5
+      "bytes": 154415,
+      "fileCount": 3
     }
   },
   "confidenceTotals": {
     "high": {
-      "bytes": 305805998,
-      "fileCount": 2020
+      "bytes": 302300819,
+      "fileCount": 2011
     },
     "low": {
-      "bytes": 711806,
-      "fileCount": 5
+      "bytes": 154415,
+      "fileCount": 3
     },
     "medium": {
-      "bytes": 142464430,
-      "fileCount": 817
+      "bytes": 143957198,
+      "fileCount": 826
     }
   },
   "confirmedReferencedBytes": 0,
@@ -718,11 +669,11 @@
   "directoryDispositions": {
     "keepInWebsiteRepository": [
       {
-        "bytes": 261531625,
-        "dynamicRescueCount": 815,
+        "bytes": 258961823,
+        "dynamicRescueCount": 824,
         "path": "modules",
         "referencedSiblingCount": 3430,
-        "suspectedOrphanCount": 1647
+        "suspectedOrphanCount": 1645
       },
       {
         "bytes": 180932540,
@@ -860,14 +811,14 @@
     ],
     "manualConfirmation": [
       {
-        "bytes": 261531625,
-        "dynamicRescueCount": 815,
+        "bytes": 258961823,
+        "dynamicRescueCount": 824,
         "generatedDerivativeBytes": 132136952,
         "path": "modules",
-        "probableUnusedBytes": 3505179,
+        "probableUnusedBytes": 0,
         "referencedSiblingCount": 3430,
-        "suspectedOrphanCount": 1647,
-        "unknownBytes": 637040
+        "suspectedOrphanCount": 1645,
+        "unknownBytes": 79649
       },
       {
         "bytes": 180932540,
@@ -1062,12 +1013,12 @@
     ],
     "originalsOutOfRepositoryCandidate": [
       {
-        "bytes": 261531625,
-        "dynamicRescueCount": 815,
+        "bytes": 258961823,
+        "dynamicRescueCount": 824,
         "path": "modules",
         "referencedSiblingCount": 3430,
         "sourceOriginalBytes": 1306323,
-        "suspectedOrphanCount": 1647
+        "suspectedOrphanCount": 1645
       },
       {
         "bytes": 180932540,
@@ -1172,35 +1123,15 @@
       }
     ]
   },
-  "dynamicReferenceRescueBytes": 123946131,
-  "dynamicReferenceRescueCount": 815,
+  "dynamicReferenceRescueBytes": 125438899,
+  "dynamicReferenceRescueCount": 824,
   "generatedDerivativeBytes": 303807059,
   "generatedDerivativeCount": 2002,
-  "highConfidenceProbableUnusedBytes": 3505179,
-  "highConfidenceProbableUnusedCount": 9,
-  "inputSuspectedOrphanBytes": 448982234,
-  "inputSuspectedOrphanCount": 2842,
+  "highConfidenceProbableUnusedBytes": 0,
+  "highConfidenceProbableUnusedCount": 0,
+  "inputSuspectedOrphanBytes": 446412432,
+  "inputSuspectedOrphanCount": 2840,
   "priorityDirectories": [
-    {
-      "bytes": 2569802,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 2,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 2569802,
-      "path": "modules/museum-atlas/assets",
-      "priorityBasis": "probable_unused_release_candidate",
-      "probableUnusedBytes": 2569802
-    },
-    {
-      "bytes": 1492768,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 9,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 935377,
-      "path": "modules/theory/assets",
-      "priorityBasis": "probable_unused_release_candidate",
-      "probableUnusedBytes": 935377
-    },
     {
       "bytes": 109484634,
       "dynamicReferenceBytes": 0,
@@ -1228,6 +1159,26 @@
       "generatedDerivativeBytes": 52488208,
       "highConfidenceProbableUnusedBytes": 0,
       "path": "assets/photos/web",
+      "priorityBasis": "generated_derivative_pipeline_review",
+      "probableUnusedBytes": 0
+    },
+    {
+      "bytes": 42831958,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 74,
+      "generatedDerivativeBytes": 42831958,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/xian-museum/assets/photos",
+      "priorityBasis": "generated_derivative_pipeline_review",
+      "probableUnusedBytes": 0
+    },
+    {
+      "bytes": 6214822,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 4,
+      "generatedDerivativeBytes": 6214822,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/baoji/assets/generated",
       "priorityBasis": "generated_derivative_pipeline_review",
       "probableUnusedBytes": 0
     }
