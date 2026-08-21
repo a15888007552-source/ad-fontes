@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "module": "shaanxi-history",
+  "publicBase": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev",
+  "plannedFiles": 807,
+  "plannedBytes": 385001226,
+  "localFilesVerified": 807,
+  "localBytesVerified": 385001226,
+  "localSha256Verified": 807,
+  "r2UrlsVerified": 807,
+  "contentLengthVerified": 807,
+  "externalPathDuplicates": 0,
+  "wrongExternalPathPrefixes": 0,
+  "fileUriCount": 0,
+  "windowsAbsoluteMediaPathCount": 0,
+  "staticReferencesMigrated": {
+    "files": 511,
+    "references": 518,
+    "mode": "HTML/CSS absolute R2 URLs; data values through assetFor()"
+  },
+  "dynamicReferencesMigrated": {
+    "files": 296,
+    "references": 296,
+    "mode": "shaanxiHistoryMediaUrl() through assetFor()"
+  },
+  "directHtmlCssR2References": 10,
+  "dataMediaLiteralsThroughResolver": 1308,
+  "localExternalizableRuntimeRequests": 0,
+  "mediaFilesDeleted": 0,
+  "binaryChanges": 0,
+  "mediaBySubdirectory": {
+    "card-covers": {
+      "files": 296,
+      "bytes": 54209094
+    },
+    "photos": {
+      "files": 499,
+      "bytes": 320896334
+    },
+    "supplement": {
+      "files": 5,
+      "bytes": 6267388
+    }
+  },
+  "browserSmoke": {
+    "status": "SKIPPED",
+    "detail": "not launched: physical memory usage 100.0% was above the 75% safety threshold"
+  },
+  "terminalHttpSmoke": {
+    "status": "PASS",
+    "resourcesChecked": 6,
+    "failures": 0,
+    "oldDirectLocalMedia": 0
+  },
+  "failedObjects": []
+}
