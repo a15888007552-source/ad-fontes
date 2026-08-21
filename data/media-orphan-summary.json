@@ -663,7 +663,7 @@
         "bytes": 204752729,
         "dynamicRescueCount": 528,
         "path": "modules",
-        "referencedSiblingCount": 2919,
+        "referencedSiblingCount": 1820,
         "suspectedOrphanCount": 1349
       },
       {
@@ -807,7 +807,7 @@
         "generatedDerivativeBytes": 132136952,
         "path": "modules",
         "probableUnusedBytes": 0,
-        "referencedSiblingCount": 2919,
+        "referencedSiblingCount": 1820,
         "suspectedOrphanCount": 1349,
         "unknownBytes": 1385972
       },

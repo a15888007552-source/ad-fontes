@@ -1,8 +1,8 @@
 # MEDIA AUDIT
 
-- Media files: **6,548**
-- Total media size: **983,043,763 bytes (937.50 MiB)**
-- Referenced media: **4,004**
+- Media files: **5,449**
+- Total media size: **783,543,452 bytes (747.25 MiB)**
+- Referenced media: **2,905**
 - Suspected orphan media: **2,544** / **392,203,338 bytes (374.03 MiB)**; nothing was deleted.
 - Embedded image data URIs: **120** / **3,809,658 approximate bytes (3.63 MiB)**
 - Embedded data URIs over 100 KiB: **1** / **139,896 approximate bytes**
@@ -11,9 +11,9 @@
 
 | Extension | Files | Bytes |
 |---|---:|---:|
-| `.jpg` | 4,646 | 559,621,434 |
-| `.webp` | 1,678 | 372,020,936 |
-| `.png` | 221 | 51,400,568 |
+| `.jpg` | 3,620 | 378,803,203 |
+| `.webp` | 1,606 | 353,373,582 |
+| `.png` | 220 | 51,365,842 |
 | `.svg` | 3 | 825 |
 
 ## By module
@@ -21,7 +21,6 @@
 | Module | Files | Bytes |
 |---|---:|---:|
 | `global` | 2,280 | 324,326,202 |
-| `qinhan` | 1,099 | 199,500,311 |
 | `xian-museum` | 207 | 130,144,476 |
 | `shaanxi-archaeology-museum` | 1,073 | 107,046,047 |
 | `europa` | 501 | 100,590,362 |
@@ -36,13 +35,9 @@
 
 | Directory | Files (recursive) | Bytes (recursive) |
 |---|---:|---:|
-| `modules` | 4,268 | 658,717,561 |
+| `modules` | 3,169 | 459,217,250 |
 | `assets` | 2,251 | 314,056,911 |
 | `assets/photos` | 2,227 | 295,577,744 |
-| `modules/qinhan` | 1,099 | 199,500,311 |
-| `modules/qinhan/assets` | 1,099 | 199,500,311 |
-| `modules/qinhan/assets/photos` | 1,024 | 180,267,458 |
-| `modules/qinhan/assets/photos/web` | 512 | 167,914,908 |
 | `assets/photos/large` | 445 | 156,298,500 |
 | `modules/xian-museum` | 207 | 130,144,476 |
 | `modules/xian-museum/assets` | 207 | 130,144,476 |
@@ -60,12 +55,16 @@
 | `modules/baoji/assets/photos` | 758 | 81,108,216 |
 | `modules/baoji/assets/photos/web` | 365 | 69,923,293 |
 | `modules/europa/assets/city/huaxia` | 99 | 40,169,800 |
-| `modules/qinhan/assets/processed` | 72 | 18,647,354 |
 | `assets/editorial` | 20 | 17,561,832 |
 | `modules/proceedings` | 589 | 15,770,040 |
 | `modules/proceedings/assets` | 589 | 15,770,040 |
-| `modules/qinhan/assets/photos/thumb` | 512 | 12,352,550 |
 | `guobo-museum` | 27 | 10,194,233 |
+| `guobo-museum/assets` | 27 | 10,194,233 |
+| `modules/proceedings/assets/photos` | 401 | 10,054,477 |
+| `assets/photos/thumb` | 891 | 9,187,566 |
+| `modules/museum-atlas` | 10 | 8,683,186 |
+| `modules/museum-atlas/assets` | 10 | 8,683,186 |
+| `guobo-museum/assets/generated` | 3 | 8,636,038 |
 
 ## Largest 30 media files
 
@@ -233,8 +232,8 @@ Roles use extension, byte size, and path/reference metadata only; no dimensions,
 
 | Role | File count |
 |---|---:|
-| `thumb` candidate | 6,548 |
-| `display` candidate | 6,548 |
+| `thumb` candidate | 5,449 |
+| `display` candidate | 5,449 |
 | `original` candidate | 45 |
 
 ## Git storage candidates
@@ -252,11 +251,11 @@ Files are flagged for review when they are >= 10.00 MiB, duplicate-content membe
 
 ## Priority directories
 
-1. `modules` — 4,268 files, 658,717,561 bytes (628.20 MiB).
+1. `modules` — 3,169 files, 459,217,250 bytes (437.94 MiB).
 2. `assets` — 2,251 files, 314,056,911 bytes (299.51 MiB).
 3. `assets/photos` — 2,227 files, 295,577,744 bytes (281.88 MiB).
-4. `modules/qinhan` — 1,099 files, 199,500,311 bytes (190.26 MiB).
-5. `modules/qinhan/assets` — 1,099 files, 199,500,311 bytes (190.26 MiB).
+4. `assets/photos/large` — 445 files, 156,298,500 bytes (149.06 MiB).
+5. `modules/xian-museum` — 207 files, 130,144,476 bytes (124.12 MiB).
 
 ## Reproducibility
 

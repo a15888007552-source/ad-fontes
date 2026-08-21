@@ -123459,7 +123459,7 @@
     "suspectedOrphanCount": 2544
   },
   "scan": {
-    "dynamicRuleCount": 22,
+    "dynamicRuleCount": 26,
     "referenceOutputExclusions": [
       "data/media-audit-summary.json",
       "data/media-externalization-plan.json",
@@ -123468,6 +123468,9 @@
       "data/media-orphan-summary.json",
       "data/media-orphan-triage.json",
       "data/media-prune-plan.json",
+      "data/qinhan-externalized-media-validation.json",
+      "data/qinhan-externalized-media.json",
+      "data/qinhan-r2-runtime-verification.json",
       "data/qinhan-r2-upload-verification.json",
       "data/shaanxi-history-externalized-media-validation.json",
       "data/shaanxi-history-externalized-media.json",
@@ -123477,6 +123480,8 @@
       "docs/MEDIA_AUDIT.md",
       "docs/MEDIA_EXTERNALIZATION.md",
       "docs/MEDIA_ORPHAN_TRIAGE.md",
+      "docs/QINHAN_MEDIA_EXTERNALIZED.md",
+      "docs/QINHAN_R2_RUNTIME.md",
       "docs/QINHAN_R2_UPLOAD.md",
       "docs/SHAANXI_HISTORY_MEDIA_EXTERNALIZED.md",
       "docs/SHAANXI_HISTORY_R2_MIGRATION.md",
