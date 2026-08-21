@@ -485,7 +485,9 @@
     const root = document.documentElement;
     let closeTimer = 0;
     root.classList.add("intro-enabled", "intro-playing");
-    opening.setAttribute("aria-hidden", "false");
+    requestAnimationFrame(() => {
+      (skip || opening).focus({ preventScroll: true });
+    });
 
     const finish = () => {
       if (!opening.isConnected || opening.classList.contains("is-leaving")) return;
@@ -498,6 +500,19 @@
         root.classList.remove("intro-enabled");
       }, 720);
     };
+
+    opening.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        finish();
+        return;
+      }
+
+      if (event.key === "Tab") {
+        event.preventDefault();
+        (skip || opening).focus({ preventScroll: true });
+      }
+    });
 
     skip?.addEventListener("click", finish, { once: true });
     opening.addEventListener("click", (event) => {

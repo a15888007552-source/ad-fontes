@@ -13,14 +13,22 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要内容</a>
-  <div class="opening-screen" id="opening-screen" aria-hidden="true">
+  <div
+    class="opening-screen"
+    id="opening-screen"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="opening-title"
+    aria-describedby="opening-description"
+    tabindex="-1"
+  >
     <div class="opening-media" aria-hidden="true"></div>
     <div class="opening-shade" aria-hidden="true"></div>
     <div class="opening-copy">
       <img class="opening-emblem" src="assets/brand-emblem.png" alt="" />
       <p><span>SHAANXI</span><i></i><span>OBJECT ARCHIVE</span></p>
-      <strong>观物入陕</strong>
-      <small>陕西历史博物馆 · 八件禁止出境文物</small>
+      <strong id="opening-title">观物入陕</strong>
+      <small id="opening-description">陕西历史博物馆 · 八件禁止出境文物</small>
     </div>
     <button class="opening-skip" id="opening-skip" type="button">跳过开场</button>
   </div>
