@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "provinces": [
+    {
+      "id": "beijing",
+      "name": "北京",
+      "code": "BEIJING",
+      "order": 1
+    },
+    {
+      "id": "shaanxi",
+      "name": "陕西",
+      "code": "SHAANXI",
+      "order": 2
+    },
+    {
+      "id": "henan",
+      "name": "河南",
+      "code": "HENAN",
+      "order": 3
+    }
+  ],
+  "museums": [
+    {
+      "id": "palace-museum",
+      "province": "beijing",
+      "order": 1,
+      "name": "故宫博物院",
+      "city": "北京",
+      "theme": "宫城与器物",
+      "status": "preparation",
+      "archive_type": null,
+      "site_path": null,
+      "card_image": {
+        "path": "modules/museum-atlas/assets/beijing-palace-hero.webp",
+        "alt": "故宫博物院建筑群",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": 2400,
+        "height": 1600
+      }
+    },
+    {
+      "id": "guobo",
+      "province": "beijing",
+      "order": 2,
+      "name": "中国国家博物馆",
+      "city": "北京",
+      "theme": "城市与国家",
+      "status": "live",
+      "archive_type": "文物卡片",
+      "site_path": "guobo-museum/index.html",
+      "card_image": {
+        "path": "modules/museum-atlas/assets/guobo-phoenix-crown.webp",
+        "alt": "中国国家博物馆孝端皇后九龙九凤冠",
+        "loading": "eager",
+        "fetchpriority": "high",
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "beilin",
+      "province": "shaanxi",
+      "order": 1,
+      "name": "西安碑林博物馆",
+      "city": "西安",
+      "theme": "碑刻与书法",
+      "status": "live",
+      "archive_type": "数字档案",
+      "site_path": "modules/beilin/index.html",
+      "card_image": {
+        "path": "assets/hero/beilin-gate.jpg",
+        "alt": "西安碑林博物馆大门",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "shaanxi-archaeology",
+      "province": "shaanxi",
+      "order": 2,
+      "name": "陕西考古博物馆",
+      "city": "西安",
+      "theme": "考古圣地",
+      "status": "live",
+      "archive_type": "现场图录",
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "card_image": {
+        "path": "modules/museum-atlas/assets/shaanxi-archaeology-exterior.jpg",
+        "alt": "陕西考古博物馆馆舍外景",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "qinhan",
+      "province": "shaanxi",
+      "order": 3,
+      "name": "陕西历史博物馆·秦汉馆",
+      "city": "西安",
+      "theme": "秦汉文明",
+      "status": "live",
+      "archive_type": "馆藏影录",
+      "site_path": "modules/qinhan/index.html",
+      "card_image": {
+        "path": "modules/museum-atlas/assets/qinhan-exterior.jpg",
+        "alt": "陕西历史博物馆秦汉馆建筑群外景",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "baoji",
+      "province": "shaanxi",
+      "order": 4,
+      "name": "中国青铜器博物院",
+      "city": "宝鸡",
+      "theme": "周秦青铜文明",
+      "status": "live",
+      "archive_type": "现场图录",
+      "site_path": "modules/baoji/index.html",
+      "card_image": {
+        "path": "modules/baoji/assets/museum-exterior.png",
+        "alt": "中国青铜器博物院外景",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "shaanxi-history",
+      "province": "shaanxi",
+      "order": 5,
+      "name": "陕西历史博物馆",
+      "city": "西安",
+      "theme": "周秦汉唐与特展",
+      "status": "live",
+      "archive_type": "观物档案",
+      "site_path": "modules/shaanxi-history/index.html",
+      "card_image": {
+        "path": "modules/shaanxi-history/assets/hero-museum.webp",
+        "alt": "陕西历史博物馆专题入口",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "xian-museum",
+      "province": "shaanxi",
+      "order": 6,
+      "name": "西安博物院",
+      "city": "西安",
+      "theme": "小雁塔与城市文脉",
+      "status": "live",
+      "archive_type": "观物档案",
+      "site_path": "modules/xian-museum/index.html",
+      "card_image": {
+        "path": "modules/xian-museum/assets/hero-pagoda.webp",
+        "alt": "西安博物院小雁塔专题入口",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "henan-museum",
+      "province": "henan",
+      "order": 1,
+      "name": "河南博物院",
+      "city": "郑州",
+      "theme": "中原文明",
+      "status": "preparation",
+      "archive_type": null,
+      "site_path": null,
+      "card_image": {
+        "path": "modules/museum-atlas/assets/henan-hero.webp",
+        "alt": "河南博物院专题视觉",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": null,
+        "height": null
+      }
+    },
+    {
+      "id": "luoyang-museum",
+      "province": "henan",
+      "order": 2,
+      "name": "洛阳博物馆",
+      "city": "洛阳",
+      "theme": "古都与器物",
+      "status": "preparation",
+      "archive_type": null,
+      "site_path": null,
+      "card_image": {
+        "path": "modules/museum-atlas/assets/henan-porcelain.webp",
+        "alt": "青花瓷细节",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": null,
+        "height": null
+      }
+    }
+  ]
+}
