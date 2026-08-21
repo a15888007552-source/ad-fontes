@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-08-21T10:28:31.9991128Z",
+  "files": 807,
+  "bytes": 385001226,
+  "publicBase": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev",
+  "objectKeysVerified": 807,
+  "httpVerified": 807,
+  "sizeVerified": 807,
+  "contentLengthVerified": 807,
+  "contentTypeObserved": 807,
+  "sha256SamplesSelected": 30,
+  "sha256SamplesVerified": 30,
+  "sampleCoverage": {
+    "photos": 20,
+    "cardCovers": 9,
+    "supplement": 1
+  },
+  "status": "PASS"
+}
