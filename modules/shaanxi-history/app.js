@@ -279,7 +279,7 @@
     const inlineStyle = `--title-size:${baseTitleSize}px;--card-delay:${delay}ms`;
     return `<button class="object-card card-enter" style="${escapeHtml(inlineStyle)}" type="button" data-title-size="${baseTitleSize}" data-item-id="${escapeHtml(item.id)}" aria-label="打开 ${escapeHtml(item.title)} 详情">
       <span class="card-image">
-        ${cover ? `<img src="${escapeHtml(cover)}" alt="${escapeHtml(item.title)}" loading="lazy">` : `<span class="image-placeholder" aria-hidden="true">陕</span>`}
+        ${cover ? `<img src="${escapeHtml(cover)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async">` : `<span class="image-placeholder" aria-hidden="true">陕</span>`}
         <span class="card-number">${escapeHtml(displayNumber(item))}</span>
         <span class="card-photo-count">${photoCount} 图</span>
       </span>
@@ -366,7 +366,7 @@
 
     if (photos.length) {
       setDialogImage(photos[0], 0, photos.length);
-      galleryStrip.innerHTML = photos.map((photo, index) => `<button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-photo-index="${index}" aria-label="查看第 ${index + 1} 张器物图"><img src="${escapeHtml(assetFor(photo.focus || photo.src || ""))}" alt="${escapeHtml(item.title)} · 第 ${index + 1} 张器物图" loading="lazy"></button>`).join("");
+      galleryStrip.innerHTML = photos.map((photo, index) => `<button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-photo-index="${index}" aria-label="查看第 ${index + 1} 张器物图"><img src="${escapeHtml(assetFor(photo.focus || photo.src || ""))}" alt="${escapeHtml(item.title)} · 第 ${index + 1} 张器物图" loading="lazy" decoding="async"></button>`).join("");
       galleryStrip.querySelectorAll("[data-photo-index]").forEach((button) => {
         button.addEventListener("click", () => {
           const index = Number(button.dataset.photoIndex);
@@ -403,7 +403,7 @@
     const holder = document.getElementById("special-preview");
     if (!holder) return;
     const specialItems = items.filter((item) => hasTag(item, "greek")).slice(0, 3);
-    holder.innerHTML = specialItems.map((item) => `<button class="special-card" type="button" data-item-id="${escapeHtml(item.id)}" aria-label="打开 ${escapeHtml(item.title)} 详情"><img src="${escapeHtml(cardCoverFor(item))}" alt="${escapeHtml(item.title)}" loading="lazy"><span><small>${escapeHtml(item.period || "文明以止")}</small><span class="special-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span></span></button>`).join("");
+    holder.innerHTML = specialItems.map((item) => `<button class="special-card" type="button" data-item-id="${escapeHtml(item.id)}" aria-label="打开 ${escapeHtml(item.title)} 详情"><img src="${escapeHtml(cardCoverFor(item))}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async"><span><small>${escapeHtml(item.period || "文明以止")}</small><span class="special-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span></span></button>`).join("");
     bindItemButtons(holder);
   }
 
@@ -422,7 +422,7 @@
     };
     const treasureItems = items.filter((item) => hasTag(item, "forbidden"));
     holder.innerHTML = treasureItems.map((item, index) => `<button class="treasure-card" type="button" data-item-id="${escapeHtml(item.id)}" aria-label="打开 ${escapeHtml(item.title)} 详情">
-      <span class="treasure-image"><img src="${escapeHtml(cardCoverFor(item))}" alt="${escapeHtml(item.title)}" loading="lazy"><b>${String(index + 1).padStart(2, "0")}</b></span>
+      <span class="treasure-image"><img src="${escapeHtml(cardCoverFor(item))}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async"><b>${String(index + 1).padStart(2, "0")}</b></span>
       <span class="treasure-copy"><span class="treasure-meta">${escapeHtml(item.period || "")} · ${escapeHtml(item.category || "馆藏文物")}</span><strong>${escapeHtml(item.title)}</strong><span class="treasure-note">${escapeHtml(notes[item.id] || item.summary || "查看完整馆藏资料。")}</span><i>展开完整资料与图组 →</i></span>
     </button>`).join("");
     bindItemButtons(holder);
