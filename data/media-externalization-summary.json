@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": {
+    "inventory": "data/media-inventory.json",
+    "triage": "data/media-orphan-triage.json"
+  },
+  "totalExternalizableFiles": 5339,
+  "totalExternalizableBytes": 1047071456,
+  "byModule": {
+    "baoji": {
+      "files": 44,
+      "bytes": 8787910
+    },
+    "beilin": {
+      "files": 1,
+      "bytes": 32908
+    },
+    "europa": {
+      "files": 501,
+      "bytes": 100590362
+    },
+    "global": {
+      "files": 1085,
+      "bytes": 136875593
+    },
+    "museum-atlas": {
+      "files": 10,
+      "bytes": 8683186
+    },
+    "proceedings": {
+      "files": 589,
+      "bytes": 15770040
+    },
+    "qinhan": {
+      "files": 1099,
+      "bytes": 199500311
+    },
+    "shaanxi-archaeology-museum": {
+      "files": 1061,
+      "bytes": 103024634
+    },
+    "shaanxi-history": {
+      "files": 807,
+      "bytes": 385001226
+    },
+    "theory": {
+      "files": 9,
+      "bytes": 1492768
+    },
+    "xian-museum": {
+      "files": 133,
+      "bytes": 87312518
+    }
+  },
+  "byReferenceType": {
+    "css_url": {
+      "files": 31,
+      "bytes": 14319052
+    },
+    "dynamic_runtime": {
+      "files": 824,
+      "bytes": 125438899
+    },
+    "html_href": {
+      "files": 11,
+      "bytes": 872470
+    },
+    "html_src": {
+      "files": 32,
+      "bytes": 12818558
+    },
+    "html_srcset": {
+      "files": 15,
+      "bytes": 2268298
+    },
+    "js_concatenation": {
+      "files": 9,
+      "bytes": 1492768
+    },
+    "js_literal": {
+      "files": 679,
+      "bytes": 420077546
+    },
+    "js_template": {
+      "files": 507,
+      "bytes": 103962805
+    },
+    "json_literal": {
+      "files": 1144,
+      "bytes": 170108538
+    },
+    "manifest": {
+      "files": 3843,
+      "bytes": 528616055
+    },
+    "other": {
+      "files": 1999,
+      "bytes": 238240227
+    }
+  },
+  "byMigrationRisk": {
+    "high": {
+      "files": 824,
+      "bytes": 125438899
+    },
+    "low": {
+      "files": 822,
+      "bytes": 479416475
+    },
+    "medium": {
+      "files": 3693,
+      "bytes": 442216082
+    }
+  },
+  "dynamicRuntimeFiles": 824,
+  "dynamicRuntimeBytes": 125438899,
+  "sourceOriginalFiles": 11,
+  "sourceOriginalBytes": 17012059,
+  "unreferencedGeneratedFiles": 2002,
+  "unreferencedGeneratedBytes": 303807059,
+  "unknownFiles": 3,
+  "unknownBytes": 154415,
+  "inventoryFileCount": 7355,
+  "inventoryTotalBytes": 1368044989,
+  "shaanxiHistoryPilot": {
+    "module": "shaanxi-history",
+    "totalMedia": {
+      "files": 814,
+      "bytes": 390818551
+    },
+    "externalizableMedia": {
+      "files": 807,
+      "bytes": 385001226
+    },
+    "staticReferencedFiles": 511,
+    "staticReferenceCount": 518,
+    "dynamicReferencedFiles": 296,
+    "dynamicReferenceCount": 296,
+    "cardCovers": {
+      "files": 296,
+      "bytes": 54209094
+    },
+    "photos": {
+      "files": 505,
+      "bytes": 325407336
+    },
+    "supplement": {
+      "files": 6,
+      "bytes": 7573711
+    },
+    "autoRewritableReferenceCount": 518,
+    "resolverRequiredDynamicReferenceCount": 296
+  }
+}
