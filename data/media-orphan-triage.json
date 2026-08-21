@@ -105989,58 +105989,6 @@
       "variantFamily": null
     },
     {
-      "bytes": 2299902,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
-      "evidence": {
-        "cssUrlMatches": [],
-        "dynamicReferences": [],
-        "exactStaticReferences": [],
-        "externalReferences": [],
-        "htmlDataAttributes": [],
-        "indirectPathMatches": [],
-        "manifestBasenameMatches": [],
-        "manifestMatches": [],
-        "pythonBuildReferences": [],
-        "sourceDocumentation": []
-      },
-      "module": "museum-atlas",
-      "path": "modules/museum-atlas/assets/beijing-palace.webp",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
-      "relatedFiles": [],
-      "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
-      ],
-      "variantFamily": null
-    },
-    {
-      "bytes": 269900,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
-      "evidence": {
-        "cssUrlMatches": [],
-        "dynamicReferences": [],
-        "exactStaticReferences": [],
-        "externalReferences": [],
-        "htmlDataAttributes": [],
-        "indirectPathMatches": [],
-        "manifestBasenameMatches": [],
-        "manifestMatches": [],
-        "pythonBuildReferences": [],
-        "sourceDocumentation": []
-      },
-      "module": "museum-atlas",
-      "path": "modules/museum-atlas/assets/shaanxi-paper.webp",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
-      "relatedFiles": [],
-      "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
-      ],
-      "variantFamily": null
-    },
-    {
       "bytes": 79390,
       "classification": "unknown",
       "confidence": "low",
@@ -132180,12 +132128,18 @@
     },
     {
       "bytes": 291109,
-      "classification": "unknown",
-      "confidence": "low",
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
       "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132201,25 +132155,31 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/corelli.jpg",
-      "reason": "unknown/low: JS/JSON/Python object or array context contains the asset stem; evidence is insufficient for a safe keep-or-release decision",
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg; JS/JSON/Python object or array context contains the asset stem",
       "relatedFiles": [
         "modules/europa/data/persons.json",
-        "modules/proceedings/index.html"
+        "modules/proceedings/index.html",
+        "modules/theory/index.html"
       ],
       "signals": [
-        "indirect_code_path_match",
-        "weak_stem_context_only"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
     {
       "bytes": 354068,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
+      "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132231,21 +132191,29 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/guidohand.jpg",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
-      "relatedFiles": [],
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg",
+      "relatedFiles": [
+        "modules/theory/index.html"
+      ],
       "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
     {
       "bytes": 58518,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
+      "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132257,21 +132225,29 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/mensural.jpg",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
-      "relatedFiles": [],
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg",
+      "relatedFiles": [
+        "modules/theory/index.html"
+      ],
       "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
     {
       "bytes": 144114,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
+      "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132283,21 +132259,29 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/neumes.jpg",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
-      "relatedFiles": [],
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg",
+      "relatedFiles": [
+        "modules/theory/index.html"
+      ],
       "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
     {
       "bytes": 219289,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
+      "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132309,21 +132293,29 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/orestes.jpg",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
-      "relatedFiles": [],
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg",
+      "relatedFiles": [
+        "modules/theory/index.html"
+      ],
       "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
     {
       "bytes": 266282,
-      "classification": "unknown",
-      "confidence": "low",
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
       "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132341,25 +132333,30 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/petrucci.jpg",
-      "reason": "unknown/low: basename/stem appears in a manifest-like data file; JS/JSON/Python object or array context contains the asset stem; evidence is insufficient for a safe keep-or-release decision",
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg; basename/stem appears in a manifest-like data file; JS/JSON/Python object or array context contains the asset stem",
       "relatedFiles": [
-        "assets/catalog.js"
+        "assets/catalog.js",
+        "modules/theory/index.html"
       ],
       "signals": [
-        "manifest_or_photo_manifest_match",
-        "indirect_code_path_match",
-        "weak_stem_context_only"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
     {
       "bytes": 4258,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
+      "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132374,24 +132371,31 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/seikilos.jpg",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg",
       "relatedFiles": [
         "modules/europa/data/periods.json",
-        "modules/europa/data/persons.json"
+        "modules/europa/data/persons.json",
+        "modules/theory/index.html"
       ],
       "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
     {
       "bytes": 138583,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
+      "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132405,23 +132409,30 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/squarcialupi.jpg",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg",
       "relatedFiles": [
-        "modules/europa/data/persons.json"
+        "modules/europa/data/persons.json",
+        "modules/theory/index.html"
       ],
       "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
     {
       "bytes": 16547,
-      "classification": "probable_unused",
-      "confidence": "high",
-      "dynamicPossible": false,
+      "classification": "probable_dynamic_reference",
+      "confidence": "medium",
+      "dynamicPossible": true,
       "evidence": {
         "cssUrlMatches": [],
-        "dynamicReferences": [],
+        "dynamicReferences": [
+          {
+            "kind": "string_concatenation",
+            "pattern": "assets/${value}.jpg",
+            "source": "modules/theory/index.html"
+          }
+        ],
         "exactStaticReferences": [],
         "externalReferences": [],
         "htmlDataAttributes": [],
@@ -132433,10 +132444,12 @@
       },
       "module": "theory",
       "path": "modules/theory/assets/systema.jpg",
-      "reason": "probable_unused/high: no static, dynamic, manifest, source, or variant evidence found",
-      "relatedFiles": [],
+      "reason": "probable_dynamic_reference/medium: dynamic path pattern: assets/${value}.jpg",
+      "relatedFiles": [
+        "modules/theory/index.html"
+      ],
       "signals": [
-        "no_static_dynamic_manifest_or_variant_evidence"
+        "dynamic_template_or_concatenation"
       ],
       "variantFamily": null
     },
@@ -134414,16 +134427,17 @@
   "input": {
     "auditSchemaVersion": 1,
     "inventory": "data/media-inventory.json",
-    "suspectedOrphanBytes": 448982234,
-    "suspectedOrphanCount": 2842
+    "suspectedOrphanBytes": 446412432,
+    "suspectedOrphanCount": 2840
   },
   "scan": {
-    "dynamicRuleCount": 20,
+    "dynamicRuleCount": 22,
     "referenceOutputExclusions": [
       "data/media-audit-summary.json",
       "data/media-inventory.json",
       "data/media-orphan-summary.json",
       "data/media-orphan-triage.json",
+      "data/media-prune-plan.json",
       "docs/MEDIA_AUDIT.md",
       "docs/MEDIA_ORPHAN_TRIAGE.md",
       "scripts/triage_media_orphans.py"

@@ -66,8 +66,9 @@ VIDEO_EXTENSIONS = {".mp4", ".webm", ".mov"}
 FONT_EXTENSIONS = {".woff", ".woff2", ".ttf", ".otf"}
 
 # These names are directory-level temporary/cache locations, not repository
-# media.  The generated audit artifacts are excluded only from reference
-# scanning so they cannot self-reference every inventory path on reruns.
+# media.  Generated audit and follow-up triage artifacts are excluded from
+# reference scanning so they cannot self-reference every inventory path on
+# reruns.
 EXCLUDED_DIRECTORY_NAMES = {
     ".git",
     ".cache",
@@ -88,7 +89,11 @@ EXCLUDED_DIRECTORY_NAMES = {
 AUDIT_OUTPUT_PATHS = {
     "data/media-inventory.json",
     "data/media-audit-summary.json",
+    "data/media-orphan-triage.json",
+    "data/media-orphan-summary.json",
+    "data/media-prune-plan.json",
     "docs/MEDIA_AUDIT.md",
+    "docs/MEDIA_ORPHAN_TRIAGE.md",
 }
 
 LARGE_EMBEDDED_URI_BYTES = 100 * 1024

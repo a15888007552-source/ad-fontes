@@ -1,6 +1,6 @@
 # MEDIA ORPHAN TRIAGE
 
-- Input suspected orphans: **2,842** / **448,982,234 bytes (428.18 MiB)**
+- Input suspected orphans: **2,840** / **446,412,432 bytes (425.73 MiB)**
 - No media file was deleted, moved, compressed, renamed, or re-encoded.
 - probable_unused is a review label only; source_original and generated_derivative are not deletion approvals.
 
@@ -9,11 +9,11 @@
 | Classification | Files | Bytes |
 |---|---:|---:|
 | confirmed_referenced | 0 | 0 (0 B) |
-| probable_dynamic_reference | 815 | 123,946,131 (118.20 MiB) |
+| probable_dynamic_reference | 824 | 125,438,899 (119.63 MiB) |
 | source_original | 11 | 17,012,059 (16.22 MiB) |
 | generated_derivative | 2,002 | 303,807,059 (289.73 MiB) |
-| probable_unused | 9 | 3,505,179 (3.34 MiB) |
-| unknown | 5 | 711,806 (695.12 KiB) |
+| probable_unused | 0 | 0 (0 B) |
+| unknown | 3 | 154,415 (150.80 KiB) |
 
 ## By module
 
@@ -25,32 +25,23 @@
 | europa | 211 | 49,753,711 | 0 | 49,753,711 |
 | xian-museum | 74 | 42,831,958 | 0 | 0 |
 | shaanxi-archaeology-museum | 320 | 24,004,739 | 0 | 19,983,326 |
-| museum-atlas | 2 | 2,569,802 | 2,569,802 | 0 |
-| theory | 9 | 1,492,768 | 935,377 | 0 |
+| theory | 9 | 1,492,768 | 0 | 1,492,768 |
 
 ## High-confidence probable_unused
 
-- Count: **9**
-- Bytes: **3,505,179 (3.34 MiB)**
+- Count: **0**
+- Bytes: **0 (0 B)**
 - The list is sorted by bytes. These are candidates for human review, not automatic cleanup.
 
 | # | Path | Bytes | Module | Reason |
 |---:|---|---:|---|---|
-| 1 | modules/museum-atlas/assets/beijing-palace.webp | 2,299,902 | museum-atlas | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
-| 2 | modules/theory/assets/guidohand.jpg | 354,068 | theory | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
-| 3 | modules/museum-atlas/assets/shaanxi-paper.webp | 269,900 | museum-atlas | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
-| 4 | modules/theory/assets/orestes.jpg | 219,289 | theory | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
-| 5 | modules/theory/assets/neumes.jpg | 144,114 | theory | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
-| 6 | modules/theory/assets/squarcialupi.jpg | 138,583 | theory | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
-| 7 | modules/theory/assets/mensural.jpg | 58,518 | theory | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
-| 8 | modules/theory/assets/systema.jpg | 16,547 | theory | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
-| 9 | modules/theory/assets/seikilos.jpg | 4,258 | theory | probable_unused/high: no static, dynamic, manifest, source, or variant evidence found |
+| — | — | 0 | — | none |
 
 ## Source originals and generated derivatives
 
 - source_original: **11** / **17,012,059 bytes (16.22 MiB)**
 - generated_derivative: **2,002** / **303,807,059 bytes (289.73 MiB)**
-- probable_dynamic_reference rescues: **815** / **123,946,131 bytes (118.20 MiB)**
+- probable_dynamic_reference rescues: **824** / **125,438,899 bytes (119.63 MiB)**
 - Exact second-pass static references: **0** / **0 bytes**
 
 ## Variant families
@@ -167,11 +158,11 @@ The first rows are probable_unused release candidates. generated_derivative rows
 
 | # | Basis | Directory | Orphans | Bytes | probable_unused bytes | generated_derivative bytes |
 |---:|---|---|---:|---:|---:|---:|
-| 1 | probable_unused_release_candidate | modules/museum-atlas/assets | 2 | 2,569,802 | 2,569,802 | 0 |
-| 2 | probable_unused_release_candidate | modules/theory/assets | 9 | 1,492,768 | 935,377 | 0 |
-| 3 | generated_derivative_pipeline_review | assets/photos/large | 292 | 109,484,634 | 0 | 109,484,634 |
-| 4 | generated_derivative_pipeline_review | modules/baoji/assets/photos/web | 358 | 68,522,041 | 0 | 68,522,041 |
-| 5 | generated_derivative_pipeline_review | assets/photos/web | 445 | 52,488,208 | 0 | 52,488,208 |
+| 1 | generated_derivative_pipeline_review | assets/photos/large | 292 | 109,484,634 | 0 | 109,484,634 |
+| 2 | generated_derivative_pipeline_review | modules/baoji/assets/photos/web | 358 | 68,522,041 | 0 | 68,522,041 |
+| 3 | generated_derivative_pipeline_review | assets/photos/web | 445 | 52,488,208 | 0 | 52,488,208 |
+| 4 | generated_derivative_pipeline_review | modules/xian-museum/assets/photos | 74 | 42,831,958 | 0 | 42,831,958 |
+| 5 | generated_derivative_pipeline_review | modules/baoji/assets/generated | 4 | 6,214,822 | 0 | 6,214,822 |
 
 ## Special directories
 
@@ -187,7 +178,7 @@ The first rows are probable_unused release candidates. generated_derivative rows
 
 ### Suitable to keep in website repository
 
-- modules — 261,531,625 bytes; suspected orphan 1,647 / 261,531,625 bytes; dynamic rescue 815
+- modules — 258,961,823 bytes; suspected orphan 1,645 / 258,961,823 bytes; dynamic rescue 824
 - assets — 180,932,540 bytes; suspected orphan 1,187 / 180,932,540 bytes
 - assets/photos — 165,639,006 bytes; suspected orphan 1,182 / 165,639,006 bytes
 - assets/photos/large — 109,484,634 bytes; suspected orphan 292 / 109,484,634 bytes
@@ -208,7 +199,7 @@ The first rows are probable_unused release candidates. generated_derivative rows
 
 ### Originals-out-of-repository candidates
 
-- modules — 261,531,625 bytes; suspected orphan 1,647 / 261,531,625 bytes; dynamic rescue 815
+- modules — 258,961,823 bytes; suspected orphan 1,645 / 258,961,823 bytes; dynamic rescue 824
 - assets — 180,932,540 bytes; suspected orphan 1,187 / 180,932,540 bytes
 - modules/shaanxi-history — 60,026,419 bytes; suspected orphan 303 / 60,026,419 bytes; dynamic rescue 296
 - modules/shaanxi-history/assets — 60,026,419 bytes; suspected orphan 303 / 60,026,419 bytes; dynamic rescue 296
@@ -220,7 +211,7 @@ The first rows are probable_unused release candidates. generated_derivative rows
 
 ### Needs later manual confirmation
 
-- modules — 261,531,625 bytes; suspected orphan 1,647 / 261,531,625 bytes; dynamic rescue 815
+- modules — 258,961,823 bytes; suspected orphan 1,645 / 258,961,823 bytes; dynamic rescue 824
 - assets — 180,932,540 bytes; suspected orphan 1,187 / 180,932,540 bytes
 - assets/photos — 165,639,006 bytes; suspected orphan 1,182 / 165,639,006 bytes
 - assets/photos/large — 109,484,634 bytes; suspected orphan 292 / 109,484,634 bytes

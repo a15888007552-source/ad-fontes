@@ -1,8 +1,8 @@
 {
   "byDirectory": [
     {
-      "bytes": 1046288589,
-      "fileCount": 5077,
+      "bytes": 1043718787,
+      "fileCount": 5075,
       "path": "modules"
     },
     {
@@ -166,16 +166,6 @@
       "path": "modules/qinhan/assets/photos/thumb"
     },
     {
-      "bytes": 11252988,
-      "fileCount": 12,
-      "path": "modules/museum-atlas"
-    },
-    {
-      "bytes": 11252988,
-      "fileCount": 12,
-      "path": "modules/museum-atlas/assets"
-    },
-    {
       "bytes": 10194233,
       "fileCount": 27,
       "path": "guobo-museum"
@@ -204,6 +194,16 @@
       "bytes": 8873612,
       "fileCount": 36,
       "path": "modules/qinhan/assets/processed/crop"
+    },
+    {
+      "bytes": 8683186,
+      "fileCount": 10,
+      "path": "modules/museum-atlas"
+    },
+    {
+      "bytes": 8683186,
+      "fileCount": 10,
+      "path": "modules/museum-atlas/assets"
     },
     {
       "bytes": 8636038,
@@ -383,9 +383,9 @@
   ],
   "byExtension": [
     {
-      "bytes": 751647810,
+      "bytes": 749078008,
       "extension": ".webp",
-      "fileCount": 2481
+      "fileCount": 2479
     },
     {
       "bytes": 565797780,
@@ -445,8 +445,8 @@
       "module": "proceedings"
     },
     {
-      "bytes": 11252988,
-      "fileCount": 12,
+      "bytes": 8683186,
+      "fileCount": 10,
       "module": "museum-atlas"
     },
     {
@@ -466,21 +466,21 @@
   "embeddedDataUriCount": 120,
   "embeddedDataUriOver100KBBytesApprox": 139896,
   "embeddedDataUriOver100KBCount": 1,
-  "fileCount": 7357,
+  "fileCount": 7355,
   "largeBinaryThresholdBytes": 10485760,
   "largeEmbeddedUriThresholdBytes": 102400,
   "pipelineRoleCounts": {
-    "display": 7357,
-    "original": 118,
-    "thumb": 7357
+    "display": 7355,
+    "original": 117,
+    "thumb": 7355
   },
   "referencedMediaCount": 4515,
-  "suspectedOrphanBytes": 448982234,
-  "suspectedOrphanCount": 2842,
+  "suspectedOrphanBytes": 446412432,
+  "suspectedOrphanCount": 2840,
   "topDirectories": [
     {
-      "bytes": 1046288589,
-      "fileCount": 5077,
+      "bytes": 1043718787,
+      "fileCount": 5075,
       "path": "modules"
     },
     {
@@ -504,5 +504,5 @@
       "path": "assets"
     }
   ],
-  "totalBytes": 1370614791
+  "totalBytes": 1368044989
 }

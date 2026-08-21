@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "status": "executed",
+  "base": {
+    "remoteMainCommit": "32415d25d0f47f52c25094bf47b26c8867359d83",
+    "remoteMainTree": "e540505a5a01db34a8795aff392084965fe00332",
+    "inventory": "data/media-inventory.json",
+    "triage": "data/media-orphan-triage.json"
+  },
+  "beforeMediaBytes": 1370614791,
+  "scope": {
+    "generatedVariantOutputDirectories": [
+      "assets/photos/large/",
+      "assets/photos/web/",
+      "assets/photos/thumb/"
+    ],
+    "generator": "scripts/build_image_variants.py",
+    "sourceDirectory": "assets/photos/original/",
+    "sourceDirectoryExists": false,
+    "generatedVariantCandidates": {
+      "fileCount": 1182,
+      "bytes": 165639006,
+      "mappedSourceCount": 0,
+      "eligibleForDeletion": 0,
+      "rejectedReason": "No corresponding source filename exists in the generator source directory or fallback source; no generated variants are deleted."
+    },
+    "protectedClassifications": {
+      "probable_dynamic_reference": 0,
+      "source_original": 0,
+      "unknown": 0,
+      "referencedFiles": 0
+    }
+  },
+  "highConfidenceProbableUnusedRecheck": {
+    "inputCount": 9,
+    "inputBytes": 3505179,
+    "approvedCount": 2,
+    "approvedBytes": 2569802,
+    "retainedAfterRecheck": [
+      {
+        "path": "modules/theory/assets/guidohand.jpg",
+        "bytes": 354068,
+        "decision": "retain",
+        "reason": "Retained: dynamic path construction maps the NOTA key to assets/<key>.jpg; deletion would break a runtime-generated image URL.",
+        "exactReferences": [],
+        "dynamicReferences": [
+          {
+            "file": "modules/theory/index.html",
+            "kind": "key_to_assets_k_jpg_template"
+          }
+        ],
+        "stemContext": [
+          {
+            "file": "modules/theory/index.html",
+            "line": 908
+          }
+        ]
+      },
+      {
+        "path": "modules/theory/assets/mensural.jpg",
+        "bytes": 58518,
+        "decision": "retain",
+        "reason": "Retained: dynamic path construction maps the NOTA key to assets/<key>.jpg; deletion would break a runtime-generated image URL.",
+        "exactReferences": [],
+        "dynamicReferences": [
+          {
+            "file": "modules/theory/index.html",
+            "kind": "key_to_assets_k_jpg_template"
+          }
+        ],
+        "stemContext": [
+          {
+            "file": "modules/theory/index.html",
+            "line": 909
+          }
+        ]
+      },
+      {
+        "path": "modules/theory/assets/neumes.jpg",
+        "bytes": 144114,
+        "decision": "retain",
+        "reason": "Retained: dynamic path construction maps the NOTA key to assets/<key>.jpg; deletion would break a runtime-generated image URL.",
+        "exactReferences": [],
+        "dynamicReferences": [
+          {
+            "file": "modules/theory/index.html",
+            "kind": "key_to_assets_k_jpg_template"
+          }
+        ],
+        "stemContext": [
+          {
+            "file": "modules/theory/index.html",
+            "line": 907
+          }
+        ]
+      },
+      {
+        "path": "modules/theory/assets/orestes.jpg",
+        "bytes": 219289,
+        "decision": "retain",
+        "reason": "Retained: dynamic path construction maps the NOTA key to assets/<key>.jpg; deletion would break a runtime-generated image URL.",
+        "exactReferences": [],
+        "dynamicReferences": [
+          {
+            "file": "modules/theory/index.html",
+            "kind": "key_to_assets_k_jpg_template"
+          }
+        ],
+        "stemContext": [
+          {
+            "file": "modules/theory/index.html",
+            "line": 903
+          }
+        ]
+      },
+      {
+        "path": "modules/theory/assets/seikilos.jpg",
+        "bytes": 4258,
+        "decision": "retain",
+        "reason": "Retained: dynamic path construction maps the NOTA key to assets/<key>.jpg; deletion would break a runtime-generated image URL.",
+        "exactReferences": [],
+        "dynamicReferences": [
+          {
+            "file": "modules/theory/index.html",
+            "kind": "key_to_assets_k_jpg_template"
+          }
+        ],
+        "stemContext": [
+          {
+            "file": "modules/theory/index.html",
+            "line": 904
+          }
+        ]
+      },
+      {
+        "path": "modules/theory/assets/squarcialupi.jpg",
+        "bytes": 138583,
+        "decision": "retain",
+        "reason": "Retained: dynamic path construction maps the NOTA key to assets/<key>.jpg; deletion would break a runtime-generated image URL.",
+        "exactReferences": [],
+        "dynamicReferences": [
+          {
+            "file": "modules/theory/index.html",
+            "kind": "key_to_assets_k_jpg_template"
+          }
+        ],
+        "stemContext": [
+          {
+            "file": "modules/theory/index.html",
+            "line": 910
+          }
+        ]
+      },
+      {
+        "path": "modules/theory/assets/systema.jpg",
+        "bytes": 16547,
+        "decision": "retain",
+        "reason": "Retained: dynamic path construction maps the NOTA key to assets/<key>.jpg; deletion would break a runtime-generated image URL.",
+        "exactReferences": [],
+        "dynamicReferences": [
+          {
+            "file": "modules/theory/index.html",
+            "kind": "key_to_assets_k_jpg_template"
+          }
+        ],
+        "stemContext": [
+          {
+            "file": "modules/theory/index.html",
+            "line": 905
+          }
+        ]
+      }
+    ]
+  },
+  "deletions": [
+    {
+      "path": "modules/museum-atlas/assets/beijing-palace.webp",
+      "bytes": 2299902,
+      "reason": "PR #5 high-confidence probable_unused; independent focused full-text search found no exact path or basename reference and no dynamic asset-path template.",
+      "regenerable": false,
+      "generator": null,
+      "source": null,
+      "sourceExists": false,
+      "classification": "probable_unused",
+      "confidence": "high",
+      "referenceCheck": {
+        "exact": [],
+        "dynamic": []
+      }
+    },
+    {
+      "path": "modules/museum-atlas/assets/shaanxi-paper.webp",
+      "bytes": 269900,
+      "reason": "PR #5 high-confidence probable_unused; independent focused full-text search found no exact path or basename reference and no dynamic asset-path template.",
+      "regenerable": false,
+      "generator": null,
+      "source": null,
+      "sourceExists": false,
+      "classification": "probable_unused",
+      "confidence": "high",
+      "referenceCheck": {
+        "exact": [],
+        "dynamic": []
+      }
+    }
+  ],
+  "deletionCount": 2,
+  "deletionBytes": 2569802,
+  "execution": {
+    "approvedOnly": true,
+    "mediaFilesModified": false,
+    "variantsGenerated": false,
+    "deletedPathsMustExistInPlan": true,
+    "deletedFilesVerifiedAbsent": true,
+    "postDeleteInventoryFileCount": 7355,
+    "postDeleteAudit": {
+      "fileCount": 7355,
+      "totalBytes": 1368044989,
+      "suspectedOrphanCount": 2840,
+      "suspectedOrphanBytes": 446412432
+    },
+    "postDeleteTriage": {
+      "inputSuspectedOrphanCount": 2840,
+      "inputSuspectedOrphanBytes": 446412432,
+      "highConfidenceProbableUnusedCount": 0,
+      "dynamicReferenceRescueCount": 824
+    }
+  },
+  "afterMediaBytes": 1368044989,
+  "freedBytes": 2569802,
+  "deletionClassificationTotals": {
+    "regenerable_derivative": {
+      "fileCount": 0,
+      "bytes": 0
+    },
+    "probable_unused": {
+      "fileCount": 2,
+      "bytes": 2569802
+    },
+    "referenced": {
+      "fileCount": 0,
+      "bytes": 0
+    },
+    "probable_dynamic_reference": {
+      "fileCount": 0,
+      "bytes": 0
+    },
+    "source_original": {
+      "fileCount": 0,
+      "bytes": 0
+    },
+    "unknown": {
+      "fileCount": 0,
+      "bytes": 0
+    }
+  },
+  "toolFixesRequiredForPostDeleteVerification": [
+    {
+      "path": "scripts/audit_media.py",
+      "reason": "exclude prior triage/report/plan outputs from reference scanning to prevent self-reference on reruns"
+    },
+    {
+      "path": "scripts/triage_media_orphans.py",
+      "reason": "accept a reduced orphan population after an approved prune and detect HTML-embedded JS concatenation paths"
+    }
+  ]
+}

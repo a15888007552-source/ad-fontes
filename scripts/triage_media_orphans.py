@@ -38,9 +38,8 @@ CLASSIFICATIONS = (
 )
 CONFIDENCES = ("high", "medium", "low")
 
-# These are the PR #4 audit totals this triage is intentionally bound to. A
-# changed audit input must fail loudly instead of silently triaging a different
-# population.
+# These are the PR #4 audit totals this triage is bounded by. A larger audit
+# input must fail loudly; a smaller input is expected after an approved prune.
 EXPECTED_AUDIT_ORPHAN_COUNT = 2842
 EXPECTED_AUDIT_ORPHAN_BYTES = 448_982_234
 
@@ -209,6 +208,12 @@ DYNAMIC_MEDIA_FRAGMENT_RE = re.compile(
     r"(?P<value>(?:(?:[A-Za-z0-9_.-]+|__TRIAGE_VAR__)/)*"
     r"(?:[A-Za-z0-9_.-]*__TRIAGE_VAR__[A-Za-z0-9_.-]*)"
     r"\.(?:jpg|jpeg|png|webp|gif|svg|avif|heic|tif|tiff|mp3|wav|flac|m4a|ogg|mp4|webm|mov|pdf|woff2?|ttf|otf))",
+    re.IGNORECASE,
+)
+EMBEDDED_CONCAT_MEDIA_RE = re.compile(
+    r"(?P<left>(?:[A-Za-z0-9_.-]+/)+)"
+    r"[\"']\s*\+\s*[A-Za-z_$][A-Za-z0-9_$]*\s*\+\s*[\"']"
+    r"(?P<right>[A-Za-z0-9_.-]*\.(?:jpg|jpeg|png|webp|gif|svg|avif|heic|tif|tiff|mp3|wav|flac|m4a|ogg|mp4|webm|mov|pdf|woff2?|ttf|otf))",
     re.IGNORECASE,
 )
 
@@ -671,6 +676,27 @@ def build_dynamic_rules(sources: list[TextSource]) -> list[dict[str, Any]]:
                     if identity not in seen:
                         seen.add(identity)
                         rules.append(rule)
+
+        # Detect concatenation embedded inside an HTML/JS string, such as
+        # '<img src="assets/' + key + '.jpg">'.
+        for match in EMBEDDED_CONCAT_MEDIA_RE.finditer(source.code_text):
+            value = (
+                match.group("left")
+                + "${value}"
+                + match.group("right")
+            )
+            for rule in make_dynamic_rules(
+                source, value, "string_concatenation"
+            ):
+                identity = (
+                    rule["source"],
+                    rule["kind"],
+                    rule["pattern"],
+                    rule["regex"].pattern,
+                )
+                if identity not in seen:
+                    seen.add(identity)
+                    rules.append(rule)
     return sorted(
         rules,
         key=lambda item: (item["source"], item["kind"], item["pattern"]),
@@ -1506,11 +1532,11 @@ def build_triage(
     if orphan_bytes != audit_summary.get("suspectedOrphanBytes"):
         raise ValueError("inventory orphan bytes differ from audit summary")
     if (
-        len(orphans) != EXPECTED_AUDIT_ORPHAN_COUNT
-        or orphan_bytes != EXPECTED_AUDIT_ORPHAN_BYTES
+        len(orphans) > EXPECTED_AUDIT_ORPHAN_COUNT
+        or orphan_bytes > EXPECTED_AUDIT_ORPHAN_BYTES
     ):
         raise ValueError(
-            f"expected PR #4 orphan baseline {EXPECTED_AUDIT_ORPHAN_COUNT}/{EXPECTED_AUDIT_ORPHAN_BYTES}, "
+            f"audit orphan population exceeds PR #4 baseline {EXPECTED_AUDIT_ORPHAN_COUNT}/{EXPECTED_AUDIT_ORPHAN_BYTES}, "
             f"got {len(orphans)}/{orphan_bytes}"
         )
 
@@ -1769,11 +1795,11 @@ def validate_outputs(repo: Path) -> dict[str, Any]:
         raise ValueError("triage contains duplicate paths")
     if set(actual_by_path) != set(expected_by_path):
         raise ValueError("triage paths differ from audit suspected orphan paths")
-    if len(orphan_records) != EXPECTED_AUDIT_ORPHAN_COUNT:
-        raise ValueError("audit orphan count is not the PR #4 baseline")
+    if len(orphan_records) > EXPECTED_AUDIT_ORPHAN_COUNT:
+        raise ValueError("audit orphan count exceeds the PR #4 baseline")
     orphan_bytes = sum(record["bytes"] for record in orphan_records)
-    if orphan_bytes != EXPECTED_AUDIT_ORPHAN_BYTES:
-        raise ValueError("audit orphan bytes are not the PR #4 baseline")
+    if orphan_bytes > EXPECTED_AUDIT_ORPHAN_BYTES:
+        raise ValueError("audit orphan bytes exceed the PR #4 baseline")
 
     for path, result in actual_by_path.items():
         source = expected_by_path[path]
