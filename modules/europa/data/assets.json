@@ -1,0 +1,2268 @@
+{
+  "CITY2": {
+    "蒙斯": [
+      3.95,
+      50.45,
+      "埃诺伯国首府，勃艮第低地的音乐重镇；班舒瓦供职的宫廷礼拜堂与邻近Soignies教士团一带，是15世纪尚松传统的南方腹地。"
+    ],
+    "费拉拉": [
+      11.62,
+      44.84,
+      "埃斯特宫廷的末代余晖：卢扎斯基的键盘秘技与杰苏阿尔多带来的半音世界，弗雷斯科巴尔迪的少年学堂。"
+    ],
+    "凡尔赛": [
+      2.13,
+      48.8,
+      "太阳王的音乐机器：小教堂、寝宫与花园各有乐制；库普兰任王室管风琴师，周日御前演出《王室音乐会曲》。"
+    ],
+    "热那亚": [
+      8.93,
+      44.41,
+      "帕格尼尼的出生港城；其遗存的瓜尔内里名琴'加农炮'今存市政厅。"
+    ],
+    "帕尔马": [
+      10.33,
+      44.8,
+      "帕格尼尼晚年受聘于玛丽·路易莎公爵领的宫廷乐职，殁后葬事因'魔鬼'传闻一波三折。"
+    ],
+    "佩萨罗": [
+      12.91,
+      43.91,
+      "罗西尼的出生地，亚得里亚海滨小城；今设罗西尼歌剧节与音乐院。"
+    ],
+    "卡塔尼亚": [
+      15.09,
+      37.5,
+      "埃特纳火山下的西西里港城，贝利尼的故乡；今其名冠于市立歌剧院与机场。"
+    ],
+    "贝尔加莫": [
+      9.67,
+      45.7,
+      "伦巴第山城，多尼采蒂的出生与终老之地；上城的多尼采蒂博物馆与音乐院承其名。"
+    ],
+    "卢卡": [
+      10.5,
+      43.84,
+      "托斯卡纳古城，普契尼世代为圣马丁大教堂管风琴师的乐匠家族之乡。"
+    ],
+    "伍斯特": [
+      -2.22,
+      52.19,
+      "英格兰西部密德兰的大教堂城，埃尔加的故乡；三合唱团音乐节(Three Choirs)的驻地之一。"
+    ],
+    "赫尔辛基": [
+      24.94,
+      60.17,
+      "芬兰民族乐派的中心；西贝柳斯学院所在，《芬兰颂》1899年首演之城，音乐即独立运动的号角。"
+    ],
+    "布尔诺": [
+      16.61,
+      49.2,
+      "摩拉维亚首府；雅纳切克在此办管风琴学校、采录民歌，其全部成熟歌剧的策源地。"
+    ],
+    "法兰克福": [
+      8.68,
+      50.11,
+      "欣德米特任歌剧院首席中提琴与作曲起点之城；美因河畔的德国现代音乐重镇。"
+    ],
+    "格拉纳达": [
+      -3.6,
+      37.18,
+      "阿尔罕布拉宫下的安达卢西亚古城；法雅晚年定居于此，弗拉门戈深歌与摩尔遗风之乡。"
+    ]
+  },
+  "PORTRAITS": {
+    "bur": {
+      "u": "assets/img/bur.jpg",
+      "c": "查尔斯·伯尼 · 雷诺兹绘"
+    },
+    "fork": {
+      "u": "assets/img/fork.jpg",
+      "c": "Karl Traugott Riedel 版画像，据 J.G. Bornemann，18世纪末"
+    },
+    "horn": {
+      "u": "assets/img/horn.jpg",
+      "c": "埃里希·冯·霍恩博斯特尔"
+    },
+    "kerm": {
+      "u": "assets/img/kerm.jpg",
+      "c": "约瑟夫·克尔曼"
+    },
+    "gers": {
+      "u": "assets/img/gers.jpg",
+      "c": "乔治·格什温"
+    },
+    "fost": {
+      "u": "assets/img/fost.jpg",
+      "c": "斯蒂芬·福斯特 · 银版照片，约1850s"
+    },
+    "sous": {
+      "u": "assets/img/sous.jpg",
+      "c": "约翰·菲利普·苏萨 · 历史照片，1900"
+    },
+    "ives": {
+      "u": "assets/img/ives.jpg",
+      "c": "查尔斯·艾夫斯 · 耶鲁时期照片，约1889"
+    },
+    "elli": {
+      "u": "assets/img/elli.jpg",
+      "c": "杜克·艾灵顿 · 历史照片，1943"
+    },
+    "copl": {
+      "u": "assets/img/copl.jpg",
+      "c": "阿隆·科普兰 · 历史照片，约1962"
+    },
+    "tom": {
+      "u": "assets/img/tom.jpg",
+      "c": "加里·汤姆林森"
+    },
+    "mccl": {
+      "u": "assets/img/mccl.jpg",
+      "c": "苏珊·麦克拉蕊"
+    },
+    "yry": {
+      "u": "assets/img/yry.jpg",
+      "c": "于润洋"
+    },
+    "yyd": {
+      "u": "assets/img/yyd.jpg",
+      "c": "杨燕迪"
+    },
+    "rile": {
+      "u": "assets/img/rile.jpg",
+      "c": "特里·赖利"
+    },
+    "pyth": {
+      "u": "assets/img/pyth.jpg",
+      "c": "卡皮托利尼博物馆罗马胸像照片"
+    },
+    "boet": {
+      "u": "assets/img/boet.jpg",
+      "c": "中世纪手抄本细密画"
+    },
+    "adam": {
+      "u": "assets/img/adam.jpg",
+      "c": "手抄本细密画（歌集），13世纪"
+    },
+    "pind": {
+      "u": "assets/img/pind.jpg",
+      "c": "古代胸像（罗马摹本）照片"
+    },
+    "seik": {
+      "u": "assets/img/seik.jpg",
+      "c": "塞基洛斯石碑（哥本哈根丹麦国家博物馆）照片，公元1-2世纪"
+    },
+    "greg": {
+      "u": "assets/img/greg.jpg",
+      "c": "中世纪泥金手抄本插画（圣灵鸽子口授）"
+    },
+    "hild": {
+      "u": "assets/img/hild.jpg",
+      "c": "《认识主道》(Scivias)泥金手抄本插画，约1151"
+    },
+    "brit": {
+      "u": "assets/img/brit.jpg",
+      "c": "Decca/London Records 宣传照，1968（后期修复版）"
+    },
+    "mach": {
+      "u": "assets/img/mach.jpg",
+      "c": "《自然女神引见马肖》BnF手抄本细密画，约14世纪"
+    },
+    "land": {
+      "u": "assets/img/land.jpg",
+      "c": "《斯夸尔恰卢皮抄本》泥金装饰首字母，约15世纪初"
+    },
+    "binc": {
+      "u": "assets/img/binc.jpg",
+      "c": "马丁·勒·弗朗《贵妇斗士》细密画，右持竖琴者为班舒瓦，约1440"
+    },
+    "dufa": {
+      "u": "assets/img/dufa.jpg",
+      "c": "马丁·勒·弗朗《贵妇斗士》细密画，左管风琴旁者为杜费，约1440"
+    },
+    "ocke": {
+      "u": "assets/img/ocke.jpg",
+      "c": "尚松手抄本细密画，戴眼镜领唱者为奥克冈，1523"
+    },
+    "josq": {
+      "u": "assets/img/josq.jpg",
+      "c": "奥普梅尔《欧洲名人录》木刻像，1611"
+    },
+    "lass": {
+      "u": "assets/img/lass.jpg",
+      "c": "拉索肖像画（宫廷肖像），16世纪"
+    },
+    "pale": {
+      "u": "assets/img/pale.jpg",
+      "c": "帕莱斯特里纳肖像画，16世纪"
+    },
+    "vict": {
+      "u": "assets/img/vict.jpg",
+      "c": "维多利亚版画像，16世纪末"
+    },
+    "byrd": {
+      "u": "assets/img/byrd.jpg",
+      "c": "威廉·伯德版画像，17世纪"
+    },
+    "tall": {
+      "u": "assets/img/tall.jpg",
+      "c": "版画像，作者不详（据早期原型的19世纪刻本）"
+    },
+    "gesu": {
+      "u": "assets/img/gesu.jpg",
+      "c": "无名氏油画（还愿画中杰苏阿尔多侧面像局部），约1600"
+    },
+    "mont": {
+      "u": "assets/img/mont.jpg",
+      "c": "贝尔纳多·斯特罗齐油画，约1630"
+    },
+    "schu": {
+      "u": "assets/img/schu.jpg",
+      "c": "克里斯托夫·斯佩特纳油画，约1650—1660"
+    },
+    "fres": {
+      "u": "assets/img/fres.jpg",
+      "c": "克洛德·梅朗铜版画，1619"
+    },
+    "lull": {
+      "u": "assets/img/lull.jpg",
+      "c": "保罗·米尼亚尔画派油画，17世纪下半叶"
+    },
+    "buxt": {
+      "u": "assets/img/buxt.jpg",
+      "c": "约翰内斯·福尔豪特《家庭音乐会》局部（传统认为画中音乐家含布克斯特胡德），1674"
+    },
+    "corel": {
+      "u": "assets/img/corel.jpg",
+      "c": "无名氏油画（一说据休·霍华德原作），约1700"
+    },
+    "purc": {
+      "u": "assets/img/purc.jpg",
+      "c": "约翰·克洛斯特曼油画，约1695"
+    },
+    "vivi": {
+      "u": "assets/img/vivi.jpg",
+      "c": "无名氏油画（博洛尼亚音乐博物馆藏，传称“红发神父”像），约1723"
+    },
+    "coup": {
+      "u": "assets/img/coup.jpg",
+      "c": "传世油画肖像，18世纪初"
+    },
+    "asca": {
+      "u": "assets/img/asca.jpg",
+      "c": "温特版画像"
+    },
+    "vinc": {
+      "u": "assets/img/vinc.jpg",
+      "c": "无名氏版画像，18世纪"
+    },
+    "perg": {
+      "u": "assets/img/perg.jpg",
+      "c": "传世油画肖像，18世纪"
+    },
+    "dsca": {
+      "u": "assets/img/dsca.jpg",
+      "c": "贝拉斯科油画，1738"
+    },
+    "ramo": {
+      "u": "assets/img/ramo.jpg",
+      "c": "阿维德（归属）油画，约1728"
+    },
+    "bach": {
+      "u": "assets/img/bach.jpg",
+      "c": "豪斯曼油画，1746"
+    },
+    "hand": {
+      "u": "assets/img/hand.jpg",
+      "c": "哈德森油画，1749"
+    },
+    "tele": {
+      "u": "assets/img/tele.jpg",
+      "c": "利希滕施泰格版画像，18世纪"
+    },
+    "gluc": {
+      "u": "assets/img/gluc.jpg",
+      "c": "杜普莱西油画，1775"
+    },
+    "cpeb": {
+      "u": "assets/img/cpeb.jpg",
+      "c": "18世纪肖像"
+    },
+    "hayd": {
+      "u": "assets/img/hayd.jpg",
+      "c": "托马斯·哈迪油画，1791"
+    },
+    "moza": {
+      "u": "assets/img/moza.jpg",
+      "c": "芭芭拉·克拉夫特油画，1819"
+    },
+    "beet": {
+      "u": "assets/img/beet.jpg",
+      "c": "约瑟夫·卡尔·施蒂勒油画，1820"
+    },
+    "sali": {
+      "u": "assets/img/sali.jpg",
+      "c": "约瑟夫·维利布罗德·梅勒油画"
+    },
+    "bocc": {
+      "u": "assets/img/bocc.jpg",
+      "c": "博凯里尼肖像版画（19世纪）"
+    },
+    "clem": {
+      "u": "assets/img/clem.jpg",
+      "c": "托马斯·哈迪派美柔汀版画"
+    },
+    "schb": {
+      "u": "assets/img/schb.jpg",
+      "c": "威廉·奥古斯特·里德油画，据其1825年水彩"
+    },
+    "paga": {
+      "u": "assets/img/paga.jpg",
+      "c": "卡拉马塔据安格尔1818年素描所作版画"
+    },
+    "ross": {
+      "u": "assets/img/ross.jpg",
+      "c": "艾蒂安·卡尔雅照片，1865"
+    },
+    "berl": {
+      "u": "assets/img/berl.jpg",
+      "c": "柏辽兹肖像画（据油画复制）"
+    },
+    "mend": {
+      "u": "assets/img/mend.jpg",
+      "c": "爱德华·马格努斯油画，1846"
+    },
+    "bize": {
+      "u": "assets/img/bize.jpg",
+      "c": "历史照片，约1875"
+    },
+    "sasa": {
+      "u": "assets/img/sasa.jpg",
+      "c": "Meurisse通讯社照片，1921"
+    },
+    "faur": {
+      "u": "assets/img/faur.jpg",
+      "c": "萨金特油画，约1889"
+    },
+    "tcha": {
+      "u": "assets/img/tcha.jpg",
+      "c": "库兹涅佐夫油画，1893"
+    },
+    "muso": {
+      "u": "assets/img/muso.jpg",
+      "c": "列宾油画，1881"
+    },
+    "rims": {
+      "u": "assets/img/rims.jpg",
+      "c": "谢罗夫油画，1898"
+    },
+    "dvor": {
+      "u": "assets/img/dvor.jpg",
+      "c": "历史照片，1901"
+    },
+    "grie": {
+      "u": "assets/img/grie.jpg",
+      "c": "彼得森油画，1891"
+    },
+    "elga": {
+      "u": "assets/img/elga.jpg",
+      "c": "历史照片，约1905"
+    },
+    "pucc": {
+      "u": "assets/img/pucc.jpg",
+      "c": "历史照片，约1908"
+    },
+    "mahl": {
+      "u": "assets/img/mahl.jpg",
+      "c": "莫里茨·奈尔照片，1907"
+    },
+    "rstr": {
+      "u": "assets/img/rstr.jpg",
+      "c": "公有领域图像"
+    },
+    "debu": {
+      "u": "assets/img/debu.jpg",
+      "c": "公有领域图像"
+    },
+    "rave": {
+      "u": "assets/img/rave.jpg",
+      "c": "公有领域图像"
+    },
+    "sati": {
+      "u": "assets/img/sati.jpg",
+      "c": "公有领域图像"
+    },
+    "scho": {
+      "u": "assets/img/scho.jpg",
+      "c": "公有领域图像"
+    },
+    "berg": {
+      "u": "assets/img/berg.jpg",
+      "c": "公有领域图像"
+    },
+    "webe": {
+      "u": "assets/img/webe.jpg",
+      "c": "公有领域图像"
+    },
+    "stra": {
+      "u": "assets/img/stra.jpg",
+      "c": "公有领域图像"
+    },
+    "bart": {
+      "u": "assets/img/bart.jpg",
+      "c": "公有领域图像"
+    },
+    "buso": {
+      "u": "assets/img/buso.jpg",
+      "c": "公有领域图像"
+    },
+    "sibe": {
+      "u": "assets/img/sibe.jpg",
+      "c": "公有领域图像"
+    },
+    "rach": {
+      "u": "assets/img/rach.jpg",
+      "c": "美国国会图书馆藏新闻照片，约1921"
+    },
+    "scri": {
+      "u": "assets/img/scri.jpg",
+      "c": "历史照片，约1900"
+    },
+    "jana": {
+      "u": "assets/img/jana.jpg",
+      "c": "历史肖像照片（附签名题字）"
+    },
+    "koda": {
+      "u": "assets/img/koda.jpg",
+      "c": "瓦伊达摄影棚照片，1928"
+    },
+    "poul": {
+      "u": "assets/img/poul.jpg",
+      "c": "历史照片（局部），约1930"
+    },
+    "prok": {
+      "u": "assets/img/prok.jpg",
+      "c": "贝恩新闻社照片，约1918"
+    },
+    "shos": {
+      "u": "assets/img/shos.jpg",
+      "c": "德意志图片档案馆照片，1950"
+    },
+    "guid": {
+      "u": "assets/img/guid.jpg",
+      "c": "中世纪手抄本细密画：圭多向主教Theobald讲授单弦琴，11–12世纪"
+    },
+    "obre": {
+      "u": "assets/img/obre.jpg",
+      "c": "昆汀·马西斯（传），油画肖像，1496年（金贝尔美术馆）"
+    },
+    "will": {
+      "u": "assets/img/will.jpg",
+      "c": "16世纪铜版画像《Effigies Adriani Willaert》"
+    },
+    "cava": {
+      "u": "assets/img/cava.jpg",
+      "c": "17世纪肖像画（弗朗切斯科·卡瓦利）"
+    },
+    "pach": {
+      "u": "assets/img/pach.jpg",
+      "c": "传约翰·帕赫贝尔像，传统版画（作者/年代不详，仅为传世通行像）"
+    },
+    "jcb": {
+      "u": "assets/img/jcb.jpg",
+      "c": "托马斯·庚斯博罗，油画，约1776年"
+    },
+    "stam": {
+      "u": "assets/img/stam.jpg",
+      "c": "18世纪铜版画肖像章，作者佚名"
+    },
+    "cweb": {
+      "u": "assets/img/cweb.jpg",
+      "c": "托马斯·劳伦斯（Thomas Lawrence）油画，1824年"
+    },
+    "meyr": {
+      "u": "assets/img/meyr.jpg",
+      "c": "梅耶贝尔肖像，19世纪照相制版（据油画）"
+    },
+    "glin": {
+      "u": "assets/img/glin.jpg",
+      "c": "伊利亚·列宾（Ilya Repin）油画，1887年"
+    },
+    "vare": {
+      "u": "assets/img/vare.jpg",
+      "c": "历史照片，1915年（Bain新闻社）"
+    },
+    "boul": {
+      "u": "assets/img/boul.jpg",
+      "c": "历史照片，1968年"
+    },
+    "xena": {
+      "u": "assets/img/xena.jpg",
+      "c": "历史照片，1975年"
+    },
+    "ligi": {
+      "u": "assets/img/ligi.jpg",
+      "c": "历史照片，1984年"
+    },
+    "feti": {
+      "u": "assets/img/feti.jpg",
+      "c": "19世纪版画/石版肖像，作者不详"
+    },
+    "chry": {
+      "u": "assets/img/chry.jpg",
+      "c": "历史照片，作者不详，19世纪末"
+    },
+    "spit": {
+      "u": "assets/img/spit.jpg",
+      "c": "历史照片，摄影者不详，约1881–1900"
+    },
+    "adle": {
+      "u": "assets/img/adle.jpg",
+      "c": "历史照片，作者不详，19世纪末—20世纪初"
+    },
+    "riem": {
+      "u": "assets/img/riem.jpg",
+      "c": "历史照片，作者不详，19世纪末—20世纪初"
+    },
+    "kret": {
+      "u": "assets/img/kret.jpg",
+      "c": "历史照片，摄影者不详，1912"
+    },
+    "sche": {
+      "u": "assets/img/sche.jpg",
+      "c": "赫尔曼·克莱门斯·科塞尔摄，历史照片，1912年"
+    },
+    "stum": {
+      "u": "assets/img/stum.jpg",
+      "c": "历史肖像照片，约1900年（公有领域）"
+    },
+    "dahl": {
+      "u": "assets/img/dahl.jpg",
+      "c": "历史照片（维基共享资源自由授权）"
+    },
+    "taru": {
+      "u": "assets/img/taru.jpg",
+      "c": "人物照片，2014年（维基共享资源自由授权）"
+    },
+    "wgj": {
+      "u": "assets/img/wgj.jpg",
+      "c": "佚名摄影，王光祈旅德时期历史照片（1920年代，公有领域）"
+    },
+    "xym": {
+      "u": "assets/img/xym.jpg",
+      "c": "佚名摄影，萧友梅历史肖像照（1920—30年代，公有领域）"
+    },
+    "marc": {
+      "u": "assets/img/marc.jpg",
+      "c": "13世纪歌本(BnF fr.12473)细密画，作者佚名，约1254年"
+    },
+    "bern": {
+      "u": "assets/img/bern.jpg",
+      "c": "13世纪歌本(BnF fr.12473)细密画，作者佚名，约1254年"
+    },
+    "dia": {
+      "u": "assets/img/dia.jpg",
+      "c": "13世纪歌本(BnF fr.12473)女游吟诗人细密画，作者佚名，约1254年"
+    },
+    "jaco": {
+      "u": "assets/img/jaco.jpg",
+      "c": "《斯夸尔恰卢皮抄本》牧歌手稿页细密画，作者佚名，约1410-1415年"
+    },
+    "dowl": {
+      "u": "assets/img/dowl.jpg",
+      "c": "约翰·道兰版画肖像，17世纪版画"
+    },
+    "stro": {
+      "u": "assets/img/stro.jpg",
+      "c": "贝尔纳多·斯特罗齐油画《抱古提琴的女子》（常认作巴巴拉·斯特罗齐），约1640年"
+    },
+    "jacq": {
+      "u": "assets/img/jacq.jpg",
+      "c": "François de Troy 油画，17世纪末/18世纪初（公有领域）"
+    },
+    "hens": {
+      "u": "assets/img/hens.jpg",
+      "c": "Moritz Daniel Oppenheim 油画，1842年（公有领域）"
+    },
+    "luto": {
+      "u": "assets/img/luto.jpg",
+      "c": "Pniewski & Kowalski 摄影，1992年（公有领域）"
+    },
+    "pend": {
+      "u": "assets/img/pend.jpg",
+      "c": "Adam Kumiszcza 摄影，2008年（CC BY 3.0）"
+    },
+    "kurt": {
+      "u": "assets/img/kurt.jpg",
+      "c": "Lenke Szilágyi 摄影，2014年（CC BY-SA 4.0）"
+    },
+    "schn": {
+      "u": "assets/img/schn.jpg",
+      "c": "历史照片，摄于1989年4月莫斯科（CC BY-SA 3.0）"
+    },
+    "gub": {
+      "u": "assets/img/gub.jpg",
+      "c": "Mikhail Kozlovsky摄，2016年（CC BY 4.0）"
+    },
+    "part": {
+      "u": "assets/img/part.jpg",
+      "c": "爱沙尼亚外交部摄，2011年（CC BY 2.0）"
+    },
+    "gore": {
+      "u": "assets/img/gore.jpg",
+      "c": "波兰音乐出版社(PWM)肖像照，约2011年（公有领域）"
+    },
+    "berio": {
+      "u": "assets/img/berio.jpg",
+      "c": "佚名摄影，1970年代（公有领域）"
+    },
+    "stock": {
+      "u": "assets/img/stock.jpg",
+      "c": "Kathinka Pasveer摄，2004年（CC BY-SA 3.0）"
+    },
+    "nono": {
+      "u": "assets/img/nono.jpg",
+      "c": "Fernando Pereira / Anefo摄，1979年（CC BY-SA 3.0 nl）"
+    },
+    "clar": {
+      "u": "assets/img/clar.jpg",
+      "c": "伦巴赫粉彩画，1878"
+    },
+    "lisz": {
+      "u": "assets/img/lisz.jpg",
+      "c": "莱曼油画，1839"
+    },
+    "wagn": {
+      "u": "assets/img/wagn.jpg",
+      "c": "汉夫施滕格尔摄影，1871"
+    },
+    "verd": {
+      "u": "assets/img/verd.jpg",
+      "c": "博尔迪尼油画，1886"
+    },
+    "brah": {
+      "u": "assets/img/brah.jpg",
+      "c": "布拉施摄影，1889"
+    },
+    "bruc": {
+      "u": "assets/img/bruc.jpg",
+      "c": "比谢油画，约1890年代"
+    },
+    "smet": {
+      "u": "assets/img/smet.jpg",
+      "c": "萨洛曼油画，1854"
+    },
+    "bell": {
+      "u": "assets/img/bell.jpg",
+      "c": "皮耶特罗·卢基尼油画，1835年前"
+    },
+    "doni": {
+      "u": "assets/img/doni.jpg",
+      "c": "朱塞佩·里洛西油画，1848年"
+    },
+    "gabr": {
+      "u": "assets/img/gabr.jpg",
+      "c": "安尼巴莱·卡拉奇油画《琉特琴演奏者》（旧传加布里埃利肖像），约1593–1594年"
+    },
+    "vwil": {
+      "u": "assets/img/vwil.jpg",
+      "c": "历史照片（佚名摄影），1910年"
+    },
+    "hind": {
+      "u": "assets/img/hind.jpg",
+      "c": "历史照片，1923年"
+    },
+    "fall": {
+      "u": "assets/img/fall.jpg",
+      "c": "阿方索·西亚兰摄影，1914年"
+    },
+    "mess": {
+      "u": "assets/img/mess.jpg",
+      "c": "Rob Croes/Anefo 摄影（CC0），1986年"
+    },
+    "chop": {
+      "u": "assets/img/chop.jpg",
+      "c": "公有领域图像"
+    },
+    "schm": {
+      "u": "assets/img/schm.jpg",
+      "c": "公有领域图像"
+    },
+    "arix": {
+      "u": "assets/img/arix.jpg",
+      "c": "那不勒斯刊行铜版画（生于塔兰托之哲学家），18世纪末"
+    },
+    "cacc": {
+      "u": "assets/img/cacc.jpg",
+      "c": "传世版画像"
+    },
+    "pero": {
+      "u": "assets/img/pero.jpg",
+      "c": "中世纪泥金细密画（奏钟者）；无传真容，以时代图像代之"
+    },
+    "vitr": {
+      "u": "assets/img/vitr.jpg",
+      "c": "菲利普·德·维特里印章，1349年"
+    },
+    "terp": {
+      "u": "assets/img/terp.jpg",
+      "c": "红绘陶瓶授琴场景，约公元前5世纪；无传真容，以时代图像代之"
+    },
+    "leon": {
+      "u": "assets/img/leon.jpg",
+      "c": "中世纪泥金细密画（歌者）；无传真容，以时代图像代之"
+    },
+    "sapp": {
+      "u": "assets/img/sapp.jpg",
+      "c": "夏尔·门金油画《萨福》（局部），1877，曼彻斯特美术馆"
+    },
+    "duns": {
+      "u": "assets/img/duns.jpg",
+      "c": "传邓斯泰布尔侧面像（后世摹绘）"
+    },
+    "bess": {
+      "u": "assets/img/bess.jpg",
+      "c": "海因里希·贝塞勒 · 历史照片，20世纪中叶"
+    }
+  },
+  "ADDITION_CITIES_20260809": {
+    "博洛尼亚": [
+      11.34,
+      44.49,
+      "圣米凯莱因博斯科修院、圣彼得罗尼奥与音乐学院共同塑造北意重镇；班凯耶里的繁花学院于此连接牧歌喜剧、理论教学与蒙特威尔第新风。"
+    ],
+    "克罗梅日什": [
+      17.39,
+      49.3,
+      "奥洛穆茨主教的摩拉维亚宫廷与档案之城；比贝尔早期任职于此，珍贵手稿保存了中欧巴洛克器乐实验。"
+    ],
+    "列日": [
+      5.57,
+      50.63,
+      "默兹河畔的瓦隆古城；奇科尼亚约生于此，其早期经历因同名父子与档案稀疏而仍有争议。"
+    ],
+    "帕多瓦": [
+      11.88,
+      45.41,
+      "威尼托的大学与教会之城；奇科尼亚约1401年起在大教堂任职，晚期作品与乐论在此汇聚法、意传统。"
+    ]
+  },
+  "ADDITION_PORTRAITS_20260809": {
+    "rore": {
+      "u": "assets/img/rore.jpg",
+      "c": "汉斯·米利希细密肖像，约1558—1559；巴伐利亚国家图书馆藏，公有领域"
+    },
+    "banc": {
+      "u": "assets/img/banc.jpg",
+      "c": "班凯耶里传世肖像，作者不详；Wikimedia Commons，公有领域"
+    },
+    "peri": {
+      "u": "assets/img/peri.jpg",
+      "c": "布翁塔伦蒂为1589年《朝圣女》所绘阿里翁服装稿，表演者为佩里；同时代形象而非传统肖像，公有领域"
+    },
+    "bibe": {
+      "u": "assets/img/bibe.jpg",
+      "c": "保罗·塞尔雕版肖像，1664—1699；阿姆斯特丹国立博物馆藏，CC0"
+    },
+    "meta": {
+      "u": "assets/img/meta.jpg",
+      "c": "梅塔斯塔西奥肖像，归属常题作巴托尼或迈滕斯；公有领域"
+    },
+    "hass": {
+      "u": "assets/img/hass.jpg",
+      "c": "巴尔塔萨·登纳绘哈塞，约1740；公有领域"
+    },
+    "cico": {
+      "u": "assets/img/cico.jpg",
+      "c": "约翰内斯·奇科尼亚肖像；来源：网络（用户提供的近期编辑版）"
+    }
+  },
+  "ART": {
+    "greek": {
+      "u": "assets/img/greek.jpg",
+      "title": "阿喀琉斯与埃阿斯下棋",
+      "artist": "埃克塞基亚斯",
+      "year": "约前540—前530年",
+      "note": "黑绘的克制轮廓与几何均衡，呼应古希腊以数比与\"和谐\"（harmonia）规约音程、以\"埃托斯\"节制情感的音乐理性。"
+    },
+    "medieval": {
+      "u": "assets/img/medieval.jpg",
+      "title": "《豪华时祷书》一月页",
+      "artist": "林堡兄弟",
+      "year": "约1412—1416年",
+      "note": "泥金历页层叠的秩序与神圣象征，映照经文歌与素歌所承载的中世纪宇宙\"数\"之比例与礼拜时序。"
+    },
+    "ren": {
+      "u": "assets/img/ren.jpg",
+      "title": "田园合奏",
+      "artist": "提香（一说乔尔乔内）",
+      "year": "约1509年",
+      "note": "牧歌情境中人声与鲁特琴交融，正是文艺复兴牧歌与\"言辞—音乐\"仿情理想的视觉写照。"
+    },
+    "baroque": {
+      "u": "assets/img/baroque.jpg",
+      "title": "乐师",
+      "artist": "卡拉瓦乔",
+      "year": "约1597年",
+      "note": "强烈明暗对照与专注的持谱姿态，对应巴洛克\"激情说\"（affetti）以音乐直击听者情感的修辞诉求。"
+    },
+    "classical": {
+      "u": "assets/img/classical.jpg",
+      "title": "贺拉斯兄弟之誓",
+      "artist": "雅克-路易·大卫",
+      "year": "1784年",
+      "note": "新古典主义的清晰结构与理性均衡，与维也纳古典乐派奏鸣曲式的对称、比例与形式逻辑同源。"
+    },
+    "romantic": {
+      "u": "assets/img/romantic.jpg",
+      "title": "雾海上的旅人",
+      "artist": "卡斯帕·大卫·弗里德里希",
+      "year": "约1818年",
+      "note": "个体面对崇高无限的沉思，正是浪漫主义\"绝对音乐\"与无词歌所追求的主体性与超越性。"
+    },
+    "modern": {
+      "u": "assets/img/modern.jpg",
+      "title": "印象III（音乐会）",
+      "artist": "瓦西里·康定斯基",
+      "year": "1911年",
+      "note": "受勋伯格无调性音乐会触发的色彩抽象，标志现代艺术中音乐与绘画在\"内在必然性\"上的通感汇流。"
+    }
+  },
+  "ART2": {
+    "greek": {
+      "u": "assets/img/side_greek.jpg",
+      "title": "弹基萨拉琴的女子",
+      "artist": "波斯科雷阿莱 P. 范尼乌斯·辛尼斯托别墅壁画",
+      "year": "约前50–前40年",
+      "c": "庞贝近郊别墅的罗马壁画，女子怀抱七弦基萨拉——古代「音乐立法者」想象的视觉回响。",
+      "extension": "assets/img/side_greek_extension.jpg"
+    },
+    "medieval": {
+      "u": "assets/img/side_medieval.jpg",
+      "title": "《圣母康蒂加》细密画",
+      "artist": "阿方索十世宫廷编纂",
+      "year": "13世纪",
+      "c": "抄本页上的安纳菲长号手；宫廷与教会以图记乐，正是中世纪音乐得以存留的媒介。",
+      "extension": "assets/img/side_medieval_extension.jpg"
+    },
+    "ren": {
+      "u": "assets/img/side_ren.jpg",
+      "title": "圣塞西莉亚的沉迷",
+      "artist": "拉斐尔",
+      "year": "约1516–1517",
+      "c": "音乐主保圣人脚下散落着破败的乐器，天上合唱压过尘世之音——文艺复兴的和谐理想。",
+      "extension": "assets/img/side_ren_extension.jpg"
+    },
+    "baroque": {
+      "u": "assets/img/side_baroque.jpg",
+      "title": "乐师",
+      "artist": "卡拉瓦乔",
+      "year": "约1597",
+      "c": "为德尔·蒙特枢机所作的少年乐师群像，明暗对照戏剧化如通奏低音——巴洛克的感官与修辞。"
+    },
+    "classical": {
+      "u": "assets/img/side_classical.jpg",
+      "title": "梅泽坦",
+      "artist": "华托",
+      "year": "约1718–1720",
+      "c": "弹琉特而歌的喜剧角色；华丽风格（galant）的优雅、私密与一缕感伤。",
+      "extension": "assets/img/side_classical_extension.jpg"
+    },
+    "romantic": {
+      "u": "assets/img/side_romantic.jpg",
+      "title": "李斯特在钢琴前",
+      "artist": "约瑟夫·丹豪泽",
+      "year": "1840",
+      "c": "贝多芬胸像俯临，乔治·桑、雨果、帕格尼尼、罗西尼环坐——浪漫主义的音乐英雄崇拜。"
+    },
+    "modern": {
+      "u": "assets/img/side_modern.jpg",
+      "title": "《春之祭》舞台设计",
+      "artist": "尼古拉·罗列赫",
+      "year": "1913",
+      "c": "斯特拉文斯基引爆巴黎的原始主义之夜；二十世纪以一场断裂开场。"
+    }
+  },
+  "CITYINFO": {
+    "纽约": {
+      "imgs": [
+        {
+          "img": "newyork",
+          "landmark": "卡内基音乐厅",
+          "cr": "公有领域"
+        },
+        {
+          "img": "newyork2",
+          "landmark": "大都会歌剧院(林肯中心)",
+          "cr": "Ermell · CC BY-SA 4.0"
+        },
+        {
+          "img": "newyork3",
+          "landmark": "百老汇剧院区",
+          "cr": "vincent desjardins · CC BY 2.0"
+        }
+      ],
+      "hist": "二十世纪欧洲作曲家流亡的首要目的地。德沃夏克1892–95年掌国家音乐学院、写下《自新大陆》交响曲;马勒指挥大都会歌剧院与纽约爱乐;巴托克在此度过贫病交加的最后五年;瓦雷兹以《美洲》《电离》重新定义'声音'。卡内基音乐厅与林肯中心是其音乐生活的心脏。"
+    },
+    "洛杉矶": {
+      "imgs": [
+        {
+          "img": "losangeles",
+          "landmark": "好莱坞露天剧场",
+          "cr": "Los Angeles Times · 公有领域"
+        },
+        {
+          "img": "losangeles2",
+          "landmark": "迪士尼音乐厅",
+          "cr": "Carol M. Highsmith · 公有领域"
+        },
+        {
+          "img": "losangeles3",
+          "landmark": "好莱坞标志",
+          "cr": "Thomas Wolf · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "二战流亡者的'太平洋畔的魏玛'。勋伯格在加州大学执教、斯特拉文斯基定居好莱坞近三十年;蓬勃的电影工业吸纳了大批欧洲作曲家。好莱坞露天剧场与迪士尼音乐厅是其地标。"
+    },
+    "波士顿": {
+      "imgs": [
+        {
+          "img": "boston",
+          "landmark": "波士顿交响音乐厅",
+          "cr": "MyCatIsAChonk · CC BY-SA 4.0"
+        },
+        {
+          "img": "boston2",
+          "landmark": "新英格兰音乐学院",
+          "cr": "JNeutrino · CC BY-SA 4.0"
+        },
+        {
+          "img": "boston3",
+          "landmark": "三一教堂",
+          "cr": "Gregg Squeglia · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "波士顿交响乐团与新英格兰音乐学院之城,其交响音乐厅声学名列世界前茅。布索尼1891–94年曾在新英格兰音乐学院执教,美国是他漫长巡演与教学生涯的一站。"
+    },
+    "芝加哥": {
+      "imgs": [
+        {
+          "img": "chicago",
+          "landmark": "芝加哥管弦乐厅",
+          "cr": "Beyond My Ken · CC BY-SA 4.0"
+        },
+        {
+          "img": "chicago2",
+          "landmark": "会堂大厦(沙利文)",
+          "cr": "Bmzuckerman · CC BY 4.0"
+        },
+        {
+          "img": "chicago3",
+          "landmark": "芝加哥歌剧院",
+          "cr": "Jeffrey Beall · CC BY 4.0"
+        }
+      ],
+      "hist": "美国中西部的音乐重镇。芝加哥交响乐团与其管弦乐厅、沙利文设计的会堂大厦是建筑与声学的杰作;普罗科菲耶夫的歌剧《三橘之恋》1921年在此首演。"
+    },
+    "费城": {
+      "imgs": [
+        {
+          "img": "philadelphia",
+          "landmark": "音乐学会厅(Academy of Music)",
+          "cr": "Dthomsen8 · 公有领域"
+        },
+        {
+          "img": "philadelphia2",
+          "landmark": "金梅尔中心·威瑞森厅",
+          "cr": "Smallbones · CC0"
+        },
+        {
+          "img": "philadelphia3",
+          "landmark": "独立厅",
+          "cr": "Mys 721tx · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "费城管弦乐团(斯托科夫斯基与奥曼迪治下的'费城之声')之城,其绚烂音响享誉世界;拉赫玛尼诺夫视之为最钟爱的乐团,多部作品在此首演并录音。音乐学会厅是美国最古老、仍在使用的歌剧院。"
+    },
+    "新港": {
+      "imgs": [
+        {
+          "img": "newhaven",
+          "landmark": "耶鲁伍尔西音乐厅",
+          "cr": "Detroit Publishing Co. · 公有领域"
+        },
+        {
+          "img": "newhaven2",
+          "landmark": "耶鲁哈克尼斯塔",
+          "cr": "Tichnor Brothers · 公有领域"
+        },
+        {
+          "img": "newhaven3",
+          "landmark": "耶鲁斯普拉格音乐厅",
+          "cr": "DanielPenfield · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "耶鲁大学所在。欣德米特1940–53年在此执教、重塑其作曲教学;查尔斯·艾夫斯亦毕业于耶鲁。伍尔西音乐厅的巨型管风琴是美国学院音乐的地标。"
+    },
+    "匹兹堡": {
+      "imgs": [
+        {
+          "img": "pittsburgh",
+          "landmark": "海因茨音乐厅",
+          "cr": "Popscreenshot · CC BY-SA 4.0"
+        },
+        {
+          "img": "pittsburgh2",
+          "landmark": "福斯特纪念馆",
+          "cr": "Cbaile19 · CC0"
+        },
+        {
+          "img": "pittsburgh3",
+          "landmark": "学习大教堂",
+          "cr": "Notyourbroom · CC BY 3.0"
+        }
+      ],
+      "hist": "斯蒂芬·福斯特的故乡,美国大众歌曲的摇篮;匹兹堡交响乐团(其海因茨音乐厅声学出众)延续着这座钢城的音乐传统。"
+    },
+    "华盛顿": {
+      "imgs": [
+        {
+          "img": "washington",
+          "landmark": "肯尼迪表演艺术中心",
+          "cr": "OhanaSurf · CC BY-SA 4.0"
+        },
+        {
+          "img": "washington2",
+          "landmark": "国会图书馆",
+          "cr": "W. H. Jackson · 公有领域"
+        },
+        {
+          "img": "washington3",
+          "landmark": "美国国会大厦",
+          "cr": "Martin Falbisoner · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "美国首都。苏萨在此执掌海军陆战队军乐团、写就国民进行曲,艾灵顿亦生于此城;肯尼迪中心与国会图书馆(藏有海量乐谱与录音)汇聚国家的音乐记忆。"
+    },
+    "旧金山": {
+      "imgs": [
+        {
+          "img": "sanfrancisco",
+          "landmark": "戴维斯交响音乐厅",
+          "cr": "Ken Lund · CC BY-SA 2.0"
+        },
+        {
+          "img": "sanfrancisco2",
+          "landmark": "战争纪念歌剧院",
+          "cr": "Dllu · CC BY-SA 4.0"
+        },
+        {
+          "img": "sanfrancisco3",
+          "landmark": "金门大桥",
+          "cr": "Dietmar Rabich · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "西海岸的音乐重镇。赖利《C调》1964年在此首演,开简约主义之先;战争纪念歌剧院与戴维斯音乐厅并峙,海湾对岸的伯克利更是克尔曼、塔鲁斯金等音乐学重镇。"
+    },
+    "巴黎": {
+      "imgs": [
+        {
+          "img": "paris",
+          "landmark": "加尼叶歌剧院",
+          "cr": "Делфина · CC BY-SA 4.0"
+        },
+        {
+          "img": "paris2",
+          "landmark": "圣礼拜堂",
+          "cr": "DXR · CC BY-SA 3.0"
+        },
+        {
+          "img": "paris3",
+          "landmark": "巴黎圣母院",
+          "cr": "Benh LIEU SONG · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "从圣母院乐派的奥尔加农,到吕利的宫廷歌剧、拉莫与卢梭的论战,再到十九世纪“大歌剧”(Grand Opéra)与巴黎音乐院(1795)体制——柏辽兹、肖邦、李斯特、奥芬巴赫、德彪西皆在此成名。加尼叶歌剧院(1875)是第二帝国歌剧盛世的纪念碑,也是欧洲乐谱出版与沙龙文化的中心。"
+    },
+    "维也纳": {
+      "imgs": [
+        {
+          "img": "vienna",
+          "landmark": "维也纳国家歌剧院",
+          "cr": "Pezi · CC BY-SA 3.0-at"
+        },
+        {
+          "img": "vienna2",
+          "landmark": "金色大厅(Musikverein)",
+          "cr": "C.Stadler/Bwag · CC BY-SA 4.0"
+        },
+        {
+          "img": "vienna3",
+          "landmark": "维也纳河畔剧院",
+          "cr": "Alt, Jakob (1789 – 1872) · Public domain"
+        }
+      ],
+      "hist": "哈布斯堡宫廷音乐的中心。海顿、莫扎特、贝多芬、舒伯特、勃拉姆斯、布鲁克纳、马勒,直到勋伯格、贝尔格、韦伯恩的“第二维也纳乐派”相继在此工作——古典与浪漫的都城。国家歌剧院(1869)与金色大厅(音乐之友协会)并峙至今。"
+    },
+    "罗马": {
+      "imgs": [
+        {
+          "img": "rome",
+          "landmark": "圣彼得大教堂",
+          "cr": "Alvesgaspar · CC BY-SA 4.0"
+        },
+        {
+          "img": "rome2",
+          "landmark": "西斯廷礼拜堂",
+          "cr": "Jörg Bittner Unna · CC BY 3.0"
+        },
+        {
+          "img": "rome3",
+          "landmark": "阿根廷剧院",
+          "cr": "Blackcat · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "教廷礼拜堂的复调正统所在:帕莱斯特里纳在此确立“教会音乐的救赎者”形象,罗马乐派为反宗教改革的清晰复调立法。后世的清唱剧、康塔塔与卡里西米亦发端于此。无数作曲家来此研习复调正典。"
+    },
+    "莱比锡": {
+      "imgs": [
+        {
+          "img": "leipzig",
+          "landmark": "圣托马斯教堂",
+          "cr": "Tuxyso · CC BY-SA 3.0"
+        },
+        {
+          "img": "leipzig2",
+          "landmark": "布商大厦音乐厅",
+          "cr": "Ichwarsnur · CC BY-SA 4.0"
+        },
+        {
+          "img": "leipzig3",
+          "landmark": "门德尔松故居",
+          "cr": "Mealisland · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "巴赫任圣托马斯教堂乐长(1723–50)、写下《马太受难曲》与众多康塔塔之地。门德尔松在此创办德国第一所音乐院(1843)、复兴巴赫;布商大厦乐团(Gewandhaus)是德意志市民音乐生活的样板。"
+    },
+    "伦敦": {
+      "imgs": [
+        {
+          "img": "london",
+          "landmark": "皇家阿尔伯特音乐厅",
+          "cr": "Diliff · CC BY-SA 3.0"
+        },
+        {
+          "img": "london2",
+          "landmark": "皇家歌剧院",
+          "cr": "Diego Delso · CC BY-SA 4.0"
+        },
+        {
+          "img": "london3",
+          "landmark": "威斯敏斯特教堂",
+          "cr": "Diliff · CC BY-SA 2.5"
+        }
+      ],
+      "hist": "亨德尔的清唱剧之都、海顿“伦敦交响”的舞台;欧洲最早的商业音乐会与乐谱市场在此成形。皇家阿尔伯特厅(1871)与其后的“逍遥音乐会”(Proms)延续着这座城市的公众音乐生活。"
+    },
+    "柏林": {
+      "imgs": [
+        {
+          "img": "berlin",
+          "landmark": "柏林音乐厅(根德尔曼广场)",
+          "cr": "Ansgar Koreng · CC BY 3.0-de"
+        },
+        {
+          "img": "berlin2",
+          "landmark": "柏林爱乐音乐厅",
+          "cr": "Pedelecs · CC BY-SA 3.0"
+        },
+        {
+          "img": "berlin3",
+          "landmark": "菩提树下国家歌剧院",
+          "cr": "T meltzer · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "普鲁士宫廷歌剧与 C.P.E. 巴赫的所在;门德尔松、迈耶贝尔活跃于此。申克尔设计的音乐厅 1821 年以韦伯《魔弹射手》首演揭幕;二十世纪魏玛文化下,克莱姆佩勒、勋伯格在此任教。"
+    },
+    "圣彼得堡": {
+      "imgs": [
+        {
+          "img": "petersburg",
+          "landmark": "马林斯基剧院",
+          "cr": "Sergey A. Demidov · CC BY 4.0"
+        },
+        {
+          "img": "petersburg2",
+          "landmark": "圣彼得堡音乐学院",
+          "cr": "Florstein (Telegram:WikiPhoto.Space) · CC BY-SA 4.0"
+        },
+        {
+          "img": "petersburg3",
+          "landmark": "滴血救世主教堂",
+          "cr": "AndreyWi · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "“强力集团”(巴拉基列夫、穆索尔斯基、鲍罗丁、里姆斯基-科萨科夫等)与俄罗斯民族乐派的据点;柴可夫斯基的芭蕾在马林斯基剧院首演,斯特拉文斯基由此启程。"
+    },
+    "汉堡": {
+      "imgs": [
+        {
+          "img": "hamburg",
+          "landmark": "易北爱乐厅",
+          "cr": "Dietmar Rabich · CC BY-SA 4.0"
+        },
+        {
+          "img": "hamburg2",
+          "landmark": "圣米迦勒教堂",
+          "cr": "Dietmar Rabich · CC BY-SA 4.0"
+        },
+        {
+          "img": "hamburg3",
+          "landmark": "汉堡国家歌剧院",
+          "cr": "Photo: Andreas Praefcke · CC BY 3.0"
+        }
+      ],
+      "hist": "德国第一座公共歌剧院(1678)所在;泰勒曼与 C.P.E. 巴赫先后主持其音乐生活,门德尔松与勃拉姆斯皆生于此。当代的易北爱乐厅(2017)已成新地标。"
+    },
+    "雅典": {
+      "imgs": [
+        {
+          "img": "athens",
+          "landmark": "希罗德·阿提库斯剧场",
+          "cr": "Jebulon · CC0(公有领域)"
+        },
+        {
+          "img": "athens2",
+          "landmark": "雅典音乐厅",
+          "cr": "StrangeTraveler · CC BY-SA 4.0"
+        },
+        {
+          "img": "athens3",
+          "landmark": "狄俄尼索斯剧场",
+          "cr": "Jebulon · CC0"
+        }
+      ],
+      "hist": "古希腊音乐理论(毕达哥拉斯的数比、阿里斯托克塞诺斯的听觉之学)与“埃托斯”节制说的源头;悲剧合唱与竞技会的音乐在此上演。卫城南麓的希罗德·阿提库斯剧场(约161年)至今仍作音乐会之用。"
+    },
+    "威尼斯": {
+      "imgs": [
+        {
+          "img": "venice",
+          "landmark": "圣马可大教堂",
+          "cr": "Roman Bonnefoy · CC BY-SA 4.0"
+        },
+        {
+          "img": "venice2",
+          "landmark": "凤凰歌剧院",
+          "cr": "Pietro Tessarin · CC BY-SA 4.0"
+        },
+        {
+          "img": "venice3",
+          "landmark": "凤凰歌剧院内部",
+          "cr": "Andreas Praefcke · CC BY 3.0"
+        }
+      ],
+      "hist": "圣马可的复合唱(cori spezzati)在此辉煌:维拉尔特、加布里埃利叔侄以对唱与器乐开启威尼斯乐派。四大孤女院(ospedali)的器乐训练成就了维瓦尔第的协奏曲——水城的声景。"
+    },
+    "那不勒斯": {
+      "imgs": [
+        {
+          "img": "naples",
+          "landmark": "圣卡洛剧院",
+          "cr": "Diego Delso · CC BY-SA 4.0"
+        },
+        {
+          "img": "naples2",
+          "landmark": "那不勒斯音乐学院",
+          "cr": "MM · Public domain"
+        },
+        {
+          "img": "naples3",
+          "landmark": "那不勒斯主教座堂",
+          "cr": "Jebulon · CC0"
+        }
+      ],
+      "hist": "十八世纪歌剧之都:正歌剧与喜歌剧、美声学派的摇篮。四大音乐院(conservatorio)输出 A. 斯卡拉蒂、佩尔戈莱西等。圣卡洛剧院(1737)是欧洲现存最古老、仍在运营的歌剧院之一。"
+    },
+    "德累斯顿": {
+      "imgs": [
+        {
+          "img": "dresden",
+          "landmark": "森佩尔歌剧院",
+          "cr": "Sebastian Terfloth · CC BY-SA 3.0"
+        },
+        {
+          "img": "dresden2",
+          "landmark": "圣母教堂",
+          "cr": "J. Strauß · CC BY-SA 3.0"
+        },
+        {
+          "img": "dresden3",
+          "landmark": "茨温格宫",
+          "cr": "User:Kolossos · CC BY 3.0"
+        }
+      ],
+      "hist": "萨克森选帝侯宫廷乐队(欧洲最古老者之一)所在:许茨、哈塞的意大利式歌剧,韦伯的德语歌剧;瓦格纳《漂泊的荷兰人》《汤豪泽》与理查·施特劳斯多部歌剧在森佩尔歌剧院首演。"
+    },
+    "慕尼黑": {
+      "imgs": [
+        {
+          "img": "munich",
+          "landmark": "巴伐利亚国家剧院",
+          "cr": "xiquinhosilva · CC BY 2.0"
+        },
+        {
+          "img": "munich2",
+          "landmark": "居维利埃剧院",
+          "cr": "Heather Cowper from Bristol, UK · CC BY 2.0"
+        },
+        {
+          "img": "munich3",
+          "landmark": "慕尼黑圣母主教座堂",
+          "cr": "Martin Falbisoner · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "巴伐利亚宫廷歌剧的中心。在路德维希二世的庇护下,瓦格纳《特里斯坦与伊索尔德》《纽伦堡的名歌手》在此国家剧院首演——乐剧史上的关键舞台。"
+    },
+    "莫斯科": {
+      "imgs": [
+        {
+          "img": "moscow",
+          "landmark": "莫斯科大剧院",
+          "cr": "Юрий Д.К. · CC BY 4.0"
+        },
+        {
+          "img": "moscow2",
+          "landmark": "莫斯科音乐学院",
+          "cr": "Perituss · CC0"
+        },
+        {
+          "img": "moscow3",
+          "landmark": "圣瓦西里主教座堂",
+          "cr": "Petar Milošević · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "大剧院(Bolshoi)的芭蕾与歌剧、莫斯科音乐院的所在;柴可夫斯基、拉赫玛尼诺夫、斯克里亚宾在此求学任教,是与圣彼得堡并峙的俄罗斯音乐重镇。"
+    },
+    "拜罗伊特": {
+      "imgs": [
+        {
+          "img": "bayreuth",
+          "landmark": "拜罗伊特节日剧院",
+          "cr": "Carsten Steger · CC BY-SA 4.0"
+        },
+        {
+          "img": "bayreuth2",
+          "landmark": "侯爵歌剧院",
+          "cr": "Lothar Spurzem · CC BY-SA 2.0 de"
+        },
+        {
+          "img": "bayreuth3",
+          "landmark": "瓦格纳故居 Wahnfried",
+          "cr": "Photochrom Print Collection · Public domain"
+        }
+      ],
+      "hist": "瓦格纳为上演《尼伯龙根的指环》而亲自筹建的节日剧院(1876):隐藏乐池、扇形观众席与独特声学,专为其乐剧构想而造——至今仍是瓦格纳朝圣的圣地。"
+    },
+    "萨尔茨堡": {
+      "imgs": [
+        {
+          "img": "salzburg",
+          "landmark": "萨尔茨堡大教堂",
+          "cr": "Uoaei1 · CC BY-SA 4.0"
+        },
+        {
+          "img": "salzburg2",
+          "landmark": "莫扎特出生地",
+          "cr": "Andrew Bossi · CC BY-SA 2.5"
+        },
+        {
+          "img": "salzburg3",
+          "landmark": "萨尔茨堡要塞",
+          "cr": "Andreas Stiasny · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "莫扎特的出生地与早年受雇于采邑大主教之地;巴洛克教堂音乐的传统深植于此。今以萨尔茨堡音乐节(1920 创办)闻名于世。"
+    },
+    "米兰": {
+      "imgs": [
+        {
+          "img": "milan",
+          "landmark": "斯卡拉歌剧院",
+          "cr": "Adam Cuerden 修复 · 公有领域",
+          "medium": "历史版画"
+        },
+        {
+          "img": "milan2",
+          "landmark": "米兰大教堂",
+          "cr": "Daniel Case · CC BY-SA 3.0"
+        },
+        {
+          "img": "milan3",
+          "landmark": "威尔第音乐学院",
+          "cr": "Paolobon140 · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "斯卡拉歌剧院(1778)是意大利歌剧的圣殿:罗西尼、贝利尼、多尼采蒂,到威尔第、普契尼的众多名作皆在此首演。"
+    },
+    "佛罗伦萨": {
+      "imgs": [
+        {
+          "img": "florence",
+          "landmark": "花之圣母大教堂",
+          "cr": "Dllu · CC BY-SA 4.0"
+        },
+        {
+          "img": "florence2",
+          "landmark": "乌菲齐美术馆",
+          "cr": "Petar Milošević · CC BY-SA 4.0"
+        },
+        {
+          "img": "florence3",
+          "landmark": "佩尔戈拉剧院",
+          "cr": "Yair Haklai · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "卡梅拉塔(Camerata)的人文主义者在此以单声歌乐复兴古希腊悲剧,催生了最早的歌剧;美第奇宫廷是其赞助者。"
+    },
+    "曼托瓦": {
+      "imgs": [
+        {
+          "img": "mantua",
+          "landmark": "圣安德烈大教堂",
+          "cr": "Velvet · CC BY-SA 4.0"
+        },
+        {
+          "img": "mantua2",
+          "landmark": "贡扎加公爵宫",
+          "cr": "Velvet · CC BY-SA 4.0"
+        },
+        {
+          "img": "mantua3",
+          "landmark": "比比恩纳剧院",
+          "cr": "Mozzihh · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "蒙特威尔第在贡扎加宫廷供职,1607 年在此上演划时代的歌剧《奥菲欧》——最早的歌剧杰作之一。"
+    },
+    "克雷莫纳": {
+      "imgs": [
+        {
+          "img": "cremona",
+          "landmark": "克雷莫纳钟楼(Torrazzo)",
+          "cr": "Zairon · CC BY-SA 4.0"
+        },
+        {
+          "img": "cremona2",
+          "landmark": "小提琴博物馆",
+          "cr": "Bimbacami · CC BY-SA 4.0"
+        },
+        {
+          "img": "cremona3",
+          "landmark": "克雷莫纳主教座堂",
+          "cr": "Zairon · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "阿马蒂、瓜尔内里与斯特拉迪瓦里的制琴之城,古典提琴工艺的巅峰皆出于此。"
+    },
+    "克罗顿": {
+      "img": "croton",
+      "landmark": "卡波·科隆纳神庙遗址",
+      "cr": "Benjamin Smith · CC BY-SA 4.0",
+      "hist": "毕达哥拉斯晚年在克罗顿建立学派,以弦长比例(2:1、3:2、4:3)确立协和音程的数理基础——和谐宇宙观念的发源地。"
+    },
+    "帕维亚": {
+      "imgs": [
+        {
+          "img": "pavia",
+          "landmark": "帕维亚修道院",
+          "cr": "Ambra75 · CC BY-SA 4.0"
+        },
+        {
+          "img": "pavia2",
+          "landmark": "帕维亚主教座堂",
+          "cr": "R.montagna · CC BY-SA 3.0"
+        },
+        {
+          "img": "pavia3",
+          "landmark": "帕维亚大学",
+          "cr": "Giovanni Dall'Orto · Attribution"
+        }
+      ],
+      "hist": "波爱修斯在此被囚、写下《哲学的慰藉》;其《音乐原理》把希腊乐理译为拉丁传统,主宰中世纪音乐思想近千年。"
+    },
+    "苏黎世": {
+      "imgs": [
+        {
+          "img": "zurich",
+          "landmark": "苏黎世歌剧院",
+          "cr": "Roland zh · CC BY-SA 3.0"
+        },
+        {
+          "img": "zurich2",
+          "landmark": "苏黎世音乐厅(Tonhalle)",
+          "cr": "Guérin Nicolas (messages) · CC BY-SA 3.0"
+        },
+        {
+          "img": "zurich3",
+          "landmark": "大教堂(Grossmünster)",
+          "cr": "Daniel Kraft · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "瓦格纳流亡瑞士期间(1849–58)在此构思《特里斯坦与伊索尔德》,并写下《歌剧与戏剧》等理论著作。"
+    },
+    "马德里": {
+      "imgs": [
+        {
+          "img": "madrid",
+          "landmark": "皇家剧院",
+          "cr": "Carlos Delgado · CC BY-SA 3.0"
+        },
+        {
+          "img": "madrid2",
+          "landmark": "萨苏埃拉剧院",
+          "cr": "Javier Perez Montes · CC BY-SA 4.0"
+        },
+        {
+          "img": "madrid3",
+          "landmark": "西班牙国家音乐厅",
+          "cr": "Mentxuwiki · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "多梅尼科·斯卡拉蒂在西班牙宫廷度过后半生,写下五百余首键盘奏鸣曲;博凯里尼亦长期供职于此。"
+    },
+    "布拉格": {
+      "imgs": [
+        {
+          "img": "prague",
+          "landmark": "城邦剧院",
+          "cr": "Jorge Royan · CC BY-SA 3.0"
+        },
+        {
+          "img": "prague2",
+          "landmark": "鲁道夫音乐厅",
+          "cr": "Txllxt TxllxT · CC BY-SA 4.0"
+        },
+        {
+          "img": "prague3",
+          "landmark": "布拉格国家剧院",
+          "cr": "Jorge Royan · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "莫扎特深受布拉格人爱戴,《唐·乔瓦尼》1787 年在城邦剧院首演;《布拉格交响曲》亦为此城而作。"
+    },
+    "布达佩斯": {
+      "imgs": [
+        {
+          "img": "budapest",
+          "landmark": "匈牙利国家歌剧院",
+          "cr": "Jeremy Oakley · CC BY 2.0"
+        },
+        {
+          "img": "budapest2",
+          "landmark": "李斯特音乐学院",
+          "cr": "FOTO:Fortepan — ID 82393: Adományozó/Donor: Budapest Fő · Public domain"
+        },
+        {
+          "img": "budapest3",
+          "landmark": "马加什教堂",
+          "cr": "Perituss · CC0"
+        }
+      ],
+      "hist": "李斯特晚年在此创办音乐学院并任首任院长;巴托克与柯达伊由此开启对匈牙利民间音乐的采集与现代匈牙利乐派。"
+    },
+    "魏玛": {
+      "imgs": [
+        {
+          "img": "weimar",
+          "landmark": "魏玛剧院(德意志国家剧院)",
+          "cr": "Andreas Trepte · CC BY-SA 2.5"
+        },
+        {
+          "img": "weimar2",
+          "landmark": "李斯特故居",
+          "cr": "Raimond Spekking · CC BY-SA 4.0"
+        },
+        {
+          "img": "weimar3",
+          "landmark": "赫尔德教堂",
+          "cr": "Uoaei1 · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "巴赫任宫廷管风琴师(1708–17)写下大量管风琴作品;一个世纪后李斯特在此任乐长,首演瓦格纳《罗恩格林》。"
+    },
+    "吕贝克": {
+      "imgs": [
+        {
+          "img": "lubeck",
+          "landmark": "圣母教堂",
+          "cr": "Dietmar Rabich · CC BY-SA 4.0"
+        },
+        {
+          "img": "lubeck2",
+          "landmark": "荷尔斯滕城门",
+          "cr": "Christian Wolf (www.c-w-design.de) · CC BY-SA 3.0 de"
+        },
+        {
+          "img": "lubeck3",
+          "landmark": "吕贝克主教座堂",
+          "cr": "Dietmar Rabich · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "布克斯特胡德在圣母教堂主持著名的晚间音乐会(Abendmusiken);青年巴赫曾徒步数百里前来聆教。"
+    },
+    "艾森施塔特": {
+      "imgs": [
+        {
+          "img": "eisenstadt",
+          "landmark": "埃斯特哈齐宫",
+          "cr": "Carsten Steger · CC BY-SA 4.0"
+        },
+        {
+          "img": "eisenstadt2",
+          "landmark": "海顿山教堂",
+          "cr": "C.Stadler/Bwag · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "海顿受雇于埃斯特哈齐亲王府近三十年;与世隔绝反使他不得不成为原创者,在此写下大量交响曲与四重奏。"
+    },
+    "艾森纳赫": {
+      "imgs": [
+        {
+          "img": "eisenach",
+          "landmark": "瓦特堡",
+          "cr": "Krzysztof Golik · CC BY-SA 4.0"
+        },
+        {
+          "img": "eisenach2",
+          "landmark": "巴赫故居",
+          "cr": "Krzysztof Golik · CC BY-SA 4.0"
+        },
+        {
+          "img": "eisenach3",
+          "landmark": "圣乔治教堂",
+          "cr": "CEphoto, Uwe Aranas · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "巴赫的出生地,瓦特堡下图林根乐匠世家之乡;瓦特堡城堡亦是瓦格纳《汤豪泽》歌唱比赛的想象背景。"
+    },
+    "波恩": {
+      "imgs": [
+        {
+          "img": "bonn",
+          "landmark": "贝多芬故居",
+          "cr": "Thomas Wolf · CC BY-SA 3.0-de"
+        },
+        {
+          "img": "bonn2",
+          "landmark": "波恩大教堂",
+          "cr": "Thomas Wolf, www.foto-tw.de · CC BY-SA 3.0 de"
+        },
+        {
+          "img": "bonn3",
+          "landmark": "贝多芬纪念像",
+          "cr": "Sir James · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "贝多芬的出生地;青年时代在选帝侯宫廷任管风琴师与中提琴手,后携此地的启蒙教养赴维也纳。"
+    },
+    "宾根": {
+      "imgs": [
+        {
+          "img": "bingen",
+          "landmark": "鼠塔与莱茵河",
+          "cr": "Felix König · CC BY 3.0"
+        },
+        {
+          "img": "bingen2",
+          "landmark": "希尔德加德受神启像(《认识主道》抄本)",
+          "medium": "细密画",
+          "cr": "佚名 · 公有领域"
+        }
+      ],
+      "hist": "莱茵河的女先知希尔德加德·冯·宾根在附近的鲁佩茨贝格修道院著述作曲,单声圣咏《美德的序列》等留存至今。"
+    },
+    "兰斯": {
+      "imgs": [
+        {
+          "img": "reims",
+          "landmark": "兰斯主教座堂",
+          "cr": "Tournasol7 · CC BY-SA 4.0"
+        },
+        {
+          "img": "reims2",
+          "landmark": "塔宫",
+          "cr": "The Crazy Tourist (thecrazytourist.com) · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "兰斯主教座堂是法兰西加冕之地,亦是中世纪礼仪音乐重镇;马肖曾于此任教士,写下《圣母弥撒》。"
+    },
+    "康布雷": {
+      "imgs": [
+        {
+          "img": "cambrai",
+          "landmark": "康布雷主教座堂",
+          "cr": "JackyM59 · CC BY-SA 4.0"
+        },
+        {
+          "img": "cambrai2",
+          "landmark": "康布雷钟楼",
+          "cr": "JackyM59 · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "迪费晚年任康布雷主教座堂教士,勃艮第乐派的复调艺术在此臻于成熟。"
+    },
+    "孔代": {
+      "img": "conde",
+      "landmark": "孔代-苏莱斯科",
+      "cr": "Pierre André Leclercq · CC BY-SA 4.0",
+      "hist": "若斯坎·德普雷晚年任孔代-苏莱斯科教堂教长并在此辞世,文艺复兴复调的集大成者长眠于斯。"
+    },
+    "阿维拉": {
+      "imgs": [
+        {
+          "img": "avila",
+          "landmark": "阿维拉城墙",
+          "cr": "Carlos Delgado · CC BY-SA 3.0"
+        },
+        {
+          "img": "avila2",
+          "landmark": "阿维拉主教座堂",
+          "cr": "Emilio J. Rodríguez Posada · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "反宗教改革复调大师托马斯·路易斯·德·维多利亚生于阿维拉,这座以完整中世纪城墙闻名的城市孕育其神秘主义灵性。"
+    },
+    "华沙": {
+      "imgs": [
+        {
+          "img": "warsaw",
+          "landmark": "拉齐恩基公园·肖邦像",
+          "cr": "Paweł Kabański · CC BY-SA 2.0"
+        },
+        {
+          "img": "warsaw2",
+          "landmark": "华沙爱乐厅",
+          "cr": "Adrian Grycuk · CC BY-SA 3.0 pl"
+        },
+        {
+          "img": "warsaw3",
+          "landmark": "圣十字教堂",
+          "cr": "Scotch Mist · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "肖邦在此度过青年时代,汲取玛祖卡与波洛涅兹的养分;1830 年离乡后再未归来。拉齐恩基公园的肖邦像为其纪念。"
+    },
+    "卑尔根": {
+      "imgs": [
+        {
+          "img": "bergen",
+          "landmark": "特罗豪根(格里格故居)",
+          "cr": "Andreas Sandberg · CC BY-SA 3.0"
+        },
+        {
+          "img": "bergen2",
+          "landmark": "格里格音乐厅",
+          "cr": "Diego Delso · CC BY-SA 4.0"
+        },
+        {
+          "img": "bergen3",
+          "landmark": "布吕根码头",
+          "cr": "Smtunli · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "格里格生于卑尔根,故居山妖之丘(Troldhaugen)俯瞰峡湾;他以《培尔·金特》等作确立挪威民族乐派。"
+    },
+    "翁弗勒尔": {
+      "imgs": [
+        {
+          "img": "honfleur",
+          "landmark": "老船坞(Vieux Bassin)",
+          "cr": "René Cortin · CC BY-SA 4.0"
+        },
+        {
+          "img": "honfleur2",
+          "landmark": "圣凯瑟琳木教堂",
+          "cr": "PMRMaeyaert · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "萨蒂生于这座诺曼底港城;其《吉姆诺佩迪》的简素与反浪漫,预告了二十世纪的新方向。"
+    },
+    "费拉拉": {
+      "imgs": [
+        {
+          "img": "ferrara",
+          "landmark": "钻石宫",
+          "cr": "Lungoleno · CC BY-SA 2.5"
+        },
+        {
+          "img": "ferrara2",
+          "landmark": "埃斯特城堡",
+          "cr": "Ввласенко · CC BY-SA 3.0"
+        },
+        {
+          "img": "ferrara3",
+          "landmark": "费拉拉主教座堂",
+          "cr": "Ввласенко · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "埃斯特宫廷是文艺复兴晚期的音乐重镇:若斯坎、奥布雷赫特曾供职;'费拉拉贵妇合唱团'(concerto delle donne)开炫技女声之风,牧歌传统影响杰苏阿尔多与蒙特威尔第。"
+    },
+    "阿雷佐": {
+      "imgs": [
+        {
+          "img": "arezzo",
+          "landmark": "圣方济各圣殿",
+          "cr": "Wikimedia Commons · CC BY-SA 2.5"
+        },
+        {
+          "img": "arezzo2",
+          "landmark": "阿雷佐主教座堂",
+          "cr": "sailko · CC BY-SA 3.0"
+        },
+        {
+          "img": "arezzo3",
+          "landmark": "圭多·达雷佐纪念像",
+          "cr": "Ввласенко · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "圭多·达雷佐(约991–1050)在此完善四线谱与唱名法(ut-re-mi…),奠定西方记谱与视唱之基——'音乐识字'自此城发端。"
+    },
+    "博洛尼亚": {
+      "imgs": [
+        {
+          "img": "bologna",
+          "landmark": "阿尔基金纳西奥宫",
+          "cr": "Wwikiwalter · CC BY-SA 4.0"
+        },
+        {
+          "img": "bologna2",
+          "landmark": "博洛尼亚市立剧院",
+          "cr": "San2Kan · CC BY-SA 4.0"
+        },
+        {
+          "img": "bologna3",
+          "landmark": "圣白托略圣殿",
+          "cr": "Terragio67 · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "欧洲最古老大学之城;博洛尼亚爱乐学会与圣彼得罗尼奥乐派是对位与器乐重镇,青年莫扎特曾受马蒂尼神父指点、考取院士。"
+    },
+    "卢卡": {
+      "imgs": [
+        {
+          "img": "lucca",
+          "landmark": "圆形广场(Piazza dell'Anfiteatro)",
+          "cr": "Kasa Fue · CC BY-SA 4.0"
+        },
+        {
+          "img": "lucca2",
+          "landmark": "普契尼故居",
+          "cr": "Sailko · CC BY 3.0"
+        },
+        {
+          "img": "lucca3",
+          "landmark": "圣马蒂诺主教座堂",
+          "cr": "Myrabella · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "普契尼与博凯里尼的故乡;普契尼家族世代在此任教堂乐师,托斯卡纳古城的圆形广场沿罗马竞技场遗址而建。"
+    },
+    "贝尔加莫": {
+      "imgs": [
+        {
+          "img": "bergamo",
+          "landmark": "贝加莫上城",
+          "cr": "Ввласенко · CC BY-SA 3.0"
+        },
+        {
+          "img": "bergamo2",
+          "landmark": "多尼采蒂剧院",
+          "cr": "Mannivu · CC BY-SA 4.0"
+        },
+        {
+          "img": "bergamo3",
+          "landmark": "大圣母教堂",
+          "cr": "Steffen Schmitz · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "多尼采蒂的故乡;这位美声多产大师以《拉美莫尔的露琪亚》《爱的甘醇》名世,贝加莫上城守护其墓与遗产。"
+    },
+    "帕尔马": {
+      "imgs": [
+        {
+          "img": "parma",
+          "landmark": "帕尔马主教座堂(俯瞰)",
+          "cr": "Città di Parma · CC BY-SA 2.0"
+        },
+        {
+          "img": "parma2",
+          "landmark": "帕尔马皇家歌剧院",
+          "cr": "Viva-Verdi · CC BY-SA 3.0"
+        },
+        {
+          "img": "parma3",
+          "landmark": "法尔内塞剧院",
+          "cr": "www.bestofcinqueterre.com · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "威尔第故乡艾米利亚的中心;帕尔马以歌剧观众之严苛著称,是威尔第传统的心脏,指挥巨匠托斯卡尼尼亦生于此。"
+    },
+    "热那亚": {
+      "imgs": [
+        {
+          "img": "genoa",
+          "landmark": "费拉里广场",
+          "cr": "Julian Lupyan · CC0"
+        },
+        {
+          "img": "genoa2",
+          "landmark": "卡洛·费利切歌剧院",
+          "cr": "Map hobby · CC BY-SA 4.0"
+        },
+        {
+          "img": "genoa3",
+          "landmark": "圣洛伦佐主教座堂",
+          "cr": "This Photo was taken by Timothy A. Gonsalves. Feel free · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "帕格尼尼的故乡;这位炫技小提琴大师以近乎魔鬼的技艺重定义乐器的可能,热那亚至今珍藏其名琴'加农炮'。"
+    },
+    "佩萨罗": {
+      "imgs": [
+        {
+          "img": "pesaro",
+          "landmark": "公爵宫",
+          "cr": "Italtrucker · 公有领域"
+        },
+        {
+          "img": "pesaro2",
+          "landmark": "罗西尼剧院",
+          "cr": "Accurimbono · CC BY-SA 4.0"
+        },
+        {
+          "img": "pesaro3",
+          "landmark": "罗西尼故居",
+          "cr": "F Ceragioli · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "罗西尼的故乡;这位歌剧大师以《塞维利亚的理发师》等喜歌剧风靡欧洲,佩萨罗每年以罗西尼歌剧节纪念其人。"
+    },
+    "卡塔尼亚": {
+      "imgs": [
+        {
+          "img": "catania",
+          "landmark": "古希腊—罗马剧场",
+          "cr": "Antony-22 · CC BY-SA 4.0"
+        },
+        {
+          "img": "catania2",
+          "landmark": "贝利尼歌剧院",
+          "cr": "Berthold Werner · CC BY-SA 3.0"
+        },
+        {
+          "img": "catania3",
+          "landmark": "卡塔尼亚主教座堂",
+          "cr": "Berthold Werner · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "美声歌剧大师贝利尼的故乡;他以《诺尔玛》等作的悠长气息名世,西西里的古剧场遗迹见证此地深远的戏剧传统。"
+    },
+    "图卢兹": {
+      "imgs": [
+        {
+          "img": "toulouse",
+          "landmark": "圣塞尔南大教堂",
+          "cr": "Didier Descouens · CC BY-SA 4.0"
+        },
+        {
+          "img": "toulouse2",
+          "landmark": "国会剧院",
+          "cr": "Didier Descouens · CC BY-SA 4.0"
+        },
+        {
+          "img": "toulouse3",
+          "landmark": "谷物厅音乐厅",
+          "cr": "Didier Descouens · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "圣塞尔南是中世纪朝圣路上的罗曼式巨构;朗格多克的游吟诗人(troubadour)与阿基坦复调传统在此一带兴盛。"
+    },
+    "利摩日": {
+      "imgs": [
+        {
+          "img": "limoges",
+          "landmark": "利摩日主教座堂",
+          "cr": "Sten van Houwelingen · CC BY-SA 4.0"
+        },
+        {
+          "img": "limoges2",
+          "landmark": "利摩日歌剧院",
+          "cr": "Babsy · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "中世纪圣马歇尔修道院是阿基坦复调(圣马歇尔乐派)的中心,11–12 世纪的花唱与孔杜克图斯手稿由此传世,上承格里高利、下启圣母院乐派。"
+    },
+    "蒙斯": {
+      "imgs": [
+        {
+          "img": "mons",
+          "landmark": "蒙斯市政厅与钟楼",
+          "cr": "Jean-Pol GRANDMONT · CC BY-SA 3.0"
+        },
+        {
+          "img": "mons2",
+          "landmark": "圣沃德吕教堂",
+          "cr": "Trougnouf (Benoit Brummer) · CC BY 4.0"
+        }
+      ],
+      "hist": "拉索(Orlando di Lasso)的故乡;这位弗兰德-拉丁复调的集大成者从蒙斯走向慕尼黑宫廷,是十六世纪最国际化的作曲家。"
+    },
+    "凡尔赛": {
+      "imgs": [
+        {
+          "img": "versailles",
+          "landmark": "凡尔赛宫·镜厅",
+          "cr": "Myrabella · CC BY-SA 3.0"
+        },
+        {
+          "img": "versailles2",
+          "landmark": "凡尔赛皇家歌剧院",
+          "cr": "Jean-Michel Moreau · Public domain"
+        },
+        {
+          "img": "versailles3",
+          "landmark": "凡尔赛皇家礼拜堂",
+          "cr": "Jebulon · CC0"
+        }
+      ],
+      "hist": "路易十四的宫廷是法国巴洛克音乐的中心:吕利的宫廷歌剧与芭蕾、库普兰的羽管键琴、'王家二十四把提琴'皆在此成形。"
+    },
+    "纽伦堡": {
+      "imgs": [
+        {
+          "img": "nurnberg",
+          "landmark": "圣塞巴尔杜斯教堂",
+          "cr": "jailbird · CC BY-SA 2.0"
+        },
+        {
+          "img": "nurnberg2",
+          "landmark": "纽伦堡歌剧院",
+          "cr": "de:Benutzer:Stern · CC BY-SA 2.5"
+        },
+        {
+          "img": "nurnberg3",
+          "landmark": "纽伦堡圣母教堂",
+          "cr": "Uoaei1 · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "名歌手(Meistersinger)传统之城,汉斯·萨克斯的行会歌唱在此鼎盛——瓦格纳《纽伦堡的名歌手》即以此为背景;帕赫贝尔亦生于此。"
+    },
+    "曼海姆": {
+      "imgs": [
+        {
+          "img": "mannheim",
+          "landmark": "曼海姆宫",
+          "cr": "Hubert Berberich · CC BY 3.0"
+        },
+        {
+          "img": "mannheim2",
+          "landmark": "曼海姆国家剧院",
+          "cr": "Photo: Andreas Praefcke · CC BY 3.0"
+        },
+        {
+          "img": "mannheim3",
+          "landmark": "曼海姆耶稣会教堂",
+          "cr": "Tournasol7 · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "以渐强、火箭音型与乐队纪律著称的'曼海姆乐派',在选帝侯宫廷把交响曲锤炼成型,深刻影响莫扎特与维也纳古典乐派。"
+    },
+    "法兰克福": {
+      "imgs": [
+        {
+          "img": "frankfurt",
+          "landmark": "法兰克福歌剧院",
+          "cr": "Epizentrum · CC BY-SA 3.0"
+        },
+        {
+          "img": "frankfurt2",
+          "landmark": "法兰克福老歌剧院",
+          "cr": "Thomas Wolf, www.foto-tw.de · CC BY-SA 3.0 de"
+        },
+        {
+          "img": "frankfurt3",
+          "landmark": "法兰克福皇帝大教堂",
+          "cr": "Dietmar Rabich · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "加冕之城与出版重镇;克拉拉·舒曼晚年在霍赫音乐院执教并终老于此,二十世纪又以歌剧院与阿多诺的音乐哲学著称。"
+    },
+    "科隆": {
+      "imgs": [
+        {
+          "img": "cologne",
+          "landmark": "西德意志广播电台(WDR)",
+          "cr": "Raimond Spekking · CC BY-SA 4.0"
+        },
+        {
+          "img": "cologne2",
+          "landmark": "科隆大教堂",
+          "cr": "CEphoto, Uwe Aranas · CC BY-SA 3.0"
+        },
+        {
+          "img": "cologne3",
+          "landmark": "科隆爱乐厅",
+          "cr": "Hanserblich · CC BY 3.0"
+        }
+      ],
+      "hist": "施托克豪森在科隆的西德意志广播电台(WDR)电子音乐棚开创磁带与电子声音的作曲,使科隆成为战后先锋音乐的中心。"
+    },
+    "布尔诺": {
+      "imgs": [
+        {
+          "img": "brno",
+          "landmark": "圣彼得圣保罗主教座堂",
+          "cr": "Harold17 · CC BY-SA 3.0"
+        },
+        {
+          "img": "brno2",
+          "landmark": "亚纳切克剧院",
+          "cr": "User:Sveter (Please credit as \"Petr Šmerkl, Wikipedia\"  · CC BY-SA 3.0"
+        },
+        {
+          "img": "brno3",
+          "landmark": "马亨剧院",
+          "cr": "Radler59 (talk) · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "亚纳切克长期在布尔诺生活创作,以摩拉维亚方言的'语言旋律'锤炼出《耶奴发》等歌剧,确立捷克民族乐派的现代一脉。"
+    },
+    "克拉科夫": {
+      "imgs": [
+        {
+          "img": "krakow",
+          "landmark": "圣母圣殿",
+          "cr": "Mach240390 · CC BY 4.0"
+        },
+        {
+          "img": "krakow2",
+          "landmark": "瓦维尔主教座堂",
+          "cr": "Ingo Mehling · CC BY-SA 4.0"
+        },
+        {
+          "img": "krakow3",
+          "landmark": "克拉科夫爱乐厅",
+          "cr": "Zygmunt Put Zetpe0202 · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "波兰古都,瓦维尔宫廷与雅盖隆大学的音乐传统悠久;圣母圣殿的号曲(hejnał)每时回荡,彭代雷茨基在此求学任教,以音块技法震动乐坛。"
+    },
+    "塔林": {
+      "imgs": [
+        {
+          "img": "tallinn",
+          "landmark": "塔林老城",
+          "cr": "Ivar Leidus · CC BY-SA 3.0"
+        },
+        {
+          "img": "tallinn2",
+          "landmark": "爱沙尼亚剧院",
+          "cr": "Harri Hedman · CC BY 3.0"
+        },
+        {
+          "img": "tallinn3",
+          "landmark": "亚历山大·涅夫斯基主教座堂",
+          "cr": "Diego Delso · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "爱沙尼亚的汉萨古城;二十世纪作曲家阿尔沃·帕特的故乡,其'钟鸣作曲法'(tintinnabuli)以极简的三和弦重塑神圣音乐。"
+    },
+    "赫尔辛基": {
+      "imgs": [
+        {
+          "img": "helsinki",
+          "landmark": "西贝柳斯音乐学院",
+          "cr": "Leonhard Lenz · CC0"
+        },
+        {
+          "img": "helsinki2",
+          "landmark": "芬兰厅",
+          "cr": "ArildV · CC BY-SA 4.0"
+        },
+        {
+          "img": "helsinki3",
+          "landmark": "赫尔辛基音乐中心",
+          "cr": "Diego Delso · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "西贝柳斯以《芬兰颂》与七部交响曲铸就芬兰的民族之声;以他命名的西贝柳斯音乐学院是北欧音乐教育的重镇。"
+    },
+    "格拉纳达": {
+      "imgs": [
+        {
+          "img": "granada",
+          "landmark": "阿尔罕布拉宫·查理五世宫",
+          "cr": "Jebulon · CC0"
+        },
+        {
+          "img": "granada2",
+          "landmark": "格拉纳达主教座堂",
+          "cr": "Berthold Werner · CC BY-SA 3.0"
+        },
+        {
+          "img": "granada3",
+          "landmark": "格拉纳达园林(法雅所居一带)",
+          "cr": "Pepepitos · CC BY-SA 3.0"
+        }
+      ],
+      "hist": "摩尔王朝最后的都城;法雅晚年隐居于此,从安达卢西亚的深歌(cante jondo)与吉他中提炼西班牙民族乐派,与洛尔迦同倡深歌节。"
+    },
+    "米蒂利尼": {
+      "img": "mytilene",
+      "landmark": "米蒂利尼古剧场",
+      "cr": "ProtecTOR · CC BY-SA 4.0",
+      "hist": "莱斯博斯岛的主城;萨福与阿尔凯奥斯的抒情琴歌(莱斯博斯琴歌)在此发源,特尔潘德亦出自此岛——古希腊独唱琴歌的摇篮。"
+    },
+    "伍斯特": {
+      "imgs": [
+        {
+          "img": "worcester",
+          "landmark": "伍斯特大教堂",
+          "cr": "Merlincooper · CC BY-SA 2.5"
+        },
+        {
+          "img": "worcester2",
+          "landmark": "埃尔加雕像",
+          "cr": "Philip Halling · CC BY-SA 2.0"
+        }
+      ],
+      "hist": "英格兰教堂音乐重镇,'三合唱团音乐节'(Three Choirs)历史最悠久;埃尔加长期在此一带创作,《谜语变奏曲》的乡土即源于此。"
+    },
+    "根特": {
+      "imgs": [
+        {
+          "img": "ghent",
+          "landmark": "格拉斯莱码头",
+          "cr": "Michielverbeek · CC BY-SA 4.0"
+        },
+        {
+          "img": "ghent2",
+          "landmark": "根特城堡(Gravensteen)",
+          "cr": "Marc Ryckaert · CC BY 3.0"
+        },
+        {
+          "img": "ghent3",
+          "landmark": "圣尼各老教堂与钟楼",
+          "cr": "Trougnouf (Benoit Brummer) · CC BY 4.0"
+        },
+        {
+          "img": "ghent4",
+          "landmark": "星期五市场",
+          "cr": "Michielverbeek · CC BY-SA 4.0"
+        }
+      ],
+      "hist": "弗兰德斯的富庶商城,弗兰德复调黄金时代的核心地带;圣巴夫大教堂藏有凡·艾克的《根特祭坛画》,钟楼与行会宅邸见证其商业与艺术的鼎盛。"
+    }
+  }
+}
