@@ -31,12 +31,15 @@ PLAN_PATH = ROOT / "data" / "media-externalization-plan.json"
 ARCHIVE_PATH = ROOT / "modules" / "qinhan" / "data" / "archive.json"
 SUMMARY_PATH = ROOT / "data" / "qinhan-r2-runtime-verification.json"
 DOC_PATH = ROOT / "docs" / "QINHAN_R2_RUNTIME.md"
+UPLOAD_SUMMARY_PATH = ROOT / "data" / "qinhan-r2-upload-verification.json"
+PROVENANCE_PATH = ROOT / "assets" / "editorial" / "provenance-trails.js"
 MODULE_ROOT = ROOT / "modules" / "qinhan"
 MODULE_PREFIX = "modules/qinhan/"
 PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
 LEGACY_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
 EXPECTED_FILES = 1099
 EXPECTED_BYTES = 199500311
+EXPECTED_PROVENANCE_FILES = 4
 SAMPLE_COUNT = 40
 CACHE_SAMPLE_COUNT = 40
 SAMPLE_SEED = 20260821
@@ -62,6 +65,10 @@ WORKER_URL_RE = re.compile(
 )
 ABSOLUTE_PATH_RE = re.compile(r"(?i)(?<![a-z0-9])[a-z]:[\\/]")
 FILE_URI_RE = re.compile(r"(?i)\bfile://")
+PROVENANCE_QINHAN_BLOCK_RE = re.compile(
+    r"""(?s)\bqinhan\s*:\s*\{.*?(?=\n\s*['\"]xian-museum['\"]\s*:)"""
+)
+PROVENANCE_IMAGE_RE = re.compile(r"""image\s*:\s*['\"]([^'\"]+)['\"]""")
 
 
 def load_json(path: Path) -> Any:
@@ -116,7 +123,60 @@ def runtime_texts() -> dict[str, str]:
             continue
         relative = path.relative_to(MODULE_ROOT).as_posix()
         texts[relative] = path.read_text(encoding="utf-8", errors="replace")
+    if PROVENANCE_PATH.is_file():
+        texts["assets/editorial/provenance-trails.js"] = PROVENANCE_PATH.read_text(
+            encoding="utf-8", errors="replace"
+        )
     return texts
+
+
+def provenance_media_paths(text: str) -> set[str]:
+    block = PROVENANCE_QINHAN_BLOCK_RE.search(text)
+    if not block:
+        return set()
+    return {
+        normalized
+        for value in PROVENANCE_IMAGE_RE.findall(block.group(0))
+        if (normalized := normalize_qinhan_path(value))
+    }
+
+
+def provenance_resolver_checks(text: str) -> dict[str, bool]:
+    block = PROVENANCE_QINHAN_BLOCK_RE.search(text)
+    image_function = re.search(
+        r"const\s+img\s*=\s*\(path\)\s*=>\s*\{(?P<body>.*?)\n\s*\};",
+        text,
+        re.S,
+    )
+    body = image_function.group("body") if image_function else ""
+    return {
+        "qinhanDatasetPresent": bool(block),
+        "qinhanUsesMediaResolver": bool(
+            re.search(
+                r"page\s*===\s*['\"]qinhan['\"].*?window\.qinhanMediaUrl",
+                body,
+                re.S,
+            )
+        ),
+        "qinhanResolverCall": "return window.qinhanMediaUrl(path);" in body,
+        "nonQinhanLocalFallback": "return new URL(path, projectRoot).href;" in body,
+    }
+
+
+def previous_upload_verification() -> dict[str, Any] | None:
+    if not UPLOAD_SUMMARY_PATH.is_file():
+        return None
+    baseline = load_json(UPLOAD_SUMMARY_PATH)
+    return {
+        "historical": True,
+        "status": baseline.get("status"),
+        "files": baseline.get("files"),
+        "bytes": baseline.get("bytes"),
+        "http": baseline.get("httpVerified"),
+        "contentLength": baseline.get("contentLengthVerified"),
+        "sha256Samples": baseline.get("sha256SamplesVerified"),
+        "cacheControlSamples": baseline.get("cacheControlSamplesVerified"),
+    }
 
 
 def archive_media_fields(archive: dict[str, Any]) -> tuple[list[dict[str, str]], set[str]]:
@@ -301,11 +361,28 @@ def binary_change_paths() -> list[str]:
     return sorted(path for path in changed if Path(path).suffix.lower() in MEDIA_EXTENSIONS)
 
 
+def browser_smoke_payload(args: argparse.Namespace) -> dict[str, Any]:
+    return {
+        "status": args.browser_status,
+        "detail": args.browser_detail,
+        "consoleErrors": args.browser_console_errors,
+        "consoleWarnings": args.browser_console_warnings,
+        "provenanceMedia": args.browser_provenance_media,
+        "provenanceMediaLoaded": args.browser_provenance_loaded,
+        "provenanceWorkerHttp": args.browser_provenance_http,
+        "provenanceLocalRequests": args.browser_provenance_local_requests,
+        "mediaFailures": args.browser_media_failures,
+        "archiveDialogsChecked": args.browser_archive_dialogs,
+        "cropFullSwitch": args.browser_crop_full_switch,
+    }
+
+
 def build_document(summary: dict[str, Any]) -> str:
     samples = summary["sha256Samples"]
     cache = summary["cacheControlSamples"]
     terminal = summary["terminalHttpSmoke"]
     browser = summary["browserSmoke"]
+    baseline = summary.get("previousUploadVerification") or {}
     return f"""# Qin-Han R2 runtime
 
 - Status: **{summary['status']}**
@@ -314,9 +391,12 @@ def build_document(summary: dict[str, Any]) -> str:
 - Local Qin-Han media retained: **{summary['localMediaFiles']:,} files / {summary['localMediaBytes']:,} bytes**
 - Static Worker media references: **{summary['staticWorkerUniqueFiles']:,} files / {summary['staticWorkerReferenceOccurrences']:,} occurrences**
 - Dynamic archive media fields: **{summary['dynamicMediaFieldValues']:,} values / {summary['dynamicUniqueFiles']:,} unique files**
+- Provenance Qin-Han media: **{summary['provenanceMediaFiles']:,} files**; Worker-resolved **{summary['provenanceWorkerResolved']:,}/{summary['provenanceMediaFiles']:,}**; local requests **{summary['provenanceLocalRuntimeRequests']}**
+- Runtime routing: **{summary['runtimeRoutingStatus']}** (static + dynamic archive + provenance resolver)
 - Runtime coverage: **{summary['totalUniqueRuntimeMediaFiles']:,}/{summary['plannedFiles']:,} unique files**
 - Worker HTTP: **{summary['workerHttpVerified']:,}/{summary['plannedFiles']:,}**
 - Content-Length: **{summary['contentLengthVerified']:,}/{summary['plannedFiles']:,}**
+- Worker object failures observed: **{summary.get('failedObjectCount', 0):,}**; unverified because terminal network was skipped/blocked: **{summary.get('unverifiedObjectCount', 0):,}**
 - SHA256 GET samples: **{samples['verified']:,}/{samples['selected']:,}**
 - Cache-Control samples: **{cache['verified']:,}/{cache['selected']:,}**
 - Direct local runtime requests for planned media: **{summary['directLocalRuntimeRequests']}**
@@ -324,7 +404,9 @@ def build_document(summary: dict[str, Any]) -> str:
 - Double module prefix / `file://` / Windows absolute paths: **{summary['doubleModulePrefixCount']} / {summary['fileUriCount']} / {summary['windowsAbsolutePathCount']}**
 - Preloads: **{summary['preloads']['count']}**; `fetchpriority=high`: **{summary['preloads']['highPriorityCount']}**
 - Terminal HTTP smoke: **{terminal['status']}** ({terminal['resourcesChecked']} resources checked)
-- Browser smoke: **{browser['status']}**{f' ({browser.get("detail", "")})' if browser.get("detail") else ''}
+- Terminal Worker revalidation: **{summary['terminalNetworkStatus']}**{f' ({summary.get("terminalNetworkDetail", "")})' if summary.get("terminalNetworkDetail") else ''}
+- Browser smoke: **{browser['status']}**{f' ({browser.get("detail", "")})' if browser.get("detail") else ''}; console **{browser.get('consoleErrors', 0)} errors / {browser.get('consoleWarnings', 0)} warnings**; provenance **{browser.get('provenanceMediaLoaded', 0)}/{browser.get('provenanceMedia', 0)}**; media failures **{browser.get('mediaFailures', 0)}**
+- Historical upload verification baseline: **{baseline.get('status', 'UNAVAILABLE')}** — {baseline.get('files', 0):,} files / {baseline.get('bytes', 0):,} bytes; HTTP {baseline.get('http', 0):,}; Content-Length {baseline.get('contentLength', 0):,}; SHA256 samples {baseline.get('sha256Samples', 0):,}; Cache-Control samples {baseline.get('cacheControlSamples', 0):,}
 - Binary media changes: **{summary['binaryMediaChanges']}**
 {f"- Verification blockers: **{'; '.join(summary.get('verificationBlockers', []))}**" if summary.get('verificationBlockers') else ''}
 
@@ -344,6 +426,26 @@ def main() -> int:
     parser.add_argument("--terminal-detail", default="")
     parser.add_argument("--browser-status", choices=("PASS", "SKIPPED"), default="SKIPPED")
     parser.add_argument("--browser-detail", default="")
+    parser.add_argument("--browser-console-errors", type=int, default=0)
+    parser.add_argument("--browser-console-warnings", type=int, default=0)
+    parser.add_argument("--browser-provenance-media", type=int, default=0)
+    parser.add_argument("--browser-provenance-loaded", type=int, default=0)
+    parser.add_argument("--browser-provenance-http", type=int, default=0)
+    parser.add_argument("--browser-provenance-local-requests", type=int, default=0)
+    parser.add_argument("--browser-media-failures", type=int, default=0)
+    parser.add_argument("--browser-archive-dialogs", type=int, default=0)
+    parser.add_argument("--browser-crop-full-switch", default="")
+    parser.add_argument(
+        "--terminal-network-status",
+        choices=("PASS", "BLOCKED", "SKIPPED"),
+        default=None,
+    )
+    parser.add_argument("--terminal-network-detail", default="")
+    parser.add_argument(
+        "--skip-worker-network",
+        action="store_true",
+        help="skip all external Worker requests and record local validation as BLOCKED",
+    )
     parser.add_argument(
         "--record-failure",
         action="store_true",
@@ -405,6 +507,34 @@ def main() -> int:
         errors.append(f"local plan integrity failures: {len(integrity_failures)}")
 
     texts = runtime_texts()
+    provenance_text = texts.get("assets/editorial/provenance-trails.js", "")
+    provenance_paths = provenance_media_paths(provenance_text)
+    provenance_checks = provenance_resolver_checks(provenance_text)
+    provenance_plan_missing = sorted(provenance_paths - plan_paths)
+    provenance_resolver_ok = all(provenance_checks.values()) and not provenance_plan_missing
+    provenance_worker_resolved = (
+        len(provenance_paths) if provenance_resolver_ok else 0
+    )
+    provenance_local_hits = (
+        [
+            {"file": "assets/editorial/provenance-trails.js", "path": path}
+            for path in sorted(provenance_paths)
+        ]
+        if provenance_paths and not provenance_resolver_ok
+        else []
+    )
+    if len(provenance_paths) != EXPECTED_PROVENANCE_FILES:
+        errors.append(
+            f"provenance Qin-Han media paths {len(provenance_paths)} != {EXPECTED_PROVENANCE_FILES}"
+        )
+    if provenance_plan_missing:
+        errors.append(
+            f"provenance media paths outside plan: {len(provenance_plan_missing)}"
+        )
+    for check, passed in provenance_checks.items():
+        if not passed:
+            errors.append(f"provenance resolver check failed: {check}")
+
     all_runtime_text = "\n".join(texts.values())
     old_host_count = all_runtime_text.count(LEGACY_PUBLIC_BASE)
     old_r2_count = len(re.findall(r"(?i)r2\.dev", all_runtime_text))
@@ -439,14 +569,28 @@ def main() -> int:
     static_unknown = sorted(static_paths - plan_paths)
     if static_unknown:
         errors.append(f"static Worker paths outside plan: {len(static_unknown)}")
-    runtime_paths = dynamic_paths | static_paths
+    runtime_paths = dynamic_paths | static_paths | provenance_paths
     if runtime_paths != plan_paths:
         errors.append(
             f"runtime coverage mismatch (covered={len(runtime_paths)}, missing={len(plan_paths - runtime_paths)}, extra={len(runtime_paths - plan_paths)})"
         )
     direct_local_hits = direct_local_runtime_hits(texts, plan_paths)
+    direct_local_hits.extend(provenance_local_hits)
     if direct_local_hits:
         errors.append(f"direct local runtime media references: {len(direct_local_hits)}")
+
+    runtime_routing_status = (
+        "PASS"
+        if (
+            len(provenance_paths) == EXPECTED_PROVENANCE_FILES
+            and provenance_worker_resolved == EXPECTED_PROVENANCE_FILES
+            and runtime_paths == plan_paths
+            and not direct_local_hits
+            and old_host_count == 0
+            and old_r2_count == 0
+        )
+        else "FAIL"
+    )
 
     wrapper = texts.get("media-url.js", "")
     app = texts.get("app.js", "")
@@ -481,8 +625,20 @@ def main() -> int:
         errors.append("critical preload URL set is incomplete")
 
     ordered_entries = sorted(entries, key=lambda item: str(item["path"]))
-    with ThreadPoolExecutor(max_workers=max(1, min(args.workers, 32))) as executor:
-        head_results = list(executor.map(response_head, ordered_entries))
+    if args.skip_worker_network:
+        head_results = [
+            {
+                "path": entry["path"],
+                "status": None,
+                "length": None,
+                "cacheControl": "",
+                "error": "terminal network skipped",
+            }
+            for entry in ordered_entries
+        ]
+    else:
+        with ThreadPoolExecutor(max_workers=max(1, min(args.workers, 32))) as executor:
+            head_results = list(executor.map(response_head, ordered_entries))
     worker_http_verified = sum(1 for result in head_results if result.get("status") == 200)
     content_length_verified = sum(
         1
@@ -504,8 +660,22 @@ def main() -> int:
         errors.append(f"Worker Content-Length verified {content_length_verified} != {EXPECTED_FILES}")
 
     samples = sample_entries(ordered_entries)
-    with ThreadPoolExecutor(max_workers=8) as executor:
-        sample_results = list(executor.map(sha256_get, samples))
+    if args.skip_worker_network:
+        sample_results = [
+            {
+                "path": entry["path"],
+                "status": None,
+                "received": 0,
+                "length": None,
+                "sha256": "",
+                "expectedSha256": entry["sha256"],
+                "error": "terminal network skipped",
+            }
+            for entry in samples
+        ]
+    else:
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            sample_results = list(executor.map(sha256_get, samples))
     sha_verified = sum(
         1
         for result, entry in zip(sample_results, samples)
@@ -543,6 +713,34 @@ def main() -> int:
     if cache_verified != CACHE_SAMPLE_COUNT:
         errors.append(f"Cache-Control samples verified {cache_verified} != {CACHE_SAMPLE_COUNT}")
 
+    browser_summary = browser_smoke_payload(args)
+    terminal_network_status = args.terminal_network_status or (
+        "PASS" if worker_http_verified == EXPECTED_FILES else "BLOCKED"
+    )
+    terminal_network_detail = args.terminal_network_detail or (
+        "terminal network path to workers.dev unavailable"
+        if terminal_network_status == "BLOCKED"
+        else ""
+    )
+    previous_upload = previous_upload_verification()
+    if args.browser_status == "PASS":
+        browser_expectations = {
+            "provenanceMedia": EXPECTED_PROVENANCE_FILES,
+            "provenanceMediaLoaded": EXPECTED_PROVENANCE_FILES,
+            "provenanceWorkerHttp": EXPECTED_PROVENANCE_FILES,
+            "provenanceLocalRequests": 0,
+            "mediaFailures": 0,
+        }
+        for field, expected in browser_expectations.items():
+            if browser_summary.get(field) != expected:
+                errors.append(
+                    f"browser smoke {field} {browser_summary.get(field)} != {expected}"
+                )
+        if browser_summary.get("consoleErrors") != 0:
+            errors.append("browser smoke console errors are nonzero")
+        if browser_summary.get("consoleWarnings") != 0:
+            errors.append("browser smoke console warnings are nonzero")
+
     changed_binary_paths = binary_change_paths()
     if changed_binary_paths:
         errors.append(f"binary media changes: {len(changed_binary_paths)}")
@@ -550,7 +748,7 @@ def main() -> int:
         errors.append("terminal HTTP smoke was not recorded")
 
     if errors:
-        if args.record_failure and worker_http_verified != EXPECTED_FILES:
+        if args.record_failure and (args.skip_worker_network or worker_http_verified != EXPECTED_FILES):
             blocked_summary = {
                 "schemaVersion": 1,
                 "status": "BLOCKED",
@@ -596,11 +794,21 @@ def main() -> int:
                     "resourcesChecked": args.terminal_resources,
                     "detail": args.terminal_detail,
                 },
-                "browserSmoke": {"status": args.browser_status, "detail": args.browser_detail},
+                "provenanceMediaFiles": len(provenance_paths),
+                "provenanceWorkerResolved": provenance_worker_resolved,
+                "provenanceLocalRuntimeRequests": len(provenance_local_hits),
+                "provenanceResolverChecks": provenance_checks,
+                "runtimeRoutingStatus": runtime_routing_status,
+                "terminalNetworkStatus": terminal_network_status,
+                "terminalNetworkDetail": terminal_network_detail,
+                "previousUploadVerification": previous_upload,
+                "browserSmoke": browser_summary,
                 "binaryMediaChanges": len(changed_binary_paths),
                 "verificationBlockers": errors,
-                "failedObjectCount": len(failed_objects),
-                "failedObjectExamples": failed_objects[:20],
+                "workerVerificationSkipped": args.skip_worker_network,
+                "failedObjectCount": 0 if args.skip_worker_network else len(failed_objects),
+                "unverifiedObjectCount": len(failed_objects) if args.skip_worker_network else 0,
+                "failedObjectExamples": [] if args.skip_worker_network else failed_objects[:20],
             }
             write_json(SUMMARY_PATH, blocked_summary)
             DOC_PATH.write_text(build_document(blocked_summary), encoding="utf-8", newline="\n")
@@ -608,8 +816,9 @@ def main() -> int:
         print("QINHAN_R2_RUNTIME=FAIL")
         for error in errors[:60]:
             print(f"ERROR={error}")
-        for item in failed_objects[:20]:
-            print(f"FAILED_OBJECT={item['path']} status={item['status']} error={item['error']}")
+        if not args.skip_worker_network:
+            for item in failed_objects[:20]:
+                print(f"FAILED_OBJECT={item['path']} status={item['status']} error={item['error']}")
         return 1
 
     summary = {
@@ -657,8 +866,19 @@ def main() -> int:
             "resourcesChecked": args.terminal_resources,
             "detail": args.terminal_detail,
         },
-        "browserSmoke": {"status": args.browser_status, "detail": args.browser_detail},
+        "provenanceMediaFiles": len(provenance_paths),
+        "provenanceWorkerResolved": provenance_worker_resolved,
+        "provenanceLocalRuntimeRequests": len(provenance_local_hits),
+        "provenanceResolverChecks": provenance_checks,
+        "runtimeRoutingStatus": runtime_routing_status,
+        "terminalNetworkStatus": terminal_network_status,
+        "terminalNetworkDetail": terminal_network_detail,
+        "previousUploadVerification": previous_upload,
+        "browserSmoke": browser_summary,
         "binaryMediaChanges": len(changed_binary_paths),
+        "workerVerificationSkipped": args.skip_worker_network,
+        "failedObjectCount": len(failed_objects),
+        "unverifiedObjectCount": 0,
         "failedObjects": failed_objects,
     }
     write_json(SUMMARY_PATH, summary)

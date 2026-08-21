@@ -57,9 +57,40 @@
     "resourcesChecked": 9,
     "detail": "local HTTP smoke: 9 resources, all HTTP 200"
   },
+  "provenanceMediaFiles": 4,
+  "provenanceWorkerResolved": 4,
+  "provenanceLocalRuntimeRequests": 0,
+  "provenanceResolverChecks": {
+    "qinhanDatasetPresent": true,
+    "qinhanUsesMediaResolver": true,
+    "qinhanResolverCall": true,
+    "nonQinhanLocalFallback": true
+  },
+  "runtimeRoutingStatus": "PASS",
+  "terminalNetworkStatus": "BLOCKED",
+  "terminalNetworkDetail": "Python single URL HTTP 403; curl.exe single URL exit 28; terminal network path to workers.dev unavailable",
+  "previousUploadVerification": {
+    "historical": true,
+    "status": "PASS",
+    "files": 1099,
+    "bytes": 199500311,
+    "http": 1099,
+    "contentLength": 1099,
+    "sha256Samples": 40,
+    "cacheControlSamples": 40
+  },
   "browserSmoke": {
-    "status": "SKIPPED",
-    "detail": "not launched: physical memory 80.9%; Chrome/Chromium unavailable on PATH"
+    "status": "PASS",
+    "detail": "Chrome/Playwright: provenance 4/4 Worker HTTP 200; representative runtime regression passed; terminal Worker revalidation remains blocked",
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "provenanceMedia": 4,
+    "provenanceMediaLoaded": 4,
+    "provenanceWorkerHttp": 4,
+    "provenanceLocalRequests": 0,
+    "mediaFailures": 0,
+    "archiveDialogsChecked": 3,
+    "cropFullSwitch": "PASS"
   },
   "binaryMediaChanges": 0,
   "verificationBlockers": [
@@ -72,107 +103,8 @@
     "SHA256 sample family missing: external",
     "Cache-Control samples verified 0 != 40"
   ],
-  "failedObjectCount": 1099,
-  "failedObjectExamples": [
-    {
-      "path": "modules/qinhan/assets/brand-emblem.png",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/external/qinhan-museum-aerial-li-yibo.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/external/qinhan-museum-aerial-zou-hong.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2009.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2011.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2013.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2014.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2015.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2016.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2017.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2018.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2025.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2027.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2028.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2030.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2031.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2032.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2033.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2034.jpg",
-      "status": null,
-      "error": "URLError"
-    },
-    {
-      "path": "modules/qinhan/assets/photos/thumb/DSC_2035.jpg",
-      "status": null,
-      "error": "URLError"
-    }
-  ]
+  "workerVerificationSkipped": true,
+  "failedObjectCount": 0,
+  "unverifiedObjectCount": 1099,
+  "failedObjectExamples": []
 }
