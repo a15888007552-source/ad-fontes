@@ -455,3 +455,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* 单行标题与信息卡片整体居中 */
+#museum .section-title-row { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; margin-bottom: 36px; }
+#museum .museum-facts { text-align: center; }
