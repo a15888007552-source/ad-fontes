@@ -1,0 +1,322 @@
+{
+  "status": "PASS_STATIC_BROWSER_SKIPPED",
+  "module": "shaanxi-archaeology-museum",
+  "publicBase": "https://ad-fontes-media.gusgumee777.workers.dev",
+  "plannedFiles": 1061,
+  "plannedBytes": 103024634,
+  "staticRuntimeMediaFiles": 10,
+  "staticRuntimeReferenceCount": 26,
+  "dynamicDataMediaFiles": 734,
+  "dynamicRuntimeSinkCount": 6,
+  "dynamicRuntimeSinks": {
+    "cardImgSrc": true,
+    "cardSrcsetThumb": true,
+    "cardSrcsetWeb": true,
+    "selectPhotoImageSrc": true,
+    "openArtifactMainImage": true,
+    "dialogThumbnails": true,
+    "mediaUrlHelperPresent": true
+  },
+  "provenanceMediaFiles": 6,
+  "provenanceWorkerResolved": 6,
+  "reviewRuntimeMediaFiles": 0,
+  "totalRuntimeReferencedMediaFiles": 742,
+  "runtimeReferencedPlanCoverage": {
+    "files": 742,
+    "bytes": 76888137,
+    "ofFrozenFiles": 1061,
+    "ofFrozenBytes": 103024634
+  },
+  "directLocalRuntimeReferences": 0,
+  "oldR2DevReferences": 0,
+  "doublePrefixReferences": 0,
+  "resolverChecks": {
+    "checks": {
+      "completeUrlPreserved": true,
+      "assetsPathPrefixed": true,
+      "reviewPathPrefixed": true,
+      "modulePrefixNotDoubled": true,
+      "unrelatedRelativeUnchanged": true,
+      "workerBaseCorrect": true,
+      "usesSharedResolver": true,
+      "completeUrlGuardPresent": true,
+      "allCases": true
+    },
+    "cases": [
+      {
+        "input": "https://example.com/a.webp?rev=1#hero",
+        "output": "https://example.com/a.webp?rev=1#hero",
+        "expected": "https://example.com/a.webp?rev=1#hero",
+        "passed": true
+      },
+      {
+        "input": "data:image/png;base64,abc",
+        "output": "data:image/png;base64,abc",
+        "expected": "data:image/png;base64,abc",
+        "passed": true
+      },
+      {
+        "input": "blob:https://example.com/id",
+        "output": "blob:https://example.com/id",
+        "expected": "blob:https://example.com/id",
+        "passed": true
+      },
+      {
+        "input": "//cdn.example.com/a.webp",
+        "output": "//cdn.example.com/a.webp",
+        "expected": "//cdn.example.com/a.webp",
+        "passed": true
+      },
+      {
+        "input": "assets/photos/web/DSC_3114.jpg?rev=1#view",
+        "output": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3114.jpg?rev=1#view",
+        "expected": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3114.jpg?rev=1#view",
+        "passed": true
+      },
+      {
+        "input": "./assets/photos/thumbs/DSC_3117.jpg",
+        "output": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/photos/thumbs/DSC_3117.jpg",
+        "expected": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/photos/thumbs/DSC_3117.jpg",
+        "passed": true
+      },
+      {
+        "input": "review/contact-sheets/contact_001_041.jpg",
+        "output": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/review/contact-sheets/contact_001_041.jpg",
+        "expected": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/review/contact-sheets/contact_001_041.jpg",
+        "passed": true
+      },
+      {
+        "input": "modules/shaanxi-archaeology-museum/assets/brand-emblem.png",
+        "output": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/brand-emblem.png",
+        "expected": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/brand-emblem.png",
+        "passed": true
+      },
+      {
+        "input": "../shared/icon.svg",
+        "output": "../shared/icon.svg",
+        "expected": "../shared/icon.svg",
+        "passed": true
+      },
+      {
+        "input": "data/photo.jpg",
+        "output": "data/photo.jpg",
+        "expected": "data/photo.jpg",
+        "passed": true
+      }
+    ]
+  },
+  "scriptOrderChecks": {
+    "sharedResolverBeforeModuleResolver": true,
+    "moduleResolverBeforeCatalog": true,
+    "moduleResolverBeforePhotoCatalog": true,
+    "moduleResolverBeforeProvenance": true
+  },
+  "fallbackChecks": {
+    "qinhanBranchPreserved": true,
+    "shaanxiBranchScoped": true,
+    "otherModulesFallbackPreserved": true
+  },
+  "workerEvidence": {
+    "source": "GitHub Actions",
+    "previousRunStatus": "PASS",
+    "workflow": "Verify Shaanxi Archaeology Worker media",
+    "http": 1061,
+    "contentLength": 1061,
+    "sha256Samples": 40,
+    "contentTypeSamples": 40,
+    "cacheControlSamples": 40,
+    "missingObject": 404
+  },
+  "browserSmoke": {
+    "status": "SKIPPED",
+    "reason": "Skipped: physical memory was 86.2% used (2144 MB free); no safe new Chrome context was available.",
+    "consoleErrors": null,
+    "localMediaRequests": null,
+    "workerMediaFailures": null,
+    "oldR2DevRequests": null
+  },
+  "terminalWorkerNetwork": "BLOCKED",
+  "localMediaFiles": 1061,
+  "localMediaBytes": 103024634,
+  "missingLocalMedia": [],
+  "binaryMediaChanges": {
+    "additions": 0,
+    "modifications": 0,
+    "deletions": 0,
+    "paths": [],
+    "status": "PASS"
+  },
+  "discovery": {
+    "loadedStylesheets": [
+      "styles.css?v=20260815-wide3",
+      "artifact-catalog.css?v=20260815-dialog2",
+      "catalog-cards.css?v=20260815-cards3",
+      "museum-motion-lite.css?v=20260815-lite1",
+      "museum-backgrounds.css?v=20260815-texture2",
+      "catalog-direct.css?v=20260815-direct1",
+      "museum-scenes.css?v=20260815-scenes1"
+    ],
+    "loadedScripts": [
+      "../../shared/js/media-url.js",
+      "media-url.js",
+      "catalog-direct.js?v=20260815-direct2",
+      "data/artifacts-data.js?v=20260815-embedded1",
+      "photo-catalog.js?v=20260815-cards4-embedded",
+      "museum-motion-lite.js?v=20260815-lite1",
+      "../../assets/editorial/provenance-trails.js?v=20260820-editorial1"
+    ],
+    "htmlStaticReferences": [
+      {
+        "attribute": "href",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/brand-emblem.png",
+        "path": "modules/shaanxi-archaeology-museum/assets/brand-emblem.png"
+      },
+      {
+        "attribute": "src",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/brand-emblem.png",
+        "path": "modules/shaanxi-archaeology-museum/assets/brand-emblem.png"
+      },
+      {
+        "attribute": "src",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/hero/shaanxi-archaeology-museum-aerial.jpg",
+        "path": "modules/shaanxi-archaeology-museum/assets/hero/shaanxi-archaeology-museum-aerial.jpg"
+      },
+      {
+        "attribute": "src",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3114.jpg",
+        "path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3114.jpg"
+      },
+      {
+        "attribute": "src",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/photos/thumbs/DSC_3117.jpg",
+        "path": "modules/shaanxi-archaeology-museum/assets/photos/thumbs/DSC_3117.jpg"
+      }
+    ],
+    "cssStaticReferences": [
+      {
+        "stylesheet": "museum-backgrounds.css?v=20260815-texture2",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-paper.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-paper.webp"
+      },
+      {
+        "stylesheet": "museum-backgrounds.css?v=20260815-texture2",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-paper.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-paper.webp"
+      },
+      {
+        "stylesheet": "museum-backgrounds.css?v=20260815-texture2",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp"
+      },
+      {
+        "stylesheet": "museum-backgrounds.css?v=20260815-texture2",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp"
+      },
+      {
+        "stylesheet": "museum-backgrounds.css?v=20260815-texture2",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-960.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-960.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-960.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-960.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-960.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-960.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-960.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-960.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-wide.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-960.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-960.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-960.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-field-960.webp"
+      },
+      {
+        "stylesheet": "museum-scenes.css?v=20260815-scenes1",
+        "value": "https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-960.webp",
+        "path": "modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-gallery-960.webp"
+      }
+    ],
+    "dynamicDataPathCount": 734,
+    "provenanceImages": [
+      "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2636.jpg",
+      "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2744.jpg",
+      "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2812.jpg",
+      "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2890.jpg",
+      "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2919.jpg",
+      "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3182.jpg"
+    ],
+    "reviewRuntimePaths": [],
+    "nonRuntimeReviewPlanFiles": 11,
+    "storageChecks": {
+      "s3Objects": true,
+      "s3Bytes": true,
+      "s3Missing": true,
+      "s3SizeMismatch": true,
+      "shaSamples": true
+    }
+  },
+  "failedChecks": []
+}

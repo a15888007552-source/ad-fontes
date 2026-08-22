@@ -1,6 +1,12 @@
 (() => {
   "use strict";
 
+  const mediaUrl = (path) => (
+    typeof window.shaanxiArchaeologyMediaUrl === "function"
+      ? window.shaanxiArchaeologyMediaUrl(path)
+      : path
+  );
+
   const escapeHtml = (value = "") => String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
@@ -34,13 +40,15 @@
 
   const cardHtml = (artifact) => {
     const photo = artifact.photos[0];
+    const thumbUrl = mediaUrl(photo.thumb);
+    const webUrl = mediaUrl(photo.web);
     const number = String(artifact.index).padStart(3, "0");
     const period = artifact.period || "年代以现场资料为限";
     return `
       <article class="artifact-catalog-card" tabindex="0" role="button" data-artifact-id="${artifact.id}" aria-label="查看${escapeHtml(artifact.title)}详情">
         <figure class="artifact-card-media">
-          <img src="${escapeHtml(photo.thumb)}"
-               srcset="${escapeHtml(photo.thumb)} 480w, ${escapeHtml(photo.web)} 1600w"
+          <img src="${escapeHtml(thumbUrl)}"
+               srcset="${escapeHtml(thumbUrl)} 480w, ${escapeHtml(webUrl)} 1600w"
                sizes="(max-width: 720px) 100vw, 34vw"
                width="${photo.width}" height="${photo.height}"
                loading="lazy" decoding="async" alt="${escapeHtml(artifact.title)}现场照片">
@@ -118,7 +126,7 @@
     const photo = activeArtifact.photos[activePhoto];
     const image = dialog.querySelector(".artifact-dialog-main-image");
     if (image) {
-      image.src = photo.web;
+      image.src = mediaUrl(photo.web);
       image.alt = `${activeArtifact.title} ${photo.role}`;
     }
     dialog.querySelectorAll("[data-photo-index]").forEach((button) => {
@@ -145,7 +153,7 @@
         <button class="artifact-dialog-close" type="button" data-dialog-close aria-label="关闭详情">关闭 ×</button>
         <section class="artifact-dialog-gallery" aria-label="文物照片">
           <div class="artifact-dialog-stage">
-            <img class="artifact-dialog-main-image" src="${escapeHtml(artifact.photos[0].web)}" alt="${escapeHtml(artifact.title)}整体" decoding="async">
+            <img class="artifact-dialog-main-image" src="${escapeHtml(mediaUrl(artifact.photos[0].web))}" alt="${escapeHtml(artifact.title)}整体" decoding="async">
           </div>
           <div class="artifact-zoom-controls" aria-label="图像缩放">
             <button type="button" data-zoom-out aria-label="缩小">−</button>
@@ -156,7 +164,7 @@
           <div class="artifact-dialog-thumbs">
             ${artifact.photos.map((photo, index) => `
               <button type="button" data-photo-index="${index}" aria-current="${index === 0}">
-                <img src="${escapeHtml(photo.thumb)}" width="${photo.width}" height="${photo.height}" loading="lazy" decoding="async" alt="${escapeHtml(photo.role)}缩略图">
+                <img src="${escapeHtml(mediaUrl(photo.thumb))}" width="${photo.width}" height="${photo.height}" loading="lazy" decoding="async" alt="${escapeHtml(photo.role)}缩略图">
                 <span>${escapeHtml(photo.role)}</span>
               </button>`).join("")}
           </div>
