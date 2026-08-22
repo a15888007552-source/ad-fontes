@@ -1,0 +1,38 @@
+name: Verify Shaanxi Archaeology Worker media
+
+on:
+  pull_request:
+    paths:
+      - "scripts/validate_shaanxi_archaeology_worker.py"
+      - ".github/workflows/shaanxi-archaeology-worker-verify.yml"
+      - "data/media-externalization-plan.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Verify public Worker media
+        run: |
+          mkdir -p artifacts
+          python scripts/validate_shaanxi_archaeology_worker.py \
+            --output artifacts/shaanxi-archaeology-worker-verification.json
+
+      - name: Upload verification artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: shaanxi-archaeology-worker-verification
+          path: artifacts/
+          if-no-files-found: warn
