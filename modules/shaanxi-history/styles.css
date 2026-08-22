@@ -459,3 +459,62 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 /* 单行标题与信息卡片整体居中 */
 #museum .section-title-row { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; margin-bottom: 36px; }
 #museum .museum-facts { text-align: center; }
+
+/* Collection theme: Tang red, gold, and a quiet lacquer ground. */
+#collection.collection {
+  --paper: #3b1e1a;
+  --paper-deep: #4b2520;
+  --surface: rgba(54, 29, 24, .9);
+  --ink: #fff1da;
+  --muted: rgba(245, 220, 188, .78);
+  --line: rgba(233, 184, 107, .3);
+  --line-dark: rgba(233, 184, 107, .5);
+  --red: #df805e;
+  --red-dark: #a94332;
+  --gold: #e2b96c;
+  --teal: #95b3a2;
+  --night: #1b100d;
+  --collection-art: url("assets/ui/collection-background.webp");
+  color: var(--ink);
+  color-scheme: dark;
+  background:
+    linear-gradient(180deg, rgba(44, 17, 13, .88), rgba(78, 31, 24, .74) 52%, rgba(30, 13, 11, .92)),
+    var(--collection-art) center / cover no-repeat;
+}
+
+#collection.collection .collection-head p,
+#collection.collection .result-line { color: var(--muted); }
+#collection.collection .filter-shell { border-color: var(--line-dark); background: rgba(47, 22, 18, .88); box-shadow: 0 18px 46px rgba(30, 12, 9, .26); }
+#collection.collection .search-box,
+#collection.collection .filter-row { border-color: var(--line); }
+#collection.collection .search-box input,
+#collection.collection .sort-box select { color: var(--ink); }
+#collection.collection .search-box input::placeholder { color: rgba(245, 220, 188, .56); }
+#collection.collection kbd { border-color: var(--line); color: var(--muted); background: rgba(39, 17, 14, .82); }
+#collection.collection .filter-chip { border-color: var(--line); color: var(--muted); }
+#collection.collection .filter-chip:hover,
+#collection.collection .filter-chip:focus-visible { border-color: var(--gold); color: var(--gold); }
+#collection.collection .filter-chip.active { color: #fff1da; border-color: var(--red-dark); background: var(--red-dark); }
+#collection.collection .filter-chip.music.active { border-color: var(--teal); background: var(--teal); }
+#collection.collection .filter-chip.forbidden.active,
+#collection.collection .filter-chip.wall.active { border-color: var(--red); background: var(--red); }
+#collection.collection .filter-chip.greek.active { color: var(--night); border-color: var(--gold); background: var(--gold); }
+#collection.collection .object-grid { border-color: var(--line); }
+#collection.collection .object-card {
+  border-color: var(--line);
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(53, 24, 20, .95), rgba(79, 35, 25, .84)),
+    var(--collection-art) center / cover no-repeat;
+}
+#collection.collection .object-card:hover,
+#collection.collection .object-card:focus-visible {
+  border-color: var(--gold);
+  background:
+    linear-gradient(135deg, rgba(76, 31, 23, .92), rgba(108, 49, 31, .8)),
+    var(--collection-art) center / cover no-repeat;
+}
+#collection.collection .card-title { color: var(--ink); }
+#collection.collection .mini-tag { border-color: var(--line); color: var(--muted); }
+#collection.collection .empty-state { border-color: var(--line); background: rgba(51, 25, 21, .9); }
+#collection.collection .quiet-action { border-color: var(--line-dark); color: var(--ink); }
