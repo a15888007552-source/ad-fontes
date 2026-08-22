@@ -1,0 +1,73 @@
+name: Tomb Trails browser smoke
+
+on:
+  pull_request:
+    paths:
+      - "modules/tomb-trails/**"
+      - "assets/tomb-trails/**"
+      - "modules/qinhan/index.html"
+      - "modules/xian-museum/index.html"
+      - "modules/shaanxi-history/index.html"
+      - "modules/shaanxi-archaeology-museum/index.html"
+      - "modules/baoji/index.html"
+      - "modules/beilin/index.html"
+      - "scripts/smoke_tomb_trails_browser.py"
+      - ".github/workflows/tomb-trails-browser-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Playwright
+        run: python -m pip install --upgrade pip playwright
+
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Start local HTTP server
+        shell: bash
+        run: |
+          python -m http.server 8765 > /tmp/tomb-trails-http.log 2>&1 &
+          echo $! > /tmp/tomb-trails-http.pid
+          for attempt in {1..30}; do
+            if curl --silent --show-error --fail http://127.0.0.1:8765/modules/tomb-trails/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/tomb-trails-http.log
+          exit 1
+
+      - name: Run tomb trails browser smoke
+        run: |
+          python scripts/smoke_tomb_trails_browser.py \
+            --output artifacts/tomb-trails-browser-smoke.json
+
+      - name: Upload smoke report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tomb-trails-browser-smoke
+          path: artifacts/tomb-trails-browser-smoke.json
+          if-no-files-found: warn
+
+      - name: Upload visual review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tomb-trails-visual-review
+          path: artifacts/tomb-trails-review
+          if-no-files-found: warn

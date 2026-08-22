@@ -474,6 +474,45 @@ runSection("return-to-atlas", atlasReturnLinksQa);
 runSection("local-resources", localResourcesQa);
 runSection("externalized-worker-routing", externalizedRuntimeQa);
 runSection("runtime-safety", runtimeSafetyQa);
+function tombTrailsWiringQa() {
+  const coreFiles = [
+    "modules/tomb-trails/index.html",
+    "modules/tomb-trails/tomb-trails.css",
+    "modules/tomb-trails/tomb-trails.js",
+    "modules/tomb-trails/tomb-trails-data.json",
+    "modules/tomb-trails/embedded.css",
+    "modules/tomb-trails/host.css",
+  ];
+  for (const file of coreFiles) assert(exists(file), `tomb-trails core file missing: ${file}`);
+  const records = readJson("modules/tomb-trails/tomb-trails-data.json");
+  assert(Array.isArray(records), "tomb-trails-data must be an array of sites");
+  assert(records.length === 33, `tomb-trails sites ${records.length} != 33`);
+  const museums = new Set(records.map((record) => record.museum));
+  assert(museums.size === 6, `tomb-trails museums ${museums.size} != 6`);
+  const expectedMuseums = new Set(["qinhan", "xian-museum", "shaanxi-history", "shaanxi-archaeology-museum", "baoji", "beilin"]);
+  assert([...museums].every((m) => expectedMuseums.has(m)), "tomb-trails data holds an unknown museum");
+  const hosts = [
+    ["modules/qinhan/index.html", "qinhan"],
+    ["modules/xian-museum/index.html", "xian"],
+    ["modules/shaanxi-history/index.html", "history"],
+    ["modules/shaanxi-archaeology-museum/index.html", "archaeology"],
+    ["modules/baoji/index.html", "baoji"],
+    ["modules/beilin/index.html", "beilin"],
+  ];
+  for (const [pagePath, museumParam] of hosts) {
+    const html = readRepo(pagePath);
+    const iframes = [...html.matchAll(/<iframe[^>]*tomb-trails\/index\.html\?museum=([a-z]+)[^>]*>/g)];
+    assert(iframes.length === 1, `${pagePath} tomb-trails iframe count ${iframes.length} != 1`);
+    assert(iframes[0][1] === museumParam, `${pagePath} tomb-trails museum param ${iframes[0][1]} != ${museumParam}`);
+    assert(iframes[0][0].includes("embed=1"), `${pagePath} tomb-trails iframe missing embed=1`);
+    assert((html.match(/tomb-trails\/host\.css/g) || []).length === 1, `${pagePath} host.css link missing or duplicated`);
+    assert(!html.includes("provenance-trails.js"), `${pagePath} still loads the legacy provenance-trails script`);
+  }
+  // The legacy shared component files themselves remain in the repository as
+  // historical code and must not fail this contract.
+}
+
+runSection("tomb-trails-wiring", tombTrailsWiringQa);
 runSection("javascript-syntax", javascriptSyntaxQa);
 
 if (failures.length === 0) {
