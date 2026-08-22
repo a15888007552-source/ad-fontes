@@ -2009,7 +2009,7 @@
         <span class="atlas-opening__title-line">从一张图</span>
         <span class="atlas-opening__title-line atlas-opening__title-line--accent">进入一座馆</span>
       </h1>
-      <p class="atlas-opening__caption">十座博物馆 · 七座专题已上线</p>
+      <p class="atlas-opening__caption" data-registry-stat="opening-summary">十座博物馆 · 七座专题已上线</p>
       <div class="atlas-opening__progress" aria-hidden="true"><span></span></div>
       <p class="atlas-opening__hint">点击任意处跳过 <span>SCROLL TO BEGIN</span></p>
     </div>
@@ -2025,7 +2025,7 @@
             <p class="micro-label">AD FONTES / MUSEUM ATLAS</p>
             <h1>中国博物馆行记</h1>
             <p class="latin-label">ITINERARIA MUSEORUM SINARUM</p>
-            <p class="header-stats">03 省份 · 10 座馆 · 07 个已上线专题</p>
+            <p class="header-stats" data-registry-stat="header-summary">03 省份 · 10 座馆 · 07 个已上线专题</p>
           </div>
         </div>
         <nav class="site-nav" aria-label="总馆导航">
@@ -2052,7 +2052,7 @@
       <div class="cover-side" aria-label="总馆统计与首张照片">
         <div class="cover-index">
           <p class="micro-label">PROVINCES</p>
-          <strong>03</strong>
+          <strong data-registry-stat="province-count">03</strong>
           <span>北京<br />陕西<br />河南</span>
         </div>
         <figure class="cover-stamp">
@@ -2098,13 +2098,13 @@
           <p class="brief-copy"><strong>北京 · 朱红</strong> 先从宫城开始，再沿着城市中轴寻找下一座馆</p>
           <dl class="brief-meta">
             <div><dt>主题</dt><dd>秩序 / 中心</dd></div>
-            <div><dt>馆数</dt><dd>02 座</dd></div>
+            <div><dt>馆数</dt><dd data-registry-province-count="beijing">02 座</dd></div>
           </dl>
         </div>
         <div class="chapter-content reveal-on-scroll">
           <section aria-labelledby="beijing-museums">
             <div class="content-heading"><h3 id="beijing-museums">MUSEA</h3><span>北京 · 博物馆入口</span></div>
-            <div class="museum-list">
+            <div class="museum-list" data-registry-museums="beijing">
               <article class="museum-card museum-card--soon" aria-label="故宫博物院专题站筹备中">
                 <div class="card-media"><img src="assets/beijing-palace-hero.webp" alt="故宫博物院建筑群" loading="lazy" decoding="async" width="2400" height="1600" /></div>
                 <div class="museum-card-body"><span class="card-status">IN PREPARATION</span><h4>故宫博物院</h4><p>北京 · 宫城与器物</p><span class="card-arrow">专题筹备中</span></div>
@@ -2132,13 +2132,13 @@
           <p class="brief-copy"><strong>陕西 · 墨色</strong> 字留在石上，照片把它带回今天</p>
           <dl class="brief-meta">
             <div><dt>主题</dt><dd>碑刻 / 时间</dd></div>
-            <div><dt>馆数</dt><dd>06 座</dd></div>
+            <div><dt>馆数</dt><dd data-registry-province-count="shaanxi">06 座</dd></div>
           </dl>
         </div>
         <div class="chapter-content reveal-on-scroll">
           <section aria-labelledby="shaanxi-museums">
             <div class="content-heading"><h3 id="shaanxi-museums">MUSEA</h3><span>陕西 · 博物馆入口</span></div>
-            <div class="museum-list">
+            <div class="museum-list" data-registry-museums="shaanxi">
                             <a class="museum-card museum-card--link" href="../beilin/index.html" aria-label="进入西安碑林博物馆专题站">
                 <div class="card-media"><img src="../../assets/hero/beilin-gate.jpg" alt="西安碑林博物馆大门" loading="lazy" decoding="async" /></div>
                 <div class="museum-card-body"><span class="card-status">OPEN / 数字档案</span><h4>西安碑林博物馆</h4><p>西安 · 碑刻与书法</p><span class="card-arrow">进入专题 ↗</span></div>
@@ -2181,13 +2181,13 @@
           <p class="brief-copy"><strong>河南 · 青花瓷</strong> 白地留给器物，蓝色指向中原的远方</p>
           <dl class="brief-meta">
             <div><dt>主题</dt><dd>器物 / 中原</dd></div>
-            <div><dt>馆数</dt><dd>02 座</dd></div>
+            <div><dt>馆数</dt><dd data-registry-province-count="henan">02 座</dd></div>
           </dl>
         </div>
         <div class="chapter-content reveal-on-scroll">
           <section aria-labelledby="henan-museums">
             <div class="content-heading"><h3 id="henan-museums">MUSEA</h3><span>河南 · 博物馆入口</span></div>
-            <div class="museum-list">
+            <div class="museum-list" data-registry-museums="henan">
               <article class="museum-card museum-card--soon" aria-label="河南博物院专题站筹备中">
                 <div class="card-media"><img src="assets/henan-hero.webp" alt="河南博物院专题视觉" loading="lazy" decoding="async" /></div>
                 <div class="museum-card-body"><span class="card-status">IN PREPARATION</span><h4>河南博物院</h4><p>郑州 · 中原文明</p><span class="card-arrow">专题筹备中</span></div>
@@ -2486,6 +2486,230 @@
       attributeFilter: ["data-active-province"]
     });
     render();
+  })();
+</script>
+<script id="museum-registry-renderer">
+  (() => {
+    const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
+    const isNonEmptyString = (value) => typeof value === "string" && value.trim().length > 0;
+    const requireValid = (condition) => {
+      if (!condition) throw new Error();
+    };
+
+    const isSafeRepositoryPath = (value) => {
+      if (!isNonEmptyString(value) || value.includes("\\") || value.startsWith("/") || /^[a-z][a-z\d+.-]*:/i.test(value)) {
+        return false;
+      }
+      return !value.split("/").includes("..");
+    };
+
+    const validateRegistry = (registry) => {
+      requireValid(isObject(registry) && registry.schema_version === 1);
+      requireValid(Array.isArray(registry.provinces) && registry.provinces.length > 0);
+      requireValid(Array.isArray(registry.museums));
+
+      const provinceIds = new Set();
+      const provinceOrders = new Set();
+      registry.provinces.forEach((province) => {
+        requireValid(isObject(province));
+        requireValid(isNonEmptyString(province.id) && !provinceIds.has(province.id));
+        requireValid(isNonEmptyString(province.name) && isNonEmptyString(province.code));
+        requireValid(Number.isFinite(province.order) && !provinceOrders.has(province.order));
+        provinceIds.add(province.id);
+        provinceOrders.add(province.order);
+      });
+
+      const museumIds = new Set();
+      const museumOrders = new Map([...provinceIds].map((id) => [id, new Set()]));
+      registry.museums.forEach((museum) => {
+        requireValid(isObject(museum));
+        requireValid(isNonEmptyString(museum.id) && !museumIds.has(museum.id));
+        requireValid(provinceIds.has(museum.province));
+        requireValid(Number.isFinite(museum.order) && !museumOrders.get(museum.province).has(museum.order));
+        requireValid(isNonEmptyString(museum.name) && isNonEmptyString(museum.city) && isNonEmptyString(museum.theme));
+        requireValid(museum.status === "live" || museum.status === "preparation");
+
+        const image = museum.card_image;
+        requireValid(isObject(image));
+        requireValid(isSafeRepositoryPath(image.path) && isNonEmptyString(image.alt));
+        requireValid(image.loading === "eager" || image.loading === "lazy");
+        requireValid(image.fetchpriority === null || typeof image.fetchpriority === "string");
+        requireValid(image.width === null || (typeof image.width === "number" && Number.isFinite(image.width) && image.width > 0));
+        requireValid(image.height === null || (typeof image.height === "number" && Number.isFinite(image.height) && image.height > 0));
+
+        if (museum.status === "live") {
+          requireValid(isNonEmptyString(museum.archive_type) && isSafeRepositoryPath(museum.site_path));
+        } else {
+          requireValid(museum.archive_type === null && museum.site_path === null);
+        }
+
+        museumIds.add(museum.id);
+        museumOrders.get(museum.province).add(museum.order);
+      });
+      provinceIds.forEach((id) => requireValid(museumOrders.get(id).size > 0));
+
+      return registry;
+    };
+
+    const getSingleMount = (selector) => {
+      const nodes = document.querySelectorAll(selector);
+      requireValid(nodes.length === 1);
+      return nodes[0];
+    };
+
+    const validateMounts = (registry) => {
+      const header = getSingleMount('[data-registry-stat="header-summary"]');
+      const provinceCount = getSingleMount('[data-registry-stat="province-count"]');
+      const openingNodes = document.querySelectorAll('[data-registry-stat="opening-summary"]');
+      requireValid(openingNodes.length <= 1);
+
+      const listNodes = Array.from(document.querySelectorAll("[data-registry-museums]"));
+      const countNodes = Array.from(document.querySelectorAll("[data-registry-province-count]"));
+      const provinceIds = registry.provinces.map((province) => province.id);
+      const expectedIds = new Set(provinceIds);
+      requireValid(listNodes.length === provinceIds.length && countNodes.length === provinceIds.length);
+
+      const lists = new Map();
+      listNodes.forEach((node) => {
+        const id = node.dataset.registryMuseums;
+        requireValid(expectedIds.has(id) && !lists.has(id));
+        lists.set(id, node);
+      });
+
+      const counts = new Map();
+      countNodes.forEach((node) => {
+        const id = node.dataset.registryProvinceCount;
+        requireValid(expectedIds.has(id) && !counts.has(id));
+        counts.set(id, node);
+      });
+
+      provinceIds.forEach((id) => {
+        requireValid(lists.has(id) && counts.has(id));
+      });
+
+      return {
+        header,
+        opening: openingNodes[0] || null,
+        provinceCount,
+        lists,
+        counts
+      };
+    };
+
+    const pad2 = (value) => String(value).padStart(2, "0");
+
+    const toChineseInteger = (value) => {
+      const digits = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+      const base = digits.length;
+      if (!Number.isInteger(value) || value < 0 || value >= base * base) return String(value);
+      if (value < base) return digits[value];
+      if (value === base) return "十";
+      if (value < base * 2) return `十${digits[value - base]}`;
+      const tens = Math.floor(value / base);
+      const ones = value % base;
+      return `${digits[tens]}十${ones ? digits[ones] : ""}`;
+    };
+
+    const buildImage = (museum, repositoryRoot) => {
+      const image = document.createElement("img");
+      const data = museum.card_image;
+      image.setAttribute("src", new URL(data.path, repositoryRoot).href);
+      image.setAttribute("alt", data.alt);
+      image.setAttribute("loading", data.loading);
+      image.setAttribute("decoding", "async");
+      if (data.fetchpriority !== null) image.setAttribute("fetchpriority", data.fetchpriority);
+      if (data.width !== null) image.setAttribute("width", String(data.width));
+      if (data.height !== null) image.setAttribute("height", String(data.height));
+      return image;
+    };
+
+    const buildCard = (museum, repositoryRoot) => {
+      const isLive = museum.status === "live";
+      const card = document.createElement(isLive ? "a" : "article");
+      card.className = isLive ? "museum-card museum-card--link" : "museum-card museum-card--soon";
+      card.setAttribute("aria-label", isLive ? `进入${museum.name}专题站` : `${museum.name}专题站筹备中`);
+      if (isLive) card.setAttribute("href", new URL(museum.site_path, repositoryRoot).href);
+
+      const media = document.createElement("div");
+      media.className = "card-media";
+      media.append(buildImage(museum, repositoryRoot));
+
+      const body = document.createElement("div");
+      body.className = "museum-card-body";
+      const status = document.createElement("span");
+      status.className = "card-status";
+      status.textContent = isLive ? `OPEN / ${museum.archive_type}` : "IN PREPARATION";
+      const title = document.createElement("h4");
+      title.textContent = museum.name;
+      const description = document.createElement("p");
+      description.textContent = `${museum.city} · ${museum.theme}`;
+      const arrow = document.createElement("span");
+      arrow.className = "card-arrow";
+      arrow.textContent = isLive ? "进入专题 ↗" : "专题筹备中";
+      body.append(status, title, description, arrow);
+      card.append(media, body);
+      return card;
+    };
+
+    const buildRenderPlan = (registry, mounts) => {
+      const repositoryRoot = new URL("../../", document.baseURI);
+      const provinces = [...registry.provinces].sort((a, b) => a.order - b.order);
+      const counts = new Map(provinces.map((province) => [province.id, 0]));
+      registry.museums.forEach((museum) => counts.set(museum.province, counts.get(museum.province) + 1));
+
+      const fragments = new Map();
+      provinces.forEach((province) => {
+        const fragment = document.createDocumentFragment();
+        [...registry.museums]
+          .filter((museum) => museum.province === province.id)
+          .sort((a, b) => a.order - b.order)
+          .forEach((museum) => fragment.append(buildCard(museum, repositoryRoot)));
+        fragments.set(province.id, fragment);
+      });
+
+      const provinceCount = provinces.length;
+      const museumCount = registry.museums.length;
+      const liveCount = registry.museums.filter((museum) => museum.status === "live").length;
+      const countText = new Map(provinces.map((province) => [province.id, `${pad2(counts.get(province.id))} 座`]));
+
+      return {
+        provinces,
+        fragments,
+        countText,
+        headerText: `${pad2(provinceCount)} 省份 · ${pad2(museumCount)} 座馆 · ${pad2(liveCount)} 个已上线专题`,
+        openingText: `${toChineseInteger(museumCount)}座博物馆 · ${toChineseInteger(liveCount)}座专题已上线`,
+        provinceText: pad2(provinceCount),
+        mounts
+      };
+    };
+
+    const commitRender = (plan) => {
+      plan.provinces.forEach((province) => {
+        plan.mounts.lists.get(province.id).replaceChildren(plan.fragments.get(province.id));
+      });
+      plan.mounts.header.textContent = plan.headerText;
+      plan.mounts.provinceCount.textContent = plan.provinceText;
+      plan.provinces.forEach((province) => {
+        plan.mounts.counts.get(province.id).textContent = plan.countText.get(province.id);
+      });
+      if (plan.mounts.opening) plan.mounts.opening.textContent = plan.openingText;
+      window.requestAnimationFrame(() => {
+        window.dispatchEvent(new Event("resize"));
+      });
+    };
+
+    (async () => {
+      try {
+        const response = await fetch("../../museum-registry.json");
+        if (!response.ok) throw new Error();
+        const registry = validateRegistry(await response.json());
+        const mounts = validateMounts(registry);
+        const plan = buildRenderPlan(registry, mounts);
+        commitRender(plan);
+      } catch (error) {
+        // The static Atlas markup remains the resilient fallback.
+      }
+    })();
   })();
 </script>
 </body>
