@@ -1,8 +1,8 @@
 {
   "byDirectory": [
     {
-      "bytes": 356192616,
-      "fileCount": 2108,
+      "bytes": 459217250,
+      "fileCount": 3169,
       "path": "modules"
     },
     {
@@ -41,6 +41,11 @@
       "path": "modules/xian-museum/assets/photos"
     },
     {
+      "bytes": 107046047,
+      "fileCount": 1073,
+      "path": "modules/shaanxi-archaeology-museum"
+    },
+    {
       "bytes": 100590362,
       "fileCount": 501,
       "path": "modules/europa"
@@ -49,6 +54,16 @@
       "bytes": 97688117,
       "fileCount": 499,
       "path": "modules/europa/assets"
+    },
+    {
+      "bytes": 96950853,
+      "fileCount": 1051,
+      "path": "modules/shaanxi-archaeology-museum/assets"
+    },
+    {
+      "bytes": 96146186,
+      "fileCount": 1042,
+      "path": "modules/shaanxi-archaeology-museum/assets/photos"
     },
     {
       "bytes": 89923511,
@@ -64,6 +79,11 @@
       "bytes": 89640138,
       "fileCount": 772,
       "path": "modules/baoji/assets"
+    },
+    {
+      "bytes": 88124514,
+      "fileCount": 521,
+      "path": "modules/shaanxi-archaeology-museum/assets/photos/web"
     },
     {
       "bytes": 81108216,
@@ -131,9 +151,24 @@
       "path": "guobo-museum/assets/generated"
     },
     {
+      "bytes": 8548416,
+      "fileCount": 16,
+      "path": "modules/shaanxi-archaeology-museum/review"
+    },
+    {
+      "bytes": 8021672,
+      "fileCount": 521,
+      "path": "modules/shaanxi-archaeology-museum/assets/photos/thumbs"
+    },
+    {
       "bytes": 7764606,
       "fileCount": 189,
       "path": "modules/europa/assets/img"
+    },
+    {
+      "bytes": 6681306,
+      "fileCount": 12,
+      "path": "modules/shaanxi-archaeology-museum/review/contact-sheets"
     },
     {
       "bytes": 6399826,
@@ -169,16 +204,6 @@
       "bytes": 4511002,
       "fileCount": 6,
       "path": "modules/shaanxi-history/assets/photos"
-    },
-    {
-      "bytes": 4021413,
-      "fileCount": 12,
-      "path": "modules/shaanxi-archaeology-museum"
-    },
-    {
-      "bytes": 2395245,
-      "fileCount": 5,
-      "path": "modules/shaanxi-archaeology-museum/review"
     },
     {
       "bytes": 1546519,
@@ -251,9 +276,9 @@
       "path": "modules/proceedings/assets/slides/jiashubing"
     },
     {
-      "bytes": 528135,
-      "fileCount": 1,
-      "path": "modules/shaanxi-archaeology-museum/review/contact-sheets"
+      "bytes": 566700,
+      "fileCount": 6,
+      "path": "modules/shaanxi-archaeology-museum/assets/backgrounds"
     },
     {
       "bytes": 468773,
@@ -286,9 +311,9 @@
       "path": "modules/europa/音乐学资源"
     },
     {
-      "bytes": 79390,
+      "bytes": 125010,
       "fileCount": 1,
-      "path": "modules/shaanxi-archaeology-museum/assets"
+      "path": "modules/shaanxi-archaeology-museum/assets/hero"
     },
     {
       "bytes": 32908,
@@ -303,19 +328,19 @@
   ],
   "byExtension": [
     {
-      "bytes": 352806882,
-      "extension": ".webp",
-      "fileCount": 1600
-    },
-    {
-      "bytes": 276378836,
+      "bytes": 378803203,
       "extension": ".jpg",
-      "fileCount": 2566
+      "fileCount": 3620
     },
     {
-      "bytes": 51332275,
+      "bytes": 353373582,
+      "extension": ".webp",
+      "fileCount": 1606
+    },
+    {
+      "bytes": 51365842,
       "extension": ".png",
-      "fileCount": 219
+      "fileCount": 220
     },
     {
       "bytes": 825,
@@ -333,6 +358,11 @@
       "bytes": 130144476,
       "fileCount": 207,
       "module": "xian-museum"
+    },
+    {
+      "bytes": 107046047,
+      "fileCount": 1073,
+      "module": "shaanxi-archaeology-museum"
     },
     {
       "bytes": 100590362,
@@ -360,11 +390,6 @@
       "module": "shaanxi-history"
     },
     {
-      "bytes": 4021413,
-      "fileCount": 12,
-      "module": "shaanxi-archaeology-museum"
-    },
-    {
       "bytes": 1492768,
       "fileCount": 9,
       "module": "theory"
@@ -381,21 +406,21 @@
   "embeddedDataUriCount": 120,
   "embeddedDataUriOver100KBBytesApprox": 139896,
   "embeddedDataUriOver100KBCount": 1,
-  "fileCount": 4388,
+  "fileCount": 5449,
   "largeBinaryThresholdBytes": 10485760,
   "largeEmbeddedUriThresholdBytes": 102400,
   "pipelineRoleCounts": {
-    "display": 4388,
+    "display": 5449,
     "original": 45,
-    "thumb": 4388
+    "thumb": 5449
   },
-  "referencedMediaCount": 2307,
-  "suspectedOrphanBytes": 341022702,
-  "suspectedOrphanCount": 2081,
+  "referencedMediaCount": 2905,
+  "suspectedOrphanBytes": 392203338,
+  "suspectedOrphanCount": 2544,
   "topDirectories": [
     {
-      "bytes": 356192616,
-      "fileCount": 2108,
+      "bytes": 459217250,
+      "fileCount": 3169,
       "path": "modules"
     },
     {
@@ -419,5 +444,5 @@
       "path": "modules/xian-museum"
     }
   ],
-  "totalBytes": 680518818
+  "totalBytes": 783543452
 }
