@@ -244,15 +244,17 @@ def expected_mime(path: str) -> str | None:
     return EXPECTED_MIME.get(Path(path).suffix.lower())
 
 
-def cache_control_ok(value: str | None) -> bool:
-    if not value:
+def r2_delivery_ok(status: int | None, headers: dict) -> bool:
+    """R2 public-host delivery contract: byte-range support and a stable ETag.
+
+    The r2.dev public host intentionally serves no per-object Cache-Control
+    header (edge caching is managed by Cloudflare), so the retired Worker's
+    cache directives are no longer part of the contract.
+    """
+    if status != 200:
         return False
-    directives = {part.strip().lower() for part in value.split(",")}
-    return {
-        "public",
-        "max-age=86400",
-        "stale-while-revalidate=604800",
-    }.issubset(directives)
+    accept_ranges = (headers.get("accept-ranges") or "").strip().lower()
+    return accept_ranges == "bytes" and bool((headers.get("etag") or "").strip())
 
 
 def content_type_ok(path: str, value: str | None) -> bool:
@@ -298,7 +300,7 @@ def base_result(planned_files: int, planned_bytes: int) -> dict[str, Any]:
             "coverage": {},
         },
         "contentTypeSamples": {"selected": 0, "verified": 0, "failures": 0},
-        "cacheControlSamples": {"selected": 0, "verified": 0, "failures": 0},
+        "deliverySamples": {"selected": 0, "verified": 0, "failures": 0},
         "missingObjectStatus": None,
         "failedObjects": [],
         "durationSeconds": 0.0,
@@ -354,13 +356,13 @@ def main() -> int:
     samples = select_samples(entries)
     result["sha256Samples"]["selected"] = len(samples)
     result["contentTypeSamples"]["selected"] = len(samples)
-    result["cacheControlSamples"]["selected"] = len(samples)
+    result["deliverySamples"]["selected"] = len(samples)
     result["sha256Samples"]["coverage"] = {
         category: sum(category_for(entry.path) == category for entry in samples)
         for category in COVERAGE_CATEGORIES
     }
     result["contentTypeSamples"]["coverage"] = result["sha256Samples"]["coverage"]
-    result["cacheControlSamples"]["coverage"] = result["sha256Samples"]["coverage"]
+    result["deliverySamples"]["coverage"] = result["sha256Samples"]["coverage"]
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as executor:
         head_results = list(
@@ -407,7 +409,7 @@ def main() -> int:
 
     sample_head_by_path = {entry.path: head for entry, head in zip(entries, head_results)}
     content_type_verified = 0
-    cache_control_verified = 0
+    delivery_verified = 0
     for entry in samples:
         head = sample_head_by_path[entry.path]
         headers = head.get("headers", {})
@@ -421,14 +423,14 @@ def main() -> int:
                 f"expected {expected_mime(entry.path)}, got {headers.get('content-type')}",
                 head.get("status"),
             )
-        if head.get("status") == 200 and cache_control_ok(headers.get("cache-control")):
-            cache_control_verified += 1
+        if r2_delivery_ok(head.get("status"), headers):
+            delivery_verified += 1
         else:
             add_failure(
                 failures,
                 entry.path,
-                "cache-control",
-                f"expected public/max-age=86400/stale-while-revalidate=604800, got {headers.get('cache-control')}",
+                "delivery-contract",
+                f"expected 200 with accept-ranges=bytes and an ETag, got status={head.get('status')} accept-ranges={headers.get('accept-ranges')!r} etag={headers.get('etag')!r}",
                 head.get("status"),
             )
 
@@ -481,8 +483,8 @@ def main() -> int:
     result["sha256Samples"]["bytesVerified"] = sha_bytes_verified
     result["contentTypeSamples"]["verified"] = content_type_verified
     result["contentTypeSamples"]["failures"] = len(samples) - content_type_verified
-    result["cacheControlSamples"]["verified"] = cache_control_verified
-    result["cacheControlSamples"]["failures"] = len(samples) - cache_control_verified
+    result["deliverySamples"]["verified"] = delivery_verified
+    result["deliverySamples"]["failures"] = len(samples) - delivery_verified
     result["missingObjectStatus"] = missing_status
     result["failedObjects"] = failures
     result["durationSeconds"] = round(time.monotonic() - started, 3)
@@ -495,7 +497,7 @@ def main() -> int:
         and result["otherHttpFailures"] == 0
         and result["sha256Samples"]["verified"] == SAMPLE_COUNT
         and result["contentTypeSamples"]["verified"] == SAMPLE_COUNT
-        and result["cacheControlSamples"]["verified"] == SAMPLE_COUNT
+        and result["deliverySamples"]["verified"] == SAMPLE_COUNT
         and result["missingObjectStatus"] == 404
         and not failures
     ) else "FAIL"
@@ -506,7 +508,7 @@ def main() -> int:
     print(f"CONTENT_LENGTH={result['contentLengthVerified']}/{EXPECTED_FILES}")
     print(f"SHA256={result['sha256Samples']['verified']}/{SAMPLE_COUNT}")
     print(f"CONTENT_TYPE={result['contentTypeSamples']['verified']}/{SAMPLE_COUNT}")
-    print(f"CACHE_CONTROL={result['cacheControlSamples']['verified']}/{SAMPLE_COUNT}")
+    print(f"DELIVERY_CONTRACT={result['deliverySamples']['verified']}/{SAMPLE_COUNT}")
     print(f"MISSING_OBJECT={result['missingObjectStatus']}")
     return 0 if result["status"] == "PASS" else 1
 
