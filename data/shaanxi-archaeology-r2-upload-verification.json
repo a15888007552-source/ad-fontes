@@ -1,0 +1,95 @@
+{
+  "status": "PASS_STORAGE_WORKER_BLOCKED",
+  "module": "shaanxi-archaeology-museum",
+  "tool": "rclone",
+  "bucket": "ad-fontes-media",
+  "objectKeyPrefix": "modules/shaanxi-archaeology-museum/",
+  "plannedFiles": 1061,
+  "plannedBytes": 103024634,
+  "localExists": 1061,
+  "localSizeVerified": 1061,
+  "localSha256Verified": 1061,
+  "uploaded": 1061,
+  "alreadyPresent": null,
+  "alreadyPresentCountVerified": false,
+  "uploadFailures": 0,
+  "s3ObjectsVerified": 1061,
+  "s3BytesVerified": 103024634,
+  "s3MissingObjects": 0,
+  "s3SizeMismatches": 0,
+  "s3ExtraObjectsInCheckedPrefixes": 0,
+  "workerPublicBase": "https://ad-fontes-media.gusgumee777.workers.dev",
+  "workerHttpVerified": 0,
+  "contentLengthVerified": 0,
+  "sha256Samples": {
+    "selected": 40,
+    "verified": 40,
+    "missing": 0,
+    "mismatch": 0,
+    "coverage": {
+      "assets/backgrounds": 3,
+      "assets/hero": 1,
+      "assets/brand-emblem.png": 1,
+      "assets/photos/thumbs": 15,
+      "assets/photos/web": 15,
+      "review/contact-sheets": 5
+    }
+  },
+  "contentTypeSamples": {
+    "selected": 0,
+    "verified": 0,
+    "status": "BLOCKED"
+  },
+  "cacheControlSamples": {
+    "selected": 0,
+    "verified": 0,
+    "status": "BLOCKED"
+  },
+  "worker404Test": "BLOCKED",
+  "failedObjectCount": 0,
+  "terminalNetworkStatus": "BLOCKED",
+  "terminalNetworkDetail": "curl.exe exit 6 while resolving the workers.dev hostname",
+  "binaryMediaChanges": {
+    "additions": 0,
+    "modifications": 0,
+    "deletions": 0
+  },
+  "dynamicRuntimeFiles": 308,
+  "sourceOriginalFiles": 0,
+  "unknownFiles": 2,
+  "referenceTypeCounts": {
+    "css_url": 6,
+    "dynamic_runtime": 308,
+    "html_href": 1,
+    "html_src": 4,
+    "js_literal": 6,
+    "manifest": 1053,
+    "other": 308
+  },
+  "mediaDirectories": [
+    {
+      "path": "assets/backgrounds",
+      "files": 6
+    },
+    {
+      "path": "assets/hero",
+      "files": 1
+    },
+    {
+      "path": "assets/brand-emblem.png",
+      "files": 1
+    },
+    {
+      "path": "assets/photos/thumbs",
+      "files": 521
+    },
+    {
+      "path": "assets/photos/web",
+      "files": 521
+    },
+    {
+      "path": "review/contact-sheets",
+      "files": 11
+    }
+  ]
+}
