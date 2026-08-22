@@ -5,15 +5,6 @@
   },
   "byDirectory": [
     {
-      "bytes": 204752729,
-      "dynamicReferenceBytes": 71229805,
-      "fileCount": 1349,
-      "generatedDerivativeBytes": 132136952,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules",
-      "probableUnusedBytes": 0
-    },
-    {
       "bytes": 180932540,
       "dynamicReferenceBytes": 0,
       "fileCount": 1187,
@@ -32,48 +23,21 @@
       "probableUnusedBytes": 0
     },
     {
+      "bytes": 153572093,
+      "dynamicReferenceBytes": 51246479,
+      "fileCount": 886,
+      "generatedDerivativeBytes": 100939642,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules",
+      "probableUnusedBytes": 0
+    },
+    {
       "bytes": 109484634,
       "dynamicReferenceBytes": 0,
       "fileCount": 292,
       "generatedDerivativeBytes": 109484634,
       "highConfidenceProbableUnusedBytes": 0,
       "path": "assets/photos/large",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 80852228,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 728,
-      "generatedDerivativeBytes": 80852228,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/baoji",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 80852228,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 728,
-      "generatedDerivativeBytes": 80852228,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/baoji/assets",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 74514539,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 723,
-      "generatedDerivativeBytes": 74514539,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/baoji/assets/photos",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 68522041,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 358,
-      "generatedDerivativeBytes": 68522041,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/baoji/assets/photos/web",
       "probableUnusedBytes": 0
     },
     {
@@ -113,6 +77,33 @@
       "probableUnusedBytes": 0
     },
     {
+      "bytes": 49654918,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 573,
+      "generatedDerivativeBytes": 49654918,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/baoji",
+      "probableUnusedBytes": 0
+    },
+    {
+      "bytes": 49654918,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 573,
+      "generatedDerivativeBytes": 49654918,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/baoji/assets",
+      "probableUnusedBytes": 0
+    },
+    {
+      "bytes": 43317229,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 568,
+      "generatedDerivativeBytes": 43317229,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/baoji/assets/photos",
+      "probableUnusedBytes": 0
+    },
+    {
       "bytes": 42831958,
       "dynamicReferenceBytes": 0,
       "fileCount": 74,
@@ -140,39 +131,12 @@
       "probableUnusedBytes": 0
     },
     {
-      "bytes": 24004739,
-      "dynamicReferenceBytes": 19983326,
-      "fileCount": 320,
-      "generatedDerivativeBytes": 3941764,
+      "bytes": 37324731,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 203,
+      "generatedDerivativeBytes": 37324731,
       "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/shaanxi-archaeology-museum",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 20062716,
-      "dynamicReferenceBytes": 19983326,
-      "fileCount": 309,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/shaanxi-archaeology-museum/assets",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 19983326,
-      "dynamicReferenceBytes": 19983326,
-      "fileCount": 308,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/shaanxi-archaeology-museum/assets/photos",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 18323298,
-      "dynamicReferenceBytes": 18323298,
-      "fileCount": 154,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/shaanxi-archaeology-museum/assets/photos/web",
+      "path": "modules/baoji/assets/photos/web",
       "probableUnusedBytes": 0
     },
     {
@@ -257,6 +221,15 @@
       "probableUnusedBytes": 0
     },
     {
+      "bytes": 4021413,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 12,
+      "generatedDerivativeBytes": 3941764,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/shaanxi-archaeology-museum",
+      "probableUnusedBytes": 0
+    },
+    {
       "bytes": 3666164,
       "dynamicReferenceBytes": 0,
       "fileCount": 445,
@@ -272,15 +245,6 @@
       "generatedDerivativeBytes": 2395245,
       "highConfidenceProbableUnusedBytes": 0,
       "path": "modules/shaanxi-archaeology-museum/review",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 1660028,
-      "dynamicReferenceBytes": 1660028,
-      "fileCount": 154,
-      "generatedDerivativeBytes": 0,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/shaanxi-archaeology-museum/assets/photos/thumbs",
       "probableUnusedBytes": 0
     },
     {
@@ -354,6 +318,15 @@
       "highConfidenceProbableUnusedBytes": 0,
       "path": "modules/baoji/assets/official",
       "probableUnusedBytes": 0
+    },
+    {
+      "bytes": 79390,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 1,
+      "generatedDerivativeBytes": 0,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/shaanxi-archaeology-museum/assets",
+      "probableUnusedBytes": 0
     }
   ],
   "byModule": [
@@ -389,37 +362,6 @@
       "module": "global"
     },
     {
-      "bytes": 80852228,
-      "classifications": {
-        "confirmed_referenced": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "generated_derivative": {
-          "bytes": 80852228,
-          "fileCount": 728
-        },
-        "probable_dynamic_reference": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "probable_unused": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "source_original": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "unknown": {
-          "bytes": 0,
-          "fileCount": 0
-        }
-      },
-      "fileCount": 728,
-      "module": "baoji"
-    },
-    {
       "bytes": 49753711,
       "classifications": {
         "confirmed_referenced": {
@@ -449,6 +391,37 @@
       },
       "fileCount": 211,
       "module": "europa"
+    },
+    {
+      "bytes": 49654918,
+      "classifications": {
+        "confirmed_referenced": {
+          "bytes": 0,
+          "fileCount": 0
+        },
+        "generated_derivative": {
+          "bytes": 49654918,
+          "fileCount": 573
+        },
+        "probable_dynamic_reference": {
+          "bytes": 0,
+          "fileCount": 0
+        },
+        "probable_unused": {
+          "bytes": 0,
+          "fileCount": 0
+        },
+        "source_original": {
+          "bytes": 0,
+          "fileCount": 0
+        },
+        "unknown": {
+          "bytes": 0,
+          "fileCount": 0
+        }
+      },
+      "fileCount": 573,
+      "module": "baoji"
     },
     {
       "bytes": 42831958,
@@ -482,37 +455,6 @@
       "module": "xian-museum"
     },
     {
-      "bytes": 24004739,
-      "classifications": {
-        "confirmed_referenced": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "generated_derivative": {
-          "bytes": 3941764,
-          "fileCount": 10
-        },
-        "probable_dynamic_reference": {
-          "bytes": 19983326,
-          "fileCount": 308
-        },
-        "probable_unused": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "source_original": {
-          "bytes": 0,
-          "fileCount": 0
-        },
-        "unknown": {
-          "bytes": 79649,
-          "fileCount": 2
-        }
-      },
-      "fileCount": 320,
-      "module": "shaanxi-archaeology-museum"
-    },
-    {
       "bytes": 5817325,
       "classifications": {
         "confirmed_referenced": {
@@ -542,6 +484,37 @@
       },
       "fileCount": 7,
       "module": "shaanxi-history"
+    },
+    {
+      "bytes": 4021413,
+      "classifications": {
+        "confirmed_referenced": {
+          "bytes": 0,
+          "fileCount": 0
+        },
+        "generated_derivative": {
+          "bytes": 3941764,
+          "fileCount": 10
+        },
+        "probable_dynamic_reference": {
+          "bytes": 0,
+          "fileCount": 0
+        },
+        "probable_unused": {
+          "bytes": 0,
+          "fileCount": 0
+        },
+        "source_original": {
+          "bytes": 0,
+          "fileCount": 0
+        },
+        "unknown": {
+          "bytes": 79649,
+          "fileCount": 2
+        }
+      },
+      "fileCount": 12,
+      "module": "shaanxi-archaeology-museum"
     },
     {
       "bytes": 1492768,
@@ -582,9 +555,9 @@
       "fileCount": 0
     },
     {
-      "bytes": 71229805,
+      "bytes": 51246479,
       "classification": "probable_dynamic_reference",
-      "fileCount": 528
+      "fileCount": 220
     },
     {
       "bytes": 15705736,
@@ -592,9 +565,9 @@
       "fileCount": 10
     },
     {
-      "bytes": 303807059,
+      "bytes": 272609749,
       "classification": "generated_derivative",
-      "fileCount": 2002
+      "fileCount": 1847
     },
     {
       "bytes": 0,
@@ -621,12 +594,12 @@
       "fileCount": 0
     },
     "generated_derivative": {
-      "bytes": 303807059,
-      "fileCount": 2002
+      "bytes": 272609749,
+      "fileCount": 1847
     },
     "probable_dynamic_reference": {
-      "bytes": 71229805,
-      "fileCount": 528
+      "bytes": 51246479,
+      "fileCount": 220
     },
     "probable_unused": {
       "bytes": 0,
@@ -643,29 +616,22 @@
   },
   "confidenceTotals": {
     "high": {
-      "bytes": 248091725,
-      "fileCount": 1715
+      "bytes": 230665585,
+      "fileCount": 1562
     },
     "low": {
       "bytes": 1460738,
       "fileCount": 4
     },
     "medium": {
-      "bytes": 142650875,
-      "fileCount": 825
+      "bytes": 108896379,
+      "fileCount": 515
     }
   },
   "confirmedReferencedBytes": 0,
   "confirmedReferencedCount": 0,
   "directoryDispositions": {
     "keepInWebsiteRepository": [
-      {
-        "bytes": 204752729,
-        "dynamicRescueCount": 528,
-        "path": "modules",
-        "referencedSiblingCount": 1820,
-        "suspectedOrphanCount": 1349
-      },
       {
         "bytes": 180932540,
         "dynamicRescueCount": 0,
@@ -681,39 +647,18 @@
         "suspectedOrphanCount": 1182
       },
       {
+        "bytes": 153572093,
+        "dynamicRescueCount": 220,
+        "path": "modules",
+        "referencedSiblingCount": 1222,
+        "suspectedOrphanCount": 886
+      },
+      {
         "bytes": 109484634,
         "dynamicRescueCount": 0,
         "path": "assets/photos/large",
         "referencedSiblingCount": 153,
         "suspectedOrphanCount": 292
-      },
-      {
-        "bytes": 80852228,
-        "dynamicRescueCount": 0,
-        "path": "modules/baoji",
-        "referencedSiblingCount": 44,
-        "suspectedOrphanCount": 728
-      },
-      {
-        "bytes": 80852228,
-        "dynamicRescueCount": 0,
-        "path": "modules/baoji/assets",
-        "referencedSiblingCount": 44,
-        "suspectedOrphanCount": 728
-      },
-      {
-        "bytes": 74514539,
-        "dynamicRescueCount": 0,
-        "path": "modules/baoji/assets/photos",
-        "referencedSiblingCount": 35,
-        "suspectedOrphanCount": 723
-      },
-      {
-        "bytes": 68522041,
-        "dynamicRescueCount": 0,
-        "path": "modules/baoji/assets/photos/web",
-        "referencedSiblingCount": 7,
-        "suspectedOrphanCount": 358
       },
       {
         "bytes": 52488208,
@@ -744,6 +689,27 @@
         "suspectedOrphanCount": 211
       },
       {
+        "bytes": 49654918,
+        "dynamicRescueCount": 0,
+        "path": "modules/baoji",
+        "referencedSiblingCount": 199,
+        "suspectedOrphanCount": 573
+      },
+      {
+        "bytes": 49654918,
+        "dynamicRescueCount": 0,
+        "path": "modules/baoji/assets",
+        "referencedSiblingCount": 199,
+        "suspectedOrphanCount": 573
+      },
+      {
+        "bytes": 43317229,
+        "dynamicRescueCount": 0,
+        "path": "modules/baoji/assets/photos",
+        "referencedSiblingCount": 190,
+        "suspectedOrphanCount": 568
+      },
+      {
         "bytes": 42831958,
         "dynamicRescueCount": 0,
         "path": "modules/xian-museum",
@@ -765,32 +731,11 @@
         "suspectedOrphanCount": 74
       },
       {
-        "bytes": 24004739,
-        "dynamicRescueCount": 308,
-        "path": "modules/shaanxi-archaeology-museum",
-        "referencedSiblingCount": 753,
-        "suspectedOrphanCount": 320
-      },
-      {
-        "bytes": 20062716,
-        "dynamicRescueCount": 308,
-        "path": "modules/shaanxi-archaeology-museum/assets",
-        "referencedSiblingCount": 742,
-        "suspectedOrphanCount": 309
-      },
-      {
-        "bytes": 19983326,
-        "dynamicRescueCount": 308,
-        "path": "modules/shaanxi-archaeology-museum/assets/photos",
-        "referencedSiblingCount": 734,
-        "suspectedOrphanCount": 308
-      },
-      {
-        "bytes": 18323298,
-        "dynamicRescueCount": 154,
-        "path": "modules/shaanxi-archaeology-museum/assets/photos/web",
-        "referencedSiblingCount": 367,
-        "suspectedOrphanCount": 154
+        "bytes": 37324731,
+        "dynamicRescueCount": 0,
+        "path": "modules/baoji/assets/photos/web",
+        "referencedSiblingCount": 162,
+        "suspectedOrphanCount": 203
       },
       {
         "bytes": 15293534,
@@ -798,19 +743,37 @@
         "path": "assets/editorial",
         "referencedSiblingCount": 15,
         "suspectedOrphanCount": 5
+      },
+      {
+        "bytes": 6443303,
+        "dynamicRescueCount": 0,
+        "path": "guobo-museum",
+        "referencedSiblingCount": 20,
+        "suspectedOrphanCount": 7
+      },
+      {
+        "bytes": 6443303,
+        "dynamicRescueCount": 0,
+        "path": "guobo-museum/assets",
+        "referencedSiblingCount": 20,
+        "suspectedOrphanCount": 7
+      },
+      {
+        "bytes": 6214822,
+        "dynamicRescueCount": 0,
+        "path": "modules/baoji/assets/generated",
+        "referencedSiblingCount": 3,
+        "suspectedOrphanCount": 4
+      },
+      {
+        "bytes": 6031101,
+        "dynamicRescueCount": 0,
+        "path": "guobo-museum/assets/generated",
+        "referencedSiblingCount": 1,
+        "suspectedOrphanCount": 2
       }
     ],
     "manualConfirmation": [
-      {
-        "bytes": 204752729,
-        "dynamicRescueCount": 528,
-        "generatedDerivativeBytes": 132136952,
-        "path": "modules",
-        "probableUnusedBytes": 0,
-        "referencedSiblingCount": 1820,
-        "suspectedOrphanCount": 1349,
-        "unknownBytes": 1385972
-      },
       {
         "bytes": 180932540,
         "dynamicRescueCount": 0,
@@ -832,6 +795,16 @@
         "unknownBytes": 0
       },
       {
+        "bytes": 153572093,
+        "dynamicRescueCount": 220,
+        "generatedDerivativeBytes": 100939642,
+        "path": "modules",
+        "probableUnusedBytes": 0,
+        "referencedSiblingCount": 1222,
+        "suspectedOrphanCount": 886,
+        "unknownBytes": 1385972
+      },
+      {
         "bytes": 109484634,
         "dynamicRescueCount": 0,
         "generatedDerivativeBytes": 109484634,
@@ -842,46 +815,6 @@
         "unknownBytes": 0
       },
       {
-        "bytes": 80852228,
-        "dynamicRescueCount": 0,
-        "generatedDerivativeBytes": 80852228,
-        "path": "modules/baoji",
-        "probableUnusedBytes": 0,
-        "referencedSiblingCount": 44,
-        "suspectedOrphanCount": 728,
-        "unknownBytes": 0
-      },
-      {
-        "bytes": 80852228,
-        "dynamicRescueCount": 0,
-        "generatedDerivativeBytes": 80852228,
-        "path": "modules/baoji/assets",
-        "probableUnusedBytes": 0,
-        "referencedSiblingCount": 44,
-        "suspectedOrphanCount": 728,
-        "unknownBytes": 0
-      },
-      {
-        "bytes": 74514539,
-        "dynamicRescueCount": 0,
-        "generatedDerivativeBytes": 74514539,
-        "path": "modules/baoji/assets/photos",
-        "probableUnusedBytes": 0,
-        "referencedSiblingCount": 35,
-        "suspectedOrphanCount": 723,
-        "unknownBytes": 0
-      },
-      {
-        "bytes": 68522041,
-        "dynamicRescueCount": 0,
-        "generatedDerivativeBytes": 68522041,
-        "path": "modules/baoji/assets/photos/web",
-        "probableUnusedBytes": 0,
-        "referencedSiblingCount": 7,
-        "suspectedOrphanCount": 358,
-        "unknownBytes": 0
-      },
-      {
         "bytes": 52488208,
         "dynamicRescueCount": 0,
         "generatedDerivativeBytes": 52488208,
@@ -889,6 +822,36 @@
         "probableUnusedBytes": 0,
         "referencedSiblingCount": 446,
         "suspectedOrphanCount": 445,
+        "unknownBytes": 0
+      },
+      {
+        "bytes": 49654918,
+        "dynamicRescueCount": 0,
+        "generatedDerivativeBytes": 49654918,
+        "path": "modules/baoji",
+        "probableUnusedBytes": 0,
+        "referencedSiblingCount": 199,
+        "suspectedOrphanCount": 573,
+        "unknownBytes": 0
+      },
+      {
+        "bytes": 49654918,
+        "dynamicRescueCount": 0,
+        "generatedDerivativeBytes": 49654918,
+        "path": "modules/baoji/assets",
+        "probableUnusedBytes": 0,
+        "referencedSiblingCount": 199,
+        "suspectedOrphanCount": 573,
+        "unknownBytes": 0
+      },
+      {
+        "bytes": 43317229,
+        "dynamicRescueCount": 0,
+        "generatedDerivativeBytes": 43317229,
+        "path": "modules/baoji/assets/photos",
+        "probableUnusedBytes": 0,
+        "referencedSiblingCount": 190,
+        "suspectedOrphanCount": 568,
         "unknownBytes": 0
       },
       {
@@ -922,24 +885,14 @@
         "unknownBytes": 0
       },
       {
-        "bytes": 24004739,
-        "dynamicRescueCount": 308,
-        "generatedDerivativeBytes": 3941764,
-        "path": "modules/shaanxi-archaeology-museum",
+        "bytes": 37324731,
+        "dynamicRescueCount": 0,
+        "generatedDerivativeBytes": 37324731,
+        "path": "modules/baoji/assets/photos/web",
         "probableUnusedBytes": 0,
-        "referencedSiblingCount": 753,
-        "suspectedOrphanCount": 320,
-        "unknownBytes": 79649
-      },
-      {
-        "bytes": 20062716,
-        "dynamicRescueCount": 308,
-        "generatedDerivativeBytes": 0,
-        "path": "modules/shaanxi-archaeology-museum/assets",
-        "probableUnusedBytes": 0,
-        "referencedSiblingCount": 742,
-        "suspectedOrphanCount": 309,
-        "unknownBytes": 79390
+        "referencedSiblingCount": 162,
+        "suspectedOrphanCount": 203,
+        "unknownBytes": 0
       },
       {
         "bytes": 6443303,
@@ -1000,6 +953,26 @@
         "referencedSiblingCount": 0,
         "suspectedOrphanCount": 7,
         "unknownBytes": 1306323
+      },
+      {
+        "bytes": 5817325,
+        "dynamicRescueCount": 0,
+        "generatedDerivativeBytes": 4511002,
+        "path": "modules/shaanxi-history/assets",
+        "probableUnusedBytes": 0,
+        "referencedSiblingCount": 0,
+        "suspectedOrphanCount": 7,
+        "unknownBytes": 1306323
+      },
+      {
+        "bytes": 4511002,
+        "dynamicRescueCount": 0,
+        "generatedDerivativeBytes": 4511002,
+        "path": "modules/shaanxi-history/assets/photos",
+        "probableUnusedBytes": 0,
+        "referencedSiblingCount": 0,
+        "suspectedOrphanCount": 6,
+        "unknownBytes": 0
       }
     ],
     "originalsOutOfRepositoryCandidate": [
@@ -1046,13 +1019,6 @@
     ],
     "webDisplayOnlyCandidate": [
       {
-        "bytes": 68522041,
-        "dynamicRescueCount": 0,
-        "path": "modules/baoji/assets/photos/web",
-        "referencedSiblingCount": 7,
-        "suspectedOrphanCount": 358
-      },
-      {
         "bytes": 52488208,
         "dynamicRescueCount": 0,
         "path": "assets/photos/web",
@@ -1060,11 +1026,11 @@
         "suspectedOrphanCount": 445
       },
       {
-        "bytes": 18323298,
-        "dynamicRescueCount": 154,
-        "path": "modules/shaanxi-archaeology-museum/assets/photos/web",
-        "referencedSiblingCount": 367,
-        "suspectedOrphanCount": 154
+        "bytes": 37324731,
+        "dynamicRescueCount": 0,
+        "path": "modules/baoji/assets/photos/web",
+        "referencedSiblingCount": 162,
+        "suspectedOrphanCount": 203
       },
       {
         "bytes": 3666164,
@@ -1072,24 +1038,17 @@
         "path": "assets/photos/thumb",
         "referencedSiblingCount": 446,
         "suspectedOrphanCount": 445
-      },
-      {
-        "bytes": 1660028,
-        "dynamicRescueCount": 154,
-        "path": "modules/shaanxi-archaeology-museum/assets/photos/thumbs",
-        "referencedSiblingCount": 367,
-        "suspectedOrphanCount": 154
       }
     ]
   },
-  "dynamicReferenceRescueBytes": 71229805,
-  "dynamicReferenceRescueCount": 528,
-  "generatedDerivativeBytes": 303807059,
-  "generatedDerivativeCount": 2002,
+  "dynamicReferenceRescueBytes": 51246479,
+  "dynamicReferenceRescueCount": 220,
+  "generatedDerivativeBytes": 272609749,
+  "generatedDerivativeCount": 1847,
   "highConfidenceProbableUnusedBytes": 0,
   "highConfidenceProbableUnusedCount": 0,
-  "inputSuspectedOrphanBytes": 392203338,
-  "inputSuspectedOrphanCount": 2544,
+  "inputSuspectedOrphanBytes": 341022702,
+  "inputSuspectedOrphanCount": 2081,
   "priorityDirectories": [
     {
       "bytes": 109484634,
@@ -1098,16 +1057,6 @@
       "generatedDerivativeBytes": 109484634,
       "highConfidenceProbableUnusedBytes": 0,
       "path": "assets/photos/large",
-      "priorityBasis": "generated_derivative_pipeline_review",
-      "probableUnusedBytes": 0
-    },
-    {
-      "bytes": 68522041,
-      "dynamicReferenceBytes": 0,
-      "fileCount": 358,
-      "generatedDerivativeBytes": 68522041,
-      "highConfidenceProbableUnusedBytes": 0,
-      "path": "modules/baoji/assets/photos/web",
       "priorityBasis": "generated_derivative_pipeline_review",
       "probableUnusedBytes": 0
     },
@@ -1128,6 +1077,16 @@
       "generatedDerivativeBytes": 42831958,
       "highConfidenceProbableUnusedBytes": 0,
       "path": "modules/xian-museum/assets/photos",
+      "priorityBasis": "generated_derivative_pipeline_review",
+      "probableUnusedBytes": 0
+    },
+    {
+      "bytes": 37324731,
+      "dynamicReferenceBytes": 0,
+      "fileCount": 203,
+      "generatedDerivativeBytes": 37324731,
+      "highConfidenceProbableUnusedBytes": 0,
+      "path": "modules/baoji/assets/photos/web",
       "priorityBasis": "generated_derivative_pipeline_review",
       "probableUnusedBytes": 0
     },
@@ -1275,7 +1234,7 @@
       "path": "modules/xian-museum/assets"
     },
     {
-      "bytes": 20062716,
+      "bytes": 79390,
       "classifications": {
         "confirmed_referenced": {
           "bytes": 0,
@@ -1286,8 +1245,8 @@
           "fileCount": 0
         },
         "probable_dynamic_reference": {
-          "bytes": 19983326,
-          "fileCount": 308
+          "bytes": 0,
+          "fileCount": 0
         },
         "probable_unused": {
           "bytes": 0,
@@ -1302,7 +1261,7 @@
           "fileCount": 1
         }
       },
-      "fileCount": 309,
+      "fileCount": 1,
       "highConfidenceProbableUnusedBytes": 0,
       "path": "modules/shaanxi-archaeology-museum/assets"
     },
@@ -1339,15 +1298,15 @@
       "path": "modules/europa/assets"
     },
     {
-      "bytes": 80852228,
+      "bytes": 49654918,
       "classifications": {
         "confirmed_referenced": {
           "bytes": 0,
           "fileCount": 0
         },
         "generated_derivative": {
-          "bytes": 80852228,
-          "fileCount": 728
+          "bytes": 49654918,
+          "fileCount": 573
         },
         "probable_dynamic_reference": {
           "bytes": 0,
@@ -1366,10 +1325,10 @@
           "fileCount": 0
         }
       },
-      "fileCount": 728,
+      "fileCount": 573,
       "highConfidenceProbableUnusedBytes": 0,
       "path": "modules/baoji/assets"
     }
   ],
-  "variantFamilyCount": 976
+  "variantFamilyCount": 822
 }
