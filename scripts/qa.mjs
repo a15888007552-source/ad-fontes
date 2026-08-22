@@ -415,6 +415,11 @@ function externalizedRuntimeQa() {
     const wrapper = moduleId === "qinhan" ? "qinhanMediaUrl" : moduleId === "shaanxi-history" ? "shaanxiHistoryMediaUrl" : "shaanxiArchaeologyMediaUrl";
     assert(files.some((target) => fs.readFileSync(target, "utf8").includes(wrapper)), `${moduleId} resolver wrapper is missing`);
   }
+  const trails = readRepo("assets/editorial/provenance-trails.js");
+  for (const moduleId of EXTERNALIZED_MODULES) {
+    const wrapper = moduleId === "qinhan" ? "qinhanMediaUrl" : moduleId === "shaanxi-history" ? "shaanxiHistoryMediaUrl" : "shaanxiArchaeologyMediaUrl";
+    assert(new RegExp(`page === '${moduleId}'[^)]*window\\.${wrapper}`).test(trails), `provenance trail media routing missing for ${moduleId}`);
+  }
   const atlas = readRepo("modules/museum-atlas/index.html");
   assert(/externalizedModules\s*=\s*new Set\(\[\s*["']qinhan["'][\s\S]*["']shaanxi-history["'][\s\S]*["']shaanxi-archaeology-museum["']/.test(atlas), "Atlas externalized resolver set is incomplete");
   assert(!/ad-fontes-media\.gusgumee777\.workers\.dev/i.test(atlas), "Atlas still contains the retired workers.dev host");
