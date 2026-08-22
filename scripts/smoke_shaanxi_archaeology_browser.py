@@ -19,8 +19,9 @@ from urllib.parse import urlsplit
 
 MODULE = "shaanxi-archaeology-museum"
 PAGE_URL = "http://127.0.0.1:8765/modules/shaanxi-archaeology-museum/"
-WORKER_HOST = "ad-fontes-media.gusgumee777.workers.dev"
-WORKER_PREFIX = f"https://{WORKER_HOST}/modules/{MODULE}/"
+MEDIA_HOST = "pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+MEDIA_PREFIX = f"https://{MEDIA_HOST}/modules/{MODULE}/"
+RETIRED_WORKER_HOST = "ad-fontes-media.gusgumee777.workers.dev"
 LOCAL_PREFIX = f"http://127.0.0.1:8765/modules/{MODULE}/"
 PROVENANCE_EXPECTED = 6
 MEDIA_SUFFIXES = {
@@ -47,15 +48,15 @@ MEDIA_SUFFIXES = {
 
 class MediaTracker:
     def __init__(self) -> None:
-        self.worker_requests = 0
-        self.worker_responses_2xx = 0
-        self.worker_failures: set[str] = set()
+        self.external_requests = 0
+        self.external_responses_2xx = 0
+        self.external_failures: set[str] = set()
         self.local_module_requests = 0
         self.local_review_requests = 0
-        self.old_r2_requests = 0
+        self.retired_worker_requests = 0
         self.media_request_failures: set[str] = set()
         self.failed_urls: set[str] = set()
-        self.css_worker_requests = 0
+        self.css_external_requests = 0
 
     @staticmethod
     def classify(url: str) -> str | None:
@@ -63,8 +64,8 @@ class MediaTracker:
         path = parsed.path.lower()
         if Path(path).suffix not in MEDIA_SUFFIXES:
             return None
-        if parsed.hostname == WORKER_HOST and parsed.path.startswith(f"/modules/{MODULE}/"):
-            return "worker"
+        if parsed.hostname == MEDIA_HOST and parsed.path.startswith(f"/modules/{MODULE}/"):
+            return "external"
         if parsed.hostname in {"127.0.0.1", "localhost"} and parsed.path.startswith(
             f"/modules/{MODULE}/"
         ):
@@ -72,31 +73,31 @@ class MediaTracker:
                 return "local_review"
             if f"/modules/{MODULE}/assets/" in parsed.path:
                 return "local_module"
-        if parsed.hostname and parsed.hostname.endswith("r2.dev"):
-            return "old_r2"
+        if parsed.hostname == RETIRED_WORKER_HOST:
+            return "retired_worker"
         return None
 
     def on_request(self, request) -> None:
         kind = self.classify(request.url)
-        if kind == "worker":
-            self.worker_requests += 1
+        if kind == "external":
+            self.external_requests += 1
             if "/assets/backgrounds/" in urlsplit(request.url).path:
-                self.css_worker_requests += 1
+                self.css_external_requests += 1
         elif kind == "local_module":
             self.local_module_requests += 1
         elif kind == "local_review":
             self.local_review_requests += 1
-        elif kind == "old_r2":
-            self.old_r2_requests += 1
+        elif kind == "retired_worker":
+            self.retired_worker_requests += 1
 
     def on_response(self, response) -> None:
         kind = self.classify(response.url)
-        if kind != "worker":
+        if kind != "external":
             return
         if 200 <= response.status < 300:
-            self.worker_responses_2xx += 1
+            self.external_responses_2xx += 1
         else:
-            self.worker_failures.add(response.url)
+            self.external_failures.add(response.url)
             self.media_request_failures.add(response.url)
             self.failed_urls.add(f"{response.status} {response.url}")
 
@@ -106,8 +107,8 @@ class MediaTracker:
             return
         self.media_request_failures.add(request.url)
         self.failed_urls.add(f"failed {request.url} ({request.failure})")
-        if kind == "worker":
-            self.worker_failures.add(request.url)
+        if kind == "external":
+            self.external_failures.add(request.url)
 
 
 def image_loaded(locator, timeout_ms: int = 30000) -> bool:
@@ -122,9 +123,9 @@ def image_loaded(locator, timeout_ms: int = 30000) -> bool:
     return False
 
 
-def worker_src(locator) -> bool:
+def external_src(locator) -> bool:
     src = locator.get_attribute("src") or ""
-    return src.startswith(WORKER_PREFIX)
+    return src.startswith(MEDIA_PREFIX)
 
 
 def count_from_label(text: str) -> int | None:
@@ -252,11 +253,11 @@ def main() -> int:
             locator = page_obj.locator(selector).first
             locator.scroll_into_view_if_needed(timeout=30000)
             loaded = image_loaded(locator)
-            routed = worker_src(locator)
+            routed = external_src(locator)
             if not loaded:
                 fail(f"{label}: naturalWidth is zero")
             if not routed:
-                fail(f"{label}: src is not Worker URL ({locator.get_attribute('src')})")
+                fail(f"{label}: src is not production media URL ({locator.get_attribute('src')})")
             return loaded and routed
         except Exception as error:
             fail(f"{label}: {error}")
@@ -466,8 +467,8 @@ def main() -> int:
                         main_image = dialogs.locator(".artifact-dialog-main-image")
                         if not image_loaded(main_image):
                             fail(f"dialog {index + 1}: main image naturalWidth is zero")
-                        if not worker_src(main_image):
-                            fail(f"dialog {index + 1}: main image is not Worker URL")
+                        if not external_src(main_image):
+                            fail(f"dialog {index + 1}: main image is not production media URL")
 
                         thumbnails = dialogs.locator("[data-photo-index]")
                         thumbnail_count = thumbnails.count()
@@ -483,7 +484,7 @@ def main() -> int:
                                 button.scroll_into_view_if_needed(timeout=30000)
                                 button.click()
                                 page.wait_for_timeout(250)
-                                if image_loaded(main_image) and worker_src(main_image):
+                                if image_loaded(main_image) and external_src(main_image):
                                     report["thumbnailSwitches"] += 1
                                 else:
                                     fail(f"dialog {index + 1}: thumbnail switch {target} failed")
@@ -521,20 +522,20 @@ def main() -> int:
                     provenance.scroll_into_view_if_needed(timeout=30000)
                     page.wait_for_timeout(700)
                     images = provenance.locator("img")
-                    report["provenanceWorkerResolved"] = 0
+                    report["provenanceExternalResolved"] = 0
                     report["provenanceLoaded"] = 0
                     for index in range(images.count()):
                         image = images.nth(index)
                         image.scroll_into_view_if_needed(timeout=30000)
                         src = image.get_attribute("src") or ""
-                        if src.startswith(WORKER_PREFIX):
-                            report["provenanceWorkerResolved"] += 1
+                        if src.startswith(MEDIA_PREFIX):
+                            report["provenanceExternalResolved"] += 1
                         if image_loaded(image):
                             report["provenanceLoaded"] += 1
                     if images.count() != PROVENANCE_EXPECTED:
                         fail(f"provenance expected {PROVENANCE_EXPECTED}, found {images.count()}")
-                    if report["provenanceWorkerResolved"] != PROVENANCE_EXPECTED:
-                        fail("provenance images are not all Worker URLs")
+                    if report["provenanceExternalResolved"] != PROVENANCE_EXPECTED:
+                        fail("provenance images are not all production media URLs")
                     if report["provenanceLoaded"] != PROVENANCE_EXPECTED:
                         fail("provenance images are not all loaded")
                 except Exception as error:
@@ -553,29 +554,30 @@ def main() -> int:
             if page_errors:
                 fail(f"page errors: {page_errors[:3]}")
 
-            report["workerMediaRequests"] = tracker.worker_requests
-            report["workerMediaResponses2xx"] = tracker.worker_responses_2xx
-            report["workerMediaFailures"] = len(tracker.worker_failures)
-            report["cssWorkerMediaRequests"] = tracker.css_worker_requests
+            report["externalHost"] = MEDIA_HOST
+            report["externalMediaRequests"] = tracker.external_requests
+            report["externalMediaResponses2xx"] = tracker.external_responses_2xx
+            report["externalMediaFailures"] = len(tracker.external_failures)
+            report["cssExternalMediaRequests"] = tracker.css_external_requests
             report["localModuleMediaRequests"] = tracker.local_module_requests
             report["localReviewMediaRequests"] = tracker.local_review_requests
-            report["oldR2DevRequests"] = tracker.old_r2_requests
+            report["retiredWorkerRequests"] = tracker.retired_worker_requests
             report["mediaRequestFailures"] = len(tracker.media_request_failures)
             report["failedUrls"] = sorted(tracker.failed_urls)[:100]
-            if tracker.worker_requests == 0:
-                fail("no Worker media requests observed")
-            if tracker.css_worker_requests == 0:
-                fail("no Worker CSS background media request observed")
-            if tracker.worker_responses_2xx < tracker.worker_requests:
+            if tracker.external_requests == 0:
+                fail(f"no external media requests observed on {MEDIA_HOST}")
+            if tracker.css_external_requests == 0:
+                fail("no external CSS background media request observed")
+            if tracker.external_responses_2xx < tracker.external_requests:
                 fail(
-                    f"Worker responses incomplete: {tracker.worker_responses_2xx}/{tracker.worker_requests}"
+                    f"external media responses incomplete: {tracker.external_responses_2xx}/{tracker.external_requests}"
                 )
-            if tracker.worker_failures:
-                fail(f"Worker media failures: {len(tracker.worker_failures)}")
+            if tracker.external_failures:
+                fail(f"external media failures: {len(tracker.external_failures)}")
             if tracker.local_module_requests or tracker.local_review_requests:
                 fail("local module media request observed")
-            if tracker.old_r2_requests:
-                fail("old r2.dev media request observed")
+            if tracker.retired_worker_requests:
+                fail("retired workers.dev media request observed")
             if tracker.media_request_failures:
                 fail(f"media request failures: {len(tracker.media_request_failures)}")
 
@@ -607,10 +609,10 @@ def main() -> int:
     )
     print(f"SEARCH_RENDERED_CARDS={report['searchRenderedCards']}")
     print(f"SEARCH_TITLES_FIRST5={report['searchVisibleTitlesFirst5']}")
-    print(f"WORKER_MEDIA={report['workerMediaRequests']}/{report['workerMediaResponses2xx']}")
-    print(f"WORKER_FAILURES={report['workerMediaFailures']}")
+    print(f"EXTERNAL_MEDIA={report['externalMediaRequests']}/{report['externalMediaResponses2xx']}")
+    print(f"EXTERNAL_FAILURES={report['externalMediaFailures']}")
     print(f"LOCAL_MODULE_MEDIA={report['localModuleMediaRequests']}")
-    print(f"PROVENANCE={report['provenanceWorkerResolved']}/{report['provenanceLoaded']}")
+    print(f"PROVENANCE={report['provenanceExternalResolved']}/{report['provenanceLoaded']}")
     print(f"DIALOGS={report['dialogsChecked']}")
     print(f"THUMBNAIL_SWITCHES={report['thumbnailSwitches']}")
     print(f"CONSOLE_PAGE_ERRORS={report['consoleErrors']}/{report['pageErrors']}")

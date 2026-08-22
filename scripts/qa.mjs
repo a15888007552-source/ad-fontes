@@ -6,7 +6,8 @@ const ROOT = path.resolve(process.cwd());
 const PUBLIC_ORIGIN = "https://a15888007552-source.github.io";
 const PUBLIC_ROOT = "/ad-fontes/";
 const PUBLIC_BASE = `${PUBLIC_ORIGIN}${PUBLIC_ROOT}`;
-const WORKER_ORIGIN = "https://ad-fontes-media.gusgumee777.workers.dev";
+const MEDIA_ORIGIN = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev";
+const RETIRED_WORKER_ORIGIN = "https://ad-fontes-media.gusgumee777.workers.dev";
 const EXTERNALIZED_MODULES = new Set(["qinhan", "shaanxi-history", "shaanxi-archaeology-museum"]);
 const MEDIA_SUFFIXES = new Set([
   ".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".avif", ".heic", ".tif", ".tiff",
@@ -184,10 +185,10 @@ function isSafeLocalPath(value, allowEmpty = false) {
 function assertTrustedImageUrl(value, page, label) {
   const url = new URL(value, PUBLIC_BASE);
   assert(url.protocol === "https:", `${page.path} ${label} must use HTTPS`);
-  assert(!url.href.includes("r2.dev"), `${page.path} ${label} still uses old r2.dev host`);
-  if (url.origin === WORKER_ORIGIN) {
-    assert(EXTERNALIZED_MODULES.has(moduleIdFor(url.pathname.slice("/".length))), `${page.path} ${label} uses Worker for an unknown module`);
-    assert(url.pathname.startsWith("/modules/"), `${page.path} ${label} Worker path is not repo-relative`);
+  assert(url.origin !== RETIRED_WORKER_ORIGIN, `${page.path} ${label} still uses the retired workers.dev host`);
+  if (url.origin === MEDIA_ORIGIN) {
+    assert(EXTERNALIZED_MODULES.has(moduleIdFor(url.pathname.slice("/".length))), `${page.path} ${label} uses the media host for an unknown module`);
+    assert(url.pathname.startsWith("/modules/"), `${page.path} ${label} media path is not repo-relative`);
     return;
   }
   assert(url.origin === PUBLIC_ORIGIN && url.pathname.startsWith(PUBLIC_ROOT), `${page.path} ${label} must use the public site or trusted Worker`);
@@ -284,7 +285,7 @@ function atlasQa() {
   assert(registryContext, "registry QA did not run");
   const html = readRepo("modules/museum-atlas/index.html");
   assert(/museum-registry\.json/.test(html), "Atlas registry loader is missing");
-  assert(/window\.resolveAtlasMediaUrl/.test(html) && /ad-fontes-media\.gusgumee777\.workers\.dev/.test(html), "Atlas media resolver/Worker base is missing");
+  assert(/window\.resolveAtlasMediaUrl/.test(html) && /pub-2f296678a1134f0fa45cf651ddd6f956\.r2\.dev/.test(html), "Atlas media resolver/R2 production base is missing");
   for (const moduleId of EXTERNALIZED_MODULES) assert(new RegExp(`['"]${moduleId}['"]`).test(html), `Atlas externalized module missing: ${moduleId}`);
   const bodyStart = html.indexOf("<body");
   const searchScript = html.indexOf('<script id="atlas-search-script"');
@@ -402,21 +403,22 @@ function externalizedRuntimeQa() {
     for (const target of files) {
       if (!/\.(?:html|css|js)$/i.test(target)) continue;
       const source = fs.readFileSync(target, "utf8");
-      assert(!/r2\.dev/i.test(source), `${moduleId} contains old r2.dev URL: ${path.relative(ROOT, target)}`);
+      assert(!/ad-fontes-media\.gusgumee777\.workers\.dev/i.test(source), `${moduleId} still references the retired workers.dev host: ${path.relative(ROOT, target)}`);
     }
     const indexPath = `modules/${moduleId}/index.html`;
     const html = readRepo(indexPath);
     for (const tag of scanStartTags(html)) {
       const reference = tag.name === "img" ? tag.attrs.get("src") : tag.name === "link" ? tag.attrs.get("href") : null;
       if (!reference || !isMediaPath(reference)) continue;
-      assert(reference.startsWith(WORKER_ORIGIN), `${indexPath} still directly requests local media: ${reference}`);
+      assert(reference.startsWith(MEDIA_ORIGIN), `${indexPath} still directly requests local media: ${reference}`);
     }
     const wrapper = moduleId === "qinhan" ? "qinhanMediaUrl" : moduleId === "shaanxi-history" ? "shaanxiHistoryMediaUrl" : "shaanxiArchaeologyMediaUrl";
     assert(files.some((target) => fs.readFileSync(target, "utf8").includes(wrapper)), `${moduleId} resolver wrapper is missing`);
   }
   const atlas = readRepo("modules/museum-atlas/index.html");
   assert(/externalizedModules\s*=\s*new Set\(\[\s*["']qinhan["'][\s\S]*["']shaanxi-history["'][\s\S]*["']shaanxi-archaeology-museum["']/.test(atlas), "Atlas externalized resolver set is incomplete");
-  assert(!/pub-[a-z0-9-]+\.r2\.dev/i.test(atlas), "Atlas still contains the old r2.dev host");
+  assert(!/ad-fontes-media\.gusgumee777\.workers\.dev/i.test(atlas), "Atlas still contains the retired workers.dev host");
+  assert(/pub-2f296678a1134f0fa45cf651ddd6f956\.r2\.dev/i.test(atlas), "Atlas R2 production media base is missing");
 }
 
 function runtimeSafetyQa() {
@@ -434,7 +436,7 @@ function runtimeSafetyQa() {
   roots.forEach(visit);
   for (const target of files) {
     const source = fs.readFileSync(target, "utf8");
-    assert(!/r2\.dev/i.test(source), `old r2.dev URL in ${path.relative(ROOT, target)}`);
+    assert(!/ad-fontes-media\.gusgumee777\.workers\.dev/i.test(source), `retired workers.dev URL in ${path.relative(ROOT, target)}`);
   }
 }
 
