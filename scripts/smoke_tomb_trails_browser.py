@@ -4,9 +4,11 @@
 Covers: six museum host pages (iframe wiring, renderable slide contract,
 repository-owned images fully loaded, no legacy provenance component, no
 HTTP 404s), the standalone tomb-trails page (tabs, slides, controls,
-keyboard), desktop blank-space regression (iframe width ratio + overflow),
-mobile checks, and validated visual-review screenshots whose viewport
-geometry is proven to frame the tomb-trails section before capture.
+keyboard), desktop blank-space regression, mobile checks, and validated
+visual-review screenshots. Every accepted screenshot must pass four hard
+checks: section visible, iframe loaded, first slide present, and an
+elementFromPoint occlusion proof at the iframe's visible center — taken
+after dismissing each host page's opening overlay the way a user would.
 """
 
 from __future__ import annotations
@@ -14,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
@@ -27,10 +30,38 @@ HOSTS = [
     ("baoji", "modules/baoji/", "baoji", 8),
     ("beilin", "modules/beilin/", "beilin", 4),
 ]
+OPENING_SKIP_SELECTORS = ("#opening-skip", ".opening-skip", ".museum-opening-lite__skip")
+OPENING_CONTAINER_SELECTORS = ("#opening", "#opening-screen", ".museum-opening-lite")
 
 
 def fail(failures: list[str], message: str) -> None:
     failures.append(message)
+
+
+def dismiss_opening(page) -> list[str]:
+    """Perform the normal user 'skip intro' action when an opening UI exists."""
+    dismissed: list[str] = []
+    for selector in OPENING_SKIP_SELECTORS:
+        try:
+            button = page.locator(selector)
+            deadline = time.monotonic() + 8
+            clicked = False
+            while time.monotonic() < deadline:
+                if button.count() and button.first.is_visible():
+                    button.first.click(force=True, timeout=2000)
+                    clicked = True
+                    break
+                page.wait_for_timeout(300)
+            if clicked:
+                dismissed.append(selector)
+        except Exception:
+            continue
+    for selector in OPENING_CONTAINER_SELECTORS:
+        try:
+            page.locator(selector).first.wait_for(state="hidden", timeout=6000)
+        except Exception:
+            continue
+    return dismissed
 
 
 def slide_metrics(frame) -> dict:
@@ -56,13 +87,13 @@ def slide_metrics(frame) -> dict:
 
 
 def scroll_to_section(page, iframe_locator) -> None:
-    """Bring the tomb-trails section into the viewport.
+    """Bring the tomb-trails section toward the viewport.
 
     Host pages differ: some scroll the window, several use an inner scroll
     container (window.scrollTo is a no-op there), so Playwright's
-    scroll_into_view_if_needed drives the real container first; an explicit
-    window scroll is kept as a fallback. Geometry is asserted by the caller
-    before any screenshot is accepted.
+    scroll_into_view_if_needed drives the real container and an explicit
+    window scroll is kept as a fallback. Geometry + occlusion are asserted
+    by the caller before any screenshot is accepted.
     """
     try:
         iframe_locator.scroll_into_view_if_needed(timeout=15000)
@@ -76,6 +107,37 @@ def scroll_to_section(page, iframe_locator) -> None:
             if (document.documentElement.scrollHeight > window.innerHeight) {
                 window.scrollTo({top: Math.max(0, top - 40), behavior: 'instant'});
             }
+        }"""
+    )
+
+
+def reframe(page, iframe_locator) -> None:
+    """Re-frame right before capture: host pages may reset their inner
+    scroll container after programmatic scrolls."""
+    try:
+        iframe_locator.scroll_into_view_if_needed(timeout=10000)
+    except Exception:
+        pass
+    page.wait_for_timeout(900)
+
+
+def occlusion_free(page) -> dict:
+    """elementFromPoint proof: the iframe's visible center must hit the
+    iframe itself, not an opening overlay / dialog / hero / fixed layer."""
+    return page.evaluate(
+        """() => {
+            const frame = document.querySelector('.museum-tomb-trails iframe');
+            if (!frame) return {ok: false, reason: 'no-iframe'};
+            const r = frame.getBoundingClientRect();
+            const vh = window.innerHeight, vw = window.innerWidth;
+            const top = Math.max(r.top, 0), bottom = Math.min(r.bottom, vh);
+            const left = Math.max(r.left, 0), right = Math.min(r.right, vw);
+            if (bottom <= top || right <= left) return {ok: false, reason: 'iframe-not-in-viewport'};
+            const cx = Math.round((left + right) / 2), cy = Math.round((top + bottom) / 2);
+            const el = document.elementFromPoint(cx, cy);
+            const hit = el === frame;
+            const label = el ? (el.id || String(el.className).slice(0, 60) || el.tagName) : 'nothing';
+            return {ok: hit, reason: hit ? 'ok' : `occluded-by:${label}`, point: [cx, cy]};
         }"""
     )
 
@@ -113,6 +175,17 @@ def first_slide_in_viewport(frame) -> bool:
     )
 
 
+def pending_slide_in_viewport(frame) -> bool:
+    return frame.evaluate(
+        """() => {
+            const pending = document.querySelector('#slides .site-image.image-pending');
+            if (!pending) return false;
+            const r = pending.getBoundingClientRect();
+            return r.top < window.innerHeight && r.bottom > 0 && r.width > 0;
+        }"""
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--base-url", default=BASE)
@@ -122,14 +195,16 @@ def main() -> int:
     base = args.base_url.rstrip("/") + "/"
     args.review_dir.mkdir(parents=True, exist_ok=True)
 
-    report: dict = {"status": "FAIL", "hosts": {}, "standalone": {}, "mobile": {}}
+    report: dict = {"status": "FAIL", "hosts": {}, "standalone": {}, "mobile": {}, "openingOverlaysDismissed": []}
     failures: list[str] = []
     console_errors: list[str] = []
     page_errors: list[str] = []
     http_404s: list[str] = []
     external_fallbacks_total = 0
     visual_valid = 0
+    occlusion_free_count = 0
     visual_expected = 12
+    fallback_valid: str = "N/A"
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch()
@@ -149,6 +224,12 @@ def main() -> int:
                 report["hosts"][name] = entry
                 continue
 
+            dismissed = dismiss_opening(page)
+            if dismissed:
+                report["openingOverlaysDismissed"] = sorted(
+                    set(report["openingOverlaysDismissed"]) | {f"{name}:{d}" for d in dismissed}
+                )
+
             iframes = page.locator("iframe[src*='tomb-trails/index.html']")
             entry["tombTrailsIframes"] = iframes.count()
             if entry["tombTrailsIframes"] != 1:
@@ -165,8 +246,6 @@ def main() -> int:
             if entry["oldProvenanceScript"] or entry["oldProvenanceVisible"]:
                 fail(failures, f"{name}: legacy provenance component still present")
 
-            # explicit scroll to the tomb-trails section (scroll_into_view_if_needed
-            # under-scrolls on several host pages and produced invalid screenshots)
             scroll_to_section(page, iframes.first)
             page.wait_for_timeout(1800)
             frame = iframes.first.element_handle().content_frame()
@@ -211,16 +290,6 @@ def main() -> int:
                 fail(failures, f"{name}: repository images {metrics['localLoaded']}/{metrics['localTotal']}")
             if metrics["broken"]:
                 fail(failures, f"{name}: {metrics['broken']} broken img elements remain")
-            if metrics["fallbacks"] and name == "qinhan":
-                frame.evaluate(
-                    """() => { const el = document.querySelector('#slides');
-                        const pend = document.querySelector('#slides .site-image.image-pending');
-                        const slide = pend ? pend.closest('.slide') : null;
-                        if (slide) el.scrollTo({left: slide.offsetLeft}); }"""
-                )
-                page.wait_for_timeout(900)
-                page.screenshot(path=str(args.review_dir / "qinhan-fallback-desktop.png"))
-                report["qinhanFallbackScreenshot"] = "qinhan-fallback-desktop.png"
 
             legacy = frame.locator(".pt-grid, .pt-card--lead").count()
             entry["legacyGridStructures"] = legacy
@@ -255,21 +324,45 @@ def main() -> int:
                 if frame_overflow > 2:
                     fail(failures, f"{name}: iframe inner horizontal overflow {frame_overflow}px")
 
-            # re-frame right before capture: several host pages reset their
-            # inner scroll container after programmatic scrolls
-            try:
-                iframes.first.scroll_into_view_if_needed(timeout=10000)
-            except Exception:
-                pass
-            page.wait_for_timeout(900)
+            # screenshot: section element capture with four hard checks
+            reframe(page, iframes.first)
             geo = section_in_viewport(page)
             slide_visible = first_slide_in_viewport(frame)
+            occ = occlusion_free(page)
             entry["screenshotGeometry"] = geo
-            if geo and geo.get("ok") and slide_visible:
-                page.screenshot(path=str(args.review_dir / f"{name}-desktop.png"))
+            entry["occlusion"] = occ
+            if geo and geo.get("ok") and slide_visible and occ.get("ok"):
+                page.locator(".museum-tomb-trails").screenshot(path=str(args.review_dir / f"{name}-desktop.png"))
                 visual_valid += 1
+                occlusion_free_count += 1
+                entry["desktopValid"] = True
             else:
-                fail(failures, f"{name}: desktop screenshot geometry invalid ({geo} slideVisible={slide_visible})")
+                entry["desktopValid"] = False
+                fail(
+                    failures,
+                    f"{name}: desktop screenshot invalid (geo={geo} slideVisible={slide_visible} occ={occ})",
+                )
+
+            # fallback acceptance shot: qinhan only, when fallbacks occurred
+            if metrics["fallbacks"] and name == "qinhan":
+                frame.evaluate(
+                    """() => { const el = document.querySelector('#slides');
+                        const pend = document.querySelector('#slides .site-image.image-pending');
+                        const slide = pend ? pend.closest('.slide') : null;
+                        if (slide) el.scrollTo({left: slide.offsetLeft}); }"""
+                )
+                page.wait_for_timeout(900)
+                reframe(page, iframes.first)
+                occ_fb = occlusion_free(page)
+                pending_visible = pending_slide_in_viewport(frame)
+                if occ_fb.get("ok") and pending_visible:
+                    page.locator(".museum-tomb-trails").screenshot(
+                        path=str(args.review_dir / "qinhan-fallback-desktop.png")
+                    )
+                    fallback_valid = "YES"
+                else:
+                    fallback_valid = "NO"
+                    fail(failures, f"qinhan fallback screenshot invalid (occ={occ_fb} pendingVisible={pending_visible})")
             report["hosts"][name] = entry
 
         # ---- standalone tomb-trails page ----
@@ -307,6 +400,11 @@ def main() -> int:
             entry: dict = {}
             resp = mpage.goto(base + path, wait_until="domcontentloaded", timeout=60000)
             entry["pageLoad"] = resp is not None and resp.status < 400
+            dismissed = dismiss_opening(mpage)
+            if dismissed:
+                report["openingOverlaysDismissed"] = sorted(
+                    set(report["openingOverlaysDismissed"]) | {f"mobile:{name}:{d}" for d in dismissed}
+                )
             iframe = mpage.locator("iframe[src*='tomb-trails/index.html']").first
             iframe.wait_for(state="visible", timeout=30000)
             scroll_to_section(mpage, iframe)
@@ -328,21 +426,20 @@ def main() -> int:
             entry["slidesScrollable"] = frame.evaluate(
                 "() => { const el = document.querySelector('#slides'); return el ? el.scrollWidth > el.clientWidth : false; }"
             )
-            # same pre-capture re-frame as desktop: host pages may reset their
-            # inner scroll container after programmatic scrolls
-            try:
-                iframe.scroll_into_view_if_needed(timeout=10000)
-            except Exception:
-                pass
-            mpage.wait_for_timeout(900)
+            reframe(mpage, iframe)
             geo = section_in_viewport(mpage)
             slide_visible = first_slide_in_viewport(frame)
-            entry["screenshotGeometryOk"] = bool(geo and geo.get("ok") and slide_visible)
-            if entry["screenshotGeometryOk"]:
-                mpage.screenshot(path=str(args.review_dir / f"{name}-mobile.png"))
+            occ = occlusion_free(mpage)
+            entry["screenshotGeometry"] = geo
+            entry["occlusion"] = occ
+            if geo and geo.get("ok") and slide_visible and occ.get("ok"):
+                mpage.locator(".museum-tomb-trails").screenshot(path=str(args.review_dir / f"{name}-mobile.png"))
                 visual_valid += 1
+                occlusion_free_count += 1
+                entry["mobileValid"] = True
             else:
-                fail(failures, f"mobile {name}: screenshot geometry invalid ({geo})")
+                entry["mobileValid"] = False
+                fail(failures, f"mobile {name}: screenshot invalid (geo={geo} occ={occ})")
             report["mobile"][name] = entry
         mobile_context.close()
         browser.close()
@@ -358,8 +455,14 @@ def main() -> int:
     report["pageErrors"] = len(page_errors)
     report["externalImageFallbacks"] = external_fallbacks_total
     report["visualReviewValid"] = f"{visual_valid}/{visual_expected}"
+    report["screenshotOcclusionFree"] = f"{occlusion_free_count}/{visual_expected}"
+    report["fallbackScreenshotValid"] = fallback_valid
     if visual_valid != visual_expected:
         fail(failures, f"visual review screenshots valid {visual_valid}/{visual_expected}")
+    if occlusion_free_count != visual_expected:
+        fail(failures, f"occlusion-free screenshots {occlusion_free_count}/{visual_expected}")
+    if external_fallbacks_total > 0 and fallback_valid != "YES":
+        fail(failures, f"fallback screenshot valid = {fallback_valid}")
     report["failures"] = failures[:20]
     report["status"] = "PASS" if not failures else "FAIL"
 
@@ -370,13 +473,16 @@ def main() -> int:
     total_renderable = sum(e.get("renderableSlides", 0) for e in report["hosts"].values())
     print(f"RENDERABLE_SLIDES={total_renderable}/33")
     for name, entry in report["hosts"].items():
-        print(f"HOST {name}: iframe={entry.get('tombTrailsIframes')} slides={entry.get('slides')} renderable={entry.get('renderableSlides')} local={entry.get('localImages')} fallbacks={entry.get('externalFallbacks')} broken={entry.get('brokenImgs')}")
+        print(f"HOST {name}: iframe={entry.get('tombTrailsIframes')} slides={entry.get('slides')} renderable={entry.get('renderableSlides')} local={entry.get('localImages')} fallbacks={entry.get('externalFallbacks')} broken={entry.get('brokenImgs')} desktopValid={entry.get('desktopValid')}")
     s = report["standalone"]
     print(f"STANDALONE: tabs={s.get('museumTabs')} slides={s.get('slides')} keyboard={s.get('keyboardNavigation')}")
     for name, entry in report["mobile"].items():
-        print(f"MOBILE {name}: visible={entry.get('iframeVisible')} overflow={entry.get('hostOverflow')}/{entry.get('frameOverflow')} geoOK={entry.get('screenshotGeometryOk')}")
+        print(f"MOBILE {name}: visible={entry.get('iframeVisible')} overflow={entry.get('hostOverflow')}/{entry.get('frameOverflow')} valid={entry.get('mobileValid')}")
+    print(f"OPENING_DISMISSED={report['openingOverlaysDismissed']}")
     print(f"EXTERNAL_IMAGE_FALLBACKS={external_fallbacks_total}")
     print(f"VISUAL_REVIEW_VALID={visual_valid}/{visual_expected}")
+    print(f"SCREENSHOT_OCCLUSION_FREE={occlusion_free_count}/{visual_expected}")
+    print(f"FALLBACK_SCREENSHOT_VALID={fallback_valid}")
     print(f"HTTP_404={len(http_404s)}")
     print(f"CONSOLE_PAGE_ERRORS={report['consoleErrors']}/{report['pageErrors']}")
     return 0 if report["status"] == "PASS" else 1
