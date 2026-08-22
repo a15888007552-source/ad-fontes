@@ -6,6 +6,9 @@
     if (page === 'qinhan' && typeof window.qinhanMediaUrl === 'function') {
       return window.qinhanMediaUrl(path);
     }
+    if (page === 'shaanxi-archaeology-museum' && typeof window.shaanxiArchaeologyMediaUrl === 'function') {
+      return window.shaanxiArchaeologyMediaUrl(path);
+    }
     return new URL(path, projectRoot).href;
   };
   if (!document.querySelector('link[data-provenance-trails]')) {
