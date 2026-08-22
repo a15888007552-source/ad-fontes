@@ -64,11 +64,6 @@ class MediaTracker:
         path = parsed.path.lower()
         if Path(path).suffix not in MEDIA_SUFFIXES:
             return None
-        if parsed.path.endswith("/archaeology-atmosphere-v2.webp"):
-            # Known recovery gap: the snapshot-era tomb-trails.css references this
-            # pruned regenerable asset; it is tracked separately, not as local
-            # module media (independent tomb-trails product resource).
-            return "tomb_trails_theme_reference"
         if parsed.hostname == MEDIA_HOST and parsed.path.startswith(f"/modules/{MODULE}/"):
             return "external"
         if parsed.hostname in {"127.0.0.1", "localhost"} and parsed.path.startswith(
@@ -572,12 +567,10 @@ def main() -> int:
                 except Exception as error:
                     report["diagnosticErrors"].append(f"home screenshot: {error}")
 
-            real_console_errors = [e for e in console_errors if "404" not in e]
-            report["consoleErrors"] = len(real_console_errors)
+            report["consoleErrors"] = len(console_errors)
             report["pageErrors"] = len(page_errors)
-            report["knownDangling404s"] = len(console_errors) - len(real_console_errors)
-            if real_console_errors:
-                fail(f"console errors: {real_console_errors[:3]}")
+            if console_errors:
+                fail(f"console errors: {console_errors[:3]}")
             if page_errors:
                 fail(f"page errors: {page_errors[:3]}")
 

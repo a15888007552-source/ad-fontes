@@ -37,6 +37,8 @@ $('#prev').addEventListener('click',()=>move(-1));
 $('#next').addEventListener('click',()=>move(1));
 document.querySelectorAll('.museum-tab').forEach(b=>b.addEventListener('click',()=>filter(b.dataset.museum)));
 document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1);});
+const toFallback=img=>{const fig=img.closest('.site-image');if(!fig||fig.classList.contains('image-pending'))return;fig.classList.add('image-pending');fig.setAttribute('role','img');fig.setAttribute('aria-label',`${img.alt.replace(/相关现场图$/,'')}现场图暂不可用`);fig.innerHTML='<span>现场图暂不可用</span><small>外部图像当前无法加载，请通过下方来源链接核对。</small>';};
+$('#slides').addEventListener('error',e=>{const img=e.target;if(img instanceof HTMLImageElement)toFallback(img);},true);
+setInterval(()=>{document.querySelectorAll('#slides .site-image img').forEach(img=>{if(img.complete&&img.naturalWidth>0)return;img.dataset.ttWait=(+img.dataset.ttWait||0)+1;if(+img.dataset.ttWait>=4)toFallback(img);});},2500);
 $('#slides').addEventListener('scroll',()=>{const el=$('#slides');const i=Math.round(el.scrollLeft/el.clientWidth);if(i!==state.index&&i>=0&&i<state.items.length){state.index=i;$('#position').textContent=`${String(i+1).padStart(2,'0')} / ${String(state.items.length).padStart(2,'0')}`;}});
 fetch('./tomb-trails-data.json').then(r=>r.json()).then(data=>{state.all=data.map(p=>({...p,museum:museumKeys[p.museum]||p.museum}));const requested=new URLSearchParams(location.search).get('museum');filter(requested&&Object.keys(museumLabels).includes(requested)?requested:'all');}).catch(err=>{$('#slides').innerHTML=`<p class="load-error">专题资料读取失败：${esc(err.message)}</p>`;});
-
