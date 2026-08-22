@@ -2202,6 +2202,298 @@
       transition: none;
     }
   }
+</style>
+<style id="atlas-search-styles">
+  .atlas-search-trigger {
+    appearance: none;
+    border: 1px solid transparent;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+  }
+
+  .atlas-search-trigger:hover,
+  .atlas-search-trigger:focus-visible {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--page);
+  }
+
+  html[data-active-province="beijing"] .site-header .atlas-search-trigger {
+    color: rgba(255, 244, 230, .9);
+    text-shadow: 0 1px 2px rgba(44, 5, 10, .7);
+  }
+
+  .atlas-search-dialog {
+    width: min(1040px, calc(100vw - 32px));
+    max-width: none;
+    max-height: 86dvh;
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  .atlas-search-dialog::backdrop {
+    background: rgba(20, 16, 13, .72);
+  }
+
+  .atlas-search-dialog__inner {
+    max-height: 86dvh;
+    overflow-y: auto;
+    padding: clamp(24px, 5vw, 62px);
+  }
+
+  .atlas-search__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .atlas-search__kicker {
+    margin: 0 0 11px;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: .16em;
+  }
+
+  .atlas-search__title {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 4.2rem);
+    font-weight: 400;
+    letter-spacing: -.075em;
+    line-height: .98;
+  }
+
+  .atlas-search__lede {
+    max-width: 36em;
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .atlas-search__close {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 7px 12px;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+  }
+
+  .atlas-search__close:hover,
+  .atlas-search__close:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .atlas-search__controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, .32fr);
+    gap: 14px;
+    padding: 24px 0 10px;
+  }
+
+  .atlas-search__field {
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+
+  .atlas-search__input,
+  .atlas-search__select {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+    border: 1px solid var(--line-strong);
+    border-radius: 0;
+    background: var(--surface-strong);
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+    letter-spacing: 0;
+    outline: none;
+  }
+
+  .atlas-search__input {
+    padding: 10px 12px;
+  }
+
+  .atlas-search__select {
+    padding: 0 10px;
+  }
+
+  .atlas-search__input:focus,
+  .atlas-search__select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+
+  .atlas-search__status {
+    min-height: 1.4em;
+    padding: 10px 0 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 14px;
+  }
+
+  .atlas-search__examples {
+    padding: 4px 0 22px;
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 13px;
+  }
+
+  .atlas-search__results {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 24px;
+  }
+
+  .atlas-search-result {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 14px;
+    min-width: 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color 180ms ease, color 180ms ease;
+  }
+
+  .atlas-search-result:hover,
+  .atlas-search-result:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .atlas-search-result__media {
+    display: grid;
+    aspect-ratio: 1 / 1.08;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    place-items: center;
+    background: color-mix(in srgb, var(--surface-strong) 86%, var(--accent-soft));
+  }
+
+  .atlas-search-result__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: var(--image-filter);
+  }
+
+  .atlas-search-result__placeholder {
+    display: grid;
+    gap: 5px;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .atlas-search-result__placeholder small {
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: .08em;
+  }
+
+  .atlas-search-result__body {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .atlas-search-result__title {
+    margin: 0;
+    color: inherit;
+    font-family: var(--serif);
+    font-size: clamp(1rem, 1.8vw, 1.28rem);
+    font-weight: 500;
+    letter-spacing: -.04em;
+    line-height: 1.35;
+  }
+
+  .atlas-search-result__meta,
+  .atlas-search-result__museum,
+  .atlas-search-result__cue {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .atlas-search-result__museum {
+    color: var(--ink);
+  }
+
+  .atlas-search-result__cue {
+    color: var(--accent);
+  }
+
+  @media (max-width: 760px) {
+    .atlas-search-dialog {
+      width: calc(100vw - 20px);
+    }
+
+    .atlas-search-dialog__inner {
+      padding: 22px 18px 28px;
+    }
+
+    .atlas-search__controls,
+    .atlas-search__results {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .atlas-search-result {
+      grid-template-columns: 82px minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 430px) {
+    .atlas-search__header {
+      gap: 12px;
+    }
+
+    .atlas-search__title {
+      font-size: 2.2rem;
+    }
+
+    .atlas-search__close {
+      padding-inline: 9px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .atlas-search-trigger,
+    .atlas-search-result {
+      transition: none;
+    }
+  }
 </style></head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴" tabindex="0">
@@ -2237,6 +2529,7 @@
         <nav class="site-nav" aria-label="总馆导航">
           <a class="nav-item" href="#top">总览</a>
           <a class="nav-item" href="#provinces" aria-current="page">省份</a>
+          <button class="nav-item atlas-search-trigger" type="button" aria-haspopup="dialog" aria-controls="atlas-search-dialog">检索</button>
           <a class="nav-item" href="../beilin/index.html">碑林 ↗</a>
           <a class="nav-item" href="#about">关于</a>
         </nav>
@@ -2537,6 +2830,299 @@
       <a class="footer-link" href="../beilin/index.html">西安碑林专题 ↗</a>
     </div>
   </footer>
+
+  <dialog class="atlas-search-dialog" id="atlas-search-dialog" aria-labelledby="atlas-search-title">
+    <div class="atlas-search-dialog__inner">
+      <div class="atlas-search__header">
+        <div>
+          <p class="atlas-search__kicker">SEARCH ACROSS COLLECTIONS</p>
+          <h2 class="atlas-search__title" id="atlas-search-title">跨馆检索</h2>
+          <p class="atlas-search__lede">在七座已上线专题中查找文物与档案条目。</p>
+        </div>
+        <button class="atlas-search__close" type="button" aria-label="关闭检索">关闭</button>
+      </div>
+      <div class="atlas-search__controls">
+        <label class="atlas-search__field">
+          <span>查找文物</span>
+          <input class="atlas-search__input" type="search" placeholder="输入文物名、时代、器类或材料" autocomplete="off" spellcheck="false" />
+        </label>
+        <label class="atlas-search__field">
+          <span>博物馆</span>
+          <select class="atlas-search__select">
+            <option value="">全部博物馆</option>
+          </select>
+        </label>
+      </div>
+      <div class="atlas-search__status" aria-live="polite"></div>
+      <div class="atlas-search__examples">试试：唐 · 青铜 · 乐器 · 凤冠</div>
+      <div class="atlas-search__results" aria-live="polite"></div>
+    </div>
+  </dialog>
+
+  <script id="atlas-search-script">
+    (() => {
+      const trigger = document.querySelector(".atlas-search-trigger");
+      const dialog = document.getElementById("atlas-search-dialog");
+      const closeButton = dialog?.querySelector(".atlas-search__close");
+      const input = dialog?.querySelector(".atlas-search__input");
+      const select = dialog?.querySelector(".atlas-search__select");
+      const status = dialog?.querySelector(".atlas-search__status");
+      const results = dialog?.querySelector(".atlas-search__results");
+      if (!trigger || !dialog || !closeButton || !input || !select || !status || !results) return;
+
+      const repositoryRoot = new URL("../../", document.baseURI);
+      const searchIndexUrl = new URL("modules/museum-atlas/search-index.json?rev=20260822-build02", repositoryRoot);
+      const expectedKeys = ["museum_id", "museum_name", "id", "title", "period", "type", "material", "origin", "keywords", "site_path", "image_path"];
+      const allowedEmptyImageIds = new Set([
+        "beilin:artifact-057",
+        "baoji:photo-group-3619",
+        "baoji:photo-group-3881",
+      ]);
+      const museumOrder = [];
+      let searchIndexPromise = null;
+      let searchIndex = null;
+
+      const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
+      const isSafeLocalPath = (value, allowEmpty = false) => {
+        if (typeof value !== "string") return false;
+        if (allowEmpty && value === "") return true;
+        return value.length > 0
+          && !value.startsWith("/")
+          && !value.startsWith("\\")
+          && !value.includes("\\")
+          && !value.includes("..")
+          && !/^[A-Za-z][A-Za-z\d+.-]*:/.test(value)
+          && !value.includes("?")
+          && !value.includes("#");
+      };
+      const normalizeSearch = (value) => String(value ?? "")
+        .normalize("NFKC")
+        .toLocaleLowerCase("zh-CN")
+        .replace(/[·/／、,，;；:：()（）—–]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      const tokensFor = (value) => normalizeSearch(value).split(" ").filter(Boolean);
+
+      const validateIndex = (payload) => {
+        if (!isObject(payload) || payload.schema_version !== 1 || !Array.isArray(payload.records) || !payload.records.length) {
+          throw new Error("invalid search index shape");
+        }
+        const seen = new Set();
+        const museums = new Set();
+        for (const record of payload.records) {
+          if (!isObject(record) || Object.keys(record).length !== expectedKeys.length || Object.keys(record).some((key, index) => key !== expectedKeys[index])) {
+            throw new Error("invalid search record schema");
+          }
+          for (const field of ["museum_id", "museum_name", "id", "title", "site_path"]) {
+            if (typeof record[field] !== "string" || !record[field].trim()) throw new Error(`invalid required field: ${field}`);
+          }
+          for (const field of ["period", "type", "material", "origin", "image_path"]) {
+            if (typeof record[field] !== "string") throw new Error(`invalid text field: ${field}`);
+          }
+          if (!Array.isArray(record.keywords) || record.keywords.some((keyword) => typeof keyword !== "string")) {
+            throw new Error("invalid keyword array");
+          }
+          if (!isSafeLocalPath(record.site_path) || !isSafeLocalPath(record.image_path, true)) {
+            throw new Error("unsafe repository path");
+          }
+          const compositeId = `${record.museum_id}:${record.id}`;
+          if (seen.has(compositeId)) throw new Error("duplicate search record");
+          seen.add(compositeId);
+          museums.add(record.museum_id);
+          if (!record.image_path && !allowedEmptyImageIds.has(compositeId)) {
+            throw new Error("unexpected empty image path");
+          }
+        }
+        if (museums.size !== 7) throw new Error("unexpected museum count");
+        if ([...allowedEmptyImageIds].some((compositeId) => !seen.has(compositeId))) {
+          throw new Error("missing audited no-image record");
+        }
+        museumOrder.splice(0, museumOrder.length, ...museums);
+        return payload;
+      };
+
+      const loadSearchIndex = () => {
+        if (searchIndexPromise) return searchIndexPromise;
+        searchIndexPromise = fetch(searchIndexUrl, { cache: "force-cache" })
+          .then((response) => {
+            if (!response.ok) throw new Error(`search index request failed: ${response.status}`);
+            return response.json();
+          })
+          .then(validateIndex)
+          .then((payload) => {
+            searchIndex = payload;
+            return payload;
+          })
+          .catch((error) => {
+            searchIndexPromise = null;
+            throw error;
+          });
+        return searchIndexPromise;
+      };
+
+      const setStatus = (message) => {
+        status.textContent = message;
+      };
+
+      const clearResults = () => {
+        results.replaceChildren();
+      };
+
+      const populateMuseumFilter = (recordsList) => {
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "全部博物馆";
+        const options = [];
+        const seen = new Set();
+        for (const record of recordsList) {
+          if (seen.has(record.museum_id)) continue;
+          seen.add(record.museum_id);
+          const option = document.createElement("option");
+          option.value = record.museum_id;
+          option.textContent = record.museum_name;
+          options.push(option);
+        }
+        select.replaceChildren(defaultOption, ...options);
+      };
+
+      const searchable = (record) => ({
+        title: normalizeSearch(record.title),
+        period: normalizeSearch(record.period),
+        type: normalizeSearch(record.type),
+        material: normalizeSearch(record.material),
+        origin: normalizeSearch(record.origin),
+        keywords: normalizeSearch(record.keywords.join(" ")),
+        museum: normalizeSearch(record.museum_name),
+      });
+
+      const rankRecord = (record, query) => {
+        const fields = searchable(record);
+        const normalizedQuery = normalizeSearch(query);
+        const queryTokens = tokensFor(query);
+        const all = [fields.title, fields.period, fields.type, fields.material, fields.origin, fields.keywords, fields.museum].filter(Boolean).join(" ");
+        if (!queryTokens.every((token) => all.includes(token))) return -1;
+        if (fields.title === normalizedQuery) return 700;
+        if (fields.title.startsWith(normalizedQuery)) return 600;
+        if (fields.title.includes(normalizedQuery)) return 500;
+        if (queryTokens.every((token) => fields.title.includes(token))) return 400;
+        if (queryTokens.every((token) => [fields.period, fields.type, fields.material].some((field) => field.includes(token)))) return 300;
+        if (queryTokens.every((token) => [fields.keywords, fields.origin].some((field) => field.includes(token)))) return 200;
+        if (queryTokens.every((token) => fields.museum.includes(token))) return 100;
+        return 0;
+      };
+
+      const findMatches = (query, museumId) => {
+        const recordsList = searchIndex?.records || [];
+        return recordsList.map((record, sourceOrder) => ({
+          record,
+          sourceOrder,
+          rank: museumId && record.museum_id !== museumId ? -1 : rankRecord(record, query),
+        }))
+          .filter((entry) => entry.rank >= 0)
+          .sort((left, right) => right.rank - left.rank || left.sourceOrder - right.sourceOrder)
+          .map((entry) => entry.record);
+      };
+
+      const buildRecordHref = (record) => {
+        const target = new URL(record.site_path, repositoryRoot);
+        target.searchParams.set("item", record.id);
+        return target.href;
+      };
+
+      const renderResult = (record) => {
+        const anchor = document.createElement("a");
+        anchor.className = "atlas-search-result";
+        anchor.href = buildRecordHref(record);
+
+        const media = document.createElement("figure");
+        media.className = "atlas-search-result__media";
+        if (record.image_path) {
+          const image = document.createElement("img");
+          image.src = new URL(record.image_path, repositoryRoot).href;
+          image.alt = `${record.title} · ${record.museum_name}`;
+          image.loading = "lazy";
+          image.decoding = "async";
+          media.append(image);
+        } else {
+          const placeholder = document.createElement("div");
+          placeholder.className = "atlas-search-result__placeholder";
+          const label = document.createElement("span");
+          label.textContent = "暂无图像";
+          const note = document.createElement("small");
+          note.textContent = "档案可检索";
+          placeholder.append(label, note);
+          media.append(placeholder);
+        }
+
+        const body = document.createElement("div");
+        body.className = "atlas-search-result__body";
+        const title = document.createElement("h3");
+        title.className = "atlas-search-result__title";
+        title.textContent = record.title;
+        const metadata = document.createElement("p");
+        metadata.className = "atlas-search-result__meta";
+        metadata.textContent = [record.period, record.type, record.material].filter(Boolean).join(" · ") || "档案条目";
+        const museum = document.createElement("p");
+        museum.className = "atlas-search-result__museum";
+        museum.textContent = record.museum_name;
+        const cue = document.createElement("p");
+        cue.className = "atlas-search-result__cue";
+        cue.textContent = "查看此物 ↗";
+        body.append(title, metadata, museum, cue);
+        anchor.append(media, body);
+        return anchor;
+      };
+
+      const render = () => {
+        if (!searchIndex) return;
+        const query = input.value;
+        const museumId = select.value;
+        clearResults();
+        if (!query.trim() && !museumId) {
+          setStatus("输入关键词，开始跨馆查找。");
+          return;
+        }
+        const matches = query.trim() ? findMatches(query, museumId) : searchIndex.records.filter((record) => record.museum_id === museumId);
+        if (!matches.length) {
+          setStatus("没有找到匹配对象。");
+          return;
+        }
+        setStatus(matches.length > 60 ? `找到 ${matches.length} 条，显示前 60 条` : `找到 ${matches.length} 条`);
+        matches.slice(0, 60).forEach((record) => results.append(renderResult(record)));
+      };
+
+      const openSearch = () => {
+        if (dialog.open) return;
+        dialog.showModal();
+        setStatus("正在载入跨馆索引…");
+        clearResults();
+        window.requestAnimationFrame(() => input.focus({ preventScroll: true }));
+        loadSearchIndex()
+          .then((payload) => {
+            populateMuseumFilter(payload.records);
+            render();
+          })
+          .catch(() => {
+            clearResults();
+            setStatus("检索索引暂时不可用。");
+          });
+      };
+
+      const closeSearch = () => {
+        if (dialog.open) dialog.close();
+        trigger.focus({ preventScroll: true });
+      };
+
+      trigger.addEventListener("click", openSearch);
+      closeButton.addEventListener("click", closeSearch);
+      input.addEventListener("input", render);
+      select.addEventListener("change", render);
+      dialog.addEventListener("cancel", (event) => {
+        event.preventDefault();
+        closeSearch();
+      });
+    })();
+  </script>
 
   <script>
     (() => {
