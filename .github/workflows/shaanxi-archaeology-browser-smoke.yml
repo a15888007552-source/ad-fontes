@@ -1,0 +1,54 @@
+name: Shaanxi Archaeology browser smoke
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Playwright
+        run: python -m pip install --upgrade pip playwright
+
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Start local HTTP server
+        shell: bash
+        run: |
+          python -m http.server 8765 > /tmp/shaanxi-archaeology-http.log 2>&1 &
+          echo $! > /tmp/shaanxi-archaeology-http.pid
+          for attempt in {1..30}; do
+            if curl --silent --show-error --fail http://127.0.0.1:8765/modules/shaanxi-archaeology-museum/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/shaanxi-archaeology-http.log
+          exit 1
+
+      - name: Run browser and network smoke
+        run: |
+          python scripts/smoke_shaanxi_archaeology_browser.py \
+            --output artifacts/shaanxi-archaeology-browser-smoke.json
+
+      - name: Upload smoke artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shaanxi-archaeology-browser-smoke
+          path: artifacts
+          if-no-files-found: warn
