@@ -8,6 +8,7 @@
 <meta name="description" content="欧罗巴音乐家年鉴：与华夏音乐家年鉴组成 Ad Fontes 第一模块的镜像双卷。">
 <script>try{var __mirrorDirection=sessionStorage.getItem('ad-fontes-yearbook-direction');if(__mirrorDirection)document.documentElement.dataset.mirror=__mirrorDirection}catch(e){}</script>
 <link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/map-real.css">
 
 <body class="europa-opening-active">
 <div id="europa-opening" role="dialog" aria-modal="true" aria-labelledby="europa-opening-title">
@@ -63,6 +64,7 @@
     <button data-v="musio">音乐学</button>
     <button data-v="gl">术 语</button>
     <button data-v="bib">文 献</button>
+    <button data-v="real">实 景</button>
   </nav>
   <button class="roam" id="roam" title="随机开一位音乐家的传记（R）">🎲 漫游</button>
   <button class="helpbtn" id="helpbtn" title="导览与凡例（?）">?</button>
@@ -92,6 +94,10 @@
       <aside class="mappanel" id="mappanel" aria-live="polite"><h4>点选一座城市</h4><p style="font-size:13.5px;color:var(--mut)">圆点大小对应此地活跃音乐家之多寡。点击城市可见驻留者名录与历史典故；点"绘其行迹"，其一生游历将以流动的虚线绘于图上。海岸线取自 Natural Earth 地理数据。</p></aside>
     </div>
     <p class="mapnote">※ 城市按真实经纬度投影；海岸线为 Natural Earth 50m 数据简化。历史疆界流变不居，故只绘海陆，不绘国界。</p>
+  </section>
+  <section class="view" id="v-real">
+    <h3 class="rub">REALIS · 欧洲实景地图（缩放到城市后显示地点）</h3>
+    <div id="realmap-view" class="realmap-wrap"></div>
   </section>
   <section class="view" id="v-net">
     <h3 class="rub">CONSTELLATIO · 师承与影响之网</h3>

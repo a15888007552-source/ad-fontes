@@ -1,0 +1,2001 @@
+{
+  "version": "2026-08-22-main-realmap-v1",
+  "baseUrl": "https://a15888007552-source.github.io/ad-fontes-europa-assets/",
+  "media": {
+    "poi-ace5e3cc269d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-069-ace5e3cc26.jpg",
+      "file": "images/poi/poi-069-ace5e3cc26.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%8D%A1%E5%86%85%E5%9F%BA%E9%9F%B3%E4%B9%90%E5%8E%85",
+      "aiCreated": false
+    },
+    "poi-6f78aa0f2337": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-180-6f78aa0f23.jpg",
+      "file": "images/poi/poi-180-6f78aa0f23.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:Facade_of_the_Metropolitan_Opera_House_at_Lincoln_Center,_NYC.jpg",
+      "aiCreated": false
+    },
+    "poi-561e778e2822": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-181-561e778e28.jpg",
+      "file": "images/poi/poi-181-561e778e28.jpg",
+      "credit": "Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Broadway_Theatre,_Mt._Pleasant,_MI_(Explored).tif",
+      "aiCreated": false
+    },
+    "poi-1f4822ea1abb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-182.png",
+      "file": "images/poi/user/poi-user-182.png",
+      "credit": "用户提供实景图（顺序 16）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-12ea5e6903e6": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-184-12ea5e6903.jpg",
+      "file": "images/poi/poi-184-12ea5e6903.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hollywood_sign_seen_from_Dolby_Theatre.jpg",
+      "aiCreated": false
+    },
+    "poi-70ad74a4d582": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-073-70ad74a4d5.jpg",
+      "file": "images/poi/poi-073-70ad74a4d5.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2018_Symphony_Hall_Boston.jpg",
+      "aiCreated": false
+    },
+    "poi-f2578911a688": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-072-f2578911a6.jpg",
+      "file": "images/poi/poi-072-f2578911a6.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://zh.wikipedia.org/wiki/%E6%96%B0%E8%8B%B1%E6%A0%BC%E5%85%B0%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-bc8cc0ca3f38": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-185-bc8cc0ca3f.jpg",
+      "file": "images/poi/poi-185-bc8cc0ca3f.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Trinity_Church,_Boston,_Massachusetts_-_front_oblique_view.JPG",
+      "aiCreated": false
+    },
+    "poi-8c8245893f9d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-186-8c8245893f.jpg",
+      "file": "images/poi/poi-186-8c8245893f.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Orchestra_Hall,_Chicago_Symphony_Center.jpg",
+      "aiCreated": false
+    },
+    "poi-f123ad1554ba": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-187-f123ad1554.jpg",
+      "file": "images/poi/poi-187-f123ad1554.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Louis_H._Sullivan_-_Auditorium_Building,_Chicago,_IL.jpg",
+      "aiCreated": false
+    },
+    "poi-31564d13d1ca": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-188-31564d13d1.jpg",
+      "file": "images/poi/poi-188-31564d13d1.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Chicago_-_Chicago_River_-_Civic_Opera_Building.jpg",
+      "aiCreated": false
+    },
+    "poi-92b9e6794558": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-189-92b9e67945.jpg",
+      "file": "images/poi/poi-189-92b9e67945.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Academy_of_Music,_Philadelphia.jpg",
+      "aiCreated": false
+    },
+    "poi-d2ae6918d4ca": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-190-d2ae6918d4.jpg",
+      "file": "images/poi/poi-190-d2ae6918d4.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2013_Kimmel_Center_Spruce_Street_entrance.jpg",
+      "aiCreated": false
+    },
+    "poi-0da05d824538": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-191-0da05d8245.jpg",
+      "file": "images/poi/poi-191-0da05d8245.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Independence_Hall_Exterior_Front.jpg",
+      "aiCreated": false
+    },
+    "poi-d2fcba9043f7": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-192-d2fcba9043.jpg",
+      "file": "images/poi/poi-192-d2fcba9043.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:The_1896_bronze_statue_of_onetime_president_Theodore_Dwight_Woolsey_before_the_entrance_of_Dwight_Hall,_the_former_college_library_used_as_a_volunteer_center_on_Yale_University%27s_Old_Campus,_New_Haven_LCCN2011634076.tif",
+      "aiCreated": false
+    },
+    "poi-0eb41979da41": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-193-0eb41979da.jpg",
+      "file": "images/poi/poi-193-0eb41979da.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2014-04-17-Yale-Old-Campus-Courtyard-Harkness-Tower.jpg",
+      "aiCreated": false
+    },
+    "poi-193f7d792650": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-194.png",
+      "file": "images/poi/user/poi-user-194.png",
+      "credit": "用户提供实景图（顺序 17）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-8ac1f75a653e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-092-8ac1f75a65.jpg",
+      "file": "images/poi/poi-092-8ac1f75a65.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Grand_Staircase,_Heinz_Hall,_2015-06-07.jpg",
+      "aiCreated": false
+    },
+    "poi-3a913d54b8ab": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-195-3a913d54b8.jpg",
+      "file": "images/poi/poi-195-3a913d54b8.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:PittStephenFosterMemorial_front.jpg",
+      "aiCreated": false
+    },
+    "poi-cdc12719a8ac": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-196-cdc12719a8.jpg",
+      "file": "images/poi/poi-196-cdc12719a8.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%AD%A6%E4%B9%A0%E5%A4%A7%E6%95%99%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-404ad66f05e0": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-197-404ad66f05.jpg",
+      "file": "images/poi/poi-197-404ad66f05.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E7%BA%A6%E7%BF%B0%C2%B7%E8%82%AF%E5%B0%BC%E8%BF%AA%E8%A1%A8%E6%BC%94%E8%89%BA%E6%9C%AF%E4%B8%AD%E5%BF%83",
+      "aiCreated": false
+    },
+    "poi-c753d04651fb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-198-c753d04651.jpg",
+      "file": "images/poi/poi-198-c753d04651.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Library_of_Congress_Great_Hall_-_Jan_2006.jpg",
+      "aiCreated": false
+    },
+    "poi-3f2167bfbc3d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-199-3f2167bfbc.jpg",
+      "file": "images/poi/poi-199-3f2167bfbc.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cannon_House_Office_Building_20240601.jpg",
+      "aiCreated": false
+    },
+    "poi-dd24a6884491": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-089-dd24a68844.jpg",
+      "file": "images/poi/poi-089-dd24a68844.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Davies_Symphony_Hall,_San_Francisco,_CA.jpg",
+      "aiCreated": false
+    },
+    "poi-961300421c58": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-200-961300421c.jpg",
+      "file": "images/poi/poi-200-961300421c.jpg",
+      "credit": "Wikimedia Commons · CC SA 1.0",
+      "source": "https://zh.wikipedia.org/wiki/%E6%88%98%E4%BA%89%E7%BA%AA%E5%BF%B5%E6%AD%8C%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-635020815289": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-201-6350208152.jpg",
+      "file": "images/poi/poi-201-6350208152.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E9%87%91%E9%97%A8%E5%A4%A7%E6%A1%A5",
+      "aiCreated": false
+    },
+    "poi-c2bcc45b60d4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-202.png",
+      "file": "images/poi/user/poi-user-202.png",
+      "credit": "用户提供实景图（顺序 18）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": true
+    },
+    "poi-2f42579131d7": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-203.png",
+      "file": "images/poi/user/poi-user-203.png",
+      "credit": "用户提供实景图（顺序 19）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-4d6e38c33890": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-204-4d6e38c338.jpg",
+      "file": "images/poi/poi-204-4d6e38c338.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:At_the_Theatre_of_Dionysus_in_Athens.jpg",
+      "aiCreated": false
+    },
+    "poi-041ec134bec9": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-205.png",
+      "file": "images/poi/user/poi-user-205.png",
+      "credit": "用户提供实景图（顺序 20）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-36936153996a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-158-3693615399.jpg",
+      "file": "images/poi/poi-158-3693615399.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Museo_archeologico_nazionale_Crotone_-_Wikigita_Calabria_2022_-_f00.jpg",
+      "aiCreated": false
+    },
+    "poi-d54d421c4d5f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-159-d54d421c4d.jpg",
+      "file": "images/poi/poi-159-d54d421c4d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Crotone,_Calabria,_Italy._Basilica_Cattedrale_-_panoramio.jpg",
+      "aiCreated": false
+    },
+    "poi-a6345ce2c7e2": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-206-a6345ce2c7.jpg",
+      "file": "images/poi/poi-206-a6345ce2c7.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%81%96%E4%BC%AF%E5%A4%9A%E7%A5%BF%E5%A4%A7%E6%AE%BF",
+      "aiCreated": false
+    },
+    "poi-ac7344d76de3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-207-ac7344d76d.jpg",
+      "file": "images/poi/poi-207-ac7344d76d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Sistine_Chapel-St._Peter%27s_Basilica_Dome.jpg",
+      "aiCreated": false
+    },
+    "poi-f87cefc8bffb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-208-f87cefc8bf.jpg",
+      "file": "images/poi/poi-208-f87cefc8bf.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Rom,_das_Teatro_Argentina.JPG",
+      "aiCreated": false
+    },
+    "poi-190a43281b03": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-209-190a43281b.jpg",
+      "file": "images/poi/poi-209-190a43281b.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Certosa_di_Pavia_(facciata).jpg",
+      "aiCreated": false
+    },
+    "poi-771692431ad4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-210-771692431a.jpg",
+      "file": "images/poi/poi-210-771692431a.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%B8%95%E7%BB%B4%E4%BA%9A%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-66e0945ef802": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-211-66e0945ef8.jpg",
+      "file": "images/poi/poi-211-66e0945ef8.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Palazzo_centrale_Universit%C3%A0_di_Pavia.jpg",
+      "aiCreated": false
+    },
+    "poi-359d78fd091c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-212.png",
+      "file": "images/poi/user/poi-user-212.png",
+      "credit": "用户提供实景图（顺序 21）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-c502c135b858": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-213.png",
+      "file": "images/poi/user/poi-user-213.png",
+      "credit": "用户提供实景图（顺序 22）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": true
+    },
+    "poi-9b1283019d18": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-160-9b1283019d.jpg",
+      "file": "images/poi/poi-160-9b1283019d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bingen_am_Rhein_histMuseum.jpg",
+      "aiCreated": false
+    },
+    "poi-65508e132bd2": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-214-65508e132b.jpg",
+      "file": "images/poi/poi-214-65508e132b.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E%E6%AD%8C%E5%8A%87%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-815a005efbf9": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-215-815a005efb.jpg",
+      "file": "images/poi/poi-215-815a005efb.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Nord_Sainte_Chapelle_Statue.jpg",
+      "aiCreated": false
+    },
+    "poi-8a81b8809800": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-216-8a81b88098.jpg",
+      "file": "images/poi/poi-216-8a81b88098.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%B7%B4%E9%BB%8E%E8%81%96%E6%AF%8D%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-f6324f0faa64": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-217-f6324f0faa.jpg",
+      "file": "images/poi/poi-217-f6324f0faa.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%85%B0%E6%96%AF%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-14e6156d1898": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-218-14e6156d18.jpg",
+      "file": "images/poi/poi-218-14e6156d18.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Parma,_Palazzo_della_Pilotta_e_monumento.jpg",
+      "aiCreated": false
+    },
+    "poi-a2169d263be3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-161-a2169d263b.jpg",
+      "file": "images/poi/poi-161-a2169d263b.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Porte_Mars_04.jpg",
+      "aiCreated": false
+    },
+    "poi-83fd469b2751": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-219-83fd469b27.jpg",
+      "file": "images/poi/poi-219-83fd469b27.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Santa_Maria_del_Fiore_(Florence).jpg",
+      "aiCreated": false
+    },
+    "poi-dfc85e12a6bb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-220-dfc85e12a6.jpg",
+      "file": "images/poi/poi-220-dfc85e12a6.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E7%83%8F%E8%8F%B2%E8%8C%B2%E7%BE%8E%E8%A1%93%E9%A4%A8",
+      "aiCreated": false
+    },
+    "poi-e8a6636b781a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-221.png",
+      "file": "images/poi/user/poi-user-221.png",
+      "credit": "用户提供实景图（顺序 23）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-aaaebdb76cde": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-222-aaaebdb76c.jpg",
+      "file": "images/poi/poi-222-aaaebdb76c.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://zh.wikipedia.org/wiki/%E8%81%96%E9%A6%AC%E7%88%BE%E8%B0%B7%E8%81%96%E6%AE%BF%E5%AE%97%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-2edd14ae8e87": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-223-2edd14ae8e.jpg",
+      "file": "images/poi/poi-223-2edd14ae8e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Teatro_La_Fenice_(Venice)_-_Facade.jpg",
+      "aiCreated": false
+    },
+    "poi-2d7e37f16147": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-162-2d7e37f161.jpg",
+      "file": "images/poi/poi-162-2d7e37f161.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:(Venice)_Doge%27s_Palace_and_campanile_of_St._Mark%27s_Basilica_facing_the_sea.jpg",
+      "aiCreated": false
+    },
+    "poi-d29a25ab4501": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-224-d29a25ab45.jpg",
+      "file": "images/poi/poi-224-d29a25ab45.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:Sant_Andrea_straight.jpg",
+      "aiCreated": false
+    },
+    "poi-e8addf50c136": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-225-e8addf50c1.jpg",
+      "file": "images/poi/poi-225-e8addf50c1.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ducal_Palace_in_Mantua_(1).jpg",
+      "aiCreated": false
+    },
+    "poi-ccfc519cfe6b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-226-ccfc519cfe.jpg",
+      "file": "images/poi/poi-226-ccfc519cfe.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Mantova-Teatro_Bibiena.jpg",
+      "aiCreated": false
+    },
+    "poi-1fc8da090f0d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-227-1fc8da090f.jpg",
+      "file": "images/poi/poi-227-1fc8da090f.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:Cremona,_torrazzo_01.JPG",
+      "aiCreated": false
+    },
+    "poi-31c72a90df11": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-228-31c72a90df.jpg",
+      "file": "images/poi/poi-228-31c72a90df.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Museo_del_Violino_visto_da_Piazza_Guglielmo_Marconi,_Cremona.jpg",
+      "aiCreated": false
+    },
+    "poi-9df9d16b9f9e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-229-9df9d16b9f.jpg",
+      "file": "images/poi/poi-229-9df9d16b9f.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://zh.wikipedia.org/wiki/%E5%85%8B%E9%9B%B7%E8%8E%AB%E7%BA%B3%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-cb04fb90b8e7": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-230-cb04fb90b8.jpg",
+      "file": "images/poi/poi-230-cb04fb90b8.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%9C%A3%E5%8D%A1%E6%B4%9B%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-1b831408b780": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-231-1b831408b7.jpg",
+      "file": "images/poi/poi-231-1b831408b7.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Pietro_a_Majella.jpg",
+      "aiCreated": false
+    },
+    "poi-04b03e880fa3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-232-04b03e880f.jpg",
+      "file": "images/poi/poi-232-04b03e880f.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E9%82%A3%E4%B8%8D%E5%8B%92%E6%96%AF%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-08027a9d79d1": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-233-08027a9d79.jpg",
+      "file": "images/poi/poi-233-08027a9d79.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:London_Royal_Albert_Hall-20130715-RM-122441.jpg",
+      "aiCreated": false
+    },
+    "poi-23f8aa47ce0b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-234-23f8aa47ce.jpg",
+      "file": "images/poi/poi-234-23f8aa47ce.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E7%9A%87%E5%AE%B6%E6%AD%8C%E5%8A%87%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-9296b55f0d53": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-235-9296b55f0d.jpg",
+      "file": "images/poi/poi-235-9296b55f0d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%95%8F%E5%AF%BA",
+      "aiCreated": false
+    },
+    "poi-513d78209c5c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-039-513d78209c.jpg",
+      "file": "images/poi/poi-039-513d78209c.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 at",
+      "source": "https://zh.wikipedia.org/wiki/%E7%BB%B4%E4%B9%9F%E7%BA%B3%E5%9B%BD%E7%AB%8B%E6%AD%8C%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-fb7eec1e9e62": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-236-fb7eec1e9e.jpg",
+      "file": "images/poi/poi-236-fb7eec1e9e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Musikverein,_Viena,_Austria,_2020-01-31,_DD_170-172_HDR.jpg",
+      "aiCreated": false
+    },
+    "poi-84b3ca65b24c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-237-84b3ca65b2.jpg",
+      "file": "images/poi/poi-237-84b3ca65b2.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E7%B6%AD%E4%B9%9F%E7%B4%8D%E6%B2%B3%E7%95%94%E5%8A%87%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-337e6d103f80": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-238-337e6d103f.jpg",
+      "file": "images/poi/poi-238-337e6d103f.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%90%A8%E5%B0%94%E8%8C%A8%E5%A0%A1%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-16727fa4d860": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-052-16727fa4d8.jpg",
+      "file": "images/poi/poi-052-16727fa4d8.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 at",
+      "source": "https://zh.wikipedia.org/wiki/%E8%8E%AB%E6%89%8E%E7%89%B9%E5%87%BA%E7%94%9F%E5%9C%B0",
+      "aiCreated": false
+    },
+    "poi-a48fb90509e3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-239-a48fb90509.jpg",
+      "file": "images/poi/poi-239-a48fb90509.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%90%A8%E5%B0%94%E8%8C%A8%E5%A0%A1%E8%A6%81%E5%A1%9E",
+      "aiCreated": false
+    },
+    "poi-fe882d00df9c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-240-fe882d00df.jpg",
+      "file": "images/poi/poi-240-fe882d00df.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Eisenstadt_-_Schloss_Esterhazy.JPG",
+      "aiCreated": false
+    },
+    "poi-4dbd2f8b3e2c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-241-4dbd2f8b3e.jpg",
+      "file": "images/poi/poi-241-4dbd2f8b3e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Eisenstadt_Haydnkirche.JPG",
+      "aiCreated": false
+    },
+    "poi-692e0191cc1f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-163-692e0191cc.jpg",
+      "file": "images/poi/poi-163-692e0191cc.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:9_Chapel_Street,_Llangollen_-_Haydn_House_-_geograph.org.uk_-_7933326.jpg",
+      "aiCreated": false
+    },
+    "poi-ff25d96c6635": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-242-ff25d96c66.jpg",
+      "file": "images/poi/poi-242-ff25d96c66.jpg",
+      "credit": "Wikimedia Commons · FAL",
+      "source": "https://zh.wikipedia.org/wiki/%E7%93%A6%E7%89%B9%E5%A0%A1",
+      "aiCreated": false
+    },
+    "poi-81fb47909d31": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-243-81fb47909d.jpg",
+      "file": "images/poi/poi-243-81fb47909d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:BachhausEisenach-pjt.jpg",
+      "aiCreated": false
+    },
+    "poi-1b76386fec50": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-244-1b76386fec.jpg",
+      "file": "images/poi/poi-244-1b76386fec.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E6%A0%BC%E6%8B%89%E7%89%B9%E4%BF%AE%E9%81%93%E9%99%A2%E5%9C%A3%E4%B9%94%E6%B2%BB%E6%95%99%E5%A0%82.jpg",
+      "aiCreated": false
+    },
+    "poi-bebfda2d39f4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-245-bebfda2d39.jpg",
+      "file": "images/poi/poi-245-bebfda2d39.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%9C%A3%E6%89%98%E9%A9%AC%E6%96%AF%E6%95%99%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-66727286f992": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-246-66727286f9.jpg",
+      "file": "images/poi/poi-246-66727286f9.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:20070812100DR_Dresden_Gewandhaus_mit_Dinglingerbrunnen.jpg",
+      "aiCreated": false
+    },
+    "poi-4eaa2bb2251a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-049-4eaa2bb225.jpg",
+      "file": "images/poi/poi-049-4eaa2bb225.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:Mendelssohnhaus_au%C3%9Fen_1.jpg",
+      "aiCreated": false
+    },
+    "poi-a3c9078b8af3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-247-a3c9078b8a.jpg",
+      "file": "images/poi/poi-247-a3c9078b8a.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Semperoper-dresden-front.jpg",
+      "aiCreated": false
+    },
+    "poi-01daffd0d58f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-248-01daffd0d5.jpg",
+      "file": "images/poi/poi-248-01daffd0d5.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Church_of_Our_Lady_of_Peace,_Newbridge_front.JPG",
+      "aiCreated": false
+    },
+    "poi-7dc2f402844b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-249-7dc2f40284.jpg",
+      "file": "images/poi/poi-249-7dc2f40284.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.5",
+      "source": "https://zh.wikipedia.org/wiki/%E8%8C%A8%E6%B8%A9%E6%A0%BC%E5%AE%AB",
+      "aiCreated": false
+    },
+    "poi-030150a4d2f0": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-250-030150a4d2.jpg",
+      "file": "images/poi/poi-250-030150a4d2.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0 de",
+      "source": "https://commons.wikimedia.org/wiki/File:150418_Konzerthaus_Berlin.jpg",
+      "aiCreated": false
+    },
+    "poi-161db97b652c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-044-161db97b65.jpg",
+      "file": "images/poi/poi-044-161db97b65.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Berliner_Philharmonie,_main_building_(1).jpg",
+      "aiCreated": false
+    },
+    "poi-14105f5a7c52": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-251-14105f5a7c.jpg",
+      "file": "images/poi/poi-251-14105f5a7c.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E6%9F%8F%E6%9E%97%E5%9C%8B%E7%AB%8B%E6%AD%8C%E5%8A%87%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-6595c71ff36b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-252-6595c71ff3.jpg",
+      "file": "images/poi/poi-252-6595c71ff3.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%22Cap_San_Diego%22_%26_Elbphilharmonie_(Hamburg,_2019).jpg",
+      "aiCreated": false
+    },
+    "poi-2fbed0f56c8c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-253-2fbed0f56c.jpg",
+      "file": "images/poi/poi-253-2fbed0f56c.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E5%9C%A3%E7%B1%B3%E8%BF%A6%E5%8B%92%E6%95%99%E5%A0%82_20250622.jpg",
+      "aiCreated": false
+    },
+    "poi-f22c3c43a557": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-254-f22c3c43a5.jpg",
+      "file": "images/poi/poi-254-f22c3c43a5.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2022-09-20-Hamburgische-Staatsoper.jpg",
+      "aiCreated": false
+    },
+    "poi-2af6627a0351": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-255-2af6627a03.jpg",
+      "file": "images/poi/poi-255-2af6627a03.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bell_tower_of_the_Dom_zu_Unserer_Lieben_Frau.jpg",
+      "aiCreated": false
+    },
+    "poi-3214fd1e2113": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-256-3214fd1e21.jpg",
+      "file": "images/poi/poi-256-3214fd1e21.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 de",
+      "source": "https://commons.wikimedia.org/wiki/File:Holstentor_in_L%C3%BCbeck_Frontseite.jpg",
+      "aiCreated": false
+    },
+    "poi-ae77944044f0": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-257-ae77944044.jpg",
+      "file": "images/poi/poi-257-ae77944044.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%90%95%E8%B4%9D%E5%85%8B%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-60e5eed05601": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-258-60e5eed056.jpg",
+      "file": "images/poi/poi-258-60e5eed056.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Beethoven_house.jpg",
+      "aiCreated": false
+    },
+    "poi-a195ff4e9847": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-259-a195ff4e98.jpg",
+      "file": "images/poi/poi-259-a195ff4e98.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0 de",
+      "source": "https://zh.wikipedia.org/wiki/%E6%B3%A2%E6%81%A9%E5%A4%A7%E6%95%99%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-08ec9ff2c72e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-260-08ec9ff2c7.jpg",
+      "file": "images/poi/poi-260-08ec9ff2c7.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 de",
+      "source": "https://commons.wikimedia.org/wiki/File:2013-09-02_Beethoven-Denkmal_n%C3%B6rdlich_des_Restaurants_Rheinaue,_Ludwig-Erhard-Allee_20,_Bonn-Hochkreuz_IMG_0878.jpg",
+      "aiCreated": false
+    },
+    "poi-41d636233e6d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-261-41d636233e.jpg",
+      "file": "images/poi/poi-261-41d636233e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Deutsches_Nationaltheater_Weimar.jpg",
+      "aiCreated": false
+    },
+    "poi-89cc9453762a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-262-89cc945376.jpg",
+      "file": "images/poi/poi-262-89cc945376.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Exterior_of_Liszthaus,_Weimar.jpg",
+      "aiCreated": false
+    },
+    "poi-ecbc241f792d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-263-ecbc241f79.jpg",
+      "file": "images/poi/poi-263-ecbc241f79.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Weimar_Herderkirche.jpg",
+      "aiCreated": false
+    },
+    "poi-52ce25e01c16": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-145-52ce25e01c.jpg",
+      "file": "images/poi/poi-145-52ce25e01c.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0 de",
+      "source": "https://zh.wikipedia.org/wiki/%E6%8B%9C%E7%BD%97%E4%BC%8A%E7%89%B9%E8%8A%82%E6%97%A5%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-218ec402dc5a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-264-218ec402dc.jpg",
+      "file": "images/poi/poi-264-218ec402dc.jpg",
+      "credit": "Wikimedia Commons · FAL",
+      "source": "https://zh.wikipedia.org/wiki/%E4%BE%AF%E7%88%B5%E6%AD%8C%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-b6bebc67411f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-265-b6bebc6741.jpg",
+      "file": "images/poi/poi-265-b6bebc6741.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0 de",
+      "source": "https://commons.wikimedia.org/wiki/File:Bayreuth,_Haus_Wahnfried_1995.jpg",
+      "aiCreated": false
+    },
+    "poi-99f3cf345fe7": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-266-99f3cf345f.jpg",
+      "file": "images/poi/poi-266-99f3cf345f.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:03.08.2022_Bayerisches_Nationaltheater_08.jpg",
+      "aiCreated": false
+    },
+    "poi-de8b57f8e9f4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-267-de8b57f8e9.jpg",
+      "file": "images/poi/poi-267-de8b57f8e9.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Cuvillies_Theater_Muenchen.jpg",
+      "aiCreated": false
+    },
+    "poi-a6de581ef286": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-268-a6de581ef2.jpg",
+      "file": "images/poi/poi-268-a6de581ef2.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bell_tower_of_the_Dom_zu_Unserer_Lieben_Frau.jpg",
+      "aiCreated": false
+    },
+    "poi-2d5f3a7d6881": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-269-2d5f3a7d68.jpg",
+      "file": "images/poi/poi-269-2d5f3a7d68.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Estates_Theatre,_Prague.jpg",
+      "aiCreated": false
+    },
+    "poi-47c96ccf77c3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-060-47c96ccf77.jpg",
+      "file": "images/poi/poi-060-47c96ccf77.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E9%B2%81%E9%81%93%E5%A4%AB%E9%9F%B3%E4%B9%90%E5%8E%85",
+      "aiCreated": false
+    },
+    "poi-7158bb9e414c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-270-7158bb9e41.jpg",
+      "file": "images/poi/poi-270-7158bb9e41.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Prague_National_Theatre_201906.jpg",
+      "aiCreated": false
+    },
+    "poi-411fdb187c8d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-063-411fdb187c.jpg",
+      "file": "images/poi/poi-063-411fdb187c.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://zh.wikipedia.org/wiki/%E5%8C%88%E7%89%99%E5%88%A9%E5%9B%BD%E5%AE%B6%E6%AD%8C%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-d2cf5d2d6af9": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-018-d2cf5d2d6a.jpg",
+      "file": "images/poi/poi-018-d2cf5d2d6a.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E6%9D%8E%E6%96%AF%E7%89%B9%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-74577f317bc4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-271-74577f317b.jpg",
+      "file": "images/poi/poi-271-74577f317b.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%8A%A0%E4%BB%80%E6%95%99%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-608205b16d1c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-272-608205b16d.jpg",
+      "file": "images/poi/poi-272-608205b16d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Chopin_Monument,_Warsaw_-_2010.JPG",
+      "aiCreated": false
+    },
+    "poi-486ba2a98db5": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-273-486ba2a98d.jpg",
+      "file": "images/poi/poi-273-486ba2a98d.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Warsaw_Philharmonic_-_southern_facade.jpg",
+      "aiCreated": false
+    },
+    "poi-6dce682cdb2b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-274-6dce682cdb.png",
+      "file": "images/poi/poi-274-6dce682cdb.png",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Church_of_Holy_Cross_in_Warsaw.PNG",
+      "aiCreated": false
+    },
+    "poi-1326187e50b2": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-094-1326187e50.jpg",
+      "file": "images/poi/poi-094-1326187e50.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E9%A9%AC%E6%9E%97%E6%96%AF%E5%9F%BA%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-eb19eb4cf945": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-275-eb19eb4cf9.jpg",
+      "file": "images/poi/poi-275-eb19eb4cf9.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:St._Petersburg._Imperial_Conservatory._Theatre_Square.,_3..JPG",
+      "aiCreated": false
+    },
+    "poi-5c776732a5a9": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-276-5c776732a5.jpg",
+      "file": "images/poi/poi-276-5c776732a5.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://zh.wikipedia.org/wiki/%E6%BB%B4%E8%A1%80%E6%95%91%E4%B8%96%E4%B8%BB%E6%95%99%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-22a0238d640e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-096-22a0238d64.jpg",
+      "file": "images/poi/poi-096-22a0238d64.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%8E%AB%E6%96%AF%E7%A7%91%E5%A4%A7%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-def51c261a60": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-278-def51c261a.jpg",
+      "file": "images/poi/poi-278-def51c261a.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:St._Basil%27s_Cathedral_Exterior_01.JPG",
+      "aiCreated": false
+    },
+    "poi-b5225de95a10": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-279-b5225de95a.jpg",
+      "file": "images/poi/poi-279-b5225de95a.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%B8%83%E9%9B%B7%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-ea2df8216df9": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-280-ea2df8216d.jpg",
+      "file": "images/poi/poi-280-ea2df8216d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%B8%83%E9%9B%B7%E9%92%9F%E6%A5%BC",
+      "aiCreated": false
+    },
+    "poi-eab5ae8c879f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-164-eab5ae8c87.jpg",
+      "file": "images/poi/poi-164-eab5ae8c87.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-G%C3%A9ry_ext_1.JPG",
+      "aiCreated": false
+    },
+    "poi-2d3a1f54521a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-281-2d3a1f5452.jpg",
+      "file": "images/poi/poi-281-2d3a1f5452.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:CONDE_Chateau_des_comtes_de_Hainaut.jpg",
+      "aiCreated": false
+    },
+    "poi-58b5533b7996": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-165-58b5533b79.jpg",
+      "file": "images/poi/poi-165-58b5533b79.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://zh.wikipedia.org/wiki/%E5%AD%94%E4%BB%A3%E5%9F%8E%E5%A0%A1",
+      "aiCreated": false
+    },
+    "poi-b06776e3b304": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-166-b06776e3b3.jpg",
+      "file": "images/poi/poi-166-b06776e3b3.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Conde_sur_escaut_eglise_st_wasnon.jpg",
+      "aiCreated": false
+    },
+    "poi-9eb30063b6b4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-282-9eb30063b6.jpg",
+      "file": "images/poi/poi-282-9eb30063b6.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.5 nl",
+      "source": "https://commons.wikimedia.org/wiki/File:Avila_walls.jpg",
+      "aiCreated": false
+    },
+    "poi-aae1ef9ed611": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-283-aae1ef9ed6.jpg",
+      "file": "images/poi/poi-283-aae1ef9ed6.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E9%98%BF%E7%BB%B4%E6%8B%89%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-2240e781b4fb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-167-2240e781b4.jpg",
+      "file": "images/poi/poi-167-2240e781b4.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Basilica_de_San_Vicente,_Avila-HDR.jpg",
+      "aiCreated": false
+    },
+    "poi-8a1b50e15fdb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-284-8a1b50e15f.jpg",
+      "file": "images/poi/poi-284-8a1b50e15f.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Teatro_Real_de_Madrid._Fachada_principal.jpg",
+      "aiCreated": false
+    },
+    "poi-d1b6db25ec91": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-285-d1b6db25ec.jpg",
+      "file": "images/poi/poi-285-d1b6db25ec.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 es",
+      "source": "https://commons.wikimedia.org/wiki/File:Teatro_de_la_Zarzuela_(Madrid)_02.jpg",
+      "aiCreated": false
+    },
+    "poi-b7c9d5f2298c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-286-b7c9d5f229.jpg",
+      "file": "images/poi/poi-286-b7c9d5f229.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Auditorio_Nacional_de_M%C3%BAsica,_Madrid.JPG",
+      "aiCreated": false
+    },
+    "poi-e83b0c8460a7": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-287-e83b0c8460.jpg",
+      "file": "images/poi/poi-287-e83b0c8460.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Troldhaugen_in_Bergen.jpg",
+      "aiCreated": false
+    },
+    "poi-f07456eadd3b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-288-f07456eadd.jpg",
+      "file": "images/poi/poi-288-f07456eadd.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:BERGEN_Norway_Lille_Lungeg%C3%A5rdsvannet_KODE_Art_Museum_Kunsthall_Grieghallen_Foreningsgaten_Nyg%C3%A5rdsg._etc_View_from_Mount_Floyen_2019-08-28_by_Forbes_Johnston_Flickr_Some_rights_reserved.jpg",
+      "aiCreated": false
+    },
+    "poi-f41f24e6b6d5": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-289-f41f24e6b6.jpg",
+      "file": "images/poi/poi-289-f41f24e6b6.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:View_of_Bryggen_from_the_other_side_of_the_harbor_Bergen_Norway.jpg",
+      "aiCreated": false
+    },
+    "poi-16b84d667014": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-168-16b84d6670.jpg",
+      "file": "images/poi/poi-168-16b84d6670.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:B%C3%A9ziers_Cathedral_and_Old_Bridge001.JPG",
+      "aiCreated": false
+    },
+    "poi-a5bb8e743ef4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-169-a5bb8e743e.jpg",
+      "file": "images/poi/poi-169-a5bb8e743e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%80%81%E6%A1%A5",
+      "aiCreated": false
+    },
+    "poi-c1ea7b296d3d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-170-c1ea7b296d.jpg",
+      "file": "images/poi/poi-170-c1ea7b296d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:FonseranesLocks.jpg",
+      "aiCreated": false
+    },
+    "poi-6a5c20f3299e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-290-6a5c20f329.jpg",
+      "file": "images/poi/poi-290-6a5c20f329.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%98%87%E9%BB%8E%E4%B8%96%E6%AD%8C%E5%8A%87%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-03d4bc16b771": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-291-03d4bc16b7.jpg",
+      "file": "images/poi/poi-291-03d4bc16b7.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tonhalle_aussen.jpg",
+      "aiCreated": false
+    },
+    "poi-74802fa94d32": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-292-74802fa94d.jpg",
+      "file": "images/poi/poi-292-74802fa94d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Blick_vom_Z%C3%BCrichsee_auf_Quaibr%C3%BCcke_und_Grossm%C3%BCnster_(2009).jpg",
+      "aiCreated": false
+    },
+    "poi-6d20c1638bdb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-056-6d20c1638b.jpg",
+      "file": "images/poi/poi-056-6d20c1638b.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E6%96%AF%E5%8D%A1%E6%8B%89%E5%A4%A7%E5%8A%87%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-2fc3a448ede0": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-293-2fc3a448ed.jpg",
+      "file": "images/poi/poi-293-2fc3a448ed.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E7%B1%B3%E5%85%B0%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82",
+      "aiCreated": false
+    },
+    "poi-cb002c1e917a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-294-cb002c1e91.png",
+      "file": "images/poi/poi-294-cb002c1e91.png",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Conservatory_Giuseppe_Verdi_-_Front_(Turin,_1928).png",
+      "aiCreated": false
+    },
+    "poi-41821f3a3b22": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-295-41821f3a3b.jpg",
+      "file": "images/poi/poi-295-41821f3a3b.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Honfleur_Vieux_Bassin_1.jpg",
+      "aiCreated": false
+    },
+    "poi-9040ca12796b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-296-9040ca1279.jpg",
+      "file": "images/poi/poi-296-9040ca1279.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Honfleur_%C3%89glise_Sainte-Catherine_Fassade_3.jpg",
+      "aiCreated": false
+    },
+    "poi-54d83b084fb5": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-171-54d83b084f.jpg",
+      "file": "images/poi/poi-171-54d83b084f.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Honfleur_-_Place_Sainte-Catherine_-_View_NW_on_Free-standing_Bell-Tower_%26_Saint-Catherine%27s_Church.jpg",
+      "aiCreated": false
+    },
+    "poi-4e597818afed": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-000-4e597818af.jpg",
+      "file": "images/poi/poi-000-4e597818af.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Paris_-_Conservatoire_National_Sup%C3%A9rieur_de_Musique_et_de_Danse_(22896169063).jpg",
+      "aiCreated": false
+    },
+    "poi-835aca1017cc": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-001-835aca1017.jpg",
+      "file": "images/poi/poi-001-835aca1017.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0 fr",
+      "source": "https://zh.wikipedia.org/wiki/%E9%9F%B3%E4%B9%90%E5%9F%8E",
+      "aiCreated": false
+    },
+    "poi-168ec5090b41": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-002-168ec5090b.jpg",
+      "file": "images/poi/poi-002-168ec5090b.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Royal_College_of_Music,_Kensington,_London.jpg",
+      "aiCreated": false
+    },
+    "poi-3f8323001795": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-004-3f83230017.jpg",
+      "file": "images/poi/poi-004-3f83230017.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:London_003_Hendrix_and_Handel_houses.jpg",
+      "aiCreated": false
+    },
+    "poi-5d7ea4f3ff55": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-005-5d7ea4f3ff.jpg",
+      "file": "images/poi/poi-005-5d7ea4f3ff.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://zh.wikipedia.org/wiki/%E7%BB%B4%E4%B9%9F%E7%BA%B3%E9%9F%B3%E4%B9%90%E4%B8%8E%E8%A1%A8%E6%BC%94%E8%89%BA%E6%9C%AF%E5%A4%A7%E5%AD%A6",
+      "aiCreated": false
+    },
+    "poi-d2e425107a4e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-006-d2e425107a.jpg",
+      "file": "images/poi/poi-006-d2e425107a.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Beethoven_residence_-_M%C3%B6lkerbastei_8_(Pasqualati_House),_Vienna.JPG",
+      "aiCreated": false
+    },
+    "poi-9db058d83307": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-007-9db058d833.jpg",
+      "file": "images/poi/poi-007-9db058d833.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Alsergrund_(Wien)_-_Schuberthaus_(2).JPG",
+      "aiCreated": false
+    },
+    "poi-6c19a9db3b74": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-008-6c19a9db3b.jpg",
+      "file": "images/poi/poi-008-6c19a9db3b.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2026-01-05-UdK-Theatersaal-Fasanenstr-Berlin-Charlottenburg.jpg",
+      "aiCreated": false
+    },
+    "poi-87840b699e75": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-009-87840b699e.jpg",
+      "file": "images/poi/poi-009-87840b699e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0 at",
+      "source": "https://commons.wikimedia.org/wiki/File:Arnold_Schoenberg_Center_Vienna.jpg",
+      "aiCreated": false
+    },
+    "poi-c265885692ec": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-010.png",
+      "file": "images/poi/user/poi-user-010.png",
+      "credit": "用户提供实景图（顺序 1）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-c7ed7b71ebfa": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-011-c7ed7b71eb.jpg",
+      "file": "images/poi/poi-011-c7ed7b71eb.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 de",
+      "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-1983-0325-309,_Leipzig,_Bosehaus,_Bach-Museum.jpg",
+      "aiCreated": false
+    },
+    "poi-e4b0f4d073c4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-012-e4b0f4d073.jpg",
+      "file": "images/poi/poi-012-e4b0f4d073.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Mozarteum_University_of_Salzburg.jpg",
+      "aiCreated": false
+    },
+    "poi-861631324c07": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-013-861631324c.jpg",
+      "file": "images/poi/poi-013-861631324c.jpg",
+      "credit": "Wikimedia Commons · Attribution",
+      "source": "https://commons.wikimedia.org/wiki/File:8395_-_Milano_-_Giuseppe_Rusnati_(attr.),_Facciata_del_Conservatorio_-_Foto_Giovanni_Dall%27Orto,_31-Aug-2007.jpg",
+      "aiCreated": false
+    },
+    "poi-bb36487fc4fc": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-014-bb36487fc4.jpg",
+      "file": "images/poi/poi-014-bb36487fc4.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Casa_Verdi_e_monumento_a_Giuseppe_Verdi.jpg",
+      "aiCreated": false
+    },
+    "poi-ba74f7c9c65a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-015-ba74f7c9c6.jpg",
+      "file": "images/poi/poi-015-ba74f7c9c6.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Campo_Marzio_-_Accademia_di_Santa_Cecilia_1.JPG",
+      "aiCreated": false
+    },
+    "poi-7ac8aa8c4802": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-016-7ac8aa8c48.png",
+      "file": "images/poi/poi-016-7ac8aa8c48.png",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:It%27s_a_Wonderful_Life_-_Prague_IMG_0111.png",
+      "aiCreated": false
+    },
+    "poi-f356e7ab24c8": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-017-f356e7ab24.jpg",
+      "file": "images/poi/poi-017-f356e7ab24.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Prague_2018_015.JPG",
+      "aiCreated": false
+    },
+    "poi-3d692411dbe6": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-019-3d692411db.jpg",
+      "file": "images/poi/poi-019-3d692411db.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%8C%B1%E8%8E%89%E4%BA%9E%E5%AD%B8%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-7b209ee6e64c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-020-7b209ee6e6.jpg",
+      "file": "images/poi/poi-020-7b209ee6e6.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:University_Hall_(Harvard_University)_-_east_facade.JPG",
+      "aiCreated": false
+    },
+    "poi-beb719f48af2": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-021-beb719f48a.jpg",
+      "file": "images/poi/poi-021-beb719f48a.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://zh.wikipedia.org/wiki/%E4%BC%AF%E5%85%8B%E5%88%A9%E9%9F%B3%E6%A8%82%E5%AD%B8%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-6e91a95a8d6f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-022-6e91a95a8d.jpg",
+      "file": "images/poi/poi-022-6e91a95a8d.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Yale_School_of_Music_(54106346494).jpg",
+      "aiCreated": false
+    },
+    "poi-bed905ebec85": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-023-bed905ebec.jpg",
+      "file": "images/poi/poi-023-bed905ebec.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E6%9F%AF%E8%92%82%E6%96%AF%E9%9F%B3%E6%A8%82%E5%AD%B8%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-8d4b61563076": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-024-8d4b615630.jpg",
+      "file": "images/poi/poi-024-8d4b615630.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Usc_booth_hall_north_face_1.jpg",
+      "aiCreated": false
+    },
+    "poi-1b382c37195c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-025-1b382c3719.jpg",
+      "file": "images/poi/poi-025-1b382c3719.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:St._Petersburg._Imperial_Conservatory._Theatre_Square.,_3..JPG",
+      "aiCreated": false
+    },
+    "poi-ef4946ba6292": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-026-ef4946ba62.jpg",
+      "file": "images/poi/poi-026-ef4946ba62.jpg",
+      "credit": "Wikimedia Commons · FAL",
+      "source": "https://zh.wikipedia.org/wiki/%E8%8E%AB%E6%96%AF%E7%A7%91%E9%9F%B3%E6%A8%82%E5%AD%B8%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-b07b8a64e453": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-027-b07b8a64e4.jpg",
+      "file": "images/poi/poi-027-b07b8a64e4.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://zh.wikipedia.org/wiki/%E8%B5%AB%E5%B0%94%E8%BE%9B%E5%9F%BA%E8%89%BA%E6%9C%AF%E5%A4%A7%E5%AD%A6%E8%A5%BF%E8%B4%9D%E6%9F%B3%E6%96%AF%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-f5fa09aae22e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-028-f5fa09aae2.jpg",
+      "file": "images/poi/poi-028-f5fa09aae2.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E9%9B%85%E7%BA%B3%E5%88%87%E5%85%8B%E9%9F%B3%E4%B9%90%E4%B8%8E%E8%A1%A8%E6%BC%94%E8%89%BA%E6%9C%AF%E5%AD%A6%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-d5a41e7036b8": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-029-d5a41e7036.jpg",
+      "file": "images/poi/poi-029-d5a41e7036.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Sorbonne_university_main_building_entrance.jpg",
+      "aiCreated": false
+    },
+    "poi-ddb3bae18121": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-030-ddb3bae181.jpg",
+      "file": "images/poi/poi-030-ddb3bae181.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:EcoleNormaledeMusiquedeParis.JPG",
+      "aiCreated": false
+    },
+    "poi-2c4849cd4a73": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-031-2c4849cd4a.jpg",
+      "file": "images/poi/poi-031-2c4849cd4a.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ircam_place_stravinsky.jpg",
+      "aiCreated": false
+    },
+    "poi-7042a9fa40de": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-032-7042a9fa40.jpg",
+      "file": "images/poi/poi-032-7042a9fa40.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:1352667_II_BARBICAN,_Guildhall_School_of_Music_and_Drama_City_of_London_London_20250613_0001.jpg",
+      "aiCreated": false
+    },
+    "poi-38e2f777acaa": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-033-38e2f777ac.jpg",
+      "file": "images/poi/poi-033-38e2f777ac.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Trinity_Laban_Conservatoire_of_Music_and_Dance.jpg",
+      "aiCreated": false
+    },
+    "poi-f116f832b70e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-034-f116f832b7.jpg",
+      "file": "images/poi/poi-034-f116f832b7.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.5",
+      "source": "https://zh.wikipedia.org/wiki/%E5%A8%81%E6%A0%BC%E8%8E%AB%E5%B0%94%E9%9F%B3%E4%B9%90%E5%8E%85",
+      "aiCreated": false
+    },
+    "poi-faf6626db560": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-035-faf6626db5.jpg",
+      "file": "images/poi/poi-035-faf6626db5.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Goldsmiths_Main_Building.jpg",
+      "aiCreated": false
+    },
+    "poi-968b4fa04598": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-036-968b4fa045.jpg",
+      "file": "images/poi/poi-036-968b4fa045.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Universit%C3%A4t_f%C3%BCr_Musik_und_Darstellende_Kunst.jpg",
+      "aiCreated": false
+    },
+    "poi-af381933cd46": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-037-af381933cd.jpg",
+      "file": "images/poi/poi-037-af381933cd.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 at",
+      "source": "https://commons.wikimedia.org/wiki/File:Universit%C3%A4t_Wien,_Hauptgeb%C3%A4ude.jpg",
+      "aiCreated": false
+    },
+    "poi-4e943ec12a13": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-040-4e943ec12a.jpg",
+      "file": "images/poi/poi-040-4e943ec12a.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:1944_-_Salzburg_-_Mozart_Wohnhaus,_Makartplatz.jpg",
+      "aiCreated": false
+    },
+    "poi-dba544aacd05": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-041-dba544aacd.png",
+      "file": "images/poi/poi-041-dba544aacd.png",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:HaydnsHouseInVienna.PNG",
+      "aiCreated": false
+    },
+    "poi-996c100f0d84": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-042-996c100f0d.jpg",
+      "file": "images/poi/poi-042-996c100f0d.jpg",
+      "credit": "Wikimedia Commons · Attribution",
+      "source": "https://commons.wikimedia.org/wiki/File:2006-09-10_Marstall01.jpg",
+      "aiCreated": false
+    },
+    "poi-28fd16d7f804": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-043-28fd16d7f8.jpg",
+      "file": "images/poi/poi-043-28fd16d7f8.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2018-08-12_DE_Berlin-Mitte,_Franz%C3%B6sische_Stra%C3%9Fe,_Oberwallstra%C3%9Fe,_Barenboim-Said-Akademie_(50022818967).jpg",
+      "aiCreated": false
+    },
+    "poi-a37778833604": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-046-a377788336.jpg",
+      "file": "images/poi/poi-046-a377788336.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Humboldt_University_-_Main_building.jpg",
+      "aiCreated": false
+    },
+    "poi-a63f8d2883a8": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-047-a63f8d2883.jpg",
+      "file": "images/poi/poi-047-a63f8d2883.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Exterior_of_St._Thomas_Church,_Leipzig,_with_Bach_statue.jpg",
+      "aiCreated": false
+    },
+    "poi-ae8c781c78fb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-048-ae8c781c78.jpg",
+      "file": "images/poi/poi-048-ae8c781c78.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:20070812100DR_Dresden_Gewandhaus_mit_Dinglingerbrunnen.jpg",
+      "aiCreated": false
+    },
+    "poi-ecfdcecb1991": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-050-ecfdcecb19.jpg",
+      "file": "images/poi/poi-050-ecfdcecb19.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Leipzig_Schumann-Haus.jpg",
+      "aiCreated": false
+    },
+    "poi-81b06a92d386": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-051-81b06a92d3.jpg",
+      "file": "images/poi/poi-051-81b06a92d3.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Universidad_de_Leipzig.jpg",
+      "aiCreated": false
+    },
+    "poi-558ebf450bbe": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-053-558ebf450b.jpg",
+      "file": "images/poi/poi-053-558ebf450b.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:1944_-_Salzburg_-_Mozart_Wohnhaus,_Makartplatz.jpg",
+      "aiCreated": false
+    },
+    "poi-8567aee1736d": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-054-8567aee173.jpg",
+      "file": "images/poi/poi-054-8567aee173.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Salzburg_Festspielhaus.jpg",
+      "aiCreated": false
+    },
+    "poi-bc9f0ef86147": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-055-bc9f0ef861.jpg",
+      "file": "images/poi/poi-055-bc9f0ef861.jpg",
+      "credit": "Wikimedia Commons · Copyrighted free use",
+      "source": "https://commons.wikimedia.org/wiki/File:BuildingUniversitySalzburg1.jpg",
+      "aiCreated": false
+    },
+    "poi-9fcd17474fd6": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-057-9fcd17474f.jpg",
+      "file": "images/poi/poi-057-9fcd17474f.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E7%B1%B3%E8%98%AD%E5%A4%A7%E5%AD%B8",
+      "aiCreated": false
+    },
+    "poi-32888c00e4fe": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-058-32888c00e4.jpg",
+      "file": "images/poi/poi-058-32888c00e4.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Teatro_dell%27Opera_a_Roma.JPG",
+      "aiCreated": false
+    },
+    "poi-dca54f5b35ec": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-059-dca54f5b35.jpg",
+      "file": "images/poi/poi-059-dca54f5b35.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ingresso_UniSapienza_Notte.jpg",
+      "aiCreated": false
+    },
+    "poi-5ee456014771": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-061-5ee4560147.jpg",
+      "file": "images/poi/poi-061-5ee4560147.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0 de",
+      "source": "https://zh.wikipedia.org/wiki/%E5%B8%83%E6%8B%89%E6%A0%BC%E5%9B%BD%E5%AE%B6%E6%AD%8C%E5%89%A7%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-843b93a1590f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-062-843b93a159.jpg",
+      "file": "images/poi/poi-062-843b93a159.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:FFUK_Praha.JPG",
+      "aiCreated": false
+    },
+    "poi-2ee96f6c9abe": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-064-2ee96f6c9a.jpg",
+      "file": "images/poi/poi-064-2ee96f6c9a.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:B%C3%A9la_Bart%C3%B3k_Memorial_House_(52648970259).jpg",
+      "aiCreated": false
+    },
+    "poi-4af3a2798ed2": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-065-4af3a2798e.jpg",
+      "file": "images/poi/poi-065-4af3a2798e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Budapest_VI.,_Andr%C3%A1ssy_%C3%BAt_87_-_89_sz%C3%A1m.jpg",
+      "aiCreated": false
+    },
+    "poi-fa86c8c7fc43": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-066-fa86c8c7fc.jpg",
+      "file": "images/poi/poi-066-fa86c8c7fc.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%8E%84%E7%89%B9%E6%B2%83%E4%BB%80%C2%B7%E7%BE%85%E8%98%AD%E5%A4%A7%E5%AD%B8",
+      "aiCreated": false
+    },
+    "poi-d093774020dc": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-067-d093774020.jpg",
+      "file": "images/poi/poi-067-d093774020.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E6%9B%BC%E5%93%88%E9%A1%BF%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-c0f3536c3e96": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-068-c0f3536c3e.jpg",
+      "file": "images/poi/poi-068-c0f3536c3e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Mannes_facade.jpg",
+      "aiCreated": false
+    },
+    "poi-43da641aeed6": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-071-43da641aee.jpg",
+      "file": "images/poi/poi-071-43da641aee.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Columbia_Climate_School_Hogan_Hall.jpg",
+      "aiCreated": false
+    },
+    "poi-973fb876c18f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-074-973fb876c1.jpg",
+      "file": "images/poi/poi-074-973fb876c1.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Boston_University_Marsh_Chapel,_Boston_MA.jpg",
+      "aiCreated": false
+    },
+    "poi-1c70522914b3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-075-1c70522914.jpg",
+      "file": "images/poi/poi-075-1c70522914.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Walker_Museum_Building,_University_of_Chicago,_University_Avenue,_Hyde_Park,_Chicago,_IL_(54515842641).jpg",
+      "aiCreated": false
+    },
+    "poi-d7d571d05f2b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-076.png",
+      "file": "images/poi/user/poi-user-076.png",
+      "credit": "用户提供实景图（顺序 2）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-71e04fcf4e57": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-077-71e04fcf4e.jpg",
+      "file": "images/poi/poi-077-71e04fcf4e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Orchestra_Hall,_Chicago_Symphony_Center.jpg",
+      "aiCreated": false
+    },
+    "poi-b82c3d2f0102": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-078-b82c3d2f01.jpg",
+      "file": "images/poi/poi-078-b82c3d2f01.jpg",
+      "credit": "Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Cortlandt_V.D._Hubbard,_Photographer_November_1967_HALLWAY_OUTSIDE_THEATRE_-_American_Academy_of_Music,_232-246_South_Broad_Street,_Philadelphia,_Philadelphia_County,_PA_HABS_PA,51-PHILA,294-8.tif",
+      "aiCreated": false
+    },
+    "poi-049c93306791": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-079-049c933067.jpg",
+      "file": "images/poi/poi-079-049c933067.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Levin_Building_Exterior.jpg",
+      "aiCreated": false
+    },
+    "poi-318d5e7b0beb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-080.png",
+      "file": "images/poi/user/poi-user-080.png",
+      "credit": "用户提供实景图（顺序 3）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-87b90ec9df43": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-081-87b90ec9df.jpg",
+      "file": "images/poi/poi-081-87b90ec9df.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:ColburnSchoolFront.jpg",
+      "aiCreated": false
+    },
+    "poi-4da9dae40d30": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-082-4da9dae40d.jpg",
+      "file": "images/poi/poi-082-4da9dae40d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:UCLA_Herb_Alpert_School_of_Music_1.jpg",
+      "aiCreated": false
+    },
+    "poi-85b0464cd233": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-083-85b0464cd2.jpg",
+      "file": "images/poi/poi-083-85b0464cd2.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.5",
+      "source": "https://zh.wikipedia.org/wiki/%E8%8F%AF%E7%89%B9%C2%B7%E8%BF%AA%E5%A3%AB%E5%B0%BC%E9%9F%B3%E6%A8%82%E5%BB%B3",
+      "aiCreated": false
+    },
+    "poi-a235f07f876c": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-084-a235f07f87.jpg",
+      "file": "images/poi/poi-084-a235f07f87.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2019_UCLA_Royce_Hall_1.jpg",
+      "aiCreated": false
+    },
+    "poi-ed840a3af0ed": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-085-ed840a3af0.jpg",
+      "file": "images/poi/poi-085-ed840a3af0.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Watergate_and_John_F._Kennedy_Center_for_Performing_arts_as_seen_from_the_Georgetown_waterfront_(March_26,_%2704)_-_panoramio.jpg",
+      "aiCreated": false
+    },
+    "poi-fb9e368707c7": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-086.png",
+      "file": "images/poi/user/poi-user-086.png",
+      "credit": "用户提供实景图（顺序 4）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-9c4ec4eab6b2": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-087-9c4ec4eab6.jpg",
+      "file": "images/poi/poi-087-9c4ec4eab6.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Columbian_University_law_school_and_university_building_-_The_George_Washington_University.tif",
+      "aiCreated": false
+    },
+    "poi-b57dd5e454a6": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-088-b57dd5e454.jpg",
+      "file": "images/poi/poi-088-b57dd5e454.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:San_Francisco_Conservatory_of_Music_Building.jpg",
+      "aiCreated": false
+    },
+    "poi-82e62225796a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-090.png",
+      "file": "images/poi/user/poi-user-090.png",
+      "credit": "用户提供实景图（顺序 5）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-948cc1f8f175": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-091-948cc1f8f1.jpg",
+      "file": "images/poi/poi-091-948cc1f8f1.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Plaza_next_to_Posvar_Hall_and_Barco_Law_Building,_University_of_Pittsburgh_Oakland_Campus.jpg",
+      "aiCreated": false
+    },
+    "poi-200b7075c7ad": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-093.png",
+      "file": "images/poi/user/poi-user-093.png",
+      "credit": "用户提供实景图（顺序 6）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-7ab90ce7db94": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-095-7ab90ce7db.jpg",
+      "file": "images/poi/poi-095-7ab90ce7db.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%9C%A3%E5%BD%BC%E5%BE%97%E5%A0%A1%E5%9B%BD%E7%AB%8B%E5%A4%A7%E5%AD%A6",
+      "aiCreated": false
+    },
+    "poi-1b7e9f5514f1": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-097-1b7e9f5514.jpg",
+      "file": "images/poi/poi-097-1b7e9f5514.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Gnessinmoscow.jpg",
+      "aiCreated": false
+    },
+    "poi-6cee13ef07fc": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-098-6cee13ef07.jpg",
+      "file": "images/poi/poi-098-6cee13ef07.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:View_towards_Helsinki_Music_Centre_from_tower_of_National_Museum.jpg",
+      "aiCreated": false
+    },
+    "poi-299ed33388d1": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-099-299ed33388.jpg",
+      "file": "images/poi/poi-099-299ed33388.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://zh.wikipedia.org/wiki/%E8%8A%AC%E5%85%B0%E5%9B%BD%E5%AE%B6%E6%AD%8C%E5%89%A7%E8%8A%AD%E8%95%BE%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-6e1c6dce18d5": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-100-6e1c6dce18.jpg",
+      "file": "images/poi/poi-100-6e1c6dce18.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 pl",
+      "source": "https://zh.wikipedia.org/wiki/%E8%82%96%E9%82%A6%E9%9F%B3%E4%B9%90%E5%A4%A7%E5%AD%A6",
+      "aiCreated": false
+    },
+    "poi-bec39ab750bf": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-101-bec39ab750.jpg",
+      "file": "images/poi/poi-101-bec39ab750.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Warsaw_Philharmonic_-_southern_facade.jpg",
+      "aiCreated": false
+    },
+    "poi-af81ad09eaf3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-102-af81ad09ea.jpg",
+      "file": "images/poi/poi-102-af81ad09ea.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:PL_Warsaw_Ostrogski_Palace_and_Fryderyk_Chopin_Institute_Tamka_Street.JPG",
+      "aiCreated": false
+    },
+    "poi-e6f5265fc386": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-103-e6f5265fc3.jpg",
+      "file": "images/poi/poi-103-e6f5265fc3.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://zh.wikipedia.org/wiki/%E5%8D%8E%E6%B2%99%E5%A4%A7%E5%AD%A6",
+      "aiCreated": false
+    },
+    "poi-479ade98c127": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-104-479ade98c1.jpg",
+      "file": "images/poi/poi-104-479ade98c1.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Akademia_Muzyczna_Krak%C3%B3w.JPG",
+      "aiCreated": false
+    },
+    "poi-d11794fcc5cc": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-105-d11794fcc5.jpg",
+      "file": "images/poi/poi-105-d11794fcc5.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Jagiellonian_University,_Collegium_Maius_facade,_15_Jagiello%C5%84ska_Street,_Old_Town,_Krak%C3%B3w,_Poland.jpg",
+      "aiCreated": false
+    },
+    "poi-8dbd9203c3d0": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-106-8dbd9203c3.jpg",
+      "file": "images/poi/poi-106-8dbd9203c3.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Madrid_-_Real_Conservatorio_Superior_de_M%C3%BAsica_de_Madrid.jpg",
+      "aiCreated": false
+    },
+    "poi-382ec1cdb535": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-107-382ec1cdb5.jpg",
+      "file": "images/poi/poi-107-382ec1cdb5.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Edificio_de_la_Escuela_Superior_de_M%C3%BAsica_Reina_Sof%C3%ADa.jpg",
+      "aiCreated": false
+    },
+    "poi-ac49f78889ef": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-108-ac49f78889.jpg",
+      "file": "images/poi/poi-108-ac49f78889.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Madrid_-_Complutense_University.jpg",
+      "aiCreated": false
+    },
+    "poi-fa37190ac7cd": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-109-fa37190ac7.jpg",
+      "file": "images/poi/poi-109-fa37190ac7.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E9%9B%85%E5%85%B8%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-a10d8f668d48": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-110-a10d8f668d.jpg",
+      "file": "images/poi/poi-110-a10d8f668d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Stavros_Niarchos_Foundation_Cultural_Center,_Leof._Andrea_Siggrou,_Kallithea,_Greece.jpg",
+      "aiCreated": false
+    },
+    "poi-a69583539099": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-111-a695835390.jpg",
+      "file": "images/poi/poi-111-a695835390.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:National_and_Kapodistrian_University_of_Athens,_buildings_and_statues_(1).jpg",
+      "aiCreated": false
+    },
+    "poi-ae8ffdeafa15": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-112-ae8ffdeafa.jpg",
+      "file": "images/poi/poi-112-ae8ffdeafa.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:Conservatorio_luigi_cherubini,_portale.JPG",
+      "aiCreated": false
+    },
+    "poi-031d8837f260": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-113-031d8837f2.jpg",
+      "file": "images/poi/poi-113-031d8837f2.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fondazione_Teatro_del_maggio_musicale_fiorentino,_Firenze_(FI).jpg",
+      "aiCreated": false
+    },
+    "poi-99d84ef214d0": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-114-99d84ef214.jpg",
+      "file": "images/poi/poi-114-99d84ef214.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Napoli_-_PalazzoConservatorioPietro_a_Maiella.jpg",
+      "aiCreated": false
+    },
+    "poi-f9309b6f2eb3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-115-f9309b6f2e.jpg",
+      "file": "images/poi/poi-115-f9309b6f2e.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Teatro_San_Carlo_(Naples)-exterior.jpg",
+      "aiCreated": false
+    },
+    "poi-dc77ed84d5b5": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-116-dc77ed84d5.jpg",
+      "file": "images/poi/poi-116-dc77ed84d5.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:FedericoII.jpg",
+      "aiCreated": false
+    },
+    "poi-906079faa5d1": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-117.png",
+      "file": "images/poi/user/poi-user-117.png",
+      "credit": "用户提供实景图（顺序 7）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-80790b3d5a66": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-118-80790b3d5a.jpg",
+      "file": "images/poi/poi-118-80790b3d5a.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Conservatorio-Bologna.jpg",
+      "aiCreated": false
+    },
+    "poi-26db7d7272fc": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-119-26db7d7272.jpg",
+      "file": "images/poi/poi-119-26db7d7272.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bologna_-_Palazzo_Poggi_3399.jpg",
+      "aiCreated": false
+    },
+    "poi-2b483c6caac4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-120-2b483c6caa.jpg",
+      "file": "images/poi/poi-120-2b483c6caa.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ferrara_Conservatorio_Frescobaldi.JPG",
+      "aiCreated": false
+    },
+    "poi-efd774d7ed79": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-121.png",
+      "file": "images/poi/user/poi-user-121.png",
+      "credit": "用户提供实景图（顺序 8）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-5db1d1be0bba": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-122-5db1d1be0b.jpg",
+      "file": "images/poi/poi-122-5db1d1be0b.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Conservatorio_Arrigo_Boito_(Parma)_-_facciata_1_2024-10-13.jpg",
+      "aiCreated": false
+    },
+    "poi-c672956c7406": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-123-c672956c74.jpg",
+      "file": "images/poi/poi-123-c672956c74.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Genova_Albaro_villa_Bombrini.jpg",
+      "aiCreated": false
+    },
+    "poi-15d6a786debe": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-124-15d6a786de.jpg",
+      "file": "images/poi/poi-124-15d6a786de.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Pesaro_-_Conservatorio_Gioachino_Rossini_-_202209021914.jpg",
+      "aiCreated": false
+    },
+    "poi-ddd3356435a5": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-125.png",
+      "file": "images/poi/user/poi-user-125.png",
+      "credit": "用户提供实景图（顺序 9）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-db317ad349da": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-126-db317ad349.jpg",
+      "file": "images/poi/poi-126-db317ad349.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Casa_natale_di_Gaetano_Donizetti.jpg",
+      "aiCreated": false
+    },
+    "poi-7292a722cd4a": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-127.png",
+      "file": "images/poi/user/poi-user-127.png",
+      "credit": "用户提供实景图（顺序 10）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-e44fc99d11b2": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-128-e44fc99d11.jpg",
+      "file": "images/poi/poi-128-e44fc99d11.jpg",
+      "credit": "Wikimedia Commons · Attribution",
+      "source": "https://commons.wikimedia.org/wiki/File:1253_-_Catania_-_Museo_Bellini_-_Foto_Giovanni_Dall%27Orto_-_2-Oct-2006.jpg",
+      "aiCreated": false
+    },
+    "poi-fe5e2afb6670": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-129.png",
+      "file": "images/poi/user/poi-user-129.png",
+      "credit": "用户提供实景图（顺序 11）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-77a19f4b9f30": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-130-77a19f4b9f.jpg",
+      "file": "images/poi/poi-130-77a19f4b9f.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Conservatoire_%C3%A0_rayonnement_r%C3%A9gional_de_Toulouse_(ancien_h%C3%B4pital_Larrey).jpg",
+      "aiCreated": false
+    },
+    "poi-f0416e0c4a67": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-131.png",
+      "file": "images/poi/user/poi-user-131.png",
+      "credit": "用户提供实景图（顺序 12）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-59ed6cfe1c79": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-132-59ed6cfe1c.jpg",
+      "file": "images/poi/poi-132-59ed6cfe1c.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hochschule_f%C3%BCr_Musik_und_Tanz_K%C3%B6ln,_Unter_Krahnenb%C3%A4umen_87-9339.jpg",
+      "aiCreated": false
+    },
+    "poi-e882200ecbe1": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-133-e882200ecb.jpg",
+      "file": "images/poi/poi-133-e882200ecb.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hauptgeb%C3%A4ude_der_Universit%C3%A4t_zu_K%C3%B6ln_-_Ansicht_von_S%C3%BCden-5642.jpg",
+      "aiCreated": false
+    },
+    "poi-1bdce19fe9f8": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-134-1bdce19fe9.jpg",
+      "file": "images/poi/poi-134-1bdce19fe9.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Eingangshalle_der_Hochschule_f%C3%BCr_Musik_und_Darstellende_Kunst_Frankfurt_am_Main.jpg",
+      "aiCreated": false
+    },
+    "poi-7fa9c64efce5": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-135-7fa9c64efc.jpg",
+      "file": "images/poi/poi-135-7fa9c64efc.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Closeup_on_Physics_Building_on_Campus_Riedberg,_Goethe_University_Frankfurt.jpg",
+      "aiCreated": false
+    },
+    "poi-e2f4ad4add31": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-136-e2f4ad4add.jpg",
+      "file": "images/poi/poi-136-e2f4ad4add.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hochschule_f%C3%BCr_Musik_und_Theater_M%C3%BCnchen-7617.jpg",
+      "aiCreated": false
+    },
+    "poi-850aae1ab151": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-137-850aae1ab1.jpg",
+      "file": "images/poi/poi-137-850aae1ab1.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hauptgeb%C3%A4ude_LMU_Eingangsfassade.jpg",
+      "aiCreated": false
+    },
+    "poi-cb77e030da9b": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-138-cb77e030da.jpg",
+      "file": "images/poi/poi-138-cb77e030da.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bavarian_State_Opera,_Munich.jpg",
+      "aiCreated": false
+    },
+    "poi-ed395a7d792f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-139.png",
+      "file": "images/poi/user/poi-user-139.png",
+      "credit": "用户提供实景图（顺序 13）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-7ce3042949eb": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-140-7ce3042949.jpg",
+      "file": "images/poi/poi-140-7ce3042949.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:20050320540DR_Dresden_Semperoper_am_Theaterplatz.jpg",
+      "aiCreated": false
+    },
+    "poi-44c901b82080": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-141-44c901b820.jpg",
+      "file": "images/poi/poi-141-44c901b820.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:20230214_Hochschule_f%C3%BCr_Musik_und_Darstellende_Kunst_Stuttgart.jpg",
+      "aiCreated": false
+    },
+    "poi-d65c848c05b1": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-142-d65c848c05.jpg",
+      "file": "images/poi/poi-142-d65c848c05.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%22Cap_San_Diego%22_%26_Elbphilharmonie_(Hamburg,_2019).jpg",
+      "aiCreated": false
+    },
+    "poi-f188519f93b7": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-143-f188519f93.jpg",
+      "file": "images/poi/poi-143-f188519f93.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Brahms-Museum_von_au%C3%9Fen.jpg",
+      "aiCreated": false
+    },
+    "poi-1065703625d6": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-144-1065703625.jpg",
+      "file": "images/poi/poi-144-1065703625.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hochschule_f%C3%BCr_Musik_Franz_Liszt_Weimar,_Platz_der_Demokratie_2,_Weimar-0952.jpg",
+      "aiCreated": false
+    },
+    "poi-535fdb19cbce": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-146-535fdb19cb.jpg",
+      "file": "images/poi/poi-146-535fdb19cb.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 2.0 de",
+      "source": "https://commons.wikimedia.org/wiki/File:Bayreuth,_Haus_Wahnfried_1995.jpg",
+      "aiCreated": false
+    },
+    "poi-3dc03585874f": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-147-3dc0358587.jpg",
+      "file": "images/poi/poi-147-3dc0358587.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Z%C3%BCrcher_Hochschule_der_K%C3%BCnste._Toni-Areal.jpg",
+      "aiCreated": false
+    },
+    "poi-cb5640d5a310": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-148-cb5640d5a3.jpg",
+      "file": "images/poi/poi-148-cb5640d5a3.jpg",
+      "credit": "Wikimedia Commons · CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hauptgeb%C3%A4ude_der_Universit%C3%A4t_Z%C3%BCrich_2022-09-24_01.jpg",
+      "aiCreated": false
+    },
+    "poi-2f4a634123b7": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-149-2f4a634123.jpg",
+      "file": "images/poi/poi-149-2f4a634123.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://zh.wikipedia.org/wiki/%E7%BA%BD%E4%BC%A6%E5%A0%A1%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2",
+      "aiCreated": false
+    },
+    "poi-1c77ad28558e": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-150-1c77ad2855.jpg",
+      "file": "images/poi/poi-150-1c77ad2855.jpg",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:Musikhochschule_in_Mannheim.jpg",
+      "aiCreated": false
+    },
+    "poi-d2e09eea5966": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-151-d2e09eea59.jpg",
+      "file": "images/poi/poi-151-d2e09eea59.jpg",
+      "credit": "Wikimedia Commons · CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:9.8.17_1_Hukvaldy_and_Leos_Janacek_019_(36498394665).jpg",
+      "aiCreated": false
+    },
+    "poi-c651dd3011a3": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-152-c651dd3011.jpg",
+      "file": "images/poi/poi-152-c651dd3011.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Masaryk_University_Campus_Brno.jpg",
+      "aiCreated": false
+    },
+    "poi-13ad30690da4": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-153-13ad30690d.jpg",
+      "file": "images/poi/poi-153-13ad30690d.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Griffith_College_Dublin_-_Front_of_Campus.jpg",
+      "aiCreated": false
+    },
+    "poi-abd8df1d6088": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-154.png",
+      "file": "images/poi/user/poi-user-154.png",
+      "credit": "用户提供实景图（顺序 14）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-8829b6c36693": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-155-8829b6c366.jpg",
+      "file": "images/poi/poi-155-8829b6c366.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Palazzo_Bo_(Padua).jpg",
+      "aiCreated": false
+    },
+    "poi-80197383bcb6": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-156-80197383bc.jpg",
+      "file": "images/poi/poi-156-80197383bc.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Conservatoire_royal_de_musique.jpg",
+      "aiCreated": false
+    },
+    "poi-950bd89ba0ae": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-157-950bd89ba0.jpg",
+      "file": "images/poi/poi-157-950bd89ba0.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://zh.wikipedia.org/wiki/%E5%88%97%E6%97%A5%E5%A4%A7%E5%AD%A6",
+      "aiCreated": false
+    },
+    "poi-1bde7db3d590": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-172.png",
+      "file": "images/poi/user/poi-user-172.png",
+      "credit": "用户提供实景图（顺序 15）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    },
+    "poi-0825b9b7e1ba": {
+      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/user/poi-user-333.png",
+      "file": "images/poi/user/poi-user-333.png",
+      "credit": "用户提供实景图（顺序 24）",
+      "source": "用户提供附件；原始来源/许可待补",
+      "aiCreated": false
+    }
+  }
+}

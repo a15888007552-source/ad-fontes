@@ -1,0 +1,62 @@
+/* 实景地图独立样式：不改变原有 SVG 研究地图。 */
+.realmap-wrap{margin-top:16px}
+.realmap-toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 12px;background:var(--panel);border:1px solid var(--line);border-bottom:0}
+.realmap-modes,.realmap-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.realmap-mode,.realmap-tool{border:1px solid var(--line);background:var(--bg);color:var(--mut);font:600 12px/1.2 var(--sans);letter-spacing:.04em;padding:8px 11px;cursor:pointer}
+.realmap-mode.is-on,.realmap-tool:hover{background:var(--acc);border-color:var(--acc);color:var(--bg)}
+.realmap-toggle{display:inline-flex;align-items:center;gap:5px;color:var(--mut);font:12px var(--sans);cursor:pointer}
+.realmap-toggle input{accent-color:var(--acc)}
+.realmap-summary{margin-left:auto;color:var(--mut);font:11px/1.5 var(--sans);letter-spacing:.02em}
+.realmap-layout{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(300px,.82fr);min-height:680px;border:1px solid var(--line);background:var(--panel)}
+.realmap-stage{position:relative;min-height:680px;background:#26322a;overflow:hidden}
+.realmap-canvas{position:absolute;inset:0;min-height:680px}
+.realmap-loading{position:absolute;z-index:3;inset:0;display:grid;place-items:center;text-align:center;padding:28px;background:linear-gradient(135deg,rgba(24,37,29,.94),rgba(32,28,22,.88));color:#f4ecd9;pointer-events:none}
+.realmap-loading[hidden]{display:none}
+.realmap-loading strong{display:block;font:600 22px/1.3 var(--dfont)}
+.realmap-loading span{display:block;margin-top:8px;color:#d7ceb9;font:13px/1.7 var(--sans)}
+.realmap-status{position:absolute;z-index:4;left:12px;bottom:12px;max-width:calc(100% - 24px);padding:6px 9px;background:rgba(24,20,15,.82);color:#f4ecd9;border:1px solid rgba(240,223,180,.28);font:11px/1.35 var(--sans);pointer-events:none}
+.realmap-panel{min-width:0;max-height:680px;overflow:auto;background:var(--bg);border-left:1px solid var(--line)}
+.realmap-panel-empty{padding:30px 24px;color:var(--mut)}
+.realmap-panel-empty h4{margin:8px 0 10px;color:var(--ink);font:600 25px/1.25 var(--dfont)}
+.realmap-panel-empty p{margin:0;font-size:14px;line-height:1.8}
+.realmap-panel-kicker{color:var(--acc);font:700 10px/1.4 var(--sans);letter-spacing:.18em}
+.realmap-poi-card{padding:20px 20px 28px}
+.realmap-card-meta{display:flex;align-items:center;gap:7px;color:var(--acc2);font:700 11px/1.5 var(--sans);letter-spacing:.08em}
+.realmap-card-icon,.legend-dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:#b45309;box-shadow:0 0 0 2px rgba(255,255,255,.5)}
+.realmap-card-icon.music_venue,.legend-dot.music_venue{background:#1769aa}
+.realmap-card-icon.conservatory,.legend-dot.conservatory{background:#7c3aed}
+.realmap-card-icon.university,.legend-dot.university{background:#0f766e}
+.realmap-card-icon.house,.legend-dot.house{background:#b42318}
+.realmap-poi-card h4{margin:8px 0 3px;color:var(--ink);font:600 28px/1.25 var(--dfont)}
+.realmap-card-coords{margin:0 0 13px;color:var(--mut);font:11px var(--sans);letter-spacing:.08em}
+.realmap-figure{margin:0 0 18px;border:1px solid var(--line);background:var(--panel)}
+.realmap-figure img{display:block;width:100%;max-height:280px;object-fit:cover}
+.realmap-figure figcaption{padding:6px 8px;color:var(--mut);font:11px/1.45 var(--sans)}
+.realmap-no-image{display:grid;place-items:center;min-height:110px;margin:0 0 18px;padding:14px;background:var(--panel);border:1px dashed var(--line);color:var(--mut);font:12px var(--sans);text-align:center}
+.realmap-poi-card h5{margin:17px 0 6px;color:var(--acc2);font:700 11px/1.4 var(--sans);letter-spacing:.16em}
+.realmap-poi-card>p{margin:0;color:var(--ink);font-size:14px;line-height:1.8}
+.realmap-card-status{display:grid;gap:5px;margin-top:18px;padding:10px 11px;border-left:3px solid var(--acc);background:color-mix(in srgb,var(--panel) 82%,transparent);color:var(--mut);font:11px/1.5 var(--sans)}
+.realmap-card-source{margin-top:12px;font:12px var(--sans)}
+.realmap-card-source a{color:var(--acc);text-decoration:underline dotted}
+.realmap-legend{display:flex;gap:13px;flex-wrap:wrap;padding:10px 4px;color:var(--mut);font:11px var(--sans)}
+.realmap-legend span{display:inline-flex;align-items:center;gap:5px}
+.realmap-note{margin:0;color:var(--mut);font:12px/1.7 var(--sans)}
+.realmap-city-marker,.realmap-poi-marker{border:0;background:none;padding:0;margin:0;cursor:pointer;font-family:var(--sans);color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.85);white-space:nowrap}
+.realmap-city-marker{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:700}
+.realmap-city-dot{display:block;width:12px;height:12px;border-radius:50%;background:#d7a72c;border:2px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.65)}
+.realmap-city-label{padding:2px 4px;background:rgba(20,20,16,.58)}
+.realmap-poi-marker{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700}
+.realmap-poi-glyph{display:grid;place-items:center;width:23px;height:23px;border:2px solid #fff;border-radius:50%;background:#b45309;box-shadow:0 2px 7px rgba(0,0,0,.62);position:relative}
+.realmap-poi-glyph::before{content:"◆";font-size:10px;color:#fff}
+.realmap-poi-marker.music_venue .realmap-poi-glyph{background:#1769aa}.realmap-poi-marker.music_venue .realmap-poi-glyph::before{content:"♪";font-size:14px}
+.realmap-poi-marker.conservatory .realmap-poi-glyph{background:#7c3aed}.realmap-poi-marker.conservatory .realmap-poi-glyph::before{content:"♫";font-size:13px}
+.realmap-poi-marker.university .realmap-poi-glyph{background:#0f766e}.realmap-poi-marker.university .realmap-poi-glyph::before{content:"▣";font-size:12px}
+.realmap-poi-marker.house .realmap-poi-glyph{background:#b42318}.realmap-poi-marker.house .realmap-poi-glyph::before{content:"⌂";font-size:14px}
+.realmap-poi-marker.is-selected .realmap-poi-glyph{outline:3px solid #f5e7ad;transform:scale(1.18)}
+.realmap-poi-label{max-width:180px;padding:2px 4px;background:rgba(20,20,16,.7);overflow:hidden;text-overflow:ellipsis}
+.realmap-poi-marker.no-label .realmap-poi-label{display:none}
+.realmap-poi-marker.no-label:hover .realmap-poi-label,.realmap-poi-marker.is-selected .realmap-poi-label{display:block}
+.maplibregl-ctrl-group{border-radius:0!important;box-shadow:0 2px 9px rgba(0,0,0,.3)!important}
+.maplibregl-ctrl button{background-color:rgba(250,246,234,.92)!important}
+@media(max-width:900px){.realmap-layout{grid-template-columns:1fr}.realmap-panel{max-height:none;border-left:0;border-top:1px solid var(--line)}.realmap-stage,.realmap-canvas{min-height:560px}.realmap-summary{width:100%;margin-left:0}}
+@media(max-width:560px){.realmap-toolbar{align-items:flex-start}.realmap-summary{font-size:10px}.realmap-stage,.realmap-canvas{min-height:460px}.realmap-panel-empty,.realmap-poi-card{padding:20px 16px}.realmap-poi-card h4{font-size:24px}}

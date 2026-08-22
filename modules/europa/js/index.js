@@ -1,3 +1,5 @@
+import { initRealMapView, stopRealMapView } from "./map-real.js";
+
 const EUROPA_DATA = Object.assign(
   {},
   ...(await Promise.all([
@@ -1104,9 +1106,11 @@ function setView(v){
   const themed=v==="alm";
   $("#app").dataset.ep=themed?curEp:"atlas";
   $("#epnav").style.display=themed?"flex":"none";
+  if(v!=="real")stopRealMapView();
   if(v!=="map"&&typeof mapStop==="function")mapStop();
   if(v!=="net")net3d?.pauseAnimation?.();
   if(v==="map")initMapView();
+  if(v==="real")initRealMapView();
   if(v==="tl")renderTL();
   if(v==="net"){netLegend();if($("#tog3d").classList.contains("on"))net3d?.resumeAnimation?.();else init2D()}
   if(v==="lin")renderLineage();
@@ -1136,7 +1140,8 @@ const VIEWDESC=[["年 鉴","七时代分章：篇首名画、导论小论文、�
 ["师 承",`${LINEAGES.length}条传统脉络的谱系带，肖像节点＋关系箭头。`],
 ["史 脉",`${HISTEVENTS.length}个重要历史事件的垂直时间轴，点开读前因—经过—后果—史学评价。`],
 ["术 语",`${GLOSS.length}条核心概念，逐条注原语与文献出处。`],
-["文 献","编纂所据的权威著作与凡例。"]];
+  ["文 献","编纂所据的权威著作与凡例。"],
+  ["实 景","MapLibre 卫星、街道与地形底图；放大到城市后显示建筑、音乐场所、学院、大学和故居。"]];
 $("#introgrid").innerHTML=VIEWDESC.map(v=>`<div><b>${v[0]}</b><span>${v[1]}</span></div>`).join("");
 const intro=$("#intro");
 function showIntro(){if(!intro.open)intro.showModal()}
