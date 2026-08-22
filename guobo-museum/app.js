@@ -1,5 +1,6 @@
 const objectItems = [
   {
+    id: "guobo-dudousai-drama-brick",
     src: "assets/photos/dudousai-drama-brick.webp",
     title: "丁都塞 · 戏曲雕砖",
     era: "戏曲 / 图像",
@@ -7,6 +8,7 @@ const objectItems = [
     description: "这张照片先作为戏曲图像线索收录。砖面上的人物、动作和舞台感，把文字之外的表演记忆带进了展柜；具体时代、出土地和馆藏编号，等下一轮按现场展签继续核对。"
   },
   {
+    id: "guobo-flute-maid-mural",
     src: "assets/photos/flute-maid-mural.webp",
     title: "吹排箫乐妓画",
     era: "乐舞图像",
@@ -14,6 +16,7 @@ const objectItems = [
     description: "画面中可以辨认出吹奏排箫的姿态。它让“音乐文物”不再只是器物本身，也包括身体、服饰、动作和演奏场景。本轮不凭照片把它硬认作某座墓葬或某件具体馆藏。"
   },
   {
+    id: "guobo-xiaoduan-phoenix-crown",
     src: "assets/photos/xiaoduan-phoenix-crown.webp",
     title: "孝端皇后九龙九凤冠",
     era: "明 · 万历",
@@ -23,6 +26,7 @@ const objectItems = [
     sourceUrl: "https://www.chnmuseum.cn/zp/zpml/kgfjp/202111/t20211126_252409.shtml"
   },
   {
+    id: "guobo-turquoise-meiping",
     src: "assets/photos/meiping.webp",
     title: "松石绿釉暗刻花卉纹梅瓶",
     era: "瓷器 · 器物",
@@ -30,6 +34,7 @@ const objectItems = [
     description: "这张照片保留了现场展签中的题名。松石绿釉、暗刻花卉纹和梅瓶的器形共同构成了它的第一层观看线索；具体朝代、尺寸和馆藏编号，后续再按官方目录逐项补齐。"
   },
   {
+    id: "guobo-mengxi-bitan",
     src: "assets/photos/mengxi-bitan.webp",
     title: "《梦溪笔谈》",
     era: "北宋 · 沈括",
@@ -39,6 +44,7 @@ const objectItems = [
     sourceUrl: "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202203/t20220301_254035.shtml"
   },
   {
+    id: "guobo-shanhaijing",
     src: "assets/photos/shanhaijing.webp",
     title: "《山海经》",
     era: "古籍 · 神话地理",
@@ -46,6 +52,7 @@ const objectItems = [
     description: "这张照片先作为文本与图像线索收录。它适合从神话地理、异域想象和古代知识分类的角度继续展开；本轮不把模糊展签直接升级成某一确定版本的结论。"
   },
   {
+    id: "guobo-zuozhuan",
     src: "assets/photos/zuozhuan.webp",
     title: "《左传》",
     era: "古籍 · 史传",
@@ -53,6 +60,7 @@ const objectItems = [
     description: "《左传》把历史叙事、政治制度和礼仪秩序编织在一起。放在这次国博参观里，它和青铜礼器、石磬、古代乐舞照片互相照应；具体刻本信息仍以照片展签和官方馆藏记录为准。"
   },
   {
+    id: "guobo-chuci",
     src: "assets/photos/chuci.webp",
     title: "《楚辞》",
     era: "古籍 · 诗歌",
@@ -60,6 +68,7 @@ const objectItems = [
     description: "《楚辞》在这组照片里首先是一件被观看、被翻阅的古籍。它与歌辞、仪式、神话和声音想象之间的关系，适合在下一轮和《九歌》、戏曲文献一起展开；本轮先保留照片和题名。"
   },
   {
+    id: "guobo-xiyuanlu",
     src: "assets/photos/xiyuanlu.webp",
     title: "《洗冤录》",
     era: "古籍 · 法医学史",
@@ -67,6 +76,7 @@ const objectItems = [
     description: "这张照片记录了《洗冤录》在展柜中的书名和装帧。它属于古代知识史的一条支线：文本如何被整理、传抄和用于实际制度；具体版本信息暂不超出照片能够支持的范围。"
   },
   {
+    id: "guobo-pottery-musicians",
     src: "assets/photos/pottery-musicians.webp",
     title: "演奏陶俑",
     era: "唐 · 坐部伎",
@@ -76,6 +86,7 @@ const objectItems = [
     sourceUrl: "https://www.chnmuseum.cn/zp/zpml/kgfjp/202111/t20211116_252264.shtml"
   },
   {
+    id: "guobo-baishi-daoren-gequ",
     src: "assets/photos/baishi-daoren-gequ.webp",
     title: "《白石道人歌曲》",
     era: "南宋 · 姜夔",
@@ -85,6 +96,7 @@ const objectItems = [
     sourceUrl: "https://www.chnmuseum.cn/zp/zpml/gjwxbt/202203/t20220301_254048.shtml"
   },
   {
+    id: "guobo-dou-e-yuan",
     src: "assets/photos/dou-e-yuan.webp",
     title: "《窦娥冤》",
     era: "元杂剧 · 戏曲",
@@ -92,6 +104,7 @@ const objectItems = [
     description: "《窦娥冤》把戏曲从舞台带进了古籍文献的观看现场。这里先以照片中的书名和展陈关系为主，不把版本、刊刻年代或具体馆藏号写成未经核对的确定事实。"
   },
   {
+    id: "guobo-dong-xieyuan-xixiang",
     src: "assets/photos/dong-xieyuan-xixiang.webp",
     title: "董谢元《西厢记诸宫调》",
     era: "金元 · 诸宫调",
@@ -99,6 +112,7 @@ const objectItems = [
     description: "“诸宫调”本身就把叙事、曲调和说唱联系在一起。这张照片适合成为后续戏曲专题的入口：从文献题名出发，继续追踪它怎样被唱、被讲、被改编。"
   },
   {
+    id: "guobo-tiger-qing",
     src: "assets/photos/tiger-qing.webp",
     title: "虎纹特磬",
     era: "石 · 打击乐",
@@ -108,6 +122,7 @@ const objectItems = [
     sourceUrl: "https://www.chnmuseum.cn/zp/zpml/kgfjp/202107/t20210728_250856.shtml"
   },
   {
+    id: "guobo-xixiangji",
     src: "assets/photos/xixiangji.webp",
     title: "《西厢记》",
     era: "戏曲 · 文本",
@@ -115,6 +130,7 @@ const objectItems = [
     description: "《西厢记》与《西厢记诸宫调》并列出现在你的照片里，正好形成从文本、说唱到戏曲舞台的观看入口。本轮先保留题名和图像，具体版本信息下一轮再查。"
   },
   {
+    id: "guobo-unknown-bronze-instrument",
     src: "assets/photos/unknown-bronze-instrument.webp",
     title: "待核对 · 钟 / 铙类青铜器",
     era: "青铜 · 具体对象待核",
@@ -122,6 +138,7 @@ const objectItems = [
     description: "照片中可以看见乳钉、纹饰、铭文和带甬形制，具有青铜打击乐器的观看线索。但仅凭这一张照片还不足以确定它究竟是钟、铙、甬钟还是其他具体器物，所以本页只保留为“待核对”，不硬猜藏品名。"
   },
   {
+    id: "guobo-tao-xun",
     src: "assets/photos/tao-xun.webp",
     title: "陶埙",
     era: "土 · 吹奏乐器",
@@ -131,6 +148,7 @@ const objectItems = [
     sourceUrl: "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_33141.shtml"
   },
   {
+    id: "guobo-bronze-nao",
     src: "assets/photos/bronze-nao.webp",
     title: "青铜编铙",
     era: "金 · 打击乐器",
@@ -141,9 +159,14 @@ const objectItems = [
   }
 ];
 
+const objectById = new Map(
+  objectItems.map((item) => [String(item.id), item]),
+);
+
 const grid = document.querySelector("#object-grid");
 const count = document.querySelector("#object-count");
 const dialog = document.querySelector("#object-dialog");
+const dialogClose = document.querySelector(".dialog-close");
 const dialogImage = document.querySelector("#dialog-image");
 const dialogKicker = document.querySelector("#dialog-kicker");
 const dialogTitle = document.querySelector("#dialog-title");
@@ -158,21 +181,50 @@ const motionAllowed = !reducedMotion && !navigator.connection?.saveData;
 let openingClosed = false;
 let openingLeaveTimer;
 let openingFinishTimer;
+let lastFocusedElement = null;
+let restoreFocusAfterDialogClose = true;
 
-function setOpeningComplete() {
+function getItemFromLocation() {
+  const id = new URLSearchParams(window.location.search).get("item");
+  return id && objectById.has(id) ? id : null;
+}
+
+function syncItemToUrl(id) {
+  const url = new URL(window.location.href);
+  const current = url.searchParams.get("item");
+
+  if (id) {
+    const next = String(id);
+    if (current === next) return;
+    url.searchParams.set("item", next);
+  } else {
+    if (!current) return;
+    url.searchParams.delete("item");
+  }
+
+  window.history.pushState(
+    { item: id ? String(id) : null },
+    "",
+    `${url.pathname}${url.search}${url.hash}`,
+  );
+}
+
+function setOpeningComplete({ markSeen = true } = {}) {
   document.body.classList.remove("guobo-intro-active");
   document.documentElement.classList.remove("guobo-intro-live");
   document.documentElement.classList.add("guobo-intro-complete");
-  try {
-    sessionStorage.setItem("guobo-intro-seen", "1");
-  } catch {
-    // A blocked sessionStorage should not prevent the page from opening.
+  if (markSeen) {
+    try {
+      sessionStorage.setItem("guobo-intro-seen", "1");
+    } catch {
+      // A blocked sessionStorage should not prevent the page from opening.
+    }
   }
 }
 
-function removeOpening() {
+function removeOpening({ markSeen = true } = {}) {
   opening?.remove();
-  setOpeningComplete();
+  setOpeningComplete({ markSeen });
   document.removeEventListener("keydown", handleOpeningKeydown, true);
 }
 
@@ -216,26 +268,41 @@ function setupOpening() {
   openingFinishTimer = window.setTimeout(removeOpening, finishAt);
 }
 
-setupOpening();
+const initialItem = getItemFromLocation();
+if (initialItem) removeOpening({ markSeen: false });
+else setupOpening();
 
 function renderCards() {
   count.textContent = `${objectItems.length} 张照片卡`;
   grid.innerHTML = objectItems.map((item, index) => `
-    <button class="object-card" type="button" data-object-index="${index}" aria-label="打开 ${item.title} 的介绍">
+    <button class="object-card" type="button" data-object-id="${item.id}" aria-label="打开 ${item.title} 的介绍">
       <span class="card-index">${String(index + 1).padStart(2, "0")}</span>
       <span class="object-image"><img src="${item.src}" alt="${item.title}" loading="lazy" /></span>
       <span class="object-caption"><span><h3>${item.title}</h3></span><small>${item.era}</small></span>
     </button>
   `).join("");
 
-  grid.querySelectorAll("[data-object-index]").forEach((card) => {
-    card.addEventListener("click", () => openObject(Number(card.dataset.objectIndex)));
+  grid.querySelectorAll("[data-object-id]").forEach((card) => {
+    card.addEventListener("click", () => openObject(card.dataset.objectId, {
+      syncUrl: true,
+      focusClose: true,
+      rememberFocus: true,
+    }));
   });
 }
 
-function openObject(index) {
-  const item = objectItems[index];
-  if (!item) return;
+function openObject(
+  id,
+  {
+    syncUrl = false,
+    focusClose = true,
+    rememberFocus = true,
+  } = {},
+) {
+  const item = objectById.get(String(id));
+  if (!item) return false;
+  const dialogAlreadyOpen = dialog.open || dialog.hasAttribute("open");
+  if (rememberFocus) lastFocusedElement = document.activeElement;
   dialogImage.src = item.src;
   dialogImage.alt = item.title;
   dialogKicker.textContent = item.era;
@@ -250,15 +317,16 @@ function openObject(index) {
   } else {
     dialogSource.hidden = true;
   }
-  if (typeof dialog.showModal === "function") dialog.showModal();
-  else dialog.setAttribute("open", "");
+  if (!dialogAlreadyOpen) {
+    if (typeof dialog.showModal === "function") dialog.showModal();
+    else dialog.setAttribute("open", "");
+  }
+  if (focusClose) dialogClose.focus();
+  if (syncUrl) syncItemToUrl(item.id);
+  return true;
 }
 
-document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
-dialog.addEventListener("click", (event) => {
-  if (event.target === dialog) dialog.close();
-});
-dialog.addEventListener("close", () => {
+function clearDialogFields() {
   dialogImage.removeAttribute("src");
   dialogImage.alt = "";
   dialogKicker.textContent = "";
@@ -268,6 +336,86 @@ dialog.addEventListener("close", () => {
   dialogBoundary.textContent = "";
   dialogSource.hidden = true;
   dialogSource.removeAttribute("href");
+}
+
+function finishDialogClose() {
+  clearDialogFields();
+  if (
+    restoreFocusAfterDialogClose &&
+    lastFocusedElement?.isConnected &&
+    typeof lastFocusedElement.focus === "function"
+  ) {
+    lastFocusedElement.focus();
+  }
+  lastFocusedElement = null;
+  restoreFocusAfterDialogClose = true;
+}
+
+function closeObject({ syncUrl = false, restoreFocus = true } = {}) {
+  const dialogIsOpen = dialog.open || dialog.hasAttribute("open");
+  if (!dialogIsOpen) {
+    lastFocusedElement = null;
+    restoreFocusAfterDialogClose = true;
+    return false;
+  }
+  restoreFocusAfterDialogClose = restoreFocus;
+  if (typeof dialog.close === "function" && dialog.open) {
+    dialog.close();
+  } else {
+    dialog.removeAttribute("open");
+    finishDialogClose();
+  }
+  if (syncUrl) syncItemToUrl(null);
+  return true;
+}
+
+dialogClose.addEventListener("click", () => {
+  closeObject({
+    syncUrl: true,
+    restoreFocus: true,
+  });
+});
+dialog.addEventListener("click", (event) => {
+  if (event.target === dialog) {
+    closeObject({
+      syncUrl: true,
+      restoreFocus: true,
+    });
+  }
+});
+dialog.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  closeObject({
+    syncUrl: true,
+    restoreFocus: true,
+  });
+});
+dialog.addEventListener("close", () => {
+  finishDialogClose();
+});
+window.addEventListener("popstate", () => {
+  lastFocusedElement = null;
+  restoreFocusAfterDialogClose = false;
+  const id = getItemFromLocation();
+  if (id) {
+    openObject(id, {
+      syncUrl: false,
+      focusClose: false,
+      rememberFocus: false,
+    });
+  } else {
+    closeObject({
+      syncUrl: false,
+      restoreFocus: false,
+    });
+  }
 });
 
 renderCards();
+if (initialItem) {
+  openObject(initialItem, {
+    syncUrl: false,
+    focusClose: false,
+    rememberFocus: false,
+  });
+}

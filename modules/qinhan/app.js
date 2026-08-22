@@ -115,14 +115,51 @@ function bindOpeners(root = document) {
   root.querySelectorAll("[data-open-id]").forEach((button) => {
     if (button.dataset.bound === "true") return;
     button.dataset.bound = "true";
-    button.addEventListener("click", () => openGroup(button.dataset.openId, true));
+    button.addEventListener("click", () => openGroup(button.dataset.openId, { syncUrl: true }));
   });
 }
 
-function openGroup(id, pushHistory = false) {
+function getItemFromLocation() {
+  if (!state.data) return null;
+  const requested = new URLSearchParams(window.location.search).get("item");
+  if (requested) {
+    const group = state.data.groups.find((item) => item.id === requested);
+    if (group && isPublicArtifact(group)) return requested;
+  }
+  if (window.location.hash.startsWith("#artifact=")) {
+    try {
+      const legacyId = decodeURIComponent(window.location.hash.slice("#artifact=".length));
+      const group = state.data.groups.find((item) => item.id === legacyId);
+      if (group && isPublicArtifact(group)) return legacyId;
+    } catch {
+      return null;
+    }
+  }
+  return null;
+}
+
+function syncItemToUrl(id) {
+  const url = new URL(window.location.href);
+  const current = url.searchParams.get("item");
+  const legacyArtifact = url.hash.startsWith("#artifact=");
+  if (id) {
+    const next = String(id);
+    if (current === next && !legacyArtifact) return;
+    url.searchParams.set("item", next);
+    if (legacyArtifact) url.hash = "";
+  } else {
+    if (!current && !legacyArtifact) return;
+    url.searchParams.delete("item");
+    if (legacyArtifact) url.hash = "#archive";
+  }
+  window.history.pushState({ item: id ? String(id) : null }, "", `${url.pathname}${url.search}${url.hash}`);
+}
+
+function openGroup(id, { syncUrl = false } = {}) {
   if (!state.data) return;
   const group = state.data.groups.find((item) => item.id === id);
   if (!group || !isPublicArtifact(group)) return;
+  const dialogAlreadyOpen = elements.dialog.open || elements.dialog.hasAttribute("open");
   state.activeGroup = group;
   elements.dialogKicker.textContent = `${group.category} · ${group.era} · ${group.photo_count} 张现场照片`;
   elements.dialogSpecial.innerHTML = group.special_status ? `<span class="dialog-special">${escapeHTML(group.special_status)}</span>` : "";
@@ -144,13 +181,13 @@ function openGroup(id, pushHistory = false) {
   setDialogImage("crop");
   renderThumbnails(group);
   elements.dialog.querySelectorAll("[data-view]").forEach((button) => button.classList.toggle("is-active", button.dataset.view === "crop"));
-  if (!elements.dialog.open) {
+  if (!dialogAlreadyOpen) {
     elements.dialog.classList.add("is-opening");
     elements.dialog.showModal();
     requestAnimationFrame(() => elements.dialog.classList.add("is-ready"));
     window.setTimeout(() => elements.dialog.classList.remove("is-opening"), 650);
   }
-  if (pushHistory) history.pushState({ artifact: id }, "", `#artifact=${encodeURIComponent(id)}`);
+  if (syncUrl) syncItemToUrl(group.id);
 }
 
 function setDialogImage(view, customPhoto = null) {
@@ -189,7 +226,7 @@ function renderThumbnails(group) {
   });
 }
 
-function closeDialog(updateURL = true) {
+function closeDialog({ syncUrl = true } = {}) {
   if (elements.dialog.open) {
     if (motion.reduced) elements.dialog.close();
     else {
@@ -202,7 +239,7 @@ function closeDialog(updateURL = true) {
     }
   }
   state.activeGroup = null;
-  if (updateURL && location.hash.startsWith("#artifact=")) history.pushState({}, "", "#archive");
+  if (syncUrl) syncItemToUrl(null);
 }
 
 function renderSources() {
@@ -360,12 +397,6 @@ function setupMotion() {
   document.documentElement.classList.add("motion-ready");
 }
 
-function syncFromHash() {
-  if (!location.hash.startsWith("#artifact=")) return;
-  const id = decodeURIComponent(location.hash.split("=")[1] || "");
-  if (id) openGroup(id, false);
-}
-
 async function init() {
   try {
     const response = await fetch("data/archive.json?v=20260813-motion1", { cache: "no-store" });
@@ -384,7 +415,13 @@ async function init() {
     bindOpeners(document);
     mountCards(document);
     animateCounters();
-    syncFromHash();
+    const requestedItem = getItemFromLocation();
+    if (requestedItem) {
+      document.querySelector(".page-intro")?.remove();
+      document.body.classList.remove("intro-active");
+      document.documentElement.classList.add("intro-complete");
+      openGroup(requestedItem, { syncUrl: false });
+    }
   } catch (error) {
     elements.status.innerHTML = `<strong>档案数据没有载入。</strong><br />请通过项目内的“打开网站”方式浏览，而不是直接双击 HTML。`;
     console.error(error);
@@ -421,13 +458,13 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-elements.dialog.querySelector(".dialog-close").addEventListener("click", () => closeDialog(true));
+elements.dialog.querySelector(".dialog-close").addEventListener("click", () => closeDialog({ syncUrl: true }));
 elements.dialog.addEventListener("click", (event) => {
-  if (event.target === elements.dialog) closeDialog(true);
+  if (event.target === elements.dialog) closeDialog({ syncUrl: true });
 });
 elements.dialog.addEventListener("cancel", (event) => {
   event.preventDefault();
-  closeDialog(true);
+  closeDialog({ syncUrl: true });
 });
 elements.dialog.querySelectorAll("[data-view]").forEach((button) => {
   button.addEventListener("click", () => {
@@ -437,8 +474,9 @@ elements.dialog.querySelectorAll("[data-view]").forEach((button) => {
 });
 
 window.addEventListener("popstate", () => {
-  if (location.hash.startsWith("#artifact=")) syncFromHash();
-  else if (elements.dialog.open) closeDialog(false);
+  const id = getItemFromLocation();
+  if (id) openGroup(id, { syncUrl: false });
+  else closeDialog({ syncUrl: false });
 });
 
 setupMotion();

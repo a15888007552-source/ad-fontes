@@ -137,6 +137,9 @@ const motionAllowed =
   !navigator.connection?.saveData;
 
 let revealObserver = null;
+let lastFocusedElement = null;
+let restoreFocusAfterDialogClose = true;
+let deferredArtifactIntro = false;
 
 const collator = new Intl.Collator("zh-CN", { numeric: true, sensitivity: "base" });
 
@@ -185,8 +188,36 @@ function registerReveal(element, delay = 0) {
   revealObserver.observe(element);
 }
 
-function setupMotion() {
+function hasPotentialArtifactDeepLink() {
+  return new URLSearchParams(window.location.search).has("item") || window.location.hash.startsWith("#artifact-");
+}
+
+function deferArtifactIntro() {
+  const intro = document.querySelector(".beilin-intro");
+  if (!intro || !hasPotentialArtifactDeepLink()) return false;
+  intro.hidden = true;
+  deferredArtifactIntro = true;
+  return true;
+}
+
+function skipBeilinIntro() {
+  document.querySelector(".beilin-intro")?.remove();
+  document.body.classList.remove("beilin-intro-active");
+  document.documentElement.classList.remove("beilin-intro-live");
+  document.documentElement.classList.add("beilin-intro-complete");
+}
+
+function resumeDeferredArtifactIntro() {
+  if (!deferredArtifactIntro) return;
+  deferredArtifactIntro = false;
+  const intro = document.querySelector(".beilin-intro");
+  if (!intro) return;
+  intro.hidden = false;
   setupBeilinIntro();
+}
+
+function setupMotion() {
+  if (!deferArtifactIntro()) setupBeilinIntro();
   if (!motionAllowed) return;
   document.documentElement.classList.add("js-motion");
 
@@ -236,8 +267,7 @@ function setupBeilinIntro() {
   const seen = sessionStorage.getItem("beilin-intro-seen");
   const skipIntro = !motionAllowed || (!forceIntro && seen);
   if (skipIntro) {
-    intro.remove();
-    document.documentElement.classList.add("beilin-intro-complete");
+    skipBeilinIntro();
     return;
   }
 
@@ -249,10 +279,7 @@ function setupBeilinIntro() {
 
   window.setTimeout(() => intro.classList.add("is-leaving"), leaveAt);
   window.setTimeout(() => {
-    intro.remove();
-    document.body.classList.remove("beilin-intro-active");
-    document.documentElement.classList.remove("beilin-intro-live");
-    document.documentElement.classList.add("beilin-intro-complete");
+    skipBeilinIntro();
     sessionStorage.setItem("beilin-intro-seen", "1");
   }, finishAt);
 }
@@ -409,9 +436,12 @@ function createCard(group, index) {
   button.type = "button";
   const cardImageKind = imageKindLabel(group, group.main_photo);
   button.setAttribute("aria-label", `打开${group.name}详情，共${artifactPhotoCount(group)}张${cardImageKind}`);
-  button.addEventListener("click", () => {
-    window.location.hash = group.id;
-  });
+  button.addEventListener("click", () => openArtifactById(group.id, {
+    syncUrl: true,
+    historyMode: "push",
+    focusClose: true,
+    rememberFocus: true,
+  }));
 
   const imageWrap = makeElement("div", "card-image-wrap");
   const image = document.createElement("img");
@@ -656,6 +686,60 @@ function detailNavigationList() {
   return filteredHasCurrent ? state.filtered : state.groups;
 }
 
+function artifactById(id) {
+  const key = String(id || "");
+  return state.groups.find((group) => group.id === key) || null;
+}
+
+function getItemFromLocation() {
+  const requested = new URLSearchParams(window.location.search).get("item");
+  if (requested && artifactById(requested)) return requested;
+
+  if (window.location.hash.startsWith("#artifact-")) {
+    let legacyId = "";
+    try {
+      legacyId = decodeURIComponent(window.location.hash.slice(1));
+    } catch {
+      return null;
+    }
+    if (artifactById(legacyId)) return legacyId;
+  }
+
+  return null;
+}
+
+function syncItemToUrl(id, { historyMode = "push" } = {}) {
+  const url = new URL(window.location.href);
+  const current = url.searchParams.get("item");
+  let legacyArtifactHash = false;
+
+  if (url.hash.startsWith("#artifact-")) {
+    try {
+      legacyArtifactHash = Boolean(artifactById(decodeURIComponent(url.hash.slice(1))));
+    } catch {
+      legacyArtifactHash = false;
+    }
+  }
+
+  if (id) {
+    const next = String(id);
+    if (current === next && !legacyArtifactHash) return;
+    url.searchParams.set("item", next);
+    if (legacyArtifactHash) url.hash = "";
+  } else {
+    if (!current && !legacyArtifactHash) return;
+    url.searchParams.delete("item");
+    if (legacyArtifactHash) url.hash = "";
+  }
+
+  const method = historyMode === "replace" ? "replaceState" : "pushState";
+  window.history[method](
+    { item: id ? String(id) : null },
+    "",
+    `${url.pathname}${url.search}${url.hash}`,
+  );
+}
+
 function renderDetail(group) {
   state.currentArtifact = group;
   state.currentPhotos = artifactPhotos(group);
@@ -750,12 +834,26 @@ function renderDetail(group) {
   elements.detailPosition.textContent = `${position + 1} / ${list.length}`;
 }
 
-function openArtifactById(id, updateHash = false) {
-  const group = state.groups.find((item) => item.id === id);
+function openArtifactById(
+  id,
+  {
+    syncUrl = false,
+    historyMode = "push",
+    focusClose = true,
+    rememberFocus = true,
+  } = {},
+) {
+  const group = artifactById(id);
   if (!group) return false;
+  const dialogAlreadyOpen = elements.artifactDialog.open || elements.artifactDialog.hasAttribute("open");
+  if (rememberFocus) lastFocusedElement = document.activeElement;
   renderDetail(group);
-  if (!elements.artifactDialog.open) elements.artifactDialog.showModal();
-  if (updateHash) history.replaceState(null, "", `#${group.id}`);
+  if (!dialogAlreadyOpen) {
+    if (typeof elements.artifactDialog.showModal === "function") elements.artifactDialog.showModal();
+    else elements.artifactDialog.setAttribute("open", "");
+  }
+  if (focusClose) elements.closeDetail.focus();
+  if (syncUrl) syncItemToUrl(group.id, { historyMode });
   return true;
 }
 
@@ -764,23 +862,36 @@ function navigateArtifact(direction) {
   const list = detailNavigationList();
   const currentIndex = list.findIndex((item) => item.id === state.currentArtifact.id);
   const nextIndex = ((currentIndex + direction) % list.length + list.length) % list.length;
-  openArtifactById(list[nextIndex].id, true);
+  openArtifactById(list[nextIndex].id, {
+    syncUrl: true,
+    historyMode: "replace",
+    focusClose: false,
+    rememberFocus: false,
+  });
 }
 
-function handleHash() {
-  if (!state.catalog) return;
-  const id = decodeURIComponent(window.location.hash.replace(/^#/, ""));
-  if (/^artifact-\d{3}$/.test(id)) {
-    if (!openArtifactById(id)) history.replaceState(null, "", window.location.pathname);
-  } else if (elements.artifactDialog.open) {
-    elements.artifactDialog.close();
-  }
-}
-
-function closeArtifact() {
+function closeArtifact({ syncUrl = false, restoreFocus = true } = {}) {
   if (elements.lightbox.open) elements.lightbox.close();
-  if (elements.artifactDialog.open) elements.artifactDialog.close();
+  const dialogIsOpen = elements.artifactDialog.open || elements.artifactDialog.hasAttribute("open");
+  restoreFocusAfterDialogClose = restoreFocus;
+  if (dialogIsOpen) {
+    if (elements.artifactDialog.open) elements.artifactDialog.close();
+    else elements.artifactDialog.removeAttribute("open");
+  }
   state.currentPhotos = [];
+  if (syncUrl) syncItemToUrl(null, { historyMode: "push" });
+}
+
+function syncArtifactFromLocation({ focusClose = false } = {}) {
+  if (!state.catalog) return false;
+  const id = getItemFromLocation();
+  const dialogIsOpen = elements.artifactDialog.open || elements.artifactDialog.hasAttribute("open");
+  if (id) {
+    if (dialogIsOpen && state.currentArtifact?.id === id) return true;
+    return openArtifactById(id, { syncUrl: false, focusClose, rememberFocus: false });
+  }
+  if (dialogIsOpen) closeArtifact({ syncUrl: false, restoreFocus: false });
+  return false;
 }
 
 function updateLightboxImage() {
@@ -854,7 +965,7 @@ function bindEvents() {
     elements.searchInput.focus();
   });
 
-  elements.closeDetail.addEventListener("click", closeArtifact);
+  elements.closeDetail.addEventListener("click", () => closeArtifact({ syncUrl: true, restoreFocus: true }));
   elements.previousArtifact.addEventListener("click", () => navigateArtifact(-1));
   elements.nextArtifact.addEventListener("click", () => navigateArtifact(1));
   elements.openLightbox.addEventListener("click", openCurrentLightbox);
@@ -865,7 +976,11 @@ function bindEvents() {
   elements.lightboxImage.addEventListener("click", toggleZoom);
 
   elements.artifactDialog.addEventListener("click", (event) => {
-    if (event.target === elements.artifactDialog) closeArtifact();
+    if (event.target === elements.artifactDialog) closeArtifact({ syncUrl: true, restoreFocus: true });
+  });
+  elements.artifactDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeArtifact({ syncUrl: true, restoreFocus: true });
   });
   elements.lightbox.addEventListener("click", (event) => {
     if (event.target === elements.lightbox) elements.lightbox.close();
@@ -874,12 +989,13 @@ function bindEvents() {
   elements.artifactDialog.addEventListener("close", () => {
     state.currentArtifact = null;
     state.currentPhotos = [];
-    if (/^#artifact-\d{3}$/.test(window.location.hash)) {
-      history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-    }
+    if (restoreFocusAfterDialogClose && lastFocusedElement?.isConnected) lastFocusedElement.focus();
+    lastFocusedElement = null;
+    restoreFocusAfterDialogClose = true;
   });
 
-  window.addEventListener("hashchange", handleHash);
+  window.addEventListener("popstate", () => syncArtifactFromLocation({ focusClose: false }));
+  window.addEventListener("hashchange", () => syncArtifactFromLocation({ focusClose: false }));
   document.addEventListener("keydown", (event) => {
     if (elements.lightbox.open) {
       if (event.key === "ArrowLeft") {
@@ -917,9 +1033,17 @@ async function initialize() {
     setupStatAnimation();
     renderCategoryTabs();
     applyFilters();
-    handleHash();
+    const requestedItem = getItemFromLocation();
+    if (requestedItem) {
+      deferredArtifactIntro = false;
+      skipBeilinIntro();
+    } else {
+      resumeDeferredArtifactIntro();
+    }
+    syncArtifactFromLocation();
   } catch (error) {
     console.error("Failed to load Beilin catalog", error);
+    resumeDeferredArtifactIntro();
     elements.catalogGrid.setAttribute("aria-busy", "false");
     elements.catalogGrid.replaceChildren();
     elements.resultCount.textContent = "载入失败";

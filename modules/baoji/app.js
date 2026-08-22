@@ -10,6 +10,8 @@
     groups: Array.isArray(photoData.groups) ? photoData.groups : [],
   };
   let revealObserver = null;
+  let lastFocusedElement = null;
+  let activeDetailId = null;
   const revealSelector = '.section-heading, .profile-story, .stat-panel, .quick-review, .treasure-card, .archive-card, .method-copy, .source-column, .site-footer';
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -213,8 +215,33 @@
     return `<div class="research-essay">${factsMarkup}<p class="research-essay-paragraph research-essay-paragraph--opening">${escapeHTML(opening)}</p><p class="research-essay-paragraph">${escapeHTML(middle)}</p><p class="research-essay-paragraph research-essay-paragraph--closing">${escapeHTML(closing)}</p><p class="research-evidence"><b>定名依据</b>${escapeHTML(evidence)}</p></div>`;
   }
 
-  function openTreasure(item) {
+  function getDetailFromLocation() {
+    const id = new URLSearchParams(window.location.search).get('item');
+    if (!id) return null;
+    const treasure = treasureById(id);
+    if (treasure) return { id, type: 'treasure', treasure };
+    const group = state.groups.find((item) => item.id === id);
+    return group ? { id, type: 'group', group } : null;
+  }
+
+  function syncItemToUrl(id) {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get('item');
+    if (id) {
+      const next = String(id);
+      if (current === next) return;
+      url.searchParams.set('item', next);
+    } else {
+      if (!current) return;
+      url.searchParams.delete('item');
+    }
+    window.history.pushState({ item: id ? String(id) : null }, '', `${url.pathname}${url.search}${url.hash}`);
+  }
+
+  function openTreasure(item, { syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
     if (!item) return;
+    if (rememberFocus) lastFocusedElement = document.activeElement;
+    activeDetailId = item.id;
     const group = groupForTreasure(item.id);
     const values = galleryForTreasure(item, group);
     const dialogContent = $('#dialog-content');
@@ -227,7 +254,7 @@
       ${group?.labelText ? `<p class="ocr-note">现场展签 OCR 候选：${escapeHTML(group.labelText)}。此段仅用于辅助检索，未把 OCR 结果直接当作正式释文。</p>` : ''}
       ${sourcesMarkup(item)}`;
     bindGallery();
-    showDialog();
+    showDialog({ itemId: item.id, syncUrl, focusClose, rememberFocus });
   }
 
   function genericSequenceMarkup(group) {
@@ -236,15 +263,17 @@
     return `<div class="photo-sequence">${photos.map((photo) => `<figure><img src="${escapeHTML(photoPath(photo, 'thumb'))}" alt="${escapeHTML(group.title)} · ${escapeHTML(photoRole(photo.role))}" loading="lazy" /><figcaption>${escapeHTML(photoRole(photo.role))}${photo.cropThumb ? ' · 人工裁切' : ''}<br />${escapeHTML(filenameOf(photo))}</figcaption></figure>`).join('')}</div>`;
   }
 
-  function openGroup(group) {
+  function openGroup(group, { syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
     if (!group) return;
     if (group.treasureId) {
       const item = treasureById(group.treasureId);
       if (item) {
-        openTreasure(item);
+        openTreasure(item, { syncUrl, focusClose, rememberFocus });
         return;
       }
     }
+    if (rememberFocus) lastFocusedElement = document.activeElement;
+    activeDetailId = group.id;
     const dialogContent = $('#dialog-content');
     const photos = group.photos || [];
     const main = objectPhoto(group) || photos[0];
@@ -255,7 +284,7 @@
       <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, `现场顺序 · ${filenameOf(main)}`)}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
       ${genericSequenceMarkup(group)}`;
     bindGallery();
-    showDialog();
+    showDialog({ itemId: group.id, syncUrl, focusClose, rememberFocus });
   }
 
   function bindGallery() {
@@ -379,18 +408,45 @@
     render();
   }
 
-  function showDialog() {
+  function showDialog({ itemId = null, syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
     const dialog = $('#detail-dialog');
     if (!dialog) return;
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else dialog.setAttribute('open', 'open');
+    const dialogAlreadyOpen = dialog.open || dialog.hasAttribute('open');
+    if (rememberFocus) lastFocusedElement = document.activeElement;
+    if (!dialogAlreadyOpen) {
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', 'open');
+    }
+    if (itemId) activeDetailId = String(itemId);
+    if (focusClose) dialog.querySelector('[data-dialog-close]')?.focus();
+    if (syncUrl && itemId) syncItemToUrl(itemId);
   }
 
-  function closeDialog() {
+  function closeDialog({ syncUrl = false } = {}) {
     const dialog = $('#detail-dialog');
     if (!dialog) return;
-    if (typeof dialog.close === 'function') dialog.close();
+    if (syncUrl) syncItemToUrl(null);
+    if (typeof dialog.close === 'function' && dialog.open) dialog.close();
     else dialog.removeAttribute('open');
+    activeDetailId = null;
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
+
+  function openDetailFromLocation({ focusClose = false } = {}) {
+    const detail = getDetailFromLocation();
+    if (!detail) {
+      if ($('#detail-dialog')?.open) closeDialog({ syncUrl: false });
+      return false;
+    }
+    const dialog = $('#detail-dialog');
+    if ((dialog?.open || dialog?.hasAttribute('open')) && activeDetailId === detail.id) return true;
+    if (detail.type === 'treasure') {
+      openTreasure(detail.treasure, { syncUrl: false, focusClose, rememberFocus: false });
+    } else {
+      openGroup(detail.group, { syncUrl: false, focusClose, rememberFocus: false });
+    }
+    return true;
   }
 
   function groupMatches(group) {
@@ -457,7 +513,7 @@
       const photoCount = groups.reduce((sum, group) => sum + (group.photos || []).length, 0);
       status.textContent = state.groups.length ? `已整理 ${state.groups.length} 个器物卡片 · 当前筛选 ${groups.length} 张卡片 / ${photoCount} 张照片 · 原片总数 ${photoData.sourceCount || 625} 张` : '照片目录正在生成；四件禁出文物详情已可先行阅读。';
     }
-    $$('[data-group-id]', target).forEach((button) => button.addEventListener('click', () => openGroup(state.groups.find((group) => group.id === button.dataset.groupId))));
+    $$('[data-group-id]', target).forEach((button) => button.addEventListener('click', () => openGroup(state.groups.find((group) => group.id === button.dataset.groupId), { syncUrl: true })));
     observeReveals(target);
   }
 
@@ -474,6 +530,7 @@
       if (Array.isArray(remote.groups)) state.groups = remote.groups;
       updateFilterCounts();
       renderArchive();
+      openDetailFromLocation();
     } catch (error) {
       const status = $('#archive-status');
       if (status) status.textContent = '照片目录未加载；请通过本地服务器打开本专题，或先阅读四件禁出文物卡片。';
@@ -484,11 +541,22 @@
   function initDialog() {
     $('#treasure-grid')?.addEventListener('click', (event) => {
       const button = event.target.closest('[data-treasure-id]');
-      if (button) openTreasure(treasureById(button.dataset.treasureId));
+      if (button) openTreasure(treasureById(button.dataset.treasureId), { syncUrl: true });
     });
-    $('[data-dialog-close]')?.addEventListener('click', closeDialog);
-    $('#detail-dialog')?.addEventListener('click', (event) => {
-      if (event.target === event.currentTarget) closeDialog();
+    $('[data-dialog-close]')?.addEventListener('click', () => closeDialog({ syncUrl: true }));
+    const dialog = $('#detail-dialog');
+    dialog?.addEventListener('click', (event) => {
+      if (event.target === event.currentTarget) closeDialog({ syncUrl: true });
+    });
+    dialog?.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      closeDialog({ syncUrl: true });
+    });
+    dialog?.addEventListener('close', () => {
+      activeDetailId = null;
+    });
+    window.addEventListener('popstate', () => {
+      openDetailFromLocation({ focusClose: false });
     });
   }
 
@@ -555,7 +623,12 @@
   }
 
   function init() {
-    initIntro();
+    if (new URLSearchParams(window.location.search).has('item')) {
+      $('.intro-curtain')?.remove();
+      document.body.classList.add('intro-complete');
+    } else {
+      initIntro();
+    }
     renderTreasureCards();
     initDialog();
     initFilters();
@@ -564,6 +637,7 @@
     updateFilterCounts();
     scheduleArchiveInit();
     observeReveals();
+    openDetailFromLocation({ focusClose: true });
   }
 
   document.addEventListener('DOMContentLoaded', init, { once: true });

@@ -224,8 +224,27 @@
 
   function bindItemButtons(scope) {
     scope.querySelectorAll("[data-item-id]").forEach((button) => {
-      button.addEventListener("click", () => openItem(button.dataset.itemId));
+      button.addEventListener("click", () => openItem(button.dataset.itemId, { syncUrl: true }));
     });
+  }
+
+  function getItemFromLocation() {
+    const id = new URLSearchParams(window.location.search).get("item");
+    return id && itemById.has(id) ? id : null;
+  }
+
+  function syncItemToUrl(id) {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get("item");
+    if (id) {
+      const next = String(id);
+      if (current === next) return;
+      url.searchParams.set("item", next);
+    } else {
+      if (!current) return;
+      url.searchParams.delete("item");
+    }
+    window.history.pushState({ item: id ? String(id) : null }, "", `${url.pathname}${url.search}${url.hash}`);
   }
 
   function render() {
@@ -298,11 +317,11 @@
     galleryStrip.querySelectorAll(".gallery-thumb").forEach((button, buttonIndex) => button.classList.toggle("active", buttonIndex === index));
   }
 
-  function openItem(id) {
+  function openItem(id, { syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
     const item = itemById.get(String(id));
-    if (!item) return;
+    if (!item) return false;
     currentItem = item;
-    lastFocusedElement = document.activeElement;
+    if (rememberFocus) lastFocusedElement = document.activeElement;
     const photos = Array.isArray(item.photos) ? item.photos.filter((photo) => photo && photo.src) : [];
     document.getElementById("dialog-kicker").textContent = `${String(item.sourceMuseum || "西安博物院").toUpperCase()}  /  ${isGroup(item) ? "展柜图组" : "OBJECT RECORD"}`;
     const title = document.getElementById("dialog-title");
@@ -325,10 +344,12 @@
     if (typeof dialog.showModal === "function") dialog.showModal();
     else dialog.setAttribute("open", "");
     dialog.classList.add("is-open");
-    document.getElementById("dialog-close").focus();
+    if (focusClose) document.getElementById("dialog-close").focus();
+    if (syncUrl) syncItemToUrl(item.id);
+    return true;
   }
 
-  function closeDialog() {
+  function closeDialog({ syncUrl = false } = {}) {
     resetImageZoom();
     if (!dialog.open && !dialog.hasAttribute("open")) return;
     dialog.classList.remove("is-open");
@@ -336,6 +357,7 @@
     else dialog.removeAttribute("open");
     dialog.removeAttribute("aria-modal");
     if (lastFocusedElement && typeof lastFocusedElement.focus === "function") lastFocusedElement.focus();
+    if (syncUrl) syncItemToUrl(null);
   }
 
   function bindFilters() {
@@ -388,6 +410,10 @@
   function initOpening() {
     const opening = document.getElementById("opening");
     if (!opening) return;
+    if (getItemFromLocation()) {
+      opening.remove();
+      return;
+    }
     document.body.classList.add("opening-active");
     const close = () => {
       opening.classList.add("is-leaving");
@@ -400,12 +426,17 @@
     else opening.classList.add("is-ready");
   }
 
-  document.getElementById("dialog-close").addEventListener("click", closeDialog);
-  dialog.addEventListener("cancel", (event) => { event.preventDefault(); closeDialog(); });
-  dialog.addEventListener("click", (event) => { if (event.target === dialog) closeDialog(); });
+  document.getElementById("dialog-close").addEventListener("click", () => closeDialog({ syncUrl: true }));
+  dialog.addEventListener("cancel", (event) => { event.preventDefault(); closeDialog({ syncUrl: true }); });
+  dialog.addEventListener("click", (event) => { if (event.target === dialog) closeDialog({ syncUrl: true }); });
   dialog.addEventListener("close", () => {
     dialog.classList.remove("is-open");
     dialog.removeAttribute("aria-modal");
+  });
+  window.addEventListener("popstate", () => {
+    const id = getItemFromLocation();
+    if (id) openItem(id, { syncUrl: false, focusClose: false, rememberFocus: false });
+    else closeDialog({ syncUrl: false });
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "/" && document.activeElement !== searchInput && !["INPUT", "SELECT", "TEXTAREA"].includes(document.activeElement?.tagName)) {
@@ -424,5 +455,7 @@
   bindFilters();
   renderRoutes();
   render();
-  document.querySelector(".featured-open")?.addEventListener("click", () => openItem("xian-001-painted-mirror"));
+  document.querySelector(".featured-open")?.addEventListener("click", () => openItem("xian-001-painted-mirror", { syncUrl: true }));
+  const initialItem = getItemFromLocation();
+  if (initialItem) openItem(initialItem, { syncUrl: false });
 }());
