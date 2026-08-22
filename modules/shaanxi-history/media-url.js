@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_PREFIX = "modules/shaanxi-history/";
-  const WORKER_PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev";
+  const WORKER_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev";
   const resolve = root && root.resolveMediaUrl;
 
   if (typeof resolve !== "function") {

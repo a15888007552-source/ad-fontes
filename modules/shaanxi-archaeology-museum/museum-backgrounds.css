@@ -4,7 +4,7 @@
   background-color: #f2eee4;
   background-image:
     linear-gradient(90deg, rgba(246, 243, 235, 0.38), rgba(246, 243, 235, 0.56)),
-    url("https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-paper.webp");
+    url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-paper.webp");
   background-position: center top;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -15,7 +15,7 @@
   background-color: #f2eee4;
   background-image:
     linear-gradient(rgba(244, 241, 233, 0.46), rgba(244, 241, 233, 0.62)),
-    url("https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-paper.webp");
+    url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-paper.webp");
   background-position: center top;
   background-size: 100% auto;
   background-repeat: repeat-y;
@@ -25,7 +25,7 @@
   background-color: #101713;
   background-image:
     linear-gradient(90deg, rgba(11, 16, 13, 0.72), rgba(16, 24, 19, 0.88)),
-    url("https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp");
+    url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,7 +35,7 @@
   background-color: #101713;
   background-image:
     linear-gradient(135deg, rgba(10, 15, 12, 0.7), rgba(18, 29, 22, 0.8)),
-    url("https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp");
+    url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -45,7 +45,7 @@ footer,
 .site-footer {
   background-image:
     linear-gradient(rgba(12, 18, 14, 0.88), rgba(12, 18, 14, 0.94)),
-    url("https://ad-fontes-media.gusgumee777.workers.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp");
+    url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/backgrounds/archaeology-ink.webp");
   background-position: center;
   background-size: cover;
 }

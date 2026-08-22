@@ -11,8 +11,8 @@ from pathlib import Path
 from urllib.parse import urljoin, urlsplit
 
 
-WORKER_HOST = "ad-fontes-media.gusgumee777.workers.dev"
-OLD_R2_SUFFIX = ".r2.dev"
+MEDIA_HOST = "pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+RETIRED_WORKER_HOST = "ad-fontes-media.gusgumee777.workers.dev"
 EXTERNALIZED_MODULES = {"qinhan", "shaanxi-history", "shaanxi-archaeology-museum"}
 MEDIA_SUFFIXES = {
     ".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".avif", ".heic", ".tif", ".tiff",
@@ -35,10 +35,10 @@ def module_from_path(path: str) -> str | None:
 
 class Tracker:
     def __init__(self) -> None:
-        self.worker_requests = 0
-        self.worker_failures: set[str] = set()
+        self.external_requests = 0
+        self.external_failures: set[str] = set()
         self.local_externalized_requests = 0
-        self.old_r2_requests = 0
+        self.retired_worker_requests = 0
         self.external_other_requests = 0
         self.failed_media: set[str] = set()
 
@@ -46,24 +46,24 @@ class Tracker:
         parsed = urlsplit(url)
         if not is_media_url(url):
             return None
-        if parsed.hostname == WORKER_HOST and module_from_path(parsed.path) in EXTERNALIZED_MODULES:
-            return "worker"
+        if parsed.hostname == MEDIA_HOST and module_from_path(parsed.path) in EXTERNALIZED_MODULES:
+            return "external"
         if parsed.hostname in {"127.0.0.1", "localhost"}:
             module = module_from_path(parsed.path)
             if module in EXTERNALIZED_MODULES:
                 return "local_externalized"
-        if parsed.hostname and parsed.hostname.endswith(OLD_R2_SUFFIX):
-            return "old_r2"
+        if parsed.hostname == RETIRED_WORKER_HOST:
+            return "retired_worker"
         return "external_other"
 
     def on_request(self, request) -> None:
         kind = self.classify(request.url)
-        if kind == "worker":
-            self.worker_requests += 1
+        if kind == "external":
+            self.external_requests += 1
         elif kind == "local_externalized":
             self.local_externalized_requests += 1
-        elif kind == "old_r2":
-            self.old_r2_requests += 1
+        elif kind == "retired_worker":
+            self.retired_worker_requests += 1
         elif kind == "external_other":
             self.external_other_requests += 1
 
@@ -72,16 +72,16 @@ class Tracker:
         if kind is None or 200 <= response.status < 400:
             return
         self.failed_media.add(f"{response.status} {response.url}")
-        if kind == "worker":
-            self.worker_failures.add(response.url)
+        if kind == "external":
+            self.external_failures.add(response.url)
 
     def on_request_failed(self, request) -> None:
         kind = self.classify(request.url)
         if kind is None:
             return
         self.failed_media.add(f"failed {request.url} ({request.failure})")
-        if kind == "worker":
-            self.worker_failures.add(request.url)
+        if kind == "external":
+            self.external_failures.add(request.url)
 
 
 def wait_for_image(locator, timeout_ms: int = 30000) -> None:
@@ -155,10 +155,11 @@ def main() -> int:
         "searchResultMuseum": "",
         "deepLinksTested": [],
         "returnLinksTested": [],
-        "workerRequests": 0,
-        "workerFailures": 0,
+        "externalHost": MEDIA_HOST,
+        "externalMediaRequests": 0,
+        "externalMediaFailures": 0,
         "deletedLocalMediaRequests": 0,
-        "oldR2Requests": 0,
+        "retiredWorkerRequests": 0,
         "externalOtherMediaRequests": 0,
         "diagnostics": [],
     }
@@ -279,22 +280,22 @@ def main() -> int:
                 raise AssertionError(f"console errors: {report['consoleErrors'][:5]}")
             if report["pageErrors"]:
                 raise AssertionError(f"page errors: {report['pageErrors'][:5]}")
-            if tracker.worker_failures:
-                raise AssertionError(f"Worker media failures: {sorted(tracker.worker_failures)[:5]}")
+            if tracker.external_failures:
+                raise AssertionError(f"external media failures on {MEDIA_HOST}: {sorted(tracker.external_failures)[:5]}")
             if tracker.local_externalized_requests:
                 raise AssertionError(f"deleted local externalized media requests: {tracker.local_externalized_requests}")
-            if tracker.old_r2_requests:
-                raise AssertionError(f"old r2.dev media requests: {tracker.old_r2_requests}")
+            if tracker.retired_worker_requests:
+                raise AssertionError(f"retired workers.dev media requests: {tracker.retired_worker_requests}")
             if tracker.failed_media:
                 raise AssertionError(f"failed media requests: {sorted(tracker.failed_media)[:5]}")
             report["status"] = "PASS"
     except Exception as error:
         report["diagnostics"].append(str(error))
     finally:
-        report["workerRequests"] = tracker.worker_requests
-        report["workerFailures"] = len(tracker.worker_failures)
+        report["externalMediaRequests"] = tracker.external_requests
+        report["externalMediaFailures"] = len(tracker.external_failures)
         report["deletedLocalMediaRequests"] = tracker.local_externalized_requests
-        report["oldR2Requests"] = tracker.old_r2_requests
+        report["retiredWorkerRequests"] = tracker.retired_worker_requests
         report["externalOtherMediaRequests"] = tracker.external_other_requests
         report["failedMedia"] = sorted(tracker.failed_media)
         args.output.parent.mkdir(parents=True, exist_ok=True)

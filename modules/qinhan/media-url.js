@@ -2,7 +2,7 @@
   "use strict";
 
   const MODULE_PREFIX = "modules/qinhan/";
-  const PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev";
+  const PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev";
   const COMPLETE_URL = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
 
   function qinhanMediaUrl(path) {

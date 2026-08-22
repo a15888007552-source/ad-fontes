@@ -21,7 +21,7 @@ from urllib.request import Request, urlopen
 
 MODULE = "shaanxi-archaeology-museum"
 MODULE_PREFIX = f"modules/{MODULE}/"
-PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
+PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
 EXPECTED_FILES = 1061
 EXPECTED_BYTES = 103024634
 DEFAULT_WORKERS = 12
