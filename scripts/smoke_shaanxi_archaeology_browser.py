@@ -365,7 +365,7 @@ def main() -> int:
                                   return count > 0 && count < initialCount;
                                 }
                                 """,
-                                {"countSelector": "[data-artifact-count]", "initialCount": initial_count},
+                                arg={"countSelector": "[data-artifact-count]", "initialCount": initial_count},
                                 timeout=10000,
                             )
                         except Exception as error:
@@ -411,7 +411,7 @@ def main() -> int:
                                   return Boolean(match) && Number(match[1]) === initialCount;
                                 }
                                 """,
-                                {
+                                arg={
                                     "inputSelector": "[data-artifact-search]",
                                     "countSelector": "[data-artifact-count]",
                                     "initialCount": initial_count,
