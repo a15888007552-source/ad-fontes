@@ -106,6 +106,7 @@ AUDIT_OUTPUT_PATHS = {
     "data/shaanxi-history-r2-verification.json",
     "data/shaanxi-history-workers-verification.json",
     "data/shaanxi-archaeology-r2-upload-verification.json",
+    "data/shaanxi-archaeology-r2-deletion-verification.json",
     "docs/MEDIA_AUDIT.md",
     "docs/MEDIA_EXTERNALIZATION.md",
     "docs/MEDIA_ORPHAN_TRIAGE.md",
@@ -117,6 +118,7 @@ AUDIT_OUTPUT_PATHS = {
     "docs/SHAANXI_HISTORY_R2_PILOT.md",
     "docs/SHAANXI_HISTORY_WORKERS_MIGRATION.md",
     "docs/SHAANXI_ARCHAEOLOGY_R2_UPLOAD.md",
+    "docs/SHAANXI_ARCHAEOLOGY_R2_DELETION.md",
 }
 
 LARGE_EMBEDDED_URI_BYTES = 100 * 1024

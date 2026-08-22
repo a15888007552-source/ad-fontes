@@ -4,8 +4,8 @@
     "inventory": "data/media-inventory.json",
     "triage": "data/media-orphan-triage.json"
   },
-  "totalExternalizableFiles": 3433,
-  "totalExternalizableBytes": 462569919,
+  "totalExternalizableFiles": 2372,
+  "totalExternalizableBytes": 359545285,
   "byModule": {
     "baoji": {
       "files": 44,
@@ -31,10 +31,6 @@
       "files": 589,
       "bytes": 15770040
     },
-    "shaanxi-archaeology-museum": {
-      "files": 1061,
-      "bytes": 103024634
-    },
     "theory": {
       "files": 9,
       "bytes": 1492768
@@ -46,20 +42,20 @@
   },
   "byReferenceType": {
     "css_url": {
-      "files": 24,
-      "bytes": 10352339
+      "files": 18,
+      "bytes": 9785639
     },
     "dynamic_runtime": {
-      "files": 528,
-      "bytes": 71229805
+      "files": 220,
+      "bytes": 51246479
     },
     "html_href": {
-      "files": 9,
-      "bytes": 782260
+      "files": 8,
+      "bytes": 748693
     },
     "html_src": {
-      "files": 26,
-      "bytes": 11693520
+      "files": 22,
+      "bytes": 11380319
     },
     "html_srcset": {
       "files": 15,
@@ -70,8 +66,8 @@
       "bytes": 1492768
     },
     "js_literal": {
-      "files": 171,
-      "bytes": 91957688
+      "files": 165,
+      "bytes": 91141594
     },
     "js_template": {
       "files": 211,
@@ -82,38 +78,38 @@
       "bytes": 170108538
     },
     "manifest": {
-      "files": 2523,
-      "bytes": 294139503
+      "files": 1471,
+      "bytes": 192146723
     },
     "other": {
-      "files": 903,
-      "bytes": 39325415
+      "files": 604,
+      "bytes": 22069175
     }
   },
   "byMigrationRisk": {
     "high": {
-      "files": 528,
-      "bytes": 71229805
+      "files": 220,
+      "bytes": 51246479
     },
     "low": {
-      "files": 308,
-      "bytes": 148038844
+      "files": 300,
+      "bytes": 147313567
     },
     "medium": {
-      "files": 2597,
-      "bytes": 243301270
+      "files": 1852,
+      "bytes": 160985239
     }
   },
-  "dynamicRuntimeFiles": 528,
-  "dynamicRuntimeBytes": 71229805,
+  "dynamicRuntimeFiles": 220,
+  "dynamicRuntimeBytes": 51246479,
   "sourceOriginalFiles": 10,
   "sourceOriginalBytes": 15705736,
   "unreferencedGeneratedFiles": 2002,
   "unreferencedGeneratedBytes": 303807059,
   "unknownFiles": 4,
   "unknownBytes": 1460738,
-  "inventoryFileCount": 5449,
-  "inventoryTotalBytes": 783543452,
+  "inventoryFileCount": 4388,
+  "inventoryTotalBytes": 680518818,
   "shaanxiHistoryPilot": {
     "module": "shaanxi-history",
     "totalMedia": {

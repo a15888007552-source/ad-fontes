@@ -1,0 +1,92 @@
+{
+  "status": "PASS_STATIC_BROWSER_PENDING",
+  "module": "shaanxi-archaeology-museum",
+  "baseCommit": "32b32832e1773f9698a785b3c49fbac3d5c3edd1",
+  "frozenManifest": {
+    "sourceCommit": "32b32832e1773f9698a785b3c49fbac3d5c3edd1",
+    "sources": [
+      "data/media-externalization-plan.json",
+      "data/shaanxi-archaeology-r2-upload-verification.json"
+    ],
+    "files": 1061,
+    "bytes": 103024634,
+    "allowedPrefixes": [
+      "modules/shaanxi-archaeology-museum/assets/backgrounds/",
+      "modules/shaanxi-archaeology-museum/assets/hero/",
+      "modules/shaanxi-archaeology-museum/assets/photos/thumbs/",
+      "modules/shaanxi-archaeology-museum/assets/photos/web/"
+    ],
+    "allowedExactPaths": [
+      "modules/shaanxi-archaeology-museum/assets/brand-emblem.png"
+    ],
+    "allowedPrefixesIncludingReview": [
+      "modules/shaanxi-archaeology-museum/review/contact-sheets/"
+    ]
+  },
+  "frozenManifestFiles": 1061,
+  "frozenManifestBytes": 103024634,
+  "preDeleteExistingFiles": 1061,
+  "preDeleteBytes": 103024634,
+  "preDeleteShaVerified": 1061,
+  "deletedFiles": 1061,
+  "deletedBytes": 103024634,
+  "postDeleteLocalCopies": 0,
+  "outOfManifestRetainedFiles": 1,
+  "outOfManifestRetainedBytes": 528135,
+  "outOfManifestRetainedPaths": [
+    "modules/shaanxi-archaeology-museum/review/contact-sheets/contact_001_041.jpg"
+  ],
+  "retainedPathInFrozenManifest": false,
+  "retainedPathExistsAfterDeletion": true,
+  "runtime": {
+    "directLocalRuntimeReferences": 0,
+    "oldR2DevReferences": 0,
+    "doublePrefixReferences": 0,
+    "provenanceWorkerResolved": 6,
+    "staticWorkerReferencesPresent": true,
+    "dynamicCatalogResolverPreserved": true,
+    "logicalArtifactPathsPreserved": true,
+    "reviewContactSheetsRuntime": false
+  },
+  "audit": {
+    "status": "PASS",
+    "inventoryValidation": "PASS",
+    "before": {
+      "files": 5449,
+      "bytes": 783543452
+    },
+    "after": {
+      "files": 4388,
+      "bytes": 680518818
+    }
+  },
+  "externalizationAfter": {
+    "files": 2372,
+    "bytes": 359545285,
+    "planRegeneratedAfterDeletion": true
+  },
+  "binaryAdditions": 0,
+  "binaryModifications": 0,
+  "binaryDeletions": 1061,
+  "deletedBinarySetMatchesFrozenManifest": true,
+  "priorBrowserSmoke": {
+    "status": "PASS",
+    "source": "GitHub-hosted Chromium, PR #19, before this deletion",
+    "searchCounts": "167/1/167",
+    "workerMedia": "51/51",
+    "workerFailures": 0,
+    "localModuleMedia": 0,
+    "provenance": "6/6",
+    "dialogs": 6,
+    "thumbnailSwitches": 5,
+    "consolePageErrors": "0/0"
+  },
+  "networkChecks": {
+    "postDeleteWorkerRequest": "NOT_RUN",
+    "postDeleteBrowserSmoke": "PENDING_GITHUB_ACTIONS",
+    "historicalWorkerUploadVerification": "PASS",
+    "historicalWorkerObjects": 1061,
+    "historicalWorkerContentLength": 1061,
+    "historicalWorkerSha256Samples": 40
+  }
+}
