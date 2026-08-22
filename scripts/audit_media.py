@@ -91,6 +91,8 @@ AUDIT_OUTPUT_PATHS = {
     "data/media-audit-summary.json",
     "data/media-externalization-plan.json",
     "data/media-externalization-summary.json",
+    "data/shaanxi-archaeology-r2-runtime-verification.json",
+    "docs/SHAANXI_ARCHAEOLOGY_R2_RUNTIME.md",
     "data/media-orphan-triage.json",
     "data/media-orphan-summary.json",
     "data/media-prune-plan.json",
