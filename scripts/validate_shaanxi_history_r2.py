@@ -558,9 +558,9 @@ def main() -> int:
         if result.get("status") != 200 or result.get("length") != int(entry["bytes"])
     ]
     if worker_http_verified != EXPECTED_FILES:
-        errors.append(f"Worker HTTP verified {worker_http_verified} != {EXPECTED_FILES}")
+        errors.append(f"external HTTP verified {worker_http_verified} != {EXPECTED_FILES}")
     if content_length_verified != EXPECTED_FILES:
-        errors.append(f"Worker Content-Length verified {content_length_verified} != {EXPECTED_FILES}")
+        errors.append(f"external Content-Length verified {content_length_verified} != {EXPECTED_FILES}")
 
     sample_records = select_samples(ordered_entries)
     with ThreadPoolExecutor(max_workers=8) as executor:

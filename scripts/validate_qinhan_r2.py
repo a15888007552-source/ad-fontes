@@ -372,7 +372,7 @@ def browser_smoke_payload(args: argparse.Namespace) -> dict[str, Any]:
         "consoleWarnings": args.browser_console_warnings,
         "provenanceMedia": args.browser_provenance_media,
         "provenanceMediaLoaded": args.browser_provenance_loaded,
-        "provenanceWorkerHttp": args.browser_provenance_http,
+        "provenanceExternalHttp": args.browser_provenance_http,
         "provenanceLocalRequests": args.browser_provenance_local_requests,
         "mediaFailures": args.browser_media_failures,
         "archiveDialogsChecked": args.browser_archive_dialogs,
@@ -392,7 +392,7 @@ def build_document(summary: dict[str, Any]) -> str:
 - Current R2 public base: `{summary['currentPublicBase']}`
 - Frozen plan: **{summary['plannedFiles']:,} files / {summary['plannedBytes']:,} bytes**
 - Local Qin-Han media retained: **{summary['localMediaFiles']:,} files / {summary['localMediaBytes']:,} bytes**
-- Static external media references: **{summary['staticWorkerUniqueFiles']:,} files / {summary['staticWorkerReferenceOccurrences']:,} occurrences**
+- Static external media references: **{summary['staticExternalUniqueFiles']:,} files / {summary['staticExternalReferenceOccurrences']:,} occurrences**
 - Dynamic archive media fields: **{summary['dynamicMediaFieldValues']:,} values / {summary['dynamicUniqueFiles']:,} unique files**
 - Provenance Qin-Han media: **{summary['provenanceMediaFiles']:,} files**; External-resolved **{summary['provenanceExternalResolved']:,}/{summary['provenanceMediaFiles']:,}**; local requests **{summary['provenanceLocalRuntimeRequests']}**
 - Runtime routing: **{summary['runtimeRoutingStatus']}** (static + dynamic archive + provenance resolver)
@@ -797,7 +797,7 @@ def main() -> int:
                     "detail": args.terminal_detail,
                 },
                 "provenanceMediaFiles": len(provenance_paths),
-                "provenanceExternalResolved": provenance_worker_resolved,
+                "provenanceExternalResolved": provenance_external_resolved,
                 "provenanceLocalRuntimeRequests": len(provenance_local_hits),
                 "provenanceResolverChecks": provenance_checks,
                 "runtimeRoutingStatus": runtime_routing_status,
@@ -868,7 +868,7 @@ def main() -> int:
             "detail": args.terminal_detail,
         },
         "provenanceMediaFiles": len(provenance_paths),
-        "provenanceExternalResolved": provenance_worker_resolved,
+        "provenanceExternalResolved": provenance_external_resolved,
         "provenanceLocalRuntimeRequests": len(provenance_local_hits),
         "provenanceResolverChecks": provenance_checks,
         "runtimeRoutingStatus": runtime_routing_status,
@@ -888,15 +888,15 @@ def main() -> int:
     print("QINHAN_R2_RUNTIME=PASS")
     print(f"PLAN={EXPECTED_FILES}/{EXPECTED_BYTES}")
     print(f"LOCAL_MEDIA={len(local_paths)}/{local_bytes}")
-    print(f"STATIC_WORKER={len(static_paths)} files/{len(static_occurrences)} references")
+    print(f"STATIC_EXTERNAL={len(static_paths)} files/{len(static_occurrences)} references")
     print(f"DYNAMIC_FIELDS={len(dynamic_fields)} values/{len(dynamic_paths)} files")
     print(f"RUNTIME_COVERAGE={len(runtime_paths)}/{EXPECTED_FILES}")
-    print(f"WORKER_HTTP={worker_http_verified}/{EXPECTED_FILES}")
+    print(f"EXTERNAL_HTTP={worker_http_verified}/{EXPECTED_FILES}")
     print(f"CONTENT_LENGTH={content_length_verified}/{EXPECTED_FILES}")
     print(f"SHA256_SAMPLES={sha_verified}/{len(samples)}")
     print(f"DELIVERY_SAMPLES={delivery_verified}/{CACHE_SAMPLE_COUNT}")
     print(f"DIRECT_LOCAL_RUNTIME={len(direct_local_hits)}")
-    print(f"RUNTIME_OLD_R2DEV={old_host_count}")
+    print(f"RUNTIME_RETIRED_WORKER={retired_worker_count}")
     print(f"BINARY_MEDIA_CHANGES={len(changed_binary_paths)}")
     print(f"REPORTS_WRITTEN={SUMMARY_PATH.name},{DOC_PATH.name}")
     return 0
