@@ -137,7 +137,27 @@
     resetZoom();
   }
 
-  function openArtifact(artifact) {
+  function getItemFromLocation() {
+    const id = new URLSearchParams(window.location.search).get("item");
+    return id && artifacts.find((item) => item.id === id) ? id : null;
+  }
+
+  function syncItemToUrl(id) {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get("item");
+    if (id) {
+      const next = String(id);
+      if (current === next) return;
+      url.searchParams.set("item", next);
+    } else {
+      if (!current) return;
+      url.searchParams.delete("item");
+    }
+    window.history.pushState({ item: id ? String(id) : null }, "", `${url.pathname}${url.search}${url.hash}`);
+  }
+
+  function openArtifact(artifact, { syncUrl = false } = {}) {
+    if (!artifact) return false;
     activeArtifact = artifact;
     activePhoto = 0;
     const facts = [
@@ -183,6 +203,13 @@
     dialog.showModal();
     document.body.classList.add("catalog-dialog-open");
     resetZoom();
+    if (syncUrl) syncItemToUrl(artifact.id);
+    return true;
+  }
+
+  function closeArtifactDialog({ syncUrl = false } = {}) {
+    if (syncUrl) syncItemToUrl(null);
+    if (dialog.open) dialog.close();
   }
 
   root.addEventListener("input", (event) => {
@@ -193,7 +220,7 @@
   });
   root.addEventListener("click", (event) => {
     const card = event.target.closest("[data-artifact-id]");
-    if (card) openArtifact(artifacts.find((item) => item.id === card.dataset.artifactId));
+    if (card) openArtifact(artifacts.find((item) => item.id === card.dataset.artifactId), { syncUrl: true });
   });
   root.addEventListener("keydown", (event) => {
     if ((event.key === "Enter" || event.key === " ") && event.target.matches("[data-artifact-id]")) {
@@ -203,7 +230,7 @@
   });
 
   dialog.addEventListener("click", (event) => {
-    if (event.target === dialog || event.target.closest("[data-dialog-close]")) dialog.close();
+    if (event.target === dialog || event.target.closest("[data-dialog-close]")) closeArtifactDialog({ syncUrl: true });
     const photoButton = event.target.closest("[data-photo-index]");
     if (photoButton) selectPhoto(Number(photoButton.dataset.photoIndex));
     if (event.target.closest("[data-zoom-in]")) setZoom(zoom + 0.25);
@@ -218,6 +245,15 @@
   dialog.addEventListener("close", () => {
     activeArtifact = null;
     document.body.classList.remove("catalog-dialog-open");
+  });
+  dialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeArtifactDialog({ syncUrl: true });
+  });
+  window.addEventListener("popstate", () => {
+    const id = getItemFromLocation();
+    if (id) openArtifact(artifacts.find((item) => item.id === id), { syncUrl: false });
+    else if (dialog.open) closeArtifactDialog({ syncUrl: false });
   });
 
   async function loadArtifactData() {
@@ -253,6 +289,8 @@
         <div class="artifact-catalog-grid"></div>
         <nav class="artifact-catalog-pager" data-artifact-pager aria-label="文物目录分页"></nav>`;
       renderCards();
+      const requestedItem = getItemFromLocation();
+      if (requestedItem) openArtifact(artifacts.find((item) => item.id === requestedItem), { syncUrl: false });
     })
     .catch((error) => {
       root.innerHTML = `<p class="artifact-load-error"><strong>文物目录载入失败。</strong><br>请确认通过本地服务器打开页面，并刷新重试。<small>${escapeHtml(error.message)}</small></p>`;

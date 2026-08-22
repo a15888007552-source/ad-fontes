@@ -1,0 +1,35 @@
+name: Museum QA
+
+on:
+  push:
+    branches:
+      - main
+      - recovery/restore-product-atlas-v1
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: museum-qa-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check QA script syntax
+        run: node --check scripts/qa.mjs
+
+      - name: Run museum QA
+        run: node scripts/qa.mjs

@@ -8,7 +8,58 @@
   <title>中国博物馆行记 · Museum Atlas</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23a92e31'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='%23fff7e9'%3E%E9%A4%86%3C/text%3E%3C/svg%3E" />
   <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/index.html" />
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ad Fontes · Museum Atlas" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:title" content="中国博物馆行记 · Museum Atlas" />
+  <meta property="og:description" content="中国博物馆行记：按省份进入个人博物馆照片与专题" />
+  <meta property="og:url" content="https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/index.html" />
+  <meta property="og:image" content="https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/assets/museum-atlas-ai-cover.png" />
+  <meta property="og:image:alt" content="中国博物馆行记 Museum Atlas 封面" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="中国博物馆行记 · Museum Atlas" />
+  <meta name="twitter:description" content="中国博物馆行记：按省份进入个人博物馆照片与专题" />
+  <meta name="twitter:image" content="https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/assets/museum-atlas-ai-cover.png" />
+  <meta name="twitter:image:alt" content="中国博物馆行记 Museum Atlas 封面" />
+  <script src="../../shared/js/media-url.js"></script>
+  <script id="atlas-media-url">
+    (() => {
+      const workerBase = "https://ad-fontes-media.gusgumee777.workers.dev";
+      const externalizedModules = new Set(["qinhan", "shaanxi-history", "shaanxi-archaeology-museum"]);
+      const repositoryRoot = new URL("../../", document.baseURI);
+      const isComplete = (value) => /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(String(value || ""));
+      const repoPathFor = (value, contextPath = "") => {
+        let path = String(value || "").replace(/^(?:\.\/)+/, "");
+        if (path.startsWith("modules/") || path.startsWith("guobo-museum/")) return path;
+        if (contextPath) {
+          const base = String(contextPath).slice(0, String(contextPath).lastIndexOf("/") + 1);
+          if (/^modules\/beilin\//.test(String(contextPath)) && path.startsWith("assets/")) return path;
+          path = base + path;
+        }
+        return path.replace(/^\.\//, "");
+      };
+      window.resolveAtlasMediaUrl = (value, contextPath = "") => {
+        if (value === null || value === undefined) return value;
+        const source = String(value);
+        if (isComplete(source)) return source;
+        const repoPath = repoPathFor(source, contextPath);
+        const moduleId = repoPath.match(/^modules\/([^/]+)\//)?.[1];
+        if (externalizedModules.has(moduleId) && typeof window.resolveMediaUrl === "function") {
+          return window.resolveMediaUrl(repoPath, { mode: "external", baseUrl: workerBase });
+        }
+        return new URL(repoPath, repositoryRoot).href;
+      };
+      const applyMediaPaths = () => document.querySelectorAll("[data-media-path]").forEach((image) => {
+        image.src = window.resolveAtlasMediaUrl(image.dataset.mediaPath, image.dataset.mediaContext || "");
+      });
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", applyMediaPaths, { once: true });
+      } else {
+        applyMediaPaths();
+      }
+    })();
+  </script>
   <link rel="preload" as="image" href="assets/beijing-palace-hero.webp" />
   <style>
     :root {
@@ -1983,9 +2034,504 @@
       padding: 22px;
     }
   }
-  .museum-map-section{margin:48px auto 0;padding:clamp(22px,4vw,44px);width:min(1320px,calc(100% - 32px));background:linear-gradient(145deg,#e9efe9,#f8f5ed);border:1px solid rgba(47,91,78,.22);border-radius:26px;box-shadow:0 22px 60px rgba(27,45,38,.10)}
-  .museum-map-header{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:18px}.museum-map-kicker{margin:0 0 7px;color:#37695a;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}.museum-map-header h3{margin:0;font:500 clamp(28px,4vw,48px)/1.1 "Noto Serif SC","Source Han Serif SC",serif;letter-spacing:-.055em;color:#243b34}.museum-map-intro{max-width:430px;margin:0;color:#5b6f66;font-size:13px;line-height:1.85}.museum-map-shell{position:relative;height:min(62vw,610px);min-height:410px;overflow:hidden;border:1px solid rgba(37,69,59,.28);border-radius:18px;background:#dfe8df}.museum-map{position:absolute;inset:0}.museum-map-note{position:absolute;z-index:2;left:14px;bottom:14px;padding:7px 10px;color:#37584d;background:rgba(248,250,245,.85);border:1px solid rgba(47,91,78,.22);border-radius:9px;backdrop-filter:blur(8px);font-size:11px}.museum-map-legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;color:#5b6f66;font-size:11px}.museum-map-legend span{display:inline-flex;align-items:center;gap:6px}.museum-map-legend i{width:8px;height:8px;border-radius:50%;background:#a34c34;box-shadow:0 0 0 3px rgba(163,76,52,.15)}.museum-map-legend i.building{border-radius:2px;background:#7f9e8d;box-shadow:0 0 0 3px rgba(127,158,141,.16)}.maplibregl-popup-content{font-family:Inter,"Microsoft YaHei",sans-serif;padding:14px 16px;color:#243b34}.museum-popup-title{font-family:"Noto Serif SC","Source Han Serif SC",serif;font-size:17px;margin:0 0 4px}.museum-popup-meta{font-size:11px;color:#667a70;margin:0 0 10px}.museum-popup-link{font-size:11px;color:#8b4b35;text-decoration:underline;text-underline-offset:3px}
-  @media(max-width:680px){.museum-map-header{display:block}.museum-map-intro{margin-top:12px}.museum-map-shell{min-height:440px;height:112vw}}
+
+  .selected-objects {
+    margin-top: clamp(96px, 12vw, 170px);
+    padding-bottom: clamp(72px, 9vw, 130px);
+  }
+
+  .selected-objects__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.44fr);
+    gap: clamp(28px, 7vw, 100px);
+    align-items: end;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .selected-objects__kicker {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+
+  .selected-objects__heading h2 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4.7rem);
+    font-weight: 400;
+    letter-spacing: -0.08em;
+    line-height: 0.98;
+  }
+
+  .selected-objects__lede {
+    max-width: 220px;
+    margin: 0 0 4px;
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    line-height: 1.8;
+  }
+
+  .selected-objects__catalogue {
+    display: grid;
+    gap: clamp(36px, 5vw, 70px);
+    padding-top: clamp(30px, 4vw, 48px);
+  }
+
+  .selected-objects__row {
+    display: grid;
+    gap: clamp(18px, 3vw, 40px);
+    align-items: start;
+  }
+
+  .selected-objects__row--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .selected-objects__row--four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .selected-object {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0 18px;
+    color: var(--ink);
+    transition: border-color 180ms ease, color 180ms ease;
+  }
+
+  .selected-object__media {
+    display: grid;
+    aspect-ratio: 4 / 5;
+    margin: 0;
+    overflow: hidden;
+    place-items: center;
+    background: color-mix(in srgb, var(--surface-strong) 86%, var(--accent-soft));
+  }
+
+  .selected-object__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: var(--image-filter);
+    transition: transform 360ms cubic-bezier(0.16, 0.82, 0.2, 1), opacity 180ms ease;
+  }
+
+  .selected-object__meta {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 8px 10px;
+    padding-top: 16px;
+  }
+
+  .selected-object__number {
+    padding-top: 4px;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+
+  .selected-object__copy {
+    min-width: 0;
+  }
+
+  .selected-object__copy h3 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.35;
+  }
+
+  .selected-object__type,
+  .selected-object__museum {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .selected-object__museum {
+    margin-top: 2px;
+    color: var(--ink);
+    opacity: 0.84;
+  }
+
+  .selected-object__cue {
+    grid-column: 2;
+    margin-top: 12px;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    transition: color 180ms ease;
+  }
+
+  .selected-object:hover,
+  .selected-object:focus-visible {
+    border-color: var(--accent);
+  }
+
+  .selected-object:hover .selected-object__media img,
+  .selected-object:focus-visible .selected-object__media img {
+    opacity: 0.96;
+    transform: scale(1.015);
+  }
+
+  .selected-object:hover .selected-object__cue,
+  .selected-object:focus-visible .selected-object__cue {
+    color: var(--accent-deep);
+  }
+
+  @media (max-width: 1100px) {
+    .selected-objects__row--three,
+    .selected-objects__row--four {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .selected-objects {
+      margin-top: clamp(88px, 18vw, 120px);
+      padding-bottom: clamp(68px, 14vw, 96px);
+    }
+
+    .selected-objects__intro {
+      display: block;
+      padding-bottom: 20px;
+    }
+
+    .selected-objects__heading h2 {
+      font-size: clamp(2.6rem, 14vw, 4rem);
+    }
+
+    .selected-objects__lede {
+      max-width: none;
+      margin-top: 14px;
+    }
+
+    .selected-objects__catalogue {
+      gap: 32px;
+      padding-top: 24px;
+    }
+
+    .selected-objects__row--three,
+    .selected-objects__row--four {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    .selected-object {
+      padding-top: 12px;
+      padding-bottom: 16px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .selected-object,
+    .selected-object__media img,
+    .selected-object__cue {
+      transition: none;
+    }
+  }
+</style>
+<style id="atlas-search-styles">
+  .atlas-search-trigger {
+    appearance: none;
+    border: 1px solid transparent;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+  }
+
+  .atlas-search-trigger:hover,
+  .atlas-search-trigger:focus-visible {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--page);
+  }
+
+  html[data-active-province="beijing"] .site-header .atlas-search-trigger {
+    color: rgba(255, 244, 230, .9);
+    text-shadow: 0 1px 2px rgba(44, 5, 10, .7);
+  }
+
+  .atlas-search-dialog {
+    width: min(1040px, calc(100vw - 32px));
+    max-width: none;
+    max-height: 86dvh;
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+  }
+
+  .atlas-search-dialog::backdrop {
+    background: rgba(20, 16, 13, .72);
+  }
+
+  .atlas-search-dialog__inner {
+    max-height: 86dvh;
+    overflow-y: auto;
+    padding: clamp(24px, 5vw, 62px);
+  }
+
+  .atlas-search__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .atlas-search__kicker {
+    margin: 0 0 11px;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: .16em;
+  }
+
+  .atlas-search__title {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 4.2rem);
+    font-weight: 400;
+    letter-spacing: -.075em;
+    line-height: .98;
+  }
+
+  .atlas-search__lede {
+    max-width: 36em;
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .atlas-search__close {
+    flex: 0 0 auto;
+    min-height: 36px;
+    padding: 7px 12px;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+  }
+
+  .atlas-search__close:hover,
+  .atlas-search__close:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .atlas-search__controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, .32fr);
+    gap: 14px;
+    padding: 24px 0 10px;
+  }
+
+  .atlas-search__field {
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+
+  .atlas-search__input,
+  .atlas-search__select {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+    border: 1px solid var(--line-strong);
+    border-radius: 0;
+    background: var(--surface-strong);
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+    letter-spacing: 0;
+    outline: none;
+  }
+
+  .atlas-search__input {
+    padding: 10px 12px;
+  }
+
+  .atlas-search__select {
+    padding: 0 10px;
+  }
+
+  .atlas-search__input:focus,
+  .atlas-search__select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+
+  .atlas-search__status {
+    min-height: 1.4em;
+    padding: 10px 0 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 14px;
+  }
+
+  .atlas-search__examples {
+    padding: 4px 0 22px;
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 13px;
+  }
+
+  .atlas-search__results {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 24px;
+  }
+
+  .atlas-search-result {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 14px;
+    min-width: 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--line);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color 180ms ease, color 180ms ease;
+  }
+
+  .atlas-search-result:hover,
+  .atlas-search-result:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .atlas-search-result__media {
+    display: grid;
+    aspect-ratio: 1 / 1.08;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    place-items: center;
+    background: color-mix(in srgb, var(--surface-strong) 86%, var(--accent-soft));
+  }
+
+  .atlas-search-result__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: var(--image-filter);
+  }
+
+  .atlas-search-result__placeholder {
+    display: grid;
+    gap: 5px;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .atlas-search-result__placeholder small {
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: .08em;
+  }
+
+  .atlas-search-result__body {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .atlas-search-result__title {
+    margin: 0;
+    color: inherit;
+    font-family: var(--serif);
+    font-size: clamp(1rem, 1.8vw, 1.28rem);
+    font-weight: 500;
+    letter-spacing: -.04em;
+    line-height: 1.35;
+  }
+
+  .atlas-search-result__meta,
+  .atlas-search-result__museum,
+  .atlas-search-result__cue {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .atlas-search-result__museum {
+    color: var(--ink);
+  }
+
+  .atlas-search-result__cue {
+    color: var(--accent);
+  }
+
+  @media (max-width: 760px) {
+    .atlas-search-dialog {
+      width: calc(100vw - 20px);
+    }
+
+    .atlas-search-dialog__inner {
+      padding: 22px 18px 28px;
+    }
+
+    .atlas-search__controls,
+    .atlas-search__results {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .atlas-search-result {
+      grid-template-columns: 82px minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 430px) {
+    .atlas-search__header {
+      gap: 12px;
+    }
+
+    .atlas-search__title {
+      font-size: 2.2rem;
+    }
+
+    .atlas-search__close {
+      padding-inline: 9px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .atlas-search-trigger,
+    .atlas-search-result {
+      transition: none;
+    }
+  }
 </style></head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴" tabindex="0">
@@ -1999,7 +2545,7 @@
         <span class="atlas-opening__title-line">从一张图</span>
         <span class="atlas-opening__title-line atlas-opening__title-line--accent">进入一座馆</span>
       </h1>
-      <p class="atlas-opening__caption">十座博物馆 · 七座专题已上线</p>
+      <p class="atlas-opening__caption" data-registry-stat="opening-summary">十座博物馆 · 七座专题已上线</p>
       <div class="atlas-opening__progress" aria-hidden="true"><span></span></div>
       <p class="atlas-opening__hint">点击任意处跳过 <span>SCROLL TO BEGIN</span></p>
     </div>
@@ -2015,12 +2561,13 @@
             <p class="micro-label">AD FONTES / MUSEUM ATLAS</p>
             <h1>中国博物馆行记</h1>
             <p class="latin-label">ITINERARIA MUSEORUM SINARUM</p>
-            <p class="header-stats">03 省份 · 10 座馆 · 07 个已上线专题</p>
+            <p class="header-stats" data-registry-stat="header-summary">03 省份 · 10 座馆 · 07 个已上线专题</p>
           </div>
         </div>
         <nav class="site-nav" aria-label="总馆导航">
           <a class="nav-item" href="#top">总览</a>
           <a class="nav-item" href="#provinces" aria-current="page">省份</a>
+          <button class="nav-item atlas-search-trigger" type="button" aria-haspopup="dialog" aria-controls="atlas-search-dialog">检索</button>
           <a class="nav-item" href="../beilin/index.html">碑林 ↗</a>
           <a class="nav-item" href="#about">关于</a>
         </nav>
@@ -2042,7 +2589,7 @@
       <div class="cover-side" aria-label="总馆统计与首张照片">
         <div class="cover-index">
           <p class="micro-label">PROVINCES</p>
-          <strong>03</strong>
+          <strong data-registry-stat="province-count">03</strong>
           <span>北京<br />陕西<br />河南</span>
         </div>
         <figure class="cover-stamp">
@@ -2088,20 +2635,20 @@
           <p class="brief-copy"><strong>北京 · 朱红</strong> 先从宫城开始，再沿着城市中轴寻找下一座馆</p>
           <dl class="brief-meta">
             <div><dt>主题</dt><dd>秩序 / 中心</dd></div>
-            <div><dt>馆数</dt><dd>02 座</dd></div>
+            <div><dt>馆数</dt><dd data-registry-province-count="beijing">02 座</dd></div>
           </dl>
         </div>
         <div class="chapter-content reveal-on-scroll">
           <section aria-labelledby="beijing-museums">
             <div class="content-heading"><h3 id="beijing-museums">MUSEA</h3><span>北京 · 博物馆入口</span></div>
-            <div class="museum-list">
+            <div class="museum-list" data-registry-museums="beijing">
               <article class="museum-card museum-card--soon" aria-label="故宫博物院专题站筹备中">
                 <div class="card-media"><img src="assets/beijing-palace-hero.webp" alt="故宫博物院建筑群" loading="lazy" decoding="async" width="2400" height="1600" /></div>
                 <div class="museum-card-body"><span class="card-status">IN PREPARATION</span><h4>故宫博物院</h4><p>北京 · 宫城与器物</p><span class="card-arrow">专题筹备中</span></div>
               </article>
               <a class="museum-card museum-card--link" href="../../guobo-museum/index.html" aria-label="进入中国国家博物馆专题站">
                 <div class="card-media"><img src="assets/guobo-phoenix-crown.webp" alt="中国国家博物馆孝端皇后九龙九凤冠" loading="eager" fetchpriority="high" decoding="async" /></div>
-                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>中国国家博物馆</h4><p>北京 · 城市与国家</p><span class="card-arrow">进入专题 ↗</span></div>
+                <div class="museum-card-body"><span class="card-status">OPEN / 文物卡片</span><h4>中国国家博物馆</h4><p>北京 · 城市与国家</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
             </div>
           </section>
@@ -2122,47 +2669,39 @@
           <p class="brief-copy"><strong>陕西 · 墨色</strong> 字留在石上，照片把它带回今天</p>
           <dl class="brief-meta">
             <div><dt>主题</dt><dd>碑刻 / 时间</dd></div>
-            <div><dt>馆数</dt><dd>09 座</dd></div>
+            <div><dt>馆数</dt><dd data-registry-province-count="shaanxi">06 座</dd></div>
           </dl>
         </div>
         <div class="chapter-content reveal-on-scroll">
           <section aria-labelledby="shaanxi-museums">
             <div class="content-heading"><h3 id="shaanxi-museums">MUSEA</h3><span>陕西 · 博物馆入口</span></div>
-            <div class="museum-list">
+            <div class="museum-list" data-registry-museums="shaanxi">
                             <a class="museum-card museum-card--link" href="../beilin/index.html" aria-label="进入西安碑林博物馆专题站">
                 <div class="card-media"><img src="../../assets/hero/beilin-gate.jpg" alt="西安碑林博物馆大门" loading="lazy" decoding="async" /></div>
-                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>西安碑林博物馆</h4><p>西安 · 碑刻与书法</p><span class="card-arrow">进入专题 ↗</span></div>
+                <div class="museum-card-body"><span class="card-status">OPEN / 数字档案</span><h4>西安碑林博物馆</h4><p>西安 · 碑刻与书法</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
               <a class="museum-card museum-card--link" href="../shaanxi-archaeology-museum/index.html" aria-label="进入陕西考古博物馆专题站">
                 <div class="card-media"><img src="assets/shaanxi-archaeology-exterior.jpg" alt="陕西考古博物馆馆舍外景" loading="lazy" decoding="async" /></div>
-                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>陕西考古博物馆</h4><p>西安 · 考古圣地</p><span class="card-arrow">进入专题 ↗</span></div>
+                <div class="museum-card-body"><span class="card-status">OPEN / 现场图录</span><h4>陕西考古博物馆</h4><p>西安 · 考古圣地</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
-              <a class="museum-card museum-card--link" href="../qinhan/index.html" aria-label="进入陕西历史博物馆秦汉馆专题站">
+              <a class="museum-card museum-card--link" href="../qinhan/index.html" aria-label="进入陕西历史博物馆·秦汉馆专题站">
                 <div class="card-media"><img src="assets/qinhan-exterior.jpg" alt="陕西历史博物馆秦汉馆建筑群外景" loading="lazy" decoding="async" /></div>
-                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>陕西历史博物馆秦汉馆</h4><p>西安 · 秦汉文明</p><span class="card-arrow">进入专题 ↗</span></div>
+                <div class="museum-card-body"><span class="card-status">OPEN / 馆藏影录</span><h4>陕西历史博物馆·秦汉馆</h4><p>西安 · 秦汉文明</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
               <a class="museum-card museum-card--link" href="../baoji/index.html" aria-label="进入中国青铜器博物院专题站">
                 <div class="card-media"><img src="../baoji/assets/museum-exterior.png" alt="中国青铜器博物院外景" loading="lazy" decoding="async" /></div>
-                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>中国青铜器博物院</h4><p>宝鸡 · 周秦青铜文明</p><span class="card-arrow">进入专题 ↗</span></div>
+                <div class="museum-card-body"><span class="card-status">OPEN / 现场图录</span><h4>中国青铜器博物院</h4><p>宝鸡 · 周秦青铜文明</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
               <a class="museum-card museum-card--link" href="../shaanxi-history/index.html" aria-label="进入陕西历史博物馆专题站">
-                <div class="card-media"><img src="../shaanxi-history/assets/hero-museum.webp" alt="陕西历史博物馆专题入口" loading="lazy" decoding="async" /></div>
-                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>陕西历史博物馆</h4><p>西安 · 周秦汉唐与特展</p><span class="card-arrow">进入专题 ↗</span></div>
+                <div class="card-media"><img data-media-path="modules/shaanxi-history/assets/hero-museum.webp" alt="陕西历史博物馆专题入口" loading="lazy" decoding="async" /></div>
+                <div class="museum-card-body"><span class="card-status">OPEN / 观物档案</span><h4>陕西历史博物馆</h4><p>西安 · 周秦汉唐与特展</p><span class="card-arrow">进入专题 ↗</span></div>
               </a>
               <a class="museum-card museum-card--link" href="../xian-museum/index.html" aria-label="进入西安博物院专题站">
                 <div class="card-media"><img src="../xian-museum/assets/hero-pagoda.webp" alt="西安博物院小雁塔专题入口" loading="lazy" decoding="async" /></div>
-                <div class="museum-card-body"><span class="card-status">OPEN / 已上线</span><h4>西安博物院</h4><p>西安 · 小雁塔与城市文脉</p><span class="card-arrow">进入专题 ↗</span></div>
+                <div class="museum-card-body"><span class="card-status">OPEN / 观物档案</span><h4>西安博物院</h4><p>西安 · 小雁塔与城市文脉</p><span class="card-arrow">进入专题 ↗</span></div>
               </a></div>
           </section>
         </div>
-        <section class="museum-map-section" aria-labelledby="museum-map-title">
-          <div class="museum-map-header">
-            <div><p class="museum-map-kicker">REAL MAP / OPEN BUILDING DATA</p><h3 id="museum-map-title">陕西馆舍，放回真实地图</h3></div>
-            <p class="museum-map-intro">不是效果图：底图与建筑轮廓来自开放地图数据，楼块按真实建筑高度拉起。点开六馆，查看位置与专题入口。</p>
-          </div>
-          <div class="museum-map-shell"><div id="museum-map" class="museum-map" aria-label="陕西六座博物馆真实地图与三维建筑"></div><span class="museum-map-note">OpenFreeMap / OSM · AWS Terrain · 无商业地图密钥</span></div>
-          <div class="museum-map-legend" aria-label="地图图例"><span><i class="building"></i>真实建筑轮廓</span><span><i></i>六馆点位</span></div>
-        </section>
       </article>
 
       <article class="province-panel" id="panel-henan" role="tabpanel" tabindex="0" aria-labelledby="tab-henan" data-province="henan" hidden>
@@ -2179,13 +2718,13 @@
           <p class="brief-copy"><strong>河南 · 青花瓷</strong> 白地留给器物，蓝色指向中原的远方</p>
           <dl class="brief-meta">
             <div><dt>主题</dt><dd>器物 / 中原</dd></div>
-            <div><dt>馆数</dt><dd>02 座</dd></div>
+            <div><dt>馆数</dt><dd data-registry-province-count="henan">02 座</dd></div>
           </dl>
         </div>
         <div class="chapter-content reveal-on-scroll">
           <section aria-labelledby="henan-museums">
             <div class="content-heading"><h3 id="henan-museums">MUSEA</h3><span>河南 · 博物馆入口</span></div>
-            <div class="museum-list">
+            <div class="museum-list" data-registry-museums="henan">
               <article class="museum-card museum-card--soon" aria-label="河南博物院专题站筹备中">
                 <div class="card-media"><img src="assets/henan-hero.webp" alt="河南博物院专题视觉" loading="lazy" decoding="async" /></div>
                 <div class="museum-card-body"><span class="card-status">IN PREPARATION</span><h4>河南博物院</h4><p>郑州 · 中原文明</p><span class="card-arrow">专题筹备中</span></div>
@@ -2199,6 +2738,127 @@
         </div>
       </article>
     </section>
+
+    <section class="selected-objects page-frame" aria-labelledby="selected-objects-title">
+      <div class="selected-objects__intro">
+        <div class="selected-objects__heading">
+          <p class="selected-objects__kicker">SELECTED OBJECTS · 01—07</p>
+          <h2 id="selected-objects-title">七馆一物</h2>
+        </div>
+        <p class="selected-objects__lede">从七座已上线专题中，各取一物。</p>
+      </div>
+
+      <div class="selected-objects__catalogue">
+        <div class="selected-objects__row selected-objects__row--three">
+          <a class="selected-object" href="../../guobo-museum/index.html?item=guobo-xiaoduan-phoenix-crown">
+            <figure class="selected-object__media">
+              <img data-media-path="guobo-museum/assets/photos/xiaoduan-phoenix-crown.webp" alt="孝端皇后九龙九凤冠 · 中国国家博物馆" loading="lazy" decoding="async" />
+            </figure>
+            <div class="selected-object__meta">
+              <span class="selected-object__number" aria-hidden="true">01</span>
+              <div class="selected-object__copy">
+                <h3>孝端皇后九龙九凤冠</h3>
+                <p class="selected-object__type">明 · 万历 / 凤冠</p>
+                <p class="selected-object__museum">中国国家博物馆</p>
+              </div>
+              <span class="selected-object__cue">查看此物 ↗</span>
+            </div>
+          </a>
+
+          <a class="selected-object" href="../beilin/index.html?item=artifact-168">
+            <figure class="selected-object__media">
+              <img data-media-path="assets/photos/web/DSC_1942.jpg" alt="大秦景教流行中国碑 · 西安碑林博物馆" loading="lazy" decoding="async" />
+            </figure>
+            <div class="selected-object__meta">
+              <span class="selected-object__number" aria-hidden="true">02</span>
+              <div class="selected-object__copy">
+                <h3>大秦景教流行中国碑</h3>
+                <p class="selected-object__type">唐 · 建中二年（781） / 碑刻</p>
+                <p class="selected-object__museum">西安碑林博物馆</p>
+              </div>
+              <span class="selected-object__cue">查看此物 ↗</span>
+            </div>
+          </a>
+
+          <a class="selected-object" href="../shaanxi-archaeology-museum/index.html?item=artifact-024">
+            <figure class="selected-object__media">
+              <img data-media-path="modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2697.jpg" alt="三彩双鱼瓶 · 陕西考古博物馆" loading="lazy" decoding="async" />
+            </figure>
+            <div class="selected-object__meta">
+              <span class="selected-object__number" aria-hidden="true">03</span>
+              <div class="selected-object__copy">
+                <h3>三彩双鱼瓶</h3>
+                <p class="selected-object__type">唐 / 三彩釉陶</p>
+                <p class="selected-object__museum">陕西考古博物馆</p>
+              </div>
+              <span class="selected-object__cue">查看此物 ↗</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="selected-objects__row selected-objects__row--four">
+          <a class="selected-object" href="../qinhan/index.html?item=queen-seal">
+            <figure class="selected-object__media">
+              <img data-media-path="modules/qinhan/assets/processed/crop/queen-seal.webp" alt="皇后之玺 · 陕西历史博物馆·秦汉馆" loading="lazy" decoding="async" />
+            </figure>
+            <div class="selected-object__meta">
+              <span class="selected-object__number" aria-hidden="true">04</span>
+              <div class="selected-object__copy">
+                <h3>皇后之玺</h3>
+                <p class="selected-object__type">西汉 / 玉玺</p>
+                <p class="selected-object__museum">陕西历史博物馆·秦汉馆</p>
+              </div>
+              <span class="selected-object__cue">查看此物 ↗</span>
+            </div>
+          </a>
+
+          <a class="selected-object" href="../baoji/index.html?item=he-zun">
+            <figure class="selected-object__media">
+              <img data-media-path="modules/baoji/assets/photos/web/DSC_3465.jpg" alt="何尊 · 中国青铜器博物院" loading="lazy" decoding="async" />
+            </figure>
+            <div class="selected-object__meta">
+              <span class="selected-object__number" aria-hidden="true">05</span>
+              <div class="selected-object__copy">
+                <h3>何尊</h3>
+                <p class="selected-object__type">西周早期 · 成王五年 / 青铜尊</p>
+                <p class="selected-object__museum">中国青铜器博物院</p>
+              </div>
+              <span class="selected-object__cue">查看此物 ↗</span>
+            </div>
+          </a>
+
+          <a class="selected-object" href="../shaanxi-history/index.html?item=field-4681">
+            <figure class="selected-object__media">
+              <img data-media-path="modules/shaanxi-history/assets/photos/focus-4675.webp" alt="镶金兽首玛瑙杯 · 陕西历史博物馆" loading="lazy" decoding="async" />
+            </figure>
+            <div class="selected-object__meta">
+              <span class="selected-object__number" aria-hidden="true">06</span>
+              <div class="selected-object__copy">
+                <h3>镶金兽首玛瑙杯</h3>
+                <p class="selected-object__type">唐 / 玛瑙、黄金</p>
+                <p class="selected-object__museum">陕西历史博物馆</p>
+              </div>
+              <span class="selected-object__cue">查看此物 ↗</span>
+            </div>
+          </a>
+
+          <a class="selected-object" href="../xian-museum/index.html?item=xian-001-painted-mirror">
+            <figure class="selected-object__media">
+              <img data-media-path="modules/xian-museum/assets/supplement/painted-mirror-01.webp" alt="西汉彩绘人物车马镜 · 西安博物院" loading="lazy" decoding="async" />
+            </figure>
+            <div class="selected-object__meta">
+              <span class="selected-object__number" aria-hidden="true">07</span>
+              <div class="selected-object__copy">
+                <h3>西汉彩绘人物车马镜</h3>
+                <p class="selected-object__type">西汉 / 彩绘铜镜</p>
+                <p class="selected-object__museum">西安博物院</p>
+              </div>
+              <span class="selected-object__cue">查看此物 ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer reveal-on-scroll" id="about">
@@ -2209,15 +2869,333 @@
     </div>
   </footer>
 
+  <dialog class="atlas-search-dialog" id="atlas-search-dialog" aria-labelledby="atlas-search-title">
+    <div class="atlas-search-dialog__inner">
+      <div class="atlas-search__header">
+        <div>
+          <p class="atlas-search__kicker">SEARCH ACROSS COLLECTIONS</p>
+          <h2 class="atlas-search__title" id="atlas-search-title">跨馆检索</h2>
+          <p class="atlas-search__lede">在七座已上线专题中查找文物与档案条目。</p>
+        </div>
+        <button class="atlas-search__close" type="button" aria-label="关闭检索">关闭</button>
+      </div>
+      <div class="atlas-search__controls">
+        <label class="atlas-search__field">
+          <span>查找文物</span>
+          <input class="atlas-search__input" type="search" placeholder="输入文物名、时代、器类或材料" autocomplete="off" spellcheck="false" />
+        </label>
+        <label class="atlas-search__field">
+          <span>博物馆</span>
+          <select class="atlas-search__select">
+            <option value="">全部博物馆</option>
+          </select>
+        </label>
+      </div>
+      <div class="atlas-search__status" aria-live="polite"></div>
+      <div class="atlas-search__examples">试试：唐 · 青铜 · 乐器 · 凤冠</div>
+      <div class="atlas-search__results" aria-live="polite"></div>
+    </div>
+  </dialog>
+
+  <script id="atlas-search-script">
+    (() => {
+      const trigger = document.querySelector(".atlas-search-trigger");
+      const dialog = document.getElementById("atlas-search-dialog");
+      const closeButton = dialog?.querySelector(".atlas-search__close");
+      const input = dialog?.querySelector(".atlas-search__input");
+      const select = dialog?.querySelector(".atlas-search__select");
+      const status = dialog?.querySelector(".atlas-search__status");
+      const results = dialog?.querySelector(".atlas-search__results");
+      if (!trigger || !dialog || !closeButton || !input || !select || !status || !results) return;
+
+      const repositoryRoot = new URL("../../", document.baseURI);
+      const searchIndexUrl = new URL("modules/museum-atlas/search-index.json?rev=20260822-build02", repositoryRoot);
+      const expectedKeys = ["museum_id", "museum_name", "id", "title", "period", "type", "material", "origin", "keywords", "site_path", "image_path"];
+      const allowedEmptyImageIds = new Set([
+        "beilin:artifact-057",
+        "baoji:photo-group-3619",
+        "baoji:photo-group-3881",
+      ]);
+      const museumOrder = [];
+      let searchIndexPromise = null;
+      let searchIndex = null;
+
+      const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
+      const isSafeLocalPath = (value, allowEmpty = false) => {
+        if (typeof value !== "string") return false;
+        if (allowEmpty && value === "") return true;
+        return value.length > 0
+          && !value.startsWith("/")
+          && !value.startsWith("\\")
+          && !value.includes("\\")
+          && !value.includes("..")
+          && !/^[A-Za-z][A-Za-z\d+.-]*:/.test(value)
+          && !value.includes("?")
+          && !value.includes("#");
+      };
+      const normalizeSearch = (value) => String(value ?? "")
+        .normalize("NFKC")
+        .toLocaleLowerCase("zh-CN")
+        .replace(/[·/／、,，;；:：()（）—–]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      const tokensFor = (value) => normalizeSearch(value).split(" ").filter(Boolean);
+
+      const validateIndex = (payload) => {
+        if (!isObject(payload) || payload.schema_version !== 1 || !Array.isArray(payload.records) || !payload.records.length) {
+          throw new Error("invalid search index shape");
+        }
+        const seen = new Set();
+        const museums = new Set();
+        for (const record of payload.records) {
+          if (!isObject(record) || Object.keys(record).length !== expectedKeys.length || Object.keys(record).some((key, index) => key !== expectedKeys[index])) {
+            throw new Error("invalid search record schema");
+          }
+          for (const field of ["museum_id", "museum_name", "id", "title", "site_path"]) {
+            if (typeof record[field] !== "string" || !record[field].trim()) throw new Error(`invalid required field: ${field}`);
+          }
+          for (const field of ["period", "type", "material", "origin", "image_path"]) {
+            if (typeof record[field] !== "string") throw new Error(`invalid text field: ${field}`);
+          }
+          if (!Array.isArray(record.keywords) || record.keywords.some((keyword) => typeof keyword !== "string")) {
+            throw new Error("invalid keyword array");
+          }
+          if (!isSafeLocalPath(record.site_path) || !isSafeLocalPath(record.image_path, true)) {
+            throw new Error("unsafe repository path");
+          }
+          const compositeId = `${record.museum_id}:${record.id}`;
+          if (seen.has(compositeId)) throw new Error("duplicate search record");
+          seen.add(compositeId);
+          museums.add(record.museum_id);
+          if (!record.image_path && !allowedEmptyImageIds.has(compositeId)) {
+            throw new Error("unexpected empty image path");
+          }
+        }
+        if (museums.size !== 7) throw new Error("unexpected museum count");
+        if ([...allowedEmptyImageIds].some((compositeId) => !seen.has(compositeId))) {
+          throw new Error("missing audited no-image record");
+        }
+        museumOrder.splice(0, museumOrder.length, ...museums);
+        return payload;
+      };
+
+      const loadSearchIndex = () => {
+        if (searchIndexPromise) return searchIndexPromise;
+        searchIndexPromise = fetch(searchIndexUrl, { cache: "force-cache" })
+          .then((response) => {
+            if (!response.ok) throw new Error(`search index request failed: ${response.status}`);
+            return response.json();
+          })
+          .then(validateIndex)
+          .then((payload) => {
+            searchIndex = payload;
+            return payload;
+          })
+          .catch((error) => {
+            searchIndexPromise = null;
+            throw error;
+          });
+        return searchIndexPromise;
+      };
+
+      const setStatus = (message) => {
+        status.textContent = message;
+      };
+
+      const clearResults = () => {
+        results.replaceChildren();
+      };
+
+      const populateMuseumFilter = (recordsList) => {
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "全部博物馆";
+        const options = [];
+        const seen = new Set();
+        for (const record of recordsList) {
+          if (seen.has(record.museum_id)) continue;
+          seen.add(record.museum_id);
+          const option = document.createElement("option");
+          option.value = record.museum_id;
+          option.textContent = record.museum_name;
+          options.push(option);
+        }
+        select.replaceChildren(defaultOption, ...options);
+      };
+
+      const searchable = (record) => ({
+        title: normalizeSearch(record.title),
+        period: normalizeSearch(record.period),
+        type: normalizeSearch(record.type),
+        material: normalizeSearch(record.material),
+        origin: normalizeSearch(record.origin),
+        keywords: normalizeSearch(record.keywords.join(" ")),
+        museum: normalizeSearch(record.museum_name),
+      });
+
+      const rankRecord = (record, query) => {
+        const fields = searchable(record);
+        const normalizedQuery = normalizeSearch(query);
+        const queryTokens = tokensFor(query);
+        const all = [fields.title, fields.period, fields.type, fields.material, fields.origin, fields.keywords, fields.museum].filter(Boolean).join(" ");
+        if (!queryTokens.every((token) => all.includes(token))) return -1;
+        if (fields.title === normalizedQuery) return 700;
+        if (fields.title.startsWith(normalizedQuery)) return 600;
+        if (fields.title.includes(normalizedQuery)) return 500;
+        if (queryTokens.every((token) => fields.title.includes(token))) return 400;
+        if (queryTokens.every((token) => [fields.period, fields.type, fields.material].some((field) => field.includes(token)))) return 300;
+        if (queryTokens.every((token) => [fields.keywords, fields.origin].some((field) => field.includes(token)))) return 200;
+        if (queryTokens.every((token) => fields.museum.includes(token))) return 100;
+        return 0;
+      };
+
+      const findMatches = (query, museumId) => {
+        const recordsList = searchIndex?.records || [];
+        return recordsList.map((record, sourceOrder) => ({
+          record,
+          sourceOrder,
+          rank: museumId && record.museum_id !== museumId ? -1 : rankRecord(record, query),
+        }))
+          .filter((entry) => entry.rank >= 0)
+          .sort((left, right) => right.rank - left.rank || left.sourceOrder - right.sourceOrder)
+          .map((entry) => entry.record);
+      };
+
+      const buildRecordHref = (record) => {
+        const target = new URL(record.site_path, repositoryRoot);
+        target.searchParams.set("item", record.id);
+        return target.href;
+      };
+
+      const renderResult = (record) => {
+        const anchor = document.createElement("a");
+        anchor.className = "atlas-search-result";
+        anchor.href = buildRecordHref(record);
+
+        const media = document.createElement("figure");
+        media.className = "atlas-search-result__media";
+        if (record.image_path) {
+          const image = document.createElement("img");
+          image.src = window.resolveAtlasMediaUrl(record.image_path, record.site_path);
+          image.alt = `${record.title} · ${record.museum_name}`;
+          image.loading = "lazy";
+          image.decoding = "async";
+          media.append(image);
+        } else {
+          const placeholder = document.createElement("div");
+          placeholder.className = "atlas-search-result__placeholder";
+          const label = document.createElement("span");
+          label.textContent = "暂无图像";
+          const note = document.createElement("small");
+          note.textContent = "档案可检索";
+          placeholder.append(label, note);
+          media.append(placeholder);
+        }
+
+        const body = document.createElement("div");
+        body.className = "atlas-search-result__body";
+        const title = document.createElement("h3");
+        title.className = "atlas-search-result__title";
+        title.textContent = record.title;
+        const metadata = document.createElement("p");
+        metadata.className = "atlas-search-result__meta";
+        metadata.textContent = [record.period, record.type, record.material].filter(Boolean).join(" · ") || "档案条目";
+        const museum = document.createElement("p");
+        museum.className = "atlas-search-result__museum";
+        museum.textContent = record.museum_name;
+        const cue = document.createElement("p");
+        cue.className = "atlas-search-result__cue";
+        cue.textContent = "查看此物 ↗";
+        body.append(title, metadata, museum, cue);
+        anchor.append(media, body);
+        return anchor;
+      };
+
+      const render = () => {
+        if (!searchIndex) return;
+        const query = input.value;
+        const museumId = select.value;
+        clearResults();
+        if (!query.trim() && !museumId) {
+          setStatus("输入关键词，开始跨馆查找。");
+          return;
+        }
+        const matches = query.trim() ? findMatches(query, museumId) : searchIndex.records.filter((record) => record.museum_id === museumId);
+        if (!matches.length) {
+          setStatus("没有找到匹配对象。");
+          return;
+        }
+        setStatus(matches.length > 60 ? `找到 ${matches.length} 条，显示前 60 条` : `找到 ${matches.length} 条`);
+        matches.slice(0, 60).forEach((record) => results.append(renderResult(record)));
+      };
+
+      const openSearch = () => {
+        if (dialog.open) return;
+        dialog.showModal();
+        setStatus("正在载入跨馆索引…");
+        clearResults();
+        window.requestAnimationFrame(() => input.focus({ preventScroll: true }));
+        loadSearchIndex()
+          .then((payload) => {
+            populateMuseumFilter(payload.records);
+            render();
+          })
+          .catch(() => {
+            clearResults();
+            setStatus("检索索引暂时不可用。");
+          });
+      };
+
+      const closeSearch = () => {
+        if (dialog.open) dialog.close();
+        trigger.focus({ preventScroll: true });
+      };
+
+      trigger.addEventListener("click", openSearch);
+      closeButton.addEventListener("click", closeSearch);
+      input.addEventListener("input", render);
+      select.addEventListener("change", render);
+      dialog.addEventListener("cancel", (event) => {
+        event.preventDefault();
+        closeSearch();
+      });
+    })();
+  </script>
+
   <script>
     (() => {
       const root = document.documentElement;
       const stage = document.querySelector(".chapter-panels");
       const tabs = Array.from(document.querySelectorAll(".province-tab"));
+      const validProvinces = new Set(tabs.map((tab) => tab.dataset.province));
       const panels = Array.from(document.querySelectorAll(".province-panel"));
       const indicator = document.querySelector(".province-indicator");
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const motion = { raf: 0, panelTimer: 0, scrollState: "top", scrollMax: 1 };
+
+      const getProvinceFromLocation = () => {
+        const requested = new URLSearchParams(window.location.search).get("province");
+        if (validProvinces.has(requested)) return requested;
+        if (window.location.hash === "#shaanxi") return "shaanxi";
+        return "beijing";
+      };
+
+      const syncProvinceToUrl = (province) => {
+        const url = new URL(window.location.href);
+        const alreadyCurrent = url.searchParams.get("province") === province && url.hash !== "#shaanxi";
+        if (alreadyCurrent) return;
+
+        url.searchParams.set("province", province);
+        if (url.hash === "#shaanxi") {
+          url.hash = "";
+        }
+
+        window.history.pushState(
+          { province },
+          "",
+          `${url.pathname}${url.search}${url.hash}`
+        );
+      };
 
       const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
       const schedule = () => {
@@ -2256,12 +3234,14 @@
         });
       };
 
-      const setActiveProvince = (province, shouldFocus = false, animate = true) => {
+      const setActiveProvince = (province, shouldFocus = false, animate = true, syncUrl = false) => {
         const activeTab = tabs.find((tab) => tab.dataset.province === province) || tabs[0];
         const activeProvince = activeTab.dataset.province;
         const currentPanel = panels.find((panel) => !panel.hidden);
         const nextPanel = panels.find((panel) => panel.dataset.province === activeProvince) || panels[0];
         const shouldAnimate = animate && !reducedMotion.matches && currentPanel && currentPanel !== nextPanel;
+
+        if (syncUrl) syncProvinceToUrl(activeProvince);
 
         root.dataset.activeProvince = activeProvince;
 
@@ -2331,7 +3311,7 @@
       };
 
       tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => setActiveProvince(tab.dataset.province));
+        tab.addEventListener("click", () => setActiveProvince(tab.dataset.province, false, true, true));
         tab.addEventListener("keydown", (event) => {
           if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
           event.preventDefault();
@@ -2340,8 +3320,12 @@
           if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
           if (event.key === "Home") nextIndex = 0;
           if (event.key === "End") nextIndex = tabs.length - 1;
-          setActiveProvince(tabs[nextIndex].dataset.province, true);
+          setActiveProvince(tabs[nextIndex].dataset.province, true, true, true);
         });
+      });
+
+      window.addEventListener("popstate", () => {
+        setActiveProvince(getProvinceFromLocation(), false, true, false);
       });
 
       window.addEventListener("scroll", schedule, { passive: true });
@@ -2355,8 +3339,8 @@
       });
 
       root.classList.add("motion-ready");
-      const requestedProvince = new URLSearchParams(window.location.search).get("province") || (location.hash === "#shaanxi" ? "shaanxi" : root.dataset.activeProvince || "beijing");
-      setActiveProvince(requestedProvince, false, false);
+      const requestedProvince = getProvinceFromLocation();
+      setActiveProvince(requestedProvince, false, false, false);
       updateScrollRange();
       window.requestAnimationFrame(() => {
         moveIndicator(tabs.find((tab) => tab.getAttribute("aria-selected") === "true"));
@@ -2370,9 +3354,22 @@
       if (!opening) return;
       const root = document.documentElement;
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduced) {
+      /* 20260821 · atlas opening once per session */
+      const seenKey = "ad-fontes-museum-atlas-opening-seen";
+      let alreadySeen = false;
+      try {
+        alreadySeen = window.sessionStorage.getItem(seenKey) === "1";
+      } catch (error) {
+        alreadySeen = false;
+      }
+      if (alreadySeen || reduced) {
         opening.remove();
         return;
+      }
+      try {
+        window.sessionStorage.setItem(seenKey, "1");
+      } catch (error) {
+        // Animation remains usable when storage is unavailable.
       }
 
       root.classList.add("atlas-opening-active");
@@ -2442,43 +3439,229 @@
     render();
   })();
 </script>
-  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <script id="museum-map-script">
-    (() => {
-      const points = [
-        {name:'陕西历史博物馆',city:'西安 · 小寨东路',coords:[108.9637,34.2367],href:'../shaanxi-history/index.html'},
-        {name:'西安碑林博物馆',city:'西安 · 孔庙旧址',coords:[108.9545,34.2523],href:'../beilin/index.html'},
-        {name:'西安博物院',city:'西安 · 荐福寺历史文化景区',coords:[108.9468,34.2380],href:'../xian-museum/index.html'},
-        {name:'陕西历史博物馆秦汉馆',city:'西咸新区秦汉新城',coords:[108.8090,34.4380],href:'../qinhan/index.html'},
-        {name:'陕西考古博物馆',city:'西安 · 长安区',coords:[108.8010,34.0790],href:'../shaanxi-archaeology-museum/index.html'},
-        {name:'中国青铜器博物院',city:'宝鸡 · 中华石鼓园',coords:[107.1475,34.3607],href:'../baoji/index.html'}
-      ];
-      let map;
-      const init = () => {
-        const el = document.getElementById('museum-map');
-        if (!el || map || !window.maplibregl) return;
-        map = new maplibregl.Map({container:el,style:'https://tiles.openfreemap.org/styles/bright',center:[108.55,34.28],zoom:8.05,pitch:58,bearing:-18,antialias:true,attributionControl:true});
-        map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'top-right');
-        points.forEach((p) => {
-          const popup = new maplibregl.Popup({offset:18,maxWidth:'240px'}).setHTML(`<h3 class="museum-popup-title">${p.name}</h3><p class="museum-popup-meta">${p.city}</p><a class="museum-popup-link" href="${p.href}">进入专题 ↗</a>`);
-          new maplibregl.Marker({color:'#a34c34'}).setLngLat(p.coords).setPopup(popup).addTo(map);
-        });
-        map.on('load', () => {
-          map.addSource('terrain-dem', {type:'raster-dem',tiles:['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],tileSize:256,maxzoom:15,encoding:'terrarium',attribution:'Elevation: AWS Terrain Tiles'});
-          map.setTerrain({source:'terrain-dem',exaggeration:1.55});
-          map.addLayer({id:'terrain-hillshade',type:'hillshade',source:'terrain-dem',paint:{'hillshade-shadow-color':'#5e675f','hillshade-highlight-color':'#f5f0df','hillshade-accent-color':'#9b8f79','hillshade-exaggeration':0.55}}, 'building');
-          if (map.getLayer('building-3d')) map.setPaintProperty('building-3d','fill-extrusion-color','#9b9588');
-          if (map.getLayer('building')) map.setPaintProperty('building','fill-color','#b6b0a2');
-          if (map.getLayer('water')) map.setPaintProperty('water','fill-color','#b8c9c5');
-          if (map.getLayer('park')) map.setPaintProperty('park','fill-color','#c3d0bf');
-          if (map.getLayer('landcover-wood')) map.setPaintProperty('landcover-wood','fill-color','#b4c3b0');
-          map.resize();
-        });
+<script id="museum-registry-renderer">
+  (() => {
+    const isObject = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
+    const isNonEmptyString = (value) => typeof value === "string" && value.trim().length > 0;
+    const requireValid = (condition) => {
+      if (!condition) throw new Error();
+    };
+
+    const isSafeRepositoryPath = (value) => {
+      if (!isNonEmptyString(value) || value.includes("\\") || value.startsWith("/") || /^[a-z][a-z\d+.-]*:/i.test(value)) {
+        return false;
+      }
+      return !value.split("/").includes("..");
+    };
+
+    const validateRegistry = (registry) => {
+      requireValid(isObject(registry) && registry.schema_version === 1);
+      requireValid(Array.isArray(registry.provinces) && registry.provinces.length > 0);
+      requireValid(Array.isArray(registry.museums));
+
+      const provinceIds = new Set();
+      const provinceOrders = new Set();
+      registry.provinces.forEach((province) => {
+        requireValid(isObject(province));
+        requireValid(isNonEmptyString(province.id) && !provinceIds.has(province.id));
+        requireValid(isNonEmptyString(province.name) && isNonEmptyString(province.code));
+        requireValid(Number.isFinite(province.order) && !provinceOrders.has(province.order));
+        provinceIds.add(province.id);
+        provinceOrders.add(province.order);
+      });
+
+      const museumIds = new Set();
+      const museumOrders = new Map([...provinceIds].map((id) => [id, new Set()]));
+      registry.museums.forEach((museum) => {
+        requireValid(isObject(museum));
+        requireValid(isNonEmptyString(museum.id) && !museumIds.has(museum.id));
+        requireValid(provinceIds.has(museum.province));
+        requireValid(Number.isFinite(museum.order) && !museumOrders.get(museum.province).has(museum.order));
+        requireValid(isNonEmptyString(museum.name) && isNonEmptyString(museum.city) && isNonEmptyString(museum.theme));
+        requireValid(museum.status === "live" || museum.status === "preparation");
+
+        const image = museum.card_image;
+        requireValid(isObject(image));
+        requireValid(isSafeRepositoryPath(image.path) && isNonEmptyString(image.alt));
+        requireValid(image.loading === "eager" || image.loading === "lazy");
+        requireValid(image.fetchpriority === null || typeof image.fetchpriority === "string");
+        requireValid(image.width === null || (typeof image.width === "number" && Number.isFinite(image.width) && image.width > 0));
+        requireValid(image.height === null || (typeof image.height === "number" && Number.isFinite(image.height) && image.height > 0));
+
+        if (museum.status === "live") {
+          requireValid(isNonEmptyString(museum.archive_type) && isSafeRepositoryPath(museum.site_path));
+        } else {
+          requireValid(museum.archive_type === null && museum.site_path === null);
+        }
+
+        museumIds.add(museum.id);
+        museumOrders.get(museum.province).add(museum.order);
+      });
+      provinceIds.forEach((id) => requireValid(museumOrders.get(id).size > 0));
+
+      return registry;
+    };
+
+    const getSingleMount = (selector) => {
+      const nodes = document.querySelectorAll(selector);
+      requireValid(nodes.length === 1);
+      return nodes[0];
+    };
+
+    const validateMounts = (registry) => {
+      const header = getSingleMount('[data-registry-stat="header-summary"]');
+      const provinceCount = getSingleMount('[data-registry-stat="province-count"]');
+      const openingNodes = document.querySelectorAll('[data-registry-stat="opening-summary"]');
+      requireValid(openingNodes.length <= 1);
+
+      const listNodes = Array.from(document.querySelectorAll("[data-registry-museums]"));
+      const countNodes = Array.from(document.querySelectorAll("[data-registry-province-count]"));
+      const provinceIds = registry.provinces.map((province) => province.id);
+      const expectedIds = new Set(provinceIds);
+      requireValid(listNodes.length === provinceIds.length && countNodes.length === provinceIds.length);
+
+      const lists = new Map();
+      listNodes.forEach((node) => {
+        const id = node.dataset.registryMuseums;
+        requireValid(expectedIds.has(id) && !lists.has(id));
+        lists.set(id, node);
+      });
+
+      const counts = new Map();
+      countNodes.forEach((node) => {
+        const id = node.dataset.registryProvinceCount;
+        requireValid(expectedIds.has(id) && !counts.has(id));
+        counts.set(id, node);
+      });
+
+      provinceIds.forEach((id) => {
+        requireValid(lists.has(id) && counts.has(id));
+      });
+
+      return {
+        header,
+        opening: openingNodes[0] || null,
+        provinceCount,
+        lists,
+        counts
       };
-      const observe = () => { if(document.documentElement.dataset.activeProvince === 'shaanxi'){init(); if(map) setTimeout(()=>map.resize(),120)} };
-      const start = () => { observe(); new MutationObserver(observe).observe(document.documentElement,{attributes:true,attributeFilter:['data-active-province']}); };
-      if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start,{once:true}); else start();
+    };
+
+    const pad2 = (value) => String(value).padStart(2, "0");
+
+    const toChineseInteger = (value) => {
+      const digits = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+      const base = digits.length;
+      if (!Number.isInteger(value) || value < 0 || value >= base * base) return String(value);
+      if (value < base) return digits[value];
+      if (value === base) return "十";
+      if (value < base * 2) return `十${digits[value - base]}`;
+      const tens = Math.floor(value / base);
+      const ones = value % base;
+      return `${digits[tens]}十${ones ? digits[ones] : ""}`;
+    };
+
+    const buildImage = (museum, repositoryRoot) => {
+      const image = document.createElement("img");
+      const data = museum.card_image;
+        image.setAttribute("src", window.resolveAtlasMediaUrl(data.path));
+      image.setAttribute("alt", data.alt);
+      image.setAttribute("loading", data.loading);
+      image.setAttribute("decoding", "async");
+      if (data.fetchpriority !== null) image.setAttribute("fetchpriority", data.fetchpriority);
+      if (data.width !== null) image.setAttribute("width", String(data.width));
+      if (data.height !== null) image.setAttribute("height", String(data.height));
+      return image;
+    };
+
+    const buildCard = (museum, repositoryRoot) => {
+      const isLive = museum.status === "live";
+      const card = document.createElement(isLive ? "a" : "article");
+      card.className = isLive ? "museum-card museum-card--link" : "museum-card museum-card--soon";
+      card.setAttribute("aria-label", isLive ? `进入${museum.name}专题站` : `${museum.name}专题站筹备中`);
+      if (isLive) card.setAttribute("href", new URL(museum.site_path, repositoryRoot).href);
+
+      const media = document.createElement("div");
+      media.className = "card-media";
+      media.append(buildImage(museum, repositoryRoot));
+
+      const body = document.createElement("div");
+      body.className = "museum-card-body";
+      const status = document.createElement("span");
+      status.className = "card-status";
+      status.textContent = isLive ? `OPEN / ${museum.archive_type}` : "IN PREPARATION";
+      const title = document.createElement("h4");
+      title.textContent = museum.name;
+      const description = document.createElement("p");
+      description.textContent = `${museum.city} · ${museum.theme}`;
+      const arrow = document.createElement("span");
+      arrow.className = "card-arrow";
+      arrow.textContent = isLive ? "进入专题 ↗" : "专题筹备中";
+      body.append(status, title, description, arrow);
+      card.append(media, body);
+      return card;
+    };
+
+    const buildRenderPlan = (registry, mounts) => {
+      const repositoryRoot = new URL("../../", document.baseURI);
+      const provinces = [...registry.provinces].sort((a, b) => a.order - b.order);
+      const counts = new Map(provinces.map((province) => [province.id, 0]));
+      registry.museums.forEach((museum) => counts.set(museum.province, counts.get(museum.province) + 1));
+
+      const fragments = new Map();
+      provinces.forEach((province) => {
+        const fragment = document.createDocumentFragment();
+        [...registry.museums]
+          .filter((museum) => museum.province === province.id)
+          .sort((a, b) => a.order - b.order)
+          .forEach((museum) => fragment.append(buildCard(museum, repositoryRoot)));
+        fragments.set(province.id, fragment);
+      });
+
+      const provinceCount = provinces.length;
+      const museumCount = registry.museums.length;
+      const liveCount = registry.museums.filter((museum) => museum.status === "live").length;
+      const countText = new Map(provinces.map((province) => [province.id, `${pad2(counts.get(province.id))} 座`]));
+
+      return {
+        provinces,
+        fragments,
+        countText,
+        headerText: `${pad2(provinceCount)} 省份 · ${pad2(museumCount)} 座馆 · ${pad2(liveCount)} 个已上线专题`,
+        openingText: `${toChineseInteger(museumCount)}座博物馆 · ${toChineseInteger(liveCount)}座专题已上线`,
+        provinceText: pad2(provinceCount),
+        mounts
+      };
+    };
+
+    const commitRender = (plan) => {
+      plan.provinces.forEach((province) => {
+        plan.mounts.lists.get(province.id).replaceChildren(plan.fragments.get(province.id));
+      });
+      plan.mounts.header.textContent = plan.headerText;
+      plan.mounts.provinceCount.textContent = plan.provinceText;
+      plan.provinces.forEach((province) => {
+        plan.mounts.counts.get(province.id).textContent = plan.countText.get(province.id);
+      });
+      if (plan.mounts.opening) plan.mounts.opening.textContent = plan.openingText;
+      window.requestAnimationFrame(() => {
+        window.dispatchEvent(new Event("resize"));
+      });
+    };
+
+    (async () => {
+      try {
+        const response = await fetch("../../museum-registry.json");
+        if (!response.ok) throw new Error();
+        const registry = validateRegistry(await response.json());
+        const mounts = validateMounts(registry);
+        const plan = buildRenderPlan(registry, mounts);
+        commitRender(plan);
+      } catch (error) {
+        // The static Atlas markup remains the resilient fallback.
+      }
     })();
-  </script>
+  })();
+</script>
 </body>
 </html>

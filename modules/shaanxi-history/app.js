@@ -214,8 +214,27 @@
   function bindItemButtons(scope) {
     if (!scope) return;
     scope.querySelectorAll("[data-item-id]").forEach((button) => {
-      button.addEventListener("click", () => openItem(button.dataset.itemId));
+      button.addEventListener("click", () => openItem(button.dataset.itemId, { syncUrl: true }));
     });
+  }
+
+  function getItemFromLocation() {
+    const id = new URLSearchParams(window.location.search).get("item");
+    return id && itemById.has(id) ? id : null;
+  }
+
+  function syncItemToUrl(id) {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get("item");
+    if (id) {
+      const next = String(id);
+      if (current === next) return;
+      url.searchParams.set("item", next);
+    } else {
+      if (!current) return;
+      url.searchParams.delete("item");
+    }
+    window.history.pushState({ item: id ? String(id) : null }, "", `${url.pathname}${url.search}${url.hash}`);
   }
 
   function setStats() {
@@ -340,10 +359,10 @@
     document.getElementById("dialog-sequence").textContent = `${frame} · ${index + 1} / ${Math.max(total, 1)}`;
   }
 
-  function openItem(id) {
+  function openItem(id, { syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
     const item = itemById.get(String(id));
-    if (!item) return;
-    lastFocusedElement = document.activeElement;
+    if (!item) return false;
+    if (rememberFocus) lastFocusedElement = document.activeElement;
     const photos = Array.isArray(item.photos) ? item.photos.filter((photo) => photo && (photo.focus || photo.src)) : [];
     const title = document.getElementById("dialog-title");
     document.getElementById("dialog-kicker").textContent = [item.category || "观物档案", item.period || ""].filter(Boolean).join(" · ");
@@ -382,18 +401,23 @@
       galleryStrip.innerHTML = "";
     }
 
-    if (dialog.open && typeof dialog.close === "function") dialog.close();
-    if (typeof dialog.showModal === "function") dialog.showModal();
-    else dialog.setAttribute("open", "");
+    const dialogAlreadyOpen = dialog.open || dialog.hasAttribute("open");
+    if (!dialogAlreadyOpen) {
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else dialog.setAttribute("open", "");
+    }
     dialog.setAttribute("aria-modal", "true");
     requestAnimationFrame(() => {
       dialog.classList.add("is-open");
-      document.getElementById("dialog-close")?.focus();
+      if (focusClose) document.getElementById("dialog-close")?.focus();
     });
+    if (syncUrl) syncItemToUrl(item.id);
+    return true;
   }
 
-  function closeDialog() {
+  function closeDialog({ syncUrl = false } = {}) {
     resetImageZoom();
+    if (syncUrl) syncItemToUrl(null);
     dialog.classList.remove("is-open");
     if (dialog.open && typeof dialog.close === "function") dialog.close();
     else dialog.removeAttribute("open");
@@ -432,6 +456,11 @@
     const opening = document.getElementById("opening-screen");
     const skip = document.getElementById("opening-skip");
     if (!opening) return;
+
+    if (getItemFromLocation()) {
+      opening.remove();
+      return;
+    }
 
     let seen = false;
     try { seen = sessionStorage.getItem("shaanxi-opening-seen") === "1"; } catch { /* restricted storage is non-fatal */ }
@@ -491,7 +520,7 @@
     renderCategories();
     render();
   });
-  document.getElementById("dialog-close").addEventListener("click", closeDialog);
+  document.getElementById("dialog-close").addEventListener("click", () => closeDialog({ syncUrl: true }));
   dialog.addEventListener("close", () => {
     dialog.classList.remove("is-open");
     dialog.removeAttribute("aria-modal");
@@ -499,7 +528,13 @@
     lastFocusedElement = null;
     if (restore && typeof restore.focus === "function") restore.focus();
   });
-  dialog.addEventListener("click", (event) => { if (event.target === dialog) closeDialog(); });
+  dialog.addEventListener("click", (event) => { if (event.target === dialog) closeDialog({ syncUrl: true }); });
+  dialog.addEventListener("cancel", (event) => { event.preventDefault(); closeDialog({ syncUrl: true }); });
+  window.addEventListener("popstate", () => {
+    const id = getItemFromLocation();
+    if (id) openItem(id, { syncUrl: false, focusClose: false, rememberFocus: false });
+    else closeDialog({ syncUrl: false });
+  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "/" && document.activeElement !== searchInput) {
       event.preventDefault();
@@ -540,4 +575,6 @@
   // Start the visible duration only after the heavy archive grid has finished
   // its synchronous first render; otherwise the timer can expire before paint.
   initOpening();
+  const initialItem = getItemFromLocation();
+  if (initialItem) openItem(initialItem, { syncUrl: false, focusClose: true, rememberFocus: false });
 }());

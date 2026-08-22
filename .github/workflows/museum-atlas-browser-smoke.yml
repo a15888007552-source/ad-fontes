@@ -1,0 +1,54 @@
+name: Museum Atlas browser smoke
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Playwright
+        run: python -m pip install --upgrade pip playwright
+
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Start local HTTP server
+        shell: bash
+        run: |
+          python -m http.server 8765 > /tmp/museum-atlas-http.log 2>&1 &
+          echo $! > /tmp/museum-atlas-http.pid
+          for attempt in {1..30}; do
+            if curl --silent --show-error --fail http://127.0.0.1:8765/modules/museum-atlas/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/museum-atlas-http.log
+          exit 1
+
+      - name: Run Museum Atlas browser smoke
+        run: |
+          python scripts/smoke_museum_atlas_browser.py \
+            --output artifacts/museum-atlas-browser-smoke.json
+
+      - name: Upload smoke artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: museum-atlas-browser-smoke
+          path: artifacts
+          if-no-files-found: warn

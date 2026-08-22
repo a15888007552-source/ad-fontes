@@ -10,6 +10,11 @@
     groups: Array.isArray(photoData.groups) ? photoData.groups : [],
   };
   let revealObserver = null;
+  let activeDetailId = null;
+  let lastFocusedElement = null;
+  let restoreFocusAfterDialogClose = true;
+  let introDeferred = false;
+  let introInitialized = false;
   const revealSelector = '.section-heading, .profile-story, .stat-panel, .quick-review, .treasure-card, .archive-card, .method-copy, .source-column, .site-footer';
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -80,6 +85,61 @@
 
   function groupForTreasure(id) {
     return state.groups.find((group) => group.treasureId === id);
+  }
+
+  function detailById(id) {
+    const key = String(id || '');
+    const treasure = treasureById(key);
+    if (treasure) {
+      return {
+        type: 'treasure',
+        id: treasure.id,
+        treasure,
+        group: groupForTreasure(treasure.id) || null,
+      };
+    }
+    const group = state.groups.find((item) => item.id === key) || null;
+    if (!group) return null;
+    if (group.treasureId) {
+      const linkedTreasure = treasureById(group.treasureId);
+      if (linkedTreasure) {
+        return {
+          type: 'treasure',
+          id: linkedTreasure.id,
+          treasure: linkedTreasure,
+          group,
+        };
+      }
+    }
+    return {
+      type: 'group',
+      id: group.id,
+      group,
+      treasure: null,
+    };
+  }
+
+  function getDetailFromLocation() {
+    const id = new URLSearchParams(window.location.search).get('item');
+    return id ? detailById(id) : null;
+  }
+
+  function syncItemToUrl(id) {
+    const url = new URL(window.location.href);
+    const current = url.searchParams.get('item');
+    if (id) {
+      const next = String(id);
+      if (current === next) return;
+      url.searchParams.set('item', next);
+    } else {
+      if (!current) return;
+      url.searchParams.delete('item');
+    }
+    window.history.pushState(
+      { item: id ? String(id) : null },
+      '',
+      url.pathname + url.search + url.hash
+    );
   }
 
   function objectPhoto(group) {
@@ -193,32 +253,210 @@
     return `<section class="label-archive"><h3>展签档案 · 现场证据</h3>${factMarkup}<p class="ocr-note">以下字段由展签照片 OCR 候选整理，只用于快速检阅；标题、时代、出土地点和收藏单位仍应回看原展签或正式图录。</p><details class="label-raw"><summary>展开原始展签候选</summary><pre>${escapeHTML(raw)}</pre></details></section>`;
   }
 
-  function researchMarkup(group) {
+    function researchMarkup(group) {
     const research = group.research || {};
-    const joinResearch = (...values) => values.filter((value) => String(value || '').trim()).join(' ');
-    const opening = joinResearch(research.name_origin, research.history);
-    const middle = joinResearch(research.form, research.decoration, research.inscription);
-    const closing = joinResearch(research.significance, research.viewing);
     const facts = group.labelFacts || {};
+    const clean = (value) => String(value || '')
+      .split(String.fromCharCode(10)).join(' ')
+      .split(String.fromCharCode(13)).join(' ')
+      .split('  ').join(' ')
+      .trim();
+    const stripLeadPunctuation = (value) => String(value || '')
+      .replace(/^[\s:：，,、；;。．·—–-]+/, '')
+      .trim();
+    const stripTitle = (value) => {
+      let text = clean(value);
+      const prefixes = [clean(group.title), '此鼎：', '此器：', '本件：', '此物：'].filter(Boolean);
+      prefixes.some((prefix) => {
+        if (!text.startsWith(prefix)) return false;
+        text = stripLeadPunctuation(text.slice(prefix.length));
+        if (prefix === clean(group.title) && text.startsWith('的')) text = text.slice(1).trim();
+        return true;
+      });
+      ['历史信息：', '历史关联：', '形制与工艺：', '形制：', '工艺：', '观看重点：', '资料价值：'].some((prefix) => {
+        if (!text.startsWith(prefix)) return false;
+        text = stripLeadPunctuation(text.slice(prefix.length));
+        return true;
+      });
+      return stripLeadPunctuation(text);
+    };
+    const isTemplate = (value, needles) => {
+      const text = clean(value);
+      return !text || needles.some((needle) => text.includes(needle));
+    };
+    const genericHistory = ['卡片名称取自后置介绍牌', '宝鸡青铜文明的现场序列'];
+    const genericObject = ['本组照片保留', '形制判断以器身轮廓', '纹饰和可能的刻划应以局部照片为准', '本组没有稳定可核对的铭文释文'];
+    const genericViewing = ['先看主图建立整体轮廓', '照片编号区分不同现场单元'];
+    const genericSignificance = ['价值不只在于“年代久远”'];
+    const typeNote = (title) => {
+      const text = clean(title);
+      const notes = [
+        {
+          token: '甗',
+          opening: '甗由上部甑和下部鬲组合而成，炊煮功能可从两部分的连接、箅孔与足部观察；具体用途仍要结合器形和出土组合判断。',
+          viewing: '先看甑、鬲两部分的连接和箅孔，再看鬲足、耳部以及纹饰分布。'
+        },
+        {
+          token: '鬲',
+          opening: '鬲以袋足、腹部和口沿为主要识别部位，袋足有利于直接受火；用途判断应结合足部形态、器壁和同出器物。',
+          viewing: '按口沿、腹部、袋足的顺序查看，再放大足部连接和纹饰。'
+        },
+        {
+          token: '鼎',
+          opening: '鼎以腹、耳、足为主要识别部位，基本用途可从炊煮或盛食讨论；是否承担祭祀功能，要结合器形、铭文和出土组合判断。',
+          viewing: '按腹、耳、足的顺序查看，再放大纹带和可能的铭文位置。'
+        },
+        {
+          token: '簋',
+          opening: '簋是盛放黍稷等熟食的礼器，圈足、腹部、耳部和盖钮是判断形制的关键；礼仪位置还要结合铭文与组合关系说明。',
+          viewing: '先看腹部与圈足，再看耳部、盖钮和纹饰是否连续。'
+        },
+        {
+          token: '觚',
+          opening: '觚以细长器身、喇叭形口沿和高圈足为主要特征，常见于酒礼器组合；具体年代以展签和器形比较为准。',
+          viewing: '从口沿向下看器身收放，再看圈足、纹带和局部磨损。'
+        },
+        {
+          token: '爵',
+          opening: '爵的流、尾、鋬和三足共同构成器形，通常从温酒或饮酒礼器讨论；用途与礼制位置不能只凭单张照片确定。',
+          viewing: '先看流、尾和鋬的关系，再看三足、柱与纹饰。'
+        },
+        {
+          token: '尊',
+          opening: '尊以较大的腹部、口沿和圈足构成基本形制，常用于酒礼语境；器类和时代仍需与展签、纹饰及组合材料互证。 ',
+          viewing: '先看口沿、腹部和圈足，再放大肩部纹饰与可能的铭文。'
+        },
+        {
+          token: '卣',
+          opening: '卣是有提梁的酒器，提梁、盖、腹部和圈足是观察重点；是否属于特定礼仪组合，需结合出土信息判断。',
+          viewing: '按提梁、盖、腹部、圈足的顺序查看，再看器身纹饰。'
+        },
+        {
+          token: '罍',
+          opening: '罍以较大的腹部、肩部和圈足构成器形，常在酒礼和储酒语境中讨论；纹饰与铭文有助于缩小判断范围。',
+          viewing: '先看器身比例，再看肩部、圈足和纹带的连接。'
+        },
+        {
+          token: '壶',
+          opening: '壶的口、颈、肩、腹和圈足共同决定器形，功能需在盛酒、储液等可能性之间结合器形与组合判断。',
+          viewing: '按口沿、颈部、肩部、腹部和圈足顺序观察，再看纹饰。'
+        },
+        {
+          token: '盘',
+          opening: '盘以浅腹、折沿和圈足为主要形制线索，可能与盥洗或礼仪使用有关；具体功能应以器形和出土组合为依据。',
+          viewing: '先看盘面、折沿和腹部，再看圈足、底部与铭文位置。'
+        },
+        {
+          token: '盂',
+          opening: '盂以宽口、深腹和圈足构成基本形制，盛水、盛食或礼仪用途需要结合器形和组合判断。',
+          viewing: '从口沿向腹部观察器身比例，再看圈足和内外纹饰。'
+        },
+        {
+          token: '钟',
+          opening: '钟的扁体、枚、篆带和钲部是判断形制与悬挂方式的主要线索；音列和编钟关系不能只凭一件器物推定。',
+          viewing: '先看钟体正侧面，再看枚、篆带、钲部和铭文局部。'
+        },
+        {
+          token: '铙',
+          opening: '铙以钟体、口沿和悬挂部位为主要观察对象，使用方式需结合器形、尺寸和同出器物判断。',
+          viewing: '先看钟体与口沿，再看悬挂部位、枚饰和铭文。'
+        },
+        {
+          token: '戈',
+          opening: '戈由援、内和穿等部位构成，刃部与装柄方式是判断其功能的关键；具体使用情境仍需结合出土信息。',
+          viewing: '按援、内、穿的顺序查看，再放大刃部和铸造痕迹。'
+        },
+        {
+          token: '剑',
+          opening: '剑的剑身、脊、刃部和柄部共同构成形制，长度与装具可帮助讨论其使用方式；年代以展签和比较材料为准。',
+          viewing: '先看剑身整体，再看脊、刃部、柄部和装具残留。'
+        },
+        {
+          token: '镞',
+          opening: '镞的锋、翼、铤或穿是观察和分类的主要部位，具体配属的箭杆与使用场景不能仅凭器体确定。',
+          viewing: '先看锋部和翼部，再看铤、穿及表面锈蚀。'
+        },
+        {
+          token: '矛',
+          opening: '矛以骹、叶和锋部为主要形制线索，装柄方式可从骹部和穿孔观察；战斗或仪仗用途需要材料互证。',
+          viewing: '按锋、叶、骹的顺序观察，再看穿孔、刃部和锈蚀。'
+        },
+        {
+          token: '戟',
+          opening: '戟兼具刺击与勾杀的形制线索，援、刺和内部连接关系是观察重点；具体组合关系需结合出土资料。',
+          viewing: '先看刺、援和内的连接，再看刃部和装柄部位。'
+        },
+        {
+          token: '镜',
+          opening: '铜镜主要从镜面、镜背、钮和纹饰带观察，纹样与钮座可用于器类和时代比较；功能解释不超出照片与展签信息。',
+          viewing: '先看镜面与镜背，再放大钮座、纹饰带和边缘。'
+        },
+        {
+          token: '璧',
+          opening: '璧以扁平圆体和中央穿孔为基本形制，玉质、孔壁和边缘加工可用于观察制作与使用痕迹。',
+          viewing: '先看整体轮廓与孔部，再看边缘、表面和局部磨痕。'
+        },
+        {
+          token: '玉',
+          opening: '玉器的材质、形制和穿孔或切割痕迹是可见的判断线索；用途与身份需结合展签和同出关系说明。',
+          viewing: '先看轮廓、孔部和厚薄，再放大边缘加工与表面痕迹。'
+        }
+      ];
+      return notes.find((note) => text.includes(note.token)) || null;
+    };
     const factRows = [
       ['时代', facts.period],
       ['来源 / 出土', facts.findspot],
       ['收藏单位', facts.collection],
       ['尺寸', facts.dimensions],
-    ].filter(([, value]) => String(value || '').trim());
+    ].filter(([, value]) => clean(value));
     const factsMarkup = factRows.length
-      ? `<div class="research-facts">${factRows.map(([label, value]) => `<div class="research-fact"><span>${escapeHTML(label)}</span><b>${escapeHTML(value)}</b></div>`).join('')}</div>`
+      ? '<div class="research-facts">' + factRows.map(([label, value]) => '<div class="research-fact"><span>' + escapeHTML(label) + '</span><b>' + escapeHTML(value) + '</b></div>').join('') + '</div>'
       : '';
-    const evidence = research.evidence || '名称依据展签与现场照片顺序整理。';
-    return `<div class="research-essay">${factsMarkup}<p class="research-essay-paragraph research-essay-paragraph--opening">${escapeHTML(opening)}</p><p class="research-essay-paragraph">${escapeHTML(middle)}</p><p class="research-essay-paragraph research-essay-paragraph--closing">${escapeHTML(closing)}</p><p class="research-evidence"><b>定名依据</b>${escapeHTML(evidence)}</p></div>`;
+    const history = stripTitle(research.history);
+    const objectText = [research.form, research.decoration, research.inscription]
+      .map(stripTitle)
+      .filter((value) => value && !isTemplate(value, genericObject))
+      .join(' ');
+    const note = typeNote(group.title);
+    const firstParts = [];
+    if (history && !isTemplate(history, genericHistory)) firstParts.push(history);
+    if (objectText) firstParts.push(objectText);
+    if (!firstParts.length && note) firstParts.push(note.opening);
+    const factBits = [];
+    if (clean(facts.period)) factBits.push('展签所示时代为' + clean(facts.period));
+    if (clean(facts.findspot)) factBits.push('来源记录为' + clean(facts.findspot));
+    if (factBits.length) firstParts.push(factBits.join('；') + '。');
+    if (!firstParts.length) firstParts.push('这件器物的现场记录以展签、照片顺序和可见形制为限。');
+    const viewing = stripTitle(research.viewing);
+    const significance = stripTitle(research.significance);
+    const secondParts = [];
+    if (viewing && !isTemplate(viewing, genericViewing)) secondParts.push(viewing);
+    if (significance && !isTemplate(significance, genericSignificance)) secondParts.push(significance);
+    if (!secondParts.length && note) secondParts.push(note.viewing);
+    if (!secondParts.length) secondParts.push('照片按现场拍摄顺序保留，器物图与展签图分开读取；需要确认的名称和铭文应回看原图。');
+    let evidence = clean(research.evidence)
+      .split('名称依据后置介绍牌与照片顺序校正。').join('')
+      .split('名称依据后置介绍牌与照片顺序校正').join('')
+      .trim();
+    if (!evidence) evidence = '展签照片与器物照片共同用于核对本条名称、时代和来源；具体铭文释读仍需对照清晰拓片或正式图录。';
+    return '<div class="research-essay">' + factsMarkup
+      + '<p class="research-essay-paragraph research-essay-paragraph--opening">' + escapeHTML(firstParts.join(' ')) + '</p>'
+      + '<p class="research-essay-paragraph research-essay-paragraph--closing">' + escapeHTML(secondParts.join(' ')) + '</p>'
+      + '<p class="research-evidence"><b>资料边界</b>' + escapeHTML(evidence) + '</p></div>';
   }
 
-  function openTreasure(item) {
+  function openTreasure(item, {
+    syncUrl = false,
+    focusClose = true,
+    rememberFocus = true,
+  } = {}) {
     if (!item) return;
     const group = groupForTreasure(item.id);
     const values = galleryForTreasure(item, group);
     const dialogContent = $('#dialog-content');
     if (!dialogContent) return;
+    activeDetailId = item.id;
     const title = item.displayName || item.name;
     dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(item.number)} / TREASURE INDEX · ${escapeHTML(item.category)}</p><h2 id="dialog-title">${escapeHTML(title)}<small>${escapeHTML(item.pinyin)}</small></h2></div><p class="dialog-lead">${escapeHTML(item.lead)}</p></div>
       ${factsMarkup(item)}
@@ -227,7 +465,12 @@
       ${group?.labelText ? `<p class="ocr-note">现场展签 OCR 候选：${escapeHTML(group.labelText)}。此段仅用于辅助检索，未把 OCR 结果直接当作正式释文。</p>` : ''}
       ${sourcesMarkup(item)}`;
     bindGallery();
-    showDialog();
+    showDialog({
+      itemId: item.id,
+      syncUrl,
+      focusClose,
+      rememberFocus,
+    });
   }
 
   function genericSequenceMarkup(group) {
@@ -236,26 +479,36 @@
     return `<div class="photo-sequence">${photos.map((photo) => `<figure><img src="${escapeHTML(photoPath(photo, 'thumb'))}" alt="${escapeHTML(group.title)} · ${escapeHTML(photoRole(photo.role))}" loading="lazy" /><figcaption>${escapeHTML(photoRole(photo.role))}${photo.cropThumb ? ' · 人工裁切' : ''}<br />${escapeHTML(filenameOf(photo))}</figcaption></figure>`).join('')}</div>`;
   }
 
-  function openGroup(group) {
+  function openGroup(group, {
+    syncUrl = false,
+    focusClose = true,
+    rememberFocus = true,
+  } = {}) {
     if (!group) return;
     if (group.treasureId) {
       const item = treasureById(group.treasureId);
       if (item) {
-        openTreasure(item);
+        openTreasure(item, { syncUrl, focusClose, rememberFocus });
         return;
       }
     }
     const dialogContent = $('#dialog-content');
+    activeDetailId = group.id;
     const photos = group.photos || [];
     const main = objectPhoto(group) || photos[0];
     const sequence = group.sequenceLabel || (group.sequenceStart ? `${group.sequenceStart}—${group.sequenceEnd}` : '现场照片');
     const unitNote = Number(group.unitCount || 1) > 1 ? `；同名器物合并 ${group.unitCount} 组现场照片` : '';
-    dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(group.number || 'PHOTO GROUP')} / ${escapeHTML(group.categoryLabel || '其他器物')}</p><h2 id="dialog-title">${escapeHTML(group.title || '器物卡片')}<small>${escapeHTML(sequence)}</small></h2></div><p class="dialog-lead">${escapeHTML(group.summary || '现场器物照片按相机顺序归档。')}${escapeHTML(unitNote)}</p></div>
-      <div class="dialog-facts"><div class="dialog-fact"><span class="dialog-fact-label">类别</span><span class="dialog-fact-value">${escapeHTML(group.categoryLabel || '其他器物')}</span></div><div class="dialog-fact"><span class="dialog-fact-label">照片数</span><span class="dialog-fact-value">${photos.length} 张</span></div><div class="dialog-fact"><span class="dialog-fact-label">音乐重点</span><span class="dialog-fact-value">${group.musicFocus ? '是 · 乐器 / 礼乐' : '否'}</span></div><div class="dialog-fact"><span class="dialog-fact-label">证据状态</span><span class="dialog-fact-value">${escapeHTML(group.status || '名称依据展签与器物序列整理')}</span></div></div>
+    dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(group.number || 'PHOTO GROUP')} / ${escapeHTML(group.categoryLabel || '其他器物')}</p><h2 id="dialog-title">${escapeHTML(group.title || '器物卡片')}<small>${escapeHTML(sequence)}</small></h2></div><p class="dialog-lead">${escapeHTML(group.summary || '现场展签与照片序列记录。')}${escapeHTML(unitNote)}</p></div>
+      <div class="dialog-facts"><div class="dialog-fact"><span class="dialog-fact-label">类别</span><span class="dialog-fact-value">${escapeHTML(group.categoryLabel || '其他器物')}</span></div><div class="dialog-fact"><span class="dialog-fact-label">照片数</span><span class="dialog-fact-value">${photos.length} 张</span></div><div class="dialog-fact"><span class="dialog-fact-label">音乐重点</span><span class="dialog-fact-value">${group.musicFocus ? '是 · 乐器 / 礼乐' : '否'}</span></div><div class="dialog-fact"><span class="dialog-fact-label">证据状态</span><span class="dialog-fact-value">${escapeHTML(group.status || '现场展签 / 照片顺序')}</span></div></div>
       <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, `现场顺序 · ${filenameOf(main)}`)}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
       ${genericSequenceMarkup(group)}`;
     bindGallery();
-    showDialog();
+    showDialog({
+      itemId: group.id,
+      syncUrl,
+      focusClose,
+      rememberFocus,
+    });
   }
 
   function bindGallery() {
@@ -379,18 +632,77 @@
     render();
   }
 
-  function showDialog() {
+  function showDialog({
+    itemId = null,
+    syncUrl = false,
+    focusClose = true,
+    rememberFocus = true,
+  } = {}) {
     const dialog = $('#detail-dialog');
     if (!dialog) return;
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else dialog.setAttribute('open', 'open');
+    const dialogAlreadyOpen = dialog.open || dialog.hasAttribute('open');
+    if (rememberFocus) lastFocusedElement = document.activeElement;
+    else lastFocusedElement = null;
+    if (!dialogAlreadyOpen) {
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else dialog.setAttribute('open', 'open');
+    }
+    if (itemId) activeDetailId = String(itemId);
+    if (focusClose) dialog.querySelector('[data-dialog-close]')?.focus();
+    if (syncUrl && itemId) syncItemToUrl(itemId);
   }
 
-  function closeDialog() {
+  function handleDialogClose() {
+    activeDetailId = null;
+    const restore = restoreFocusAfterDialogClose ? lastFocusedElement : null;
+    lastFocusedElement = null;
+    restoreFocusAfterDialogClose = true;
+    if (restore && typeof restore.focus === 'function') restore.focus();
+  }
+
+  function closeDialog({
+    syncUrl = false,
+    restoreFocus = true,
+  } = {}) {
     const dialog = $('#detail-dialog');
     if (!dialog) return;
-    if (typeof dialog.close === 'function') dialog.close();
-    else dialog.removeAttribute('open');
+    const dialogIsOpen = dialog.open || dialog.hasAttribute('open');
+    if (!dialogIsOpen) return;
+    restoreFocusAfterDialogClose = restoreFocus;
+    if (syncUrl) syncItemToUrl(null);
+    if (dialog.open && typeof dialog.close === 'function') dialog.close();
+    else {
+      dialog.removeAttribute('open');
+      handleDialogClose();
+    }
+  }
+
+  function openDetailFromLocation({ focusClose = false } = {}) {
+    const detail = getDetailFromLocation();
+    if (!detail) {
+      closeDialog({
+        syncUrl: false,
+        restoreFocus: false,
+      });
+      return false;
+    }
+    const dialog = $('#detail-dialog');
+    const dialogIsOpen = dialog?.open || dialog?.hasAttribute('open');
+    if (dialogIsOpen && activeDetailId === detail.id) return true;
+    if (detail.type === 'treasure') {
+      openTreasure(detail.treasure, {
+        syncUrl: false,
+        focusClose,
+        rememberFocus: false,
+      });
+    } else {
+      openGroup(detail.group, {
+        syncUrl: false,
+        focusClose,
+        rememberFocus: false,
+      });
+    }
+    return true;
   }
 
   function groupMatches(group) {
@@ -457,7 +769,16 @@
       const photoCount = groups.reduce((sum, group) => sum + (group.photos || []).length, 0);
       status.textContent = state.groups.length ? `已整理 ${state.groups.length} 个器物卡片 · 当前筛选 ${groups.length} 张卡片 / ${photoCount} 张照片 · 原片总数 ${photoData.sourceCount || 625} 张` : '照片目录正在生成；四件禁出文物详情已可先行阅读。';
     }
-    $$('[data-group-id]', target).forEach((button) => button.addEventListener('click', () => openGroup(state.groups.find((group) => group.id === button.dataset.groupId))));
+    $$('[data-group-id]', target).forEach((button) => button.addEventListener('click', () => {
+      const group = state.groups.find((item) => item.id === button.dataset.groupId);
+      if (group) {
+        openGroup(group, {
+          syncUrl: true,
+          focusClose: true,
+          rememberFocus: true,
+        });
+      }
+    }));
     observeReveals(target);
   }
 
@@ -474,21 +795,55 @@
       if (Array.isArray(remote.groups)) state.groups = remote.groups;
       updateFilterCounts();
       renderArchive();
+      const shouldResolveInitial = introDeferred;
+      const fallbackDetail = getDetailFromLocation();
+      if (shouldResolveInitial) {
+        if (fallbackDetail) skipIntro();
+        else startIntro();
+      }
+      if (fallbackDetail) openDetailFromLocation({ focusClose: shouldResolveInitial });
     } catch (error) {
       const status = $('#archive-status');
       if (status) status.textContent = '照片目录未加载；请通过本地服务器打开本专题，或先阅读四件禁出文物卡片。';
       renderArchive();
+      if (introDeferred) startIntro();
     }
   }
 
   function initDialog() {
     $('#treasure-grid')?.addEventListener('click', (event) => {
       const button = event.target.closest('[data-treasure-id]');
-      if (button) openTreasure(treasureById(button.dataset.treasureId));
+      if (button) {
+        openTreasure(treasureById(button.dataset.treasureId), {
+          syncUrl: true,
+          focusClose: true,
+          rememberFocus: true,
+        });
+      }
     });
-    $('[data-dialog-close]')?.addEventListener('click', closeDialog);
-    $('#detail-dialog')?.addEventListener('click', (event) => {
-      if (event.target === event.currentTarget) closeDialog();
+    $('[data-dialog-close]')?.addEventListener('click', () => closeDialog({
+      syncUrl: true,
+      restoreFocus: true,
+    }));
+    const dialog = $('#detail-dialog');
+    dialog?.addEventListener('click', (event) => {
+      if (event.target === event.currentTarget) {
+        closeDialog({
+          syncUrl: true,
+          restoreFocus: true,
+        });
+      }
+    });
+    dialog?.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      closeDialog({
+        syncUrl: true,
+        restoreFocus: true,
+      });
+    });
+    dialog?.addEventListener('close', handleDialogClose);
+    window.addEventListener('popstate', () => {
+      openDetailFromLocation({ focusClose: false });
     });
   }
 
@@ -532,6 +887,20 @@
     window.addEventListener('resize', schedule, { passive: true });
   }
 
+  function startIntro() {
+    if (introInitialized) return;
+    introDeferred = false;
+    introInitialized = true;
+    initIntro();
+  }
+
+  function skipIntro() {
+    introDeferred = false;
+    introInitialized = true;
+    $('.intro-curtain')?.remove();
+    document.body.classList.add('intro-complete');
+  }
+
   function initIntro() {
     const intro = $('.intro-curtain');
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -555,7 +924,11 @@
   }
 
   function init() {
-    initIntro();
+    const initialDetail = getDetailFromLocation();
+    const hasItemParam = new URLSearchParams(window.location.search).has('item');
+    if (initialDetail) skipIntro();
+    else if (hasItemParam && state.groups.length === 0) introDeferred = true;
+    else startIntro();
     renderTreasureCards();
     initDialog();
     initFilters();
@@ -564,6 +937,7 @@
     updateFilterCounts();
     scheduleArchiveInit();
     observeReveals();
+    if (initialDetail) openDetailFromLocation({ focusClose: true });
   }
 
   document.addEventListener('DOMContentLoaded', init, { once: true });
