@@ -35,6 +35,7 @@ def module_from_path(path: str) -> str | None:
 
 class Tracker:
     def __init__(self) -> None:
+        self.http_404_urls: list[str] = []
         self.external_requests = 0
         self.external_failures: set[str] = set()
         self.local_externalized_requests = 0
@@ -68,6 +69,8 @@ class Tracker:
             self.external_other_requests += 1
 
     def on_response(self, response) -> None:
+        if response.status == 404:
+            self.http_404_urls.append(response.url)
         kind = self.classify(response.url)
         if kind is None or 200 <= response.status < 400:
             return

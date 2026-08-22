@@ -1,0 +1,176 @@
+html:has(body.is-embedded){
+  min-height:100%;
+  background:#17241d;
+}
+body.is-embedded{
+  --ink:#f7f2e9;
+  --muted:#d5ddd6;
+  --paper:rgba(13,20,17,.72);
+  --line:rgba(247,242,233,.22);
+  --accent:#b9ddc9;
+  min-height:100vh;
+  color:#f7f2e9;
+  background:
+    linear-gradient(110deg,rgba(13,19,16,.96) 0%,rgba(21,30,24,.84) 46%,rgba(21,30,24,.52) 100%),
+    var(--context-image,none),
+    #1b241d;
+  background-position:center;
+  background-size:cover;
+  background-attachment:scroll;
+}
+body.is-embedded .masthead,
+body.is-embedded .museum-nav,
+body.is-embedded .site-foot{display:none}
+body.is-embedded .site-shell{
+  width:min(1760px,calc(100% - clamp(24px,3vw,48px)));
+  min-height:100vh;
+  margin:auto;
+  padding:clamp(24px,3.5vw,56px) 0 30px;
+}
+body.is-embedded .trail{
+  color:#f7f2e9;
+  background:rgba(13,20,17,.72);
+  border:1px solid rgba(247,242,233,.24);
+  box-shadow:0 20px 60px rgba(0,0,0,.22);
+  backdrop-filter:blur(3px);
+}
+body.is-embedded .trail-head{
+  padding:clamp(24px,3vw,38px) clamp(20px,4vw,54px) 20px;
+  border-color:rgba(247,242,233,.22);
+}
+body.is-embedded .trail-head h2,
+body.is-embedded .trail-controls,
+body.is-embedded .trail-controls button,
+body.is-embedded .slide h3,
+body.is-embedded .slide .kind,
+body.is-embedded .facts dd,
+body.is-embedded .swipe-hint{color:#f7f2e9}
+body.is-embedded .trail-controls button{
+  border-color:rgba(247,242,233,.44);
+  background:rgba(23,32,28,.80);
+}
+body.is-embedded .trail-controls button:hover{
+  background:#f7f2e9;
+  color:#17201c;
+}
+body.is-embedded .slide{padding:clamp(22px,4vw,54px)}
+body.is-embedded .slide-index,
+body.is-embedded .facts dt{color:#b9ddc9}
+body.is-embedded .facts div{border-color:rgba(247,242,233,.22)}
+body.is-embedded .source-links a{color:#d8eee1}
+body.is-embedded .swipe-hint{padding-bottom:22px}
+@media(max-width:820px){
+  body.is-embedded .site-shell{width:calc(100% - 16px);padding-top:12px}
+  body.is-embedded .trail-head{padding:24px 20px 18px}
+  body.is-embedded .slide{padding:20px}
+}
+/* 20260820 · embedded museum palettes. The image is atmosphere; the palette identifies the host museum. */
+body.is-embedded {
+  --embed-bg:#17241d;
+  --embed-ink:#f7f2e9;
+  --embed-muted:#d5ddd6;
+  --embed-paper:rgba(13,20,17,.78);
+  --embed-line:rgba(247,242,233,.24);
+  --embed-accent:#b9ddc9;
+  --embed-link:#d8eee1;
+  color:var(--embed-ink);
+  background:
+    linear-gradient(110deg,rgba(13,19,16,.96) 0%,rgba(21,30,24,.84) 46%,rgba(21,30,24,.52) 100%),
+    var(--context-image,none),
+    var(--embed-bg);
+}
+body.is-embedded[data-museum="qinhan"] {
+  --embed-bg:#3b2818;
+  --embed-ink:#fff0cf;
+  --embed-muted:#e3c795;
+  --embed-paper:rgba(58,37,20,.86);
+  --embed-line:rgba(255,240,207,.28);
+  --embed-accent:#e2b762;
+  --embed-link:#f1dba8;
+}
+body.is-embedded[data-museum="xian"] {
+  --embed-bg:#103a38;
+  --embed-ink:#ecf7ef;
+  --embed-muted:#b9d8ca;
+  --embed-paper:rgba(12,47,45,.84);
+  --embed-line:rgba(236,247,239,.26);
+  --embed-accent:#98d0bb;
+  --embed-link:#c9ebdc;
+}
+body.is-embedded[data-museum="history"] {
+  --embed-bg:#4a271e;
+  --embed-ink:#fff1dc;
+  --embed-muted:#e7c6a1;
+  --embed-paper:rgba(62,30,23,.86);
+  --embed-line:rgba(255,241,220,.28);
+  --embed-accent:#e0b266;
+  --embed-link:#f1d5ad;
+}
+body.is-embedded[data-museum="archaeology"] {
+  --embed-bg:#0b2a20;
+  --embed-ink:#edf6ed;
+  --embed-muted:#c4d8ca;
+  --embed-paper:rgba(7,31,23,.86);
+  --embed-line:rgba(237,246,237,.27);
+  --embed-accent:#b8d7b5;
+  --embed-link:#d5ead4;
+}
+body.is-embedded[data-museum="baoji"] {
+  --embed-bg:#2b1c13;
+  --embed-ink:#fff0dc;
+  --embed-muted:#e3c0a1;
+  --embed-paper:rgba(43,28,19,.86);
+  --embed-line:rgba(255,240,220,.28);
+  --embed-accent:#d6a06a;
+  --embed-link:#f1c99b;
+}
+body.is-embedded[data-museum="beilin"] {
+  --embed-bg:#1b241d;
+  --embed-ink:#f7f2e9;
+  --embed-muted:#d5ddd6;
+  --embed-paper:rgba(13,20,17,.78);
+  --embed-line:rgba(247,242,233,.24);
+  --embed-accent:#b9ddc9;
+  --embed-link:#d8eee1;
+}
+body.is-embedded .trail {
+  color:var(--embed-ink);
+  background:var(--embed-paper);
+  border-color:var(--embed-line);
+}
+body.is-embedded .trail-head {
+  border-color:var(--embed-line);
+}
+body.is-embedded .trail-head h2,
+body.is-embedded .trail-controls,
+body.is-embedded .trail-controls button,
+body.is-embedded .slide h3,
+body.is-embedded .slide .kind,
+body.is-embedded .facts dd,
+body.is-embedded .swipe-hint {
+  color:var(--embed-ink);
+}
+body.is-embedded .trail-controls button {
+  border-color:var(--embed-line);
+  color:var(--embed-ink);
+  background:color-mix(in srgb,var(--embed-bg) 80%,transparent);
+}
+body.is-embedded .trail-controls button:hover {
+  color:var(--embed-bg);
+  background:var(--embed-ink);
+}
+body.is-embedded .slide-index,
+body.is-embedded .facts dt {
+  color:var(--embed-accent);
+}
+body.is-embedded .facts div {
+  border-color:var(--embed-line);
+}
+body.is-embedded .slide p,
+body.is-embedded .hero-note,
+body.is-embedded .swipe-hint {
+  color:var(--embed-muted);
+}
+body.is-embedded .source-links a {
+  color:var(--embed-link);
+}
