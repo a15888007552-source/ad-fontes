@@ -3105,3 +3105,49 @@ dialog::backdrop {
   }
 }
  @media (min-width: 721px) { .hero-panel h1 { font-size: clamp(72px, 5.5vw, 96px); } .hero-lead { max-width: 510px; font-size: 15px; } }
+/* Themed method band — the archive-method section carries the site's
+   cinnabar theme color with light contrast text (task: 栏目变色跟随主题色). */
+.method-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-inline: max(32px, calc((100% - 1440px) / 2));
+  background: linear-gradient(165deg, var(--cinnabar) 0%, var(--cinnabar-dark) 100%);
+}
+
+.method-section .section-index {
+  border-top-color: rgba(250, 249, 245, 0.55);
+  color: rgba(250, 249, 245, 0.78);
+}
+
+.method-section h2 {
+  color: var(--white);
+}
+
+.method-section .section-kicker {
+  color: rgba(250, 249, 245, 0.85);
+}
+
+.method-section .method-steps {
+  border-top-color: rgba(250, 249, 245, 0.5);
+}
+
+.method-section .method-steps li {
+  border-bottom-color: rgba(250, 249, 245, 0.3);
+}
+
+.method-section .method-steps span {
+  color: var(--paper);
+}
+
+.method-section .method-steps p {
+  color: rgba(250, 249, 245, 0.92);
+}
+
+.method-section .method-note {
+  color: rgba(250, 249, 245, 0.8);
+}
+
+.method-section .method-note strong {
+  color: var(--white);
+}

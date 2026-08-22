@@ -374,3 +374,8 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
 @media (max-width: 1180px) { .object-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .featured-grid{grid-template-columns:1fr 1fr;gap:34px}.featured-media{min-height:470px}.object-card{min-height:500px}.routes-head{grid-template-columns:118px minmax(220px,.8fr) minmax(320px,1.2fr);gap:26px}.route-card{grid-template-columns:160px 1fr} }
 @media (max-width: 860px) { .route-grid{grid-template-columns:1fr}.route-card{grid-template-columns:minmax(190px,.7fr) minmax(260px,1.3fr)} }
 @media (max-width: 760px) { :root{--page:calc(100% - 24px)} .object-grid{grid-template-columns:1fr}.object-card{min-height:520px;grid-template-rows:330px auto}.card-image{min-height:330px}.featured-grid{grid-template-columns:1fr}.featured-media{min-height:430px}.featured-copy dl{grid-template-columns:1fr}.featured-copy dl div{border-left:0;border-top:1px solid rgba(225,236,229,.18)}.opening-copy{width:calc(100% - 32px)}.opening-copy h2{font-size:72px}.opening-copy p{font-size:13px;line-height:1.8}.hero{min-height:620px;background-position:65% center}.routes-head{grid-template-columns:1fr;gap:18px}.route-card{grid-template-columns:1fr;grid-template-rows:260px auto}.route-object{min-height:260px}.route-copy{min-height:250px} }
+
+/* 单行标题与信息卡片整体居中 */
+#museum .section-title-row { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; margin-bottom: 28px; }
+#museum .section-title-row h2 { max-width: none; }
+#museum .museum-facts { text-align: center; }
