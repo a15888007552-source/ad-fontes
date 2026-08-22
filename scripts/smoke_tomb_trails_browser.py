@@ -328,6 +328,13 @@ def main() -> int:
             entry["slidesScrollable"] = frame.evaluate(
                 "() => { const el = document.querySelector('#slides'); return el ? el.scrollWidth > el.clientWidth : false; }"
             )
+            # same pre-capture re-frame as desktop: host pages may reset their
+            # inner scroll container after programmatic scrolls
+            try:
+                iframe.scroll_into_view_if_needed(timeout=10000)
+            except Exception:
+                pass
+            mpage.wait_for_timeout(900)
             geo = section_in_viewport(mpage)
             slide_visible = first_slide_in_viewport(frame)
             entry["screenshotGeometryOk"] = bool(geo and geo.get("ok") and slide_visible)
