@@ -20,9 +20,16 @@
   let lastFocusedElement = null;
   let restoreFocusAfterDialogClose = true;
   let titleFitFrame = 0;
+  let itemDetails = null;
+  let itemDetailsPromise = null;
+  let openRequestGeneration = 0;
+  let initialArchiveRendered = false;
+  let initialArchiveRenderScheduled = false;
   const reduceMotion = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const zoomState = { scale: 1, x: 0, y: 0, dragging: false, pointerId: null, startX: 0, startY: 0, originX: 0, originY: 0 };
   const IMAGE_REV = "20260821-copy1";
+  const DETAIL_FIELDS = ["photos", "essay", "evidence", "sources"];
+  const DETAIL_KEYS = [...DETAIL_FIELDS].sort();
 
   function initMotion() {
     document.documentElement.classList.add("motion-ready");
@@ -78,6 +85,57 @@
   const cssUrl = (value) => encodeURI(String(value || "")).replace(/['()]/g, (character) => `%${character.charCodeAt(0).toString(16)}`);
   const cardCoverFor = (item) => assetFor(`assets/card-covers/${String(item.id).replace(/[^A-Za-z0-9_-]+/g, "-")}.webp`);
   const hasTag = (item, tag) => Array.isArray(item.tags) && item.tags.includes(tag);
+
+  const isPlainObject = (value) => {
+    if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+    const prototype = Object.getPrototypeOf(value);
+    return prototype === Object.prototype || prototype === null;
+  };
+
+  function validateItemDetails(payload) {
+    if (!isPlainObject(payload) || payload.schema_version !== 1 || !isPlainObject(payload.items)) throw new Error("Invalid detail payload");
+    const detailIds = Object.keys(payload.items);
+    if (detailIds.length !== itemById.size) throw new Error("Incomplete detail payload");
+    detailIds.forEach((id) => {
+      if (!itemById.has(id)) throw new Error("Unknown detail item");
+      const detail = payload.items[id];
+      if (!isPlainObject(detail) || JSON.stringify(Object.keys(detail).sort()) !== JSON.stringify(DETAIL_KEYS)) throw new Error("Invalid detail record");
+      if (!Array.isArray(detail.photos) || !Array.isArray(detail.essay) || typeof detail.evidence !== "string" || !Array.isArray(detail.sources)) throw new Error("Invalid detail fields");
+    });
+    itemById.forEach((item, id) => {
+      if (!Object.prototype.hasOwnProperty.call(payload.items, id)) throw new Error("Missing detail item");
+    });
+    return payload;
+  }
+
+  function loadItemDetails() {
+    if (itemDetails) return Promise.resolve(itemDetails);
+    if (itemDetailsPromise) return itemDetailsPromise;
+    const promise = Promise.resolve()
+      .then(() => fetch("item-details.json?rev=20260822-split1"))
+      .then((response) => {
+        if (!response.ok) throw new Error("Detail request failed");
+        return response.json();
+      })
+      .then(validateItemDetails)
+      .then((payload) => {
+        itemDetails = payload;
+        return payload;
+      })
+      .catch((error) => {
+        itemDetailsPromise = null;
+        throw error;
+      });
+    itemDetailsPromise = promise;
+    return promise;
+  }
+
+  function materializeItem(id) {
+    const catalogueItem = itemById.get(String(id));
+    const detail = itemDetails?.items?.[String(id)];
+    if (!catalogueItem || !detail) return null;
+    return { ...catalogueItem, ...detail };
+  }
 
   function applyImageZoom() {
     dialogImageWrap.style.setProperty("--zoom-scale", zoomState.scale.toFixed(3));
@@ -274,9 +332,9 @@
   function cardHtml(item, index) {
     const cover = cardCoverFor(item);
     const tags = (item.tags || []).filter((tag) => ["music", "forbidden", "greek", "wall"].includes(tag));
-    const photoCount = (item.photos || []).length;
-    const sourceCount = (item.sources || []).length;
-    const cardLead = item.cardLead || (item.essay || [])[1]?.text || (item.essay || [])[0]?.text || "";
+    const photoCount = Number(item.photoCount) || 0;
+    const sourceCount = Number(item.sourceCount) || 0;
+    const cardLead = item.cardLead || item.summary || "";
     const delay = Math.min(index, 11) * 18;
     const baseTitleSize = Number.parseFloat(titleSize(item.title));
     const inlineStyle = `--title-size:${baseTitleSize}px;--card-delay:${delay}ms`;
@@ -300,6 +358,7 @@
   }
 
   function render() {
+    initialArchiveRendered = true;
     const output = filteredItems();
     grid.innerHTML = output.map(cardHtml).join("");
     empty.hidden = output.length !== 0;
@@ -316,13 +375,31 @@
     scheduleTitleFit();
   }
 
+  function scheduleInitialArchiveRender() {
+    if (initialArchiveRendered || initialArchiveRenderScheduled) return;
+    initialArchiveRenderScheduled = true;
+    let completed = false;
+    let fallbackTimer = 0;
+    const run = () => {
+      if (completed) return;
+      completed = true;
+      if (fallbackTimer) window.clearTimeout(fallbackTimer);
+      if (!initialArchiveRendered) render();
+    };
+    window.requestAnimationFrame(() => {
+      if (typeof window.requestIdleCallback === "function") window.requestIdleCallback(run, { timeout: 700 });
+      else window.requestAnimationFrame(run);
+    });
+    fallbackTimer = window.setTimeout(run, 1200);
+  }
+
   function metaHtml(item) {
     const values = [
       ["时代", item.period || "未完整识读"],
       ["材质", item.material || "未完整识读"],
       ["类别", item.type || "未分类"],
       ["出土 / 来源", item.origin || "未完整记录"],
-      ["器物图组", item.photoRange || `${(item.photos || []).length} 图`],
+      ["器物图组", item.photoRange || `${Number(item.photoCount) || 0} 图`],
       ["档案编号", `SHM-${displayNumber(item)}`],
     ];
     return values
@@ -411,11 +488,8 @@
     );
   }
 
-  function openItem(id, { syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
-    const item = itemById.get(String(id));
-    if (!item) return;
+  function renderItemDialog(item, focusClose, requestToken) {
     const dialogAlreadyOpen = dialog.open || dialog.hasAttribute("open");
-    if (rememberFocus) lastFocusedElement = document.activeElement;
     const photos = Array.isArray(item.photos) ? item.photos.filter((photo) => photo && (photo.focus || photo.src)) : [];
     const title = document.getElementById("dialog-title");
     document.getElementById("dialog-kicker").textContent = [item.category || "观物档案", item.period || ""].filter(Boolean).join(" · ");
@@ -429,7 +503,8 @@
     const essayMarkup = hasTag(item, "forbidden")
       ? (item.essay || []).map((part) => '<h3>' + escapeHtml(part.heading) + '</h3><p>' + escapeHtml(part.text) + '</p>').join('')
       : compactEssayMarkup(item);
-    document.getElementById("dialog-essay").innerHTML = essayMarkup;    const sources = (item.sources || [])
+    document.getElementById("dialog-essay").innerHTML = essayMarkup;
+    const sources = (item.sources || [])
       .map((source) => source.url
         ? `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label || source.url)} ↗</a>`
         : escapeHtml(source.label))
@@ -460,13 +535,31 @@
     }
     dialog.setAttribute("aria-modal", "true");
     requestAnimationFrame(() => {
+      if (requestToken !== openRequestGeneration) return;
       dialog.classList.add("is-open");
       if (focusClose) document.getElementById("dialog-close")?.focus();
     });
-    if (syncUrl) syncItemToUrl(item.id);
+  }
+
+  async function openItem(id, { syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
+    const itemId = String(id);
+    if (!itemById.has(itemId)) return;
+    const requestToken = ++openRequestGeneration;
+    if (rememberFocus) lastFocusedElement = document.activeElement;
+    try {
+      await loadItemDetails();
+      if (requestToken !== openRequestGeneration) return;
+      const item = materializeItem(itemId);
+      if (!item || requestToken !== openRequestGeneration) return;
+      renderItemDialog(item, focusClose, requestToken);
+      if (syncUrl && requestToken === openRequestGeneration) syncItemToUrl(item.id);
+    } catch (error) {
+      // Detail failures leave the catalogue usable and keep the current URL unchanged.
+    }
   }
 
   function closeDialog({ syncUrl = false, restoreFocus = true } = {}) {
+    openRequestGeneration += 1;
     resetImageZoom();
     const dialogIsOpen = dialog.open || dialog.hasAttribute("open");
     if (!dialogIsOpen) return;
@@ -645,18 +738,16 @@
   initImageZoom();
   setStats();
   renderCategories();
-  render();
   renderTreasureGrid();
   renderSpecialPreview();
-  // Start the visible duration only after the heavy archive grid has finished
-  // its synchronous first render; otherwise the timer can expire before paint.
   const requestedItem = getItemFromLocation();
   if (requestedItem) {
     const root = document.documentElement;
     document.getElementById("opening-screen")?.remove();
     root.classList.remove("intro-enabled", "intro-playing");
-    openItem(requestedItem, { syncUrl: false, focusClose: true, rememberFocus: false });
+    void openItem(requestedItem, { syncUrl: false, focusClose: true, rememberFocus: false });
   } else {
     initOpening();
   }
+  scheduleInitialArchiveRender();
 }());
