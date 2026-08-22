@@ -132,6 +132,47 @@ def count_from_label(text: str) -> int | None:
     return int(match.group(1)) if match else None
 
 
+def choose_search_keyword(page, cards) -> str:
+    """Choose a real title whose data match is a strict, non-empty subset."""
+
+    try:
+        artifacts = page.evaluate(
+            "() => Array.isArray(window.__SHAANXI_ARTIFACTS__?.artifacts) "
+            "? window.__SHAANXI_ARTIFACTS__.artifacts : []"
+        )
+    except Exception:
+        artifacts = []
+
+    if isinstance(artifacts, list) and artifacts:
+        candidates = ["录簋"]
+        candidates.extend(
+            str(item.get("title", "")).strip()
+            for item in artifacts
+            if isinstance(item, dict)
+        )
+        fields = ("title", "category", "period", "findspot", "material", "summary")
+        for candidate in candidates:
+            if not candidate:
+                continue
+            needle = candidate.casefold()
+            matches = sum(
+                needle in " ".join(str(item.get(field, "")) for field in fields).casefold()
+                for item in artifacts
+                if isinstance(item, dict)
+            )
+            if 0 < matches < len(artifacts):
+                return candidate
+
+    try:
+        for title in cards.locator("h3").all_inner_texts():
+            candidate = title.strip()
+            if candidate:
+                return candidate
+    except Exception:
+        pass
+    return ""
+
+
 def base_report(output: Path) -> dict:
     return {
         "status": "FAIL",
@@ -145,6 +186,13 @@ def base_report(output: Path) -> dict:
         "cssWorkerMediaRequests": 0,
         "catalogCardsVisible": 0,
         "searchCheck": False,
+        "searchKeyword": "",
+        "searchInputValue": "",
+        "searchInitialCount": None,
+        "searchFilteredCount": None,
+        "searchRestoredCount": None,
+        "searchRenderedCards": 0,
+        "searchVisibleTitlesFirst5": [],
         "filterCheck": False,
         "dialogsChecked": 0,
         "thumbnailSwitches": 0,
@@ -285,18 +333,102 @@ def main() -> int:
                     search.wait_for(state="visible", timeout=30000)
                     initial_text = count_label.inner_text()
                     initial_count = count_from_label(initial_text)
-                    keyword = cards.first.locator("h3").inner_text().strip()
-                    search.fill(keyword)
-                    page.wait_for_timeout(400)
-                    filtered_text = count_label.inner_text()
-                    filtered_count = count_from_label(filtered_text)
-                    report["searchCheck"] = bool(
-                        filtered_count and filtered_count > 0 and (filtered_text != initial_text or filtered_count != initial_count)
-                    )
-                    if not report["searchCheck"]:
-                        fail(f"search did not change results: {initial_text!r} -> {filtered_text!r}")
+                    report["searchInitialCount"] = initial_count
+                    keyword = choose_search_keyword(page, cards)
+                    report["searchKeyword"] = keyword
+                    if not keyword:
+                        fail("search keyword selection returned an empty string")
+                    if initial_count is None:
+                        fail(f"search initial count is not parseable: {initial_text!r}")
+                    else:
+                        search.click()
+                        search.fill("")
+                        press_sequentially = getattr(search, "press_sequentially", None)
+                        if callable(press_sequentially):
+                            press_sequentially(keyword, delay=40)
+                        else:
+                            type_text = getattr(search, "type", None)
+                            if callable(type_text):
+                                type_text(keyword, delay=40)
+                            else:
+                                page.keyboard.type(keyword, delay=40)
 
-                    search.fill("")
+                        try:
+                            page.wait_for_function(
+                                """
+                                ({countSelector, initialCount}) => {
+                                  const label = document.querySelector(countSelector);
+                                  if (!label) return false;
+                                  const match = label.textContent.match(/(\\d+)\\s*\\/\\s*\\d+/);
+                                  if (!match) return false;
+                                  const count = Number(match[1]);
+                                  return count > 0 && count < initialCount;
+                                }
+                                """,
+                                {"countSelector": "[data-artifact-count]", "initialCount": initial_count},
+                                timeout=10000,
+                            )
+                        except Exception as error:
+                            fail(f"search strict-subset wait: {error}")
+
+                        filtered_text = count_label.inner_text()
+                        filtered_count = count_from_label(filtered_text)
+                        report["searchInputValue"] = search.input_value()
+                        report["searchFilteredCount"] = filtered_count
+                        report["searchRenderedCards"] = cards.count()
+                        report["searchVisibleTitlesFirst5"] = cards.locator("h3").all_inner_texts()[:5]
+                        titles_match = any(
+                            keyword in title for title in report["searchVisibleTitlesFirst5"]
+                        )
+                        report["searchCheck"] = bool(
+                            filtered_count is not None
+                            and filtered_count > 0
+                            and filtered_count < initial_count
+                            and report["searchRenderedCards"] > 0
+                            and titles_match
+                        )
+                        if not report["searchCheck"]:
+                            fail(
+                                "search did not produce a strict, matching subset: "
+                                f"initial={initial_text!r} filtered={filtered_text!r} "
+                                f"keyword={keyword!r} input={report['searchInputValue']!r} "
+                                f"renderedCards={report['searchRenderedCards']} "
+                                f"titles={report['searchVisibleTitlesFirst5']!r}"
+                            )
+
+                    search.click()
+                    search.press("Control+A")
+                    search.press("Backspace")
+                    try:
+                        if initial_count is not None:
+                            page.wait_for_function(
+                                """
+                                ({inputSelector, countSelector, initialCount}) => {
+                                  const input = document.querySelector(inputSelector);
+                                  const label = document.querySelector(countSelector);
+                                  if (!input || !label || input.value !== '') return false;
+                                  const match = label.textContent.match(/(\\d+)\\s*\\/\\s*\\d+/);
+                                  return Boolean(match) && Number(match[1]) === initialCount;
+                                }
+                                """,
+                                {
+                                    "inputSelector": "[data-artifact-search]",
+                                    "countSelector": "[data-artifact-count]",
+                                    "initialCount": initial_count,
+                                },
+                                timeout=10000,
+                            )
+                    except Exception as error:
+                        fail(f"search restore wait: {error}")
+                    report["searchInputValue"] = search.input_value()
+                    restored_text = count_label.inner_text()
+                    report["searchRestoredCount"] = count_from_label(restored_text)
+                    if initial_count is not None and report["searchRestoredCount"] != initial_count:
+                        fail(
+                            f"search did not restore results: expected {initial_count}, "
+                            f"got {restored_text!r}"
+                        )
+
                     values = category.locator("option").evaluate_all(
                         "(options) => options.map((option) => option.value).filter(Boolean)"
                     )
@@ -315,8 +447,6 @@ def main() -> int:
                         if not report["filterCheck"]:
                             fail(f"category filter did not change results: {before_filter!r} -> {after_filter!r}")
                     category.select_option("")
-                    search.fill("")
-                    page.wait_for_timeout(400)
                 except Exception as error:
                     fail(f"search/filter: {error}")
 
@@ -470,6 +600,13 @@ def main() -> int:
     report["status"] = "PASS" if not failures else "FAIL"
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"BROWSER_SMOKE={report['status']}")
+    print(f"SEARCH_KEYWORD={report['searchKeyword']}")
+    print(
+        "SEARCH_COUNTS="
+        f"{report['searchInitialCount']}/{report['searchFilteredCount']}/{report['searchRestoredCount']}"
+    )
+    print(f"SEARCH_RENDERED_CARDS={report['searchRenderedCards']}")
+    print(f"SEARCH_TITLES_FIRST5={report['searchVisibleTitlesFirst5']}")
     print(f"WORKER_MEDIA={report['workerMediaRequests']}/{report['workerMediaResponses2xx']}")
     print(f"WORKER_FAILURES={report['workerMediaFailures']}")
     print(f"LOCAL_MODULE_MEDIA={report['localModuleMediaRequests']}")
