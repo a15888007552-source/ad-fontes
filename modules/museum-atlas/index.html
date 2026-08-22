@@ -2108,18 +2108,30 @@
 
   .selected-object__media {
     display: grid;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     margin: 0;
     overflow: hidden;
     place-items: center;
     background: color-mix(in srgb, var(--surface-strong) 86%, var(--accent-soft));
   }
 
+  /* Curated presentation metadata lives on each <figure> as data attributes
+     and custom properties; the stage itself stays neutral for every card. */
+  .selected-object__media[data-media-fit="portrait"] {
+    aspect-ratio: 3 / 4;
+  }
+
+  .selected-object__media[data-media-fit="cover"] img {
+    object-fit: cover;
+  }
+
   .selected-object__media img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: var(--media-position, 50% 50%);
     filter: var(--image-filter);
+    transform: scale(var(--media-scale, 1));
     transition: transform 360ms cubic-bezier(0.16, 0.82, 0.2, 1), opacity 180ms ease;
   }
 
@@ -2181,7 +2193,7 @@
   .selected-object:hover .selected-object__media img,
   .selected-object:focus-visible .selected-object__media img {
     opacity: 0.96;
-    transform: scale(1.015);
+    transform: scale(calc(var(--media-scale, 1) * 1.015));
   }
 
   .selected-object:hover .selected-object__cue,
@@ -2751,7 +2763,7 @@
       <div class="selected-objects__catalogue">
         <div class="selected-objects__row selected-objects__row--three">
           <a class="selected-object" href="../../guobo-museum/index.html?item=guobo-xiaoduan-phoenix-crown">
-            <figure class="selected-object__media">
+            <figure class="selected-object__media" data-media-fit="cover">
               <img data-media-path="guobo-museum/assets/photos/xiaoduan-phoenix-crown.webp" alt="孝端皇后九龙九凤冠 · 中国国家博物馆" loading="lazy" decoding="async" />
             </figure>
             <div class="selected-object__meta">
@@ -2766,7 +2778,7 @@
           </a>
 
           <a class="selected-object" href="../beilin/index.html?item=artifact-168">
-            <figure class="selected-object__media">
+            <figure class="selected-object__media" data-media-fit="portrait">
               <img data-media-path="assets/photos/web/DSC_1942.jpg" alt="大秦景教流行中国碑 · 西安碑林博物馆" loading="lazy" decoding="async" />
             </figure>
             <div class="selected-object__meta">
@@ -2781,7 +2793,7 @@
           </a>
 
           <a class="selected-object" href="../shaanxi-archaeology-museum/index.html?item=artifact-024">
-            <figure class="selected-object__media">
+            <figure class="selected-object__media" data-media-fit="cover">
               <img data-media-path="modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2697.jpg" alt="三彩双鱼瓶 · 陕西考古博物馆" loading="lazy" decoding="async" />
             </figure>
             <div class="selected-object__meta">
@@ -2798,7 +2810,7 @@
 
         <div class="selected-objects__row selected-objects__row--four">
           <a class="selected-object" href="../qinhan/index.html?item=queen-seal">
-            <figure class="selected-object__media">
+            <figure class="selected-object__media" data-media-fit="cover">
               <img data-media-path="modules/qinhan/assets/processed/crop/queen-seal.webp" alt="皇后之玺 · 陕西历史博物馆·秦汉馆" loading="lazy" decoding="async" />
             </figure>
             <div class="selected-object__meta">
@@ -2828,7 +2840,7 @@
           </a>
 
           <a class="selected-object" href="../shaanxi-history/index.html?item=field-4681">
-            <figure class="selected-object__media">
+            <figure class="selected-object__media" style="--media-scale: 1.04">
               <img data-media-path="modules/shaanxi-history/assets/photos/focus-4675.webp" alt="镶金兽首玛瑙杯 · 陕西历史博物馆" loading="lazy" decoding="async" />
             </figure>
             <div class="selected-object__meta">
@@ -2843,7 +2855,7 @@
           </a>
 
           <a class="selected-object" href="../xian-museum/index.html?item=xian-001-painted-mirror">
-            <figure class="selected-object__media">
+            <figure class="selected-object__media" data-media-fit="cover" style="--media-scale: 1.06">
               <img data-media-path="modules/xian-museum/assets/supplement/painted-mirror-01.webp" alt="西汉彩绘人物车马镜 · 西安博物院" loading="lazy" decoding="async" />
             </figure>
             <div class="selected-object__meta">
