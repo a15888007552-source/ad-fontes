@@ -1122,6 +1122,13 @@ function setView(v){
   queueChronograph();
 }
 $("#views").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setView(b.dataset.v)});
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-open-view]");
+  if(!b)return;
+  e.preventDefault();
+  setView(b.dataset.openView);
+  window.scrollTo({top:0,behavior:RM?"auto":"smooth"});
+});
 $("#epnav").addEventListener("click",e=>{
   const b=e.target.closest("button");if(!b)return;
   curEp=b.dataset.ep;$("#app").dataset.ep=curEp;renderEpnav();renderAlm();window.scrollTo({top:0});
@@ -1135,7 +1142,7 @@ $("#roam").onclick=()=>{const i=Math.floor((performance.now()*131.77)%NAVORDER.l
 /* ══════════ 导览 / 凡例卡 ══════════ */
 const VIEWDESC=[["年 鉴","七时代分章：篇首名画、导论小论文、大事记、史学争鸣与音乐家名录卡片。"],
 ["年 表","全体音乐家按生卒排成生命横道，时代色带贯穿。"],
-["舆 图","真实经纬度投影的欧洲历史地图：国界、河流、拉丁地名；点城市见驻留者与典故，可绘行迹。"],
+["舆 图","真实经纬度投影的欧洲音乐史研究地图：国界、河流、拉丁地名；点城市见驻留者与典故。卫星实景地图见“实 景”。"],
 ["星 丛","师承与影响之网：平面 D3 力导向 + WebGL 立体星丛，节点为肖像。"],
 ["师 承",`${LINEAGES.length}条传统脉络的谱系带，肖像节点＋关系箭头。`],
 ["史 脉",`${HISTEVENTS.length}个重要历史事件的垂直时间轴，点开读前因—经过—后果—史学评价。`],
