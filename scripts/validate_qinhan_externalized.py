@@ -36,8 +36,8 @@ RUNTIME_PATH = ROOT / "data" / "qinhan-r2-runtime-verification.json"
 INVENTORY_PATH = ROOT / "data" / "media-inventory.json"
 AUDIT_SUMMARY_PATH = ROOT / "data" / "media-audit-summary.json"
 ARCHIVE_PATH = MODULE_ROOT / "data" / "archive.json"
-PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
-LEGACY_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+CURRENT_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+RETIRED_WORKER_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
 EXPECTED_FILES = 1099
 EXPECTED_BYTES = 199_500_311
 EXPECTED_PROVENANCE_FILES = 4
@@ -152,7 +152,7 @@ def manifest_payload(objects: list[dict[str, Any]]) -> dict[str, Any]:
         "module": "qinhan",
         "files": len(objects),
         "bytes": sum(item["bytes"] for item in objects),
-        "publicBase": PUBLIC_BASE,
+        "publicBase": RETIRED_WORKER_BASE,
         "sourcePlan": "data/media-externalization-plan.json",
         "generatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "objects": objects,
@@ -168,7 +168,7 @@ def load_manifest() -> dict[str, Any]:
         or manifest.get("module") != "qinhan"
         or manifest.get("files") != EXPECTED_FILES
         or manifest.get("bytes") != EXPECTED_BYTES
-        or manifest.get("publicBase") != PUBLIC_BASE
+        or manifest.get("publicBase") != RETIRED_WORKER_BASE
         or not isinstance(objects, list)
         or len(objects) != EXPECTED_FILES
     ):
@@ -261,7 +261,7 @@ def historical_worker_evidence() -> dict[str, Any]:
 def runtime_routing(manifest: dict[str, Any]) -> dict[str, Any]:
     frozen = {item["path"] for item in manifest["objects"]}
     texts = runtime_validator.runtime_texts()
-    static_occurrences, static_paths = runtime_validator.static_worker_paths(texts)
+    static_occurrences, static_paths = runtime_validator.static_external_paths(texts)
     dynamic_fields, dynamic_paths = runtime_validator.archive_media_fields(load_json(ARCHIVE_PATH))
     provenance_text = texts.get("assets/editorial/provenance-trails.js", "")
     provenance_paths = runtime_validator.provenance_media_paths(provenance_text)
@@ -277,13 +277,13 @@ def runtime_routing(manifest: dict[str, Any]) -> dict[str, Any]:
         raise ValidationError(f"provenance resolver checks failed: {provenance_checks}")
     direct_hits = runtime_validator.direct_local_runtime_hits(texts, frozen)
     runtime_text = "\n".join(texts.get(name, "") for name in sorted(RUNTIME_FILE_NAMES)) + "\n" + provenance_text
-    old_count = runtime_text.count(LEGACY_PUBLIC_BASE)
+    retired_count = runtime_text.count(RETIRED_WORKER_BASE)
     file_count = len(re.findall(r"(?i)\bfile://", runtime_text))
     windows_count = len(WINDOWS_ABSOLUTE_RE.findall(runtime_text))
     double_count = runtime_text.count("modules/qinhan/modules/qinhan/")
-    if PUBLIC_BASE not in runtime_text or old_count or file_count or windows_count or double_count or direct_hits:
+    if CURRENT_PUBLIC_BASE not in runtime_text or retired_count or file_count or windows_count or double_count or direct_hits:
         raise ValidationError(
-            f"runtime path failure worker={PUBLIC_BASE in runtime_text} old={old_count} file={file_count} "
+            f"runtime path failure current={CURRENT_PUBLIC_BASE in runtime_text} retired={retired_count} file={file_count} "
             f"windows={windows_count} double={double_count} direct={direct_hits[:3]}"
         )
     if not provenance_checks.get("qinhanUsesMediaResolver") or not provenance_checks.get("qinhanResolverCall"):
@@ -293,9 +293,9 @@ def runtime_routing(manifest: dict[str, Any]) -> dict[str, Any]:
         "runtimeCoverageExtra": extra, "staticWorkerReferenceOccurrences": len(static_occurrences),
         "staticWorkerUniqueFiles": len(static_paths), "dynamicMediaFieldValues": len(dynamic_fields),
         "dynamicUniqueFiles": len(dynamic_paths), "directLocalRuntimeRequests": len(direct_hits),
-        "oldR2DevReferences": old_count, "doubleModulePrefix": double_count,
+        "retiredWorkerReferences": retired_count, "doubleModulePrefix": double_count,
         "fileUriReferences": file_count, "windowsAbsoluteRuntimePaths": windows_count,
-        "provenanceMediaFiles": len(provenance_paths), "provenanceWorkerResolved": len(provenance_paths),
+        "provenanceMediaFiles": len(provenance_paths), "provenanceExternalResolved": len(provenance_paths),
         "provenanceLocalRuntimeRequests": 0, "provenanceResolverChecks": provenance_checks,
     }
 
@@ -345,12 +345,38 @@ def binary_change_counts() -> dict[str, int]:
     return {"binaryAdditions": additions, "binaryModifications": modifications, "binaryDeletions": deletions}
 
 
+def historical_deletion_evidence() -> dict[str, Any]:
+    """Read the frozen deletion-day record strictly; it is history, never rewritten."""
+    record = load_json(VALIDATION_PATH)
+    required = {
+        "status": "PASS",
+        "module": "qinhan",
+        "frozenFiles": EXPECTED_FILES,
+        "frozenBytes": EXPECTED_BYTES,
+        "deletedFiles": EXPECTED_FILES,
+        "deletedBytes": EXPECTED_BYTES,
+        "binaryAdditions": 0,
+        "binaryModifications": 0,
+        "binaryDeletions": EXPECTED_FILES,
+    }
+    mismatches = [f"{key}={record.get(key)!r}" for key, expected in required.items() if record.get(key) != expected]
+    if mismatches:
+        raise ValidationError(f"historical deletion evidence mismatch: {'; '.join(mismatches)}")
+    return {
+        "files": int(record["deletedFiles"]),
+        "bytes": int(record["deletedBytes"]),
+        "binaryAdditions": int(record["binaryAdditions"]),
+        "binaryModifications": int(record["binaryModifications"]),
+        "binaryDeletions": int(record["binaryDeletions"]),
+    }
+
+
 def browser_payload(args: argparse.Namespace) -> dict[str, Any]:
     return {
         "status": args.browser_smoke, "detail": args.browser_detail,
         "consoleErrors": args.browser_console_errors, "consoleWarnings": args.browser_console_warnings,
         "provenanceMedia": args.browser_provenance_media, "provenanceMediaLoaded": args.browser_provenance_loaded,
-        "provenanceWorkerHttp": args.browser_provenance_http,
+        "provenanceExternalHttp": args.browser_provenance_http,
         "provenanceLocalRequests": args.browser_provenance_local_requests,
         "archiveDialogsChecked": args.browser_archive_dialogs, "archiveCardsChecked": args.browser_archive_cards,
         "thumbnailSwitch": args.browser_thumbnail_switch, "cropFullSwitch": args.browser_crop_full_switch,
@@ -368,9 +394,9 @@ def build_document(summary: dict[str, Any]) -> str:
 - Status: **{summary['status']}**
 - Current tree reduction: **{summary['deletedFiles']:,} local media files / {summary['deletedBytes']:,} bytes removed**
 - Frozen recovery manifest: `data/qinhan-externalized-media.json` ({summary['frozenFiles']:,} files / {summary['frozenBytes']:,} bytes)
-- Active Worker runtime remains: `{PUBLIC_BASE}`
-- Runtime coverage: **{summary['runtimeCoverage']:,}/{summary['frozenFiles']:,}**; direct local runtime requests **{summary['directLocalRuntimeRequests']}**; old `r2.dev` references **{summary['oldR2DevReferences']}**
-- Provenance Worker routing: **{summary['provenanceWorkerResolved']}/{summary['provenanceMediaFiles']}**; local provenance requests **{summary['provenanceLocalRuntimeRequests']}**
+- Current R2 runtime base: `{CURRENT_PUBLIC_BASE}`
+- Runtime coverage: **{summary['runtimeCoverage']:,}/{summary['frozenFiles']:,}**; direct local runtime requests **{summary['directLocalRuntimeRequests']}**; retired `workers.dev` references **{summary['retiredWorkerReferences']}**
+- Provenance external routing: **{summary['provenanceExternalResolved']}/{summary['provenanceMediaFiles']}**; local provenance requests **{summary['provenanceLocalRuntimeRequests']}**
 - Historical upload evidence: **{upload['status']}**, {upload['files']:,} files / {upload['bytes']:,} bytes; HTTP {upload['http']:,}; Content-Length {upload['contentLength']:,}; SHA256 samples {upload['sha256Samples']}; Cache-Control samples {upload['cacheControlSamples']}
 - Historical runtime evidence: routing **{runtime['runtimeRoutingStatus']}**, browser smoke **{runtime['browserSmoke'].get('status')}**; terminal Worker status was **{runtime.get('terminalNetworkStatus', 'BLOCKED')}**
 - Post-delete browser smoke: **{browser['status']}**; console errors **{browser['consoleErrors']}**; media failures **{browser['mediaFailures']}**; local media network requests **{browser['localNetworkMediaRequests']}**
@@ -414,35 +440,46 @@ def validate(args: argparse.Namespace) -> int:
     manifest = load_manifest()
     local = verify_local_set(manifest, expect_present=False)
     evidence = historical_worker_evidence()
+    deletion_evidence = historical_deletion_evidence()
     routing = runtime_routing(manifest)
     current = current_audit_state()
     binary = binary_change_counts()
     browser = browser_payload(args)
     if browser["status"] == "PASS" and (browser["consoleErrors"] or browser["mediaFailures"] or browser["localNetworkMediaRequests"]):
         raise ValidationError("browser smoke reported errors, media failures, or local requests")
-    if binary["binaryAdditions"] or binary["binaryModifications"] or binary["binaryDeletions"] != EXPECTED_FILES:
-        raise ValidationError(f"unexpected binary change counts: {binary}")
+    # Current worktree safety: a committed post-delete tree must hold no media
+    # binary changes at all. The 1099 deletions live in the historical record.
+    if binary["binaryAdditions"] or binary["binaryModifications"] or binary["binaryDeletions"]:
+        raise ValidationError(f"current worktree holds unexpected media binary changes: {binary}")
     summary: dict[str, Any] = {
         "status": "PASS", "module": "qinhan", "frozenFiles": EXPECTED_FILES, "frozenBytes": EXPECTED_BYTES,
         "preDeleteLocalExists": EXPECTED_FILES, "preDeleteSha256Verified": EXPECTED_FILES,
         "deletedFiles": EXPECTED_FILES - local["manifestFilesPresent"], "deletedBytes": EXPECTED_BYTES,
         "localCopiesPresent": local["manifestFilesPresent"], "runtimeCoverage": routing["runtimeCoverage"],
         "runtimeCoverageMissing": routing["runtimeCoverageMissing"], "runtimeCoverageExtra": routing["runtimeCoverageExtra"],
-        "directLocalRuntimeRequests": routing["directLocalRuntimeRequests"], "oldR2DevReferences": routing["oldR2DevReferences"],
-        "provenanceMediaFiles": routing["provenanceMediaFiles"], "provenanceWorkerResolved": routing["provenanceWorkerResolved"],
+        "directLocalRuntimeRequests": routing["directLocalRuntimeRequests"], "retiredWorkerReferences": routing["retiredWorkerReferences"],
+        "provenanceMediaFiles": routing["provenanceMediaFiles"], "provenanceExternalResolved": routing["provenanceExternalResolved"],
         "provenanceLocalRuntimeRequests": routing["provenanceLocalRuntimeRequests"], "browserSmoke": browser,
         "browserMediaFailures": browser["mediaFailures"], "localNetworkMediaRequests": browser["localNetworkMediaRequests"],
         "terminalWorkerNetwork": args.terminal_worker_network, "historicalWorkerVerification": evidence,
+        "historicalDeletionEvidence": deletion_evidence,
         **binary, **current,
     }
     if summary["deletedFiles"] != EXPECTED_FILES or summary["localCopiesPresent"] != 0:
         raise ValidationError("frozen Qin-Han local copies were not deleted exactly")
-    write_json(VALIDATION_PATH, summary)
-    DOC_PATH.parent.mkdir(parents=True, exist_ok=True)
-    DOC_PATH.write_text(build_document(summary), encoding="utf-8", newline="\n")
+    # --validate is read-only for tracked history: data/qinhan-externalized-media-validation.json
+    # and docs/QINHAN_MEDIA_EXTERNALIZED.md stay untouched. An optional untracked
+    # artifact may be requested with --output.
+    if args.output:
+        write_json(Path(args.output), summary)
     print("QINHAN_EXTERNALIZED=PASS")
-    for key in ("frozenFiles", "frozenBytes", "deletedFiles", "deletedBytes", "localCopiesPresent", "runtimeCoverage", "directLocalRuntimeRequests", "oldR2DevReferences", "provenanceWorkerResolved", "binaryAdditions", "binaryModifications", "binaryDeletions"):
+    for key in ("frozenFiles", "frozenBytes", "deletedFiles", "deletedBytes", "localCopiesPresent", "runtimeCoverage", "directLocalRuntimeRequests", "retiredWorkerReferences", "provenanceExternalResolved", "binaryAdditions", "binaryModifications", "binaryDeletions"):
         print(f"{key}={summary[key]}")
+    print(
+        "historicalDeletionEvidence="
+        f"{deletion_evidence['files']}/{deletion_evidence['bytes']}"
+        f" binary={deletion_evidence['binaryAdditions']}/{deletion_evidence['binaryModifications']}/{deletion_evidence['binaryDeletions']}"
+    )
     print(f"browserSmoke={browser['status']}")
     print(f"terminalWorkerNetwork={args.terminal_worker_network}")
     return 0
@@ -469,6 +506,12 @@ def main() -> int:
     parser.add_argument("--browser-media-failures", type=int, default=0)
     parser.add_argument("--local-network-media-requests", type=int, default=0)
     parser.add_argument("--terminal-worker-network", choices=("PASS", "BLOCKED"), default="BLOCKED")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=None,
+        help="optional untracked artifact path for the current validation summary (e.g. artifacts/qinhan-externalized-current-validation.json)",
+    )
     args = parser.parse_args()
     if args.freeze:
         return freeze()

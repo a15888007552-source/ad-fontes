@@ -28,8 +28,8 @@ PLAN_PATH = ROOT / "data" / "media-externalization-plan.json"
 SUMMARY_PATH = ROOT / "data" / "shaanxi-history-externalized-media-validation.json"
 DOC_PATH = ROOT / "docs" / "SHAANXI_HISTORY_MEDIA_EXTERNALIZED.md"
 MODULE_PREFIX = "modules/shaanxi-history/"
-PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
-LEGACY_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+CURRENT_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+RETIRED_WORKER_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
 EXPECTED_FILES = 807
 EXPECTED_BYTES = 385001226
 EXPECTED_REMAINING_FILES = 7
@@ -59,7 +59,7 @@ def media_category(path: str) -> str:
 
 def url_for(entry: dict[str, Any]) -> str:
     object_key = str(entry["objectKey"]).lstrip("/")
-    return f"{PUBLIC_BASE}/{object_key}"
+    return f"{CURRENT_PUBLIC_BASE}/{object_key}"
 
 
 def walk_strings(value: Any, key: str = "") -> list[tuple[str, str]]:
@@ -86,7 +86,7 @@ def parse_data_js(text: str) -> dict[str, Any]:
 
 
 def response_head_once(entry: dict[str, Any]) -> dict[str, Any]:
-    """Read one object's status, Content-Length, and cache header."""
+    """Read one object's status, Content-Length, and R2 delivery headers."""
 
     url = url_for(entry)
     request = Request(
@@ -102,7 +102,8 @@ def response_head_once(entry: dict[str, Any]) -> dict[str, Any]:
                 "length": int(response.headers["Content-Length"])
                 if response.headers.get("Content-Length")
                 else None,
-                "cacheControl": response.headers.get("Cache-Control", ""),
+                "acceptRanges": response.headers.get("Accept-Ranges", ""),
+                "etag": response.headers.get("ETag", ""),
                 "error": "",
             }
     except HTTPError as exc:
@@ -110,7 +111,8 @@ def response_head_once(entry: dict[str, Any]) -> dict[str, Any]:
             "path": entry["path"],
             "status": int(exc.code),
             "length": None,
-            "cacheControl": "",
+            "acceptRanges": "",
+            "etag": "",
             "error": f"HTTPError:{exc.code}",
         }
     except (URLError, TimeoutError, OSError) as exc:
@@ -118,7 +120,8 @@ def response_head_once(entry: dict[str, Any]) -> dict[str, Any]:
             "path": entry["path"],
             "status": getattr(exc, "code", None),
             "length": None,
-            "cacheControl": "",
+            "acceptRanges": "",
+            "etag": "",
             "error": type(exc).__name__,
         }
 
@@ -223,18 +226,26 @@ def sha256_get(entry: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
-def cache_control_samples(entries: list[dict[str, Any]]) -> tuple[int, list[dict[str, Any]]]:
+def delivery_samples(entries: list[dict[str, Any]]) -> tuple[int, list[dict[str, Any]]]:
+    """Sampled R2 delivery contract: HTTP 200 + accept-ranges=bytes + a non-empty ETag.
+
+    The public R2 host intentionally serves no per-object Cache-Control
+    header, so the Worker-era cache policy is no longer part of the
+    delivery contract.
+    """
     rows = sorted(entries, key=lambda item: str(item["objectKey"]))
     random.Random(SAMPLE_SEED + 1).shuffle(rows)
     rows = rows[:CACHE_SAMPLE_COUNT]
-    required = ("public", "max-age=86400", "stale-while-revalidate=604800")
     results: list[dict[str, Any]] = []
     for entry in rows:
         result: dict[str, Any] = {}
         for attempt in range(5):
             result = response_head_once(entry)
-            cache = str(result.get("cacheControl", "")).lower()
-            if result.get("status") == 200 and all(token in cache for token in required):
+            if (
+                result.get("status") == 200
+                and str(result.get("acceptRanges", "")).strip().lower() == "bytes"
+                and bool(str(result.get("etag", "")).strip())
+            ):
                 break
             if result.get("status") in {400, 401, 403, 404}:
                 break
@@ -245,10 +256,8 @@ def cache_control_samples(entries: list[dict[str, Any]]) -> tuple[int, list[dict
         1
         for result in results
         if result.get("status") == 200
-        and all(
-            token in str(result.get("cacheControl", "")).lower()
-            for token in required
-        )
+        and str(result.get("acceptRanges", "")).strip().lower() == "bytes"
+        and bool(str(result.get("etag", "")).strip())
     )
     return passed, results
 
@@ -301,21 +310,21 @@ def build_document(summary: dict[str, Any]) -> str:
     browser = summary["browserSmoke"]
     terminal = summary["terminalHttpSmoke"]
     samples = summary["sha256Samples"]
-    cache = summary["cacheControlSamples"]
+    cache = summary["deliverySamples"]
     return f"""# Shaanxi History externalized media
 
 - Status: **{summary['status']}**
 - Frozen manifest: **{summary['frozenManifestFiles']:,} files / {summary['frozenManifestBytes']:,} bytes**
-- Active Worker public base: `{summary['activePublicBase']}`
-- Worker HTTP: **{summary['workerHttpVerified']:,}/{summary['frozenManifestFiles']:,}**
+- Current R2 public base: `{summary['currentPublicBase']}`
+- External HTTP: **{summary['externalHttpVerified']:,}/{summary['frozenManifestFiles']:,}**
 - Content-Length: **{summary['contentLengthVerified']:,}/{summary['frozenManifestFiles']:,}**
 - SHA256 GET samples: **{samples['verified']:,}/{samples['selected']:,}** (`photos={samples['coverage']['photos']}`, `card-covers={samples['coverage']['card-covers']}`, `supplement={samples['coverage']['supplement']}`)
-- Cache-Control samples: **{cache['verified']:,}/{cache['selected']:,}**
+- R2 delivery samples (200 + accept-ranges + ETag): **{cache['verified']:,}/{cache['selected']:,}**
 - Local frozen copies present: **{summary['localCopiesPresent']}**
 - Remaining Shaanxi History local media: **{summary['remainingLocalMediaFiles']:,} files / {summary['remainingLocalMediaBytes']:,} bytes**
 - Current plan Shaanxi externalizable media: **{summary['currentPlanShaanxiFiles']:,} files / {summary['currentPlanShaanxiBytes']:,} bytes**
 - Direct local runtime requests for frozen media: **{summary['directLocalRuntimeRequests']}**
-- Runtime old `r2.dev` references: **{summary['runtimeOldR2DevReferences']}**
+- Runtime retired `workers.dev` references: **{summary['runtimeRetiredWorkerReferences']}**
 
 ## Deletion record
 
@@ -330,14 +339,14 @@ def build_document(summary: dict[str, Any]) -> str:
 ## Runtime and smoke checks
 
 - `data/shaanxi-history-externalized-media.json` is the permanent freeze source for the deleted objects.
-- `assets/...` data literals remain allowed because `assetFor()` and `shaanxiHistoryMediaUrl()` resolve them to the Worker.
+- `assets/...` data literals remain allowed because `assetFor()` and `shaanxiHistoryMediaUrl()` resolve them to the current R2 public base.
 - Terminal HTTP smoke: **{terminal['status']}** ({terminal['resourcesChecked']} resources checked).
 - Browser smoke: **{browser['status']}**{f' ({browser.get("detail", "")})' if browser.get("detail") else ''}
 
-Recommended Worker cache policy already verified on sampled responses:
+R2 delivery contract verified on sampled responses:
 
 ```text
-public, max-age=86400, stale-while-revalidate=604800
+HTTP 200 + Accept-Ranges: bytes + non-empty ETag
 ```
 """
 
@@ -379,7 +388,7 @@ def main() -> int:
         errors.append("frozen path/object key mismatch")
     if any(not path.startswith(MODULE_PREFIX) for path in manifest_paths):
         errors.append("frozen manifest path outside Shaanxi History module")
-    if manifest.get("activePublicBase") != PUBLIC_BASE:
+    if manifest.get("activePublicBase") != RETIRED_WORKER_BASE:
         errors.append("frozen manifest active base mismatch")
 
     local_present = [path for path in manifest_paths if repo_path(path).is_file()]
@@ -464,12 +473,12 @@ def main() -> int:
         errors.append(f"unknown data media paths: {len(unknown_data_assets)}")
 
     all_text = "\n".join(texts.values())
-    runtime_old_r2dev_references = len(re.findall(r"(?i)r2\.dev", all_text))
-    if runtime_old_r2dev_references:
-        errors.append(f"runtime old r2.dev references: {runtime_old_r2dev_references}")
-    runtime_worker_base_occurrences = all_text.count(PUBLIC_BASE)
-    if runtime_worker_base_occurrences == 0:
-        errors.append("active Worker base is absent from runtime files")
+    runtime_retired_worker_references = all_text.count(RETIRED_WORKER_BASE)
+    if runtime_retired_worker_references:
+        errors.append(f"runtime retired workers.dev references: {runtime_retired_worker_references}")
+    runtime_current_base_occurrences = all_text.count(CURRENT_PUBLIC_BASE)
+    if runtime_current_base_occurrences == 0:
+        errors.append("current R2 base is absent from runtime files")
     file_uri_pattern = re.compile(r"(?i)(?:[\"'(=]|(?:src|href)\s*=\s*[\"'])\s*file://")
     file_uri_count = len(file_uri_pattern.findall(all_text))
     if file_uri_count:
@@ -495,11 +504,11 @@ def main() -> int:
     if direct_local_hits:
         errors.append(f"direct local frozen-media hits: {len(direct_local_hits)}")
 
-    direct_worker_hits = sum(
-        texts.get(name, "").count(PUBLIC_BASE) for name in ("index", "styles")
+    direct_external_hits = sum(
+        texts.get(name, "").count(CURRENT_PUBLIC_BASE) for name in ("index", "styles")
     )
-    if direct_worker_hits == 0:
-        errors.append("no direct HTML/CSS Worker media URLs found")
+    if direct_external_hits == 0:
+        errors.append("no direct HTML/CSS external media URLs found")
 
     wrapper = texts.get("wrapper", "")
     app = texts.get("app", "")
@@ -549,9 +558,9 @@ def main() -> int:
         if result.get("status") != 200 or result.get("length") != int(entry["bytes"])
     ]
     if worker_http_verified != EXPECTED_FILES:
-        errors.append(f"Worker HTTP verified {worker_http_verified} != {EXPECTED_FILES}")
+        errors.append(f"external HTTP verified {worker_http_verified} != {EXPECTED_FILES}")
     if content_length_verified != EXPECTED_FILES:
-        errors.append(f"Worker Content-Length verified {content_length_verified} != {EXPECTED_FILES}")
+        errors.append(f"external Content-Length verified {content_length_verified} != {EXPECTED_FILES}")
 
     sample_records = select_samples(ordered_entries)
     with ThreadPoolExecutor(max_workers=8) as executor:
@@ -576,9 +585,9 @@ def main() -> int:
         if not sample_coverage.get(category):
             errors.append(f"SHA256 sample category missing: {category}")
 
-    cache_verified, cache_results = cache_control_samples(ordered_entries)
-    if cache_verified != CACHE_SAMPLE_COUNT:
-        errors.append(f"Cache-Control samples verified {cache_verified} != {CACHE_SAMPLE_COUNT}")
+    delivery_verified, delivery_results = delivery_samples(ordered_entries)
+    if delivery_verified != CACHE_SAMPLE_COUNT:
+        errors.append(f"R2 delivery samples verified {delivery_verified} != {CACHE_SAMPLE_COUNT}")
 
     if errors:
         print("EXTERNALIZED_VALIDATION=FAIL")
@@ -600,7 +609,7 @@ def main() -> int:
         "schemaVersion": 1,
         "status": "PASS",
         "module": "shaanxi-history",
-        "activePublicBase": PUBLIC_BASE,
+        "currentPublicBase": CURRENT_PUBLIC_BASE,
         "frozenManifest": MANIFEST_PATH.relative_to(ROOT).as_posix(),
         "frozenManifestFiles": EXPECTED_FILES,
         "frozenManifestBytes": EXPECTED_BYTES,
@@ -615,10 +624,10 @@ def main() -> int:
         "remainingLocalMediaBytes": remaining_bytes,
         "currentPlanShaanxiFiles": len(current_plan_paths),
         "currentPlanShaanxiBytes": current_plan_bytes,
-        "workerHttpVerified": worker_http_verified,
+        "externalHttpVerified": worker_http_verified,
         "contentLengthVerified": content_length_verified,
-        "worker404Failures": worker_404_failures,
-        "worker5xxFailures": worker_5xx_failures,
+        "external404Failures": worker_404_failures,
+        "external5xxFailures": worker_5xx_failures,
         "sha256Samples": {
             "selected": len(sample_records),
             "verified": sha256_samples_verified,
@@ -628,18 +637,18 @@ def main() -> int:
                 "supplement": sample_coverage.get("supplement", 0),
             },
         },
-        "cacheControlSamples": {
+        "deliverySamples": {
             "selected": CACHE_SAMPLE_COUNT,
-            "verified": cache_verified,
-            "required": "public, max-age=86400, stale-while-revalidate=604800",
+            "verified": delivery_verified,
+            "required": "HTTP 200 + accept-ranges=bytes + non-empty ETag",
         },
-        "runtimeWorkerBaseOccurrences": runtime_worker_base_occurrences,
-        "runtimeOldR2DevReferences": runtime_old_r2dev_references,
+        "runtimeCurrentBaseOccurrences": runtime_current_base_occurrences,
+        "runtimeRetiredWorkerReferences": runtime_retired_worker_references,
         "directLocalRuntimeRequests": len(direct_local_hits),
         "fileUriCount": file_uri_count,
         "windowsAbsoluteMediaPathCount": windows_absolute_count,
         "doubleModulePrefixCount": double_prefix_count,
-        "directWorkerReferences": direct_worker_hits,
+        "directExternalReferences": direct_external_hits,
         "dataMediaLiteralsThroughResolver": len(data_asset_literals),
         "mediaBySubdirectory": category_stats,
         "mediaFilesDeleted": EXPECTED_FILES,
@@ -659,11 +668,11 @@ def main() -> int:
     print(f"FROZEN_MANIFEST={EXPECTED_FILES}/{EXPECTED_BYTES}")
     print(f"LOCAL_COPIES_PRESENT={len(local_present)}")
     print(f"REMAINING_LOCAL_MEDIA={len(remaining_media)}/{remaining_bytes}")
-    print(f"WORKER_HTTP={worker_http_verified}/{EXPECTED_FILES}")
+    print(f"EXTERNAL_HTTP={worker_http_verified}/{EXPECTED_FILES}")
     print(f"CONTENT_LENGTH={content_length_verified}/{EXPECTED_FILES}")
     print(f"SHA256_SAMPLES={sha256_samples_verified}/{len(sample_records)}")
-    print(f"CACHE_CONTROL_SAMPLES={cache_verified}/{CACHE_SAMPLE_COUNT}")
-    print(f"RUNTIME_OLD_R2DEV={runtime_old_r2dev_references}")
+    print(f"DELIVERY_SAMPLES={delivery_verified}/{CACHE_SAMPLE_COUNT}")
+    print(f"RUNTIME_RETIRED_WORKER={runtime_retired_worker_references}")
     print(f"DIRECT_LOCAL_RUNTIME={len(direct_local_hits)}")
     print(f"REPORTS_WRITTEN={SUMMARY_PATH.name},{DOC_PATH.name}")
     return 0

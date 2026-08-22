@@ -1,0 +1,62 @@
+name: Qin-Han browser smoke
+
+on:
+  pull_request:
+    paths:
+      - "modules/qinhan/**"
+      - "shared/js/media-url.js"
+      - "assets/editorial/provenance-trails.js"
+      - "scripts/smoke_qinhan_browser.py"
+      - "scripts/validate_qinhan_r2.py"
+      - "scripts/validate_qinhan_externalized.py"
+      - ".github/workflows/qinhan-browser-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Playwright
+        run: python -m pip install --upgrade pip playwright
+
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Start local HTTP server
+        shell: bash
+        run: |
+          python -m http.server 8765 > /tmp/qinhan-http.log 2>&1 &
+          echo $! > /tmp/qinhan-http.pid
+          for attempt in {1..30}; do
+            if curl --silent --show-error --fail http://127.0.0.1:8765/modules/qinhan/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/qinhan-http.log
+          exit 1
+
+      - name: Run browser and network smoke
+        run: |
+          python scripts/smoke_qinhan_browser.py \
+            --output artifacts/qinhan-browser-smoke.json
+
+      - name: Upload smoke artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qinhan-browser-smoke
+          path: artifacts
+          if-no-files-found: warn
