@@ -1,9 +1,9 @@
 # MEDIA AUDIT
 
-- Media files: **4,388**
-- Total media size: **680,518,818 bytes (648.99 MiB)**
-- Referenced media: **2,307**
-- Suspected orphan media: **2,081** / **341,022,702 bytes (325.22 MiB)**; nothing was deleted.
+- Media files: **5,449**
+- Total media size: **783,543,452 bytes (747.25 MiB)**
+- Referenced media: **2,905**
+- Suspected orphan media: **2,544** / **392,203,338 bytes (374.03 MiB)**; nothing was deleted.
 - Embedded image data URIs: **120** / **3,809,658 approximate bytes (3.63 MiB)**
 - Embedded data URIs over 100 KiB: **1** / **139,896 approximate bytes**
 
@@ -11,9 +11,9 @@
 
 | Extension | Files | Bytes |
 |---|---:|---:|
-| `.webp` | 1,600 | 352,806,882 |
-| `.jpg` | 2,566 | 276,378,836 |
-| `.png` | 219 | 51,332,275 |
+| `.jpg` | 3,620 | 378,803,203 |
+| `.webp` | 1,606 | 353,373,582 |
+| `.png` | 220 | 51,365,842 |
 | `.svg` | 3 | 825 |
 
 ## By module
@@ -22,12 +22,12 @@
 |---|---:|---:|
 | `global` | 2,280 | 324,326,202 |
 | `xian-museum` | 207 | 130,144,476 |
+| `shaanxi-archaeology-museum` | 1,073 | 107,046,047 |
 | `europa` | 501 | 100,590,362 |
 | `baoji` | 772 | 89,640,138 |
 | `proceedings` | 589 | 15,770,040 |
 | `museum-atlas` | 10 | 8,683,186 |
 | `shaanxi-history` | 7 | 5,817,325 |
-| `shaanxi-archaeology-museum` | 12 | 4,021,413 |
 | `theory` | 9 | 1,492,768 |
 | `beilin` | 1 | 32,908 |
 
@@ -35,7 +35,7 @@
 
 | Directory | Files (recursive) | Bytes (recursive) |
 |---|---:|---:|
-| `modules` | 2,108 | 356,192,616 |
+| `modules` | 3,169 | 459,217,250 |
 | `assets` | 2,251 | 314,056,911 |
 | `assets/photos` | 2,227 | 295,577,744 |
 | `assets/photos/large` | 445 | 156,298,500 |
@@ -43,11 +43,15 @@
 | `modules/xian-museum/assets` | 207 | 130,144,476 |
 | `assets/photos/web` | 891 | 130,091,678 |
 | `modules/xian-museum/assets/photos` | 197 | 127,363,932 |
+| `modules/shaanxi-archaeology-museum` | 1,073 | 107,046,047 |
 | `modules/europa` | 501 | 100,590,362 |
 | `modules/europa/assets` | 499 | 97,688,117 |
+| `modules/shaanxi-archaeology-museum/assets` | 1,051 | 96,950,853 |
+| `modules/shaanxi-archaeology-museum/assets/photos` | 1,042 | 96,146,186 |
 | `modules/europa/assets/city` | 310 | 89,923,511 |
 | `modules/baoji` | 772 | 89,640,138 |
 | `modules/baoji/assets` | 772 | 89,640,138 |
+| `modules/shaanxi-archaeology-museum/assets/photos/web` | 521 | 88,124,514 |
 | `modules/baoji/assets/photos` | 758 | 81,108,216 |
 | `modules/baoji/assets/photos/web` | 365 | 69,923,293 |
 | `modules/europa/assets/city/huaxia` | 99 | 40,169,800 |
@@ -61,10 +65,6 @@
 | `modules/museum-atlas` | 10 | 8,683,186 |
 | `modules/museum-atlas/assets` | 10 | 8,683,186 |
 | `guobo-museum/assets/generated` | 3 | 8,636,038 |
-| `modules/europa/assets/img` | 189 | 7,764,606 |
-| `modules/baoji/assets/generated` | 7 | 6,399,826 |
-| `modules/baoji/assets/photos/thumbs` | 365 | 5,992,498 |
-| `modules/shaanxi-history` | 7 | 5,817,325 |
 
 ## Largest 30 media files
 
@@ -232,8 +232,8 @@ Roles use extension, byte size, and path/reference metadata only; no dimensions,
 
 | Role | File count |
 |---|---:|
-| `thumb` candidate | 4,388 |
-| `display` candidate | 4,388 |
+| `thumb` candidate | 5,449 |
+| `display` candidate | 5,449 |
 | `original` candidate | 45 |
 
 ## Git storage candidates
@@ -251,7 +251,7 @@ Files are flagged for review when they are >= 10.00 MiB, duplicate-content membe
 
 ## Priority directories
 
-1. `modules` — 2,108 files, 356,192,616 bytes (339.69 MiB).
+1. `modules` — 3,169 files, 459,217,250 bytes (437.94 MiB).
 2. `assets` — 2,251 files, 314,056,911 bytes (299.51 MiB).
 3. `assets/photos` — 2,227 files, 295,577,744 bytes (281.88 MiB).
 4. `assets/photos/large` — 445 files, 156,298,500 bytes (149.06 MiB).
