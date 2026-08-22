@@ -345,12 +345,38 @@ def binary_change_counts() -> dict[str, int]:
     return {"binaryAdditions": additions, "binaryModifications": modifications, "binaryDeletions": deletions}
 
 
+def historical_deletion_evidence() -> dict[str, Any]:
+    """Read the frozen deletion-day record strictly; it is history, never rewritten."""
+    record = load_json(VALIDATION_PATH)
+    required = {
+        "status": "PASS",
+        "module": "qinhan",
+        "frozenFiles": EXPECTED_FILES,
+        "frozenBytes": EXPECTED_BYTES,
+        "deletedFiles": EXPECTED_FILES,
+        "deletedBytes": EXPECTED_BYTES,
+        "binaryAdditions": 0,
+        "binaryModifications": 0,
+        "binaryDeletions": EXPECTED_FILES,
+    }
+    mismatches = [f"{key}={record.get(key)!r}" for key, expected in required.items() if record.get(key) != expected]
+    if mismatches:
+        raise ValidationError(f"historical deletion evidence mismatch: {'; '.join(mismatches)}")
+    return {
+        "files": int(record["deletedFiles"]),
+        "bytes": int(record["deletedBytes"]),
+        "binaryAdditions": int(record["binaryAdditions"]),
+        "binaryModifications": int(record["binaryModifications"]),
+        "binaryDeletions": int(record["binaryDeletions"]),
+    }
+
+
 def browser_payload(args: argparse.Namespace) -> dict[str, Any]:
     return {
         "status": args.browser_smoke, "detail": args.browser_detail,
         "consoleErrors": args.browser_console_errors, "consoleWarnings": args.browser_console_warnings,
         "provenanceMedia": args.browser_provenance_media, "provenanceMediaLoaded": args.browser_provenance_loaded,
-        "provenanceWorkerHttp": args.browser_provenance_http,
+        "provenanceExternalHttp": args.browser_provenance_http,
         "provenanceLocalRequests": args.browser_provenance_local_requests,
         "archiveDialogsChecked": args.browser_archive_dialogs, "archiveCardsChecked": args.browser_archive_cards,
         "thumbnailSwitch": args.browser_thumbnail_switch, "cropFullSwitch": args.browser_crop_full_switch,
@@ -414,14 +440,17 @@ def validate(args: argparse.Namespace) -> int:
     manifest = load_manifest()
     local = verify_local_set(manifest, expect_present=False)
     evidence = historical_worker_evidence()
+    deletion_evidence = historical_deletion_evidence()
     routing = runtime_routing(manifest)
     current = current_audit_state()
     binary = binary_change_counts()
     browser = browser_payload(args)
     if browser["status"] == "PASS" and (browser["consoleErrors"] or browser["mediaFailures"] or browser["localNetworkMediaRequests"]):
         raise ValidationError("browser smoke reported errors, media failures, or local requests")
-    if binary["binaryAdditions"] or binary["binaryModifications"] or binary["binaryDeletions"] != EXPECTED_FILES:
-        raise ValidationError(f"unexpected binary change counts: {binary}")
+    # Current worktree safety: a committed post-delete tree must hold no media
+    # binary changes at all. The 1099 deletions live in the historical record.
+    if binary["binaryAdditions"] or binary["binaryModifications"] or binary["binaryDeletions"]:
+        raise ValidationError(f"current worktree holds unexpected media binary changes: {binary}")
     summary: dict[str, Any] = {
         "status": "PASS", "module": "qinhan", "frozenFiles": EXPECTED_FILES, "frozenBytes": EXPECTED_BYTES,
         "preDeleteLocalExists": EXPECTED_FILES, "preDeleteSha256Verified": EXPECTED_FILES,
@@ -433,16 +462,24 @@ def validate(args: argparse.Namespace) -> int:
         "provenanceLocalRuntimeRequests": routing["provenanceLocalRuntimeRequests"], "browserSmoke": browser,
         "browserMediaFailures": browser["mediaFailures"], "localNetworkMediaRequests": browser["localNetworkMediaRequests"],
         "terminalWorkerNetwork": args.terminal_worker_network, "historicalWorkerVerification": evidence,
+        "historicalDeletionEvidence": deletion_evidence,
         **binary, **current,
     }
     if summary["deletedFiles"] != EXPECTED_FILES or summary["localCopiesPresent"] != 0:
         raise ValidationError("frozen Qin-Han local copies were not deleted exactly")
-    write_json(VALIDATION_PATH, summary)
-    DOC_PATH.parent.mkdir(parents=True, exist_ok=True)
-    DOC_PATH.write_text(build_document(summary), encoding="utf-8", newline="\n")
+    # --validate is read-only for tracked history: data/qinhan-externalized-media-validation.json
+    # and docs/QINHAN_MEDIA_EXTERNALIZED.md stay untouched. An optional untracked
+    # artifact may be requested with --output.
+    if args.output:
+        write_json(Path(args.output), summary)
     print("QINHAN_EXTERNALIZED=PASS")
     for key in ("frozenFiles", "frozenBytes", "deletedFiles", "deletedBytes", "localCopiesPresent", "runtimeCoverage", "directLocalRuntimeRequests", "retiredWorkerReferences", "provenanceExternalResolved", "binaryAdditions", "binaryModifications", "binaryDeletions"):
         print(f"{key}={summary[key]}")
+    print(
+        "historicalDeletionEvidence="
+        f"{deletion_evidence['files']}/{deletion_evidence['bytes']}"
+        f" binary={deletion_evidence['binaryAdditions']}/{deletion_evidence['binaryModifications']}/{deletion_evidence['binaryDeletions']}"
+    )
     print(f"browserSmoke={browser['status']}")
     print(f"terminalWorkerNetwork={args.terminal_worker_network}")
     return 0
@@ -469,6 +506,12 @@ def main() -> int:
     parser.add_argument("--browser-media-failures", type=int, default=0)
     parser.add_argument("--local-network-media-requests", type=int, default=0)
     parser.add_argument("--terminal-worker-network", choices=("PASS", "BLOCKED"), default="BLOCKED")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=None,
+        help="optional untracked artifact path for the current validation summary (e.g. artifacts/qinhan-externalized-current-validation.json)",
+    )
     args = parser.parse_args()
     if args.freeze:
         return freeze()
