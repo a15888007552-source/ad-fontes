@@ -473,7 +473,28 @@ runSection("deep-links", deepLinkQa);
 runSection("return-to-atlas", atlasReturnLinksQa);
 runSection("local-resources", localResourcesQa);
 runSection("externalized-worker-routing", externalizedRuntimeQa);
+function validatorSemanticsQa() {
+  const validators = [
+    "scripts/validate_qinhan_r2.py",
+    "scripts/validate_qinhan_externalized.py",
+    "scripts/validate_shaanxi_history_r2.py",
+  ];
+  const currentBase = MEDIA_ORIGIN.replace(/^https:\/\//, "");
+  const retiredBase = RETIRED_WORKER_ORIGIN.replace(/^https:\/\//, "");
+  for (const validator of validators) {
+    const source = readRepo(validator);
+    assert(source.includes(currentBase), `${validator} must run live media checks against the current R2 public base`);
+    assert(source.includes(retiredBase), `${validator} must scope the retired workers.dev host explicitly`);
+    for (const line of source.split("\n")) {
+      if (/r2\.dev/.test(line) && /(legacy|retired|old)/i.test(line)) {
+        fail(`${validator} describes the R2 public base as legacy/old/retired: ${line.trim().slice(0, 80)}`);
+      }
+    }
+  }
+}
+
 runSection("runtime-safety", runtimeSafetyQa);
+runSection("validator-semantics", validatorSemanticsQa);
 runSection("javascript-syntax", javascriptSyntaxQa);
 
 if (failures.length === 0) {

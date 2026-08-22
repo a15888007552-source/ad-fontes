@@ -36,8 +36,8 @@ RUNTIME_PATH = ROOT / "data" / "qinhan-r2-runtime-verification.json"
 INVENTORY_PATH = ROOT / "data" / "media-inventory.json"
 AUDIT_SUMMARY_PATH = ROOT / "data" / "media-audit-summary.json"
 ARCHIVE_PATH = MODULE_ROOT / "data" / "archive.json"
-PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
-LEGACY_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+CURRENT_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+RETIRED_WORKER_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
 EXPECTED_FILES = 1099
 EXPECTED_BYTES = 199_500_311
 EXPECTED_PROVENANCE_FILES = 4
@@ -152,7 +152,7 @@ def manifest_payload(objects: list[dict[str, Any]]) -> dict[str, Any]:
         "module": "qinhan",
         "files": len(objects),
         "bytes": sum(item["bytes"] for item in objects),
-        "publicBase": PUBLIC_BASE,
+        "publicBase": RETIRED_WORKER_BASE,
         "sourcePlan": "data/media-externalization-plan.json",
         "generatedAt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "objects": objects,
@@ -168,7 +168,7 @@ def load_manifest() -> dict[str, Any]:
         or manifest.get("module") != "qinhan"
         or manifest.get("files") != EXPECTED_FILES
         or manifest.get("bytes") != EXPECTED_BYTES
-        or manifest.get("publicBase") != PUBLIC_BASE
+        or manifest.get("publicBase") != RETIRED_WORKER_BASE
         or not isinstance(objects, list)
         or len(objects) != EXPECTED_FILES
     ):
@@ -261,7 +261,7 @@ def historical_worker_evidence() -> dict[str, Any]:
 def runtime_routing(manifest: dict[str, Any]) -> dict[str, Any]:
     frozen = {item["path"] for item in manifest["objects"]}
     texts = runtime_validator.runtime_texts()
-    static_occurrences, static_paths = runtime_validator.static_worker_paths(texts)
+    static_occurrences, static_paths = runtime_validator.static_external_paths(texts)
     dynamic_fields, dynamic_paths = runtime_validator.archive_media_fields(load_json(ARCHIVE_PATH))
     provenance_text = texts.get("assets/editorial/provenance-trails.js", "")
     provenance_paths = runtime_validator.provenance_media_paths(provenance_text)
@@ -277,13 +277,13 @@ def runtime_routing(manifest: dict[str, Any]) -> dict[str, Any]:
         raise ValidationError(f"provenance resolver checks failed: {provenance_checks}")
     direct_hits = runtime_validator.direct_local_runtime_hits(texts, frozen)
     runtime_text = "\n".join(texts.get(name, "") for name in sorted(RUNTIME_FILE_NAMES)) + "\n" + provenance_text
-    old_count = runtime_text.count(LEGACY_PUBLIC_BASE)
+    retired_count = runtime_text.count(RETIRED_WORKER_BASE)
     file_count = len(re.findall(r"(?i)\bfile://", runtime_text))
     windows_count = len(WINDOWS_ABSOLUTE_RE.findall(runtime_text))
     double_count = runtime_text.count("modules/qinhan/modules/qinhan/")
-    if PUBLIC_BASE not in runtime_text or old_count or file_count or windows_count or double_count or direct_hits:
+    if CURRENT_PUBLIC_BASE not in runtime_text or retired_count or file_count or windows_count or double_count or direct_hits:
         raise ValidationError(
-            f"runtime path failure worker={PUBLIC_BASE in runtime_text} old={old_count} file={file_count} "
+            f"runtime path failure current={CURRENT_PUBLIC_BASE in runtime_text} retired={retired_count} file={file_count} "
             f"windows={windows_count} double={double_count} direct={direct_hits[:3]}"
         )
     if not provenance_checks.get("qinhanUsesMediaResolver") or not provenance_checks.get("qinhanResolverCall"):
@@ -293,9 +293,9 @@ def runtime_routing(manifest: dict[str, Any]) -> dict[str, Any]:
         "runtimeCoverageExtra": extra, "staticWorkerReferenceOccurrences": len(static_occurrences),
         "staticWorkerUniqueFiles": len(static_paths), "dynamicMediaFieldValues": len(dynamic_fields),
         "dynamicUniqueFiles": len(dynamic_paths), "directLocalRuntimeRequests": len(direct_hits),
-        "oldR2DevReferences": old_count, "doubleModulePrefix": double_count,
+        "retiredWorkerReferences": retired_count, "doubleModulePrefix": double_count,
         "fileUriReferences": file_count, "windowsAbsoluteRuntimePaths": windows_count,
-        "provenanceMediaFiles": len(provenance_paths), "provenanceWorkerResolved": len(provenance_paths),
+        "provenanceMediaFiles": len(provenance_paths), "provenanceExternalResolved": len(provenance_paths),
         "provenanceLocalRuntimeRequests": 0, "provenanceResolverChecks": provenance_checks,
     }
 
@@ -368,9 +368,9 @@ def build_document(summary: dict[str, Any]) -> str:
 - Status: **{summary['status']}**
 - Current tree reduction: **{summary['deletedFiles']:,} local media files / {summary['deletedBytes']:,} bytes removed**
 - Frozen recovery manifest: `data/qinhan-externalized-media.json` ({summary['frozenFiles']:,} files / {summary['frozenBytes']:,} bytes)
-- Active Worker runtime remains: `{PUBLIC_BASE}`
-- Runtime coverage: **{summary['runtimeCoverage']:,}/{summary['frozenFiles']:,}**; direct local runtime requests **{summary['directLocalRuntimeRequests']}**; old `r2.dev` references **{summary['oldR2DevReferences']}**
-- Provenance Worker routing: **{summary['provenanceWorkerResolved']}/{summary['provenanceMediaFiles']}**; local provenance requests **{summary['provenanceLocalRuntimeRequests']}**
+- Current R2 runtime base: `{CURRENT_PUBLIC_BASE}`
+- Runtime coverage: **{summary['runtimeCoverage']:,}/{summary['frozenFiles']:,}**; direct local runtime requests **{summary['directLocalRuntimeRequests']}**; retired `workers.dev` references **{summary['retiredWorkerReferences']}**
+- Provenance external routing: **{summary['provenanceExternalResolved']}/{summary['provenanceMediaFiles']}**; local provenance requests **{summary['provenanceLocalRuntimeRequests']}**
 - Historical upload evidence: **{upload['status']}**, {upload['files']:,} files / {upload['bytes']:,} bytes; HTTP {upload['http']:,}; Content-Length {upload['contentLength']:,}; SHA256 samples {upload['sha256Samples']}; Cache-Control samples {upload['cacheControlSamples']}
 - Historical runtime evidence: routing **{runtime['runtimeRoutingStatus']}**, browser smoke **{runtime['browserSmoke'].get('status')}**; terminal Worker status was **{runtime.get('terminalNetworkStatus', 'BLOCKED')}**
 - Post-delete browser smoke: **{browser['status']}**; console errors **{browser['consoleErrors']}**; media failures **{browser['mediaFailures']}**; local media network requests **{browser['localNetworkMediaRequests']}**
@@ -428,8 +428,8 @@ def validate(args: argparse.Namespace) -> int:
         "deletedFiles": EXPECTED_FILES - local["manifestFilesPresent"], "deletedBytes": EXPECTED_BYTES,
         "localCopiesPresent": local["manifestFilesPresent"], "runtimeCoverage": routing["runtimeCoverage"],
         "runtimeCoverageMissing": routing["runtimeCoverageMissing"], "runtimeCoverageExtra": routing["runtimeCoverageExtra"],
-        "directLocalRuntimeRequests": routing["directLocalRuntimeRequests"], "oldR2DevReferences": routing["oldR2DevReferences"],
-        "provenanceMediaFiles": routing["provenanceMediaFiles"], "provenanceWorkerResolved": routing["provenanceWorkerResolved"],
+        "directLocalRuntimeRequests": routing["directLocalRuntimeRequests"], "retiredWorkerReferences": routing["retiredWorkerReferences"],
+        "provenanceMediaFiles": routing["provenanceMediaFiles"], "provenanceExternalResolved": routing["provenanceExternalResolved"],
         "provenanceLocalRuntimeRequests": routing["provenanceLocalRuntimeRequests"], "browserSmoke": browser,
         "browserMediaFailures": browser["mediaFailures"], "localNetworkMediaRequests": browser["localNetworkMediaRequests"],
         "terminalWorkerNetwork": args.terminal_worker_network, "historicalWorkerVerification": evidence,
@@ -441,7 +441,7 @@ def validate(args: argparse.Namespace) -> int:
     DOC_PATH.parent.mkdir(parents=True, exist_ok=True)
     DOC_PATH.write_text(build_document(summary), encoding="utf-8", newline="\n")
     print("QINHAN_EXTERNALIZED=PASS")
-    for key in ("frozenFiles", "frozenBytes", "deletedFiles", "deletedBytes", "localCopiesPresent", "runtimeCoverage", "directLocalRuntimeRequests", "oldR2DevReferences", "provenanceWorkerResolved", "binaryAdditions", "binaryModifications", "binaryDeletions"):
+    for key in ("frozenFiles", "frozenBytes", "deletedFiles", "deletedBytes", "localCopiesPresent", "runtimeCoverage", "directLocalRuntimeRequests", "retiredWorkerReferences", "provenanceExternalResolved", "binaryAdditions", "binaryModifications", "binaryDeletions"):
         print(f"{key}={summary[key]}")
     print(f"browserSmoke={browser['status']}")
     print(f"terminalWorkerNetwork={args.terminal_worker_network}")

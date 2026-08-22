@@ -37,8 +37,8 @@ UPLOAD_SUMMARY_PATH = ROOT / "data" / "qinhan-r2-upload-verification.json"
 PROVENANCE_PATH = ROOT / "assets" / "editorial" / "provenance-trails.js"
 MODULE_ROOT = ROOT / "modules" / "qinhan"
 MODULE_PREFIX = "modules/qinhan/"
-PUBLIC_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
-LEGACY_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+CURRENT_PUBLIC_BASE = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
+RETIRED_WORKER_BASE = "https://ad-fontes-media.gusgumee777.workers.dev"
 EXPECTED_FILES = 1099
 EXPECTED_BYTES = 199500311
 EXPECTED_PROVENANCE_FILES = 4
@@ -62,8 +62,8 @@ RUNTIME_REQUEST_FILES = {
     "media-url.js",
     "seal-viewer.js",
 }
-WORKER_URL_RE = re.compile(
-    re.escape(PUBLIC_BASE) + r"/modules/qinhan/[^\"'\s)<>]+"
+EXTERNAL_URL_RE = re.compile(
+    re.escape(CURRENT_PUBLIC_BASE) + r"/modules/qinhan/[^\"'\s)<>]+"
 )
 ABSOLUTE_PATH_RE = re.compile(r"(?i)(?<![a-z0-9])[a-z]:[\\/]")
 FILE_URI_RE = re.compile(r"(?i)\bfile://")
@@ -205,15 +205,15 @@ def archive_media_fields(archive: dict[str, Any]) -> tuple[list[dict[str, str]],
     return fields, paths
 
 
-def worker_url(path: str) -> str:
-    return f"{PUBLIC_BASE}/{path.lstrip('/')}"
+def external_url(path: str) -> str:
+    return f"{CURRENT_PUBLIC_BASE}/{path.lstrip('/')}"
 
 
-def static_worker_paths(texts: dict[str, str]) -> tuple[list[str], set[str]]:
+def static_external_paths(texts: dict[str, str]) -> tuple[list[str], set[str]]:
     occurrences: list[str] = []
     paths: set[str] = set()
     for name in ("index.html", "styles.css", "motion.css"):
-        for match in WORKER_URL_RE.finditer(texts.get(name, "")):
+        for match in EXTERNAL_URL_RE.finditer(texts.get(name, "")):
             url = match.group(0)
             occurrences.append(url)
             path = urlsplit(url).path.lstrip("/")
@@ -221,14 +221,14 @@ def static_worker_paths(texts: dict[str, str]) -> tuple[list[str], set[str]]:
     return occurrences, paths
 
 
-def strip_worker_urls(text: str) -> str:
-    return WORKER_URL_RE.sub("", text)
+def strip_external_urls(text: str) -> str:
+    return EXTERNAL_URL_RE.sub("", text)
 
 
 def direct_local_runtime_hits(texts: dict[str, str], plan_paths: set[str]) -> list[dict[str, str]]:
     hits: list[dict[str, str]] = []
     for name in sorted(RUNTIME_REQUEST_FILES):
-        text = strip_worker_urls(texts.get(name, ""))
+        text = strip_external_urls(texts.get(name, ""))
         for path in sorted(plan_paths):
             local_path = path[len(MODULE_PREFIX):] if path.startswith(MODULE_PREFIX) else path
             if local_path in text or f"./{local_path}" in text:
@@ -238,7 +238,7 @@ def direct_local_runtime_hits(texts: dict[str, str], plan_paths: set[str]) -> li
 
 def response_head_once(entry: dict[str, Any]) -> dict[str, Any]:
     request = Request(
-        worker_url(str(entry["path"])),
+        external_url(str(entry["path"])),
         method="HEAD",
         headers={"User-Agent": USER_AGENT, "Accept": "*/*"},
     )
@@ -249,13 +249,14 @@ def response_head_once(entry: dict[str, Any]) -> dict[str, Any]:
                 "path": entry["path"],
                 "status": int(getattr(response, "status", 200)),
                 "length": int(length) if length else None,
-                "cacheControl": response.headers.get("Cache-Control", ""),
+                "acceptRanges": response.headers.get("Accept-Ranges", ""),
+                "etag": response.headers.get("ETag", ""),
                 "error": "",
             }
     except HTTPError as exc:
-        return {"path": entry["path"], "status": int(exc.code), "length": None, "cacheControl": "", "error": f"HTTPError:{exc.code}"}
+        return {"path": entry["path"], "status": int(exc.code), "length": None, "acceptRanges": "", "etag": "", "error": f"HTTPError:{exc.code}"}
     except (URLError, TimeoutError, OSError) as exc:
-        return {"path": entry["path"], "status": getattr(exc, "code", None), "length": None, "cacheControl": "", "error": type(exc).__name__}
+        return {"path": entry["path"], "status": getattr(exc, "code", None), "length": None, "acceptRanges": "", "etag": "", "error": type(exc).__name__}
 
 
 def response_head(entry: dict[str, Any]) -> dict[str, Any]:
@@ -297,7 +298,7 @@ def sample_entries(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 def sha256_get_once(entry: dict[str, Any]) -> dict[str, Any]:
     request = Request(
-        worker_url(str(entry["path"])),
+        external_url(str(entry["path"])),
         method="GET",
         headers={"User-Agent": USER_AGENT, "Accept": "*/*"},
     )
@@ -381,32 +382,32 @@ def browser_smoke_payload(args: argparse.Namespace) -> dict[str, Any]:
 
 def build_document(summary: dict[str, Any]) -> str:
     samples = summary["sha256Samples"]
-    cache = summary["cacheControlSamples"]
+    cache = summary["deliverySamples"]
     terminal = summary["terminalHttpSmoke"]
     browser = summary["browserSmoke"]
     baseline = summary.get("previousUploadVerification") or {}
     return f"""# Qin-Han R2 runtime
 
 - Status: **{summary['status']}**
-- Active Worker public base: `{summary['activePublicBase']}`
+- Current R2 public base: `{summary['currentPublicBase']}`
 - Frozen plan: **{summary['plannedFiles']:,} files / {summary['plannedBytes']:,} bytes**
 - Local Qin-Han media retained: **{summary['localMediaFiles']:,} files / {summary['localMediaBytes']:,} bytes**
-- Static Worker media references: **{summary['staticWorkerUniqueFiles']:,} files / {summary['staticWorkerReferenceOccurrences']:,} occurrences**
+- Static external media references: **{summary['staticWorkerUniqueFiles']:,} files / {summary['staticWorkerReferenceOccurrences']:,} occurrences**
 - Dynamic archive media fields: **{summary['dynamicMediaFieldValues']:,} values / {summary['dynamicUniqueFiles']:,} unique files**
-- Provenance Qin-Han media: **{summary['provenanceMediaFiles']:,} files**; Worker-resolved **{summary['provenanceWorkerResolved']:,}/{summary['provenanceMediaFiles']:,}**; local requests **{summary['provenanceLocalRuntimeRequests']}**
+- Provenance Qin-Han media: **{summary['provenanceMediaFiles']:,} files**; External-resolved **{summary['provenanceExternalResolved']:,}/{summary['provenanceMediaFiles']:,}**; local requests **{summary['provenanceLocalRuntimeRequests']}**
 - Runtime routing: **{summary['runtimeRoutingStatus']}** (static + dynamic archive + provenance resolver)
 - Runtime coverage: **{summary['totalUniqueRuntimeMediaFiles']:,}/{summary['plannedFiles']:,} unique files**
-- Worker HTTP: **{summary['workerHttpVerified']:,}/{summary['plannedFiles']:,}**
+- External HTTP: **{summary['externalHttpVerified']:,}/{summary['plannedFiles']:,}**
 - Content-Length: **{summary['contentLengthVerified']:,}/{summary['plannedFiles']:,}**
 - Worker object failures observed: **{summary.get('failedObjectCount', 0):,}**; unverified because terminal network was skipped/blocked: **{summary.get('unverifiedObjectCount', 0):,}**
 - SHA256 GET samples: **{samples['verified']:,}/{samples['selected']:,}**
-- Cache-Control samples: **{cache['verified']:,}/{cache['selected']:,}**
+- R2 delivery samples (200 + accept-ranges + ETag): **{cache['verified']:,}/{cache['selected']:,}**
 - Direct local runtime requests for planned media: **{summary['directLocalRuntimeRequests']}**
-- Runtime old `r2.dev` references: **{summary['runtimeOldR2DevReferences']}**
+- Runtime retired `workers.dev` references: **{summary['runtimeRetiredWorkerReferences']}**
 - Double module prefix / `file://` / Windows absolute paths: **{summary['doubleModulePrefixCount']} / {summary['fileUriCount']} / {summary['windowsAbsolutePathCount']}**
 - Preloads: **{summary['preloads']['count']}**; `fetchpriority=high`: **{summary['preloads']['highPriorityCount']}**
 - Terminal HTTP smoke: **{terminal['status']}** ({terminal['resourcesChecked']} resources checked)
-- Terminal Worker revalidation: **{summary['terminalNetworkStatus']}**{f' ({summary.get("terminalNetworkDetail", "")})' if summary.get("terminalNetworkDetail") else ''}
+- Terminal R2 revalidation: **{summary['terminalNetworkStatus']}**{f' ({summary.get("terminalNetworkDetail", "")})' if summary.get("terminalNetworkDetail") else ''}
 - Browser smoke: **{browser['status']}**{f' ({browser.get("detail", "")})' if browser.get("detail") else ''}; console **{browser.get('consoleErrors', 0)} errors / {browser.get('consoleWarnings', 0)} warnings**; provenance **{browser.get('provenanceMediaLoaded', 0)}/{browser.get('provenanceMedia', 0)}**; media failures **{browser.get('mediaFailures', 0)}**
 - Historical upload verification baseline: **{baseline.get('status', 'UNAVAILABLE')}** — {baseline.get('files', 0):,} files / {baseline.get('bytes', 0):,} bytes; HTTP {baseline.get('http', 0):,}; Content-Length {baseline.get('contentLength', 0):,}; SHA256 samples {baseline.get('sha256Samples', 0):,}; Cache-Control samples {baseline.get('cacheControlSamples', 0):,}
 - Binary media changes: **{summary['binaryMediaChanges']}**
@@ -414,7 +415,7 @@ def build_document(summary: dict[str, Any]) -> str:
 
 `archive.json` keeps its original `assets/...` values. The runtime boundary is
 `qinhanMediaUrl()`, which delegates to the shared vendor-neutral resolver and
-maps those values to the unchanged `modules/qinhan/...` Worker object keys.
+maps those values to the unchanged `modules/qinhan/...` R2 object keys.
 """
 
 
@@ -444,9 +445,9 @@ def main() -> int:
     )
     parser.add_argument("--terminal-network-detail", default="")
     parser.add_argument(
-        "--skip-worker-network",
+        "--skip-external-network",
         action="store_true",
-        help="skip all external Worker requests and record local validation as BLOCKED",
+        help="skip all external R2 requests and record local validation as BLOCKED",
     )
     parser.add_argument(
         "--record-failure",
@@ -514,7 +515,7 @@ def main() -> int:
     provenance_checks = provenance_resolver_checks(provenance_text)
     provenance_plan_missing = sorted(provenance_paths - plan_paths)
     provenance_resolver_ok = all(provenance_checks.values()) and not provenance_plan_missing
-    provenance_worker_resolved = (
+    provenance_external_resolved = (
         len(provenance_paths) if provenance_resolver_ok else 0
     )
     provenance_local_hits = (
@@ -538,19 +539,18 @@ def main() -> int:
             errors.append(f"provenance resolver check failed: {check}")
 
     all_runtime_text = "\n".join(texts.values())
-    old_host_count = all_runtime_text.count(LEGACY_PUBLIC_BASE)
-    old_r2_count = len(re.findall(r"(?i)r2\.dev", all_runtime_text))
-    worker_base_count = all_runtime_text.count(PUBLIC_BASE)
+    retired_worker_count = all_runtime_text.count(RETIRED_WORKER_BASE)
+    current_base_count = all_runtime_text.count(CURRENT_PUBLIC_BASE)
     file_uri_count = len(FILE_URI_RE.findall(all_runtime_text))
     runtime_request_text = "\n".join(
         texts.get(name, "") for name in sorted(RUNTIME_REQUEST_FILES)
     )
     windows_absolute_count = len(ABSOLUTE_PATH_RE.findall(runtime_request_text))
     double_prefix_count = all_runtime_text.count(MODULE_PREFIX + MODULE_PREFIX)
-    if old_host_count or old_r2_count:
-        errors.append(f"runtime old r2.dev references: {old_r2_count}")
-    if worker_base_count == 0:
-        errors.append("active Worker base is absent from Qin-Han runtime")
+    if retired_worker_count:
+        errors.append(f"runtime retired workers.dev references: {retired_worker_count}")
+    if current_base_count == 0:
+        errors.append("current R2 base is absent from Qin-Han runtime")
     if file_uri_count:
         errors.append(f"file URI count: {file_uri_count}")
     if windows_absolute_count:
@@ -567,10 +567,10 @@ def main() -> int:
     if len(dynamic_fields) != expected_field_values:
         errors.append(f"archive dynamic field values {len(dynamic_fields)} != {expected_field_values}")
 
-    static_occurrences, static_paths = static_worker_paths(texts)
+    static_occurrences, static_paths = static_external_paths(texts)
     static_unknown = sorted(static_paths - plan_paths)
     if static_unknown:
-        errors.append(f"static Worker paths outside plan: {len(static_unknown)}")
+        errors.append(f"static external media paths outside plan: {len(static_unknown)}")
     runtime_paths = dynamic_paths | static_paths | provenance_paths
     if runtime_paths != plan_paths:
         errors.append(
@@ -585,11 +585,11 @@ def main() -> int:
         "PASS"
         if (
             len(provenance_paths) == EXPECTED_PROVENANCE_FILES
-            and provenance_worker_resolved == EXPECTED_PROVENANCE_FILES
+            and provenance_external_resolved == EXPECTED_PROVENANCE_FILES
             and runtime_paths == plan_paths
             and not direct_local_hits
-            and old_host_count == 0
-            and old_r2_count == 0
+            and retired_worker_count == 0
+            and current_base_count > 0
         )
         else "FAIL"
     )
@@ -620,20 +620,21 @@ def main() -> int:
     if high_priority_count > 2:
         errors.append(f"high-priority image preload count {high_priority_count} > 2")
     expected_preload_urls = {
-        worker_url(f"{MODULE_PREFIX}assets/brand-emblem.png"),
-        worker_url(f"{MODULE_PREFIX}assets/external/qinhan-museum-aerial-zou-hong.jpg"),
+        external_url(f"{MODULE_PREFIX}assets/brand-emblem.png"),
+        external_url(f"{MODULE_PREFIX}assets/external/qinhan-museum-aerial-zou-hong.jpg"),
     }
     if not all(url in index for url in expected_preload_urls):
         errors.append("critical preload URL set is incomplete")
 
     ordered_entries = sorted(entries, key=lambda item: str(item["path"]))
-    if args.skip_worker_network:
+    if args.skip_external_network:
         head_results = [
             {
                 "path": entry["path"],
                 "status": None,
                 "length": None,
-                "cacheControl": "",
+                "acceptRanges": "",
+                "etag": "",
                 "error": "terminal network skipped",
             }
             for entry in ordered_entries
@@ -657,12 +658,12 @@ def main() -> int:
         if result.get("status") != 200 or result.get("length") != int(entry["bytes"])
     ]
     if worker_http_verified != EXPECTED_FILES:
-        errors.append(f"Worker HTTP verified {worker_http_verified} != {EXPECTED_FILES}")
+        errors.append(f"external HTTP verified {worker_http_verified} != {EXPECTED_FILES}")
     if content_length_verified != EXPECTED_FILES:
-        errors.append(f"Worker Content-Length verified {content_length_verified} != {EXPECTED_FILES}")
+        errors.append(f"external Content-Length verified {content_length_verified} != {EXPECTED_FILES}")
 
     samples = sample_entries(ordered_entries)
-    if args.skip_worker_network:
+    if args.skip_external_network:
         sample_results = [
             {
                 "path": entry["path"],
@@ -701,26 +702,26 @@ def main() -> int:
         if not sample_coverage.get(family):
             errors.append(f"SHA256 sample family missing: {family}")
 
-    cache_rows = sorted(ordered_entries, key=lambda item: str(item["path"]))
-    random.Random(SAMPLE_SEED + 1).shuffle(cache_rows)
-    cache_sample_paths = {str(item["path"]) for item in cache_rows[:CACHE_SAMPLE_COUNT]}
-    cache_results = [result for result in head_results if str(result.get("path")) in cache_sample_paths]
-    required_cache = ("public", "max-age=86400", "stale-while-revalidate=604800")
-    cache_verified = sum(
+    delivery_rows = sorted(ordered_entries, key=lambda item: str(item["path"]))
+    random.Random(SAMPLE_SEED + 1).shuffle(delivery_rows)
+    delivery_sample_paths = {str(item["path"]) for item in delivery_rows[:CACHE_SAMPLE_COUNT]}
+    delivery_results = [result for result in head_results if str(result.get("path")) in delivery_sample_paths]
+    delivery_verified = sum(
         1
-        for result in cache_results
+        for result in delivery_results
         if result.get("status") == 200
-        and all(token in str(result.get("cacheControl", "")).lower() for token in required_cache)
+        and str(result.get("acceptRanges", "")).strip().lower() == "bytes"
+        and bool(str(result.get("etag", "")).strip())
     )
-    if cache_verified != CACHE_SAMPLE_COUNT:
-        errors.append(f"Cache-Control samples verified {cache_verified} != {CACHE_SAMPLE_COUNT}")
+    if delivery_verified != CACHE_SAMPLE_COUNT:
+        errors.append(f"R2 delivery samples verified {delivery_verified} != {CACHE_SAMPLE_COUNT}")
 
     browser_summary = browser_smoke_payload(args)
     terminal_network_status = args.terminal_network_status or (
         "PASS" if worker_http_verified == EXPECTED_FILES else "BLOCKED"
     )
     terminal_network_detail = args.terminal_network_detail or (
-        "terminal network path to workers.dev unavailable"
+        "terminal network path to the R2 public host unavailable"
         if terminal_network_status == "BLOCKED"
         else ""
     )
@@ -729,7 +730,7 @@ def main() -> int:
         browser_expectations = {
             "provenanceMedia": EXPECTED_PROVENANCE_FILES,
             "provenanceMediaLoaded": EXPECTED_PROVENANCE_FILES,
-            "provenanceWorkerHttp": EXPECTED_PROVENANCE_FILES,
+            "provenanceExternalHttp": EXPECTED_PROVENANCE_FILES,
             "provenanceLocalRequests": 0,
             "mediaFailures": 0,
         }
@@ -750,43 +751,42 @@ def main() -> int:
         errors.append("terminal HTTP smoke was not recorded")
 
     if errors:
-        if args.record_failure and (args.skip_worker_network or worker_http_verified != EXPECTED_FILES):
+        if args.record_failure and (args.skip_external_network or worker_http_verified != EXPECTED_FILES):
             blocked_summary = {
                 "schemaVersion": 1,
                 "status": "BLOCKED",
                 "module": "qinhan",
-                "activePublicBase": PUBLIC_BASE,
+                "currentPublicBase": CURRENT_PUBLIC_BASE,
                 "plannedFiles": EXPECTED_FILES,
                 "plannedBytes": EXPECTED_BYTES,
                 "localMediaFiles": len(local_paths),
                 "localMediaBytes": local_bytes,
-                "staticWorkerReferenceOccurrences": len(static_occurrences),
-                "staticWorkerUniqueFiles": len(static_paths),
-                "staticWorkerPaths": sorted(static_paths),
+                "staticExternalReferenceOccurrences": len(static_occurrences),
+                "staticExternalUniqueFiles": len(static_paths),
+                "staticExternalPaths": sorted(static_paths),
                 "dynamicMediaFieldValues": len(dynamic_fields),
                 "dynamicUniqueFiles": len(dynamic_paths),
                 "dynamicFieldCounts": dict(Counter(item["field"] for item in dynamic_fields)),
                 "totalUniqueRuntimeMediaFiles": len(runtime_paths),
                 "runtimeCoverageMissing": sorted(plan_paths - runtime_paths),
                 "runtimeCoverageExtra": sorted(runtime_paths - plan_paths),
-                "workerHttpVerified": worker_http_verified,
+                "externalHttpVerified": worker_http_verified,
                 "contentLengthVerified": content_length_verified,
-                "worker404Failures": worker_404_failures,
-                "worker5xxFailures": worker_5xx_failures,
+                "external404Failures": worker_404_failures,
+                "external5xxFailures": worker_5xx_failures,
                 "sha256Samples": {
                     "selected": len(samples),
                     "verified": sha_verified,
                     "coverage": dict(sample_coverage),
                 },
-                "cacheControlSamples": {
+                "deliverySamples": {
                     "selected": CACHE_SAMPLE_COUNT,
-                    "verified": cache_verified,
-                    "required": "public, max-age=86400, stale-while-revalidate=604800",
+                    "verified": delivery_verified,
+                    "required": "HTTP 200 + accept-ranges=bytes + non-empty ETag",
                 },
                 "directLocalRuntimeRequests": len(direct_local_hits),
-                "runtimeOldR2DevReferences": old_host_count,
-                "runtimeR2DevOccurrences": old_r2_count,
-                "workerBaseOccurrences": worker_base_count,
+                "runtimeRetiredWorkerReferences": retired_worker_count,
+                "runtimeCurrentBaseOccurrences": current_base_count,
                 "doubleModulePrefixCount": double_prefix_count,
                 "fileUriCount": file_uri_count,
                 "windowsAbsolutePathCount": windows_absolute_count,
@@ -797,7 +797,7 @@ def main() -> int:
                     "detail": args.terminal_detail,
                 },
                 "provenanceMediaFiles": len(provenance_paths),
-                "provenanceWorkerResolved": provenance_worker_resolved,
+                "provenanceExternalResolved": provenance_worker_resolved,
                 "provenanceLocalRuntimeRequests": len(provenance_local_hits),
                 "provenanceResolverChecks": provenance_checks,
                 "runtimeRoutingStatus": runtime_routing_status,
@@ -807,10 +807,10 @@ def main() -> int:
                 "browserSmoke": browser_summary,
                 "binaryMediaChanges": len(changed_binary_paths),
                 "verificationBlockers": errors,
-                "workerVerificationSkipped": args.skip_worker_network,
-                "failedObjectCount": 0 if args.skip_worker_network else len(failed_objects),
-                "unverifiedObjectCount": len(failed_objects) if args.skip_worker_network else 0,
-                "failedObjectExamples": [] if args.skip_worker_network else failed_objects[:20],
+                "workerVerificationSkipped": args.skip_external_network,
+                "failedObjectCount": 0 if args.skip_external_network else len(failed_objects),
+                "unverifiedObjectCount": len(failed_objects) if args.skip_external_network else 0,
+                "failedObjectExamples": [] if args.skip_external_network else failed_objects[:20],
             }
             write_json(SUMMARY_PATH, blocked_summary)
             DOC_PATH.write_text(build_document(blocked_summary), encoding="utf-8", newline="\n")
@@ -818,7 +818,7 @@ def main() -> int:
         print("QINHAN_R2_RUNTIME=FAIL")
         for error in errors[:60]:
             print(f"ERROR={error}")
-        if not args.skip_worker_network:
+        if not args.skip_external_network:
             for item in failed_objects[:20]:
                 print(f"FAILED_OBJECT={item['path']} status={item['status']} error={item['error']}")
         return 1
@@ -827,38 +827,37 @@ def main() -> int:
         "schemaVersion": 1,
         "status": "PASS",
         "module": "qinhan",
-        "activePublicBase": PUBLIC_BASE,
+        "currentPublicBase": CURRENT_PUBLIC_BASE,
         "plannedFiles": EXPECTED_FILES,
         "plannedBytes": EXPECTED_BYTES,
         "localMediaFiles": len(local_paths),
         "localMediaBytes": local_bytes,
-        "staticWorkerReferenceOccurrences": len(static_occurrences),
-        "staticWorkerUniqueFiles": len(static_paths),
-        "staticWorkerPaths": sorted(static_paths),
+        "staticExternalReferenceOccurrences": len(static_occurrences),
+        "staticExternalUniqueFiles": len(static_paths),
+        "staticExternalPaths": sorted(static_paths),
         "dynamicMediaFieldValues": len(dynamic_fields),
         "dynamicUniqueFiles": len(dynamic_paths),
         "dynamicFieldCounts": dict(Counter(item["field"] for item in dynamic_fields)),
         "totalUniqueRuntimeMediaFiles": len(runtime_paths),
         "runtimeCoverageMissing": sorted(plan_paths - runtime_paths),
         "runtimeCoverageExtra": sorted(runtime_paths - plan_paths),
-        "workerHttpVerified": worker_http_verified,
+        "externalHttpVerified": worker_http_verified,
         "contentLengthVerified": content_length_verified,
-        "worker404Failures": worker_404_failures,
-        "worker5xxFailures": worker_5xx_failures,
+        "external404Failures": worker_404_failures,
+        "external5xxFailures": worker_5xx_failures,
         "sha256Samples": {
             "selected": len(samples),
             "verified": sha_verified,
             "coverage": dict(sample_coverage),
         },
-        "cacheControlSamples": {
+        "deliverySamples": {
             "selected": CACHE_SAMPLE_COUNT,
-            "verified": cache_verified,
-            "required": "public, max-age=86400, stale-while-revalidate=604800",
+            "verified": delivery_verified,
+            "required": "HTTP 200 + accept-ranges=bytes + non-empty ETag",
         },
         "directLocalRuntimeRequests": len(direct_local_hits),
-        "runtimeOldR2DevReferences": old_host_count,
-        "runtimeR2DevOccurrences": old_r2_count,
-        "workerBaseOccurrences": worker_base_count,
+        "runtimeRetiredWorkerReferences": retired_worker_count,
+        "runtimeCurrentBaseOccurrences": current_base_count,
         "doubleModulePrefixCount": double_prefix_count,
         "fileUriCount": file_uri_count,
         "windowsAbsolutePathCount": windows_absolute_count,
@@ -869,7 +868,7 @@ def main() -> int:
             "detail": args.terminal_detail,
         },
         "provenanceMediaFiles": len(provenance_paths),
-        "provenanceWorkerResolved": provenance_worker_resolved,
+        "provenanceExternalResolved": provenance_worker_resolved,
         "provenanceLocalRuntimeRequests": len(provenance_local_hits),
         "provenanceResolverChecks": provenance_checks,
         "runtimeRoutingStatus": runtime_routing_status,
@@ -878,7 +877,7 @@ def main() -> int:
         "previousUploadVerification": previous_upload,
         "browserSmoke": browser_summary,
         "binaryMediaChanges": len(changed_binary_paths),
-        "workerVerificationSkipped": args.skip_worker_network,
+        "workerVerificationSkipped": args.skip_external_network,
         "failedObjectCount": len(failed_objects),
         "unverifiedObjectCount": 0,
         "failedObjects": failed_objects,
@@ -895,7 +894,7 @@ def main() -> int:
     print(f"WORKER_HTTP={worker_http_verified}/{EXPECTED_FILES}")
     print(f"CONTENT_LENGTH={content_length_verified}/{EXPECTED_FILES}")
     print(f"SHA256_SAMPLES={sha_verified}/{len(samples)}")
-    print(f"CACHE_CONTROL_SAMPLES={cache_verified}/{CACHE_SAMPLE_COUNT}")
+    print(f"DELIVERY_SAMPLES={delivery_verified}/{CACHE_SAMPLE_COUNT}")
     print(f"DIRECT_LOCAL_RUNTIME={len(direct_local_hits)}")
     print(f"RUNTIME_OLD_R2DEV={old_host_count}")
     print(f"BINARY_MEDIA_CHANGES={len(changed_binary_paths)}")
