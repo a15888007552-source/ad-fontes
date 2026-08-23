@@ -295,50 +295,45 @@
     holder.querySelectorAll("[data-route-category]").forEach((button) => button.addEventListener("click", () => activateCategory(button.dataset.routeCategory)));
   }
 
-  function detailArchiveField(label, value) {
+  function detailArchiveField(label, value, keepSlot = false) {
     const normalized = value == null ? "" : String(value).trim();
-    const pending = !normalized;
+    if (!normalized && keepSlot) return '<div class="detail-archive-field" hidden aria-hidden="true"></div>';
+    if (!normalized) return "";
     return '<div class="detail-archive-field"><span class="detail-archive-label">'
       + escapeHtml(label)
-      + '</span><strong class="detail-archive-value'
-      + (pending ? ' is-pending' : '')
-      + '">'
-      + escapeHtml(normalized || "待研究")
+      + '</span><strong class="detail-archive-value">'
+      + escapeHtml(normalized)
       + '</strong></div>';
   }
 
   function detailArchiveMarkup(item) {
     const number = "XAM-" + String(item.sequence ?? "—").padStart(3, "0");
-    const fields = [
+    const archiveFields = [
       ["文物编号", number],
       ["类别", item.category],
       ["时代", item.period],
       ["材质", item.material],
-      ["出土地点", null],
-      ["尺寸", null],
+      ["出土地点", item.findspot],
+      ["尺寸", item.dimensions],
+    ];
+    const photos = Array.isArray(item.photos) ? item.photos : [];
+    const photoFields = [
+      ["SOURCE / 出土 / 来源", item.origin],
+      ["PHOTO SET / 器物视图", item.photoRange || (photos.length ? `${photos.length} 图` : "")],
     ];
     return '<section class="detail-archive-fields" aria-label="文物档案">'
       + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
       + '<div class="detail-archive-grid">'
-      + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+      + archiveFields.map(([label, value]) => detailArchiveField(label, value, true)).join("")
+      + photoFields.map(([label, value]) => detailArchiveField(label, value)).join("")
       + '</div></section>';
   }
 
   function mountDetailArchiveFields(anchor, item) {
-    anchor.closest("dialog")?.querySelector(".detail-archive-fields")?.remove();
-    anchor.insertAdjacentHTML("afterend", detailArchiveMarkup(item));
-  }
-
-  function metaHtml(item) {
-    const values = [
-      ["时代", item.period || "年代未完整识读"],
-      ["材质", item.material || "材质未完整识读"],
-      ["类别", item.category || "未分类"],
-      ["出土 / 来源", item.origin || "来源未完整记录"],
-      ["器物视图", item.photoRange || `${(item.photos || []).length} 图`],
-      ["档案编号", `XAM-${String(item.sequence ?? "—").padStart(3, "0")}`],
-    ];
-    return values.map(([label, value]) => `<div><b>${escapeHtml(label)}</b>${escapeHtml(value)}</div>`).join("");
+    anchor.outerHTML = detailArchiveMarkup(item).replace(
+      '<section class="detail-archive-fields"',
+      '<section id="dialog-meta" class="detail-archive-fields"',
+    );
   }
 
   function setDialogImage(photo, index, total) {
@@ -367,7 +362,6 @@
       hasTag(item, "forbidden") ? `<span class="forbidden">禁止出境文物</span>` : "",
       `<span>${escapeHtml(item.category || "观物档案")}</span>`,
     ].filter(Boolean).join("");
-    document.getElementById("dialog-meta").innerHTML = metaHtml(item);
     mountDetailArchiveFields(document.getElementById("dialog-meta"), item);
     document.getElementById("dialog-essay").innerHTML = (item.sections || []).map((section) => `<section><h3>${escapeHtml(section.heading)}</h3><p>${escapeHtml(section.text)}</p></section>`).join("");
     const sourceLinks = (item.sources || []).map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)} ↗</a>`).join(" · ");

@@ -44,37 +44,52 @@ const normalize = (value) => String(value || "").toLocaleLowerCase("zh-CN").repl
 const NON_ARTIFACT_GROUP_IDS = new Set(["museum-arrival", "reference-wall"]);
 const isPublicArtifact = (group) => !NON_ARTIFACT_GROUP_IDS.has(group.id);
 
-function detailArchiveField(label, value) {
+function detailArchiveField(label, value, keepSlot = false) {
   const normalized = value == null ? "" : String(value).trim();
-  const pending = !normalized;
+  if (!normalized && keepSlot) return '<div class="detail-archive-field" hidden aria-hidden="true"></div>';
+  if (!normalized) return "";
   return '<div class="detail-archive-field"><span class="detail-archive-label">'
     + escapeHTML(label)
-    + '</span><strong class="detail-archive-value'
-    + (pending ? ' is-pending' : '')
-    + '">'
-    + escapeHTML(normalized || "待研究")
+    + '</span><strong class="detail-archive-value">'
+    + escapeHTML(normalized)
     + '</strong></div>';
 }
 
 function detailArchiveMarkup(group) {
-  const fields = [
+  const archiveFields = [
     ["文物编号", group.id],
     ["类别", group.category],
-    ["时代", null],
-    ["材质", null],
-    ["出土地点", null],
-    ["尺寸", null],
+    ["时代", group.period],
+    ["材质", group.material],
+    ["出土地点", group.findspot],
+    ["尺寸", group.dimensions],
+  ];
+  const primaryPhoto = Array.isArray(group.gallery)
+    ? group.gallery.find((photo) => photo.sequence === group.main_sequence)
+    : null;
+  const processing = group.processing || {};
+  const sourceSize = Array.isArray(processing.source_size) ? processing.source_size.join(" × ") : "";
+  const photoFields = [
+    ["SEQUENCE / 拍摄序列", group.sequence_start != null && group.sequence_end != null ? `${group.sequence_start}—${group.sequence_end}` : ""],
+    ["PRIMARY VIEW / 主图文件", primaryPhoto?.filename],
+    ["PROCESSING / 图片处理", processing.method ? `${processing.method} · 非生成式` : ""],
+    ["SOURCE / 处理来源", processing.source_kind && sourceSize ? `${processing.source_kind} · ${sourceSize} px` : processing.source_kind],
+    ["PRESERVATION / 原片状态", "F 盘只读保留 · SHA-256 已记录"],
   ];
   return '<section class="detail-archive-fields" aria-label="文物档案">'
     + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
     + '<div class="detail-archive-grid">'
-    + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+    + archiveFields.map(([label, value]) => detailArchiveField(label, value, true)).join("")
+    + photoFields.map(([label, value]) => detailArchiveField(label, value)).join("")
     + '</div></section>';
 }
 
 function mountDetailArchiveFields(anchor, group) {
-  anchor.closest("dialog")?.querySelector(".detail-archive-fields")?.remove();
-  anchor.insertAdjacentHTML("afterend", detailArchiveMarkup(group));
+  anchor.outerHTML = detailArchiveMarkup(group).replace(
+    '<section class="detail-archive-fields"',
+    '<section id="dialog-meta" class="detail-archive-fields"',
+  );
+  elements.dialogMeta = elements.dialog.querySelector("#dialog-meta");
 }
 
 function filteredGroups() {
@@ -203,13 +218,6 @@ function openGroup(id, { syncUrl = false } = {}) {
   elements.dialogSummary.textContent = group.summary;
   elements.dialogInterpretation.textContent = group.interpretation;
   elements.dialogLabel.textContent = group.label_text || "本组没有可用的展签 OCR 文本；请回看对象图和原文件名。";
-  elements.dialogMeta.innerHTML = `
-    <div><span>拍摄序列</span><strong>${group.sequence_start}—${group.sequence_end}</strong></div>
-    <div><span>主图文件</span><strong>${escapeHTML(group.gallery.find((photo) => photo.sequence === group.main_sequence)?.filename || "")}</strong></div>
-    <div><span>图片处理</span><strong>${escapeHTML(group.processing.method)} · 非生成式</strong></div>
-    <div><span>处理来源</span><strong>${escapeHTML(group.processing.source_kind)} · ${group.processing.source_size.join(" × ")} px</strong></div>
-    <div><span>原片状态</span><strong>F 盘只读保留 · SHA-256 已记录</strong></div>
-  `;
   elements.dialogSources.innerHTML = group.sources.length
     ? `<h3>对象来源</h3>${group.sources.map((url, index) => `<a href="${escapeHTML(url)}" target="_blank" rel="noreferrer">来源 ${index + 1} ↗</a>`).join("")}`
     : `<h3>对象来源</h3><p>当前以现场展签和个人照片为主，尚未加入可公开核验的对象级馆方链接。</p>`;
