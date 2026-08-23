@@ -22,7 +22,6 @@ const elements = {
   dialogTitle: document.querySelector("#dialog-title"),
   dialogSummary: document.querySelector("#dialog-summary"),
   dialogInterpretation: document.querySelector("#dialog-interpretation"),
-  dialogEvidence: document.querySelector("#dialog-evidence"),
   dialogLabel: document.querySelector("#dialog-label"),
   dialogMeta: document.querySelector("#dialog-meta"),
   dialogSources: document.querySelector("#dialog-sources"),
@@ -166,7 +165,6 @@ function openGroup(id, { syncUrl = false } = {}) {
   elements.dialogTitle.textContent = group.title;
   elements.dialogSummary.textContent = group.summary;
   elements.dialogInterpretation.textContent = group.interpretation;
-  elements.dialogEvidence.textContent = group.evidence_note;
   elements.dialogLabel.textContent = group.label_text || "本组没有可用的展签 OCR 文本；请回看对象图和原文件名。";
   elements.dialogMeta.innerHTML = `
     <div><span>拍摄序列</span><strong>${group.sequence_start}—${group.sequence_end}</strong></div>

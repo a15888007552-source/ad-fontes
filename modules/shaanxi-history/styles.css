@@ -518,3 +518,24 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 #collection.collection .mini-tag { border-color: var(--line); color: var(--muted); }
 #collection.collection .empty-state { border-color: var(--line); background: rgba(51, 25, 21, .9); }
 #collection.collection .quiet-action { border-color: var(--line-dark); color: var(--ink); }
+
+/* Special exhibition theme: a warm gold field for the Hellenistic display. */
+#special.special {
+  color: #2b1a0c;
+  background:
+    linear-gradient(118deg, rgba(171, 116, 25, .94), rgba(240, 202, 112, .9) 52%, rgba(151, 94, 17, .94)),
+    url("https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/generated/archive-texture-v1.webp") center / cover no-repeat;
+}
+#special.special .section-label,
+#special.special .section-label span,
+#special.special .section-label p,
+#special.special .special-copy .eyebrow { color: #61370c; }
+#special.special .section-label span { color: #4e2907; }
+#special.special .special-copy > div:last-child > p { color: rgba(43, 26, 12, .8); }
+#special.special .text-button { color: #5e3208; border-color: rgba(94, 50, 8, .46); }
+#special.special .text-button:hover,
+#special.special .text-button:focus-visible { color: #2b1a0c; }
+#special.special .special-preview { border-color: rgba(82, 45, 8, .42); background: rgba(82, 45, 8, .38); }
+#special.special .special-card { color: #2b1a0c; background: rgba(255, 244, 211, .82); }
+#special.special .special-preview small { color: #70400c; }
+#special.special .special-title { color: #2b1a0c; }
