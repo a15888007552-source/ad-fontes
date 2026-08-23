@@ -583,3 +583,110 @@ img { display: block; max-width: 100%; }
 }
 #archive.archive-section .card-summary { color: rgba(244, 233, 211, .7); }
 #archive.archive-section .load-more { border-color: var(--bronze); color: var(--night); background: var(--bronze); }
+
+/* PR40 · shared research record layer; Qin-Han theme remains scoped above. */
+#archive.archive-section {
+  --record-title: clamp(22px, 1.7vw, 26px);
+  --record-meta: 11px;
+  --record-copy: 15px;
+}
+
+#archive.archive-section .archive-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 500px;
+  gap: 1rem;
+}
+
+#archive.archive-section .object-card,
+#archive.archive-section .object-card:nth-child(5n + 1),
+#archive.archive-section .object-card:nth-child(5n + 2) {
+  grid-column: span 1;
+  height: 100%;
+}
+
+#archive.archive-section .object-card > button {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100%;
+}
+
+#archive.archive-section .card-image {
+  height: auto;
+  aspect-ratio: 16 / 10;
+}
+
+#archive.archive-section .card-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+#archive.archive-section .card-topline,
+#archive.archive-section .card-era,
+#archive.archive-section .card-metrics,
+#archive.archive-section .card-footer {
+  font-size: var(--record-meta);
+}
+
+#archive.archive-section .card-topline > span:first-child::before {
+  color: var(--bronze);
+  content: "OBJECT No. ";
+}
+
+#archive.archive-section .card-topline > span:nth-child(2)::before,
+#archive.archive-section .card-era::before {
+  color: var(--bronze);
+}
+
+#archive.archive-section .card-topline > span:nth-child(2)::before { content: "TYPE / "; }
+#archive.archive-section .card-era::before { content: "DATE / "; }
+
+#archive.archive-section .card-copy h3 {
+  font-size: var(--record-title);
+  line-height: 1.25;
+}
+
+#archive.archive-section .card-summary {
+  font-size: var(--record-copy);
+  line-height: 1.65;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+#archive.archive-section .card-footer b {
+  font-size: 0;
+}
+
+#archive.archive-section .card-footer b::after {
+  color: var(--green);
+  content: "OPEN RECORD ↗";
+  font-size: var(--record-meta);
+  letter-spacing: .08em;
+}
+
+@media (max-width: 1120px) {
+  #archive.archive-section .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  #archive.archive-section .archive-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 456px;
+  }
+
+  #archive.archive-section .object-card,
+  #archive.archive-section .object-card:nth-child(5n + 1),
+  #archive.archive-section .object-card:nth-child(5n + 2) {
+    grid-column: auto;
+  }
+
+  #archive.archive-section .object-card > button { grid-template-columns: minmax(0, 1fr); }
+  #archive.archive-section .card-image { aspect-ratio: 16 / 9; }
+  #archive.archive-section .card-copy { min-height: 0; padding: 1rem .95rem .9rem; }
+  #archive.archive-section .card-copy h3 { font-size: 22px; }
+  #archive.archive-section .card-summary { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #archive.archive-section .object-card,
+  #archive.archive-section .card-image img { transition: none; }
+}
