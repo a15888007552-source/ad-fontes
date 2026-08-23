@@ -1,11 +1,6 @@
 .museum-tomb-trails{width:100%;margin:clamp(56px,8vw,112px) 0 0;border-top:1px solid rgba(80,65,50,.22);background:transparent;overflow:hidden}
 .museum-tomb-trails iframe{display:block;width:100%;height:clamp(1040px,76vw,1260px);border:0;background:#1b241d}
 @media(max-width:820px){.museum-tomb-trails{margin-top:clamp(44px,14vw,76px)}.museum-tomb-trails iframe{height:clamp(1080px,184vw,1420px)}}
-.museum-tomb-trails--archaeology {
-  width: min(1240px, calc(100% - 36px));
-  margin-left: auto;
-  margin-right: auto;
-}
 /* 20260820 · archaeology embed width follows the host page grid. */
 .museum-tomb-trails--archaeology {
   width:min(1880px,calc(100% - 32px));

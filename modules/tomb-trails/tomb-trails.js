@@ -19,14 +19,23 @@ const sourceHosts=[
   ['cntv.cn','央视网｜报道资料'],['news.cn','新华网｜报道资料'],['xinhuanet.com','新华网｜报道资料'],
   ['wikipedia.org','Wikipedia｜辅助资料']
 ];
+const webpVariants={'assets/hanchangancity-site-user.png':'assets/hanchangancity-site-user.webp'};
 function sourceLabel(source){
   const label=source?.[0]||'资料链接';
   if(label!=='原资料链接')return label;
   try{const host=new URL(source?.[1]||'',location.href).hostname.replace(/^www\./,'');const match=sourceHosts.find(([domain])=>host===domain||host.endsWith(`.${domain}`));return match?.[1]||'公开资料｜原文';}catch{return '公开资料｜原文';}
 }
+function renderSiteImage(p,i){
+  const imagePath=p.image||'';
+  if(!/^(?:https?:\/\/|(?:\.\/)?assets\/)/.test(imagePath))return `<div class="site-image image-pending" role="img" aria-label="${esc(p.name)}现场图待核"><span>现场图待核</span><small>未找到能确认对应地点的图像，本条不使用替代文物照</small></div>`;
+  const loading=i<2?'eager':'lazy';
+  const fallback=`<img src="${esc(imagePath)}" alt="${esc(p.name)}相关现场图" loading="${loading}" decoding="async">`;
+  const image=webpVariants[imagePath]?`<picture><source srcset="${esc(webpVariants[imagePath])}" type="image/webp">${fallback}</picture>`:fallback;
+  return `<figure class="site-image">${image}<figcaption>${esc(p.credit||'图像来源与性质待补充')}</figcaption></figure>`;
+}
 function render(){
   const host=$('#slides');
-  host.innerHTML=state.items.map((p,i)=>{const image=/^(?:https?:\/\/|(?:\.\/)?assets\/)/.test(p.image||'')?`<figure class="site-image"><img src="${esc(p.image)}" alt="${esc(p.name)}相关现场图" loading="${i<2?'eager':'lazy'}" decoding="async"><figcaption>${esc(p.credit||'图像来源与性质待补充')}</figcaption></figure>`:`<div class="site-image image-pending" role="img" aria-label="${esc(p.name)}现场图待核"><span>现场图待核</span><small>未找到能确认对应地点的图像，本条不使用替代文物照</small></div>`;return `<article class="slide" data-index="${i}" aria-label="${i+1} / ${state.items.length}"><div class="slide-visual">${image}</div><div class="slide-meta"><span class="slide-index">${String(i+1).padStart(2,'0')} / ${String(state.items.length).padStart(2,'0')}</span><h3>${esc(p.name)}</h3><p class="kind">${esc(p.museumName)} · ${esc(p.kind)}</p><dl class="facts"><div><dt>墓主／遗址</dt><dd>${esc(p.history)}</dd></div><div><dt>发现与发掘</dt><dd>${esc(p.date)}。${esc(p.discovery)}</dd></div><div><dt>馆藏关联</dt><dd>${esc(p.objects)}</dd></div><div><dt>为什么重要</dt><dd>${esc(p.importance||p.value)}</dd></div></dl><div class="source-links">${(p.source||[]).map(s=>`<a href="${esc(s[1])}" target="_blank" rel="noreferrer">${esc(sourceLabel(s))} ↗</a>`).join('')}</div></div></article>`}).join('');
+  host.innerHTML=state.items.map((p,i)=>{const image=renderSiteImage(p,i);return `<article class="slide" data-index="${i}" aria-label="${i+1} / ${state.items.length}"><div class="slide-visual">${image}</div><div class="slide-meta"><span class="slide-index">${String(i+1).padStart(2,'0')} / ${String(state.items.length).padStart(2,'0')}</span><h3>${esc(p.name)}</h3><p class="kind">${esc(p.museumName)} · ${esc(p.kind)}</p><dl class="facts"><div><dt>墓主／遗址</dt><dd>${esc(p.history)}</dd></div><div><dt>发现与发掘</dt><dd>${esc(p.date)}。${esc(p.discovery)}</dd></div><div><dt>馆藏关联</dt><dd>${esc(p.objects)}</dd></div><div><dt>为什么重要</dt><dd>${esc(p.importance||p.value)}</dd></div></dl><div class="source-links">${(p.source||[]).map(s=>`<a href="${esc(s[1])}" target="_blank" rel="noreferrer">${esc(sourceLabel(s))} ↗</a>`).join('')}</div></div></article>`}).join('');
   $('#trail-count').textContent=`${state.items.length} 个地点`;
   $('#position').textContent=`${String(state.index+1).padStart(2,'0')} / ${String(state.items.length).padStart(2,'0')}`;
   host.scrollTo({left:host.clientWidth*state.index,behavior:'auto'});
