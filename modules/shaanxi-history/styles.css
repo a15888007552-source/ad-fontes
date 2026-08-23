@@ -460,6 +460,11 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 #museum .section-title-row { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; margin-bottom: 36px; }
 #museum .museum-facts { text-align: center; }
 
+/* Keep the museum introduction on the page axis while retaining its section rail. */
+#museum > .museum { display: block; }
+#museum > .museum > .section-label { width: 100%; margin-bottom: 30px; }
+#museum > .museum > .section-label::after { content: ""; flex: 1 1 auto; height: 1px; margin-left: 12px; background: color-mix(in srgb, var(--line-dark) 76%, transparent); }
+
 /* Collection theme: Tang red, gold, and a quiet lacquer ground. */
 #collection.collection {
   --paper: #3b1e1a;

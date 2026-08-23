@@ -380,6 +380,11 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
 #museum .section-title-row h2 { max-width: none; }
 #museum .museum-facts { text-align: center; }
 
+/* Keep the museum introduction on the page axis while retaining its section rail. */
+#museum.museum { display: block; }
+#museum.museum > .section-label { width: 100%; margin-bottom: 30px; }
+#museum.museum > .section-label::after { content: ""; flex: 1 1 auto; height: 1px; margin-left: 12px; background: var(--line); }
+
 /* Collection theme: deep mirror blue-green with bronze-gold edges. */
 #collection.collection {
   --paper: #0e292c;
