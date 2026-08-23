@@ -555,3 +555,99 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
   #collection.collection .object-card { min-height: 468px; grid-template-rows: 246px minmax(222px, 1fr); }
   #collection.collection .card-image { min-height: 246px; }
 }
+
+/* PR40 · shared research record layer; Xi'an jade/paper theme remains scoped above. */
+#collection.collection {
+  --record-title: clamp(22px, 1.7vw, 26px);
+  --record-meta: 11px;
+  --record-copy: 15px;
+}
+
+#collection.collection .object-grid {
+  grid-auto-rows: 530px;
+}
+
+#collection.collection .object-card {
+  height: 530px;
+  min-height: 530px;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+#collection.collection .card-image {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+}
+
+#collection.collection .card-image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+#collection.collection .card-number {
+  font-size: var(--record-meta);
+  letter-spacing: .06em;
+}
+
+#collection.collection .card-number::before { content: "OBJECT No. "; }
+
+#collection.collection .card-kicker,
+#collection.collection .card-origin,
+#collection.collection .card-bottom { font-size: var(--record-meta); }
+
+#collection.collection .card-kicker span:first-child::before,
+#collection.collection .card-kicker span:last-child::before,
+#collection.collection .card-origin::before { color: var(--xian-stone); }
+
+#collection.collection .card-kicker span:first-child::before { content: "TYPE / "; }
+#collection.collection .card-kicker span:last-child::before { content: "DATE / "; }
+#collection.collection .card-origin::before { content: "SOURCE / "; }
+
+#collection.collection .card-title {
+  font-size: var(--record-title) !important;
+  line-height: 1.25;
+}
+
+#collection.collection .card-summary {
+  font-size: var(--record-copy);
+  line-height: 1.65;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+#collection.collection .card-open {
+  font-size: 0;
+  letter-spacing: .08em;
+}
+
+#collection.collection .card-open::after {
+  content: "OPEN RECORD ↗";
+  font-size: var(--record-meta);
+}
+
+@media (max-width: 1180px) {
+  #collection.collection .object-card {
+    height: 530px;
+    min-height: 530px;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  #collection.collection .card-image { min-height: 0; }
+}
+
+@media (max-width: 760px) {
+  #collection.collection .object-grid { grid-auto-rows: 462px; }
+  #collection.collection .object-card {
+    height: 462px;
+    min-height: 462px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  #collection.collection .card-image { aspect-ratio: 16 / 9; }
+  #collection.collection .card-title { font-size: 22px !important; }
+  #collection.collection .card-summary { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #collection.collection .object-card,
+  #collection.collection .card-image img { transition: none; }
+}

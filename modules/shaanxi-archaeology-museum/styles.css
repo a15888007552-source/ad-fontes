@@ -687,3 +687,104 @@ h3 { margin-bottom: 12px; font-size: clamp(24px, 3vw, 36px); }
     transition: none;
   }
 }
+
+/* PR40 · shared research record layer; field-report theme remains scoped above. */
+#other.other-card {
+  --record-title: clamp(22px, 1.7vw, 26px);
+  --record-meta: 11px;
+  --record-copy: 15px;
+}
+
+#other.other-card .artifact-catalog-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 520px;
+  align-items: stretch;
+}
+
+#other.other-card .artifact-catalog-card {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 520px;
+  min-height: 520px;
+}
+
+#other.other-card .artifact-card-media {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  aspect-ratio: 16 / 10;
+}
+
+#other.other-card .artifact-card-media img {
+  object-fit: cover;
+  object-position: center;
+}
+
+#other.other-card .artifact-card-kicker,
+#other.other-card .artifact-card-period,
+#other.other-card .artifact-card-footer {
+  font-size: var(--record-meta);
+}
+
+#other.other-card .artifact-card-kicker span:first-child::before,
+#other.other-card .artifact-card-kicker span + span::before,
+#other.other-card .artifact-card-period::before { color: var(--arch-earth); }
+
+#other.other-card .artifact-card-kicker span:first-child::before { content: "OBJECT No. "; }
+#other.other-card .artifact-card-kicker span + span::before { content: "TYPE / "; }
+#other.other-card .artifact-card-period::before { content: "DATE / "; }
+
+#other.other-card .artifact-catalog-card h3 {
+  font-size: var(--record-title);
+  line-height: 1.25;
+}
+
+#other.other-card .artifact-card-summary {
+  font-size: var(--record-copy);
+  line-height: 1.65;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+#other.other-card .artifact-card-footer span:last-child {
+  font-size: 0;
+  letter-spacing: .08em;
+}
+
+#other.other-card .artifact-card-footer span:last-child::after {
+  color: var(--arch-earth);
+  content: "OPEN RECORD ↗";
+  font-size: var(--record-meta);
+}
+
+@media (max-width: 1180px) and (min-width: 761px) {
+  #other.other-card .artifact-catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #other.other-card .artifact-catalog-card {
+    height: 520px;
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 760px) {
+  #other.other-card .artifact-catalog-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 452px;
+  }
+
+  #other.other-card .artifact-catalog-card {
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 452px;
+    min-height: 452px;
+  }
+
+  #other.other-card .artifact-card-media { aspect-ratio: 16 / 9; }
+  #other.other-card .artifact-card-copy { min-height: 0; padding: 16px 17px 14px; }
+  #other.other-card .artifact-catalog-card h3 { font-size: 22px; }
+  #other.other-card .artifact-card-summary { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #other.other-card .artifact-catalog-card,
+  #other.other-card .artifact-card-media img { transition: none; }
+}
