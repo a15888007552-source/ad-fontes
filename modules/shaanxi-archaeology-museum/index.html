@@ -26,6 +26,43 @@
     <link rel="stylesheet" href="catalog-direct.css?v=20260815-direct1" />
     <link rel="stylesheet" href="museum-scenes.css?v=20260815-scenes1" />
     <style id="museum-brand-emblem">.brand-mark{overflow:hidden;background:#17211e}.brand-mark img{display:block;width:88%;height:88%;object-fit:contain}</style>
+    <style id="archaeology-section-continuity">
+      body { --arch-section-deep: #1e2d26; --arch-section-surface: #2a3a32; background: var(--arch-section-deep); }
+      .page-shell { background: var(--arch-section-deep); }
+      .page-shell > .feature-card:not(.theme-card) { border-color: rgba(238, 231, 216, .18); background: var(--arch-section-surface); box-shadow: none; color: var(--arch-paper); }
+      .page-shell > .feature-card:not(.theme-card) .feature-copy > p:not(.eyebrow):not(.lead):not(.boundary),
+      .page-shell > .feature-card:not(.theme-card) .other-heading > p,
+      .page-shell > .feature-card:not(.theme-card) .artifact-card-period,
+      .page-shell > .feature-card:not(.theme-card) .artifact-card-summary,
+      .page-shell > .feature-card:not(.theme-card) .artifact-card-footer { color: rgba(238, 231, 216, .78); }
+      .page-shell > .feature-card:not(.theme-card) h2,
+      .page-shell > .feature-card:not(.theme-card) h3 { color: var(--arch-paper); }
+      .about-aside { border-color: rgba(238, 231, 216, .18); background: var(--arch-section-deep); }
+      .about-aside span,
+      .treasure-facts dd,
+      .object-count { color: rgba(238, 231, 216, .7); }
+      #other.other-card {
+        color: var(--arch-paper);
+        background-color: var(--arch-section-surface);
+        background-image: linear-gradient(rgba(42, 58, 50, .94), rgba(30, 45, 38, .96)), var(--collection-art);
+        background-position: center;
+        background-size: cover;
+      }
+      #other .artifact-catalog-toolbar { border-color: rgba(238, 231, 216, .18); color: var(--arch-paper); }
+      #other .artifact-catalog-toolbar input,
+      #other .artifact-catalog-toolbar select { border-color: rgba(238, 231, 216, .28); color: var(--arch-paper); background: rgba(238, 231, 216, .08); }
+      #other .artifact-catalog-toolbar input::placeholder { color: rgba(238, 231, 216, .52); }
+      #other.other-card .artifact-catalog-card { border-color: rgba(238, 231, 216, .2); background: rgba(23, 38, 30, .82); }
+      #other.other-card .artifact-card-copy { color: rgba(238, 231, 216, .78); }
+      #other.other-card .artifact-catalog-card h3 { color: var(--arch-paper); }
+      #other.other-card .artifact-card-period,
+      #other.other-card .artifact-card-summary,
+      #other.other-card .artifact-card-footer { color: rgba(238, 231, 216, .78); }
+      #other .artifact-card-media { background: #111b16; }
+      #other .artifact-catalog-pager button { border-color: rgba(238, 231, 216, .28); color: var(--arch-paper); }
+      .museum-tomb-trails--archaeology { width: 100% !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: var(--arch-section-deep) !important; }
+      .museum-tomb-trails--archaeology iframe { background: var(--arch-section-deep) !important; }
+    </style>
   <link rel="stylesheet" href="../tomb-trails/host.css?v=20260821-layout1">
   </head>
   <body>

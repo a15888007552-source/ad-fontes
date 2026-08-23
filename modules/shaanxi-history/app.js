@@ -332,52 +332,44 @@
     scheduleTitleFit();
   }
 
-  function detailArchiveField(label, value) {
+  function detailArchiveField(label, value, keepSlot = false) {
     const normalized = value == null ? "" : String(value).trim();
-    const pending = !normalized;
+    if (!normalized && keepSlot) return '<div class="detail-archive-field" hidden aria-hidden="true"></div>';
+    if (!normalized) return "";
     return '<div class="detail-archive-field"><span class="detail-archive-label">'
       + escapeHtml(label)
-      + '</span><strong class="detail-archive-value'
-      + (pending ? ' is-pending' : '')
-      + '">'
-      + escapeHtml(normalized || "待研究")
+      + '</span><strong class="detail-archive-value">'
+      + escapeHtml(normalized)
       + '</strong></div>';
   }
 
   function detailArchiveMarkup(item) {
-    const fields = [
+    const archiveFields = [
       ["文物编号", "SHM-" + displayNumber(item)],
       ["类别", item.type],
       ["时代", item.period],
       ["材质", item.material],
-      ["出土地点", null],
-      ["尺寸", null],
+      ["出土地点", item.findspot],
+      ["尺寸", item.dimensions],
+    ];
+    const photos = Array.isArray(item.photos) ? item.photos : [];
+    const photoFields = [
+      ["SOURCE / 出土 / 来源", item.origin],
+      ["PHOTO SET / 器物图组", item.photoRange || (photos.length ? `${photos.length} 图` : "")],
     ];
     return '<section class="detail-archive-fields" aria-label="文物档案">'
       + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
       + '<div class="detail-archive-grid">'
-      + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+      + archiveFields.map(([label, value]) => detailArchiveField(label, value, true)).join("")
+      + photoFields.map(([label, value]) => detailArchiveField(label, value)).join("")
       + '</div></section>';
   }
 
   function mountDetailArchiveFields(anchor, item) {
-    anchor.closest("dialog")?.querySelector(".detail-archive-fields")?.remove();
-    anchor.insertAdjacentHTML("afterend", detailArchiveMarkup(item));
-  }
-
-  function metaHtml(item) {
-    const values = [
-      ["时代", item.period || "未完整识读"],
-      ["材质", item.material || "未完整识读"],
-      ["类别", item.type || "未分类"],
-      ["出土 / 来源", item.origin || "未完整记录"],
-      ["器物图组", item.photoRange || `${(item.photos || []).length} 图`],
-      ["档案编号", `SHM-${displayNumber(item)}`],
-    ];
-    return values
-      .filter(([, value]) => value)
-      .map(([label, value]) => `<div><b>${escapeHtml(label)}</b>${escapeHtml(value)}</div>`)
-      .join("");
+    anchor.outerHTML = detailArchiveMarkup(item).replace(
+      '<section class="detail-archive-fields"',
+      '<section id="dialog-meta" class="detail-archive-fields"',
+    );
   }
 
   function setDialogImage(photo, index, total) {
@@ -405,7 +397,6 @@
     document.getElementById("dialog-tags").innerHTML = (item.tags || [])
       .map((tag) => `<span class="mini-tag ${escapeHtml(tag)}">${escapeHtml(tagLabel(tag))}</span>`)
       .join("");
-    document.getElementById("dialog-meta").innerHTML = metaHtml(item);
     mountDetailArchiveFields(document.getElementById("dialog-meta"), item);
     document.getElementById("dialog-essay").innerHTML = (item.essay || [])
       .map((part) => `<h3>${escapeHtml(part.heading)}</h3><p>${escapeHtml(part.text)}</p>`)

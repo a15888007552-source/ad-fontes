@@ -34,10 +34,6 @@
   dialog.setAttribute("aria-label", "文物详情");
   document.body.append(dialog);
 
-  const factRow = (label, value) => value
-    ? `<div class="artifact-fact"><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`
-    : "";
-
   const cardHtml = (artifact) => {
     const photo = artifact.photos[0];
     const thumbUrl = mediaUrl(photo.thumb);
@@ -156,20 +152,19 @@
     window.history.pushState({ item: id ? String(id) : null }, "", `${url.pathname}${url.search}${url.hash}`);
   }
 
-  function detailArchiveField(label, value) {
+  function detailArchiveField(label, value, keepSlot = false) {
     const normalized = value == null ? "" : String(value).trim();
-    const pending = !normalized;
+    if (!normalized && keepSlot) return '<div class="detail-archive-field" hidden aria-hidden="true"></div>';
+    if (!normalized) return "";
     return '<div class="detail-archive-field"><span class="detail-archive-label">'
       + escapeHtml(label)
-      + '</span><strong class="detail-archive-value'
-      + (pending ? ' is-pending' : '')
-      + '">'
-      + escapeHtml(normalized || "待研究")
+      + '</span><strong class="detail-archive-value">'
+      + escapeHtml(normalized)
       + '</strong></div>';
   }
 
   function detailArchiveMarkup(artifact) {
-    const fields = [
+    const archiveFields = [
       ["文物编号", "ARC-" + String(artifact.index).padStart(3, "0")],
       ["类别", artifact.category],
       ["时代", artifact.period],
@@ -177,10 +172,12 @@
       ["出土地点", artifact.findspot],
       ["尺寸", artifact.dimensions],
     ];
+    const existingContext = [["CONTEXT / 主题 / 要点", artifact.theme]];
     return '<section class="detail-archive-fields" aria-label="文物档案">'
       + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
       + '<div class="detail-archive-grid">'
-      + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+      + archiveFields.map(([label, value]) => detailArchiveField(label, value, true)).join("")
+      + existingContext.map(([label, value]) => detailArchiveField(label, value)).join("")
       + '</div></section>';
   }
 
@@ -188,14 +185,6 @@
     if (!artifact) return false;
     activeArtifact = artifact;
     activePhoto = 0;
-    const facts = [
-      factRow("类别", artifact.category),
-      factRow("时代", artifact.period),
-      factRow("形制 / 尺寸", artifact.dimensions),
-      factRow("出土 / 发现", artifact.findspot),
-      factRow("材质 / 工艺", artifact.material),
-      factRow("主题 / 要点", artifact.theme),
-    ].join("");
     dialog.innerHTML = `
       <div class="artifact-dialog-shell">
         <button class="artifact-dialog-close" type="button" data-dialog-close aria-label="关闭详情">关闭 ×</button>
@@ -221,14 +210,13 @@
         <article class="artifact-dialog-copy">
           <p class="artifact-dialog-index">CATALOGUE ${String(artifact.index).padStart(3, "0")}</p>
           <h2>${escapeHtml(artifact.title)}</h2>
-          <dl class="artifact-facts">${facts}</dl>
+          ${detailArchiveMarkup(artifact)}
           <section><h3>文物说明</h3><p>${escapeHtml(artifact.description)}</p></section>
           <section><h3>历史与研究价值</h3><p>${escapeHtml(artifact.significance)}</p></section>
           <section><h3>观看提示</h3><p>${escapeHtml(artifact.viewing_notes)}</p></section>
           <aside class="artifact-evidence"><strong>资料边界</strong><p>${escapeHtml(artifact.evidence_note)}</p></aside>
         </article>
       </div>`;
-    dialog.querySelector(".artifact-facts")?.insertAdjacentHTML("afterend", detailArchiveMarkup(artifact));
     dialog.showModal();
     document.body.classList.add("catalog-dialog-open");
     resetZoom();
