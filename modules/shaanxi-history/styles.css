@@ -762,3 +762,70 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   line-height: 1;
   touch-action: manipulation;
 }
+
+/* PR43 · artifact archive fields extend the Tang-gold record layer. */
+.object-dialog .detail-archive-fields {
+  margin: 1.45rem 0 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(169, 133, 67, .36);
+}
+.object-dialog .detail-archive-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .55rem;
+  align-items: baseline;
+  margin: 0 0 .8rem;
+  color: var(--gold);
+  font: 700 9px/1.4 var(--sans);
+  letter-spacing: .14em;
+}
+.object-dialog .detail-archive-heading small {
+  color: var(--muted);
+  font: 400 10px/1.4 var(--sans);
+  letter-spacing: .08em;
+}
+.object-dialog .detail-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(36, 31, 24, .16);
+  border-left: 1px solid rgba(36, 31, 24, .16);
+}
+.object-dialog .detail-archive-field {
+  min-width: 0;
+  min-height: 4rem;
+  padding: .75rem .8rem;
+  border-right: 1px solid rgba(36, 31, 24, .16);
+  border-bottom: 1px solid rgba(36, 31, 24, .16);
+}
+.object-dialog .detail-archive-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .35rem;
+  align-items: baseline;
+  color: var(--ink);
+  font: 700 9px/1.4 var(--sans);
+  letter-spacing: .07em;
+}
+.object-dialog .detail-archive-label::before { color: var(--gold); }
+.object-dialog .detail-archive-field:nth-child(1) .detail-archive-label::before { content: "OBJECT NO. /"; }
+.object-dialog .detail-archive-field:nth-child(2) .detail-archive-label::before { content: "CATEGORY /"; }
+.object-dialog .detail-archive-field:nth-child(3) .detail-archive-label::before { content: "PERIOD /"; }
+.object-dialog .detail-archive-field:nth-child(4) .detail-archive-label::before { content: "MATERIAL /"; }
+.object-dialog .detail-archive-field:nth-child(5) .detail-archive-label::before { content: "FINDSPOT /"; }
+.object-dialog .detail-archive-field:nth-child(6) .detail-archive-label::before { content: "DIMENSIONS /"; }
+.object-dialog .detail-archive-value {
+  display: block;
+  margin-top: .4rem;
+  color: var(--ink);
+  font: 400 11px/1.65 var(--sans);
+  overflow-wrap: anywhere;
+}
+.object-dialog .detail-archive-value.is-pending {
+  color: color-mix(in srgb, var(--muted) 68%, transparent);
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .object-dialog .detail-archive-grid { grid-template-columns: 1fr; }
+  .object-dialog .detail-archive-field { min-height: 0; }
+}

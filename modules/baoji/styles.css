@@ -931,6 +931,74 @@ body {
   touch-action: manipulation;
 }
 
+/* PR43 · artifact archive fields extend the bronze inscription record layer. */
+.detail-dialog .detail-archive-fields {
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.detail-dialog .detail-archive-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .55rem;
+  align-items: baseline;
+  margin: 0 0 .8rem;
+  color: var(--bronze-gold);
+  font: 700 .56rem/1.4 var(--mono);
+  letter-spacing: .14em;
+}
+.detail-dialog .detail-archive-heading small {
+  color: var(--muted);
+  font: 400 .6rem/1.4 var(--mono);
+  letter-spacing: .08em;
+}
+.detail-dialog .detail-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.detail-dialog .detail-archive-field {
+  min-width: 0;
+  min-height: 3.8rem;
+  padding: .7rem .75rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.detail-dialog .detail-archive-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .35rem;
+  align-items: baseline;
+  color: var(--bronze-patina);
+  font: .55rem/1.35 var(--mono);
+  letter-spacing: .04em;
+}
+.detail-dialog .detail-archive-label::before { color: var(--bronze-gold); }
+.detail-dialog .detail-archive-field:nth-child(1) .detail-archive-label::before { content: "OBJECT NO. /"; }
+.detail-dialog .detail-archive-field:nth-child(2) .detail-archive-label::before { content: "CATEGORY /"; }
+.detail-dialog .detail-archive-field:nth-child(3) .detail-archive-label::before { content: "PERIOD /"; }
+.detail-dialog .detail-archive-field:nth-child(4) .detail-archive-label::before { content: "MATERIAL /"; }
+.detail-dialog .detail-archive-field:nth-child(5) .detail-archive-label::before { content: "FINDSPOT /"; }
+.detail-dialog .detail-archive-field:nth-child(6) .detail-archive-label::before { content: "DIMENSIONS /"; }
+.detail-dialog .detail-archive-value {
+  display: block;
+  margin-top: .4rem;
+  color: var(--ink);
+  font-size: .72rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.detail-dialog .detail-archive-value.is-pending {
+  color: color-mix(in srgb, var(--muted) 68%, transparent);
+  font-style: italic;
+}
+
+@media (max-width: 760px) {
+  .detail-dialog .detail-archive-grid { grid-template-columns: 1fr; }
+  .detail-dialog .detail-archive-field { min-height: 0; }
+}
+
 /* PR41 · detail research layer; Bronze Inscription Archive remains patina and paper. */
 .detail-dialog #dialog-content {
   position: relative;
