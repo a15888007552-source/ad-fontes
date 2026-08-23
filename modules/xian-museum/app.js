@@ -295,6 +295,40 @@
     holder.querySelectorAll("[data-route-category]").forEach((button) => button.addEventListener("click", () => activateCategory(button.dataset.routeCategory)));
   }
 
+  function detailArchiveField(label, value) {
+    const normalized = value == null ? "" : String(value).trim();
+    const pending = !normalized;
+    return '<div class="detail-archive-field"><span class="detail-archive-label">'
+      + escapeHtml(label)
+      + '</span><strong class="detail-archive-value'
+      + (pending ? ' is-pending' : '')
+      + '">'
+      + escapeHtml(normalized || "待研究")
+      + '</strong></div>';
+  }
+
+  function detailArchiveMarkup(item) {
+    const number = "XAM-" + String(item.sequence ?? "—").padStart(3, "0");
+    const fields = [
+      ["文物编号", number],
+      ["类别", item.category],
+      ["时代", item.period],
+      ["材质", item.material],
+      ["出土地点", null],
+      ["尺寸", null],
+    ];
+    return '<section class="detail-archive-fields" aria-label="文物档案">'
+      + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
+      + '<div class="detail-archive-grid">'
+      + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+      + '</div></section>';
+  }
+
+  function mountDetailArchiveFields(anchor, item) {
+    anchor.closest("dialog")?.querySelector(".detail-archive-fields")?.remove();
+    anchor.insertAdjacentHTML("afterend", detailArchiveMarkup(item));
+  }
+
   function metaHtml(item) {
     const values = [
       ["时代", item.period || "年代未完整识读"],
@@ -334,6 +368,7 @@
       `<span>${escapeHtml(item.category || "观物档案")}</span>`,
     ].filter(Boolean).join("");
     document.getElementById("dialog-meta").innerHTML = metaHtml(item);
+    mountDetailArchiveFields(document.getElementById("dialog-meta"), item);
     document.getElementById("dialog-essay").innerHTML = (item.sections || []).map((section) => `<section><h3>${escapeHtml(section.heading)}</h3><p>${escapeHtml(section.text)}</p></section>`).join("");
     const sourceLinks = (item.sources || []).map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.label)} ↗</a>`).join(" · ");
     document.getElementById("dialog-evidence").innerHTML = `<b>资料来源</b><br>${escapeHtml(item.evidence || "名称、时代与来源依据现场展签。") }${sourceLinks ? `<br>${sourceLinks}` : ""}`;

@@ -181,6 +181,35 @@
     return values;
   }
 
+  function detailArchiveField(label, value) {
+    const normalized = value == null ? "" : String(value).trim();
+    const pending = !normalized;
+    return '<div class="detail-archive-field"><span class="detail-archive-label">'
+      + escapeHTML(label)
+      + '</span><strong class="detail-archive-value'
+      + (pending ? ' is-pending' : '')
+      + '">'
+      + escapeHTML(normalized || "待研究")
+      + '</strong></div>';
+  }
+
+  function detailArchiveMarkup(item) {
+    const objectNo = item.number ? "BRZ-" + item.number : item.id;
+    const fields = [
+      ["文物编号", objectNo],
+      ["类别", item.category || item.categoryLabel],
+      ["时代", item.era],
+      ["材质", null],
+      ["出土地点", item.findspot],
+      ["尺寸", item.dimensions],
+    ];
+    return '<section class="detail-archive-fields" aria-label="文物档案">'
+      + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
+      + '<div class="detail-archive-grid">'
+      + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+      + '</div></section>';
+  }
+
   function factsMarkup(item) {
     const facts = [
       ['年代', item.era],
@@ -464,6 +493,7 @@
       ${inscriptionMarkup(item)}
       ${group?.labelText ? `<p class="ocr-note">现场展签 OCR 候选：${escapeHTML(group.labelText)}。此段仅用于辅助检索，未把 OCR 结果直接当作正式释文。</p>` : ''}
       ${sourcesMarkup(item)}`;
+    dialogContent.querySelector(".dialog-facts")?.insertAdjacentHTML("afterend", detailArchiveMarkup(item));
     bindGallery();
     showDialog({
       itemId: item.id,
@@ -502,6 +532,7 @@
       <div class="dialog-facts"><div class="dialog-fact"><span class="dialog-fact-label">类别</span><span class="dialog-fact-value">${escapeHTML(group.categoryLabel || '其他器物')}</span></div><div class="dialog-fact"><span class="dialog-fact-label">照片数</span><span class="dialog-fact-value">${photos.length} 张</span></div><div class="dialog-fact"><span class="dialog-fact-label">音乐重点</span><span class="dialog-fact-value">${group.musicFocus ? '是 · 乐器 / 礼乐' : '否'}</span></div><div class="dialog-fact"><span class="dialog-fact-label">证据状态</span><span class="dialog-fact-value">${escapeHTML(group.status || '现场展签 / 照片顺序')}</span></div></div>
       <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, `现场顺序 · ${filenameOf(main)}`)}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
       ${genericSequenceMarkup(group)}`;
+    dialogContent.querySelector(".dialog-facts")?.insertAdjacentHTML("afterend", detailArchiveMarkup(group));
     bindGallery();
     showDialog({
       itemId: group.id,

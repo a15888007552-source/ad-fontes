@@ -332,6 +332,39 @@
     scheduleTitleFit();
   }
 
+  function detailArchiveField(label, value) {
+    const normalized = value == null ? "" : String(value).trim();
+    const pending = !normalized;
+    return '<div class="detail-archive-field"><span class="detail-archive-label">'
+      + escapeHtml(label)
+      + '</span><strong class="detail-archive-value'
+      + (pending ? ' is-pending' : '')
+      + '">'
+      + escapeHtml(normalized || "待研究")
+      + '</strong></div>';
+  }
+
+  function detailArchiveMarkup(item) {
+    const fields = [
+      ["文物编号", "SHM-" + displayNumber(item)],
+      ["类别", item.type],
+      ["时代", item.period],
+      ["材质", item.material],
+      ["出土地点", null],
+      ["尺寸", null],
+    ];
+    return '<section class="detail-archive-fields" aria-label="文物档案">'
+      + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
+      + '<div class="detail-archive-grid">'
+      + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+      + '</div></section>';
+  }
+
+  function mountDetailArchiveFields(anchor, item) {
+    anchor.closest("dialog")?.querySelector(".detail-archive-fields")?.remove();
+    anchor.insertAdjacentHTML("afterend", detailArchiveMarkup(item));
+  }
+
   function metaHtml(item) {
     const values = [
       ["时代", item.period || "未完整识读"],
@@ -373,6 +406,7 @@
       .map((tag) => `<span class="mini-tag ${escapeHtml(tag)}">${escapeHtml(tagLabel(tag))}</span>`)
       .join("");
     document.getElementById("dialog-meta").innerHTML = metaHtml(item);
+    mountDetailArchiveFields(document.getElementById("dialog-meta"), item);
     document.getElementById("dialog-essay").innerHTML = (item.essay || [])
       .map((part) => `<h3>${escapeHtml(part.heading)}</h3><p>${escapeHtml(part.text)}</p>`)
       .join("");

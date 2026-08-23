@@ -44,6 +44,39 @@ const normalize = (value) => String(value || "").toLocaleLowerCase("zh-CN").repl
 const NON_ARTIFACT_GROUP_IDS = new Set(["museum-arrival", "reference-wall"]);
 const isPublicArtifact = (group) => !NON_ARTIFACT_GROUP_IDS.has(group.id);
 
+function detailArchiveField(label, value) {
+  const normalized = value == null ? "" : String(value).trim();
+  const pending = !normalized;
+  return '<div class="detail-archive-field"><span class="detail-archive-label">'
+    + escapeHTML(label)
+    + '</span><strong class="detail-archive-value'
+    + (pending ? ' is-pending' : '')
+    + '">'
+    + escapeHTML(normalized || "待研究")
+    + '</strong></div>';
+}
+
+function detailArchiveMarkup(group) {
+  const fields = [
+    ["文物编号", group.id],
+    ["类别", group.category],
+    ["时代", null],
+    ["材质", null],
+    ["出土地点", null],
+    ["尺寸", null],
+  ];
+  return '<section class="detail-archive-fields" aria-label="文物档案">'
+    + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
+    + '<div class="detail-archive-grid">'
+    + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+    + '</div></section>';
+}
+
+function mountDetailArchiveFields(anchor, group) {
+  anchor.closest("dialog")?.querySelector(".detail-archive-fields")?.remove();
+  anchor.insertAdjacentHTML("afterend", detailArchiveMarkup(group));
+}
+
 function filteredGroups() {
   if (!state.data) return [];
   return state.data.groups.filter((group) => {
@@ -163,6 +196,7 @@ function openGroup(id, { syncUrl = false } = {}) {
   if (!group || !isPublicArtifact(group)) return;
   const dialogAlreadyOpen = elements.dialog.open || elements.dialog.hasAttribute("open");
   state.activeGroup = group;
+  mountDetailArchiveFields(elements.dialogMeta, group);
   elements.dialogKicker.textContent = `${group.category} · ${group.era} · ${group.photo_count} 张现场照片`;
   elements.dialogSpecial.innerHTML = group.special_status ? `<span class="dialog-special">${escapeHTML(group.special_status)}</span>` : "";
   elements.dialogTitle.textContent = group.title;

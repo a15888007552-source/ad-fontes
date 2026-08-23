@@ -156,6 +156,34 @@
     window.history.pushState({ item: id ? String(id) : null }, "", `${url.pathname}${url.search}${url.hash}`);
   }
 
+  function detailArchiveField(label, value) {
+    const normalized = value == null ? "" : String(value).trim();
+    const pending = !normalized;
+    return '<div class="detail-archive-field"><span class="detail-archive-label">'
+      + escapeHtml(label)
+      + '</span><strong class="detail-archive-value'
+      + (pending ? ' is-pending' : '')
+      + '">'
+      + escapeHtml(normalized || "待研究")
+      + '</strong></div>';
+  }
+
+  function detailArchiveMarkup(artifact) {
+    const fields = [
+      ["文物编号", "ARC-" + String(artifact.index).padStart(3, "0")],
+      ["类别", artifact.category],
+      ["时代", artifact.period],
+      ["材质", artifact.material],
+      ["出土地点", artifact.findspot],
+      ["尺寸", artifact.dimensions],
+    ];
+    return '<section class="detail-archive-fields" aria-label="文物档案">'
+      + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
+      + '<div class="detail-archive-grid">'
+      + fields.map(([label, value]) => detailArchiveField(label, value)).join("")
+      + '</div></section>';
+  }
+
   function openArtifact(artifact, { syncUrl = false } = {}) {
     if (!artifact) return false;
     activeArtifact = artifact;
@@ -200,6 +228,7 @@
           <aside class="artifact-evidence"><strong>资料边界</strong><p>${escapeHtml(artifact.evidence_note)}</p></aside>
         </article>
       </div>`;
+    dialog.querySelector(".artifact-facts")?.insertAdjacentHTML("afterend", detailArchiveMarkup(artifact));
     dialog.showModal();
     document.body.classList.add("catalog-dialog-open");
     resetZoom();
