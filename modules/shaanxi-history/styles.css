@@ -456,73 +456,84 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
 
-/* 单行标题与信息卡片整体居中 */
-#museum .section-title-row { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; margin-bottom: 36px; }
-#museum .museum-facts { text-align: center; }
-
-/* Keep the museum introduction on the page axis while retaining its section rail. */
+/* Keep the museum introduction and its content on one left axis. */
 #museum > .museum { display: block; }
-#museum > .museum > .section-label { width: 100%; margin-bottom: 30px; }
+#museum > .museum > .section-label { width: 100%; margin-bottom: 28px; padding-top: 0; }
 #museum > .museum > .section-label::after { content: ""; flex: 1 1 auto; height: 1px; margin-left: 12px; background: color-mix(in srgb, var(--line-dark) 76%, transparent); }
+#museum .section-title-row { flex-direction: column; align-items: flex-start; justify-content: flex-start; text-align: left; gap: 10px; margin-bottom: 36px; }
+#museum .museum-facts { text-align: left; }
 
-/* Collection theme: Tang red, gold, and a quiet lacquer ground. */
+/* Collection theme: Tang gold, vermilion, paper, and ink. */
 #collection.collection {
-  --paper: #3b1e1a;
-  --paper-deep: #4b2520;
-  --surface: rgba(54, 29, 24, .9);
-  --ink: #fff1da;
-  --muted: rgba(245, 220, 188, .78);
-  --line: rgba(233, 184, 107, .3);
-  --line-dark: rgba(233, 184, 107, .5);
-  --red: #df805e;
-  --red-dark: #a94332;
-  --gold: #e2b96c;
-  --teal: #95b3a2;
-  --night: #1b100d;
+  --paper: #E8DFCE;
+  --paper-deep: #E8DFCE;
+  --surface: #F4EDE0;
+  --ink: #241F18;
+  --muted: #6F6254;
+  --line: rgba(36, 31, 24, .18);
+  --line-dark: rgba(36, 31, 24, .42);
+  --red: #A94332;
+  --red-dark: #7F3026;
+  --gold: #B88A3D;
+  --teal: #496E65;
+  --night: #241F18;
   --collection-art: url("assets/ui/collection-background.webp");
   color: var(--ink);
-  color-scheme: dark;
+  color-scheme: light;
   background:
-    linear-gradient(180deg, rgba(44, 17, 13, .88), rgba(78, 31, 24, .74) 52%, rgba(30, 13, 11, .92)),
+    linear-gradient(180deg, rgba(232, 223, 206, .92), rgba(232, 223, 206, .78) 48%, rgba(232, 223, 206, .94)),
     var(--collection-art) center / cover no-repeat;
+}
+#collection.collection::before {
+  opacity: .1;
+  mix-blend-mode: multiply;
 }
 
 #collection.collection .collection-head p,
 #collection.collection .result-line { color: var(--muted); }
-#collection.collection .filter-shell { border-color: var(--line-dark); background: rgba(47, 22, 18, .88); box-shadow: 0 18px 46px rgba(30, 12, 9, .26); }
+#collection.collection .filter-shell { border-color: var(--line-dark); background: rgba(244, 237, 224, .9); box-shadow: 0 18px 46px rgba(55, 39, 20, .1); }
 #collection.collection .search-box,
 #collection.collection .filter-row { border-color: var(--line); }
 #collection.collection .search-box input,
 #collection.collection .sort-box select { color: var(--ink); }
-#collection.collection .search-box input::placeholder { color: rgba(245, 220, 188, .56); }
-#collection.collection kbd { border-color: var(--line); color: var(--muted); background: rgba(39, 17, 14, .82); }
+#collection.collection .search-box input::placeholder { color: color-mix(in srgb, var(--muted) 76%, transparent); }
+#collection.collection kbd { border-color: var(--line); color: var(--muted); background: rgba(255, 250, 241, .72); }
 #collection.collection .filter-chip { border-color: var(--line); color: var(--muted); }
 #collection.collection .filter-chip:hover,
 #collection.collection .filter-chip:focus-visible { border-color: var(--gold); color: var(--gold); }
 #collection.collection .filter-chip.active,
-#collection.collection .filter-chip.music.active,
 #collection.collection .filter-chip.forbidden.active,
-#collection.collection .filter-chip.wall.active,
-#collection.collection .filter-chip.greek.active { color: #fff1da; border-color: var(--red); background: var(--red-dark); }
+#collection.collection .filter-chip.wall.active { color: #F4EDE0; border-color: var(--ink); background: var(--ink); }
+#collection.collection .filter-chip.music.active { color: #F4EDE0; border-color: var(--teal); background: var(--teal); }
+#collection.collection .filter-chip.forbidden.active { color: #F4EDE0; border-color: var(--red); background: var(--red); }
+#collection.collection .filter-chip.greek.active { color: var(--ink); border-color: var(--gold); background: var(--gold); }
+#collection.collection .section-label span { color: var(--gold); }
 #collection.collection .object-grid { border-color: var(--line); }
 #collection.collection .object-card {
   border-color: var(--line);
+  border-top: 2px solid var(--gold);
   color: var(--ink);
-  background:
-    linear-gradient(135deg, rgba(53, 24, 20, .95), rgba(79, 35, 25, .84)),
-    var(--collection-art) center / cover no-repeat;
+  background: rgba(244, 237, 224, .94);
 }
 #collection.collection .object-card:hover,
 #collection.collection .object-card:focus-visible {
   border-color: var(--gold);
-  background:
-    linear-gradient(135deg, rgba(76, 31, 23, .92), rgba(108, 49, 31, .8)),
-    var(--collection-art) center / cover no-repeat;
+  border-top-color: var(--red);
+  background: #F1E5CD;
 }
 #collection.collection .card-title { color: var(--ink); }
 #collection.collection .mini-tag { border-color: var(--line); color: var(--muted); }
-#collection.collection .empty-state { border-color: var(--line); background: rgba(51, 25, 21, .9); }
+#collection.collection .card-origin,
+#collection.collection .card-lead { color: color-mix(in srgb, var(--ink) 76%, var(--muted)); }
+#collection.collection .card-reference { color: var(--muted); }
+#collection.collection .empty-state { border-color: var(--line); background: rgba(244, 237, 224, .94); }
 #collection.collection .quiet-action { border-color: var(--line-dark); color: var(--ink); }
+
+@media (min-width: 761px) {
+  #collection.collection .object-card { grid-template-rows: clamp(208px, 18vw, 252px) minmax(214px, 1fr); }
+  #collection.collection .card-image { aspect-ratio: auto; }
+  #collection.collection .card-body { min-height: 214px; }
+}
 
 /* Special exhibition theme: a warm gold field for the Hellenistic display. */
 #special.special {
