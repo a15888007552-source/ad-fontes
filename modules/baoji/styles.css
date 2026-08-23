@@ -924,6 +924,13 @@ body {
   #archive.section--archive .archive-card-media img { transition: none; }
 }
 
+/* PR42 · bronze record controls use the same minimum touch target as the other museums. */
+.detail-dialog .dialog-close {
+  min-width: 44px;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
 /* PR41 · detail research layer; Bronze Inscription Archive remains patina and paper. */
 .detail-dialog #dialog-content {
   position: relative;

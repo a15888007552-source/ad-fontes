@@ -744,3 +744,20 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
   .object-dialog .dialog-meta > div { min-height: 0; }
   .object-dialog .dialog-content h2 { max-width: none; }
 }
+
+/* PR42 · preserve complete record titles and align detail controls. */
+.object-dialog .dialog-content h2 {
+  max-width: 100%;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+  white-space: normal;
+}
+.object-dialog .dialog-close {
+  display: grid;
+  min-width: 44px;
+  min-height: 44px;
+  place-items: center;
+  line-height: 1;
+  touch-action: manipulation;
+}
