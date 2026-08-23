@@ -494,11 +494,11 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 #collection.collection .filter-chip { border-color: var(--line); color: var(--muted); }
 #collection.collection .filter-chip:hover,
 #collection.collection .filter-chip:focus-visible { border-color: var(--gold); color: var(--gold); }
-#collection.collection .filter-chip.active { color: #fff1da; border-color: var(--red-dark); background: var(--red-dark); }
-#collection.collection .filter-chip.music.active { border-color: var(--teal); background: var(--teal); }
+#collection.collection .filter-chip.active,
+#collection.collection .filter-chip.music.active,
 #collection.collection .filter-chip.forbidden.active,
-#collection.collection .filter-chip.wall.active { border-color: var(--red); background: var(--red); }
-#collection.collection .filter-chip.greek.active { color: var(--night); border-color: var(--gold); background: var(--gold); }
+#collection.collection .filter-chip.wall.active,
+#collection.collection .filter-chip.greek.active { color: #fff1da; border-color: var(--red); background: var(--red-dark); }
 #collection.collection .object-grid { border-color: var(--line); }
 #collection.collection .object-card {
   border-color: var(--line);

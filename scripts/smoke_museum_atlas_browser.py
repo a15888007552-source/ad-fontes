@@ -14,6 +14,11 @@ from urllib.parse import urljoin, urlsplit
 MEDIA_HOST = "pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
 RETIRED_WORKER_HOST = "ad-fontes-media.gusgumee777.workers.dev"
 EXTERNALIZED_MODULES = {"qinhan", "shaanxi-history", "shaanxi-archaeology-museum"}
+LOCAL_UI_MEDIA = {
+    "/modules/qinhan/assets/ui/collection-background.webp",
+    "/modules/shaanxi-history/assets/ui/collection-background.webp",
+    "/modules/shaanxi-archaeology-museum/assets/ui/collection-background.webp",
+}
 MEDIA_SUFFIXES = {
     ".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".avif", ".heic", ".tif", ".tiff",
     ".mp3", ".wav", ".flac", ".m4a", ".ogg", ".mp4", ".webm", ".mov", ".pdf",
@@ -38,6 +43,7 @@ class Tracker:
         self.http_404_urls: list[str] = []
         self.external_requests = 0
         self.external_failures: set[str] = set()
+        self.local_ui_requests = 0
         self.local_externalized_requests = 0
         self.retired_worker_requests = 0
         self.external_other_requests = 0
@@ -50,6 +56,8 @@ class Tracker:
         if parsed.hostname == MEDIA_HOST and module_from_path(parsed.path) in EXTERNALIZED_MODULES:
             return "external"
         if parsed.hostname in {"127.0.0.1", "localhost"}:
+            if parsed.path in LOCAL_UI_MEDIA:
+                return "local_ui"
             module = module_from_path(parsed.path)
             if module in EXTERNALIZED_MODULES:
                 return "local_externalized"
@@ -61,6 +69,8 @@ class Tracker:
         kind = self.classify(request.url)
         if kind == "external":
             self.external_requests += 1
+        elif kind == "local_ui":
+            self.local_ui_requests += 1
         elif kind == "local_externalized":
             self.local_externalized_requests += 1
         elif kind == "retired_worker":
@@ -72,6 +82,9 @@ class Tracker:
         if response.status == 404:
             self.http_404_urls.append(response.url)
         kind = self.classify(response.url)
+        if kind == "local_ui" and response.status != 200:
+            self.failed_media.add(f"{response.status} {response.url}")
+            return
         if kind is None or 200 <= response.status < 400:
             return
         self.failed_media.add(f"{response.status} {response.url}")
@@ -161,6 +174,7 @@ def main() -> int:
         "externalHost": MEDIA_HOST,
         "externalMediaRequests": 0,
         "externalMediaFailures": 0,
+        "localUiMediaRequests": 0,
         "deletedLocalMediaRequests": 0,
         "retiredWorkerRequests": 0,
         "externalOtherMediaRequests": 0,
@@ -285,6 +299,8 @@ def main() -> int:
                 raise AssertionError(f"page errors: {report['pageErrors'][:5]}")
             if tracker.external_failures:
                 raise AssertionError(f"external media failures on {MEDIA_HOST}: {sorted(tracker.external_failures)[:5]}")
+            if tracker.local_ui_requests < 3:
+                raise AssertionError(f"legal local UI media requests observed: {tracker.local_ui_requests}")
             if tracker.local_externalized_requests:
                 raise AssertionError(f"deleted local externalized media requests: {tracker.local_externalized_requests}")
             if tracker.retired_worker_requests:
@@ -297,6 +313,7 @@ def main() -> int:
     finally:
         report["externalMediaRequests"] = tracker.external_requests
         report["externalMediaFailures"] = len(tracker.external_failures)
+        report["localUiMediaRequests"] = tracker.local_ui_requests
         report["deletedLocalMediaRequests"] = tracker.local_externalized_requests
         report["retiredWorkerRequests"] = tracker.retired_worker_requests
         report["externalOtherMediaRequests"] = tracker.external_other_requests

@@ -414,9 +414,10 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
 #collection.collection .filter-chip { border-color: var(--line); color: var(--muted); }
 #collection.collection .filter-chip:hover,
 #collection.collection .filter-chip:focus-visible { border-color: var(--gold); color: var(--gold); }
-#collection.collection .filter-chip.active { color: #f8f0dd; border-color: var(--green-dark); background: var(--green-dark); }
-#collection.collection .filter-chip.music.active { border-color: var(--red); background: var(--red); }
-#collection.collection .filter-chip.groups.active { color: #132a28; border-color: var(--gold); background: var(--gold); }
+#collection.collection .filter-chip.active,
+#collection.collection .filter-chip.music.active,
+#collection.collection .filter-chip.groups.active,
+#collection.collection .filter-chip.forbidden.active { color: #f8f0dd; border-color: var(--green-dark); background: var(--green-dark); }
 #collection.collection .object-grid { border-color: var(--line); }
 #collection.collection .object-card {
   border-color: var(--line);
