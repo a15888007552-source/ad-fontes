@@ -248,3 +248,92 @@ dialog[open] dl dd {
     padding: 12px 0 !important;
   }
 }
+
+/* PR41 · detail research layer; Field Report remains loess-paper and report-like. */
+.artifact-dialog .artifact-dialog-copy {
+  position: relative;
+  padding: clamp(2rem, 4vw, 4.2rem);
+  background:
+    linear-gradient(135deg, rgba(238, 231, 216, .98), rgba(216, 210, 196, .9)),
+    repeating-linear-gradient(0deg, transparent 0 34px, rgba(155, 91, 58, .045) 34px 35px);
+}
+.artifact-dialog .artifact-dialog-copy::before {
+  display: block;
+  margin-bottom: 1.5rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(155, 91, 58, .35);
+  color: var(--catalog-accent);
+  content: "FIELD REPORT / OBJECT RECORD";
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.artifact-dialog .artifact-dialog-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .6rem;
+  align-items: baseline;
+  color: var(--catalog-muted);
+}
+.artifact-dialog .artifact-dialog-index::before {
+  color: var(--catalog-accent);
+  content: "CATALOGUE /";
+}
+.artifact-dialog .artifact-dialog-copy h2 {
+  max-width: 13ch;
+  margin-bottom: 1.25rem;
+  color: var(--catalog-ink);
+  letter-spacing: -.045em;
+}
+.artifact-dialog .artifact-facts {
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, .22);
+}
+.artifact-dialog .artifact-fact dt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .4rem;
+  align-items: baseline;
+}
+.artifact-dialog .artifact-fact dt::before {
+  color: var(--catalog-accent);
+}
+.artifact-dialog .artifact-fact:nth-child(1) dt::before { content: "CATEGORY /"; }
+.artifact-dialog .artifact-fact:nth-child(2) dt::before { content: "PERIOD /"; }
+.artifact-dialog .artifact-fact:nth-child(3) dt::before { content: "PROVENANCE /"; }
+.artifact-dialog .artifact-fact:nth-child(4) dt::before { content: "CONTEXT /"; }
+.artifact-dialog .artifact-dialog-copy section {
+  margin-top: 1.8rem;
+  padding-top: 1rem;
+}
+.artifact-dialog .artifact-dialog-copy section h3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  align-items: baseline;
+}
+.artifact-dialog .artifact-dialog-copy section h3::before {
+  color: var(--catalog-accent);
+  content: "FIELD NOTE /";
+  font-size: .65rem;
+  letter-spacing: .12em;
+}
+.artifact-dialog .artifact-evidence {
+  margin-top: 1.8rem;
+  background: rgba(180, 71, 53, .09);
+}
+.artifact-dialog .artifact-evidence strong {
+  color: var(--catalog-accent);
+}
+.artifact-dialog .artifact-evidence strong::before {
+  margin-right: .45rem;
+  content: "SOURCE /";
+  font-size: .65rem;
+  letter-spacing: .12em;
+}
+
+@media (max-width: 760px) {
+  .artifact-dialog .artifact-dialog-copy { padding: 1.4rem 1rem max(2.5rem, env(safe-area-inset-bottom)); }
+  .artifact-dialog .artifact-dialog-copy::before { margin-bottom: 1.2rem; font-size: .62rem; }
+  .artifact-dialog .artifact-dialog-copy h2 { max-width: none; }
+}
