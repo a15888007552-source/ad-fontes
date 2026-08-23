@@ -2544,6 +2544,306 @@
       transition: none;
     }
   }
+  /* PR44 · the hub borrows each live museum's archive language without touching
+     the museum modules or the preparation cards. */
+  .atlas-archive-summary {
+    display: grid;
+    grid-template-columns: minmax(220px, .92fr) minmax(0, 2.08fr);
+    gap: 28px;
+    align-items: stretch;
+    margin-top: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .atlas-archive-summary[hidden] {
+    display: none;
+  }
+
+  .atlas-archive-summary__lead {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .atlas-archive-summary__lead .section-kicker {
+    margin: 0 0 7px;
+  }
+
+  .atlas-archive-summary__lead h2 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.42rem, 2.6vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 1.15;
+  }
+
+  .atlas-archive-summary__lead p:last-child {
+    max-width: 28em;
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .atlas-archive-summary__stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-left: 1px solid var(--line);
+  }
+
+  .atlas-archive-summary__stats > div {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6px 18px;
+    border-right: 1px solid var(--line);
+  }
+
+  .atlas-archive-summary__stats dt {
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .atlas-archive-summary__stats dd {
+    margin: 4px 0 0;
+    color: var(--accent);
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 2.3vw, 1.85rem);
+    letter-spacing: -.04em;
+    line-height: 1;
+  }
+
+  .atlas-archive-summary__stats small {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: .1em;
+  }
+
+  .museum-card--branded {
+    grid-template-columns: 118px minmax(0, 1fr);
+    min-height: 174px;
+    border-color: var(--museum-line);
+    background: var(--museum-surface);
+    color: var(--museum-ink);
+  }
+
+  .museum-card--branded::after {
+    background: radial-gradient(circle at var(--card-x, 50%) var(--card-y, 50%), color-mix(in srgb, var(--museum-accent) 20%, transparent), transparent 42%);
+  }
+
+  .museum-card--branded .card-media {
+    position: relative;
+    min-height: 174px;
+    background: var(--museum-media);
+  }
+
+  .museum-card--branded .card-media img {
+    min-height: 174px;
+    filter: saturate(.9) contrast(1.04);
+  }
+
+  .museum-card--branded:hover .card-media img,
+  .museum-card--branded:focus-within .card-media img {
+    filter: saturate(1.08) contrast(1.05);
+  }
+
+  .museum-card--branded .museum-card-body {
+    padding: 14px 15px 13px;
+    background: var(--museum-surface);
+  }
+
+  .museum-card--branded .card-status,
+  .museum-card--branded .card-arrow {
+    color: var(--museum-accent);
+  }
+
+  .museum-card--branded h4 {
+    color: var(--museum-ink);
+  }
+
+  .museum-card--branded p {
+    color: var(--museum-muted);
+  }
+
+  .museum-card--branded .card-arrow {
+    padding-top: 9px;
+  }
+
+  .museum-card--branded:hover,
+  .museum-card--branded:focus-visible {
+    border-color: var(--museum-accent);
+    background: var(--museum-surface);
+    box-shadow: 0 14px 30px color-mix(in srgb, var(--museum-accent) 18%, transparent);
+  }
+
+  .museum-card--qinhan {
+    --museum-accent: #d5b477;
+    --museum-surface: #151a18;
+    --museum-ink: #f3e9d5;
+    --museum-muted: #b9b0a1;
+    --museum-line: rgba(213, 180, 119, .34);
+    --museum-media: #2b2119;
+  }
+
+  .museum-card--xian-museum {
+    --museum-accent: #34665b;
+    --museum-surface: #e8eee8;
+    --museum-ink: #1d342f;
+    --museum-muted: #617a71;
+    --museum-line: rgba(52, 102, 91, .34);
+    --museum-media: #cadbd2;
+  }
+
+  .museum-card--shaanxi-history {
+    --museum-accent: #b88a3d;
+    --museum-surface: #f2eadc;
+    --museum-ink: #31271d;
+    --museum-muted: #8a7661;
+    --museum-line: rgba(184, 138, 61, .42);
+    --museum-media: #dfcba6;
+  }
+
+  .museum-card--shaanxi-archaeology {
+    --museum-accent: #b8863a;
+    --museum-surface: #eee7d8;
+    --museum-ink: #30271f;
+    --museum-muted: #817263;
+    --museum-line: rgba(184, 134, 58, .42);
+    --museum-media: #d5c29c;
+  }
+
+  .museum-card--baoji {
+    --museum-accent: #b08a45;
+    --museum-surface: #e9e3d5;
+    --museum-ink: #29251d;
+    --museum-muted: #756f5d;
+    --museum-line: rgba(89, 96, 68, .42);
+    --museum-media: #c6cdbd;
+  }
+
+  .card-media__label {
+    position: absolute;
+    z-index: 3;
+    right: 8px;
+    bottom: 8px;
+    max-width: calc(100% - 16px);
+    overflow: hidden;
+    padding: 4px 6px;
+    background: rgba(20, 24, 22, .76);
+    color: #fff8e8;
+    font-size: 8px;
+    letter-spacing: .08em;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .archive-status {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 8px;
+    align-items: baseline;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--museum-line, var(--line));
+  }
+
+  .archive-status__label {
+    grid-column: 1 / -1;
+    color: var(--museum-accent, var(--muted));
+    font-size: 8px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .archive-status__value {
+    color: var(--museum-ink, var(--ink));
+    font-family: var(--serif);
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .archive-status__meta {
+    color: var(--museum-muted, var(--muted));
+    font-size: 9px;
+    text-align: right;
+  }
+
+  .museum-card--control .archive-status {
+    border-top-color: var(--line);
+  }
+
+  .museum-card--control .archive-status__label {
+    color: var(--muted);
+  }
+
+  .museum-card--control .archive-status__value {
+    color: var(--ink);
+  }
+
+  @media (max-width: 900px) {
+    .atlas-archive-summary {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .atlas-archive-summary {
+      width: min(100% - 32px, 520px);
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .atlas-archive-summary__stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .atlas-archive-summary__stats > div {
+      min-height: 78px;
+      padding: 11px 13px;
+    }
+
+    .museum-card--branded {
+      grid-template-columns: 104px minmax(0, 1fr);
+      min-height: 158px;
+    }
+
+    .museum-card--branded .card-media,
+    .museum-card--branded .card-media img {
+      min-height: 158px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .atlas-archive-summary__stats {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .atlas-archive-summary__stats > div {
+      min-height: 0;
+      padding: 10px 13px;
+    }
+
+    .museum-card--branded {
+      grid-template-columns: 92px minmax(0, 1fr);
+      min-height: 148px;
+    }
+
+    .museum-card--branded .card-media,
+    .museum-card--branded .card-media img {
+      min-height: 148px;
+    }
+  }
 </style></head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴" tabindex="0">
@@ -2590,6 +2890,20 @@
       </div>
     </div>
   </header>
+
+  <section class="atlas-archive-summary page-frame" data-atlas-archive-summary aria-labelledby="archive-summary-title" hidden>
+    <div class="atlas-archive-summary__lead">
+      <p class="section-kicker">ARCHIVE OVERVIEW / FIVE COLLECTIONS</p>
+      <h2 id="archive-summary-title">五馆档案总览</h2>
+      <p>陕西五个结构化数据源的条目、照片与字段完整度；碑林保留为 control museum。</p>
+    </div>
+    <dl class="atlas-archive-summary__stats">
+      <div><dt>文物条目</dt><dd data-atlas-total="records">—</dd><small>OBJECTS</small></div>
+      <div><dt>照片记录</dt><dd data-atlas-total="photos">—</dd><small>PHOTO RECORDS</small></div>
+      <div><dt>档案字段</dt><dd data-atlas-total="fields">—</dd><small>FILLED / ALL</small></div>
+      <div><dt>字段完整度</dt><dd data-atlas-total="percent">—</dd><small>FIELD COVERAGE</small></div>
+    </dl>
+  </section>
 
   <main>
     <section class="cover page-frame" aria-labelledby="cover-title">
@@ -3671,6 +3985,252 @@
         commitRender(plan);
       } catch (error) {
         // The static Atlas markup remains the resilient fallback.
+      }
+    })();
+  })();
+</script>
+<script id="atlas-hub-branding-v1">
+  (() => {
+    const repositoryRoot = new URL("../../", document.baseURI);
+    const nonArtifactQinhanGroups = new Set(["museum-arrival", "reference-wall"]);
+    const formatNumber = (value) => new Intl.NumberFormat("zh-CN").format(Number(value) || 0);
+    const hasValue = (value) => value !== null && value !== undefined && String(value).trim().length > 0;
+    const recordsWithAllFields = (records, fields) => records.filter((record) => fields.every((field) => hasValue(record[field]))).length;
+    const countFields = (records, fields) => fields.reduce((total, field) => total + records.filter((record) => hasValue(record[field])).length, 0);
+    const photoCountFromArrays = (records) => records.reduce((total, record) => {
+      const photos = Array.isArray(record.photos) ? record.photos : Array.isArray(record.gallery) ? record.gallery : [];
+      return total + photos.length;
+    }, 0);
+
+    const specs = {
+      qinhan: {
+        tone: "qinhan",
+        path: "../qinhan/data/archive.json",
+        contextPath: "modules/qinhan/index.html",
+        fields: ["category"],
+        records: (data) => data.groups || [],
+        photoTotal: (data, records) => Number(data.photo_count) || photoCountFromArrays(records),
+        preview: (records) => records.find((record) => !nonArtifactQinhanGroups.has(record.id) && record.main_image) || records[0],
+        previewPath: (record) => record?.main_image || record?.full_image,
+        previewTitle: (record) => record?.title || "秦汉馆精选文物"
+      },
+      "xian-museum": {
+        tone: "xian-museum",
+        path: "../xian-museum/data.js",
+        contextPath: "modules/xian-museum/data.js",
+        dataKey: "XIAN_DATA",
+        fields: ["period", "material"],
+        records: (data) => data.items || [],
+        photoTotal: (data, records) => Number(data.stats?.photos) || photoCountFromArrays(records),
+        preview: (records) => records.find((record) => record.cover) || records[0],
+        previewPath: (record) => record?.cover,
+        previewTitle: (record) => record?.title || "西安博物院精选文物"
+      },
+      "shaanxi-history": {
+        tone: "shaanxi-history",
+        path: "../shaanxi-history/data.js",
+        contextPath: "modules/shaanxi-history/data.js",
+        dataKey: "SHAANXI_DATA",
+        fields: ["period", "material", "type"],
+        records: (data) => data.items || [],
+        photoTotal: (data, records) => Number(data.stats?.photos) || photoCountFromArrays(records),
+        preview: (records) => records.find((record) => record.cover) || records[0],
+        previewPath: (record) => record?.cover,
+        previewTitle: (record) => record?.title || "陕西历史博物馆精选文物"
+      },
+      "shaanxi-archaeology": {
+        tone: "shaanxi-archaeology",
+        path: "../shaanxi-archaeology-museum/data/artifacts.json",
+        contextPath: "modules/shaanxi-archaeology-museum/index.html",
+        fields: ["period", "material", "findspot", "dimensions"],
+        records: (data) => data.artifacts || [],
+        photoTotal: (data, records) => Number(data.meta?.photo_count) || photoCountFromArrays(records),
+        preview: (records) => records.find((record) => record.photos?.length) || records[0],
+        previewPath: (record) => record?.photos?.find((photo) => photo.web || photo.thumb)?.web || record?.photos?.[0]?.thumb,
+        previewTitle: (record) => record?.title || "陕西考古博物馆精选文物"
+      },
+      baoji: {
+        tone: "baoji",
+        path: "../baoji/data/treasures.js",
+        contextPath: "modules/baoji/index.html",
+        dataKey: "BAOJI_DATA",
+        fields: ["era", "category", "findspot", "dimensions", "collection"],
+        records: (data) => data.treasures || [],
+        photoTotal: (data, records) => records.reduce((total, record) => total + [record.heroImage, record.inscriptionImage].filter(hasValue).length, 0),
+        preview: (records) => records.find((record) => record.heroImage) || records[0],
+        previewPath: (record) => record?.heroImage ? "assets/photos/web/" + String(record.heroImage).replace(/\.JPG$/i, ".jpg") : "",
+        previewTitle: (record) => record?.name || "中国青铜器博物院精选文物"
+      }
+    };
+
+    const fetchJson = async (path) => {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error("archive data unavailable");
+      return response.json();
+    };
+
+    const fetchWindowData = async (path, key) => {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error("museum data unavailable");
+      const source = await response.text();
+      const scope = {};
+      return Function("window", source + "\nreturn window[" + JSON.stringify(key) + "];")(scope);
+    };
+
+    const loadSpec = async (id) => {
+      const spec = specs[id];
+      const data = spec.dataKey ? await fetchWindowData(spec.path, spec.dataKey) : await fetchJson(spec.path);
+      const records = spec.records(data);
+      const filledFields = countFields(records, spec.fields);
+      const totalFields = records.length * spec.fields.length;
+      const completeRecords = recordsWithAllFields(records, spec.fields);
+      const preview = spec.preview(records);
+      return {
+        id,
+        records: records.length,
+        photos: spec.photoTotal(data, records),
+        filledFields,
+        totalFields,
+        completeRecords,
+        previewPath: spec.previewPath(preview),
+        previewTitle: spec.previewTitle(preview)
+      };
+    };
+
+    const loadBeilinControlCount = async () => {
+      try {
+        const response = await fetch("../beilin/index.html");
+        if (!response.ok) return "—";
+        const html = await response.text();
+        const documentFragment = new DOMParser().parseFromString(html, "text/html");
+        return documentFragment.querySelector("#artifactStat")?.textContent?.trim() || "—";
+      } catch (error) {
+        return "—";
+      }
+    };
+
+    const buildArchiveStatus = (card, values, control = false) => {
+      const body = card.querySelector(".museum-card-body");
+      if (!body) return;
+      let status = body.querySelector(".archive-status");
+      if (!status) {
+        status = document.createElement("div");
+        status.className = "archive-status";
+        const arrow = body.querySelector(".card-arrow");
+        body.insertBefore(status, arrow || null);
+      }
+      status.replaceChildren();
+      status.dataset.archiveStatus = control ? "control" : "live";
+
+      const label = document.createElement("span");
+      label.className = "archive-status__label";
+      label.textContent = control ? "CONTROL MUSEUM" : "ARCHIVE STATUS";
+
+      const value = document.createElement("strong");
+      value.className = "archive-status__value";
+      value.textContent = control ? values.controlCount : formatNumber(values.completeRecords) + " / " + formatNumber(values.records);
+
+      const meta = document.createElement("span");
+      meta.className = "archive-status__meta";
+      meta.textContent = control ? "条目 · 本轮不纳入统计" : "完整档案 · " + Math.round((values.filledFields / Math.max(1, values.totalFields)) * 100) + "%";
+      status.append(label, value, meta);
+    };
+
+    const applyPreview = (card, museum, spec, values) => {
+      const media = card.querySelector(".card-media");
+      const image = media?.querySelector("img");
+      if (!media || !image || !values.previewPath) return;
+      const resolved = typeof window.resolveAtlasMediaUrl === "function"
+        ? window.resolveAtlasMediaUrl(values.previewPath, spec.contextPath)
+        : new URL(spec.contextPath.slice(0, spec.contextPath.lastIndexOf("/") + 1) + values.previewPath, repositoryRoot).href;
+      image.src = resolved;
+      image.alt = values.previewTitle + " · " + museum.name + "精选文物";
+      image.loading = "lazy";
+      image.removeAttribute("fetchpriority");
+      if (!media.querySelector(".card-media__label")) {
+        const label = document.createElement("span");
+        label.className = "card-media__label";
+        label.textContent = "SELECTED / " + values.previewTitle;
+        media.append(label);
+      }
+    };
+
+    const findMuseumCard = (museum) => {
+      const expected = new URL(museum.site_path, repositoryRoot).href;
+      return [...document.querySelectorAll(".museum-card[href]")].find((card) => {
+        try {
+          return new URL(card.getAttribute("href"), document.baseURI).href === expected;
+        } catch (error) {
+          return false;
+        }
+      });
+    };
+
+    const enhanceCards = (registry, valuesById, controlCount) => {
+      const liveMuseums = registry.museums.filter((museum) => museum.province === "shaanxi" && museum.status === "live");
+      let allCardsReady = true;
+      liveMuseums.forEach((museum) => {
+        const card = findMuseumCard(museum);
+        if (!card) {
+          allCardsReady = false;
+          return;
+        }
+        card.dataset.museumId = museum.id;
+        if (museum.id === "beilin") {
+          card.classList.add("museum-card--control");
+          buildArchiveStatus(card, { controlCount }, true);
+          return;
+        }
+        const spec = specs[museum.id];
+        const values = valuesById.get(museum.id);
+        if (!spec || !values) {
+          allCardsReady = false;
+          return;
+        }
+        card.classList.add("museum-card--branded", "museum-card--" + spec.tone);
+        card.dataset.archiveTone = spec.tone;
+        card.setAttribute("aria-label", "进入" + museum.name + "专题站；" + values.completeRecords + " / " + values.records + " 条目完成档案字段");
+        applyPreview(card, museum, spec, values);
+        buildArchiveStatus(card, values);
+      });
+      return allCardsReady;
+    };
+
+    const commitSummary = (valuesById, summary) => {
+      const totals = [...valuesById.values()].reduce((total, values) => ({
+        records: total.records + values.records,
+        photos: total.photos + values.photos,
+        filledFields: total.filledFields + values.filledFields,
+        totalFields: total.totalFields + values.totalFields
+      }), { records: 0, photos: 0, filledFields: 0, totalFields: 0 });
+      summary.querySelector('[data-atlas-total="records"]').textContent = formatNumber(totals.records);
+      summary.querySelector('[data-atlas-total="photos"]').textContent = formatNumber(totals.photos);
+      summary.querySelector('[data-atlas-total="fields"]').textContent = formatNumber(totals.filledFields) + " / " + formatNumber(totals.totalFields);
+      summary.querySelector('[data-atlas-total="percent"]').textContent = Math.round((totals.filledFields / Math.max(1, totals.totalFields)) * 100) + "%";
+      summary.hidden = false;
+    };
+
+    (async () => {
+      try {
+        const registry = await fetch("../../museum-registry.json").then((response) => {
+          if (!response.ok) throw new Error("registry unavailable");
+          return response.json();
+        });
+        const ids = Object.keys(specs);
+        const loaded = await Promise.all(ids.map(loadSpec));
+        const valuesById = new Map(loaded.map((values) => [values.id, values]));
+        const controlCount = await loadBeilinControlCount();
+        const summary = document.querySelector("[data-atlas-archive-summary]");
+        if (summary) commitSummary(valuesById, summary);
+
+        const root = document.querySelector(".chapter-panels") || document.body;
+        const apply = () => enhanceCards(registry, valuesById, controlCount);
+        apply();
+        const observer = new MutationObserver(apply);
+        observer.observe(root, { childList: true, subtree: true });
+        window.setTimeout(() => observer.disconnect(), 12000);
+      } catch (error) {
+        // The registry cards and original hub remain available if an archive source is unavailable.
       }
     })();
   })();
