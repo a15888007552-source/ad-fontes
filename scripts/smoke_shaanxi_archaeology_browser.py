@@ -23,6 +23,9 @@ MEDIA_HOST = "pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev"
 MEDIA_PREFIX = f"https://{MEDIA_HOST}/modules/{MODULE}/"
 RETIRED_WORKER_HOST = "ad-fontes-media.gusgumee777.workers.dev"
 LOCAL_PREFIX = f"http://127.0.0.1:8765/modules/{MODULE}/"
+LOCAL_UI_MEDIA = {
+    "/modules/shaanxi-archaeology-museum/assets/ui/collection-background.webp",
+}
 PROVENANCE_EXPECTED = 6
 MEDIA_SUFFIXES = {
     ".jpg",
@@ -51,6 +54,7 @@ class MediaTracker:
         self.external_requests = 0
         self.external_responses_2xx = 0
         self.external_failures: set[str] = set()
+        self.local_ui_requests = 0
         self.local_module_requests = 0
         self.local_review_requests = 0
         self.retired_worker_requests = 0
@@ -69,6 +73,8 @@ class MediaTracker:
         if parsed.hostname in {"127.0.0.1", "localhost"} and parsed.path.startswith(
             f"/modules/{MODULE}/"
         ):
+            if parsed.path in LOCAL_UI_MEDIA:
+                return "local_ui"
             if f"/modules/{MODULE}/review/" in parsed.path:
                 return "local_review"
             if f"/modules/{MODULE}/assets/" in parsed.path:
@@ -83,6 +89,8 @@ class MediaTracker:
             self.external_requests += 1
             if "/assets/backgrounds/" in urlsplit(request.url).path:
                 self.css_external_requests += 1
+        elif kind == "local_ui":
+            self.local_ui_requests += 1
         elif kind == "local_module":
             self.local_module_requests += 1
         elif kind == "local_review":
@@ -92,6 +100,10 @@ class MediaTracker:
 
     def on_response(self, response) -> None:
         kind = self.classify(response.url)
+        if kind == "local_ui" and response.status != 200:
+            self.media_request_failures.add(response.url)
+            self.failed_urls.add(f"{response.status} {response.url}")
+            return
         if kind != "external":
             return
         if 200 <= response.status < 300:
@@ -204,6 +216,7 @@ def base_report(output: Path) -> dict:
         "workerMediaRequests": 0,
         "workerMediaResponses2xx": 0,
         "workerMediaFailures": 0,
+        "localUiMediaRequests": 0,
         "localModuleMediaRequests": 0,
         "localReviewMediaRequests": 0,
         "oldR2DevRequests": 0,
@@ -579,6 +592,7 @@ def main() -> int:
             report["externalMediaResponses2xx"] = tracker.external_responses_2xx
             report["externalMediaFailures"] = len(tracker.external_failures)
             report["cssExternalMediaRequests"] = tracker.css_external_requests
+            report["localUiMediaRequests"] = tracker.local_ui_requests
             report["localModuleMediaRequests"] = tracker.local_module_requests
             report["localReviewMediaRequests"] = tracker.local_review_requests
             report["retiredWorkerRequests"] = tracker.retired_worker_requests
@@ -594,6 +608,8 @@ def main() -> int:
                 )
             if tracker.external_failures:
                 fail(f"external media failures: {len(tracker.external_failures)}")
+            if tracker.local_ui_requests < 1:
+                fail("legal local UI media request not observed")
             if tracker.local_module_requests or tracker.local_review_requests:
                 fail("local module media request observed")
             if tracker.retired_worker_requests:
@@ -631,6 +647,7 @@ def main() -> int:
     print(f"SEARCH_TITLES_FIRST5={report['searchVisibleTitlesFirst5']}")
     print(f"EXTERNAL_MEDIA={report['externalMediaRequests']}/{report['externalMediaResponses2xx']}")
     print(f"EXTERNAL_FAILURES={report['externalMediaFailures']}")
+    print(f"LOCAL_UI_MEDIA={report['localUiMediaRequests']}")
     print(f"LOCAL_MODULE_MEDIA={report['localModuleMediaRequests']}")
     print(f"TOMB_TRAILS={report.get('tombTrailsSlides', 0)} slides images={report.get('tombTrailsImagesLoaded', '0/0')}")
     print(f"DIALOGS={report['dialogsChecked']}")

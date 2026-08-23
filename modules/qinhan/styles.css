@@ -529,3 +529,49 @@ img { display: block; max-width: 100%; }
   .tiger-actions { flex-direction: column; align-items: stretch; }
   .tiger-actions a { text-align: center; }
 }
+
+/* Collection theme: dark lacquer, cinnabar, and aged gold. */
+#archive.archive-section {
+  --paper: #191816;
+  --paper-bright: rgba(38, 33, 26, .92);
+  --ink: #f7efe1;
+  --muted: rgba(244, 233, 211, .72);
+  --red: #a94e3e;
+  --green: #b49459;
+  --bronze: #d6b471;
+  --night: #101311;
+  --line: rgba(224, 190, 123, .3);
+  --collection-art: url("assets/ui/collection-background.webp");
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(13, 13, 12, .84), rgba(31, 25, 20, .72) 54%, rgba(10, 13, 12, .92)),
+    var(--collection-art) center / cover no-repeat;
+}
+
+#archive.archive-section .archive-intro { border-color: var(--line); }
+#archive.archive-section .archive-intro > p { color: rgba(244, 233, 211, .78); }
+#archive.archive-section .archive-tools { border-color: var(--line); }
+#archive.archive-section .search-field { border-color: var(--line); background: rgba(25, 24, 20, .9); }
+#archive.archive-section .search-field input { color: var(--ink); }
+#archive.archive-section .search-field input::placeholder { color: rgba(244, 233, 211, .52); }
+#archive.archive-section .filter-chip { border-color: var(--line); color: var(--muted); }
+#archive.archive-section .filter-chip:hover,
+#archive.archive-section .filter-chip:focus-visible { border-color: var(--bronze); color: var(--bronze); }
+#archive.archive-section .filter-chip.is-active { border-color: var(--bronze); color: var(--night); background: var(--bronze); }
+#archive.archive-section .featured-toggle { color: var(--muted); }
+#archive.archive-section .object-card {
+  border-color: var(--line);
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(24, 23, 19, .96), rgba(42, 34, 25, .88)),
+    var(--collection-art) center / cover no-repeat;
+}
+#archive.archive-section .object-card:hover,
+#archive.archive-section .object-card:focus-within {
+  border-color: var(--bronze);
+  background:
+    linear-gradient(135deg, rgba(39, 31, 23, .94), rgba(57, 43, 28, .84)),
+    var(--collection-art) center / cover no-repeat;
+}
+#archive.archive-section .card-summary { color: rgba(244, 233, 211, .7); }
+#archive.archive-section .load-more { border-color: var(--bronze); color: var(--night); background: var(--bronze); }

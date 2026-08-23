@@ -625,3 +625,50 @@ body {
   .reveal { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { animation: none !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Collection theme: patinated green, bronze, and cool porcelain light. */
+#archive.section--archive {
+  --ink: #233b34;
+  --ink-soft: #2e4e44;
+  --paper: #eef4eb;
+  --paper-warm: #f6f9f1;
+  --paper-deep: #c4d5c7;
+  --bronze: #a47d43;
+  --bronze-light: #d7b878;
+  --rust: #4e7c6b;
+  --sage: #668d7e;
+  --muted: #4e6a60;
+  --line: rgba(35, 59, 52, .25);
+  --line-light: rgba(238, 244, 235, .3);
+  --collection-art: url("assets/ui/collection-background.webp");
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(224, 236, 222, .92), rgba(204, 222, 211, .78)),
+    var(--collection-art) 82% 48% / cover no-repeat;
+}
+
+#archive.section--archive .heading-note,
+#archive.section--archive .archive-status,
+#archive.section--archive .archive-card-summary { color: var(--muted); }
+#archive.section--archive .archive-toolbar { border-color: var(--line); }
+#archive.section--archive .filter-button { border-color: var(--line); color: var(--muted); }
+#archive.section--archive .filter-button:hover,
+#archive.section--archive .filter-button:focus-visible,
+#archive.section--archive .filter-button.is-active { color: var(--paper); border-color: var(--ink); background: var(--ink); }
+#archive.section--archive .search-box { border-color: var(--ink); color: var(--muted); }
+#archive.section--archive .search-box input { color: var(--ink); }
+#archive.section--archive .search-box input::placeholder { color: rgba(46, 78, 68, .62); }
+#archive.section--archive .archive-card {
+  border-color: var(--line);
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(244, 249, 239, .92), rgba(214, 231, 218, .82)),
+    var(--collection-art) center / cover no-repeat;
+}
+#archive.section--archive .archive-card:hover,
+#archive.section--archive .archive-card:focus-within {
+  border-color: var(--rust);
+  background:
+    linear-gradient(135deg, rgba(250, 252, 244, .94), rgba(202, 224, 209, .86)),
+    var(--collection-art) center / cover no-repeat;
+}
