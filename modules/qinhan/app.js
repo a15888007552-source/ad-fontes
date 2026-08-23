@@ -77,6 +77,7 @@ function renderFilters() {
 
 function cardTemplate(group, index) {
   const status = group.special_status ? `<span class="card-special">${escapeHTML(group.special_status)}</span>` : "";
+  const tags = group.tags.slice(0, 3).map((tag) => `<span>${escapeHTML(tag)}</span>`).join("");
   return `
     <article class="object-card${group.featured ? " is-featured" : ""}" style="--card-order:${index % 12}">
       <button type="button" data-open-id="${escapeHTML(group.id)}" aria-label="打开${escapeHTML(group.title)}详情">
@@ -90,7 +91,9 @@ function cardTemplate(group, index) {
           <h3>${escapeHTML(group.title)}</h3>
           <span class="card-era">${escapeHTML(group.era)}</span>
           <span class="card-summary">${escapeHTML(group.summary)}</span>
-          <span class="card-footer"><span>${group.object_photo_count} 张对象图</span><span>序列 ${group.sequence_start}—${group.sequence_end}</span><b>打开 ↗</b></span>
+          <span class="card-tags" aria-label="文物标签">${tags}</span>
+          <span class="card-metrics" aria-label="图像与序列信息"><span>对象图 ${escapeHTML(group.object_photo_count)}</span><span>展签 ${escapeHTML(group.label_photo_count)}</span><span>序列 ${escapeHTML(group.sequence_start)}—${escapeHTML(group.sequence_end)}</span></span>
+          <span class="card-footer"><b>打开详情 ↗</b></span>
         </span>
       </button>
     </article>
@@ -286,7 +289,7 @@ function setupTextReveals() {
 function setupReveals(root = document) {
   const targets = root.querySelectorAll([
     ".section-rail", ".museum-heading", ".museum-prose > *", ".museum-figure", ".museum-facts",
-    ".exhibition-sticky", ".exhibition-copy > *", ".queen-image-wrap", ".queen-copy > *",
+    ".exhibition-sticky", ".exhibition-copy > *", ".queen-image-wrap", ".queen-copy > *", ".tiger-image-wrap", ".tiger-copy > *",
     ".archive-intro > *", ".archive-tools", ".archive-status", ".method-title-wrap",
     ".method-copy > *", ".method-steps", ".source-list"
   ].join(","));
