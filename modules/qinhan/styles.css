@@ -796,3 +796,17 @@ img { display: block; max-width: 100%; }
   .archive-dialog .dialog-meta div { min-height: 0; }
   .archive-dialog .dialog-header h2 { max-width: none; }
 }
+
+/* PR42 · detail controls keep Imperial Archive's black-gold language. */
+.archive-dialog .dialog-close {
+  display: grid;
+  min-width: 44px;
+  min-height: 44px;
+  place-items: center;
+  line-height: 1;
+  touch-action: manipulation;
+}
+.archive-dialog .dialog-close:focus-visible {
+  outline: 2px solid #d5b477;
+  outline-offset: 2px;
+}

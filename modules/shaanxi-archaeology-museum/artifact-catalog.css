@@ -337,3 +337,15 @@ dialog[open] dl dd {
   .artifact-dialog .artifact-dialog-copy::before { margin-bottom: 1.2rem; font-size: .62rem; }
   .artifact-dialog .artifact-dialog-copy h2 { max-width: none; }
 }
+
+/* PR42 · Field Report keeps its fixed dark close control and gains the shared interaction contract. */
+.artifact-dialog .artifact-dialog-close {
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  touch-action: manipulation;
+}
+.artifact-dialog .artifact-dialog-close:focus-visible {
+  outline: 2px solid var(--catalog-accent);
+  outline-offset: 2px;
+}
