@@ -651,3 +651,96 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
   #collection.collection .object-card,
   #collection.collection .card-image img { transition: none; }
 }
+
+/* PR41 · detail research layer; Jade Civilization remains jade-green and stone-paper. */
+.object-dialog .dialog-content {
+  position: relative;
+  padding: clamp(2.8rem, 5vw, 4.2rem) clamp(1.6rem, 4vw, 4rem) 3rem;
+  background:
+    linear-gradient(135deg, rgba(247, 246, 239, .98), rgba(223, 229, 220, .94)),
+    repeating-linear-gradient(0deg, transparent 0 34px, rgba(18, 108, 112, .045) 34px 35px);
+}
+.object-dialog .dialog-content::before {
+  display: block;
+  margin-bottom: 1.65rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(18, 108, 112, .28);
+  color: var(--green);
+  content: "OBJECT RECORD / JADE CIVILIZATION";
+  font: 700 9px/1.4 var(--sans);
+  letter-spacing: .16em;
+}
+.object-dialog .dialog-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .45rem;
+  align-items: baseline;
+  color: var(--muted);
+}
+.object-dialog .dialog-kicker::after {
+  color: var(--green);
+  content: "/ CHANG'AN CITY HERITAGE";
+}
+.object-dialog .dialog-content h2 {
+  max-width: 14ch;
+  color: var(--ink);
+  letter-spacing: -.055em;
+}
+.object-dialog .dialog-tags {
+  margin-top: .9rem;
+}
+.object-dialog .dialog-meta {
+  gap: 0;
+  margin: 1.7rem 0 2.1rem;
+  border: 1px solid rgba(20, 39, 42, .18);
+  background: rgba(255, 255, 255, .22);
+}
+.object-dialog .dialog-meta > div {
+  min-height: 4.4rem;
+  padding: .85rem .9rem;
+  border-color: rgba(20, 39, 42, .15);
+}
+.object-dialog .dialog-meta b {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .35rem;
+  align-items: baseline;
+  color: var(--green-dark);
+}
+.object-dialog .dialog-meta b::before {
+  color: var(--green);
+  font: 700 9px/1.4 var(--sans);
+  letter-spacing: .08em;
+}
+.object-dialog .dialog-meta > div:nth-child(1) b::before { content: "PERIOD /"; }
+.object-dialog .dialog-meta > div:nth-child(2) b::before { content: "MATERIAL /"; }
+.object-dialog .dialog-meta > div:nth-child(3) b::before { content: "CATEGORY /"; }
+.object-dialog .dialog-meta > div:nth-child(4) b::before { content: "PROVENANCE /"; }
+.object-dialog .dialog-meta > div:nth-child(5) b::before { content: "PHOTO SET /"; }
+.object-dialog .dialog-meta > div:nth-child(6) b::before { content: "OBJECT NO. /"; }
+.object-dialog .dialog-essay h3::before {
+  margin-right: .45rem;
+  color: var(--green);
+  content: "CONTEXT /";
+  font: 700 9px/1 var(--sans);
+  letter-spacing: .1em;
+}
+.object-dialog .dialog-evidence {
+  border-left-width: 3px;
+  border-left-color: var(--green);
+  background: rgba(18, 108, 112, .07);
+}
+.object-dialog .dialog-evidence b::before {
+  margin-right: .45rem;
+  color: var(--green);
+  content: "PROVENANCE /";
+  font: 700 9px/1 var(--sans);
+  letter-spacing: .08em;
+}
+
+@media (max-width: 760px) {
+  .object-dialog .dialog-content { padding: 2.4rem 1rem 2rem; }
+  .object-dialog .dialog-content::before { margin-bottom: 1.25rem; font-size: 8px; }
+  .object-dialog .dialog-meta > div { min-height: 0; }
+  .object-dialog .dialog-content h2 { max-width: none; }
+}

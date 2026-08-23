@@ -654,3 +654,94 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   #collection.collection .object-card,
   #collection.collection .card-image img { transition: none; }
 }
+
+/* PR41 · detail research layer; Tang Golden Archive remains gold, vermilion and paper. */
+.object-dialog .dialog-content {
+  position: relative;
+  padding: clamp(2.8rem, 5vw, 4.2rem) clamp(1.6rem, 4vw, 4rem) 3rem;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 244, .98), rgba(242, 236, 223, .96)),
+    repeating-linear-gradient(0deg, transparent 0 34px, rgba(169, 133, 67, .05) 34px 35px);
+}
+.object-dialog .dialog-content::before {
+  display: block;
+  margin-bottom: 1.65rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(169, 133, 67, .36);
+  color: var(--gold);
+  content: "OBJECT RECORD / TANG GOLDEN ARCHIVE";
+  font: 700 9px/1.4 var(--sans);
+  letter-spacing: .16em;
+}
+.object-dialog .dialog-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .45rem;
+  align-items: baseline;
+  color: var(--muted);
+}
+.object-dialog .dialog-kicker::after {
+  color: var(--gold);
+  content: "/ TANG COURT COLLECTION";
+}
+.object-dialog .dialog-content h2 {
+  max-width: 14ch;
+  color: var(--ink);
+  letter-spacing: -.055em;
+}
+.object-dialog .dialog-tags { margin-top: .9rem; }
+.object-dialog .dialog-meta {
+  gap: 0;
+  margin: 1.7rem 0 2.1rem;
+  border: 1px solid rgba(36, 31, 24, .18);
+  background: rgba(255, 252, 244, .4);
+}
+.object-dialog .dialog-meta > div {
+  min-height: 4.4rem;
+  padding: .85rem .9rem;
+  border-color: rgba(36, 31, 24, .15);
+}
+.object-dialog .dialog-meta b {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .35rem;
+  align-items: baseline;
+  color: var(--ink);
+}
+.object-dialog .dialog-meta b::before {
+  color: var(--gold);
+  font: 700 9px/1.4 var(--sans);
+  letter-spacing: .08em;
+}
+.object-dialog .dialog-meta > div:nth-child(1) b::before { content: "PERIOD /"; }
+.object-dialog .dialog-meta > div:nth-child(2) b::before { content: "MATERIAL /"; }
+.object-dialog .dialog-meta > div:nth-child(3) b::before { content: "CATEGORY /"; }
+.object-dialog .dialog-meta > div:nth-child(4) b::before { content: "PROVENANCE /"; }
+.object-dialog .dialog-meta > div:nth-child(5) b::before { content: "PHOTO SET /"; }
+.object-dialog .dialog-meta > div:nth-child(6) b::before { content: "OBJECT NO. /"; }
+.object-dialog .dialog-essay h3::before {
+  margin-right: .45rem;
+  color: var(--gold);
+  content: "CONTEXT /";
+  font: 700 9px/1 var(--sans);
+  letter-spacing: .1em;
+}
+.object-dialog .dialog-evidence {
+  border-left-width: 3px;
+  border-left-color: var(--gold);
+  background: rgba(169, 133, 67, .08);
+}
+.object-dialog .dialog-evidence b::before {
+  margin-right: .45rem;
+  color: var(--gold);
+  content: "PROVENANCE /";
+  font: 700 9px/1 var(--sans);
+  letter-spacing: .08em;
+}
+
+@media (max-width: 760px) {
+  .object-dialog .dialog-content { padding: 2.4rem 1rem 2rem; }
+  .object-dialog .dialog-content::before { margin-bottom: 1.25rem; font-size: 8px; }
+  .object-dialog .dialog-meta > div { min-height: 0; }
+  .object-dialog .dialog-content h2 { max-width: none; }
+}

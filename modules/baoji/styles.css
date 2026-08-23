@@ -924,6 +924,114 @@ body {
   #archive.section--archive .archive-card-media img { transition: none; }
 }
 
+/* PR41 · detail research layer; Bronze Inscription Archive remains patina and paper. */
+.detail-dialog #dialog-content {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(244, 240, 230, .97), rgba(235, 226, 212, .94)),
+    repeating-linear-gradient(0deg, transparent 0 34px, rgba(89, 96, 68, .045) 34px 35px);
+}
+.detail-dialog #dialog-content::before {
+  display: block;
+  margin-bottom: 1.55rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(89, 96, 68, .34);
+  color: var(--bronze-patina);
+  content: "OBJECT RECORD / BRONZE INSCRIPTION ARCHIVE";
+  font: 700 .5rem/1.4 var(--mono);
+  letter-spacing: .16em;
+}
+.detail-dialog .dialog-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .5rem;
+  align-items: baseline;
+  color: var(--muted);
+}
+.detail-dialog .dialog-kicker::before {
+  color: var(--bronze-gold);
+  content: "RECORD /";
+}
+.detail-dialog .dialog-header h2 {
+  max-width: 14ch;
+  color: var(--ink);
+  letter-spacing: -.055em;
+}
+.detail-dialog .dialog-lead {
+  max-width: 32rem;
+  padding-left: .9rem;
+  border-left: 2px solid var(--bronze-gold);
+  text-align: left;
+}
+.detail-dialog .dialog-facts {
+  gap: 0;
+  margin-top: 1.3rem;
+  border-top: 1px solid var(--line);
+  background: rgba(89, 96, 68, .035);
+}
+.detail-dialog .dialog-fact {
+  min-height: 4.1rem;
+  padding: .78rem .8rem;
+  border-left: 1px solid var(--line);
+}
+.detail-dialog .dialog-fact:first-child { border-left: 0; }
+.detail-dialog .dialog-fact-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .35rem;
+  align-items: baseline;
+  color: var(--bronze-patina);
+}
+.detail-dialog .dialog-fact-label::before { color: var(--bronze-gold); }
+.detail-dialog .dialog-fact:nth-child(1) .dialog-fact-label::before { content: "CATEGORY /"; }
+.detail-dialog .dialog-fact:nth-child(2) .dialog-fact-label::before { content: "PHOTO SET /"; }
+.detail-dialog .dialog-fact:nth-child(3) .dialog-fact-label::before { content: "CONTEXT /"; }
+.detail-dialog .dialog-fact:nth-child(4) .dialog-fact-label::before { content: "EVIDENCE /"; }
+.detail-dialog .dialog-copy {
+  position: relative;
+  padding-top: .2rem;
+}
+.detail-dialog .dialog-copy::before {
+  display: block;
+  margin-bottom: .8rem;
+  color: var(--bronze-patina);
+  content: "FIELD NOTES / RESEARCH CONTEXT";
+  font: 700 .5rem/1.4 var(--mono);
+  letter-spacing: .14em;
+}
+.detail-dialog .research-facts {
+  padding: .7rem 0 .45rem;
+  border-block: 1px solid var(--line);
+}
+.detail-dialog .research-fact span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .35rem;
+  align-items: baseline;
+}
+.detail-dialog .research-fact span::before { color: var(--bronze-gold); }
+.detail-dialog .research-fact:nth-child(1) span::before { content: "PERIOD /"; }
+.detail-dialog .research-fact:nth-child(2) span::before { content: "PROVENANCE /"; }
+.detail-dialog .research-fact:nth-child(3) span::before { content: "COLLECTION /"; }
+.detail-dialog .research-fact:nth-child(4) span::before { content: "DIMENSIONS /"; }
+.detail-dialog .research-evidence {
+  border-left-color: var(--bronze-gold);
+  background: rgba(89, 96, 68, .08);
+}
+.detail-dialog .research-evidence b::before {
+  margin-right: .45rem;
+  color: var(--bronze-gold);
+  content: "SOURCE /";
+  letter-spacing: .08em;
+}
+
+@media (max-width: 760px) {
+  .detail-dialog #dialog-content::before { margin-bottom: 1.2rem; font-size: .46rem; }
+  .detail-dialog .dialog-header h2 { max-width: none; }
+  .detail-dialog .dialog-fact { min-height: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .detail-dialog .dialog-fact:first-child { border-top: 0; }
+}
+
 /* PR40 · shared research record layer; bronze archive theme remains scoped above. */
 #archive.section--archive {
   --record-title: clamp(22px, 1.7vw, 26px);

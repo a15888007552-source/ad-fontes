@@ -690,3 +690,109 @@ img { display: block; max-width: 100%; }
   #archive.archive-section .object-card,
   #archive.archive-section .card-image img { transition: none; }
 }
+
+/* PR41 · detail research layer; Imperial Archive remains black-gold. */
+.archive-dialog .dialog-content {
+  position: relative;
+  padding: clamp(3.4rem, 5vw, 4.8rem) clamp(2.2rem, 4vw, 4.5rem) 3rem;
+  background:
+    linear-gradient(180deg, rgba(29, 36, 32, .98), rgba(21, 26, 24, .99)),
+    repeating-linear-gradient(0deg, transparent 0 34px, rgba(213, 180, 119, .035) 34px 35px);
+}
+.archive-dialog .dialog-content::before {
+  display: block;
+  margin-bottom: 1.8rem;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(213, 180, 119, .34);
+  color: #d5b477;
+  content: "OBJECT RECORD / IMPERIAL ARCHIVE";
+  font: 700 .5rem/1.4 var(--mono);
+  letter-spacing: .16em;
+}
+.archive-dialog .dialog-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem .55rem;
+  align-items: baseline;
+  color: rgba(255, 255, 255, .58);
+}
+.archive-dialog .dialog-kicker::before {
+  color: #d5b477;
+  content: "RECORD /";
+}
+.archive-dialog .dialog-header h2 {
+  max-width: 13ch;
+  margin-top: .2rem;
+  color: #fff8eb;
+  letter-spacing: -.045em;
+}
+.archive-dialog .dialog-summary {
+  max-width: 31rem;
+  margin-top: 1.35rem;
+  padding: .15rem 0 .15rem 1rem;
+  border-left: 2px solid #a77c45;
+  color: rgba(255, 255, 255, .72);
+  text-align: left;
+  text-indent: 0;
+}
+.archive-dialog .dialog-meta {
+  gap: 0;
+  margin: 1.8rem 0 2rem;
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(5, 6, 5, .2);
+}
+.archive-dialog .dialog-meta div {
+  min-height: 4.5rem;
+  padding: .85rem .9rem;
+  border-color: rgba(255, 255, 255, .14);
+}
+.archive-dialog .dialog-meta span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .2rem .35rem;
+  align-items: baseline;
+  color: rgba(255, 255, 255, .46);
+}
+.archive-dialog .dialog-meta span::before {
+  color: #d5b477;
+}
+.archive-dialog .dialog-meta div:nth-child(1) span::before { content: "SEQUENCE /"; }
+.archive-dialog .dialog-meta div:nth-child(2) span::before { content: "PRIMARY VIEW /"; }
+.archive-dialog .dialog-meta div:nth-child(3) span::before { content: "PROCESSING /"; }
+.archive-dialog .dialog-meta div:nth-child(4) span::before { content: "SOURCE /"; }
+.archive-dialog .dialog-meta div:nth-child(5) span::before { content: "PRESERVATION /"; }
+.archive-dialog .dialog-section,
+.archive-dialog .dialog-sources {
+  border-color: rgba(255, 255, 255, .18);
+}
+.archive-dialog .dialog-section h3::before {
+  margin-right: .45rem;
+  color: #d5b477;
+  content: "CONTEXT /";
+  font: 700 .5rem/1 var(--mono);
+  letter-spacing: .12em;
+}
+.archive-dialog .dialog-sources h3::before {
+  margin-right: .45rem;
+  color: #d5b477;
+  content: "SOURCES /";
+  font: 700 .5rem/1 var(--mono);
+  letter-spacing: .12em;
+}
+.archive-dialog .evidence-section {
+  border-color: rgba(167, 124, 69, .55);
+  background: rgba(167, 124, 69, .09);
+}
+
+@media (max-width: 820px) {
+  .archive-dialog .dialog-content {
+    padding: 3rem 1rem 2.2rem;
+  }
+  .archive-dialog .dialog-content::before { margin-bottom: 1.35rem; }
+  .archive-dialog .dialog-summary { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .archive-dialog .dialog-meta div { min-height: 0; }
+  .archive-dialog .dialog-header h2 { max-width: none; }
+}
