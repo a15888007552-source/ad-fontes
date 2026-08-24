@@ -33,6 +33,7 @@ window.XIAN_DATA = {
   "items": [
     {
       "id": "xian-001-painted-mirror",
+      "findspot": "西安市红庙坡村",
       "sequence": 1,
       "title": "西汉彩绘人物车马镜",
       "period": "西汉",
@@ -120,6 +121,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-002-4857",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 2,
       "title": "鎏金盘蛇柄环首刀",
       "period": "汉代",
@@ -171,6 +174,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-003-4859",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 3,
       "title": "玉舞人",
       "period": "汉代",
@@ -224,6 +229,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-004-4861",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 4,
       "title": "小骑马俑",
       "period": "汉代",
@@ -289,6 +296,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-005-4867",
+      "findspot": "凤翔县城北",
+      "dimensions": "长27.4厘米；宽11.1厘米；高21.8厘米",
       "sequence": 5,
       "title": "鎏金羊灯",
       "period": "汉代",
@@ -346,6 +355,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-006-4869",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 6,
       "title": "玉杯",
       "period": "年代待考",
@@ -405,6 +416,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-007-4872",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 7,
       "title": "大型铜壶",
       "period": "汉代",
@@ -462,6 +475,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-008-4874",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 8,
       "title": "楚大官厨鼎",
       "period": "汉代",
@@ -515,6 +530,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-009-4876",
+      "findspot": "咸阳市秦都区沣西乡李家村",
+      "dimensions": "长5.8厘米",
       "sequence": 9,
       "title": "齐郡太守虎符",
       "period": "汉代",
@@ -572,6 +589,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-010-4878",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 10,
       "title": "鲁王虎符",
       "period": "汉代",
@@ -629,6 +648,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-011-4881",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 11,
       "title": "鎏金错银虎镇",
       "period": "汉代",
@@ -682,6 +703,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-012-4883",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 12,
       "title": "卷角陶羊",
       "period": "汉代",
@@ -735,6 +758,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-013-4888",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 13,
       "title": "三眼行灶",
       "period": "汉代",
@@ -794,6 +819,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-014-4894",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 14,
       "title": "海贝席镇",
       "period": "汉代",
@@ -847,6 +874,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-015-4896",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 15,
       "title": "金空心珠",
       "period": "汉代",
@@ -900,6 +929,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-016-4900",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 16,
       "title": "彩绘陶鸿雁",
       "period": "汉代",
@@ -957,6 +988,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-017-4905",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 17,
       "title": "人形铜镇",
       "period": "年代待考",
@@ -1011,6 +1044,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-018-4907",
+      "findspot": "西安市南小巷",
+      "dimensions": null,
       "sequence": 18,
       "title": "博山熏炉",
       "period": "汉代",
@@ -1074,6 +1109,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-019-4916",
+      "findspot": "西安市唐青龙寺遗址",
+      "dimensions": null,
       "sequence": 19,
       "title": "一佛二菩萨佛龛",
       "period": "唐代",
@@ -1139,6 +1176,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-020-4921",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 20,
       "title": "象座",
       "period": "年代待考",
@@ -1206,6 +1245,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-021-4926",
+      "findspot": "西安市莲湖区",
+      "dimensions": null,
       "sequence": 21,
       "title": "盘龙石柱",
       "period": "唐代",
@@ -1265,6 +1306,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-022-4929",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 22,
       "title": "铁佛坐像",
       "period": "唐代",
@@ -1318,6 +1361,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-023-4931",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 23,
       "title": "四神石棺",
       "period": "唐代",
@@ -1389,6 +1434,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-024-4937",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 24,
       "title": "石兽座",
       "period": "唐代",
@@ -1442,6 +1489,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-025-4940",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 25,
       "title": "造像塔",
       "period": "唐代",
@@ -1501,6 +1550,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-026-4945",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 26,
       "title": "天宝五年佛坐像",
       "period": "唐天宝五年",
@@ -1554,6 +1605,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-027-4948",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 27,
       "title": "一佛二菩萨造像",
       "period": "唐代",
@@ -1625,6 +1678,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-028-4955",
+      "findspot": "西安市灞桥区",
+      "dimensions": null,
       "sequence": 28,
       "title": "大业元年魏天得造佛像",
       "period": "隋大业元年",
@@ -1678,6 +1733,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-029-4958",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 29,
       "title": "大统三年造像碑",
       "period": "西魏大统三年",
@@ -1737,6 +1794,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-030-4963",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 30,
       "title": "楼阁式造像塔",
       "period": "年代待考",
@@ -1821,6 +1880,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-031-4971",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 31,
       "title": "绿釉螭吻",
       "period": "明代",
@@ -1881,6 +1942,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-032-4974",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 32,
       "title": "彩绘百枝陶灯",
       "period": "汉代",
@@ -1941,6 +2004,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-033-4980",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 33,
       "title": "铜樽",
       "period": "汉代",
@@ -2007,6 +2072,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-034-4983",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 34,
       "title": "“梁山宫”银盒",
       "period": "年代待考",
@@ -2067,6 +2134,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-035-4989",
+      "findspot": null,
+      "dimensions": "口径9厘米；高4.2厘米",
       "sequence": 35,
       "title": "八瓣仕女狩猎纹银杯",
       "period": "唐代",
@@ -2127,6 +2196,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-036-4992",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 36,
       "title": "飞鸟带柄铜熏炉",
       "period": "年代待考",
@@ -2186,6 +2257,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-037-4995",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 37,
       "title": "蝴蝶纹银碗",
       "period": "年代待考",
@@ -2239,6 +2312,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-038-4997",
+      "findspot": "西安市雁塔区",
+      "dimensions": null,
       "sequence": 38,
       "title": "白釉“盈”字款葵口盘（瓷）",
       "period": "唐代",
@@ -2303,6 +2378,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-039-5000",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 39,
       "title": "白釉“盈”字款执壶（瓷）",
       "period": "唐代",
@@ -2361,6 +2438,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-040-5002",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 40,
       "title": "三彩四系罐（陶）",
       "period": "唐代",
@@ -2421,6 +2500,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-041-5005",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 41,
       "title": "三彩宝相花纹盘（陶）",
       "period": "唐代",
@@ -2481,6 +2562,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-042-5008",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 42,
       "title": "鎏金凤鸟铜镇",
       "period": "年代待考",
@@ -2534,6 +2617,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-043-5011",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 43,
       "title": "嵌眼纹玻璃鎏金神兽形青铜饰件",
       "period": "年代待考",
@@ -2587,6 +2672,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-044-5013",
+      "findspot": "西安市未央区秦阿房宫遗址",
+      "dimensions": "通高14.5厘米",
       "sequence": 44,
       "title": "勾连云纹玉杯",
       "period": "年代待考",
@@ -2646,6 +2733,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-045-5016",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 45,
       "title": "金虎饰",
       "period": "年代待考",
@@ -2700,6 +2789,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-046-5018",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 46,
       "title": "镂空回首金虎",
       "period": "年代待考",
@@ -2754,6 +2845,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-047-5020",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 47,
       "title": "甬钟（三件）",
       "period": "先秦",
@@ -2822,6 +2915,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-048-5024",
+      "findspot": "西安市蓝田县",
+      "dimensions": "高47厘米；口径58厘米；腹深37厘米",
       "sequence": 48,
       "title": "永盂",
       "period": "西周",
@@ -2892,6 +2987,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-049-5037",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 49,
       "title": "乙鼎",
       "period": "西周",
@@ -2952,6 +3049,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-050-5040",
+      "findspot": "西安市长安区",
+      "dimensions": null,
       "sequence": 50,
       "title": "申父庚盉",
       "period": "西周",
@@ -3012,6 +3111,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-051-5043",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 51,
       "title": "凤流提梁盉",
       "period": "战国",
@@ -3071,6 +3172,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-052-5046",
+      "findspot": "西安市长安区新旺村丰镐遗址",
+      "dimensions": "高85.5厘米；口径66.7厘米",
       "sequence": 52,
       "title": "勾连云雷纹鼎",
       "period": "年代待考",
@@ -3131,6 +3234,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-053-5049",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 53,
       "title": "鎏金西方三圣铜造像",
       "period": "唐代",
@@ -3184,6 +3289,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-054-5051",
+      "findspot": "西安市新城区西安秦川机械厂基建工地",
+      "dimensions": null,
       "sequence": 54,
       "title": "鎏金舍利银椁",
       "period": "唐代",
@@ -3238,6 +3345,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-055-5053",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 55,
       "title": "长颈鼓腹琉璃瓶",
       "period": "唐代",
@@ -3297,6 +3406,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-056-5055",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 56,
       "title": "鎏金带头光铜立佛造像",
       "period": "年代待考",
@@ -3351,6 +3462,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-057-5058",
+      "findspot": "西安市莲湖区西安制药厂唐墓",
+      "dimensions": "通高38厘米；长52厘米",
       "sequence": 57,
       "title": "三彩腾空马",
       "period": "唐代",
@@ -3421,6 +3534,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-058-5067",
+      "findspot": "西安地区",
+      "dimensions": null,
       "sequence": 58,
       "title": "蓝釉点彩驴",
       "period": "唐代",
@@ -3492,6 +3607,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-059-5073",
+      "findspot": "西安市未央区井上村",
+      "dimensions": null,
       "sequence": 59,
       "title": "史君墓石椁",
       "period": "北周",
@@ -3569,6 +3686,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-060-5079",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 60,
       "title": "张载《横渠先生易说》",
       "period": "清代刻本",
@@ -3627,6 +3746,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-061-5081",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 61,
       "title": "鎏金铜牛符",
       "period": "年代待考",
@@ -3680,6 +3801,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-062-5087",
+      "findspot": "西安市雁塔区",
+      "dimensions": null,
       "sequence": 62,
       "title": "磁州窑“风吹十里透瓶香”白地黑花梅瓶",
       "period": "元代",
@@ -3735,6 +3858,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-063-5089",
+      "findspot": "西安市新城区",
+      "dimensions": null,
       "sequence": 63,
       "title": "钧窑天蓝釉紫红斑碗",
       "period": "元代",
@@ -3794,6 +3919,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-064-5107",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 64,
       "title": "清代临摹赵孟頫《辋川图》手卷",
       "period": "清代",
@@ -3855,6 +3982,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-065-5103",
+      "findspot": null,
+      "dimensions": null,
       "sequence": 65,
       "title": "古籍册页",
       "period": "明清",
@@ -3909,6 +4038,8 @@ window.XIAN_DATA = {
     },
     {
       "id": "xian-066-5114",
+      "findspot": "西安市荐福寺遗址",
+      "dimensions": "现高43.395米；底边11.38米",
       "sequence": 66,
       "title": "小雁塔",
       "period": "唐代",
