@@ -133,7 +133,7 @@
     "objects": "本馆代表：史君墓石椁及石门伎乐图。",
     "value": "石椁图像、双语墓志和墓葬形制提供了不同层面的证据，可据此讨论史君家族的身份和在华经历。",
     "importance": "史君墓是研究六世纪关中粟特社群的关键个案，因为石椁图像、汉文墓志、粟特文题铭和墓葬形制在同一地点相互校验。它显示“外来者”并不是脱离中国社会的抽象标签，而可以在官职、婚姻、宗教、语言和葬制多个层面留下可比对的证据。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Wirkak_tomb_content.jpg",
+    "image": "assets/xian-shijun-tomb-user.png",
     "source": [
       [
         "丝绸之路网｜史君墓资料",
@@ -145,7 +145,7 @@
       ]
     ],
     "museumName": "西安博物院",
-    "credit": "Wikimedia Commons｜史君墓相关出土内容"
+    "credit": "用户提供｜北周史君墓石椁图"
   },
   {
     "museum": "xian-museum",
@@ -157,7 +157,7 @@
     "objects": "本馆代表：青龙寺遗址出土一佛二菩萨佛龛。",
     "value": "寺院基址和造像、建筑构件等遗物，使青龙寺的佛教活动能够放回唐长安的坊里空间和东亚交流史中考察。",
     "importance": "青龙寺的重要性不只在“空海来过”这一人物故事，而在于寺院遗址、造像和建筑构件共同提供了唐长安佛教空间的物质证据。把它放回新昌坊的城市格局中，可以讨论密教传播、译经活动和东亚僧侣往来如何依托具体的寺院制度与城市交通发生。",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/%E9%9D%92%E9%BE%99%E5%AF%BA%E9%81%97%E5%9D%80-%E5%9B%9E%E5%BB%8A%E9%81%97%E5%9D%80%EF%BC%88%E4%BA%94%E5%8F%B7%E9%81%97%E5%9D%80%EF%BC%89.jpg",
+    "image": "assets/xian-qinglong-temple-user.png",
     "source": [
       [
         "西部网｜青龙寺遗址报道",
@@ -169,7 +169,7 @@
       ]
     ],
     "museumName": "西安博物院",
-    "credit": "Wikimedia Commons｜青龙寺遗址回廊"
+    "credit": "用户提供｜唐青龙寺遗址园区图"
   },
   {
     "museum": "xian-museum",
@@ -181,7 +181,7 @@
     "objects": "本馆代表：小雁塔、荐福寺出土建筑与生活遗物。",
     "value": "小雁塔本体、寺院遗址和近现代保护层次叠加在同一地点，适合观察古建筑如何在城市变迁中保存下来。",
     "importance": "荐福寺与小雁塔把佛教传播、建筑史和遗产保护集中在一个可步行阅读的地点。小雁塔作为唐代密檐式砖塔与丝绸之路遗产点，其价值不只在外形优美，也在于塔、寺院遗址、石刻和城市环境共同保留了长安佛教网络的层累历史。",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Small_Wild_Goose_Pagoda_2024_01.jpg?width=1600",
+    "image": "assets/xian-jianfu-xiaoyanta-user.png",
     "source": [
       [
         "陕西地方志｜荐福寺—小雁塔",
@@ -193,7 +193,7 @@
       ]
     ],
     "museumName": "西安博物院",
-    "credit": "Wikimedia Commons｜小雁塔"
+    "credit": "用户提供｜荐福寺与小雁塔图"
   },
   {
     "museum": "shaanxi-history",
