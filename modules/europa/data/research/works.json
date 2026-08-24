@@ -1,0 +1,293 @@
+[
+  {
+    "id": "work:seikilos-epitaph",
+    "personId": "seik",
+    "title": "塞基洛斯墓志铭歌",
+    "originalTitle": "Seikilos Epitaph",
+    "date": "约公元1世纪",
+    "dateStart": 1,
+    "dateEnd": 100,
+    "genre": "墓志铭歌曲 / 希腊化歌曲",
+    "status": "complete",
+    "summary": "石碑保存下来的不是一首脱离场景的“古曲”，而是一件把诗句、字母记谱与墓葬用途压在同一表面上的证据。旋律虽相对完整，塞基洛斯其人、署名关系以及原始演奏情境却仍在石面之外。",
+    "catalogue": null,
+    "places": [
+      "特拉勒斯"
+    ],
+    "relatedPersons": [],
+    "historicalContext": "它的可听性来自石面上的双重记号：字母标出音高，附加符号提示时值；材料来自小亚细亚墓碑，却没有留下足以重建墓主、用途和演奏者的完整语境。今天的复原以保存下来的符号为骨架，又以歌词格律补足节奏，不能当作现场记录。",
+    "researchQuestions": [
+      "石碑上的两套记号分别能证明什么，哪些判断只能依赖歌词格律？",
+      "“现存最完整”描述的是保存状态，还是已经把一套现代复原标准写进了古代音乐史？",
+      "当作者、墓主与使用场合无法互证时，WORK 的归属边界应停在哪里？"
+    ],
+    "sourceRefs": [],
+    "bibliographyRefs": [],
+    "versionRefs": [],
+    "performanceRefs": [],
+    "recordingRefs": [],
+    "receptionRefs": [],
+    "dating": {
+      "certainty": "approximate",
+      "note": "现有材料通常将石碑置于公元1世纪；具体年代、墓主身份与署名关系仍不宜压缩为一个确定年份。"
+    },
+    "whyThisWorkMatters": "一方石碑使古代音乐史出现了一个反常的样本：保存最完整的旋律，恰恰不能证明其社会用途、作者身份和原始听法。它把“能唱出来”与“知道它为何被写下”拆开，也提醒后来的复原不能替代已经消失的演奏共同体。"
+  },
+  {
+    "id": "work:machaut-messe-de-nostre-dame",
+    "personId": "mach",
+    "title": "圣母弥撒",
+    "originalTitle": "Messe de Nostre Dame",
+    "date": "约1360年代",
+    "dateStart": 1360,
+    "dateEnd": 1369,
+    "genre": "常规弥撒",
+    "status": "complete",
+    "summary": "《圣母弥撒》的问题不在于它是否可以被列入“完整弥撒”之首，而在于礼仪乐章何时、如何被组织成一件署名作品。它把教会时间、复调写作和抄本编纂压在同一结构里，作者并非只写出乐章，也参与了作品被看见的方式。",
+    "catalogue": null,
+    "places": [
+      "兰斯",
+      "巴黎"
+    ],
+    "relatedPersons": [],
+    "historicalContext": "马肖的作品全集抄本把礼仪用曲从一次次礼拜中抽离出来，置入可传抄、可署名、可归类的书写秩序；兰斯与巴黎之间的宫廷—教会文化，使这部弥撒既是礼仪行动，也是作者形象的载体。现存抄本、礼仪顺序和现代分类并不自动给出同一个“单一作品”。",
+    "researchQuestions": [
+      "礼仪各部分在抄本中被怎样排列，才形成今日所谓“弥撒”？",
+      "马肖监制的全集抄本究竟保存了创作意图，还是制造了后世可识别的作者形象？",
+      "“第一部完整弥撒”这一称呼遮蔽了哪些更早的礼仪与复调组合？"
+    ],
+    "sourceRefs": [],
+    "bibliographyRefs": [],
+    "versionRefs": [],
+    "performanceRefs": [],
+    "recordingRefs": [],
+    "receptionRefs": [],
+    "dating": {
+      "certainty": "approximate",
+      "note": "通常断代落在1360年代；现存抄本、创作过程与定稿时间不宜被视为同一时刻。"
+    },
+    "whyThisWorkMatters": "它让我们看到，作者性并非印在作品完成之日才出现：抄本、署名和礼仪使用共同把乐章组织成一个可继承的对象。由此，十四世纪音乐史中的“作品”不再只是音符的总和，也是一套书写与归档制度的结果。"
+  },
+  {
+    "id": "work:bach-kunst-der-fuge",
+    "personId": "bach",
+    "title": "赋格的艺术",
+    "originalTitle": "Die Kunst der Fuge",
+    "date": "约1742–1750",
+    "dateStart": 1742,
+    "dateEnd": 1750,
+    "genre": "复调曲集 / 对位研究",
+    "status": "incomplete",
+    "summary": "一部以秩序为主题的曲集，为什么没有一个无争议的终点？《赋格的艺术》留下的难题正在这里：未完成终曲和曲目编排使“作品”同时存在于手稿、印刷组织与演出选择之间，对位的抽象性反而暴露了它的物质条件。",
+    "catalogue": "BWV 1080",
+    "places": [
+      "莱比锡"
+    ],
+    "relatedPersons": [],
+    "historicalContext": "巴赫晚年把复调材料整理为可反复编排的曲集，莱比锡的路德宗城市制度与十八世纪对“学问化”作曲的评价构成其背景。作者留下的材料没有锁定最终次序，后来的出版者与演出者遂不只是传播这部作品，也参与规定它从哪里开始、在哪里结束。",
+    "researchQuestions": [
+      "未竟终曲的中断发生在创作、手稿还是出版层面？三者的答案是否相同？",
+      "曲目次序改变的是听觉逻辑、编纂逻辑，还是后世对巴赫晚期风格的想象？",
+      "十九世纪复兴把这部曲集放回何种经典制度，哪些早期使用情境因而退场？"
+    ],
+    "sourceRefs": [
+      "source:bach-kunst-fuge-autograph-p200",
+      "source:bach-kunst-fuge-printed-1751"
+    ],
+    "bibliographyRefs": [],
+    "versionRefs": [
+      "version:bach-kunst-der-fuge-authorial-1742-1750",
+      "version:bach-kunst-der-fuge-printed-1751"
+    ],
+    "performanceRefs": [],
+    "recordingRefs": [],
+    "receptionRefs": [
+      "reception:bach-kunst-fuge-1752-public-repositioning"
+    ],
+    "dating": {
+      "certainty": "range",
+      "note": "作品在1740年代至巴赫去世前的编纂与修订中形成；创作区间、未竟终曲与后来的出版组织必须分开处理。"
+    },
+    "whyThisWorkMatters": "这里的“完成”把作者意图推向出版史：谁排列曲目，谁决定结尾，谁就参与定义作品。巴赫复兴由此不只是旧曲重演，还把一部晚期曲集改造成衡量作曲技艺与经典秩序的一个范本。"
+  },
+  {
+    "id": "work:mozart-requiem",
+    "personId": "moza",
+    "title": "安魂曲",
+    "originalTitle": "Requiem in D minor, K. 626",
+    "date": "1791",
+    "dateStart": 1791,
+    "dateEnd": 1791,
+    "genre": "安魂曲",
+    "status": "reconstructed",
+    "summary": "现存总谱是一项协作后的遗物，而不是莫扎特临终时留下的透明原稿。《安魂曲》的委约、草稿、死讯、苏斯迈尔续写和出版整理，使“莫扎特的作品”成为一个需要逐段核验的文本名称。",
+    "catalogue": "K. 626",
+    "places": [
+      "维也纳"
+    ],
+    "relatedPersons": [],
+    "historicalContext": "1791年的委约把一项尚未完成的弥撒带入莫扎特最后一年的工作；他去世后，苏斯迈尔补配器并续写若干乐章，委约者的隐匿又给文本外加了悬疑。后来的“天鹅之歌”叙事把这些层次重新缝合，听众面对的遂不只是手稿遗留物，也是被传记塑形的作品。",
+    "researchQuestions": [
+      "草稿、手稿与风格证据在不同乐章上能提供多大程度的归属判断？",
+      "苏斯迈尔的续写在何处接管了莫扎特留下的材料，未来 VERSION 应怎样记录这种接管？",
+      "死亡传记与委约疑云何时进入作品解释，又何时遮蔽了文本证据？"
+    ],
+    "sourceRefs": [
+      "source:mozart-requiem-autograph-a2-1791",
+      "source:mozart-requiem-cod-17561a"
+    ],
+    "bibliographyRefs": [],
+    "versionRefs": [
+      "version:mozart-requiem-authorial-1791",
+      "version:mozart-requiem-suessmayr-1792"
+    ],
+    "performanceRefs": [
+      "performance:mozart-requiem-vienna-st-michael-1791-12-10",
+      "performance:mozart-requiem-vienna-jahn-saal-1793-01-02"
+    ],
+    "recordingRefs": [
+      "recording:mozart-requiem-krips-1950"
+    ],
+    "receptionRefs": [
+      "reception:mozart-requiem-1800-completion-attribution"
+    ],
+    "dating": {
+      "certainty": "certain",
+      "note": "委约、主要创作与莫扎特去世均发生于1791年；现存完成文本的形成则延续到其死后。"
+    },
+    "whyThisWorkMatters": "它迫使音乐史放弃一个过于整齐的“作者—原稿—经典”链条：一部作品可以在作者死后继续被完成、出版和神话化。经典并非只靠作曲者留下的音符成立，也靠编辑、演出者和听众不断划定边界。"
+  },
+  {
+    "id": "work:wagner-ring-cycle",
+    "personId": "wagn",
+    "title": "尼伯龙根的指环",
+    "originalTitle": "Der Ring des Nibelungen",
+    "date": "1848–1876",
+    "dateStart": 1848,
+    "dateEnd": 1876,
+    "genre": "乐剧四联剧",
+    "status": "complete",
+    "summary": "对《指环》而言，作品边界伸出了总谱：四晚连演、专属剧院、沉入台下的乐池和无包厢观众席，都是它实现自身的条件。主导动机只是其中一层；没有拜罗伊特的建筑与观演秩序，“总艺术作品”仍停留在理论宣言。",
+    "catalogue": null,
+    "places": [
+      "苏黎世",
+      "拜罗伊特"
+    ],
+    "relatedPersons": [],
+    "historicalContext": "瓦格纳先写理论与诗篇，再在1848—1876年间完成从构思到舞台的长链条；1876年拜罗伊特以四晚连演开幕，机械台车、熄灯与隐藏乐池把观众也纳入制作。路德维希二世的出资让这套“革命”得以落地，却同时暴露出革命修辞对王权赞助的依赖。",
+    "researchQuestions": [
+      "若移除拜罗伊特的建筑和观众制度，剩下的总谱还是同一件 WORK 吗？",
+      "主导动机何时是作曲结构，何时又因后来的主题指南而成为可索引的解释工具？",
+      "王权出资与革命宣言如何在首演制度中同时成立？"
+    ],
+    "sourceRefs": [],
+    "bibliographyRefs": [],
+    "versionRefs": [],
+    "performanceRefs": [
+      "performance:wagner-ring-bayreuth-1876"
+    ],
+    "recordingRefs": [
+      "recording:wagner-ring-keilberth-bayreuth-1955"
+    ],
+    "receptionRefs": [
+      "reception:wagner-ring-bayreuth-1876-contemporary-report"
+    ],
+    "dating": {
+      "certainty": "range",
+      "note": "日期覆盖1848年前后的构思、1850年代起的谱曲与1876年拜罗伊特首演；它描述的是作品—剧场形成过程，而非单一写作时点。"
+    },
+    "whyThisWorkMatters": "在《指环》中，一个常被分开的事实重新接上：现代作品可以由剧场制度生产，而非先有总谱、再找场地演出。它也让“先锋”一词失去纯粹性——最激进的舞台理想，靠王室资金、专属建筑和严格观演纪律才获得形体。"
+  },
+  {
+    "id": "work:debussy-pelleas",
+    "personId": "debu",
+    "title": "佩利亚斯与梅丽桑德",
+    "originalTitle": "Pelléas et Mélisande",
+    "date": "1893–1902",
+    "dateStart": 1893,
+    "dateEnd": 1902,
+    "genre": "象征主义歌剧",
+    "status": "complete",
+    "summary": "梅特林克的暧昧台词迫使歌剧重新安排音乐时间，这正是《佩利亚斯与梅丽桑德》的难题，而不只是“印象主义”是否恰当。德彪西删改文本、压低宣叙调的戏剧权力，让和声与音色承受原由咏叹调和高潮承担的结构任务。",
+    "catalogue": null,
+    "places": [
+      "巴黎"
+    ],
+    "relatedPersons": [],
+    "historicalContext": "德彪西自1893年起处理梅特林克剧本，直到1902年巴黎喜歌剧院首演才把这套写作选择交给公共舞台。作品借用瓦格纳之后的戏剧与和声遗产，却用删改、半吟诵和不解决的和声拒绝其戏剧控制；作曲家抵拒“印象主义”，正说明后世标签与创作自我说明并不重合。",
+    "researchQuestions": [
+      "梅特林克的台词在删改后留下了哪些音乐时间，哪些又被德彪西重新分配？",
+      "首演制度如何容纳一部不依靠强烈咏叹调与动机发展推进的歌剧？",
+      "“印象主义”与“去瓦格纳化”分别由哪些批评、演出和后世史学固定下来？"
+    ],
+    "sourceRefs": [],
+    "bibliographyRefs": [],
+    "versionRefs": [],
+    "performanceRefs": [
+      "performance:debussy-pelleas-paris-1902-04-30"
+    ],
+    "recordingRefs": [
+      "recording:debussy-pelleas-desormiere-1941"
+    ],
+    "receptionRefs": [
+      "reception:debussy-pelleas-paris-1902-controversy",
+      "reception:debussy-pelleas-1919-french-canonization"
+    ],
+    "dating": {
+      "certainty": "range",
+      "note": "创作从1893年前后持续至1902年首演；首演年份不能代替草稿、删改与定稿的全过程。"
+    },
+    "whyThisWorkMatters": "这件作品改变的不只是和声语言，而是歌剧让观众等待、辨认和理解戏剧的方式：情节不再由高潮不断向前推，暧昧本身成为时间结构。现代歌剧史由此出现一条不以瓦格纳式扩张为尺度的路径。"
+  },
+  {
+    "id": "work:buso-doktor-faust",
+    "personId": "buso",
+    "title": "浮士德博士",
+    "originalTitle": "Doktor Faust",
+    "date": "约1916–1924",
+    "dateStart": 1916,
+    "dateEnd": 1924,
+    "genre": "歌剧 / 乐剧",
+    "status": "incomplete",
+    "summary": "《浮士德博士》首先是一件未完成的 WORK，而不是一部等待补齐的固定总谱。布索尼留下的草稿与构想构成原始对象；Jarnach、Beaumont 的完成稿必须另作版本处理。",
+    "catalogue": null,
+    "places": [
+      "柏林",
+      "苏黎世"
+    ],
+    "relatedPersons": [],
+    "historicalContext": "布索尼在现代主义、巴赫再解释与“年轻的古典性”之间写作这部歌剧，1924年去世使原计划在文本上中断。后续完成实践并非简单填补空白：补写者要在草稿、剧本与作者美学声明之间作出选择，因而把编辑判断带进作品的可演形态。",
+    "researchQuestions": [
+      "哪些草稿、剧本段落与美学声明能够作为布索尼 WORK 的边界证据？",
+      "Jarnach 与 Beaumont 各自在哪里接管文本，未来 VERSION 需要如何保留这种差异？",
+      "完成版的首演与出版何时把补写选择自然化为“布索尼的作品”？"
+    ],
+    "sourceRefs": [
+      "source:buso-doktor-faust-libretto-1920",
+      "source:buso-doktor-faust-printed-score-1925"
+    ],
+    "bibliographyRefs": [],
+    "versionRefs": [
+      "version:buso-doktor-faust-authorial-1916-1924",
+      "version:buso-doktor-faust-jarnach-1925",
+      "version:buso-doktor-faust-beaumont-1984"
+    ],
+    "performanceRefs": [
+      "performance:buso-doktor-faust-dresden-1925-05-21",
+      "performance:buso-doktor-faust-bologna-1985-04-02"
+    ],
+    "recordingRefs": [
+      "recording:buso-doktor-faust-bbc-1959",
+      "recording:buso-doktor-faust-nagano-1997-1998"
+    ],
+    "receptionRefs": [
+      "reception:buso-doktor-faust-dresden-1925-early-response",
+      "reception:buso-doktor-faust-beaumont-bologna-1985-reassessment"
+    ],
+    "dating": {
+      "certainty": "range",
+      "note": "这里以约1916年至布索尼1924年去世作为创作区间；未完成原作与后续完成稿的日期必须在 VERSION 层分开记录。"
+    },
+    "whyThisWorkMatters": "布索尼的案例把作品完整性从技术问题推向制度史：未完成者、补写者、出版者、演出机构和听众都可能在不同环节决定“作品”长什么样。它不只关乎一部歌剧能否演出，也关乎作者意图何时被后来的可演性接管。"
+  }
+]

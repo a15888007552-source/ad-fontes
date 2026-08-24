@@ -689,7 +689,7 @@ body.europa-opening-active{overflow:hidden}
 .europa-opening-disc{position:relative;width:min(72vw,470px);aspect-ratio:1;display:grid;place-items:center;transform-style:preserve-3d;filter:drop-shadow(0 28px 38px rgba(0,0,0,.5));will-change:transform;animation:europa-opening-disc-spin 3.2s var(--ease-out) both}
 .europa-opening-base{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;filter:saturate(.96) contrast(1.04);will-change:opacity;animation:europa-opening-disc-fade 3.2s linear both}
 .europa-opening-fragments{position:absolute;inset:0;pointer-events:none;overflow:visible}
-.europa-opening-fragment{position:absolute;inset:0;display:block;border-radius:50%;background:url("./europa-orbit-seal.png") center/100% 100% no-repeat;opacity:0;will-change:transform,opacity;-webkit-mask:conic-gradient(from var(--angle),#000 0 30deg,transparent 30deg 360deg);mask:conic-gradient(from var(--angle),#000 0 30deg,transparent 30deg 360deg);animation:europa-fragment-scatter 1.68s var(--ease-out) calc(1.22s + var(--delay)) both}
+.europa-opening-fragment{position:absolute;inset:0;display:block;border-radius:50%;background:url("../europa-orbit-seal.png") center/100% 100% no-repeat;opacity:0;will-change:transform,opacity;-webkit-mask:conic-gradient(from var(--angle),#000 0 30deg,transparent 30deg 360deg);mask:conic-gradient(from var(--angle),#000 0 30deg,transparent 30deg 360deg);animation:europa-fragment-scatter 1.68s var(--ease-out) calc(1.22s + var(--delay)) both}
 .europa-opening-caption{position:absolute;left:50%;bottom:3%;transform:translateX(-50%);width:min(92vw,620px);text-align:center;opacity:0;animation:europa-opening-caption-in .72s var(--ease-out) 2.24s both}
 .europa-opening-caption .kicker{display:block;color:#d4b56f;font:600 10px/1.4 var(--sans);letter-spacing:.42em;margin-left:.42em}
 .europa-opening-caption h1{font-family:var(--serif);font-size:clamp(28px,5vw,54px);line-height:1.1;letter-spacing:.15em;margin:12px 0 7px;font-weight:600;text-shadow:0 3px 18px rgba(0,0,0,.48)}
@@ -700,3 +700,63 @@ body.europa-opening-active{overflow:hidden}
 @keyframes europa-opening-caption-in{from{opacity:0;transform:translate(-50%,18px)}to{opacity:1;transform:translate(-50%,0)}}
 @media(max-width:640px){.europa-opening-stage{height:min(80vh,590px)}.europa-opening-disc{width:min(78vw,360px)}.europa-opening-caption{bottom:3%}.europa-opening-caption h1{letter-spacing:.1em}.europa-opening-caption p{letter-spacing:.17em}.europa-opening-skip{font-size:10px;padding:10px 12px}}
 @media(prefers-reduced-motion:reduce){#europa-opening{display:none!important}.europa-opening-disc,.europa-opening-base,.europa-opening-fragment,.europa-opening-caption{animation:none!important}}
+
+/* ---------- work archive: PERSON -> WORK -> overview ---------- */
+.person-work-archive{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.person-work-archive-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.person-work-archive-title{margin:0!important;font:700 12px/1.35 var(--sans)!important;letter-spacing:.22em!important;color:var(--acc)!important}
+.person-work-archive-latin{margin-top:5px;font:10px/1.3 var(--sans);letter-spacing:.18em;color:var(--mut)}
+.person-work-archive-count{flex:none;margin-top:1px;font:700 10px/1.35 var(--sans);letter-spacing:.1em;color:var(--acc2);white-space:nowrap}
+.person-work-list{display:grid;gap:11px;margin-top:15px}
+.person-work-entry{border:1px solid var(--line);background:var(--bg);padding:14px 14px 13px;min-width:0}
+.person-work-entry-meta{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:10px}
+.person-work-entry-title{margin:0;font:600 19px/1.35 var(--dfont);color:var(--ink);overflow-wrap:anywhere}
+.person-work-entry-original{margin-top:3px;font:italic 12px/1.45 var(--serif);color:var(--mut);overflow-wrap:anywhere}
+.person-work-entry-status{align-self:start;border:1px solid color-mix(in srgb,var(--acc2) 62%,var(--line));padding:4px 7px;color:var(--acc2);font:700 10px/1.2 var(--sans);letter-spacing:.08em;white-space:nowrap}
+.person-work-entry-details{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:9px;color:var(--acc);font:11px/1.5 var(--sans);letter-spacing:.04em}
+.person-work-entry-details span+span{padding-left:12px;border-left:1px solid var(--line)}
+.person-work-entry-summary{margin:10px 0 12px;color:var(--ink);font-size:14px;line-height:1.8}
+.person-work-open{display:inline-flex;align-items:center;gap:8px;min-height:40px;border:1px solid var(--acc);background:transparent;color:var(--acc);padding:8px 11px;cursor:pointer;font:700 11px/1.3 var(--sans);letter-spacing:.08em;transition:background var(--motion-fast),color var(--motion-fast),border-color var(--motion-fast)}
+.person-work-open:hover,.person-work-open:focus-visible{background:var(--acc);border-color:var(--acc);color:var(--bg);outline:2px solid color-mix(in srgb,var(--acc) 35%,transparent);outline-offset:2px}
+.person-work-open span{font-size:15px;line-height:1}
+
+.work-archive-view{padding-bottom:32px}
+.work-archive-nav{position:sticky;top:0;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 -30px;padding:15px 30px 13px;background:color-mix(in srgb,var(--panel) 95%,transparent);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+.work-archive-back{border:0;background:none;color:var(--acc);padding:8px 0;cursor:pointer;font:700 11px/1.4 var(--sans);letter-spacing:.08em}
+.work-archive-back:hover,.work-archive-back:focus-visible{color:var(--ink);outline:2px solid var(--acc);outline-offset:3px}
+.work-archive-close{margin-left:auto}
+.work-archive-header{position:relative;padding:30px 0 21px;border-bottom:2px solid var(--acc)}
+.work-archive-kicker{display:block;margin-bottom:10px;color:var(--acc);font:700 10px/1.3 var(--sans);letter-spacing:.22em}
+.work-archive-title{margin:0}
+.work-archive-header h4{margin:0;font:600 30px/1.2 var(--dfont);color:var(--ink);overflow-wrap:anywhere}
+.work-archive-original{margin-top:6px;color:var(--mut);font:italic 14px/1.5 var(--serif);overflow-wrap:anywhere}
+.work-archive-meta{margin-top:10px;color:var(--acc);font:11px/1.5 var(--sans);letter-spacing:.08em}
+.work-archive-status{display:inline-block;margin-top:13px;border:1px solid var(--acc2);padding:5px 8px;color:var(--acc2);font:700 10px/1.2 var(--sans);letter-spacing:.1em}
+.work-archive-identity{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:18px;border:1px solid var(--line);background:var(--line)}
+.work-archive-identity>div{min-width:0;padding:10px 11px;background:var(--bg)}
+.work-archive-identity span{display:block;margin-bottom:5px;color:var(--mut);font:700 9.5px/1.3 var(--sans);letter-spacing:.16em}
+.work-archive-identity b{display:block;color:var(--ink);font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+.work-archive-section{margin-top:25px}
+.work-archive-section h5{margin:0 0 9px;color:var(--acc);font:700 11px/1.4 var(--sans);letter-spacing:.22em}
+.work-archive-section p,.work-archive-section li{margin:0;color:var(--ink);font-size:15.5px;line-height:1.9}
+.work-archive-questions{margin:0;padding-left:20px}
+.work-archive-questions li+li{margin-top:7px}
+.work-archive-section-index{padding-top:21px;border-top:1px solid var(--line)}
+.work-archive-index-note{margin-bottom:13px!important;color:var(--mut)!important;font:11.5px/1.7 var(--sans)!important}
+.work-archive-index{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.work-archive-index-item{min-width:0;padding:10px 7px;background:var(--bg);text-align:center}
+.work-archive-index-item span{display:block;color:var(--ink);font-size:12px;line-height:1.35;overflow-wrap:anywhere}
+.work-archive-index-item small{display:block;margin-top:2px;color:var(--mut);font:700 8.5px/1.35 var(--sans);letter-spacing:.1em;overflow-wrap:anywhere}
+.work-archive-index-item b{display:block;margin-top:6px;color:var(--ink);font-size:13px;line-height:1.35;overflow-wrap:anywhere}
+@media(max-width:640px){
+  .work-archive-nav{margin:0 -20px;padding-left:20px;padding-right:20px}
+  .work-archive-header h4{font-size:27px}
+  .work-archive-identity{grid-template-columns:1fr}
+  .work-archive-index{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .work-archive-index-item:last-child{grid-column:1 / -1}
+}
+@media(max-width:380px){
+  .person-work-entry-meta{grid-template-columns:1fr}
+  .person-work-entry-status{justify-self:start}
+  .work-archive-index{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

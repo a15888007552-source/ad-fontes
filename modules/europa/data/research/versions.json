@@ -1,0 +1,269 @@
+[
+  {
+    "id": "version:buso-doktor-faust-authorial-1916-1924",
+    "workId": "work:buso-doktor-faust",
+    "label": "布索尼未完成作者状态",
+    "originalLabel": "Busoni unfinished authorial state",
+    "versionType": "authorial_state",
+    "date": "1916–1924",
+    "dateStart": 1916,
+    "dateEnd": 1924,
+    "dating": "range",
+    "responsibility": [
+      {
+        "personId": "buso",
+        "role": "composer"
+      }
+    ],
+    "unlinkedResponsibility": [],
+    "status": "extant",
+    "basis": "布索尼留下的剧本、草稿与作者构想，使《浮士德博士》能够作为一部未竟的作者工程被辨认；现有材料并不等于一部已经完成的演出总谱。",
+    "scopeOfChange": "这是作品停在作者手中的未完成状态：它保留已写成的场景、草稿和未竟结尾，也保留后续完成者必须面对的文本缺口。",
+    "relationshipToWork": "WORK 的作者遗稿状态；它不是失败的独立作品，也不是把后来的完成方案倒推成布索尼唯一最终意图的依据。",
+    "historicalContext": "布索尼晚年把歌剧写作、巴赫传统的重新编码和“Junge Klassizität”的秩序理想压入同一工程；1924 年去世使这一工程以作者未竟材料的形式中断，后来可演的完整文本因此必须经过他人处理。",
+    "versionQuestion": [
+      "哪些草稿、剧本段落和作者说明能够划定布索尼亲自完成的边界？",
+      "作者材料中的不同层次，是否已经包含可供完成者直接采用的结构指示？",
+      "后出的完成方案在多大程度上继承了作者结构，又在何处承担了独立的戏剧与音乐判断？"
+    ],
+    "sourceRefs": [
+      "source:buso-doktor-faust-preface-autograph-1922",
+      "source:buso-doktor-faust-letter-1917",
+      "source:buso-doktor-faust-libretto-1920"
+    ],
+    "performanceRefs": [],
+    "recordingRefs": [],
+    "receptionRefs": []
+  },
+  {
+    "id": "version:buso-doktor-faust-jarnach-1925",
+    "workId": "work:buso-doktor-faust",
+    "label": "雅纳赫完成版",
+    "originalLabel": "Philipp Jarnach completion (1925)",
+    "versionType": "completion",
+    "date": "1925",
+    "dateStart": 1925,
+    "dateEnd": 1925,
+    "dating": "certain",
+    "responsibility": [],
+    "unlinkedResponsibility": [
+      {
+        "name": "Philipp Jarnach",
+        "role": "completer"
+      }
+    ],
+    "status": "extant",
+    "basis": "布索尼去世后，雅纳赫依据能够取得的布索尼遗留材料补写缺失部分，形成了 1925 年可供首演的完成方案；完成者的责任不能被折叠进布索尼作者身份。",
+    "scopeOfChange": "补写未完成段落并提供可演的结尾，把作者遗稿转化为一套完整演出文本；在布索尼草稿未能决定的部分，雅纳赫必须自行组织音乐与戏剧收束。",
+    "relationshipToWork": "作者去世后形成的第一套可演完成方案，仍属于同一 WORK；它不是新的《浮士德博士》，也不可被倒推为布索尼唯一的最终形态。",
+    "historicalContext": "1924 年布索尼去世后，作品从作者私人工作转入完成者、剧院与公共演出的协商关系；1925 年雅纳赫方案的首演使“未完成作品如何获得公共形态”成为该 WORK 的核心历史问题。演出本身留待 PERFORMANCE 层记录。",
+    "versionQuestion": [
+      "雅纳赫使用了哪些布索尼材料，哪些段落是为填补缺口而独立补写？",
+      "1925 年首演的公共条件如何影响完成方案的音乐与戏剧取舍？",
+      "后来的研究与演出为何常把雅纳赫完成版误当成作品本身，而不再标明其完成责任？"
+    ],
+    "sourceRefs": [
+      "source:buso-doktor-faust-printed-score-1925"
+    ],
+    "performanceRefs": [
+      "performance:buso-doktor-faust-dresden-1925-05-21"
+    ],
+    "recordingRefs": [
+      "recording:buso-doktor-faust-bbc-1959"
+    ],
+    "receptionRefs": [
+      "reception:buso-doktor-faust-dresden-1925-early-response"
+    ]
+  },
+  {
+    "id": "version:buso-doktor-faust-beaumont-1984",
+    "workId": "work:buso-doktor-faust",
+    "label": "Beaumont 完成方案",
+    "originalLabel": "Antony Beaumont completion",
+    "versionType": "completion",
+    "date": "约1982–1985",
+    "dateStart": 1982,
+    "dateEnd": 1985,
+    "dating": "range",
+    "responsibility": [],
+    "unlinkedResponsibility": [
+      {
+        "name": "Antony Beaumont",
+        "role": "completer"
+      }
+    ],
+    "status": "extant",
+    "basis": "Beaumont 依据布索尼遗留材料，并纳入雅纳赫未能取得的后发现草稿，形成另一套可演的完成结构；现有材料把准备、出版与 1984–1985 年间的公开实现联系在一起，但不宜在 VERSION 层把这些日期压成一个未经核验的单点。",
+    "scopeOfChange": "重新组织并补写结尾场景，把新增草稿纳入与雅纳赫方案不同的收束逻辑；它改变的不只是末段文字，也改变了研究者判断布索尼遗稿边界的方式。",
+    "relationshipToWork": "同一未完成 WORK 的后出替代完成方案；它不是雅纳赫方案的普通再版，也不是把后发现材料直接伪装成布索尼完整定稿。",
+    "historicalContext": "20 世纪后期的档案发现、校勘工作与现代演出实践重新打开了《浮士德博士》的完成问题；Beaumont 方案由此把“完成”变成一次可被比较的研究判断，而不再只是对 1925 年首演文本的被动继承。具体出版物、演出场次和录音应分别进入后续层。",
+    "versionQuestion": [
+      "后发现草稿在 Beaumont 方案中承担的是补足、改写还是重新排序的作用？",
+      "如何区分完成方案的准备日期、出版日期与首次公开实现日期？",
+      "与雅纳赫方案的差异，哪些来自新材料，哪些来自完成者对布索尼戏剧结构的不同解释？"
+    ],
+    "sourceRefs": [
+      "source:buso-doktor-faust-beaumont-programme-1985"
+    ],
+    "performanceRefs": [
+      "performance:buso-doktor-faust-bologna-1985-04-02"
+    ],
+    "recordingRefs": [],
+    "receptionRefs": [
+      "reception:buso-doktor-faust-beaumont-bologna-1985-reassessment"
+    ]
+  },
+  {
+    "id": "version:mozart-requiem-authorial-1791",
+    "workId": "work:mozart-requiem",
+    "label": "莫扎特作者遗稿状态",
+    "originalLabel": "Mozart authorial material (1791)",
+    "versionType": "authorial_state",
+    "date": "1791",
+    "dateStart": 1791,
+    "dateEnd": 1791,
+    "dating": "certain",
+    "responsibility": [
+      {
+        "personId": "moza",
+        "role": "composer"
+      }
+    ],
+    "unlinkedResponsibility": [],
+    "status": "fragmentary",
+    "basis": "莫扎特 1791 年留下的亲笔稿、草稿与未完成材料构成了一个可以独立辨认的作者状态；它证明作者留下了什么，但不自动提供一部完整可演总谱。",
+    "scopeOfChange": "保存已完成段落与未完成草稿的作者边界，不包含死后补配、续写或为公共演出而完成的整体编排。",
+    "relationshipToWork": "WORK 的作者材料状态；它把“莫扎特写下的部分”与后来完成的《安魂曲》区分开来，而不是把残缺材料当成另一部作品。",
+    "historicalContext": "这部受委托的安魂曲在莫扎特生命最后一年进入写作，死亡使创作从作者工作转为遗稿处理问题；其后任何完整形态都同时牵涉委托、遗产、完成责任与公共演出。",
+    "versionQuestion": [
+      "哪些乐章或段落可以在材料层面归入莫扎特亲自完成，哪些只保留草稿或补充痕迹？",
+      "作者遗稿中的未决处，后来如何被完成者的编配和续写遮蔽？",
+      "“莫扎特的《安魂曲》”这一后世简称，何时把作者状态与完整演出文本混成了一个对象？"
+    ],
+    "sourceRefs": [
+      "source:mozart-requiem-autograph-a2-1791",
+      "source:mozart-requiem-cod-17561a"
+    ],
+    "performanceRefs": [
+      "performance:mozart-requiem-vienna-st-michael-1791-12-10"
+    ],
+    "recordingRefs": [],
+    "receptionRefs": [
+      "reception:mozart-requiem-1800-completion-attribution"
+    ]
+  },
+  {
+    "id": "version:mozart-requiem-suessmayr-1792",
+    "workId": "work:mozart-requiem",
+    "label": "苏斯迈尔传统完成版",
+    "originalLabel": "The Requiem, completed by Franz Xaver Süßmayr, in the traditional form",
+    "versionType": "completion",
+    "date": "1791–1792",
+    "dateStart": 1791,
+    "dateEnd": 1792,
+    "dating": "range",
+    "responsibility": [],
+    "unlinkedResponsibility": [
+      {
+        "name": "Franz Xaver Süßmayr",
+        "role": "completer"
+      }
+    ],
+    "status": "extant",
+    "basis": "莫扎特亲笔材料、已有补充痕迹与苏斯迈尔的完成实践共同构成传统完整文本的依据；官方作品记录将其作为未完成作品的苏斯迈尔传统完成形态，不能因此把完整文本的每一层都重新归为莫扎特。",
+    "scopeOfChange": "补配器并续写未完成乐章，使遗稿形成一套完整的传统演出文本；不同层次的作者归属、补写范围与材料依据仍需在 SOURCE 层逐段核验。",
+    "relationshipToWork": "作者遗稿之后形成的完成方案，仍属于同一 WORK；它不是莫扎特作者状态的同义词，也不是唯一可能的完整形态。",
+    "historicalContext": "1791 年莫扎特去世后，委托、遗稿交付与尽快形成完整文本的压力把作品推入完成者主导的制度环境；苏斯迈尔的方案后来成为传统公共形态，正因如此，后世接受常把完成者的补写隐入“莫扎特作品”的单一署名之下。",
+    "versionQuestion": [
+      "苏斯迈尔分别依据哪些莫扎特草稿、补充痕迹或既有材料完成各段？",
+      "传统完成版中哪些部分是补配、哪些部分是续写，现有证据能否逐段区分？",
+      "后来的演出、录音与目录命名如何处理莫扎特作者责任和苏斯迈尔完成责任之间的张力？"
+    ],
+    "sourceRefs": [
+      "source:mozart-requiem-cod-17561a"
+    ],
+    "performanceRefs": [],
+    "recordingRefs": [
+      "recording:mozart-requiem-krips-1950"
+    ],
+    "receptionRefs": [
+      "reception:mozart-requiem-1800-completion-attribution"
+    ]
+  },
+  {
+    "id": "version:bach-kunst-der-fuge-authorial-1742-1750",
+    "workId": "work:bach-kunst-der-fuge",
+    "label": "巴赫作者遗稿状态",
+    "originalLabel": "Bach authorial manuscript state",
+    "versionType": "authorial_state",
+    "date": "约1742–1750",
+    "dateStart": 1742,
+    "dateEnd": 1750,
+    "dating": "range",
+    "responsibility": [
+      {
+        "personId": "bach",
+        "role": "composer"
+      }
+    ],
+    "unlinkedResponsibility": [],
+    "status": "fragmentary",
+    "basis": "巴赫亲笔手稿、修订痕迹与现存作者材料共同显示出一套尚未被公共印刷顺序固定的作者状态；材料本身的排列不能简单还原成一部已经完成的“最终版”。",
+    "scopeOfChange": "保留作者材料中的曲目次序、修订痕迹与未竟终曲；它把未完成与内部次序保留在 WORK 内部，而不把后世印刷编排倒推为唯一作者决定。",
+    "relationshipToWork": "WORK 的作者材料状态；其未完成、次序和终曲问题属于版本研究，而不是另一个 WORK。",
+    "historicalContext": "《赋格的艺术》在巴赫晚年把复调技术、作者修订和公共传播的限度压缩在同一组材料中；作者去世前后的手稿与印刷实践，使“作品的顺序”不再只是目录问题，而成为材料史问题。",
+    "versionQuestion": [
+      "手稿中的曲目次序与修订痕迹，哪些可以归因于作者的工作阶段，哪些可能是材料保存造成的假象？",
+      "未竟终曲应当如何在作者状态与后世完成叙事之间定位？",
+      "把手稿次序视为作者意图时，研究者是否把材料状态过早转换成了作品结构？"
+    ],
+    "sourceRefs": [
+      "source:bach-kunst-fuge-autograph-p200",
+      "source:bach-kunst-fuge-autograph-p2001-f3"
+    ],
+    "performanceRefs": [],
+    "recordingRefs": [],
+    "receptionRefs": []
+  },
+  {
+    "id": "version:bach-kunst-der-fuge-printed-1751",
+    "workId": "work:bach-kunst-der-fuge",
+    "label": "1751 首版印刷状态",
+    "originalLabel": "1751 first printed state",
+    "versionType": "publication_state",
+    "date": "1751",
+    "dateStart": 1751,
+    "dateEnd": 1751,
+    "dating": "certain",
+    "responsibility": [
+      {
+        "personId": "bach",
+        "role": "composer and pre-publication reviser"
+      }
+    ],
+    "unlinkedResponsibility": [
+      {
+        "name": "1751 年印刷与出版团队",
+        "role": "posthumous publishing and editorial agents"
+      }
+    ],
+    "status": "extant",
+    "basis": "1751 首次印刷本与作者手稿的对读显示，两者在曲目与赋格次序、呈现方式及部分材料处理上并非机械重合；因此这里记录的是一种具有结构后果的公共印刷状态，而不是普通重印。",
+    "scopeOfChange": "改变曲目与赋格的排列和呈现方式，并把一套公共印刷顺序固定下来；它使读者和后来的演出传统面对的是经出版机制组织过的 WORK。",
+    "relationshipToWork": "巴赫去世后形成的公共印刷状态，仍属于同一 WORK；只有因为顺序、材料呈现与作者责任发生结构性问题，它才在这里作为 VERSION，而不是被泛称为 EDITION。",
+    "historicalContext": "1751 年的印刷把原本依赖手稿、修订痕迹和材料顺序的对象转入出版市场；出版者的组织工作、作者生前可能参与的修订以及死后固定的公共顺序共同改变了作品的可见形态。具体出版实体和印刷见证留待 EDITION / SOURCE 层。",
+    "versionQuestion": [
+      "1751 印刷本的次序变化中，哪些来自作者生前的修订，哪些来自死后出版组织？",
+      "公共印刷顺序如何逐渐被后世接受为《赋格的艺术》“本来就有”的结构？",
+      "在何种证据条件下，结构性出版状态应当继续保留为 VERSION，而不是拆回多个 EDITION？"
+    ],
+    "sourceRefs": [
+      "source:bach-kunst-fuge-printed-1751"
+    ],
+    "performanceRefs": [],
+    "recordingRefs": [],
+    "receptionRefs": [
+      "reception:bach-kunst-fuge-1752-public-repositioning"
+    ]
+  }
+]

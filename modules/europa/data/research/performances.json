@@ -1,0 +1,481 @@
+[
+  {
+    "id": "performance:wagner-ring-bayreuth-1876",
+    "workId": "work:wagner-ring-cycle",
+    "versionId": null,
+    "title": "1876年拜罗伊特《指环》首个完整周期",
+    "performanceType": "first_complete_performance",
+    "date": "1876年8月13—17日（四晚：13、14、16、17日）",
+    "dateStart": 1876,
+    "dateEnd": 1876,
+    "dateGranularity": "date_range",
+    "dating": {
+      "certainty": "certain",
+      "note": "Morgan Library 的首演资料列出四部作品实际演出日期；拜罗伊特官方历史页同时把1876年夏季界定为首个循环完整演出的实现阶段。"
+    },
+    "venue": "Bayreuther Festspielhaus（拜罗伊特节日剧院）",
+    "place": "拜罗伊特",
+    "countryOrPolity": "德意志帝国；巴伐利亚王国",
+    "participants": [
+      {
+        "personId": "wagn",
+        "name": "Richard Wagner",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Hans Richter",
+        "role": "conductor"
+      },
+      {
+        "personId": null,
+        "name": "Amalie Materna",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Franz Betz",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "路德维希二世",
+        "role": "patron"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Bayreuther Festspiele",
+        "role": "festival"
+      },
+      {
+        "name": "Bayreuther Festspielhaus",
+        "role": "theatre"
+      }
+    ],
+    "programme": {
+      "format": "四晚连演的舞台节日周期",
+      "items": [
+        {
+          "label": "《莱茵的黄金》（Vorabend）",
+          "date": "1876-08-13",
+          "order": 1
+        },
+        {
+          "label": "《女武神》",
+          "date": "1876-08-14",
+          "order": 2
+        },
+        {
+          "label": "《齐格弗里德》",
+          "date": "1876-08-16",
+          "order": 3
+        },
+        {
+          "label": "《诸神的黄昏》",
+          "date": "1876-08-17",
+          "order": 4
+        }
+      ]
+    },
+    "productionLabel": null,
+    "performanceState": {
+      "state": "complete_cycle",
+      "matchesVersionExactly": null,
+      "note": "四晚构成同一个首个完整周期；当前尚未建立对应 VERSION，故不把这次舞台实现压缩为某份总谱的唯一状态。"
+    },
+    "historicalContext": "这四晚演出把《指环》从总谱和诗剧推入专属剧院、隐藏乐池、熄灯观众席与王室融资共同构成的制度现场。拜罗伊特不是盛装容器，而是作品得以成为四晚整体的生产条件。",
+    "performanceSignificance": "这里首次公开实现的不是四部歌剧的简单相加，而是一套以周期、建筑和观演纪律组织起来的乐剧对象；“总艺术作品”的概念因此获得了可检验的剧场形态。",
+    "sourceRefs": [
+      "source:wagner-ring-bayreuth-cast-1876"
+    ],
+    "recordingRefs": [],
+    "receptionRefs": [
+      "reception:wagner-ring-bayreuth-1876-contemporary-report"
+    ]
+  },
+  {
+    "id": "performance:buso-doktor-faust-dresden-1925-05-21",
+    "workId": "work:buso-doktor-faust",
+    "versionId": "version:buso-doktor-faust-jarnach-1925",
+    "title": "雅纳赫完成版《浮士德博士》德累斯顿首演",
+    "performanceType": "premiere",
+    "date": "1925年5月21日",
+    "dateStart": 1925,
+    "dateEnd": 1925,
+    "dateGranularity": "day",
+    "dating": {
+      "certainty": "certain",
+      "note": "Sächsische Staatstheater 的历史资料把1925年5月21日列为《Doktor Faust》在德累斯顿的首演日期，并保存首演剧场单的数字再现。"
+    },
+    "venue": "Sächsisches Staatstheater Dresden（德累斯顿萨克森国家剧院）",
+    "place": "德累斯顿",
+    "countryOrPolity": "魏玛共和国；萨克森自由州",
+    "participants": [
+      {
+        "personId": "buso",
+        "name": "Ferruccio Busoni",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Philipp Jarnach",
+        "role": "other"
+      },
+      {
+        "personId": null,
+        "name": "Fritz Busch",
+        "role": "conductor"
+      },
+      {
+        "personId": null,
+        "name": "Robert Burg",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Meta Seinemeyer",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Alfred Reucker",
+        "role": "director"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Sächsisches Staatstheater Dresden",
+        "role": "opera_house"
+      },
+      {
+        "name": "Sächsische Staatskapelle Dresden",
+        "role": "ensemble"
+      }
+    ],
+    "programme": {
+      "format": "全剧舞台首演",
+      "items": [
+        {
+          "label": "《浮士德博士》雅纳赫完成文本",
+          "date": "1925-05-21",
+          "order": 1
+        }
+      ]
+    },
+    "productionLabel": "1925年德累斯顿首演制作",
+    "performanceState": {
+      "state": "complete_version",
+      "matchesVersionExactly": true,
+      "note": "首演资料将这一公共形态与Philipp Jarnach的完成责任相连；因此链接雅纳赫 VERSION，而不把首演重新归回布索尼未完成作者状态。"
+    },
+    "historicalContext": "布索尼去世后，未完成的歌剧离开私人遗稿，进入完成者、剧院和公共首演的协商。德累斯顿首演把雅纳赫补写的结尾变成可见的制度事实，也让“谁使作品能够演出”成为作品史的一部分。",
+    "performanceSignificance": "这场首演确立了《浮士德博士》最早的公共完整形态；它不是作者总谱的透明兑现，而是雅纳赫的编辑判断通过剧院、指挥与歌者获得了历史可听性。",
+    "sourceRefs": [
+      "source:buso-doktor-faust-premiere-1925"
+    ],
+    "recordingRefs": [],
+    "receptionRefs": [
+      "reception:buso-doktor-faust-dresden-1925-early-response"
+    ]
+  },
+  {
+    "id": "performance:buso-doktor-faust-bologna-1985-04-02",
+    "workId": "work:buso-doktor-faust",
+    "versionId": "version:buso-doktor-faust-beaumont-1984",
+    "title": "Beaumont 完成方案的博洛尼亚首演",
+    "performanceType": "premiere",
+    "date": "1985年4月2日",
+    "dateStart": 1985,
+    "dateEnd": 1985,
+    "dateGranularity": "day",
+    "dating": {
+      "certainty": "certain",
+      "note": "Teatro Comunale di Bologna 档案列出1985年4月2、4、9、14、16、18日的演出；博洛尼亚图书馆年表把4月2日标为Beaumont结尾重构的首场/世界首演。"
+    },
+    "venue": "Teatro Comunale di Bologna（博洛尼亚市立剧院）",
+    "place": "博洛尼亚",
+    "countryOrPolity": "意大利共和国",
+    "participants": [
+      {
+        "personId": "buso",
+        "name": "Ferruccio Busoni",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Antony Beaumont",
+        "role": "other"
+      },
+      {
+        "personId": null,
+        "name": "Zoltán Peskó",
+        "role": "conductor"
+      },
+      {
+        "personId": null,
+        "name": "Werner Herzog",
+        "role": "director"
+      },
+      {
+        "personId": null,
+        "name": "James Johnson",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Sophia Larson",
+        "role": "singer"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Teatro Comunale di Bologna",
+        "role": "opera_house"
+      },
+      {
+        "name": "Orchestra e Coro del Teatro Comunale di Bologna",
+        "role": "ensemble"
+      }
+    ],
+    "programme": {
+      "format": "全剧舞台首演",
+      "items": [
+        {
+          "label": "《浮士德博士》Beaumont 完成方案",
+          "date": "1985-04-02",
+          "order": 1
+        }
+      ]
+    },
+    "productionLabel": "Teatro Comunale di Bologna 新制作；Werner Herzog 导演",
+    "performanceState": {
+      "state": "reconstructed_completion",
+      "matchesVersionExactly": true,
+      "note": "剧院档案与节目册都把公开演出标为Beaumont完成方案；这里记录首场演出，不把4月2—18日整段演期另建成一条模糊制作实体。"
+    },
+    "historicalContext": "1985年博洛尼亚演出把档案中新发现的布索尼草稿带回剧院，由Beaumont的重构、Peskó的指挥和Herzog的舞台制作共同测试“完成”能否再次被改写。档案发现因此直接进入公共演出，而没有停留在校勘室。",
+    "performanceSignificance": "它把《浮士德博士》的完成问题从1925年的单一路径裂解为可比较的版本实践：同一 WORK 在新的档案材料和剧院机制中获得另一种结尾，也迫使听众把补写责任重新听见。",
+    "sourceRefs": [
+      "source:buso-doktor-faust-beaumont-programme-1985",
+      "source:buso-doktor-faust-bologna-archive-1985"
+    ],
+    "recordingRefs": [],
+    "receptionRefs": [
+      "reception:buso-doktor-faust-beaumont-bologna-1985-reassessment"
+    ]
+  },
+  {
+    "id": "performance:mozart-requiem-vienna-st-michael-1791-12-10",
+    "workId": "work:mozart-requiem",
+    "versionId": "version:mozart-requiem-authorial-1791",
+    "title": "圣米迦勒教堂《安魂曲》片段演出",
+    "performanceType": "other",
+    "date": "1791年12月10日",
+    "dateStart": 1791,
+    "dateEnd": 1791,
+    "dateGranularity": "day",
+    "dating": {
+      "certainty": "certain",
+      "note": "Salzburg Mozarteum Foundation 的资料将1791年12月10日圣米迦勒教堂葬礼仪式列为《安魂曲》片段的演出日期，并明确只涉及已完成的两个乐章。"
+    },
+    "venue": "St. Michael's Church（维也纳圣米迦勒教堂）",
+    "place": "维也纳",
+    "countryOrPolity": "哈布斯堡君主国；维也纳",
+    "participants": [
+      {
+        "personId": "moza",
+        "name": "Wolfgang Amadeus Mozart",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "圣米迦勒教堂歌者与器乐员",
+        "role": "other"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "St. Michael's Church",
+        "role": "church"
+      },
+      {
+        "name": "圣米迦勒教堂音乐班",
+        "role": "ensemble"
+      }
+    ],
+    "programme": {
+      "format": "葬礼仪式中的作品片段",
+      "items": [
+        {
+          "label": "Requiem aeternam",
+          "date": "1791-12-10",
+          "order": 1
+        },
+        {
+          "label": "Kyrie",
+          "date": "1791-12-10",
+          "order": 2
+        }
+      ]
+    },
+    "productionLabel": null,
+    "performanceState": {
+      "state": "excerpt",
+      "matchesVersionExactly": false,
+      "note": "实际演出只包含当时已经完成的Requiem aeternam与Kyrie；它与作者遗稿状态的关系是片段性对应，不是完整《安魂曲》的逐乐章实现。"
+    },
+    "historicalContext": "这场演出发生在莫扎特去世五天后，作品仍停留在作者未竟材料中；教堂礼仪先于完整总谱进入公共空间，显示宗教仪式可以暂时容纳一件尚未完成的委约作品。",
+    "performanceSignificance": "它拆开了“首演”与“完整作品首演”的后世叙述：1791年已经有可定位的片段使用，但这不能被改写成苏斯迈尔完成版的公共首演，也不能被死亡传记包装成预言兑现。",
+    "sourceRefs": [
+      "source:mozart-requiem-st-michael-1791"
+    ],
+    "recordingRefs": [],
+    "receptionRefs": []
+  },
+  {
+    "id": "performance:mozart-requiem-vienna-jahn-saal-1793-01-02",
+    "workId": "work:mozart-requiem",
+    "versionId": null,
+    "title": "《安魂曲》Jahn-Saal 完整首演",
+    "performanceType": "first_complete_performance",
+    "date": "1793年1月2日",
+    "dateStart": 1793,
+    "dateEnd": 1793,
+    "dateGranularity": "day",
+    "dating": {
+      "certainty": "certain",
+      "note": "New Mozart Edition 的批评报告将1793年1月2日维也纳 Jahnscher Saal 的演出置于1793年12月Walsegg葬礼演出之前，并明确称其为首演。"
+    },
+    "venue": "Jahnscher Saal（Himmelpfortgasse，Jahn-Saal）",
+    "place": "维也纳",
+    "countryOrPolity": "哈布斯堡君主国；维也纳",
+    "participants": [
+      {
+        "personId": "moza",
+        "name": "Wolfgang Amadeus Mozart",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "维也纳演出歌者与乐队（本次来源未列全名）",
+        "role": "other"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Jahnscher Saal",
+        "role": "concert_hall"
+      }
+    ],
+    "programme": {
+      "format": "公共筹款音乐会中的完整《安魂曲》",
+      "items": [
+        {
+          "label": "《安魂曲》完整文本（完成责任与实际声部仍需区分）",
+          "date": "1793-01-02",
+          "order": 1
+        }
+      ]
+    },
+    "productionLabel": null,
+    "performanceState": {
+      "state": "complete_version",
+      "matchesVersionExactly": null,
+      "note": "现有来源足以确认这是完整《安魂曲》的首演，但本次读取的在线批评报告没有保留完整演出声部供逐项比对，因此不把它强行绑定到当前 Süßmayr VERSION。"
+    },
+    "historicalContext": "1793年的Jahn-Saal演出把《安魂曲》从葬礼片段转入公共筹款音乐会，作品的完整形态遂与遗产处理、抄本流通和维也纳商业演出空间相连。完整并不意味着作者责任因此恢复为单一署名。",
+    "performanceSignificance": "这场事件确立了现存传统《安魂曲》进入公共音乐生活的时间节点，却也保留了版本识别的缺口：首演事实清楚，实际使用的声部抄本与当前 VERSION 是否逐项相同仍不能由一条来源独立证明。",
+    "sourceRefs": [
+      "source:mozart-requiem-jahn-saal-1793"
+    ],
+    "recordingRefs": [],
+    "receptionRefs": []
+  },
+  {
+    "id": "performance:debussy-pelleas-paris-1902-04-30",
+    "workId": "work:debussy-pelleas",
+    "versionId": null,
+    "title": "《佩利亚斯与梅丽桑德》巴黎首演",
+    "performanceType": "premiere",
+    "date": "1902年4月30日",
+    "dateStart": 1902,
+    "dateEnd": 1902,
+    "dateGranularity": "day",
+    "dating": {
+      "certainty": "certain",
+      "note": "BnF 演出目录卡片给出1902年4月30日、巴黎Opéra-Comique、Albert Carré制作，以及Mary Garden与Jean Périer的角色信息。"
+    },
+    "venue": "Théâtre national de l'Opéra-Comique（Salle Favart）",
+    "place": "巴黎",
+    "countryOrPolity": "法兰西共和国",
+    "participants": [
+      {
+        "personId": "debu",
+        "name": "Claude Debussy",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Maurice Maeterlinck",
+        "role": "other"
+      },
+      {
+        "personId": null,
+        "name": "Albert Carré",
+        "role": "director"
+      },
+      {
+        "personId": null,
+        "name": "Mary Garden",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Jean Périer",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Eugène Ronsin",
+        "role": "designer"
+      },
+      {
+        "personId": null,
+        "name": "Lucien Jusseaume",
+        "role": "designer"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Théâtre national de l'Opéra-Comique",
+        "role": "opera_house"
+      }
+    ],
+    "programme": {
+      "format": "五幕十二场歌剧首演",
+      "items": [
+        {
+          "label": "《佩利亚斯与梅丽桑德》",
+          "date": "1902-04-30",
+          "order": 1
+        }
+      ]
+    },
+    "productionLabel": "Albert Carré 制作；Eugène Ronsin、Lucien Jusseaume 布景",
+    "performanceState": {
+      "state": "complete_version",
+      "matchesVersionExactly": null,
+      "note": "当前数据尚未建立《佩利亚斯与梅丽桑德》的 VERSION；这里记录首演舞台，而不把后来的印刷或演出实践倒写成首演版本。"
+    },
+    "historicalContext": "德彪西的歌剧写作在1902年进入Opéra-Comique的制度轨道：梅特林克文本、Carré的剧院权力、Garden与Périer的角色塑造及布景共同把暧昧的戏剧时间交给公共舞台。首演因此也是一次机构选择。",
+    "performanceSignificance": "这场首演没有把歌剧重新装回瓦格纳式戏剧机器，而是让低声部宣叙、未解决和声与视觉布景共同承担推进作用；后来的“印象主义歌剧”标签，不能代替这场具体制度事件。",
+    "sourceRefs": [
+      "source:debussy-pelleas-premiere-1902"
+    ],
+    "recordingRefs": [],
+    "receptionRefs": [
+      "reception:debussy-pelleas-paris-1902-controversy"
+    ]
+  }
+]
