@@ -8,6 +8,9 @@ window.BAOJI_PHOTO_INDEX = {
   "groups": [
     {
       "id": "photo-group-3186",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区桑园堡",
       "number": "01",
       "title": "兽面纹甗",
       "titleSource": "展签校正 / 现场顺序",
@@ -108,6 +111,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3190",
+      "era": "商代",
+      "material": "青铜",
+      "findspot": "扶风县法门镇美阳村",
       "number": "02",
       "title": "高足杯",
       "titleSource": "展签校正 / 现场顺序",
@@ -208,6 +214,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3194",
+      "era": "商代",
+      "material": "青铜",
+      "findspot": "麟游县",
       "number": "03",
       "title": "兽面纹斝",
       "titleSource": "展签校正 / 现场顺序",
@@ -308,6 +317,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3198",
+      "era": "商代",
+      "material": "青铜",
+      "findspot": "扶风县法门镇美阳村",
       "number": "04",
       "title": "乳钉纹簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -408,6 +420,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3205",
+      "material": "青铜",
       "number": "05",
       "title": "兽面纹觚",
       "titleSource": "展签校正 / 现场顺序",
@@ -491,6 +504,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3218",
+      "era": "商代",
+      "material": "青铜",
+      "findspot": "岐山县京当镇京当村",
       "number": "06",
       "title": "云纹分裆鬲",
       "titleSource": "展签校正 / 现场顺序",
@@ -578,6 +594,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3222",
+      "era": "商代晚期",
+      "material": "青铜",
+      "findspot": "征集",
       "number": "07",
       "title": "乳钉纹鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -678,6 +697,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3226",
+      "era": "商代",
+      "material": "青铜",
+      "findspot": "渭滨区桑园堡",
       "number": "08",
       "title": "鲜纹鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -791,6 +813,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3232",
+      "era": "商代",
+      "material": "青铜",
+      "findspot": "渭滨区桑园堡",
       "number": "09",
       "title": "目雷纹分裆鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -878,6 +903,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3235",
+      "era": "商代",
+      "material": "青铜",
+      "findspot": "渭滨区桑园堡",
       "number": "10",
       "title": "涡纹鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -978,6 +1006,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3243",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地一号墓",
       "number": "11",
       "title": "亚共庚父丁尊",
       "titleSource": "展签校正 / 现场顺序",
@@ -1091,6 +1122,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3249",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "12",
       "title": "户方彝",
       "titleSource": "展签校正 / 现场顺序",
@@ -1191,6 +1225,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3255",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "13",
       "title": "龙纹禁与兽面纹斗",
       "titleSource": "展签校正 / 现场顺序",
@@ -1278,6 +1315,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3263",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "14",
       "title": "冉父乙卣",
       "titleSource": "展签校正 / 现场顺序",
@@ -1378,6 +1418,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3268",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "15",
       "title": "父戊尊",
       "titleSource": "展签校正 / 现场顺序",
@@ -1478,6 +1521,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3273",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地一号墓",
       "number": "16",
       "title": "守卣",
       "titleSource": "展签校正 / 现场顺序",
@@ -1565,6 +1611,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3278",
+      "material": "青铜",
       "number": "17",
       "title": "冉盉",
       "titleSource": "展签校正 / 现场顺序",
@@ -1648,6 +1695,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3282",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "18",
       "title": "重父乙卣",
       "titleSource": "展签校正 / 现场顺序",
@@ -1748,6 +1798,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3286",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "19",
       "title": "正鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -1848,6 +1901,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3290",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "20",
       "title": "父甲壶",
       "titleSource": "展签校正 / 现场顺序",
@@ -1935,6 +1991,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3293",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地一号墓",
       "number": "21",
       "title": "乳钉纹鼎与鸟纹觯",
       "titleSource": "展签校正 / 现场顺序",
@@ -2022,6 +2081,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3300",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "22",
       "title": "鸟父甲鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -2135,6 +2197,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3306",
+      "era": "商末周初",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓山墓地三号墓",
       "number": "23",
       "title": "亚羌父乙罍",
       "titleSource": "展签校正 / 现场顺序",
@@ -2235,6 +2300,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3310",
+      "era": "西周",
+      "material": "陶",
+      "findspot": "渭滨区马营镇旭光村四号墓",
       "number": "24",
       "title": "联裆陶鬲",
       "titleSource": "展签校正 / 现场顺序",
@@ -2335,6 +2403,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3314",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区马营镇旭光村七十四号墓",
       "number": "25",
       "title": "交父壬簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -2422,6 +2493,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3317",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区马营镇旭光村二十六号墓",
       "number": "26",
       "title": "覃鬲",
       "titleSource": "展签校正 / 现场顺序",
@@ -2509,6 +2583,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3320",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区马营镇旭光村七十四号墓",
       "number": "27",
       "title": "兽面纹鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -2596,6 +2673,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3323",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区马营镇旭光村十三号墓",
       "number": "28",
       "title": "当卢",
       "titleSource": "展签校正 / 现场顺序",
@@ -2670,6 +2750,10 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3325",
+      "era": "西周晚期",
+      "material": "青铜",
+      "findspot": "眉县马家镇杨家村窖藏",
+      "dimensions": "高20.4厘米；口径53.6厘米；圈足直径约41厘米；深10.4厘米；重约18.5千克",
       "number": "29",
       "title": "逨盘",
       "titleSource": "展签校正 / 现场顺序",
@@ -2784,6 +2868,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3333",
+      "era": "西周晚期",
+      "material": "青铜",
+      "findspot": "眉县马家镇杨家村窖藏",
       "number": "30",
       "title": "四十二年逨鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -2884,6 +2971,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3337",
+      "era": "西周晚期",
+      "material": "青铜",
+      "findspot": "眉县马家镇杨家村窖藏",
       "number": "31",
       "title": "天孟",
       "titleSource": "展签校正 / 现场顺序",
@@ -2984,6 +3074,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3342",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇董家村一号窖藏",
       "number": "32",
       "title": "此鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -3084,6 +3177,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3346",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇董家村一号窖藏",
       "number": "33",
       "title": "此簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -3171,6 +3267,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3350",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇董家村一号窖藏",
       "number": "34",
       "title": "公臣簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -3271,6 +3370,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3354",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇贺家村北墓地",
       "number": "35",
       "title": "昔鸡爵",
       "titleSource": "展签校正 / 现场顺序",
@@ -3358,6 +3460,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3357",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇贺家村北墓地",
       "number": "36",
       "title": "昔鸡觯",
       "titleSource": "展签校正 / 现场顺序",
@@ -3432,6 +3537,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3360",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇贺家村北墓地",
       "number": "37",
       "title": "铜鼎",
       "titleSource": "keyword",
@@ -3506,6 +3614,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3372",
+      "era": "西周晚期",
+      "material": "青铜",
+      "findspot": "眉县马家镇杨家村窖藏",
       "number": "38",
       "title": "单叔鬲",
       "titleSource": "展签校正 / 现场顺序",
@@ -3593,6 +3704,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3375",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇董家村一号窖藏",
       "number": "39",
       "title": "善夫伯辛父鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -3693,6 +3807,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3379",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇董家村一号窖藏",
       "number": "40",
       "title": "善夫旅伯鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -3780,6 +3897,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3386",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇董家村一号窖藏",
       "number": "41",
       "title": "仲南父盉",
       "titleSource": "展签校正 / 现场顺序",
@@ -3880,6 +4000,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3390",
+      "material": "青铜",
       "number": "42",
       "title": "单五父壶",
       "titleSource": "visual-anchor",
@@ -3963,6 +4084,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3393",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村一号窖藏",
       "number": "43",
       "title": "微伯鬲",
       "titleSource": "展签校正 / 现场顺序",
@@ -4050,6 +4174,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3396",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村一号窖藏",
       "number": "44",
       "title": "癫盆",
       "titleSource": "展签校正 / 现场顺序",
@@ -4150,6 +4277,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3400",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村一号窖藏",
       "number": "45",
       "title": "癫钟",
       "titleSource": "展签校正 / 现场顺序",
@@ -4237,6 +4367,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3404",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村一号窖藏",
       "number": "46",
       "title": "癫簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -4324,6 +4457,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3415",
+      "era": "西周晚期",
+      "material": "青铜",
+      "findspot": "眉县马家镇杨家村窖藏",
       "number": "47",
       "title": "四十三年逨鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -4411,6 +4547,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3420",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区纸坊头国墓地一号墓",
       "number": "48",
       "title": "带盖龙纹鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -4511,6 +4650,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3424",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄西周遗址",
       "number": "49",
       "title": "周曹卣",
       "titleSource": "展签校正 / 现场顺序",
@@ -4611,6 +4753,8 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3429",
+      "era": "西周",
+      "material": "青铜",
       "number": "50",
       "title": "南官簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -4697,6 +4841,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3433",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇召陈村窖藏",
       "number": "51",
       "title": "楚公钟",
       "titleSource": "展签校正 / 现场顺序",
@@ -4784,6 +4931,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3437",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇黄堆村",
       "number": "52",
       "title": "丹叔番盂",
       "titleSource": "展签校正 / 现场顺序",
@@ -4871,6 +5021,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3443",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "铜件厂拣选",
       "number": "53",
       "title": "仲鬲",
       "titleSource": "展签校正 / 现场顺序",
@@ -4958,6 +5111,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3447",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区纸坊头",
       "number": "54",
       "title": "戈伯鬲",
       "titleSource": "展签校正 / 现场顺序",
@@ -5044,6 +5200,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3451",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县周公庙",
       "number": "55",
       "title": "卜甲",
       "titleSource": "展签校正 / 现场顺序",
@@ -5118,6 +5277,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3454",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县城关镇五郡西村窖藏",
       "number": "56",
       "title": "瑙生尊",
       "titleSource": "展签校正 / 现场顺序",
@@ -5218,6 +5380,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3459",
+      "material": "青铜",
       "number": "57",
       "title": "宰兽簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -5301,6 +5464,8 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3465",
+      "material": "青铜",
+      "dimensions": "高约38.5厘米；口径28.8厘米；重约14.6千克",
       "number": "58",
       "title": "何尊",
       "titleSource": "展签校正 / 现场顺序",
@@ -5398,6 +5563,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3471",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄国墓地一号墓",
       "number": "59",
       "title": "强伯盉",
       "titleSource": "展签校正 / 现场顺序",
@@ -5498,6 +5666,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3476",
+      "material": "青铜",
       "number": "60",
       "title": "兽面纹双耳方座盒",
       "titleSource": "展签校正 / 现场顺序",
@@ -5581,6 +5750,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3479",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟强国墓地十三号墓",
       "number": "61",
       "title": "兽面纹双耳方座簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -5668,6 +5840,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3484",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟国墓地十三号墓",
       "number": "62",
       "title": "目雷纹带盖双耳簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -5755,6 +5930,10 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3487",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇齐村窖藏",
+      "dimensions": "高约59厘米；口径约43厘米；腹深约23厘米；最大腹径约136厘米；重约60千克",
       "number": "63",
       "title": "㝬簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -5882,6 +6061,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3505",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村墓葬",
       "number": "64",
       "title": "董甗",
       "titleSource": "展签校正 / 现场顺序",
@@ -5969,6 +6151,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3508",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县贺家村砖厂四号墓",
       "number": "65",
       "title": "人面盾饰",
       "titleSource": "展签校正 / 现场顺序",
@@ -6043,6 +6228,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3510",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村墓葬",
       "number": "66",
       "title": "或方鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -6143,6 +6331,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3515",
+      "material": "青铜",
       "number": "67",
       "title": "兽头",
       "titleSource": "展签校正 / 现场顺序",
@@ -6226,6 +6415,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3518",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟强国墓地十三号墓",
       "number": "68",
       "title": "兽头轭饰",
       "titleSource": "展签校正 / 现场顺序",
@@ -6300,6 +6492,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3520",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄窖藏",
       "number": "69",
       "title": "刖人守门方鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -6400,6 +6595,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3524",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇董家村一号窖藏",
       "number": "70",
       "title": "朕彝",
       "titleSource": "展签校正 / 现场顺序",
@@ -6500,6 +6698,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3528",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟国墓地七号墓",
       "number": "71",
       "title": "四叶目纹鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -6587,6 +6788,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3531",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村一号窖藏",
       "number": "72",
       "title": "微伯兴匕",
       "titleSource": "展签校正 / 现场顺序",
@@ -6674,6 +6878,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3538",
+      "material": "青铜",
       "number": "73",
       "title": "父辛盘",
       "titleSource": "展签校正 / 现场顺序",
@@ -6744,6 +6949,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3541",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟鱼国墓地十三号墓",
       "number": "74",
       "title": "兽面纹盉",
       "titleSource": "展签校正 / 现场顺序",
@@ -6844,6 +7052,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3546",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇齐家村",
       "number": "75",
       "title": "涡纹罍",
       "titleSource": "展签校正 / 现场顺序",
@@ -6944,6 +7155,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3551",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟強国墓地七号墓",
       "number": "76",
       "title": "云纹编钟",
       "titleSource": "展签校正 / 现场顺序",
@@ -7031,6 +7245,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3554",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟渔国墓地十三号墓",
       "number": "77",
       "title": "兽面纹镜",
       "titleSource": "展签校正 / 现场顺序",
@@ -7118,6 +7335,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3558",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村一号窖藏",
       "number": "78",
       "title": "夔纹斗",
       "titleSource": "展签校正 / 现场顺序",
@@ -7205,6 +7425,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3561",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区神农镇峪泉村周墓",
       "number": "79",
       "title": "顾首龙纹尊",
       "titleSource": "展签校正 / 现场顺序",
@@ -7305,6 +7528,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3565",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区神农镇峪泉村周墓",
       "number": "80",
       "title": "龙纹提梁卣",
       "titleSource": "展签校正 / 现场顺序",
@@ -7379,6 +7605,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3568",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区神农镇峪泉村周墓",
       "number": "81",
       "title": "回首龙纹卣",
       "titleSource": "展签校正 / 现场顺序",
@@ -7453,6 +7682,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3571",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄国墓地一号墓",
       "number": "82",
       "title": "强伯双耳双环簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -7540,6 +7772,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3574",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄强国墓地二号墓",
       "number": "83",
       "title": "独柱带盘鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -7627,6 +7862,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3577",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄强国墓地二号墓",
       "number": "84",
       "title": "井姬附耳鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -7714,6 +7952,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3580",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄鱼国墓地二号墓",
       "number": "85",
       "title": "井姬圆鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -7801,6 +8042,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3583",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区石鼓镇石嘴头村",
       "number": "86",
       "title": "史毕庚觯",
       "titleSource": "展签校正 / 现场顺序",
@@ -7901,6 +8145,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3588",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "铜件厂拣选",
       "number": "87",
       "title": "昊母盆盖",
       "titleSource": "展签校正 / 现场顺序",
@@ -7975,6 +8222,8 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3590",
+      "era": "西周",
+      "material": "青铜",
       "number": "88",
       "title": "成周邦父壶盖",
       "titleSource": "展签校正 / 现场顺序",
@@ -8047,6 +8296,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3595",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇齐家村十九号墓",
       "number": "89",
       "title": "夷王簋盖",
       "titleSource": "展签校正 / 现场顺序",
@@ -8147,6 +8399,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3599",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇齐家村十九号墓",
       "number": "90",
       "title": "作旅鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -8234,6 +8489,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3602",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区长青村",
       "number": "91",
       "title": "盨",
       "titleSource": "展签校正 / 现场顺序",
@@ -8321,6 +8579,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3605",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区纸坊头国墓地一号墓",
       "number": "92",
       "title": "强伯四耳方座簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -8421,6 +8682,8 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3609",
+      "era": "西周",
+      "material": "青铜",
       "number": "93",
       "title": "伯方鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -8493,6 +8756,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3613",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区纸坊头强国墓地一号墓",
       "number": "94",
       "title": "云雷纹鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -8580,6 +8846,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3617",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区长青村",
       "number": "95",
       "title": "分裆圆鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -8654,6 +8923,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3619",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区长青村",
       "number": "96",
       "title": "祖乙簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -8728,6 +9000,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3622",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟鱼国墓地八号墓",
       "number": "97",
       "title": "直棱纹簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -8802,6 +9077,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3624",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟强国墓地七号墓",
       "number": "98",
       "title": "提梁小方彝",
       "titleSource": "展签校正 / 现场顺序",
@@ -8889,6 +9167,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3627",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟国墓地七号墓",
       "number": "99",
       "title": "丰公鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -8976,6 +9257,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3630",
+      "era": "春秋",
+      "material": "玉",
+      "findspot": "陇县东南镇边家庄村",
       "number": "100",
       "title": "兽面泡",
       "titleSource": "展签校正 / 现场顺序",
@@ -9050,6 +9334,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3632",
+      "era": "春秋",
+      "material": "玉",
+      "findspot": "陇县东南镇边家庄村",
       "number": "101",
       "title": "钩形铜泡",
       "titleSource": "展签校正 / 现场顺序",
@@ -9124,6 +9411,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3634",
+      "era": "春秋",
+      "material": "青铜",
+      "findspot": "陈仓区",
       "number": "102",
       "title": "蟠螭纹盘",
       "titleSource": "展签校正 / 现场顺序",
@@ -9198,6 +9488,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3636",
+      "era": "春秋",
+      "material": "青铜",
+      "findspot": "征集",
       "number": "103",
       "title": "重环纹方壶",
       "titleSource": "展签校正 / 现场顺序",
@@ -9285,6 +9578,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3641",
+      "era": "汉代",
+      "material": "陶",
+      "findspot": "征集",
       "number": "104",
       "title": "羽阳千岁瓦当",
       "titleSource": "展签校正 / 现场顺序",
@@ -9359,6 +9655,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3643",
+      "era": "汉代",
+      "material": "玉",
+      "findspot": "凤翔区长青镇",
       "number": "105",
       "title": "玉琮",
       "titleSource": "展签校正 / 现场顺序",
@@ -9446,6 +9745,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3649",
+      "era": "春秋",
+      "material": "青铜",
+      "findspot": "陈仓区太公庙村",
       "number": "106",
       "title": "秦公钟",
       "titleSource": "展签校正 / 现场顺序",
@@ -9585,6 +9887,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3656",
+      "era": "春秋",
+      "material": "青铜",
+      "findspot": "陈仓区太公庙村",
       "number": "107",
       "title": "秦公镈",
       "titleSource": "展签校正 / 现场顺序",
@@ -9672,6 +9977,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3659",
+      "era": "春秋",
+      "material": "青铜",
+      "findspot": "征集",
       "number": "108",
       "title": "连珠纹扁茎剑",
       "titleSource": "展签校正 / 现场顺序",
@@ -9746,6 +10054,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3664",
+      "era": "春秋",
+      "material": "青铜",
+      "findspot": "渭滨区高家镇甘峪村",
       "number": "109",
       "title": "环首铜削",
       "titleSource": "展签校正 / 现场顺序",
@@ -9820,6 +10131,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3669",
+      "era": "春秋",
+      "material": "石",
+      "findspot": "凤翔区城关镇豆腐村",
       "number": "110",
       "title": "龙纹单头齿方筒形铜构件",
       "titleSource": "展签校正 / 现场顺序",
@@ -9894,6 +10208,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3672",
+      "era": "春秋",
+      "material": "石",
+      "findspot": "凤翔区城关镇豆腐村",
       "number": "111",
       "title": "龙纹铜构件",
       "titleSource": "展签校正 / 现场顺序",
@@ -9981,6 +10298,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3677",
+      "era": "战国",
+      "material": "青铜",
+      "findspot": "岐山县凤鸣镇四崖头村",
       "number": "112",
       "title": "蒜头铜扁壶",
       "titleSource": "展签校正 / 现场顺序",
@@ -10068,6 +10388,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3680",
+      "era": "秦代",
+      "material": "青铜",
+      "findspot": "陈仓区凤阁岭镇",
       "number": "113",
       "title": "弦纹蒜头壶",
       "titleSource": "展签校正 / 现场顺序",
@@ -10155,6 +10478,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3685",
+      "era": "春秋",
+      "material": "玉",
+      "findspot": "渭滨区神农镇益门堡村",
       "number": "114",
       "title": "素面金环",
       "titleSource": "展签校正 / 现场顺序",
@@ -10235,6 +10561,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3687",
+      "era": "春秋",
+      "material": "玉",
+      "findspot": "渭滨区神农镇益门堡村",
       "number": "115",
       "title": "索状玉环",
       "titleSource": "展签校正 / 现场顺序",
@@ -10315,6 +10644,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3689",
+      "era": "春秋",
+      "material": "玉",
+      "findspot": "渭滨区神农镇益门堡村",
       "number": "116",
       "title": "虎形玉佩",
       "titleSource": "展签校正 / 现场顺序",
@@ -10395,6 +10727,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3694",
+      "era": "战国",
+      "material": "青铜",
+      "findspot": "铜件厂拣选",
       "number": "117",
       "title": "八年昌不韦戈",
       "titleSource": "展签校正 / 现场顺序",
@@ -10481,6 +10816,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3697",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟强国墓地七号墓",
       "number": "118",
       "title": "伯各卣",
       "titleSource": "展签校正 / 现场顺序",
@@ -10568,6 +10906,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3700",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区纸坊头强国墓地一号墓",
       "number": "119",
       "title": "四耳簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -10655,6 +10996,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3708",
+      "era": "东汉",
+      "material": "青铜",
+      "findspot": "旧藏",
       "number": "120",
       "title": "位至三公双夔镜",
       "titleSource": "展签校正 / 现场顺序",
@@ -10735,6 +11079,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3710",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县凤鸣镇罗家河村",
       "number": "121",
       "title": "夔凤纹方鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -10822,6 +11169,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3719",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村",
       "number": "122",
       "title": "如意云纹壶",
       "titleSource": "展签校正 / 现场顺序",
@@ -10896,6 +11246,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3724",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "咸阳市武功县调拨",
       "number": "123",
       "title": "父丁鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -10996,6 +11349,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3728",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟渔国墓地七号墓",
       "number": "124",
       "title": "伯各尊",
       "titleSource": "展签校正 / 现场顺序",
@@ -11083,6 +11439,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3733",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县召公镇巨良村",
       "number": "125",
       "title": "爬龙",
       "titleSource": "展签校正 / 现场顺序",
@@ -11170,6 +11529,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3736",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄强国墓地一号墓",
       "number": "126",
       "title": "三足铜鸟",
       "titleSource": "展签校正 / 现场顺序",
@@ -11270,6 +11632,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3740",
+      "era": "西周晚期",
+      "material": "青铜",
+      "findspot": "眉县马家镇杨家村窖藏",
       "number": "127",
       "title": "逨盉",
       "titleSource": "展签校正 / 现场顺序",
@@ -11383,6 +11748,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3745",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "金台区纸坊头鱼国墓地一号墓",
       "number": "128",
       "title": "强伯双耳方座簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -11470,6 +11838,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3748",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村二号窖藏",
       "number": "129",
       "title": "重环纹彝",
       "titleSource": "展签校正 / 现场顺序",
@@ -11557,6 +11928,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3751",
+      "era": "战国",
+      "material": "青铜",
+      "findspot": "征集",
       "number": "130",
       "title": "蟠螭纹提链壶",
       "titleSource": "展签校正 / 现场顺序",
@@ -11644,6 +12018,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3754",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "眉县马家镇杨家村窖藏",
       "number": "131",
       "title": "叔五父彝",
       "titleSource": "展签校正 / 现场顺序",
@@ -11731,6 +12108,8 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3757",
+      "era": "西周",
+      "material": "青铜",
       "number": "132",
       "title": "云雷纹带盖簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -11816,6 +12195,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3761",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区茹家庄鱼国墓地一号墓",
       "number": "133",
       "title": "象尊",
       "titleSource": "展签校正 / 现场顺序",
@@ -11903,6 +12285,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3764",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟强国墓地十三号墓",
       "number": "134",
       "title": "兽面铜冠",
       "titleSource": "展签校正 / 现场顺序",
@@ -11977,6 +12362,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3766",
+      "era": "明代",
+      "material": "青铜",
+      "findspot": "旧藏",
       "number": "135",
       "title": "兽头彝",
       "titleSource": "展签校正 / 现场顺序",
@@ -12064,6 +12452,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3773",
+      "era": "春秋",
+      "material": "青铜",
+      "findspot": "金台区刘家台村",
       "number": "136",
       "title": "错金银壶",
       "titleSource": "展签校正 / 现场顺序",
@@ -12164,6 +12555,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3781",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村一号窖藏",
       "number": "137",
       "title": "伯兮父盉",
       "titleSource": "展签校正 / 现场顺序",
@@ -12251,6 +12645,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3784",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村西南墓葬",
       "number": "138",
       "title": "伯威簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -12338,6 +12735,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3788",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县城关镇五郡村窖藏",
       "number": "139",
       "title": "戈簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -12412,6 +12812,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3790",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县城关镇五郡村窖藏",
       "number": "140",
       "title": "伯湄父簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -12486,6 +12889,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3792",
+      "era": "西汉",
+      "material": "青铜",
+      "findspot": "废品公司拣选",
       "number": "141",
       "title": "富贵昌盆",
       "titleSource": "展签校正 / 现场顺序",
@@ -12573,6 +12979,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3795",
+      "era": "战国",
+      "material": "玉",
+      "findspot": "宝鸡刑警队移交",
       "number": "142",
       "title": "龙形玉佩",
       "titleSource": "展签校正 / 现场顺序",
@@ -12717,6 +13126,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3802",
+      "era": "西周",
+      "material": "玉",
+      "findspot": "宝鸡茹家庄",
       "number": "143",
       "title": "玉鸟",
       "titleSource": "展签校正 / 现场顺序",
@@ -12797,6 +13209,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3804",
+      "era": "西周",
+      "material": "玉",
+      "findspot": "宝鸡茹家庄",
       "number": "144",
       "title": "石兽面",
       "titleSource": "展签校正 / 现场顺序",
@@ -12871,6 +13286,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3817",
+      "material": "青铜",
       "number": "145",
       "title": "木子丁觯",
       "titleSource": "展签校正 / 现场顺序",
@@ -12941,6 +13357,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3829",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白一号窖藏",
       "number": "146",
       "title": "旅父乙卣",
       "titleSource": "展签校正 / 现场顺序",
@@ -13028,6 +13447,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3832",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "渭滨区竹园沟强国墓地十三号墓",
       "number": "147",
       "title": "父辛鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -13115,6 +13537,10 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3839",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇庄白村一号窖藏",
+      "dimensions": "高16.2厘米；口径47.3厘米；深8.6厘米；重约12.45千克",
       "number": "148",
       "title": "墙盘",
       "titleSource": "展签校正 / 现场顺序",
@@ -13216,6 +13642,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3843",
+      "era": "汉代",
+      "material": "青铜",
+      "findspot": "铜件厂拣选",
       "number": "149",
       "title": "河间鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -13290,6 +13719,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3845",
+      "era": "秦代",
+      "material": "青铜",
+      "findspot": "陈仓区凤阁岭镇建河村",
       "number": "150",
       "title": "二十六年铜戈",
       "titleSource": "展签校正 / 现场顺序",
@@ -13364,6 +13796,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3847",
+      "era": "秦代",
+      "material": "青铜",
+      "findspot": "陈仓区凤阁岭镇建河村",
       "number": "151",
       "title": "丞廣弩机",
       "titleSource": "展签校正 / 现场顺序",
@@ -13438,6 +13873,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3853",
+      "material": "青铜",
       "number": "152",
       "title": "无疆簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -13521,6 +13957,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3856",
+      "material": "青铜",
       "number": "153",
       "title": "董簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -13604,6 +14041,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3861",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "扶风县法门镇康家村",
       "number": "154",
       "title": "宽鼎",
       "titleSource": "展签校正 / 现场顺序",
@@ -13691,6 +14131,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3864",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇贺家村北墓地",
       "number": "155",
       "title": "昔鸡簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -13778,6 +14221,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3867",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "眉县马家镇杨家村窖藏",
       "number": "156",
       "title": "逨方鼎（复制品）",
       "titleSource": "展签校正 / 现场顺序",
@@ -13852,6 +14298,9 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3870",
+      "era": "西周",
+      "material": "青铜",
+      "findspot": "岐山县京当镇董家村窖藏",
       "number": "157",
       "title": "五祀卫鼎（复制品）",
       "titleSource": "展签校正 / 现场顺序",
@@ -13939,6 +14388,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3874",
+      "material": "青铜",
       "number": "158",
       "title": "生史簋",
       "titleSource": "展签校正 / 现场顺序",
@@ -14022,6 +14472,8 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3876",
+      "era": "隋代",
+      "material": "陶",
       "number": "159",
       "title": "青釉四系罐",
       "titleSource": "展签校正 / 现场顺序",
@@ -14095,6 +14547,8 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3878",
+      "era": "汉代",
+      "material": "陶",
       "number": "160",
       "title": "朱雀灯",
       "titleSource": "展签校正 / 现场顺序",
@@ -14181,6 +14635,7 @@ window.BAOJI_PHOTO_INDEX = {
     },
     {
       "id": "photo-group-3881",
+      "material": "陶",
       "number": "161",
       "title": "陶权",
       "titleSource": "展签校正 / 现场顺序",

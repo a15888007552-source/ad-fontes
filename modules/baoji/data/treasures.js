@@ -8,6 +8,7 @@ window.BAOJI_DATA = {
   "treasures": [
     {
       "id": "lai-pan",
+      "material": "青铜",
       "number": "01",
       "name": "逨盘",
       "pinyin": "LÁI PÁN",
@@ -52,6 +53,7 @@ window.BAOJI_DATA = {
     },
     {
       "id": "he-zun",
+      "material": "青铜",
       "number": "02",
       "name": "何尊",
       "pinyin": "HÉ ZŪN",
@@ -97,6 +99,7 @@ window.BAOJI_DATA = {
     },
     {
       "id": "hu-gui",
+      "material": "青铜",
       "number": "03",
       "name": "㝬簋",
       "displayName": "害夫簋 · 㝬簋",
@@ -145,6 +148,7 @@ window.BAOJI_DATA = {
     },
     {
       "id": "qiang-pan",
+      "material": "青铜",
       "number": "04",
       "name": "墙盘",
       "pinyin": "QIÁNG PÁN",
