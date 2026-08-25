@@ -2341,6 +2341,30 @@ dialog::backdrop {
   line-height: 1.7;
 }
 
+@media (min-width: 821px) {
+  .theme-heading {
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    gap: clamp(24px, 3vw, 48px);
+  }
+
+  .theme-heading > div,
+  .theme-intro {
+    min-width: 0;
+  }
+
+  .theme-heading h2 {
+    max-width: 100%;
+    line-height: 1.06;
+    white-space: normal;
+  }
+
+  .theme-intro {
+    max-width: 42ch;
+    margin: 0;
+    align-self: end;
+  }
+}
+
 .theme-grid {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-auto-rows: 176px;
