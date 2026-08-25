@@ -1,0 +1,456 @@
+[
+  {
+    "id": "recording:debussy-pelleas-desormiere-1941",
+    "workId": "work:debussy-pelleas",
+    "versionId": null,
+    "performanceId": null,
+    "title": "Désormière 1941年《佩利亚斯与梅丽桑德》全剧录音",
+    "recordingDate": "1941年4月、11月（分期录音）",
+    "dateStart": 1941,
+    "dateEnd": 1941,
+    "dating": {
+      "certainty": "certain",
+      "note": "BnF目录将录音地点列为巴黎Salle du Conservatoire，并给出1941年4月与11月两个录音月份；这里保留分期录音，不把1942年发行日当作录音日。"
+    },
+    "recordingType": "studio",
+    "recordingVenue": "Salle du Conservatoire（巴黎音乐学院大厅）",
+    "place": "巴黎",
+    "countryOrPolity": "法兰西共和国",
+    "participants": [
+      {
+        "personId": "debu",
+        "name": "Claude Debussy",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Roger Désormière",
+        "role": "conductor"
+      },
+      {
+        "personId": null,
+        "name": "Irène Joachim",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Jacques Jansen",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Henri Etcheverry",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Chorale Yvonne Gouverné",
+        "role": "chorus"
+      },
+      {
+        "personId": null,
+        "name": "Orchestre symphonique",
+        "role": "ensemble_member"
+      }
+    ],
+    "recordingCredits": [
+      {
+        "name": "Gramophone",
+        "role": "recording company"
+      },
+      {
+        "name": "Industries Musicales et Electriques Pathé-Marconi",
+        "role": "recording company"
+      }
+    ],
+    "recordingMedium": "shellac disc",
+    "recordingTechnology": "unknown",
+    "channels": "unknown",
+    "technicalNote": "BnF直接确认20张78转针式唱片及矩阵号；目录没有说明录音过程与声道，因此不把78转载体外推为某一种录音技术。",
+    "duration": {
+      "status": "complete",
+      "display": "完整全剧（20张78转唱片；总时长未核实）",
+      "minutes": null,
+      "note": "目录确认全剧录音和20张唱片，但本次来源没有给出可核验的总时长。"
+    },
+    "survivalStatus": "extant_complete",
+    "relationshipToPerformance": null,
+    "relationshipToVersion": "当前尚未建立《佩利亚斯与梅丽桑德》的 VERSION；这条录音证明了作品进入录音棚与唱片制度的方式，不把后来的录音文本倒写成1902年首演版本。",
+    "historicalContext": "这条录音把一部原为剧场而写的歌剧拆进20张78转唱片：巴黎音乐学院大厅、分期录音、歌者近距离收音与唱片的单面容量，共同重排了《佩利亚斯》的听觉时间。",
+    "recordingSignificance": "录音保存的不是1902年首演的透明回声，而是1941年法国唱片工业对德彪西戏剧时间的再组织；全剧得以反复聆听，也同时被78转载体切割、编号并重新编排。",
+    "sourceRefs": [
+      "source:debussy-pelleas-desormiere-1941"
+    ],
+    "receptionRefs": []
+  },
+  {
+    "id": "recording:mozart-requiem-krips-1950",
+    "workId": "work:mozart-requiem",
+    "versionId": "version:mozart-requiem-suessmayr-1792",
+    "performanceId": null,
+    "title": "Josef Krips 1950年《安魂曲》录音",
+    "recordingDate": "1950年6月10—11日",
+    "dateStart": 1950,
+    "dateEnd": 1950,
+    "dating": {
+      "certainty": "certain",
+      "note": "Decca/Eloquence录音资料明确给出维也纳Musikverein Grosser Saal及1950年6月10—11日的录音日期；其CD首发日期另属发行史。"
+    },
+    "recordingType": "studio",
+    "recordingVenue": "Grosser Saal, Musikverein（维也纳音乐协会大礼堂）",
+    "place": "维也纳",
+    "countryOrPolity": "奥地利共和国",
+    "participants": [
+      {
+        "personId": "moza",
+        "name": "Wolfgang Amadeus Mozart",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Josef Krips",
+        "role": "conductor"
+      },
+      {
+        "personId": null,
+        "name": "Werner Pech",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Hans Breitschopf",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Walther Ludwig",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Harald Pröglhöf",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Wiener Hofmusikkapelle",
+        "role": "ensemble_member"
+      },
+      {
+        "personId": null,
+        "name": "Wiener Philharmoniker",
+        "role": "ensemble_member"
+      }
+    ],
+    "recordingCredits": [
+      {
+        "name": "Victor Olof",
+        "role": "recording producer"
+      },
+      {
+        "name": "Cyril Windebank",
+        "role": "recording engineer"
+      },
+      {
+        "name": "Decca",
+        "role": "recording company"
+      }
+    ],
+    "recordingMedium": "unknown",
+    "recordingTechnology": "unknown",
+    "channels": "unknown",
+    "technicalNote": "官方录音页提供录音地点、日期、制作人与平衡工程师，但没有确认原始载体、录音过程或声道；不能以后来的一张CD反推这些字段。",
+    "duration": {
+      "status": "complete",
+      "display": "完整苏斯迈尔完成版；总时长未核实",
+      "minutes": null,
+      "note": "来源明确说明录音采用苏斯迈尔完成版，但没有给出本次核验可用的原始总时长。"
+    },
+    "survivalStatus": "extant_complete",
+    "relationshipToPerformance": null,
+    "relationshipToVersion": "录音页明确将所听版本标为Franz Xaver Süssmayr完成的传统形态，因此链接现有Süßmayr VERSION；这不是对莫扎特作者遗稿状态的重新归属。",
+    "historicalContext": "1950年的录音把《安魂曲》置于战后维也纳的录音棚与唱片工业中，传统完成版不再只靠教堂和现场传承，而被制作人、工程师与麦克风组织成可重复调用的公共声音。",
+    "recordingSignificance": "这条录音的研究价值不在于替苏斯迈尔完成版裁定“正确”，而在于它把一个协作形成的文本固定为可反复聆听的声音对象；录音制度由此参与了作者责任的再分配。",
+    "sourceRefs": [
+      "source:mozart-requiem-krips-1950"
+    ],
+    "receptionRefs": []
+  },
+  {
+    "id": "recording:wagner-ring-keilberth-bayreuth-1955",
+    "workId": "work:wagner-ring-cycle",
+    "versionId": null,
+    "performanceId": null,
+    "title": "Keilberth 1955年拜罗伊特《指环》现场录音",
+    "recordingDate": "1955年7月24—28日及8月8—14日（多场现场录音）",
+    "dateStart": 1955,
+    "dateEnd": 1955,
+    "dating": {
+      "certainty": "certain",
+      "note": "Decca录音目录将录音地点、制作人与多场现场日期列为1955年拜罗伊特；ORF资料进一步确认这是早期立体声《指环》并在现场以磁带连续记录。"
+    },
+    "recordingType": "live",
+    "recordingVenue": "Bayreuther Festspielhaus（拜罗伊特节日剧院）",
+    "place": "拜罗伊特",
+    "countryOrPolity": "德意志联邦共和国",
+    "participants": [
+      {
+        "personId": "wagn",
+        "name": "Richard Wagner",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Joseph Keilberth",
+        "role": "conductor"
+      },
+      {
+        "personId": null,
+        "name": "Bayreuther Festspielorchester",
+        "role": "ensemble_member"
+      },
+      {
+        "personId": null,
+        "name": "Bayreuther Festspielchor",
+        "role": "chorus"
+      },
+      {
+        "personId": null,
+        "name": "Wolfgang Windgassen",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Astrid Varnay",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Hans Hotter",
+        "role": "singer"
+      }
+    ],
+    "recordingCredits": [
+      {
+        "name": "Peter Andry",
+        "role": "recording producer"
+      },
+      {
+        "name": "Kenneth Wilkinson",
+        "role": "recording engineer"
+      },
+      {
+        "name": "Roy Wallace",
+        "role": "balance engineer"
+      },
+      {
+        "name": "Decca",
+        "role": "recording company"
+      }
+    ],
+    "recordingMedium": "magnetic tape",
+    "recordingTechnology": "stereo magnetic tape",
+    "channels": "stereo",
+    "technicalNote": "ORF明确说录音由Decca工程师在现场以1:1方式录到磁带，并保留观众反应与提示员声音；Decca目录另列制作人与工程师。",
+    "duration": {
+      "status": "complete",
+      "display": "四部全剧（多场现场录音；总时长未核实）",
+      "minutes": null,
+      "note": "来源把它作为完整《指环》录音保存与发行，但本次核验不以后来唱片套装时长冒充原始录音时长。"
+    },
+    "survivalStatus": "extant_complete",
+    "relationshipToPerformance": null,
+    "relationshipToVersion": "当前尚未建立《指环》的 VERSION；录音跨越多场现场与不同演出日期，不能借录音的公共发行状态制造一个“最终舞台版本”。",
+    "historicalContext": "1955年拜罗伊特的磁带把剧院事件直接带进唱片工业：观众反应、提示员声音和早期立体声的空间试验没有被完全抹平，录音棚因此不是舞台的替代物，而是把舞台偶发性保存下来的另一种制度。",
+    "recordingSignificance": "这条录音显示，所谓“现场”并非脱离技术的自然声音；麦克风布置、Decca的保存策略、早期立体声与多年未发行的母带共同决定了今天能听见怎样的拜罗伊特。",
+    "sourceRefs": [
+      "source:wagner-ring-keilberth-1955-session",
+      "source:wagner-ring-keilberth-1955-tape-history"
+    ],
+    "receptionRefs": []
+  },
+  {
+    "id": "recording:buso-doktor-faust-bbc-1959",
+    "workId": "work:buso-doktor-faust",
+    "versionId": "version:buso-doktor-faust-jarnach-1925",
+    "performanceId": null,
+    "title": "Boult 1959年BBC《浮士德博士》现场广播录音",
+    "recordingDate": "1959年11月13日",
+    "dateStart": 1959,
+    "dateEnd": 1959,
+    "dating": {
+      "certainty": "certain",
+      "note": "伦敦爱乐官方录音页给出1959年11月13日及Royal Festival Hall，并明确将其说明为BBC广播；2011年发行日期只属于后来的访问表面。"
+    },
+    "recordingType": "broadcast",
+    "recordingVenue": "Southbank Centre’s Royal Festival Hall",
+    "place": "伦敦",
+    "countryOrPolity": "英国",
+    "participants": [
+      {
+        "personId": "buso",
+        "name": "Ferruccio Busoni",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Sir Adrian Boult",
+        "role": "conductor"
+      },
+      {
+        "personId": null,
+        "name": "Dietrich Fischer-Dieskau",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Richard Lewis",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Ian Wallace",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "London Philharmonic Orchestra and Choir",
+        "role": "ensemble_member"
+      },
+      {
+        "personId": null,
+        "name": "Ambrosian Singers",
+        "role": "chorus"
+      },
+      {
+        "personId": null,
+        "name": "Chorus from the Royal Academy of Music",
+        "role": "chorus"
+      }
+    ],
+    "recordingCredits": [
+      {
+        "name": "BBC",
+        "role": "broadcaster"
+      },
+      {
+        "name": "London Philharmonic Orchestra Ltd.",
+        "role": "recording archive"
+      }
+    ],
+    "recordingMedium": "unknown",
+    "recordingTechnology": "unknown",
+    "channels": "mono",
+    "technicalNote": "LPO官方页明确标为ADD Mono，并说明这是1959年BBC广播的缩编版；页面没有确认原始磁带、录音工程或声道链路的全部细节。",
+    "duration": {
+      "status": "surviving_only",
+      "display": "约74分钟（发行资料给出74:26；BBC缩编版）",
+      "minutes": 74,
+      "note": "74:26是现行发行资料的节目时长，不是完整歌剧或原始广播母带的精确时长；官方页明确说明BBC为传输制作了缩短版本。"
+    },
+    "survivalStatus": "extant_partial",
+    "relationshipToPerformance": null,
+    "relationshipToVersion": "LPO官方页明确称该广播使用Philipp Jarnach完成版，但同时说明BBC为传输删节了歌剧；因此链接Jarnach VERSION，却不把广播文本等同于完整演出谱。",
+    "historicalContext": "1959年的《浮士德博士》不是一场被动收音的完整剧场复制，而是BBC为广播传输制作的删节对象：现场演出、公共广播和后来唱片整理在同一条链上重新切分了布索尼遗作的可听边界。",
+    "recordingSignificance": "它让Jarnach完成版进入广播制度，却也把“可听的完整性”拆成传输时长、现场条件与后来的保存版本三个问题；录音保留下来，删节责任也必须一并保留。",
+    "sourceRefs": [
+      "source:buso-doktor-faust-bbc-1959"
+    ],
+    "receptionRefs": []
+  },
+  {
+    "id": "recording:buso-doktor-faust-nagano-1997-1998",
+    "workId": "work:buso-doktor-faust",
+    "versionId": null,
+    "performanceId": null,
+    "title": "Nagano 1997—1998年里昂《浮士德博士》录音",
+    "recordingDate": "1997年11月及1998年3月（分期录音）",
+    "dateStart": 1997,
+    "dateEnd": 1998,
+    "dating": {
+      "certainty": "certain",
+      "note": "CiNii书目与Hampsong Foundation资料均将录音地点列为Opéra National de Lyon，并给出1997年11月与1998年3月两个录音阶段；1999年Erato出版日不作为录音日期。"
+    },
+    "recordingType": "studio",
+    "recordingVenue": "Opéra National de Lyon",
+    "place": "里昂",
+    "countryOrPolity": "法兰西共和国",
+    "participants": [
+      {
+        "personId": "buso",
+        "name": "Ferruccio Busoni",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Kent Nagano",
+        "role": "conductor"
+      },
+      {
+        "personId": null,
+        "name": "Dietrich Fischer-Dieskau",
+        "role": "speaker"
+      },
+      {
+        "personId": null,
+        "name": "Dietrich Henschel",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Kim Begley",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Eva Jenisová",
+        "role": "singer"
+      },
+      {
+        "personId": null,
+        "name": "Chœur de l’Opéra National de Lyon",
+        "role": "chorus"
+      },
+      {
+        "personId": null,
+        "name": "Chœur du Grand Théâtre de Genève",
+        "role": "chorus"
+      },
+      {
+        "personId": null,
+        "name": "Orchestre de l’Opéra National de Lyon",
+        "role": "ensemble_member"
+      }
+    ],
+    "recordingCredits": [
+      {
+        "name": "Erato",
+        "role": "recording company"
+      },
+      {
+        "name": "Warner Classics International",
+        "role": "recording company"
+      }
+    ],
+    "recordingMedium": "unknown",
+    "recordingTechnology": "unknown",
+    "channels": "unknown",
+    "technicalNote": "CiNii确认后来目录对象为三张CD，但该信息只说明发行载体；原始录音介质、技术与声道没有在本次权威目录核验中说明，故全部保留未知。",
+    "duration": {
+      "status": "approximate",
+      "display": "约3小时16分钟（目录所载三张CD的节目时长）",
+      "minutes": 196,
+      "note": "3小时16分钟来自CiNii的发行目录，不把发行载体时长冒充原始录音 session 的精确持续时间。"
+    },
+    "survivalStatus": "extant_complete",
+    "relationshipToPerformance": null,
+    "relationshipToVersion": "现有目录确认录音的是Busoni歌剧，但没有给出一条足以把整套录音归入单一VERSION的声明；Hampsong关联资料同时列出Jarnach与Beaumont结尾，因此保留versionId为空。",
+    "historicalContext": "里昂录音把《浮士德博士》的完成问题从剧场争论带进后期唱片工业：档案发现、歌剧院资源、跨院合唱与录音棚制作共同允许一部未完成作品以多种结尾进入同一套可重复聆听的对象。",
+    "recordingSignificance": "这条录音最值得保存的不是一个“最终版”标签，而是它让版本差异在同一听觉装置内并置；Jarnach与Beaumont不再只是校勘室的名字，而成为听者可以比较的结构选择。",
+    "sourceRefs": [
+      "source:buso-doktor-faust-nagano-catalogue-1997-1998",
+      "source:buso-doktor-faust-nagano-versions-1997-1998"
+    ],
+    "receptionRefs": []
+  }
+]

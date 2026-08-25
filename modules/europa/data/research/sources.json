@@ -1,0 +1,1598 @@
+[
+  {
+    "id": "source:buso-doktor-faust-preface-autograph-1922",
+    "sourceType": "autograph_manuscript",
+    "title": "《浮士德博士》乐谱序言手稿",
+    "originalTitle": "Über die Partitur des \"Doktor Faust\" / Faust-Vorwort",
+    "creator": [
+      {
+        "personId": "buso",
+        "name": "Ferruccio Busoni",
+        "role": "author"
+      }
+    ],
+    "date": "1922年7月",
+    "dateStart": 1922,
+    "dateEnd": 1922,
+    "dating": {
+      "certainty": "certain",
+      "note": "Kalliope 馆藏记录将手稿定为1922年7月，并给出具体卷内题名与馆藏号。"
+    },
+    "repository": "Staatsbibliothek zu Berlin, Musikabteilung",
+    "repositoryPlace": "Berlin",
+    "shelfmark": "Mus.Nachl. F. Busoni C I,8",
+    "collection": "Nachlass Ferruccio Busoni",
+    "physicalDescription": "布索尼亲笔手稿，讨论《浮士德博士》乐谱",
+    "extent": "13 Bl.",
+    "language": ["de"],
+    "catalogueUrl": "https://kalliope-verbund.info/de/findingaid?fa.id=DE-611-BF-1328&fq=ead.pers.index%3A(%22Mozart%2C+Wolfgang+Amadeus+%281756-1791%29%22)&htmlFull=false&lang=de&lastparam=true",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": "DE-611-HS-3392934",
+    "rights": {
+      "status": "unknown",
+      "statement": "本次核验的馆藏记录未明确给出手稿复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "version",
+        "entityId": "version:buso-doktor-faust-authorial-1916-1924",
+        "claim": "supports Busoni's authorial framing of Doktor Faust in 1922",
+        "strength": "direct",
+        "evidenceNote": "手稿本身直接证明布索尼在1922年以亲笔序言讨论该歌剧乐谱；它不能单独证明乐谱已经完成，也不能证明后来的雅纳赫或Beaumont方案符合作者最终意图。"
+      }
+    ],
+    "sourceCriticism": "这是作者亲笔的序言/论述手稿，不是完整歌剧总谱；其数字访问在本次核验中只有馆藏目录，创作顺序与最终作者状态仍需结合其他稿本。"
+  },
+  {
+    "id": "source:buso-doktor-faust-letter-1917",
+    "sourceType": "letter",
+    "title": "布索尼致 Robert Freund 书信（1917年10月29日）",
+    "originalTitle": "Ferruccio Busoni an Robert Freund, Zürich, 29. Oktober 1917",
+    "creator": [
+      {
+        "personId": "buso",
+        "name": "Ferruccio Busoni",
+        "role": "sender and author"
+      }
+    ],
+    "date": "1917年10月29日",
+    "dateStart": 1917,
+    "dateEnd": 1917,
+    "dating": {
+      "certainty": "certain",
+      "note": "Busoni-Nachlass 数字版给出书写地点与完整日期，并以D0100561标识该信件页面。"
+    },
+    "repository": "Staatsbibliothek zu Berlin, Musikabteilung",
+    "repositoryPlace": "Berlin",
+    "shelfmark": "B I, 550",
+    "collection": "Busoni-Nachlass",
+    "physicalDescription": "布索尼亲笔书信；现通过数字校注版访问",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": "https://busoni-nachlass.org/de/Korrespondenz/E010007/D0100561.html",
+    "digitalUrl": "https://busoni-nachlass.org/de/Korrespondenz/E010007/D0100561.html",
+    "iiifManifest": null,
+    "persistentId": "D0100561",
+    "rights": {
+      "status": "unknown",
+      "statement": "数字页面提供书信图像与校注，但本次核验未把数字版许可外推为原件复制许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "version",
+        "entityId": "version:buso-doktor-faust-authorial-1916-1924",
+        "claim": "provides contemporary context for Busoni's work on a large theatre project later identified as Doktor Faust",
+        "strength": "contextual",
+        "evidenceNote": "书信原文直接证明布索尼在1917年处理一部大型剧场作品；作品名与《浮士德博士》的对应部分依赖数字版编者说明，因此它不能单独证明完整谱本、最终结构或完成者责任。"
+      }
+    ],
+    "sourceCriticism": "原件是作者书信，但本次使用的是Busoni-Nachlass的数字校注页；作品名称的指认部分来自编辑注释，不能把注释内容当作书信原文。"
+  },
+  {
+    "id": "source:buso-doktor-faust-libretto-1920",
+    "sourceType": "libretto",
+    "title": "《浮士德博士：音乐诗》1920年印刷本",
+    "originalTitle": "Doktor Faust: Dichtung für Musik",
+    "creator": [
+      {
+        "personId": "buso",
+        "name": "Ferruccio Busoni",
+        "role": "author"
+      }
+    ],
+    "date": "1920",
+    "dateStart": 1920,
+    "dateEnd": 1920,
+    "dating": {
+      "certainty": "certain",
+      "note": "Busoni-Nachlass书目记录给出1920年Potsdam版及DNB识别号，并链接Weimar数字对象。"
+    },
+    "repository": "Herzogin Anna Amalia Bibliothek, Klassik Stiftung Weimar",
+    "repositoryPlace": "Weimar",
+    "shelfmark": null,
+    "collection": null,
+    "physicalDescription": "1920年印刷的歌剧剧本文本",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": "https://www.busoni-nachlass.org/de/Bibliographie/E0800243.html",
+    "digitalUrl": "https://haab-digital.klassik-stiftung.de/viewer/!image/1221004190/3/",
+    "iiifManifest": null,
+    "persistentId": "DNB 365316091",
+    "rights": {
+      "status": "unknown",
+      "statement": "书目页与数字入口没有在本次核验中明确解决印刷本图像的复制许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "work",
+        "entityId": "work:buso-doktor-faust",
+        "claim": "provides a 1920 authorial publication witness for the libretto layer of Doktor Faust",
+        "strength": "direct",
+        "evidenceNote": "印刷剧本文本直接证明布索尼的戏剧文本在1920年以可传播的出版状态出现；它不能证明总谱配器、未完成段落或后来完成方案。"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:buso-doktor-faust-authorial-1916-1924",
+        "claim": "supports the authorial textual state of Doktor Faust before Busoni's death",
+        "strength": "direct",
+        "evidenceNote": "该出版物直接保存作者署名的文本层，能限定作者在1920年前后的公开剧本文本；它不能把已出版剧本文本扩大为一部完成的作者总谱。"
+      }
+    ],
+    "sourceCriticism": "这是历史印刷剧本而非乐谱；Weimar页面提供数字替代物，书目记录与数字图像之间仍需区分，图像权利也未在本次核验中确认。"
+  },
+  {
+    "id": "source:buso-doktor-faust-printed-score-1925",
+    "sourceType": "printed_score",
+    "title": "《浮士德博士：诗与音乐》1925年印刷谱本",
+    "originalTitle": "Doktor Faust: Dichtung und Musik (1925)",
+    "creator": [
+      {
+        "personId": "buso",
+        "name": "Ferruccio Busoni",
+        "role": "composer"
+      },
+      {
+        "personId": null,
+        "name": "Breitkopf & Härtel",
+        "role": "publisher"
+      }
+    ],
+    "date": "1925",
+    "dateStart": 1925,
+    "dateEnd": 1925,
+    "dating": {
+      "certainty": "certain",
+      "note": "SLUB Dresden的Breitkopf & Härtel Textbibliothek记录给出书名、出版社与1925年出版信息。"
+    },
+    "repository": "Sächsische Landesbibliothek – Staats- und Universitätsbibliothek Dresden",
+    "repositoryPlace": "Dresden",
+    "shelfmark": null,
+    "collection": "Breitkopf & Härtel Textbibliothek",
+    "physicalDescription": "1925年歌剧印刷谱本；本次核验的直接入口为机构目录记录",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": "https://katalog.slub-dresden.de/id/0-527828998",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "机构目录记录未明确给出该印刷谱本的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "work",
+        "entityId": "work:buso-doktor-faust",
+        "claim": "identifies a 1925 public printed score of Doktor Faust",
+        "strength": "direct",
+        "evidenceNote": "目录记录直接确认1925年《Doktor Faust: Dichtung und Musik》的印刷出版状态；它不能单独证明该谱本中每一段补写的责任归属。"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:buso-doktor-faust-jarnach-1925",
+        "claim": "provides an indirect witness for the 1925 public completion state associated with Jarnach",
+        "strength": "indirect",
+        "evidenceNote": "1925年印刷谱本与雅纳赫完成版处于同一公共出版阶段，但该SLUB目录记录本身没有逐段说明雅纳赫的补写范围；它不能单独证明所有后完成材料均出自雅纳赫。"
+      }
+    ],
+    "sourceCriticism": "这里直接核验到的是权威目录记录而非谱本页面；目录确认出版物的存在与年份，却没有提供可逐页核对的数字替代物或已核实馆藏号，完成责任仍需与其他材料对读。"
+  },
+  {
+    "id": "source:buso-doktor-faust-beaumont-programme-1985",
+    "sourceType": "programme",
+    "title": "《浮士德博士》1984/1985演出节目册",
+    "originalTitle": "[Stagione lirica 1984/1985] Doktor Faust",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Teatro Comunale di Bologna",
+        "role": "issuing institution"
+      }
+    ],
+    "date": "1985",
+    "dateStart": 1985,
+    "dateEnd": 1985,
+    "dating": {
+      "certainty": "certain",
+      "note": "LeviData记录标明1984/1985歌剧季、1985年、节目册材质与126页；官方博洛尼亚剧院档案页亦记录1985年演出。"
+    },
+    "repository": "Fondazione Ugo e Olga Levi",
+    "repositoryPlace": "Venezia",
+    "shelfmark": "GUI 7",
+    "collection": "Fondo Guidetti",
+    "physicalDescription": "印刷演出节目册，标注作品由A. Beaumont完成",
+    "extent": "126 pp.",
+    "language": ["it"],
+    "catalogueUrl": "https://levidata.fondazionelevi.it/index.php/serie-items?f%5B0%5D=persone_items%3ABeaumont%2C+Anthony&f%5B1%5D=tipologia_specifica_items_2%3Aatto&f%5B2%5D=tipologia_specifica_items_2%3Acc.&f%5B3%5D=tipologia_specifica_items_2%3Afascicolo&f%5B4%5D=tipologia_specifica_items_2%3Aintavolatura&f%5B5%5D=tipologia_specifica_items_2%3Apartitura%2C+particella+e+parti&f%5B6%5D=tipologia_specifica_items_2%3Aprogramma+di+sala",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "LeviData目录记录未明确给出节目册复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "Fondo Guidetti；节目册更早的所有权流转本次未建立",
+    "evidenceFor": [
+      {
+        "entityType": "version",
+        "entityId": "version:buso-doktor-faust-beaumont-1984",
+        "claim": "directly records a 1985 public realization identified as completed by Anthony Beaumont",
+        "strength": "direct",
+        "evidenceNote": "节目册目录直接写出音乐为Ferruccio Busoni、完成者为Anthony Beaumont，并给出1985年节目册的馆藏号与页数；它不能证明Beaumont具体使用了哪些草稿，也不能把公开署名等同于全部完成过程。"
+      },
+      {
+        "entityType": "performance",
+        "entityId": "performance:buso-doktor-faust-bologna-1985-04-02",
+        "claim": "provides the programme-level evidence for the 1985 Bologna public realization of Beaumont's completion",
+        "strength": "strong",
+        "evidenceNote": "节目册目录把1985年博洛尼亚公开演出标为Busoni作品、Anthony Beaumont完成；具体首场日期与完整演职员表由Teatro Comunale的官方档案条目补足，不能把节目册单独当作Beaumont的工作稿。"
+      },
+      {
+        "entityType": "reception",
+        "entityId": "reception:buso-doktor-faust-beaumont-bologna-1985-reassessment",
+        "claim": "证明Beaumont完成版在1985年博洛尼亚节目册中作为公共版本被命名",
+        "strength": "direct",
+        "evidenceNote": "节目册目录直接保存公共署名与版本命名；它不能单独证明Beaumont完成过程的全部文本选择，也不能证明该版本取代Jarnach。"
+      }
+    ],
+    "sourceCriticism": "这是后出的公共演出记录，不是Beaumont的工作稿或校勘底本；它能证明1985年公开版本如何署名，却不能单独重建补写、删改和新发现草稿之间的关系。"
+  },
+  {
+    "id": "source:mozart-requiem-autograph-a2-1791",
+    "sourceType": "autograph_manuscript",
+    "title": "《安魂曲》莫扎特亲笔草稿总谱（A2）",
+    "originalTitle": "Requiem: autograph draft score (A2)",
+    "creator": [
+      {
+        "personId": "moza",
+        "name": "Wolfgang Amadeus Mozart",
+        "role": "composer"
+      }
+    ],
+    "date": "1791",
+    "dateStart": 1791,
+    "dateEnd": 1791,
+    "dating": {
+      "certainty": "certain",
+      "note": "奥地利国家图书馆与NMA源说明将A2列为1791年的莫扎特亲笔草稿材料。"
+    },
+    "repository": "Österreichische Nationalbibliothek, Musiksammlung",
+    "repositoryPlace": "Wien",
+    "shelfmark": "Mus. Hs. 17.561/b",
+    "collection": null,
+    "physicalDescription": "莫扎特亲笔草稿总谱，涉及《安魂曲》第3至第10号乐章的作者材料",
+    "extent": null,
+    "language": ["la"],
+    "catalogueUrl": "https://kv.mozarteum.at/en/work/requiem-the-requiem-completed-by-franz-xaver-susmayr-in-the-traditional-form-7373",
+    "digitalUrl": "https://dme.mozarteum.at/DME/objs/pdf/nma_14_-23_-3_eng.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "目录与NMA数字版提供查阅入口，但本次核验未把数字版访问权外推为原件复制许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "work",
+        "entityId": "work:mozart-requiem",
+        "claim": "locates an autograph component of K. 626 in the Österreichische Nationalbibliothek",
+        "strength": "direct",
+        "evidenceNote": "馆藏号与源说明直接把A2定位为K.626的莫扎特亲笔草稿；它不能把局部作者材料扩展成完整总谱。"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:mozart-requiem-authorial-1791",
+        "claim": "directly supports Mozart's 1791 authorial material state",
+        "strength": "direct",
+        "evidenceNote": "A2作为莫扎特亲笔草稿直接证明作者留下的局部写作状态；它不能证明所有乐章均由莫扎特完成，也不能证明苏斯迈尔后来如何补写。"
+      }
+    ],
+    "sourceCriticism": "A2是草稿而非完整清抄总谱；本次数字入口是NMA的现代校勘/数字替代物，必须把莫扎特亲笔层与后来的编配和抄写层分开。"
+  },
+  {
+    "id": "source:mozart-requiem-cod-17561a",
+    "sourceType": "other",
+    "title": "《安魂曲》莫扎特—苏斯迈尔合成交付总谱（A1/B）",
+    "originalTitle": "Requiem: Mus. Hs. 17.561/a (A1/B)",
+    "creator": [
+      {
+        "personId": "moza",
+        "name": "Wolfgang Amadeus Mozart",
+        "role": "composer and autograph contributor"
+      },
+      {
+        "personId": null,
+        "name": "Franz Xaver Süßmayr",
+        "role": "completer and copyist"
+      }
+    ],
+    "date": "1791–1792",
+    "dateStart": 1791,
+    "dateEnd": 1792,
+    "dating": {
+      "certainty": "range",
+      "note": "NMA源说明将同一装订本中的A1与B分别联系到莫扎特作者材料和苏斯迈尔完成部分，时间跨越1791至1792年。"
+    },
+    "repository": "Österreichische Nationalbibliothek, Musiksammlung",
+    "repositoryPlace": "Wien",
+    "shelfmark": "Mus. Hs. 17.561/a",
+    "collection": null,
+    "physicalDescription": "复合交付总谱；A1为莫扎特亲笔材料，B为苏斯迈尔续补/抄写部分，同册装订",
+    "extent": null,
+    "language": ["la"],
+    "catalogueUrl": "https://kv.mozarteum.at/en/work/requiem-the-requiem-completed-by-franz-xaver-susmayr-in-the-traditional-form-7373",
+    "digitalUrl": "https://dme.mozarteum.at/DME/objs/pdf/nma_14_-23_-3_eng.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "官方目录与NMA源说明未在本次核验中明确解决原件及数字替代物的复制许可。",
+      "url": null
+    },
+    "provenance": "本次核验确认现藏于奥地利国家图书馆；更早所有权流转未完整建立",
+    "evidenceFor": [
+      {
+        "entityType": "work",
+        "entityId": "work:mozart-requiem",
+        "claim": "locates the composite delivery score of K. 626 and its divided authorial/completion layers",
+        "strength": "direct",
+        "evidenceNote": "馆藏号与源说明直接把A1/B定位为《安魂曲》的复合总谱；它证明的是材料的装订与手迹分层，不是一个无差别的单一作者总谱。"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:mozart-requiem-authorial-1791",
+        "claim": "supports the Mozart autograph component of the authorial state",
+        "strength": "direct",
+        "evidenceNote": "同册A1部分保存莫扎特亲笔作者材料，直接支撑作者遗稿状态；它不能把同册中的苏斯迈尔部分重新归入莫扎特。"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:mozart-requiem-suessmayr-1792",
+        "claim": "directly supports the traditional completion state through the Süßmayr section",
+        "strength": "direct",
+        "evidenceNote": "同册B部分被源说明认定为苏斯迈尔完成/抄写的传统完整层，直接证明完成者介入；它不能单独解决苏斯迈尔各段所依据的莫扎特草稿和Eybler补充之间的全部边界。"
+      }
+    ],
+    "sourceCriticism": "同一物理装订本把莫扎特的A1与苏斯迈尔的B放在一起；不能把‘完整总谱’的连续外观当成单一作者身份，NMA页面也只是现代校勘说明与数字替代物。"
+  },
+  {
+    "id": "source:bach-kunst-fuge-autograph-p200",
+    "sourceType": "autograph_manuscript",
+    "title": "《赋格的艺术》巴赫亲笔主卷（P 200）",
+    "originalTitle": "Die Kunst der Fuge, autograph manuscript",
+    "creator": [
+      {
+        "personId": "bach",
+        "name": "Johann Sebastian Bach",
+        "role": "composer"
+      }
+    ],
+    "date": "约1742–1750",
+    "dateStart": 1742,
+    "dateEnd": 1750,
+    "dating": {
+      "certainty": "range",
+      "note": "当前源入口确认P 200为巴赫亲笔主卷；创作与修订横跨1740年代至1750年前后，不能压成单一书写日。"
+    },
+    "repository": "Staatsbibliothek zu Berlin – Preußischer Kulturbesitz",
+    "repositoryPlace": "Berlin",
+    "shelfmark": "D-B Mus.ms. Bach P 200",
+    "collection": "Bach-Sammlung",
+    "physicalDescription": "巴赫亲笔乐谱主卷；不等于包含全部曲目与最终公共顺序的定稿",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": "https://www.bach-digital.de/receive/BachDigitalSource_source_00001071",
+    "digitalUrl": "https://www.bach-digital.de/receive/BachDigitalSource_source_00001071",
+    "iiifManifest": null,
+    "persistentId": "BachDigitalSource_source_00001071",
+    "rights": {
+      "status": "unknown",
+      "statement": "Bach Digital提供数字入口；本次未以第三方关于开放访问的表述替代馆方复制许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "work",
+        "entityId": "work:bach-kunst-der-fuge",
+        "claim": "locates the principal autograph witness of BWV 1080",
+        "strength": "direct",
+        "evidenceNote": "机构收藏说明与Bach Digital源入口共同把P 200定位为《赋格的艺术》的巴赫亲笔主卷；它不能把主卷的材料次序直接等同于后来的印刷结构。"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:bach-kunst-der-fuge-authorial-1742-1750",
+        "claim": "directly supports the authorial manuscript state of BWV 1080",
+        "strength": "direct",
+        "evidenceNote": "P 200直接保存巴赫亲笔乐谱与修订层，支撑作者材料状态；它不能单独证明未保存部分、终曲边界或作者最终公共编排。"
+      }
+    ],
+    "sourceCriticism": "P 200是作者亲笔主卷，但《赋格的艺术》相关亲笔材料还包括P 200/1的三个分册；主卷与后来的1751印刷状态不能合并成一份透明的‘最终稿’。"
+  },
+  {
+    "id": "source:bach-kunst-fuge-autograph-p2001-f3",
+    "sourceType": "autograph_manuscript",
+    "title": "《赋格的艺术》未完成终曲亲笔稿（P 200/1，第三分册）",
+    "originalTitle": "Letzter (unvollständiger) Contrapunctus der Kunst der Fuge, BWV 1080",
+    "creator": [
+      {
+        "personId": "bach",
+        "name": "Johann Sebastian Bach",
+        "role": "composer"
+      }
+    ],
+    "date": "约1748–1749",
+    "dateStart": 1748,
+    "dateEnd": 1749,
+    "dating": {
+      "certainty": "approximate",
+      "note": "官方馆藏图录与数字项目确认P 200/1第三分册及其未完成终曲；本条保留约1748–1749的材料断代，不把后人说明的日期当作作者书写日。"
+    },
+    "repository": "Staatsbibliothek zu Berlin – Preußischer Kulturbesitz",
+    "repositoryPlace": "Berlin",
+    "shelfmark": "D-B Mus.ms. Bach P 200/1, Faszikel 3",
+    "collection": "Bach-Sammlung",
+    "physicalDescription": "巴赫亲笔的未完成多主题终曲片段，附有后人手迹/说明层",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": "https://www.bach-digital.de/receive/BachDigitalSource_source_00001074",
+    "digitalUrl": "https://www.bach-digital.de/receive/BachDigitalSource_source_00001074",
+    "iiifManifest": null,
+    "persistentId": "BachDigitalSource_source_00001074",
+    "rights": {
+      "status": "unknown",
+      "statement": "Bach Digital提供数字入口；本次未把在线查看条件外推为原件复制许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "version",
+        "entityId": "version:bach-kunst-der-fuge-authorial-1742-1750",
+        "claim": "directly documents the fragmentary and unfinished edge of the authorial state",
+        "strength": "direct",
+        "evidenceNote": "这件亲笔片段直接显示终曲在材料层面中断；它不能单独证明中断原因、作者原定次序，也不能把后人的题记当成巴赫亲笔。"
+      }
+    ],
+    "sourceCriticism": "核心乐谱为巴赫亲笔，但分册中还存在后人手迹/说明；它是片段而非完整终曲，数字入口也不能消除手迹层与编目层的区别。"
+  },
+  {
+    "id": "source:bach-kunst-fuge-printed-1751",
+    "sourceType": "printed_score",
+    "title": "《赋格的艺术》1751年首版印刷本",
+    "originalTitle": "Die Kunst der Fuge durch Herrn Johann Sebastian Bach",
+    "creator": [
+      {
+        "personId": "bach",
+        "name": "Johann Sebastian Bach",
+        "role": "named author"
+      }
+    ],
+    "date": "约1751",
+    "dateStart": 1751,
+    "dateEnd": 1751,
+    "dating": {
+      "certainty": "approximate",
+      "note": "哥本哈根馆藏号DK-Kk mu 6406.2030被权威研究与数字扫描目录识别为1751首版；印刷本标题页本身不提供完整出版日期，故保留约定断代。"
+    },
+    "repository": "Det Kgl. Bibliotek, Musik- og Teatersamlingen",
+    "repositoryPlace": "København",
+    "shelfmark": "DK-Kk mu 6406.2030",
+    "collection": null,
+    "physicalDescription": "1751年《赋格的艺术》原始印刷谱本；通过馆方数字扫描访问",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": null,
+    "digitalUrl": "https://img.kb.dk/ma/uklav/bach_kdf-m.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "本次核验确认馆方数字扫描入口，但未确认该数字对象的具体复制许可声明。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "work",
+        "entityId": "work:bach-kunst-der-fuge",
+        "claim": "provides a primary printed witness for the posthumous public state of BWV 1080",
+        "strength": "direct",
+        "evidenceNote": "印刷本直接保存1751首版的标题、曲目组织与公共呈现状态；它不能单独区分其中哪些顺序来自巴赫生前修订，哪些来自死后出版组织。"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:bach-kunst-der-fuge-printed-1751",
+        "claim": "directly supports the 1751 first printed state",
+        "strength": "direct",
+        "evidenceNote": "该首版印刷物本身就是1751公共印刷状态的物质见证；它能证明出版顺序已经固定，不能因此证明印刷顺序等于作者最后意图。"
+      }
+    ],
+    "sourceCriticism": "这是后于巴赫去世的公共印刷见证；首版的出版日期主要由书目与版本学证据确定，标题页不等于作者亲笔，印刷组织与作者生前修订的责任必须分开。"
+  },
+  {
+    "id": "source:wagner-ring-bayreuth-cast-1876",
+    "sourceType": "archival_record",
+    "title": "1876年拜罗伊特《指环》首演演员与日期资料",
+    "originalTitle": "Wagner's Ring: Forging an Epic — Cast Members",
+    "creator": [
+      {
+        "personId": null,
+        "name": "The Morgan Library & Museum",
+        "role": "compiler"
+      }
+    ],
+    "date": "2016年展览资料",
+    "dateStart": 2016,
+    "dateEnd": 2016,
+    "dating": {
+      "certainty": "certain",
+      "note": "Morgan Library 的展览页面标明展览为2016年；配套演员名单 PDF 以该展览研究与展陈资料为入口，列出1876年四部作品的具体日期。"
+    },
+    "repository": "The Morgan Library & Museum",
+    "repositoryPlace": "New York",
+    "shelfmark": null,
+    "collection": "Wagner's Ring: Forging an Epic",
+    "physicalDescription": "展览使用的首演演员与日期名单 PDF；包含1876年拜罗伊特四部作品的日期和主要演员",
+    "extent": null,
+    "language": ["en"],
+    "catalogueUrl": "https://www.themorgan.org/exhibitions/wagners-ring",
+    "digitalUrl": "https://www.themorgan.org/sites/default/files/pdf/Wagner_CastMemberList.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "Morgan Library 页面提供展览与 PDF 访问入口，但本次核验未把在线查看权限外推为原始档案或图像的复制许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:wagner-ring-bayreuth-1876",
+        "claim": "identifies the four dates and central performers for the first complete Bayreuth Ring cycle in 1876",
+        "strength": "strong",
+        "evidenceNote": "名单列出Das Rheingold、Die Walküre、Siegfried与Götterdämmerung分别在8月13、14、16、17日演出，并列出Hans Richter及主要声部；它是现代展览整理，不是1876年原始剧场档案，不能单独证明观众反应或王室资助细节。"
+      }
+    ],
+    "sourceCriticism": "这是Morgan展览制作的研究性演员名单与数字 PDF，不是原始节目单的完整影像；它适合核对日期与首演班底，拜罗伊特剧院建造、观演制度和融资关系仍需与官方节日史及其他档案对读。"
+  },
+  {
+    "id": "source:buso-doktor-faust-premiere-1925",
+    "sourceType": "archival_record",
+    "title": "《浮士德博士》1925年德累斯顿首演剧场档案",
+    "originalTitle": "Theaterzettel der Uraufführung \"Doktor Faust\" am 21. Mai 1925",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Historisches Archiv der Sächsischen Staatstheater Dresden",
+        "role": "archival institution"
+      }
+    ],
+    "date": "1925年5月21日",
+    "dateStart": 1925,
+    "dateEnd": 1925,
+    "dating": {
+      "certainty": "certain",
+      "note": "Sächsische Staatstheater 的官方出版物以历史档案中的首演剧场单为题，明确标出1925年5月21日；原档案馆藏号未在本次网页中显示。"
+    },
+    "repository": "Historisches Archiv der Sächsischen Staatstheater Dresden",
+    "repositoryPlace": "Dresden",
+    "shelfmark": null,
+    "collection": "Historisches Archiv der Sächsischen Staatstheater",
+    "physicalDescription": "官方杂志转载的历史剧场单图像与首演编年说明",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": "https://www.semperoper.de/die-semperoper/semperoper-dresden/geschichte-der-semperoper.html",
+    "digitalUrl": "https://www.semperoper.de/fileadmin/semperoper/dokumente/publikationen/hefte/semper-magazin/Semper_2016-17/SO_Semper_No4_16-17_doppelseiten.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "Sächsische Staatstheater提供官方网页和PDF访问入口，但本次核验未确认历史剧场单图像的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:buso-doktor-faust-dresden-1925-05-21",
+        "claim": "records the Dresden premiere of Doktor Faust on 21 May 1925 and locates it in the Sächsische Staatstheater",
+        "strength": "strong",
+        "evidenceNote": "官方剧院史与首演剧场单资料共同确认日期、剧院和公共首演身份；本次读取的网页没有提供原始剧场单的独立馆藏号，因此演员与制作责任仍按所见记录保守保存。"
+      },
+      {
+        "entityType": "reception",
+        "entityId": "reception:buso-doktor-faust-dresden-1925-early-response",
+        "claim": "为1925年德累斯顿首演的同时代评论提供演出日期与机构边界",
+        "strength": "contextual",
+        "evidenceNote": "剧场档案直接支持首演日期和机构；具体批评判断来自另一条1925年期刊评论，本条不把档案网页冒充评论文本。"
+      }
+    ],
+    "sourceCriticism": "数字入口是2016/17年官方杂志对历史档案的转载，不是原始剧场单的完整馆藏目录或全幅数字对象；它能支持首演日期与机构身份，不能单独重建所有演职员的责任链。"
+  },
+  {
+    "id": "source:buso-doktor-faust-bologna-archive-1985",
+    "sourceType": "archival_record",
+    "title": "Teatro Comunale di Bologna 1985年《浮士德博士》档案条目",
+    "originalTitle": "Le magie del Dottor Faust — Archivio storico 1984–1993",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Teatro Comunale di Bologna",
+        "role": "archival institution"
+      }
+    ],
+    "date": "1985年",
+    "dateStart": 1985,
+    "dateEnd": 1985,
+    "dating": {
+      "certainty": "certain",
+      "note": "剧院官方历史档案条目列出1985年4月2、4、9、14、16、18日的场次，并完整列出Beaumont完成标记、指挥、导演和主要角色。"
+    },
+    "repository": "Teatro Comunale di Bologna",
+    "repositoryPlace": "Bologna",
+    "shelfmark": null,
+    "collection": "Archivio storico 1984–1993",
+    "physicalDescription": "剧院官方历史档案网页中的演出编年条目",
+    "extent": null,
+    "language": ["it"],
+    "catalogueUrl": "https://www.tcbo.it/il-teatro/archivio-storico/1984-1993/",
+    "digitalUrl": "https://www.tcbo.it/il-teatro/archivio-storico/1984-1993/",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "剧院网页开放浏览，但本次核验未确认其档案文字与演职员信息的复制许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:buso-doktor-faust-bologna-1985-04-02",
+        "claim": "identifies the 2 April 1985 Bologna opening of the Beaumont-completed Doktor Faust staging",
+        "strength": "direct",
+        "evidenceNote": "官方档案逐列给出场次、Beaumont完成标记、Zoltán Peskó、Werner Herzog、Henning von Gierke、合唱团与角色演员；它记录的是剧院编年，不是Beaumont的工作稿。"
+      },
+      {
+        "entityType": "reception",
+        "entityId": "reception:buso-doktor-faust-beaumont-bologna-1985-reassessment",
+        "claim": "证明Beaumont完成版在1985年4月2日进入博洛尼亚剧院的具体演出制度",
+        "strength": "direct",
+        "evidenceNote": "官方档案直接列出日期、场次、Beaumont完成标记和主要班底；它证明公共实现，不单独裁定评论接受或版本优劣。"
+      }
+    ],
+    "sourceCriticism": "这是剧院后设整理的历史档案网页，不是原始节目册或导演工作文件；它足以锁定演出日期、机构、版本署名与主要班底，但不能独立解释Beaumont重构所依据的每一页草稿。"
+  },
+  {
+    "id": "source:mozart-requiem-st-michael-1791",
+    "sourceType": "other",
+    "title": "莫扎特《安魂曲》圣米迦勒教堂片段演出周年资料",
+    "originalTitle": "Mozartwoche — Requiem press release",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Stiftung Mozarteum Salzburg",
+        "role": "issuing institution"
+      }
+    ],
+    "date": "约2021年",
+    "dateStart": 2021,
+    "dateEnd": 2021,
+    "dating": {
+      "certainty": "approximate",
+      "note": "PDF以莫扎特逝世230周年为背景，正文明确记载1791年12月10日葬礼仪式与两个已完成乐章；文件 URL 沿用旧的Mozartwoche路径，故不把路径年份当作材料形成日。"
+    },
+    "repository": "Stiftung Mozarteum Salzburg",
+    "repositoryPlace": "Salzburg",
+    "shelfmark": null,
+    "collection": null,
+    "physicalDescription": "机构周年新闻资料 PDF，概述《安魂曲》的创作与1791年葬礼仪式",
+    "extent": "2 pp.",
+    "language": ["en"],
+    "catalogueUrl": "https://mozarteum.at/en/press_release/on-the-230th-anniversary-of-wolfgang-amade-mozarts-death-on-5-december",
+    "digitalUrl": "https://mozarteum.at/static/6e35ef2366268e7e97a72ba488e25fe0/ISM_Requiem_press-release.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "Mozarteum Foundation提供PDF访问入口，但本次核验未确认新闻资料的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:mozart-requiem-vienna-st-michael-1791-12-10",
+        "claim": "states that two completed movements of Mozart's Requiem were performed at the 10 December 1791 funeral ceremony in St Michael's Church",
+        "strength": "strong",
+        "evidenceNote": "官方机构资料直接给出日期、教堂和Requiem aeternam、Kyrie两项；它是后出的说明材料，不是1791年原始礼仪记录，因此不单独承担演出班底和完整礼仪流程的证明。"
+      }
+    ],
+    "sourceCriticism": "这是现代机构新闻资料，不是同时代节目单或教堂账簿；它清楚区分片段与未完成作品，但日期、乐章与参与者仍应与Mozarteum作品目录和同时代文献对读。"
+  },
+  {
+    "id": "source:mozart-requiem-jahn-saal-1793",
+    "sourceType": "other",
+    "title": "NMA《安魂曲》批评报告中的1793年Jahn-Saal演出记载",
+    "originalTitle": "New Mozart Edition I/1/2/2 Requiem — Critical Report",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Digitale Mozart-Edition / Internationale Stiftung Mozarteum",
+        "role": "editorial institution"
+      }
+    ],
+    "date": "在线版日期未详（NMA I/1/2/2）",
+    "dateStart": null,
+    "dateEnd": null,
+    "dating": {
+      "certainty": "unknown",
+      "note": "在线PDF没有在本次页面元数据中显示印刷或数字发布年份；报告正文明确标为New Mozart Edition I/1/2/2，并引用Deutsch 1961年的文献记录。"
+    },
+    "repository": "Digitale Mozart-Edition, Stiftung Mozarteum Salzburg",
+    "repositoryPlace": "Salzburg",
+    "shelfmark": "NMA I/1/2/2",
+    "collection": "Requiem",
+    "physicalDescription": "《安魂曲》版本流传与来源批评报告 PDF，含1793年Jahnscher Saal演出说明",
+    "extent": "21 pp.",
+    "language": ["en"],
+    "catalogueUrl": null,
+    "digitalUrl": "https://dme.mozarteum.at/DME/objs/pdf/nma_14_-23_-3_eng.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "Digitale Mozart-Edition提供在线PDF，但本次核验未确认批评报告及其引用材料的复制许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:mozart-requiem-vienna-jahn-saal-1793-01-02",
+        "claim": "records the 2 January 1793 premiere at the Jahnscher Saal in Vienna before Walsegg's December 1793 memorial performance",
+        "strength": "strong",
+        "evidenceNote": "NMA批评报告直接给出Jahnscher Saal、Himmelpfortgasse、维也纳和1793年1月2日，并把它置于后来的Walsegg演出之前；它没有在本页保存完整首演声部，不能单独完成VERSION逐段比对。"
+      }
+    ],
+    "sourceCriticism": "这是现代版本学批评报告而非1793年原始节目单；它的价值在于把演出日期、场所与谱本流传连起来，同时保留了实际演出抄本与当前VERSION之间的证据缺口。"
+  },
+  {
+    "id": "source:debussy-pelleas-premiere-1902",
+    "sourceType": "archival_record",
+    "title": "BnF《佩利亚斯与梅丽桑德》1902年演出目录卡",
+    "originalTitle": "Pelléas et Mélisande [Spectacle] : drame lyrique en 5 actes",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Bibliothèque nationale de France",
+        "role": "cataloguing institution"
+      }
+    ],
+    "date": "目录卡编制日期未详；记录演出为1902年4月30日",
+    "dateStart": null,
+    "dateEnd": null,
+    "dating": {
+      "certainty": "unknown",
+      "note": "BnF页面没有显示该目录卡的编制日期；它明确记录巴黎Opéra-Comique于1902年4月30日的演出、制作者、主要歌者和布景责任。"
+    },
+    "repository": "Bibliothèque nationale de France",
+    "repositoryPlace": "Paris",
+    "shelfmark": null,
+    "collection": "Catalogue général — Notice de spectacle",
+    "physicalDescription": "BnF演出目录卡，含剧名、演出日期、制作、主要演员与技术艺术责任者",
+    "extent": "1 catalogue record",
+    "language": ["fr"],
+    "catalogueUrl": "https://catalogue.bnf.fr/ark:/12148/cb42253396j",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": "ark:/12148/cb42253396j",
+    "rights": {
+      "status": "unknown",
+      "statement": "BnF目录页开放检索，但本次核验未确认该目录记录所关联历史材料的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "not yet established",
+    "evidenceFor": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:debussy-pelleas-paris-1902-04-30",
+        "claim": "identifies the 30 April 1902 Paris Opéra-Comique premiere and its principal production and cast entries",
+        "strength": "direct",
+        "evidenceNote": "BnF演出目录卡直接列出日期、剧院、Albert Carré导演、Mary Garden与Jean Périer，以及Ronsin、Jusseaume的布景责任；它是后出的目录记录，不等于完整首演节目册。"
+      }
+    ],
+    "sourceCriticism": "这是国家图书馆的演出目录记录而非首演当晚的完整节目单；它能锁定演出身份与主要责任者，不能单独重建指挥、观众反应或所有舞台实践细节。"
+  },
+  {
+    "id": "source:debussy-pelleas-desormiere-1941",
+    "sourceType": "sound_document",
+    "title": "BnF《佩利亚斯与梅丽桑德》1941年录音目录",
+    "originalTitle": "Pelléas et Mélisande : enregistrement intégral en 20 disques",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Bibliothèque nationale de France",
+        "role": "cataloguing institution"
+      }
+    ],
+    "date": "1941年录音；1942年目录所列出版",
+    "dateStart": 1941,
+    "dateEnd": 1942,
+    "dating": {
+      "certainty": "range",
+      "note": "BnF同一目录分别给出1941年4月、11月录音与1942年出版信息；本条保留录音和出版两个层次，不把它们合为一个日期。"
+    },
+    "repository": "Bibliothèque nationale de France, Département de l’Audiovisuel",
+    "repositoryPlace": "Paris",
+    "shelfmark": "Gramophone DB 5161/DB 5180",
+    "collection": "Catalogue général — Univers musique",
+    "physicalDescription": "20张78转针式唱片及28页小册；目录列出矩阵号、主要歌者、合唱与Roger Désormière指挥",
+    "extent": "20 discs + 28 pp. booklet",
+    "language": ["fr"],
+    "catalogueUrl": "https://catalogue.bnf.fr/ark:/12148/cb378939719",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": "ark:/12148/cb378939719",
+    "rights": {
+      "status": "unknown",
+      "statement": "BnF目录提供馆藏与数字访问入口，但本次核验未把在线查阅条件外推为唱片复制许可。",
+      "url": null
+    },
+    "provenance": "本次核验确认BnF目录与唱片编目；更早所有权流转未建立",
+    "evidenceFor": [
+      {
+        "entityType": "recording",
+        "entityId": "recording:debussy-pelleas-desormiere-1941",
+        "claim": "直接定位1941年巴黎分期录制的《佩利亚斯与梅丽桑德》全剧录音及其78转载体",
+        "strength": "direct",
+        "evidenceNote": "BnF目录同时给出巴黎Salle du Conservatoire、1941年4月与11月、20张78转唱片、主要歌者、合唱与Désormière；1942年是目录所列出版年份，不能被当作录音日期。"
+      }
+    ],
+    "sourceCriticism": "这是国家图书馆的声音资料目录而非录音棚原始session log；它足以锁定录音日期、地点、参与者与物理载体，却没有单独说明录音技术、声道或每一场的具体分工。"
+  },
+  {
+    "id": "source:mozart-requiem-krips-1950",
+    "sourceType": "sound_document",
+    "title": "Decca/Eloquence Josef Krips 1950年《安魂曲》录音资料",
+    "originalTitle": "Mozart: Requiem — Josef Krips",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Eloquence Classics / Decca",
+        "role": "recording documentation issuer"
+      }
+    ],
+    "date": "1950年6月10—11日录音；后出发行资料",
+    "dateStart": 1950,
+    "dateEnd": 1950,
+    "dating": {
+      "certainty": "certain",
+      "note": "官方录音资料明确区分1950年6月10—11日的录音地点与后来CD资料；本条以原始录音日期作为时间锚点。"
+    },
+    "repository": "Eloquence Classics / Decca release archive",
+    "repositoryPlace": null,
+    "shelfmark": "Decca 4826530（后出发行编号）",
+    "collection": "Eloquence Classics release archive",
+    "physicalDescription": "唱片公司官方录音资料页；列出传统苏斯迈尔完成版、演出阵容、制作人与录音工程，以及维也纳录音地点和日期",
+    "extent": null,
+    "language": ["en"],
+    "catalogueUrl": "https://www.eloquenceclassics.com/releases-archive/mozart-requiem-2/",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "官方页面可供查阅，但本次核验未确认原始录音或后出发行物的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "后出唱片公司资料；1950年原始母带流转未建立",
+    "evidenceFor": [
+      {
+        "entityType": "recording",
+        "entityId": "recording:mozart-requiem-krips-1950",
+        "claim": "确认Josef Krips指挥的1950年维也纳《安魂曲》录音及其苏斯迈尔完成版关系",
+        "strength": "direct",
+        "evidenceNote": "官方页明确写出Süssmayr完成版、Wiener Philharmoniker与Wiener Hofmusikkapelle、Josef Krips，以及1950年6月10—11日Musikverein录音；它没有提供原始载体或声道信息。"
+      }
+    ],
+    "sourceCriticism": "这是后出的唱片公司录音资料而非1950年原始session log或母带目录；它直接支持日期、地点、版本与责任者，但不能把后出CD格式、发行编号或再版工程外推为原始录音技术。"
+  },
+  {
+    "id": "source:wagner-ring-keilberth-1955-session",
+    "sourceType": "archival_record",
+    "title": "Decca 1955年拜罗伊特《指环》录音目录",
+    "originalTitle": "Decca Discography, Volume V — Bayreuth 1955 Ring recordings",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Centre for the History and Analysis of Recorded Music, Royal Holloway",
+        "role": "discography compiler"
+      }
+    ],
+    "date": "目录编制日期未详；记录1955年录音",
+    "dateStart": null,
+    "dateEnd": null,
+    "dating": {
+      "certainty": "unknown",
+      "note": "在线PDF的编制日期在本次核验中未确认；其条目直接记录1955年拜罗伊特的录音日期、地点、制作人与工程师。"
+    },
+    "repository": "Centre for the History and Analysis of Recorded Music (CHARM), Royal Holloway, University of London",
+    "repositoryPlace": "London",
+    "shelfmark": null,
+    "collection": "Decca Discography, Volume V",
+    "physicalDescription": "Decca录音目录条目；区分排练与现场录音，并列出1955年拜罗伊特多场日期、Bayreuth Festival Chorus and Orchestra、Joseph Keilberth、Peter Andry与录音工程师",
+    "extent": null,
+    "language": ["en"],
+    "catalogueUrl": "https://charm.rhul.ac.uk/pubs/DeccaV.pdf",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "CHARM提供PDF访问入口，但本次核验未确认该目录及其所依据材料的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "后出的录音史目录；Decca原始母带的馆藏流转未建立",
+    "evidenceFor": [
+      {
+        "entityType": "recording",
+        "entityId": "recording:wagner-ring-keilberth-bayreuth-1955",
+        "claim": "锁定1955年拜罗伊特《指环》多场现场录音的日期、地点、制作人与工程师",
+        "strength": "strong",
+        "evidenceNote": "Decca目录把四部作品的多场录音放在Bayreuth Festspielhaus，并区分live recordings、制作人Peter Andry与工程师Kenneth Wilkinson、Roy Wallace；其为后出目录整理，不是原始母带卡片。"
+      }
+    ],
+    "sourceCriticism": "这是录音史目录而非Decca原始母带的馆藏记录；它能把录音日期、场所和制作链从后来发行物中分离出来，但磁带保存状态与声音内容仍需结合ORF等资料。"
+  },
+  {
+    "id": "source:wagner-ring-keilberth-1955-tape-history",
+    "sourceType": "archival_record",
+    "title": "ORF关于1955年拜罗伊特《指环》磁带录音的历史资料",
+    "originalTitle": "Vom Trichter zur DVD",
+    "creator": [
+      {
+        "personId": null,
+        "name": "ORF Österreichischer Rundfunk",
+        "role": "broadcaster and historical compiler"
+      }
+    ],
+    "date": "2017年4月8日",
+    "dateStart": 2017,
+    "dateEnd": 2017,
+    "dating": {
+      "certainty": "certain",
+      "note": "ORF页面标明2017年4月8日发表；页面讨论的是1955年录音的技术与保存史，不能把文章日期当作录音日期。"
+    },
+    "repository": "ORF Österreichischer Rundfunk",
+    "repositoryPlace": "Vienna",
+    "shelfmark": null,
+    "collection": "Ö1 historical recording feature",
+    "physicalDescription": "广播机构的录音史文章；说明1955年拜罗伊特早期立体声、磁带连续记录、观众反应、提示员声音及母带长期封存后再现",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": "https://oe1.orf.at/artikel/202834/Vom-Trichter-zur-DVD",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "ORF页面开放浏览，但本次核验未确认文章所述录音母带或再发行物的复制许可。",
+      "url": null
+    },
+    "provenance": "后出的广播机构录音史说明；Decca母带保存位置未建立",
+    "evidenceFor": [
+      {
+        "entityType": "recording",
+        "entityId": "recording:wagner-ring-keilberth-bayreuth-1955",
+        "claim": "确认1955年拜罗伊特《指环》以早期立体声磁带在现场连续记录，并保留观众与剧场偶发声",
+        "strength": "strong",
+        "evidenceNote": "ORF明确说明Decca工程师在1955年夏季拜罗伊特把录音1:1记录到磁带，保留观众反应与提示员声音，并说明母带长期封存、后来才被重新发行。"
+      }
+    ],
+    "sourceCriticism": "这是广播机构对录音史的后出叙述，不是Decca的原始技术日志；它直接支持磁带、立体声、现场性与保存史，但不能单独提供全部录音场次和完整演职员表。"
+  },
+  {
+    "id": "source:buso-doktor-faust-bbc-1959",
+    "sourceType": "sound_document",
+    "title": "伦敦爱乐档案中的1959年BBC《浮士德博士》录音",
+    "originalTitle": "Busoni: Doktor Faust",
+    "creator": [
+      {
+        "personId": null,
+        "name": "London Philharmonic Orchestra Ltd.",
+        "role": "recording archive issuer"
+      }
+    ],
+    "date": "1959年11月13日",
+    "dateStart": 1959,
+    "dateEnd": 1959,
+    "dating": {
+      "certainty": "certain",
+      "note": "伦敦爱乐官方档案页直接给出1959年11月13日、Royal Festival Hall、BBC广播性质与缩编说明；2011年是LPO发行年份。"
+    },
+    "repository": "London Philharmonic Orchestra archive",
+    "repositoryPlace": "London",
+    "shelfmark": "LPO–0056",
+    "collection": null,
+    "physicalDescription": "伦敦爱乐官方录音条目；保存1959年现场BBC广播的演职员、单声道标记、发行时长与Jarnach完成版说明",
+    "extent": "1 archive entry",
+    "language": ["en"],
+    "catalogueUrl": "https://lpo.org.uk/recording/busoni-doktor-faust/",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "LPO页面提供录音条目与发行访问入口，但本次核验未确认BBC原始广播母带的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "LPO后出档案条目；BBC原始广播母带流转未建立",
+    "evidenceFor": [
+      {
+        "entityType": "recording",
+        "entityId": "recording:buso-doktor-faust-bbc-1959",
+        "claim": "确认1959年11月13日Royal Festival Hall现场BBC广播的录音、Jarnach完成版、单声道与删节时长",
+        "strength": "direct",
+        "evidenceNote": "LPO官方页列出日期、地点、Boult、Fischer-Dieskau、Lewis、LPO及合唱阵容，标为ADD Mono并说明BBC为传输制作了缩短版本；它没有确认原始磁带格式。"
+      }
+    ],
+    "sourceCriticism": "这是乐团后出的发行与档案说明，不是1959年BBC广播工程日志；它直接支持录音事件、参与者、Jarnach完成版与删节边界，但原始载体和完整广播链路仍不可见。"
+  },
+  {
+    "id": "source:buso-doktor-faust-nagano-catalogue-1997-1998",
+    "sourceType": "sound_document",
+    "title": "CiNii《浮士德博士》1997—1998年录音书目",
+    "originalTitle": "Doktor Faust / Busoni — Erato 3984-25501-2",
+    "creator": [
+      {
+        "personId": null,
+        "name": "National Institute of Informatics, CiNii Books",
+        "role": "cataloguing institution"
+      }
+    ],
+    "date": "1997年11月、1998年3月录音；1999年Erato出版",
+    "dateStart": 1997,
+    "dateEnd": 1999,
+    "dating": {
+      "certainty": "range",
+      "note": "CiNii记录将录音阶段与Erato出版状态同时列出；本条把1997—1998年作为录音日期，把1999年保留为发行层信息。"
+    },
+    "repository": "National Institute of Informatics, CiNii Books",
+    "repositoryPlace": "Tokyo",
+    "shelfmark": "Erato 3984-25501-2",
+    "collection": "University library sound-recording catalogue",
+    "physicalDescription": "大学图书馆书目记录；列出三张CD、录音地点与日期、主要歌者、两组合唱、里昂歌剧院乐团及Kent Nagano",
+    "extent": "3 sound discs; approximately 3 h. 16 min. in the catalogue",
+    "language": ["ja", "de", "fr", "en"],
+    "catalogueUrl": "https://ci.nii.ac.jp/ncid/BA45320529",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": "NCID BA45320529",
+    "rights": {
+      "status": "unknown",
+      "statement": "CiNii提供书目查阅入口，但本次核验未确认CD、附册或原始录音的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "大学图书馆目录所见发行对象；原始录音载体与母带流转未建立",
+    "evidenceFor": [
+      {
+        "entityType": "recording",
+        "entityId": "recording:buso-doktor-faust-nagano-1997-1998",
+        "claim": "确认Kent Nagano在里昂分期录制的《浮士德博士》、主要阵容及发行载体时长",
+        "strength": "strong",
+        "evidenceNote": "CiNii列出Opéra National de Lyon、1997年11月与1998年3月、Nagano、主要歌者与合唱，以及三张CD和约3小时16分钟目录时长；它没有单独裁定Jarnach或Beaumont为整套录音的唯一版本。"
+      }
+    ],
+    "sourceCriticism": "这是大学图书馆书目而不是录音棚session log或母带目录；它适合锁定录音时间、地点、人员和发行对象，不能由三张CD的外观推断原始载体、技术、声道或单一VERSION。"
+  },
+  {
+    "id": "source:buso-doktor-faust-nagano-versions-1997-1998",
+    "sourceType": "archival_record",
+    "title": "Hampsong Foundation《浮士德博士》录音与结尾版本资料",
+    "originalTitle": "Ferruccio Busoni — Lone Wolf of Opera",
+    "creator": [
+      {
+        "personId": null,
+        "name": "The Hampsong Foundation",
+        "role": "research resource curator"
+      }
+    ],
+    "date": "在线页面编制日期未详；页面所列音频文件为2024年路径",
+    "dateStart": null,
+    "dateEnd": null,
+    "dating": {
+      "certainty": "unknown",
+      "note": "页面没有给出完整编制日期；它关联Warner Classics录音，并把Jarnach与Beaumont结尾分别标为可听片段。"
+    },
+    "repository": "The Hampsong Foundation",
+    "repositoryPlace": null,
+    "shelfmark": null,
+    "collection": "Ferruccio Busoni — Lone Wolf of Opera",
+    "physicalDescription": "研究型线上资源；提供Warner Classics录音元数据、Kent Nagano阵容和Jarnach / Beaumont两个结尾的关联音频片段",
+    "extent": null,
+    "language": ["en", "de"],
+    "catalogueUrl": "https://hampsongfoundation.org/resource/ferruccio-busoni-lone-wolf-of-opera/",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "Hampsong页面提供音频与研究说明入口，但本次核验未确认关联音频及录音发行物的复制许可。",
+      "url": null
+    },
+    "provenance": "后出的研究与访问资源；关联音频的原始母带流转未建立",
+    "evidenceFor": [
+      {
+        "entityType": "recording",
+        "entityId": "recording:buso-doktor-faust-nagano-1997-1998",
+        "claim": "确认Nagano录音的版本边界不能被压成单一VERSION，并提供Jarnach与Beaumont结尾的可听比较入口",
+        "strength": "strong",
+        "evidenceNote": "页面将Warner Classics录音列为1997年11月与1998年3月录制，并把关联音频分别标为Jarnach Version与Beaumont Version；它支持版本并置与听觉比较，不等于原始session log。"
+      }
+    ],
+    "sourceCriticism": "这是后出的研究型访问资源，不是录音原始载体或唱片公司内部档案；它能直接提示两种结尾的并置，却不能单独解决每个音轨的录音日期、编辑链与原始技术。"
+  },
+  {
+    "id": "source:debussy-pelleas-review-bellaigue-1902",
+    "sourceType": "review",
+    "title": "Camille Bellaigue 对《佩利亚斯与梅丽桑德》的评论（1902）",
+    "originalTitle": "Revue musicale — 14 mai 1902",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Camille Bellaigue",
+        "role": "reviewer"
+      }
+    ],
+    "date": "1902年5月14日",
+    "dateStart": 1902,
+    "dateEnd": 1902,
+    "dating": {
+      "certainty": "certain",
+      "note": "数字转录保留《Revue des Deux Mondes》1902年5月14日的期刊日期与页码450—456。"
+    },
+    "repository": "Wikisource（《Revue des Deux Mondes》数字转录）",
+    "repositoryPlace": "France",
+    "shelfmark": null,
+    "collection": "Revue des Deux Mondes, 14 mai 1902",
+    "physicalDescription": "同时代法文音乐评论的数字转录页面",
+    "extent": "pp. 450–456",
+    "language": ["fr"],
+    "catalogueUrl": null,
+    "digitalUrl": "https://fr.wikisource.org/wiki/Revue_musicale_-_14_mai_1902",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "Wikisource提供公共访问的数字转录入口；本次未单独核验原期刊图像与数字文本的再利用许可。",
+      "url": null
+    },
+    "provenance": "原期刊评论的后出数字转录；原始期刊馆藏流转未在本条建立",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:debussy-pelleas-paris-1902-controversy",
+        "claim": "保存1902年5月14日一篇对《佩利亚斯与梅丽桑德》的同时代批评，并记录其对前四幕、旋律、节奏与戏剧推进的严厉质疑",
+        "strength": "direct",
+        "evidenceNote": "评论文本直接承载Bellaigue的判断；它证明一位评论家的具体立场，不能单独推出全体报刊或观众的共同反应。"
+      }
+    ],
+    "sourceCriticism": "这是同时代期刊评论的数字转录，不是原期刊的完整馆藏记录或评论接受统计；它可以锁定一条具体批评声音，不能把修辞判断改写成客观的首演事实。"
+  },
+  {
+    "id": "source:debussy-pelleas-press-index-1902",
+    "sourceType": "archival_record",
+    "title": "1902年《佩利亚斯与梅丽桑德》报刊通知索引",
+    "originalTitle": "Pelléas et Mélisande — presse et musique en France",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Presse et musique en France（PMF）",
+        "role": "database curator"
+      }
+    ],
+    "date": "1902年4—6月所列报刊通知",
+    "dateStart": 1902,
+    "dateEnd": 1902,
+    "dating": {
+      "certainty": "range",
+      "note": "索引条目按照1902年4月至6月的报刊日期聚合；当前来源是后出的数据库记录，不把数据库页面日期误作原报纸日期。"
+    },
+    "repository": "Presse et musique en France（PMF）",
+    "repositoryPlace": "France",
+    "shelfmark": null,
+    "collection": "Pelléas et Mélisande press notices",
+    "physicalDescription": "后出的法国报刊史数据库索引，列出与首演相关的多种报刊通知",
+    "extent": null,
+    "language": ["fr"],
+    "catalogueUrl": "https://pmf.regroupement-rcms.org/list/?mot_cle__nom=Pell%C3%A9as+et+M%C3%A9lisande",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "PMF提供检索与条目访问入口；本次未核验索引所列每一份报纸原件的复制许可。",
+      "url": null
+    },
+    "provenance": "后出的报刊资料索引；所列报纸原件、剪报和馆藏链路不由本条自动继承",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:debussy-pelleas-paris-1902-controversy",
+        "claim": "确认1902年4月至6月间存在多种与《佩利亚斯与梅丽桑德》相关的报刊通知记录",
+        "strength": "indirect",
+        "evidenceNote": "索引直接支持报刊记录的存在与日期范围，但不替代每一篇原报纸，也不单独证明各篇的立场。"
+      }
+    ],
+    "sourceCriticism": "这是后出的数据库索引而不是1902年报纸原件；它适合证明反应留下了多报刊记录，不能把条目数量转译为意见比例或观众态度。"
+  },
+  {
+    "id": "source:debussy-pelleas-rolland-1919",
+    "sourceType": "review",
+    "title": "Romain Rolland 论《佩利亚斯与梅丽桑德》（1919）",
+    "originalTitle": "Pelléas et Mélisande de Claude Debussy",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Romain Rolland",
+        "role": "music critic"
+      }
+    ],
+    "date": "1919年",
+    "dateStart": 1919,
+    "dateEnd": 1919,
+    "dating": {
+      "certainty": "certain",
+      "note": "Wikisource页面将该篇置于Romain Rolland 1919年的《Musiciens d’aujourd’hui》文本中。"
+    },
+    "repository": "Wikisource（Romain Rolland音乐批评文本数字转录）",
+    "repositoryPlace": "France",
+    "shelfmark": null,
+    "collection": "Musiciens d’aujourd’hui",
+    "physicalDescription": "1919年音乐批评文本的数字转录页面",
+    "extent": null,
+    "language": ["fr"],
+    "catalogueUrl": null,
+    "digitalUrl": "https://fr.wikisource.org/wiki/Musiciens_d%E2%80%99aujourd%E2%80%99hui/Pell%C3%A9as_et_M%C3%A9lisande_de_Claude_Debussy",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "Wikisource提供数字转录入口；本次未单独核验1919年纸本版本与数字文本的再利用许可。",
+      "url": null
+    },
+    "provenance": "1919年音乐批评文本的后出数字转录；原出版物馆藏与版本链路未在本条展开",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:debussy-pelleas-1919-french-canonization",
+        "claim": "保存1919年对《佩利亚斯与梅丽桑德》的回溯性法国音乐史定位，并将作品置于对瓦格纳戏剧模式的回应与法国音乐改革的叙述中",
+        "strength": "direct",
+        "evidenceNote": "文本直接承载Rolland的历史解释；它是首演十七年后的回溯性接受材料，不应倒写成1902年现场的意见。"
+      }
+    ],
+    "sourceCriticism": "这是1919年的回溯性批评文本，不是首演评论或观众统计；它能证明后来的历史叙述如何抬升作品位置，不能单独证明经典化已经完成。"
+  },
+  {
+    "id": "source:wagner-ring-guardian-report-1876",
+    "sourceType": "newspaper",
+    "title": "《卫报》关于拜罗伊特首演的报道（1876年8月11日）",
+    "originalTitle": "The Guardian report on Bayreuth, 11 August 1876（edited extract）",
+    "creator": [
+      {
+        "personId": null,
+        "name": "The Guardian",
+        "role": "newspaper publisher"
+      }
+    ],
+    "date": "1876年8月11日",
+    "dateStart": 1876,
+    "dateEnd": 1876,
+    "dating": {
+      "certainty": "certain",
+      "note": "Richard Wagner Verband页面标明所转载报道来自《The Guardian》1876年8月11日，并以编辑节选方式呈现。"
+    },
+    "repository": "The Guardian archive via Richard Wagner Verband",
+    "repositoryPlace": "London / Bayreuth",
+    "shelfmark": null,
+    "collection": "Bayreuth 1876 report",
+    "physicalDescription": "1876年报纸报道的后出编辑节选与数字重刊",
+    "extent": null,
+    "language": ["en"],
+    "catalogueUrl": null,
+    "digitalUrl": "https://www.richard-wagner.org/rwvi/en/news/news-members/?collection_id=897",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "当前页面提供历史报道的编辑节选与访问入口；本次未核验《卫报》原始报纸页面的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "《The Guardian》历史报道的后出转载与编辑节选；原报纸馆藏和完整上下文未在本条建立",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:wagner-ring-bayreuth-1876-contemporary-report",
+        "claim": "记录一篇当时报纸如何描述拜罗伊特的剧院制度、观演空间与观众回应",
+        "strength": "strong",
+        "evidenceNote": "报道直接保存记者视角下的城市品牌、隐藏乐池、熄灯观众席和终场反应；由于当前访问的是编辑节选，不能将其扩展成完整的观众统计。"
+      }
+    ],
+    "sourceCriticism": "这是原始报纸报道的后出编辑节选，不是完整报纸版面或记者通信档案；它能支持一条当时报导的叙事结构，不能单独证明拜罗伊特观众或欧洲报刊的普遍意见。"
+  },
+  {
+    "id": "source:buso-doktor-faust-review-1925",
+    "sourceType": "review",
+    "title": "H. Platzbecker 评《浮士德博士》德累斯顿首演（1925）",
+    "originalTitle": "Ferruccio Busonis „Doktor Faust“ — Uraufführung der Dresdner Oper",
+    "creator": [
+      {
+        "personId": null,
+        "name": "H. Platzbecker",
+        "role": "reviewer"
+      }
+    ],
+    "date": "1925年7月",
+    "dateStart": 1925,
+    "dateEnd": 1925,
+    "dating": {
+      "certainty": "certain",
+      "note": "nmz数字页面标明该文为Neue Musik-Zeitung第46年卷、第20期（1925年7月）中的首演评论。"
+    },
+    "repository": "Neue Musik-Zeitung digital reproduction via nmz",
+    "repositoryPlace": "Germany",
+    "shelfmark": null,
+    "collection": "Neue Musik-Zeitung, 46. Jg., Heft 20",
+    "physicalDescription": "1925年期刊评论的后出数字重刊页面",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": null,
+    "digitalUrl": "https://www.nmz.de/kritik/oper-konzert/vor-100-jahren-ferruccio-busoni-doktor-faust-urauffuehrung-der-dresdner",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "nmz提供历史评论的数字重刊入口；本次未单独核验1925年期刊原件和重刊文本的复制许可。",
+      "url": null
+    },
+    "provenance": "1925年期刊评论的后出数字重刊；原刊物纸本流转未在本条建立",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:buso-doktor-faust-dresden-1925-early-response",
+        "claim": "保存一篇对1925年德累斯顿首演的混合评价，包括作者身份、剧本文本、管弦与合唱写作、演出长度和Jarnach终场",
+        "strength": "direct",
+        "evidenceNote": "评论直接提供同时代评价的分项判断；当前网页是数字重刊，因此它不能替代原期刊物质状态，也不能把一位评论家的意见扩写为全体观众的意见。"
+      }
+    ],
+    "sourceCriticism": "这是1925年评论的后出数字重刊，不是原期刊完整扫描或首演现场记录；它适合锁定一条同时代批评链，不能单独重建所有观众、剧院和完成者的接受史。"
+  },
+  {
+    "id": "source:mozart-requiem-suessmayr-letter-1800",
+    "sourceType": "letter",
+    "title": "苏斯迈尔致 Breitkopf & Härtel 书信（1800年2月8日）",
+    "originalTitle": "Franz Xaver Süßmayr an Breitkopf & Härtel, 8. Februar 1800",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Franz Xaver Süßmayr",
+        "role": "sender and author"
+      }
+    ],
+    "date": "1800年2月8日",
+    "dateStart": 1800,
+    "dateEnd": 1800,
+    "dating": {
+      "certainty": "certain",
+      "note": "DME书信页面给出苏斯迈尔致出版社的完整日期，并标明原件馆藏号Mus.Slg.Härtel 336。"
+    },
+    "repository": "Staatsbibliothek zu Berlin, Musikabteilung",
+    "repositoryPlace": "Berlin",
+    "shelfmark": "Mus.Slg.Härtel 336",
+    "collection": "Breitkopf & Härtel correspondence",
+    "physicalDescription": "书信原件的数字转录与数字访问页",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": "https://dme.mozarteum.at/DME/briefe/letter.php?mid=2923",
+    "digitalUrl": "https://dme.mozarteum.at/DME/objs/raradocs/transcr/pdf/ID_2923.pdf",
+    "iiifManifest": null,
+    "persistentId": "DME letter mid=2923",
+    "rights": {
+      "status": "unknown",
+      "statement": "DME提供书信转录与PDF访问入口；本次未确认原件图像及数字转录的再利用许可。",
+      "url": null
+    },
+    "provenance": "柏林国家图书馆Härtel收藏中的书信；更早流转未在本条展开",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:mozart-requiem-1800-completion-attribution",
+        "claim": "记录出版社在1800年询问苏斯迈尔关于《安魂曲》完成部分的背景，并保存苏斯迈尔的回应",
+        "strength": "direct",
+        "evidenceNote": "书信直接承载完成者与出版社之间的通信；它不能单独证明1800年版面如何公开呈现这些责任，也不能替代莫扎特亲笔材料。"
+      }
+    ],
+    "sourceCriticism": "这是有馆藏号的书信数字转录与PDF入口，不是出版社完整档案或首版总谱；它直接支持通信和责任说明，但书信的公开传播时间与版面署名仍需另看印刷物。"
+  },
+  {
+    "id": "source:mozart-requiem-printed-score-1800",
+    "sourceType": "printed_score",
+    "title": "Breitkopf & Härtel《安魂曲》全谱首版记录（1800/1801）",
+    "originalTitle": "Wolfgang Amadeus Mozart, Requiem in D minor, Leipzig: Breitkopf & Härtel, [1800 or 1801]",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Wolfgang Amadeus Mozart",
+        "role": "named composer"
+      },
+      {
+        "personId": null,
+        "name": "Breitkopf & Härtel",
+        "role": "publisher"
+      }
+    ],
+    "date": "1800或1801年",
+    "dateStart": 1800,
+    "dateEnd": 1801,
+    "dating": {
+      "certainty": "range",
+      "note": "Morgan馆藏记录将该件定为Leipzig Breitkopf & Härtel的1800或1801年全谱首版记录，页面同时标为first edition。"
+    },
+    "repository": "The Morgan Library & Museum",
+    "repositoryPlace": "New York",
+    "shelfmark": null,
+    "collection": "Music manuscripts and printed music",
+    "physicalDescription": "《安魂曲》全谱印刷本的馆藏记录，保存题名、出版者和版次信息",
+    "extent": "full score",
+    "language": ["de"],
+    "catalogueUrl": "https://www.themorgan.org/music-manuscripts-and-printed-music/113843",
+    "digitalUrl": null,
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "Morgan提供馆藏记录与对象访问入口；本次未确认该印刷物图像的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "Morgan馆藏印刷谱记录；该对象进入Morgan之前的流转未在本条建立",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:mozart-requiem-1800-completion-attribution",
+        "claim": "确认1800/1801年前后《安魂曲》全谱首版以Breitkopf & Härtel印刷物进入公共出版链路",
+        "strength": "strong",
+        "evidenceNote": "馆藏记录直接支持首版、出版者、题名和日期范围；它不能单独重建苏斯迈尔每一处续写，也不能证明首版读者如何理解作者责任。"
+      }
+    ],
+    "sourceCriticism": "这是全谱印刷物的现代馆藏记录，不是出版商校样、编辑通信全集或莫扎特原稿；它能锁定公共版状态，不能把印刷题名自动等同于完整作者署名史。"
+  },
+  {
+    "id": "source:bach-kunst-fuge-marpurg-1752",
+    "sourceType": "other",
+    "title": "Marpurg 1752年《赋格的艺术》版序复制",
+    "originalTitle": "Die Kunst der Fuge — Vorbericht von Friedrich Wilhelm Marpurg（historical text in digital reproduction）",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Friedrich Wilhelm Marpurg",
+        "role": "preface author and critic"
+      }
+    ],
+    "date": "1752年文本；当前数字复制的出版日期未详",
+    "dateStart": 1752,
+    "dateEnd": 1752,
+    "dating": {
+      "certainty": "range",
+      "note": "数字PDF保存并转录Marpurg为1752年版写的前言；当前访问页没有把数字文件的现代出版日期与历史文本日期分开标明。"
+    },
+    "repository": "Classical Sheet Music digital collection",
+    "repositoryPlace": null,
+    "shelfmark": null,
+    "collection": "Bach supplement preface and contents",
+    "physicalDescription": "现代数字PDF中保存的历史印刷序言与目录复制",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": null,
+    "digitalUrl": "https://www.classical-sheet-music.eu/collection/pdf/Bach/pd/BG%20Supplementband%20Vorwort%20und%20Inhalt.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "当前数字PDF提供阅读入口；本次未确认历史印刷物与现代PDF的复制、转录和再利用许可。",
+      "url": null
+    },
+    "provenance": "后出的数字复制与转录；1752年印刷物的原始馆藏流转未在本条建立",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:bach-kunst-fuge-1752-public-repositioning",
+        "claim": "保存Marpurg 1752年版序关于《赋格的艺术》所处音乐趣味与模仿价值的同时代论述",
+        "strength": "strong",
+        "evidenceNote": "数字复制承载历史序言的文本层；它能支持Marpurg的论述，不提供原版销售量或全体读者反应。"
+      }
+    ],
+    "sourceCriticism": "这是历史版序的现代数字复制，不是1752年原印本的完整馆藏记录；文本层可用于接受史，物质版本、发行规模和读者范围仍不能由当前PDF单独确定。"
+  },
+  {
+    "id": "source:bach-kunst-fuge-mattheson-1752",
+    "sourceType": "other",
+    "title": "Mattheson 1752年关于《赋格的艺术》的评论页",
+    "originalTitle": "Historische Druckseite zu Matthesons Besprechung der Kunst der Fuge（title of original issue not resolved）",
+    "creator": [
+      {
+        "personId": null,
+        "name": "Johann Mattheson",
+        "role": "critic"
+      }
+    ],
+    "date": "1752年；数字复制所据原刊题名待核",
+    "dateStart": 1752,
+    "dateEnd": 1752,
+    "dating": {
+      "certainty": "approximate",
+      "note": "当前数字复制以1752年评论页为内容范围，但没有在访问页上完整解析原刊题名、版次与馆藏号。"
+    },
+    "repository": "Musicologie.org digital reproduction",
+    "repositoryPlace": null,
+    "shelfmark": null,
+    "collection": null,
+    "physicalDescription": "历史批评页的扫描/转录数字复制，保留Mattheson对作品的评价语句",
+    "extent": null,
+    "language": ["de"],
+    "catalogueUrl": null,
+    "digitalUrl": "https://www.musicologie.org/Biographies/m/m/1902102306.pdf",
+    "iiifManifest": null,
+    "persistentId": null,
+    "rights": {
+      "status": "unknown",
+      "statement": "当前页面提供历史批评页的数字访问入口；本次未确认原刊和数字复制的复制与再利用许可。",
+      "url": null
+    },
+    "provenance": "后出的历史印刷页数字复制；原刊物质流转与完整书目身份待进一步核对",
+    "evidenceFor": [
+      {
+        "entityType": "reception",
+        "entityId": "reception:bach-kunst-fuge-1752-public-repositioning",
+        "claim": "保存Mattheson 1752年对《赋格的艺术》的正面批评用语，为早期公共定位提供另一条同时代文本",
+        "strength": "direct",
+        "evidenceNote": "数字复制直接承载评论语句，但其原刊题名和完整版次尚未由当前访问页独立核实；因此不把该语句外推为普遍接受。"
+      }
+    ],
+    "sourceCriticism": "这是历史评论页的后出扫描/转录入口，原刊书目信息仍不完整；它适合保存一条批评措辞，不足以单独证明出版规模、读者数量或长期经典化。"
+  }
+]

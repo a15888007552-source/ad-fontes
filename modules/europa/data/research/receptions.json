@@ -1,0 +1,447 @@
+[
+  {
+    "id": "reception:debussy-pelleas-paris-1902-controversy",
+    "workId": "work:debussy-pelleas",
+    "title": "《佩利亚斯与梅丽桑德》1902年首演后的批评冲突",
+    "receptionType": "controversy",
+    "receptionScope": "immediate",
+    "date": "1902年4月—5月",
+    "dateStart": 1902,
+    "dateEnd": 1902,
+    "dating": {
+      "certainty": "range",
+      "note": "PMF索引覆盖1902年4月至6月的相关报刊通知；本条把Bellaigue评论的1902年5月14日作为可直接阅读的同代批评节点。"
+    },
+    "place": "Paris",
+    "actors": [
+      {
+        "personId": null,
+        "name": "巴黎报刊评论家群体",
+        "role": "critic"
+      },
+      {
+        "personId": null,
+        "name": "Opéra-Comique首演观众",
+        "role": "audience_group"
+      },
+      {
+        "personId": null,
+        "name": "Maurice Maeterlinck",
+        "role": "other"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Opéra-Comique",
+        "type": "theatre",
+        "role": "public stage"
+      },
+      {
+        "name": "Revue des Deux Mondes",
+        "type": "journal",
+        "role": "critical publication"
+      },
+      {
+        "name": "巴黎报刊",
+        "type": "newspaper",
+        "role": "circulation of notices"
+      }
+    ],
+    "targetRefs": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:debussy-pelleas-paris-1902-04-30",
+        "relation": "critical_response_to"
+      },
+      {
+        "entityType": "work",
+        "entityId": "work:debussy-pelleas",
+        "relation": "reframes"
+      }
+    ],
+    "documentedResponse": "现有材料可以确认两件事，而不能把它们压成一场“观众暴动”：PMF的报刊目录列出1902年4月至6月多种相关报道；Bellaigue在5月14日《Revue des Deux Mondes》的评论中逐幕否定前四幕，只承认终场具有感染力，并以缺乏旋律、节奏和戏剧推进为由质疑作品。",
+    "interpretiveShift": "因此，首演后的对象不是一个已经被“成功”或“失败”定型的作品，而是被评论家拿来争论法语戏剧、旋律组织和现代音乐合法性的场域。这里的“分裂”只指材料中可见的评论立场差异，不推断所有观众的统一反应。",
+    "historicalContext": "Opéra-Comique把梅特林克的象征主义戏剧交给固定剧院、歌者、布景和日报评论机制；作品的可听形态与报刊的可读判断同时进入公共空间。PMF的索引证明反应有持续的报刊记录，却不自动提供每一篇文章的立场。",
+    "receptionSignificance": "这一节点把“首演”从成功史或轰动史中拆出来：它让研究者同时看见一场具体演出、一个负面评论文本与一个多报刊记录网络，并把法国语言、戏剧时间和现代音乐合法性的争论保留为待检验关系。",
+    "interpretiveCertainty": "partial",
+    "interpretiveNote": "Bellaigue的评论是同时代文本；PMF是后出的检索数据库，只能证明所列notice存在；“批评冲突”是基于两种材料的研究者归纳，不等于完整民意统计。",
+    "sourceRefs": [
+      "source:debussy-pelleas-review-bellaigue-1902",
+      "source:debussy-pelleas-press-index-1902"
+    ],
+    "bibliographyRefs": []
+  },
+  {
+    "id": "reception:debussy-pelleas-1919-french-canonization",
+    "workId": "work:debussy-pelleas",
+    "title": "1919年《佩利亚斯与梅丽桑德》的法国音乐史重写",
+    "receptionType": "canonization",
+    "receptionScope": "retrospective",
+    "date": "1919年",
+    "dateStart": 1919,
+    "dateEnd": 1919,
+    "dating": {
+      "certainty": "certain",
+      "note": "Romain Rolland的文本属于1919年的《Musiciens d’aujourd’hui》，时间与回溯性写作位置均可由数字转录页确认。"
+    },
+    "place": "Paris",
+    "actors": [
+      {
+        "personId": null,
+        "name": "Romain Rolland",
+        "role": "scholar"
+      }
+    ],
+    "institutions": [],
+    "targetRefs": [
+      {
+        "entityType": "work",
+        "entityId": "work:debussy-pelleas",
+        "relation": "canonizes"
+      }
+    ],
+    "documentedResponse": "Romain Rolland在1919年《当代音乐家》的专文中，把《佩利亚斯与梅丽桑德》写成法国音乐对瓦格纳戏剧模式的回应，并将其首演置于法国音乐改革的历史叙述中。",
+    "interpretiveShift": "这不是1902年现场反应的补录，而是一次回溯性重排：作品从仍在争辩的歌剧，转成可以代表法国现代音乐方向的历史节点。经典化在这里表现为叙述位置的抬升，而非一个可量化的观众共识。",
+    "historicalContext": "1919年的文本已隔首演十七年，作者通过音乐史章节、民族风格和戏剧改革的连接重新组织作品位置；这种书写把首演争论转译为法国音乐史的连续线索。",
+    "receptionSignificance": "把该节点单列，可以防止把后来的法国现代主义经典地位倒灌回1902年；它显示接受史不仅发生在剧院，也发生在谁有权编排音乐史的出版文本中。",
+    "interpretiveCertainty": "strong",
+    "interpretiveNote": "Rolland的1919年文本直接提供回溯性历史框架；“经典化”是研究者对这种叙述抬升的分析命名，不声称1919年已经消除了所有争议。",
+    "sourceRefs": [
+      "source:debussy-pelleas-rolland-1919"
+    ],
+    "bibliographyRefs": []
+  },
+  {
+    "id": "reception:wagner-ring-bayreuth-1876-contemporary-report",
+    "workId": "work:wagner-ring-cycle",
+    "title": "1876年拜罗伊特《指环》首演的报纸现场框架",
+    "receptionType": "contemporary_criticism",
+    "receptionScope": "immediate",
+    "date": "1876年8月11日",
+    "dateStart": 1876,
+    "dateEnd": 1876,
+    "dating": {
+      "certainty": "certain",
+      "note": "《The Guardian》报道日期为1876年8月11日；当前访问页是Richard Wagner Verband提供的编辑节选。"
+    },
+    "place": "Bayreuth",
+    "actors": [
+      {
+        "personId": null,
+        "name": "The Guardian记者",
+        "role": "critic"
+      },
+      {
+        "personId": null,
+        "name": "拜罗伊特节庆观众",
+        "role": "audience_group"
+      },
+      {
+        "personId": null,
+        "name": "Richard Wagner的节庆组织",
+        "role": "institution"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "The Guardian",
+        "type": "newspaper",
+        "role": "contemporary report"
+      },
+      {
+        "name": "Bayreuther Festspielhaus",
+        "type": "theatre",
+        "role": "purpose-built festival theatre"
+      },
+      {
+        "name": "Bayreuther Festspiele",
+        "type": "festival",
+        "role": "cycle institution"
+      }
+    ],
+    "targetRefs": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:wagner-ring-bayreuth-1876",
+        "relation": "critical_response_to"
+      },
+      {
+        "entityType": "work",
+        "entityId": "work:wagner-ring-cycle",
+        "relation": "institutionalizes"
+      }
+    ],
+    "documentedResponse": "1876年8月11日《The Guardian》报道（今由Richard Wagner Verband转载的编辑节选）把拜罗伊特写成带有商标、国民剧院想象与“朝圣”色彩的制度工程；报道还注意到隐藏乐池、熄灯观众席，以及观众在终场以“欣喜”回应。",
+    "interpretiveShift": "这条材料证明的是一篇报纸报道如何组织现场意义，而不是所有观众的统计意见。《指环》的第一次完整公共实现被报道为剧院建筑、城市品牌和观演纪律的联合事件；“成功”必须限定在这一报道的视角内。",
+    "historicalContext": "拜罗伊特节庆剧院把四晚周期、专门建筑、隐藏乐池和王室及私人筹资连接起来，新闻记者进入的不是普通剧院的单场剧目，而是瓦格纳自我设计的节庆制度。",
+    "receptionSignificance": "这一节点把报纸现场叙述与后来的“首演神话”拆开：它保留一篇当时报道如何赋予建筑、观演纪律和国民剧院想象以意义，同时拒绝把编辑节选扩大成全欧洲的共同评价。",
+    "interpretiveCertainty": "partial",
+    "interpretiveNote": "报道日期与主要叙事来自当时新闻文本的后出编辑节选；“制度化”是对建筑、节庆和报刊框架关系的研究者归纳，不等于完整观众调查。",
+    "sourceRefs": [
+      "source:wagner-ring-guardian-report-1876"
+    ],
+    "bibliographyRefs": []
+  },
+  {
+    "id": "reception:buso-doktor-faust-dresden-1925-early-response",
+    "workId": "work:buso-doktor-faust",
+    "title": "《浮士德博士》1925年德累斯顿首演的混合评价",
+    "receptionType": "contemporary_criticism",
+    "receptionScope": "immediate",
+    "date": "1925年5月—7月",
+    "dateStart": 1925,
+    "dateEnd": 1925,
+    "dating": {
+      "certainty": "range",
+      "note": "剧场档案锁定1925年5月21日首演，Neue Musik-Zeitung评论发表于1925年7月；本条保留两种材料的时间层。"
+    },
+    "place": "Dresden",
+    "actors": [
+      {
+        "personId": null,
+        "name": "H. Platzbecker",
+        "role": "critic"
+      },
+      {
+        "personId": null,
+        "name": "Fritz Busch与德累斯顿首演班底",
+        "role": "performer"
+      },
+      {
+        "personId": null,
+        "name": "德累斯顿首演观众",
+        "role": "audience_group"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Neue Musik-Zeitung",
+        "type": "journal",
+        "role": "contemporary review"
+      },
+      {
+        "name": "Sächsische Staatstheater Dresden",
+        "type": "theatre",
+        "role": "premiere institution"
+      }
+    ],
+    "targetRefs": [
+      {
+        "entityType": "performance",
+        "entityId": "performance:buso-doktor-faust-dresden-1925-05-21",
+        "relation": "critical_response_to"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:buso-doktor-faust-jarnach-1925",
+        "relation": "reassesses"
+      },
+      {
+        "entityType": "work",
+        "entityId": "work:buso-doktor-faust",
+        "relation": "reframes"
+      }
+    ],
+    "documentedResponse": "Neue Musik-Zeitung在1925年7月刊载的H. Platzbecker评论（今为nmz数字重刊）指出，公众更习惯把布索尼视为钢琴家、教师和理论家，而非作曲家；评论认为剧本文本松散，音乐局部成功，管弦与合唱段落有力量，但演出过长使观众疲惫，雅纳赫补写的终场仍被视为对才华的强烈检验。",
+    "interpretiveShift": "早期接受因此不是“首演即经典”，而是围绕作者身份、补写责任、长时段剧场经验与作品可听性的混合判断。评论的赞许和保留同时落在同一场演出上，Jarnach结尾既使作品得以上演，也把完成问题暴露在批评面前。",
+    "historicalContext": "1925年的德累斯顿首演发生在布索尼去世后，雅纳赫、弗里茨·布施、剧院与歌者共同把未完成总谱变成公共事件；nmz所载文字是后出的数字重刊，不能冒充原刊的完整物质档案。",
+    "receptionSignificance": "该节点把《浮士德博士》的早期声誉固定在一条可核验的混合证据上：首演日期来自剧场档案，评价来自当时评论的数字重刊。它既不把批评中的肯定扩写成共识，也不以长演时长替代作品史解释。",
+    "interpretiveCertainty": "strong",
+    "interpretiveNote": "首演日期与机构来自剧场档案，评价来自1925年评论的数字重刊；“混合评价”是对同一评论中赞许与保留并存的归纳，不是观众总体统计。",
+    "sourceRefs": [
+      "source:buso-doktor-faust-review-1925",
+      "source:buso-doktor-faust-premiere-1925"
+    ],
+    "bibliographyRefs": []
+  },
+  {
+    "id": "reception:buso-doktor-faust-beaumont-bologna-1985-reassessment",
+    "workId": "work:buso-doktor-faust",
+    "title": "Beaumont完成版在博洛尼亚的1985年公共重估",
+    "receptionType": "version_reassessment",
+    "receptionScope": "immediate",
+    "date": "1985年4月2日",
+    "dateStart": 1985,
+    "dateEnd": 1985,
+    "dating": {
+      "certainty": "certain",
+      "note": "Teatro Comunale di Bologna官方档案锁定1985年4月2日开演，Fondazione Ugo e Olga Levi的节目册记录同一歌剧季的Beaumont完成署名。"
+    },
+    "place": "Bologna",
+    "actors": [
+      {
+        "personId": null,
+        "name": "Anthony Beaumont",
+        "role": "editor"
+      },
+      {
+        "personId": null,
+        "name": "Teatro Comunale di Bologna",
+        "role": "institution"
+      },
+      {
+        "personId": null,
+        "name": "Zoltán Peskó与博洛尼亚演出班底",
+        "role": "performer"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Teatro Comunale di Bologna",
+        "type": "theatre",
+        "role": "public realization"
+      },
+      {
+        "name": "Fondazione Ugo e Olga Levi",
+        "type": "other",
+        "role": "programme archive"
+      }
+    ],
+    "targetRefs": [
+      {
+        "entityType": "version",
+        "entityId": "version:buso-doktor-faust-beaumont-1984",
+        "relation": "public_realization_of"
+      },
+      {
+        "entityType": "performance",
+        "entityId": "performance:buso-doktor-faust-bologna-1985-04-02",
+        "relation": "institutionalizes"
+      },
+      {
+        "entityType": "work",
+        "entityId": "work:buso-doktor-faust",
+        "relation": "reframes"
+      }
+    ],
+    "documentedResponse": "Fondazione Ugo e Olga Levi的1984/1985节目册目录把《浮士德博士》标为Busoni作品、Anthony Beaumont完成；Teatro Comunale di Bologna官方档案又列出1985年4月2日及后续场次，并以Beaumont完成标记这套制作。",
+    "interpretiveShift": "Beaumont因而不是只存在于校勘室的替代结尾，而是在博洛尼亚获得了可定位的公共实现。这个节点证明的是一种版本选择进入剧院制度，不证明它已经取代Jarnach、赢得一致评价，或被所有后续录音采用。",
+    "historicalContext": "1985年的博洛尼亚剧院把完成问题重新交给节目册、档案编年、指挥和舞台制作；版本身份通过机构署名和演出实践变得可见，而不是只由作者遗稿的年代决定。",
+    "receptionSignificance": "把RECEPTION目标同时指向VERSION和PERFORMANCE，可以区分两个问题：Beaumont作为文本状态如何被公开命名，以及这套文本何时在具体剧场获得可核验的听觉位置。",
+    "interpretiveCertainty": "strong",
+    "interpretiveNote": "节目册与剧院档案直接支持Beaumont署名和1985年公共实现；“重估”只描述版本选择获得制度可见性，不声称版本优劣或后续普遍替代关系。",
+    "sourceRefs": [
+      "source:buso-doktor-faust-beaumont-programme-1985",
+      "source:buso-doktor-faust-bologna-archive-1985"
+    ],
+    "bibliographyRefs": []
+  },
+  {
+    "id": "reception:mozart-requiem-1800-completion-attribution",
+    "workId": "work:mozart-requiem",
+    "title": "《安魂曲》1800年前后完成责任与公开版状态的重估",
+    "receptionType": "version_reassessment",
+    "receptionScope": "short_term",
+    "date": "1800年1月—1801年",
+    "dateStart": 1800,
+    "dateEnd": 1801,
+    "dating": {
+      "certainty": "range",
+      "note": "苏斯迈尔书信日期为1800年2月8日，Morgan馆藏记录将Breitkopf & Härtel全谱首版定为1800或1801年；本条保留通信与印刷的时间范围。"
+    },
+    "place": null,
+    "actors": [
+      {
+        "personId": null,
+        "name": "Franz Xaver Süßmayr",
+        "role": "editor"
+      },
+      {
+        "personId": null,
+        "name": "Breitkopf & Härtel",
+        "role": "publisher"
+      },
+      {
+        "personId": null,
+        "name": "Wolfgang Amadeus Mozart的遗产署名",
+        "role": "other"
+      }
+    ],
+    "institutions": [
+      {
+        "name": "Breitkopf & Härtel",
+        "type": "publisher",
+        "role": "public edition and attribution inquiry"
+      }
+    ],
+    "targetRefs": [
+      {
+        "entityType": "version",
+        "entityId": "version:mozart-requiem-suessmayr-1792",
+        "relation": "public_completion_state"
+      },
+      {
+        "entityType": "version",
+        "entityId": "version:mozart-requiem-authorial-1791",
+        "relation": "reassesses_authorship"
+      },
+      {
+        "entityType": "work",
+        "entityId": "work:mozart-requiem",
+        "relation": "reframes"
+      }
+    ],
+    "documentedResponse": "苏斯迈尔1800年2月8日致Breitkopf & Härtel的信回应出版社关于其在《安魂曲》中所作部分的询问；Morgan的馆藏记录同时保存了Breitkopf & Härtel于1800/1801年出版的《安魂曲》全谱首版记录。两条材料把续写、署名与公开印刷放到同一条证据链上。",
+    "interpretiveShift": "这不是把“莫扎特写作、苏斯迈尔续成”简化成一个作者争夺，而是显示作品进入商业出版后，完成者的责任需要通过书信、版面和署名策略重新谈判。后来的作者归属争议，部分由这一公共版本状态持续供给。",
+    "historicalContext": "1791年的未竟委约在死后经过遗产处理、完成者介入和出版社询问，才形成可销售的完整总谱；出版商的提问表明版本不是私人遗稿的透明转印，而是有编辑和商业条件的公共对象。",
+    "receptionSignificance": "这一节点把《安魂曲》的接受史放在VERSION层，而不是死亡传记的神话里：研究者可以分别追踪作者材料、苏斯迈尔完成和1800年印刷如何相互重叠，却不必把任何一层冒充全部作品。",
+    "interpretiveCertainty": "strong",
+    "interpretiveNote": "书信直接证明出版社与完成者之间的责任询问，馆藏记录直接证明全谱首版；“重估”是对两条材料如何共同制造版本问题的研究者解释，不等于首版已经公开解决作者归属。",
+    "sourceRefs": [
+      "source:mozart-requiem-suessmayr-letter-1800",
+      "source:mozart-requiem-printed-score-1800"
+    ],
+    "bibliographyRefs": []
+  },
+  {
+    "id": "reception:bach-kunst-fuge-1752-public-repositioning",
+    "workId": "work:bach-kunst-der-fuge",
+    "title": "1752年《赋格的艺术》的公共再定位",
+    "receptionType": "contemporary_criticism",
+    "receptionScope": "immediate",
+    "date": "1752年",
+    "dateStart": 1752,
+    "dateEnd": 1752,
+    "dating": {
+      "certainty": "certain",
+      "note": "Marpurg版序与Mattheson评论均以1752年文本层进入当前数字复制；原印本的完整物质版本仍需分别核对。"
+    },
+    "place": null,
+    "actors": [
+      {
+        "personId": null,
+        "name": "Friedrich Wilhelm Marpurg",
+        "role": "critic"
+      },
+      {
+        "personId": null,
+        "name": "Johann Mattheson",
+        "role": "critic"
+      }
+    ],
+    "institutions": [],
+    "targetRefs": [
+      {
+        "entityType": "version",
+        "entityId": "version:bach-kunst-der-fuge-printed-1751",
+        "relation": "reassesses"
+      },
+      {
+        "entityType": "work",
+        "entityId": "work:bach-kunst-der-fuge",
+        "relation": "reframes"
+      }
+    ],
+    "documentedResponse": "1752年围绕《赋格的艺术》的两种同时代文本留下了不同的公共定位：Marpurg版序把赋格写作置于当时趣味变化中，并号召产生模仿者；Mattheson同年评语则称其为“实用而辉煌”的作品。现存数字复制支持两条文本的存在，但不能由它们推出销售量或普遍接受。",
+    "interpretiveShift": "这不是“1752年已经成为经典”，而是一次公开的再定位：作品一面被防守为可学习、可模仿的对位范本，一面仍需要在变化中的音乐趣味中说明其合理性。褒奖与辩护并存，正是这个节点的历史内容。",
+    "historicalContext": "作品的印刷传播把复杂对位从私人谱稿带入书商、评论和读者的判断；Marpurg和Mattheson都不等于全体听众，但他们让作品在当时的公共语言中获得可见位置。",
+    "receptionSignificance": "这一节点让《赋格的艺术》的早期接受停留在具体印刷文本和批评语句上，而不是把十九世纪复兴或今日经典地位倒推回1752年。",
+    "interpretiveCertainty": "strong",
+    "interpretiveNote": "两条数字复制分别承载Marpurg版序与Mattheson评论；“公共再定位”是对同时代文本如何为作品辩护和命名的研究者归纳，不是销售史或全体读者统计。",
+    "sourceRefs": [
+      "source:bach-kunst-fuge-marpurg-1752",
+      "source:bach-kunst-fuge-mattheson-1752"
+    ],
+    "bibliographyRefs": []
+  }
+]
