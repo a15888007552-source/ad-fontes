@@ -146,6 +146,10 @@ const RESEARCH_STATUS_LABEL=Object.freeze({complete:"完整",incomplete:"未完�
 const VERSION_TYPE_LABEL=Object.freeze({authorial_state:"作者状态",completion:"补写完成",publication_state:"出版状态"});
 const VERSION_STATUS_LABEL=Object.freeze({extant:"存世",fragmentary:"残缺"});
 const VERSION_ROLE_LABEL=Object.freeze({composer:"作曲者", "composer and pre-publication reviser":"作曲者与出版前修订者",completer:"完成者", "posthumous publishing and editorial agents":"身后出版与编辑责任者"});
+const FONTES_SOURCE_TYPE_LABEL=Object.freeze({autograph_manuscript:"亲笔手稿",printed_score:"印刷谱本",libretto:"剧本文本",other:"其他史料"});
+const FONTES_CREATOR_ROLE_LABEL=Object.freeze({author:"作者",composer:"作曲者",publisher:"出版者", "named author":"署名作者", "composer and autograph contributor":"作曲者、亲笔材料贡献者", "completer and copyist":"完成者、抄写者"});
+const FONTES_DATING_CERTAINTY_LABEL=Object.freeze({certain:"确定",approximate:"约定",range:"区间"});
+const FONTES_LANGUAGE_LABEL=Object.freeze({de:"德语",la:"拉丁语",en:"英语",it:"意大利语",fr:"法语"});
 let researchDataReady=false;
 let researchWorks=[];
 let researchData=Object.create(null);
@@ -167,6 +171,93 @@ function researchVersionsForWork(workId){
     const av=Number.isFinite(ad)?ad:Number.POSITIVE_INFINITY,bv=Number.isFinite(bd)?bd:Number.POSITIVE_INFINITY;
     return av-bv||a.index-b.index;
   }).map(({version})=>version);
+}
+function researchSourcesForWork(work){
+  const sources=Array.isArray(researchData.sources)?researchData.sources:[];
+  const bySourceId=new Map(sources.filter(source=>source&&source.id).map(source=>[source.id,source]));
+  const refs=Array.isArray(work?.sourceRefs)?work.sourceRefs:[];
+  return refs.map(sourceRef=>{
+    const source=bySourceId.get(sourceRef);
+    if(!source)console.warn("[AD FONTES] Unresolved WORK→SOURCE reference",{workId:work?.id,sourceRef});
+    return source||null;
+  }).filter(Boolean);
+}
+function researchSourceTypeLabel(type){return FONTES_SOURCE_TYPE_LABEL[String(type||"")]||"未定类型"}
+function researchCreatorRoleLabel(role){return FONTES_CREATOR_ROLE_LABEL[String(role||"")]||"责任未定"}
+function researchDatingLabel(source){
+  const dating=source?.dating||{};
+  const certainty=FONTES_DATING_CERTAINTY_LABEL[String(dating.certainty||"")]||"未定";
+  const note=String(dating.note??"").trim();
+  return note?`${certainty} · ${researchEscape(note)}`:certainty;
+}
+function researchLanguageLabel(language){
+  const codes=(Array.isArray(language)?language:[language]).map(code=>String(code??"").trim()).filter(Boolean);
+  return codes.length?researchEscape(codes.map(code=>FONTES_LANGUAGE_LABEL[code]||code).join("、")):"—";
+}
+function researchProvenanceLabel(provenance){
+  return provenance==="not yet established"?"尚未建立":researchField(provenance);
+}
+function researchUrl(value){
+  const text=String(value??"").trim();
+  if(!text)return "";
+  try{
+    const url=new URL(text,location.href);
+    return /^https?:$/.test(url.protocol)?researchEscape(text):"";
+  }catch(error){return ""}
+}
+function renderFontesCreator(items){
+  const rows=(Array.isArray(items)?items:[]).map(item=>{
+    const person=item?.personId?byId[item.personId]:null;
+    const name=person?researchField(person.n):researchField(item?.name||item?.personId);
+    return `<li><span>${name}</span><small>${researchCreatorRoleLabel(item?.role)}</small></li>`;
+  }).join("");
+  return rows?`<ul class="work-archive-fontes-creators">${rows}</ul>`:"—";
+}
+function renderFontesLinks(source){
+  const catalogue=String(source?.catalogueUrl??"").trim();
+  const digital=String(source?.digitalUrl??"").trim();
+  const manifest=String(source?.iiifManifest??"").trim();
+  const links=[];
+  const pushLink=(url,label)=>{const safeUrl=researchUrl(url);if(safeUrl)links.push(`<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${label}</a>`)};
+  if(catalogue&&digital&&catalogue===digital)pushLink(catalogue,"馆藏与数字入口");
+  else{
+    if(catalogue)pushLink(catalogue,"馆藏目录");
+    if(digital)pushLink(digital,"数字替代物");
+  }
+  if(manifest)pushLink(manifest,"IIIF Manifest");
+  if(!links.length&&!digital)return "";
+  return `<div class="work-archive-fontes-links">${links.join("")}${digital?`<p class="work-archive-fontes-digital-note">数字入口用于访问当前可核验的替代物或机构页面，不等于原件本身。</p>`:""}</div>`;
+}
+function renderFontesEvidence(source,work){
+  const evidence=(Array.isArray(source?.evidenceFor)?source.evidenceFor:[]).filter(item=>item?.entityType==="work"&&item?.entityId===work.id);
+  return evidence.length?`<section class="work-archive-fontes-evidence"><h6>为何进入此 WORK</h6><ul>${evidence.map(item=>`<li>${researchField(item?.evidenceNote)}</li>`).join("")}</ul></section>`:"";
+}
+function renderFontesField(label,value,wide=false){
+  return `<div class="work-archive-fontes-field${wide?" work-archive-fontes-field-wide":""}"><dt>${label}</dt><dd>${value}</dd></div>`;
+}
+function renderFontesEntry(source,index,work){
+  return `<article class="work-archive-fontes-entry">
+    <header class="work-archive-fontes-entry-head"><span class="work-archive-fontes-number">FONS ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-fontes-title">${researchField(source.title)}</h5><div class="work-archive-fontes-original">${researchField(source.originalTitle)}</div></header>
+    <dl class="work-archive-fontes-fields">
+      ${renderFontesField("材料类型",researchSourceTypeLabel(source.sourceType))}
+      ${renderFontesField("断代",researchField(source.date))}
+      ${renderFontesField("断代依据",researchDatingLabel(source))}
+      ${renderFontesField("责任者",renderFontesCreator(source.creator))}
+      ${renderFontesField("收藏机构",researchField(source.repository))}
+      ${renderFontesField("地点",researchField(source.repositoryPlace))}
+      ${renderFontesField("馆藏号",researchField(source.shelfmark))}
+      ${renderFontesField("所属馆藏",researchField(source.collection))}
+      ${renderFontesField("材料形态",researchField(source.physicalDescription),true)}
+      ${renderFontesField("页叶 / 数量",researchField(source.extent))}
+      ${renderFontesField("语言",researchLanguageLabel(source.language))}
+      ${renderFontesField("持久标识",researchField(source.persistentId))}
+      ${renderFontesField("递藏 / 来源",researchProvenanceLabel(source.provenance),true)}
+      ${renderFontesField("权利说明",researchField(source.rights?.statement),true)}
+    </dl>
+    ${renderFontesEvidence(source,work)}
+    ${renderFontesLinks(source)}
+    <section class="work-archive-fontes-criticism"><h6>史料批判</h6><p>${researchField(source.sourceCriticism)}</p></section>
+  </article>`;
 }
 function renderVersionResponsibility(items,unlinked=false){
   const rows=(Array.isArray(items)?items:[]).map(item=>{
@@ -196,7 +287,9 @@ function renderWorkArchiveIndex(work){
   return `<div class="work-archive-index">${items.map(([label,archiveLabel,key])=>{
     const count=researchRefCount(work,key);
     const body=`<span>${label}</span><small>${archiveLabel}</small><b>${researchIndexValue(count)}</b>`;
-    return key==="versionRefs"&&count>0?`<button type="button" class="work-archive-index-item work-archive-index-button" data-version-open="${researchField(work.id,"")}" aria-label="打开版本谱系">${body}</button>`:`<div class="work-archive-index-item">${body}</div>`;
+    if(key==="versionRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-version-open="${researchField(work.id,"")}" aria-label="打开版本谱系">${body}</button>`;
+    if(key==="sourceRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-fontes-open="${researchField(work.id,"")}" aria-label="打开原始史料">${body}</button>`;
+    return `<div class="work-archive-index-item">${body}</div>`;
   }).join("")}</div>`;
 }
 function renderVersionLineageEntry(version,index){
@@ -244,11 +337,41 @@ function openWorkArchive(workId,opts={}){
   $("#work-archive-back").onclick=()=>openM(person.i,source,{restoreScroll:personScroll});
   $("#dx").onclick=()=>dg.close();
   $("#dwrap").querySelectorAll("[data-version-open]").forEach(b=>b.onclick=()=>openVersionLineage(b.dataset.versionOpen));
+  $("#dwrap").querySelectorAll("[data-fontes-open]").forEach(b=>b.onclick=()=>openFontes(b.dataset.fontesOpen));
   requestAnimationFrame(()=>{
     if(restoreScroll!=null)wrap.scrollTop=restoreScroll;
-    const focusTarget=opts.focusVersion===true?wrap.querySelector("[data-version-open]"):$("#work-archive-back");
+    const focusTarget=opts.focusFontes===true?wrap.querySelector("[data-fontes-open]"):opts.focusVersion===true?wrap.querySelector("[data-version-open]"):$("#work-archive-back");
     focusTarget?.focus({preventScroll:true});
   });
+}
+function openFontes(workId){
+  if(!researchDataReady)return;
+  const work=researchWorks.find(item=>item&&item.id===workId);
+  const person=work&&byId[work.personId];
+  const sources=researchSourcesForWork(work);
+  const dg=$("#dlg");
+  const wrap=$("#dwrap");
+  if(!work||!person||!sources.length||!dg||!wrap)return;
+  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
+  const workScroll=wrap.scrollTop||0;
+  const source=dg.dataset.source||"年鉴名录";
+  dg.dataset.kind="fontes";
+  dg.dataset.m=person.i;
+  dg.dataset.work=work.id;
+  dg.dataset.personScroll=String(personScroll);
+  dg.dataset.workScroll=String(workScroll);
+  dg.setAttribute("aria-labelledby","fontes-title");
+  wrap.innerHTML=`<div class="work-archive-view work-archive-fontes-view">
+    <div class="work-archive-nav"><button type="button" class="work-archive-back" id="fontes-back">← 返回作品</button><button type="button" class="dclose work-archive-close" id="dx" aria-label="关闭详情">✕</button></div>
+    <header class="work-archive-header work-archive-fontes-header"><span class="work-archive-kicker">WORK ARCHIVE · FONTES</span><h4 id="fontes-title">原始史料</h4><div class="work-archive-original">FONTES</div><div class="work-archive-meta">${researchField(work.title)} · ${researchField(work.originalTitle)}</div></header>
+    <div class="work-archive-fontes-context"><span>归属 WORK</span><strong>${researchField(work.title)}</strong><small>${researchField(work.originalTitle)}</small></div>
+    <p class="work-archive-fontes-intro">此处只列与该 WORK 明确建立关系的史料见证；手稿、印刷本、馆藏记录与数字替代物各有证据边界，不相互替代。</p>
+    <section class="work-archive-fontes-list">${sources.map((sourceItem,index)=>renderFontesEntry(sourceItem,index,work)).join("")}</section>
+  </div>`;
+  if(!dg.open)dg.show();
+  $("#fontes-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusFontes:true});
+  $("#dx").onclick=()=>dg.close();
+  requestAnimationFrame(()=>$("#fontes-back")?.focus());
 }
 function openVersionLineage(workId){
   if(!researchDataReady)return;
@@ -582,7 +705,7 @@ function openM(id,source="年鉴名录",opts={}){
     <h5>相关人物与关系（${rels.length}）</h5><ul class="conn">${rel||"<li>暂无已编关系</li>"}</ul>
   </div></div>${renderPersonWorks(m)}`;
   const dg=$("#dlg");
-  if(dg.open&&!(["musician","work","version"].includes(dg.dataset.kind)))dg.close();
+  if(dg.open&&!(["musician","work","version","fontes"].includes(dg.dataset.kind)))dg.close();
   delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;
   dg.dataset.ep=m.e;dg.dataset.kind="musician";dg.dataset.m=id;dg.dataset.source=source;dg.setAttribute("aria-labelledby","detail-title");
   if(!dg.open)dg.show();
@@ -1322,7 +1445,7 @@ $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
 
 /* ══════════ 弹窗关闭清锚点 ══════════ */
-$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
+$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
 function currentView(){const on=document.querySelector("#views button.on");return on?"v="+on.dataset.v:""}
 
 /* ══════════ 键盘导航 ══════════ */
