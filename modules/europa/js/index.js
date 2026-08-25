@@ -143,6 +143,9 @@ const $=s=>document.querySelector(s);
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const RESEARCH_DATA_FILES=["works","versions","sources","performances","recordings","receptions"];
 const RESEARCH_STATUS_LABEL=Object.freeze({complete:"完整",incomplete:"未完成",reconstructed:"重构",fragmentary:"残缺",disputed:"有争议",unknown:"未定"});
+const VERSION_TYPE_LABEL=Object.freeze({authorial_state:"作者状态",completion:"补写完成",publication_state:"出版状态"});
+const VERSION_STATUS_LABEL=Object.freeze({extant:"存世",fragmentary:"残缺"});
+const VERSION_ROLE_LABEL=Object.freeze({composer:"作曲者", "composer and pre-publication reviser":"作曲者与出版前修订者",completer:"完成者", "posthumous publishing and editorial agents":"身后出版与编辑责任者"});
 let researchDataReady=false;
 let researchWorks=[];
 let researchData=Object.create(null);
@@ -152,8 +155,27 @@ function researchField(value,fallback="—"){
   return text?researchEscape(text):fallback;
 }
 function researchStatusLabel(status){return RESEARCH_STATUS_LABEL[String(status||"unknown")]||RESEARCH_STATUS_LABEL.unknown}
+function researchVersionTypeLabel(type){return VERSION_TYPE_LABEL[String(type||"")]||"未定类型"}
+function researchVersionStatusLabel(status){return VERSION_STATUS_LABEL[String(status||"")]||"未定"}
+function researchVersionRoleLabel(role){return VERSION_ROLE_LABEL[String(role||"")]||"未定责任"}
 function researchRefCount(work,key){return Array.isArray(work?.[key])?work[key].length:0}
 function researchWorksForPerson(personId){return researchWorks.filter(work=>work&&work.personId===personId)}
+function researchVersionsForWork(workId){
+  const versions=Array.isArray(researchData.versions)?researchData.versions:[];
+  return versions.map((version,index)=>({version,index})).filter(({version})=>version&&version.workId===workId).sort((a,b)=>{
+    const ad=Number(a.version.dateStart),bd=Number(b.version.dateStart);
+    const av=Number.isFinite(ad)?ad:Number.POSITIVE_INFINITY,bv=Number.isFinite(bd)?bd:Number.POSITIVE_INFINITY;
+    return av-bv||a.index-b.index;
+  }).map(({version})=>version);
+}
+function renderVersionResponsibility(items,unlinked=false){
+  const rows=(Array.isArray(items)?items:[]).map(item=>{
+    const person=!unlinked&&item?.personId?byId[item.personId]:null;
+    const name=unlinked?researchField(item?.name):person?researchField(person.n):researchField(item?.name||item?.personId);
+    return `<li><span>${name}</span><small>${researchVersionRoleLabel(item?.role)}</small></li>`;
+  }).join("");
+  return rows?`<ul class="work-archive-version-responsibility">${rows}</ul>`:`<span class="work-archive-version-empty">—</span>`;
+}
 function renderPersonWorks(m){
   if(!researchDataReady)return "";
   const works=researchWorksForPerson(m.i);
@@ -171,20 +193,41 @@ function renderPersonWorks(m){
 function researchIndexValue(count){return count?String(count):"尚未建立"}
 function renderWorkArchiveIndex(work){
   const items=[["版本","VERSION","versionRefs"],["原始史料","FONTES","sourceRefs"],["演出","PERFORMANCE","performanceRefs"],["录音","RECORDING","recordingRefs"],["接受史","RECEPTION","receptionRefs"]];
-  return `<div class="work-archive-index">${items.map(([label,archiveLabel,key])=>`<div class="work-archive-index-item"><span>${label}</span><small>${archiveLabel}</small><b>${researchIndexValue(researchRefCount(work,key))}</b></div>`).join("")}</div>`;
+  return `<div class="work-archive-index">${items.map(([label,archiveLabel,key])=>{
+    const count=researchRefCount(work,key);
+    const body=`<span>${label}</span><small>${archiveLabel}</small><b>${researchIndexValue(count)}</b>`;
+    return key==="versionRefs"&&count>0?`<button type="button" class="work-archive-index-item work-archive-index-button" data-version-open="${researchField(work.id,"")}" aria-label="打开版本谱系">${body}</button>`:`<div class="work-archive-index-item">${body}</div>`;
+  }).join("")}</div>`;
 }
-function openWorkArchive(workId){
+function renderVersionLineageEntry(version,index){
+  return `<article class="work-archive-version-entry">
+    <span class="work-archive-version-node" aria-hidden="true"></span>
+    <div class="work-archive-version-head"><div><span class="work-archive-version-number">VERSION ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-version-label">${researchField(version.label)}</h5><div class="work-archive-version-original">${researchField(version.originalLabel)}</div></div><div class="work-archive-version-date">${researchField(version.date)}</div></div>
+    <dl class="work-archive-version-fields">
+      <div class="work-archive-version-field"><dt>类型</dt><dd>${researchVersionTypeLabel(version.versionType)}</dd></div>
+      <div class="work-archive-version-field"><dt>状态</dt><dd>${researchVersionStatusLabel(version.status)}</dd></div>
+      <div class="work-archive-version-field"><dt>人物责任</dt><dd>${renderVersionResponsibility(version.responsibility)}</dd></div>
+      <div class="work-archive-version-field"><dt>未建人物责任</dt><dd>${renderVersionResponsibility(version.unlinkedResponsibility,true)}</dd></div>
+      <div class="work-archive-version-field work-archive-version-field-wide"><dt>变更范围</dt><dd>${researchField(version.scopeOfChange)}</dd></div>
+      <div class="work-archive-version-field work-archive-version-field-wide"><dt>与 WORK 的关系</dt><dd>${researchField(version.relationshipToWork)}</dd></div>
+    </dl>
+  </article>`;
+}
+function openWorkArchive(workId,opts={}){
   if(!researchDataReady)return;
   const work=researchWorks.find(item=>item&&item.id===workId);
   const person=work&&byId[work.personId];
   const dg=$("#dlg");
   const wrap=$("#dwrap");
   if(!work||!person||!dg||!wrap)return;
-  const personScroll=wrap.scrollTop||0;
+  const storedPersonScroll=Number(dg.dataset.personScroll);
+  const personScroll=Number.isFinite(Number(opts.personScroll))?Number(opts.personScroll):Number.isFinite(storedPersonScroll)?storedPersonScroll:wrap.scrollTop||0;
+  const restoreScroll=Number.isFinite(Number(opts.restoreScroll))?Number(opts.restoreScroll):null;
   dg.dataset.kind="work";
   dg.dataset.m=person.i;
   dg.dataset.work=work.id;
   dg.dataset.personScroll=String(personScroll);
+  delete dg.dataset.workScroll;
   dg.setAttribute("aria-labelledby","work-archive-title");
   const source=dg.dataset.source||"年鉴名录";
   wrap.innerHTML=`<div class="work-archive-view">
@@ -200,7 +243,39 @@ function openWorkArchive(workId){
   if(!dg.open)dg.show();
   $("#work-archive-back").onclick=()=>openM(person.i,source,{restoreScroll:personScroll});
   $("#dx").onclick=()=>dg.close();
-  requestAnimationFrame(()=>$("#work-archive-back")?.focus());
+  $("#dwrap").querySelectorAll("[data-version-open]").forEach(b=>b.onclick=()=>openVersionLineage(b.dataset.versionOpen));
+  requestAnimationFrame(()=>{
+    $("#work-archive-back")?.focus({preventScroll:true});
+    if(restoreScroll!=null)wrap.scrollTop=restoreScroll;
+  });
+}
+function openVersionLineage(workId){
+  if(!researchDataReady)return;
+  const work=researchWorks.find(item=>item&&item.id===workId);
+  const person=work&&byId[work.personId];
+  const versions=researchVersionsForWork(workId);
+  const dg=$("#dlg");
+  const wrap=$("#dwrap");
+  if(!work||!person||!versions.length||!dg||!wrap)return;
+  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
+  const workScroll=wrap.scrollTop||0;
+  const source=dg.dataset.source||"年鉴名录";
+  dg.dataset.kind="version";
+  dg.dataset.m=person.i;
+  dg.dataset.work=work.id;
+  dg.dataset.personScroll=String(personScroll);
+  dg.dataset.workScroll=String(workScroll);
+  dg.setAttribute("aria-labelledby","version-lineage-title");
+  wrap.innerHTML=`<div class="work-archive-view work-archive-version-view">
+    <div class="work-archive-nav"><button type="button" class="work-archive-back" id="version-lineage-back">← 返回作品</button><button type="button" class="dclose work-archive-close" id="dx" aria-label="关闭详情">✕</button></div>
+    <header class="work-archive-header work-archive-version-header"><span class="work-archive-kicker">WORK ARCHIVE · VERSION LINEAGE</span><h4 id="version-lineage-title">版本谱系</h4><div class="work-archive-original">VERSIONES</div><div class="work-archive-meta">${researchField(work.title)} · ${researchField(work.originalTitle)}</div></header>
+    <div class="work-archive-version-context"><span>归属 WORK</span><strong>${researchField(work.title)}</strong><small>${researchField(work.originalTitle)}</small></div>
+    <section class="work-archive-version-lineage" aria-label="版本谱系条目">${versions.map(renderVersionLineageEntry).join("")}</section>
+  </div>`;
+  if(!dg.open)dg.show();
+  $("#version-lineage-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll});
+  $("#dx").onclick=()=>dg.close();
+  requestAnimationFrame(()=>$("#version-lineage-back")?.focus());
 }
 async function loadResearchData(){
   try{
@@ -506,8 +581,8 @@ function openM(id,source="年鉴名录",opts={}){
     <h5>相关人物与关系（${rels.length}）</h5><ul class="conn">${rel||"<li>暂无已编关系</li>"}</ul>
   </div></div>${renderPersonWorks(m)}`;
   const dg=$("#dlg");
-  if(dg.open&&dg.dataset.kind!=="musician"&&dg.dataset.kind!=="work")dg.close();
-  delete dg.dataset.work;delete dg.dataset.personScroll;
+  if(dg.open&&!(["musician","work","version"].includes(dg.dataset.kind)))dg.close();
+  delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;
   dg.dataset.ep=m.e;dg.dataset.kind="musician";dg.dataset.m=id;dg.dataset.source=source;dg.setAttribute("aria-labelledby","detail-title");
   if(!dg.open)dg.show();
   setHash("m="+id);syncSelection();announceSelection(m,rels,source);
@@ -1246,7 +1321,7 @@ $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
 
 /* ══════════ 弹窗关闭清锚点 ══════════ */
-$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(dg.dataset.kind==="musician"||dg.dataset.kind==="work"))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
+$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
 function currentView(){const on=document.querySelector("#views button.on");return on?"v="+on.dataset.v:""}
 
 /* ══════════ 键盘导航 ══════════ */
