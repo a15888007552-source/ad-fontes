@@ -245,8 +245,9 @@ function openWorkArchive(workId,opts={}){
   $("#dx").onclick=()=>dg.close();
   $("#dwrap").querySelectorAll("[data-version-open]").forEach(b=>b.onclick=()=>openVersionLineage(b.dataset.versionOpen));
   requestAnimationFrame(()=>{
-    $("#work-archive-back")?.focus({preventScroll:true});
     if(restoreScroll!=null)wrap.scrollTop=restoreScroll;
+    const focusTarget=opts.focusVersion===true?wrap.querySelector("[data-version-open]"):$("#work-archive-back");
+    focusTarget?.focus({preventScroll:true});
   });
 }
 function openVersionLineage(workId){
@@ -273,7 +274,7 @@ function openVersionLineage(workId){
     <section class="work-archive-version-lineage" aria-label="版本谱系条目">${versions.map(renderVersionLineageEntry).join("")}</section>
   </div>`;
   if(!dg.open)dg.show();
-  $("#version-lineage-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll});
+  $("#version-lineage-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusVersion:true});
   $("#dx").onclick=()=>dg.close();
   requestAnimationFrame(()=>$("#version-lineage-back")?.focus());
 }
