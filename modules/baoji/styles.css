@@ -281,6 +281,24 @@ img { display: block; max-width: 100%; }
 .heading-note { max-width: 25rem; margin: 0 0 .2rem auto; color: var(--muted); font-size: .86rem; line-height: 1.85; }
 .section--treasures .heading-note, .section--method .heading-note { color: rgba(236, 232, 220, .64); }
 
+@media (min-width: 1200px) {
+  .section-heading--split {
+    grid-template-columns: minmax(0, 1fr) minmax(520px, 600px);
+    gap: clamp(36px, 4vw, 64px);
+  }
+
+  .section-heading--split > div,
+  .section-heading--split .heading-note {
+    min-width: 0;
+  }
+
+  .section-heading--split .heading-note {
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+  }
+}
+
 .profile-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(230px, .55fr); gap: clamp(3rem, 9vw, 8rem); }
 .profile-story { max-width: 680px; font-size: 1.02rem; line-height: 2.15; }
 .profile-story p { margin: 0 0 1.35rem; }
