@@ -2359,9 +2359,22 @@ dialog::backdrop {
   }
 
   .theme-intro {
-    max-width: 42ch;
+    width: 100%;
+    max-width: 100%;
     margin: 0;
     align-self: end;
+  }
+}
+
+@media (min-width: 1200px) {
+  .theme-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(560px, 680px);
+    gap: clamp(36px, 4vw, 72px);
+  }
+
+  .theme-intro {
+    max-width: 680px;
+    justify-self: end;
   }
 }
 
