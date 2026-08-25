@@ -794,3 +794,46 @@ body.europa-opening-active{overflow:hidden}
   .work-archive-version-fields{grid-template-columns:1fr}
   .work-archive-version-field-wide{grid-column:auto}
 }
+
+/* ---------- work archive: FONTES / source witnesses ---------- */
+.work-archive-fontes-context{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 11px;margin-top:18px;padding:11px 12px;border:1px solid var(--line);background:var(--bg)}
+.work-archive-fontes-context span{grid-row:span 2;color:var(--mut);font:700 9.5px/1.4 var(--sans);letter-spacing:.16em}
+.work-archive-fontes-context strong{min-width:0;color:var(--ink);font:600 16px/1.4 var(--dfont);overflow-wrap:anywhere}
+.work-archive-fontes-context small{min-width:0;color:var(--mut);font:italic 12px/1.45 var(--serif);overflow-wrap:anywhere}
+.work-archive-fontes-intro{margin:22px 0 0;color:var(--ink);font-size:15.5px;line-height:1.9;overflow-wrap:anywhere}
+.work-archive-fontes-list{margin-top:27px;min-width:0}
+.work-archive-fontes-entry{min-width:0;padding:0 0 32px;border-bottom:1px solid var(--line)}
+.work-archive-fontes-entry+.work-archive-fontes-entry{padding-top:30px}
+.work-archive-fontes-entry:last-child{padding-bottom:0;border-bottom:0}
+.work-archive-fontes-entry-head{min-width:0}
+.work-archive-fontes-number{display:block;margin-bottom:7px;color:var(--acc);font:700 9px/1.3 var(--sans);letter-spacing:.18em}
+.work-archive-fontes-title{margin:0;color:var(--ink);font:600 21px/1.35 var(--dfont);overflow-wrap:anywhere;word-break:break-word}
+.work-archive-fontes-original{margin-top:4px;color:var(--mut);font:italic 12px/1.5 var(--serif);overflow-wrap:anywhere;word-break:break-word}
+.work-archive-fontes-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:18px 0 0;border:1px solid var(--line);background:var(--line)}
+.work-archive-fontes-field{min-width:0;padding:10px 11px;background:var(--bg)}
+.work-archive-fontes-field-wide{grid-column:1 / -1}
+.work-archive-fontes-field dt{margin:0 0 5px;color:var(--mut);font:700 9px/1.35 var(--sans);letter-spacing:.16em}
+.work-archive-fontes-field dd{min-width:0;margin:0;color:var(--ink);font-size:14px;line-height:1.75;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-fontes-creators{margin:0;padding:0;list-style:none}
+.work-archive-fontes-creators li+li{margin-top:7px}
+.work-archive-fontes-creators li span{display:block;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-fontes-creators li small{display:block;margin-top:2px;color:var(--mut);font:10px/1.45 var(--sans);letter-spacing:.04em;overflow-wrap:anywhere}
+.work-archive-fontes-evidence{margin-top:23px;padding-top:16px;border-top:1px dashed var(--line)}
+.work-archive-fontes-evidence h6,.work-archive-fontes-criticism h6{margin:0 0 8px;color:var(--acc);font:700 10px/1.4 var(--sans);letter-spacing:.18em}
+.work-archive-fontes-evidence ul{margin:0;padding-left:18px}
+.work-archive-fontes-evidence li{margin:0;color:var(--ink);font-size:14px;line-height:1.85;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-fontes-evidence li+li{margin-top:7px}
+.work-archive-fontes-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:21px;min-width:0}
+.work-archive-fontes-links a{max-width:100%;color:var(--acc);font:700 10.5px/1.45 var(--sans);letter-spacing:.06em;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-fontes-links a:hover,.work-archive-fontes-links a:focus-visible{color:var(--ink)}
+.work-archive-fontes-digital-note{flex:1 0 100%;margin:2px 0 0;color:var(--mut);font:11px/1.7 var(--sans);overflow-wrap:anywhere;word-break:break-word}
+.work-archive-fontes-criticism{margin-top:24px;padding:16px 0 0 16px;border-top:1px solid var(--line);border-left:3px solid var(--acc)}
+.work-archive-fontes-criticism p{margin:0;color:var(--ink);font:14.5px/1.9 var(--serif);overflow-wrap:anywhere;word-break:break-word}
+@media(max-width:640px){
+  .work-archive-fontes-context{grid-template-columns:1fr;gap:4px 0}
+  .work-archive-fontes-context span{grid-row:auto}
+  .work-archive-fontes-fields{grid-template-columns:1fr}
+  .work-archive-fontes-field-wide{grid-column:auto}
+  .work-archive-fontes-title{font-size:20px}
+  .work-archive-fontes-fields,.work-archive-fontes-evidence,.work-archive-fontes-links,.work-archive-fontes-criticism{max-width:100%}
+}
