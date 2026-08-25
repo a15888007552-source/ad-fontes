@@ -150,6 +150,11 @@ const FONTES_SOURCE_TYPE_LABEL=Object.freeze({autograph_manuscript:"亲笔手稿
 const FONTES_CREATOR_ROLE_LABEL=Object.freeze({author:"作者",composer:"作曲者",publisher:"出版者", "named author":"署名作者", "composer and autograph contributor":"作曲者、亲笔材料贡献者", "completer and copyist":"完成者、抄写者"});
 const FONTES_DATING_CERTAINTY_LABEL=Object.freeze({certain:"确定",approximate:"约定",range:"区间"});
 const FONTES_LANGUAGE_LABEL=Object.freeze({de:"德语",la:"拉丁语",en:"英语",it:"意大利语",fr:"法语"});
+const PERFORMANCE_TYPE_LABEL=Object.freeze({first_complete_performance:"首次完整演出",premiere:"首演",other:"其他演出"});
+const PERFORMANCE_PARTICIPANT_ROLE_LABEL=Object.freeze({composer:"作曲者",conductor:"指挥",singer:"歌者",patron:"赞助者",other:"其他参与",director:"导演",designer:"设计者"});
+const PERFORMANCE_INSTITUTION_ROLE_LABEL=Object.freeze({festival:"音乐节",theatre:"剧院",opera_house:"歌剧院",ensemble:"演出团体",church:"教堂",concert_hall:"音乐厅"});
+const PERFORMANCE_DATING_CERTAINTY_LABEL=Object.freeze({certain:"确定"});
+const PERFORMANCE_STATE_LABEL=Object.freeze({complete_cycle:"完整周期",complete_version:"完整演出形态",reconstructed_completion:"重构完成形态",excerpt:"片段演出"});
 let researchDataReady=false;
 let researchWorks=[];
 let researchData=Object.create(null);
@@ -182,6 +187,16 @@ function researchSourcesForWork(work){
     return source||null;
   }).filter(Boolean);
 }
+function researchPerformancesForWork(work){
+  const performances=Array.isArray(researchData.performances)?researchData.performances:[];
+  const byPerformanceId=new Map(performances.filter(performance=>performance&&performance.id).map(performance=>[performance.id,performance]));
+  const refs=Array.isArray(work?.performanceRefs)?work.performanceRefs:[];
+  return refs.map(performanceRef=>{
+    const performance=byPerformanceId.get(performanceRef);
+    if(!performance)console.warn("[AD FONTES] Unresolved WORK→PERFORMANCE reference",{workId:work?.id,performanceRef});
+    return performance||null;
+  }).filter(Boolean);
+}
 function researchSourceTypeLabel(type){return FONTES_SOURCE_TYPE_LABEL[String(type||"")]||"未定类型"}
 function researchCreatorRoleLabel(role){return FONTES_CREATOR_ROLE_LABEL[String(role||"")]||"责任未定"}
 function researchDatingLabel(source){
@@ -193,6 +208,21 @@ function researchDatingLabel(source){
 function researchLanguageLabel(language){
   const codes=(Array.isArray(language)?language:[language]).map(code=>String(code??"").trim()).filter(Boolean);
   return codes.length?researchEscape(codes.map(code=>FONTES_LANGUAGE_LABEL[code]||code).join("、")):"—";
+}
+function researchPerformanceTypeLabel(type){return PERFORMANCE_TYPE_LABEL[String(type||"")]||"未定类型"}
+function researchPerformanceParticipantRoleLabel(role){return PERFORMANCE_PARTICIPANT_ROLE_LABEL[String(role||"")]||"角色未定"}
+function researchPerformanceInstitutionRoleLabel(role){return PERFORMANCE_INSTITUTION_ROLE_LABEL[String(role||"")]||"性质未定"}
+function researchPerformanceDatingLabel(performance){
+  const dating=performance?.dating||{};
+  const certainty=PERFORMANCE_DATING_CERTAINTY_LABEL[String(dating.certainty||"")]||"未定";
+  const note=String(dating.note??"").trim();
+  return note?`${certainty} · ${researchEscape(note)}`:certainty;
+}
+function researchPerformanceStateLabel(state){return PERFORMANCE_STATE_LABEL[String(state||"")]||"状态未定"}
+function researchPerformanceMatchLabel(value){
+  if(value===true)return "已建立精确对应";
+  if(value===false)return "未形成完整对应";
+  return "当前未建立确定对应";
 }
 function researchProvenanceLabel(provenance){
   return provenance==="not yet established"?"尚未建立":researchField(provenance);
@@ -289,6 +319,7 @@ function renderWorkArchiveIndex(work){
     const body=`<span>${label}</span><small>${archiveLabel}</small><b>${researchIndexValue(count)}</b>`;
     if(key==="versionRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-version-open="${researchField(work.id,"")}" aria-label="打开版本谱系">${body}</button>`;
     if(key==="sourceRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-fontes-open="${researchField(work.id,"")}" aria-label="打开原始史料">${body}</button>`;
+    if(key==="performanceRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-performance-open="${researchField(work.id,"")}" aria-label="打开演出史">${body}</button>`;
     return `<div class="work-archive-index-item">${body}</div>`;
   }).join("")}</div>`;
 }
@@ -338,11 +369,96 @@ function openWorkArchive(workId,opts={}){
   $("#dx").onclick=()=>dg.close();
   $("#dwrap").querySelectorAll("[data-version-open]").forEach(b=>b.onclick=()=>openVersionLineage(b.dataset.versionOpen));
   $("#dwrap").querySelectorAll("[data-fontes-open]").forEach(b=>b.onclick=()=>openFontes(b.dataset.fontesOpen));
+  $("#dwrap").querySelectorAll("[data-performance-open]").forEach(b=>b.onclick=()=>openPerformance(b.dataset.performanceOpen));
   requestAnimationFrame(()=>{
     if(restoreScroll!=null)wrap.scrollTop=restoreScroll;
-    const focusTarget=opts.focusFontes===true?wrap.querySelector("[data-fontes-open]"):opts.focusVersion===true?wrap.querySelector("[data-version-open]"):$("#work-archive-back");
+    const focusTarget=opts.focusFontes===true?wrap.querySelector("[data-fontes-open]"):opts.focusVersion===true?wrap.querySelector("[data-version-open]"):opts.focusPerformance===true?wrap.querySelector("[data-performance-open]"):$("#work-archive-back");
     focusTarget?.focus({preventScroll:true});
   });
+}
+function renderPerformanceField(label,value,wide=false){
+  return `<div class="work-archive-performance-field${wide?" work-archive-performance-field-wide":""}"><dt>${label}</dt><dd>${value}</dd></div>`;
+}
+function renderPerformanceParticipants(items){
+  const rows=(Array.isArray(items)?items:[]).map(item=>{
+    const person=item?.personId?byId[item.personId]:null;
+    if(item?.personId&&!person)console.warn("[AD FONTES] Unresolved PERFORMANCE participant person reference",{personId:item.personId});
+    const name=person?researchField(person.n):researchField(item?.name);
+    return `<li><span>${name}</span><small>${researchPerformanceParticipantRoleLabel(item?.role)}</small></li>`;
+  }).join("");
+  return rows?`<ul class="work-archive-performance-people">${rows}</ul>`:"—";
+}
+function renderPerformanceInstitutions(items){
+  const rows=(Array.isArray(items)?items:[]).map(item=>`<li><span>${researchField(item?.name)}</span><small>${researchPerformanceInstitutionRoleLabel(item?.role)}</small></li>`).join("");
+  return rows?`<ul class="work-archive-performance-institutions">${rows}</ul>`:"—";
+}
+function renderPerformanceProgramme(programme){
+  const items=Array.isArray(programme?.items)?programme.items:[];
+  const rows=items.map(item=>`<li><span class="work-archive-performance-programme-order">${researchField(item?.order)}</span><span class="work-archive-performance-programme-label">${researchField(item?.label)}</span><time class="work-archive-performance-programme-date">${researchField(item?.date)}</time></li>`).join("");
+  return rows?`<div class="work-archive-performance-programme"><p class="work-archive-performance-programme-format"><span>节目形态</span> ${researchField(programme?.format)}</p><ol class="work-archive-performance-programme-items">${rows}</ol></div>`:"—";
+}
+function renderPerformanceVersion(versionId){
+  if(versionId==null)return `<span class="work-archive-performance-version-empty">当前未建立对应 VERSION</span>`;
+  const versions=Array.isArray(researchData.versions)?researchData.versions:[];
+  const version=versions.find(item=>item&&item.id===versionId);
+  if(!version){
+    console.warn("[AD FONTES] Unresolved PERFORMANCE→VERSION reference",{versionId});
+    return `<span class="work-archive-performance-version-empty">当前未建立对应 VERSION</span>`;
+  }
+  return `<span class="work-archive-performance-version"><strong>${researchField(version.label)}</strong><small>${researchField(version.originalLabel)}</small></span>`;
+}
+function renderPerformanceEntry(performance,index){
+  const state=performance?.performanceState||{};
+  return `<article class="work-archive-performance-entry">
+    <header class="work-archive-performance-entry-head"><div><span class="work-archive-performance-number">PERFORMANCE ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-performance-title">${researchField(performance.title)}</h5></div><div class="work-archive-performance-date">${researchField(performance.date)}</div></header>
+    <dl class="work-archive-performance-fields">
+      ${renderPerformanceField("演出类型",researchPerformanceTypeLabel(performance.performanceType))}
+      ${renderPerformanceField("日期",researchField(performance.date))}
+      ${renderPerformanceField("断代依据",researchPerformanceDatingLabel(performance))}
+      ${renderPerformanceField("场所",researchField(performance.venue))}
+      ${renderPerformanceField("城市",researchField(performance.place))}
+      ${renderPerformanceField("政体 / 地域",researchField(performance.countryOrPolity))}
+      ${renderPerformanceField("制作标识",researchField(performance.productionLabel))}
+      ${renderPerformanceField("关联 VERSION",renderPerformanceVersion(performance.versionId))}
+      ${renderPerformanceField("与 VERSION 的对应",researchPerformanceMatchLabel(state.matchesVersionExactly),true)}
+    </dl>
+    <section class="work-archive-performance-section"><h6>参与者</h6>${renderPerformanceParticipants(performance.participants)}</section>
+    <section class="work-archive-performance-section"><h6>机构</h6>${renderPerformanceInstitutions(performance.institutions)}</section>
+    <section class="work-archive-performance-section"><h6>节目</h6>${renderPerformanceProgramme(performance.programme)}</section>
+    <section class="work-archive-performance-section"><h6>演出状态</h6><p>${researchPerformanceStateLabel(state.state)}</p></section>
+    <section class="work-archive-performance-section"><h6>状态说明</h6><p>${researchField(state.note)}</p></section>
+    <section class="work-archive-performance-section work-archive-performance-history"><h6>历史现场</h6><p>${researchField(performance.historicalContext)}</p></section>
+    <section class="work-archive-performance-section work-archive-performance-significance"><h6>演出史意义</h6><p>${researchField(performance.performanceSignificance)}</p></section>
+  </article>`;
+}
+function openPerformance(workId){
+  if(!researchDataReady)return;
+  const work=researchWorks.find(item=>item&&item.id===workId);
+  const person=work&&byId[work.personId];
+  const performances=researchPerformancesForWork(work);
+  const dg=$("#dlg");
+  const wrap=$("#dwrap");
+  if(!work||!person||!performances.length||!dg||!wrap)return;
+  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
+  const workScroll=wrap.scrollTop||0;
+  const source=dg.dataset.source||"年鉴名录";
+  dg.dataset.kind="performance";
+  dg.dataset.m=person.i;
+  dg.dataset.work=work.id;
+  dg.dataset.personScroll=String(personScroll);
+  dg.dataset.workScroll=String(workScroll);
+  dg.setAttribute("aria-labelledby","performance-title");
+  wrap.innerHTML=`<div class="work-archive-view work-archive-performance-view">
+    <div class="work-archive-nav"><button type="button" class="work-archive-back" id="performance-back">← 返回作品</button><button type="button" class="dclose work-archive-close" id="dx" aria-label="关闭详情">✕</button></div>
+    <header class="work-archive-header work-archive-performance-header"><span class="work-archive-kicker">WORK ARCHIVE · PERFORMANCE</span><h4 id="performance-title">演出史</h4><div class="work-archive-original">PERFORMANCE</div><div class="work-archive-meta">${researchField(work.title)} · ${researchField(work.originalTitle)}</div></header>
+    <div class="work-archive-performance-context"><span>归属 WORK</span><strong>${researchField(work.title)}</strong><small>${researchField(work.originalTitle)}</small></div>
+    <p class="work-archive-performance-intro">作品一旦进入演出现场，便不再只是总谱的兑现。此处只列与该 WORK 明确建立关系的演出；日期、场所、参与者、节目与版本责任分别保留。</p>
+    <section class="work-archive-performance-list">${performances.map(renderPerformanceEntry).join("")}</section>
+  </div>`;
+  if(!dg.open)dg.show();
+  $("#performance-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusPerformance:true});
+  $("#dx").onclick=()=>dg.close();
+  requestAnimationFrame(()=>$("#performance-back")?.focus());
 }
 function openFontes(workId){
   if(!researchDataReady)return;
@@ -705,7 +821,7 @@ function openM(id,source="年鉴名录",opts={}){
     <h5>相关人物与关系（${rels.length}）</h5><ul class="conn">${rel||"<li>暂无已编关系</li>"}</ul>
   </div></div>${renderPersonWorks(m)}`;
   const dg=$("#dlg");
-  if(dg.open&&!(["musician","work","version","fontes"].includes(dg.dataset.kind)))dg.close();
+  if(dg.open&&!(["musician","work","version","fontes","performance"].includes(dg.dataset.kind)))dg.close();
   delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;
   dg.dataset.ep=m.e;dg.dataset.kind="musician";dg.dataset.m=id;dg.dataset.source=source;dg.setAttribute("aria-labelledby","detail-title");
   if(!dg.open)dg.show();
@@ -1445,7 +1561,7 @@ $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
 
 /* ══════════ 弹窗关闭清锚点 ══════════ */
-$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
+$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
 function currentView(){const on=document.querySelector("#views button.on");return on?"v="+on.dataset.v:""}
 
 /* ══════════ 键盘导航 ══════════ */
