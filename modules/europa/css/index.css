@@ -837,3 +837,56 @@ body.europa-opening-active{overflow:hidden}
   .work-archive-fontes-title{font-size:20px}
   .work-archive-fontes-fields,.work-archive-fontes-evidence,.work-archive-fontes-links,.work-archive-fontes-criticism{max-width:100%}
 }
+
+/* ---------- work archive: PERFORMANCE / performance history ---------- */
+.work-archive-performance-context{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 11px;margin-top:18px;padding:11px 12px;border:1px solid var(--line);background:var(--bg)}
+.work-archive-performance-context span{grid-row:span 2;color:var(--mut);font:700 9.5px/1.4 var(--sans);letter-spacing:.16em}
+.work-archive-performance-context strong{min-width:0;color:var(--ink);font:600 16px/1.4 var(--dfont);overflow-wrap:anywhere}
+.work-archive-performance-context small{min-width:0;color:var(--mut);font:italic 12px/1.45 var(--serif);overflow-wrap:anywhere}
+.work-archive-performance-intro{margin:22px 0 0;color:var(--ink);font-size:15.5px;line-height:1.9;overflow-wrap:anywhere}
+.work-archive-performance-list{margin-top:27px;min-width:0}
+.work-archive-performance-entry{min-width:0;padding:0 0 32px;border-bottom:1px solid var(--line)}
+.work-archive-performance-entry+.work-archive-performance-entry{padding-top:30px}
+.work-archive-performance-entry:last-child{padding-bottom:0;border-bottom:0}
+.work-archive-performance-entry-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.work-archive-performance-number{display:block;margin-bottom:7px;color:var(--acc);font:700 9px/1.3 var(--sans);letter-spacing:.18em}
+.work-archive-performance-title{margin:0;color:var(--ink);font:600 21px/1.35 var(--dfont);overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-date{flex:0 1 34%;max-width:34%;padding-top:1px;color:var(--acc2);font:700 11px/1.5 var(--sans);letter-spacing:.05em;text-align:right;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:18px 0 0;border:1px solid var(--line);background:var(--line)}
+.work-archive-performance-field{min-width:0;padding:10px 11px;background:var(--bg)}
+.work-archive-performance-field-wide{grid-column:1 / -1}
+.work-archive-performance-field dt{margin:0 0 5px;color:var(--mut);font:700 9px/1.35 var(--sans);letter-spacing:.16em}
+.work-archive-performance-field dd{min-width:0;margin:0;color:var(--ink);font-size:14px;line-height:1.75;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-version{display:block;min-width:0}
+.work-archive-performance-version strong{display:block;font-weight:600;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-version small{display:block;margin-top:3px;color:var(--mut);font:italic 12px/1.45 var(--serif);overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-version-empty{color:var(--mut)}
+.work-archive-performance-section{margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
+.work-archive-performance-section h6{margin:0 0 8px;color:var(--acc);font:700 10px/1.4 var(--sans);letter-spacing:.18em}
+.work-archive-performance-section p{margin:0;color:var(--ink);font-size:14.5px;line-height:1.9;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-people,.work-archive-performance-institutions{margin:0;padding:0;list-style:none}
+.work-archive-performance-people li,.work-archive-performance-institutions li{min-width:0}
+.work-archive-performance-people li+li,.work-archive-performance-institutions li+li{margin-top:7px}
+.work-archive-performance-people li span,.work-archive-performance-institutions li span{display:block;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-people li small,.work-archive-performance-institutions li small{display:block;margin-top:2px;color:var(--mut);font:10px/1.45 var(--sans);letter-spacing:.04em;overflow-wrap:anywhere}
+.work-archive-performance-programme-format{color:var(--acc)!important;font:600 13px/1.65 var(--serif)!important}
+.work-archive-performance-programme-items{margin:10px 0 0;padding:0;list-style:none}
+.work-archive-performance-programme-items li{display:grid;grid-template-columns:2.5em minmax(0,1fr) auto;gap:8px;align-items:start;min-width:0;color:var(--ink);font-size:14px;line-height:1.7}
+.work-archive-performance-programme-items li+li{margin-top:8px}
+.work-archive-performance-programme-order{color:var(--acc);font:700 10px/1.7 var(--sans);letter-spacing:.08em}
+.work-archive-performance-programme-label{min-width:0;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-programme-date{color:var(--mut);font:10.5px/1.7 var(--sans);letter-spacing:.03em;text-align:right;overflow-wrap:anywhere;word-break:break-word}
+.work-archive-performance-history{border-top-style:dashed}
+.work-archive-performance-significance{padding-left:16px;border-left:3px solid var(--acc)}
+@media(max-width:640px){
+  .work-archive-performance-context{grid-template-columns:1fr;gap:4px 0}
+  .work-archive-performance-context span{grid-row:auto}
+  .work-archive-performance-entry-head{display:block}
+  .work-archive-performance-date{max-width:none;margin-top:8px;text-align:left}
+  .work-archive-performance-fields{grid-template-columns:1fr}
+  .work-archive-performance-field-wide{grid-column:auto}
+  .work-archive-performance-title{font-size:20px}
+  .work-archive-performance-fields,.work-archive-performance-programme-items,.work-archive-performance-history,.work-archive-performance-significance{max-width:100%}
+  .work-archive-performance-programme-items li{grid-template-columns:2.5em minmax(0,1fr)}
+  .work-archive-performance-programme-date{grid-column:2;text-align:left}
+}
