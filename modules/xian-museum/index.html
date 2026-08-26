@@ -20,6 +20,32 @@
   <link rel="icon" href="assets/brand-emblem.png" type="image/png">
   <link rel="stylesheet" href="styles.css?rev=20260818-routes1-logo1">
   <style id="opening-brand-emblem">.opening-emblem{display:block;width:clamp(72px,8vw,108px);height:clamp(72px,8vw,108px);margin:0 0 18px;object-fit:contain}@media(max-width:760px){.opening-emblem{width:72px;height:72px;margin-bottom:14px}}</style>
+  <style id="xian-polish-20260826">
+    /* 长安四径：卡片统一高度、悬浮轻抬 */
+    .route-grid { grid-auto-rows: 1fr; }
+
+    .route-card {
+      transition: border-color .24s ease, transform .24s cubic-bezier(.22, .8, .25, 1), box-shadow .24s ease;
+    }
+
+    .route-card:hover,
+    .route-card:focus-within {
+      border-color: color-mix(in srgb, var(--green) 55%, var(--line-dark));
+      box-shadow: 0 16px 34px rgba(20, 56, 58, .12);
+      transform: translateY(-4px);
+    }
+
+    .route-object img { transition: transform .42s cubic-bezier(.22, .8, .25, 1); }
+    .route-card:hover .route-object img { transform: scale(1.04); }
+
+    /* 镇馆之镜：主图悬浮微放大 */
+    .featured-media img { transition: transform .5s cubic-bezier(.22, .8, .25, 1); }
+    .featured-media:hover img { transform: scale(1.025); }
+
+    /* 检索卡片文案对比度 */
+    .object-card .card-origin { color: color-mix(in srgb, var(--muted) 84%, var(--ink)); }
+  </style>
+<link rel="stylesheet" href="../../shared/css/polish.css" />
 <link rel="stylesheet" href="../tomb-trails/host.css?v=20260824-layout2">
 </head>
 <body>
@@ -156,6 +182,7 @@
 
   <script src="data.js"></script>
   <script src="app.js?rev=20260818-imagezoom1"></script>
+  <script src="../../shared/js/polish.js" defer></script>
   </body>
 </html>
 

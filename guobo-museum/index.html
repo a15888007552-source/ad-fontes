@@ -19,7 +19,28 @@
     <meta name="twitter:image" content="https://a15888007552-source.github.io/ad-fontes/guobo-museum/assets/photos/xiaoduan-phoenix-crown.webp" />
     <link rel="icon" href="assets/brand-emblem.png" type="image/png" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../shared/css/polish.css" />
     <style id="museum-brand-emblem">.brand-mark,.footer-mark{overflow:hidden;background:var(--red-950)}.brand-mark img,.footer-mark img{display:block;width:84%;height:84%;object-fit:contain}.opening-seal{overflow:hidden;border-color:var(--gold);background:var(--red-950)}.opening-seal img{display:block;width:78%;height:78%;object-fit:contain}</style>
+    <style id="guobo-polish-20260826">
+      /* 文物卡片：网格内全部等高 */
+      .object-grid { grid-auto-rows: 1fr; }
+      .object-card { height: 100%; }
+
+      /* 卡片标题：一行收起，避免换行挤行 */
+      .object-caption h3 {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .object-caption small {
+        max-width: 46%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    </style>
     <noscript><style>.opening-screen{display:none!important}body.guobo-intro-active{overflow:auto!important}</style></noscript>
   </head>
   <body class="guobo-intro-active">
@@ -107,5 +128,6 @@
     </dialog>
 
     <script src="app.js"></script>
+    <script src="../shared/js/polish.js" defer></script>
   </body>
 </html>

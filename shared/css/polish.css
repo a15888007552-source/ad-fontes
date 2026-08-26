@@ -1,0 +1,62 @@
+/* Ad Fontes · shared polish layer
+   Scroll-reveal for card grids and key blocks.
+   Progressive enhancement: elements are hidden ONLY after JS adds .polish-reveal,
+   so no-JS / no-JS-error pages stay fully visible. */
+
+.polish-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 0.62s ease,
+    transform 0.62s cubic-bezier(0.22, 0.8, 0.25, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.polish-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Gentle hover lift shared by card grids that lack one. */
+.polish-lift {
+  transition:
+    transform 0.24s cubic-bezier(0.22, 0.8, 0.25, 1),
+    box-shadow 0.24s ease,
+    border-color 0.24s ease;
+}
+
+.polish-lift:hover,
+.polish-lift:focus-visible,
+.polish-lift:focus-within {
+  transform: translateY(-4px);
+}
+
+/* Tighten card copy: keep summaries to two lines, single-line titles. */
+.polish-clamp-1 {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.polish-clamp-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polish-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .polish-lift {
+    transform: none !important;
+    transition: none !important;
+  }
+}

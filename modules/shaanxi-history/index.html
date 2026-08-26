@@ -29,6 +29,42 @@
     #special > .special-preview { width: 100%; max-width: none; min-width: 0; }
     #special > .special-preview { grid-column: 2 / -1; }
   </style>
+  <style id="history-polish-20260826">
+    /* 卡片文案收敛：正文最多两行，避免四五行挤作一团 */
+    .treasure-note {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+    }
+
+    .treasure-card:hover,
+    .treasure-card:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .28);
+    }
+
+    /* 文明以止：三张预览卡严格等高、悬浮轻抬 */
+    .special-preview { grid-auto-rows: 1fr; }
+
+    .special-card { min-height: 96px; }
+
+    .special-card:hover,
+    .special-card:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(43, 26, 12, .14);
+    }
+
+    .special-preview img { transition: transform .32s ease, box-shadow .32s ease; }
+
+    #special.special .special-card { background: rgba(255, 244, 211, .86); }
+
+    /* 检索卡片：标题单行、来源单行，正文两行收起 */
+    .object-card .card-title { font-size: max(var(--title-size), 17px); }
+    .object-card .card-origin { color: color-mix(in srgb, var(--muted) 86%, var(--ink)); }
+  </style>
+<link rel="stylesheet" href="../../shared/css/polish.css" />
 <link rel="stylesheet" href="../tomb-trails/host.css?v=20260824-layout2">
 </head>
 <body>
@@ -195,6 +231,7 @@
   <script src="media-url.js?rev=20260821-r2pilot1"></script>
   <script src="data.js?rev=20260817-sourced-cards4"></script>
   <script src="app.js?rev=20260818-imagezoom1"></script>
+  <script src="../../shared/js/polish.js" defer></script>
   </body>
 </html>
 

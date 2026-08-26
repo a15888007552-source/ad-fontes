@@ -24,6 +24,21 @@
     <noscript><style>.page-intro{display:none!important}</style></noscript>
     <link rel="stylesheet" href="styles.css?v=20260823-qinhan-cards1" />
     <link rel="stylesheet" href="motion.css?v=20260823-qinhan-cards1" />
+    <link rel="stylesheet" href="../../shared/css/polish.css" />
+    <style id="qinhan-polish-20260826">
+      /* 馆舍航拍图：悬浮缓放 */
+      .museum-figure img { transition: transform .5s cubic-bezier(.22, .8, .25, 1), filter .3s ease; }
+      .museum-figure:hover img { transform: scale(1.02); }
+
+      /* 皇后之玺 / 杜虎符 主图：悬浮缓放 */
+      .queen-image-wrap img,
+      .tiger-image-wrap img { transition: transform .5s cubic-bezier(.22, .8, .25, 1); }
+      .queen-image-wrap:hover img,
+      .tiger-image-wrap:hover img { transform: scale(1.025); }
+
+      /* 目录卡片文案对比度 */
+      .object-card .card-summary { color: color-mix(in srgb, #565851 88%, #1d1f1c); }
+    </style>
     <style id="tomb-trails-continuity">
       .museum-tomb-trails { width: 100% !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: var(--night) !important; }
       .museum-tomb-trails iframe { background: var(--night) !important; }
@@ -277,6 +292,7 @@
     <script src="../../shared/js/media-url.js"></script>
     <script src="media-url.js"></script>
     <script src="app.js?v=20260823-qinhan-cards1"></script>
+    <script src="../../shared/js/polish.js" defer></script>
   </body>
 </html>
 
