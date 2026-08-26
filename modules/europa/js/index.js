@@ -155,6 +155,12 @@ const PERFORMANCE_PARTICIPANT_ROLE_LABEL=Object.freeze({composer:"作曲者",con
 const PERFORMANCE_INSTITUTION_ROLE_LABEL=Object.freeze({festival:"音乐节",theatre:"剧院",opera_house:"歌剧院",ensemble:"演出团体",church:"教堂",concert_hall:"音乐厅"});
 const PERFORMANCE_DATING_CERTAINTY_LABEL=Object.freeze({certain:"确定"});
 const PERFORMANCE_STATE_LABEL=Object.freeze({complete_cycle:"完整周期",complete_version:"完整演出形态",reconstructed_completion:"重构完成形态",excerpt:"片段演出"});
+const RECORDING_TYPE_LABEL=Object.freeze({studio:"录音室录音",live:"现场录音",broadcast:"广播录音"});
+const RECORDING_PARTICIPANT_ROLE_LABEL=Object.freeze({composer:"作曲者",conductor:"指挥",singer:"歌者",chorus:"合唱",ensemble_member:"乐团 / 合奏",speaker:"朗诵者"});
+const RECORDING_CREDIT_ROLE_LABEL=Object.freeze({"recording company":"录音公司","recording producer":"制作人","recording engineer":"录音工程师","balance engineer":"平衡工程师",broadcaster:"广播机构","recording archive":"录音档案机构"});
+const RECORDING_DURATION_STATUS_LABEL=Object.freeze({complete:"完整",surviving_only:"现存形态",approximate:"约数"});
+const RECORDING_SURVIVAL_STATUS_LABEL=Object.freeze({extant_complete:"现存完整",extant_partial:"现存不完整"});
+const RECORDING_DATING_CERTAINTY_LABEL=Object.freeze({certain:"确定"});
 let researchDataReady=false;
 let researchWorks=[];
 let researchData=Object.create(null);
@@ -197,6 +203,16 @@ function researchPerformancesForWork(work){
     return performance||null;
   }).filter(Boolean);
 }
+function researchRecordingsForWork(work){
+  const recordings=Array.isArray(researchData.recordings)?researchData.recordings:[];
+  const byRecordingId=new Map(recordings.filter(recording=>recording&&recording.id).map(recording=>[recording.id,recording]));
+  const refs=Array.isArray(work?.recordingRefs)?work.recordingRefs:[];
+  return refs.map(recordingRef=>{
+    const recording=byRecordingId.get(recordingRef);
+    if(!recording)console.warn("[AD FONTES] Unresolved WORK→RECORDING reference",{workId:work?.id,recordingRef});
+    return recording||null;
+  }).filter(Boolean);
+}
 function researchSourceTypeLabel(type){return FONTES_SOURCE_TYPE_LABEL[String(type||"")]||"未定类型"}
 function researchCreatorRoleLabel(role){return FONTES_CREATOR_ROLE_LABEL[String(role||"")]||"责任未定"}
 function researchDatingLabel(source){
@@ -223,6 +239,17 @@ function researchPerformanceMatchLabel(value){
   if(value===true)return "已建立精确对应";
   if(value===false)return "未形成完整对应";
   return "当前未建立确定对应";
+}
+function researchRecordingTypeLabel(type){return RECORDING_TYPE_LABEL[String(type||"")]||"未定类型"}
+function researchRecordingParticipantRoleLabel(role){return RECORDING_PARTICIPANT_ROLE_LABEL[String(role||"")]||"角色未定"}
+function researchRecordingCreditRoleLabel(role){return RECORDING_CREDIT_ROLE_LABEL[String(role||"")]||"责任未定"}
+function researchRecordingDurationStatusLabel(status){return RECORDING_DURATION_STATUS_LABEL[String(status||"")]||"状态未定"}
+function researchRecordingSurvivalStatusLabel(status){return RECORDING_SURVIVAL_STATUS_LABEL[String(status||"")]||"状态未定"}
+function researchRecordingDatingLabel(recording){
+  const dating=recording?.dating||{};
+  const certainty=RECORDING_DATING_CERTAINTY_LABEL[String(dating.certainty||"")]||"未定";
+  const note=String(dating.note??"").trim();
+  return note?`${certainty} · ${researchEscape(note)}`:certainty;
 }
 function researchProvenanceLabel(provenance){
   return provenance==="not yet established"?"尚未建立":researchField(provenance);
@@ -297,6 +324,75 @@ function renderVersionResponsibility(items,unlinked=false){
   }).join("");
   return rows?`<ul class="work-archive-version-responsibility">${rows}</ul>`:`<span class="work-archive-version-empty">—</span>`;
 }
+function renderRecordingField(label,value,wide=false){
+  return `<div class="work-archive-recording-field${wide?" work-archive-recording-field-wide":""}"><dt>${label}</dt><dd>${value}</dd></div>`;
+}
+function renderRecordingParticipants(items){
+  const rows=(Array.isArray(items)?items:[]).map(item=>{
+    const personId=item?.personId!=null?item.personId:null;
+    const person=personId!=null?byId[personId]:null;
+    if(personId!=null&&!person)console.warn("[AD FONTES] Unresolved RECORDING participant person reference",{personId});
+    const name=person?researchField(person.n):researchField(item?.name);
+    return `<li><span>${name}</span><small>${researchRecordingParticipantRoleLabel(item?.role)}</small></li>`;
+  }).join("");
+  return rows?`<ul class="work-archive-recording-people">${rows}</ul>`:"—";
+}
+function renderRecordingCredits(items){
+  const rows=(Array.isArray(items)?items:[]).map(item=>`<li><span>${researchField(item?.name)}</span><small>${researchRecordingCreditRoleLabel(item?.role)}</small></li>`).join("");
+  return rows?`<ul class="work-archive-recording-credits">${rows}</ul>`:"—";
+}
+function renderRecordingVersion(versionId){
+  if(versionId==null)return `<span class="work-archive-recording-version-empty">当前未建立对应 VERSION</span>`;
+  const versions=Array.isArray(researchData.versions)?researchData.versions:[];
+  const version=versions.find(item=>item&&item.id===versionId);
+  if(!version){
+    console.warn("[AD FONTES] Unresolved RECORDING→VERSION reference",{versionId});
+    return `<span class="work-archive-recording-version-empty">当前未建立对应 VERSION</span>`;
+  }
+  return `<span class="work-archive-recording-version"><strong>${researchField(version.label)}</strong><small>${researchField(version.originalLabel)}</small></span>`;
+}
+function renderRecordingPerformance(performanceId){
+  if(performanceId==null)return `<span class="work-archive-recording-performance-empty">当前未建立对应 PERFORMANCE</span>`;
+  const performances=Array.isArray(researchData.performances)?researchData.performances:[];
+  const performance=performances.find(item=>item&&item.id===performanceId);
+  if(!performance){
+    console.warn("[AD FONTES] Unresolved RECORDING→PERFORMANCE reference",{performanceId});
+    return `<span class="work-archive-recording-performance-empty">当前未建立对应 PERFORMANCE</span>`;
+  }
+  return `<span class="work-archive-recording-performance"><strong>${researchField(performance.title)}</strong><small>${researchField(performance.date)}</small></span>`;
+}
+function renderRecordingDuration(duration){
+  const value=duration||{};
+  return `<div class="work-archive-recording-duration"><p class="work-archive-recording-duration-status"><span>状态：</span>${researchRecordingDurationStatusLabel(value.status)}</p><p class="work-archive-recording-duration-display">${researchField(value.display)}</p><p class="work-archive-recording-duration-note"><span>说明：</span>${researchField(value.note)}</p></div>`;
+}
+function renderRecordingEntry(recording,index){
+  const relationshipToPerformance=String(recording?.relationshipToPerformance??"").trim();
+  return `<article class="work-archive-recording-entry">
+    <header class="work-archive-recording-entry-head"><div><span class="work-archive-recording-number">RECORDING ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-recording-title">${researchField(recording.title)}</h5></div><div class="work-archive-recording-date">${researchField(recording.recordingDate)}</div></header>
+    <dl class="work-archive-recording-fields">
+      ${renderRecordingField("录音类型",researchRecordingTypeLabel(recording.recordingType))}
+      ${renderRecordingField("录音日期",researchField(recording.recordingDate))}
+      ${renderRecordingField("断代依据",researchRecordingDatingLabel(recording))}
+      ${renderRecordingField("录音场所",researchField(recording.recordingVenue))}
+      ${renderRecordingField("城市",researchField(recording.place))}
+      ${renderRecordingField("政体 / 地域",researchField(recording.countryOrPolity))}
+      ${renderRecordingField("关联 VERSION",renderRecordingVersion(recording.versionId))}
+      ${renderRecordingField("关联 PERFORMANCE",renderRecordingPerformance(recording.performanceId))}
+      ${renderRecordingField("载体",researchField(recording.recordingMedium))}
+      ${renderRecordingField("录音技术",researchField(recording.recordingTechnology))}
+      ${renderRecordingField("声道",researchField(recording.channels))}
+      ${renderRecordingField("保存状态",researchRecordingSurvivalStatusLabel(recording.survivalStatus))}
+    </dl>
+    <section class="work-archive-recording-section"><h6>参与者</h6>${renderRecordingParticipants(recording.participants)}</section>
+    <section class="work-archive-recording-section"><h6>制作 / 录音责任</h6>${renderRecordingCredits(recording.recordingCredits)}</section>
+    <section class="work-archive-recording-section"><h6>时长</h6>${renderRecordingDuration(recording.duration)}</section>
+    <section class="work-archive-recording-section"><h6>技术说明</h6><p>${researchField(recording.technicalNote)}</p></section>
+    <section class="work-archive-recording-section"><h6>版本关系说明</h6><p>${researchField(recording.relationshipToVersion)}</p></section>
+    ${relationshipToPerformance?`<section class="work-archive-recording-section"><h6>演出关系说明</h6><p>${researchField(relationshipToPerformance)}</p></section>`:""}
+    <section class="work-archive-recording-section work-archive-recording-history"><h6>历史语境</h6><p>${researchField(recording.historicalContext)}</p></section>
+    <section class="work-archive-recording-section work-archive-recording-significance"><h6>录音史意义</h6><p>${researchField(recording.recordingSignificance)}</p></section>
+  </article>`;
+}
 function renderPersonWorks(m){
   if(!researchDataReady)return "";
   const works=researchWorksForPerson(m.i);
@@ -320,6 +416,7 @@ function renderWorkArchiveIndex(work){
     if(key==="versionRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-version-open="${researchField(work.id,"")}" aria-label="打开版本谱系">${body}</button>`;
     if(key==="sourceRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-fontes-open="${researchField(work.id,"")}" aria-label="打开原始史料">${body}</button>`;
     if(key==="performanceRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-performance-open="${researchField(work.id,"")}" aria-label="打开演出史">${body}</button>`;
+    if(key==="recordingRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-recording-open="${researchField(work.id,"")}" aria-label="打开录音史">${body}</button>`;
     return `<div class="work-archive-index-item">${body}</div>`;
   }).join("")}</div>`;
 }
@@ -370,9 +467,10 @@ function openWorkArchive(workId,opts={}){
   $("#dwrap").querySelectorAll("[data-version-open]").forEach(b=>b.onclick=()=>openVersionLineage(b.dataset.versionOpen));
   $("#dwrap").querySelectorAll("[data-fontes-open]").forEach(b=>b.onclick=()=>openFontes(b.dataset.fontesOpen));
   $("#dwrap").querySelectorAll("[data-performance-open]").forEach(b=>b.onclick=()=>openPerformance(b.dataset.performanceOpen));
+  $("#dwrap").querySelectorAll("[data-recording-open]").forEach(b=>b.onclick=()=>openRecording(b.dataset.recordingOpen));
   requestAnimationFrame(()=>{
     if(restoreScroll!=null)wrap.scrollTop=restoreScroll;
-    const focusTarget=opts.focusFontes===true?wrap.querySelector("[data-fontes-open]"):opts.focusVersion===true?wrap.querySelector("[data-version-open]"):opts.focusPerformance===true?wrap.querySelector("[data-performance-open]"):$("#work-archive-back");
+    const focusTarget=opts.focusFontes===true?wrap.querySelector("[data-fontes-open]"):opts.focusVersion===true?wrap.querySelector("[data-version-open]"):opts.focusPerformance===true?wrap.querySelector("[data-performance-open]"):opts.focusRecording===true?wrap.querySelector("[data-recording-open]"):$("#work-archive-back");
     focusTarget?.focus({preventScroll:true});
   });
 }
@@ -459,6 +557,35 @@ function openPerformance(workId){
   $("#performance-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusPerformance:true});
   $("#dx").onclick=()=>dg.close();
   requestAnimationFrame(()=>$("#performance-back")?.focus());
+}
+function openRecording(workId){
+  if(!researchDataReady)return;
+  const work=researchWorks.find(item=>item&&item.id===workId);
+  const person=work&&byId[work.personId];
+  const recordings=researchRecordingsForWork(work);
+  const dg=$("#dlg");
+  const wrap=$("#dwrap");
+  if(!work||!person||!recordings.length||!dg||!wrap)return;
+  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
+  const workScroll=wrap.scrollTop||0;
+  const source=dg.dataset.source||"年鉴名录";
+  dg.dataset.kind="recording";
+  dg.dataset.m=person.i;
+  dg.dataset.work=work.id;
+  dg.dataset.personScroll=String(personScroll);
+  dg.dataset.workScroll=String(workScroll);
+  dg.setAttribute("aria-labelledby","recording-title");
+  wrap.innerHTML=`<div class="work-archive-view work-archive-recording-view">
+    <div class="work-archive-nav"><button type="button" class="work-archive-back" id="recording-back">← 返回作品</button><button type="button" class="dclose work-archive-close" id="dx" aria-label="关闭详情">✕</button></div>
+    <header class="work-archive-header work-archive-recording-header"><span class="work-archive-kicker">WORK ARCHIVE · RECORDING</span><h4 id="recording-title">录音史</h4><div class="work-archive-original">RECORDING</div><div class="work-archive-meta">${researchField(work.title)} · ${researchField(work.originalTitle)}</div></header>
+    <div class="work-archive-recording-context"><span>归属 WORK</span><strong>${researchField(work.title)}</strong><small>${researchField(work.originalTitle)}</small></div>
+    <p class="work-archive-recording-intro">录音把作品从一次性的现场转入可复制、剪辑、保存与再发行的声音制度。此处只列与该 WORK 明确建立关系的录音；版本、演出、媒介、技术与保存状态分别保留。</p>
+    <section class="work-archive-recording-list">${recordings.map(renderRecordingEntry).join("")}</section>
+  </div>`;
+  if(!dg.open)dg.show();
+  $("#recording-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusRecording:true});
+  $("#dx").onclick=()=>dg.close();
+  requestAnimationFrame(()=>$("#recording-back")?.focus());
 }
 function openFontes(workId){
   if(!researchDataReady)return;
@@ -1561,7 +1688,7 @@ $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
 
 /* ══════════ 弹窗关闭清锚点 ══════════ */
-$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
+$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance","recording"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
 function currentView(){const on=document.querySelector("#views button.on");return on?"v="+on.dataset.v:""}
 
 /* ══════════ 键盘导航 ══════════ */
