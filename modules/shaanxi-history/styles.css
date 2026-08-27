@@ -829,3 +829,65 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   .object-dialog .detail-archive-grid { grid-template-columns: 1fr; }
   .object-dialog .detail-archive-field { min-height: 0; }
 }
+
+/* 2026-08-27 · center the museum lead and the remaining special-exhibition content. */
+#museum .section-title-row {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#museum .section-title-row h2 {
+  max-width: 100%;
+}
+
+#special.special {
+  display: block;
+}
+
+#special.special .special-copy {
+  width: min(100%, 1120px);
+  margin-inline: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 6vw, 88px);
+  align-items: center;
+  text-align: center;
+}
+
+#special.special .special-copy > div {
+  min-width: 0;
+}
+
+#special.special .special-copy h2 {
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+#special.special .special-copy > div:last-child > p {
+  max-width: 42em;
+  margin-inline: auto;
+}
+
+#special.special .special-preview {
+  grid-column: auto;
+  width: min(100%, 1120px);
+  margin: 32px auto 0;
+}
+
+@media (max-width: 1040px) {
+  #special.special .special-copy {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  #special.special .special-copy {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  #special.special .special-preview {
+    grid-template-columns: 1fr;
+  }
+}
