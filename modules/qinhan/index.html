@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="motion.css?v=20260823-qinhan-cards1" />
     <link rel="stylesheet" href="../../shared/css/polish.css" />
     <style id="qinhan-polish-20260826">
+      /* 标架：统一 warm paper 色温，收紧标题防止回绕 */
+      .hero h1 { flex-wrap: nowrap; max-width: 100%; }
+      .museum-heading h2 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .archive-intro h2 { max-width: 12em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
       /* 馆舍航拍图：悬浮缓放 */
       .museum-figure img { transition: transform .5s cubic-bezier(.22, .8, .25, 1), filter .3s ease; }
       .museum-figure:hover img { transform: scale(1.02); }
@@ -36,8 +41,11 @@
       .queen-image-wrap:hover img,
       .tiger-image-wrap:hover img { transform: scale(1.025); }
 
-      /* 目录卡片文案对比度 */
-      .object-card .card-summary { color: color-mix(in srgb, #565851 88%, #1d1f1c); }
+      /* 目录卡片：标题单行，说明两行，对比度微增 */
+      .card-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .card-summary { display: -webkit-box; overflow: hidden; color: color-mix(in srgb, #565851 90%, #1d1f1c); -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+      /* 软化红与纸面对比 */
+      .card-era { color: color-mix(in srgb, var(--red) 80%, var(--ink)); }
     </style>
     <style id="tomb-trails-continuity">
       .museum-tomb-trails { width: 100% !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: var(--night) !important; }

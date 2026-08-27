@@ -28,6 +28,14 @@
     <link rel="stylesheet" href="../../shared/css/polish.css" />
     <style id="museum-brand-emblem">.brand-mark{overflow:hidden;background:#17211e}.brand-mark img{display:block;width:88%;height:88%;object-fit:contain}</style>
     <style id="archaeology-polish-20260826">
+      /* 标题收敛：防止 12 行回绕，保持一轴可读 */
+      #about-title { display: flex; align-items: end; flex-wrap: nowrap; gap: .45em; white-space: nowrap; }
+      #about-title .about-title-kicker { display: inline; white-space: nowrap; }
+      #about-title .about-title-secondary { display: inline; white-space: nowrap; }
+      @media (max-width: 820px) {
+        #about-title { flex-wrap: wrap; white-space: normal; }
+        #about-title::after { display: none; }
+      }
       /* 主视觉与重点文物图：悬浮缓放 */
       .feature-image img,
       .treasure-main-image img,

@@ -35,6 +35,13 @@
     <link rel="stylesheet" href="./motion.css?v=5.4" />
     <link rel="stylesheet" href="./mobile.css?v=20260821-mobile1" />
     <link rel="stylesheet" href="../../shared/css/polish.css" />
+    <style id="beilin-polish-20260826">
+      /* 目录卡片：统一等高 + 标题单行，保证行对齐 */
+      .catalog-grid { grid-auto-rows: auto; }
+      .artifact-card { min-height: 0; }
+      .artifact-card-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .artifact-card-desc { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+    </style>
     <style id="tomb-trails-continuity">
       .museum-tomb-trails { width: 100% !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: var(--ink) !important; }
       .museum-tomb-trails iframe { background: var(--ink) !important; }

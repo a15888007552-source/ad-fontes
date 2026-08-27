@@ -315,8 +315,8 @@ img { display: block; max-width: 100%; }
 .quick-review { margin-top: clamp(5rem, 10vw, 9rem); }
 .subheading { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: var(--muted); font-size: .62rem; }
 .subheading .eyebrow { margin: 0; }
-.review-grid { display: grid; grid-template-columns: 1.25fr repeat(3, 1fr); gap: .6rem; }
-.review-card { position: relative; display: flex; align-items: center; min-height: 150px; overflow: hidden; border: 1px solid var(--line); background: rgba(255, 255, 255, .2); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
+.review-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; }
+.review-card { position: relative; display: flex; align-items: center; height: 100%; min-height: 150px; overflow: hidden; border: 1px solid var(--line); background: rgba(255, 255, 255, .2); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
 .review-card:hover, .review-card:focus-visible { border-color: var(--rust); background: rgba(255, 255, 255, .55); transform: translateY(-4px); }
 .review-card--image { color: var(--paper); background: var(--ink); }
 .review-card-image { position: absolute; inset: 0; background-position: center; background-size: cover; opacity: .42; transition: transform .4s ease, opacity .25s ease; }
