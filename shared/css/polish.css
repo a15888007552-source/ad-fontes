@@ -53,19 +53,19 @@
    title systems remain untouched. */
 
 .intro-curtain .intro-curtain-center > strong {
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
 }
 
 .intro-curtain ~ main#top > .hero #hero-title {
-  letter-spacing: -0.03em;
+  letter-spacing: 0.08em;
 }
 
 #opening.opening .opening-copy h2 {
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
 }
 
 #opening.opening ~ main #overview.hero .hero-copy h1 {
-  letter-spacing: -0.03em;
+  letter-spacing: 0.08em;
 }
 
 @media (prefers-reduced-motion: reduce) {
