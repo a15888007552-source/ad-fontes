@@ -161,6 +161,14 @@ const RECORDING_CREDIT_ROLE_LABEL=Object.freeze({"recording company":"录音公�
 const RECORDING_DURATION_STATUS_LABEL=Object.freeze({complete:"完整",surviving_only:"现存形态",approximate:"约数"});
 const RECORDING_SURVIVAL_STATUS_LABEL=Object.freeze({extant_complete:"现存完整",extant_partial:"现存不完整"});
 const RECORDING_DATING_CERTAINTY_LABEL=Object.freeze({certain:"确定"});
+const RECEPTION_TYPE_LABEL=Object.freeze({controversy:"争议",canonization:"经典化",contemporary_criticism:"同时代批评",version_reassessment:"版本重估"});
+const RECEPTION_SCOPE_LABEL=Object.freeze({immediate:"即时接受",short_term:"短期接受",retrospective:"回溯性接受"});
+const RECEPTION_INTERPRETIVE_CERTAINTY_LABEL=Object.freeze({strong:"较强",partial:"部分"});
+const RECEPTION_DATING_CERTAINTY_LABEL=Object.freeze({certain:"确定",range:"区间"});
+const RECEPTION_ACTOR_ROLE_LABEL=Object.freeze({critic:"批评者",audience_group:"观众群体",other:"其他参与",scholar:"学者",institution:"机构",performer:"演出参与者",editor:"编辑者",publisher:"出版者"});
+const RECEPTION_INSTITUTION_TYPE_LABEL=Object.freeze({theatre:"剧院",journal:"期刊",newspaper:"报纸",other:"其他机构",publisher:"出版机构"});
+const RECEPTION_TARGET_RELATION_LABEL=Object.freeze({critical_response_to:"批评回应",reframes:"重新框定",canonizes:"经典化",institutionalizes:"制度化",reassesses:"重新评估",public_realization_of:"公开实现",public_completion_state:"公开完成状态",reassesses_authorship:"重新评估作者归属"});
+const RECEPTION_TARGET_ENTITY_TYPE_LABEL=Object.freeze({work:"WORK",version:"VERSION",performance:"PERFORMANCE",recording:"RECORDING"});
 let researchDataReady=false;
 let researchWorks=[];
 let researchData=Object.create(null);
@@ -213,6 +221,16 @@ function researchRecordingsForWork(work){
     return recording||null;
   }).filter(Boolean);
 }
+function researchReceptionsForWork(work){
+  const receptions=Array.isArray(researchData.receptions)?researchData.receptions:[];
+  const byReceptionId=new Map(receptions.filter(reception=>reception&&reception.id).map(reception=>[reception.id,reception]));
+  const refs=Array.isArray(work?.receptionRefs)?work.receptionRefs:[];
+  return refs.map(receptionRef=>{
+    const reception=byReceptionId.get(receptionRef);
+    if(!reception)console.warn("[AD FONTES] Unresolved WORK→RECEPTION reference",{workId:work?.id,receptionRef});
+    return reception||null;
+  }).filter(Boolean);
+}
 function researchSourceTypeLabel(type){return FONTES_SOURCE_TYPE_LABEL[String(type||"")]||"未定类型"}
 function researchCreatorRoleLabel(role){return FONTES_CREATOR_ROLE_LABEL[String(role||"")]||"责任未定"}
 function researchDatingLabel(source){
@@ -250,6 +268,35 @@ function researchRecordingDatingLabel(recording){
   const certainty=RECORDING_DATING_CERTAINTY_LABEL[String(dating.certainty||"")]||"未定";
   const note=String(dating.note??"").trim();
   return note?`${certainty} · ${researchEscape(note)}`:certainty;
+}
+function researchReceptionTypeLabel(type){return RECEPTION_TYPE_LABEL[String(type||"")]||"未定类型"}
+function researchReceptionScopeLabel(scope){return RECEPTION_SCOPE_LABEL[String(scope||"")]||"未定范围"}
+function researchReceptionInterpretiveCertaintyLabel(certainty){return RECEPTION_INTERPRETIVE_CERTAINTY_LABEL[String(certainty||"")]||"未定"}
+function researchReceptionDatingLabel(reception){
+  const dating=reception?.dating||{};
+  const certainty=RECEPTION_DATING_CERTAINTY_LABEL[String(dating.certainty||"")]||"未定";
+  const note=String(dating.note??"");
+  return note.trim()?`${certainty} · ${researchEscape(note)}`:certainty;
+}
+function researchReceptionActorRoleLabel(role){return RECEPTION_ACTOR_ROLE_LABEL[String(role||"")]||"角色未定"}
+function researchReceptionInstitutionTypeLabel(type){return RECEPTION_INSTITUTION_TYPE_LABEL[String(type||"")]||"性质未定"}
+function researchReceptionTargetRelationLabel(relation){return RECEPTION_TARGET_RELATION_LABEL[String(relation||"")]||researchField(relation)}
+function researchReceptionTargetEntityTypeLabel(entityType){return RECEPTION_TARGET_ENTITY_TYPE_LABEL[String(entityType||"")]||"ENTITY"}
+function researchReceptionTargetEntity(entityType,entityId){
+  if(entityType==="work")return researchWorks.find(item=>item&&item.id===entityId)||null;
+  if(entityType==="version"){
+    const versions=Array.isArray(researchData.versions)?researchData.versions:[];
+    return versions.find(item=>item&&item.id===entityId)||null;
+  }
+  if(entityType==="performance"){
+    const performances=Array.isArray(researchData.performances)?researchData.performances:[];
+    return performances.find(item=>item&&item.id===entityId)||null;
+  }
+  if(entityType==="recording"){
+    const recordings=Array.isArray(researchData.recordings)?researchData.recordings:[];
+    return recordings.find(item=>item&&item.id===entityId)||null;
+  }
+  return null;
 }
 function researchProvenanceLabel(provenance){
   return provenance==="not yet established"?"尚未建立":researchField(provenance);
@@ -393,6 +440,78 @@ function renderRecordingEntry(recording,index){
     <section class="work-archive-recording-section work-archive-recording-significance"><h6>录音史意义</h6><p>${researchField(recording.recordingSignificance)}</p></section>
   </article>`;
 }
+function renderReceptionField(label,value,wide=false){
+  return `<div class="work-archive-reception-field${wide?" work-archive-reception-field-wide":""}"><dt>${label}</dt><dd>${value}</dd></div>`;
+}
+function renderReceptionActors(items){
+  const rows=(Array.isArray(items)?items:[]).map(item=>{
+    const personId=item?.personId??null;
+    const person=personId?byId[personId]:null;
+    if(personId&&!person)console.warn("[AD FONTES] Unresolved RECEPTION actor person reference",{personId});
+    const name=person?researchField(person.n):researchField(item?.name);
+    return `<li><span>${name}</span><small>${researchReceptionActorRoleLabel(item?.role)}</small></li>`;
+  }).join("");
+  return rows?`<ul class="work-archive-reception-actors">${rows}</ul>`:"—";
+}
+function renderReceptionInstitutions(items){
+  const rows=(Array.isArray(items)?items:[]).map(item=>{
+    const name=researchField(item?.name);
+    const type=researchReceptionInstitutionTypeLabel(item?.type);
+    const role=researchField(item?.role);
+    return `<li><span>${name}</span><small>${type} · ${role}</small></li>`;
+  }).join("");
+  return rows?`<ul class="work-archive-reception-institutions">${rows}</ul>`:"—";
+}
+function renderReceptionTarget(target){
+  const entityType=String(target?.entityType??"");
+  const entityId=String(target?.entityId??"");
+  const entity=researchReceptionTargetEntity(entityType,entityId);
+  if(!entity)console.warn("[AD FONTES] Unresolved RECEPTION target reference",{entityType,entityId});
+  let primary="当前未建立对应实体";
+  let secondary="";
+  if(entity){
+    if(entityType==="work"){
+      primary=researchField(entity.title);
+      secondary=researchField(entity.originalTitle);
+    }else if(entityType==="version"){
+      primary=researchField(entity.label);
+      secondary=researchField(entity.originalLabel);
+    }else if(entityType==="performance"){
+      primary=researchField(entity.title);
+      secondary=researchField(entity.date);
+    }else if(entityType==="recording"){
+      primary=researchField(entity.title);
+      secondary=researchField(entity.recordingDate);
+    }
+  }
+  const secondaryMarkup=secondary?`<small>${secondary}</small>`:"";
+  return `<li class="work-archive-reception-target"><span class="work-archive-reception-target-type">${researchReceptionTargetEntityTypeLabel(entityType)}</span><div class="work-archive-reception-target-entity"><strong>${primary}</strong>${secondaryMarkup}</div><small class="work-archive-reception-target-relation">${researchReceptionTargetRelationLabel(target?.relation)}</small></li>`;
+}
+function renderReceptionTargets(targetRefs){
+  const rows=(Array.isArray(targetRefs)?targetRefs:[]).map(renderReceptionTarget).join("");
+  return rows?`<ul class="work-archive-reception-targets">${rows}</ul>`:"—";
+}
+function renderReceptionEntry(reception,index){
+  return `<article class="work-archive-reception-entry">
+    <header class="work-archive-reception-entry-head"><div><span class="work-archive-reception-number">RECEPTION ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-reception-title">${researchField(reception?.title)}</h5></div><time class="work-archive-reception-date">${researchField(reception?.date)}</time></header>
+    <dl class="work-archive-reception-fields">
+      ${renderReceptionField("接受类型",researchReceptionTypeLabel(reception?.receptionType))}
+      ${renderReceptionField("接受范围",researchReceptionScopeLabel(reception?.receptionScope))}
+      ${renderReceptionField("日期",researchField(reception?.date))}
+      ${renderReceptionField("断代依据",researchReceptionDatingLabel(reception))}
+      ${renderReceptionField("地点",researchField(reception?.place))}
+      ${renderReceptionField("解释把握度",researchReceptionInterpretiveCertaintyLabel(reception?.interpretiveCertainty))}
+    </dl>
+    <section class="work-archive-reception-section"><h6>参与者</h6>${renderReceptionActors(reception?.actors)}</section>
+    <section class="work-archive-reception-section"><h6>相关机构</h6>${renderReceptionInstitutions(reception?.institutions)}</section>
+    <section class="work-archive-reception-section"><h6>指向对象</h6>${renderReceptionTargets(reception?.targetRefs)}</section>
+    <section class="work-archive-reception-section work-archive-reception-response"><h6>文献所见</h6><p>${researchField(reception?.documentedResponse)}</p></section>
+    <section class="work-archive-reception-section work-archive-reception-interpretive"><h6>解释转向</h6><p>${researchField(reception?.interpretiveShift)}</p></section>
+    <section class="work-archive-reception-section work-archive-reception-boundary"><h6>解释边界</h6><p>${researchField(reception?.interpretiveNote)}</p></section>
+    <section class="work-archive-reception-section work-archive-reception-history"><h6>历史语境</h6><p>${researchField(reception?.historicalContext)}</p></section>
+    <section class="work-archive-reception-section work-archive-reception-significance"><h6>接受史意义</h6><p>${researchField(reception?.receptionSignificance)}</p></section>
+  </article>`;
+}
 function renderPersonWorks(m){
   if(!researchDataReady)return "";
   const works=researchWorksForPerson(m.i);
@@ -417,6 +536,7 @@ function renderWorkArchiveIndex(work){
     if(key==="sourceRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-fontes-open="${researchField(work.id,"")}" aria-label="打开原始史料">${body}</button>`;
     if(key==="performanceRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-performance-open="${researchField(work.id,"")}" aria-label="打开演出史">${body}</button>`;
     if(key==="recordingRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-recording-open="${researchField(work.id,"")}" aria-label="打开录音史">${body}</button>`;
+    if(key==="receptionRefs"&&count>0)return `<button type="button" class="work-archive-index-item work-archive-index-button" data-reception-open="${researchField(work.id,"")}" aria-label="打开接受史">${body}</button>`;
     return `<div class="work-archive-index-item">${body}</div>`;
   }).join("")}</div>`;
 }
@@ -468,10 +588,12 @@ function openWorkArchive(workId,opts={}){
   $("#dwrap").querySelectorAll("[data-fontes-open]").forEach(b=>b.onclick=()=>openFontes(b.dataset.fontesOpen));
   $("#dwrap").querySelectorAll("[data-performance-open]").forEach(b=>b.onclick=()=>openPerformance(b.dataset.performanceOpen));
   $("#dwrap").querySelectorAll("[data-recording-open]").forEach(b=>b.onclick=()=>openRecording(b.dataset.recordingOpen));
+  $("#dwrap").querySelectorAll("[data-reception-open]").forEach(b=>b.onclick=()=>openReception(b.dataset.receptionOpen));
   requestAnimationFrame(()=>{
     if(restoreScroll!=null)wrap.scrollTop=restoreScroll;
-    const focusTarget=opts.focusFontes===true?wrap.querySelector("[data-fontes-open]"):opts.focusVersion===true?wrap.querySelector("[data-version-open]"):opts.focusPerformance===true?wrap.querySelector("[data-performance-open]"):opts.focusRecording===true?wrap.querySelector("[data-recording-open]"):$("#work-archive-back");
+    const focusTarget=opts.focusFontes===true?wrap.querySelector("[data-fontes-open]"):opts.focusVersion===true?wrap.querySelector("[data-version-open]"):opts.focusPerformance===true?wrap.querySelector("[data-performance-open]"):opts.focusRecording===true?wrap.querySelector("[data-recording-open]"):opts.focusReception===true?wrap.querySelector("[data-reception-open]"):$("#work-archive-back");
     focusTarget?.focus({preventScroll:true});
+    if(restoreScroll!=null)requestAnimationFrame(()=>{wrap.scrollTop=restoreScroll});
   });
 }
 function renderPerformanceField(label,value,wide=false){
@@ -586,6 +708,34 @@ function openRecording(workId){
   $("#recording-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusRecording:true});
   $("#dx").onclick=()=>dg.close();
   requestAnimationFrame(()=>$("#recording-back")?.focus());
+}
+function openReception(workId){
+  if(!researchDataReady)return;
+  const work=researchWorks.find(item=>item&&item.id===workId);
+  const person=work&&byId[work.personId];
+  const receptions=researchReceptionsForWork(work);
+  const dg=$("#dlg");
+  const wrap=$("#dwrap");
+  if(!work||!person||!receptions.length||!dg||!wrap)return;
+  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
+  const workScroll=wrap.scrollTop||0;
+  dg.dataset.kind="reception";
+  dg.dataset.m=person.i;
+  dg.dataset.work=work.id;
+  dg.dataset.personScroll=String(personScroll);
+  dg.dataset.workScroll=String(workScroll);
+  dg.setAttribute("aria-labelledby","reception-title");
+  wrap.innerHTML=`<div class="work-archive-view work-archive-reception-view">
+    <div class="work-archive-nav"><button type="button" class="work-archive-back" id="reception-back">← 返回作品</button><button type="button" class="dclose work-archive-close" id="dx" aria-label="关闭详情">✕</button></div>
+    <header class="work-archive-header work-archive-reception-header"><span class="work-archive-kicker">WORK ARCHIVE · RECEPTION</span><h4 id="reception-title">接受史</h4><div class="work-archive-original">RECEPTION</div><div class="work-archive-meta">${researchField(work.title)} · ${researchField(work.originalTitle)}</div></header>
+    <div class="work-archive-reception-context"><span>归属 WORK</span><strong>${researchField(work.title)}</strong><small>${researchField(work.originalTitle)}</small></div>
+    <p class="work-archive-reception-intro">作品进入公共判断之后，接受史记录的不是一条从争议通向经典的直线。此处只列与该 WORK 明确建立关系的接受节点，并把可直接文献化的反应、研究者的解释转向及其证据强度分开保存。</p>
+    <section class="work-archive-reception-list">${receptions.map(renderReceptionEntry).join("")}</section>
+  </div>`;
+  if(!dg.open)dg.show();
+  $("#reception-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusReception:true});
+  $("#dx").onclick=()=>dg.close();
+  requestAnimationFrame(()=>$("#reception-back")?.focus());
 }
 function openFontes(workId){
   if(!researchDataReady)return;
@@ -1688,7 +1838,7 @@ $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
 
 /* ══════════ 弹窗关闭清锚点 ══════════ */
-$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance","recording"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
+$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance","recording","reception"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
 function currentView(){const on=document.querySelector("#views button.on");return on?"v="+on.dataset.v:""}
 
 /* ══════════ 键盘导航 ══════════ */
