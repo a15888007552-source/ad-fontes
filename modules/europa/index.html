@@ -7,28 +7,17 @@
 <title>欧罗巴音乐家年鉴 · Annales Musicorum Europae</title>
 <meta name="description" content="欧罗巴音乐家年鉴：与华夏音乐家年鉴组成 Ad Fontes 第一模块的镜像双卷。">
 <script>try{var __mirrorDirection=sessionStorage.getItem('ad-fontes-yearbook-direction');if(__mirrorDirection)document.documentElement.dataset.mirror=__mirrorDirection}catch(e){}</script>
-<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/index.css?v=20260828-era-frame-v6">
 <link rel="stylesheet" href="./css/map-real.css">
+<link rel="stylesheet" href="./css/europa-liquid-interactions.css">
 
 <body class="europa-opening-active">
 <div id="europa-opening" role="dialog" aria-modal="true" aria-labelledby="europa-opening-title">
   <div class="europa-opening-stage">
+    <span class="europa-opening-line" aria-hidden="true"></span>
     <div class="europa-opening-disc" aria-hidden="true">
-      <img class="europa-opening-base" src="./europa-orbit-seal.png" width="1254" height="1254" decoding="async" alt="" draggable="false">
-      <div class="europa-opening-fragments">
-        <i class="europa-opening-fragment" style="--angle:0deg;--scatter:54px;--twist:-13deg;--delay:0s"></i>
-        <i class="europa-opening-fragment" style="--angle:30deg;--scatter:72px;--twist:9deg;--delay:.03s"></i>
-        <i class="europa-opening-fragment" style="--angle:60deg;--scatter:48px;--twist:-8deg;--delay:.07s"></i>
-        <i class="europa-opening-fragment" style="--angle:90deg;--scatter:84px;--twist:14deg;--delay:.02s"></i>
-        <i class="europa-opening-fragment" style="--angle:120deg;--scatter:62px;--twist:-11deg;--delay:.09s"></i>
-        <i class="europa-opening-fragment" style="--angle:150deg;--scatter:78px;--twist:7deg;--delay:.04s"></i>
-        <i class="europa-opening-fragment" style="--angle:180deg;--scatter:57px;--twist:-15deg;--delay:.11s"></i>
-        <i class="europa-opening-fragment" style="--angle:210deg;--scatter:88px;--twist:10deg;--delay:.05s"></i>
-        <i class="europa-opening-fragment" style="--angle:240deg;--scatter:52px;--twist:-7deg;--delay:.08s"></i>
-        <i class="europa-opening-fragment" style="--angle:270deg;--scatter:76px;--twist:12deg;--delay:.01s"></i>
-        <i class="europa-opening-fragment" style="--angle:300deg;--scatter:64px;--twist:-10deg;--delay:.06s"></i>
-        <i class="europa-opening-fragment" style="--angle:330deg;--scatter:82px;--twist:8deg;--delay:.1s"></i>
-      </div>
+      <img class="europa-opening-base" src="./assets/img/original-musical-cosmograph.webp?v=1" width="640" height="640" decoding="async" alt="" draggable="false">
+      <span class="europa-opening-seam" aria-hidden="true"></span>
     </div>
     <div class="europa-opening-caption">
       <span class="kicker">AD FONTES · DICTIONARIUM EUROPAE</span>
@@ -36,6 +25,7 @@
       <p>ANNALES MUSICORUM EUROPAE · OPEN THE ARCHIVE</p>
     </div>
   </div>
+  <div class="europa-opening-veil" aria-hidden="true"><span></span><span></span></div>
   <button class="europa-opening-skip" id="europa-opening-skip" type="button">跳过开场</button>
 </div>
 
@@ -64,7 +54,7 @@
     <button data-v="musio">音乐学</button>
     <button data-v="gl">术 语</button>
     <button data-v="bib">文 献</button>
-    <button data-v="real">实 景</button>
+    <button data-v="real">实 景</button><span class="af-liquid-nav-ink" aria-hidden="true"></span>
   </nav>
   <button class="roam" id="roam" title="随机开一位音乐家的传记（R）">🎲 漫游</button>
   <button class="helpbtn" id="helpbtn" title="导览与凡例（?）">?</button>
@@ -183,6 +173,7 @@
 
 
 <script type="module" src="./js/index.js"></script>
+<script type="module" src="./js/europa-liquid-interactions.js"></script>
 <script>
 (function(){
   const link=document.querySelector('[data-mirror-to]');if(!link)return;
@@ -213,20 +204,61 @@
   let seen=false;
   try{seen=sessionStorage.getItem(key)==="1"}catch(e){}
   let finished=false;
+  let handoffTimer=0;
+  let finishTimer=0;
+  let removeTimer=0;
+  const HANDOFF_AT=1320;
+  const FINISH_AT=2050;
+
+  function clearTimers(){
+    [handoffTimer,finishTimer,removeTimer].forEach(function(timer){if(timer)window.clearTimeout(timer)});
+    handoffTimer=finishTimer=removeTimer=0;
+  }
+
+  function dismissImmediately(){
+    if(finished)return;
+    finished=true;
+    clearTimers();
+    document.body.classList.remove("europa-opening-active","europa-opening-handoff");
+    opening.remove();
+  }
+
+  function startHandoff(){
+    if(finished||opening.classList.contains("is-handoff"))return;
+    const disc=opening.querySelector(".europa-opening-disc");
+    const target=document.querySelector(".archive-orbis");
+    if(disc&&target){
+      const from=disc.getBoundingClientRect();
+      const to=target.getBoundingClientRect();
+      const x=to.left+to.width/2-(from.left+from.width/2);
+      const y=to.top+to.height/2-(from.top+from.height/2);
+      const scale=Math.min(to.width/from.width,to.height/from.height);
+      disc.style.setProperty("--handoff-x",x+"px");
+      disc.style.setProperty("--handoff-y",y+"px");
+      disc.style.setProperty("--handoff-scale",scale);
+      document.body.classList.add("europa-opening-handoff");
+      opening.classList.add("is-handoff");
+      disc.classList.add("is-handoff");
+      void disc.offsetWidth;
+      disc.classList.add("is-moving");
+    }
+    opening.classList.add("is-leaving");
+  }
+
   function finish(){
     if(finished)return;
     finished=true;
+    clearTimers();
     opening.classList.add("is-leaving");
-    document.body.classList.remove("europa-opening-active");
-    window.setTimeout(function(){opening.classList.add("is-done");opening.remove()},680);
+    document.body.classList.remove("europa-opening-active","europa-opening-handoff");
+    removeTimer=window.setTimeout(function(){opening.classList.add("is-done");opening.remove()},700);
   }
   skip&&skip.addEventListener("click",finish);
   window.addEventListener("keydown",function(e){if(e.key==="Escape"&&!finished){e.preventDefault();finish()}},false);
-  if(reduced||saveData||(!force&&seen)){finish();return;}
+  if(reduced||saveData||(!force&&seen)){dismissImmediately();return;}
   try{sessionStorage.setItem(key,"1")}catch(e){}
-  const mobile=window.matchMedia&&window.matchMedia("(max-width:640px)").matches;
-  window.setTimeout(function(){if(!finished)opening.classList.add("is-leaving")},mobile?2920:3260);
-  window.setTimeout(finish,mobile?3600:3940);
+  handoffTimer=window.setTimeout(startHandoff,HANDOFF_AT);
+  finishTimer=window.setTimeout(finish,FINISH_AT);
   skip&&skip.focus({preventScroll:true});
 })();
 </script>
