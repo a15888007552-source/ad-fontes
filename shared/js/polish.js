@@ -69,7 +69,9 @@
     // standalone key blocks that benefit from a reveal (feature cards, hero copy)
     var blocks = document.querySelectorAll('.feature-card > .feature-copy, .chapter-hero-copy');
     Array.prototype.forEach.call(blocks, function (el) {
-      if (!el.closest('.polish-reveal')) prepare(el);
+      if (el.closest('.polish-reveal')) return;
+      prepare(el);
+      queued.push(el);
     });
   } catch (e) {
     return;
