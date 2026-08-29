@@ -174,28 +174,9 @@
       }
     },
     {
-      "id": "longmen-grottoes",
-      "province": "henan",
-      "order": 1,
-      "name": "洛阳龙门石窟",
-      "city": "洛阳",
-      "theme": "石窟与佛教艺术",
-      "status": "preparation",
-      "archive_type": null,
-      "site_path": null,
-      "card_image": {
-        "path": "modules/museum-atlas/assets/longmen-grottoes.png",
-        "alt": "洛阳龙门石窟奉先寺大佛",
-        "loading": "lazy",
-        "fetchpriority": null,
-        "width": null,
-        "height": null
-      }
-    },
-    {
       "id": "luoyang-museum",
       "province": "henan",
-      "order": 2,
+      "order": 1,
       "name": "洛阳博物馆",
       "city": "洛阳",
       "theme": "古都与器物",
