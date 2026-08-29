@@ -19,6 +19,7 @@
     <meta name="twitter:image" content="https://a15888007552-source.github.io/ad-fontes/modules/baoji/assets/museum-exterior.png" />
     <link rel="icon" href="assets/brand-emblem.png" type="image/png" />
     <link rel="stylesheet" href="styles.css?v=20260821-treasure-bg1" />
+    <link rel="stylesheet" href="bronze-use-atlas/atlas.css?v=20260828-identity2" />
     <style id="museum-brand-emblem">.brand-mark{overflow:hidden;background:#17211e;border:1px solid var(--bronze-light)}.brand-mark img{display:block;width:88%;height:88%;object-fit:contain}.intro-curtain-emblem{display:block;width:clamp(62px,7vw,94px);height:clamp(62px,7vw,94px);margin:0 auto .65rem;object-fit:contain;opacity:0;animation:intro-copy-in .55s ease-out .14s forwards}@media(max-width:640px){.intro-curtain-emblem{width:64px;height:64px;margin-bottom:.4rem}}</style>
   <style id="baoji-polish-20260826">
     /* 快速检阅卡：标题最多两行、说明单行，四卡等高 */
@@ -84,6 +85,7 @@
       </a>
       <nav class="site-nav" aria-label="专题导航">
           <a href="#profile">博物馆</a>
+          <a href="#bronze-use-atlas">青铜器用图谱</a>
           <a href="#treasures">禁出文物</a>
           <a href="#archive">照片总览</a>
           <a href="../museum-atlas/index.html?province=shaanxi" target="_top">← Museum Atlas</a>
@@ -159,6 +161,38 @@
         </div>
       </section>
 
+      <section class="section" id="bronze-use-atlas" aria-labelledby="bronze-use-atlas-title" tabindex="-1">
+        <div class="atlas-shell">
+          <header class="atlas-heading">
+            <p class="atlas-eyebrow">04 / BRONZE USE ATLAS</p>
+            <div class="atlas-heading-row">
+              <h2 id="bronze-use-atlas-title">青铜器用图谱 <span>BRONZE USE ATLAS</span></h2>
+              <div class="atlas-heading-side">
+                <p>十一组器用系统汇集一百零六种青铜类型，并将两种石玉礼乐关联器纳入同场比较。点选画面中的器物，即可在当前页面阅读完整器型卡。</p>
+                <form class="atlas-search" data-atlas-search role="search">
+                  <label for="atlas-type-search">检索器型</label>
+                  <div><input id="atlas-type-search" data-atlas-search-input list="atlas-type-options" autocomplete="off" placeholder="鼎 / DING" /><button type="submit">打开</button></div>
+                  <datalist id="atlas-type-options" data-atlas-search-options></datalist>
+                </form>
+              </div>
+            </div>
+          </header>
+          <div class="atlas-stage">
+            <div class="atlas-viewport" data-atlas-viewport aria-label="青铜器分类图谱，使用左右方向键或滑动切换">
+              <div class="atlas-track" data-atlas-track></div>
+            </div>
+            <button class="atlas-arrow atlas-arrow--prev" type="button" data-atlas-prev aria-label="上一分类">←</button>
+            <button class="atlas-arrow atlas-arrow--next" type="button" data-atlas-next aria-label="下一分类">→</button>
+            <aside class="atlas-type-card" data-atlas-card hidden aria-live="polite" aria-label="完整器型卡" tabindex="-1"></aside>
+          </div>
+          <footer class="atlas-controls">
+            <p class="atlas-counter"><strong data-atlas-current>01</strong><span>/ 11</span></p>
+            <nav class="atlas-dots" data-atlas-dots aria-label="分类跳转"></nav>
+            <p class="atlas-hint">滚轮 · 方向键 · 滑动</p>
+          </footer>
+        </div>
+      </section>
+
       <section class="section section--treasures" id="treasures" aria-labelledby="treasures-title">
         <div class="page-shell">
           <div class="section-heading section-heading--split">
@@ -203,8 +237,8 @@
         </div>
       </section>
 
-          <section class="museum-tomb-trails" aria-label="墓葬与遗址历史脉络">
-        <iframe src="../tomb-trails/index.html?museum=baoji&amp;embed=1" title="宝鸡青铜器博物院墓葬与遗址历史脉络" loading="lazy"></iframe>
+          <section class="museum-tomb-trails" id="tomb-trails" aria-label="墓葬与遗址历史脉络">
+        <iframe src="../tomb-trails/index.html?museum=baoji&amp;embed=1&amp;v=20260829-restore" title="宝鸡青铜器博物院墓葬与遗址历史脉络" loading="lazy"></iframe>
       </section>
     </main>
 
@@ -219,7 +253,11 @@
 
     <script src="data/treasures.js?v=20260815-14" defer></script>
     <script src="data/photo-index.js?v=20260815-14" defer></script>
+    <script src="data/bronze-use-atlas-types.js?v=20260829-card-ai" defer></script>
+    <script src="data/bronze-use-atlas-visuals.js?v=20260829-card-ai" defer></script>
+    <script src="data/bronze-use-atlas-copy.js?v=20260828-plates1" defer></script>
     <script src="app.js?v=20260821-copy2" defer></script>
+    <script src="bronze-use-atlas/atlas.js?v=20260829-card-ai" defer></script>
     <script src="../../shared/js/polish.js" defer></script>
   </body>
 </html>

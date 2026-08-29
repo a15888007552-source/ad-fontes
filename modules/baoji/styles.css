@@ -579,6 +579,84 @@ img { display: block; max-width: 100%; }
   .site-footer { align-items: start; flex-direction: column; margin-top: 4rem; }
 }
 
+/* 20260828 · formal Bronze Use Atlas chapter entry */
+.section--atlas-entry {
+  position: relative;
+  overflow: hidden;
+  color: #eee9dc;
+  background:
+    linear-gradient(90deg, rgba(16,17,14,.98), rgba(16,17,14,.88) 58%, rgba(56,45,29,.72)),
+    url('bronze-use-atlas/assets/category-food.png') center / cover;
+}
+
+.section--atlas-entry::after {
+  position: absolute;
+  right: -8rem;
+  bottom: -11rem;
+  width: 28rem;
+  height: 28rem;
+  border: 1px solid rgba(210,170,109,.25);
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+
+.atlas-entry-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(280px, .75fr);
+  align-items: end;
+  gap: clamp(2.5rem, 10vw, 10rem);
+}
+
+.atlas-entry-grid h2 {
+  margin: .7rem 0 0;
+  color: #eee9dc;
+  font-size: clamp(3.2rem, 7vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -.1em;
+  line-height: .95;
+}
+
+.atlas-entry-copy p {
+  max-width: 34rem;
+  margin: 0 0 1.5rem;
+  color: rgba(238,233,220,.72);
+  font-size: .95rem;
+  line-height: 2;
+}
+
+.atlas-entry-copy .button--dark {
+  color: #161713;
+  background: #d2aa6d;
+}
+
+.atlas-entry-copy .button--dark:hover,
+.atlas-entry-copy .button--dark:focus-visible { background: #f4f0e6; }
+
+.atlas-entry-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem 2.5rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(238,233,220,.18);
+  color: rgba(210,170,109,.88);
+  font-family: var(--mono);
+  font-size: .56rem;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 720px) {
+  .atlas-entry-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+  .atlas-entry-grid h2 { font-size: clamp(3.2rem, 17vw, 6rem); }
+  .atlas-entry-copy p { font-size: .84rem; }
+  .atlas-entry-meta { margin-top: 2rem; gap: .6rem 1.2rem; font-size: .5rem; }
+}
+
 .research-essay-paragraph {
   text-indent: 2em;
 }

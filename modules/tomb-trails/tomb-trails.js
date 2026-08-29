@@ -42,7 +42,20 @@ function render(){
   host.scrollTo({left:host.clientWidth*state.index,behavior:'auto'});
 }
 function move(delta){if(!state.items.length)return;state.index=(state.index+delta+state.items.length)%state.items.length;$('#slides').scrollTo({left:$('#slides').clientWidth*state.index,behavior:'smooth'});$('#position').textContent=`${String(state.index+1).padStart(2,'0')} / ${String(state.items.length).padStart(2,'0')}`;}
-function filter(m){state.items=m==='all'?state.all:state.all.filter(p=>p.museum===m);state.index=0;document.body.dataset.museum=m;$('#museum-intro').textContent=m==='all'?'六馆合览把帝陵、寺院、唐墓壁画、史前聚落、周秦墓地和碑刻材料放在同一条“从地下到展柜”的证据链上。先看地点，再看墓葬组合、出土过程和馆藏关联；AI背景图只负责建立视觉气氛，具体历史判断仍以每页来源为准。':museumIntros[m];const source=$('#museum-source');const allView=m==='all';$('#hero-note').firstChild.textContent=allView?'六馆合览 · 六张AI背景图仅作视觉设计，不作考古现场证据':`${museumLabels[m]} · AI生成背景图仅作视觉设计，不作考古现场证据 · `;source.hidden=allView;if(!allView){source.href=museumSources[m];source.textContent='馆方／主管部门资料 ↗';}render();document.querySelectorAll('.museum-tab').forEach(b=>b.classList.toggle('is-active',b.dataset.museum===m));}
+function filter(m){
+  state.items=m==='all'?state.all:state.all.filter(p=>p.museum===m);
+  state.index=0;
+  document.body.dataset.museum=m;
+  $('#museum-intro').textContent=m==='all'
+    ?'六馆合览把帝陵、寺院、唐墓壁画、史前聚落、周秦墓地和碑刻材料放在同一条证据链上。先看地点，再看墓葬组合、出土过程和馆藏关联。'
+    :museumIntros[m];
+  const source=$('#museum-source');
+  const allView=m==='all';
+  source.hidden=allView;
+  if(!allView){source.href=museumSources[m];source.textContent='馆方／主管部门资料 ↗';}
+  render();
+  document.querySelectorAll('.museum-tab').forEach(b=>b.classList.toggle('is-active',b.dataset.museum===m));
+}
 $('#prev').addEventListener('click',()=>move(-1));
 $('#next').addEventListener('click',()=>move(1));
 document.querySelectorAll('.museum-tab').forEach(b=>b.addEventListener('click',()=>filter(b.dataset.museum)));
