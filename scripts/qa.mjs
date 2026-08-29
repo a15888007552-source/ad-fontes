@@ -488,10 +488,10 @@ function tombTrailsWiringQa() {
   for (const file of coreFiles) assert(exists(file), `tomb-trails core file missing: ${file}`);
   const records = readJson("modules/tomb-trails/tomb-trails-data.json");
   assert(Array.isArray(records), "tomb-trails-data must be an array of sites");
-  assert(records.length === 33, `tomb-trails sites ${records.length} != 33`);
+  assert(records.length === 38, `tomb-trails sites ${records.length} != 38`);
   const museums = new Set(records.map((record) => record.museum));
-  assert(museums.size === 6, `tomb-trails museums ${museums.size} != 6`);
-  const expectedMuseums = new Set(["qinhan", "xian-museum", "shaanxi-history", "shaanxi-archaeology-museum", "baoji", "beilin"]);
+  assert(museums.size === 7, `tomb-trails museums ${museums.size} != 7`);
+  const expectedMuseums = new Set(["qinhan", "xian-museum", "shaanxi-history", "shaanxi-archaeology-museum", "baoji", "beilin", "shangqiu"]);
   assert([...museums].every((m) => expectedMuseums.has(m)), "tomb-trails data holds an unknown museum");
   const hosts = [
     ["modules/qinhan/index.html", "qinhan"],
@@ -500,6 +500,7 @@ function tombTrailsWiringQa() {
     ["modules/shaanxi-archaeology-museum/index.html", "archaeology"],
     ["modules/baoji/index.html", "baoji"],
     ["modules/beilin/index.html", "beilin"],
+    ["modules/shangqiu-museum/index.html", "shangqiu"],
   ];
   for (const [pagePath, museumParam] of hosts) {
     const html = readRepo(pagePath);

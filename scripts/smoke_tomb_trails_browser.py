@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Browser smoke for the six-museum tomb-trails product.
+"""Browser smoke for the seven-museum tomb-trails product.
 
-Covers: six museum host pages (iframe wiring, renderable slide contract,
+Covers: seven museum host pages (iframe wiring, renderable slide contract,
 repository-owned images fully loaded, no legacy provenance component, no
 HTTP 404s), the standalone tomb-trails page (tabs, slides, controls,
 keyboard), desktop blank-space regression, mobile checks, and validated
@@ -29,6 +29,7 @@ HOSTS = [
     ("shaanxi-archaeology-museum", "modules/shaanxi-archaeology-museum/", "archaeology", 6),
     ("baoji", "modules/baoji/", "baoji", 8),
     ("beilin", "modules/beilin/", "beilin", 4),
+    ("shangqiu-museum", "modules/shangqiu-museum/", "shangqiu", 5),
 ]
 OPENING_SKIP_SELECTORS = ("#opening-skip", ".opening-skip", ".museum-opening-lite__skip")
 OPENING_CONTAINER_SELECTORS = ("#opening", "#opening-screen", ".museum-opening-lite")
@@ -203,13 +204,13 @@ def main() -> int:
     external_fallbacks_total = 0
     visual_valid = 0
     occlusion_free_count = 0
-    visual_expected = 12
+    visual_expected = 14
     fallback_valid: str = "N/A"
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch()
 
-        # ---- six museum host pages, desktop ----
+        # ---- seven museum host pages, desktop ----
         context = browser.new_context(viewport={"width": 1440, "height": 1100})
         page = context.new_page()
         page.on("response", lambda r: http_404s.append(f"desktop:{r.url}") if r.status == 404 else None)
@@ -374,10 +375,10 @@ def main() -> int:
         standalone["slides"] = page.locator("#slides .slide").count()
         standalone["prevButton"] = page.locator("#prev").count()
         standalone["nextButton"] = page.locator("#next").count()
-        if standalone["museumTabs"] != 7:
-            fail(failures, f"standalone: museum tabs {standalone['museumTabs']} != 7")
-        if standalone["slides"] != 33:
-            fail(failures, f"standalone: slides {standalone['slides']} != 33")
+        if standalone["museumTabs"] != 8:
+            fail(failures, f"standalone: museum tabs {standalone['museumTabs']} != 8")
+        if standalone["slides"] != 38:
+            fail(failures, f"standalone: slides {standalone['slides']} != 38")
         if not standalone["prevButton"] or not standalone["nextButton"]:
             fail(failures, "standalone: prev/next controls missing")
         position_before = page.locator("#position").inner_text()
@@ -471,7 +472,7 @@ def main() -> int:
 
     print(f"TOMB_TRAILS_BROWSER_SMOKE={report['status']}")
     total_renderable = sum(e.get("renderableSlides", 0) for e in report["hosts"].values())
-    print(f"RENDERABLE_SLIDES={total_renderable}/33")
+    print(f"RENDERABLE_SLIDES={total_renderable}/38")
     for name, entry in report["hosts"].items():
         print(f"HOST {name}: iframe={entry.get('tombTrailsIframes')} slides={entry.get('slides')} renderable={entry.get('renderableSlides')} local={entry.get('localImages')} fallbacks={entry.get('externalFallbacks')} broken={entry.get('brokenImgs')} desktopValid={entry.get('desktopValid')}")
     s = report["standalone"]

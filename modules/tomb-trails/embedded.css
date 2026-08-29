@@ -133,6 +133,15 @@ body.is-embedded[data-museum="beilin"] {
   --embed-accent:#b9ddc9;
   --embed-link:#d8eee1;
 }
+body.is-embedded[data-museum="shangqiu"] {
+  --embed-bg:#17090d;
+  --embed-ink:#f3eadc;
+  --embed-muted:#c7aeb0;
+  --embed-paper:rgba(36,12,18,.88);
+  --embed-line:rgba(226,190,145,.24);
+  --embed-accent:#d8ad72;
+  --embed-link:#ebc794;
+}
 body.is-embedded .trail {
   color:var(--embed-ink);
   background:var(--embed-paper);

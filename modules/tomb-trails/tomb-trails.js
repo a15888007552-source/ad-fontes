@@ -1,7 +1,7 @@
-const museumLabels={qinhan:'秦汉馆',xian:'西安博物院',history:'陕西历史博物馆',archaeology:'陕西考古博物馆',baoji:'宝鸡青铜器博物院',beilin:'西安碑林博物馆'};
-const museumIntros={qinhan:'秦汉馆以考古资料为实证，把秦汉文明的制度创建、城市与陵墓、技术与交流放在同一条历史线上。这里的墓葬与遗址，不是帝国叙事的插图，而是观察国家组织、物资供给、军事秩序和地下空间如何互相配合的材料。',xian:'西安博物院由博物馆、唐荐福寺遗址和小雁塔共同组成，城市史、佛教遗址与出土文物在同一园区相遇。这里的地点尤其适合追问：一座塔、一处寺院和一批墓葬器物，如何共同保存唐长安的城市生活与跨区域交流。',history:'陕西历史博物馆的唐墓壁画来自二十多座唐墓，近六百幅、逾千平方米；它们把仪仗、服饰、建筑、乐舞和狩猎留在明确的墓葬语境中。这里关注的不只是“盛唐气象”，还包括壁画如何被揭取、修复、保存，以及图像证据的边界。',archaeology:'陕西考古博物馆把考古学史、文化谱系、重大考古发现和文物保护科技放在同一套展陈里。这里的墓地和遗址不只展示出土物，也展示地层、聚落、实验与保护工作怎样把零散遗存组织成可检验的历史证据。',baoji:'宝鸡青铜器博物院集中收藏、研究和展示周秦青铜文化。眉县杨家村、庄白、石鼓山、鱼国墓地等材料，让青铜礼器不再只是孤立的“国宝”，而能与家族、墓地、铭文、车马和周王朝的政治秩序一起阅读。',beilin:'西安碑林博物馆以碑石、墓志、石刻造像和陵墓石刻为核心，保存的是被刻在石头上的身份、纪功、信仰与书写。这里的墓葬材料必须同时看原石、拓本、出土地和后来的收藏迁移，才能避免把一块碑误读成完整的历史现场。'};
-const museumSources={qinhan:'https://www.sxhm.com/about.html',xian:'https://www.xabwy.com/index.html',history:'https://www.sxhm.com/info/news/detail/15874.html',archaeology:'https://wwj.shaanxi.gov.cn/zfxxgk/fdzdgknr/zzjg/zsdw/202011/t20201110_2008472.html',baoji:'https://www.bjqtm.com/',beilin:'https://www.beilin-museum.com/'};
-const museumKeys={qinhan:'qinhan','xian-museum':'xian','shaanxi-history':'history','shaanxi-archaeology-museum':'archaeology',baoji:'baoji',beilin:'beilin'};
+const museumLabels={qinhan:'秦汉馆',xian:'西安博物院',history:'陕西历史博物馆',archaeology:'陕西考古博物馆',baoji:'宝鸡青铜器博物院',beilin:'西安碑林博物馆',shangqiu:'商丘博物馆'};
+const museumIntros={qinhan:'秦汉馆以考古资料为实证，把秦汉文明的制度创建、城市与陵墓、技术与交流放在同一条历史线上。这里的墓葬与遗址，不是帝国叙事的插图，而是观察国家组织、物资供给、军事秩序和地下空间如何互相配合的材料。',xian:'西安博物院由博物馆、唐荐福寺遗址和小雁塔共同组成，城市史、佛教遗址与出土文物在同一园区相遇。这里的地点尤其适合追问：一座塔、一处寺院和一批墓葬器物，如何共同保存唐长安的城市生活与跨区域交流。',history:'陕西历史博物馆的唐墓壁画来自二十多座唐墓，近六百幅、逾千平方米；它们把仪仗、服饰、建筑、乐舞和狩猎留在明确的墓葬语境中。这里关注的不只是“盛唐气象”，还包括壁画如何被揭取、修复、保存，以及图像证据的边界。',archaeology:'陕西考古博物馆把考古学史、文化谱系、重大考古发现和文物保护科技放在同一套展陈里。这里的墓地和遗址不只展示出土物，也展示地层、聚落、实验与保护工作怎样把零散遗存组织成可检验的历史证据。',baoji:'宝鸡青铜器博物院集中收藏、研究和展示周秦青铜文化。眉县杨家村、庄白、石鼓山、鱼国墓地等材料，让青铜礼器不再只是孤立的“国宝”，而能与家族、墓地、铭文、车马和周王朝的政治秩序一起阅读。',beilin:'西安碑林博物馆以碑石、墓志、石刻造像和陵墓石刻为核心，保存的是被刻在石头上的身份、纪功、信仰与书写。这里的墓葬材料必须同时看原石、拓本、出土地和后来的收藏迁移，才能避免把一块碑误读成完整的历史现场。',shangqiu:'商丘博物馆的汉梁展线与永城芒砀山西汉梁王陵墓群紧密相连。这里从黄土山金缕玉衣和芒砀山玉圭出发，辨认王陵、王后陵、壁画墓与展柜器物之间能够被考古资料确认的关系；传统纪念性陵址则不与考古出土物混写。'};
+const museumSources={qinhan:'https://www.sxhm.com/about.html',xian:'https://www.xabwy.com/index.html',history:'https://www.sxhm.com/info/news/detail/15874.html',archaeology:'https://wwj.shaanxi.gov.cn/zfxxgk/fdzdgknr/zzjg/zsdw/202011/t20201110_2008472.html',baoji:'https://www.bjqtm.com/',beilin:'https://www.beilin-museum.com/',shangqiu:'http://hnsqbwg.com/'};
+const museumKeys={qinhan:'qinhan','xian-museum':'xian','shaanxi-history':'history','shaanxi-archaeology-museum':'archaeology',baoji:'baoji',beilin:'beilin','shangqiu-museum':'shangqiu'};
 const state={all:[],items:[],index:0};
 // Lazy images may remain incomplete while off-screen; only a real error event means the source failed.
 if(new URLSearchParams(location.search).get('embed')==='1')document.body.classList.add('is-embedded');
@@ -15,6 +15,9 @@ const sourceHosts=[
   ['cssn.cn','中国社会科学网｜研究资料'],['xabwy.com','西安博物院｜馆方资料'],
   ['sxhm.com','陕西历史博物馆｜馆方资料'],['shxkgy.cn','陕西省考古研究院｜考古资料'],
   ['bjqtm.com','宝鸡青铜器博物院｜馆方资料'],['beilin-museum.com','西安碑林博物馆｜馆方资料'],
+  ['hnsqbwg.com','商丘博物馆｜馆方资料'],['rootinhenan.gov.cn','河南省文化和旅游厅｜行走中原'],
+  ['wenwuchina.com','中国文物信息网｜馆藏与考古资料'],['zhongguowenwubao.com','中国文物报｜考古资料'],
+  ['chnmus.net','河南博物院｜馆藏与保护资料'],['sina.com.cn','新浪｜现场影像来源'],
   ['dpm.org.cn','故宫博物院｜馆藏资料'],['chnmuseum.cn','中国国家博物馆｜展览资料'],
   ['chinanews.com.cn','中国新闻网｜采访与发掘资料'],['cctv.com','央视网｜报道资料'],
   ['cntv.cn','央视网｜报道资料'],['news.cn','新华网｜报道资料'],['xinhuanet.com','新华网｜报道资料'],
@@ -47,7 +50,7 @@ function filter(m){
   state.index=0;
   document.body.dataset.museum=m;
   $('#museum-intro').textContent=m==='all'
-    ?'六馆合览把帝陵、寺院、唐墓壁画、史前聚落、周秦墓地和碑刻材料放在同一条证据链上。先看地点，再看墓葬组合、出土过程和馆藏关联。'
+    ?'七馆合览把帝陵、寺院、唐墓壁画、史前聚落、周秦墓地、汉梁王陵和碑刻材料放在同一条证据链上。先看地点，再看墓葬组合、出土过程和馆藏关联。'
     :museumIntros[m];
   const source=$('#museum-source');
   const allView=m==='all';

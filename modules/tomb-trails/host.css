@@ -17,3 +17,6 @@
     height:clamp(1120px,190vw,1480px);
   }
 }
+.museum-tomb-trails--shangqiu{margin-top:0;border-top-color:rgba(216,173,114,.24);background:#17090d}
+.museum-tomb-trails--shangqiu iframe{height:clamp(1080px,78vw,1280px);background:#17090d}
+@media(max-width:820px){.museum-tomb-trails--shangqiu iframe{height:clamp(1120px,190vw,1460px)}}

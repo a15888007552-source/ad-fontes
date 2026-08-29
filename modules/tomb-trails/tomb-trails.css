@@ -10,3 +10,6 @@ body[data-museum="history"]{--context-image:url("../../assets/tomb-trails/histor
 body[data-museum="archaeology"]{--context-image:url("../../assets/tomb-trails/archaeology-bg.webp")}
 body[data-museum="baoji"]{--context-image:url("../../assets/tomb-trails/baoji-bg.webp")}
 body[data-museum="beilin"]{--context-image:url("../../assets/tomb-trails/beilin-bg.webp")}
+body[data-museum="shangqiu"] .masthead{--hero-image:url("../shangqiu-museum/assets/visuals/burial-world.webp")}
+body[data-museum="shangqiu"]{--context-image:url("../shangqiu-museum/assets/visuals/burial-world.webp")}
+body[data-museum="all"] .masthead{background-image:linear-gradient(90deg,#121713e8 0%,#1b211bc7 38%,#1b211b55 100%),url("../../assets/tomb-trails/qinhan-bg.webp"),url("../../assets/tomb-trails/xian-bg.webp"),url("../../assets/tomb-trails/history-bg.webp"),url("../../assets/tomb-trails/archaeology-bg.webp"),url("../../assets/tomb-trails/baoji-bg.webp"),url("../../assets/tomb-trails/beilin-bg.webp"),url("../shangqiu-museum/assets/visuals/burial-world.webp");background-size:cover,14.4% 100%,14.4% 100%,14.4% 100%,14.4% 100%,14.4% 100%,14.4% 100%,14.4% 100%;background-position:center,0 0,16.66% 0,33.33% 0,50% 0,66.66% 0,83.33% 0,100% 0;background-repeat:no-repeat}
