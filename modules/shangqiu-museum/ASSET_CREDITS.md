@@ -22,3 +22,19 @@ The Xuanniao emblem, hero image, history triptych, reading-path images, and soci
 
 - `assets/visuals/treasure-dual-source.png` / `treasure-dual.webp`: strict bilateral museum panorama joining a central water-control stele, engraved waterways, jade plaques, and gold thread in oxblood, ink, bronze, and aged-jade tones; no text or people.
 - `assets/visuals/catalog-atlas-source.png` / `catalog-atlas.webp`: strict bilateral object atlas pairing stone tools, pottery, bronze ritual vessels, jade, mirrors, porcelain, and stone fragments around an empty central medallion; no text or people.
+- `assets/visuals/hero-xuanniao-symmetric-source.png` / `hero-xuanniao-symmetric.webp`: strict axial hero composition with paired bronze xuanniao, archaeological strata, and a central ceremonial passage; deep oxblood, charcoal, earth, bronze, and muted jade; no text or people.
+- `assets/visuals/detail-prehan-source.png` / `detail-prehan.webp`: bilateral detail-panel field using oracle-bone cracks, bronze geometry, jade rings, and rammed-earth strata around a quiet dark center; no text or people.
+- `assets/visuals/detail-han-burial-source.png` / `detail-han-burial.webp`: bilateral Han burial field using stone-chamber architecture, jade plaques, mirrors, wells, and animal-pen models around a quiet oxblood center; no text or people.
+- `assets/visuals/detail-late-source.png` / `detail-late.webp`: bilateral late-period field using rubbing textures, city-wall brick, waterways, porcelain, mirrors, and floral borders; no text or people.
+- `assets/visuals/burial-world-source.png` / `burial-world.webp`: centered Han stone-chamber passage with paired jade-suit plaques, bronze mirrors, pottery wells, animal pens, and funerary vessels; no people, human remains, text, or watermark.
+
+## Display font
+
+- `assets/fonts/sq-display-subset.ttf`: project-local subset of Ma Shan Zheng, used for display headings and object titles.
+- Source: https://github.com/googlefonts/mashanzheng
+- License: SIL Open Font License 1.1; retained in `assets/fonts/OFL-MaShanZheng.txt`.
+- `assets/fonts/sq-display-chars.txt` records the published glyph subset.
+- `assets/fonts/sq-display-fallback-subset.ttf`: six-glyph LXGW WenKai fallback for uncommon artifact-name characters not present in Ma Shan Zheng.
+- Source: https://github.com/lxgw/LxgwWenKai
+- License: SIL Open Font License 1.1; retained in `assets/fonts/OFL-LXGWWenKai.txt`.
+- `assets/fonts/sq-display-fallback-chars.txt` records the fallback glyph subset.

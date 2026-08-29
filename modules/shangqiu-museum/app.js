@@ -147,11 +147,13 @@
     const artifact = artifactById.get(id);
     if (!artifact) return;
     const images = objectPhotos(artifact);
+    const lateCategories = new Set(["唐宋", "明清", "馆外遗存"]);
+    dialog.dataset.visual = artifact.category === "汉梁" ? "han" : lateCategories.has(artifact.category) ? "late" : "prehan";
     document.querySelector("#dialog-kicker").textContent = `${artifact.site} · ${artifact.category}`;
     const dialogTitle = document.querySelector("#dialog-title");
     dialogTitle.textContent = artifact.title;
-    dialogTitle.classList.toggle("is-long", artifact.title.length > 10);
-    dialogTitle.classList.toggle("is-very-long", artifact.title.length > 15);
+    dialogTitle.classList.toggle("is-long", artifact.title.length > 8);
+    dialogTitle.classList.toggle("is-very-long", artifact.title.length > 13);
     const metaRows = Array.isArray(artifact.metaRows) && artifact.metaRows.length
       ? artifact.metaRows
       : [

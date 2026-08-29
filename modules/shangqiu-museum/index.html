@@ -20,7 +20,8 @@
   <meta name="twitter:description" content="从商文化与汉梁遗存出发，沿器物、碑刻与古城水脉阅读商丘。" />
   <meta name="twitter:image" content="https://a15888007552-source.github.io/ad-fontes/modules/shangqiu-museum/assets/visuals/og-shangqiu.jpg" />
   <link rel="icon" href="assets/visuals/brand-xuanniao.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" href="assets/fonts/sq-display-subset.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=20260829b" />
   <noscript><style>.opening-screen{display:none!important}body.intro-active{overflow:auto!important}</style></noscript>
 </head>
 <body class="intro-active">
@@ -35,7 +36,7 @@
       <div class="opening-copy">
         <img class="opening-emblem" src="assets/visuals/brand-xuanniao.png" alt="" />
         <p>天命玄鸟 · 降而生商</p>
-        <h2>玄鸟生商 · 商丘博物馆</h2>
+        <p class="opening-title">玄鸟生商 · 商丘博物馆</p>
         <span class="opening-subtitle">一城一馆 · 一物一史</span>
         <button id="opening-enter" type="button">进入展厅 <i>↘</i></button>
       </div>
@@ -53,6 +54,7 @@
       <a href="#museum">本馆</a>
       <a href="#paths">年代线索</a>
       <a href="#treasures">镇馆之宝</a>
+      <a href="#tombs">墓葬</a>
       <a href="#catalog">文物目录</a>
       <a href="#baguanzhai">八关斋</a>
       <a class="official-nav" href="http://hnsqbwg.com/" target="_blank" rel="noreferrer">官方网站 <span>↗</span></a>
@@ -76,24 +78,8 @@
         <dl class="hero-stats">
           <div><dt>历史源流</dt><dd>商文化</dd></div>
           <div><dt>器物索引</dt><dd id="group-count">84</dd></div>
-          <div><dt>城中遗存</dt><dd>八关斋</dd></div>
+          <div><dt>墓葬线索</dt><dd>汉梁墓葬</dd></div>
         </dl>
-      </div>
-
-      <div class="hero-object-rail reveal" aria-label="代表性馆藏">
-        <div class="rail-heading"><span>SELECTED OBJECTS</span><strong>代表器物</strong></div>
-        <figure class="rail-card rail-card-main">
-          <img src="assets/photos/web/DSC_5324.webp" alt="商丘博物馆展陈中的金缕玉衣" />
-          <figcaption><span>01 / 汉</span><strong>金缕玉衣</strong><small>玉片为甲 · 金丝成缕</small></figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="assets/photos/web/DSC_5294.webp" alt="商丘博物馆展陈中的汉代铜镜" />
-          <figcaption><span>02 / 汉</span><strong>铜镜组</strong><small>镜背铸纹 · 铭文寄意</small></figcaption>
-        </figure>
-        <figure class="rail-card">
-          <img src="assets/photos/web/DSC_5178.webp" alt="商丘博物馆展陈中的卜骨与卜甲" />
-          <figcaption><span>03 / 商</span><strong>卜骨与卜甲</strong><small>灼骨问事 · 兆纹存痕</small></figcaption>
-        </figure>
       </div>
       <a class="scroll-cue" href="#museum" aria-label="继续向下阅读"><span>SCROLL</span><i></i></a>
     </section>
@@ -186,6 +172,60 @@
       <div class="treasure-dots" role="group" aria-label="选择镇馆之宝"><button type="button" class="is-active" data-treasure-dot="0" aria-label="查看水利图碑" aria-pressed="true"></button><button type="button" data-treasure-dot="1" aria-label="查看金缕玉衣" aria-pressed="false"></button></div>
     </section>
 
+    <section class="burial-world" id="tombs" aria-labelledby="tombs-title">
+      <div class="burial-backdrop" aria-hidden="true"></div>
+      <header class="burial-heading reveal">
+        <p class="eyebrow">05 · BURIAL WORLD</p>
+        <h2 id="tombs-title">墓室之内，生活如常</h2>
+        <div class="burial-couplet" aria-label="墓葬叙事线索"><span>玉衣合身，博山寄望。</span><i></i><span>圈舍纳业，鸡犬守家。</span></div>
+        <p>六件器物，并置身体、家业与身后世界。</p>
+      </header>
+      <div class="burial-grid">
+        <article class="burial-pair reveal">
+          <span class="burial-index">01 · BODY &amp; BELIEF</span>
+          <h3>护身｜寄望</h3>
+          <div class="burial-objects">
+            <button type="button" data-open-artifact="jade-suit">
+              <img src="assets/photos/thumbs/DSC_5324.webp" alt="金缕玉衣" loading="lazy" />
+              <span><b>金缕玉衣</b><small>玉片合缀，覆护其身</small></span>
+            </button>
+            <button type="button" data-open-artifact="mountain-lidded-bronze">
+              <img src="assets/photos/thumbs/DSC_5279.webp" alt="绿釉博山盖陶樽" loading="lazy" />
+              <span><b>绿釉博山盖陶樽</b><small>层峰起伏，安置神山</small></span>
+            </button>
+          </div>
+        </article>
+        <article class="burial-pair reveal">
+          <span class="burial-index">02 · HOUSE &amp; ESTATE</span>
+          <h3>圈舍｜家业</h3>
+          <div class="burial-objects">
+            <button type="button" data-open-artifact="courtyard-model">
+              <img src="assets/photos/thumbs/DSC_5342.webp" alt="绿釉陶猪圈" loading="lazy" />
+              <span><b>绿釉陶猪圈</b><small>楼圈相连，家业入墓</small></span>
+            </button>
+            <button type="button" data-open-artifact="green-glazed-model">
+              <img src="assets/photos/thumbs/DSC_5267.webp" alt="绿釉陶羊圈" loading="lazy" />
+              <span><b>绿釉陶羊圈</b><small>圈舍合围，牲畜成群</small></span>
+            </button>
+          </div>
+        </article>
+        <article class="burial-pair reveal">
+          <span class="burial-index">03 · DAWN &amp; GUARD</span>
+          <h3>报晓｜守望</h3>
+          <div class="burial-objects">
+            <button type="button" data-open-artifact="painted-rooster">
+              <img src="assets/photos/thumbs/DSC_5258.webp" alt="绿釉红陶鸡" loading="lazy" />
+              <span><b>绿釉红陶鸡</b><small>昂首报晓，日常有时</small></span>
+            </button>
+            <button type="button" data-open-artifact="green-glazed-dog">
+              <img src="assets/photos/thumbs/DSC_5271.webp" alt="绿釉红陶狗" loading="lazy" />
+              <span><b>绿釉红陶狗</b><small>四足稳立，庭院有守</small></span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="catalog" id="catalog" aria-labelledby="catalog-title">
       <div class="section-heading section-heading-inline reveal">
         <div>
@@ -236,7 +276,7 @@
     <p>器以载史 · 城以藏文</p>
   </footer>
 
-  <dialog class="artifact-dialog" id="artifact-dialog" aria-labelledby="dialog-title">
+  <dialog class="artifact-dialog" id="artifact-dialog" data-visual="prehan" aria-labelledby="dialog-title">
     <button class="dialog-close" type="button" aria-label="关闭详情">×</button>
     <div class="dialog-media">
       <div class="viewer" id="viewer" tabindex="0" aria-label="文物图片查看器">
@@ -267,6 +307,6 @@
   <script src="data/content-late.js"></script>
   <script src="data/content.js"></script>
   <script src="data/catalog.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=20260829b"></script>
 </body>
 </html>
