@@ -14578,6 +14578,1366 @@
       ],
       "site_path": "guobo-museum/index.html",
       "image_path": "guobo-museum/assets/photos/bronze-nao.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bone-awls",
+      "title": "骨板",
+      "period": "新石器时代龙山文化",
+      "type": "史前",
+      "material": "骨",
+      "origin": "",
+      "keywords": [
+        "史前",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5146.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "stone-ornaments",
+      "title": "灰陶网坠",
+      "period": "新石器时代龙山文化",
+      "type": "史前",
+      "material": "灰陶",
+      "origin": "",
+      "keywords": [
+        "史前",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5148.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "impressed-pottery-jar",
+      "title": "网纹灰陶鼎",
+      "period": "新石器时代龙山文化",
+      "type": "史前",
+      "material": "灰陶",
+      "origin": "",
+      "keywords": [
+        "史前",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5150.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "stone-tool",
+      "title": "石镞范",
+      "period": "春秋",
+      "type": "商周",
+      "material": "石",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5152.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "jade-pendant",
+      "title": "单孔石刀",
+      "period": "商",
+      "type": "商周",
+      "material": "石",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5155.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "early-bronze-ding",
+      "title": "铜鼎",
+      "period": "商周",
+      "type": "商周",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5158.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "jade-ring",
+      "title": "玉玦",
+      "period": "商",
+      "type": "商周",
+      "material": "玉",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5161.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "antler-bone-tools",
+      "title": "鹿角与贝币",
+      "period": "龙山文化—商",
+      "type": "史前",
+      "material": "角、贝",
+      "origin": "",
+      "keywords": [
+        "史前",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5164.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "pottery-dou",
+      "title": "卷沿卷足陶豆",
+      "period": "商",
+      "type": "商周",
+      "material": "陶",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5168.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bronze-jue",
+      "title": "青铜爵",
+      "period": "商",
+      "type": "商周",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5171.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "shell-knife",
+      "title": "蚌刀",
+      "period": "新石器时代",
+      "type": "史前",
+      "material": "蚌",
+      "origin": "",
+      "keywords": [
+        "史前",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5174.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bone-implements",
+      "title": "骨质用具",
+      "period": "商周",
+      "type": "商周",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5176.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "oracle-bones",
+      "title": "卜骨与卜甲",
+      "period": "商",
+      "type": "商周",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5178.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bronze-weapons",
+      "title": "青铜兵器",
+      "period": "商周至战国",
+      "type": "商周",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5184.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "lidded-pottery-dou",
+      "title": "带盖灰陶豆",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5191.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "lidded-pottery-ding",
+      "title": "带盖灰陶鼎",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5194.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bronze-swords",
+      "title": "铜剑",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5198.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "dragon-handled-dipper",
+      "title": "龙首柄铜鐎斗",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "铜",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5200.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bronze-fittings",
+      "title": "铜锸",
+      "period": "战国",
+      "type": "战国",
+      "material": "铜",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5204.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "animal-bronze-vessel",
+      "title": "兽形青铜器",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5206.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "painted-pottery-dou",
+      "title": "彩绘陶豆",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5209.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "lidded-bronze-ding",
+      "title": "青铜鼎",
+      "period": "春秋",
+      "type": "商周",
+      "material": "青铜",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5213.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bronze-tray-vessel",
+      "title": "青铜簠",
+      "period": "春秋",
+      "type": "商周",
+      "material": "青铜",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5217.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bronze-hu",
+      "title": "青铜罍",
+      "period": "春秋",
+      "type": "商周",
+      "material": "青铜",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5221.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "cloud-thunder-ding",
+      "title": "云雷纹铜鼎",
+      "period": "西周",
+      "type": "商周",
+      "material": "青铜",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5224.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bronze-gui",
+      "title": "青铜簋",
+      "period": "西周",
+      "type": "商周",
+      "material": "青铜",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5227.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "pottery-yi",
+      "title": "灰陶匜",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5230.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "lidded-pottery-vessel",
+      "title": "带盖灰陶器",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5233.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "fish-pattern-gui",
+      "title": "兽面纹灰陶簋",
+      "period": "西周",
+      "type": "商周",
+      "material": "灰陶",
+      "origin": "",
+      "keywords": [
+        "商周",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5236.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "painted-pottery-plate",
+      "title": "彩绘纹饰灰陶盘",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5240.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "lidded-pottery-zan",
+      "title": "带盖灰陶器",
+      "period": "战国",
+      "type": "战国",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "战国",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5244.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "cylindrical-bronze",
+      "title": "灰陶井",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "灰陶",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5248.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "han-lidded-ding",
+      "title": "带盖铜鼎",
+      "period": "西汉",
+      "type": "汉梁",
+      "material": "青铜",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5253.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "painted-rooster",
+      "title": "绿釉红陶鸡",
+      "period": "东汉",
+      "type": "汉梁",
+      "material": "红陶、绿釉",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5258.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "proto-celadon-hu",
+      "title": "原始青瓷铺首衔环壶",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "原始青瓷",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5262.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "green-glazed-model",
+      "title": "绿釉陶羊圈",
+      "period": "东汉",
+      "type": "汉梁",
+      "material": "陶、绿釉",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5267.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "green-glazed-dog",
+      "title": "绿釉红陶狗",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "红陶、绿釉",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5271.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "bronze-flat-hu",
+      "title": "铺首衔环铜扁壶",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5275.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "mountain-lidded-bronze",
+      "title": "绿釉博山盖陶樽",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "陶、绿釉",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5279.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "green-glazed-stove",
+      "title": "绿釉红陶磨",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "红陶、绿釉",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5283.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "stone-inkstone",
+      "title": "带盖石砚",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5285.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "han-pottery-dou",
+      "title": "灰陶熏炉",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "灰陶",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5287.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "painted-pottery-hu",
+      "title": "黄釉波曲纹陶壶",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "陶、黄釉",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5290.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "han-bronze-mirrors",
+      "title": "汉代铜镜组",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5294.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "gilded-bronze-fittings",
+      "title": "鎏金铜饰与带具",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5314.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "jade-bi",
+      "title": "玉璧",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5321.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "jade-suit",
+      "title": "金缕玉衣",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "玉、金丝",
+      "origin": "永城市黄土山一号汉代石室墓出土",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆",
+        "馆藏精选",
+        "永城市黄土山一号汉代石室墓出土"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5324.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "gold-ornaments",
+      "title": "金质镶嵌饰件",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5330.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "jade-ritual-ornaments",
+      "title": "兽面纹玉璧与玉饰",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5333.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "blade",
+      "title": "玉圭",
+      "period": "汉",
+      "type": "汉梁",
+      "material": "玉",
+      "origin": "永城芒砀山汉墓群出土",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆",
+        "永城芒砀山汉墓群出土"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5340.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "courtyard-model",
+      "title": "绿釉陶猪圈",
+      "period": "东汉",
+      "type": "汉梁",
+      "material": "陶、绿釉",
+      "origin": "",
+      "keywords": [
+        "汉梁",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5342.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "painted-rider",
+      "title": "珐华骑马俑",
+      "period": "明",
+      "type": "明清",
+      "material": "陶、珐华釉",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5345.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "celadon-vase",
+      "title": "豆青刻花牡丹纹瓷瓶",
+      "period": "清",
+      "type": "明清",
+      "material": "瓷",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5349.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "famille-rose-cups",
+      "title": "粉彩人物纹薄胎杯",
+      "period": "清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5353.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "blue-white-jar",
+      "title": "青花花卉纹瓷罐",
+      "period": "明清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5357.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "iron-painted-vase",
+      "title": "铁绘纹瓷瓶",
+      "period": "明清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5360.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "fish-plate",
+      "title": "青花釉里红鲤鱼纹盘",
+      "period": "清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5363.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "carved-vases",
+      "title": "人物纹梅瓶与松鹤纹罐",
+      "period": "明—清",
+      "type": "明清",
+      "material": "紫砂、瓷",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5366.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "ivory-hu",
+      "title": "象牙笏板",
+      "period": "明清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5372.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "paper-document",
+      "title": "咸丰银票",
+      "period": "清",
+      "type": "明清",
+      "material": "纸",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5375.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "coins",
+      "title": "古钱币组",
+      "period": "明清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5380.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "black-glazed-bowls",
+      "title": "祭蓝釉金彩龙纹碗",
+      "period": "清",
+      "type": "明清",
+      "material": "瓷",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5385.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "sancai-censer",
+      "title": "孔雀绿三足陶炉",
+      "period": "元",
+      "type": "唐宋",
+      "material": "陶、孔雀绿釉",
+      "origin": "",
+      "keywords": [
+        "唐宋",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5389.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "blue-white-plates",
+      "title": "青花纹饰瓷盘组",
+      "period": "明清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5392.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "dehua-guanyin",
+      "title": "德化窑送子观音像",
+      "period": "明清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5398.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "ivory-and-jade-plaques",
+      "title": "清代牙玉雕饰",
+      "period": "清",
+      "type": "明清",
+      "material": "象牙、玉",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5400.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "inscribed-four-loop-jar",
+      "title": "白釉褐彩“风花雪月”四系瓷瓶",
+      "period": "宋",
+      "type": "唐宋",
+      "material": "瓷",
+      "origin": "",
+      "keywords": [
+        "唐宋",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5406.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "sancai-pillow",
+      "title": "花卉纹三彩枕",
+      "period": "唐宋",
+      "type": "唐宋",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "唐宋",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5411.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "mulan-stele",
+      "title": "《孝烈将军祠像辨正记》碑",
+      "period": "元",
+      "type": "碑刻",
+      "material": "石",
+      "origin": "",
+      "keywords": [
+        "碑刻",
+        "商丘博物馆",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5414.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "later-mirrors",
+      "title": "葵形及人物纹铜镜",
+      "period": "唐宋",
+      "type": "唐宋",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "唐宋",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5423.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "small-spouted-vessel",
+      "title": "黑釉瓷药斗",
+      "period": "宋",
+      "type": "唐宋",
+      "material": "瓷、黑釉",
+      "origin": "",
+      "keywords": [
+        "唐宋",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5433.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "blue-glazed-censer",
+      "title": "蓝釉三足炉",
+      "period": "明清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5435.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "famille-rose-covered-bowl",
+      "title": "粉彩开光花卉纹盖碗",
+      "period": "清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5438.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "blue-white-hex-vase",
+      "title": "青花山水人物纹六棱瓶",
+      "period": "清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5441.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "blue-glazed-hex-vase",
+      "title": "蓝釉描金六棱双耳瓷瓶",
+      "period": "清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5443.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "brown-glazed-vase",
+      "title": "玳瑁釉双兽耳瓷瓶",
+      "period": "民国",
+      "type": "近现代",
+      "material": "瓷",
+      "origin": "",
+      "keywords": [
+        "近现代",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5446.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "porcelain-pillow",
+      "title": "李白戏酒图牙雕臂搁",
+      "period": "清",
+      "type": "明清",
+      "material": "象牙",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5448.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "silver-ingots",
+      "title": "银锭",
+      "period": "民国",
+      "type": "近现代",
+      "material": "银",
+      "origin": "商丘古城东门内出土",
+      "keywords": [
+        "近现代",
+        "商丘博物馆",
+        "商丘古城东门内出土"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5451.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "carved-wood-panel",
+      "title": "人物故事木雕构件",
+      "period": "明清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5455.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "celadon-octagonal-plate",
+      "title": "龙泉窑八棱刻花瓷盘",
+      "period": "元明",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5457.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "red-glazed-vase",
+      "title": "红釉双耳方瓶",
+      "period": "清",
+      "type": "明清",
+      "material": "",
+      "origin": "",
+      "keywords": [
+        "明清",
+        "商丘博物馆"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5460.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "baguanzhai-stele",
+      "title": "《宋州八关斋会报德记》石幢",
+      "period": "唐",
+      "type": "馆外遗存",
+      "material": "",
+      "origin": "八关斋",
+      "keywords": [
+        "馆外遗存",
+        "八关斋",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5464.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "qiansou-banquet-stele",
+      "title": "千叟宴碑",
+      "period": "清",
+      "type": "馆外遗存",
+      "material": "石",
+      "origin": "八关斋",
+      "keywords": [
+        "馆外遗存",
+        "八关斋",
+        "馆藏精选"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5471.webp"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "baguanzhai-gate",
+      "title": "八关斋院门",
+      "period": "近现代重修",
+      "type": "馆外遗存",
+      "material": "",
+      "origin": "八关斋",
+      "keywords": [
+        "馆外遗存",
+        "八关斋"
+      ],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "assets/photos/thumbs/DSC_5477.webp"
     }
   ]
 }

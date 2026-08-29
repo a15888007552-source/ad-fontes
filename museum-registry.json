@@ -191,6 +191,25 @@
         "width": null,
         "height": null
       }
+    },
+    {
+      "id": "shangqiu-museum",
+      "province": "henan",
+      "order": 2,
+      "name": "商丘博物馆",
+      "city": "商丘",
+      "theme": "玄鸟生商与汉梁器物",
+      "status": "live",
+      "archive_type": "数字图录",
+      "site_path": "modules/shangqiu-museum/index.html",
+      "card_image": {
+        "path": "modules/shangqiu-museum/assets/visuals/hero-xuanniao-symmetric.webp",
+        "alt": "商丘博物馆玄鸟生商专题入口",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": 1672,
+        "height": 941
+      }
     }
   ]
 }

@@ -21,6 +21,7 @@ const PAGES = [
   { id: "baoji", path: "modules/baoji/index.html" },
   { id: "shaanxi-history", path: "modules/shaanxi-history/index.html" },
   { id: "xian-museum", path: "modules/xian-museum/index.html" },
+  { id: "shangqiu-museum", path: "modules/shangqiu-museum/index.html" },
   { id: "guobo", path: "guobo-museum/index.html" },
 ];
 const ITEM_SOURCES = {
@@ -30,6 +31,7 @@ const ITEM_SOURCES = {
   baoji: "modules/baoji/app.js",
   "shaanxi-history": "modules/shaanxi-history/app.js",
   "xian-museum": "modules/xian-museum/app.js",
+  "shangqiu-museum": "modules/shangqiu-museum/app.js",
   guobo: "guobo-museum/app.js",
 };
 const failures = [];
@@ -249,7 +251,7 @@ function registryQa() {
     }
     museumIds.add(museum.id);
   }
-  assert(live.length === 7, `expected seven live museum entries, found ${live.length}`);
+  assert(live.length === 8, `expected eight live museum entries, found ${live.length}`);
   registryContext = { registry, provinceIds, live };
 }
 
@@ -310,7 +312,7 @@ function atlasQa() {
 function searchIndexQa() {
   const index = readJson("modules/museum-atlas/search-index.json");
   exactKeys(index, ["schema_version", "records"], "search-index root");
-  assert(index.schema_version === 1 && Array.isArray(index.records) && index.records.length === 922, `search-index expected 922 records, found ${index.records?.length}`);
+  assert(index.schema_version === 1 && Array.isArray(index.records) && index.records.length === 1006, `search-index expected 1006 records, found ${index.records?.length}`);
   const expectedKeys = ["museum_id", "museum_name", "id", "title", "period", "type", "material", "origin", "keywords", "site_path", "image_path"];
   const allowedEmpty = new Set(["beilin:artifact-057", "baoji:photo-group-3619", "baoji:photo-group-3881"]);
   const seen = new Set();
@@ -334,7 +336,7 @@ function searchIndexQa() {
       assert(candidates.some((candidate) => candidate && exists(candidate)) || (moduleId && EXTERNALIZED_MODULES.has(moduleId)), `search image cannot be resolved for ${composite}`);
     }
   }
-  assert(museums.size === 7, `search-index museum count ${museums.size} != 7`);
+  assert(museums.size === 8, `search-index museum count ${museums.size} != 8`);
   for (const museum of registryContext.live) assert(byMuseum.has(museum.id), `search-index missing live museum ${museum.id}`);
   assert([...allowedEmpty].every((id) => seen.has(id)), "audited no-image records are missing");
   searchIndexContext = { index, byMuseum };
@@ -427,7 +429,7 @@ function externalizedRuntimeQa() {
 }
 
 function runtimeSafetyQa() {
-  const roots = ["museum-registry.json", "modules/museum-atlas", "shared/js", "app.js", "guobo-museum", "modules/beilin", "modules/qinhan", "modules/baoji", "modules/xian-museum", "modules/shaanxi-history", "modules/shaanxi-archaeology-museum"];
+  const roots = ["museum-registry.json", "modules/museum-atlas", "shared/js", "app.js", "guobo-museum", "modules/beilin", "modules/qinhan", "modules/baoji", "modules/xian-museum", "modules/shaanxi-history", "modules/shaanxi-archaeology-museum", "modules/shangqiu-museum"];
   const files = new Set();
   const visit = (relative) => {
     const target = repoPath(relative);

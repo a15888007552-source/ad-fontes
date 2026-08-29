@@ -202,8 +202,12 @@
     });
     showPhoto(images[0], artifact, filmstrip.firstElementChild);
     if (!dialog.open) dialog.showModal();
-    if (syncHistory && location.hash !== `#artifact=${artifact.id}`) {
-      history.pushState({ artifact: artifact.id }, "", `#artifact=${artifact.id}`);
+    const activeItem = new URLSearchParams(location.search).get("item");
+    if (syncHistory && activeItem !== artifact.id) {
+      const url = new URL(location.href);
+      url.searchParams.set("item", artifact.id);
+      url.hash = "";
+      history.pushState({ artifact: artifact.id }, "", url);
     }
   }
 
@@ -212,9 +216,15 @@
     dialogImage.removeAttribute("src");
     filmstrip.replaceChildren();
     resetZoom();
-    if (!syncHistory || !location.hash.startsWith("#artifact=")) return;
+    const hasItem = new URLSearchParams(location.search).has("item");
+    if (!syncHistory || (!hasItem && !location.hash.startsWith("#artifact="))) return;
     if (history.state?.artifact) history.back();
-    else history.replaceState(null, "", "#catalog");
+    else {
+      const url = new URL(location.href);
+      url.searchParams.delete("item");
+      url.hash = "catalog";
+      history.replaceState(null, "", url);
+    }
   }
 
   searchInput.addEventListener("input", () => { state.query = searchInput.value; renderCatalog(); });
@@ -353,11 +363,11 @@
   renderCatalog();
 
   window.addEventListener("popstate", () => {
-    const artifactId = location.hash.match(/^#artifact=(.+)$/)?.[1];
+    const artifactId = new URLSearchParams(location.search).get("item") || location.hash.match(/^#artifact=(.+)$/)?.[1];
     if (artifactId) openArtifact(artifactId, { syncHistory: false });
     else closeDialog({ syncHistory: false });
   });
 
-  const initialArtifact = location.hash.match(/^#artifact=(.+)$/)?.[1];
+  const initialArtifact = new URLSearchParams(location.search).get("item") || location.hash.match(/^#artifact=(.+)$/)?.[1];
   if (initialArtifact) openArtifact(initialArtifact, { syncHistory: false });
 })();

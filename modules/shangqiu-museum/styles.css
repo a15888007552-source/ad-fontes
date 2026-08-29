@@ -294,6 +294,7 @@ h1, h2, h3, .brand strong, .vertical-label { font-family: var(--display); font-s
 .monument-list small { display: block; margin-bottom: .32rem; color: var(--bronze-light); }
 .monument-list strong { font-family: var(--serif); }
 footer { padding: 2rem var(--page); display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line-dark); color: rgba(238,230,214,.44); font-size: .68rem; }
+footer a { color: var(--bronze-light); text-underline-offset: .32em; }
 
 /* Object viewer */
 .artifact-dialog { --dialog-art: url("assets/visuals/detail-prehan.webp"); width: min(1180px, calc(100vw - 2rem)); height: min(820px, calc(100vh - 2rem)); max-width: none; max-height: none; padding: 0; overflow: hidden; border: 1px solid rgba(195,168,117,.35); background: var(--wine-950); color: var(--ivory); box-shadow: 0 35px 120px rgba(0,0,0,.58); }

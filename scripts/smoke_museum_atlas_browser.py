@@ -208,8 +208,8 @@ def main() -> int:
             wait_for_visible_page(page, ".museum-card")
             report["museumCards"] = page.locator(".museum-card").count()
             report["liveMuseumCards"] = page.locator("a.museum-card").count()
-            if report["museumCards"] != 10 or report["liveMuseumCards"] != 7:
-                raise AssertionError("Museum Atlas card counts do not match 10 total / 7 live")
+            if report["museumCards"] != 10 or report["liveMuseumCards"] != 8:
+                raise AssertionError("Museum Atlas card counts do not match 10 total / 8 live")
             wait_for_image(page.locator("#province-cover-image"))
 
             for province in ("beijing", "shaanxi"):
