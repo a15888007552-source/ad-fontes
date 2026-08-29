@@ -924,7 +924,7 @@
         "青铜器"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": ""
+      "image_path": "assets/editorial/theme-inscription.webp"
     },
     {
       "museum_id": "beilin",
@@ -7818,7 +7818,7 @@
         "ritual"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": ""
+      "image_path": "modules/baoji/assets/generated/fallback-zuyi-gui-v1.webp"
     },
     {
       "museum_id": "baoji",
@@ -8887,7 +8887,7 @@
         "ceramic"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": ""
+      "image_path": "modules/baoji/assets/generated/fallback-pottery-weight-v1.webp"
     },
     {
       "museum_id": "baoji",

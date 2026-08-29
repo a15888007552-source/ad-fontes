@@ -16,6 +16,12 @@
   --display: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", STSong, SimSun, serif;
   --mono: "Cascadia Mono", "IBM Plex Mono", Consolas, monospace;
   --page-pad: max(5vw, calc((100vw - 1500px) / 2));
+  --qinhan-museum-art: url("assets/ui/museum-civilization-paper-v1.webp");
+  --qinhan-exhibition-art: url("assets/ui/exhibition-lacquer-route-v1.webp");
+  --qinhan-queen-art: url("assets/ui/queen-jade-paper-v1.webp");
+  --qinhan-tiger-art: url("assets/ui/tiger-tally-bronze-v1.webp");
+  --qinhan-method-art: url("assets/ui/method-lacquer-slips-v1.webp");
+  --qinhan-detail-art: url("assets/ui/detail-imperial-archive-v1.webp");
 }
 
 * { box-sizing: border-box; }
@@ -69,7 +75,7 @@ img { display: block; max-width: 100%; }
 .orbit-a { top: 18%; right: -2rem; transform: rotate(90deg); }
 .orbit-b { left: 1.3rem; bottom: 33%; transform: rotate(-90deg); transform-origin: left bottom; }
 
-.museum-section { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; padding: 7rem var(--page-pad); background: var(--paper-bright); }
+.museum-section { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; padding: 7rem var(--page-pad); background: linear-gradient(100deg, rgba(248, 245, 239, .96), rgba(248, 245, 239, .76) 58%, rgba(248, 245, 239, .9)), var(--qinhan-museum-art) center / cover no-repeat; }
 .section-rail { grid-column: 1 / -1; display: flex; align-items: center; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
 .section-rail span { color: var(--red); font: 700 .75rem/1 var(--mono); }
 .section-rail p { margin: 0; color: var(--muted); font: 700 .56rem/1 var(--mono); letter-spacing: .16em; }
@@ -92,7 +98,7 @@ img { display: block; max-width: 100%; }
 .museum-facts span { display: block; margin-bottom: .45rem; color: var(--muted); font: .54rem/1 var(--mono); letter-spacing: .1em; }
 .museum-facts strong { font-family: var(--display); font-size: .96rem; font-weight: 500; }
 
-.exhibition-band { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; min-height: auto; padding: 7rem var(--page-pad); overflow: hidden; color: #f4f0e7; background: var(--green); }
+.exhibition-band { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; min-height: auto; padding: 7rem var(--page-pad); overflow: hidden; color: #f4f0e7; background: linear-gradient(100deg, rgba(18, 32, 29, .92), rgba(41, 73, 68, .8), rgba(18, 32, 29, .92)), var(--qinhan-exhibition-art) center / cover no-repeat; }
 .exhibition-band::after { position: absolute; right: -8rem; bottom: -14rem; width: 36rem; height: 36rem; border: 1px solid rgba(213, 180, 119, .18); border-radius: 50%; content: ""; box-shadow: 0 0 0 90px rgba(213, 180, 119, .025), 0 0 0 180px rgba(213, 180, 119, .018); }
 .exhibition-sticky { position: relative; z-index: 1; grid-column: 1 / 5; align-self: start; display: block; min-height: 0; padding: 0; overflow: visible; background: none; }
 .exhibition-sticky::before { display: block; width: 3.2rem; height: 2px; margin: 1.35rem 0 2.4rem; content: ""; background: #d5b477; }
@@ -104,7 +110,7 @@ img { display: block; max-width: 100%; }
 .chapter-index { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 2.2rem; border-top: 1px solid rgba(244, 240, 231, .28); border-left: 1px solid rgba(244, 240, 231, .28); }
 .chapter-index span { display: grid; min-height: 62px; place-items: center; border-right: 1px solid rgba(244, 240, 231, .28); border-bottom: 1px solid rgba(244, 240, 231, .28); color: #e1c48d; font-family: var(--display); font-size: 1rem; letter-spacing: .08em; }
 
-.queen-section { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(440px, .92fr); min-height: 0; border-bottom: 1px solid var(--line); color: var(--ink); background: #e6ddd0; }
+.queen-section { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(440px, .92fr); min-height: 0; border-bottom: 1px solid var(--line); color: var(--ink); background: linear-gradient(90deg, rgba(230, 221, 208, .78), rgba(230, 221, 208, .94) 48%, rgba(230, 221, 208, .9)), var(--qinhan-queen-art) center / cover no-repeat; }
 .queen-image-wrap { position: relative; min-height: min(820px, 82svh); overflow: hidden; background: #080908; }
 .queen-image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
 .queen-image-wrap:hover img { transform: scale(1.025); }
@@ -195,7 +201,7 @@ img { display: block; max-width: 100%; }
 .load-more { display: block; min-width: 220px; min-height: 48px; margin: 2rem auto 0; border: 1px solid var(--green); color: #fff; background: var(--green); cursor: pointer; font: 700 .62rem/1 var(--mono); letter-spacing: .09em; }
 .load-more[hidden] { display: none; }
 
-.method-section { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; padding: 7rem var(--page-pad); color: #f4f0e7; background: var(--night); }
+.method-section { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; padding: 7rem var(--page-pad); color: #f4f0e7; background: linear-gradient(100deg, rgba(10, 14, 13, .94), rgba(21, 27, 25, .74), rgba(10, 14, 13, .94)), var(--qinhan-method-art) center / cover no-repeat; }
 .method-title-wrap { grid-column: 1 / 5; }
 .method-title-wrap::before { display: block; width: 3.2rem; height: 2px; margin: 1.4rem 0 2.2rem; content: ""; background: #d5b477; }
 .method-title-wrap h2 { margin: 0; font-family: var(--display); font-size: clamp(3.1rem, 5vw, 4.8rem); font-weight: 500; letter-spacing: .035em; line-height: 1.18; }
@@ -225,7 +231,7 @@ img { display: block; max-width: 100%; }
 .archive-dialog[open] { display: grid; animation: dialog-in .28s ease-out; }
 .archive-dialog::backdrop { background: rgba(0,0,0,.8); }
 .dialog-close { position: absolute; z-index: 10; top: .8rem; right: .8rem; width: 44px; height: 44px; border: 1px solid #a77c45; color: #d5b477; background: #151a18; cursor: pointer; font-size: 1.25rem; }
-.dialog-media { display: grid; grid-template-rows: minmax(0, 1fr) auto auto; min-height: 0; overflow: hidden; background: #050605; }
+.dialog-media { display: grid; grid-template-rows: minmax(0, 1fr) auto auto; min-height: 0; overflow: hidden; background: linear-gradient(rgba(5, 6, 5, .82), rgba(5, 6, 5, .9)), var(--qinhan-detail-art) center / cover no-repeat; }
 .dialog-main-image { min-height: 0; overflow: hidden; }
 .dialog-main-image img { width: 100%; height: 100%; object-fit: contain; }
 .view-switch { display: grid; grid-template-columns: 1fr 1fr; padding: .65rem; background: #151a18; }
@@ -386,7 +392,9 @@ img { display: block; max-width: 100%; }
   min-height: 0;
   border-bottom: 1px solid var(--line);
   color: var(--ink);
-  background: #e2d8c2;
+  background:
+    linear-gradient(90deg, rgba(226, 216, 194, .78), rgba(226, 216, 194, .94) 48%, rgba(226, 216, 194, .9)),
+    var(--qinhan-tiger-art) center / cover no-repeat;
 }
 
 .tiger-image-wrap {
@@ -697,7 +705,7 @@ img { display: block; max-width: 100%; }
   padding: clamp(3.4rem, 5vw, 4.8rem) clamp(2.2rem, 4vw, 4.5rem) 3rem;
   background:
     linear-gradient(180deg, rgba(29, 36, 32, .98), rgba(21, 26, 24, .99)),
-    repeating-linear-gradient(0deg, transparent 0 34px, rgba(213, 180, 119, .035) 34px 35px);
+    var(--qinhan-detail-art) center / cover no-repeat;
 }
 .archive-dialog .dialog-content::before {
   display: block;
@@ -877,4 +885,41 @@ img { display: block; max-width: 100%; }
 @media (max-width: 480px) {
   .archive-dialog .detail-archive-grid { grid-template-columns: 1fr; }
   .archive-dialog .detail-archive-field { min-height: 0; }
+}
+
+/* Generated Qin-Han art belongs on the visible card and dialog surfaces. */
+#archive.archive-section .card-copy,
+#archive.archive-section .object-card:hover .card-copy,
+#archive.archive-section .object-card:focus-within .card-copy {
+  background:
+    linear-gradient(135deg, rgba(20, 19, 16, .56), rgba(32, 25, 19, .68)),
+    url("assets/ui/card-interior-qinhan-collage-v2.webp") center / cover no-repeat;
+}
+
+#archive.archive-section .object-card:hover .card-copy,
+#archive.archive-section .object-card:focus-within .card-copy {
+  background:
+    linear-gradient(135deg, rgba(20, 19, 16, .48), rgba(32, 25, 19, .6)),
+    url("assets/ui/card-interior-qinhan-collage-v2.webp") center / cover no-repeat;
+}
+
+#archive.archive-section .object-card:nth-child(3n + 1) .card-copy { background-position: center, 12% center; }
+#archive.archive-section .object-card:nth-child(3n + 2) .card-copy { background-position: center, 50% center; }
+#archive.archive-section .object-card:nth-child(3n) .card-copy { background-position: center, 88% center; }
+
+.archive-dialog .dialog-media {
+  background:
+    linear-gradient(rgba(5, 6, 5, .48), rgba(5, 6, 5, .64)),
+    url("assets/ui/card-interior-qinhan-collage-v2.webp") center / cover no-repeat;
+}
+
+.archive-dialog .dialog-content {
+  background:
+    linear-gradient(180deg, rgba(21, 26, 24, .64), rgba(17, 21, 19, .74)),
+    url("assets/ui/card-interior-qinhan-collage-v2.webp") center / cover no-repeat;
+}
+
+.archive-dialog .view-switch,
+.archive-dialog .thumbnail-strip {
+  background: rgba(21, 26, 24, .78);
 }

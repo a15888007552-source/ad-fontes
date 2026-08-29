@@ -284,7 +284,16 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .special-title { display: block; margin: 4px 0 0; overflow: hidden; font-size: 12px; font-weight: 500; line-height: 1.45; white-space: nowrap; text-overflow: ellipsis; }
 .special-preview small { color: var(--gold); font: 600 8px/1.3 var(--sans); letter-spacing: .08em; }
 
-.method { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 42px; }
+.method {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 42px;
+}
+#method.method {
+  background:
+    linear-gradient(100deg, rgba(246, 240, 227, .94), rgba(246, 240, 227, .72) 58%, rgba(246, 240, 227, .9)),
+    url("assets/generated/method-tang-conservation-v1.webp") center / cover no-repeat;
+}
 .method-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
 .method-grid article { padding-top: 12px; border-top: 2px solid var(--ink); }
 .method-grid b { color: var(--red); font: 700 11px/1.4 var(--sans); letter-spacing: .06em; }
@@ -661,7 +670,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   padding: clamp(2.8rem, 5vw, 4.2rem) clamp(1.6rem, 4vw, 4rem) 3rem;
   background:
     linear-gradient(135deg, rgba(255, 252, 244, .98), rgba(242, 236, 223, .96)),
-    repeating-linear-gradient(0deg, transparent 0 34px, rgba(169, 133, 67, .05) 34px 35px);
+    url("assets/generated/detail-tang-archive-v1.webp") center / cover no-repeat;
 }
 .object-dialog .dialog-content::before {
   display: block;
@@ -890,4 +899,27 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   #special.special .special-preview {
     grid-template-columns: 1fr;
   }
+}
+
+/* Generated Tang art remains visible on list cards and opened records. */
+#collection.collection .card-body {
+  background:
+    linear-gradient(135deg, rgba(244, 237, 224, .68), rgba(244, 237, 224, .76)),
+    url("assets/generated/card-interior-tang-collage-v2.webp") center / cover no-repeat;
+}
+
+#collection.collection .object-card:nth-child(3n + 1) .card-body { background-position: center, 12% center; }
+#collection.collection .object-card:nth-child(3n + 2) .card-body { background-position: center, 50% center; }
+#collection.collection .object-card:nth-child(3n) .card-body { background-position: center, 88% center; }
+
+.object-dialog .dialog-content {
+  background:
+    linear-gradient(135deg, rgba(255, 252, 244, .64), rgba(242, 236, 223, .72)),
+    url("assets/generated/card-interior-tang-collage-v2.webp") center / cover no-repeat;
+}
+
+.object-dialog .dialog-media {
+  background:
+    linear-gradient(rgba(23, 21, 18, .5), rgba(23, 21, 18, .66)),
+    url("assets/generated/card-interior-tang-collage-v2.webp") center / cover no-repeat;
 }

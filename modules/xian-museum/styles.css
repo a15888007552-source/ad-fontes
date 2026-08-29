@@ -321,7 +321,7 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
 .featured-copy dd { margin: 7px 0 0; color: #fff; font-size: 12px; line-height: 1.55; }
 .featured-open { min-height: 48px; padding: 0 18px; border: 1px solid #d7b66f; color: #ffedc4; background: rgba(161,63,50,.72); cursor: pointer; font: 700 11px/1 var(--sans); }
 .featured-open:hover, .featured-open:focus-visible { background: #a13f32; outline: 2px solid #f3d69b; outline-offset: 3px; }
-.routes { position: relative; overflow: hidden; background: color-mix(in srgb,var(--paper) 86%,#dce8e2); }
+.routes { position: relative; overflow: hidden; background: linear-gradient(100deg, rgba(232, 237, 229, .9), rgba(220, 232, 226, .7), rgba(232, 237, 229, .9)), url("assets/generated/routes-changan-jade-map-v1.webp") center / cover no-repeat; }
 .routes::before { content:""; position:absolute; inset:0; pointer-events:none; background: radial-gradient(circle at 90% 8%,rgba(38,91,78,.14),transparent 32%), repeating-radial-gradient(circle at 12% 82%,transparent 0 72px,rgba(38,91,78,.055) 73px 74px); }
 .routes > .page-width { position:relative; z-index:1; }
 .routes-head { display:grid; grid-template-columns:150px minmax(280px,.8fr) minmax(390px,1.2fr); gap:44px; align-items:end; margin-bottom:34px; }
@@ -355,8 +355,8 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
 .card-open { white-space:nowrap; font-size:9px; }
 .mini-tag.forbidden,.dialog-tags .forbidden { color: var(--red); border-color: color-mix(in srgb,var(--red) 62%,var(--line)); }
 .filter-chip.forbidden.active { border-color: var(--red); background: var(--red); }
-.dialog-media { background: #061b21; }
-.dialog-image-wrap { background-position:center; background-size:cover; }
+.dialog-media { background: linear-gradient(rgba(6, 27, 33, .82), rgba(6, 27, 33, .9)), url("assets/generated/detail-jade-stone-paper-v1.webp") center / cover no-repeat; }
+.dialog-image-wrap { background-image: linear-gradient(rgba(6, 27, 33, .66), rgba(6, 27, 33, .78)), url("assets/generated/detail-jade-stone-paper-v1.webp"); background-position:center; background-size:cover; }
 .dialog-image-wrap img { position:relative; z-index:1; }
 .opening { position:fixed; z-index:100; inset:0; display:grid; place-items:center; overflow:hidden; color:#fff; background:#04171d url('assets/hero-mirror-city.webp') center/cover no-repeat; transition:opacity .72s ease, transform .72s cubic-bezier(.22,.8,.25,1); }
 .opening::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(2,14,19,.92),rgba(2,17,22,.35)); }
@@ -389,6 +389,9 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
   --muted: var(--xian-stone);
   --line: color-mix(in srgb, var(--xian-stone) 42%, transparent);
   color: var(--xian-ink);
+  background:
+    linear-gradient(100deg, rgba(233, 226, 210, .94), rgba(233, 226, 210, .7) 58%, rgba(233, 226, 210, .9)),
+    url("assets/generated/museum-pagoda-courtyard-v1.webp") center / cover no-repeat;
 }
 #museum.museum > .section-label { width: 100%; margin-bottom: 34px; }
 #museum.museum > .section-label::after { content: ""; flex: 1 1 auto; height: 1px; margin-left: 12px; background: color-mix(in srgb, var(--xian-stone) 52%, transparent); }
@@ -658,7 +661,7 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
   padding: clamp(2.8rem, 5vw, 4.2rem) clamp(1.6rem, 4vw, 4rem) 3rem;
   background:
     linear-gradient(135deg, rgba(247, 246, 239, .98), rgba(223, 229, 220, .94)),
-    repeating-linear-gradient(0deg, transparent 0 34px, rgba(18, 108, 112, .045) 34px 35px);
+    url("assets/generated/detail-jade-stone-paper-v1.webp") center / cover no-repeat;
 }
 .object-dialog .dialog-content::before {
   display: block;
@@ -827,4 +830,35 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
 @media (max-width: 760px) {
   .object-dialog .detail-archive-grid { grid-template-columns: 1fr; }
   .object-dialog .detail-archive-field { min-height: 0; }
+}
+
+/* Generated Chang'an art remains visible on list cards and opened records. */
+#collection.collection .card-body {
+  background:
+    linear-gradient(135deg, rgba(245, 240, 230, .68), rgba(233, 238, 231, .76)),
+    url("assets/generated/card-interior-changan-collage-v2.webp") center / cover no-repeat;
+}
+
+#collection.collection .object-card:nth-child(3n + 1) .card-body { background-position: center, 12% center; }
+#collection.collection .object-card:nth-child(3n + 2) .card-body { background-position: center, 50% center; }
+#collection.collection .object-card:nth-child(3n) .card-body { background-position: center, 88% center; }
+
+.object-dialog .dialog-content {
+  background:
+    linear-gradient(135deg, rgba(247, 246, 239, .62), rgba(223, 229, 220, .72)),
+    url("assets/generated/card-interior-changan-collage-v2.webp") center / cover no-repeat;
+}
+
+.object-dialog .dialog-media {
+  background:
+    linear-gradient(rgba(6, 27, 33, .46), rgba(6, 27, 33, .62)),
+    url("assets/generated/card-interior-changan-collage-v2.webp") center / cover no-repeat;
+}
+
+.object-dialog .dialog-image-wrap {
+  background-image:
+    linear-gradient(rgba(6, 27, 33, .36), rgba(6, 27, 33, .5)),
+    url("assets/generated/card-interior-changan-collage-v2.webp");
+  background-position: center;
+  background-size: cover;
 }

@@ -19,12 +19,12 @@
     <meta name="twitter:image" content="https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/museum-exterior.jpg" />
     <link rel="icon" href="https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/brand-emblem.png" type="image/png" />
     <link rel="stylesheet" href="styles.css?v=20260827-contrast1" />
-    <link rel="stylesheet" href="artifact-catalog.css?v=20260815-dialog2" />
+    <link rel="stylesheet" href="artifact-catalog.css?v=20260829-cardart2" />
     <link rel="stylesheet" href="catalog-cards.css?v=20260815-cards3" />
     <link rel="stylesheet" href="museum-motion-lite.css?v=20260815-lite1" />
     <link rel="stylesheet" href="museum-backgrounds.css?v=20260815-texture2" />
     <link rel="stylesheet" href="catalog-direct.css?v=20260815-direct1" />
-    <link rel="stylesheet" href="museum-scenes.css?v=20260815-scenes1" />
+    <link rel="stylesheet" href="museum-scenes.css?v=20260829-backgrounds1" />
     <link rel="stylesheet" href="../../shared/css/polish.css" />
     <style id="museum-brand-emblem">.brand-mark{overflow:hidden;background:#17211e}.brand-mark img{display:block;width:88%;height:88%;object-fit:contain}</style>
     <style id="archaeology-polish-20260826">
@@ -53,7 +53,7 @@
     <style id="archaeology-section-continuity">
       body { --arch-section-deep: #1e2d26; --arch-section-surface: #2a3a32; background: var(--arch-section-deep); }
       .page-shell { background: var(--arch-section-deep); }
-      .page-shell > .feature-card:not(.theme-card) { border-color: rgba(238, 231, 216, .18); background: var(--arch-section-surface); box-shadow: none; color: var(--arch-paper); }
+      .page-shell > .feature-card:not(.theme-card) { border-color: rgba(238, 231, 216, .18); background-color: var(--arch-section-surface); box-shadow: none; color: var(--arch-paper); }
       .page-shell > .feature-card:not(.theme-card) .feature-copy > p:not(.eyebrow):not(.lead):not(.boundary),
       .page-shell > .feature-card:not(.theme-card) .other-heading > p,
       .page-shell > .feature-card:not(.theme-card) .artifact-card-period,
@@ -72,7 +72,7 @@
       #other.other-card {
         color: var(--arch-paper);
         background-color: var(--arch-section-surface);
-        background-image: linear-gradient(rgba(42, 58, 50, .94), rgba(30, 45, 38, .96)), var(--collection-art);
+        background-image: linear-gradient(rgba(42, 58, 50, .62), rgba(30, 45, 38, .74)), url("assets/ui/card-interior-field-collage-v2.webp");
         background-position: center;
         background-size: cover;
       }
@@ -80,7 +80,11 @@
       #other .artifact-catalog-toolbar input,
       #other .artifact-catalog-toolbar select { border-color: rgba(238, 231, 216, .28); color: var(--arch-paper); background: rgba(238, 231, 216, .08); }
       #other .artifact-catalog-toolbar input::placeholder { color: rgba(238, 231, 216, .52); }
-      #other.other-card .artifact-catalog-card { border-color: rgba(238, 231, 216, .2); background: rgba(23, 38, 30, .82); }
+      #other.other-card #artifact-grid { background-image: linear-gradient(rgba(30, 45, 38, .54), rgba(30, 45, 38, .66)), url("assets/ui/card-interior-field-collage-v2.webp"); background-position: center; background-size: cover; }
+      #other.other-card .artifact-catalog-card { border-color: rgba(238, 231, 216, .2); background: linear-gradient(135deg, rgba(18, 30, 24, .58), rgba(18, 30, 24, .72)), url("assets/ui/card-interior-field-collage-v2.webp") center / cover no-repeat; }
+      #other.other-card .artifact-catalog-card:nth-child(3n + 1) { background-position: center, 14% center; }
+      #other.other-card .artifact-catalog-card:nth-child(3n + 2) { background-position: center, 50% center; }
+      #other.other-card .artifact-catalog-card:nth-child(3n) { background-position: center, 86% center; }
       #other.other-card .artifact-card-copy { color: rgba(238, 231, 216, .78); }
       #other.other-card .artifact-catalog-card h3 { color: var(--arch-paper); }
       #other.other-card .artifact-card-period,

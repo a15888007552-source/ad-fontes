@@ -2226,6 +2226,7 @@
   }
 
   .atlas-search-result__media {
+    position: relative;
     display: grid;
     aspect-ratio: 1 / 1.08;
     min-width: 0;
@@ -2233,6 +2234,25 @@
     overflow: hidden;
     place-items: center;
     background: color-mix(in srgb, var(--surface-strong) 86%, var(--accent-soft));
+  }
+
+  .atlas-search-result__media--record-context {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .atlas-search-result__context-note {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    padding: 5px 6px;
+    color: rgba(255, 255, 255, .9);
+    background: rgba(20, 20, 17, .72);
+    font-family: var(--serif);
+    font-size: 10px;
+    line-height: 1.35;
+    text-align: center;
   }
 
   .atlas-search-result__media img {
@@ -2589,9 +2609,10 @@
       if (!trigger || !dialog || !closeButton || !input || !select || !status || !results) return;
 
       const repositoryRoot = new URL("../../", document.baseURI);
-      const searchIndexUrl = new URL("modules/museum-atlas/search-index.json?rev=20260822-build02", repositoryRoot);
+      const searchIndexUrl = new URL("modules/museum-atlas/search-index.json?rev=20260829-backgrounds1", repositoryRoot);
       const expectedKeys = ["museum_id", "museum_name", "id", "title", "period", "type", "material", "origin", "keywords", "site_path", "image_path"];
-      const allowedEmptyImageIds = new Set([
+      const allowedEmptyImageIds = new Set([]);
+      const recordContextImageIds = new Set([
         "beilin:artifact-057",
         "baoji:photo-group-3619",
         "baoji:photo-group-3881",
@@ -2755,12 +2776,25 @@
         const media = document.createElement("figure");
         media.className = "atlas-search-result__media";
         if (record.image_path) {
-          const image = document.createElement("img");
-          image.src = window.resolveAtlasMediaUrl(record.image_path, record.site_path);
-          image.alt = `${record.title} · ${record.museum_name}`;
-          image.loading = "lazy";
-          image.decoding = "async";
-          media.append(image);
+          const compositeId = `${record.museum_id}:${record.id}`;
+          const resolvedImage = window.resolveAtlasMediaUrl(record.image_path, record.site_path);
+          if (recordContextImageIds.has(compositeId)) {
+            media.classList.add("atlas-search-result__media--record-context");
+            media.style.backgroundImage = `linear-gradient(rgba(20, 20, 17, .08), rgba(20, 20, 17, .38)), url("${resolvedImage}")`;
+            media.setAttribute("role", "img");
+            media.setAttribute("aria-label", `${record.title}：本条目暂无器物本体影像`);
+            const contextNote = document.createElement("span");
+            contextNote.className = "atlas-search-result__context-note";
+            contextNote.textContent = "暂无器物本体影像";
+            media.append(contextNote);
+          } else {
+            const image = document.createElement("img");
+            image.src = resolvedImage;
+            image.alt = `${record.title} · ${record.museum_name}`;
+            image.loading = "lazy";
+            image.decoding = "async";
+            media.append(image);
+          }
         } else {
           const placeholder = document.createElement("div");
           placeholder.className = "atlas-search-result__placeholder";

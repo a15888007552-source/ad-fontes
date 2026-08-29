@@ -3,6 +3,22 @@
 
   const data = window.BAOJI_DATA || { site: {}, treasures: [] };
   const photoData = window.BAOJI_PHOTO_INDEX || { sourceCount: 625, groups: [], photos: [] };
+  const unavailablePhotoNames = new Set([
+    'DSC_3390.JPG',
+    'DSC_3619.JPG',
+    'DSC_3875.JPG',
+    'DSC_3881.JPG',
+  ]);
+  const groupVisualFallbacks = Object.freeze({
+    'photo-group-3619': {
+      path: 'assets/generated/fallback-zuyi-gui-v1.webp',
+      label: '本条目暂无器物本体影像',
+    },
+    'photo-group-3881': {
+      path: 'assets/generated/fallback-pottery-weight-v1.webp',
+      label: '本条目暂无器物本体影像',
+    },
+  });
   const state = {
     filter: 'all',
     query: '',
@@ -58,6 +74,19 @@
     if (!value) return '';
     if (typeof value === 'string') return value;
     return value.filename || value.name || '';
+  }
+
+  function photoIsAvailable(photo) {
+    const filename = filenameOf(photo).toUpperCase();
+    return Boolean(filename) && !unavailablePhotoNames.has(filename);
+  }
+
+  function availableGroupPhotos(group) {
+    return (group?.photos || []).filter(photoIsAvailable);
+  }
+
+  function groupVisualFallback(group) {
+    return groupVisualFallbacks[group?.id] || null;
   }
 
   function photoPath(value, kind = 'web') {
@@ -143,9 +172,9 @@
   }
 
   function objectPhoto(group) {
-    const photos = group?.photos || [];
+    const photos = availableGroupPhotos(group);
     const valid = (photo) => photo && !photo.isLabel && photo.role !== 'label' && photo.role !== 'environment';
-    if (valid(group?.featured)) return group.featured;
+    if (photoIsAvailable(group?.featured) && valid(group.featured)) return group.featured;
     return photos.find(valid) || null;
   }
 
@@ -211,8 +240,16 @@
   }
 
 
-  function galleryMarkup(values, mainValue, captionPrefix = '') {
-    if (!values.length) return '<p class="dialog-image-caption">暂无可用照片</p>';
+  function galleryMarkup(values, mainValue, captionPrefix = '', fallback = null, title = '') {
+    if (!values.length && fallback) {
+      return `<div class="dialog-image-stack dialog-image-stack--fallback">
+        <div class="zoom-stage zoom-stage--fallback" style="--fallback-art:url('${escapeHTML(fallback.path)}')" role="img" aria-label="${escapeHTML(`${title}：本条目暂无器物本体影像`)}">
+          <span class="dialog-fallback-note">${escapeHTML(fallback.label)}</span>
+        </div>
+        <p class="dialog-image-caption">条目信息据现场展签著录，具体形制仍待其他材料核对</p>
+      </div>`;
+    }
+    if (!values.length) return '<p class="dialog-image-caption">本条目暂无器物本体影像</p>';
     const mainIndex = Math.max(0, values.findIndex((value) => filenameOf(value) === filenameOf(mainValue)));
     return `<div class="dialog-image-stack">
       <div class="zoom-stage" data-zoom-stage tabindex="0" aria-label="文物主图，可双击或使用滚轮缩放，放大后可拖动查看">
@@ -493,8 +530,8 @@
     });
   }
 
-  function genericSequenceMarkup(group) {
-    const photos = (group.photos || []).slice(0, 8);
+  function genericSequenceMarkup(group, values = availableGroupPhotos(group)) {
+    const photos = values.slice(0, 8);
     if (!photos.length) return '';
     return `<div class="photo-sequence">${photos.map((photo) => `<figure><img src="${escapeHTML(photoPath(photo, 'thumb'))}" alt="${escapeHTML(group.title)} · ${escapeHTML(photoRole(photo.role))}" loading="lazy" /><figcaption>${escapeHTML(photoRole(photo.role))}${photo.cropThumb ? ' · 人工裁切' : ''}<br />${escapeHTML(filenameOf(photo))}</figcaption></figure>`).join('')}</div>`;
   }
@@ -514,14 +551,15 @@
     }
     const dialogContent = $('#dialog-content');
     activeDetailId = group.id;
-    const photos = group.photos || [];
-    const main = objectPhoto(group) || photos[0];
+    const photos = availableGroupPhotos(group);
+    const main = objectPhoto(group) || photos[0] || null;
+    const fallback = groupVisualFallback(group);
     const sequence = group.sequenceLabel || (group.sequenceStart ? `${group.sequenceStart}—${group.sequenceEnd}` : '现场照片');
     const unitNote = Number(group.unitCount || 1) > 1 ? `；同名器物合并 ${group.unitCount} 组现场照片` : '';
     dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(group.number || 'PHOTO GROUP')} / ${escapeHTML(group.categoryLabel || '其他器物')}</p><h2 id="dialog-title">${escapeHTML(group.title || '器物卡片')}<small>${escapeHTML(sequence)}</small></h2></div><p class="dialog-lead">${escapeHTML(group.summary || '现场展签与照片序列记录。')}${escapeHTML(unitNote)}</p></div>
       <div class="dialog-facts"><div class="dialog-fact"><span class="dialog-fact-label">类别</span><span class="dialog-fact-value">${escapeHTML(group.categoryLabel || '其他器物')}</span></div><div class="dialog-fact"><span class="dialog-fact-label">照片数</span><span class="dialog-fact-value">${photos.length} 张</span></div><div class="dialog-fact"><span class="dialog-fact-label">音乐重点</span><span class="dialog-fact-value">${group.musicFocus ? '是 · 乐器 / 礼乐' : '否'}</span></div><div class="dialog-fact"><span class="dialog-fact-label">证据状态</span><span class="dialog-fact-value">${escapeHTML(group.status || '现场展签 / 照片顺序')}</span></div></div>
-      <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, `现场顺序 · ${filenameOf(main)}`)}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
-      ${genericSequenceMarkup(group)}`;
+      <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, main ? `现场顺序 · ${filenameOf(main)}` : '', fallback, group.title || '器物条目')}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
+      ${genericSequenceMarkup(group, photos)}`;
     const groupFacts = dialogContent.querySelector(".dialog-facts");
     if (groupFacts) groupFacts.outerHTML = detailArchiveMarkup(group, [["PHOTO / 照片数", `${photos.length} 张`], ["CONTEXT / 音乐重点", group.musicFocus ? '是 · 乐器 / 礼乐' : '否'], ["EVIDENCE / 证据状态", group.status || '现场展签 / 照片顺序']]);
     bindGallery();
@@ -750,14 +788,18 @@
 
   function archiveCardMarkup(group) {
     const featured = objectPhoto(group);
+    const availablePhotos = availableGroupPhotos(group);
+    const fallback = groupVisualFallback(group);
     const music = group.musicFocus;
     const range = group.sequenceShortLabel || group.sequenceLabel || (group.sequenceStart ? `${group.sequenceStart}—${group.sequenceEnd}` : '现场');
     const cropNote = featured && featured.cropThumb ? ' · 裁切图' : '';
     const media = featured
       ? `<div class="archive-card-media"><img src="${escapeHTML(photoPath(featured, 'thumb'))}" alt="${escapeHTML(group.title || '现场照片')}" loading="lazy" decoding="async" /><span class="archive-card-label">${escapeHTML(`${range}${cropNote}`)}</span></div>`
+      : fallback
+        ? `<div class="archive-card-media archive-card-media--fallback" style="--fallback-art:url('${escapeHTML(fallback.path)}')" role="img" aria-label="${escapeHTML(`${group.title || '器物条目'}：本条目暂无器物本体影像`)}"><span class="archive-card-fallback-note">${escapeHTML(fallback.label)}</span><span class="archive-card-label">${escapeHTML(range)}</span></div>`
       : `<div class="archive-card-media archive-card-media--evidence"><span>暂无器物主图</span><small>${escapeHTML(range)} · 仅保留现场证据</small></div>`;
     const unitNote = Number(group.unitCount || 1) > 1 ? ` · ${group.unitCount}组` : '';
-    return `<article class="archive-card${music ? ' archive-card--music' : ''}${featured ? '' : ' archive-card--evidence'}"><button type="button" data-group-id="${escapeHTML(group.id)}" aria-label="打开${escapeHTML(group.title || '器物卡片')}详情">${media}<div class="archive-card-body"><div class="archive-card-top"><h3 title="${escapeHTML(group.title || '器物卡片')}">${escapeHTML(group.title || '器物卡片')}</h3>${music ? '<span class="music-badge">♫ MUSIC</span>' : ''}</div><div class="archive-card-meta"><span>${escapeHTML(group.categoryLabel || '其他器物')}</span><span>${(group.photos || []).length} 张${unitNote}</span></div><p class="archive-card-summary">${escapeHTML(group.summary || '现场器物照片按顺序归档')}</p></div></button></article>`;
+    return `<article class="archive-card${music ? ' archive-card--music' : ''}${featured || fallback ? '' : ' archive-card--evidence'}"><button type="button" data-group-id="${escapeHTML(group.id)}" aria-label="打开${escapeHTML(group.title || '器物卡片')}详情">${media}<div class="archive-card-body"><div class="archive-card-top"><h3 title="${escapeHTML(group.title || '器物卡片')}">${escapeHTML(group.title || '器物卡片')}</h3>${music ? '<span class="music-badge">♫ MUSIC</span>' : ''}</div><div class="archive-card-meta"><span>${escapeHTML(group.categoryLabel || '其他器物')}</span><span>${availablePhotos.length} 张${unitNote}</span></div><p class="archive-card-summary">${escapeHTML(group.summary || '现场器物照片按顺序归档')}</p></div></button></article>`;
   }
 
   function updateFilterCounts() {

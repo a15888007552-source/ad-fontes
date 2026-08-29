@@ -455,12 +455,12 @@ function createCard(group, index) {
   } else {
     imageWrap.classList.add("is-editorial-placeholder");
     image.src = projectUrl(THEME_ART[group.category] || THEME_ART["古董/文物"]);
-    image.alt = `${group.name}主题视觉占位，本组没有文物本体照片`;
+    image.alt = `${group.name}：本条目暂无器物本体影像`;
   }
   image.loading = index < 12 ? "eager" : "lazy";
   image.decoding = "async";
   imageWrap.append(image);
-  if (!cardPhoto) imageWrap.append(makeElement("span", "card-placeholder-note", "主题视觉 · 非文物照片"));
+  if (!cardPhoto) imageWrap.append(makeElement("span", "card-placeholder-note", "本条目暂无器物本体影像"));
 
   const corner = makeElement("div", "card-corner-effect");
   corner.setAttribute("aria-label", "打开详情查看图集");
@@ -805,15 +805,15 @@ function renderDetail(group) {
   elements.detailMainImage.hidden = !hasArtifactPhotos;
   elements.galleryArtDisclosure.textContent = hasArtifactPhotos
     ? isSupplementalImage(group, selectedPhoto())
-      ? "用户提供 PDF 资料图 · 原图未修改"
-      : "AI 主题环境 · 原图未修改"
-    : "AI 主题环境 · 非文物影像";
+      ? "资料页所载器物图像"
+      : "器物图像 · 专题视图"
+    : "本条目暂无器物本体影像";
   if (elements.galleryImageNote) {
     elements.galleryImageNote.innerHTML = hasArtifactPhotos && isSupplementalImage(group, selectedPhoto())
-      ? "图像来自用户提供 PDF 资料页<br />背景为 AI 主题环境"
+      ? "资料页所载器物图像<br />器物身份以资料页著录为据"
       : hasArtifactPhotos
-        ? "中央为现场原图<br />背景为 AI 主题环境"
-        : "没有现场文物原图<br />背景为 AI 主题环境";
+        ? "现场所见器物影像<br />器物身份以展签著录为据"
+        : "本条目暂无器物本体影像<br />条目信息据现场展签著录";
   }
   elements.zoomHint.textContent = hasArtifactPhotos ? "点击查看原图" : "无可打开的文物原图";
   elements.openLightbox.setAttribute(

@@ -14,6 +14,12 @@
   --shadow: 0 24px 60px rgba(15, 15, 13, 0.18);
   --sans: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
   --serif: "Songti SC", SimSun, "Noto Serif CJK SC", Georgia, serif;
+  --beilin-museum-art: url("modules/beilin/assets/generated/museum-stone-courtyard-v1.webp");
+  --beilin-theme-art: url("modules/beilin/assets/generated/theme-rubbing-atlas-v1.webp");
+  --beilin-catalog-art: url("modules/beilin/assets/generated/catalog-ink-steles-v1.webp");
+  --beilin-card-interior-art: url("modules/beilin/assets/generated/card-interior-stele-collage-v2.webp");
+  --beilin-method-art: url("modules/beilin/assets/generated/method-cinnabar-rubbing-v1.webp");
+  --beilin-detail-art: url("modules/beilin/assets/generated/detail-stone-paper-v1.webp");
 }
 
 * {
@@ -337,6 +343,12 @@ img {
   padding: clamp(92px, 11vw, 160px) 0;
 }
 
+.museum-section {
+  background:
+    linear-gradient(90deg, rgba(240, 237, 229, 0.96), rgba(240, 237, 229, 0.78) 58%, rgba(240, 237, 229, 0.88)),
+    var(--beilin-museum-art) center / cover no-repeat;
+}
+
 .section-index {
   padding-top: 3px;
   border-top: 1px solid var(--ink);
@@ -411,7 +423,9 @@ img {
 .theme-section {
   padding: clamp(90px, 10vw, 150px) max(32px, calc((100vw - 1600px) / 2));
   overflow: hidden;
-  background: #ded8ca;
+  background:
+    linear-gradient(110deg, rgba(222, 216, 202, 0.96), rgba(222, 216, 202, 0.75) 55%, rgba(222, 216, 202, 0.9)),
+    var(--beilin-theme-art) center / cover no-repeat;
 }
 
 .theme-heading {
@@ -584,7 +598,9 @@ img {
 
 .catalog-section {
   padding: clamp(84px, 9vw, 136px) max(32px, calc((100vw - 1600px) / 2));
-  background: var(--ink);
+  background:
+    linear-gradient(110deg, rgba(23, 23, 20, 0.96), rgba(23, 23, 20, 0.78) 54%, rgba(23, 23, 20, 0.94)),
+    var(--beilin-catalog-art) center / cover no-repeat;
   color: var(--white);
 }
 
@@ -994,7 +1010,9 @@ dialog::backdrop {
   max-width: none;
   max-height: calc(100svh - 32px);
   margin: auto;
-  background: var(--paper);
+  background:
+    linear-gradient(rgba(240, 237, 229, 0.93), rgba(240, 237, 229, 0.96)),
+    var(--beilin-detail-art) center / cover no-repeat;
   color: var(--ink);
   box-shadow: var(--shadow);
 }
@@ -1392,7 +1410,9 @@ dialog::backdrop {
 .source-section {
   padding: clamp(46px, 6vw, 82px) clamp(28px, 6vw, 90px);
   border-top: 1px solid var(--line);
-  background: var(--paper-deep);
+  background:
+    linear-gradient(rgba(228, 223, 211, 0.88), rgba(228, 223, 211, 0.94)),
+    var(--beilin-detail-art) center / cover no-repeat;
 }
 
 .source-list {
@@ -1407,7 +1427,9 @@ dialog::backdrop {
 .source-item {
   min-height: 132px;
   padding: 20px;
-  background: var(--paper);
+  background:
+    linear-gradient(rgba(250, 249, 245, 0.9), rgba(240, 237, 229, 0.94)),
+    var(--beilin-detail-art) center / cover no-repeat;
 }
 
 .source-item .source-layer {
@@ -3149,7 +3171,9 @@ dialog::backdrop {
   max-width: none;
   margin: 0;
   padding-inline: max(32px, calc((100% - 1440px) / 2));
-  background: linear-gradient(165deg, var(--cinnabar) 0%, var(--cinnabar-dark) 100%);
+  background:
+    linear-gradient(165deg, rgba(166, 50, 39, 0.9) 0%, rgba(120, 37, 31, 0.94) 100%),
+    var(--beilin-method-art) center / cover no-repeat;
 }
 
 .method-section .section-index {
@@ -3187,4 +3211,41 @@ dialog::backdrop {
 
 .method-section .method-note strong {
   color: var(--white);
+}
+
+/* Card interior art: keep the image on the visible card and reading surfaces. */
+.catalog-section {
+  background:
+    linear-gradient(110deg, rgba(23, 23, 20, .68), rgba(23, 23, 20, .44) 54%, rgba(23, 23, 20, .7)),
+    var(--beilin-catalog-art) center / cover no-repeat;
+}
+
+.artifact-card-button,
+.artifact-card-button:hover,
+.artifact-card-button:focus-visible {
+  background:
+    linear-gradient(120deg, rgba(15, 15, 13, .58), rgba(15, 15, 13, .7)),
+    var(--beilin-card-interior-art) center / cover no-repeat;
+}
+
+.artifact-card:nth-child(3n + 1) .artifact-card-button { background-position: center, 16% center; }
+.artifact-card:nth-child(3n + 2) .artifact-card-button { background-position: center, 52% center; }
+.artifact-card:nth-child(3n) .artifact-card-button { background-position: center, 84% center; }
+
+.artifact-dialog {
+  background:
+    linear-gradient(135deg, rgba(240, 237, 229, .58), rgba(240, 237, 229, .68)),
+    var(--beilin-card-interior-art) center / cover no-repeat;
+}
+
+.source-section {
+  background:
+    linear-gradient(135deg, rgba(228, 223, 211, .58), rgba(228, 223, 211, .7)),
+    var(--beilin-card-interior-art) center / cover no-repeat;
+}
+
+.source-item {
+  background:
+    linear-gradient(135deg, rgba(250, 249, 245, .66), rgba(240, 237, 229, .76)),
+    var(--beilin-card-interior-art) center / cover no-repeat;
 }

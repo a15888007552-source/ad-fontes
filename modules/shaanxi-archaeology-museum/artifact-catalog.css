@@ -137,7 +137,7 @@
 .artifact-dialog-shell { position: relative; display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr); min-height: min(760px, calc(100dvh - 2rem)); }
 .artifact-dialog-close { position: fixed; z-index: 10; top: max(1.7rem, env(safe-area-inset-top)); right: max(1.7rem, env(safe-area-inset-right)); min-width: 76px; min-height: 44px; border: 1px solid rgba(255,255,255,.32); background: rgba(13,16,14,.84); color: #fff; font: inherit; cursor: pointer; }
 .artifact-dialog-gallery { display: flex; min-width: 0; flex-direction: column; padding: clamp(1rem, 2vw, 1.6rem); background: var(--catalog-dark); color: #eee8dc; }
-.artifact-dialog-stage { display: grid; min-height: 460px; flex: 1; place-items: center; overflow: auto; background: #080a08; cursor: zoom-in; }
+.artifact-dialog-stage { display: grid; min-height: 460px; flex: 1; place-items: center; overflow: auto; background: linear-gradient(rgba(8, 10, 8, .82), rgba(8, 10, 8, .9)), url("assets/ui/detail-field-report-v1.webp") center / cover no-repeat; cursor: zoom-in; }
 .artifact-dialog-main-image { display: block; max-width: 100%; max-height: 68vh; transform-origin: center; transition: transform 120ms ease; }
 .artifact-zoom-controls { display: flex; align-items: center; gap: 0.45rem; padding: 0.75rem 0 0.5rem; }
 .artifact-zoom-controls button { min-width: 42px; min-height: 40px; border: 1px solid rgba(255,255,255,.2); background: transparent; color: inherit; font: inherit; cursor: pointer; }
@@ -255,7 +255,7 @@ dialog[open] dl dd {
   padding: clamp(2rem, 4vw, 4.2rem);
   background:
     linear-gradient(135deg, rgba(238, 231, 216, .98), rgba(216, 210, 196, .9)),
-    repeating-linear-gradient(0deg, transparent 0 34px, rgba(155, 91, 58, .045) 34px 35px);
+    url("assets/ui/detail-field-report-v1.webp") center / cover no-repeat;
 }
 .artifact-dialog .artifact-dialog-copy::before {
   display: block;
@@ -422,4 +422,17 @@ dialog[open] dl dd {
 @media (max-width: 760px) {
   .artifact-dialog .detail-archive-grid { grid-template-columns: 1fr; }
   .artifact-dialog .detail-archive-field { min-height: 0; }
+}
+
+/* Keep generated fieldwork art visible inside the opened artifact card. */
+.artifact-dialog .artifact-dialog-copy {
+  background:
+    linear-gradient(135deg, rgba(238, 231, 216, .64), rgba(216, 210, 196, .72)),
+    url("assets/ui/card-interior-field-collage-v2.webp") center / cover no-repeat;
+}
+
+.artifact-dialog .artifact-dialog-stage {
+  background:
+    linear-gradient(rgba(8, 10, 8, .5), rgba(8, 10, 8, .66)),
+    url("assets/ui/card-interior-field-collage-v2.webp") center / cover no-repeat;
 }

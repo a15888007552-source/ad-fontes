@@ -393,6 +393,22 @@ img { display: block; max-width: 100%; }
 .archive-card-media--evidence span { font-size: .78rem; line-height: 1.45; }
 .archive-card-media--evidence small { color: rgba(236, 232, 220, .48); font-family: var(--mono); font-size: .48rem; letter-spacing: .04em; }
 .archive-card-media::after { position: absolute; right: 0; bottom: 0; left: 0; height: 40%; background: linear-gradient(0deg, rgba(0, 0, 0, .46), transparent); content: ''; pointer-events: none; }
+.archive-card-media--fallback {
+  background:
+    linear-gradient(rgba(24, 25, 21, .18), rgba(24, 25, 21, .5)),
+    var(--fallback-art) center / cover no-repeat !important;
+}
+.archive-card-fallback-note {
+  position: absolute;
+  z-index: 2;
+  top: .55rem;
+  right: .55rem;
+  padding: .28rem .42rem;
+  color: rgba(244, 240, 230, .86);
+  background: rgba(22, 23, 19, .76);
+  font: .48rem/1.35 var(--mono);
+  letter-spacing: .04em;
+}
 .archive-card-label { position: absolute; z-index: 1; bottom: .5rem; left: .6rem; color: var(--paper); font-family: var(--mono); font-size: .53rem; letter-spacing: .05em; }
 .archive-card-body { display: grid; gap: .35rem; padding: .8rem .75rem .9rem; }
 .archive-card-top { display: flex; align-items: center; justify-content: space-between; gap: .6rem; min-width: 0; }
@@ -439,7 +455,7 @@ img { display: block; max-width: 100%; }
 .dialog-fact-value { font-size: .95rem; line-height: 1.65; }
 .dialog-body-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 2.1rem; padding-top: 2.1rem; }
 .dialog-image-stack { display: grid; gap: .7rem; align-content: start; }
-.zoom-stage { position: relative; display: grid; width: 100%; height: min(490px, 58svh); min-height: 260px; overflow: hidden; place-items: center; background: #292921; cursor: zoom-in; touch-action: pan-y; }
+.zoom-stage { position: relative; display: grid; width: 100%; height: min(490px, 58svh); min-height: 260px; overflow: hidden; place-items: center; background: linear-gradient(rgba(32, 31, 26, .82), rgba(32, 31, 26, .9)), url("assets/generated/detail-bronze-paper-v1.webp") center / cover no-repeat; cursor: zoom-in; touch-action: pan-y; }
 .zoom-stage.is-zoomed { cursor: grab; touch-action: none; }
 .zoom-stage.is-dragging { cursor: grabbing; }
 .dialog-main-image { width: 100%; height: 100%; max-height: none; object-fit: contain; user-select: none; transform: translate3d(0, 0, 0) scale(1); transform-origin: center center; transition: transform .16s ease-out; will-change: transform; }
@@ -454,6 +470,19 @@ img { display: block; max-width: 100%; }
 .dialog-thumb { aspect-ratio: 1.25; overflow: hidden; border: 1px solid var(--line); background: #292921; }
 .dialog-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .72; transition: opacity .2s ease; }
 .dialog-thumb:hover img, .dialog-thumb.is-active img { opacity: 1; }
+.zoom-stage--fallback {
+  cursor: default;
+  background:
+    linear-gradient(rgba(18, 19, 16, .18), rgba(18, 19, 16, .48)),
+    var(--fallback-art) center / cover no-repeat;
+}
+.dialog-fallback-note {
+  padding: .55rem .75rem;
+  color: rgba(244, 240, 230, .9);
+  background: rgba(22, 23, 19, .72);
+  font: .6rem/1.5 var(--mono);
+  letter-spacing: .05em;
+}
 .dialog-copy { display: grid; gap: 1.6rem; align-content: start; }
 .dialog-copy h3 { margin: 0 0 .55rem; color: var(--rust); font-family: var(--mono); font-size: .78rem; font-weight: 400; letter-spacing: .08em; }
 .dialog-copy p { margin: 0; font-size: 1.06rem; line-height: 2.05; }
@@ -1020,6 +1049,36 @@ body {
   #archive.section--archive .archive-card-media img { transition: none; }
 }
 
+/* Generated bronze art remains visible on list cards and opened records. */
+#archive.section--archive .archive-card-body {
+  background:
+    linear-gradient(90deg, rgba(255, 252, 244, .62), rgba(238, 231, 216, .72)),
+    url("assets/generated/card-interior-bronze-collage-v2.webp") center / cover no-repeat;
+}
+
+#archive.section--archive .archive-card:nth-child(3n + 1) .archive-card-body { background-position: center, 14% center; }
+#archive.section--archive .archive-card:nth-child(3n + 2) .archive-card-body { background-position: center, 50% center; }
+#archive.section--archive .archive-card:nth-child(3n) .archive-card-body { background-position: center, 86% center; }
+
+.treasure-copy {
+  background:
+    linear-gradient(90deg, rgba(20, 21, 18, .52), rgba(20, 21, 18, .64)),
+    url("assets/generated/card-interior-bronze-collage-v2.webp") center / cover no-repeat;
+}
+
+.detail-dialog .dialog-inner {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(244, 240, 230, .62), rgba(235, 226, 212, .74)),
+    url("assets/generated/card-interior-bronze-collage-v2.webp") center / cover no-repeat;
+}
+
+.detail-dialog .zoom-stage:not(.zoom-stage--fallback) {
+  background:
+    linear-gradient(rgba(24, 24, 20, .44), rgba(24, 24, 20, .62)),
+    url("assets/generated/card-interior-bronze-collage-v2.webp") center / cover no-repeat;
+}
+
 /* PR42 · bronze record controls use the same minimum touch target as the other museums. */
 .detail-dialog .dialog-close {
   min-width: 44px;
@@ -1099,8 +1158,8 @@ body {
 .detail-dialog #dialog-content {
   position: relative;
   background:
-    linear-gradient(135deg, rgba(244, 240, 230, .97), rgba(235, 226, 212, .94)),
-    repeating-linear-gradient(0deg, transparent 0 34px, rgba(89, 96, 68, .045) 34px 35px);
+    linear-gradient(135deg, rgba(244, 240, 230, .62), rgba(235, 226, 212, .72)),
+    url("assets/generated/card-interior-bronze-collage-v2.webp") center / cover no-repeat;
 }
 .detail-dialog #dialog-content::before {
   display: block;
