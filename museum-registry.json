@@ -203,12 +203,12 @@
       "archive_type": "数字图录",
       "site_path": "modules/shangqiu-museum/index.html",
       "card_image": {
-        "path": "modules/shangqiu-museum/assets/visuals/hero-xuanniao-symmetric.webp",
-        "alt": "商丘博物馆玄鸟生商专题入口",
+        "path": "modules/shangqiu-museum/assets/profile/shangqiu-museum-gate.webp",
+        "alt": "商丘博物馆馆舍外景",
         "loading": "lazy",
         "fetchpriority": null,
-        "width": 1672,
-        "height": 941
+        "width": 1920,
+        "height": 1440
       }
     }
   ]
