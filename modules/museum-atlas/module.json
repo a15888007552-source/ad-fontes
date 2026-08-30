@@ -1,10 +1,31 @@
 {
   "id": "museum-atlas",
-  "title": "中国博物馆行记 · Museum Atlas",
-  "subtitle": "中国博物馆行记：按省份进入个人博物馆照片与专题",
+  "number": "VI",
+  "title": "中国博物馆行记",
+  "latinTitle": "Museum Atlas",
+  "subtitle": "按省份浏览博物馆专题",
+  "description": "按省份进入个人博物馆照片与专题，查看现场照片、重点文物、展签文字和多图档案。已开放专题与筹备中的馆舍分别标示。",
+  "route": "modules/museum-atlas/index.html",
   "type": "atlas",
-  "status": "published",
+  "status": "expanding",
+  "access": "public",
+  "home": true,
+  "parent": null,
+  "materialTypes": [
+    "博物馆目录",
+    "跨馆检索",
+    "文物图像与展签"
+  ],
+  "sourceBasis": [
+    "个人现场拍摄",
+    "博物馆公开资料",
+    "已开放各馆专题的文物记录"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．中国博物馆行记：按省份浏览博物馆专题．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

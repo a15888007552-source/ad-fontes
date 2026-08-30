@@ -1,10 +1,28 @@
 {
   "id": "shao",
-  "title": "韶元音乐台 · Ad Fontes",
-  "subtitle": "Ad Fontes 的 Shao 远程音乐生成工作台入口与使用说明。",
+  "number": "VII",
+  "title": "Shao Music Desk",
+  "latinTitle": "",
+  "subtitle": "韶元音乐台 · 远程音乐生成",
+  "description": "远程音乐生成服务的静态说明与启动入口。提交生成任务、查看进度、试听及下载均在远程音乐台进行；本站不直接运行生成任务，远程服务状态以实际访问为准。",
+  "route": "modules/shao/index.html",
   "type": "tool",
-  "status": "published",
+  "status": "active",
+  "access": "remote-service",
+  "home": true,
+  "parent": null,
+  "materialTypes": [
+    "服务入口",
+    "使用说明"
+  ],
+  "sourceBasis": [
+    "本站所列 Shao Music Generation 远程服务配置与操作说明"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．Shao Music Desk：韶元音乐台 · 远程音乐生成．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/shao/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

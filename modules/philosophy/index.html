@@ -7,6 +7,7 @@
 <meta name="description" content="Ad Fontes 第Ⅴ栏：卡尔·达尔豪斯著作译读、原页码对照与音乐美学思想图谱。">
 <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/philosophy/index.html">
 <link rel="icon" href="../../favicon.svg">
+<link rel="stylesheet" href="reader.css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Musica Philosophica · 音乐哲学">
 <meta property="og:description" content="达尔豪斯著作译读：逐页译文、概念索引、思想分类与分析。">
@@ -26,7 +27,7 @@
 </head>
 <body>
 <div class="shell">
-  <div class="utility"><a class="back" href="../../index.html">← Ad Fontes · 溯源</a><button class="theme" id="theme" aria-label="切换明暗主题">明 / 暗</button></div>
+  <div class="utility"><a class="back" href="../../index.html">← Ad Fontes · 溯源</a><a class="back" href="../index.html">馆藏目录</a><button class="theme" id="theme" aria-label="切换明暗主题">明 / 暗</button></div>
   <header class="hero" id="top">
     <div><span class="kicker">Columna V · Reading laboratory</span><h1>Musica<br>Philosophica<span class="cn">音乐哲学</span></h1><p class="lede">从达尔豪斯开始：把译文、原页码、概念史与批判性分析放在同一个可追溯的阅读界面里。</p></div>
     <aside class="hero-note"><b>全书正文与附录已整理</b>十章正文完整中译；书后说明性注释中译、书目与索引可全文检索。</aside>
@@ -36,6 +37,7 @@
     <button class="on" data-view="desk">Ⅰ 阅读台</button><button data-view="translation">Ⅱ 逐页译文</button><button data-view="map">Ⅲ 思想图谱</button><button data-view="method">Ⅳ 方法与术语</button><button data-view="notes">Ⅴ 注释与索引</button>
   </nav>
   <div class="tools"><input id="search" type="search" placeholder="检索译文与分析：绝对音乐、自治、形式、交响曲、四重奏……" aria-label="全文检索"><span class="count" id="count">输入关键词开始检索</span></div>
+  <div class="reader-actions"><button type="button" id="copy-citation">复制当前引用</button><button type="button" id="print-reading">打印当前栏目</button><span id="reader-status" role="status" aria-live="polite"></span></div>
 
   <main>
     <section class="view on" id="view-desk">
@@ -52,7 +54,7 @@
 
     <section class="view" id="view-translation">
       <div class="section-head"><div><span class="eyebrow">Translation · Book 01</span><h2>《绝对音乐的理念》译文</h2></div><p>Carl Dahlhaus, <i>The Idea of Absolute Music</i>，英译 Roger Lustig。译文按英文版原书页分页；引文序号沿用原书注码。</p></div>
-      <div class="chapter-banner"><h3>第一章 · 作为美学范式的绝对音乐</h3><div class="progress"><b>17 / 17</b><br>原书 pp. 1–17 · PDF pp. 13–29</div></div>
+      <div class="chapter-banner" id="chapter-1"><h3>第一章 · 作为美学范式的绝对音乐</h3><div class="progress"><b>17 / 17</b><br>原书 pp. 1–17 · PDF pp. 13–29</div></div>
       <div class="page-list" id="pages">
         <article class="page searchable" id="p1" data-tags="美学 日常 音诗 歌剧"><div class="folio">原书 p. 1 <span>PDF p. 13</span></div><p>音乐美学并不受欢迎。音乐家怀疑它只是远离音乐现实的抽象议论；音乐公众则害怕那类哲学反思，觉得最好把它留给内行，不必让自己的头脑承受多余的哲学难题。</p><p>人们对各种自封的音乐美学家所发议论抱有不耐烦的疑虑，这当然可以理解；但若因此以为音乐的美学问题都在日常音乐生活之外的朦胧远处，那就错了。冷静看来，这些问题其实十分具体，而且就在眼前。</p><p>有人在音乐会前嫌阅读李斯特或理查·施特劳斯交响诗的文字纲领麻烦；有人要求艺术歌曲独唱会把灯调暗，以致节目册上的歌词无法辨读；还有人认为，观看意大利语演唱的歌剧以前，没有必要熟悉剧情梗概——换言之，凡在音乐会或歌剧院里漫不经心地轻视音乐中的语言成分者，都已经作出一种音乐美学的决定。他或许以为那只是个人趣味，实际上却是在表达一种普遍而占支配地位的倾向：它在过去一百五十年不断扩张，但其对音乐文化的重要性一直没有得到充分认识。超出个人及其偶然偏好之外，正在发生的正是音乐概念本身的深刻变化——</p></article>
         <article class="page searchable" id="p2" data-tags="范式 库恩 艾斯勒 资产阶级"><div class="folio">原书 p. 2 <span>PDF p. 14</span></div><p>——它不是形式与技法之间的普通风格更替，而是对“音乐是什么、意味着什么、应当如何理解”的根本改造。</p><p>以上述方式反应的听众，实际上把自己归入了一个音乐美学“范式”——这里借用托马斯·库恩用于科学史的术语——即“绝对音乐”范式。范式是引导音乐感知与音乐思维的基本观念。阐明这些潜伏在日常音乐习惯背后、少受注意的前提，正是一种不沉溺于玄想的音乐美学的中心任务。</p><p>汉斯·艾斯勒曾认真尝试把马克思主义用于音乐与音乐美学。他把绝对音乐观念称为“资产阶级时期”的虚构：他蔑视这个时代，却也把自己视为它的继承者。“音乐会音乐及其社会形式——音乐会——代表音乐演化中的一个历史时代。它的特殊发展与现代资产阶级社会的兴起交织在一起。无词音乐——通俗地称为‘绝对音乐’——的优势地位，以及音乐与劳动、严肃音乐与轻音乐、专业家与业余爱好者之间的分裂，都是资本主义社会中音乐的典型特征。”<sup>1</sup></p><p>“现代资产阶级社会”一词尽管含混，艾斯勒显然确信：“绝对音乐”不只是一个无时间性的同义词，用来表示没有文本、独立存在且不受“音乐外”功能或纲领约束的器乐。它标示的是一个观念，某一特定历史时代围绕它组织了关于音乐本性的想法。颇令人意外的是，艾斯勒称“绝对音乐”是“通俗”说法；这大概暗含他对这个造词的怨气——作为哲学家的儿子，他不可能没有察觉其中的崇高诉求：绝对音乐的含义容许人预感“绝对者”。</p></article>
@@ -1048,17 +1050,6 @@ Overture Hamlet, 163 Zimmermann, Robert, 28</pre>
   <footer>Ad Fontes · 第Ⅴ栏「音乐哲学」 · 《绝对音乐的理念》正文、注释与索引离线版</footer>
 </div>
 <button class="top" id="toTop" aria-label="回到页首">↑</button>
-<script>
-(function(){
-const tabs=[...document.querySelectorAll('#tabs button')],views=[...document.querySelectorAll('.view')];
-function show(name){tabs.forEach(b=>b.classList.toggle('on',b.dataset.view===name));views.forEach(v=>v.classList.toggle('on',v.id==='view-'+name));history.replaceState(null,'','#'+name);window.scrollTo({top:document.querySelector('#tabs').offsetTop-4,behavior:'smooth'});}
-tabs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.view)));
-const initial=location.hash.replace('#','');if(['desk','translation','map','method','notes'].includes(initial))show(initial);
-const theme=document.getElementById('theme');theme.addEventListener('click',()=>{const root=document.documentElement,dark=root.dataset.theme==='dark'||(!root.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);root.dataset.theme=dark?'light':'dark';localStorage.setItem('philosophica-theme',root.dataset.theme)});const saved=localStorage.getItem('philosophica-theme');if(saved)document.documentElement.dataset.theme=saved;
-const search=document.getElementById('search'),count=document.getElementById('count');search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase(),active=document.querySelector('.view.on'),items=[...active.querySelectorAll('.searchable')];let n=0;items.forEach(el=>{const hit=!q||(el.textContent+' '+(el.dataset.tags||'')).toLowerCase().includes(q);el.classList.toggle('search-hidden',!hit);if(hit&&q)n++});count.textContent=q?(n+' 个匹配项'):'输入关键词开始检索'});
-const pages=[...document.querySelectorAll('.page')];let current=0;function go(delta){current=Math.max(0,Math.min(pages.length-1,current+delta));pages[current].scrollIntoView({behavior:'smooth',block:'start'})}document.getElementById('prev').addEventListener('click',()=>go(-1));document.getElementById('next').addEventListener('click',()=>go(1));const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)current=pages.indexOf(e.target)}),{rootMargin:'-25% 0px -65%'});pages.forEach(p=>obs.observe(p));
-const top=document.getElementById('toTop');addEventListener('scroll',()=>top.classList.toggle('show',scrollY>700),{passive:true});top.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
-})();
-</script>
+<script src="reader.js"></script>
 </body>
 </html>

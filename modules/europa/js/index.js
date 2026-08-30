@@ -1,4 +1,5 @@
 import { initRealMapView, stopRealMapView } from "./map-real.js";
+import { ARCHIVES, parseRoute, serializeRoute, resolveRoute, createRouteController } from "./routes.mjs";
 
 const EUROPA_DATA = Object.assign(
   {},
@@ -340,7 +341,7 @@ function renderFontesField(label,value,wide=false){
   return `<div class="work-archive-fontes-field${wide?" work-archive-fontes-field-wide":""}"><dt>${label}</dt><dd>${value}</dd></div>`;
 }
 function renderFontesEntry(source,index,work){
-  return `<article class="work-archive-fontes-entry">
+  return `<article class="work-archive-fontes-entry" data-archive-item="${researchField(source.id,"")}" tabindex="-1">
     <header class="work-archive-fontes-entry-head"><span class="work-archive-fontes-number">FONS ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-fontes-title">${researchField(source.title)}</h5><div class="work-archive-fontes-original">${researchField(source.originalTitle)}</div></header>
     <dl class="work-archive-fontes-fields">
       ${renderFontesField("材料类型",researchSourceTypeLabel(source.sourceType))}
@@ -414,7 +415,7 @@ function renderRecordingDuration(duration){
 }
 function renderRecordingEntry(recording,index){
   const relationshipToPerformance=String(recording?.relationshipToPerformance??"").trim();
-  return `<article class="work-archive-recording-entry">
+  return `<article class="work-archive-recording-entry" data-archive-item="${researchField(recording.id,"")}" tabindex="-1">
     <header class="work-archive-recording-entry-head"><div><span class="work-archive-recording-number">RECORDING ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-recording-title">${researchField(recording.title)}</h5></div><div class="work-archive-recording-date">${researchField(recording.recordingDate)}</div></header>
     <dl class="work-archive-recording-fields">
       ${renderRecordingField("录音类型",researchRecordingTypeLabel(recording.recordingType))}
@@ -492,7 +493,7 @@ function renderReceptionTargets(targetRefs){
   return rows?`<ul class="work-archive-reception-targets">${rows}</ul>`:"—";
 }
 function renderReceptionEntry(reception,index){
-  return `<article class="work-archive-reception-entry">
+  return `<article class="work-archive-reception-entry" data-archive-item="${researchField(reception.id,"")}" tabindex="-1">
     <header class="work-archive-reception-entry-head"><div><span class="work-archive-reception-number">RECEPTION ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-reception-title">${researchField(reception?.title)}</h5></div><time class="work-archive-reception-date">${researchField(reception?.date)}</time></header>
     <dl class="work-archive-reception-fields">
       ${renderReceptionField("接受类型",researchReceptionTypeLabel(reception?.receptionType))}
@@ -541,7 +542,7 @@ function renderWorkArchiveIndex(work){
   }).join("")}</div>`;
 }
 function renderVersionLineageEntry(version,index){
-  return `<article class="work-archive-version-entry">
+  return `<article class="work-archive-version-entry" data-archive-item="${researchField(version.id,"")}" tabindex="-1">
     <span class="work-archive-version-node" aria-hidden="true"></span>
     <div class="work-archive-version-head"><div><span class="work-archive-version-number">VERSION ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-version-label">${researchField(version.label)}</h5><div class="work-archive-version-original">${researchField(version.originalLabel)}</div></div><div class="work-archive-version-date">${researchField(version.date)}</div></div>
     <dl class="work-archive-version-fields">
@@ -554,14 +555,14 @@ function renderVersionLineageEntry(version,index){
     </dl>
   </article>`;
 }
-function openWorkArchive(workId,opts={}){
+function renderWorkArchive(workId,opts={}){
   if(!researchDataReady)return;
   const work=researchWorks.find(item=>item&&item.id===workId);
   const person=work&&byId[work.personId];
   const dg=$("#dlg");
   const wrap=$("#dwrap");
   if(!work||!person||!dg||!wrap)return;
-  const storedPersonScroll=Number(dg.dataset.personScroll);
+  const storedPersonScroll=routeContext.personScroll;
   const personScroll=Number.isFinite(Number(opts.personScroll))?Number(opts.personScroll):Number.isFinite(storedPersonScroll)?storedPersonScroll:wrap.scrollTop||0;
   const restoreScroll=Number.isFinite(Number(opts.restoreScroll))?Number(opts.restoreScroll):null;
   dg.dataset.kind="work";
@@ -570,7 +571,7 @@ function openWorkArchive(workId,opts={}){
   dg.dataset.personScroll=String(personScroll);
   delete dg.dataset.workScroll;
   dg.setAttribute("aria-labelledby","work-archive-title");
-  const source=dg.dataset.source||"年鉴名录";
+  const source=routeContext.source||"年鉴名录";
   wrap.innerHTML=`<div class="work-archive-view">
     <div class="work-archive-nav"><button type="button" class="work-archive-back" id="work-archive-back">← 返回人物</button><button type="button" class="dclose work-archive-close" id="dx" aria-label="关闭详情">✕</button></div>
     <header class="work-archive-header"><span class="work-archive-kicker">WORK ARCHIVE · OVERVIEW</span><h4 id="work-archive-title">${researchField(work.title)}</h4><div class="work-archive-original">${researchField(work.originalTitle)}</div><div class="work-archive-meta">${researchField(work.date)} · ${researchField(work.genre)}</div><span class="work-archive-status">${researchStatusLabel(work.status)}</span></header>
@@ -583,7 +584,7 @@ function openWorkArchive(workId,opts={}){
   </div>`;
   if(!dg.open)dg.show();
   $("#work-archive-back").onclick=()=>openM(person.i,source,{restoreScroll:personScroll});
-  $("#dx").onclick=()=>dg.close();
+  $("#dx").onclick=closeRouteLayer;
   $("#dwrap").querySelectorAll("[data-version-open]").forEach(b=>b.onclick=()=>openVersionLineage(b.dataset.versionOpen));
   $("#dwrap").querySelectorAll("[data-fontes-open]").forEach(b=>b.onclick=()=>openFontes(b.dataset.fontesOpen));
   $("#dwrap").querySelectorAll("[data-performance-open]").forEach(b=>b.onclick=()=>openPerformance(b.dataset.performanceOpen));
@@ -629,7 +630,7 @@ function renderPerformanceVersion(versionId){
 }
 function renderPerformanceEntry(performance,index){
   const state=performance?.performanceState||{};
-  return `<article class="work-archive-performance-entry">
+  return `<article class="work-archive-performance-entry" data-archive-item="${researchField(performance.id,"")}" tabindex="-1">
     <header class="work-archive-performance-entry-head"><div><span class="work-archive-performance-number">PERFORMANCE ${String(index+1).padStart(2,"0")}</span><h5 class="work-archive-performance-title">${researchField(performance.title)}</h5></div><div class="work-archive-performance-date">${researchField(performance.date)}</div></header>
     <dl class="work-archive-performance-fields">
       ${renderPerformanceField("演出类型",researchPerformanceTypeLabel(performance.performanceType))}
@@ -651,17 +652,15 @@ function renderPerformanceEntry(performance,index){
     <section class="work-archive-performance-section work-archive-performance-significance"><h6>演出史意义</h6><p>${researchField(performance.performanceSignificance)}</p></section>
   </article>`;
 }
-function openPerformance(workId){
+function renderPerformance(workId){
   if(!researchDataReady)return;
   const work=researchWorks.find(item=>item&&item.id===workId);
   const person=work&&byId[work.personId];
   const performances=researchPerformancesForWork(work);
   const dg=$("#dlg");
   const wrap=$("#dwrap");
-  if(!work||!person||!performances.length||!dg||!wrap)return;
-  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
-  const workScroll=wrap.scrollTop||0;
-  const source=dg.dataset.source||"年鉴名录";
+  if(!work||!person||!dg||!wrap)return;
+  const {personScroll,workScroll}=routeContext;
   dg.dataset.kind="performance";
   dg.dataset.m=person.i;
   dg.dataset.work=work.id;
@@ -677,20 +676,18 @@ function openPerformance(workId){
   </div>`;
   if(!dg.open)dg.show();
   $("#performance-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusPerformance:true});
-  $("#dx").onclick=()=>dg.close();
+  $("#dx").onclick=closeRouteLayer;
   requestAnimationFrame(()=>$("#performance-back")?.focus());
 }
-function openRecording(workId){
+function renderRecording(workId){
   if(!researchDataReady)return;
   const work=researchWorks.find(item=>item&&item.id===workId);
   const person=work&&byId[work.personId];
   const recordings=researchRecordingsForWork(work);
   const dg=$("#dlg");
   const wrap=$("#dwrap");
-  if(!work||!person||!recordings.length||!dg||!wrap)return;
-  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
-  const workScroll=wrap.scrollTop||0;
-  const source=dg.dataset.source||"年鉴名录";
+  if(!work||!person||!dg||!wrap)return;
+  const {personScroll,workScroll}=routeContext;
   dg.dataset.kind="recording";
   dg.dataset.m=person.i;
   dg.dataset.work=work.id;
@@ -706,19 +703,18 @@ function openRecording(workId){
   </div>`;
   if(!dg.open)dg.show();
   $("#recording-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusRecording:true});
-  $("#dx").onclick=()=>dg.close();
+  $("#dx").onclick=closeRouteLayer;
   requestAnimationFrame(()=>$("#recording-back")?.focus());
 }
-function openReception(workId){
+function renderReception(workId){
   if(!researchDataReady)return;
   const work=researchWorks.find(item=>item&&item.id===workId);
   const person=work&&byId[work.personId];
   const receptions=researchReceptionsForWork(work);
   const dg=$("#dlg");
   const wrap=$("#dwrap");
-  if(!work||!person||!receptions.length||!dg||!wrap)return;
-  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
-  const workScroll=wrap.scrollTop||0;
+  if(!work||!person||!dg||!wrap)return;
+  const {personScroll,workScroll}=routeContext;
   dg.dataset.kind="reception";
   dg.dataset.m=person.i;
   dg.dataset.work=work.id;
@@ -734,20 +730,18 @@ function openReception(workId){
   </div>`;
   if(!dg.open)dg.show();
   $("#reception-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusReception:true});
-  $("#dx").onclick=()=>dg.close();
+  $("#dx").onclick=closeRouteLayer;
   requestAnimationFrame(()=>$("#reception-back")?.focus());
 }
-function openFontes(workId){
+function renderFontes(workId){
   if(!researchDataReady)return;
   const work=researchWorks.find(item=>item&&item.id===workId);
   const person=work&&byId[work.personId];
   const sources=researchSourcesForWork(work);
   const dg=$("#dlg");
   const wrap=$("#dwrap");
-  if(!work||!person||!sources.length||!dg||!wrap)return;
-  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
-  const workScroll=wrap.scrollTop||0;
-  const source=dg.dataset.source||"年鉴名录";
+  if(!work||!person||!dg||!wrap)return;
+  const {personScroll,workScroll}=routeContext;
   dg.dataset.kind="fontes";
   dg.dataset.m=person.i;
   dg.dataset.work=work.id;
@@ -763,20 +757,18 @@ function openFontes(workId){
   </div>`;
   if(!dg.open)dg.show();
   $("#fontes-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusFontes:true});
-  $("#dx").onclick=()=>dg.close();
+  $("#dx").onclick=closeRouteLayer;
   requestAnimationFrame(()=>$("#fontes-back")?.focus());
 }
-function openVersionLineage(workId){
+function renderVersionLineage(workId){
   if(!researchDataReady)return;
   const work=researchWorks.find(item=>item&&item.id===workId);
   const person=work&&byId[work.personId];
   const versions=researchVersionsForWork(workId);
   const dg=$("#dlg");
   const wrap=$("#dwrap");
-  if(!work||!person||!versions.length||!dg||!wrap)return;
-  const personScroll=Number.isFinite(Number(dg.dataset.personScroll))?Number(dg.dataset.personScroll):0;
-  const workScroll=wrap.scrollTop||0;
-  const source=dg.dataset.source||"年鉴名录";
+  if(!work||!person||!dg||!wrap)return;
+  const {personScroll,workScroll}=routeContext;
   dg.dataset.kind="version";
   dg.dataset.m=person.i;
   dg.dataset.work=work.id;
@@ -791,7 +783,7 @@ function openVersionLineage(workId){
   </div>`;
   if(!dg.open)dg.show();
   $("#version-lineage-back").onclick=()=>openWorkArchive(work.id,{personScroll,restoreScroll:workScroll,focusVersion:true});
-  $("#dx").onclick=()=>dg.close();
+  $("#dx").onclick=closeRouteLayer;
   requestAnimationFrame(()=>$("#version-lineage-back")?.focus());
 }
 async function loadResearchData(){
@@ -806,11 +798,7 @@ async function loadResearchData(){
     researchData=Object.fromEntries(entries);
     researchWorks=researchData.works||[];
     researchDataReady=true;
-    const dg=$("#dlg");
-    if(dg.open&&dg.dataset.kind==="musician"&&dg.dataset.m){
-      const scroll=$("#dwrap")?.scrollTop||0;
-      openM(dg.dataset.m,dg.dataset.source||"年鉴名录",{restoreScroll:scroll});
-    }
+    refreshPersonWorks();
   }catch(error){
     researchDataReady=false;
     researchWorks=[];
@@ -1013,13 +1001,167 @@ function xlink(txt,selfId){
 /* 传记导航序：全体按生年 */
 const NAVORDER=[...M].sort((a,b)=>yrs(a)[0]-yrs(b)[0]).map(m=>m.i);
 
-/* ══════════ URL 锚点 ══════════ */
-function setHash(h){try{history.replaceState(null,"",h?("#"+h):location.pathname+location.search)}catch(e){}}
+/* ══════════ 集中路由：先恢复界面，再写入地址 ══════════ */
+const europaBaseTitle=document.title;
+const routeContext={view:"alm",source:"年鉴名录",personScroll:0,workScroll:0,returnFocus:null};
+let researchLoadPromise;
+let ignoredDialogCloses=0;
+const routeController=createRouteController({
+  ready:()=>researchLoadPromise,
+  resolve:route=>resolveRoute(route,{persons:byId,views:VIEWS,data:researchData,researchReady:researchDataReady}),
+  render:renderRoute,
+  write:(route,mode)=>{
+    const hash=serializeRoute(route);
+    const state={...(history.state||{}),europaView:routeContext.view};
+    if(mode==="push"&&hash!==location.hash)history.pushState(state,"",hash);
+    else history.replaceState(state,"",hash);
+  }
+});
+function dismissDialog(){
+  const dg=$("#dlg");
+  if(dg.open){ignoredDialogCloses++;dg.close()}
+  for(const key of ["m","kind","work","personScroll","workScroll","source"])delete dg.dataset[key];
+  dg.removeAttribute("aria-labelledby");
+}
+function refreshPersonWorks(){
+  const current=routeController.current,requested=routeController.requested;
+  if(current.kind!=="person"||requested.kind!=="person"||current.person!==requested.person)return;
+  const wrap=$("#dwrap");
+  if(!$("#dlg").open||wrap.querySelector(".person-work-archive"))return;
+  // Append the newly available index only. Preserve biography focus/scroll and
+  // never issue a navigation that could cancel a newer pending work request.
+  wrap.insertAdjacentHTML("beforeend",renderPersonWorks(byId[current.person]));
+  wrap.querySelectorAll("[data-work-open]").forEach(button=>button.onclick=()=>openWorkArchive(button.dataset.workOpen));
+}
+function navigateRoute(route,options={}){
+  const previous=routeController.current;
+  const wrap=$("#dwrap");
+  if(previous.kind==="person")routeContext.personScroll=wrap.scrollTop||0;
+  if(previous.kind==="work"&&!previous.archive)routeContext.workScroll=wrap.scrollTop||0;
+  if(previous.kind==="view"&&route.kind!=="view")routeContext.returnFocus=document.activeElement;
+  if(options.source)routeContext.source=options.source;
+  return routeController.navigate(route,options).catch(error=>{
+    console.warn("[AD FONTES] Archive navigation could not finish.",error);
+    renderRouteError({error:"档案暂时无法打开",detail:"请重试，或返回年鉴继续浏览。",retry:true,route});
+    return false;
+  });
+}
 function readHash(){
-  const h=decodeURIComponent(location.hash.replace(/^#/,""));
-  if(!h)return;
-  if(h.startsWith("m=")){const id=h.slice(2);if(byId[id])openM(id,"URL 直达");return}
-  if(h.startsWith("v=")){const v=h.slice(2);const b=document.querySelector(`#views button[data-v="${v}"]`);if(b)b.click();return}
+  return navigateRoute(parseRoute(location.hash),{mode:"replace",view:history.state?.europaView,source:"URL 直达"});
+}
+function openM(id,source="年鉴名录",opts={}){return navigateRoute({kind:"person",person:id},{...opts,source})}
+function openWorkArchive(work,opts={}){return navigateRoute({kind:"work",work},opts)}
+function openVersionLineage(work){return navigateRoute({kind:"work",work,archive:"versions"})}
+function openFontes(work){return navigateRoute({kind:"work",work,archive:"fontes"})}
+function openPerformance(work){return navigateRoute({kind:"work",work,archive:"performances"})}
+function openRecording(work){return navigateRoute({kind:"work",work,archive:"recordings"})}
+function openReception(work){return navigateRoute({kind:"work",work,archive:"reception"})}
+function setView(view,options={}){return navigateRoute({kind:"view",view},options)}
+function closeRouteLayer(){
+  const route=routeController.current;
+  if(route.kind==="work"){
+    if(route.archive){
+      const focusKey={versions:"focusVersion",fontes:"focusFontes",performances:"focusPerformance",recordings:"focusRecording",reception:"focusReception"}[route.archive];
+      return openWorkArchive(route.work,{restoreScroll:routeContext.workScroll,[focusKey]:true});
+    }
+    const work=researchWorks.find(item=>item.id===route.work);
+    if(work&&byId[work.personId])return openM(work.personId,routeContext.source,{restoreScroll:routeContext.personScroll});
+  }
+  return navigateRoute({kind:"view",view:routeContext.view},{restoreFocus:true});
+}
+function routeNotice(text,parent=$("#dwrap")){
+  const notice=document.createElement("p");
+  notice.className="archive-route-notice";
+  notice.setAttribute("role","status");
+  notice.textContent=text;
+  parent.prepend(notice);
+}
+function renderRouteError(result){
+  const dg=$("#dlg"),wrap=$("#dwrap");
+  if(dg.open&&dg.matches(":modal"))dismissDialog();
+  dg.dataset.kind="route-error";
+  dg.setAttribute("aria-labelledby","archive-route-error-title");
+  wrap.innerHTML=`<section class="work-archive-view"><div class="work-archive-nav"><button type="button" class="work-archive-back" id="route-return">← 返回年鉴</button><button type="button" class="dclose" id="dx" aria-label="关闭详情">✕</button></div><h4 id="archive-route-error-title" tabindex="-1">${researchField(result.error)}</h4><p>${researchField(result.detail)}</p>${result.retry?'<button type="button" class="work-archive-back" id="route-retry">重试加载</button>':""}</section>`;
+  if(!dg.open)dg.show();
+  $("#route-return").onclick=()=>setView("alm");
+  $("#dx").onclick=closeRouteLayer;
+  if(result.retry)$("#route-retry").onclick=()=>{researchLoadPromise=loadResearchData();navigateRoute(result.route,{mode:"replace"})};
+  document.title=`${result.error} · ${europaBaseTitle}`;
+  $("#archive-route-error-title").focus({preventScroll:true});
+  return true;
+}
+function archiveLink(route){return new URL(serializeRoute(route),location.href).href}
+async function copyArchiveLink(button,route,status){
+  const url=archiveLink(route);
+  let copied=false;
+  try{await navigator.clipboard.writeText(url);copied=true}catch(error){
+    const field=document.createElement("textarea");
+    field.value=url;field.className="archive-copy-fallback";
+    $("#dwrap").append(field);field.select();
+    try{copied=document.execCommand("copy")}catch(error){}
+    field.remove();button.focus({preventScroll:true});
+  }
+  status.textContent=copied?"链接已复制。":"未能自动复制，请复制浏览器地址栏中的链接。";
+  if(!copied){
+    const field=document.createElement("input");field.type="text";field.readOnly=true;field.value=url;
+    field.className="archive-copy-url";field.setAttribute("aria-label","可手动复制的档案地址");
+    status.append(field);field.focus();field.select();
+  }
+}
+function addArchiveLinkControls(route){
+  const wrap=$("#dwrap"),header=wrap.querySelector(".work-archive-header");
+  if(!header)return;
+  const controls=document.createElement("div");controls.className="archive-link-controls";
+  controls.innerHTML='<button type="button" class="archive-copy-link">复制此档案链接</button><span class="archive-copy-status" role="status" aria-live="polite"></span>';
+  header.append(controls);
+  const status=controls.querySelector(".archive-copy-status");
+  controls.querySelector("button").onclick=event=>copyArchiveLink(event.currentTarget,route,status);
+  wrap.querySelectorAll("[data-archive-item]").forEach(entry=>{
+    const button=document.createElement("button");button.type="button";button.className="archive-copy-link archive-copy-item";
+    button.textContent="复制条目链接";
+    button.onclick=()=>copyArchiveLink(button,{...route,item:entry.dataset.archiveItem},status);
+    entry.append(button);
+  });
+}
+function renderRoute(result,options){
+  const {route}=result;
+  if(VIEWS.includes(options.view)&&options.view!==routeContext.view){routeContext.view=options.view;renderView(options.view)}
+  document.querySelectorAll(".archive-route-notice").forEach(node=>node.remove());
+  if(result.error)return renderRouteError(result);
+  if(route.kind==="view"){
+    dismissDialog();if(!options.preserveSelection)clearSelection();routeContext.view=route.view;renderView(route.view);
+    document.title=`${document.querySelector(`#views button[data-v="${route.view}"]`).textContent.trim()} · ${europaBaseTitle}`;
+    if(result.notice)routeNotice(result.notice,$("#v-"+route.view));
+    if(options.restoreFocus){const target=routeContext.returnFocus;requestAnimationFrame(()=>{if(target?.isConnected)target.focus({preventScroll:true});else document.querySelector("#views button.on")?.focus()})}
+    return true;
+  }
+  const dg=$("#dlg"),wrap=$("#dwrap");
+  if(dg.open&&dg.matches(":modal"))dismissDialog();
+  dg.dataset.ep=result.person.e;
+  selectedId=result.person.i;selectedSource=routeContext.source;
+  if(route.kind==="person"){
+    renderPerson(route.person,routeContext.source,options);
+    document.title=`${result.person.n} · ${europaBaseTitle}`;
+    requestAnimationFrame(()=>$("#detail-title")?.focus({preventScroll:true}));
+  }else{
+    if(route.archive){
+      const renderers={versions:renderVersionLineage,fontes:renderFontes,performances:renderPerformance,recordings:renderRecording,reception:renderReception};
+      renderers[route.archive](route.work);
+      if(!wrap.querySelector("[data-archive-item]"))routeNotice(`此作品尚未建立${ARCHIVES[route.archive].label}条目。`);
+    }else renderWorkArchive(route.work,options);
+    addArchiveLinkControls(route);
+    document.title=`${result.item?(result.item.title||result.item.label)+" · ":""}${route.archive?ARCHIVES[route.archive].label+" · ":""}${result.work.title} · ${europaBaseTitle}`;
+    if(options.restoreScroll==null)wrap.scrollTop=0;
+    if(result.notice)routeNotice(result.notice);
+    if(result.item)requestAnimationFrame(()=>{
+      const entry=[...wrap.querySelectorAll("[data-archive-item]")].find(node=>node.dataset.archiveItem===route.item);
+      if(!entry||serializeRoute(routeController.current)!==serializeRoute(route))return;
+      entry.focus({preventScroll:true});entry.scrollIntoView({block:"start",behavior:RM?"auto":"smooth"});
+      if(!RM){entry.classList.add("archive-item-target");setTimeout(()=>entry.classList.remove("archive-item-target"),2400)}
+    });
+  }
+  syncSelection();
+  return dg.open;
 }
 
 /* ══════════ 人物选择与右侧详情 ══════════ */
@@ -1050,21 +1192,27 @@ function focusTimeline(id){
   const x=+bar.getAttribute("x"),y=+bar.getAttribute("y");
   box.scrollTo({left:Math.max(0,x-box.clientWidth*.38),top:Math.max(0,y-box.clientHeight*.42),behavior:RM?"auto":"smooth"});
 }
-function locateMusician(id,target){
+async function locateMusician(id,target){
   const m=byId[id];if(!m)return;
   selectedId=id;
+  const stillLocating=()=>routeController.requested.kind==="view"&&routeController.requested.view===target&&selectedId===id;
   if(target==="map"){
     mapFilter="all";mapYear=null;routeOf=id;selectedCity=(m.c||[]).find(c=>CITY[c])||null;fitRoute(id);
-    setView("map");renderChips();renderMap();syncMapUI();if(selectedCity)cityPanel(selectedCity);
+    if(!await setView("map",{preserveSelection:true})||!stillLocating())return;
+    renderChips();renderMap();syncMapUI();if(selectedCity)cityPanel(selectedCity);
   }else if(target==="tl"){
-    setView("tl");syncSelection();requestAnimationFrame(()=>focusTimeline(id));
+    if(!await setView("tl",{preserveSelection:true})||!stillLocating())return;
+    syncSelection();requestAnimationFrame(()=>{if(stillLocating())focusTimeline(id)});
   }else if(target==="net"){
-    netFilter="all";setView("net");netLegend();$("#tog2d").click();
-    Promise.resolve(init2D()).then(()=>{syncSelection();net2d?.focus?.(id)});
+    netFilter="all";
+    if(!await setView("net",{preserveSelection:true})||!stillLocating())return;
+    netLegend();$("#tog2d").click();await init2D();
+    if(!stillLocating())return;
+    syncSelection();net2d?.focus?.(id);
   }
   announceSelection(m,L.filter(l=>l[0]===id||l[1]===id),`详情面板 → ${target==="map"?"舆图":target==="tl"?"年表":"星丛"}`);
 }
-function openM(id,source="年鉴名录",opts={}){
+function renderPerson(id,source="年鉴名录",opts={}){
   const m=byId[id];if(!m)return;
   const restoreScroll=Number.isFinite(Number(opts.restoreScroll))?Number(opts.restoreScroll):null;
   const rels=L.filter(l=>l[0]===id||l[1]===id);
@@ -1076,7 +1224,7 @@ function openM(id,source="年鉴名录",opts={}){
   selectedId=id;selectedSource=source;
   $("#dwrap").innerHTML=`
   <div class="dhead">
-    <div><span class="selection-kicker"><i></i>已选中音乐家</span><h4 id="detail-title">${m.n}</h4><div class="orig">${m.o}</div>
+    <div><span class="selection-kicker"><i></i>已选中音乐家</span><h4 id="detail-title" tabindex="-1">${m.n}</h4><div class="orig">${m.o}</div>
     <div class="meta">${m.d} · ${EP[m.e].zh} · ${m.s}</div><div class="selection-reason">由“${source}”定位；关联人物与路径已同步高亮。</div></div>
     <div class="dnav"><button id="dprev" title="上一位（←）">‹ 前</button><button id="dnext" title="下一位（→）">后 ›</button></div>
     <button class="dclose" id="dx" aria-label="关闭详情">✕</button></div>
@@ -1098,12 +1246,11 @@ function openM(id,source="年鉴名录",opts={}){
     <h5>相关人物与关系（${rels.length}）</h5><ul class="conn">${rel||"<li>暂无已编关系</li>"}</ul>
   </div></div>${renderPersonWorks(m)}`;
   const dg=$("#dlg");
-  if(dg.open&&!(["musician","work","version","fontes","performance"].includes(dg.dataset.kind)))dg.close();
   delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;
   dg.dataset.ep=m.e;dg.dataset.kind="musician";dg.dataset.m=id;dg.dataset.source=source;dg.setAttribute("aria-labelledby","detail-title");
   if(!dg.open)dg.show();
-  setHash("m="+id);syncSelection();announceSelection(m,rels,source);
-  $("#dx").onclick=()=>dg.close();
+  syncSelection();announceSelection(m,rels,source);
+  $("#dx").onclick=closeRouteLayer;
   $("#dprev").onclick=()=>openM(NAVORDER[(ni-1+NAVORDER.length)%NAVORDER.length],"前一位");
   $("#dnext").onclick=()=>openM(NAVORDER[(ni+1)%NAVORDER.length],"后一位");
   $("#dwrap").querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"相关人物"));
@@ -1680,7 +1827,7 @@ function openHist(y){
     ${mus?`<h5 class="hmustitle">牵涉音乐家</h5><div class="hmus">${mus}</div>`:""}
     ${dp.cite?`<p class="citeline">文献定位 — ${dp.cite}</p>`:""}
   </div>`;
-  const dg=$("#dlg");if(dg.open)dg.close();dg.dataset.kind="history";dg.removeAttribute("aria-labelledby");dg.showModal();
+  const dg=$("#dlg");dismissDialog();dg.dataset.kind="history";dg.removeAttribute("aria-labelledby");dg.showModal();
   $("#dx").onclick=()=>dg.close();
   $("#dwrap").querySelectorAll("[data-m]").forEach(n=>n.onclick=()=>openM(n.dataset.m,"历史事件深读"));
 }
@@ -1755,7 +1902,7 @@ function openMusioFig(id){
   </div><div>
     ${p?`<figure class="pfig"><img loading="lazy" decoding="async" src="${p.u}" alt="${f.n}"><figcaption>${p.c}</figcaption></figure>`:med({i:f.i,o:f.o},84)}
   </div></div>`;
-  const dg=$("#dlg");if(dg.open)dg.close();dg.dataset.ep="atlas";dg.dataset.kind="musicology";dg.removeAttribute("aria-labelledby");dg.showModal();
+  const dg=$("#dlg");dismissDialog();dg.dataset.ep="atlas";dg.dataset.kind="musicology";dg.removeAttribute("aria-labelledby");dg.showModal();
   dg.dataset.m="";
   $("#dx").onclick=()=>dg.close();
   $("#dwrap").querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"音乐学人物关系"));
@@ -1778,7 +1925,7 @@ qi.addEventListener("keydown",e=>{if(e.key==="Escape"){sres.style.display="none"
 
 /* ══════════ 导航 ══════════ */
 
-function setView(v){
+function renderView(v){
   const b=document.querySelector(`#views button[data-v="${v}"]`);if(!b)return;
   document.querySelectorAll("#views button").forEach(x=>x.classList.toggle("on",x===b));
   document.querySelectorAll(".view").forEach(s=>s.classList.remove("on"));
@@ -1798,7 +1945,6 @@ function setView(v){
   if(v==="musio"&&!musioDone){renderMusio();musioDone=true}
   if(v==="gl")renderGloss();
   syncSelection();
-  setHash("v="+v);
   queueChronograph();
 }
 $("#views").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setView(b.dataset.v)});
@@ -1837,16 +1983,16 @@ $("#introx").onclick=closeIntro;$("#introgo").onclick=closeIntro;
 $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
 
-/* ══════════ 弹窗关闭清锚点 ══════════ */
-$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance","recording","reception"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
-function currentView(){const on=document.querySelector("#views button.on");return on?"v="+on.dataset.v:""}
+/* ══════════ 关闭当前层级；程序化切换不产生额外历史记录 ══════════ */
+$("#dlg").addEventListener("close",()=>{if(ignoredDialogCloses){ignoredDialogCloses--;return}closeRouteLayer()});
+$("#dlg").addEventListener("cancel",event=>{event.preventDefault();closeRouteLayer()});
 
 /* ══════════ 键盘导航 ══════════ */
 document.addEventListener("keydown",e=>{
   if(/^(INPUT|TEXTAREA)$/.test(e.target.tagName))return;
   const dlg=$("#dlg");
   if(dlg.open&&dlg.dataset.kind){
-    if(e.key==="Escape"){e.preventDefault();dlg.close()}
+    if(e.key==="Escape"){e.preventDefault();closeRouteLayer()}
     else if(dlg.dataset.kind==="musician"&&e.key==="ArrowLeft"){e.preventDefault();$("#dprev")?.click()}
     else if(dlg.dataset.kind==="musician"&&e.key==="ArrowRight"){e.preventDefault();$("#dnext")?.click()}
     return;
@@ -1858,10 +2004,11 @@ document.addEventListener("keydown",e=>{
 });
 
 /* ══════════ URL 锚点 / 前进后退 ══════════ */
-window.addEventListener("popstate",()=>{if(!location.hash){$("#dlg").open&&$("#dlg").close()}else readHash()});
+window.addEventListener("popstate",readHash);
+window.addEventListener("hashchange",readHash);
 
 /* ══════════ 启动 ══════════ */
-renderEpnav();renderAlm();loadResearchData();
+renderEpnav();renderAlm();researchLoadPromise=loadResearchData();
 queueChronograph();
 if(location.hash){readHash()}
 else{let seen;try{seen=localStorage.getItem("annales_seen")}catch(e){}if(!seen)setTimeout(showIntro,4600)}

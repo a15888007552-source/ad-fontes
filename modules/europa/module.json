@@ -1,12 +1,51 @@
 {
   "id": "europa",
   "number": "I",
-  "title": "欧罗巴音乐家年鉴 · Annales Musicorum Europae",
-  "subtitle": "欧罗巴音乐家年鉴：与华夏音乐家年鉴组成 Ad Fontes 第一模块的镜像双卷。",
+  "title": "Annales Musicorum",
+  "latinTitle": "Annales Musicorum Europae · Annales Musicorum Sinarum",
+  "subtitle": "欧罗巴 ↔ 华夏音乐家年鉴",
+  "description": "两部并列的交互年鉴：欧罗巴卷以音乐家为经，华夏卷以人、曲、器、书、制五类条目为纬。设有年表、舆图、关系网与作品研究档案，可镜像翻卷。",
+  "route": "modules/europa/index.html",
   "type": "research-tool",
-  "status": "published",
+  "status": "expanding",
+  "access": "public",
+  "home": true,
+  "parent": null,
+  "materialTypes": [
+    "人物年鉴",
+    "作品档案",
+    "年表与舆图",
+    "版本、史料与接受史"
+  ],
+  "sourceBasis": [
+    "欧罗巴：Grout、Taruskin 等音乐史文献",
+    "华夏：杨荫浏、孙继南、汪毓和、刘再生等著作",
+    "研究档案所列原始史料与版本书目"
+  ],
+  "corpusCounts": {
+    "作品档案": 7,
+    "版本记录": 7,
+    "华夏年鉴条目": 113
+  },
+  "countSources": {
+    "作品档案": {
+      "file": "modules/europa/data/research/works.json",
+      "pointer": ""
+    },
+    "版本记录": {
+      "file": "modules/europa/data/research/versions.json",
+      "pointer": ""
+    },
+    "华夏年鉴条目": {
+      "file": "modules/europa/data/sinica/entries.json",
+      "pointer": "/M"
+    }
+  },
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．Annales Musicorum：欧罗巴 ↔ 华夏音乐家年鉴．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/europa/index.html （引用时注明访问日期）．",
   "version": "1.1.0",
   "entry": "index.html",
-  "maintainer": "辛申奥",
   "dataVersion": "2026-08-22"
 }

@@ -1,0 +1,31 @@
+{
+  "id": "shangqiu-museum",
+  "number": "VI.8",
+  "title": "玄鸟生商",
+  "latinTitle": "",
+  "subtitle": "商丘博物馆数字图录",
+  "description": "以商丘博物馆与八关斋现场记录为基础，分章展示馆藏与馆外遗存，结合文物照片、展签和条目讲解阅读商丘历史。",
+  "route": "modules/shangqiu-museum/index.html",
+  "type": "catalog",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "现场照片",
+    "展签文字",
+    "文物图录",
+    "碑刻记录"
+  ],
+  "sourceBasis": [
+    "商丘博物馆与八关斋个人现场记录",
+    "条目所列馆藏介绍与公开文献"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．玄鸟生商：商丘博物馆数字图录．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/shangqiu-museum/index.html （引用时注明访问日期）．",
+  "version": "1.0.0",
+  "entry": "index.html"
+}

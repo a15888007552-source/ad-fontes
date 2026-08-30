@@ -1,0 +1,38 @@
+{
+  "id": "tomb-trails",
+  "number": "VI.9",
+  "title": "从地下到展柜",
+  "latinTitle": "",
+  "subtitle": "墓葬与遗址历史脉络",
+  "description": "连接各馆文物与墓葬、遗址和发现史，依馆别浏览历史背景、考古发现、关联器物及资料出处。",
+  "route": "modules/tomb-trails/index.html",
+  "type": "research-tool",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "墓葬与遗址记录",
+    "发现史",
+    "跨馆关联"
+  ],
+  "sourceBasis": [
+    "条目所列馆方、文物主管部门与考古资料",
+    "现场及公开遗址图像的出处记录"
+  ],
+  "corpusCounts": {
+    "馆别关联记录": 38
+  },
+  "countSources": {
+    "馆别关联记录": {
+      "file": "modules/tomb-trails/tomb-trails-data.json",
+      "pointer": ""
+    }
+  },
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．从地下到展柜：墓葬与遗址历史脉络．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/tomb-trails/index.html （引用时注明访问日期）．",
+  "version": "1.0.0",
+  "entry": "index.html"
+}

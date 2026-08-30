@@ -1,0 +1,14 @@
+/* Only archive address, status and keyboard affordances; existing themes stay intact. */
+.archive-link-controls{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.archive-copy-link{font:inherit;font-size:.78rem;color:var(--mut);background:transparent;border:1px solid var(--line);border-radius:2px;padding:.3rem .55rem;cursor:pointer}
+.archive-copy-link:hover{color:var(--ink)}
+.archive-copy-item{margin-top:.75rem}
+.archive-copy-status{font-size:.8rem;color:var(--mut);overflow-wrap:anywhere}
+.archive-copy-url{display:block;width:100%;box-sizing:border-box;margin-top:.4rem;font:inherit}
+.archive-copy-fallback{position:fixed;left:-9999px;top:0}
+.archive-route-notice{padding:.7rem 0;color:var(--mut);font-size:.9rem;border-bottom:1px solid var(--line)}
+#dlg [data-archive-item]{scroll-margin-top:1rem}
+#dlg :focus-visible{outline:2px solid var(--gold,var(--ink));outline-offset:4px}
+#dlg .archive-item-target{outline:2px solid var(--gold,var(--ink));outline-offset:5px;animation:archive-target 2.4s ease-out}
+@keyframes archive-target{from{background:var(--line)}to{background:transparent}}
+@media(prefers-reduced-motion:reduce){#dlg .archive-item-target{animation:none}#dlg .dwrap{scroll-behavior:auto}}

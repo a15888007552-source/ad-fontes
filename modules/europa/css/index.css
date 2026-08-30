@@ -626,7 +626,7 @@ html.motion-paused .archive-orbis img,html.motion-paused .intro-orbis img,html.m
 /* ── v3.9: 音乐学发展 MUSICOLOGIA ─────── */
 .musiohero{margin-top:26px;min-height:clamp(390px,42vw,620px);border:1px solid var(--line);background:
   linear-gradient(90deg,rgba(12,9,6,.92) 0%,rgba(12,9,6,.68) 42%,rgba(12,9,6,.24) 72%,rgba(12,9,6,.62) 100%),
-  url("音乐学资源/musicology-hero.jpg") right center/cover no-repeat;display:flex;align-items:flex-end;position:relative;overflow:hidden}
+  url("../音乐学资源/musicology-hero.jpg") right center/cover no-repeat;display:flex;align-items:flex-end;position:relative;overflow:hidden}
 .musiohero::after{content:"";position:absolute;inset:auto 0 0;height:34%;background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none}
 .musiohero .mhero-in{position:relative;z-index:1;width:min(900px,88vw);padding:clamp(28px,5vw,62px)}
 .musiohero .mlat{font:700 12px var(--sans);letter-spacing:.34em;color:#E8C46A}

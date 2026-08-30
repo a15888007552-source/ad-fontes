@@ -1,0 +1,33 @@
+name: Site research checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test module schema and generated boundaries
+        run: python -B -m unittest discover -s scripts -p test_site_catalog.py
+      - name: Check generated catalogs
+        run: python -B scripts/build_site_catalog.py --check
+      - name: Check site entries and local resources
+        run: python -B scripts/check_site.py
+      - name: Test Europa route parsing, loading and history
+        run: node --test scripts/test_europa_routes.mjs
+      - name: Check remote launcher and research readers
+        run: python -B scripts/check_secondary_modules.py

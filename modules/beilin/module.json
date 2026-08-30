@@ -1,11 +1,31 @@
 {
   "id": "beilin",
-  "number": "VI",
-  "title": "石墨 长安｜西安碑林博物馆数字档案 · Ad Fontes",
-  "subtitle": "Ad Fontes 石刻专题：以644张现场照片整理的西安碑林博物馆个人数字文物档案，收录181件碑刻、墓志、拓本、礼乐器与石雕。",
+  "number": "VI.2",
+  "title": "石墨 长安",
+  "latinTitle": "",
+  "subtitle": "西安碑林博物馆数字档案",
+  "description": "以现场照片、展签和馆藏资料整理西安碑林博物馆的碑刻、墓志、拓本、礼乐器与石雕，支持文物名录和多图档案浏览。",
+  "route": "modules/beilin/index.html",
   "type": "catalog",
-  "status": "published",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "现场照片",
+    "碑刻与墓志",
+    "拓本",
+    "器物与石雕"
+  ],
+  "sourceBasis": [
+    "个人现场拍摄与展签文字",
+    "页面所列博物馆公开资料"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．石墨 长安：西安碑林博物馆数字档案．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/beilin/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

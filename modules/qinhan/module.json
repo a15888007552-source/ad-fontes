@@ -1,10 +1,38 @@
 {
   "id": "qinhan",
-  "title": "秦汉馆藏影录 · 陕西历史博物馆秦汉馆",
-  "subtitle": "陕西历史博物馆秦汉馆文物图像档案：馆舍、常设展、皇后之玺、杜虎符与三十四个文物条目。",
+  "number": "VI.4",
+  "title": "秦汉馆藏影录",
+  "latinTitle": "",
+  "subtitle": "陕西历史博物馆秦汉馆",
+  "description": "整理陕西历史博物馆秦汉馆的馆舍、常设展与器物图像，结合现场展签浏览文物、制度与秦汉历史线索。",
+  "route": "modules/qinhan/index.html",
   "type": "catalog",
-  "status": "published",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "现场照片",
+    "展签文字",
+    "文物图像分组"
+  ],
+  "sourceBasis": [
+    "个人现场拍摄与展签",
+    "档案所列馆方及文物资料"
+  ],
+  "corpusCounts": {
+    "图像分组": 36
+  },
+  "countSources": {
+    "图像分组": {
+      "file": "modules/qinhan/data/archive.json",
+      "pointer": "/groups"
+    }
+  },
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．秦汉馆藏影录：陕西历史博物馆秦汉馆．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/qinhan/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

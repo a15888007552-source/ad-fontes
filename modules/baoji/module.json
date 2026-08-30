@@ -1,9 +1,38 @@
 {
   "id": "baoji",
-  "title": "青铜铸史，铭文为证 · 中国青铜器博物院",
-  "subtitle": "中国青铜器博物院现场照片图录：青铜铸史，铭文为证。",
+  "number": "VI.5",
+  "title": "青铜铸史，铭文为证",
+  "latinTitle": "",
+  "subtitle": "中国青铜器博物院",
+  "description": "中国青铜器博物院现场图录，以照片、铭文与器用关系组织文物档案；附青铜器用图谱，可按器用系统继续阅读。",
+  "route": "modules/baoji/index.html",
   "type": "catalog",
-  "status": "published",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "现场照片",
+    "铭文与展签",
+    "器物图谱"
+  ],
+  "sourceBasis": [
+    "个人现场照片与展签文字",
+    "页面所列博物馆公开资料及器物文献"
+  ],
+  "corpusCounts": {
+    "图像分组": 161
+  },
+  "countSources": {
+    "图像分组": {
+      "file": "modules/baoji/data/photo-index.json",
+      "pointer": "/groups"
+    }
+  },
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．青铜铸史，铭文为证：中国青铜器博物院．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/baoji/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
   "entry": "index.html",
   "chapters": [
@@ -14,6 +43,5 @@
       "description": "从器形进入动作，从动作进入礼制。按器用系统浏览青铜器。",
       "entry": "bronze-use-atlas/index.html"
     }
-  ],
-  "maintainer": "辛申奥"
+  ]
 }

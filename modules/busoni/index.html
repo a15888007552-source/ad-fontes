@@ -5,23 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <title>Studia Busoniana · 密码访问</title>
+<meta name="description" content="Studia Busoniana 布索尼研究馆藏目录：美学、书信、术语与文献译注。公开目录说明，研究正文沿用密码访问。">
+<link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/busoni/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Studia Busoniana · 布索尼研究馆藏目录">
+<meta property="og:description" content="公开馆藏范围、文献类型与来源基础；研究正文为密码访问。">
+<meta property="og:url" content="https://a15888007552-source.github.io/ad-fontes/modules/busoni/">
 <style>
 :root{--paper:#f6f1e7;--ink:#201c17;--muted:#6b6157;--line:#d9cfbe;--card:#fbf8f1;--rubric:#8c2b1f;--shadow:rgba(60,40,20,.10)}
 @media(prefers-color-scheme:dark){:root{--paper:#16130f;--ink:#e9e2d4;--muted:#a79c8b;--line:#332c22;--card:#1d1913;--rubric:#d8695a;--shadow:rgba(0,0,0,.35)}}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%}body{background:var(--paper);color:var(--ink);font-family:Georgia,"Songti SC",STSong,SimSun,"Noto Serif CJK SC",serif;line-height:1.72;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}.lock{min-height:100vh;display:grid;place-items:center;padding:24px}.lockbox{width:min(460px,100%);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:28px 30px;box-shadow:0 14px 36px var(--shadow)}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.home{font-size:12px;color:var(--muted);text-decoration:none}.home:hover{color:var(--rubric)}.mark{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rubric);border:1px solid currentColor;border-radius:2px;padding:.15rem .45rem}h1{font-size:25px;line-height:1.28;margin:0 0 8px;font-weight:600}.sub{margin:0 0 18px;color:var(--muted);font-size:14px}.field{display:grid;gap:9px}label{font-size:13px;color:var(--muted)}input{width:100%;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:3px;padding:11px 12px;font:inherit}input:focus{outline:2px solid color-mix(in srgb,var(--rubric) 45%,transparent);outline-offset:2px}button{border:1px solid var(--rubric);background:var(--rubric);color:white;border-radius:3px;padding:9px 16px;font:inherit;cursor:pointer}button:disabled{opacity:.68;cursor:wait}.row{display:flex;align-items:center;gap:12px;margin-top:14px}.err{min-height:1.6em;color:var(--rubric);font-size:13px}.hint{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}.noscript{max-width:460px;margin:24px auto;color:var(--rubric);font-size:14px}
+.lock{min-height:auto;padding:clamp(24px,5vw,56px) 20px 24px}.lockbox{width:min(640px,100%)}.password-row{display:flex;gap:8px;align-items:center}.password-row input{min-width:0}.password-row button{flex:none;padding:10px;font-size:13px;background:transparent;color:var(--rubric)}.caps{margin:0;color:var(--rubric);font-size:13px;min-height:1.5em}.finding-aid{max-width:640px;margin:0 auto 48px;padding:0 20px}.finding-aid h2{font-size:21px;font-weight:500}.finding-aid dl{margin:0}.finding-aid dt{font-size:13px;color:var(--rubric);margin-top:1rem}.finding-aid dd{margin:.2rem 0 0}.finding-aid .citation{overflow-wrap:anywhere}.public-nav{display:flex;flex-wrap:wrap;gap:1rem}.home:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--rubric);outline-offset:4px}.row{flex-wrap:wrap}.row .err{flex:1;min-width:180px}@media(max-width:420px){.lockbox{padding:22px 18px}}@media print{.lock{display:none}.finding-aid{max-width:none;color:#000}.finding-aid button{display:none}}
 </style>
 </head>
 <body>
-<section class="lock" id="lock"><form class="lockbox" id="unlockForm"><div class="topline"><a class="home" href="../../index.html">← Ad Fontes</a><span class="mark">encrypted</span></div><h1>Studia Busoniana</h1><p class="sub">布索尼专栏已设为密码访问。输入密码后，浏览器会在本机解密页面内容。</p><div class="field"><label for="pwd">访问密码</label><input id="pwd" type="password" autocomplete="current-password" autofocus></div><div class="row"><button id="unlockBtn" type="submit">解锁</button><div class="err" id="err"></div></div><p class="hint">其他模块保持公开；本页内容使用 AES-GCM 加密存放。</p></form></section><noscript><p class="noscript">此页面需要启用 JavaScript 才能解密访问。</p></noscript>
+<main>
+<section class="lock" id="lock"><form class="lockbox" id="unlockForm" aria-describedby="lock-description"><div class="topline"><nav class="public-nav" aria-label="总馆导航"><a class="home" href="../../index.html">← Ad Fontes</a><a class="home" href="../index.html">馆藏目录</a></nav><span class="mark">密码访问</span></div><h1>Studia Busoniana</h1><p class="sub" id="lock-description">布索尼专栏已设为密码访问。输入密码后，浏览器会在本机解密页面内容。下方公开馆藏目录无需密码。</p><div class="field"><label for="pwd">访问密码</label><div class="password-row"><input id="pwd" type="password" autocomplete="current-password" aria-describedby="lock-description caps err" required><button type="button" id="show-password" aria-controls="pwd" aria-pressed="false">显示密码</button></div><p class="caps" id="caps" role="status" aria-live="polite"></p></div><div class="row"><button id="unlockBtn" type="submit">解锁</button><div class="err" id="err" role="status" aria-live="polite" aria-atomic="true"></div></div><p class="hint">其他模块保持公开；本页内容使用既有 AES-GCM 加密方式存放。</p></form></section>
+<section class="finding-aid" id="finding-aid" aria-labelledby="aid-title">
+<h2 id="aid-title">馆藏目录 · Finding Aid</h2>
+<dl>
+<dt>馆藏范围与研究主题</dt><dd>布索尼研究合集，围绕美学观念、书信脉络、术语及证据关系组织材料。</dd>
+<dt>文献类型</dt><dd>书信与美学文献线索、术语索引、原文资料与译注。</dd>
+<dt>原文与译文状态</dt><dd>公开介绍列有原文库与研究整理；《肖像尝试》译注为逐步补入的项目，公开目录不据此宣称全文译毕。</dd>
+<dt>来源与证据基础</dt><dd>布索尼书信、美学文献与原著。具体引文、版本及逐条证据随受限研究材料提供。</dd>
+<dt>最近内容修订</dt><dd id="content-revision">未标注（待核定）</dd>
+<dt>最近界面修订</dt><dd id="interface-revision">见模块元数据</dd>
+<dt>推荐引用</dt><dd class="citation" id="module-citation">AD FONTES，Studia Busoniana，馆藏目录。https://a15888007552-source.github.io/ad-fontes/modules/busoni/</dd>
+<dt>访问说明</dt><dd>研究正文与公开目录分开提供，限制正文的公开范围。此处沿用密码解密访问，不提供账户管理、访问日志或访问撤销服务。</dd>
+</dl>
+</section>
+</main><noscript><p class="noscript">公开目录可直接阅读；解密正文需要启用 JavaScript。修订与引用记录可查阅 <a href="module.json">模块元数据</a>。</p></noscript>
 <script>
 const STORE_KEY='ad-fontes-busoni-password';
 function b64ToBytes(s){return Uint8Array.from(atob(s),c=>c.charCodeAt(0));}
 async function deriveKey(password,salt,iterations){const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);}
 async function ungzip(bytes){if('DecompressionStream' in window){const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));return new Uint8Array(await new Response(stream).arrayBuffer());}throw new Error('当前浏览器不支持 gzip 解压，请使用新版 Chrome、Edge 或 Safari。');}
 async function unlock(password){const env=await fetch('payload.enc.json',{cache:'no-store'}).then(r=>r.json());const salt=b64ToBytes(env.salt),iv=b64ToBytes(env.iv),tag=b64ToBytes(env.tag),data=b64ToBytes(env.data);const merged=new Uint8Array(data.length+tag.length);merged.set(data);merged.set(tag,data.length);const key=await deriveKey(password,salt,env.iterations);const decrypted=new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv},key,merged));const plain=env.compressed==='gzip'?await ungzip(decrypted):decrypted;return new TextDecoder().decode(plain);}
-async function tryUnlock(password,manual){const err=document.getElementById('err');const btn=document.getElementById('unlockBtn');err.textContent='正在解密...';btn.disabled=true;try{const html=await unlock(password);sessionStorage.setItem(STORE_KEY,password);document.open();document.write(html);document.close();}catch(ex){if(manual)sessionStorage.removeItem(STORE_KEY);err.textContent='密码不对，或浏览器不支持本地解密。';btn.disabled=false;console.error(ex);}}
+async function tryUnlock(password,manual){const err=document.getElementById('err');const btn=document.getElementById('unlockBtn');const form=document.getElementById('unlockForm');err.textContent='正在解密…';btn.disabled=true;btn.textContent='解锁中…';form.setAttribute('aria-busy','true');try{const html=await unlock(password);try{sessionStorage.setItem(STORE_KEY,password);}catch(_){}document.open();document.write(html);document.close();requestAnimationFrame(()=>{const target=document.querySelector('main,h1,[role="main"]')||document.body;if(target){target.setAttribute('tabindex','-1');target.focus();}});}catch(ex){if(manual){try{sessionStorage.removeItem(STORE_KEY);}catch(_){}}err.textContent='未能解锁：请核对密码；也可能是文件读取失败或浏览器不支持本地解密。';btn.disabled=false;btn.textContent='解锁';form.removeAttribute('aria-busy');document.getElementById('pwd').focus();}}
 document.getElementById('unlockForm').addEventListener('submit',(e)=>{e.preventDefault();tryUnlock(document.getElementById('pwd').value,true);});
-const saved=sessionStorage.getItem(STORE_KEY);if(saved){document.getElementById('pwd').value=saved;tryUnlock(saved,false);}
+const pwd=document.getElementById('pwd');
+document.getElementById('show-password').addEventListener('click',function(){const reveal=pwd.type==='password';pwd.type=reveal?'text':'password';this.textContent=reveal?'隐藏密码':'显示密码';this.setAttribute('aria-pressed',String(reveal));pwd.focus();});
+function capsStatus(event){document.getElementById('caps').textContent=event.getModifierState&&event.getModifierState('CapsLock')?'Caps Lock 已开启。':'';}
+pwd.addEventListener('keydown',capsStatus);pwd.addEventListener('keyup',capsStatus);pwd.addEventListener('blur',()=>{document.getElementById('caps').textContent='';});
+fetch('module.json').then(r=>{if(!r.ok)throw new Error('metadata unavailable');return r.json();}).then(meta=>{const content=document.getElementById('content-revision'),ui=document.getElementById('interface-revision'),citation=document.getElementById('module-citation');if(content)content.textContent=meta.contentRevision||'未标注（待核定）';if(ui)ui.textContent=meta.interfaceRevision||'未标注（待核定）';if(citation&&meta.citation)citation.textContent=meta.citation;}).catch(()=>{});
+let saved;try{saved=sessionStorage.getItem(STORE_KEY);}catch(_){}if(saved){pwd.value=saved;tryUnlock(saved,false);}
 </script>
 </body>
 </html>
