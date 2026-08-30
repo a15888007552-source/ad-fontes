@@ -39,7 +39,7 @@ def run_secondary_smoke(page, base_url):
     assert page.locator('#pwd').get_attribute('type') == 'password'
     page.evaluate("const e=new KeyboardEvent('keyup');Object.defineProperty(e,'getModifierState',{value:key=>key==='CapsLock'});document.querySelector('#pwd').dispatchEvent(e)")
     assert 'Caps Lock' in page.locator('#caps').inner_text()
-    page.evaluate("window.unlock=()=>new Promise((resolve,reject)=>{window.rejectSyntheticUnlock=reject})")
+    page.evaluate("() => { window.unlock=()=>new Promise((resolve,reject)=>{window.rejectSyntheticUnlock=reject}); }")
     page.locator('#unlockBtn').click()
     assert page.locator('#unlockBtn').is_disabled()
     assert page.locator('#unlockForm').get_attribute('aria-busy') == 'true'
@@ -47,7 +47,7 @@ def run_secondary_smoke(page, base_url):
     page.wait_for_function("!document.querySelector('#unlockBtn').disabled")
     assert page.locator('#err').inner_text().startswith('未能解锁')
     assert page.locator('#pwd').evaluate('(el)=>el===document.activeElement')
-    page.evaluate("window.unlock=async()=>\"<!doctype html><html><head><meta charset='utf-8'><link rel='icon' href='data:,'></head><body><main id='synthetic-unlocked'><h1>UI focus test</h1></main></body></html>\"")
+    page.evaluate("() => { window.unlock=async()=>\"<!doctype html><html><head><meta charset='utf-8'><link rel='icon' href='data:,'></head><body><main id='synthetic-unlocked'><h1>UI focus test</h1></main></body></html>\"; }")
     page.locator('#unlockBtn').click()
     page.wait_for_function("document.activeElement && document.activeElement.id === 'synthetic-unlocked'")
     passed.append('Busoni public Finding Aid, visibility, synthetic loading/failure/success focus; no private payload')

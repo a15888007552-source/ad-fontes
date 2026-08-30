@@ -169,6 +169,7 @@ class Evidence:
             })""")
         except Exception as error:
             self.report["observationNotes"].append({"phase": self.phase, "url": page.url, "note": "Snapshot unavailable during navigation: " + str(error)[:220]})
+            self.fail("Required page snapshot could not be inspected: " + str(error)[:220], page.url)
             return
         if snapshot["url"] == "about:blank" or snapshot["synthetic"]:
             return
