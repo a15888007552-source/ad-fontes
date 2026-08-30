@@ -1,45 +1,37 @@
 ﻿<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>页面重定向中…</title>
-    <script>
-      (function () {
-        var path = location.pathname || "";
-        if (
-          /\/modules\/modules\/beilin(?:\/(?:index\.html|main\.html)|\/?)?$/.test(path)
-        ) {
-          location.replace("/ad-fontes/modules/beilin/index.html" + location.search + location.hash);
-          return;
-        }
-        if (path === "/ad-fontes/") {
-          location.replace("/ad-fontes/index.html" + location.hash);
-          return;
-        }
-      })();
-    </script>
-    <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #f6f0e6;
-        color: #3a2f26;
-        font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-      }
-      p {
-        margin: 0 20px;
-        text-align: center;
-      }
-      a {
-        color: #8d4f39;
-      }
-    </style>
-  </head>
-  <body>
-    <p>页面不存在，正在跳转到 <a href="/ad-fontes/modules/beilin/index.html">VI 石墨长安</a>…</p>
-  </body>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="此地址不存在。请从 AD FONTES 总馆或完整馆藏目录查找所需档案。">
+  <title>页面未找到 · AD FONTES</title>
+  <link rel="icon" href="/ad-fontes/favicon.svg" type="image/svg+xml">
+  <script src="/ad-fontes/shared/site-shell.js"></script>
+  <link rel="stylesheet" href="/ad-fontes/shared/site-catalog.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至页面说明</a>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="/ad-fontes/">AD FONTES · 溯源</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="切换明暗">☾ / ☀</button>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <p class="eyebrow">404 · PAGE NOT FOUND</p>
+      <h1>页面未找到</h1>
+      <p class="lead">这个地址没有对应的页面。原有档案可能采用了其他入口，请从总馆或馆藏目录继续查找。</p>
+      <p>你访问的路径：</p>
+      <code class="error-path" id="missing-path">请查看浏览器地址栏中的访问路径。</code>
+      <p><a href="/ad-fontes/">返回 AD FONTES 总馆</a> · <a href="/ad-fontes/modules/">打开完整馆藏目录</a></p>
+      <h2>主要入口</h2>
+      <ul class="error-links">
+        <li><a href="/ad-fontes/modules/europa/">欧罗巴音乐家年鉴</a></li>
+        <li><a href="/ad-fontes/modules/museum-atlas/">中国博物馆行记</a></li>
+        <li><a href="/ad-fontes/modules/philosophy/">音乐哲学译读</a></li>
+      </ul>
+    </main>
+  </div>
+</body>
 </html>
 

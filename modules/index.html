@@ -1,256 +1,312 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ad Fontes 模块入口页" />
-    <title>Ad Fontes · 模块</title>
-    <style>
-      :root {
-        --bg: #f3ecdf;
-        --paper: #fffaf2;
-        --ink: #241c18;
-        --muted: #6f5b4d;
-        --accent: #b55f45;
-        --accent-2: #c69a55;
-        --line: rgba(36, 28, 24, 0.12);
-        --shadow: 0 24px 70px rgba(45, 28, 17, 0.12);
-        --serif: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
-        --sans: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-      }
-
-      * { box-sizing: border-box; }
-      html, body { margin: 0; min-height: 100%; }
-      body {
-        font-family: var(--sans);
-        color: var(--ink);
-        background:
-          radial-gradient(circle at 10% 10%, rgba(198, 154, 85, 0.14), transparent 22%),
-          radial-gradient(circle at 90% 12%, rgba(181, 95, 69, 0.10), transparent 18%),
-          linear-gradient(180deg, #faf4e8 0%, var(--bg) 100%);
-      }
-
-      a { color: inherit; text-decoration: none; }
-
-      .wrap {
-        width: min(1120px, calc(100vw - 32px));
-        margin: 0 auto;
-        padding: 28px 0 40px;
-      }
-
-      .topbar {
-        display: flex;
-        justify-content: space-between;
-        gap: 18px;
-        align-items: center;
-        margin-bottom: 28px;
-      }
-
-      .brand {
-        display: grid;
-        gap: 4px;
-      }
-
-      .brand strong {
-        font-family: var(--serif);
-        font-weight: 600;
-        letter-spacing: 0.14em;
-      }
-
-      .brand span {
-        color: var(--muted);
-        font-size: 12px;
-        letter-spacing: 0.12em;
-      }
-
-      .home-link {
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .hero {
-        display: grid;
-        gap: 18px;
-        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-        align-items: stretch;
-      }
-
-      .panel {
-        background: rgba(255, 251, 244, 0.92);
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(10px);
-      }
-
-      .hero-main {
-        padding: clamp(28px, 4vw, 54px);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-main::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: linear-gradient(180deg, var(--accent), var(--accent-2));
-      }
-
-      .eyebrow {
-        color: var(--accent);
-        font-size: 12px;
-        letter-spacing: 0.18em;
-        font-weight: 700;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        margin: 14px 0 12px;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: clamp(44px, 6vw, 84px);
-        line-height: 0.96;
-      }
-
-      .lead {
-        max-width: 62ch;
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.9;
-        font-size: 16px;
-      }
-
-      .actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 24px;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 46px;
-        padding: 0 18px;
-        border-radius: 999px;
-        border: 1px solid transparent;
-      }
-
-      .btn-primary {
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #fff8ef;
-      }
-
-      .btn-secondary {
-        border-color: rgba(36, 28, 24, 0.14);
-        background: rgba(255, 251, 244, 0.78);
-      }
-
-      .cards {
-        display: grid;
-        gap: 14px;
-        padding: 22px;
-      }
-
-      .card {
-        padding: 20px;
-        border-radius: 22px;
-        background: rgba(248, 243, 232, 0.82);
-        border: 1px solid rgba(36, 28, 24, 0.08);
-      }
-
-      .card h2 {
-        margin: 0 0 8px;
-        font-family: var(--serif);
-        font-weight: 500;
-        font-size: 1.5rem;
-      }
-
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.8;
-      }
-
-      .link-list {
-        display: grid;
-        gap: 10px;
-        margin-top: 16px;
-      }
-
-      .link-list a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        min-height: 54px;
-        padding: 0 16px;
-        border-radius: 16px;
-        background: var(--paper);
-        border: 1px solid rgba(36, 28, 24, 0.12);
-      }
-
-      .footer {
-        margin-top: 18px;
-        color: var(--muted);
-        font-size: 12px;
-        text-align: center;
-      }
-
-      @media (max-width: 900px) {
-        .hero { grid-template-columns: 1fr; }
-      }
-
-      @media (max-width: 640px) {
-        .wrap { width: min(100vw - 18px, 100%); }
-        .topbar { flex-direction: column; align-items: flex-start; }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <header class="topbar">
-        <div class="brand">
-          <strong>Ad Fontes · 模块</strong>
-          <span>总馆与各专题的目录页</span>
-        </div>
-        <a class="home-link" href="/ad-fontes/">返回总馆首页</a>
-      </header>
-
-      <main class="hero">
-        <section class="panel hero-main">
-          <div class="eyebrow">Modules · 2026</div>
-          <h1>模块入口</h1>
-          <p class="lead">
-            这里是 Ad Fontes 的模块总页。以后所有分馆、专题、城市页都可以从这里继续展开。
-            当前先放入西安碑林专题，后续再逐步加入其他省份和博物馆。
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="/ad-fontes/modules/beilin/index.html">进入西安碑林专题</a>
-            <a class="btn btn-secondary" href="/ad-fontes/">回到总馆首页</a>
-          </div>
-        </section>
-
-        <aside class="panel cards">
-          <div class="card">
-            <h2>当前模块</h2>
-            <p>西安碑林博物馆专题已经接入，可以直接浏览文物名录。</p>
-            <div class="link-list">
-              <a href="/ad-fontes/modules/beilin/index.html"><span>西安碑林专题</span><span>→</span></a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h2>后续扩展</h2>
-            <p>以后你拍到别的馆，只要继续在这里加新的模块文件夹即可。</p>
-          </div>
-        </aside>
-      </main>
-
-      <p class="footer">Ad Fontes · 模块入口</p>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AD FONTES 馆藏目录：各研究模块与博物馆专题的正式入口、材料范围、来源基础、访问状态与修订信息。">
+  <title>馆藏目录 / Finding Aid · AD FONTES</title>
+  <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script src="../shared/site-shell.js"></script>
+  <link rel="stylesheet" href="../shared/site-catalog.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至馆藏目录</a>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="../">AD FONTES · 溯源</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="切换明暗">☾ / ☀</button>
+    </header>
+    <main id="main-content" tabindex="-1">
+      <p class="eyebrow">FINDING AID · 馆藏导览</p>
+      <h1>AD FONTES 馆藏目录</h1>
+      <p class="lead">从音乐史年鉴、文献译读、年会纪要到博物馆行记，以下列出各模块的正式入口、材料范围、来源基础与访问条件。</p>
+      <p class="catalog-note">内容修订指材料或学术正文的修订；界面修订指阅读功能与工程结构的调整。“未标注”表示没有可核实的修订日期。馆藏规模仅列可由现有资料核对的数量。</p>
+      <!-- BEGIN GENERATED: module-catalog -->
+<div class="catalog-grid">
+  <article class="catalog-card" id="module-europa">
+    <div class="catalog-heading">
+      <span class="catalog-number">I</span>
+      <h2>Annales Musicorum</h2>
     </div>
-  </body>
+    <p class="catalog-latin">Annales Musicorum Europae · Annales Musicorum Sinica</p>
+    <p class="catalog-subtitle">欧罗巴 ↔ 华夏音乐家年鉴</p>
+    <p class="catalog-description">两部并列的交互年鉴：欧罗巴卷以音乐家为经，华夏卷以人、曲、器、书、制五类条目为纬。设有年表、舆图、关系网与作品研究档案，可镜像翻卷。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>人物年鉴 · 作品档案 · 年表与舆图 · 版本、史料与接受史</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 持续增补</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>欧罗巴：Grout、Taruskin 等音乐史文献；华夏：杨荫浏、孙继南、汪毓和、刘再生等著作；研究档案所列原始史料与版本书目</dd></div>
+      <div><dt>馆藏规模</dt><dd>作品档案 7 · 版本记录 7 · 华夏年鉴条目 113</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．Annales Musicorum：欧罗巴 ↔ 华夏音乐家年鉴．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/europa/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/europa/index.html">进入 Annales Musicorum →</a>
+  </article>
+  <article class="catalog-card" id="module-busoni">
+    <div class="catalog-heading">
+      <span class="catalog-number">II</span>
+      <h2>Studia Busoniana</h2>
+    </div>
+    <p class="catalog-subtitle">布索尼研究</p>
+    <p class="catalog-description">布索尼研究合集。公开目录介绍美学观念、书信脉络、术语索引与证据链；正文保留密码访问，原文与译注状态以模块内记录为准。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>研究专题 · 书信与原文线索 · 术语索引 · 译注</dd></div>
+      <div><dt>访问状态</dt><dd>密码访问 · 持续增补</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>公开馆藏说明所列布索尼书信、美学文献与原著</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．Studia Busoniana：布索尼研究．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/busoni/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/busoni/index.html">进入 Studia Busoniana →</a>
+  </article>
+  <article class="catalog-card" id="module-proceedings">
+    <div class="catalog-heading">
+      <span class="catalog-number">III</span>
+      <h2>Conventus Musicologicus Occidentalis</h2>
+    </div>
+    <p class="catalog-subtitle">西方音乐学会第八届年会 · 数字纪要</p>
+    <p class="catalog-description">依据会议手册、论文述要、发言人幻灯片与现场照片整理的交互式年会纪要，可按主题、会期、会场、发言人和关键词检索发言与展板。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>会议纪要 · 发言摘要 · 展板 · 现场图像</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>中国音乐家协会西方音乐学会第八届年会会议手册；论文述要、发言人幻灯片与现场照片</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．Conventus Musicologicus Occidentalis：西方音乐学会第八届年会 · 数字纪要．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/proceedings/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/proceedings/index.html">进入 Conventus Musicologicus Occidentalis →</a>
+  </article>
+  <article class="catalog-card" id="module-theory">
+    <div class="catalog-heading">
+      <span class="catalog-number">IV</span>
+      <h2>Musica Theorica</h2>
+    </div>
+    <p class="catalog-subtitle">乐理 · 看得懂、听得见</p>
+    <p class="catalog-description">从可听的声音出发，组织声音与调律、调式与调性、和声与声部、节奏与形式、记谱史、特殊音阶及二十世纪分析。七条阅读路径可检索，声学、和弦与节拍实验可直接试听。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>概念释义 · 音乐史线索 · 交互听觉实验</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>2026-08-09</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>Grout、Taruskin、Dahlhaus 等音乐史与理论著作；Open Music Theory；新南威尔士大学 Music Acoustics 与所列声学原典</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．Musica Theorica：乐理 · 看得懂、听得见．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/theory/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/theory/index.html">进入 Musica Theorica →</a>
+  </article>
+  <article class="catalog-card" id="module-philosophy">
+    <div class="catalog-heading">
+      <span class="catalog-number">V</span>
+      <h2>Musica Philosophica</h2>
+    </div>
+    <p class="catalog-subtitle">音乐哲学 · 达尔豪斯著作译读</p>
+    <p class="catalog-description">《绝对音乐的理念》十章正文中译及书后说明性注释、书目与索引已整理，保留原书页码并支持检索；另三部著作以目录、主题和思想图谱提供阅读线索。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>著作译读 · 原页码对照 · 书目与索引 · 思想图谱</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 持续增补</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>达尔豪斯《绝对音乐的理念》英译本；《音乐史学原理》《浪漫主义与现代主义之间》《十九世纪音乐》的目录与主题线索</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．Musica Philosophica：音乐哲学 · 达尔豪斯著作译读．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/philosophy/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/philosophy/index.html">进入 Musica Philosophica →</a>
+  </article>
+  <article class="catalog-card" id="module-museum-atlas">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI</span>
+      <h2>中国博物馆行记</h2>
+    </div>
+    <p class="catalog-latin">Museum Atlas</p>
+    <p class="catalog-subtitle">按省份浏览博物馆专题</p>
+    <p class="catalog-description">按省份进入个人博物馆照片与专题，查看现场照片、重点文物、展签文字和多图档案。已开放专题与筹备中的馆舍分别标示。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>博物馆目录 · 跨馆检索 · 文物图像与展签</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 持续增补</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>个人现场拍摄；博物馆公开资料；已开放各馆专题的文物记录</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．中国博物馆行记：按省份浏览博物馆专题．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/museum-atlas/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/museum-atlas/index.html">进入 中国博物馆行记 →</a>
+  </article>
+  <article class="catalog-card" id="module-guobo-museum">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.1</span>
+      <h2>中国国家博物馆</h2>
+    </div>
+    <p class="catalog-subtitle">个人参观档案 · 文物卡片</p>
+    <p class="catalog-description">以个人参观照片与文物卡片记录中国国家博物馆，包含馆舍介绍、器物与乐舞图像线索；待核事项保留在具体条目中。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>现场照片 · 文物卡片 · 馆舍介绍</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>个人参观照片；页面所列馆藏资料与展签线索</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．中国国家博物馆：个人参观档案 · 文物卡片．AD FONTES．https://a15888007552-source.github.io/ad-fontes/guobo-museum/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../guobo-museum/index.html">进入 中国国家博物馆 →</a>
+  </article>
+  <article class="catalog-card" id="module-beilin">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.2</span>
+      <h2>石墨 长安</h2>
+    </div>
+    <p class="catalog-subtitle">西安碑林博物馆数字档案</p>
+    <p class="catalog-description">以现场照片、展签和馆藏资料整理西安碑林博物馆的碑刻、墓志、拓本、礼乐器与石雕，支持文物名录和多图档案浏览。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>现场照片 · 碑刻与墓志 · 拓本 · 器物与石雕</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>个人现场拍摄与展签文字；页面所列博物馆公开资料</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．石墨 长安：西安碑林博物馆数字档案．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/beilin/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/beilin/index.html">进入 石墨 长安 →</a>
+  </article>
+  <article class="catalog-card" id="module-shaanxi-archaeology-museum">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.3</span>
+      <h2>陕西考古博物馆</h2>
+    </div>
+    <p class="catalog-subtitle">现场图录</p>
+    <p class="catalog-description">以现场照片、展签文字与逐件文物记录组织馆介绍、考古主题及重点对象，保留出土语境与资料出处线索。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>现场照片 · 展签文字 · 文物档案 · 考古语境</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>个人现场照片与展签；条目所列公开馆藏和考古资料</dd></div>
+      <div><dt>馆藏规模</dt><dd>文物档案 167</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．陕西考古博物馆：现场图录．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/shaanxi-archaeology-museum/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/shaanxi-archaeology-museum/index.html">进入 陕西考古博物馆 →</a>
+  </article>
+  <article class="catalog-card" id="module-qinhan">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.4</span>
+      <h2>秦汉馆藏影录</h2>
+    </div>
+    <p class="catalog-subtitle">陕西历史博物馆秦汉馆</p>
+    <p class="catalog-description">整理陕西历史博物馆秦汉馆的馆舍、常设展与器物图像，结合现场展签浏览文物、制度与秦汉历史线索。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>现场照片 · 展签文字 · 文物图像分组</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>个人现场拍摄与展签；档案所列馆方及文物资料</dd></div>
+      <div><dt>馆藏规模</dt><dd>图像分组 36</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．秦汉馆藏影录：陕西历史博物馆秦汉馆．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/qinhan/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/qinhan/index.html">进入 秦汉馆藏影录 →</a>
+  </article>
+  <article class="catalog-card" id="module-baoji">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.5</span>
+      <h2>青铜铸史，铭文为证</h2>
+    </div>
+    <p class="catalog-subtitle">中国青铜器博物院</p>
+    <p class="catalog-description">中国青铜器博物院现场图录，以照片、铭文与器用关系组织文物档案；附青铜器用图谱，可按器用系统继续阅读。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>现场照片 · 铭文与展签 · 器物图谱</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>个人现场照片与展签文字；页面所列博物馆公开资料及器物文献</dd></div>
+      <div><dt>馆藏规模</dt><dd>图像分组 161</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．青铜铸史，铭文为证：中国青铜器博物院．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/baoji/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/baoji/index.html">进入 青铜铸史，铭文为证 →</a>
+  </article>
+  <article class="catalog-card" id="module-shaanxi-history">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.6</span>
+      <h2>陕西历史博物馆</h2>
+    </div>
+    <p class="catalog-subtitle">观物档案</p>
+    <p class="catalog-description">以现场器物影像、展签文字和公开馆藏资料构成文物检索档案，按常设展与专题线索阅读周秦汉唐及相关文物。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>现场照片 · 展签文字 · 文物档案</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>个人现场拍摄与展签文字；条目所列博物馆公开馆藏资料</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．陕西历史博物馆：观物档案．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/shaanxi-history/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/shaanxi-history/index.html">进入 陕西历史博物馆 →</a>
+  </article>
+  <article class="catalog-card" id="module-xian-museum">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.7</span>
+      <h2>西安博物院</h2>
+    </div>
+    <p class="catalog-subtitle">观物档案</p>
+    <p class="catalog-description">以现场器物影像、展签文字和公开资料整理西安博物院文物，串联小雁塔、城市文脉与器物图像。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>现场照片 · 展签文字 · 文物档案</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>个人现场拍摄与展签文字；条目所列博物馆公开资料</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．西安博物院：观物档案．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/xian-museum/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/xian-museum/index.html">进入 西安博物院 →</a>
+  </article>
+  <article class="catalog-card" id="module-shangqiu-museum">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.8</span>
+      <h2>玄鸟生商</h2>
+    </div>
+    <p class="catalog-subtitle">商丘博物馆数字图录</p>
+    <p class="catalog-description">以商丘博物馆与八关斋现场记录为基础，分章展示馆藏与馆外遗存，结合文物照片、展签和条目讲解阅读商丘历史。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>现场照片 · 展签文字 · 文物图录 · 碑刻记录</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>商丘博物馆与八关斋个人现场记录；条目所列馆藏介绍与公开文献</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．玄鸟生商：商丘博物馆数字图录．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/shangqiu-museum/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/shangqiu-museum/index.html">进入 玄鸟生商 →</a>
+  </article>
+  <article class="catalog-card" id="module-tomb-trails">
+    <div class="catalog-heading">
+      <span class="catalog-number">VI.9</span>
+      <h2>从地下到展柜</h2>
+    </div>
+    <p class="catalog-subtitle">墓葬与遗址历史脉络</p>
+    <p class="catalog-description">连接各馆文物与墓葬、遗址和发现史，依馆别浏览历史背景、考古发现、关联器物及资料出处。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>墓葬与遗址记录 · 发现史 · 跨馆关联</dd></div>
+      <div><dt>访问状态</dt><dd>公开访问 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>条目所列馆方、文物主管部门与考古资料；现场及公开遗址图像的出处记录</dd></div>
+      <div><dt>馆藏规模</dt><dd>馆别关联记录 38</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．从地下到展柜：墓葬与遗址历史脉络．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/tomb-trails/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/tomb-trails/index.html">进入 从地下到展柜 →</a>
+  </article>
+  <article class="catalog-card" id="module-shao">
+    <div class="catalog-heading">
+      <span class="catalog-number">VII</span>
+      <h2>Shao Music Desk</h2>
+    </div>
+    <p class="catalog-subtitle">韶元音乐台 · 远程音乐生成</p>
+    <p class="catalog-description">远程音乐生成服务的静态说明与启动入口。提交生成任务、查看进度、试听及下载均在远程音乐台进行；本站不直接运行生成任务，远程服务状态以实际访问为准。</p>
+    <dl class="catalog-meta">
+      <div><dt>材料类型</dt><dd>服务入口 · 使用说明</dd></div>
+      <div><dt>访问状态</dt><dd>远程服务入口 · 已开放</dd></div>
+      <div><dt>内容修订</dt><dd>未标注（待核定）</dd></div>
+      <div><dt>界面修订</dt><dd>2026-08-30</dd></div>
+      <div><dt>来源基础</dt><dd>本站所列 Shao Music Generation 远程服务配置与操作说明</dd></div>
+    </dl>
+    <p class="catalog-citation">推荐引用：辛申奥编．Shao Music Desk：韶元音乐台 · 远程音乐生成．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/shao/index.html （引用时注明访问日期）．</p>
+    <a class="catalog-route" href="../modules/shao/index.html">进入 Shao Music Desk →</a>
+  </article>
+</div>
+<!-- END GENERATED: module-catalog -->
+    </main>
+    <footer class="footer"><a href="../">返回总馆</a> · 引用具体档案时，请保留其地址并注明访问日期。</footer>
+  </div>
+</body>
 </html>
