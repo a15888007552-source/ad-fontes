@@ -17,6 +17,7 @@ import vm from 'node:vm';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import ProceedingsData from '../modules/proceedings/data-loader.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MODULE = path.join(ROOT, 'modules/proceedings');
@@ -115,6 +116,16 @@ function collectSources() {
   return {html, scripts, appSource: appSources[0], data: assignment('SITE_DATA'), images: assignment('IMAGES')};
 }
 
+export function readOriginalData() {
+  const {data, images} = collectSources();
+  return {data, images};
+}
+
+export function readExtractedData() {
+  const bundle = Object.fromEntries(ProceedingsData.FILES.map(name => [name, JSON.parse(fs.readFileSync(path.join(MODULE, 'data', name + '.json'), 'utf8'))]));
+  return {bundle, ...ProceedingsData.assemble(bundle)};
+}
+
 function renderer(sources) {
   const nodes = new Map();
   const getNode = id => {
@@ -171,8 +182,9 @@ function scheduleGroups(talks) {
   return groups;
 }
 
-export function buildBaseline() {
+export function buildBaseline(dataOverride = null) {
   const sources = collectSources();
+  if (dataOverride) { sources.data = dataOverride.data; sources.images = dataOverride.images; }
   const {data, images} = sources;
   const talks = data.talks;
   if (!Array.isArray(talks) || !talks.length) throw new Error('Missing talk corpus');
@@ -278,6 +290,13 @@ function main() {
     const expected = JSON.parse(fs.readFileSync(MANIFEST, 'utf8'));
     if (expected.schemaVersion !== 1) throw new Error('Unsupported baseline schema version');
     validateAgainst(expected, snapshot, args.includes('--check-source'));
+    if (fs.existsSync(path.join(MODULE, 'data'))) {
+      const extracted = readExtractedData();
+      validateAgainst(expected, buildBaseline(extracted), args.includes('--check-source'));
+      const expectedGroups = expected.corpus.scheduleDisplayGroups.map(group => ({id: group.reference.replace(/^display-/, 'session-'), recordIds: group.memberIds}));
+      if (firstDifference(expectedGroups, extracted.sessions.items)) throw new Error('Extracted calendar references differ from immutable baseline');
+      console.log('PASS: extracted JSON reconstructs the original globals, record order, all preserved fields, and renderer outputs; reference indices match immutable baseline.');
+    }
     console.log('PASS: proceedings data, original IDs/order/fields, text/media output, source bylines, calendar display groups, fixed searches, local asset paths, authored shell text, and original DOM IDs match baseline.');
   }
   console.log(JSON.stringify(snapshot.corpus.counts));
