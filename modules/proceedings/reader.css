@@ -24,6 +24,8 @@
 #panel:focus-visible,#proceedings-route-status:focus-visible,#panel h2:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 .proceedings-reader-tools :focus-visible,.proceedings-entry-tools :focus-visible,.proceedings-record-links :focus-visible,.rname :focus-visible,.card a:focus-visible,.kcard a:focus-visible,.sch-talk a:focus-visible,.gallery img:focus-visible,.pcell:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media(max-width:720px){
+  .topbar-inner .brand{flex:1 1 100%;min-width:0;flex-wrap:wrap;gap:2px 12px}
+  .keynote-grid{grid-template-columns:minmax(0,1fr)}
   .proceedings-reader-tools{padding:0 18px}
   .proceedings-entry-tools{gap:8px 12px}
   .sch-talk{flex-wrap:wrap}

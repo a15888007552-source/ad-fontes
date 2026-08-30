@@ -119,6 +119,13 @@ def _no_overflow(page, label):
       viewport: innerWidth,
       document: document.documentElement.scrollWidth,
       body: document.body.scrollWidth,
+      overflowingElements: [...document.body.querySelectorAll('*')].filter(node => {
+        const rect = node.getBoundingClientRect();
+        return rect.width > 0 && rect.right > innerWidth + 1 && getComputedStyle(node).visibility !== 'hidden';
+      }).slice(0, 12).map(node => {
+        const rect = node.getBoundingClientRect();
+        return {tag: node.tagName, id: node.id, className: node.className, left: rect.left, right: rect.right, width: rect.width};
+      }),
       panel: document.querySelector('#panel.open') ? {
         width: document.querySelector('#panel').clientWidth,
         content: document.querySelector('#panel').scrollWidth
