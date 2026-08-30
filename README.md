@@ -63,7 +63,7 @@ python scripts/product_guard.py verify
 
 生成器只替换 `BEGIN GENERATED` / `END GENERATED` 标记内部；`--check` 在入口缺失、元数据非法或生成结果过期时返回非零，不写文件。未知内容修订日期使用 `null`；界面修订不覆盖学术内容日期。
 
-各模块的浏览器检查位于 `scripts/smoke_*_browser.py`，使用已有的 Playwright 流程。产品基线只有在明确获得用户视觉批准后才可更新；通过测试不等于获得批准。
+各模块的浏览器检查位于 `scripts/smoke_*_browser.py`，使用已有的 Playwright 流程。需要一次合并验收时运行 `python -B scripts/smoke_site_research.py --output <报告目录>`；它复用现有 Playwright 和已安装的 Chromium，顺序检查桌面、移动、深链接及访问界面，输出结果与关键截图，不安装浏览器。可用 `--base-url` 指定已有预览，或让脚本启动仅本机可访问、支持 `/ad-fontes/` 与真实 404 的静态预览。Windows 新浏览器启动前会检查物理内存；达到 75% 时明确报告未执行。产品基线只有在明确获得用户视觉批准后才可更新；通过测试不等于获得批准。
 
 ## 编辑与引用
 
