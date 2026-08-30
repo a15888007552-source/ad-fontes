@@ -105,24 +105,38 @@ function collectSources() {
     if (!resolved.startsWith(MODULE + path.sep)) throw new Error(`Script outside proceedings module: ${src[1]}`);
     return fs.readFileSync(resolved, 'utf8');
   });
-  function assignment(name) {
+  function embeddedSource(name) {
     const prefix = `window.${name}=`;
     const candidates = scripts.filter(script => script.trimStart().startsWith(prefix));
     const legacyId = name === 'SITE_DATA' ? 'proceedings-legacy-data' : 'proceedings-legacy-images';
-    const inert = scriptNodes.filter(match => /\btype=["']application\/json["']/i.test(match[1]) && new RegExp(`\\bid=["']${legacyId}["']`).test(match[1]));
-    if (candidates.length + inert.length !== 1) throw new Error(`Expected one original assignment or inert JSON block for ${name}`);
-    if (inert.length) return JSON.parse(inert[0][2]);
+    const inert = scriptNodes.filter(match => new RegExp(`\\bid=["']${legacyId}["']`).test(match[1]));
+    if (candidates.length + inert.length > 1) throw new Error(`Duplicate embedded source for ${name}`);
+    if (inert.length) {
+      if (!/\btype=["']application\/json["']/i.test(inert[0][1])) throw new Error(`Legacy block must be inert JSON: ${legacyId}`);
+      return {kind: 'inert', value: JSON.parse(inert[0][2])};
+    }
+    if (!candidates.length) return null;
     const raw = candidates[0].trim().slice(prefix.length).replace(/;\s*$/, '');
-    return JSON.parse(raw);
+    return {kind: 'assignment', value: JSON.parse(raw)};
   }
   const appSources = scripts.filter(script => /const App\s*=\s*\{/.test(script));
   if (appSources.length !== 1) throw new Error('Expected one original App renderer');
-  return {html, scripts, appSource: appSources[0], data: assignment('SITE_DATA'), images: assignment('IMAGES')};
+  const embeddedData = embeddedSource('SITE_DATA'), embeddedImages = embeddedSource('IMAGES');
+  if (Boolean(embeddedData) !== Boolean(embeddedImages)) throw new Error('Incomplete embedded proceedings source: both data and images are required');
+  if (embeddedData && embeddedData.kind !== embeddedImages.kind) throw new Error('Mixed embedded proceedings source formats');
+  // E removes the complete duplicate pair. Missing/malformed external files
+  // must then fail through the same loader; never fall back to another copy.
+  const current = embeddedData
+    ? {data: embeddedData.value, images: embeddedImages.value}
+    : readExtractedData();
+  return {html, scripts, appSource: appSources[0], data: current.data, images: current.images, sourceKind: embeddedData?.kind || 'external'};
 }
 
 export function readOriginalData() {
-  const {data, images} = collectSources();
-  return {data, images};
+  // After E this reads the externally stored original corpus, not a second
+  // independent copy. Its immutable baseline and ordered pins remain separate.
+  const {data, images, sourceKind} = collectSources();
+  return {data, images, sourceKind};
 }
 
 export function readExtractedData() {
