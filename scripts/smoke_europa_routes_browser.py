@@ -25,7 +25,7 @@ ARCHIVES = {
     "recordings": ("recording", "recordings", "recordingRefs"),
     "reception": ("reception", "receptions", "receptionRefs"),
 }
-INIT = """localStorage.setItem('annales_seen','1');sessionStorage.setItem('europa-opening-seen','1');"""
+INIT = """try { localStorage.setItem('annales_seen','1');sessionStorage.setItem('europa-opening-seen','1'); } catch (_) {}"""
 
 
 def run_europa_smoke(page, base_url: str, *, check_mobile: bool = True, clean_context: bool = True) -> dict:
