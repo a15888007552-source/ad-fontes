@@ -1,10 +1,30 @@
 {
   "id": "busoni",
   "number": "II",
-  "title": "Studia Busoniana · 密码访问",
+  "title": "Studia Busoniana",
+  "latinTitle": "",
+  "subtitle": "布索尼研究",
+  "description": "布索尼研究合集。公开目录介绍美学观念、书信脉络、术语索引与证据链；正文保留密码访问，原文与译注状态以模块内记录为准。",
+  "route": "modules/busoni/index.html",
   "type": "research-tool",
-  "status": "draft",
+  "status": "expanding",
+  "access": "password-protected",
+  "home": true,
+  "parent": null,
+  "materialTypes": [
+    "研究专题",
+    "书信与原文线索",
+    "术语索引",
+    "译注"
+  ],
+  "sourceBasis": [
+    "公开馆藏说明所列布索尼书信、美学文献与原著"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．Studia Busoniana：布索尼研究．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/busoni/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

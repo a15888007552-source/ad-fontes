@@ -1,11 +1,31 @@
 {
   "id": "philosophy",
   "number": "V",
-  "title": "Musica Philosophica · 音乐哲学 — Ad Fontes",
-  "subtitle": "Ad Fontes 第Ⅴ栏：卡尔·达尔豪斯著作译读、原页码对照与音乐美学思想图谱。",
+  "title": "Musica Philosophica",
+  "latinTitle": "",
+  "subtitle": "音乐哲学 · 达尔豪斯著作译读",
+  "description": "《绝对音乐的理念》十章正文中译及书后说明性注释、书目与索引已整理，保留原书页码并支持检索；另三部著作以目录、主题和思想图谱提供阅读线索。",
+  "route": "modules/philosophy/index.html",
   "type": "research-tool",
-  "status": "published",
+  "status": "expanding",
+  "access": "public",
+  "home": true,
+  "parent": null,
+  "materialTypes": [
+    "著作译读",
+    "原页码对照",
+    "书目与索引",
+    "思想图谱"
+  ],
+  "sourceBasis": [
+    "达尔豪斯《绝对音乐的理念》英译本",
+    "《音乐史学原理》《浪漫主义与现代主义之间》《十九世纪音乐》的目录与主题线索"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．Musica Philosophica：音乐哲学 · 达尔豪斯著作译读．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/philosophy/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

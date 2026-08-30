@@ -1,17 +1,32 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://a15888007552-source.github.io/ad-fontes/schemas/module.schema.json",
-  "title": "Ad Fontes module metadata",
+  "title": "AD FONTES formal module metadata",
+  "description": "Validated by scripts/build_site_catalog.py with the standard-library subset used here.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "id",
+    "number",
     "title",
+    "latinTitle",
+    "subtitle",
+    "description",
+    "route",
     "type",
     "status",
+    "access",
+    "home",
+    "parent",
+    "materialTypes",
+    "sourceBasis",
+    "corpusCounts",
+    "contentRevision",
+    "interfaceRevision",
+    "maintainer",
+    "citation",
     "version",
-    "entry",
-    "maintainer"
+    "entry"
   ],
   "properties": {
     "id": {
@@ -20,28 +35,130 @@
     },
     "number": {
       "type": "string",
-      "minLength": 1
+      "pattern": "^[IVXLCDM]+(?:\\.[1-9][0-9]*)?$"
     },
     "title": {
       "type": "string",
       "minLength": 1
     },
+    "latinTitle": {
+      "type": "string"
+    },
     "subtitle": {
+      "type": "string"
+    },
+    "description": {
       "type": "string",
       "minLength": 1
     },
+    "route": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\\\?#]+$"
+    },
     "type": {
       "type": "string",
-      "minLength": 1
+      "enum": [
+        "research-tool",
+        "proceedings",
+        "atlas",
+        "catalog",
+        "tool"
+      ]
     },
     "status": {
       "type": "string",
       "enum": [
-        "draft",
-        "published",
+        "active",
+        "expanding",
         "archived",
         "experimental"
       ]
+    },
+    "access": {
+      "type": "string",
+      "enum": [
+        "public",
+        "password-protected",
+        "remote-service",
+        "partial"
+      ]
+    },
+    "home": {
+      "type": "boolean"
+    },
+    "parent": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "materialTypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "sourceBasis": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "corpusCounts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "countSources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "file",
+          "pointer"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "file": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\\\?#]+$"
+          },
+          "pointer": {
+            "type": "string",
+            "pattern": "^(?:/.*)?$"
+          }
+        }
+      }
+    },
+    "contentRevision": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "interfaceRevision": {
+      "type": "string",
+      "format": "date"
+    },
+    "maintainer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "citation": {
+      "type": "string",
+      "minLength": 1
     },
     "version": {
       "type": "string",
@@ -50,15 +167,44 @@
     "entry": {
       "type": "string",
       "minLength": 1,
-      "pattern": "^(?!/)(?![A-Za-z]:)[^\\\\]+$"
-    },
-    "maintainer": {
-      "type": "string",
-      "minLength": 1
+      "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\\\?#]+$"
     },
     "dataVersion": {
       "type": "string",
       "minLength": 1
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "entry"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "titleEn": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "entry": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\\\?#]+$"
+          }
+        }
+      }
     }
   }
 }

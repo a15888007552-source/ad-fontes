@@ -1,0 +1,30 @@
+{
+  "id": "guobo-museum",
+  "number": "VI.1",
+  "title": "中国国家博物馆",
+  "latinTitle": "",
+  "subtitle": "个人参观档案 · 文物卡片",
+  "description": "以个人参观照片与文物卡片记录中国国家博物馆，包含馆舍介绍、器物与乐舞图像线索；待核事项保留在具体条目中。",
+  "route": "guobo-museum/index.html",
+  "type": "catalog",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "现场照片",
+    "文物卡片",
+    "馆舍介绍"
+  ],
+  "sourceBasis": [
+    "个人参观照片",
+    "页面所列馆藏资料与展签线索"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．中国国家博物馆：个人参观档案 · 文物卡片．AD FONTES．https://a15888007552-source.github.io/ad-fontes/guobo-museum/index.html （引用时注明访问日期）．",
+  "version": "1.0.0",
+  "entry": "index.html"
+}

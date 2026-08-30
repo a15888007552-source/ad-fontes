@@ -1,9 +1,31 @@
 {
   "id": "proceedings",
-  "title": "2026·北京·西方音乐学会第八届年会 · 数字纪要",
+  "number": "III",
+  "title": "Conventus Musicologicus Occidentalis",
+  "latinTitle": "",
+  "subtitle": "西方音乐学会第八届年会 · 数字纪要",
+  "description": "依据会议手册、论文述要、发言人幻灯片与现场照片整理的交互式年会纪要，可按主题、会期、会场、发言人和关键词检索发言与展板。",
+  "route": "modules/proceedings/index.html",
   "type": "proceedings",
-  "status": "published",
+  "status": "active",
+  "access": "public",
+  "home": true,
+  "parent": null,
+  "materialTypes": [
+    "会议纪要",
+    "发言摘要",
+    "展板",
+    "现场图像"
+  ],
+  "sourceBasis": [
+    "中国音乐家协会西方音乐学会第八届年会会议手册",
+    "论文述要、发言人幻灯片与现场照片"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．Conventus Musicologicus Occidentalis：西方音乐学会第八届年会 · 数字纪要．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/proceedings/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

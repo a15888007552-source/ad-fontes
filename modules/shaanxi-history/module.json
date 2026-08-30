@@ -1,10 +1,30 @@
 {
   "id": "shaanxi-history",
-  "title": "陕西历史博物馆 · 观物档案",
-  "subtitle": "陕西历史博物馆观物档案：以现场器物影像、展签文字和公开馆藏资料构成的文物检索网站。",
+  "number": "VI.6",
+  "title": "陕西历史博物馆",
+  "latinTitle": "",
+  "subtitle": "观物档案",
+  "description": "以现场器物影像、展签文字和公开馆藏资料构成文物检索档案，按常设展与专题线索阅读周秦汉唐及相关文物。",
+  "route": "modules/shaanxi-history/index.html",
   "type": "catalog",
-  "status": "published",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "现场照片",
+    "展签文字",
+    "文物档案"
+  ],
+  "sourceBasis": [
+    "个人现场拍摄与展签文字",
+    "条目所列博物馆公开馆藏资料"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．陕西历史博物馆：观物档案．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/shaanxi-history/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

@@ -50,13 +50,18 @@ scripts/                    确定性生成、静态验证与浏览器检查
 
 ## 检查
 
-在仓库根目录运行现有轻量检查：
+总馆、馆藏目录和上方模块表均由 `module.json` 生成，约束和计数口径见 [模块元数据说明](docs/module-catalog.md)。修改元数据后在仓库根目录运行：
 
 ```sh
+python scripts/build_site_catalog.py
+python scripts/build_site_catalog.py --check
 python scripts/validate_modules.py
+python scripts/check_site.py
 node scripts/qa.mjs
 python scripts/product_guard.py verify
 ```
+
+生成器只替换 `BEGIN GENERATED` / `END GENERATED` 标记内部；`--check` 在入口缺失、元数据非法或生成结果过期时返回非零，不写文件。未知内容修订日期使用 `null`；界面修订不覆盖学术内容日期。
 
 各模块的浏览器检查位于 `scripts/smoke_*_browser.py`，使用已有的 Playwright 流程。产品基线只有在明确获得用户视觉批准后才可更新；通过测试不等于获得批准。
 

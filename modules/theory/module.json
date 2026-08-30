@@ -1,10 +1,31 @@
 {
   "id": "theory",
-  "title": "Musica Theorica · 乐理 — Ad Fontes",
-  "subtitle": "一座可听、可操作、可溯源的音乐理论工坊：声音与调律、调式与调性、和声与声部、节奏与形式、记谱史、特殊音阶及二十世纪分析。",
+  "number": "IV",
+  "title": "Musica Theorica",
+  "latinTitle": "",
+  "subtitle": "乐理 · 看得懂、听得见",
+  "description": "从可听的声音出发，组织声音与调律、调式与调性、和声与声部、节奏与形式、记谱史、特殊音阶及二十世纪分析。七条阅读路径可检索，声学、和弦与节拍实验可直接试听。",
+  "route": "modules/theory/index.html",
   "type": "research-tool",
-  "status": "published",
+  "status": "active",
+  "access": "public",
+  "home": true,
+  "parent": null,
+  "materialTypes": [
+    "概念释义",
+    "音乐史线索",
+    "交互听觉实验"
+  ],
+  "sourceBasis": [
+    "Grout、Taruskin、Dahlhaus 等音乐史与理论著作",
+    "Open Music Theory",
+    "新南威尔士大学 Music Acoustics 与所列声学原典"
+  ],
+  "corpusCounts": {},
+  "contentRevision": "2026-08-09",
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．Musica Theorica：乐理 · 看得懂、听得见．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/theory/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

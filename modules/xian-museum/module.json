@@ -1,10 +1,30 @@
 {
   "id": "xian-museum",
-  "title": "西安博物院 · 观物档案",
-  "subtitle": "西安博物院观物档案：以现场器物影像、展签文字和公开资料整理的文物检索网站。",
+  "number": "VI.7",
+  "title": "西安博物院",
+  "latinTitle": "",
+  "subtitle": "观物档案",
+  "description": "以现场器物影像、展签文字和公开资料整理西安博物院文物，串联小雁塔、城市文脉与器物图像。",
+  "route": "modules/xian-museum/index.html",
   "type": "catalog",
-  "status": "published",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "现场照片",
+    "展签文字",
+    "文物档案"
+  ],
+  "sourceBasis": [
+    "个人现场拍摄与展签文字",
+    "条目所列博物馆公开资料"
+  ],
+  "corpusCounts": {},
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．西安博物院：观物档案．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/xian-museum/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }

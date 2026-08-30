@@ -1,10 +1,39 @@
 {
   "id": "shaanxi-archaeology-museum",
-  "title": "陕西考古博物馆 · 现场图录",
-  "subtitle": "陕西考古博物馆现场图录：主题、馆介绍、重点对象与逐件文物卡片。",
+  "number": "VI.3",
+  "title": "陕西考古博物馆",
+  "latinTitle": "",
+  "subtitle": "现场图录",
+  "description": "以现场照片、展签文字与逐件文物记录组织馆介绍、考古主题及重点对象，保留出土语境与资料出处线索。",
+  "route": "modules/shaanxi-archaeology-museum/index.html",
   "type": "catalog",
-  "status": "published",
+  "status": "active",
+  "access": "public",
+  "home": false,
+  "parent": "museum-atlas",
+  "materialTypes": [
+    "现场照片",
+    "展签文字",
+    "文物档案",
+    "考古语境"
+  ],
+  "sourceBasis": [
+    "个人现场照片与展签",
+    "条目所列公开馆藏和考古资料"
+  ],
+  "corpusCounts": {
+    "文物档案": 167
+  },
+  "countSources": {
+    "文物档案": {
+      "file": "modules/shaanxi-archaeology-museum/data/artifacts.json",
+      "pointer": "/artifacts"
+    }
+  },
+  "contentRevision": null,
+  "interfaceRevision": "2026-08-30",
+  "maintainer": "辛申奥",
+  "citation": "辛申奥编．陕西考古博物馆：现场图录．AD FONTES．https://a15888007552-source.github.io/ad-fontes/modules/shaanxi-archaeology-museum/index.html （引用时注明访问日期）．",
   "version": "1.0.0",
-  "entry": "index.html",
-  "maintainer": "辛申奥"
+  "entry": "index.html"
 }
