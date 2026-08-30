@@ -21,7 +21,20 @@
     "中国音乐家协会西方音乐学会第八届年会会议手册",
     "论文述要、发言人幻灯片与现场照片"
   ],
-  "corpusCounts": {},
+  "corpusCounts": {
+    "发言记录": 140,
+    "展板记录": 79
+  },
+  "countSources": {
+    "发言记录": {
+      "file": "modules/proceedings/data/presentations.json",
+      "pointer": ""
+    },
+    "展板记录": {
+      "file": "modules/proceedings/data/posters.json",
+      "pointer": ""
+    }
+  },
   "contentRevision": null,
   "interfaceRevision": "2026-08-30",
   "maintainer": "辛申奥",

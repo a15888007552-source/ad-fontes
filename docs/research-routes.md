@@ -37,3 +37,7 @@ python scripts/check_secondary_modules.py --baseline <本次修改前的提交>
 ```
 
 第二条检查可逐项证明原有阅读正文、链接、ID 与密码学函数未变。浏览器复用入口是 `scripts/smoke_secondary_modules.py` 的 `run_secondary_smoke(page, base_url)`；密码表单测试只使用合成成功／失败结果，不提交真实密码、不访问受保护正文。
+
+## 年会纪要
+
+年会入口支持 `#presentation=t000`、`#poster=t140`、`#session=session-t000` 和 `#speaker=speaker-t000`，以及六个原有视图的 `#view=` 地址。日程与署名 ID 仅引用原有记录，不改写会程或重新合并人物。数据就绪后恢复详情，支持刷新、浏览器历史与复制链接；不存在的条目提供返回入口。详见 [年会数据与保真检查](proceedings-data.md)。

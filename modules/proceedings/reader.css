@@ -1,0 +1,51 @@
+/* Reading controls inherit the original proceedings palette and typography. */
+.proceedings-reader-tools{max-width:var(--maxw);margin:12px auto 0;padding:0 24px;font:12px/1.7 var(--sans)}
+.proceedings-reader-tools nav,.proceedings-entry-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.proceedings-reader-tools a,.proceedings-entry-tools a,.proceedings-session-link{color:var(--accent);text-underline-offset:3px}
+.proceedings-reader-tools button,.proceedings-entry-tools button,.proceedings-record-links button,.rname [data-copy-link]{min-height:32px;padding:4px 8px;border:1px solid var(--line-strong);border-radius:4px;background:var(--paper-2);color:var(--ink-soft);font:inherit;cursor:pointer}
+.proceedings-entry-tools{margin-top:14px;font:12px/1.5 var(--sans)}
+.proceedings-copy-feedback{font:12px/1.6 var(--sans);overflow-wrap:anywhere}
+.proceedings-copy-feedback p:empty,#proceedings-route-status:empty{display:none}
+.proceedings-copy-feedback label{display:block;margin-top:8px}
+.proceedings-copy-feedback [hidden]{display:none}
+.proceedings-copy-feedback input{display:block;width:100%;box-sizing:border-box;min-width:0;margin-top:4px;padding:7px;border:1px solid var(--line-strong);background:var(--paper-2);color:var(--ink);font:inherit}
+.card h3 a,.kcard h3 a,.st-title a{color:inherit;text-decoration:none}
+.card h3 a:hover,.kcard h3 a:hover,.st-title a:hover{text-decoration:underline;text-underline-offset:3px}
+.c-author a,.k-author a,.st-name a{color:inherit;text-underline-offset:3px}
+.proceedings-record-links{display:block;margin-top:8px;font:11px/1.5 var(--sans)}
+.sch-talk .proceedings-record-links{flex:0 0 auto;margin:0 0 0 8px}
+.sch-talk .st-title{min-width:0;overflow-wrap:anywhere;flex:1}
+.sch-room .rname{flex-wrap:wrap;gap:6px}
+.rname .proceedings-session-link{margin-left:auto;font-size:12px;font-weight:400}
+.rname [data-copy-link]{font-size:11px;font-weight:400;margin-left:8px}
+.proceedings-reference-records{display:grid;gap:16px}
+.proceedings-print-source{display:none}
+.proceedings-record-open{overflow:hidden}
+#panel:focus-visible,#proceedings-route-status:focus-visible,#panel h2:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.proceedings-reader-tools :focus-visible,.proceedings-entry-tools :focus-visible,.proceedings-record-links :focus-visible,.rname :focus-visible,.card a:focus-visible,.kcard a:focus-visible,.sch-talk a:focus-visible,.gallery img:focus-visible,.pcell:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(max-width:720px){
+  .topbar-inner .brand{flex:1 1 100%;min-width:0;flex-wrap:wrap;gap:2px 12px}
+  .keynote-grid{grid-template-columns:minmax(0,1fr)}
+  .proceedings-reader-tools{padding:0 18px}
+  .proceedings-entry-tools{gap:8px 12px}
+  .sch-talk{flex-wrap:wrap}
+  .sch-talk .proceedings-record-links{margin-left:auto}
+  .rname{flex-wrap:wrap;gap:6px}
+  .rname .proceedings-session-link{margin-left:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.panel,.overlay{transition:none!important}}
+@media print{
+  body{background:#fff;color:#000;overflow:visible!important}
+  #proceedings-opening,.topbar,.tabs,.proceedings-reader-tools,.proceedings-data-notice,#overlay,#lightbox,.proceedings-entry-tools,.proceedings-copy-feedback,.proceedings-record-links,.panel-head .close,.rname [data-copy-link]{display:none!important}
+  main,footer{max-width:none;margin:0;padding:0}
+  .view:not(.active),.panel:not(.open){display:none!important}
+  body.proceedings-record-open main,body.proceedings-record-open>footer{display:none!important}
+  .panel.open{position:static;inset:auto;width:auto;max-height:none;overflow:visible;transform:none;box-shadow:none;background:#fff}
+  .panel-head{position:static;padding:0 0 14px;background:#fff}
+  .panel-body{padding:14px 0}
+  .proceedings-print-source{display:block;font:10pt/1.5 var(--sans);overflow-wrap:anywhere;border-top:1px solid #aaa;padding-top:10px}
+  .card,.kcard,.sch-room,.gallery img{break-inside:avoid;box-shadow:none}
+  .card a,.kcard a,.sch-talk a{color:inherit;text-decoration:none}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  h2,h3,h4{break-after:avoid}
+}
