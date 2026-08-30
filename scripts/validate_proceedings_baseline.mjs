@@ -97,7 +97,8 @@ function authoredShell(html) {
 
 function collectSources() {
   const html = fs.readFileSync(SOURCE, 'utf8');
-  const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)].map(match => {
+  const scriptNodes = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
+  const scripts = scriptNodes.map(match => {
     const src = match[1].match(/\bsrc=["']([^"']+)["']/i);
     if (!src) return match[2];
     const resolved = path.resolve(MODULE, src[1]);
@@ -107,7 +108,10 @@ function collectSources() {
   function assignment(name) {
     const prefix = `window.${name}=`;
     const candidates = scripts.filter(script => script.trimStart().startsWith(prefix));
-    if (candidates.length !== 1) throw new Error(`Expected one explicit JSON assignment for ${name}`);
+    const legacyId = name === 'SITE_DATA' ? 'proceedings-legacy-data' : 'proceedings-legacy-images';
+    const inert = scriptNodes.filter(match => /\btype=["']application\/json["']/i.test(match[1]) && new RegExp(`\\bid=["']${legacyId}["']`).test(match[1]));
+    if (candidates.length + inert.length !== 1) throw new Error(`Expected one original assignment or inert JSON block for ${name}`);
+    if (inert.length) return JSON.parse(inert[0][2]);
     const raw = candidates[0].trim().slice(prefix.length).replace(/;\s*$/, '');
     return JSON.parse(raw);
   }

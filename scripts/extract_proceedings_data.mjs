@@ -14,7 +14,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MODULE = path.join(ROOT, 'modules/proceedings');
 const DEST = path.join(MODULE, 'data');
 const manifest = JSON.parse(fs.readFileSync(path.join(MODULE, 'baseline.manifest.json'), 'utf8'));
-validateAgainst(manifest, buildBaseline(), true);
+const write = process.argv.includes('--write');
+validateAgainst(manifest, buildBaseline(), write);
 const {data, images} = readOriginalData();
 const references = ProceedingsData.createReferenceIndices(data.talks);
 const files = {
@@ -30,13 +31,12 @@ assert.deepEqual(reconstructed.data, data, 'Reconstruction changed original data
 assert.deepEqual(reconstructed.images, images, 'Reconstruction changed image mapping');
 assert.equal(JSON.stringify(reconstructed.data), JSON.stringify(data), 'Original data property/record order changed');
 const outputs = Object.fromEntries(Object.entries(files).map(([name, value]) => [name + '.json', JSON.stringify(value, null, 2) + '\n']));
-const write = process.argv.includes('--write');
 if (write) {
   for (const name of Object.keys(outputs)) if (fs.existsSync(path.join(DEST, name))) throw new Error('Refusing to overwrite extracted data: ' + name);
   fs.mkdirSync(DEST, {recursive: true});
   for (const [name, text] of Object.entries(outputs)) fs.writeFileSync(path.join(DEST, name), text, 'utf8');
 } else {
-  for (const [name, text] of Object.entries(outputs)) assert.equal(fs.readFileSync(path.join(DEST, name), 'utf8'), text, 'Extracted JSON is not an exact deterministic extraction: ' + name);
+  for (const [name, text] of Object.entries(outputs)) assert.equal(fs.readFileSync(path.join(DEST, name), 'utf8').replace(/\r\n/g, '\n'), text, 'Extracted JSON is not an exact deterministic extraction: ' + name);
 }
 console.log((write ? 'Created' : 'PASS: checked') + ' six JSON files; exact reconstruction preserves all 219 records, all fields, their order, and IMAGES.');
 console.log('140 presentations; 79 posters; 36 calendar display groups; 219 source byline references; 401 photos; 589 image paths.');
