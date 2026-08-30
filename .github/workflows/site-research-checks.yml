@@ -29,3 +29,5 @@ jobs:
         run: python -B scripts/check_site.py
       - name: Test Europa route parsing, loading and history
         run: node --test scripts/test_europa_routes.mjs
+      - name: Check remote launcher and research readers
+        run: python -B scripts/check_secondary_modules.py

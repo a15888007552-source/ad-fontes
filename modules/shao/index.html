@@ -32,6 +32,7 @@
   .topbar a:hover{border-color:var(--rubric)}
   .toggle{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:2px;padding:.3rem .55rem;font:inherit;font-size:.74rem;cursor:pointer;letter-spacing:.08em}
   .toggle:hover{border-color:var(--rubric);color:var(--rubric)}
+  [hidden]{display:none!important}a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}.topbar{flex-wrap:wrap}.launch-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}.launch-actions button{font:inherit;cursor:pointer}.remote-state{color:var(--muted);font-size:.85rem;margin-top:-1.5rem;margin-bottom:2rem}.copy-status{min-height:1.6em}.remote-address{overflow-wrap:anywhere}
   header{text-align:center;margin-bottom:2.6rem}
   .eyebrow{color:var(--rubric);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin:0 0 .8rem}
   h1{font-size:clamp(2rem,7vw,3.5rem);font-weight:500;letter-spacing:.08em;margin:0;line-height:1.2}
@@ -65,6 +66,7 @@
 <div class="wrap">
   <nav class="topbar" aria-label="面包屑导航">
     <a href="../../index.html">← 回到 Ad Fontes</a>
+    <a href="../index.html">馆藏目录</a>
     <button class="toggle" id="toggle" type="button" aria-label="切换明暗主题">☾ / ☀</button>
   </nav>
 
@@ -75,27 +77,30 @@
     <hr class="rule">
   </header>
 
-  <p class="lede"><span class="lead-mark">这</span>是 Ad Fontes 的 Shao 模型入口。把音乐描述、歌词和演唱方式交给远程 GPU，生成完成后可以在同一界面试听，并下载 MP3 或 WAV。这个栏目保存的是入口与使用方法；真正的生成任务仍然运行在远程实例上。</p>
+  <main>
+  <p class="lede"><span class="lead-mark">这</span>是 Ad Fontes 的 Shao 远程音乐生成服务入口。本页是静态说明页，只提供入口与使用方法；提交任务、查看进度、试听及下载都在另行打开的远程任务界面中进行，任务运行在远程实例上。</p>
 
   <section class="launch" aria-label="打开远程音乐台">
     <div class="launch-copy">
-      <strong>进入远程音乐台</strong>
-      <span>当前入口：117.50.180.243:30869</span>
+      <strong>远程音乐生成服务</strong>
+      <span>当前配置：<span class="remote-address" id="remote-address">正在读取入口配置…</span></span>
     </div>
-    <a class="button" href="http://117.50.180.243:30869/" target="_blank" rel="noopener noreferrer">打开音乐台 ↗</a>
+    <div class="launch-actions"><a class="button" id="remote-open" target="_blank" rel="noopener noreferrer" hidden>打开远程音乐台 ↗</a><button class="toggle" id="copy-address" type="button" disabled>复制地址</button></div>
   </section>
+  <div class="remote-state"><strong id="remote-health">状态未验证</strong><p>浏览器未对远程服务作可靠健康检查。本站的 HTTPS 页面与远程入口的协议及跨域策略可能限制探测；无法探测不表示服务离线。打开入口后的连接结果以远程界面为准。</p><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div>
+  <noscript><p>远程入口保存在 <a href="config.json">入口配置文件</a> 中；请启用 JavaScript 显示并复制地址。</p></noscript>
 
   <h2 class="sec-h">下次怎么继续用 · Next time</h2>
   <section class="steps" aria-label="使用步骤">
     <article class="step">
       <span class="step-num">01 · 先开机器</span>
       <h2>启动同一台 GPU</h2>
-      <p>打开优云智算，找到实例 <b>host</b>，确认状态为“运行中”。不要为了这个页面重新租一台机器。</p>
+      <p>在原有服务控制台确认已配置的计算实例处于运行状态。不要仅因入口暂时打不开就重新租用实例。</p>
     </article>
     <article class="step">
       <span class="step-num">02 · 打开入口</span>
       <h2>从这里进入</h2>
-      <p>点击上面的“打开音乐台”。如果打不开，先检查实例是否运行；远程地址也可能在重启后发生变化。</p>
+      <p>点击上面的“打开远程音乐台”。如果打不开，先检查实例是否运行；远程地址也可能在重启后发生变化。</p>
     </article>
     <article class="step">
       <span class="step-num">03 · 写清楚需求</span>
@@ -112,22 +117,13 @@
   <div class="notice"><strong>最重要的省钱提醒：</strong>关闭浏览器网页不等于关闭 GPU。用完后回到优云智算，点击实例的“关闭”；否则实例可能继续按小时计费。若只是误关了网页、实例仍在运行，下次直接重新打开本页即可。</div>
 
   <p class="recovery"><b>任务恢复：</b>生成页面会记住最近的任务 ID；如果页面刷新或重新打开，可用“恢复任务”继续查看已经提交的结果。任务历史依赖远程实例，不是永久云盘，所以重要音频请及时下载保存。</p>
+  </main>
 
   <footer>
     <a href="../../index.html">Ad Fontes · 溯源</a><br>
-    Shao Music Desk · 远程 RTX 4090 · 入口状态随实例而变
+    Shao Music Desk · 静态入口说明 · 远程状态未验证
   </footer>
 </div>
-<script>
-  (function(){
-    var button = document.getElementById('toggle');
-    var root = document.documentElement;
-    button.addEventListener('click', function(){
-      var current = root.getAttribute('data-theme');
-      if (!current) current = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
-    });
-  })();
-</script>
+<script src="launcher.js"></script>
 </body>
 </html>

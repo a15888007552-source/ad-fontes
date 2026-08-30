@@ -6,6 +6,7 @@
 <title>Musica Theorica · 乐理 — Ad Fontes</title>
 <meta name="description" content="一座可听、可操作、可溯源的音乐理论工坊：声音与调律、调式与调性、和声与声部、节奏与形式、记谱史、特殊音阶及二十世纪分析。">
 <link rel="canonical" href="https://a15888007552-source.github.io/ad-fontes/modules/theory/index.html">
+<link rel="stylesheet" href="reader.css">
 <link rel="icon" href="../../favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Musica Theorica · 乐理">
@@ -174,7 +175,7 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
 <body>
 <button class="toggle" id="toggle" aria-label="切换明暗">☾ / ☀</button>
 <div class="wrap">
-  <a class="back" href="../../index.html">← Ad Fontes · 溯源</a>
+  <nav class="reader-nav" aria-label="总馆导航"><a class="back" href="../../index.html">← Ad Fontes · 溯源</a><a class="back" href="../index.html">馆藏目录</a></nav>
   <header>
     <h1 class="mast">Musica&nbsp;Theorica<span class="dot">.</span></h1>
     <p class="mast-cn">乐 理</p>
@@ -182,7 +183,7 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
     <hr class="rule">
   </header>
 
-  <nav class="tabs" id="tabs">
+  <nav class="tabs" id="tabs" aria-label="乐理栏目">
     <button data-v="foundation" class="on">声音与调律</button>
     <button data-v="mode">调式与调性</button>
     <button data-v="harmony">和声与声部</button>
@@ -200,7 +201,7 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
 
   <section class="finder" aria-label="乐理检索">
     <div class="findtop">
-      <input id="finder" type="search" autocomplete="off" placeholder="检索：泛音 / 调律 / 终止式 / 复节奏 / 纽姆 / 十二音 / 音色…">
+      <input id="finder" type="search" autocomplete="off" aria-label="检索乐理概念与图示" placeholder="检索：泛音 / 调律 / 终止式 / 复节奏 / 纽姆 / 十二音 / 音色…">
       <div class="findcount" id="findcount">输入关键词, 或点下面的问题轴</div>
     </div>
     <div class="findchips" id="findchips">
@@ -215,6 +216,7 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
     </div>
     <div class="results" id="results"></div>
   </section>
+  <div class="reader-actions"><button type="button" id="copy-citation">复制当前引用</button><button type="button" id="print-reading">打印当前栏目</button><span id="reader-status" role="status" aria-live="polite"></span></div>
 
   <main>
   <!-- ════════════ 声音与调律 ════════════ -->
@@ -475,7 +477,7 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
 
     <h3 id="n-neume1">二、纽姆的三步:从无线到四线</h3>
     <p>加洛林时期出现<em class="term">纽姆</em>(neuma),其可读性经历三步演化:</p>
-    <div class="fig">
+    <div class="fig" id="n-neume2">
       <div class="svgwrap"><div id="neume-stages"></div></div>
       <div class="cap"><b>纽姆的三阶段。</b>①<b>无线纽姆</b>(adiastematic,约9世纪):点、竖、勾悬于歌词上方,只记轮廓与走向,供已熟记者提示,不定绝对音高。②<b>加线</b>(约11世纪初):先划一条(常为红色 F)、再加一条(黄色 c)干线,音高始有坐标。③<b>四线谱</b>(圭多):四线四间,方形音符各就其位,音高完全钉定。</div>
     </div>
@@ -612,16 +614,27 @@ footer{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);text-
 "use strict";
 (function(){
 var root=document.documentElement;
+try{var savedTheme=localStorage.getItem('theorica-theme');if(savedTheme==='light'||savedTheme==='dark')root.dataset.theme=savedTheme;}catch(_){}
 document.getElementById('toggle').addEventListener('click',function(){
   var cur=root.getAttribute('data-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
   root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  try{localStorage.setItem('theorica-theme',root.dataset.theme);}catch(_){}
 });
 var tabs=document.getElementById('tabs');
+var readerTitle=document.title,routeTarget='',readerStatus=document.getElementById('reader-status');
+function motion(){return matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';}
+function routeUrl(v,item){var url=new URL(location.href),params=new URLSearchParams();params.set('v',v);if(item)params.set('item',item);url.hash=params.toString();var q=document.getElementById('finder').value.trim();if(q)url.searchParams.set('q',q);else url.searchParams.delete('q');return url;}
+function writeRoute(v,item,mode){var url=routeUrl(v,item);if(url.href!==location.href)history[mode+'State'](null,'',url);}
 tabs.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;showTab(b.dataset.v);});
-function showTab(v){renderTab(v);
-  [].forEach.call(tabs.children,function(x){x.classList.toggle('on',x.dataset.v===v)});
+function showTab(v,options){options=options||{};var section=document.getElementById('v-'+v);if(!section||!section.matches('section.view'))return false;renderTab(v);
+  [].forEach.call(tabs.children,function(x){x.classList.toggle('on',x.dataset.v===v);x.setAttribute('aria-pressed',String(x.dataset.v===v));});
   [].forEach.call(document.querySelectorAll('section.view'),function(s){s.classList.remove('on')});
-  document.getElementById('v-'+v).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+  section.classList.add('on');var target=options.item&&document.getElementById(options.item);if(target&&!section.contains(target))target=null;routeTarget=target?target.id:'';readerStatus.textContent=options.item&&!target?'未找到该条目，已打开所属栏目。':'';
+  var label=target&&target.cloneNode(true);if(label)[].forEach.call(label.querySelectorAll('button'),function(b){b.remove();});document.title=(label?cleanText(label.textContent).slice(0,100):tabName(v))+' · '+readerTitle;
+  if(options.mode!==null)writeRoute(v,routeTarget,options.mode||'push');
+  if(options.scroll!==false){if(target)target.scrollIntoView({behavior:motion(),block:'start'});else window.scrollTo({top:0,behavior:motion()});}return true;}
+function restoreRoute(){var raw=location.hash.slice(1),params=new URLSearchParams(raw),v=params.get('v'),item=params.get('item');if(raw&&!raw.includes('=')){try{raw=decodeURIComponent(raw);}catch(_){raw='invalid';}var direct=document.getElementById(raw);v=document.getElementById('v-'+raw)?raw:(direct&&owningTab(direct));item=direct&&owningTab(direct)?raw:'';}document.getElementById('finder').value=new URL(location.href).searchParams.get('q')||'';if(!showTab(v||'foundation',{item:item,mode:null,scroll:Boolean(item)})){showTab('foundation',{mode:null,scroll:false});readerStatus.textContent='未找到该栏目，已返回声音与调律。';}else if(raw&&!v&&!item)readerStatus.textContent='未找到该阅读位置，已返回声音与调律。';renderSearch(document.getElementById('finder').value);}
+addEventListener('popstate',restoreRoute);addEventListener('hashchange',restoreRoute);
 /* ---- audio: additive, piano-ish, slower ---- */
 var AC;
 function ac(){if(!AC){AC=new (window.AudioContext||window.webkitAudioContext)();}if(AC.state==='suspended')AC.resume();return AC;}
@@ -669,8 +682,8 @@ function ascMidis(base,intervals){var a=intervals.map(function(iv){return base+i
 [].forEach.call(document.querySelectorAll('.flow[data-flow]'),function(el){
   var arr=JSON.parse(el.dataset.flow);
   arr.forEach(function(it,i){
-    var n=document.createElement('div');n.className='node';n.innerHTML=it[0];
-    n.onclick=function(){var t=document.getElementById(it[1]);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});};
+    var n=document.createElement('button');n.type='button';n.className='node';n.innerHTML=it[0];
+    n.onclick=function(){var t=document.getElementById(it[1]);if(t)showTab(owningTab(t),{item:t.id});};
     el.appendChild(n);
     if(i<arr.length-1){var a=document.createElement('div');a.className='arr';a.textContent='→';el.appendChild(a);}
   });
@@ -990,15 +1003,21 @@ function initFinder(){
   buildSearch();
   var input=document.getElementById('finder');
   if(!input)return;
-  input.addEventListener('input',function(){renderSearch(input.value);});
-  document.getElementById('findchips').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;input.value=b.dataset.q;renderSearch(input.value);input.focus();});
-  document.getElementById('results').addEventListener('click',function(e){var b=e.target.closest('.hit');if(!b)return;showTab(b.dataset.tab);setTimeout(function(){var target=document.getElementById(b.dataset.goto);if(target)target.scrollIntoView({behavior:'smooth',block:'start'});},30);});
+  function queryChanged(){renderSearch(input.value);writeRoute(document.querySelector('section.view.on').id.slice(2),routeTarget,'replace');}
+  input.addEventListener('input',queryChanged);
+  document.getElementById('findchips').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;input.value=b.dataset.q;queryChanged();input.focus();});
+  document.getElementById('results').addEventListener('click',function(e){var b=e.target.closest('.hit');if(!b)return;var target=document.getElementById(b.dataset.goto),stable=target;if(stable&&/^idx-/.test(stable.id)){while(stable&&!stable.matches('h3[id]'))stable=stable.previousElementSibling;}showTab(b.dataset.tab,{item:stable?stable.id:'',scroll:false});if(target)target.scrollIntoView({behavior:motion(),block:'start'});});
   renderSearch('');
 }
 /* ---- init: only render the active tab ---- */
 [].forEach.call(document.querySelectorAll('[data-route]'),function(b){b.addEventListener('click',function(){showTab(b.dataset.route);});});
 renderTab('foundation');
 initFinder();
+async function copyCitation(item){var active=document.querySelector('section.view.on'),v=active.id.slice(2),target=item&&document.getElementById(item),label=target&&target.cloneNode(true);if(label)[].forEach.call(label.querySelectorAll('button'),function(b){b.remove();});var url=new URL(document.querySelector('link[rel="canonical"]').href),params=new URLSearchParams();params.set('v',v);if(item)params.set('item',item);url.hash=params.toString();var text='AD FONTES，Musica Theorica，'+(label?cleanText(label.textContent):tabName(v))+'。'+url.href;try{await navigator.clipboard.writeText(text);readerStatus.textContent='引用已复制。';}catch(_){readerStatus.textContent='无法自动复制，请复制以下引用：'+text;}}
+[].forEach.call(document.querySelectorAll('section.view h3[id]'),function(heading){var button=document.createElement('button');button.type='button';button.className='copy-reference';button.textContent='复制引用';button.addEventListener('click',function(){copyCitation(heading.id);});heading.appendChild(button);});
+document.getElementById('copy-citation').addEventListener('click',function(){copyCitation(routeTarget);});
+document.getElementById('print-reading').addEventListener('click',function(){window.print();});
+restoreRoute();
 })();
 </script>
 </body>

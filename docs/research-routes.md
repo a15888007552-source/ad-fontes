@@ -24,3 +24,16 @@ node --test scripts/test_europa_routes.mjs
 ```
 
 真实浏览器检查复用 `scripts/smoke_europa_routes_browser.py` 的 `run_europa_smoke(page, base_url)`；调用方拥有浏览器，不为每个地址重复启动浏览器。该函数覆盖异步数据、历史、错误、复制后新上下文打开、桌面与移动视图。测试使用公共研究数据，不涉及布索尼受保护正文。
+
+## 译读与乐理
+
+音乐哲学保留原栏目锚点，并以已有页码、章节和注释 ID 定位，例如 `modules/philosophy/#p18`、`#chapter-10`、`#note157`。乐理支持 `modules/theory/#v=notation&item=n-guido`，已有 `#n-guido` 等锚点仍有效。两者均使用 `?q=` 保留检索条件，提供引用复制和阅读打印；无效定位显示可恢复提示。
+
+Shao 的可变入口只在 `modules/shao/config.json` 中配置，本站不跨域探测远程 HTTP 服务，因此显示“状态未验证”。布索尼的公开 Finding Aid 从 `module.json` 读取修订与引用信息；现有密码解密算法和受保护文件保持不变。
+
+```sh
+python scripts/check_secondary_modules.py
+python scripts/check_secondary_modules.py --baseline <本次修改前的提交>
+```
+
+第二条检查可逐项证明原有阅读正文、链接、ID 与密码学函数未变。浏览器复用入口是 `scripts/smoke_secondary_modules.py` 的 `run_secondary_smoke(page, base_url)`；密码表单测试只使用合成成功／失败结果，不提交真实密码、不访问受保护正文。
