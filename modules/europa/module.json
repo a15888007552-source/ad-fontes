@@ -2,7 +2,7 @@
   "id": "europa",
   "number": "I",
   "title": "Annales Musicorum",
-  "latinTitle": "Annales Musicorum Europae · Annales Musicorum Sinica",
+  "latinTitle": "Annales Musicorum Europae · Annales Musicorum Sinarum",
   "subtitle": "欧罗巴 ↔ 华夏音乐家年鉴",
   "description": "两部并列的交互年鉴：欧罗巴卷以音乐家为经，华夏卷以人、曲、器、书、制五类条目为纬。设有年表、舆图、关系网与作品研究档案，可镜像翻卷。",
   "route": "modules/europa/index.html",
