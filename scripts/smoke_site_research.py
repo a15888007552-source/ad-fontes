@@ -140,7 +140,22 @@ class Evidence:
         page.on("requestfailed", request_failed)
         page.on("request", request_started)
         page.on("console", console_message)
-        page.on("load", lambda: self.inspect(page))
+        # Never re-enter synchronous DOM RPC from a load callback: the Busoni
+        # synthetic document.open/write/close test replaces that very context.
+        # Preserve navigation inspections at settled caller-owned boundaries.
+        for method in ("goto", "reload", "go_back", "go_forward"):
+            original = getattr(page, method)
+
+            def settled_navigation(*args, _original=original, _method=method, **kwargs):
+                self.report["lastNavigation"] = {"phase": self.phase, "method": _method, "url": str(args[0]) if args else page.url, "state": "starting"}
+                self.checkpoint()
+                result = _original(*args, **kwargs)
+                self.inspect(page)
+                self.report["lastNavigation"] = {"phase": self.phase, "method": _method, "url": page.url, "state": "settled"}
+                self.checkpoint()
+                return result
+
+            setattr(page, method, settled_navigation)
 
     def inspect(self, page):
         try:
@@ -192,6 +207,8 @@ class Evidence:
 
     def group(self, name, callback):
         self.phase = name
+        self.report["runningGroup"] = name
+        self.checkpoint()
         previous = len(self.report["failures"])
         try:
             details = callback()
@@ -200,12 +217,17 @@ class Evidence:
         except Exception as error:
             self.fail(f"{type(error).__name__}: {error}")
             self.report["groups"].append({"name": name, "status": "FAIL", "error": f"{type(error).__name__}: {error}"})
+        self.report.pop("runningGroup", None)
+        self.checkpoint()
+
+    def checkpoint(self):
+        path = self.output / "smoke-report.json"
+        path.write_text(json.dumps(self.report, ensure_ascii=False, indent=2), encoding="utf-8")
 
     def finish(self):
         self.report["status"] = "FAIL" if self.report["failures"] else "PASS"
         self.report["finishedAt"] = datetime.now(timezone.utc).isoformat()
-        path = self.output / "smoke-report.json"
-        path.write_text(json.dumps(self.report, ensure_ascii=False, indent=2), encoding="utf-8")
+        self.checkpoint()
         return self.report
 
 
@@ -353,11 +375,12 @@ def secondary_smoke(browser, evidence, viewport):
             if module == "busoni":
                 expect(page.locator("#pwd")).to_be_visible()
                 page.locator("#show-password").focus()
+                assert page.locator("#show-password").evaluate("node => node.matches(':focus-visible') && getComputedStyle(node).outlineStyle !== 'none'")
                 page.keyboard.press("Space")
                 assert page.locator("#pwd").get_attribute("type") == "text"
+                page.locator("#show-password").focus()
                 page.keyboard.press("Space")
                 assert page.locator("#pwd").get_attribute("type") == "password"
-                assert page.locator("#show-password").evaluate("node => node.matches(':focus-visible') && getComputedStyle(node).outlineStyle !== 'none'")
             evidence.inspect(page)
         result.append(f"Explicit {viewport['width']}px Shao/Busoni/Philosophy/Theory overflow; Busoni public form keyboard focus and visibility")
         return result
