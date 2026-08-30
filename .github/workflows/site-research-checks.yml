@@ -31,3 +31,11 @@ jobs:
         run: node --test scripts/test_europa_routes.mjs
       - name: Check remote launcher and research readers
         run: python -B scripts/check_secondary_modules.py
+      - name: Preserve proceedings source records and rendered content
+        run: |
+          node scripts/validate_proceedings_baseline.mjs
+          node scripts/extract_proceedings_data.mjs --check
+      - name: Test proceedings loading and stable routes
+        run: |
+          node scripts/test_proceedings_bootstrap.mjs
+          node --test scripts/test_proceedings_routes.mjs
