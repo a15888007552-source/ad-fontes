@@ -210,6 +210,25 @@
         "width": 1920,
         "height": 1440
       }
+    },
+    {
+      "id": "henan-museum",
+      "province": "henan",
+      "order": 3,
+      "name": "河南博物院",
+      "city": "郑州",
+      "theme": "华夏之中 · 中原文明",
+      "status": "live",
+      "archive_type": "华夏中枢档案",
+      "site_path": "modules/henan-museum/index.html",
+      "card_image": {
+        "path": "modules/henan-museum/assets/visuals/henan-museum-photo.webp",
+        "alt": "河南博物院主展馆建筑外观实景",
+        "loading": "lazy",
+        "fetchpriority": null,
+        "width": 700,
+        "height": 466
+      }
     }
   ]
 }
