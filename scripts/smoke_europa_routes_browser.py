@@ -55,7 +55,15 @@ def run_europa_smoke(page, base_url: str, *, check_mobile: bool = True, clean_co
         assert all(fragment().get(key) == value for key, value in params.items()), page.url
 
     def go(hash_value: str, kind: str, **params) -> None:
-        page.goto(europa + hash_value, wait_until="domcontentloaded")
+        target = europa + hash_value
+        # A same-path goto with a different hash may not load a new document.
+        # Direct-link/loading checks must actually fetch the research data;
+        # button-driven history checks below remain normal UI navigations.
+        if page.url.split("#", 1)[0] == europa:
+            page.evaluate("target => history.replaceState(null, '', target)", target)
+            page.reload(wait_until="domcontentloaded")
+        else:
+            page.goto(target, wait_until="domcontentloaded")
         opened(kind, **params)
 
     def no_overflow() -> None:
