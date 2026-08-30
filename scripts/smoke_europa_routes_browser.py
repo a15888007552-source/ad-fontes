@@ -135,6 +135,8 @@ def run_europa_smoke(page, base_url: str, *, check_mobile: bool = True, clean_co
         try:
             go(f"#m={PERSON_ID}", "musician", m=PERSON_ID)
             expect(page.locator(".person-work-archive")).to_have_count(0)
+            page.locator("#dx").click()
+            expect(page.locator("#dlg")).not_to_be_visible()
             page.locator("#views button[data-v='musio']").click()
             expect(page.locator("#v-musio.on")).to_be_visible()
             assert fragment().get("v") == "musio"
