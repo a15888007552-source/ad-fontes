@@ -27,3 +27,5 @@ jobs:
         run: python -B scripts/build_site_catalog.py --check
       - name: Check site entries and local resources
         run: python -B scripts/check_site.py
+      - name: Test Europa route parsing, loading and history
+        run: node --test scripts/test_europa_routes.mjs
