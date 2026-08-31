@@ -683,6 +683,37 @@
         width: 82px !important;
       }
     }
+
+    @media (max-width: 820px) {
+      #top .top-nav {
+        flex-wrap: wrap;
+        row-gap: 4px;
+      }
+
+      #top .top-nav-links {
+        flex: 1 0 100%;
+        min-width: 0;
+        gap: 16px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      #top .top-nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      #top .top-nav-links a {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        min-height: 44px;
+        white-space: nowrap;
+      }
+
+      #top .hero-museum-name {
+        top: 140px;
+      }
+    }
   </style>
   <link rel="stylesheet" href="../tomb-trails/host.css?v=20260824-layout2" />
   </head>

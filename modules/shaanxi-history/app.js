@@ -568,7 +568,10 @@
       event.preventDefault();
       searchInput.focus();
     }
-    if (event.key === "Escape") closeDialog();
+    if (event.key === "Escape" && dialog.hasAttribute("open")) {
+      event.preventDefault();
+      closeDialog({ syncUrl: true });
+    }
   });
 
   const themeToggle = document.getElementById("theme-toggle");

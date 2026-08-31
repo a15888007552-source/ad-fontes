@@ -5,7 +5,7 @@
   const catalog = Array.isArray(window.SHANGQIU_CATALOG) ? window.SHANGQIU_CATALOG : [];
   const photoByNumber = new Map(photos.map((photo) => [photo.number, photo]));
   const artifactById = new Map(catalog.map((artifact) => [artifact.id, artifact]));
-  const state = { category: "全部", query: "", zoom: 1, x: 0, y: 0, dragging: false, dragX: 0, dragY: 0 };
+  const state = { category: "全部", query: "", zoom: 1, x: 0, y: 0, dragging: false, pointerId: null, dragX: 0, dragY: 0 };
 
   const grid = document.querySelector("#catalog-grid");
   const visibleCount = document.querySelector("#visible-count");
@@ -59,7 +59,10 @@
   }
 
   function createFilters() {
-    filterRow.replaceChildren();
+    if (filterRow.childElementCount) {
+      filterRow.querySelectorAll("button").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.category === state.category)));
+      return;
+    }
     categories().forEach((category) => {
       const button = document.createElement("button");
       button.type = "button";
@@ -116,7 +119,17 @@
     emptyState.hidden = items.length > 0;
   }
 
+  function endDrag(event) {
+    if (event && event.pointerId !== state.pointerId) return;
+    const pointerId = state.pointerId;
+    state.dragging = false;
+    state.pointerId = null;
+    viewer.classList.remove("is-dragging");
+    if (pointerId !== null && viewer.hasPointerCapture(pointerId)) viewer.releasePointerCapture(pointerId);
+  }
+
   function resetZoom() {
+    endDrag();
     state.zoom = 1;
     state.x = 0;
     state.y = 0;
@@ -131,7 +144,7 @@
 
   function setZoom(nextZoom) {
     state.zoom = Math.min(6, Math.max(1, nextZoom));
-    if (state.zoom === 1) { state.x = 0; state.y = 0; }
+    if (state.zoom === 1) { endDrag(); state.x = 0; state.y = 0; }
     applyTransform();
   }
 
@@ -256,21 +269,25 @@
     setZoom(state.zoom * (event.deltaY < 0 ? 1.16 : .86));
   }, { passive: false });
   viewer.addEventListener("pointerdown", (event) => {
-    if (state.zoom <= 1) return;
+    if (state.zoom <= 1 || state.dragging || event.isPrimary === false || event.button !== 0 || event.target.closest(".viewer-controls")) return;
+    event.preventDefault();
     state.dragging = true;
+    state.pointerId = event.pointerId;
     state.dragX = event.clientX - state.x;
     state.dragY = event.clientY - state.y;
     viewer.classList.add("is-dragging");
     viewer.setPointerCapture(event.pointerId);
   });
   viewer.addEventListener("pointermove", (event) => {
-    if (!state.dragging) return;
+    if (!state.dragging || event.pointerId !== state.pointerId) return;
     state.x = event.clientX - state.dragX;
     state.y = event.clientY - state.dragY;
     applyTransform();
   });
-  viewer.addEventListener("pointerup", () => { state.dragging = false; viewer.classList.remove("is-dragging"); });
-  viewer.addEventListener("dblclick", resetZoom);
+  viewer.addEventListener("pointerup", endDrag);
+  viewer.addEventListener("pointercancel", endDrag);
+  viewer.addEventListener("lostpointercapture", endDrag);
+  viewer.addEventListener("dblclick", (event) => { if (!event.target.closest(".viewer-controls")) resetZoom(); });
   viewer.addEventListener("keydown", (event) => {
     if (event.key === "+" || event.key === "=") setZoom(state.zoom * 1.3);
     if (event.key === "-") setZoom(state.zoom / 1.3);

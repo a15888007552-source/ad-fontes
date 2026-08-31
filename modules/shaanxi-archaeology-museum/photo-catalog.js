@@ -101,17 +101,18 @@
   }
 
   function resetZoom() {
-    zoom = 1;
-    const image = dialog.querySelector(".artifact-dialog-main-image");
-    if (image) image.style.transform = "scale(1)";
-    const output = dialog.querySelector("[data-zoom-value]");
-    if (output) output.textContent = "100%";
+    setZoom(1);
   }
 
   function setZoom(next) {
     zoom = Math.min(5, Math.max(1, next));
     const image = dialog.querySelector(".artifact-dialog-main-image");
     if (image) image.style.transform = `scale(${zoom})`;
+    const stage = dialog.querySelector(".artifact-dialog-stage");
+    if (stage) {
+      stage.classList.toggle("is-zoomed", zoom > 1);
+      if (zoom === 1) stage.scrollTo(0, 0);
+    }
     const output = dialog.querySelector("[data-zoom-value]");
     if (output) output.textContent = `${Math.round(zoom * 100)}%`;
   }
@@ -189,7 +190,7 @@
       <div class="artifact-dialog-shell">
         <button class="artifact-dialog-close" type="button" data-dialog-close aria-label="关闭详情">关闭 ×</button>
         <section class="artifact-dialog-gallery" aria-label="文物照片">
-          <div class="artifact-dialog-stage">
+          <div class="artifact-dialog-stage" tabindex="0" aria-label="文物大图">
             <img class="artifact-dialog-main-image" src="${escapeHtml(mediaUrl(artifact.photos[0].web))}" alt="${escapeHtml(artifact.title)}整体" decoding="async">
           </div>
           <div class="artifact-zoom-controls" aria-label="图像缩放">
@@ -255,7 +256,7 @@
     if (event.target.closest("[data-zoom-reset]")) resetZoom();
   });
   dialog.addEventListener("wheel", (event) => {
-    if (!event.target.closest(".artifact-dialog-stage")) return;
+    if (!event.target.closest(".artifact-dialog-stage") || (!event.ctrlKey && !event.metaKey)) return;
     event.preventDefault();
     setZoom(zoom + (event.deltaY < 0 ? 0.2 : -0.2));
   }, { passive: false });
