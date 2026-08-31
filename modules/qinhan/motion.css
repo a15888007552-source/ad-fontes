@@ -73,7 +73,7 @@ body.intro-active {
   background: rgba(12, 16, 15, .96);
 }
 
-.site-header.is-hidden { transform: translateY(-110%); }
+.site-header.is-hidden:not(:focus-within) { transform: translateY(-110%); }
 
 .scroll-progress {
   position: absolute;
