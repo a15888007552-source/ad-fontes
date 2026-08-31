@@ -1,0 +1,32 @@
+{
+  "asset": "chunhua-dading.jpeg",
+  "item_id": "chunhua-dading",
+  "subject": "淳化大鼎",
+  "image_kind": "photograph",
+  "generation_method": null,
+  "source_layer": "user-provided-pdf",
+  "source_title": "195件禁止出国出境文物",
+  "pdf_physical_pages": [171, 172],
+  "printed_pages": [161, 162],
+  "image_pdf_physical_page": 171,
+  "image_printed_page": 161,
+  "extraction": "Embedded JPEG copied without image alteration",
+  "width": 1105,
+  "height": 1423,
+  "collection": "淳化县博物馆",
+  "shaanxi_history_relationship": "2020年与天久长特展展品，不据展出关系认定为陕西历史博物馆自有馆藏",
+  "fact_sources": [
+    {
+      "url": "https://wwj.baoji.gov.cn/zzzb/wbwy/202505/t20250508_1146639.html",
+      "supports": "首批禁止出境展览文物第39项；淳化县博物馆藏；通高122厘米、口径83厘米、重226千克"
+    },
+    {
+      "url": "https://www.sxhm.com/Temporary/detail/396.html",
+      "supports": "陕西历史博物馆2020年与天久长特展列有淳化大鼎"
+    }
+  ],
+  "rights_status": "unverified",
+  "rights_note": "用户提供PDF图注记述陕西地方志及公共文献来源，独立馆方高清图来源与授权仍待补；本记录不声明开放许可或公有领域身份。",
+  "reuse_boundary": "仅使用提取的现有文物照片；不据照片推断未核实铭文、精确年代或收藏权属。",
+  "recorded_on": "2026-08-31"
+}

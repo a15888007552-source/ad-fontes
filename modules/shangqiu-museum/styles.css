@@ -364,6 +364,7 @@ footer a { color: var(--bronze-light); text-underline-offset: .32em; }
   .baguanzhai { grid-template-columns: 1fr; }
   .baguanzhai-media { min-height: 540px; }
   .artifact-dialog[open] { grid-template-columns: 1fr; grid-template-rows: minmax(420px, 55vh) 1fr; overflow-y: auto; }
+  .artifact-dialog .dialog-close { position: fixed; top: max(1.85rem, calc((100vh - 820px) / 2 + .85rem)); right: 1.85rem; }
   .dialog-media { min-height: 500px; }
   .dialog-copy { overflow: visible; }
   .treasure-slide { grid-template-columns: 1fr; gap: 2.5rem; padding-block: 1rem 2rem; }
@@ -433,6 +434,7 @@ footer a { color: var(--bronze-light); text-underline-offset: .32em; }
   .burial-pair h3 { font-size: 1.65rem; }
   footer { padding-inline: 1rem; flex-direction: column; }
   .artifact-dialog { width: 100vw; height: 100vh; height: 100dvh; max-height: 100dvh; }
+  .artifact-dialog .dialog-close { top: .85rem; right: .85rem; }
   .artifact-dialog[open] { grid-template-rows: 54vh 1fr; }
   .dialog-media { min-height: 54vh; grid-template-rows: minmax(0, 1fr) 90px; }
   .filmstrip button { width: 64px; height: 64px; flex-basis: 64px; }

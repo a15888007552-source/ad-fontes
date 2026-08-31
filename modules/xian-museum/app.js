@@ -76,12 +76,13 @@
     dialogImageWrap.querySelector("[data-zoom-reset]")?.addEventListener("click", resetImageZoom);
     dialogImageWrap.addEventListener("dblclick", (event) => { if (!event.target.closest(".zoom-toolbar")) resetImageZoom(); });
     dialogImageWrap.addEventListener("pointerdown", (event) => {
-      if (event.pointerType !== "mouse" || event.button !== 0 || zoomState.scale <= 1 || event.target.closest(".zoom-toolbar")) return;
+      if (!event.isPrimary || zoomState.pointerId !== null || (event.pointerType === "mouse" && event.button !== 0) || zoomState.scale <= 1 || event.target.closest(".zoom-toolbar")) return;
+      event.preventDefault();
       zoomState.dragging = true; zoomState.pointerId = event.pointerId; zoomState.startX = event.clientX; zoomState.startY = event.clientY; zoomState.originX = zoomState.x; zoomState.originY = zoomState.y; dialogImageWrap.setPointerCapture(event.pointerId); applyImageZoom();
     });
     dialogImageWrap.addEventListener("pointermove", (event) => { if (!zoomState.dragging || event.pointerId !== zoomState.pointerId) return; zoomState.x = zoomState.originX + event.clientX - zoomState.startX; zoomState.y = zoomState.originY + event.clientY - zoomState.startY; clampZoomPan(); applyImageZoom(); });
     const endDrag = (event) => { if (event.pointerId !== zoomState.pointerId) return; zoomState.dragging = false; zoomState.pointerId = null; applyImageZoom(); };
-    dialogImageWrap.addEventListener("pointerup", endDrag); dialogImageWrap.addEventListener("pointercancel", endDrag);
+    dialogImageWrap.addEventListener("pointerup", endDrag); dialogImageWrap.addEventListener("pointercancel", endDrag); dialogImageWrap.addEventListener("lostpointercapture", endDrag);
     dialogImageWrap.addEventListener("keydown", (event) => {
       if (["+", "="].includes(event.key)) { event.preventDefault(); setImageZoom(zoomState.scale * 1.3); }
       if (event.key === "-") { event.preventDefault(); setImageZoom(zoomState.scale / 1.3); }
@@ -444,13 +445,46 @@
       return;
     }
     document.body.classList.add("opening-active");
+    const background = [...document.body.children]
+      .filter((element) => element !== opening)
+      .map((element) => ({ element, wasInert: element.inert }));
+    background.forEach(({ element }) => { element.inert = true; });
+    const focusable = [
+      document.getElementById("opening-enter"),
+      document.getElementById("opening-skip"),
+    ].filter(Boolean);
+    let closing = false;
     const close = () => {
+      if (closing) return;
+      closing = true;
       opening.classList.add("is-leaving");
       document.body.classList.remove("opening-active");
-      window.setTimeout(() => opening.remove(), reduceMotion ? 0 : 720);
+      window.setTimeout(() => {
+        opening.remove();
+        background.forEach(({ element, wasInert }) => { element.inert = wasInert; });
+        document.querySelector(".brand")?.focus({ preventScroll: true });
+      }, reduceMotion ? 0 : 720);
     };
+    opening.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "Tab" || focusable.length < 2) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
     document.getElementById("opening-enter")?.addEventListener("click", close);
     document.getElementById("opening-skip")?.addEventListener("click", close);
+    focusable[0]?.focus({ preventScroll: true });
     if (!reduceMotion) window.setTimeout(() => opening.classList.add("is-ready"), 120);
     else opening.classList.add("is-ready");
   }

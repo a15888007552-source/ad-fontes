@@ -77,7 +77,8 @@
     return `${resolved}${resolved.includes("?") ? "&" : "?"}rev=${IMAGE_REV}`;
   };
   const cssUrl = (value) => encodeURI(String(shaanxiHistoryMediaUrl(value) || "")).replace(/['()]/g, (character) => `%${character.charCodeAt(0).toString(16)}`);
-  const cardCoverFor = (item) => assetFor(`assets/card-covers/${String(item.id).replace(/[^A-Za-z0-9_-]+/g, "-")}.webp`);
+  const cardCoverFor = (item) => item.localMedia ? new URL(item.localMedia, document.baseURI).href : assetFor(`assets/card-covers/${String(item.id).replace(/[^A-Za-z0-9_-]+/g, "-")}.webp`);
+  const photoSourceFor = (photo) => photo?.localMedia ? new URL(photo.localMedia, document.baseURI).href : assetFor(photo?.focus || photo?.src);
   const hasTag = (item, tag) => Array.isArray(item.tags) && item.tags.includes(tag);
 
   function applyImageZoom() {
@@ -130,7 +131,8 @@
     dialogImageWrap.querySelector("[data-zoom-reset]")?.addEventListener("click", resetImageZoom);
     dialogImageWrap.addEventListener("dblclick", (event) => { if (!event.target.closest(".zoom-toolbar")) resetImageZoom(); });
     dialogImageWrap.addEventListener("pointerdown", (event) => {
-      if (event.pointerType !== "mouse" || event.button !== 0 || zoomState.scale <= 1 || event.target.closest(".zoom-toolbar")) return;
+      if (zoomState.dragging || event.isPrimary === false || event.button !== 0 || zoomState.scale <= 1 || event.target.closest(".zoom-toolbar")) return;
+      event.preventDefault();
       zoomState.dragging = true; zoomState.pointerId = event.pointerId; zoomState.startX = event.clientX; zoomState.startY = event.clientY; zoomState.originX = zoomState.x; zoomState.originY = zoomState.y;
       dialogImageWrap.setPointerCapture(event.pointerId); applyImageZoom();
     });
@@ -139,7 +141,7 @@
       zoomState.x = zoomState.originX + event.clientX - zoomState.startX; zoomState.y = zoomState.originY + event.clientY - zoomState.startY; clampZoomPan(); applyImageZoom();
     });
     const endDrag = (event) => { if (event.pointerId !== zoomState.pointerId) return; zoomState.dragging = false; zoomState.pointerId = null; applyImageZoom(); };
-    dialogImageWrap.addEventListener("pointerup", endDrag); dialogImageWrap.addEventListener("pointercancel", endDrag);
+    dialogImageWrap.addEventListener("pointerup", endDrag); dialogImageWrap.addEventListener("pointercancel", endDrag); dialogImageWrap.addEventListener("lostpointercapture", endDrag);
     dialogImageWrap.addEventListener("keydown", (event) => {
       if (["+", "="].includes(event.key)) { event.preventDefault(); setImageZoom(zoomState.scale * 1.3); }
       if (event.key === "-") { event.preventDefault(); setImageZoom(zoomState.scale / 1.3); }
@@ -374,19 +376,20 @@
 
   function setDialogImage(photo, index, total) {
     resetImageZoom();
-    const source = assetFor(photo?.focus || photo?.src);
+    const source = photoSourceFor(photo);
     dialogImage.src = source;
     dialogImage.alt = photo?.label || "文物器物图";
     const imageWrap = dialogImage.closest(".dialog-image-wrap");
     if (source) imageWrap?.style.setProperty("--dialog-bg", `url(${cssUrl(source)})`);
     else imageWrap?.style.removeProperty("--dialog-bg");
-    const frame = photo?.number ? `DSC_${photo.number}` : "补入资料图";
+    const frame = photo?.viewLabel || (photo?.number ? `DSC_${photo.number}` : "补入资料图");
     document.getElementById("dialog-sequence").textContent = `${frame} · ${index + 1} / ${Math.max(total, 1)}`;
   }
 
   function openItem(id, { syncUrl = false, focusClose = true, rememberFocus = true } = {}) {
     const item = itemById.get(String(id));
     if (!item) return false;
+    dialog.dataset.itemId = item.id;
     if (rememberFocus) lastFocusedElement = document.activeElement;
     const photos = Array.isArray(item.photos) ? item.photos.filter((photo) => photo && (photo.focus || photo.src)) : [];
     const title = document.getElementById("dialog-title");
@@ -410,7 +413,7 @@
 
     if (photos.length) {
       setDialogImage(photos[0], 0, photos.length);
-      galleryStrip.innerHTML = photos.map((photo, index) => `<button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-photo-index="${index}" aria-label="查看第 ${index + 1} 张器物图"><img src="${escapeHtml(assetFor(photo.focus || photo.src || ""))}" alt="${escapeHtml(item.title)} · 第 ${index + 1} 张器物图" loading="lazy" decoding="async"></button>`).join("");
+      galleryStrip.innerHTML = photos.map((photo, index) => `<button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-photo-index="${index}" aria-label="查看第 ${index + 1} 张器物图"><img src="${escapeHtml(photoSourceFor(photo))}" alt="${escapeHtml(item.title)} · 第 ${index + 1} 张器物图" loading="lazy" decoding="async"></button>`).join("");
       galleryStrip.querySelectorAll("[data-photo-index]").forEach((button) => {
         button.addEventListener("click", () => {
           const index = Number(button.dataset.photoIndex);

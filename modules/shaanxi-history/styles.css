@@ -189,11 +189,12 @@ h2, h3 { font-weight: 500; }
 .treasures-intro p { margin: 0; color: rgba(246,234,214,.72); font-size: 13px; line-height: 1.95; }
 .treasures-all { min-height: 44px; padding: 0 0 4px; border: 0; border-bottom: 1px solid rgba(215,173,97,.72); color: #e3bd79; background: none; cursor: pointer; font: 700 10px/1.3 var(--sans); white-space: nowrap; }
 .treasures-all:hover, .treasures-all:focus-visible { color: #fff1d3; border-color: #fff1d3; outline: 0; }
-.treasure-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid rgba(239,214,169,.25); border-left: 1px solid rgba(239,214,169,.25); }
+.treasure-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid rgba(239,214,169,.25); border-left: 1px solid rgba(239,214,169,.25); }
 .treasure-card { min-width: 0; display: grid; grid-template-rows: clamp(210px,18vw,310px) 1fr; padding: 0; border: 0; border-right: 1px solid rgba(239,214,169,.25); border-bottom: 1px solid rgba(239,214,169,.25); color: inherit; background: rgba(255,248,234,.035); text-align: left; cursor: pointer; }
 .treasure-image { position: relative; display: block; overflow: hidden; background: #0b0908; }
 .treasure-image::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent,rgba(8,7,6,.82)); }
 .treasure-image img { width: 100%; height: 100%; display: block; object-fit: cover; filter: saturate(.9) contrast(1.04); transition: transform .45s cubic-bezier(.22,.8,.25,1), filter .3s ease; }
+.treasure-card[data-item-id="chunhua-dading"] .treasure-image img { object-fit: contain; }
 .treasure-image b { position: absolute; z-index: 2; top: 14px; left: 14px; padding: 6px 7px; color: #f3d9a9; background: rgba(8,7,6,.72); font: 700 9px/1 var(--mono); }
 .treasure-copy { min-width: 0; display: flex; flex-direction: column; padding: 20px 20px 18px; }
 .treasure-meta { color: #c99645; font: 700 9px/1.4 var(--sans); letter-spacing: .08em; }
@@ -312,7 +313,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .dialog-image-wrap::before { content: ""; position: absolute; z-index: 0; inset: -12%; background-image: var(--dialog-bg, none); background-position: center; background-size: cover; filter: blur(25px) brightness(.42) saturate(.74); opacity: .78; transform: scale(1.12); }
 .dialog-image-wrap::after { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 46%, transparent 36%, rgba(7, 6, 5, .2) 100%); }
 .dialog-image-wrap img { position: relative; z-index: 2; width: 100%; height: 100%; display: block; object-fit: contain; filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .2)); transform: translate3d(var(--zoom-x,0px),var(--zoom-y,0px),0) scale(var(--zoom-scale,1)); transform-origin: center; transition: transform .12s ease-out; user-select: none; -webkit-user-drag: none; }
-.dialog-image-wrap.is-zoomed { cursor: grab; }
+.dialog-image-wrap.is-zoomed { cursor: grab; touch-action: none; }
 .dialog-image-wrap.is-dragging { cursor: grabbing; }
 .dialog-image-wrap.is-dragging img { transition: none; }
 .dialog-image-wrap:focus-visible { outline: 2px solid var(--gold); outline-offset: -3px; }
@@ -384,14 +385,16 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 
 @media (max-width: 1040px) {
   :root { --page: min(100% - 36px, 920px); }
-  .top-nav { display: none; }
+  .topbar { flex-wrap: wrap; gap: 8px 12px; }
+  .top-nav { order: 1; flex: 1 0 100%; min-width: 0; margin-left: 0; gap: 20px; overflow-x: auto; }
+  .top-nav a { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 36px; white-space: nowrap; }
   .official-link { margin-left: auto; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-stats { justify-self: start; }
   .museum, .special, .method, .collection-head { grid-template-columns: 118px minmax(0, 1fr); gap: 26px; }
   .treasures-head { grid-template-columns: 118px minmax(220px,.7fr) minmax(360px,1.3fr); gap: 26px; }
-  .treasure-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .treasure-card { grid-template-rows: 300px 1fr; }
+  .treasure-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .treasure-card { grid-template-rows: 210px 1fr; }
   .object-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 10px; }
   .object-card { grid-template-rows: auto minmax(190px, 1fr); }
   .special-copy { grid-template-columns: 1fr; gap: 22px; }
@@ -420,7 +423,9 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   .treasures-intro { grid-template-columns: 1fr; gap: 14px; }
   .treasures-all { justify-self: start; }
   .treasure-grid { grid-template-columns: 1fr; }
-  .treasure-card { grid-template-rows: 300px auto; }
+  .treasure-card { grid-template-columns: minmax(112px,.9fr) minmax(0,1.3fr); grid-template-rows: 1fr; }
+  .treasure-copy { padding: 16px 14px; }
+  .treasure-copy i { padding-top: 14px; }
   .section-label { min-width: 0; }
   .section-title-row { align-items: start; flex-direction: column; margin-bottom: 24px; }
   .section-title-row h2, .collection-head h2, .special h2 { font-size: 27px; }
@@ -448,6 +453,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   .dialog-media { padding: 8px; }
   .dialog-content { padding: 34px 18px 28px; }
   .dialog-close { top: 7px; right: 7px; }
+  .zoom-toolbar { right: auto; left: 10px; }
   .dialog-content h2 { --dialog-title-size: 25px; }
 }
 
@@ -694,6 +700,8 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
   color: var(--gold);
   content: "/ TANG COURT COLLECTION";
 }
+.object-dialog[data-item-id="chunhua-dading"] .dialog-content::before { content: "OBJECT RECORD / WESTERN ZHOU"; }
+.object-dialog[data-item-id="chunhua-dading"] .dialog-kicker::after { content: "/ CHUNHUA COUNTY MUSEUM"; }
 .object-dialog .dialog-content h2 {
   max-width: 14ch;
   color: var(--ink);

@@ -1,6 +1,6 @@
 window.SHAANXI_DATA = {
   "stats": {
-    "photos": 499,
+    "photos": 500,
     "sourcePhotos": 850,
     "sections": 4
   },
@@ -17493,6 +17493,70 @@ window.SHAANXI_DATA = {
         },
         {
           "label": "《195件禁止出国出境文物》整理资料（用户提供 PDF）",
+          "url": null
+        }
+      ]
+    },
+    {
+      "id": "chunhua-dading",
+      "sequence": 1005,
+      "sequenceOrder": 1005,
+      "displayNumber": "297",
+      "title": "淳化大鼎",
+      "period": "西周",
+      "material": "青铜",
+      "type": "青铜器",
+      "category": "青铜器",
+      "findspot": "陕西省淳化县史家塬",
+      "dimensions": "通高约122厘米，口径约83厘米，腹深约54厘米，重约226千克",
+      "origin": "淳化县博物馆藏；2020年在陕西历史博物馆展出",
+      "photoRange": "淳化大鼎全器图",
+      "cover": "assets/supplement/chunhua-dading.jpeg",
+      "localMedia": "assets/supplement/chunhua-dading.jpeg",
+      "photos": [
+        {
+          "src": "assets/supplement/chunhua-dading.jpeg",
+          "localMedia": "assets/supplement/chunhua-dading.jpeg",
+          "viewLabel": "全器",
+          "label": "淳化大鼎，淳化县博物馆藏"
+        }
+      ],
+      "tags": [
+        "forbidden"
+      ],
+      "tagsText": "forbidden",
+      "summary": "大型西周青铜礼器，双耳、深腹与三足构成完整器形。现藏淳化县博物馆，曾在陕西历史博物馆展出。",
+      "cardLead": "1979年淳化县史家塬发现的大型西周青铜鼎，列入首批禁止出境展览文物目录。现藏淳化县博物馆。",
+      "essay": [
+        {
+          "heading": "历史",
+          "text": "淳化大鼎于1979年12月在陕西淳化县史家塬发现，现藏淳化县博物馆。2020年曾在陕西历史博物馆“与天久长”特展展出。"
+        },
+        {
+          "heading": "形制与工艺",
+          "text": "青铜铸造，双耳立于口沿，深腹下承三足。通高约122厘米，口径约83厘米，腹深约54厘米，重约226千克。器耳、腹部与足部之间的衔接，以及口沿下方和足部的纹饰，可结合全器比例一并观察。"
+        },
+        {
+          "heading": "地位与价值",
+          "text": "淳化大鼎列入2002年首批禁止出境展览文物目录。作为大型西周青铜礼器，它为研究青铜铸造与关中地区的礼器制度提供了实物材料；器物体量之外，铸造结构与出土环境同样是理解其历史价值的重要线索。"
+        },
+        {
+          "heading": "观看指引",
+          "text": "先看双耳、器腹与三足的整体比例，再看器腹与足部交接的位置。口沿下方的带状纹饰与足部纹样分处不同区域，可沿器形转折逐处辨认。"
+        }
+      ],
+      "evidence": "收藏单位、首批目录身份及通高、口径、重量据宝鸡市文物局公布的淳化大鼎资料。陕西历史博物馆2020年“与天久长”特展页面列有此器。发现时间与腹深据《195件禁止出国出境文物》淳化大鼎条目核对，尺寸采用约数。",
+      "sources": [
+        {
+          "label": "宝鸡市文物局：淳化大鼎（首批禁止出境展览文物，第39项）",
+          "url": "https://wwj.baoji.gov.cn/zzzb/wbwy/202505/t20250508_1146639.html"
+        },
+        {
+          "label": "陕西历史博物馆：与天久长——周秦汉唐文化与艺术特展（2020年）",
+          "url": "https://www.sxhm.com/Temporary/detail/396.html"
+        },
+        {
+          "label": "《195件禁止出国出境文物》淳化大鼎条目，印刷页161—162（PDF第171—172页）",
           "url": null
         }
       ]

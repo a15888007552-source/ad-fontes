@@ -268,8 +268,11 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 1120px) {
-  .site-header { grid-template-columns: 1fr auto; }
-  .site-header nav { display: none; }
+  .site-header { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 66px auto; height: auto; }
+  body .site-header.is-scrolled { grid-template-rows: 56px auto; height: auto; }
+  .site-header nav { grid-column: 1 / -1; grid-row: 2; display: flex; min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; border-top: 1px solid rgba(255, 255, 255, .14); border-left: 0; scrollbar-width: none; }
+  .site-header nav::-webkit-scrollbar { display: none; }
+  .site-header nav a { flex: 1 0 auto; min-height: 44px; white-space: nowrap; }
   .museum-heading h2 { grid-column: 1 / 10; font-size: clamp(3rem, 6vw, 4.4rem); }
   .museum-heading .section-deck { grid-column: 10 / -1; }
   .museum-prose { grid-column: 1 / 7; }
@@ -282,7 +285,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 820px) {
   :root { --page-pad: 1rem; }
-  .site-header { height: 62px; }
+  .site-header { grid-template-rows: 62px auto; height: auto; }
   .wordmark { padding: 0 1rem; }
   .header-meta span { display: none; }
   .header-meta { padding: 0 1rem; }
@@ -348,6 +351,8 @@ img { display: block; max-width: 100%; }
   .footer { grid-template-columns: 1fr; gap: .75rem; }
   .archive-dialog { grid-template-columns: 1fr; width: calc(100vw - 1rem); height: calc(100dvh - 1rem); overflow-y: auto; }
   .archive-dialog[open] { display: block; }
+  .archive-dialog[open].is-ready:not(.is-closing) { transform: none; }
+  .archive-dialog .dialog-close { position: fixed; top: 1.3rem; right: 1.3rem; }
   .dialog-media { height: auto; }
   .dialog-main-image { height: 54svh; }
   .dialog-content { padding: 2.6rem 1rem 2rem; overflow: visible; }
