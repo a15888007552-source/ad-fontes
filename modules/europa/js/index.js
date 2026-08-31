@@ -959,14 +959,13 @@ function renderAlm(){
   <div class="debates">${deb.map((d,i)=>`<details class="debate"><summary><span class="debate-kicker">观点 ${String(i+1).padStart(2,"0")}</span><h4>${d.t}</h4><p class="debate-summary">${debateSummary(d.b)}</p><span class="debate-more">展开论据与参考文献</span></summary><div class="debate-body"><p>${d.b}</p><span class="ref">${d.ref||""}</span></div></details>`).join("")}</div>`:""}
   <h3 class="rub">MUSICI · 音乐家名录（${ms.length}人 · 按生年为序 · 点击开传）</h3>
   <div class="grid">${ms.map(m=>`
-    <article class="card" data-m="${m.i}" aria-label="${m.n}">
+    <article class="card" data-m="${m.i}" tabindex="0" role="button" aria-label="${m.n}">
       ${m.b?'<span class="badge">◈ 重点</span>':""}${pic(m,172)}
-      <div class="cbody"><h4><button class="person-card-open" type="button" aria-label="打开${m.n}的人物详情">${m.n}</button></h4><div class="orig">${m.o}</div><div class="dts">${m.d}</div>
+      <div class="cbody"><h4>${m.n}</h4><div class="orig">${m.o}</div><div class="dts">${m.d}</div>
       <p>${(m.k||"").split("；")[0].split("：")[0]}</p>
       ${m.norton?`<span class="nortonmark">Norton note</span><span class="nortonbrief">${m.norton.split("；")[0].slice(0,82)}${m.norton.length>82?"…":""}</span>`:""}
-      <span class="sch">${m.s}</span>${listening.markup(m)}</div>
+      <span class="sch">${m.s}</span></div>
     </article>`).join("")}</div>`;
-  listening.mount($("#v-alm"));
   observe();syncSelection();queueChronograph();
 }
 
@@ -1823,10 +1822,8 @@ $("#epnav").addEventListener("click",e=>{
   const b=e.target.closest("button");if(!b)return;
   curEp=b.dataset.ep;$("#app").dataset.ep=curEp;renderEpnav();renderAlm();window.scrollTo({top:0});
 });
-document.addEventListener("click",e=>{
-  if(e.target.closest(".person-listening"))return;
-  const c=e.target.closest(".card[data-m]");if(c)openM(c.dataset.m,"年鉴名录");
-});
+document.addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openM(c.dataset.m,"年鉴名录")});
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.closest){const c=e.target.closest(".card");if(c)openM(c.dataset.m,"年鉴名录")}});
 ["#mapchips","#netchips","#linchips","#histchips","#glchips","#mapstate","#mtloff","#mplay"].forEach(selector=>{
   $(selector)?.addEventListener("click",e=>{if(e.target.closest("button"))listening.stop()});
 });
