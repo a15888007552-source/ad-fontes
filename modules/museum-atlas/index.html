@@ -2976,10 +2976,9 @@
         moveIndicator(activeTab);
 
         window.clearTimeout(motion.panelTimer);
+        if (stage) stage.style.height = "";
 
         if (shouldAnimate && stage) {
-          const currentHeight = stage.getBoundingClientRect().height;
-          stage.style.height = `${currentHeight}px`;
           panels.forEach((panel) => {
             panel.hidden = panel !== nextPanel;
             panel.classList.remove("is-entering");
@@ -2987,12 +2986,7 @@
           nextPanel.querySelectorAll(".reveal-on-scroll").forEach((item) => item.classList.remove("is-visible"));
           void nextPanel.offsetWidth;
           nextPanel.classList.add("is-entering");
-          const nextHeight = stage.getBoundingClientRect().height;
-          window.requestAnimationFrame(() => {
-            stage.style.height = `${nextHeight}px`;
-          });
           motion.panelTimer = window.setTimeout(() => {
-            stage.style.height = "";
             nextPanel.classList.remove("is-entering");
           }, 700);
           revealPanelContent(nextPanel, true);
@@ -3454,6 +3448,111 @@
   }
 </style>
 
+<style id="atlas-current-frontend-refinement">
+  /* Layout refinement on the current registry-backed atlas. */
+  :root { --display-tracking: -.025em; }
+  html[data-active-province="henan"] { --muted: #506b79; }
+  html[data-active-province="henan"] body {
+    background-color: #eaf3f5;
+    background-image: linear-gradient(135deg, rgba(234, 243, 245, .97), rgba(226, 238, 241, .97)), url("assets/henan-hero.webp");
+    background-blend-mode: normal, soft-light;
+  }
+  .skip-link { z-index: 100; }
+  .site-header { position: relative; }
+  .header-main { min-height: 88px; align-items: center; gap: 28px; padding: 14px 0; }
+  .brand-copy h1 { font-size: clamp(23px, 2.2vw, 30px); letter-spacing: -.02em; }
+  .brand-copy .micro-label { font-size: 9px; letter-spacing: .14em; }
+  .latin-label, .header-subline { display: none; }
+  .header-stats { margin-top: 7px; font-size: 11px; }
+  .site-nav { gap: 18px; }
+  .nav-item {
+    min-height: 44px; padding: 4px 2px; border: 0;
+    border-bottom: 1px solid transparent; background: transparent;
+  }
+  .nav-item:hover, .nav-item:focus-visible, .nav-item[aria-current="page"] {
+    background: transparent; border-color: var(--accent); color: var(--ink);
+  }
+  .cover { padding: 28px 0; gap: 48px; }
+  .cover-copy .section-kicker { margin-bottom: 10px; }
+  .cover-title { font-size: clamp(44px, 4.2vw, 58px); line-height: 1.08; }
+  .cover-lede { max-width: 36em; margin-top: 14px; font-size: 15px; line-height: 1.75; }
+  .cover-stamp, .cover-stamp img { min-height: 128px; height: 128px; box-shadow: none; }
+  .cover-stamp:hover { box-shadow: none; }
+  .cover-stamp::before { content: none; }
+  .province-rail { position: sticky; top: 0; z-index: 20; background: var(--page); }
+  .province-tab {
+    min-height: 54px; flex-direction: row; align-items: center;
+    justify-content: flex-start; gap: 16px; padding: 8px 22px; border: 0;
+  }
+  .province-tab:first-child { border: 0; }
+  .province-tab:hover, .province-tab:focus-visible, .province-tab[aria-selected="true"] {
+    background: transparent;
+  }
+  .province-tab strong { font-size: 18px; letter-spacing: -.015em; }
+  .province-tab[aria-selected="true"] strong { color: var(--accent); font-weight: 600; }
+  .province-indicator { height: 2px; }
+  .chapter-panels { overflow: visible; padding: 24px 0 64px; transition: none; }
+  .chapter-hero { aspect-ratio: auto; height: 280px; min-height: 280px; box-shadow: none; }
+  .chapter-hero-copy { top: auto; bottom: 28px; left: 32px; }
+  .chapter-hero-copy .chapter-kicker { margin-bottom: 12px; }
+  .chapter-hero-copy h2 { font-size: clamp(42px, 4.4vw, 62px); letter-spacing: -.025em; line-height: 1.04; }
+  .chapter-hero-copy h2 em { color: #f0bf83; }
+  .chapter-hero-copy p:last-child { margin-top: 12px; }
+  .chapter-brief { grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; padding: 12px 0; }
+  .brief-copy { font-size: 14px; line-height: 1.7; }
+  .brief-meta { display: flex; gap: 24px; }
+  .brief-meta div { display: flex; align-items: baseline; gap: 8px; padding: 0; border: 0; }
+  .brief-meta dd { margin: 0; font-size: 13px; }
+  .chapter-content { padding-top: 22px; }
+  .province-panel .museum-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+  .museum-card { grid-template-columns: 104px minmax(0, 1fr); min-height: 142px; }
+  .museum-card::after { content: none; }
+  .museum-card--link:hover, .museum-card--link:focus-visible {
+    box-shadow: none; transform: none; background: var(--surface);
+  }
+  .museum-card--link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .museum-card:hover .card-media img { filter: var(--image-filter); transform: none; }
+  .museum-card--link:hover .card-media img, .museum-card--link:focus-within .card-media img { transform: scale(1.025); }
+  .museum-card-body { padding: 14px 16px; }
+  .museum-card h4 { font-size: 18px; letter-spacing: -.015em; line-height: 1.45; white-space: normal; }
+  .museum-card p { font-size: 12.5px; }
+  .museum-card--link:hover .card-arrow, .museum-card--link:focus-visible .card-arrow { transform: translateX(3px); }
+  html[data-active-province="beijing"] .museum-card { box-shadow: none; }
+  html[data-active-province="beijing"] .site-header,
+  html[data-active-province="beijing"] .province-rail { background: #55141a; }
+  html[data-active-province="beijing"] .site-header .atlas-search-trigger { color: #fff4e6; }
+  html[data-active-province="beijing"] .cover-copy { padding: 0 0 0 24px; background: transparent; box-shadow: none; }
+  html[data-active-province="beijing"] .chapter-brief { background: transparent; }
+  html[data-active-province="beijing"] .chapter-content { padding: 22px 0 0; background: transparent; }
+  html[data-active-province="beijing"] .province-tab[aria-selected="true"] { background: transparent; }
+  html[data-active-province="beijing"] .province-tab[aria-selected="true"] strong { color: #f1c990; }
+  html[data-active-province="beijing"] .province-indicator { background: #f1c990; }
+  html[data-active-province="beijing"] .nav-item:hover,
+  html[data-active-province="beijing"] .nav-item:focus-visible { color: #fff4e6; background: transparent; }
+  @media (max-width: 760px) {
+    .header-main { gap: 12px; padding: 12px 0; }
+    .site-nav { gap: 14px; }
+    .cover { padding: 24px 0 20px; }
+    .cover-copy .section-kicker, .cover-side { display: none; }
+    .cover-title { font-size: clamp(36px, 10.3vw, 42px); }
+    .cover-lede { margin-top: 12px; font-size: 14px; }
+    .province-rail-inner { width: 100%; overflow: visible; }
+    .province-tab { min-width: 0; min-height: 48px; padding: 8px 16px; }
+    .province-tab small { display: none; }
+    .chapter-panels { padding: 20px 0 46px; }
+    .chapter-hero { height: 216px; min-height: 216px; }
+    .chapter-hero-copy { top: auto; bottom: 30px; left: 20px; right: 20px; }
+    .chapter-hero-copy .chapter-kicker { margin-bottom: 10px; }
+    .chapter-hero-copy h2 { font-size: clamp(36px, 10.3vw, 42px); }
+    .chapter-hero-copy p:last-child { margin-top: 10px; }
+    .chapter-brief { grid-template-columns: 1fr; padding: 12px 0; }
+    .brief-copy { display: none; }
+    .brief-meta { justify-content: space-between; gap: 12px; margin: 0; }
+    .chapter-content { padding-top: 20px; }
+    .museum-card { grid-template-columns: 94px minmax(0, 1fr); min-height: 132px; }
+    html[data-active-province="beijing"] .cover-copy { padding-left: 18px; }
+  }
+</style>
 <script src="../../shared/js/polish.js" defer></script>
 </body>
 </html>
