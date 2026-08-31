@@ -184,7 +184,12 @@ h3.rub::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(
 
 /* ── 音乐家卡片 ───────────────────────── */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:14px;margin-top:16px}
-#v-alm > .grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));align-items:start}
+#v-alm > .grid{grid-template-columns:repeat(auto-fill,minmax(350px,1fr));align-items:stretch}
+#v-alm > .grid > .card{height:760px;display:flex;flex-direction:column;contain-intrinsic-size:auto 760px}
+#v-alm > .grid > .card > .pic{flex:0 0 172px}
+#v-alm > .grid > .card > .cbody{display:flex;flex-direction:column;flex:1;min-height:0}
+#v-alm > .grid > .card > .cbody > :not(.person-listening){flex-shrink:0}
+#v-alm > .grid > .card .person-listening{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable}
 @media(max-width:720px){#v-alm > .grid{grid-template-columns:minmax(0,1fr)}}
 .card{background:var(--panel);border:1px solid var(--line);cursor:pointer;position:relative;transition:border-color .2s;overflow:hidden;contain:paint}
 .card::after{content:"";position:absolute;z-index:3;inset:-15% auto -15% -54%;width:34%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(246,239,220,.13),transparent);transform:translate3d(-160%,0,0) skewX(-16deg);transition:transform 560ms var(--ease-out)}
