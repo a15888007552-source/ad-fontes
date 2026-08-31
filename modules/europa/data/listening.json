@@ -1,0 +1,3328 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-08-31",
+  "selection": {
+    "basis": "沿用人物卡片的重点标记，重点三部、其余一部；选段均注明具体乐章或曲目。",
+    "coreComposerIds": [
+      "mach",
+      "josq",
+      "mont",
+      "vinc",
+      "bach",
+      "hayd",
+      "moza",
+      "beet",
+      "schb",
+      "chop",
+      "lisz",
+      "wagn",
+      "verd",
+      "brah",
+      "mahl",
+      "debu",
+      "scho",
+      "stra",
+      "bart",
+      "gers",
+      "fost",
+      "sous",
+      "ives",
+      "elli",
+      "copl",
+      "rile",
+      "buso",
+      "shos"
+    ]
+  },
+  "editorialSources": [
+    {
+      "personId": "ives",
+      "note": "Concord为康科德地名，修正原有代表作题名。",
+      "url": "https://charlesives.org/node/6616"
+    },
+    {
+      "personId": "mont",
+      "note": "Pur ti miro的具体作者归属存在争议。",
+      "url": "https://sscm-jscm.org/v16/no1/br_wilbourne.html"
+    },
+    {
+      "personId": "mont",
+      "note": "Ledger指挥的晚祷录音演出团体据参演者唱片目录更正。",
+      "url": "https://www.charlesbrett.com/discography"
+    },
+    {
+      "personId": "rile",
+      "note": "不将唱片发行年写作录音年。",
+      "url": "https://www.redbullmusicacademy.com/lectures/terry-riley/"
+    }
+  ],
+  "people": {
+    "pyth": {
+      "status": "not-applicable",
+      "note": "音乐学说见于后世文献，没有可靠的本人乐谱传世。",
+      "tracks": []
+    },
+    "terp": {
+      "status": "not-applicable",
+      "note": "古代文献记载其琴歌活动，原有旋律没有传世。",
+      "tracks": []
+    },
+    "pind": {
+      "status": "not-applicable",
+      "note": "凯歌文本传世，原有旋律与舞蹈并未同时保存。",
+      "tracks": []
+    },
+    "arix": {
+      "status": "not-applicable",
+      "note": "主要传世著作为乐理论述，没有可确认的本人乐曲。",
+      "tracks": []
+    },
+    "boet": {
+      "status": "not-applicable",
+      "note": "《音乐原理》属于理论著作，后世对其诗歌的谱曲不属本人作曲。",
+      "tracks": []
+    },
+    "greg": {
+      "status": "not-applicable",
+      "note": "格里高利圣咏是托名于他的礼仪曲库，不能直接归为本人创作。",
+      "tracks": []
+    },
+    "sapp": {
+      "status": "not-applicable",
+      "note": "诗歌文本及残篇传世，原有旋律并未随之保存。",
+      "tracks": []
+    },
+    "guid": {
+      "status": "not-applicable",
+      "note": "唱名法与记谱教学是其主要贡献，相关教学旋律的作曲归属不能据此确定。",
+      "tracks": []
+    },
+    "meta": {
+      "status": "not-applicable",
+      "note": "以歌剧脚本创作著称；脚本的音乐由不同作曲家谱写。",
+      "tracks": []
+    },
+    "mach": {
+      "tracks": [
+        {
+          "personId": "mach",
+          "title": "Messe de Nostre Dame",
+          "subtitle": "Kyrie · 平台试听",
+          "performer": "The Hilliard Ensemble",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6s8d6zsT4MYHZXDq3TEfVT",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6s8d6zsT4MYHZXDq3TEfVT"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mach-representative-1"
+        },
+        {
+          "personId": "mach",
+          "title": "Douce dame jolie",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Chanticleer; Tim Keeler",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7vkOc0jY2f0zdm1xSA3k29",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7vkOc0jY2f0zdm1xSA3k29"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mach-representative-2"
+        },
+        {
+          "personId": "mach",
+          "title": "Ma fin est mon commencement",
+          "subtitle": "Rondeau 14；全曲 · 平台试听",
+          "performer": "Obsidienne; Emmanuel Bonnardot",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1jm3zYNxpuC9EGsg0WLy0h",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1jm3zYNxpuC9EGsg0WLy0h"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mach-representative-3"
+        }
+      ]
+    },
+    "josq": {
+      "tracks": [
+        {
+          "personId": "josq",
+          "title": "Ave Maria … virgo serena",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "The Tallis Scholars; Peter Phillips",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2jf1Q0awbkWzDj17InuNRU",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2jf1Q0awbkWzDj17InuNRU"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "josq-representative-1"
+        },
+        {
+          "personId": "josq",
+          "title": "Miserere mei, Deus",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "La Chapelle Royale; Philippe Herreweghe",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4VAqV1NxD9QFb4BiOYWYIo",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4VAqV1NxD9QFb4BiOYWYIo"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "josq-representative-2"
+        },
+        {
+          "personId": "josq",
+          "title": "Missa L’homme armé super voces musicales",
+          "subtitle": "Kyrie · 平台试听",
+          "performer": "Pro Cantione Antiqua; Bruno Turner",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6W9me4frsdvJcnxK8pidmQ",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6W9me4frsdvJcnxK8pidmQ?utm_source=oembed"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "josq-representative-3",
+          "checkedAt": "2026-08-31"
+        }
+      ]
+    },
+    "mont": {
+      "tracks": [
+        {
+          "personId": "mont",
+          "title": "L'Orfeo, SV 318",
+          "subtitle": "Prologue: Toccata · 平台试听",
+          "performer": "Emmanuelle Haïm; Le Concert d'Astrée",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5mYHphU32rAs0L6tREA7sx",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5mYHphU32rAs0L6tREA7sx"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mont-representative-1"
+        },
+        {
+          "personId": "mont",
+          "title": "Vespro della Beata Vergine (1610)",
+          "subtitle": "Deus in adjutorium · 平台试听",
+          "performer": "Philip Ledger; The Early Music Consort of London; Choir of King's College, Cambridge",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2K74CuiJ7S2FB8qFdFzZ2e",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2K74CuiJ7S2FB8qFdFzZ2e"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mont-representative-2"
+        },
+        {
+          "personId": "mont",
+          "title": "L'incoronazione di Poppea, SV 308",
+          "subtitle": "第三幕终场二重唱 Pur ti miro；作者归属尚有争议 · 平台试听",
+          "performer": "Christina Pluhar; L'Arpeggiata; Philippe Jaroussky; Núria Rial",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5aVZA9ZKQslojsXuEs9aRi",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5aVZA9ZKQslojsXuEs9aRi"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mont-representative-3"
+        }
+      ]
+    },
+    "vinc": {
+      "tracks": [
+        {
+          "personId": "vinc",
+          "title": "Didone abbandonata",
+          "subtitle": "Act I: Dirò che fida sei · 平台试听",
+          "performer": "Gabriella Costa; Orchestra del Maggio Musicale Fiorentino; Carlo Ipata",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6VpJkwFKvO21YGVhlfTvnt",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6VpJkwFKvO21YGVhlfTvnt"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "vinc-representative-1"
+        },
+        {
+          "personId": "vinc",
+          "title": "Siroe, re di Persia",
+          "subtitle": "Fra l'orror de la tempesta · 平台试听",
+          "performer": "Leslie Visco; Orchestra del Teatro di San Carlo; Antonio Florio",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1XzMJ3X1Q7zJeVLmMa0bNP",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1XzMJ3X1Q7zJeVLmMa0bNP"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "vinc-representative-2"
+        },
+        {
+          "personId": "vinc",
+          "title": "Artaserse",
+          "subtitle": "Act II, Scene 6: Se d'un amor tiranno · 平台试听",
+          "performer": "Emily Fons; Haymarket Opera Company; Craig Trompeter",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0tCW09A5c89ZWQojnDoPaI",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0tCW09A5c89ZWQojnDoPaI"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "vinc-representative-3"
+        }
+      ]
+    },
+    "bach": {
+      "tracks": [
+        {
+          "id": "bach-native-1",
+          "title": "哥德堡变奏曲，BWV 988",
+          "subtitle": "选段 · 咏叹调 Aria",
+          "performer": "Kimiko Ishizaka（钢琴）",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goldberg_Variations_01_Aria.ogg",
+          "rights": "J. S. Bach: Goldberg Variations, BWV 988 — Aria. Kimiko Ishizaka, Open Goldberg Variations (2012), CC0 1.0.",
+          "licenseLabel": "CC0 1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Goldberg_Variations_01_Aria.ogg",
+            "mimeType": "audio/ogg"
+          },
+          "checkedAt": "2026-08-31"
+        },
+        {
+          "personId": "bach",
+          "title": "Matthäus-Passion, BWV 244",
+          "subtitle": "Aria: Erbarme dich · 平台试听",
+          "performer": "Netherlands Bach Society; Jos van Veldhoven",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5hqt1rcx3nFbLYPVn3gRxB",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5hqt1rcx3nFbLYPVn3gRxB"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "bach-representative-2"
+        },
+        {
+          "personId": "bach",
+          "title": "Mass in B Minor, BWV 232",
+          "subtitle": "Kyrie: No. 1, Kyrie eleison · 平台试听",
+          "performer": "Collegium Vocale Gent; Philippe Herreweghe",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1UtNSkBpYxZIlti3qGT9IF",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1UtNSkBpYxZIlti3qGT9IF"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "bach-representative-3"
+        }
+      ]
+    },
+    "hayd": {
+      "tracks": [
+        {
+          "personId": "hayd",
+          "title": "Symphony No. 104 in D Major, Hob. I:104 “London”",
+          "subtitle": "I. Adagio – Allegro · 平台试听",
+          "performer": "Wiener Philharmoniker; Herbert von Karajan",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/392cmNNx8pLiuLrWPaQTNM",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/392cmNNx8pLiuLrWPaQTNM"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "hayd-representative-1"
+        },
+        {
+          "personId": "hayd",
+          "title": "String Quartet in C Major, Op. 76 No. 3, Hob. III:77 “Emperor”",
+          "subtitle": "II. Poco adagio, cantabile · 平台试听",
+          "performer": "Kodály Quartet",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3sODZJQD4RzVTVRERie3Yj",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3sODZJQD4RzVTVRERie3Yj"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "hayd-representative-2"
+        },
+        {
+          "personId": "hayd",
+          "title": "The Creation, Hob. XXI:2",
+          "subtitle": "Pt. I: The Heavens Are Telling · 平台试听",
+          "performer": "Choir of King's College, Cambridge; Academy of St. Martin in the Fields; Sir David Willcocks",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0dOaNrAejJO7ejcErYJUN0",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0dOaNrAejJO7ejcErYJUN0"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "hayd-representative-3"
+        }
+      ]
+    },
+    "moza": {
+      "tracks": [
+        {
+          "id": "moza-native-1",
+          "title": "第四十交响曲，K.550",
+          "subtitle": "第一乐章 · Molto allegro",
+          "performer": "Takashi Inoue 指挥 / Tsumugi Orchestra",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mozart_Symphony_40_G_minor_-_1_Molto_allegro.oga",
+          "rights": "Takashi Inoue指挥、Tsumugi Orchestra演奏，2010年8月15日；CC BY 3.0，Ogg转换 Akaniji。",
+          "licenseLabel": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Mozart_Symphony_40_G_minor_-_1_Molto_allegro.oga",
+            "mimeType": "audio/ogg"
+          },
+          "checkedAt": "2026-08-31"
+        },
+        {
+          "personId": "moza",
+          "title": "Le nozze di Figaro, K. 492",
+          "subtitle": "Overture · 平台试听",
+          "performer": "BBC Symphony Orchestra; Sir Colin Davis",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7wW1pCR3I9rB9bPW5DeSCi",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7wW1pCR3I9rB9bPW5DeSCi"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "moza-representative-2"
+        },
+        {
+          "personId": "moza",
+          "title": "Symphony No. 41 in C Major, K. 551 “Jupiter”",
+          "subtitle": "IV. Molto allegro · 平台试听",
+          "performer": "Nikolaus Harnoncourt; Royal Concertgebouw Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0GlCI02V8j9d3tTAgh6PZC",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0GlCI02V8j9d3tTAgh6PZC"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "moza-representative-3"
+        }
+      ]
+    },
+    "beet": {
+      "tracks": [
+        {
+          "id": "beet-native-1",
+          "title": "第十四钢琴奏鸣曲《月光》，Op.27 No.2",
+          "subtitle": "第一乐章 · Adagio sostenuto",
+          "performer": "Juan Felipe Arjona（钢琴）",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moonlight.ogg",
+          "rights": "Juan Felipe Arjona演奏，CC BY 2.5；音频未经本站剪辑或改动。",
+          "licenseLabel": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Moonlight.ogg",
+            "mimeType": "audio/ogg"
+          },
+          "checkedAt": "2026-08-31"
+        },
+        {
+          "personId": "beet",
+          "title": "Symphony No. 5 in C Minor, Op. 67",
+          "subtitle": "I. Allegro con brio · 平台试听",
+          "performer": "Wiener Philharmoniker; Carlos Kleiber",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6LPnnLDv0M2u11jrBV6pq5",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6LPnnLDv0M2u11jrBV6pq5"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "beet-representative-2"
+        },
+        {
+          "personId": "beet",
+          "title": "String Quartet No. 14 in C-Sharp Minor, Op. 131",
+          "subtitle": "I. Adagio ma non troppo e molto espressivo · 平台试听",
+          "performer": "Alban Berg Quartett",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3J8su4UGy8JEF0Y3YpxWCT",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3J8su4UGy8JEF0Y3YpxWCT"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "beet-representative-3"
+        }
+      ]
+    },
+    "schb": {
+      "tracks": [
+        {
+          "id": "schb-native-1",
+          "title": "魔王，D.328",
+          "subtitle": "全曲 · 1913年历史录音",
+          "performer": "Ernestine Schumann-Heink（女低音）",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schubert_-_Schumann-Heink_-_Erlk%C3%B6nig.ogg",
+          "rights": "Ernestine Schumann-Heink演唱，Victor Talking Machine Company，1913年；来源页标示公有领域。",
+          "licenseLabel": "公有领域",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-old",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Schubert_-_Schumann-Heink_-_Erlk%C3%B6nig.ogg",
+            "mimeType": "audio/ogg"
+          },
+          "checkedAt": "2026-08-31"
+        },
+        {
+          "personId": "schb",
+          "title": "Winterreise, D. 911",
+          "subtitle": "No. 1, Gute Nacht · 平台试听",
+          "performer": "Dietrich Fischer-Dieskau; Gerald Moore",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0thJqgFmvjFrYrzBSTxdMB",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0thJqgFmvjFrYrzBSTxdMB"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "schb-representative-2"
+        },
+        {
+          "personId": "schb",
+          "title": "Symphony No. 8 in B Minor, D. 759 “Unfinished”",
+          "subtitle": "I. Allegro moderato · 平台试听",
+          "performer": "Chamber Orchestra of Europe; Claudio Abbado",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3doq0Z3HD2HBA36hkbiiP8",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3doq0Z3HD2HBA36hkbiiP8"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "schb-representative-3"
+        }
+      ]
+    },
+    "chop": {
+      "tracks": [
+        {
+          "id": "chop-native-1",
+          "title": "第一叙事曲，Op.23",
+          "subtitle": "全曲 · g小调",
+          "performer": "Donald Betts（钢琴）",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frederic_Chopin_-_ballade_no._1_in_g_minor,_op._23.ogg",
+          "rights": "Donald Betts演奏；Musopen录音，来源页附公有领域授权记录。",
+          "licenseLabel": "公有领域",
+          "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-release",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Frederic_Chopin_-_ballade_no._1_in_g_minor%2C_op._23.ogg",
+            "mimeType": "audio/ogg"
+          },
+          "checkedAt": "2026-08-31"
+        },
+        {
+          "personId": "chop",
+          "title": "Nocturne No. 2 in E-Flat Major, Op. 9 No. 2",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Arthur Rubinstein",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3r5uPgs8fkKvX8luriZzx0",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3r5uPgs8fkKvX8luriZzx0"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "chop-representative-2"
+        },
+        {
+          "personId": "chop",
+          "title": "24 Preludes, Op. 28",
+          "subtitle": "No. 15 in D-Flat Major “Raindrop” · 平台试听",
+          "performer": "Martha Argerich",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3xNvNN0N0xHNLamm2Q5muu",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3xNvNN0N0xHNLamm2Q5muu"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "chop-representative-3"
+        }
+      ]
+    },
+    "lisz": {
+      "tracks": [
+        {
+          "personId": "lisz",
+          "title": "Piano Sonata in B Minor, S. 178",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Vladimir Horowitz",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6Zy82cYdN3x9ktUpQxHydk",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6Zy82cYdN3x9ktUpQxHydk"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "lisz-representative-1"
+        },
+        {
+          "personId": "lisz",
+          "title": "A Faust Symphony, S. 108",
+          "subtitle": "I. Faust · 平台试听",
+          "performer": "Chicago Symphony Orchestra; Sir Georg Solti",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3KyLJc7NBGAzgbG2fNnYXJ",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3KyLJc7NBGAzgbG2fNnYXJ"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "lisz-representative-2"
+        },
+        {
+          "personId": "lisz",
+          "title": "Années de pèlerinage, Première année: Suisse, S. 160",
+          "subtitle": "No. 6, Vallée d’Obermann · 平台试听",
+          "performer": "Alfred Brendel",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/68xEK1BpFCwK5EnVa5G870",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/68xEK1BpFCwK5EnVa5G870"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "lisz-representative-3"
+        }
+      ]
+    },
+    "wagn": {
+      "tracks": [
+        {
+          "personId": "wagn",
+          "title": "Tristan und Isolde",
+          "subtitle": "Act I: Prelude · 平台试听",
+          "performer": "Staatskapelle Dresden; Carlos Kleiber",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4zS5hoSJbxpsF1p1k7wihM",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4zS5hoSJbxpsF1p1k7wihM"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "wagn-representative-1"
+        },
+        {
+          "personId": "wagn",
+          "title": "Die Walküre",
+          "subtitle": "Act III: Ride of the Valkyries · 平台试听",
+          "performer": "Wiener Philharmoniker; Sir Georg Solti",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4971i3mX1RV6uP0iLhotBT",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4971i3mX1RV6uP0iLhotBT"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "wagn-representative-2"
+        },
+        {
+          "personId": "wagn",
+          "title": "Parsifal",
+          "subtitle": "Act I: Prelude · 平台试听",
+          "performer": "Berliner Philharmoniker; Herbert von Karajan",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4WjEY877D3AgyMLqMKrUsV",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4WjEY877D3AgyMLqMKrUsV"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "wagn-representative-3"
+        }
+      ]
+    },
+    "verd": {
+      "tracks": [
+        {
+          "personId": "verd",
+          "title": "Rigoletto",
+          "subtitle": "Act III: La donna è mobile · 平台试听",
+          "performer": "Luciano Pavarotti; London Symphony Orchestra; Richard Bonynge",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/67VoS99IzQWwmKAjQuI2HE",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/67VoS99IzQWwmKAjQuI2HE"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "verd-representative-1"
+        },
+        {
+          "personId": "verd",
+          "title": "La traviata",
+          "subtitle": "Act I: Prelude · 平台试听",
+          "performer": "Bavarian State Orchestra; Carlos Kleiber",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/11Xb4g57kDYwbjKVljcyTN",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/11Xb4g57kDYwbjKVljcyTN"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "verd-representative-2"
+        },
+        {
+          "personId": "verd",
+          "title": "Otello",
+          "subtitle": "Act IV: Ave Maria, piena di grazia · 平台试听",
+          "performer": "Anna Netrebko; Mahler Chamber Orchestra; Claudio Abbado",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/54hGPV23WWM9dYGrk2fm5L",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/54hGPV23WWM9dYGrk2fm5L"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "verd-representative-3"
+        }
+      ]
+    },
+    "brah": {
+      "tracks": [
+        {
+          "personId": "brah",
+          "title": "Symphony No. 4 in E Minor, Op. 98",
+          "subtitle": "I. Allegro non troppo · 平台试听",
+          "performer": "Wiener Philharmoniker; Carlos Kleiber",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1imoRSXo8nFz6GvMtRCcXd",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1imoRSXo8nFz6GvMtRCcXd"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "brah-representative-1"
+        },
+        {
+          "personId": "brah",
+          "title": "Ein deutsches Requiem, Op. 45",
+          "subtitle": "IV. Wie lieblich sind deine Wohnungen · 平台试听",
+          "performer": "Otto Klemperer; Philharmonia Chorus; Philharmonia Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/30sSxj60uGyywm2y6qQxh4",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/30sSxj60uGyywm2y6qQxh4"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "brah-representative-2"
+        },
+        {
+          "personId": "brah",
+          "title": "Clarinet Quintet in B Minor, Op. 115",
+          "subtitle": "I. Allegro · 平台试听",
+          "performer": "Sabine Meyer; Alban Berg Quartett",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5yasmW0gOtmBSATcHFqBQ6",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5yasmW0gOtmBSATcHFqBQ6"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "brah-representative-3"
+        }
+      ]
+    },
+    "mahl": {
+      "tracks": [
+        {
+          "personId": "mahl",
+          "title": "Symphony No. 5 in C-Sharp Minor",
+          "subtitle": "IV. Adagietto · 平台试听",
+          "performer": "Royal Concertgebouw Orchestra; Riccardo Chailly",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/66UcL0GpUb8Ccr7glKfvZ7",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/66UcL0GpUb8Ccr7glKfvZ7"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mahl-representative-1"
+        },
+        {
+          "personId": "mahl",
+          "title": "Das Lied von der Erde",
+          "subtitle": "VI. Der Abschied · 平台试听",
+          "performer": "Christa Ludwig; New Philharmonia Orchestra; Philharmonia Orchestra; Otto Klemperer",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6cNkhjoGjhkIYBOVkC5WeY",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6cNkhjoGjhkIYBOVkC5WeY"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mahl-representative-2"
+        },
+        {
+          "personId": "mahl",
+          "title": "Kindertotenlieder",
+          "subtitle": "No. 1, Nun will die Sonn’ so hell aufgeh’n · 平台试听",
+          "performer": "Janet Baker; Hallé; Sir John Barbirolli",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0fYfTBKq8NebHT67YtfI6H",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0fYfTBKq8NebHT67YtfI6H"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "mahl-representative-3"
+        }
+      ]
+    },
+    "debu": {
+      "tracks": [
+        {
+          "id": "debu-native-1",
+          "title": "贝加莫组曲，L.75",
+          "subtitle": "第三曲 · 月光 Clair de lune",
+          "performer": "Laurens Goedhart（钢琴）",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clair_de_lune_(Claude_Debussy)_Suite_bergamasque.ogg",
+          "rights": "Claude Debussy: Clair de lune, from Suite bergamasque. Laurens Goedhart, piano (2011), CC BY 3.0; Ogg conversion by Akaniji, via Wikimedia Commons.",
+          "licenseLabel": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Clair_de_lune_%28Claude_Debussy%29_Suite_bergamasque.ogg",
+            "mimeType": "audio/ogg"
+          },
+          "checkedAt": "2026-08-31"
+        },
+        {
+          "personId": "debu",
+          "title": "Prélude à l’après-midi d’un faune, CD 87a",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "The Cleveland Orchestra; Pierre Boulez",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2r1ENw12wA3Hslg3rZce2u",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2r1ENw12wA3Hslg3rZce2u"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "debu-representative-2"
+        },
+        {
+          "personId": "debu",
+          "title": "La mer, CD 111",
+          "subtitle": "I. De l’aube à midi sur la mer · 平台试听",
+          "performer": "The Cleveland Orchestra; Pierre Boulez",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4YrZ6iHcsaftcytVHR9fGq",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4YrZ6iHcsaftcytVHR9fGq"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "debu-representative-3"
+        }
+      ]
+    },
+    "scho": {
+      "tracks": [
+        {
+          "personId": "scho",
+          "title": "Verklärte Nacht, Op. 4",
+          "subtitle": "全曲（室内乐版本） · 平台试听",
+          "performer": "Ensemble Intercontemporain; Pierre Boulez",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4HvXZqgD5PEXFS8hMAb3Ut",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4HvXZqgD5PEXFS8hMAb3Ut"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "scho-representative-1"
+        },
+        {
+          "personId": "scho",
+          "title": "Pierrot lunaire, Op. 21",
+          "subtitle": "Pt. I, No. 1: Mondestrunken · 平台试听",
+          "performer": "Christine Schäfer; Ensemble Intercontemporain; Pierre Boulez",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3Y20te0LPl7TbVgtufN28A",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3Y20te0LPl7TbVgtufN28A"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "scho-representative-2"
+        },
+        {
+          "personId": "scho",
+          "title": "Suite for Piano, Op. 25",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Claude Helffer",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4ukjL3mGaUrgJ1TFzB5PXo",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4ukjL3mGaUrgJ1TFzB5PXo"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "scho-representative-3"
+        }
+      ]
+    },
+    "stra": {
+      "tracks": [
+        {
+          "personId": "stra",
+          "title": "The Firebird, 1919 Suite",
+          "subtitle": "VI. Finale · 平台试听",
+          "performer": "London Symphony Orchestra; Claudio Abbado",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7jNnomqqH0ITafUf6Uz14m",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7jNnomqqH0ITafUf6Uz14m"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "stra-representative-1"
+        },
+        {
+          "personId": "stra",
+          "title": "Le Sacre du printemps",
+          "subtitle": "No. 2, The Augurs of Spring – Dances of the Young Girls · 平台试听",
+          "performer": "New York Philharmonic; Leonard Bernstein",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6cv0Ba8eSP2ZhTAu2Czytj",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6cv0Ba8eSP2ZhTAu2Czytj"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "stra-representative-2"
+        },
+        {
+          "personId": "stra",
+          "title": "Symphony of Psalms",
+          "subtitle": "I. Exaudi orationem meam · 平台试听",
+          "performer": "Berliner Philharmoniker; Rundfunkchor Berlin; Sir Simon Rattle",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4vXcvvzMg0G5j7DcOwlmWx",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4vXcvvzMg0G5j7DcOwlmWx"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "stra-representative-3"
+        }
+      ]
+    },
+    "bart": {
+      "tracks": [
+        {
+          "personId": "bart",
+          "title": "Music for Strings, Percussion and Celesta, Sz. 106",
+          "subtitle": "I. Andante tranquillo · 平台试听",
+          "performer": "Chicago Symphony Orchestra; Pierre Boulez",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/34Z5FD19CA8iwcSd6SofQp",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/34Z5FD19CA8iwcSd6SofQp"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "bart-representative-1"
+        },
+        {
+          "personId": "bart",
+          "title": "String Quartet No. 4, Sz. 91",
+          "subtitle": "V. Allegro molto · 平台试听",
+          "performer": "Takács Quartet",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/39WzkRUQIE3PYI0Z08EMrE",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/39WzkRUQIE3PYI0Z08EMrE"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "bart-representative-2"
+        },
+        {
+          "personId": "bart",
+          "title": "Mikrokosmos, Sz. 107",
+          "subtitle": "No. 153, Six Dances in Bulgarian Rhythm, No. 6 · 平台试听",
+          "performer": "Julia Hamos",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1aNORGLOGqGVboEWTC1jDF",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1aNORGLOGqGVboEWTC1jDF"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "bart-representative-3"
+        }
+      ]
+    },
+    "gers": {
+      "tracks": [
+        {
+          "personId": "gers",
+          "title": "Rhapsody in Blue",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Leonard Bernstein; Columbia Symphony Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5AMVP6SVHqk1bbMwahRClG",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5AMVP6SVHqk1bbMwahRClG"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "gers-representative-1"
+        },
+        {
+          "personId": "gers",
+          "title": "An American in Paris",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Leonard Bernstein; New York Philharmonic",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/73Vj9DkS23e4Goty2yO08N",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/73Vj9DkS23e4Goty2yO08N"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "gers-representative-2"
+        },
+        {
+          "personId": "gers",
+          "title": "Porgy and Bess",
+          "subtitle": "Summertime · 平台试听",
+          "performer": "Ella Fitzgerald; Louis Armstrong; Russell Garcia",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/057xnZqm0ZsTkvrJfyn96z",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/057xnZqm0ZsTkvrJfyn96z"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "gers-representative-3"
+        }
+      ]
+    },
+    "fost": {
+      "tracks": [
+        {
+          "personId": "fost",
+          "title": "Oh! Susanna",
+          "subtitle": "全曲（管弦乐改编） · 平台试听",
+          "performer": "101 Strings Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3PafuGmqNyVquS2Sj1NVVf",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3PafuGmqNyVquS2Sj1NVVf"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "fost-representative-1"
+        },
+        {
+          "personId": "fost",
+          "title": "Old Folks at Home",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Grant Williams; Robert Shaw Chorale; Robert Shaw",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/76FvEn9P2PmnwZWKWgOSnH",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/76FvEn9P2PmnwZWKWgOSnH"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "fost-representative-2"
+        },
+        {
+          "personId": "fost",
+          "title": "My Old Kentucky Home",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "The Eric Rogers Chorale and Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2VjYm4PDPBKR1tZw08nA3w",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2VjYm4PDPBKR1tZw08nA3w"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "fost-representative-3"
+        }
+      ]
+    },
+    "sous": {
+      "tracks": [
+        {
+          "personId": "sous",
+          "title": "The Stars and Stripes Forever",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "United States Marine Band",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/28U6ueHdaJJIICX1wl3uif",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/28U6ueHdaJJIICX1wl3uif"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "sous-representative-1"
+        },
+        {
+          "personId": "sous",
+          "title": "The Washington Post March",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "The President’s Own United States Marine Band",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4vL88op2MWqjh7d51lE1pZ",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4vL88op2MWqjh7d51lE1pZ"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "sous-representative-2"
+        },
+        {
+          "personId": "sous",
+          "title": "The Liberty Bell",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "United States Marine Band",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7h7UTteRW0avVqlLYS8XEt",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7h7UTteRW0avVqlLYS8XEt"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "sous-representative-3"
+        }
+      ]
+    },
+    "ives": {
+      "tracks": [
+        {
+          "personId": "ives",
+          "title": "The Unanswered Question",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Orpheus Chamber Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5zKpwspa75vnKH9t744K6p",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5zKpwspa75vnKH9t744K6p"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "ives-representative-1"
+        },
+        {
+          "personId": "ives",
+          "title": "Piano Sonata No. 2 “Concord, Mass., 1840–60”",
+          "subtitle": "III. The Alcotts · 平台试听",
+          "performer": "Pierre-Laurent Aimard",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3YYocbj3wZnTgNGOR6f4UP",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3YYocbj3wZnTgNGOR6f4UP"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "ives-representative-2"
+        },
+        {
+          "personId": "ives",
+          "title": "Symphony No. 4",
+          "subtitle": "I. Prelude: Maestoso（现场录音） · 平台试听",
+          "performer": "Seattle Symphony Chorale; Seattle Symphony Orchestra; Ludovic Morlot; Julia Tai",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/37o5rZAUmGKAxBcF7M9Oyp",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/37o5rZAUmGKAxBcF7M9Oyp"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "ives-representative-3"
+        }
+      ]
+    },
+    "elli": {
+      "tracks": [
+        {
+          "personId": "elli",
+          "title": "It Don’t Mean a Thing (If It Ain’t Got That Swing)",
+          "subtitle": "全曲；Ivie Anderson演唱 · 平台试听",
+          "performer": "Duke Ellington; Ivie Anderson",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6alPBXx6Y75VfZhXiQBGyG",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6alPBXx6Y75VfZhXiQBGyG"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "elli-representative-1"
+        },
+        {
+          "personId": "elli",
+          "title": "Solitude",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Duke Ellington",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1Jrdpneg6p0j2crsbuxW0R",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1Jrdpneg6p0j2crsbuxW0R"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "elli-representative-2"
+        },
+        {
+          "personId": "elli",
+          "title": "Black, Brown and Beige",
+          "subtitle": "Come Sunday（组曲选段） · 平台试听",
+          "performer": "Duke Ellington; Mahalia Jackson",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7mKGquVF7IghacX64lZ2wP",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7mKGquVF7IghacX64lZ2wP"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "elli-representative-3"
+        }
+      ]
+    },
+    "copl": {
+      "tracks": [
+        {
+          "personId": "copl",
+          "title": "Appalachian Spring",
+          "subtitle": "Variations on a Shaker Hymn · 平台试听",
+          "performer": "New York Philharmonic; Leonard Bernstein",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1VP9iaNrZOYgRW8kkWBt5a",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1VP9iaNrZOYgRW8kkWBt5a"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "copl-representative-1"
+        },
+        {
+          "personId": "copl",
+          "title": "Fanfare for the Common Man",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "London Symphony Orchestra; Aaron Copland",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3T9HSgS5jBFdXIBPav51gj",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3T9HSgS5jBFdXIBPav51gj"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "copl-representative-2"
+        },
+        {
+          "personId": "copl",
+          "title": "Billy the Kid",
+          "subtitle": "Gun Battle（组曲选段） · 平台试听",
+          "performer": "St. Louis Symphony Orchestra; Leonard Slatkin",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/432RVmJBeEINoR2fMhTy3c",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/432RVmJBeEINoR2fMhTy3c"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "copl-representative-3"
+        }
+      ]
+    },
+    "rile": {
+      "tracks": [
+        {
+          "personId": "rile",
+          "title": "In C",
+          "subtitle": "全曲（35:46） · 平台试听",
+          "performer": "Ensemble vocal de Montréal; Raoul Duguay; Ensemble de la Société de musique contemporaine du Québec; Walter Boudreau",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0Q571hitpEEcofGSxXpIHB",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0Q571hitpEEcofGSxXpIHB"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "rile-representative-1"
+        },
+        {
+          "personId": "rile",
+          "title": "A Rainbow in the Curved Air",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "Terry Riley",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0aGvcIUEdMq9PelZIGJOBU",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0aGvcIUEdMq9PelZIGJOBU"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "rile-representative-2"
+        },
+        {
+          "personId": "rile",
+          "title": "You’re Nogood",
+          "subtitle": "全曲；1967录音 · 平台试听",
+          "performer": "Terry Riley",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5hViDivhqQcDso9cFahbnw",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5hViDivhqQcDso9cFahbnw"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "rile-representative-3"
+        }
+      ]
+    },
+    "buso": {
+      "tracks": [
+        {
+          "personId": "buso",
+          "title": "Sarabande und Cortège, Op. 51, BV 282 “2 Studien zu Doktor Faust”",
+          "subtitle": "I. Sarabande · 平台试听",
+          "performer": "BBC Philharmonic; Neeme Järvi",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7w13M9ZsgBBMUpaPtqzj1v",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7w13M9ZsgBBMUpaPtqzj1v"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "buso-representative-1"
+        },
+        {
+          "personId": "buso",
+          "title": "Fantasia contrappuntistica, BV 256",
+          "subtitle": "全曲 · 平台试听",
+          "performer": "John Ogdon",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4gQ7OpKZDPR5flWa2irYAd",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4gQ7OpKZDPR5flWa2irYAd"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "buso-representative-2"
+        },
+        {
+          "personId": "buso",
+          "title": "Bach–Busoni: Chaconne in D Minor, BV B 24",
+          "subtitle": "据J. S. Bach《第二无伴奏小提琴组曲》BWV 1004改编；全曲 · 平台试听",
+          "performer": "Arturo Benedetti Michelangeli",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1DO3OG5rG6AlvF0VpSkPZP",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1DO3OG5rG6AlvF0VpSkPZP"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "buso-representative-3"
+        }
+      ]
+    },
+    "shos": {
+      "tracks": [
+        {
+          "personId": "shos",
+          "title": "Symphony No. 5 in D Minor, Op. 47",
+          "subtitle": "IV. Allegro non troppo · 平台试听",
+          "performer": "New York Philharmonic; Leonard Bernstein",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7wCsKZcwUhCaNKJEj5hYuA",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7wCsKZcwUhCaNKJEj5hYuA"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "shos-representative-1"
+        },
+        {
+          "personId": "shos",
+          "title": "String Quartet No. 8 in C Minor, Op. 110",
+          "subtitle": "II. Allegro molto · 平台试听",
+          "performer": "Borodin Quartet",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2zYlVKoAaP4CPzXl560ACW",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2zYlVKoAaP4CPzXl560ACW"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "shos-representative-2"
+        },
+        {
+          "personId": "shos",
+          "title": "Lady Macbeth of the Mtsensk District, Op. 29",
+          "subtitle": "Passacaglia（歌剧间奏曲；J. Conlon管弦乐整理） · 平台试听",
+          "performer": "Gürzenich-Orchester Köln; James Conlon",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0rJTCxUMkDozhUnBEDCDjP",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0rJTCxUMkDozhUnBEDCDjP"
+          },
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "id": "shos-representative-3"
+        }
+      ]
+    },
+    "rave": {
+      "tracks": [
+        {
+          "id": "rave-representative-1",
+          "title": "Boléro",
+          "subtitle": "管弦乐 · 平台试听",
+          "performer": "Radio Symphony Orchestra Ljubljana / Samo Hubad",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6bUEOQoOoyyQAfzoimzoIs",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6bUEOQoOoyyQAfzoimzoIs?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "sati": {
+      "tracks": [
+        {
+          "id": "sati-representative-1",
+          "title": "Gymnopédie No. 1",
+          "subtitle": "钢琴独奏 · 平台试听",
+          "performer": "Philippe Entremont",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0YTzYGiSFWTIkXE66MqdZu",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0YTzYGiSFWTIkXE66MqdZu?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "berg": {
+      "tracks": [
+        {
+          "id": "berg-representative-1",
+          "title": "Violin Concerto — I. Andante–Allegretto",
+          "subtitle": "小提琴协奏曲第一乐章 · 平台试听",
+          "performer": "Henryk Szeryng / Rafael Kubelík / Bavarian Radio Symphony Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4dLgbMwmAcO3VJqqso3VwT",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4dLgbMwmAcO3VJqqso3VwT?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "webe": {
+      "tracks": [
+        {
+          "id": "webe-representative-1",
+          "title": "Symphony, Op. 21 — I. Ruhig schreitend",
+          "subtitle": "交响曲第一乐章 · 平台试听",
+          "performer": "Giuseppe Sinopoli / Staatskapelle Dresden",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3c2YdZe6Wl6eESxMUa180M",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3c2YdZe6Wl6eESxMUa180M?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "prok": {
+      "tracks": [
+        {
+          "id": "prok-representative-1",
+          "title": "Romeo and Juliet, Suite No. 2, Op. 64ter — I. Montagues and Capulets",
+          "subtitle": "《罗密欧与朱丽叶》第二组曲第一曲 · 平台试听",
+          "performer": "San Francisco Symphony / Esa-Pekka Salonen",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7cMFeLGgAvk7Oq0es5Du4z",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7cMFeLGgAvk7Oq0es5Du4z?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "mess": {
+      "tracks": [
+        {
+          "id": "mess-representative-1",
+          "title": "Quatuor pour la fin du temps — V. Louange à l'Éternité de Jésus",
+          "subtitle": "《时间终结四重奏》第五乐章，大提琴与钢琴 · 平台试听",
+          "performer": "Yo-Yo Ma / Kathryn Stott",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1HMUl1cfGMbIdMUOCT42D6",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1HMUl1cfGMbIdMUOCT42D6?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "brit": {
+      "tracks": [
+        {
+          "id": "brit-representative-1",
+          "title": "The Young Person's Guide to the Orchestra, Op. 34",
+          "subtitle": "管弦乐 · 平台试听",
+          "performer": "Minnesota Orchestra / Sir Neville Marriner",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0q7gXzlLkkoT2pePyI2asN",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0q7gXzlLkkoT2pePyI2asN?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "vare": {
+      "tracks": [
+        {
+          "id": "vare-representative-1",
+          "title": "Ionisation",
+          "subtitle": "打击乐合奏 · 平台试听",
+          "performer": "The New Jersey Percussion Ensemble / Raymond Desroches",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0cIU60F56ranwpnL1MgnV0",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0cIU60F56ranwpnL1MgnV0?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "boul": {
+      "tracks": [
+        {
+          "id": "boul-representative-1",
+          "title": "12 Notations pour piano — No. 1, Fantasque–Modéré",
+          "subtitle": "钢琴《记谱》第一首 · 平台试听",
+          "performer": "David Fray",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1m2obS65C00fDT0AUyeEwI",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1m2obS65C00fDT0AUyeEwI?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "xena": {
+      "tracks": [
+        {
+          "id": "xena-representative-1",
+          "title": "Metastaseis",
+          "subtitle": "管弦乐 · 平台试听",
+          "performer": "Luxembourg Philharmonic Orchestra / Arturo Tamayo",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3itk3T7uRiXvBh2LBTD2je",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3itk3T7uRiXvBh2LBTD2je?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "ligi": {
+      "tracks": [
+        {
+          "id": "ligi-representative-1",
+          "title": "Atmosphères",
+          "subtitle": "管弦乐 · 平台试听",
+          "performer": "Jonathan Nott / Berliner Philharmoniker",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3HVUDpc6RNoY4d1zF5F287",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3HVUDpc6RNoY4d1zF5F287?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "luto": {
+      "tracks": [
+        {
+          "id": "luto-representative-1",
+          "title": "Concerto for Orchestra — I. Intrada",
+          "subtitle": "《管弦乐协奏曲》第一乐章 · 平台试听",
+          "performer": "Daniel Barenboim / Chicago Symphony Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2RDvNrUqArXEXVl9Hxod3n",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2RDvNrUqArXEXVl9Hxod3n?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "pend": {
+      "tracks": [
+        {
+          "id": "pend-representative-1",
+          "title": "Threnody to the Victims of Hiroshima",
+          "subtitle": "弦乐合奏 · 平台试听",
+          "performer": "Polish National Radio Symphony Orchestra / Antoni Wit",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4W1UVeDchCD16POhyf70tZ",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4W1UVeDchCD16POhyf70tZ?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "kurt": {
+      "tracks": [
+        {
+          "id": "kurt-representative-1",
+          "title": "Kafka-Fragmente, Op. 24 — II. Der wahre Weg",
+          "subtitle": "《卡夫卡片段》第二部分，女高音与小提琴 · 平台试听",
+          "performer": "Adrienne Csengery / Andras Keller",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7rbwiJ3YtHDQWRGyzLjXZ4",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7rbwiJ3YtHDQWRGyzLjXZ4?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "gub": {
+      "tracks": [
+        {
+          "id": "gub-representative-1",
+          "title": "Violin Concerto No. 1 — Offertorium",
+          "subtitle": "小提琴与管弦乐 · 平台试听",
+          "performer": "Gidon Kremer / Boston Symphony Orchestra / Charles Dutoit",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4NgIfVEcWGKio97hyJQpp0",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4NgIfVEcWGKio97hyJQpp0?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "schn": {
+      "tracks": [
+        {
+          "id": "schn-representative-1",
+          "title": "Concerto Grosso No. 1 — I. Preludio. Andante",
+          "subtitle": "第一大协奏曲第一乐章 · 平台试听",
+          "performer": "Gidon Kremer / Tatiana Grindenko / Yuri Smirnov / Chamber Orchestra of Europe / Heinrich Schiff",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5mL5q8ywgdCaGilwCfhB3I",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5mL5q8ywgdCaGilwCfhB3I?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "part": {
+      "tracks": [
+        {
+          "id": "part-representative-1",
+          "title": "Spiegel im Spiegel",
+          "subtitle": "小提琴与钢琴 · 平台试听",
+          "performer": "Lisa Batiashvili / Hélène Grimaud",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2gimTiA0Mw7KNo1FiAFHBL",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2gimTiA0Mw7KNo1FiAFHBL?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "gore": {
+      "tracks": [
+        {
+          "id": "gore-representative-1",
+          "title": "Symphony No. 3, Op. 36 — II. Lento e largo–Tranquillissimo",
+          "subtitle": "第三交响曲第二乐章 · 平台试听",
+          "performer": "Dawn Upshaw / London Sinfonietta / David Zinman",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4iCn374fZg5UbGD1xFNo1m",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4iCn374fZg5UbGD1xFNo1m?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "berio": {
+      "tracks": [
+        {
+          "id": "berio-representative-1",
+          "title": "Sequenza III for voice",
+          "subtitle": "独唱 · 平台试听",
+          "performer": "Cathy Berberian",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2pgaO4Stq6yUtWLvsOVIde",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2pgaO4Stq6yUtWLvsOVIde?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "stock": {
+      "tracks": [
+        {
+          "id": "stock-representative-1",
+          "title": "Klavierstück IX",
+          "subtitle": "钢琴独奏 · 平台试听",
+          "performer": "Benjamin Kobler",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/54x7p5jR7m4yfpVw0fodE9",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/54x7p5jR7m4yfpVw0fodE9?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "nono": {
+      "tracks": [
+        {
+          "id": "nono-representative-1",
+          "title": "…sofferte onde serene…",
+          "subtitle": "钢琴与磁带 · 平台试听",
+          "performer": "Maurizio Pollini",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3rsLGEIW2MeBHupkGNWGxq",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3rsLGEIW2MeBHupkGNWGxq?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "sibe": {
+      "tracks": [
+        {
+          "id": "sibe-representative-1",
+          "title": "Finlandia, Op. 26",
+          "subtitle": "管弦乐 · 平台试听",
+          "performer": "Berliner Philharmoniker / Herbert von Karajan",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1um2NaVimGcB8r3IbsnJp6",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1um2NaVimGcB8r3IbsnJp6?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "rach": {
+      "tracks": [
+        {
+          "id": "rach-representative-1",
+          "title": "Piano Concerto No. 2 in C minor, Op. 18 — II. Adagio sostenuto",
+          "subtitle": "第二钢琴协奏曲第二乐章 · 平台试听",
+          "performer": "Sviatoslav Richter / Warsaw National Philharmonic Orchestra / Stanisław Wisłocki",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6iQp6PN964ySmZCC7DAQp8",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6iQp6PN964ySmZCC7DAQp8?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "scri": {
+      "tracks": [
+        {
+          "id": "scri-representative-1",
+          "title": "The Poem of Ecstasy, Op. 54",
+          "subtitle": "管弦乐 · 平台试听",
+          "performer": "Houston Symphony / Leopold Stokowski",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1vhdepXH29HgDu4QsjQS7X",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1vhdepXH29HgDu4QsjQS7X?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "jana": {
+      "tracks": [
+        {
+          "id": "jana-representative-1",
+          "title": "Sinfonietta — I. Allegretto–Allegro–Maestoso",
+          "subtitle": "《小交响曲》第一乐章 · 平台试听",
+          "performer": "Wiener Philharmoniker / Sir Charles Mackerras",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5dpzpl2kK3lZRAz5vUW75q",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5dpzpl2kK3lZRAz5vUW75q?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "vwil": {
+      "tracks": [
+        {
+          "id": "vwil-representative-1",
+          "title": "Fantasia on a Theme by Thomas Tallis",
+          "subtitle": "弦乐合奏 · 平台试听",
+          "performer": "Sinfonia Of London / Sir John Barbirolli",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/23heHlDHSpgLpkmT7Fr7Bq",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/23heHlDHSpgLpkmT7Fr7Bq?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "koda": {
+      "tracks": [
+        {
+          "id": "koda-representative-1",
+          "title": "Dances of Galánta",
+          "subtitle": "管弦乐 · 平台试听",
+          "performer": "Neeme Järvi / Chicago Symphony Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0CTx6YX0ahfbJyuGGMz7Ic",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0CTx6YX0ahfbJyuGGMz7Ic?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "hind": {
+      "tracks": [
+        {
+          "id": "hind-representative-1",
+          "title": "Mathis der Maler Symphony — I. Engelkonzert",
+          "subtitle": "《画家马蒂斯》交响曲第一乐章 · 平台试听",
+          "performer": "San Francisco Symphony / Herbert Blomstedt",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4QK6arNqmckObVn9K6Dy28",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4QK6arNqmckObVn9K6Dy28?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "poul": {
+      "tracks": [
+        {
+          "id": "poul-representative-1",
+          "title": "Gloria, FP 177 — I. Gloria in excelsis Deo",
+          "subtitle": "《荣耀经》第一乐章 · 平台试听",
+          "performer": "Boston Symphony Orchestra / Seiji Ozawa / Tanglewood Festival Chorus / John Oliver",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3HsXW4k27ZuBxmbUOlslEY",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3HsXW4k27ZuBxmbUOlslEY?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "fall": {
+      "tracks": [
+        {
+          "id": "fall-representative-1",
+          "title": "El amor brujo — Danza ritual del fuego",
+          "subtitle": "《魔法之爱》选曲，管弦乐 · 平台试听",
+          "performer": "Leopold Stokowski / Philadelphia Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3Xgevysgf5f2JebhdBJaxy",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3Xgevysgf5f2JebhdBJaxy?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "dufa": {
+      "tracks": [
+        {
+          "id": "dufa-representative-1",
+          "title": "苍白的容颜（Se la face ay pale）",
+          "subtitle": "香颂全曲",
+          "performer": "Asteria",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guillaume_Dufay_-_Se_La_Face_Ay_Pale.ogg",
+          "rights": "CC BY-SA 2.5；https://creativecommons.org/licenses/by-sa/2.5；按来源页署名，改编须遵守相同方式共享条款",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Guillaume_Dufay_-_Se_La_Face_Ay_Pale.ogg",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "gesu": {
+      "tracks": [
+        {
+          "id": "gesu-representative-1",
+          "title": "我悲惨地死去（Moro, lasso, al mio duolo）",
+          "subtitle": "《第六卷牧歌集》选曲，全曲",
+          "performer": "MIT Chamber Chorus；William Cutter 指挥",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gesualdo-moro_lasso_al_mio_duolo.ogg",
+          "rights": "CC BY-SA 2.0；https://creativecommons.org/licenses/by-sa/2.0；按来源页署名，改编须遵守相同方式共享条款",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Gesualdo-moro_lasso_al_mio_duolo.ogg",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "seik": {
+      "tracks": [
+        {
+          "id": "seik-representative-1",
+          "title": "塞基洛斯墓志铭歌（Epitaphe de Seikilos）",
+          "subtitle": "平台试听 · 依据传世记谱演绎",
+          "performer": "Atrium Musicae de Madrid；Gregorio Paniagua",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/14BaMXmr33lOewx3ljZe9Q",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/14BaMXmr33lOewx3ljZe9Q"
+          }
+        }
+      ]
+    },
+    "hild": {
+      "tracks": [
+        {
+          "id": "hild-representative-1",
+          "title": "智慧的力量（O Virtus Sapientiae）",
+          "subtitle": "平台试听 · 对经",
+          "performer": "Kirsteen Rogers；Christopher Monks",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0qS1JelUlFVTmjf72Bx8d5",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0qS1JelUlFVTmjf72Bx8d5"
+          }
+        }
+      ]
+    },
+    "pero": {
+      "tracks": [
+        {
+          "id": "pero-representative-1",
+          "title": "众人看见（Viderunt omnes）",
+          "subtitle": "平台试听 · 四声部奥尔加农",
+          "performer": "The Hilliard Ensemble",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6Gqo7Uw583eb6npj6pWJMQ",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6Gqo7Uw583eb6npj6pWJMQ"
+          }
+        }
+      ]
+    },
+    "pale": {
+      "tracks": [
+        {
+          "id": "pale-representative-1",
+          "title": "荆棘中的百合（Sicut lilium inter spinas）",
+          "subtitle": "经文歌全曲",
+          "performer": "The Tudor Consort",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Tudor_Consort_-_01_-_Palestrina_-_Sicut_lilium_inter_spinas.ogg",
+          "rights": "CC BY 3.0；https://creativecommons.org/licenses/by/3.0；保留演奏者署名及来源链接，改编遵守所列许可条件。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/The_Tudor_Consort_-_01_-_Palestrina_-_Sicut_lilium_inter_spinas.ogg",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "lull": {
+      "tracks": [
+        {
+          "id": "lull-representative-1",
+          "title": "贵人迷（Le Bourgeois gentilhomme）：序曲",
+          "subtitle": "具体选段 · 序曲",
+          "performer": "Advent Chamber Orchestra",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lully_Le_Bourgeois_Gentilhomme_-_01._Ouverture.ogg",
+          "rights": "CC BY-SA 2.0；https://creativecommons.org/licenses/by-sa/2.0；保留演奏者署名及来源链接，改编遵守所列许可条件。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Lully_Le_Bourgeois_Gentilhomme_-_01._Ouverture.ogg",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "purc": {
+      "tracks": [
+        {
+          "id": "purc-representative-1",
+          "title": "我甚欢喜（I was glad）",
+          "subtitle": "颂歌全曲",
+          "performer": "MIT Chamber Chorus；William Cutter 指挥",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Purcell_i_was_glad.ogg",
+          "rights": "CC BY-SA 2.0；https://creativecommons.org/licenses/by-sa/2.0；保留演奏者署名及来源链接，改编遵守所列许可条件。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Purcell_i_was_glad.ogg",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "buxt": {
+      "tracks": [
+        {
+          "id": "buxt-representative-1",
+          "title": "C大调前奏曲、赋格与夏空，BuxWV 137",
+          "subtitle": "全曲 · 管风琴",
+          "performer": "Fabian Wöhrle",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:D._Buxtehude_Pr%C3%A4ludium,_Fuge_und_Chaconne_C-Dur_BuxWV_137_Fabian_W%C3%B6hrle_Kath._Kirche_Gerstetten.mp3",
+          "rights": "CC BY-SA 4.0；https://creativecommons.org/licenses/by-sa/4.0；保留演奏者署名及来源链接，改编遵守所列许可条件。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/D._Buxtehude_Pr%C3%A4ludium%2C_Fuge_und_Chaconne_C-Dur_BuxWV_137_Fabian_W%C3%B6hrle_Kath._Kirche_Gerstetten.mp3",
+            "mimeType": "audio/mpeg"
+          }
+        }
+      ]
+    },
+    "corel": {
+      "tracks": [
+        {
+          "id": "corel-representative-1",
+          "title": "g小调圣诞大协奏曲，Op. 6 No. 8",
+          "subtitle": "具体选段 · 第一至第三乐章",
+          "performer": "Advent Chamber Orchestra",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Corelli_-_Concerto_Grosso_in_G_minor_-_Christmas_Concerto_-_part_1.ogg",
+          "rights": "CC BY-SA 2.0；https://creativecommons.org/licenses/by-sa/2.0；保留演奏者署名及来源链接，改编遵守所列许可条件。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Corelli_-_Concerto_Grosso_in_G_minor_-_Christmas_Concerto_-_part_1.ogg",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "vivi": {
+      "tracks": [
+        {
+          "id": "vivi-representative-1",
+          "title": "四季·春，RV 269：第一乐章",
+          "subtitle": "具体选段 · Allegro",
+          "performer": "John Harrison 小提琴；Wichita State University Chamber Players；Robert Turizziani 指挥",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga",
+          "rights": "CC BY-SA 4.0；https://creativecommons.org/licenses/by-sa/4.0/deed.en；保留演奏者署名及来源链接，改编遵守所列许可条件。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "dsca": {
+      "tracks": [
+        {
+          "id": "dsca-representative-1",
+          "title": "d小调奏鸣曲，K. 10",
+          "subtitle": "全曲 · 羽管键琴",
+          "performer": "David Joseph Stith",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico_Scarlatti_Sonata_K10.wav",
+          "rights": "CC0；http://creativecommons.org/publicdomain/zero/1.0/deed.en；保留演奏者署名及来源链接，改编遵守所列许可条件。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Domenico_Scarlatti_Sonata_K10.wav",
+            "mimeType": "audio/wav"
+          }
+        }
+      ]
+    },
+    "tele": {
+      "tracks": [
+        {
+          "id": "tele-representative-1",
+          "title": "a小调竖笛与维奥尔琴协奏曲，TWV 52:a1",
+          "subtitle": "全曲",
+          "performer": "New Comma Baroque；Laura Osterlund 竖笛；Phillip W. Serna 维奥尔琴",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georg_Philipp_Telemann_(1681-1767)_-_Concerto_for_Recorder_and_Viola_da_Gamba,_TWV_52a1.ogg",
+          "rights": "CC BY-SA 4.0；https://creativecommons.org/licenses/by-sa/4.0；保留演奏者署名及来源链接，改编遵守所列许可条件。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Georg_Philipp_Telemann_%281681-1767%29_-_Concerto_for_Recorder_and_Viola_da_Gamba%2C_TWV_52a1.ogg",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "clem": {
+      "tracks": [
+        {
+          "id": "clem-representative-1",
+          "title": "C大调小奏鸣曲，Op. 36 No. 1：第三乐章",
+          "subtitle": "钢琴独奏 · 第三乐章 Vivace",
+          "performer": "Alessio Cesaroni",
+          "sourceLabel": "Wikimedia Commons",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clementi,_Sonatina_N.1_-_3_Mov._Vivace.ogg",
+          "rights": "录音采用 CC0 公共领域贡献声明：https://creativecommons.org/publicdomain/zero/1.0/；保留演奏者署名与来源链接便于读者查考。",
+          "media": {
+            "type": "audio",
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Clementi%2C_Sonatina_N.1_-_3_Mov._Vivace.ogg",
+            "mimeType": "audio/ogg"
+          }
+        }
+      ]
+    },
+    "leon": {
+      "tracks": [
+        {
+          "id": "leon-representative-1",
+          "title": "Viderunt omnes",
+          "subtitle": "平台试听 · 二声部奥尔加农",
+          "performer": "James Bowman；Early Music Consort of London；David Munrow",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5zoWCXM4E49X6OYPzEIcOd",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5zoWCXM4E49X6OYPzEIcOd"
+          }
+        }
+      ]
+    },
+    "adam": {
+      "tracks": [
+        {
+          "id": "adam-representative-1",
+          "title": "《罗宾与玛丽昂的游戏》",
+          "subtitle": "平台试听 · 第一场「玛丽昂与骑士」",
+          "performer": "Ensemble Perceval；Guy Robert；Solange Boulanger；Jean-Paul Racodon 等",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/47vdqNVbSpGCnvmMRxxRjP",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/47vdqNVbSpGCnvmMRxxRjP"
+          }
+        }
+      ]
+    },
+    "ocke": {
+      "tracks": [
+        {
+          "id": "ocke-representative-1",
+          "title": "《安魂弥撒》Missa pro defunctis",
+          "subtitle": "平台试听 · 进堂咏 Requiem aeternam",
+          "performer": "The Hilliard Ensemble；Paul Hillier",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3zlS9Y1jztEKcTId4OESOd",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3zlS9Y1jztEKcTId4OESOd"
+          }
+        }
+      ]
+    },
+    "lass": {
+      "tracks": [
+        {
+          "id": "lass-representative-1",
+          "title": "《圣彼得的眼泪》Lagrime di San Pietro",
+          "subtitle": "平台试听 · 第5首 Giovane donna il suo bel volto in specchio",
+          "performer": "Gallicantus；Gabriel Crouch",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2kxYAiduLoK6qHEvNybFkU",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2kxYAiduLoK6qHEvNybFkU"
+          }
+        }
+      ]
+    },
+    "byrd": {
+      "tracks": [
+        {
+          "id": "byrd-representative-1",
+          "title": "Ave verum corpus",
+          "subtitle": "平台试听 · 经文歌",
+          "performer": "The Tallis Scholars；Peter Phillips",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7J6b58JOnf4RGGqJmxq0bD",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7J6b58JOnf4RGGqJmxq0bD"
+          }
+        }
+      ]
+    },
+    "schu": {
+      "tracks": [
+        {
+          "id": "schu-representative-1",
+          "title": "《葬礼音乐》Musicalische Exequien，SWV 279",
+          "subtitle": "平台试听 · 第一部选段 Nacket bin ich",
+          "performer": "Vox Luminis；Lionel Meunier",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6Q3SrmumibsHkRpW4uyyrn",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6Q3SrmumibsHkRpW4uyyrn"
+          }
+        }
+      ]
+    },
+    "asca": {
+      "tracks": [
+        {
+          "id": "asca-representative-1",
+          "title": "《朱迪塔》La Giuditta",
+          "subtitle": "平台试听 · 咏叹调 Dormi o fulmine",
+          "performer": "Filippo Mineccia；Nereydas；Javier Ulises Illán",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/66elvBbMIJmBW9KI0tLSqI",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/66elvBbMIJmBW9KI0tLSqI"
+          }
+        }
+      ]
+    },
+    "ramo": {
+      "tracks": [
+        {
+          "id": "ramo-representative-1",
+          "title": "《华丽的印第安人》Les Indes galantes",
+          "subtitle": "平台试听 · Danse des Sauvages（现场录音）",
+          "performer": "Les Musiciens du Louvre；Marc Minkowski",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4ia12bEZiu5Z8yjFLeJJSK",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4ia12bEZiu5Z8yjFLeJJSK"
+          }
+        }
+      ]
+    },
+    "duns": {
+      "tracks": [
+        {
+          "id": "duns-representative-1",
+          "title": "Quam pulchra es",
+          "subtitle": "平台试听 · 经文歌",
+          "performer": "The Hilliard Ensemble；Paul Hillier",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2w9tqd6CvTCCzyKolKMUHM",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2w9tqd6CvTCCzyKolKMUHM"
+          }
+        }
+      ]
+    },
+    "obre": {
+      "tracks": [
+        {
+          "id": "obre-representative-1",
+          "title": "Salve Regina",
+          "subtitle": "平台试听 · 圣母交替圣歌",
+          "performer": "The Sixteen",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0bDp3oq2bu2DM696YPAAdE",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0bDp3oq2bu2DM696YPAAdE"
+          }
+        }
+      ]
+    },
+    "cacc": {
+      "tracks": [
+        {
+          "id": "cacc-representative-1",
+          "title": "Amarilli mia bella",
+          "subtitle": "平台试听 · 歌曲",
+          "performer": "Cecilia Bartoli；György Fischer",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6GxgK8LQhfWRkF49b5o6Et",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6GxgK8LQhfWRkF49b5o6Et"
+          }
+        }
+      ]
+    },
+    "cava": {
+      "tracks": [
+        {
+          "id": "cava-representative-1",
+          "title": "《卡利斯托》La Calisto",
+          "subtitle": "平台试听 · 第二幕 Erme e solinghe cime／Lucidissima face",
+          "performer": "Jakub Józef Orliński；Il Pomo d'Oro；Maxim Emelyanychev",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7BoFG9Flvpp0PA9N1mEdqy",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7BoFG9Flvpp0PA9N1mEdqy"
+          }
+        }
+      ]
+    },
+    "pach": {
+      "tracks": [
+        {
+          "id": "pach-representative-1",
+          "title": "D大调卡农与吉格",
+          "subtitle": "平台试听 · 卡农",
+          "performer": "Academy of St. Martin in the Fields；Neville Marriner",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/712Pm7DCa8lL8dGZ7LdXQS",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/712Pm7DCa8lL8dGZ7LdXQS"
+          }
+        }
+      ]
+    },
+    "bern": {
+      "tracks": [
+        {
+          "id": "bern-representative-1",
+          "title": "Quan vei la lauzeta mover",
+          "subtitle": "平台试听 · 游吟诗人歌曲",
+          "performer": "Maria Lafitte；Unicorn Ensemble；Oni Wytars Ensemble；Michael Posch",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2ciH0TGTcN6bvZZ0xU6yNc",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2ciH0TGTcN6bvZZ0xU6yNc"
+          }
+        }
+      ]
+    },
+    "dia": {
+      "tracks": [
+        {
+          "id": "dia-representative-1",
+          "title": "A chantar m'er de so qu'eu no volria",
+          "subtitle": "平台试听 · 游吟诗人歌曲",
+          "performer": "Ensemble Apotropaïk；Louise Bouedo；Clément Stagnol；Marie-Domitille Murez；Clémence Niclas",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6iNVXTTvvdjviUUjEVoUpZ",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6iNVXTTvvdjviUUjEVoUpZ"
+          }
+        }
+      ]
+    },
+    "dowl": {
+      "tracks": [
+        {
+          "id": "dowl-representative-1",
+          "title": "《泪，或七种泪》Lachrimae, or Seven Tears",
+          "subtitle": "平台试听 · Lachrimae antiquae",
+          "performer": "Jupiter；Thomas Dunford",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/699A0rZPvtqcbcgIcWX3rU",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/699A0rZPvtqcbcgIcWX3rU"
+          }
+        }
+      ]
+    },
+    "stro": {
+      "tracks": [
+        {
+          "id": "stro-representative-1",
+          "title": "Che si può fare，Op. 8 No. 6",
+          "subtitle": "平台试听 · 咏叹调",
+          "performer": "Emőke Baráth；Il Pomo d'Oro；Francesco Corti",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0IEldn8SlA4yLdcILggltD",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0IEldn8SlA4yLdcILggltD"
+          }
+        }
+      ]
+    },
+    "tall": {
+      "tracks": [
+        {
+          "id": "tall-representative-1",
+          "title": "If ye love me",
+          "subtitle": "平台试听 · 赞美诗",
+          "performer": "The Tallis Scholars；Peter Phillips",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6ac8XRVMwAIO2lYSYCvGkg",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6ac8XRVMwAIO2lYSYCvGkg"
+          }
+        }
+      ]
+    },
+    "fres": {
+      "tracks": [
+        {
+          "id": "fres-representative-1",
+          "title": "Se l'aura spira tutta vezzosa，F7.15",
+          "subtitle": "平台试听 · 歌曲",
+          "performer": "Mariana Flores；Clematis；Leonardo García-Alarcón",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6wV3dmMkGqoZfu2r2SMukU",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6wV3dmMkGqoZfu2r2SMukU"
+          }
+        }
+      ]
+    },
+    "coup": {
+      "tracks": [
+        {
+          "id": "coup-representative-1",
+          "title": "《神秘的障碍》Les Baricades mistérieuses",
+          "subtitle": "平台试听 · 第二卷第六组曲选段",
+          "performer": "Jean Rondeau；Thomas Dunford",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4z2ZCDtZlUI3Ypn09yutOJ",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4z2ZCDtZlUI3Ypn09yutOJ"
+          }
+        }
+      ]
+    },
+    "perg": {
+      "tracks": [
+        {
+          "id": "perg-representative-1",
+          "title": "《圣母悼歌》Stabat Mater，P. 77",
+          "subtitle": "平台试听 · 第1曲 Stabat Mater dolorosa",
+          "performer": "Emma Kirkby；James Bowman；Academy of Ancient Music；Christopher Hogwood",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2GVKH0Qp5oGaixZgwlYRED",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2GVKH0Qp5oGaixZgwlYRED"
+          }
+        }
+      ]
+    },
+    "bibe": {
+      "tracks": [
+        {
+          "id": "bibe-representative-1",
+          "title": "《玫瑰经奏鸣曲》第1首「天使报喜」，C 90",
+          "subtitle": "平台试听 · 前奏曲",
+          "performer": "Gunar Letzbor；Ars Antiqua Austria",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3O8OL6Xy6GMH0A2GPHd7f1",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3O8OL6Xy6GMH0A2GPHd7f1"
+          }
+        }
+      ]
+    },
+    "hass": {
+      "tracks": [
+        {
+          "id": "hass-representative-1",
+          "title": "《阿尔塔塞尔斯》Artaserse",
+          "subtitle": "平台试听 · 序曲",
+          "performer": "Les Talens Lyriques；Christophe Rousset",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3Hh5tuQxuI1NPhJnhB1uP7",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3Hh5tuQxuI1NPhJnhB1uP7"
+          }
+        }
+      ]
+    },
+    "cico": {
+      "tracks": [
+        {
+          "id": "cico-representative-1",
+          "title": "Una panthera",
+          "subtitle": "平台试听 · 牧歌",
+          "performer": "Sollazzo Ensemble；Anna Danilevskaia",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4XqXFo9O25azzaDjZXNXeL",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4XqXFo9O25azzaDjZXNXeL"
+          }
+        }
+      ]
+    },
+    "hand": {
+      "tracks": [
+        {
+          "id": "hand-representative-1",
+          "title": "《祭司撒督》Zadok the Priest，HWV 258",
+          "subtitle": "平台试听 · 加冕赞歌",
+          "performer": "The English Concert；The Choir of Westminster Abbey；Trevor Pinnock；Simon Preston",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/30bQxViotttoZ7x2iUP2L9",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/30bQxViotttoZ7x2iUP2L9"
+          }
+        }
+      ]
+    },
+    "vitr": {
+      "tracks": [
+        {
+          "id": "vitr-representative-1",
+          "title": "Garrit gallus／In nova fert",
+          "subtitle": "平台试听 · 等节奏经文歌",
+          "performer": "Blue Heron；Scott Metcalfe",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6Jqfb18yIa9kAvr4YodZGV",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6Jqfb18yIa9kAvr4YodZGV"
+          }
+        }
+      ]
+    },
+    "land": {
+      "tracks": [
+        {
+          "id": "land-representative-1",
+          "title": "Ecco la primavera",
+          "subtitle": "平台试听 · 巴拉塔",
+          "performer": "Ensemble Renaissance",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/74AulrRokvZoSfRWrf38TQ",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/74AulrRokvZoSfRWrf38TQ"
+          }
+        }
+      ]
+    },
+    "jaco": {
+      "tracks": [
+        {
+          "id": "jaco-representative-1",
+          "title": "Non al su' amante più Diana piacque",
+          "subtitle": "平台试听 · 牧歌",
+          "performer": "la fonte musica；Michele Pasotti",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2renNm8VPTVeEWi9VK4mXg",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2renNm8VPTVeEWi9VK4mXg"
+          }
+        }
+      ]
+    },
+    "vict": {
+      "tracks": [
+        {
+          "id": "vict-representative-1",
+          "title": "O magnum mysterium",
+          "subtitle": "平台试听 · 经文歌",
+          "performer": "VOCES8",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5A5apzuZOVrsCspsCiTncE",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5A5apzuZOVrsCspsCiTncE"
+          }
+        }
+      ]
+    },
+    "gabr": {
+      "tracks": [
+        {
+          "id": "gabr-representative-1",
+          "title": "In ecclesiis，C 78",
+          "subtitle": "平台试听 · 十四声部经文歌",
+          "performer": "His Majestys Sagbutts & Cornetts；Choir of King's College, Cambridge；Stephen Cleobury",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5mQGGCOgXCi3y9R2s2iEzm",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5mQGGCOgXCi3y9R2s2iEzm"
+          }
+        }
+      ]
+    },
+    "jacq": {
+      "tracks": [
+        {
+          "id": "jacq-representative-1",
+          "title": "Il bianco e dolce cigno",
+          "subtitle": "平台试听 · 牧歌",
+          "performer": "Boston Camerata；Joel Cohen",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1OgOp2zk2bjA6J30NONYYa",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1OgOp2zk2bjA6J30NONYYa"
+          }
+        }
+      ]
+    },
+    "will": {
+      "tracks": [
+        {
+          "id": "will-representative-1",
+          "title": "Vecchie letrose",
+          "subtitle": "平台试听 · 那不勒斯风格歌曲",
+          "performer": "Amarcord；Michael Metzler",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0y8LA7hh0H4YsFaZgW8fxl",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0y8LA7hh0H4YsFaZgW8fxl"
+          }
+        }
+      ]
+    },
+    "rore": {
+      "tracks": [
+        {
+          "id": "rore-representative-1",
+          "title": "Ancor che col partire",
+          "subtitle": "平台试听 · 四声部牧歌",
+          "performer": "The Hilliard Ensemble；Paul Hillier",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7rv0RJ9cN8rDlBWmA54CUg",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7rv0RJ9cN8rDlBWmA54CUg"
+          }
+        }
+      ]
+    },
+    "banc": {
+      "tracks": [
+        {
+          "id": "banc-representative-1",
+          "title": "《狂欢节星期四晚宴前的娱乐》Festino，Op. 18",
+          "subtitle": "平台试听 · 第12曲 Contrappunto bestiale alla mente",
+          "performer": "The King's Singers",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4loHqKKBMjC3uDwYyitiFU",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4loHqKKBMjC3uDwYyitiFU"
+          }
+        }
+      ]
+    },
+    "binc": {
+      "tracks": [
+        {
+          "id": "binc-representative-1",
+          "title": "De plus en plus se renouvelle",
+          "subtitle": "平台试听 · 香颂",
+          "performer": "Capilla Flamenca；Marnix De Cat",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/68ZKRQaXiNTIDhCPRfEMbL",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/68ZKRQaXiNTIDhCPRfEMbL"
+          }
+        }
+      ]
+    },
+    "marc": {
+      "tracks": [
+        {
+          "id": "marc-representative-1",
+          "title": "Pax! in nomine Domini",
+          "subtitle": "平台试听 · 游吟诗人歌曲",
+          "performer": "Ensemble Renaissance",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0OHkMlyjg5gC5zZ2bi1Kxq",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0OHkMlyjg5gC5zZ2bi1Kxq"
+          }
+        }
+      ]
+    },
+    "peri": {
+      "tracks": [
+        {
+          "id": "peri-representative-1",
+          "title": "《尤丽狄茜》Euridice",
+          "subtitle": "平台试听 · 第一幕 Per quel vago boschetto（现场录音）",
+          "performer": "Françoise Masset；Les Arts Baroques；Mireille Podeur",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3vhcXpPPjnfflvhfrHxP7v",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3vhcXpPPjnfflvhfrHxP7v"
+          }
+        }
+      ]
+    },
+    "gluc": {
+      "tracks": [
+        {
+          "id": "gluc-representative-1",
+          "title": "Orfeo ed Euridice — Che farò senza Euridice?",
+          "subtitle": "《奥菲欧与欧丽狄茜》第三幕咏叹调 · 平台试听",
+          "performer": "Janet Baker / Raymond Leppard / London Philharmonic Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6j3J6oeX3xm0eNTJ98i9AJ",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6j3J6oeX3xm0eNTJ98i9AJ?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "cpeb": {
+      "tracks": [
+        {
+          "id": "cpeb-representative-1",
+          "title": "Fantasia in F-sharp minor, Wq. 67",
+          "subtitle": "键盘幻想曲 · 平台试听",
+          "performer": "Andreas Staier",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1S0WUfbP7lmbp3aW7Rm9qj",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1S0WUfbP7lmbp3aW7Rm9qj?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "sali": {
+      "tracks": [
+        {
+          "id": "sali-representative-1",
+          "title": "Prima la musica e poi le parole — Là tu vedrai chi sono",
+          "subtitle": "《先音乐后语言》咏叹调 · 平台试听",
+          "performer": "Nikolaus Harnoncourt / Roberta Alexander / Royal Concertgebouw Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6Jk4DLw6yNPNUpcW2h1GwX",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6Jk4DLw6yNPNUpcW2h1GwX?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "bocc": {
+      "tracks": [
+        {
+          "id": "bocc-representative-1",
+          "title": "String Quintet in E major, Op. 11 No. 5, G. 275 — III. Minuetto",
+          "subtitle": "E大调弦乐五重奏第三乐章，小步舞曲 · 平台试听",
+          "performer": "Jaime Laredo / Isaac Stern / Cho-Liang Lin / Yo-Yo Ma / Sharon Robinson",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/66l0Z0dEAq6wcxlZN5VQid",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/66l0Z0dEAq6wcxlZN5VQid?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "berl": {
+      "tracks": [
+        {
+          "id": "berl-representative-1",
+          "title": "Symphonie fantastique, Op. 14 — II. Un bal",
+          "subtitle": "《幻想交响曲》第二乐章，舞会 · 平台试听",
+          "performer": "London Symphony Orchestra / Sir Colin Davis",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6OMGlCuXFpIvlGosXRe3hC",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6OMGlCuXFpIvlGosXRe3hC?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "mend": {
+      "tracks": [
+        {
+          "id": "mend-representative-1",
+          "title": "Violin Concerto in E minor, Op. 64 — I. Allegro molto appassionato",
+          "subtitle": "e小调小提琴协奏曲第一乐章 · 平台试听",
+          "performer": "Jascha Heifetz / Charles Münch / Boston Symphony Orchestra",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5XeEPgTCz1fqRmDdsMNnPv",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5XeEPgTCz1fqRmDdsMNnPv?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "schm": {
+      "tracks": [
+        {
+          "id": "schm-representative-1",
+          "title": "Kinderszenen, Op. 15 — No. 7, Träumerei",
+          "subtitle": "《童年情景》第七首，梦幻曲 · 平台试听",
+          "performer": "Vladimir Horowitz",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/4yaQyo7rlMY2KLhDpKyNcp",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/4yaQyo7rlMY2KLhDpKyNcp?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "clar": {
+      "tracks": [
+        {
+          "id": "clar-representative-1",
+          "title": "3 Romances for Violin and Piano, Op. 22 — No. 1, Andante molto",
+          "subtitle": "小提琴与钢琴浪漫曲第一首 · 平台试听",
+          "performer": "Tasmin Little / John Lenehan",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5ZEpUphaifKoUHVBHO5xfQ",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5ZEpUphaifKoUHVBHO5xfQ?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "bruc": {
+      "tracks": [
+        {
+          "id": "bruc-representative-1",
+          "title": "Symphony No. 7 in E major — I. Allegro moderato",
+          "subtitle": "第七交响曲第一乐章 · 平台试听",
+          "performer": "Staatskapelle Dresden / Eugen Jochum",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/44muM7jGt1EmEzqGfQw1Cb",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/44muM7jGt1EmEzqGfQw1Cb?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "tcha": {
+      "tracks": [
+        {
+          "id": "tcha-representative-1",
+          "title": "The Nutcracker, Op. 71 — Waltz of the Flowers",
+          "subtitle": "《胡桃夹子》第二幕选曲，花之圆舞曲 · 平台试听",
+          "performer": "Mariinsky Orchestra / Valery Gergiev",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1nPHuiD55BwCjJeUBxDsHd",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1nPHuiD55BwCjJeUBxDsHd?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "muso": {
+      "tracks": [
+        {
+          "id": "muso-representative-1",
+          "title": "Pictures at an Exhibition — Opening Promenade",
+          "subtitle": "《图画展览会》开篇漫步，钢琴独奏 · 平台试听",
+          "performer": "Sviatoslav Richter",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/492xtvZ8FRcuYSKheY5H8S",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/492xtvZ8FRcuYSKheY5H8S?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "rims": {
+      "tracks": [
+        {
+          "id": "rims-representative-1",
+          "title": "Scheherazade, Op. 35 — I. The Sea and Sinbad's Ship",
+          "subtitle": "《舍赫拉查达》第一乐章 · 平台试听",
+          "performer": "Fritz Reiner / Chicago Symphony Orchestra / Sidney Harth",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3XvojtlbE9k0T342XgfNFP",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3XvojtlbE9k0T342XgfNFP?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "dvor": {
+      "tracks": [
+        {
+          "id": "dvor-representative-1",
+          "title": "Symphony No. 9 in E minor, Op. 95, “From the New World” — II. Largo",
+          "subtitle": "《自新世界》交响曲第二乐章 · 平台试听",
+          "performer": "Berliner Philharmoniker / Rafael Kubelík",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/3BHVa1cjtwrQGpiQK62kV3",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/3BHVa1cjtwrQGpiQK62kV3?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "grie": {
+      "tracks": [
+        {
+          "id": "grie-representative-1",
+          "title": "Peer Gynt Suite No. 1, Op. 46 — I. Morning Mood",
+          "subtitle": "《培尔·金特》第一组曲第一首，晨景 · 平台试听",
+          "performer": "Berliner Philharmoniker / Herbert von Karajan",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1lo3gbgHucEln0sI2APiK3",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1lo3gbgHucEln0sI2APiK3?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "rstr": {
+      "tracks": [
+        {
+          "id": "rstr-representative-1",
+          "title": "Vier letzte Lieder, TrV 296 — No. 3, Beim Schlafengehen",
+          "subtitle": "《最后四首歌》第三首，入睡时 · 平台试听",
+          "performer": "Jessye Norman / Gewandhausorchester / Kurt Masur",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/1CrFHPYHycDcFUytjjOU65",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/1CrFHPYHycDcFUytjjOU65?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "jcb": {
+      "tracks": [
+        {
+          "id": "jcb-representative-1",
+          "title": "Keyboard Concerto in E-flat major, Op. 7 No. 5, W. C59 — I. Allegro di molto",
+          "subtitle": "降E大调键盘协奏曲第一乐章 · 平台试听",
+          "performer": "Anthony Halstead / Hanover Band",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/35mq43W34x6SLuHoTYrwyr",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/35mq43W34x6SLuHoTYrwyr?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "stam": {
+      "tracks": [
+        {
+          "id": "stam-representative-1",
+          "title": "Symphony in E-flat major, Op. 11 No. 3 — I. Allegro assai",
+          "subtitle": "降E大调交响曲第一乐章 · 平台试听",
+          "performer": "New Zealand Chamber Orchestra / Donald Armstrong",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0wUrcFnMhzLMgoJfloCmyD",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0wUrcFnMhzLMgoJfloCmyD?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "cweb": {
+      "tracks": [
+        {
+          "id": "cweb-representative-1",
+          "title": "Der Freischütz, J. 277 — Overture",
+          "subtitle": "《魔弹射手》序曲 · 平台试听",
+          "performer": "Staatskapelle Dresden / Carlos Kleiber",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6XgNOchwrihZelchfRhPAi",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6XgNOchwrihZelchfRhPAi?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "meyr": {
+      "tracks": [
+        {
+          "id": "meyr-representative-1",
+          "title": "L’Africaine — Pays merveilleux… Ô paradis",
+          "subtitle": "《非洲女》第四幕咏叹调 · 平台试听",
+          "performer": "Plácido Domingo / Los Angeles Philharmonic / Carlo Maria Giulini",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5lt5ZSh5tJX9mTkF10qv1n",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5lt5ZSh5tJX9mTkF10qv1n?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "glin": {
+      "tracks": [
+        {
+          "id": "glin-representative-1",
+          "title": "Ruslan and Lyudmila — Overture",
+          "subtitle": "《鲁斯兰与柳德米拉》序曲，现场录音 · 平台试听",
+          "performer": "Leningrad Philharmonic Orchestra / Evgeny Mravinsky",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/04GbUC71cGesWeGEs4RcMX",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/04GbUC71cGesWeGEs4RcMX?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "hens": {
+      "tracks": [
+        {
+          "id": "hens-representative-1",
+          "title": "Piano Trio in D minor, Op. 11 — I. Allegro molto vivace",
+          "subtitle": "d小调钢琴三重奏第一乐章 · 平台试听",
+          "performer": "Trio Chausson",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/2H3BWku5tFXa5LUQVf6UUk",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/2H3BWku5tFXa5LUQVf6UUk?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "paga": {
+      "tracks": [
+        {
+          "id": "paga-representative-1",
+          "title": "24 Caprices for Solo Violin, Op. 1 — No. 24 in A minor",
+          "subtitle": "第二十四首随想曲，小提琴独奏 · 平台试听",
+          "performer": "Hilary Hahn",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5Dop3VhzsB4OxQPL8LPjgU",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5Dop3VhzsB4OxQPL8LPjgU?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "ross": {
+      "tracks": [
+        {
+          "id": "ross-representative-1",
+          "title": "Il barbiere di Siviglia — Largo al factotum",
+          "subtitle": "《塞维利亚的理发师》第一幕咏叹调 · 平台试听",
+          "performer": "Hermann Prey / London Symphony Orchestra / Claudio Abbado",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0wPqyp1HwmEsKkYpmyPADo",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0wPqyp1HwmEsKkYpmyPADo?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "bell": {
+      "tracks": [
+        {
+          "id": "bell-representative-1",
+          "title": "Norma — Casta diva",
+          "subtitle": "《诺尔玛》第一幕选段，圣洁的女神 · 平台试听",
+          "performer": "Maria Callas / Nicola Zaccaria / Coro Del Teatro Alla Scala Di Milano / Tullio Serafin / Orchestra Del Teatro Alla Scala, Milano",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6yTDlIL0skSjcilfjhKFyf",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6yTDlIL0skSjcilfjhKFyf?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "doni": {
+      "tracks": [
+        {
+          "id": "doni-representative-1",
+          "title": "L’elisir d’amore — Una furtiva lagrima",
+          "subtitle": "《爱之甘醇》第二幕咏叹调，偷洒一滴泪 · 平台试听",
+          "performer": "Orchestra of the Royal Opera House, Covent Garden / Plácido Domingo / Sir John Pritchard",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/6l3YEkQBve5ewLaYsZLcrI",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/6l3YEkQBve5ewLaYsZLcrI?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "smet": {
+      "tracks": [
+        {
+          "id": "smet-representative-1",
+          "title": "Má vlast — II. Vltava",
+          "subtitle": "《我的祖国》第二首交响诗，伏尔塔瓦河 · 平台试听",
+          "performer": "Boston Symphony Orchestra / Rafael Kubelík",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7tVJeZW1K0TmG4Swregz2T",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7tVJeZW1K0TmG4Swregz2T?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "bize": {
+      "tracks": [
+        {
+          "id": "bize-representative-1",
+          "title": "Carmen — Habanera: L’amour est un oiseau rebelle",
+          "subtitle": "《卡门》第一幕哈巴涅拉 · 平台试听",
+          "performer": "Teresa Berganza / Ambrosian Singers / London Symphony Orchestra / Claudio Abbado",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/407r0ezDVj5hjFCIZNqsWs",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/407r0ezDVj5hjFCIZNqsWs?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "sasa": {
+      "tracks": [
+        {
+          "id": "sasa-representative-1",
+          "title": "Le Carnaval des animaux — XIII. Le Cygne",
+          "subtitle": "《动物狂欢节》第十三曲，天鹅；大提琴与双钢琴 · 平台试听",
+          "performer": "Yo-Yo Ma / Philippe Entremont / Gaby Casadesus",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/0LtPwWDn4ATL5YhE8m9N19",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/0LtPwWDn4ATL5YhE8m9N19?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "faur": {
+      "tracks": [
+        {
+          "id": "faur-representative-1",
+          "title": "Requiem, Op. 48 — VII. In paradisum",
+          "subtitle": "《安魂曲》第七乐章，在天堂 · 平台试听",
+          "performer": "Les Petits Chanteurs de Saint-Louis / Ensemble Musique Oblique / Philippe Herreweghe / La Chapelle Royale",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7wkQ1r62pT7dXPeJ1YDNJu",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7wkQ1r62pT7dXPeJ1YDNJu?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "pucc": {
+      "tracks": [
+        {
+          "id": "pucc-representative-1",
+          "title": "Tosca — Vissi d’arte, vissi d’amore",
+          "subtitle": "《托斯卡》第二幕咏叹调，为艺术，为爱情 · 平台试听",
+          "performer": "Maria Callas / Orchestra Del Teatro Alla Scala, Milano / Victor de Sabata",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/7yCqpSVzLU3vjV62pO7sAc",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/7yCqpSVzLU3vjV62pO7sAc?utm_source=oembed"
+          }
+        }
+      ]
+    },
+    "elga": {
+      "tracks": [
+        {
+          "id": "elga-representative-1",
+          "title": "Cello Concerto in E minor, Op. 85 — I. Adagio–Moderato",
+          "subtitle": "e小调大提琴协奏曲第一乐章 · 平台试听",
+          "performer": "Jacqueline du Pré / London Symphony Orchestra / Sir John Barbirolli",
+          "sourceLabel": "Spotify",
+          "sourceUrl": "https://open.spotify.com/track/5pjDwtMPly0cNMbuGXhUOI",
+          "rights": "录音权利归原权利人；播放范围依 Spotify 的地区与账户条件而定。",
+          "media": {
+            "type": "embed",
+            "url": "https://open.spotify.com/embed/track/5pjDwtMPly0cNMbuGXhUOI?utm_source=oembed"
+          }
+        }
+      ]
+    }
+  }
+}

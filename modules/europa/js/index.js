@@ -1,4 +1,7 @@
 import { initRealMapView, stopRealMapView } from "./map-real.js";
+import { createListeningLibrary } from "./listening.js?v=20260831-listening1";
+
+const listening = createListeningLibrary();
 
 const EUROPA_DATA = Object.assign(
   {},
@@ -930,6 +933,7 @@ function renderChapterRail(ep,e){
   </div>`;
 }
 function renderAlm(){
+  listening.stop();
   const e=EP[curEp];
   const ms=M.filter(m=>m.e===curEp).sort((a,b)=>yrs(a)[0]-yrs(b)[0]);
   const art=ART[curEp];
@@ -955,13 +959,14 @@ function renderAlm(){
   <div class="debates">${deb.map((d,i)=>`<details class="debate"><summary><span class="debate-kicker">观点 ${String(i+1).padStart(2,"0")}</span><h4>${d.t}</h4><p class="debate-summary">${debateSummary(d.b)}</p><span class="debate-more">展开论据与参考文献</span></summary><div class="debate-body"><p>${d.b}</p><span class="ref">${d.ref||""}</span></div></details>`).join("")}</div>`:""}
   <h3 class="rub">MUSICI · 音乐家名录（${ms.length}人 · 按生年为序 · 点击开传）</h3>
   <div class="grid">${ms.map(m=>`
-    <article class="card" data-m="${m.i}" tabindex="0" role="button" aria-label="${m.n}">
+    <article class="card" data-m="${m.i}" aria-label="${m.n}">
       ${m.b?'<span class="badge">◈ 重点</span>':""}${pic(m,172)}
-      <div class="cbody"><h4>${m.n}</h4><div class="orig">${m.o}</div><div class="dts">${m.d}</div>
+      <div class="cbody"><h4><button class="person-card-open" type="button" aria-label="打开${m.n}的人物详情">${m.n}</button></h4><div class="orig">${m.o}</div><div class="dts">${m.d}</div>
       <p>${(m.k||"").split("；")[0].split("：")[0]}</p>
       ${m.norton?`<span class="nortonmark">Norton note</span><span class="nortonbrief">${m.norton.split("；")[0].slice(0,82)}${m.norton.length>82?"…":""}</span>`:""}
-      <span class="sch">${m.s}</span></div>
+      <span class="sch">${m.s}</span>${listening.markup(m)}</div>
     </article>`).join("")}</div>`;
+  listening.mount($("#v-alm"));
   observe();syncSelection();queueChronograph();
 }
 
@@ -1066,6 +1071,7 @@ function locateMusician(id,target){
 }
 function openM(id,source="年鉴名录",opts={}){
   const m=byId[id];if(!m)return;
+  listening.stop();
   const restoreScroll=Number.isFinite(Number(opts.restoreScroll))?Number(opts.restoreScroll):null;
   const rels=L.filter(l=>l[0]===id||l[1]===id);
   const rel=rels.map(l=>{const o=byId[l[0]===id?l[1]:l[0]];if(!o)return"";
@@ -1088,6 +1094,7 @@ function openM(id,source="年鉴名录",opts={}){
     <h5>贡献 / 术语</h5><p>${xlink(m.k,id)}</p>
     <h5>声音与风格</h5><p>${xlink(m.t,id)}</p>
     <h5>代表作品</h5><ul class="works">${(m.w||[]).map(w=>`<li>${w}</li>`).join("")||"<li>资料待补</li>"}</ul>
+    ${listening.markup(m,"detail")}
     ${m.norton?`<details class="detail-expand"><summary>诺顿断代史札记</summary><div class="nortoncard"><p>${xlink(m.norton,id)}</p></div></details>`:""}
     ${m.deep?`<details class="detail-expand"><summary>展开深读</summary><div><p>${xlink(m.deep,id)}</p></div></details>`:""}
     <p class="imslp"><a href="https://imslp.org/index.php?title=Special:Search&search=${encodeURIComponent((m.o||m.n).replace(/[()]/g,""))}&fulltext=Search" target="_blank" rel="noopener">🎼 IMSLP · 检索公版乐谱与录音 ↗</a></p>
@@ -1097,6 +1104,7 @@ function openM(id,source="年鉴名录",opts={}){
     ${cs.length?`<div class="routebox">${miniMap(cs)}</div>`:""}
     <h5>相关人物与关系（${rels.length}）</h5><ul class="conn">${rel||"<li>暂无已编关系</li>"}</ul>
   </div></div>${renderPersonWorks(m)}`;
+  listening.mount($("#dwrap"));
   const dg=$("#dlg");
   if(dg.open&&!(["musician","work","version","fontes","performance"].includes(dg.dataset.kind)))dg.close();
   delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;
@@ -1764,6 +1772,7 @@ function openMusioFig(id){
 /* ══════════ 搜索 ══════════ */
 const qi=$("#q"),sres=$("#sres");
 qi.addEventListener("input",()=>{
+  listening.stop();
   const q=qi.value.trim().toLowerCase();
   if(!q){sres.style.display="none";return}
   const hits=M.filter(m=>(m.n+m.o+(m.s||"")+(m.w||[]).join("")+(m.k||"")).toLowerCase().includes(q)).slice(0,14);
@@ -1780,6 +1789,7 @@ qi.addEventListener("keydown",e=>{if(e.key==="Escape"){sres.style.display="none"
 
 function setView(v){
   const b=document.querySelector(`#views button[data-v="${v}"]`);if(!b)return;
+  listening.stop();
   document.querySelectorAll("#views button").forEach(x=>x.classList.toggle("on",x===b));
   document.querySelectorAll(".view").forEach(s=>s.classList.remove("on"));
   $("#v-"+v).classList.add("on");
@@ -1813,8 +1823,14 @@ $("#epnav").addEventListener("click",e=>{
   const b=e.target.closest("button");if(!b)return;
   curEp=b.dataset.ep;$("#app").dataset.ep=curEp;renderEpnav();renderAlm();window.scrollTo({top:0});
 });
-document.addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openM(c.dataset.m,"年鉴名录")});
-document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.closest){const c=e.target.closest(".card");if(c)openM(c.dataset.m,"年鉴名录")}});
+document.addEventListener("click",e=>{
+  if(e.target.closest(".person-listening"))return;
+  const c=e.target.closest(".card[data-m]");if(c)openM(c.dataset.m,"年鉴名录");
+});
+["#mapchips","#netchips","#linchips","#histchips","#glchips","#mapstate","#mtloff","#mplay"].forEach(selector=>{
+  $(selector)?.addEventListener("click",e=>{if(e.target.closest("button"))listening.stop()});
+});
+$("#myear")?.addEventListener("input",()=>listening.stop());
 
 /* ══════════ 随机漫游 ══════════ */
 $("#roam").onclick=()=>{const i=Math.floor((performance.now()*131.77)%NAVORDER.length);openM(NAVORDER[i],"随机漫游")};
@@ -1844,6 +1860,7 @@ function currentView(){const on=document.querySelector("#views button.on");retur
 /* ══════════ 键盘导航 ══════════ */
 document.addEventListener("keydown",e=>{
   if(/^(INPUT|TEXTAREA)$/.test(e.target.tagName))return;
+  if(e.key!=="Escape"&&e.target.closest?.(".person-listening"))return;
   const dlg=$("#dlg");
   if(dlg.open&&dlg.dataset.kind){
     if(e.key==="Escape"){e.preventDefault();dlg.close()}
