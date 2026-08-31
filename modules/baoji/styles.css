@@ -818,6 +818,7 @@ body {
 }
 #archive.section--archive .search-box input { color: var(--bronze-ink); }
 #archive.section--archive .search-box input::placeholder { color: rgba(102, 95, 81, .72); }
+#archive.section--archive .search-box:focus-within { outline: 2px solid var(--bronze-gold); outline-offset: -2px; }
 #archive.section--archive .archive-legend { color: var(--bronze-muted); }
 #archive.section--archive .legend-dot--music {
   background: var(--bronze-gold);

@@ -77,15 +77,19 @@
         background-size: cover;
       }
       #other .artifact-catalog-toolbar { border-color: rgba(238, 231, 216, .18); color: var(--arch-paper); }
-      #other .artifact-catalog-toolbar input,
-      #other .artifact-catalog-toolbar select { border-color: rgba(238, 231, 216, .28); color: var(--arch-paper); background: rgba(238, 231, 216, .08); }
-      #other .artifact-catalog-toolbar input::placeholder { color: rgba(238, 231, 216, .52); }
+      #other.other-card .artifact-catalog-toolbar input,
+      #other.other-card .artifact-catalog-toolbar select { border-color: rgba(238, 231, 216, .28); color: var(--arch-paper); background: rgba(238, 231, 216, .08); }
+      #other.other-card .artifact-catalog-toolbar input::placeholder { color: rgba(238, 231, 216, .52); }
       #other.other-card #artifact-grid { background-image: linear-gradient(rgba(30, 45, 38, .54), rgba(30, 45, 38, .66)), url("assets/ui/card-interior-field-collage-v2.webp"); background-position: center; background-size: cover; }
       #other.other-card .artifact-catalog-card { border-color: rgba(238, 231, 216, .2); background: linear-gradient(135deg, rgba(18, 30, 24, .58), rgba(18, 30, 24, .72)), url("assets/ui/card-interior-field-collage-v2.webp") center / cover no-repeat; }
       #other.other-card .artifact-catalog-card:nth-child(3n + 1) { background-position: center, 14% center; }
       #other.other-card .artifact-catalog-card:nth-child(3n + 2) { background-position: center, 50% center; }
       #other.other-card .artifact-catalog-card:nth-child(3n) { background-position: center, 86% center; }
       #other.other-card .artifact-card-copy { color: rgba(238, 231, 216, .78); }
+      #other.other-card .artifact-card-kicker span:first-child,
+      #other.other-card .artifact-card-kicker span:first-child::before { color: var(--arch-paper); }
+      #other.other-card .artifact-card-kicker span + span,
+      #other.other-card .artifact-card-kicker span + span::before { color: var(--arch-loess); }
       #other.other-card .artifact-catalog-card h3 { color: var(--arch-paper); }
       #other.other-card .artifact-card-period,
       #other.other-card .artifact-card-summary,

@@ -296,7 +296,8 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 }
 
 /* 2026 exhibition identity: mirror rings, ink blue and mineral pigments */
-:root { --page: min(1480px, calc(100% - 72px)); --paper: #eef0e8; --paper-deep: #dfe5dc; --surface: #f7f6ef; --ink: #14272a; --muted: #657274; --line: #c8d0c9; --line-dark: #8d9f9d; --green: #126c70; --green-dark: #084f57; --red: #a13f32; --gold: #a98543; }
+:root { --page: min(1480px, calc(100% - 72px)); }
+:root:not([data-theme='dark']) { --paper: #eef0e8; --paper-deep: #dfe5dc; --surface: #f7f6ef; --ink: #14272a; --muted: #657274; --line: #c8d0c9; --line-dark: #8d9f9d; --green: #126c70; --green-dark: #084f57; --red: #a13f32; --gold: #a98543; }
 body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08), transparent 28%), linear-gradient(90deg, transparent 0 49.8%, rgba(11,77,83,.035) 50%, transparent 50.2%); }
 .topbar { padding-inline: max(24px, calc((100% - 1480px) / 2)); }
 .brand-mark { border-radius: 50%; background: radial-gradient(circle at 36% 32%, #1d8183, #063f46 72%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), 0 0 0 3px rgba(9,83,89,.11); }
@@ -456,6 +457,7 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
 #collection.collection .search-box input,
 #collection.collection .sort-box select { color: var(--xian-ink); }
 #collection.collection .search-box input::placeholder { color: color-mix(in srgb, var(--muted) 78%, transparent); }
+#collection.collection .search-box:focus-within { outline: 2px solid var(--xian-jade); outline-offset: -2px; }
 #collection.collection kbd { border-color: var(--line); color: var(--muted); background: rgba(233, 226, 210, .7); }
 #collection.collection .filter-chip { border-color: var(--line); color: var(--muted); }
 #collection.collection .filter-chip:hover,

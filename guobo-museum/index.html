@@ -27,6 +27,7 @@
       .object-card { height: 100%; }
 
       /* 卡片标题：一行收起，避免换行挤行 */
+      .object-caption > span { min-width: 0; flex: 1; }
       .object-caption h3 {
         display: block;
         overflow: hidden;
@@ -54,7 +55,7 @@
         <p class="opening-kicker">MY BEIJING ARCHIVE / 01</p>
         <p class="opening-english">NATIONAL MUSEUM OF CHINA</p>
         <h1 id="opening-title">中国国家<br /><em>博物馆</em></h1>
-        <p id="opening-subtitle">在展柜与记忆之间，打开一页北京参观档案</p>
+        <p id="opening-subtitle" class="opening-subtitle">在展柜与记忆之间，打开一页北京参观档案</p>
       </div>
       <div class="opening-meta">
         <span>BEIJING · TIAN'ANMEN EAST</span>
