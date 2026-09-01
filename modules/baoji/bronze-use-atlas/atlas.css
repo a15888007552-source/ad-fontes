@@ -110,6 +110,14 @@
 #bronze-use-atlas .atlas-object-record dd { margin: .2rem 0 0; color: #c6bdad; font-size: .68rem; overflow-wrap: anywhere; }
 #bronze-use-atlas .atlas-object-record p, #bronze-use-atlas .atlas-reference-record p { margin: .65rem 0 0; color: #9f9789; font-size: .7rem; line-height: 1.7; }
 #bronze-use-atlas .atlas-reference-record a { display: inline-flex; margin-top: .65rem; color: #d5b475; font-size: .68rem; }
+#bronze-use-atlas .atlas-object-record a { display: inline-flex; margin-top: .65rem; color: #d5b475; font-size: .68rem; }
+#bronze-use-atlas .atlas-object-record--cross { border-color: rgba(213,180,117,.26); }
+#bronze-use-atlas .atlas-object-record--no-image { border-left: 2px solid rgba(213,180,117,.42); }
+#bronze-use-atlas .atlas-history-note { margin: 0; color: #b9b0a1; font-size: .76rem; line-height: 1.85; }
+#bronze-use-atlas .atlas-source-list { display: grid; gap: .45rem; margin: .85rem 0 0; padding: .85rem 0 0; border-top: 1px solid rgba(238,233,220,.12); list-style: none; }
+#bronze-use-atlas .atlas-source-list a, #bronze-use-atlas .atlas-source-list > li > span { display: grid; grid-template-columns: 6.4rem minmax(0,1fr); gap: .6rem; color: #b9b0a1; font-size: .66rem; line-height: 1.55; text-decoration: none; }
+#bronze-use-atlas .atlas-source-list a:hover { color: #e2c78d; }
+#bronze-use-atlas .atlas-source-list a > span, #bronze-use-atlas .atlas-source-list > li > span > b { color: #827b70; font: .5rem/1.5 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; letter-spacing: .06em; }
 #bronze-use-atlas .atlas-card-history blockquote { margin: 0; padding: .8rem 0 .8rem 1rem; border-left: 2px solid #b98a46; }
 #bronze-use-atlas .atlas-card-history blockquote + blockquote { margin-top: .7rem; }
 #bronze-use-atlas .atlas-card-history blockquote p { margin: 0; color: #e2d9c9; font-size: .82rem; line-height: 1.85; }

@@ -25,7 +25,8 @@
   if (!type) return;
 
   const category = categoryById.get(type.categoryId) || {};
-  const copy = copyBySlug.get(slug)?.copy || {};
+  const copyRecord = copyBySlug.get(slug) || {};
+  const copy = copyRecord.copy || {};
   const pageRoot = '../../';
   const moduleRoot = '../../../';
   const atlasBase = new URL('../../index.html', document.baseURI);
@@ -59,7 +60,7 @@
   }
 
   function photoURL(group) {
-    const filename = fileName(group?.featured).replace(/\.JPG$/i, '.jpg');
+    const filename = fileName(group?.featured || group?.photos?.[0]).replace(/\.JPG$/i, '.jpg');
     return filename ? resolveURL(`${moduleRoot}assets/photos/thumbs/${encodeURIComponent(filename)}`) : '';
   }
 
@@ -94,6 +95,11 @@
     return lead.length > max ? `${lead.slice(0, max - 1)}…` : lead;
   }
 
+  function publicText(value) {
+    const blocked = /AI辅助|AI生成|图谱应|图谱可|网页应|网页可|页面应|页面可|动作图|复原图|本页|本模块|读者|按现场顺序归档|详情页按名称/iu;
+    return (String(value || '').match(/[^。！？]+[。！？]?/g) || []).map((item) => item.trim()).filter((item) => item && !blocked.test(item)).join('');
+  }
+
   function textBlock(text, fallback) {
     return `<div class="detail-context-copy"><p>${escapeHTML(text || fallback)}</p></div>`;
   }
@@ -115,37 +121,60 @@
 
   function recordCards() {
     const localGroups = (type.localBaojiGroupIds || []).map((id) => groupById.get(id)).filter(Boolean).slice(0, 3);
-    if (!localGroups.length) {
-      const hero = heroURL();
-      return `<div class="detail-record-grid detail-record-grid--empty">
-        <article class="detail-record-card">
-          ${hero ? `<img class="detail-record-media" src="${escapeHTML(hero)}" alt="${escapeHTML(type.nameZh)}器形视觉档案" loading="lazy" />` : ''}
-          <p class="detail-record-label">SOURCE-LED TYPE ENTRY</p>
-          <h3>${escapeHTML(type.nameZh)} · 参考器例</h3>
-          <p class="detail-record-note">当前条目以类型与来源线索进入图谱，具体馆藏对象仍应回到正式器例资料核对。</p>
-        </article>
-      </div>`;
-    }
-    return `<div class="detail-record-grid">${localGroups.map((group, index) => {
-      const image = photoURL(group) || heroURL();
+    if (localGroups.length) return `<div class="detail-record-grid">${localGroups.map((group, index) => {
+      const image = photoURL(group);
       const facts = group.labelFacts || {};
+      const note = group.titleSource === '现场展签与器形复核'
+        ? [group.research?.significance, group.research?.history].map((value) => publicText(value)).find(Boolean) || ''
+        : '';
       return `<article class="detail-record-card">
-        ${image ? `<img class="detail-record-media" src="${escapeHTML(image)}" alt="${escapeHTML(group.title || type.nameZh)} · 宝鸡青铜器博物院馆藏照片" loading="lazy" />` : ''}
-        <p class="detail-record-label">BAOJI COLLECTION RECORD / 0${index + 1}</p>
+        ${image ? `<img class="detail-record-media" src="${escapeHTML(image)}" alt="${escapeHTML(group.title || type.nameZh)} · 宝鸡现场档案照片" loading="lazy" />` : ''}
+        <p class="detail-record-label">宝鸡馆藏实物 / 0${index + 1}</p>
         <h3>${escapeHTML(group.title || type.nameZh)}</h3>
         <div class="detail-record-facts">
           <span>GROUP<strong>${escapeHTML(group.id)}</strong></span>
-          <span>PERIOD<strong>${escapeHTML(facts.period || '器例资料')}</strong></span>
-          <span>COLLECTION<strong>${escapeHTML(facts.collection || '宝鸡青铜器博物院')}</strong></span>
+          <span>PERIOD<strong>${escapeHTML(facts.period || '待核')}</strong></span>
+          <span>COLLECTION<strong>${escapeHTML(facts.collection || '待核')}</strong></span>
         </div>
-        <p class="detail-record-note">${escapeHTML(group.description || `${type.nameZh}的馆藏照片记录，用于与类型特征和图志文本相互对读。`)}</p>
+        ${note ? `<p class="detail-record-note">${escapeHTML(note)}</p>` : ''}
       </article>`;
     }).join('')}</div>`;
+    const crossObjects = (type.crossMuseumObjects || []).slice(0, 2);
+    if (crossObjects.length) return `<div class="detail-record-grid">${crossObjects.map((object, index) => {
+      const image = object.image ? resolveURL(`${moduleRoot}${object.image}`) : '';
+      return `<article class="detail-record-card">
+        ${image ? `<img class="detail-record-media" src="${escapeHTML(image)}" alt="${escapeHTML(object.title)} · ${escapeHTML(object.museum)}" loading="lazy" />` : ''}
+        <p class="detail-record-label">跨馆器例 / 0${index + 1}</p>
+        <h3>${escapeHTML(object.title)}</h3>
+        <div class="detail-record-facts">
+          <span>PERIOD<strong>${escapeHTML(object.period || '待核')}</strong></span>
+          <span>COLLECTION<strong>${escapeHTML(object.museum || '待核')}</strong></span>
+          <span>TYPE<strong>${escapeHTML(type.nameZh)}</strong></span>
+        </div>
+        ${object.note ? `<p class="detail-record-note">${escapeHTML(object.note)}</p>` : ''}
+        ${object.href ? `<p class="detail-record-note"><a href="${escapeHTML(resolveURL(`${moduleRoot}${object.href}`))}" target="_blank" rel="noreferrer">打开馆藏页 ↗</a></p>` : ''}
+      </article>`;
+    }).join('')}</div>`;
+    return `<div class="detail-record-grid detail-record-grid--empty">
+      <article class="detail-record-card">
+        <p class="detail-record-label">器类参照</p>
+        <h3>${escapeHTML(type.nameZh)} · 器例资料</h3>
+        <p class="detail-record-note">当前尚未关联宝鸡本地实拍，器物判断以正式馆藏目录与考古资料为依据。</p>
+      </article>
+    </div>`;
   }
 
   function sourceLinks() {
-    const links = (type.sourceIds || []).map((id) => ({ id, source: atlas.sources?.[id] })).filter((item) => item.source);
-    if (!links.length) return '<li><span>FORMAL OBJECT LAYER</span><span>器物资料待以具体来源核对。</span></li>';
+    const researchLinks = (copyRecord.sources || []).map((source, index) => ({ id: `RESEARCH-${String(index + 1).padStart(2, '0')}`, source: { href: source.url || source.href || '', label: source.label || source.institution || source.title || '正式资料来源' } }));
+    const registeredLinks = (type.sourceIds || []).map((id) => ({ id, source: atlas.sources?.[id] })).filter((item) => item.source);
+    const seen = new Set();
+    const links = [...researchLinks, ...registeredLinks].filter((item) => {
+      const key = item.source?.href || `${item.id}:${item.source?.label || ''}`;
+      if (!item.source || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }).slice(0, 6);
+    if (!links.length) return '<li><span>来源待核</span><span>器物资料尚待补充具体来源。</span></li>';
     return links.map(({ id, source }) => `<li>
       ${source.href ? `<a href="${escapeHTML(source.href)}" target="_blank" rel="noreferrer">${escapeHTML(id)}</a>` : `<span>${escapeHTML(id)}</span>`}
       <span>${escapeHTML(source.label || source.institution || '正式器例资料')}</span>
@@ -204,14 +233,14 @@
   detail.innerHTML = `
     <section class="detail-hero" style="--hero-bg:url('${escapeHTML(heroURL())}')" aria-labelledby="detail-title">
       <div class="detail-hero-inner">
-        <p class="detail-kicker">${escapeHTML(type.categoryEn || category.nameEn || 'BRONZE USE ATLAS')} · ${escapeHTML(type.evidenceLevel || 'SOURCE-LED')}</p>
+        <p class="detail-kicker">${escapeHTML(type.categoryEn || category.nameEn || 'BRONZE USE ATLAS')} · OBJECT STUDY</p>
         <h1 id="detail-title">${escapeHTML(type.nameZh)}<span>${escapeHTML(type.romanization)} · ${escapeHTML(type.nameEn)}</span></h1>
         <p class="detail-hero-deck">${escapeHTML(shortLead(copy['总介绍'] || type.notes))}</p>
         <div class="detail-keywords">${keywordChips(type.formKeywords)}</div>
         <div class="detail-hero-meta" aria-label="器型档案摘要">
-          <span><strong>CANONICAL TYPE</strong> ${escapeHTML(type.nameZh)}</span>
-          <span><strong>FAMILY</strong> ${escapeHTML(type.categoryId)}</span>
-          <span><strong>LOCAL RECORDS</strong> ${String(type.localBaojiGroupIds?.length || 0).padStart(2, '0')}</span>
+          <span><strong>OBJECT TYPE</strong> ${escapeHTML(type.nameZh)}</span>
+          <span><strong>CATEGORY</strong> ${escapeHTML(type.categoryZh || category.nameZh || type.categoryId)}</span>
+          <span><strong>BAOJI RECORDS</strong> ${String(type.localBaojiGroupIds?.length || 0).padStart(2, '0')}</span>
         </div>
       </div>
     </section>
@@ -269,7 +298,7 @@
           <p class="detail-section-lead">器物很少只凭单件孤立理解。组合关系可以提示功能分工与礼仪场景，但不表示每件器物必然同时出现。</p>
         </div>
         ${relationCards()}
-        ${textBlock(combinationText, '请把本器与相邻类型、承托或取用器具放在同一组合关系中比较。')}
+        ${textBlock(combinationText, '本器可与相邻类型、承托或取用器具放在同一组合关系中比较。')}
       </div>
     </section>
 

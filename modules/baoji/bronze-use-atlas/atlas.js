@@ -20,6 +20,7 @@
   const groups = Array.isArray(window.BAOJI_PHOTO_INDEX?.groups) ? window.BAOJI_PHOTO_INDEX.groups : [];
   const groupById = new Map(groups.map((group) => [group.id, group]));
   const typeById = new Map(atlas.types.map((type) => [type.id, type]));
+  const copyRecordBySlug = new Map((copyBook.records || []).map((record) => [record.slug, record]));
   const copyBySlug = new Map((copyBook.records || []).map((record) => [record.slug, record.copy || {}]));
   const categoryById = new Map(atlas.categories.map((category) => [category.id, category]));
   const typesByCategory = new Map(atlas.categories.map((category) => [category.id, atlas.types.filter((type) => type.categoryId === category.id)]));
@@ -27,7 +28,7 @@
   const debugMode = new URLSearchParams(window.location.search).get(visuals.debugQuery || 'atlasDebug') === '1';
   root.classList.toggle('atlas-debug', debugMode);
 
-  const bannedMeta = /先看|再看|最后|先从|再观察|最后追问|我们可以看到|这里展示|本页|本模块|读者|为了理解|读法|HOW TO READ|追问/iu;
+  const bannedMeta = /先看|再看|最后|先从|再观察|最后追问|我们可以看到|这里展示|本页|本模块|读者|为了理解|读法|HOW TO READ|追问|图谱应|图谱可|网页应|页面应|页面可|动作图|复原图|公开正文|史料栏|资料栏/iu;
   const legacyHistorical = {
     ding: [{ source: '《史记·封禅书》', quote: '禹收九牧之金，铸九鼎。' }],
     li: [{ source: '《说文解字》', quote: '鬲，鼎属也。' }],
@@ -56,7 +57,7 @@
   function fileName(value) { return typeof value === 'string' ? value : value?.filename || value?.name || ''; }
   function localGroups(type) { return (type.localBaojiGroupIds || []).map((id) => groupById.get(id)).filter(Boolean); }
   function photoURL(group) {
-    const filename = fileName(group?.featured).replace(/\.JPG$/i, '.jpg');
+    const filename = fileName(group?.featured || group?.photos?.[0]).replace(/\.JPG$/i, '.jpg');
     return filename ? `assets/photos/thumbs/${encodeURIComponent(filename)}` : '';
   }
   function typeAssetURL(type) {
@@ -159,21 +160,51 @@
 
   function recordCards(type) {
     const records = localGroups(type).slice(0, 3);
-    if (records.length) return records.map((group) => {
+    const localCards = records.map((group) => {
       const facts = group.labelFacts || {};
-      const value = publicText(group.research?.significance || group.summary || group.description || '馆藏记录为器型判断提供可核对的对象材料。');
-      return `<article class="atlas-object-record">
-        <img src="${mono(photoURL(group))}" alt="${mono(group.title || type.nameZh)} · 宝鸡馆藏记录" loading="lazy" />
-        <div><p class="atlas-record-code">BAOJI OBJECT / ${mono(group.id)}</p><h6>${mono(group.title || type.nameZh)}</h6>
-        <dl><div><dt>年代</dt><dd>${mono(facts.period || group.era || '资料待核')}</dd></div><div><dt>出土地</dt><dd>${mono(facts.findspot || '资料待核')}</dd></div><div><dt>收藏单位</dt><dd>${mono(facts.collection || '中国青铜器博物院')}</dd></div></dl>
-        <p>${mono(excerpt(value, 2, 240))}</p></div></article>`;
-    }).join('');
+      const image = photoURL(group);
+      const rawNote = group.titleSource === '现场展签与器形复核'
+        ? [group.research?.significance, group.research?.history]
+          .map((value) => publicText(value || ''))
+          .find(Boolean) || ''
+        : '';
+      const note = excerpt(rawNote, 2, 220);
+      return `<article class="atlas-object-record${image ? '' : ' atlas-object-record--no-image'}">
+        ${image ? `<img src="${mono(image)}" alt="${mono(group.title || type.nameZh)} · 现场档案照片" loading="lazy" />` : ''}
+        <div><p class="atlas-record-code">宝鸡馆藏实物 / ${mono(group.id)}</p><h6>${mono(group.title || type.nameZh)}</h6>
+        <dl><div><dt>年代</dt><dd>${mono(facts.period || group.era || '待核')}</dd></div><div><dt>出土地</dt><dd>${mono(facts.findspot || '待核')}</dd></div><div><dt>收藏单位</dt><dd>${mono(facts.collection || '待核')}</dd></div></dl>
+        ${note ? `<p>${mono(note)}</p>` : ''}</div></article>`;
+    });
+    const crossCards = (type.crossMuseumObjects || []).slice(0, 2).map((object) => `<article class="atlas-object-record atlas-object-record--cross">
+      ${object.image ? `<img src="${mono(object.image)}" alt="${mono(object.title || type.nameZh)} · ${mono(object.museum || '跨馆器例')}" loading="lazy" />` : ''}
+      <div><p class="atlas-record-code">跨馆器例</p><h6>${mono(object.title || type.nameZh)}</h6>
+      <dl><div><dt>年代</dt><dd>${mono(object.period || '待核')}</dd></div><div><dt>收藏单位</dt><dd>${mono(object.museum || '待核')}</dd></div><div><dt>对应器类</dt><dd>${mono(type.nameZh)}</dd></div></dl>
+      ${object.note ? `<p>${mono(excerpt(object.note, 2, 220))}</p>` : ''}
+      ${object.href ? `<a href="${mono(object.href)}" target="_blank" rel="noreferrer">打开馆藏页 ↗</a>` : ''}</div></article>`);
+    if (localCards.length || crossCards.length) return [...localCards, ...crossCards].join('');
     const sources = (type.sourceIds || []).map((id) => ({ id, source: atlas.sources?.[id] })).filter((item) => item.source && item.source.href).slice(0, 3);
-    return sources.map(({ id, source }) => `<article class="atlas-reference-record"><p class="atlas-record-code">FORMAL REFERENCE / ${mono(id)}</p><h6>${mono(source.institution || '正式馆藏机构')}</h6><p>${mono(source.label || `${type.nameZh}的正式器例参照。`)}</p><a href="${mono(source.href)}" target="_blank" rel="noreferrer">查看来源 ↗</a></article>`).join('') || `<article class="atlas-reference-record"><h6>${mono(type.nameZh)} · 正式器例</h6><p>具体器例需结合正式馆藏目录与考古资料核对。</p></article>`;
+    return sources.map(({ id, source }) => `<article class="atlas-reference-record"><p class="atlas-record-code">器类参照 / ${mono(id)}</p><h6>${mono(source.institution || '正式馆藏机构')}</h6><p>${mono(source.label || `${type.nameZh}的正式器例参照。`)}</p><a href="${mono(source.href)}" target="_blank" rel="noreferrer">查看来源 ↗</a></article>`).join('') || `<article class="atlas-reference-record"><h6>${mono(type.nameZh)} · 器类参照</h6><p>具体器例需结合正式馆藏目录与考古资料核对。</p></article>`;
   }
 
   function sourceLinks(type) {
-    return (type.sourceIds || []).map((id) => ({ id, source: atlas.sources?.[id] })).filter((item) => item.source).map(({ id, source }) => source.href
+    const recordSources = (copyRecordBySlug.get(type.slug)?.sources || []).map((source, index) => ({
+      id: `RESEARCH-${String(index + 1).padStart(2, '0')}`,
+      source: {
+        href: source.url || source.href || '',
+        label: source.label || source.institution || source.title || '正式资料来源',
+        institution: source.institution || source.label || ''
+      }
+    }));
+    const registeredSources = (type.sourceIds || []).map((id) => ({ id, source: atlas.sources?.[id] })).filter((item) => item.source);
+    const unique = [];
+    const seen = new Set();
+    [...recordSources, ...registeredSources].forEach((item) => {
+      const key = item.source?.href || `${item.id}:${item.source?.label || ''}`;
+      if (!item.source || seen.has(key)) return;
+      seen.add(key);
+      unique.push(item);
+    });
+    return unique.slice(0, 5).map(({ id, source }) => source.href
       ? `<li><a href="${mono(source.href)}" target="_blank" rel="noreferrer"><span>${mono(id)}</span>${mono(source.label || source.institution)}</a></li>`
       : `<li><span><b>${mono(id)}</b>${mono(source.label || source.institution)}</span></li>`).join('');
   }
@@ -201,6 +232,7 @@
       || type.visualAssetSet?.hero
       || type.visualAssetOverride
       || (type.visualAsset !== category.background ? type.visualAsset : '')
+      || visualById.get(type.id)?.asset
       || category.background
       || '';
   }
@@ -258,11 +290,14 @@
     const rituals = ritualParagraphs(type, copy);
     const combination = excerpt(copy['器物组合'] || research.significance, 3, 420) || `${type.nameZh}与相关器型共同构成功能分工和陈设组合。`;
     const historical = historicalPassages(copy, type);
+    const historyText = excerpt(copy['史料记载'], 4, 680);
+    const recordScope = localGroups(type).length ? '宝鸡馆藏实物' : ((type.crossMuseumObjects || []).length ? '跨馆器例' : '器类参照');
+    const materialLabel = type.materialClass === 'bronze' ? '青铜' : (type.materialClass === 'stone' ? '石质' : '复合材质');
     returnFocus = trigger || hotspotFor(typeId) || returnFocus;
     clearHighlight();
     hotspotFor(typeId)?.classList.add('is-active');
     card.innerHTML = `<button class="atlas-card-close" type="button" data-card-close aria-label="关闭完整器型卡">×</button>
-      <div class="atlas-card-hero"><img src="${mono(heroURL(type))}" alt="${mono(type.nameZh)} canonical type visual" /><div class="atlas-card-hero-copy"><p class="atlas-card-kicker">${mono(type.categoryZh)} · ${mono(type.materialClass === 'bronze' ? 'CANONICAL VISUAL' : 'ADJACENT MATERIAL')}</p><h4>${mono(type.nameZh)}<span>${mono(type.romanization)} · ${mono(type.nameEn)}</span></h4><p class="atlas-card-function">${mono(type.shortFunction)}</p><div class="atlas-card-badges"><span>${mono(type.materialClass.toUpperCase())}</span><span>${mono(type.inventoryStatus)}</span></div></div></div>
+      <div class="atlas-card-hero"><img src="${mono(heroURL(type))}" alt="${mono(type.nameZh)}器形图" /><div class="atlas-card-hero-copy"><p class="atlas-card-kicker">${mono(type.categoryZh)} · OBJECT TYPE</p><h4>${mono(type.nameZh)}<span>${mono(type.romanization)} · ${mono(type.nameEn)}</span></h4><p class="atlas-card-function">${mono(type.shortFunction)}</p><div class="atlas-card-badges"><span>${mono(materialLabel)}</span><span>${mono(recordScope)}</span></div></div></div>
       <div class="atlas-card-intro"><p>${mono(excerpt(copy['总介绍'] || research.history || research.significance, 3, 450) || publicText(type.notes))}</p><div class="atlas-card-keywords">${(type.formKeywords || []).slice(0, 5).map((word) => `<span>${mono(word)}</span>`).join('')}</div></div>
       ${sectionOpen(type, 'form')}<h5>形制与工艺</h5><p>${mono(formText)}</p></section>
       ${sectionOpen(type, 'action')}<h5>器用与动作</h5><ol class="atlas-card-actions">${(actions.length ? actions : ['使用']).map((action) => `<li><strong>${mono(action)}</strong><span>${mono(actionDescription(action, type, useText))}</span></li>`).join('')}</ol></section>
@@ -270,7 +305,7 @@
       ${sectionOpen(type, 'ritual', 'ritual', 'atlas-card-ritual')}<h5>礼仪与制度</h5>${rituals.map((paragraph) => `<p>${mono(paragraph)}</p>`).join('')}</section>
       ${sectionOpen(type, 'relations')}<h5>器物组合</h5><p>${mono(combination)}</p><div class="atlas-related-types">${relationButtons(type)}</div></section>
       <section class="atlas-card-section" data-card-section="records"><h5>代表器物</h5><div class="atlas-object-records">${recordCards(type)}</div></section>
-      <section class="atlas-card-section atlas-card-history" data-card-section="history"><h5>史料</h5>${historical.map((item) => `<blockquote><p>${mono(item.quote)}</p><cite>出处：${mono(item.source)}</cite></blockquote>`).join('')}</section>`;
+      <section class="atlas-card-section atlas-card-history" data-card-section="history"><h5>史料与来源</h5>${historical.map((item) => `<blockquote><p>${mono(item.quote)}</p><cite>出处：${mono(item.source)}</cite></blockquote>`).join('')}${!historical.length && historyText ? `<p class="atlas-history-note">${mono(historyText)}</p>` : ''}<ul class="atlas-source-list">${sourceLinks(type)}</ul></section>`;
     card.hidden = false;
     card.scrollTop = 0;
     root.classList.add('atlas-card-open');

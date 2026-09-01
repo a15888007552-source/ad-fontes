@@ -107,12 +107,12 @@
     weapons: ['bronze-weapon', '刃、援、胡、銎、柄部或机括构成兵器轮廓']
   };
 
-  function cardHeroAsset(type, category) {
+  function cardHeroAsset(type, category, canonicalAsset) {
     if (contextHeroTypes.has(type.id)) return `assets/context/${type.id}/${type.id}-section-form.png`;
     return type.visualAssetSet?.hero
       || type.visualAssetOverride
       || (type.visualAsset !== category.background ? type.visualAsset : '')
-      || category.background;
+      || canonicalAsset;
   }
 
   const sceneLayouts = {
@@ -199,7 +199,7 @@
         typeId: type.id,
         nameZh: type.nameZh,
         asset,
-        cardHeroAsset: cardHeroAsset(type, category),
+        cardHeroAsset: cardHeroAsset(type, category, asset),
         material: type.materialClass,
         materialClass: type.materialClass,
         shapeClass,
