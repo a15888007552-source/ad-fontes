@@ -13,6 +13,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from build_henan_field_archive import COPY_REPAIRS
+
 
 ROOT = Path(__file__).resolve().parents[1]
 RESEARCH = ROOT / "modules" / "henan-museum" / "research"
@@ -1106,10 +1108,23 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         photo_count[0] += 1
         return photo_variants[variant_index(record, f"photo-{index}", len(photo_variants))]
     text = re.sub(re.escape(photo_sentence), replace_photo, text)
+
+    # Photo counts and label pairing are already visible in the gallery card;
+    # remove the two old inventory phrasings (and the one-photo variant) from
+    # prose so a rerun cannot restore the batch-copy fingerprint.
+    for pattern in (
+        rf"{re.escape(title)}的图组从器身延伸到展签，共\d+张，[^。]+。",
+        rf"从[^。；]{{1,100}}的展柜照到展签，{re.escape(title)}共保留\d+张图，[^。]+。",
+        rf"现有图组(?:在[^。；]{{1,100}})?只留下{re.escape(title)}的一张器物照片，[^。]+。",
+    ):
+        text = re.sub(pattern, "", text)
     return compact(text)
 
 
 def robust_paragraphs(record: dict[str, Any]) -> list[str]:
+    repair = COPY_REPAIRS.get(compact(record.get("id")))
+    if repair:
+        return list(repair)
     current = [
         apply_residual_copy_rewrites(contextualize_repeated(clean_template(item, record), record), record)
         for item in existing_copy(record)
