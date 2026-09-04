@@ -28,6 +28,7 @@
     filter: 'all', query: '', visible: 24, activeGroup: null, activePhotos: [], activePhoto: 0,
     lastOpener: null, scale: 1, offsetX: 0, offsetY: 0, dragging: false, pointerId: null,
     dragStartX: 0, dragStartY: 0, dragOriginX: 0, dragOriginY: 0,
+    swipeStartX: 0, swipeStartY: 0, swiping: false,
   };
   const roleLabels = {
     front: '正面', side: '侧面', back: '背面', detail: '局部', inscription: '铭文 / 刻辞',
@@ -175,7 +176,7 @@
   }
 
   function resetZoom() {
-    Object.assign(state, { scale: 1, offsetX: 0, offsetY: 0, dragging: false });
+    Object.assign(state, { scale: 1, offsetX: 0, offsetY: 0, dragging: false, swiping: false });
     elements.stage.classList.remove('is-zoomed', 'is-dragging');
     elements.stage.style.setProperty('--gallery-scale', '1');
     elements.stage.style.setProperty('--pan-x', '0px');
@@ -269,7 +270,13 @@
     if (state.scale === 1) resetZoom(); else applyZoom();
   }, { passive: false });
   elements.stage.addEventListener('pointerdown', event => {
-    if (state.scale <= 1.01 || event.target.closest('button')) return;
+    if (event.target.closest('button')) return;
+    if (state.scale <= 1.01) {
+      state.swiping = true;
+      state.swipeStartX = event.clientX;
+      state.swipeStartY = event.clientY;
+      return;
+    }
     Object.assign(state, { dragging: true, pointerId: event.pointerId, dragStartX: event.clientX, dragStartY: event.clientY, dragOriginX: state.offsetX, dragOriginY: state.offsetY });
     elements.stage.setPointerCapture?.(event.pointerId); elements.stage.classList.add('is-dragging');
   });
@@ -280,6 +287,13 @@
     applyZoom();
   });
   const finishDrag = event => {
+    if (state.swiping) {
+      const dx = event.clientX - state.swipeStartX;
+      const dy = event.clientY - state.swipeStartY;
+      state.swiping = false;
+      if (Math.abs(dx) >= 45 && Math.abs(dx) > Math.abs(dy)) setPhoto(state.activePhoto + (dx < 0 ? 1 : -1));
+      return;
+    }
     if (!state.dragging || event.pointerId !== state.pointerId) return;
     state.dragging = false; elements.stage.classList.remove('is-dragging');
     if (elements.stage.hasPointerCapture?.(event.pointerId)) elements.stage.releasePointerCapture(event.pointerId);
