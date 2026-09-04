@@ -24,6 +24,11 @@ GENERIC_PHRASES = (
     "它为观察青铜铸造、装饰技术和器用制度的变化",
     "它可与窑址、釉色和纹样材料互证",
     "这部分仍待依据展签",
+    # These two strings were retired from the catalogue after the first
+    # contextual pass.  Keep them in the build gate so a future regeneration
+    # cannot silently reintroduce the batch-copy fingerprint.
+    "器物不再只是一个名称，而有了聚落生活的时间坐标",
+    "胎土、火候和口沿收放要在多张照片里一起读",
 )
 
 ROLE_NAMES = {
@@ -403,10 +408,19 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
             errors.append(f"{group['id']} {group['title']}: copy must contain three substantial paragraphs")
         if not group["photos"]:
             errors.append(f"{group['id']} {group['title']}: no photos")
+        title = group["title"]
+        if title:
+            repeated_title = re.compile(rf"(?:把{re.escape(title)}){{2,}}|(?:{re.escape(title)}的){{2,}}")
+        else:
+            repeated_title = None
         for text in texts:
             for phrase in GENERIC_PHRASES:
                 if phrase in text:
                     errors.append(f"{group['id']} {group['title']}: generic phrase: {phrase}")
+            if title and text.count(title) >= 10:
+                errors.append(f"{group['id']} {group['title']}: repeated title corruption")
+            if repeated_title and repeated_title.search(text):
+                errors.append(f"{group['id']} {group['title']}: nested title prefix")
         for photo in group["photos"]:
             asset = photo.get("asset")
             if asset and not (MODULE / asset).is_file():

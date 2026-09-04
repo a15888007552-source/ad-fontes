@@ -43,6 +43,150 @@ NON_MAJOR_COPY = {
     ],
 }
 
+# The first contextual pass left two stock sentences in a small set of
+# records.  They are especially distracting when the object is not a vessel
+# (for example, a pottery dog or a model of a tent support).  Keep these
+# rewrites explicit: each sentence is tied to the evidence visible in that
+# record instead of rotating another generic template.
+RESIDUAL_COPY_REWRITES: dict[str, dict[str, str]] = {
+    "A-002": {
+        "old": "从袋足陶斝的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+        "new": "灰嘴遗址的出土记录把这件袋足陶斝置回龙山文化的炊器组合；具体使用仍需结合残留物判断。",
+    },
+    "A-004": {
+        "old": "从陶鬶的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+        "new": "郾城郝家台遗址留下的出土信息，使陶鬶可以与龙山文化的炊煮、倾注场景相连；更细的使用位置仍要看同坑材料。",
+    },
+    "A-014": {
+        "old": "从灰陶执鋬杯的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+        "new": "河南郑州的出土记录只提供了文化与地点线索，灰陶执鋬杯的具体使用仍不能由单件照片定死。",
+    },
+    "A-018": {
+        "old": "从陶罐的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+        "new": "西山遗址的地点与仰韶年代，为陶罐的储藏或炊煮可能划出范围；是否承受过火，还要等烟炱和残留物证据。",
+    },
+    "A-026": {
+        "old": "从斜三角纹彩陶钵的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+        "new": "下集遗址与仰韶年代将这件彩陶钵放回聚落饮食与仪式的日常层面，纹样的象征含义仍需更多组合证据。",
+    },
+    "A-028": {
+        "old": "从白衣彩陶钵的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+        "new": "大河村遗址的出土背景让白衣彩陶钵回到仰韶时期的餐饮器物序列；白衣和三角纹的具体意义不作越界推断。",
+    },
+    "A-032": {
+        "old": "从人祖纹彩陶缸的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+        "new": "洪山庙遗址的地点和仰韶年代为人祖纹彩陶缸保留了明确坐标，图像与仪式用途仍需结合出土组合观察。",
+    },
+    "A-069": {
+        "old": "从绳纹陶鬲的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+        "new": "二里岗遗址的出土信息把绳纹陶鬲置于郑州早商炊器谱系，具体炉灶位置与使用痕迹未见记录。",
+    },
+    "A-002-material": {
+        "old": "袋足陶斝的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "泥胎中的颗粒与袋足转折先说明受火结构；它没有施釉，烧成痕迹应与器腹和足部合看。",
+    },
+    "A-004-material": {
+        "old": "陶鬶的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "陶鬶的泥胎、长流和三足转折一起决定受热与倾注的姿态；照片未显示的使用痕迹暂不补写。",
+    },
+    "A-014-material": {
+        "old": "灰陶执鋬杯的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "灰陶胎色和鋬、口沿的比例说明这是一件轻便饮器；侧面照片更能看出握持所需的空间。",
+    },
+    "A-018-material": {
+        "old": "陶罐的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "陶罐的收口和鼓腹直接关系到容量，胎色与火痕是否来自炊煮，还要等检测或残留物证据。",
+    },
+    "A-026-material": {
+        "old": "斜三角纹彩陶钵的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "钵壁的陶胎与彩绘层次需分开观察；斜三角纹沿器壁展开，照片能说明构图，不能单独证明用途。",
+    },
+    "A-028-material": {
+        "old": "白衣彩陶钵的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "白色陶衣覆盖在胎体之上，彩绘边缘与器壁转折显示了施彩次序；烧成温度仍无直接记录。",
+    },
+    "A-032-material": {
+        "old": "人祖纹彩陶缸的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "缸体厚薄和人祖纹的绘制范围共同决定观看距离；胎土颜色来自照片可见，具体颜料配方尚无展签说明。",
+    },
+    "A-069-material": {
+        "old": "绳纹陶鬲的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "绳纹压印留在陶胎表面，袋足与腹部转折共同承担受热；是否长期置于火上，还需痕迹材料印证。",
+    },
+    "b-037-material": {
+        "old": "红釉卧姿陶狗的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "红釉覆盖伏卧陶狗，耳、口、爪等塑形细部比表面光泽更关键；釉面反光提示观看角度，不能据此补写用途。",
+    },
+    "b-052-material": {
+        "old": "白陶帐座的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "白陶帐座以多件立柱状构件模拟帷帐承托，截面和插接关系比单件外观更能说明它的模型功能。",
+    },
+    "b-056-material": {
+        "old": "三彩骆驼及牵驼胡俑的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "骆驼的驼峰、牵驼人的姿态和三彩施釉层次共同构成运输场景；釉色只说明装饰，不替墓葬身份下结论。",
+    },
+    "b-064-material": {
+        "old": "淡黄釉绞胎枕的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "绞胎枕的两色胎泥在剖面形成旋拧纹理，淡黄釉将起伏压低；枕面与底部照片应合看其寝具尺度。",
+    },
+    "b-070-material": {
+        "old": "白釉多足瓷砚的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "多足承托砚面使器物离开案面，白釉在足部转折处积色；砚面磨痕和墨痕比口沿更值得复核。",
+    },
+    "b-089-material": {
+        "old": "钧窑玫瑰紫鼓钉三足瓷盆托的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "鼓钉排列和三足承托构成盆托的结构节奏，玫瑰紫窑变在浅腹内外深浅不同；照片未能确定其配套器物。",
+    },
+    "b-090-material": {
+        "old": "钧窑月白釉花瓣瓷碗的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "花瓣形口沿把月白釉的高光切成连续弧面，浅腹与圈足的比例决定端持感；窑变细节应以近照为准。",
+    },
+    "b-091-material": {
+        "old": "钧窑玫瑰紫葵花瓷盘的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "葵花式分瓣口沿与浅盘体配合展开纹样，玫瑰紫釉色在瓣尖和盘心形成层次；实际用途仍需组合材料。",
+    },
+    "b-094-material": {
+        "old": "张公巷窑青釉盘口瓷瓶的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "盘口、细颈与鼓腹的轮廓在青釉积釉处更清楚，圈足与器壁的接合可从侧面照复核；窑口归属以展签为界。",
+    },
+    "b-095-material": {
+        "old": "黄釉刻莲花纹瓷盆的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "浅腹盆面以刻花压出莲瓣起伏，黄釉在刀痕处显出明暗；器壁厚度和底足比泛谈口沿更能说明制作。",
+    },
+    "b-098-material": {
+        "old": "当阳峪窑绞胎瓷碗的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "绞胎纹由不同色泥相叠旋合，碗壁内外的纹理方向并不相同；釉面细裂与胎体关系需看局部照片。",
+    },
+    "b-103-material": {
+        "old": "白地黑花山水人物纹瓷枕的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "瓷枕的长方枕面以白地黑花分出山水人物开光，边框和底部承重结构决定使用姿态；彩绘颜料不凭照片臆测。",
+    },
+    "b-104-material": {
+        "old": "三彩荷叶童子枕的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "童子伏卧承托荷叶枕面，三彩低温釉在人物衣褶和叶脉处形成色块；构件受力关系要结合侧面照观察。",
+    },
+    "b-105-material": {
+        "old": "白地黑花荷鸭纹瓷枕的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "八角枕面把荷叶与水鸭纳入白地黑花的开光构图，底部和侧壁决定它的承压方式；纹样寓意不单凭画面定论。",
+    },
+    "b-111-material": {
+        "old": "仿哥釉铁锈花狮耳盘口瓷瓶的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "狮耳、盘口与铁锈花共同构成器物的观赏重点，开片釉面在暗光下更明显；仿哥釉的工艺判断仍需参照窑业资料。",
+    },
+    "b-133-material": {
+        "old": "蓝釉黄彩云龙纹瓷盘的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "蓝釉铺底、黄彩勾龙，色层在浅腹和圈足转折处彼此映衬；盘面磨痕未见明确记录，使用场合暂不推定。",
+    },
+    "b-135-material": {
+        "old": "粉彩荷花瓷吸杯的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "杯体塑成荷花，荷梗兼作吸管，墨书纪念文字把饮用功能和事件记忆连在一起；粉彩颜色不等于原始使用场景。",
+    },
+    "b-145-material": {
+        "old": "五彩宝相花纹瓷盘的质地并不只由釉色决定，胎土、火候和口沿收放要在多张照片里一起读。",
+        "new": "宝相花以放射布局铺在浅腹盘面，红、绿彩与白地形成层次；圈足和盘背的制作细节需从多角度照片比看。",
+    },
+}
+
 
 def compact(value: Any) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
@@ -170,6 +314,57 @@ def clean_template(text: str, record: dict[str, Any]) -> str:
     return compact(text)
 
 
+def apply_residual_copy_rewrites(text: str, record: dict[str, Any]) -> str:
+    """Repair stock sentences and collapse nested results from old passes.
+
+    The catalogue was regenerated several times while the contextual variants
+    were being edited.  Two variants used the object title as a prefix, so a
+    second pass could prepend that title again and again.  Repair those legacy
+    forms before applying any new contextual variant; this keeps the upgrade
+    script idempotent and prevents corrupted prose from reaching the public
+    data file.
+    """
+    text = compact(text)
+    title = title_of(record)
+    if title:
+        escaped_title = re.escape(title)
+        # Older runs nested ``把{title}`` before the shared bronze tail.
+        text = re.sub(
+            rf"(?:把{escaped_title})+与同出器物并看，才能进一步判断它进入宴飨、祭祀或墓葬的哪一环。",
+            f"把{title}放回同坑组合，才能判断它在宴飨、祭祀或墓葬中扮演哪一环。",
+            text,
+        )
+        # The jade material variant suffered from the same nesting problem.
+        text = re.sub(
+            rf"(?:{escaped_title}的)+玉料光泽、刃缘和穿孔要在多个角度下比较，单看正面会掩去厚度与磨痕。",
+            f"{title}的材质、穿孔与边缘要在多个角度下比较，单看正面会掩去厚度与磨痕。",
+            text,
+        )
+    record_id = compact(record.get("id"))
+    for key in (record_id, f"{record_id}-material"):
+        rewrite = RESIDUAL_COPY_REWRITES.get(key)
+        if rewrite and rewrite["old"] in text:
+            text = text.replace(rewrite["old"], rewrite["new"])
+
+    # A prior contextual pass already changed the two object-specific records
+    # below, so their old exact stock strings are not present in
+    # RESIDUAL_COPY_REWRITES anymore.  Keep these repairs explicit as well.
+    legacy_mismatch = {
+        "b-037": (
+            "红釉覆盖伏卧陶狗，耳、口、爪等塑形细部比器皿口沿更关键；釉面反光提示观看角度，不能据此补写用途。",
+            "红釉覆盖伏卧陶狗，耳、口、爪等塑形细部比表面光泽更关键；釉面反光提示观看角度，不能据此补写用途。",
+        ),
+        "b-052": (
+            "白陶帐座以多件立柱状构件模拟帷帐承托，截面和插接关系比口沿更能说明它的模型功能。",
+            "白陶帐座以多件立柱状构件模拟帷帐承托，截面和插接关系比单件外观更能说明它的模型功能。",
+        ),
+    }
+    mismatch = legacy_mismatch.get(record_id)
+    if mismatch and mismatch[0] in text:
+        text = text.replace(mismatch[0], mismatch[1])
+    return compact(text)
+
+
 def stable_variant(record: dict[str, Any], salt: str) -> int:
     """Choose a reproducible prose variant without exposing an internal id."""
     key = f"{record.get('id', '')}|{title_of(record)}|{salt}"
@@ -191,6 +386,9 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
     dozens of objects reads like a machine template.  These variants keep the
     same evidence boundary while naming the object and its recorded context.
     """
+    # Repair malformed text before replacing any remaining stock sentence.  A
+    # catalogue upgrade may be run repeatedly during editing or deployment.
+    text = apply_residual_copy_rewrites(text, record)
     title = title_of(record) or "这件器物"
     site = site_fragment(record)
     category = kind(record)
@@ -211,7 +409,7 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         ],
         "遗址与年代相连，能把它放回聚落的生产和饮食尺度，而不只留下一个器名。": [
             f"{title}所在的{site}与年代相互校准，让它回到聚落生产和饮食的尺度。",
-            f"从{title}的遗址记录出发，器物不再只是一个名称，而有了聚落生活的时间坐标。",
+            f"从{title}的遗址记录出发，地点与年代彼此校准，聚落生活的尺度也就有了落脚处。",
             f"在{site}，{title}的出土地点为年代提供了落脚处，也把日常使用的想象限制在可核的范围内。",
         ],
         "铸范分区、纹带转折和口沿修整，是判断铸造顺序的入口。": [
@@ -230,7 +428,7 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
             f"关于{title}的使用位置，现有记录只支持谨慎推断，不能用器形替代完整的考古报告。",
         ],
         "与同出器物并看，才能进一步判断它进入宴飨、祭祀或墓葬的哪一环。": [
-            f"把{title}与同出器物并看，才能进一步判断它进入宴飨、祭祀或墓葬的哪一环。",
+            f"把{title}放回同坑组合，才能判断它在宴飨、祭祀或墓葬中扮演哪一环。",
             f"{title}在组合中的位置比孤立器名更有解释力；它究竟服务哪一场合，还要回到同坑材料。",
             f"只有把{title}放回同组器物，宴飨、祭祀或墓葬之间的差别才不会被纹饰带偏。",
         ],
@@ -310,7 +508,7 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
             f"{title}的佩戴意义不能只从纹样推断，出土地与同组玉饰提供了更可靠的尺度。",
         ],
         "玉料光泽、刃缘和穿孔要在多个角度下比较，单看正面会掩去厚度与磨痕。": [
-            f"{title}的玉料光泽、刃缘和穿孔要在多个角度下比较，单看正面会掩去厚度与磨痕。",
+            f"{title}的材质、穿孔与边缘要在多个角度下比较，单看正面会掩去厚度与磨痕。",
             f"读{title}的制作痕迹，侧面和背面的厚度、孔壁与刃缘同样重要。",
             f"{title}的光泽并不能代替工艺判断，穿孔、边缘和磨痕要随角度变化一起看。",
         ],
@@ -501,7 +699,10 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
 
 
 def robust_paragraphs(record: dict[str, Any]) -> list[str]:
-    current = [contextualize_repeated(clean_template(item, record), record) for item in existing_copy(record)]
+    current = [
+        apply_residual_copy_rewrites(contextualize_repeated(clean_template(item, record), record), record)
+        for item in existing_copy(record)
+    ]
     title = title_of(record)
     period = compact(record.get("period") or record.get("era"))
     provenance = compact(record.get("provenance") or record.get("findspot") or record.get("origin"))
@@ -538,7 +739,9 @@ def robust_paragraphs(record: dict[str, Any]) -> list[str]:
             current[index] = f"{current[index]} {context_tail(record, index)}"
         if len(current[index]) < 55:
             current[index] = f"{current[index]} {title}的多角度照片也保留了器物与展柜尺度的关系。"
-        current[index] = contextualize_repeated(clean_template(current[index], record), record)
+        current[index] = apply_residual_copy_rewrites(
+            contextualize_repeated(clean_template(current[index], record), record), record
+        )
 
     # Remove accidental exact duplicates without adding an artificial number
     # to the public prose.
