@@ -160,7 +160,9 @@ body:has(.artifact-dialog[open]){overflow:hidden}
 .artifact-dialog-facts dd{margin-top:6px;color:#d8d9c8;font:12px/1.7 var(--serif)}
 .artifact-dialog-layout{grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:start;min-height:0;padding:38px 68px 64px;gap:42px}
 .artifact-dialog-gallery{min-width:0;position:sticky;top:48px}
-.artifact-dialog-stage{position:relative;height:min(610px,66svh);overflow:hidden;border:1px solid rgba(221,205,161,.23);background:radial-gradient(circle at center,#2b392f,#0c130f 72%);touch-action:none}
+.artifact-dialog-stage{position:relative;height:min(610px,66svh);overflow:hidden;border:1px solid rgba(221,205,161,.23);background:radial-gradient(circle at center,#2b392f,#0c130f 72%);touch-action:pan-y pinch-zoom}
+.artifact-dialog-stage.is-zoomed{touch-action:none;cursor:grab}
+.artifact-dialog-stage.is-dragging{cursor:grabbing}
 .artifact-dialog-stage::after{content:"";position:absolute;inset:auto 0 0;height:23%;background:linear-gradient(0deg,rgba(8,13,10,.86),transparent);pointer-events:none}
 .artifact-dialog-stage img{width:100%;height:100%;object-fit:contain;transform:translate3d(var(--pan-x,0),var(--pan-y,0),0) scale(var(--gallery-scale,1));transform-origin:center;transition:transform .28s cubic-bezier(.2,.7,.2,1);cursor:zoom-in}
 .artifact-dialog-stage.is-zoomed img{cursor:grab;transition:none}

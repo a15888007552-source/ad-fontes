@@ -243,6 +243,14 @@ def normalize_record(record: dict[str, Any], number: int) -> dict[str, Any]:
         label = ROLE_NAMES.get(photo.get("role"), photo.get("role", "现场照片"))
         if label not in roles:
             roles.append(label)
+    sources = source_list(record) or [DEFAULT_CONTEXT_SOURCE.copy()]
+    if "bronze" in tags and "鉴" in title:
+        atlas_source = {
+            "label": "宝鸡青铜器博物馆｜青铜器用图谱：鉴（jian-water）",
+            "url": "../baoji/index.html?atlasType=jian-water#bronze-use-atlas",
+        }
+        if not any(item.get("url") == atlas_source["url"] for item in sources):
+            sources.append(atlas_source)
     group: dict[str, Any] = {
         "id": compact(record.get("id")) or f"field-{number:03d}",
         "number": number,
@@ -256,7 +264,7 @@ def normalize_record(record: dict[str, Any], number: int) -> dict[str, Any]:
         "tags": tags,
         "origin": "本次馆内实拍" if any("filename" in photo for photo in photos) else "补充资料",
         "sequenceLabel": " → ".join(roles),
-        "sources": source_list(record) or [DEFAULT_CONTEXT_SOURCE.copy()],
+        "sources": sources,
     }
     if flags.get("musical_instrument"):
         group["musicFocus"] = True

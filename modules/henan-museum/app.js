@@ -84,11 +84,12 @@
   carousel.addEventListener('wheel', event => {
     if (event.ctrlKey || event.metaKey) return;
     const horizontal = Math.abs(event.deltaX) > Math.abs(event.deltaY);
-    // The three-object strip is intentionally a wheel-controlled chapter:
-    // vertical mouse wheels and horizontal trackpads both move one complete
-    // object, wherever the pointer rests inside the strip.
+    // A vertical wheel over the artwork advances the object; over the copy it
+    // keeps the page readable. Horizontal trackpad movement remains available
+    // across the whole strip.
     const delta = (horizontal ? event.deltaX : event.deltaY) * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? carousel.clientHeight : 1);
     if (!delta) return;
+    if (!horizontal && !event.target?.closest?.('.object-art')) return;
     clearTimeout(wheelEnd);
     wheelEnd = setTimeout(() => { wheelSum = 0; wheelUsed = false; }, 180);
     if (wheelUsed) { event.preventDefault(); return; }
