@@ -234,6 +234,15 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             segment,
         ):
             continue
+        if "装饰只是一条线索，组合信息还要继续核对" in segment:
+            continue
+        if "只提供地点边界" in segment:
+            continue
+        if re.search(
+            r"沿着[^。]{1,80}的器壁和底部观察，泥胎成型与受火痕迹各有位置，解释止于可见证据",
+            segment,
+        ):
+            continue
         if plain_pottery and re.search(r"釉色|积釉|胎釉|施彩或磨损", segment):
             continue
         removed.append(segment)

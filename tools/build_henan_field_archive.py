@@ -170,10 +170,33 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             segment,
         ):
             continue
+        if "装饰只是一条线索，组合信息还要继续核对" in segment:
+            continue
+        if "只提供地点边界" in segment:
+            continue
+        if re.search(
+            r"沿着[^。]{1,80}的器壁和底部观察，泥胎成型与受火痕迹各有位置，解释止于可见证据",
+            segment,
+        ):
+            continue
         if plain_pottery and re.search(r"釉色|积釉|胎釉|施彩或磨损", segment):
             continue
         kept.append(segment)
     return compact("".join(kept))
+
+
+# A few cards need two different short repairs after the old “地点边界” or
+# “装饰只是一条线索” sentence is removed.  Keep those repairs beside the
+# fallback helper so the catalogue upgrade and final build use identical
+# prose without adding a new global template.
+FALLBACK_TAIL_OVERRIDES: dict[tuple[str, int], str] = {
+    ("A-008", 1): "镂孔与圈足的组合改变器身轻重，也让光线在孔壁间移动；用途仍应结合同址器物判断。",
+    ("A-025", 1): "黑彩沿叶状单元铺开，器壁弧度决定纹带节奏；彩绘的社会含义不由单件器形独定。",
+    ("A-025", 2): "敞口与浅腹先说明盛食尺度，叶状纹的象征方向仍需同组陶片与遗址报告互证。",
+    ("A-054", 2): "长流、鋬与腹部比例构成注水动作的顺序，是否进入礼仪场景还要看二里头同组水器。",
+    ("b-036", 2): "三足、盖与彩绘把器物置于礼器模型与炊食想象之间，征集记录不支持再指定原始场合。",
+    ("b-058", 2): "双龙柄既便于提持，也把正面构图推向观看者；洛阳出土背景可核，具体陈设位置仍待组合资料。",
+}
 
 
 def fallback_copy_tail(record: dict[str, Any], paragraph_index: int) -> str:
@@ -183,6 +206,10 @@ def fallback_copy_tail(record: dict[str, Any], paragraph_index: int) -> str:
     is intentionally varied and tied to what a field photograph can show;
     it is used only when a cleanup leaves a paragraph unusually short.
     """
+    record_id = compact(record.get("id"))
+    override = FALLBACK_TAIL_OVERRIDES.get((record_id, paragraph_index))
+    if override:
+        return override
     title = compact(record.get("name_zh") or record.get("title") or record.get("name")) or "这件器物"
     material = compact(record.get("material_or_type") or record.get("material") or record.get("categoryLabel"))
     joined = f"{title} {material}"
