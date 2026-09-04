@@ -29,6 +29,10 @@ GENERIC_PHRASES = (
     # cannot silently reintroduce the batch-copy fingerprint.
     "器物不再只是一个名称，而有了聚落生活的时间坐标",
     "胎土、火候和口沿收放要在多张照片里一起读",
+    # Editorial meta-language that must not return as a batch template.
+    "不能用青铜器的铸造术语概括",
+    "器物照与展签照可以互相核对",
+    "纹饰不能单独替代出土记录",
 )
 
 ROLE_NAMES = {
@@ -433,6 +437,11 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
                 if re.search(r"(出土于|出土|征集|现藏|属于[^，。]{0,16}(文化|代|时期)|\d{4}年)", sentence):
                     continue
                 normalized = re.sub(re.escape(title), "<TITLE>", sentence) if title else sentence
+                normalized = re.sub(r"\d+张", "<N>张", normalized)
+                normalized = re.sub(r"\d+个(?:观看角度)?", "<N>", normalized)
+                for field in (compact(group.get("provenance")), compact(group.get("material"))):
+                    if field:
+                        normalized = normalized.replace(field, "<FIELD>")
                 normalized = re.sub(r"\s+", "", normalized)
                 if len(normalized) >= 24:
                     normalized_sentence_groups.setdefault(normalized, set()).add(group["id"])

@@ -375,6 +375,14 @@ def stable_variant(record: dict[str, Any], salt: str) -> int:
     return sum(ord(char) for char in key) % 3
 
 
+def variant_index(record: dict[str, Any], salt: str, length: int) -> int:
+    """Choose one of an arbitrary number of editorial variants reproducibly."""
+    if length <= 1:
+        return 0
+    key = f"{record.get('id', '')}|{title_of(record)}|{salt}"
+    return sum(ord(char) for char in key) % length
+
+
 def site_fragment(record: dict[str, Any]) -> str:
     value = compact(record.get("provenance") or record.get("findspot") or record.get("origin"))
     value = re.sub(r"^\d{4}年[，、 ]*", "", value)
@@ -433,27 +441,110 @@ def expanded_craft_sentence(record: dict[str, Any], title: str, category: str) -
     period = compact(record.get("period") or record.get("era")) or "所属年代"
     if category == "bronze":
         if "征集" in source:
-            return f"{title}的接缝、耳部与纹带转折可以互相参照，{material}的铸造步骤仍需和{source}的器物记录分开判断。"
-        return f"在{source}的记录里，{title}的范线、接缝与{material}纹饰分区要一起对读，{period}的铸造与修整次序只能从这些部位逐层追问。"
+            variants = [
+                f"{title}的接缝、耳部与纹带转折可以互相参照，{material}的铸造痕迹仍只能按现有展签和照片判断。",
+                f"征集记录中的{title}，要从流、耳和边缘转折看{material}的成型线索，原始工序不另作推定。",
+                f"{title}的{material}纹带在边缘处留下了接合线，具体铸造步骤仍缺少原始出土记录。",
+                f"看{title}的耳部与接缝，能辨出{material}的制作分区，不能把缺失的范具细节补写出来。",
+                f"{title}的轮廓转折和纹带收束都落在{material}表面，征集来源使工艺判断停在可见痕迹。",
+                f"从{title}的边缘修整入手，{material}的铸成与后续加工可以分层观察，先不越过征集记录。",
+                f"{title}的纹饰、耳部和接缝各自留下制作线索，{material}的次序还要等待更完整的来源材料。",
+                f"把{title}的边缘细部与整体器形合看，才不会将{material}的表面变化误当成完整工序。",
+            ]
+        else:
+            variants = [
+                f"在{source}的记录里，{title}的范线、接缝与{material}纹饰分区要一起对读，{period}的制作次序只能从这些部位逐层追问。",
+                f"{title}的耳、流与纹带转折彼此牵连，{source}所见的{material}铸造痕迹要放回{period}的器形传统中核对。",
+                f"沿着{title}的接缝和纹饰边界看，{material}的范具分区逐渐显出轮廓，具体次序仍以{source}记录为界。",
+                f"{title}的器壁厚薄、口沿收束和{material}纹带共同提示制作步骤，出土于{source}的线索可以逐处复核。",
+                f"对照{source}的出土信息，{title}的纹带转折与边缘修整让{material}的铸造过程有了可观察的层次。",
+                f"{title}的{material}表面不是平面的图案，接缝、转折和口沿把{period}工匠的修整动作留了下来。",
+                f"看{title}，先把{material}的器壁、耳部和纹饰分区拆开，再由{source}的组合关系追问铸造先后。",
+                f"{title}在{source}留下的器形资料，连接起{material}的纹饰布局与边缘制作，局部观察不替代完整报告。",
+            ]
+        return variants[variant_index(record, "craft-bronze", len(variants))]
     if category == "ceramic":
         if "陶" in material or "陶" in title:
-            return f"{title}的胎体、边缘和烧成痕迹要分开看，{source}所见的{material}制作不能用青铜器的铸造术语概括。"
-        return f"观察{title}的胎体、边缘与表面处理，{source}所见{material}的成型和烧成步骤仍以照片与展签为准。"
+            variants = [
+                f"{title}的胎色、收口和足部转折共同留下烧成线索，{source}所见的{material}更适合从受火与成型痕迹读起。",
+                f"沿着{title}的器壁、口沿和底部看，{material}的泥胎怎样成型，{source}的照片给出了一条清楚线索。",
+                f"{title}把{material}的质地留在器壁起伏和边缘收束上，{source}记录中的细部可与整体轮廓互相印证。",
+                f"看{title}的三足、鋬或圈足，{material}的受力与烧成痕迹各有位置，展柜照片先保留这些可见证据。",
+                f"{title}的胎体颗粒、边缘修整和表面颜色要分开读，{source}只支持讨论{material}的制作线索。",
+                f"从{title}的器腹到足部，{material}的成型动作藏在转折处，现有来源不替它补出未见的工序。",
+                f"{title}的纹样依附器壁起伏展开，{material}的烧成效果要和口沿、底部照片放在一起看。",
+                f"把{title}的器形和{material}胎体并置，边缘与受火部位才显示出这件陶器的制作节奏。",
+            ]
+        else:
+            variants = [
+                f"{title}的胎釉交界、边缘与积釉位置，显示{material}怎样成型，{source}照片可供逐处核对。",
+                f"观察{title}的釉面起伏和底部收束，{material}的烧成层次与{source}的展签信息可以互相参照。",
+                f"{title}的器壁曲线把胎体和釉色连在一起，{source}留下的{material}细部宜从正面、侧面合看。",
+                f"顺着{title}的口沿和足部看，{material}的施釉范围与成型步骤各有痕迹，照片不替缺失部分下结论。",
+                f"{title}的釉层、胎骨和纹样边界彼此咬合，{source}所见的{material}制作线索仍需结合窑业资料。",
+                f"把{title}放回{source}的记录，胎釉厚薄与器形转折共同说明{material}的烧造特征。",
+                f"{title}的表面光泽只是入口，边缘积釉和器底处理更能说明{material}如何完成成型。",
+                f"看{title}的轮廓和施彩部位，{material}的成型与装饰是两组线索，展签和照片分别留下依据。",
+            ]
+        return variants[variant_index(record, "craft-ceramic", len(variants))]
     if category == "jade":
-        return f"{title}的孔壁、边缘和磨痕比套用器类术语更能说明{material}的雕琢过程，{source}的侧面与背面照片应合看。"
+        variants = [
+            f"{title}的孔壁、边缘和磨痕比套用器类术语更能说明{material}的雕琢过程，{source}的侧面与背面照片应合看。",
+            f"看{title}的穿孔和刃缘，{material}的厚度变化把打磨动作留在局部，来源记录只支持到可见痕迹。",
+            f"{title}的轮廓在{source}的图组中可以转面观察，{material}的磨痕与孔壁共同限定佩饰的制作判断。",
+            f"把{title}的正面纹样和背面起伏放在一起，{material}的雕琢顺序才不会被单一光泽带偏。",
+        ]
+        return variants[variant_index(record, "craft-jade", len(variants))]
     if category == "text":
-        return f"{title}的刻写位置、边缘与保存状态要分开记录，{source}的{material}不能套用青铜铸造的判断路径。"
-    return f"{title}的结构接合与表面处理各有工艺线索，{source}所见的{material}只支持讨论制作痕迹，不替它补写铸造次序。"
+        variants = [
+            f"{title}的刻写位置、边缘与保存状态要分开记录，{source}的{material}不能套用器物铸造的判断路径。",
+            f"读{title}的字痕先看载体与缺损，{material}在{source}留下的书写位置比顺口释读更可靠。",
+            f"{title}的行款和刻痕深浅要同{source}的保存状况合看，{material}能确认的范围止于照片与展签。",
+        ]
+        return variants[variant_index(record, "craft-text", len(variants))]
+    variants = [
+        f"{title}的结构接合与表面处理各有工艺线索，{source}所见的{material}只支持讨论制作痕迹。",
+        f"看{title}的接合处和表面起伏，{material}的制作层次可以在{source}的照片中逐点核对。",
+        f"{title}的边缘、背面和保存状态共同限定{material}的工艺判断，来源记录之外暂不延伸。",
+        f"从{title}的局部转折入手，{material}留下的制作痕迹与{source}的收藏信息各自有边界。",
+    ]
+    return variants[variant_index(record, "craft-other", len(variants))]
 
 
 def expanded_surface_sentence(record: dict[str, Any], title: str, category: str) -> str:
     source = source_phrase(record)
     material = material_phrase(record)
     if category == "ceramic":
-        return f"在{source}的展柜光线下，看{title}的{material}表面层次，边缘和背面也要一起核对。"
+        variants = [
+            f"在{source}的展柜光线下，看{title}的{material}表面层次，边缘和背面也要一起核对。",
+            f"{title}的釉色随器壁曲面明暗变化，{source}的照片同时留下{material}的边缘和底部。",
+            f"观察{title}时，{material}的表面光泽要和口沿、圈足的转折放在一起，{source}只呈现其中一面。",
+            f"{source}的现场光线把{title}的{material}胎釉层次照出深浅，背面细部仍按图组补看。",
+            f"沿着{title}的器壁看{material}的色泽与起伏，正面照片之外，侧面才显出边缘收束。",
+            f"{title}的表面处理不止是颜色，{material}的积釉、施彩或磨损要结合{source}的多角度图。",
+            f"从{title}的口沿到底部，{material}的表面状态各有变化，展柜照片保留了可见的那一段。",
+            f"把{title}的整体轮廓和{material}的局部光泽合看，{source}的记录足以说明表面层次但不替缺失细节下结论。",
+        ]
+        return variants[variant_index(record, "surface-ceramic", len(variants))]
     if category == "bronze":
-        return f"在{source}的展柜光线下，{title}的表面、边缘与{material}纹带要放在同一组照片里比较，局部差异不能脱离器形解释。"
-    return f"{title}的表面、边缘与{material}的保存状态应分开记录，{source}的现有照片不替缺失的细节下结论。"
+        variants = [
+            f"在{source}的展柜光线下，{title}的表面、边缘与{material}纹带要放在同一组照片里比较，局部差异不能脱离器形解释。",
+            f"{title}的纹带在{material}表面形成明暗起伏，{source}的侧面与局部照可用来校正器壁转折。",
+            f"观察{title}的铜色与边缘磨痕，{material}的纹饰密度要同{source}的整体器形一起读。",
+            f"{source}的现场光线让{title}的{material}表面出现不同层次，局部变化先按照片记录。",
+            f"从{title}的口沿、耳部到腹壁，{material}的表面处理各有痕迹，纹样不能脱离结构单看。",
+            f"{title}的铸造表面留下纹带和修整的交界，{source}的图组把这些细部放回器形比例。",
+            f"把{title}的正面纹饰与背面、边缘合看，{material}的保存状态才不会被一处反光误导。",
+            f"{title}的色泽只是观看入口，{source}记录的{material}接缝、转折与局部磨蚀更值得对读。",
+        ]
+        return variants[variant_index(record, "surface-bronze", len(variants))]
+    variants = [
+        f"{title}的表面、边缘与{material}的保存状态应分开记录，{source}的现有照片不替缺失的细节下结论。",
+        f"沿着{title}的边缘和背面看，{material}的保存痕迹与{source}的展陈光线需要分开理解。",
+        f"{source}留下的{title}照片能够辨认{material}的表面层次，未见部分仍保持为未知。",
+        f"{title}的轮廓、表面和细部在{source}的图组中各有证据，保存状况不由单一角度概括。",
+    ]
+    return variants[variant_index(record, "surface-other", len(variants))]
 
 
 def expanded_photo_sentence(record: dict[str, Any], title: str) -> str:
@@ -465,24 +556,89 @@ def expanded_photo_sentence(record: dict[str, Any], title: str) -> str:
     source = source_phrase(record)
     material = material_phrase(record)
     if count <= 1:
-        return f"现有图组在{source}只留下{title}的一张器物照片，{material}的轮廓可见，背面与局部尚未记录。"
+        variants = [
+            f"现有图组在{source}只留下{title}的一张器物照片，{material}的轮廓可见，背面与局部尚未记录。",
+            f"{title}目前只有一张来自{source}的器物照，{material}的正面比例可见，侧面细节仍缺。",
+            f"这件{title}的单张照片保留了{material}的主要轮廓，来源为{source}，未拍到的背面不作补写。",
+            f"从{source}拍到的这一帧{title}，可以辨认{material}的形制，局部与背面尚待更多角度。",
+        ]
+        return variants[variant_index(record, "photo-single", len(variants))]
+    elif labels:
+        variants = [
+            f"{title}在{source}的现场图组有{count}张照片，器物照和展签把名称与形制对应起来，{material}的细节以原图为准。",
+            f"{source}为{title}留下{count}张图，正面、侧面和展签把{material}的名称与轮廓放在同一组记录里。",
+            f"围绕{title}的{count}张现场照片同时收录器物与展签，{material}的比例和细部按原图查看。",
+            f"{title}的图组从器身延伸到展签，共{count}张，{source}的现场光线也成为观察{material}的一部分。",
+            f"在{source}拍下的{title}，器物照片和标签照片合计{count}张，适合把{material}的整体与局部对着看。",
+            f"{title}的正面、侧面和展签都留在{source}的{count}张图里，{material}的细节不靠单张照片猜测。",
+            f"这组关于{title}的{count}张现场记录把名称、比例和{material}的表面放在一起，细部以原图为准。",
+            f"从{source}的展柜照到展签，{title}共保留{count}张图，{material}的轮廓与文字可以交叉阅读。",
+        ]
     if labels:
-        return f"{title}在{source}的现场图组有{count}张照片，器物照与展签照可以互相核对，{material}的细节以原图为准。"
-    return f"{title}在{source}现有{count}张现场照，{material}的正面、侧面与局部应按图组顺序比看。"
+        return variants[variant_index(record, "photo-label", len(variants))]
+    variants = [
+        f"{title}在{source}现有{count}张现场照，{material}的正面、侧面与局部应按图组顺序比看。",
+        f"{source}的{count}张照片把{title}的正面、侧面和局部连成一组，{material}的比例变化由此可见。",
+        f"看{title}的{count}张现场图，先以整体轮廓定位，再用局部照片确认{material}的边缘和表面。",
+        f"{title}的器物照共{count}张，{source}留下的角度差异有助于辨认{material}的厚薄与转折。",
+        f"从正面到侧面，{source}为{title}保留了{count}个观看角度，{material}的细部不宜截成单张理解。",
+        f"{title}的{material}形制在{count}张现场照中逐步展开，来源为{source}，局部与整体应合看。",
+        f"把{source}拍到的{title}按{count}张图的顺序翻看，{material}的轮廓、背面和细节才不会断开。",
+        f"这组{count}张{source}现场照记录了{title}的多角度变化，{material}的制作痕迹以照片为限。",
+    ]
+    return variants[variant_index(record, "photo-field", len(variants))]
 
 
 def expanded_context_sentence(record: dict[str, Any], title: str, category: str) -> str:
     source = source_phrase(record)
     material = material_phrase(record)
     if category == "bronze":
-        return f"{title}在{source}留下的组合线索，能约束{material}在礼仪中的位置，单一纹饰只提供观察入口。"
+        variants = [
+            f"{title}在{source}留下的组合线索，能约束{material}在礼仪中的位置，单一纹饰只提供观察入口。",
+            f"把{title}和{source}的同出器物放在一起，{material}的容量、耳部与礼仪位置才有可比尺度。",
+            f"{source}让{title}不只是孤立器名，{material}的器形与共存关系共同指向它可能承担的礼仪动作。",
+            f"读{title}的纹饰要回到{source}的器物组合，{material}的使用场合不能由一处图案单独决定。",
+            f"{title}的大小和结构与{source}的出土组合彼此照应，{material}在礼仪中的分工仍需逐件核对。",
+            f"从{source}的来源线索看，{title}的{material}形制可放回器用与礼制交界处观察，结论留在证据范围内。",
+            f"{title}的组合位置比孤立纹样更有解释力，{source}所示的{material}用途仍须结合完整报告。",
+            f"把{title}的器形、纹带与{source}的同坑材料合看，才不会把{material}的装饰直接等同于身份。",
+        ]
+        return variants[variant_index(record, "context-bronze", len(variants))]
     if category == "ceramic":
-        return f"{title}的用途还要结合{source}与同组材料判断，{material}的纹饰不能单独替代出土记录。"
+        variants = [
+            f"{title}的用途要结合{source}与同组材料判断，先从{material}的器形和磨痕读起。",
+            f"把{title}的器形放回{source}的出土背景，{material}的装饰只是一条线索，组合信息还要继续核对。",
+            f"{source}给{title}留下来源坐标，{material}的纹样如何服务用途，要和同组器物对照。",
+            f"看{title}的使用可能，{material}的口沿、底部和磨损比吉祥图案更接近器物动作，{source}只提供地点边界。",
+            f"{title}的器形和{material}表面可以说明观看与使用的方向，具体场合仍要回到{source}的组合记录。",
+            f"从{source}的材料出发，{title}的{material}纹饰可作观察入口，不能独自承担用途判断。",
+            f"{title}放在{source}的历史层里看，{material}的大小、开口和残留痕迹才有解释空间。",
+            f"对{title}而言，器形先于寓意，{source}与{material}的同组线索共同限定可以说到哪一步。",
+        ]
+        return variants[variant_index(record, "context-ceramic", len(variants))]
     if category == "music":
-        return f"{title}的器形与同组乐器要放回{source}的语境，{material}才能进入声音生活的讨论。"
+        variants = [
+            f"{title}的器形与同组乐器要放回{source}的语境，{material}才能进入声音生活的讨论。",
+            f"把{title}的孔距、音高与{source}的墓葬组合并读，{material}的声音线索才不会脱离使用环境。",
+            f"{source}交代了{title}进入社会生活的地点，{material}的演奏方式仍需结合同组乐器和可测数据。",
+            f"听觉经验不能替代{title}的器形证据，{material}与{source}所见的组合关系要分开核对。",
+        ]
+        return variants[variant_index(record, "context-music", len(variants))]
     if category == "tomb":
-        return f"{title}与{source}的墓葬组合共同限定身份和使用场合，{material}纹样本身不作单一结论。"
-    return f"把{title}放回{source}与同组材料，才能讨论{material}的社会位置，纹饰只作为线索保留。"
+        variants = [
+            f"{title}与{source}的墓葬组合共同限定身份和使用场合，{material}纹样本身不作单一结论。",
+            f"在{source}的墓葬位置上，{title}和同出器物互相说明，{material}的等级意味仍需谨慎表述。",
+            f"{title}的随葬位置与{source}的墓室结构一起构成语境，{material}的装饰只能作为其中一条线索。",
+            f"回到{source}的墓葬组合，{title}的形制和{material}保存状态才有机会与身份、场合对应。",
+        ]
+        return variants[variant_index(record, "context-tomb", len(variants))]
+    variants = [
+        f"把{title}放回{source}与同组材料，才能讨论{material}的社会位置，纹饰只作为线索保留。",
+        f"{source}的来源记录为{title}划出解释边界，{material}的形制与表面信息先按照片核对。",
+        f"看{title}不能脱离{source}的收藏路径，{material}提供的线索只延伸到现有资料支持的范围。",
+        f"{title}的器形与{material}保存状态可以互相参照，来源未覆盖的社会含义暂不补写。",
+    ]
+    return variants[variant_index(record, "context-other", len(variants))]
 
 
 def generic_form_sentence(record: dict[str, Any], title: str, category: str) -> str:
@@ -514,7 +670,7 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         def replace(_match: re.Match[str]) -> str:
             index = count[0]
             count[0] += 1
-            return variants[stable_variant(record, f"{salt}-{index}") % len(variants)]
+            return variants[variant_index(record, f"{salt}-{index}", len(variants))]
         nonlocal text
         text = re.sub(pattern, replace, text)
     replacements: dict[str, list[str]] = {
@@ -948,7 +1104,7 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
     def replace_photo(_match: re.Match[str]) -> str:
         index = photo_count[0]
         photo_count[0] += 1
-        return photo_variants[stable_variant(record, f"photo-{index}")]
+        return photo_variants[variant_index(record, f"photo-{index}", len(photo_variants))]
     text = re.sub(re.escape(photo_sentence), replace_photo, text)
     return compact(text)
 
