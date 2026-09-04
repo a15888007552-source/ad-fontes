@@ -90,7 +90,7 @@ PHOTO_INVENTORY_PATTERNS = (
 )
 
 PHOTO_COUNT_MARKER = re.compile(r"(?:\d+\s*张|\d+\s*个(?:观看角度)?|合计\s*\d+)")
-PHOTO_WORD_MARKER = re.compile(r"(?:照片|图组|现场照|现场图|器物照|标签照片)")
+PHOTO_WORD_MARKER = re.compile(r"(?:照片|图组|现场照|现场图|器物照|标签照片|张图)")
 LABEL_WORD_MARKER = re.compile(r"(?:展签|标签)")
 
 
