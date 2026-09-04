@@ -89,6 +89,42 @@ PHOTO_INVENTORY_PATTERNS = (
     r"{title}的多角度照片也保留了器物与展柜尺度的关系。",
 )
 
+PHOTO_COUNT_MARKER = re.compile(r"(?:\d+\s*张|\d+\s*个(?:观看角度)?|合计\s*\d+)")
+PHOTO_WORD_MARKER = re.compile(r"(?:照片|图组|现场照|现场图|器物照|标签照片)")
+LABEL_WORD_MARKER = re.compile(r"(?:展签|标签)")
+
+
+def strip_photo_inventory_sentences(text: str) -> str:
+    """Remove sentences that only inventory photos and label pairings.
+
+    The gallery card already exposes the count and role of every image.  A
+    sentence is treated as inventory copy only when it carries a count, a
+    photo word, and a label word together; ordinary historical references to
+    a single photograph remain untouched.  Keeping the original sentence
+    boundaries avoids changing punctuation in paragraphs that need no scrub.
+    """
+    normalized = compact(text)
+    segments = re.findall(r"[^。！？]*[。！？]|[^。！？]+$", normalized)
+    if not segments:
+        return normalized
+    if not any(
+        PHOTO_COUNT_MARKER.search(segment)
+        and PHOTO_WORD_MARKER.search(segment)
+        and LABEL_WORD_MARKER.search(segment)
+        for segment in segments
+    ):
+        return normalized
+    kept = [
+        segment
+        for segment in segments
+        if not (
+            PHOTO_COUNT_MARKER.search(segment)
+            and PHOTO_WORD_MARKER.search(segment)
+            and LABEL_WORD_MARKER.search(segment)
+        )
+    ]
+    return compact("".join(kept))
+
 # A small set of catalogue records had an earlier pass of copy injected into
 # already-upgraded paragraphs.  Keep the repairs explicit and evidence-bound
 # so the generated archive remains readable even when the ignored research
@@ -219,9 +255,7 @@ def normalize_copy(record: dict[str, Any]) -> list[dict[str, str]]:
             text = compact(value)
         else:
             text = compact(value.get("text"))
-        title = compact(record.get("name_zh") or record.get("title") or record.get("name"))
-        for pattern in PHOTO_INVENTORY_PATTERNS:
-            text = re.sub(pattern.replace("{title}", re.escape(title)), "", text)
+        text = strip_photo_inventory_sentences(text)
         result.append({
             "heading": headings[index] if isinstance(value, str) else compact(value.get("heading")) or headings[index],
             "text": compact(text),
@@ -508,13 +542,17 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
                 errors.append(f"{group['id']} {group['title']}: repeated title corruption")
             if repeated_title and repeated_title.search(text):
                 errors.append(f"{group['id']} {group['title']}: nested title prefix")
-            # Photo counts and label pairing belong in the gallery UI.  Keep a
-            # focused check for the old inventory clauses so a future build
-            # cannot silently restore a shared sentence skeleton.  Factual
-            # excavation sentences are intentionally outside this check.
+            # Photo counts and label pairing belong in the gallery UI.  Flag
+            # any inventory sentence that combines a count, photo wording, and
+            # a label reference; factual excavation prose without that trio is
+            # intentionally left alone.
             for sentence in re.split(r"(?<=[。！？；])", text):
                 sentence = sentence.strip()
-                if not re.search(r"(图组从器身延伸到展签|展柜照到展签|只留下[^。]{0,40}的一张器物照片)", sentence):
+                if not (
+                    PHOTO_COUNT_MARKER.search(sentence)
+                    and PHOTO_WORD_MARKER.search(sentence)
+                    and LABEL_WORD_MARKER.search(sentence)
+                ):
                     continue
                 normalized = re.sub(re.escape(title), "<TITLE>", sentence) if title else sentence
                 normalized = re.sub(r"\d+张", "<N>张", normalized)

@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from build_henan_field_archive import COPY_REPAIRS
+from build_henan_field_archive import COPY_REPAIRS, strip_photo_inventory_sentences
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -550,45 +550,10 @@ def expanded_surface_sentence(record: dict[str, Any], title: str, category: str)
 
 
 def expanded_photo_sentence(record: dict[str, Any], title: str) -> str:
-    photos = record.get("photos") or []
-    labels = record.get("label_photos") or record.get("label_photo")
-    if isinstance(labels, str):
-        labels = [labels] if labels else []
-    count = len(photos) + len(labels or [])
-    source = source_phrase(record)
-    material = material_phrase(record)
-    if count <= 1:
-        variants = [
-            f"现有图组在{source}只留下{title}的一张器物照片，{material}的轮廓可见，背面与局部尚未记录。",
-            f"{title}目前只有一张来自{source}的器物照，{material}的正面比例可见，侧面细节仍缺。",
-            f"这件{title}的单张照片保留了{material}的主要轮廓，来源为{source}，未拍到的背面不作补写。",
-            f"从{source}拍到的这一帧{title}，可以辨认{material}的形制，局部与背面尚待更多角度。",
-        ]
-        return variants[variant_index(record, "photo-single", len(variants))]
-    elif labels:
-        variants = [
-            f"{title}在{source}的现场图组有{count}张照片，器物照和展签把名称与形制对应起来，{material}的细节以原图为准。",
-            f"{source}为{title}留下{count}张图，正面、侧面和展签把{material}的名称与轮廓放在同一组记录里。",
-            f"围绕{title}的{count}张现场照片同时收录器物与展签，{material}的比例和细部按原图查看。",
-            f"{title}的图组从器身延伸到展签，共{count}张，{source}的现场光线也成为观察{material}的一部分。",
-            f"在{source}拍下的{title}，器物照片和标签照片合计{count}张，适合把{material}的整体与局部对着看。",
-            f"{title}的正面、侧面和展签都留在{source}的{count}张图里，{material}的细节不靠单张照片猜测。",
-            f"这组关于{title}的{count}张现场记录把名称、比例和{material}的表面放在一起，细部以原图为准。",
-            f"从{source}的展柜照到展签，{title}共保留{count}张图，{material}的轮廓与文字可以交叉阅读。",
-        ]
-    if labels:
-        return variants[variant_index(record, "photo-label", len(variants))]
-    variants = [
-        f"{title}在{source}现有{count}张现场照，{material}的正面、侧面与局部应按图组顺序比看。",
-        f"{source}的{count}张照片把{title}的正面、侧面和局部连成一组，{material}的比例变化由此可见。",
-        f"看{title}的{count}张现场图，先以整体轮廓定位，再用局部照片确认{material}的边缘和表面。",
-        f"{title}的器物照共{count}张，{source}留下的角度差异有助于辨认{material}的厚薄与转折。",
-        f"从正面到侧面，{source}为{title}保留了{count}个观看角度，{material}的细部不宜截成单张理解。",
-        f"{title}的{material}形制在{count}张现场照中逐步展开，来源为{source}，局部与整体应合看。",
-        f"把{source}拍到的{title}按{count}张图的顺序翻看，{material}的轮廓、背面和细节才不会断开。",
-        f"这组{count}张{source}现场照记录了{title}的多角度变化，{material}的制作痕迹以照片为限。",
-    ]
-    return variants[variant_index(record, "photo-field", len(variants))]
+    # Photo counts, role order, and label pairing belong to the gallery UI.
+    # Returning an empty replacement keeps the prose historical rather than
+    # reintroducing an inventory sentence on the next catalogue pass.
+    return ""
 
 
 def expanded_context_sentence(record: dict[str, Any], title: str, category: str) -> str:
@@ -1118,7 +1083,7 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         rf"现有图组(?:在[^。；]{{1,100}})?只留下{re.escape(title)}的一张器物照片，[^。]+。",
     ):
         text = re.sub(pattern, "", text)
-    return compact(text)
+    return strip_photo_inventory_sentences(text)
 
 
 def robust_paragraphs(record: dict[str, Any]) -> list[str]:
@@ -1161,13 +1126,19 @@ def robust_paragraphs(record: dict[str, Any]) -> list[str]:
         current[0] = f"展签记录，{title}属于{period or '年代待核'}，来源为{provenance or '河南博物院收藏'}。{context}"
 
     for index in range(3):
-        if len(current[index]) < 55:
-            current[index] = f"{current[index]} {context_tail(record, index)}"
-        if len(current[index]) < 55:
-            current[index] = f"{current[index]} {title}的多角度照片也保留了器物与展柜尺度的关系。"
         current[index] = apply_residual_copy_rewrites(
             contextualize_repeated(clean_template(current[index], record), record), record
         )
+        # The inventory scrub can shorten an otherwise useful paragraph. Add
+        # a compact evidence sentence only after the final template pass so a
+        # photo sentence cannot be regenerated or removed on the next run.
+        if len(current[index]) < 55:
+            tails = (
+                f"{title}的形制与材质留下了可见证据，未见部分按记录保留。",
+                f"{title}的尺度与保存痕迹共同限定可说范围，缺环不作补写。",
+                f"关于{title}的使用场合，仍需把器形与来源记录放在一起判断。",
+            )
+            current[index] = f"{current[index]} {tails[index]}"
 
     # Remove accidental exact duplicates without adding an artificial number
     # to the public prose.
