@@ -13,7 +13,11 @@ import re
 from pathlib import Path
 from typing import Any
 
-from build_henan_field_archive import COPY_REPAIRS, strip_photo_inventory_sentences
+from build_henan_field_archive import (
+    COPY_REPAIRS,
+    strip_context_template_sentences,
+    strip_photo_inventory_sentences,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -232,7 +236,7 @@ def kind(record: dict[str, Any]) -> str:
         return "music"
     if re.search(r"墓|墓志|墓室|玉衣|随葬|陵", joined):
         return "tomb"
-    if re.search(r"卜辞|甲骨|石经|碑|简", joined):
+    if re.search(r"卜辞|甲骨|石经|碑|简|印刷|宣传品|文献|书卷|小册|行书", joined):
         return "text"
     # Material outranks a vessel-shape character. “陶鼎”“陶豆” and glazed
     # pottery were being caught by the bronze regex because it also contains
@@ -240,6 +244,11 @@ def kind(record: dict[str, Any]) -> str:
     # ceramic; reserve the bronze path for an explicitly metal record.
     if re.search(r"陶|瓷|釉|珐琅|漆", joined) and not re.search(r"青铜|铜质|铜器|铜胎", material):
         return "ceramic"
+    # Currency and membership badges may contain 铜 or 印 in their names, but
+    # they are not bronze vessels.  Keep their copy on monetary or documentary
+    # tracks instead of giving them vessel parts such as ears and spouts.
+    if re.search(r"银铤|银币|钱币|铜钱|宝钞|官票|钞票|证章|货币", joined):
+        return "other"
     if re.search(r"青铜|铜|爵|鼎|盉|簋|簠|豆|壶|尊|觥|卣|罍|鉴|俎|戈|钺|权|印", joined):
         return "bronze"
     if re.search(r"玉|璜|佩", joined):
@@ -518,7 +527,7 @@ def expanded_surface_sentence(record: dict[str, Any], title: str, category: str)
     material = material_phrase(record)
     if category == "ceramic":
         variants = [
-            f"在{source}的展柜光线下，看{title}的{material}表面层次，边缘和背面也要一起核对。",
+            f"{title}在{source}的光线下显出{material}的起伏，边缘与背面提供了另一组证据。",
             f"{title}的釉色随器壁曲面明暗变化，{source}的照片同时留下{material}的边缘和底部。",
             f"观察{title}时，{material}的表面光泽要和口沿、圈足的转折放在一起，{source}只呈现其中一面。",
             f"{source}的现场光线把{title}的{material}胎釉层次照出深浅，背面细部仍按图组补看。",
@@ -526,6 +535,11 @@ def expanded_surface_sentence(record: dict[str, Any], title: str, category: str)
             f"{title}的表面处理不止是颜色，{material}的积釉、施彩或磨损要结合{source}的多角度图。",
             f"从{title}的口沿到底部，{material}的表面状态各有变化，展柜照片保留了可见的那一段。",
             f"把{title}的整体轮廓和{material}的局部光泽合看，{source}的记录足以说明表面层次但不替缺失细节下结论。",
+            f"{title}的器壁从{source}的展柜光线里显出{material}层次，底部与背面也要合看。",
+            f"从{title}的口沿、肩部到足部，{material}的光泽和胎色各有变化，边缘细节不能省略。",
+            f"把{title}转到侧面，{material}的厚薄和收束才清楚；正面负责呈现纹样布局。",
+            f"{title}的表面细节落在口沿与底足之间，{source}的照片让这些转折可以逐项复核。",
+            f"光线会改变{title}的{material}观感，稳定的线索是器壁曲线、底足与局部磨痕。",
         ]
         return variants[variant_index(record, "surface-ceramic", len(variants))]
     if category == "bronze":
@@ -561,7 +575,7 @@ def expanded_context_sentence(record: dict[str, Any], title: str, category: str)
     material = material_phrase(record)
     if category == "bronze":
         variants = [
-            f"{title}在{source}留下的组合线索，能约束{material}在礼仪中的位置，单一纹饰只提供观察入口。",
+            f"{source}的组合信息比单一纹样更能约束{title}的使用场合，具体关系仍要回到同出器物。",
             f"把{title}和{source}的同出器物放在一起，{material}的容量、耳部与礼仪位置才有可比尺度。",
             f"{source}让{title}不只是孤立器名，{material}的器形与共存关系共同指向它可能承担的礼仪动作。",
             f"读{title}的纹饰要回到{source}的器物组合，{material}的使用场合不能由一处图案单独决定。",
@@ -578,9 +592,14 @@ def expanded_context_sentence(record: dict[str, Any], title: str, category: str)
             f"{source}给{title}留下来源坐标，{material}的纹样如何服务用途，要和同组器物对照。",
             f"看{title}的使用可能，{material}的口沿、底部和磨损比吉祥图案更接近器物动作，{source}只提供地点边界。",
             f"{title}的器形和{material}表面可以说明观看与使用的方向，具体场合仍要回到{source}的组合记录。",
-            f"从{source}的材料出发，{title}的{material}纹饰可作观察入口，不能独自承担用途判断。",
+            f"{title}的纹样要连同{material}的开口与底部一起看，{source}只把用途推断限制在一段范围内。",
             f"{title}放在{source}的历史层里看，{material}的大小、开口和残留痕迹才有解释空间。",
             f"对{title}而言，器形先于寓意，{source}与{material}的同组线索共同限定可以说到哪一步。",
+            f"{title}的开口、腹部与底足共同限定用途，{source}只提供一段可核的来源背景。",
+            f"看{title}的纹样之前，先确认{material}的尺度和受力方式；{source}的组合记录再补上使用线索。",
+            f"{source}留下的是{title}的地点坐标，{material}的纹饰意义仍要让位于器形与同组材料。",
+            f"{title}的用途不能从图案单独推开，{material}的开口和磨损要与{source}的记录并读。",
+            f"沿着{title}的器壁和底部观察，{material}的装饰才有了与实际动作相连的尺度。",
         ]
         return variants[variant_index(record, "context-ceramic", len(variants))]
     if category == "music":
@@ -950,6 +969,9 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
     # Rewrite every known form from the record's own source and material so a
     # second run cannot reintroduce a shared skeleton.
     cleanup_variants = [
+        (rf"关于{re.escape(title)}的使用场合，仍需把器形与来源记录放在一起判断。", expanded_context_sentence(record, title, category), "fallback-occasion-clean"),
+        (rf"{re.escape(title)}的形制与材质留下了可见证据，未见部分按记录保留。", expanded_context_sentence(record, title, category), "fallback-form-clean"),
+        (rf"{re.escape(title)}的尺度与保存痕迹共同限定可说范围，缺环不作补写。", expanded_context_sentence(record, title, category), "fallback-scale-clean"),
         (rf"{re.escape(title)}的边缘、接缝与纹带转折，把制作动作落到了可见的部位。", expanded_craft_sentence(record, title, category), "edge-clean"),
         (rf"{re.escape(title)}的范块衔接与口沿修整，把铸造顺序留在了器物边缘。", expanded_craft_sentence(record, title, category), "casting-alt-clean"),
         (rf"{re.escape(title)}的表面层次要连同边缘和背面一起看，色调本身不足以概括工艺。", expanded_surface_sentence(record, title, category), "surface-clean"),
@@ -993,6 +1015,11 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         rf"{re.escape(title)}的接缝、耳部与纹带转折可以互相参照，[^。]{{1,150}}。",
         [expanded_craft_sentence(record, title, category)],
         "broad-craft-ear",
+    )
+    replace_variants(
+        rf"{re.escape(title)}的耳、流与纹带转折彼此牵连，[^。]{{1,180}}。",
+        [expanded_craft_sentence(record, title, category)],
+        "broad-craft-ear-legacy",
     )
     replace_variants(
         rf"{re.escape(title)}的胎体、边缘和烧成痕迹要分开看，[^。]{{1,180}}。",
@@ -1040,6 +1067,31 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         "broad-context-location",
     )
     replace_variants(
+        rf"在[^。；]{{1,100}}的展柜光线下，看{re.escape(title)}的[^。；]{{1,80}}表面层次，边缘和背面也要一起核对。",
+        [expanded_surface_sentence(record, title, category)],
+        "broad-surface-display",
+    )
+    replace_variants(
+        rf"从[^。；]{{1,100}}的材料出发，{re.escape(title)}的[^。；]{{1,100}}纹饰可作观察入口，不能独自承担用途判断。",
+        [expanded_context_sentence(record, title, category)],
+        "broad-context-material",
+    )
+    replace_variants(
+        rf"沿着{re.escape(title)}的器壁看[^。；]{{1,100}}的色泽与起伏，正面照片之外，侧面才显出边缘收束。",
+        [expanded_surface_sentence(record, title, category)],
+        "broad-surface-side",
+    )
+    replace_variants(
+        rf"从{re.escape(title)}的口沿到底部，[^。；]{{1,100}}的表面状态各有变化，展柜照片保留了可见的那一段。",
+        [expanded_surface_sentence(record, title, category)],
+        "broad-surface-bottom",
+    )
+    replace_variants(
+        rf"{re.escape(title)}的纹样要连同[^。；]{{1,100}}的开口与底部一起看，[^。；]{{1,100}}只把用途推断限制在一段范围内。",
+        [expanded_context_sentence(record, title, category)],
+        "broad-context-opening",
+    )
+    replace_variants(
         rf"{re.escape(title)}的用途还要结合[^。]{{1,140}}，[^。]{{1,100}}不能单独替代出土记录。",
         [expanded_context_sentence(record, title, category)],
         "broad-context-ceramic",
@@ -1083,13 +1135,16 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         rf"现有图组(?:在[^。；]{{1,100}})?只留下{re.escape(title)}的一张器物照片，[^。]+。",
     ):
         text = re.sub(pattern, "", text)
-    return strip_photo_inventory_sentences(text)
+    return strip_context_template_sentences(strip_photo_inventory_sentences(text))
 
 
 def robust_paragraphs(record: dict[str, Any]) -> list[str]:
     repair = COPY_REPAIRS.get(compact(record.get("id")))
     if repair:
-        return list(repair)
+        return [
+            strip_context_template_sentences(strip_photo_inventory_sentences(paragraph))
+            for paragraph in repair
+        ]
     current = [
         apply_residual_copy_rewrites(contextualize_repeated(clean_template(item, record), record), record)
         for item in existing_copy(record)
