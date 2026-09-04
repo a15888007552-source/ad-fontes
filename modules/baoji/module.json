@@ -1,0 +1,19 @@
+{
+  "id": "baoji",
+  "title": "青铜铸史，铭文为证 · 中国青铜器博物院",
+  "subtitle": "中国青铜器博物院现场照片图录：青铜铸史，铭文为证。",
+  "type": "catalog",
+  "status": "published",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "chapters": [
+    {
+      "id": "bronze-use-atlas",
+      "title": "青铜器用图谱",
+      "titleEn": "BRONZE USE ATLAS",
+      "description": "从器形进入动作，从动作进入礼制。按器用系统浏览青铜器。",
+      "entry": "bronze-use-atlas/index.html"
+    }
+  ],
+  "maintainer": "辛申奥"
+}
