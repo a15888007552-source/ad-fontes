@@ -17,7 +17,9 @@ from build_henan_field_archive import (
     COPY_REPAIRS,
     CONTEXT_SENTENCE_REPLACEMENTS,
     CONTEXT_SENTENCE_SCAFFOLD,
+    CERAMIC_PROVENANCE_REPLACEMENTS,
     LOCATION_CALIBRATION_SCAFFOLD,
+    PROVENANCE_CERAMIC_SCAFFOLD,
     SURFACE_SCAFFOLD,
     TARGETED_SENTENCE_REPAIRS,
     USAGE_SENTENCE_SCAFFOLD,
@@ -246,6 +248,13 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             replacement = CONTEXT_SENTENCE_REPLACEMENTS.get(compact(record.get("id")))
             if replacement:
                 removed.append(replacement)
+            continue
+        if PROVENANCE_CERAMIC_SCAFFOLD.search(segment):
+            replacement = CERAMIC_PROVENANCE_REPLACEMENTS.get(compact(record.get("id")))
+            if replacement:
+                removed.append(replacement)
+            # Drop any future unmapped occurrence instead of preserving a
+            # sentence whose fixed wording has already appeared in the batch.
             continue
         if LOCATION_CALIBRATION_SCAFFOLD.search(segment) or SURFACE_SCAFFOLD.search(segment):
             continue
