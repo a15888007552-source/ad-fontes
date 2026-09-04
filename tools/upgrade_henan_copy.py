@@ -15,6 +15,7 @@ from typing import Any
 
 from build_henan_field_archive import (
     COPY_REPAIRS,
+    fallback_copy_tail,
     strip_context_template_sentences,
     strip_photo_inventory_sentences,
 )
@@ -200,6 +201,43 @@ def compact(value: Any) -> str:
 
 def title_of(record: dict[str, Any]) -> str:
     return compact(record.get("name_zh") or record.get("title") or record.get("name"))
+
+
+def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
+    """Remove material-mismatched or batch-generated tail sentences.
+
+    The first catalogue pass used a handful of surface/context sentences as
+    scaffolding.  They are especially misleading on plain Neolithic pottery:
+    an unglazed grey or red earthenware object cannot be described through
+    glaze accumulation or a glaze layer.  The same pass also left two
+    recognizable batch tails that add no object evidence.  Drop those whole
+    sentences and let the length guard add a short evidence sentence only if
+    a paragraph actually needs it.
+    """
+    normalized = compact(text)
+    segments = re.findall(r"[^。！？]*[。！？]|[^。！？]+$", normalized)
+    if not segments:
+        return normalized
+    title = title_of(record)
+    material = compact(record.get("material_or_type") or record.get("material") or record.get("categoryLabel"))
+    joined = f"{title} {material}"
+    plain_pottery = "陶" in joined and not re.search(r"釉|瓷|珐琅", joined)
+    removed = []
+    for segment in segments:
+        if "器形先于寓意" in segment or "边缘与背面提供了另一组证据" in segment:
+            continue
+        if "尺度与保存痕迹共同限定可说范围，缺环不作补写" in segment:
+            continue
+        if re.search(
+            r"关于[^。]{1,90}的使用场合，仍需把器形与来源记录放在一起判断"
+            r"|的器形和[^。]{1,80}表面可以说明观看与使用的方向，具体场合仍要回到[^。]{1,100}组合记录",
+            segment,
+        ):
+            continue
+        if plain_pottery and re.search(r"釉色|积釉|胎釉|施彩或磨损", segment):
+            continue
+        removed.append(segment)
+    return compact("".join(removed))
 
 
 def aliases(record: dict[str, Any]) -> set[str]:
@@ -526,8 +564,21 @@ def expanded_surface_sentence(record: dict[str, Any], title: str, category: str)
     source = source_phrase(record)
     material = material_phrase(record)
     if category == "ceramic":
+        joined = f"{title} {material}"
+        if "陶" in joined and not re.search(r"釉|瓷|珐琅", joined):
+            variants = [
+                f"{title}在{source}的光线下显出陶胎的起伏，口沿与底部的收束先按器形记录。",
+                f"沿着{title}的器壁和足部看，{material}的泥胎、受火与边缘修整各有痕迹。",
+                f"{title}的胎色和表面颗粒保留了烧成线索，{source}的照片适合与整体轮廓合看。",
+                f"从{title}的口沿到器底，陶胎厚薄与镂孔、三足或圈足的转折共同说明成型动作。",
+                f"{title}的纹样或绳纹依附陶胎展开，局部磨光与受火痕迹以照片可见处为限。",
+                f"把{title}的正面和侧面放在一起，胎色、器壁弧度与底部受力关系才不会被一处光线带偏。",
+                f"{title}的陶胎没有施釉证据，现有记录更适合讨论泥胎成型、烧成和表面修整。",
+                f"观察{title}的边缘和足部，泥胎留下的制作痕迹比泛谈光泽更接近器物现场。",
+            ]
+            return variants[variant_index(record, "surface-plain-pottery", len(variants))]
         variants = [
-            f"{title}在{source}的光线下显出{material}的起伏，边缘与背面提供了另一组证据。",
+            f"{title}的器壁曲线和底足收束在{source}的光线下形成层次，局部细节应与整体轮廓合看。",
             f"{title}的釉色随器壁曲面明暗变化，{source}的照片同时留下{material}的边缘和底部。",
             f"观察{title}时，{material}的表面光泽要和口沿、圈足的转折放在一起，{source}只呈现其中一面。",
             f"{source}的现场光线把{title}的{material}胎釉层次照出深浅，背面细部仍按图组补看。",
@@ -594,7 +645,6 @@ def expanded_context_sentence(record: dict[str, Any], title: str, category: str)
             f"{title}的器形和{material}表面可以说明观看与使用的方向，具体场合仍要回到{source}的组合记录。",
             f"{title}的纹样要连同{material}的开口与底部一起看，{source}只把用途推断限制在一段范围内。",
             f"{title}放在{source}的历史层里看，{material}的大小、开口和残留痕迹才有解释空间。",
-            f"对{title}而言，器形先于寓意，{source}与{material}的同组线索共同限定可以说到哪一步。",
             f"{title}的开口、腹部与底足共同限定用途，{source}只提供一段可核的来源背景。",
             f"看{title}的纹样之前，先确认{material}的尺度和受力方式；{source}的组合记录再补上使用线索。",
             f"{source}留下的是{title}的地点坐标，{material}的纹饰意义仍要让位于器形与同组材料。",
@@ -1135,14 +1185,18 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         rf"现有图组(?:在[^。；]{{1,100}})?只留下{re.escape(title)}的一张器物照片，[^。]+。",
     ):
         text = re.sub(pattern, "", text)
-    return strip_context_template_sentences(strip_photo_inventory_sentences(text))
+    return strip_generated_scaffolds(
+        strip_context_template_sentences(strip_photo_inventory_sentences(text)), record
+    )
 
 
 def robust_paragraphs(record: dict[str, Any]) -> list[str]:
     repair = COPY_REPAIRS.get(compact(record.get("id")))
     if repair:
         return [
-            strip_context_template_sentences(strip_photo_inventory_sentences(paragraph))
+            strip_generated_scaffolds(
+                strip_context_template_sentences(strip_photo_inventory_sentences(paragraph)), record
+            )
             for paragraph in repair
         ]
     current = [
@@ -1184,16 +1238,12 @@ def robust_paragraphs(record: dict[str, Any]) -> list[str]:
         current[index] = apply_residual_copy_rewrites(
             contextualize_repeated(clean_template(current[index], record), record), record
         )
+        current[index] = strip_generated_scaffolds(current[index], record)
         # The inventory scrub can shorten an otherwise useful paragraph. Add
         # a compact evidence sentence only after the final template pass so a
         # photo sentence cannot be regenerated or removed on the next run.
         if len(current[index]) < 55:
-            tails = (
-                f"{title}的形制与材质留下了可见证据，未见部分按记录保留。",
-                f"{title}的尺度与保存痕迹共同限定可说范围，缺环不作补写。",
-                f"关于{title}的使用场合，仍需把器形与来源记录放在一起判断。",
-            )
-            current[index] = f"{current[index]} {tails[index]}"
+            current[index] = f"{current[index]} {fallback_copy_tail(record, index)}"
 
     # Remove accidental exact duplicates without adding an artificial number
     # to the public prose.
