@@ -93,6 +93,7 @@ PHOTO_COUNT_MARKER = re.compile(r"(?:(?:\d+|[一二三四五六七八九十百�
 PHOTO_WORD_MARKER = re.compile(r"(?:照片|图组|现场照|现场图|现场记录|器物照|标签照片|张图)")
 LABEL_WORD_MARKER = re.compile(r"(?:展签|标签)")
 PHOTO_DETAIL_MARKER = re.compile(r"(?:正面|侧面|局部|细部|名称|比例|整体|表面|原图|器物)")
+CONTEXT_TEMPLATE_MARKER = "在礼仪中的位置，单一纹饰只提供观察入口"
 
 
 def strip_photo_inventory_sentences(text: str) -> str:
@@ -126,6 +127,21 @@ def strip_photo_inventory_sentences(text: str) -> str:
     ]
     return compact("".join(kept))
 
+
+def strip_context_template_sentences(text: str) -> str:
+    """Drop the old batch tail that reduced every object to one ritual formula.
+
+    The sentence is an editorial scaffold, not object evidence.  Removing the
+    whole sentence keeps the preceding provenance sentence intact; the copy
+    upgrader adds an evidence-bound sentence only when the paragraph becomes
+    too short.
+    """
+    normalized = compact(text)
+    segments = re.findall(r"[^。！？]*[。！？]|[^。！？]+$", normalized)
+    if not segments or not any(CONTEXT_TEMPLATE_MARKER in segment for segment in segments):
+        return normalized
+    return compact("".join(segment for segment in segments if CONTEXT_TEMPLATE_MARKER not in segment))
+
 # A small set of catalogue records had an earlier pass of copy injected into
 # already-upgraded paragraphs.  Keep the repairs explicit and evidence-bound
 # so the generated archive remains readable even when the ignored research
@@ -144,12 +160,12 @@ COPY_REPAIRS: dict[str, list[str]] = {
     "A-056": [
         "1955年，夔龙纹铜盘出土于河南郑州白家庄，属于商代前期。夔龙纹铜盘的出土地点可定位在1955年河南郑州白家庄，青铜水器的器形与商代前期由此互相校准。",
         "浅腹宽沿适合承水，夔龙纹沿可观看的器面展开，纹地与主纹层次分明。在1955年河南郑州白家庄的记录里，夔龙纹铜盘的范线、接缝与青铜水器纹饰分区要一起对读，商代前期的制作次序只能从这些部位逐层追问。",
-        "盘常用于盥洗承水，也能进入祭祀、宴飨等礼仪程序。白家庄铜器让郑州商城贵族用器的类别与装饰更加具体。夔龙纹铜盘在1955年河南郑州白家庄留下的组合线索，能约束青铜水器在礼仪中的位置，单一纹饰只提供观察入口。",
+        "盘常用于盥洗承水，也能进入祭祀、宴飨等礼仪程序。白家庄铜器让郑州商城贵族用器的类别与装饰更加具体。具体礼仪环节仍需结合同时出土的盉、匜等器物判断。",
     ],
     "A-102": [
         "1981年，鱼龙纹铜盘出土于河南南阳市郊砖瓦厂，属于西周。鱼龙纹铜盘的出土地点可定位在1981年河南南阳市郊砖瓦厂，青铜水器的器形与西周由此互相校准。",
         "浅盘内外以鱼龙纹组织水面可见图案，宽沿与腹部适合承接盥洗用水。在1981年河南南阳市郊砖瓦厂的记录里，鱼龙纹铜盘的范线、接缝与青铜水器纹饰分区要一起对读，西周的制作次序只能从这些部位逐层追问。",
-        "盘通常与匜、盉等注水器配合，参与盥洗和礼仪洁净。同出铭文簋为这件盘提供了南阳西周贵族器用的区域背景。鱼龙纹铜盘在1981年河南南阳市郊砖瓦厂留下的组合线索，能约束青铜水器在礼仪中的位置，单一纹饰只提供观察入口。",
+        "盘通常与匜、盉等注水器配合，参与盥洗和礼仪洁净。同出铭文簋为这件盘提供了南阳西周贵族器用的区域背景。具体使用环节仍需回到南阳地区同组器物与出土报告。",
     ],
     "b-074": [
         "骑马狩猎纹铜镜为唐代扶沟出土器，现场展签写1958年，河南博物院网页写1963年；目录保留这一年份冲突，不以其中一说覆盖另一说。",
@@ -175,6 +191,26 @@ COPY_REPAIRS: dict[str, list[str]] = {
         "展签记录，左国玑行书卷属于明代（1368—1644），来源为征集。把左国玑行书卷的形制、材质和来源放在一起，才能知道它能说明的范围有多大。",
         "器物本身，长卷以行书连续书写诗文，字势和章法随卷面展开；左国玑为开封人，与李梦阳、张路并称‘中州三杰’。卷面行气、落款与纸张边缘要分开观察，才能理解书写者如何安排长卷节奏。",
         "左国玑行书卷的历史意义在于，作品为明代中州文人交往、诗书关系和地方书法史提供直接材料。左国玑行书卷没有完整出土组合可供复原，因此本文只保留器形能够支持的判断。",
+    ],
+    "b-120": [
+        "展签记录，《京汉工人流血记》为1923年印刷文献，现藏河南博物院。小册子记录京汉铁路总工会筹备、罢工与镇压经过，收录宣言、通电和报道，文献身份先由出版信息与内容范围来确定。",
+        "这本小册子由北京《工人周刊》社出版，纸面上的标题、分栏和连续文字承担叙事与传播功能。栏线、字级与纸张状态共同说明它怎样面向读者传递事件。",
+        "《京汉工人流血记》保存了二七大罢工相关的一手传播材料，为研究早期工人运动、铁路工会组织和近代政治宣传提供文献依据。它的历史价值在文字内容与传播现场，具体流传路径仍以馆藏记录为界。",
+    ],
+    "b-119": [
+        "展签记录，《廖仲恺先生》宣传品属于民国时期，现藏河南博物院。印刷品以廖仲恺遇刺和国民革命为主题，保存了近代政治传播的现场。",
+        "版面以标题、图像与连续文字组织阅读，纸张、墨色和印刷边缘显示其作为宣传品的制作方式。现有展签没有说明具体印刷工艺和发行数量，能够确认的先到纸面与内容。",
+        "《廖仲恺先生》宣传品保存了近代政治宣传的语言、图像与传播对象，可与二十世纪初的报刊和革命史料互证；原始流传路径仍以馆藏记录为界。",
+    ],
+    "b-113": [
+        "展签将户部官票定为清咸丰五年（1855），来源记作征集。纸钞的来源只记作征集，原始地点尚不清楚；票面格式先按现有展签和照片记录。",
+        "纸面以票名、朱印和版框建立面额与发行者的识别秩序，填写栏位与纸张磨损又留下进入流通的线索。票面尺寸和保存状态需要结合近照阅读。",
+        "户部官票以户部名义和朱印确认价值，填写项目把一次发行落实到具体票面；咸丰财政紧张背景使它成为纸币制度扩张的实物材料。",
+    ],
+    "b-115": [
+        "展签记录，满文“天命汗钱”铜钱（2枚）属于明万历四十四年（1616），来源为征集。两枚铜钱以满文钱名和铸造格式标示政权建立后的货币身份，原始流传路径未见记录。",
+        "钱面铸有满文“天命汗钱”，方孔圆钱的轮廓、穿孔边缘和文字布局共同构成识别信息。铜质、铸文和磨损可从近照观察，具体铸造地点没有展签说明。",
+        "这组钱币把后金政权早期的文字选择、纪年与货币发行放在同一件日用物上；作为征集品，不能据现有记录补出最初使用者。",
     ],
 }
 
@@ -256,7 +292,7 @@ def normalize_copy(record: dict[str, Any]) -> list[dict[str, str]]:
             text = compact(value)
         else:
             text = compact(value.get("text"))
-        text = strip_photo_inventory_sentences(text)
+        text = strip_context_template_sentences(strip_photo_inventory_sentences(text))
         result.append({
             "heading": headings[index] if isinstance(value, str) else compact(value.get("heading")) or headings[index],
             "text": compact(text),
@@ -504,6 +540,7 @@ def apply_major_copy(records: list[dict[str, Any]], path: Path) -> None:
 
 def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str, Any]:
     errors: list[str] = []
+    normalized_sentence_groups: dict[str, set[str]] = {}
     photo_skeleton_groups: dict[str, set[str]] = {}
     assigned = [photo["filename"] for group in groups for photo in group["photos"] if photo.get("filename")]
     counts = Counter(assigned)
@@ -543,6 +580,27 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
                 errors.append(f"{group['id']} {group['title']}: repeated title corruption")
             if repeated_title and repeated_title.search(text):
                 errors.append(f"{group['id']} {group['title']}: nested title prefix")
+            # Keep the broader editorial-skeleton guard alongside the photo
+            # inventory check.  Provenance/date sentences are facts and are
+            # deliberately excluded; non-factual copy should not collapse to
+            # one sentence after object names and materials are substituted.
+            for sentence in re.split(r"(?<=[。！？；])", text):
+                sentence = sentence.strip()
+                if re.search(r"(出土于|出土|征集|现藏|属于[^，。]{0,16}(文化|代|时期)|\d{4}年)", sentence):
+                    continue
+                normalized = re.sub(re.escape(title), "<TITLE>", sentence) if title else sentence
+                normalized = re.sub(r"\d+张", "<N>张", normalized)
+                normalized = re.sub(r"\d+个(?:观看角度)?", "<N>", normalized)
+                for field in (
+                    compact(group.get("provenance")),
+                    copy_source_phrase(group),
+                    compact(group.get("material")),
+                ):
+                    if field:
+                        normalized = normalized.replace(field, "<FIELD>")
+                normalized = re.sub(r"\s+", "", normalized)
+                if len(normalized) >= 24:
+                    normalized_sentence_groups.setdefault(normalized, set()).add(group["id"])
             # Photo counts and label pairing belong in the gallery UI.  Flag
             # any inventory sentence that combines a count, photo wording, and
             # a label or role/detail reference; factual excavation prose without
@@ -593,7 +651,7 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
         errors.append(f"exactly repeated paragraphs: {len(repeated)}")
     repeated_skeletons = sorted(
         (sentence, ids)
-        for sentence, ids in photo_skeleton_groups.items()
+        for sentence, ids in normalized_sentence_groups.items()
         if len(ids) >= 5
     )
     if repeated_skeletons:
