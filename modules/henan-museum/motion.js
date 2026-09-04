@@ -74,8 +74,9 @@
   const revealNodes = [...document.querySelectorAll(
     '.museum-photo, .museum-intro>.eyebrow, .museum-intro>h2, .museum-statistics, ' +
     '.museum-prose>div, .museum-intro>.text-link, .treasure-heading, .object-index, ' +
-    '.object-toolbar, .object-art, .object-copy, .music-title, .music-copy, ' +
-    '.collection>.section-heading, .ru-art, .collection-list>a, .colophon>div'
+    '.object-toolbar, .object-art, .object-copy, .music-title, .music-copy, .music-evidence, ' +
+    '.tomb-heading>*, .tomb-card, .collection>.section-heading, .ru-art, .collection-list>a, ' +
+    '.field-archive>.section-heading, .field-key, .field-grid, .colophon>div'
   )];
   if ('IntersectionObserver' in window) {
     const reveals = new IntersectionObserver(entries => {

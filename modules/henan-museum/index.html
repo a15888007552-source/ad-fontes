@@ -10,8 +10,11 @@
   <link rel="preload" as="image" href="assets/visuals/hero-museum.webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="motion.css">
+  <link rel="stylesheet" href="field-archive.css">
   <script src="app.js" defer></script>
   <script src="motion.js" defer></script>
+  <script src="data/field-photo-index.js" defer></script>
+  <script src="field-archive.js" defer></script>
 </head>
 <body>
   <div class="museum-opening" id="museum-opening" role="region" aria-label="河南博物院开场" hidden>
@@ -45,7 +48,8 @@
       <a href="#civilization">本院概况</a>
       <a href="#treasures">三件重器</a>
       <a href="#jiahu">贾湖之声</a>
-      <a href="#collection">众器成史</a>
+      <a href="#tombs">墓葬线索</a>
+      <a href="#field-archive">实拍档案</a>
       <a class="atlas-link" href="../museum-atlas/index.html?province=henan" target="_top">Museum Atlas <span>↗</span></a>
     </nav>
   </header>
@@ -62,13 +66,13 @@
         <p class="eyebrow">华夏中枢档案 / HENAN MUSEUM</p>
         <h1 id="hero-title">华夏之中<span>中原文明</span></h1>
         <p class="hero-subtitle">择中建都 <i>·</i> 文明肇始</p>
-        <p class="hero-deck">在郑州，走进河南博物院。<br>从一声骨笛到一件礼器，读懂院藏里的文明。</p>
+        <p class="hero-deck">一座院，收住八千年的声息。<br>循器物入史，看中原如何成为华夏之中。</p>
         <a class="hero-enter" href="#civilization"><span>循器入史</span><span aria-hidden="true">↘</span></a>
       </div>
       <div class="hero-bottom"><span>一方中原 · 千年回响</span><a href="#treasures">莲鹤方壶 / 春秋 <span>↓</span></a><span>01 — 04 / SCROLL TO EXPLORE</span></div>
     </section>
 
-    <div class="chapter-strip" aria-label="本页阅读线索"><span>本院概况</span><i></i><span>院藏重器</span><i></i><span>青铜与瓷</span><i></i><span>八千年乐声</span></div>
+    <div class="chapter-strip" aria-label="本页阅读线索"><span>本院概况</span><i></i><span>三件重器</span><i></i><span>贾湖之声</span><i></i><span>墓葬所见</span><i></i><span>实拍器物</span></div>
 
     <section class="civilization section-shell" id="civilization" aria-labelledby="civilization-title">
       <div class="civilization-layout museum-overview">
@@ -106,18 +110,18 @@
         <div class="object-carousel" id="object-carousel" role="region" aria-label="三件禁出文物，使用左右方向键切换" aria-roledescription="轮播图" tabindex="0">
 
         <article class="object-feature" id="lotus-crane" aria-labelledby="lotus-crane-title">
-          <figure class="object-art object-art--crane"><img src="assets/visuals/lotus-crane-detail.webp" alt="莲鹤方壶独立器物构图与青铜纹饰的几何拼贴画" width="1254" height="1254" loading="lazy"><span class="art-number" aria-hidden="true">壹</span><figcaption>青铜之上，一鹤欲飞</figcaption></figure>
+          <figure class="object-art object-art--photo object-art--crane"><img src="assets/field/protected-lotus.webp" alt="展厅中拍摄的莲鹤方壶实物" width="1133" height="1700" loading="lazy"><span class="art-number" aria-hidden="true">壹</span><figcaption>莲鹤方壶 · 本次实拍</figcaption></figure>
           <div class="object-copy"><p class="eyebrow">SPRING AND AUTUMN PERIOD · BRONZE</p><h3 id="lotus-crane-title">莲鹤方壶</h3><p class="object-thesis">沉重的礼器，<br>向上生长的想象。</p><dl class="object-facts"><div><dt>年代</dt><dd>春秋</dd></div><div><dt>出土</dt><dd>1923年 · 新郑李家楼郑公大墓</dd></div><div><dt>名录</dt><dd>2002年 · 首批禁止出国（境）展览文物</dd></div></dl><p>壶盖的双层莲瓣中央，一只鹤双足而立，展翼引颈。龙形双耳、附于器身的翼龙与承托底部的兽形，把视线从下方的重量引向上方的舒展。</p><p>它仍属于青铜酒器的世界，却把春秋工匠的奇巧构思推到了前景。与其把所有纹饰归结为单一象征，不如先看器形如何将承重、攀附与飞翔组织在一起。</p><details class="object-detail"><summary>再看一处：莲、鹤与礼器 <span>＋</span></summary><div><p>莲瓣在这里首先是壶盖的结构与装饰。它承托的是一只铸成的鹤，而非独立的花卉题材。壶作为盛酒器，关联祭祀与宴享；这件器物体量与装饰尤为突出，其具体使用方式仍须结合墓葬组合判断。</p></div></details><a class="text-link" href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508162565626657246" target="_blank" rel="noopener noreferrer">查看馆藏实物与介绍 <span>↗</span></a></div>
         </article>
 
         <article class="object-feature" id="cloud-bronze" aria-labelledby="cloud-bronze-title">
-          <figure class="object-art"><img src="assets/visuals/cloud-bronze.webp" alt="云纹铜禁的低矮器座、透空纹饰与青铜色块拼贴画" width="1536" height="1024" loading="lazy"><span class="art-number" aria-hidden="true">贰</span><figcaption>云纹盘曲，虚实相生</figcaption></figure>
+          <figure class="object-art object-art--photo object-art--wide"><img src="assets/field/protected-cloud.webp" alt="展厅中拍摄的云纹铜禁实物" width="1700" height="1133" loading="lazy"><span class="art-number" aria-hidden="true">贰</span><figcaption>云纹铜禁 · 本次实拍</figcaption></figure>
           <div class="object-copy"><p class="eyebrow">SPRING AND AUTUMN PERIOD · CHU</p><h3 id="cloud-bronze-title">云纹铜禁</h3><p class="object-thesis">一方酒器之座，<br>层层盘曲的青铜世界。</p><dl class="object-facts"><div><dt>年代</dt><dd>春秋</dd></div><div><dt>出土</dt><dd>1978年 · 淅川下寺2号楚墓</dd></div><div><dt>名录</dt><dd>2002年 · 首批禁止出国（境）展览文物</dd></div></dl><p>“禁”是承放酒器的几案。平整的中央台面，被繁密的透空云纹环绕；龙形与虎形怪兽分布于上下，使低矮的器座具有向外伸展的张力。</p><p>在河南博物院的青铜器收藏中，云纹铜禁以层叠而疏透的纹饰见长。承放酒器的台面与环绕四周的装饰，让实用的器座成为工艺精巧的重器。</p><details class="object-detail"><summary>再看一处：纹饰与铸造 <span>＋</span></summary><div><p>层叠镂空纹饰让云纹铜禁成为研究古代精密铸造的重要实物。馆方通常以失蜡法解释其制作，相关工艺研究亦存在不同意见；对具体铸造步骤的判断，需要回到实物痕迹。出土时器物破损严重，今天的整体面貌也包含长期修复的成果。</p></div></details><a class="text-link" href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508168229516397923" target="_blank" rel="noopener noreferrer">查看馆藏实物与介绍 <span>↗</span></a></div>
         </article>
 
         <article class="object-feature" id="white-green" aria-labelledby="white-green-title">
-          <figure class="object-art"><img src="assets/visuals/white-green.webp" alt="北齐白釉绿彩长颈瓶与米白、墨绿几何色块构成的拼贴画" width="1536" height="1024" loading="lazy"><span class="art-number" aria-hidden="true">叁</span><figcaption>白釉为地，绿彩垂流</figcaption></figure>
-          <div class="object-copy"><p class="eyebrow">NORTHERN QI · CERAMICS</p><h3 id="white-green-title">北齐白釉绿彩<br>长颈瓶</h3><p class="object-thesis">一抹绿意，<br>落在北方白瓷的早期。</p><dl class="object-facts"><div><dt>年代</dt><dd>北齐 · 武平六年（575）范粹墓</dd></div><div><dt>出土</dt><dd>1971年 · 安阳洪河屯范粹墓</dd></div><div><dt>名录</dt><dd>2013年 · 第三批禁止出境展览文物</dd></div></dl><p>细长颈部连接饱满腹部，口沿外撇，微泛暖色的白釉上施以绿彩。顺着器腹流动的绿色，与平静的器形形成鲜明对照。</p><p>这件瓶把目光从青铜转向胎、釉与烧造。其所属纪年墓葬，为认识北朝晚期白瓷及装饰技术提供了重要的年代依据。</p><details class="object-detail"><summary>再看一处：白与绿的关系 <span>＋</span></summary><div><p>“白釉绿彩”不是通体青绿色：白色釉面构成底色，绿彩局部施于其上。观察时可把器形、胎釉与施彩分别来看，避免将它直接等同于后世唐三彩，也不必以单一器物替代整个瓷业发展的过程。</p></div></details><a class="text-link" href="https://www.chnmus.net/ch/collection/boutique/details.html?id=7066673371475349504" target="_blank" rel="noopener noreferrer">查看馆藏实物与介绍 <span>↗</span></a></div>
+          <figure class="object-art object-art--photo object-art--portrait"><img src="assets/field/protected-white-green-official.jpg" alt="河南博物院藏北齐白釉绿彩长颈瓶，白釉器身垂施绿彩" width="630" height="768" loading="lazy"><span class="art-number" aria-hidden="true">叁</span><figcaption>白釉绿彩长颈瓶 · 河南博物院馆藏图</figcaption></figure>
+          <div class="object-copy"><p class="eyebrow">NORTHERN QI · CERAMICS</p><h3 id="white-green-title">北齐白釉绿彩长颈瓶</h3><p class="object-thesis">一抹绿意，<br>落在北方白瓷的早期。</p><dl class="object-facts"><div><dt>年代</dt><dd>北齐 · 武平六年（575）范粹墓</dd></div><div><dt>出土</dt><dd>1971年 · 安阳洪河屯范粹墓</dd></div><div><dt>名录</dt><dd>2013年 · 第三批禁止出境展览文物</dd></div></dl><p>细长颈部连接饱满腹部，口沿外撇，微泛暖色的白釉上施以绿彩。顺着器腹流动的绿色，与平静的器形形成鲜明对照。</p><p>这件瓶把目光从青铜转向胎、釉与烧造。其所属纪年墓葬，为认识北朝晚期白瓷及装饰技术提供了重要的年代依据。</p><details class="object-detail"><summary>再看一处：白与绿的关系 <span>＋</span></summary><div><p>“白釉绿彩”不是通体青绿色：白色釉面构成底色，绿彩局部施于其上。观察时可把器形、胎釉与施彩分别来看，避免将它直接等同于后世唐三彩，也不必以单一器物替代整个瓷业发展的过程。</p></div></details><a class="text-link" href="https://www.chnmus.net/ch/collection/boutique/details.html?id=7066673371475349504" target="_blank" rel="noopener noreferrer">查看馆藏实物与介绍 <span>↗</span></a></div>
         </article>
         </div>
       </div>
@@ -127,12 +131,35 @@
       <img class="music-art" src="assets/visuals/jiahu.webp" alt="骨笛、河流、芦苇与涟漪组成的史前声音主题拼贴画" width="1536" height="1024" loading="lazy">
       <div class="music-shade" aria-hidden="true"></div>
       <div class="music-ripples" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="section-shell music-layout"><div class="music-title"><p class="eyebrow">03 / BEFORE THE WRITTEN NOTE</p><span class="music-age">8000<span>多年前</span></span><h2 id="jiahu-title">在文字之前，<br>已有<span>乐声。</span></h2><p>贾湖骨笛 / 河南博物院藏</p></div>
-        <div class="music-copy"><span class="chapter-mark" aria-hidden="true">声</span><h3>一根骨管，打开音乐史的纵深</h3><p>贾湖遗址出土的骨笛，把对音乐的追问带回新石器时代。经过加工的骨管、依次排列的音孔，使史前声音留下了可以观察与研究的物质痕迹。</p><p>河南博物院所藏的七孔骨笛，经测音可奏出近似七声音阶的音列。这里能讨论的是器物的发声能力；当时如何命名音、怎样组织旋律，仍不能仅凭音孔与测音结果复原。</p><div class="music-notes"><span>骨管成器</span><i></i><span>七孔成列</span><i></i><span>声音可考</span></div><a class="text-link" href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508164979145447651" data-source="jiahu" target="_blank" rel="noopener noreferrer">阅读贾湖骨笛馆藏资料 <span>↗</span></a></div></div>
+      <div class="section-shell music-shell">
+        <div class="music-layout"><div class="music-title"><p class="eyebrow">03 / BEFORE THE WRITTEN NOTE</p><span class="music-age">8000<span>多年前</span></span><h2 id="jiahu-title">在文字之前，<br>已有<span>乐声。</span></h2><p>贾湖骨笛 / 河南博物院藏</p></div>
+          <div class="music-copy"><span class="chapter-mark" aria-hidden="true">声</span><h3>音列，不等于已经失而复得的旋律</h3><p>贾湖遗址出土的骨笛，把音乐史推回没有文字记录的年代。骨管、钻孔与磨制痕迹都能实测；它们是讨论史前声音最结实的起点。</p><p>这支七孔骨笛可以奏出接近七声音阶的音列，说明制作者已经在处理孔位与音高的关系。至于当时怎样称呼这些音、如何形成调式、吹过什么旋律，器物本身没有给出答案。</p><div class="music-notes"><span>鹤类尺骨</span><i></i><span>七孔成列</span><i></i><span>音高可测</span></div><a class="text-link" href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508164979145447651" data-source="jiahu" target="_blank" rel="noopener noreferrer">阅读贾湖骨笛馆藏资料 <span>↗</span></a></div></div>
+        <div class="music-evidence">
+          <figure><img src="assets/field/artifact-jiahu-flute.webp" alt="河南博物院展厅中的贾湖骨笛实拍" width="933" height="1400" loading="lazy"><figcaption><span>贾湖骨笛 · 本次实拍</span><small>舞阳贾湖遗址 M282</small></figcaption></figure>
+          <div class="music-evidence-copy"><p class="eyebrow">THE INSTRUMENT AS EVIDENCE</p><h3>先看一支笛，再谈八千年前的音乐。</h3><div class="music-facts"><div><small>材料</small><strong>鹤类尺骨</strong></div><div><small>形制</small><strong>七孔骨笛</strong></div><div><small>出土</small><strong>贾湖 M282</strong></div><div><small>可知</small><strong>近七声音列</strong></div></div><p>音孔按纵向排列，管体细长，制作并不靠天然孔洞碰巧成声。孔距和管长共同决定可获得的音高；测音让今天的人能讨论它的音列，却不能替古人补写一首曲子。</p><p>对音乐史而言，它最动人的地方也正在这里：声音早已消失，留下来的却不是空白，而是一件仍可测量、比较、复奏的乐器。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tomb-chapter" id="tombs" aria-labelledby="tombs-title">
+      <img class="tomb-backdrop" src="assets/visuals/tomb-axis-v2.webp" alt="" width="1536" height="1024" loading="lazy">
+      <div class="tomb-shade" aria-hidden="true"></div>
+      <div class="section-shell tomb-shell">
+        <div class="tomb-heading">
+          <div><p class="eyebrow">04 / WHAT THE TOMB KEPT</p><h2 id="tombs-title">墓门闭合，器物留下。</h2></div>
+          <div class="tomb-intro"><p>这批照片没有真正的墓室全景，却留下了更可靠的入口：带铭文的随葬器、玉衣、壁画与陶制仓廪。</p><p>把每一件东西放回墓葬组合，地下世界的尺度才慢慢显出来。</p></div>
+        </div>
+        <div class="tomb-grid">
+          <article class="tomb-card"><figure><img src="assets/field/tomb-fuhao-assemblage.webp" alt="妇好墓出土青铜器实拍" width="1133" height="1700" loading="lazy"><figcaption>安阳殷墟 · 妇好墓</figcaption></figure><div><small>01 / 商代晚期</small><h3>铭文叫出她的名字</h3><p>器内“妇好”二字把青铜礼器与墓主人直接连在一起。酒器、食器与兵器成组入墓，身份并非后来附会，而是由墓葬本身留下证词。</p></div></article>
+          <article class="tomb-card"><figure><img src="assets/field/tomb-jade-suit-detail.webp" alt="僖山汉墓金缕玉衣玉片与金丝细节实拍" width="1700" height="1133" loading="lazy"><figcaption>永城僖山 · 西汉墓</figcaption></figure><div><small>02 / 西汉</small><h3>身体被重新裁成玉片</h3><p>两千余片玉依身体部位裁成不同形状，再以金丝连缀。它既是殓服，也把诸侯王的等级制度和关于死后身体的信念缝在一起。</p></div></article>
+          <article class="tomb-card"><figure><img src="assets/field/tomb-four-gods-detail.webp" alt="四神云气图壁画局部实拍" width="1133" height="1700" loading="lazy"><figcaption>永城芒砀山 · 汉墓</figcaption></figure><div><small>03 / 西汉早期</small><h3>墓顶仍有一片天空</h3><p>云气、神兽与人物在墓室顶部铺展。今天看到的是揭取保护后的壁画，画面的位置和方向，仍保留着古人安排地下空间的方式。</p></div></article>
+          <article class="tomb-card"><figure><img src="assets/field/tomb-pottery-granary.webp" alt="汉墓出土陶仓明器实拍" width="1133" height="1700" loading="lazy"><figcaption>汉代墓葬 · 陶仓明器</figcaption></figure><div><small>04 / 汉代</small><h3>把地上的日常带入地下</h3><p>陶仓、陶廪和陶狗把储粮、居处与看守缩成可随葬的体量。它们没有宏大场面，却最接近当时人对来世日常的具体想象。</p></div></article>
+        </div>
+      </div>
     </section>
 
     <section class="collection section-shell" id="collection" aria-labelledby="collection-title">
-      <div class="section-heading"><div><p class="eyebrow">04 / MANY OBJECTS, ONE LONG HISTORY</p><h2 id="collection-title">众器成史，<span>不止青铜</span></h2></div><p class="collection-intro">从商代礼器到宋代瓷釉，从墓室壁画到黄金铭刻。沿着河南博物院的收藏，细看不同材质、用途与出土语境中的历史。</p></div>
+      <div class="section-heading"><div><p class="eyebrow">05 / MANY OBJECTS, ONE LONG HISTORY</p><h2 id="collection-title">众器成史，<span>不止青铜</span></h2></div><p class="collection-intro">从商代礼器到宋代瓷釉，从墓室壁画到黄金铭刻。沿着河南博物院的收藏，细看不同材质、用途与出土语境中的历史。</p></div>
       <div class="collection-layout"><figure class="ru-art"><img src="assets/visuals/ru-glaze.webp" alt="天青釉鹅颈瓶与纸张、釉色裂纹构成的几何拼贴画" width="1536" height="1024" loading="lazy"><figcaption><small>NORTHERN SONG · RU WARE</small><h3>雨过天青，釉色深处</h3><p>汝窑天蓝釉刻花鹅颈瓶<br>北宋 · 宝丰清凉寺窑址出土</p><a class="text-link" href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508161635059344379" data-source="ru" target="_blank" rel="noopener noreferrer">走近这件宋瓷 <span>↗</span></a></figcaption></figure>
         <div class="collection-list">
           <a href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508161052747328314" data-source="ding" target="_blank" rel="noopener noreferrer"><span class="collection-number">01</span><div><small>商代 / 青铜</small><h3>杜岭方鼎</h3><p>方正器形与厚重体量，呈现早商铸造与礼器秩序。</p></div><i>↗</i></a>
@@ -140,10 +167,50 @@
           <a href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508168152909261244" data-source="mural" target="_blank" rel="noopener noreferrer"><span class="collection-number">03</span><div><small>西汉 / 壁画</small><h3>四神云气图壁画</h3><p>墓室中的云气与神兽，展开汉代关于天界的想象。</p></div><i>↗</i></a>
           <a href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508161850642982087" data-source="gold" target="_blank" rel="noopener noreferrer"><span class="collection-number">04</span><div><small>唐代 / 黄金</small><h3>武则天金简</h3><p>刻在黄金上的文字，留下女皇与山岳信仰的一条线索。</p></div><i>↗</i></a>
           <a href="https://www.chnmus.net/ch/collection/treasure/details.html?id=508167711638793656" data-source="sword" target="_blank" rel="noopener noreferrer"><span class="collection-number">05</span><div><small>西周 / 玉与铁</small><h3>玉柄铁剑</h3><p>玉与铁相接，在虢国墓地的语境中观察材料与身份。</p></div><i>↗</i></a>
-        </div></div>
+      </div></div>
     </section>
 
-    <section class="colophon section-shell" aria-labelledby="sources-title"><div><p class="eyebrow">RETURN TO THE SOURCES</p><h2 id="sources-title">循器物，回到出处。</h2><p>器形与年代参照河南博物院藏品资料；展览主线参照馆方基本陈列。文物禁出身份依据相应批次名录。</p></div><div class="source-list"><a href="https://www.chnmus.net/ch/exhibitions/permanent/huaxia/index.html" target="_blank" rel="noopener noreferrer"><span>01</span>泱泱华夏 · 择中建都 <i>↗</i></a><a href="https://www.chnmus.net/ch/collection/treasure/index.html" target="_blank" rel="noopener noreferrer"><span>02</span>河南博物院 · 镇院之宝 <i>↗</i></a><a href="https://www.chnmus.net/ch/collection/boutique/details.html?id=7066673371475349504" target="_blank" rel="noopener noreferrer"><span>03</span>白釉绿彩长颈瓶 · 藏品资料 <i>↗</i></a><a href="https://www.chnmus.net/sitesources/hnsbwy/page_pc/dzjp/zyzb/article492822bf0c494d6a80aa86ba5f7d74e6.html" target="_blank" rel="noopener noreferrer"><span>04</span>首批禁出文物 · 馆方说明 <i>↗</i></a><a href="https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html" target="_blank" rel="noopener noreferrer"><span>05</span>第三批禁止出境展览文物目录 <i>↗</i></a></div></section>
+    <section class="field-archive section-shell" id="field-archive" aria-labelledby="field-title">
+      <div class="section-heading field-heading"><div><p class="eyebrow">06 / THE COMPLETE FIELD ARCHIVE</p><h2 id="field-title">镜头依次走过一件器物。</h2></div><div class="field-intro"><p>正面之后是侧面，侧面之后是纹饰、铭文和展签。817张原片沿着这条拍摄顺序重新合并：一张卡片对应一件器物，点开即可连续查看全部角度与现场证据。</p><dl><div><dt>相机原片</dt><dd data-field-source-count>817</dd></div><div><dt>器物图组</dt><dd data-field-group-count>—</dd></div><div><dt>手机补拍</dt><dd>5组</dd></div></dl></div></div>
+      <div class="field-toolbar" aria-label="实拍器物筛选">
+        <div class="field-filters" id="field-filters">
+          <button class="is-active" type="button" data-field-filter="all">全部 <span>—</span></button>
+          <button type="button" data-field-filter="prehistoric">史前 <span>—</span></button>
+          <button type="button" data-field-filter="bronze">青铜与甲骨 <span>—</span></button>
+          <button type="button" data-field-filter="music">乐器 <span>—</span></button>
+          <button type="button" data-field-filter="tomb">墓葬 <span>—</span></button>
+          <button type="button" data-field-filter="ceramic">陶瓷 <span>—</span></button>
+          <button type="button" data-field-filter="inscription">铭文与题记 <span>—</span></button>
+          <button type="button" data-field-filter="later">近世工艺 <span>—</span></button>
+        </div>
+        <label class="field-search"><span aria-hidden="true">⌕</span><span class="sr-only">检索器物</span><input id="field-search" type="search" placeholder="检索器名、年代、出土地或铭文" autocomplete="off"></label>
+      </div>
+      <div class="field-key"><span><i></i>本次馆内实拍</span><span><i></i>展签与局部均在图集内</span><span id="field-status" aria-live="polite">正在整理完整图录</span></div>
+      <div class="field-grid" id="field-grid"></div>
+      <button class="field-more" id="field-more" type="button" hidden>继续展开 <span>↓</span></button>
+    </section>
+
+    <dialog class="artifact-dialog" id="artifact-dialog" aria-labelledby="artifact-dialog-title">
+      <form method="dialog"><button class="artifact-dialog-close" type="submit" aria-label="关闭器物档案">×</button></form>
+      <div class="artifact-dialog-header">
+        <div><p class="eyebrow" id="artifact-dialog-era"></p><h2 id="artifact-dialog-title"></h2></div>
+        <p id="artifact-dialog-lead"></p>
+      </div>
+      <dl class="artifact-dialog-facts" id="artifact-dialog-facts"></dl>
+      <div class="artifact-dialog-layout">
+        <section class="artifact-dialog-gallery" aria-label="器物现场图集">
+          <figure class="artifact-dialog-stage" id="artifact-dialog-stage"><img id="artifact-dialog-image" src="" alt=""><figcaption><span id="artifact-dialog-credit"></span><span id="artifact-dialog-count"></span></figcaption><button class="artifact-gallery-arrow artifact-gallery-arrow--prev" id="artifact-gallery-prev" type="button" aria-label="上一张照片">←</button><button class="artifact-gallery-arrow artifact-gallery-arrow--next" id="artifact-gallery-next" type="button" aria-label="下一张照片">→</button><button class="artifact-gallery-zoom" id="artifact-gallery-zoom" type="button" aria-pressed="false">放大细看 ＋</button></figure>
+          <div class="artifact-dialog-thumbs" id="artifact-dialog-thumbs" aria-label="照片缩略图"></div>
+        </section>
+        <section class="artifact-dialog-copy" aria-label="器物研究说明">
+          <div class="artifact-dialog-prose" id="artifact-dialog-prose"></div>
+          <section class="artifact-inscription" id="artifact-inscription" hidden aria-labelledby="artifact-inscription-title"><header><p class="eyebrow">INSCRIPTION / TEXT ON THE OBJECT</p><h3 id="artifact-inscription-title">铭文原文</h3></header><blockquote id="artifact-inscription-original"></blockquote><div class="artifact-inscription-grid"><div><h4>断句与通释</h4><p id="artifact-inscription-translation"></p></div><div><h4>文字依据</h4><p id="artifact-inscription-note"></p></div></div></section>
+          <div class="artifact-dialog-sources" id="artifact-dialog-sources"></div>
+        </section>
+      </div>
+    </dialog>
+
+    <section class="colophon section-shell" aria-labelledby="sources-title"><div><p class="eyebrow">RETURN TO THE SOURCES</p><h2 id="sources-title">循器物，回到出处。</h2><p>器形与年代参照河南博物院藏品资料；展览主线参照馆方基本陈列。文物禁出身份依据相应批次名录。</p></div><div class="source-list"><a href="https://www.chnmus.net/ch/exhibitions/permanent/huaxia/index.html" target="_blank" rel="noopener noreferrer"><span>01</span>泱泱华夏 · 择中建都 <i>↗</i></a><a href="https://www.chnmus.net/ch/collection/treasure/index.html" target="_blank" rel="noopener noreferrer"><span>02</span>河南博物院 · 镇院之宝 <i>↗</i></a><a href="https://www.chnmus.net/ch/collection/boutique/details.html?id=7066673371475349504" target="_blank" rel="noopener noreferrer"><span>03</span>白釉绿彩长颈瓶 · 藏品资料 <i>↗</i></a><a href="https://www.chnmus.net/sitesources/hnsbwy/page_pc/dzjp/zyzb/article492822bf0c494d6a80aa86ba5f7d74e6.html" target="_blank" rel="noopener noreferrer"><span>04</span>首批禁出文物 · 馆方说明 <i>↗</i></a><a href="https://wwj.beijing.gov.cn/bjww/362760/362767/556574/556644/bwgjcjzl/557087/index.html" target="_blank" rel="noopener noreferrer"><span>05</span>第三批禁止出境展览文物目录 <i>↗</i></a><a href="https://commons.wikimedia.org/wiki/File:20210220_Wu_Zetian_Gold_Strip,_Henan_Museum.jpg" target="_blank" rel="noopener noreferrer"><span>06</span>武则天金简照片 · Windmemories / CC BY-SA 4.0 <i>↗</i></a></div></section>
   </main>
   <footer class="site-footer"><a class="footer-brand" href="../museum-atlas/index.html?province=henan" target="_top">AD FONTES <span>回到源头</span></a><p>河南博物院专题 · 华夏中枢档案<small>CENTRAL PLAINS ARCHIVE</small></p><div class="motion-controls"><button type="button" data-motion-toggle aria-pressed="true">暂停动效</button><button type="button" data-opening-replay>重播开场 ↗</button></div><a href="#top">回到顶部 ↑</a></footer>
 </body>
