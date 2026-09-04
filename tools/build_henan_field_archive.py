@@ -384,6 +384,7 @@ def apply_major_copy(records: list[dict[str, Any]], path: Path) -> None:
 
 def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str, Any]:
     errors: list[str] = []
+    normalized_sentence_groups: dict[str, set[str]] = {}
     assigned = [photo["filename"] for group in groups for photo in group["photos"] if photo.get("filename")]
     counts = Counter(assigned)
     missing = sorted(set(camera_names) - set(assigned))
@@ -421,6 +422,20 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
                 errors.append(f"{group['id']} {group['title']}: repeated title corruption")
             if repeated_title and repeated_title.search(text):
                 errors.append(f"{group['id']} {group['title']}: nested title prefix")
+            # Replace only the object name before counting sentences. This
+            # catches a shared prose skeleton even when every sentence swaps
+            # in a different title.
+            for sentence in re.split(r"(?<=[。！？；])", text):
+                sentence = sentence.strip()
+                # Identical excavation facts are expected across objects from
+                # one tomb or site.  They are evidence, not copy scaffolding,
+                # so keep them out of the editorial skeleton check.
+                if re.search(r"(出土于|出土|征集|现藏|属于[^，。]{0,16}(文化|代|时期)|\d{4}年)", sentence):
+                    continue
+                normalized = re.sub(re.escape(title), "<TITLE>", sentence) if title else sentence
+                normalized = re.sub(r"\s+", "", normalized)
+                if len(normalized) >= 24:
+                    normalized_sentence_groups.setdefault(normalized, set()).add(group["id"])
         for photo in group["photos"]:
             asset = photo.get("asset")
             if asset and not (MODULE / asset).is_file():
@@ -439,6 +454,13 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
     repeated = sorted(text for text, count in paragraph_counts.items() if count > 1)
     if repeated:
         errors.append(f"exactly repeated paragraphs: {len(repeated)}")
+    repeated_skeletons = sorted(
+        (sentence, ids)
+        for sentence, ids in normalized_sentence_groups.items()
+        if len(ids) >= 5
+    )
+    if repeated_skeletons:
+        errors.append(f"cross-group repeated copy skeletons: {len(repeated_skeletons)}")
 
     return {
         "sourceCount": len(camera_names),

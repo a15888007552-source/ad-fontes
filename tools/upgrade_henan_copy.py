@@ -232,10 +232,14 @@ def kind(record: dict[str, Any]) -> str:
         return "tomb"
     if re.search(r"卜辞|甲骨|石经|碑|简", joined):
         return "text"
+    # Material outranks a vessel-shape character. “陶鼎”“陶豆” and glazed
+    # pottery were being caught by the bronze regex because it also contains
+    # generic shape words such as 鼎、豆、壶、尊. Keep their craft description
+    # ceramic; reserve the bronze path for an explicitly metal record.
+    if re.search(r"陶|瓷|釉|珐琅|漆", joined) and not re.search(r"青铜|铜质|铜器|铜胎", material):
+        return "ceramic"
     if re.search(r"青铜|铜|爵|鼎|盉|簋|簠|豆|壶|尊|觥|卣|罍|鉴|俎|戈|钺|权|印", joined):
         return "bronze"
-    if re.search(r"瓷|釉|珐琅|漆|陶", joined):
-        return "ceramic"
     if re.search(r"玉|璜|佩", joined):
         return "jade"
     if re.search(r"石|化石|柱础|造像", joined):
@@ -379,6 +383,118 @@ def site_fragment(record: dict[str, Any]) -> str:
     return value[:22] or "现有收藏记录"
 
 
+def source_phrase(record: dict[str, Any]) -> str:
+    """Return a short source label that reads naturally in a sentence."""
+    raw = compact(record.get("provenance") or record.get("findspot") or record.get("origin"))
+    if not raw:
+        return "现有收藏记录"
+    if raw.startswith("征集") or ("征集" in raw and "出土" not in raw):
+        return "征集记录"
+    # Keep the year and the named site when available.  The earlier 22-character
+    # fragment collapsed many unrelated objects onto one prose skeleton (for
+    # example several pieces from 妇好墓).  A little more provenance gives each
+    # sentence a factual anchor without turning it into a catalogue field.
+    value = re.split(r"[，,；;]", raw, maxsplit=1)[0]
+    value = re.sub(r"（[^）]{1,24}）$", "", value)
+    value = re.sub(r"(出土|发现|入藏)$", "", value)
+    value = re.sub(r"\s+", "", value)
+    return value[:34] or "现有收藏记录"
+
+
+def material_phrase(record: dict[str, Any]) -> str:
+    value = compact(record.get("material_or_type") or record.get("material") or record.get("categoryLabel"))
+    return value[:18] or "器物材质"
+
+
+def expanded_provenance_sentence(record: dict[str, Any], title: str, category: str) -> str:
+    source = source_phrase(record)
+    period = compact(record.get("period") or record.get("era")) or "所属年代"
+    material = material_phrase(record)
+    if "征集" in source:
+        if category == "bronze":
+            return f"{title}的征集记录没有留下原始地点，{material}的器形与{period}只能按现有展签核对。"
+        if category == "ceramic":
+            return f"{title}的来源只记作征集，{material}的胎釉和器形以展签为界，原始地点尚不清楚。"
+        return f"{title}的来源只记作征集，原始地点尚不清楚；{material}的形制先按现有照片记录。"
+    if category == "bronze":
+        return f"{title}的出土地点可定位在{source}，{material}的器形与{period}由此互相校准。"
+    if category == "ceramic":
+        return f"{source}的出土信息把{title}放回具体年代，{material}的器形与烧成线索仍需结合展签阅读。"
+    if category == "music":
+        return f"{source}为{title}留下地点坐标，{material}的器形与{period}可以回到出土记录核对。"
+    if category == "tomb":
+        return f"{title}在{source}的出土位置，决定了{material}与随葬组合之间可以讨论到哪一步。"
+    return f"{title}的来源记录指向{source}，{material}超出{period}与现有照片的推断暂不展开。"
+
+
+def expanded_craft_sentence(record: dict[str, Any], title: str, category: str) -> str:
+    source = source_phrase(record)
+    material = material_phrase(record)
+    period = compact(record.get("period") or record.get("era")) or "所属年代"
+    if category == "bronze":
+        if "征集" in source:
+            return f"{title}的接缝、耳部与纹带转折可以互相参照，{material}的铸造步骤仍需和{source}的器物记录分开判断。"
+        return f"在{source}的记录里，{title}的范线、接缝与{material}纹饰分区要一起对读，{period}的铸造与修整次序只能从这些部位逐层追问。"
+    if category == "ceramic":
+        if "陶" in material or "陶" in title:
+            return f"{title}的胎体、边缘和烧成痕迹要分开看，{source}所见的{material}制作不能用青铜器的铸造术语概括。"
+        return f"观察{title}的胎体、边缘与表面处理，{source}所见{material}的成型和烧成步骤仍以照片与展签为准。"
+    if category == "jade":
+        return f"{title}的孔壁、边缘和磨痕比套用器类术语更能说明{material}的雕琢过程，{source}的侧面与背面照片应合看。"
+    if category == "text":
+        return f"{title}的刻写位置、边缘与保存状态要分开记录，{source}的{material}不能套用青铜铸造的判断路径。"
+    return f"{title}的结构接合与表面处理各有工艺线索，{source}所见的{material}只支持讨论制作痕迹，不替它补写铸造次序。"
+
+
+def expanded_surface_sentence(record: dict[str, Any], title: str, category: str) -> str:
+    source = source_phrase(record)
+    material = material_phrase(record)
+    if category == "ceramic":
+        return f"在{source}的展柜光线下，看{title}的{material}表面层次，边缘和背面也要一起核对。"
+    if category == "bronze":
+        return f"在{source}的展柜光线下，{title}的表面、边缘与{material}纹带要放在同一组照片里比较，局部差异不能脱离器形解释。"
+    return f"{title}的表面、边缘与{material}的保存状态应分开记录，{source}的现有照片不替缺失的细节下结论。"
+
+
+def expanded_photo_sentence(record: dict[str, Any], title: str) -> str:
+    photos = record.get("photos") or []
+    labels = record.get("label_photos") or record.get("label_photo")
+    if isinstance(labels, str):
+        labels = [labels] if labels else []
+    count = len(photos) + len(labels or [])
+    source = source_phrase(record)
+    material = material_phrase(record)
+    if count <= 1:
+        return f"现有图组在{source}只留下{title}的一张器物照片，{material}的轮廓可见，背面与局部尚未记录。"
+    if labels:
+        return f"{title}在{source}的现场图组有{count}张照片，器物照与展签照可以互相核对，{material}的细节以原图为准。"
+    return f"{title}在{source}现有{count}张现场照，{material}的正面、侧面与局部应按图组顺序比看。"
+
+
+def expanded_context_sentence(record: dict[str, Any], title: str, category: str) -> str:
+    source = source_phrase(record)
+    material = material_phrase(record)
+    if category == "bronze":
+        return f"{title}在{source}留下的组合线索，能约束{material}在礼仪中的位置，单一纹饰只提供观察入口。"
+    if category == "ceramic":
+        return f"{title}的用途还要结合{source}与同组材料判断，{material}的纹饰不能单独替代出土记录。"
+    if category == "music":
+        return f"{title}的器形与同组乐器要放回{source}的语境，{material}才能进入声音生活的讨论。"
+    if category == "tomb":
+        return f"{title}与{source}的墓葬组合共同限定身份和使用场合，{material}纹样本身不作单一结论。"
+    return f"把{title}放回{source}与同组材料，才能讨论{material}的社会位置，纹饰只作为线索保留。"
+
+
+def generic_form_sentence(record: dict[str, Any], title: str, category: str) -> str:
+    source = source_phrase(record)
+    material = material_phrase(record)
+    if category == "ceramic":
+        return f"{title}的器形与{material}表面处理共同限定使用动作，具体用途仍需结合{source}的记录判断。"
+    if category == "bronze":
+        return f"{title}的器形、{material}与出土组合互相补充，礼仪位置不能只从一处纹饰推出。"
+    return f"{title}的形制和{material}保存了可观察的线索，来源记录之外的解释暂不展开。"
+
+
 def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
     """Replace stock sentences with object-specific editorial sentences.
 
@@ -398,7 +514,7 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
         def replace(_match: re.Match[str]) -> str:
             index = count[0]
             count[0] += 1
-            return variants[stable_variant(record, f"{salt}-{index}")]
+            return variants[stable_variant(record, f"{salt}-{index}") % len(variants)]
         nonlocal text
         text = re.sub(pattern, replace, text)
     replacements: dict[str, list[str]] = {
@@ -680,6 +796,145 @@ def contextualize_repeated(text: str, record: dict[str, Any]) -> str:
             f"{title}的表面层次要连同边缘和背面一起看，色调本身不足以概括工艺。",
         ],
         "expanded-material",
+    )
+
+    # A later pass had already expanded four variants with the title inserted,
+    # but those expansions still shared the same sentence skeleton.  Rewrite
+    # them from the record's source, material, and available photo roles.
+    replace_variants(
+        rf"从[^。]{{1,100}}的记录看，{re.escape(title)}不只是器名，也带着一处可以定位的考古现场。",
+        [expanded_provenance_sentence(record, title, category)],
+        "expanded-provenance-clean",
+    )
+    replace_variants(
+        rf"把{re.escape(title)}的口沿、纹带和接缝放在一起，才能讨论铸造先后。",
+        [expanded_craft_sentence(record, title, category)],
+        "expanded-craft-clean",
+    )
+    replace_variants(
+        rf"从[^。]{{1,100}}的现场图组里，可以对读{re.escape(title)}的正面、侧面与局部。",
+        [expanded_photo_sentence(record, title)],
+        "expanded-photo-clean",
+    )
+    replace_variants(
+        rf"只有把{re.escape(title)}放回同组器物，宴飨、祭祀或墓葬之间的差别才不会被纹饰带偏。",
+        [expanded_context_sentence(record, title, category)],
+        "expanded-context-clean",
+    )
+
+    # Earlier catalogue passes left several of the rotated variants above in
+    # the JSON.  They are readable sentences, but still repeat at batch scale.
+    # Rewrite every known form from the record's own source and material so a
+    # second run cannot reintroduce a shared skeleton.
+    cleanup_variants = [
+        (rf"{re.escape(title)}的边缘、接缝与纹带转折，把制作动作落到了可见的部位。", expanded_craft_sentence(record, title, category), "edge-clean"),
+        (rf"{re.escape(title)}的范块衔接与口沿修整，把铸造顺序留在了器物边缘。", expanded_craft_sentence(record, title, category), "casting-alt-clean"),
+        (rf"{re.escape(title)}的表面层次要连同边缘和背面一起看，色调本身不足以概括工艺。", expanded_surface_sentence(record, title, category), "surface-clean"),
+        (rf"把{re.escape(title)}的口沿、纹带和接缝放在一起，才能讨论铸造先后。", expanded_craft_sentence(record, title, category), "craft-clean"),
+        (rf"把{re.escape(title)}放回同坑组合，才能判断它在宴飨、祭祀或墓葬中扮演哪一环。", expanded_context_sentence(record, title, category), "context-clean"),
+        (rf"{re.escape(title)}在组合中的位置比孤立器名更有解释力；它究竟服务哪一场合，还要回到同坑材料。", expanded_context_sentence(record, title, category), "context-alt-clean"),
+        (rf"关于{re.escape(title)}的使用位置，现有记录只支持谨慎推断，不能用器形替代完整的考古报告。", expanded_context_sentence(record, title, category), "use-clean"),
+        (rf"看{re.escape(title)}，胎土、烧成和口沿处理共同决定了光线下的轮廓；正面与侧面应合看。", expanded_surface_sentence(record, title, category), "surface-alt-clean"),
+        (rf"看{re.escape(title)}的多张照片，展柜尺度与器物轮廓可以彼此校验。", expanded_photo_sentence(record, title), "photo-alt-clean"),
+        (rf"{re.escape(title)}的图组保留了它在展柜中的比例，也把细部放在了整体轮廓旁边。", expanded_photo_sentence(record, title), "photo-clean"),
+        (rf"{re.escape(title)}的胎釉、器形和纹样共同构成时代面貌；作为征集品，原始层位与主人不另行推测。", expanded_provenance_sentence(record, title, category), "ceramic-origin-clean"),
+        (rf"对{re.escape(title)}来说，釉面、器形和纹样可以互相校验，征集记录却不能补出失去的出土层位。", expanded_provenance_sentence(record, title, category), "ceramic-origin-alt-clean"),
+        (rf"{re.escape(title)}能说明的是胎釉与装饰的组合关系；没有原始层位，便不把未知归给某位主人。", expanded_provenance_sentence(record, title, category), "ceramic-origin-short-clean"),
+        (rf"{re.escape(title)}的器类、纹饰与组合关系，可放回中原器物由实用走向礼仪化的长线观察；这里只写照片与展签能支撑的部分。", generic_form_sentence(record, title, category), "long-context-clean"),
+        (rf"从{re.escape(title)}出发，可以看见器用与礼仪之间的变化，但具体判断仍以现场照片和展签为界。", expanded_context_sentence(record, title, category), "long-context-alt-clean"),
+        (rf"{re.escape(title)}提供的是一段可定位的器物材料：纹饰、结构和组合关系相互参照，才不会把局部说成全貌。", generic_form_sentence(record, title, category), "material-context-clean"),
+        (rf"{re.escape(title)}的实际位置仍要结合遗址报告、使用痕迹或残留物判断，文字只写到证据允许的地方。", expanded_context_sentence(record, title, category), "use-alt-clean"),
+        (rf"{re.escape(title)}为征集品，原始层位和同出关系仍然未知。", expanded_provenance_sentence(record, title, category), "collection-clean"),
+        (rf"关于{re.escape(title)}，照片给出形制与表面，来源记录给出边界，超出这些证据的部分暂不下结论。", expanded_provenance_sentence(record, title, category), "source-clean"),
+        (rf"{re.escape(title)}能说明什么，取决于器形、材质和来源记录；未知之处不以想象补齐。", expanded_provenance_sentence(record, title, category), "scope-clean"),
+        (rf"{re.escape(title)}的比例、表面与细部要结合整组照片阅读，局部并不是孤立的装饰。", expanded_photo_sentence(record, title), "detail-clean"),
+        (rf"看{re.escape(title)}不能只停在一张正面照：比例、背面和局部共同决定器物的真实轮廓。", expanded_photo_sentence(record, title), "front-clean"),
+    ]
+    for pattern, replacement, salt in cleanup_variants:
+        replace_variants(pattern, [replacement], salt)
+
+    generic_form = "瓶、壶、尊、罐和盒用于盛装、倾注或收纳，口颈、系耳与盖的差别直接关系到使用方式。"
+    if generic_form in text:
+        text = text.replace(generic_form, generic_form_sentence(record, title, category))
+
+    # Match sentences produced by the immediately preceding generation too.
+    # These broad forms deliberately stop at the sentence terminator, so a
+    # future rerun replaces the whole old clause rather than leaving a shared
+    # lead before a varied second clause.
+    replace_variants(
+        rf"(?:在[^。；]{{1,90}}的记录里，)?{re.escape(title)}的范线、接缝与[^。；]{{0,90}}纹饰分区要一起对读[，；][^。]{{1,120}}。",
+        [expanded_craft_sentence(record, title, category)],
+        "broad-craft",
+    )
+    replace_variants(
+        rf"{re.escape(title)}的接缝、耳部与纹带转折可以互相参照，[^。]{{1,150}}。",
+        [expanded_craft_sentence(record, title, category)],
+        "broad-craft-ear",
+    )
+    replace_variants(
+        rf"{re.escape(title)}的胎体、边缘和烧成痕迹要分开看，[^。]{{1,180}}。",
+        [expanded_craft_sentence(record, title, category)],
+        "broad-craft-pottery",
+    )
+    replace_variants(
+        rf"观察{re.escape(title)}的胎体、边缘与表面处理，[^。]{{1,180}}。",
+        [expanded_craft_sentence(record, title, category)],
+        "broad-craft-surface",
+    )
+    replace_variants(
+        rf"看{re.escape(title)}，[^。]{{1,100}}的表面层次要连同边缘和背面一起核对；[^。]{{1,120}}。",
+        [expanded_surface_sentence(record, title, category)],
+        "broad-surface-layer",
+    )
+    replace_variants(
+        rf"{re.escape(title)}的出土地点落在[^。]{{1,150}}，这条坐标让器形与[^。]{{1,80}}可以互相校准。",
+        [expanded_provenance_sentence(record, title, category)],
+        "broad-provenance-location",
+    )
+    replace_variants(
+        rf"{re.escape(title)}留下的来源线索指向[^。]{{1,150}}，其余超出记录的推断暂不展开。",
+        [expanded_provenance_sentence(record, title, category)],
+        "broad-provenance-clue",
+    )
+    replace_variants(
+        rf"{re.escape(title)}所在的[^。]{{1,150}}与年代相互校准，让它回到聚落生产和饮食的尺度。",
+        [expanded_provenance_sentence(record, title, category)],
+        "broad-provenance-settlement",
+    )
+    replace_variants(
+        rf"把{re.escape(title)}放回[^。]{{1,150}}的背景，器形与时代的关系才有了尺度。",
+        [expanded_provenance_sentence(record, title, category)],
+        "broad-provenance-background",
+    )
+    replace_variants(
+        rf"{re.escape(title)}的来源记录指向[^。]{{1,150}}，[^。]{{1,120}}超出[^。]{{1,120}}的推断暂不展开。",
+        [expanded_provenance_sentence(record, title, category)],
+        "broad-provenance-record",
+    )
+    replace_variants(
+        rf"{re.escape(title)}在[^。]{{1,120}}留下的组合线索，能约束[^。]{{1,100}}；单一纹饰只提供观察入口。",
+        [expanded_context_sentence(record, title, category)],
+        "broad-context-location",
+    )
+    replace_variants(
+        rf"{re.escape(title)}的用途还要结合[^。]{{1,140}}，[^。]{{1,100}}不能单独替代出土记录。",
+        [expanded_context_sentence(record, title, category)],
+        "broad-context-ceramic",
+    )
+    replace_variants(
+        rf"{re.escape(title)}的现场图组(?:有\d+张照片，器物照与展签照可以互相核对[；，][^。]+|同时保留器物照与展签照，[^。]+)。",
+        [expanded_photo_sentence(record, title)],
+        "broad-photo-label",
+    )
+    replace_variants(
+        rf"{re.escape(title)}在[^。]{{1,100}}的现场图组(?:有\d+张照片，器物照与展签照可以互相核对[；，][^。]+|同时保留器物照与展签照，[^。]+)。",
+        [expanded_photo_sentence(record, title)],
+        "broad-photo-label-source",
+    )
+    replace_variants(
+        rf"{re.escape(title)}在[^。]{{1,70}}现有\d+张现场照，[^。]+。",
+        [expanded_photo_sentence(record, title)],
+        "broad-photo-field",
     )
 
     # A common photo-scale sentence was often duplicated within one record.
