@@ -17,6 +17,7 @@ from build_henan_field_archive import (
     COPY_REPAIRS,
     CONTEXT_SENTENCE_REPLACEMENTS,
     CONTEXT_SENTENCE_SCAFFOLD,
+    USAGE_SENTENCE_SCAFFOLD,
     fallback_copy_tail,
     strip_context_template_sentences,
     strip_photo_inventory_sentences,
@@ -240,6 +241,8 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             replacement = CONTEXT_SENTENCE_REPLACEMENTS.get(compact(record.get("id")))
             if replacement:
                 removed.append(replacement)
+            continue
+        if USAGE_SENTENCE_SCAFFOLD.search(segment):
             continue
         if "装饰只是一条线索，组合信息还要继续核对" in segment:
             continue
