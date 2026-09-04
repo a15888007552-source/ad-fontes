@@ -15,6 +15,8 @@ from typing import Any
 
 from build_henan_field_archive import (
     COPY_REPAIRS,
+    CONTEXT_SENTENCE_REPLACEMENTS,
+    CONTEXT_SENTENCE_SCAFFOLD,
     fallback_copy_tail,
     strip_context_template_sentences,
     strip_photo_inventory_sentences,
@@ -233,6 +235,11 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             r"|的器形和[^。]{1,80}表面可以说明观看与使用的方向，具体场合仍要回到[^。]{1,100}组合记录",
             segment,
         ):
+            continue
+        if CONTEXT_SENTENCE_SCAFFOLD.search(segment):
+            replacement = CONTEXT_SENTENCE_REPLACEMENTS.get(compact(record.get("id")))
+            if replacement:
+                removed.append(replacement)
             continue
         if "装饰只是一条线索，组合信息还要继续核对" in segment:
             continue
@@ -648,9 +655,9 @@ def expanded_context_sentence(record: dict[str, Any], title: str, category: str)
     if category == "ceramic":
         variants = [
             f"{title}的用途要结合{source}与同组材料判断，先从{material}的器形和磨痕读起。",
-            f"把{title}的器形放回{source}的出土背景，{material}的装饰只是一条线索，组合信息还要继续核对。",
+            f"把{title}的开口、腹部与底足放在一起看，{material}的使用尺度先由器形说明，{source}的记录再限定时间与地点。",
             f"{source}给{title}留下来源坐标，{material}的纹样如何服务用途，要和同组器物对照。",
-            f"看{title}的使用可能，{material}的口沿、底部和磨损比吉祥图案更接近器物动作，{source}只提供地点边界。",
+            f"{title}的口沿、底部和磨损留下动作线索，{source}的来源记录只能把它放回可核范围。",
             f"{title}的器形和{material}表面可以说明观看与使用的方向，具体场合仍要回到{source}的组合记录。",
             f"{title}的纹样要连同{material}的开口与底部一起看，{source}只把用途推断限制在一段范围内。",
             f"{title}放在{source}的历史层里看，{material}的大小、开口和残留痕迹才有解释空间。",
@@ -692,7 +699,13 @@ def generic_form_sentence(record: dict[str, Any], title: str, category: str) -> 
     if category == "ceramic":
         return f"{title}的器形与{material}表面处理共同限定使用动作，具体用途仍需结合{source}的记录判断。"
     if category == "bronze":
-        return f"{title}的器形、{material}与出土组合互相补充，礼仪位置不能只从一处纹饰推出。"
+        variants = (
+            f"{title}的器形、纹带和边缘修整共同留下制作线索，具体礼仪位置仍需同出器物合看。",
+            f"看{title}，先把器口、腹壁与足部的受力关系读清，再讨论它在组合中的分工。",
+            f"{title}的结构与表面纹饰彼此照应，来源记录只把这件{material}放回可核的历史范围。",
+            f"从{title}的容量、耳部和纹带转折，可以追问使用动作；身份判断仍要依靠完整组合。",
+        )
+        return variants[variant_index(record, "generic-form-bronze", len(variants))]
     return f"{title}的形制和{material}保存了可观察的线索，来源记录之外的解释暂不展开。"
 
 

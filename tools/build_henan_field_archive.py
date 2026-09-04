@@ -170,6 +170,14 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             segment,
         ):
             continue
+        if CONTEXT_SENTENCE_SCAFFOLD.search(segment):
+            replacement = CONTEXT_SENTENCE_REPLACEMENTS.get(compact(record.get("id")))
+            if replacement:
+                kept.append(replacement)
+            # Remove an unmapped occurrence rather than allowing a shared
+            # caption to survive; the length guard supplies a record-aware
+            # tail on the next pass.
+            continue
         if "装饰只是一条线索，组合信息还要继续核对" in segment:
             continue
         if "只提供地点边界" in segment:
@@ -197,6 +205,44 @@ FALLBACK_TAIL_OVERRIDES: dict[tuple[str, int], str] = {
     ("b-036", 2): "三足、盖与彩绘把器物置于礼器模型与炊食想象之间，征集记录不支持再指定原始场合。",
     ("b-058", 2): "双龙柄既便于提持，也把正面构图推向观看者；洛阳出土背景可核，具体陈设位置仍待组合资料。",
 }
+
+# A provenance-shaped sentence was left on a batch of records by an earlier
+# contextual pass.  It reads as if every object had a documented ritual
+# position, even when the label only says “征集”.  Replace it with evidence
+# tied to the visible form and the recorded source rather than rotating one
+# more template through the catalogue.
+CONTEXT_SENTENCE_REPLACEMENTS: dict[str, str] = {
+    "b-002": "长方形器身、盖与双耳把盛食器的尺度固定下来，蟠虺纹沿腹壁连续铺开；具体礼仪位置仍需同出鼎、豆合看。",
+    "b-007": "带钩的弯钩、钮部与错金绿松石嵌饰都集中在扣合受力处，既是服饰构件也显出战国装饰工艺。",
+    "b-011": "花瓣形联结件的孔位与鎏金边缘对应马具受力，保安山王后陵的组合使它与车马装备一同理解。",
+    "b-020": "炉腹承香、凤形构件向上围合出烟气路径，嘉禾屯出土让熏香器的陈设和葬俗关系有了位置。",
+    "b-026": "机括、悬刀和望山组成可动的发射结构，羽纹鎏金落在可见表面；新野来源之外不再推定使用者。",
+    "b-033": "壶口、颈腹和执握构件层层收束，龙、虎、朱雀等四神沿器表分区铺陈；洛阳出土只提供汉墓语境的入口。",
+    "b-034": "盖、双耳与三只熊足共同承担鼎体承托，黄釉在凸起处有磨蚀露胎；征集记录不支持补出原始墓位。",
+    "b-036": "双耳、三足和盖构成仿鼎骨架，彩绘沿腹部展开；征集来源只能说明现藏路径，不能替它指定礼仪场合。",
+    "b-041": "八系耳与莲瓣腹把固定、提持和环绕观看连在一起，青釉在器身转折处聚积；鹤壁出土提供北朝瓷业的地点坐标。",
+    "b-044": "深腹与单环耳形成悬挂和提取的动作关系，器口与腹壁比例保留了盛食或煮食的容量线索。",
+    "b-046": "细长筒腹和外撇口沿适合倾注，征集来源没有伴出器物，宴饮、盥洗或随葬位置仍不可定。",
+    "b-058": "长颈瓶体两侧的龙形柄既供提持，也把观看面朝向正面；黄绿白褐低温釉交错留下唐三彩烧成线索。",
+    "b-059": "扁囊形壶体模拟皮革缝合，管状口和鸡尾状构件分别承担倾注与装饰；征集记录不补写原始流传。",
+    "b-061": "闭合环形器身与鸡首流共同组织提握、注水和回转观看，青釉施于起伏曲面；新乡出土信息到此为止。",
+    "b-066": "蒜头口、长颈和鼓腹构成连续倾注路径，深色釉面上的浅斑随曲面变化；新野出土可与唐代器用并读。",
+    "b-069": "高颈鼓腹与成对龙形附饰形成对称轮廓，黑釉在曲面上深浅相间；鹤壁出土把它放回地方窑业。",
+    "b-071": "葵花形轮廓、中央钮与双鸾仙鹤衔绶围成镜背的同心秩序，镜面照容与吉祥图像在一件日用器上相遇。",
+    "b-072": "中央镜钮和相向双鸾把衔绶纹组织成对称镜背，征集来源无法说明它原先是否随葬；镜面用途仍可由形制确认。",
+    "b-096": "撇口细颈、下垂腹和圈足构成玉壶春瓶的纵向比例，褐彩龙纹顺腹部回转；鹤壁出土提供元代地方瓷业的坐标。",
+    "b-097": "两端收束、腹中部饱满的橄榄形器身依靠曲面显出黑釉浓淡，器形本身就是主要观看线索。",
+    "b-107": "撇口细颈、下垂腹和圈足把玉壶春瓶的比例拉长，青花云龙随腹部回转；周惠王墓出处使它进入明代藩王葬制。",
+    "b-126": "大口深腹与双兽耳对应盛水、提持的动作，器身铭文把“孟滕姬”与楚国贵族盥洗语境连在一起。",
+    "b-127": "大口深腹便于盛水，兽耳方便提持，蟠螭纹沿腹壁展开；和尚岭M9的墓葬组合决定它应与整套楚国水器合看。",
+    "b-128": "复合动物形的背部与头部附加构件提示承托、插接或陈设可能，展签未清墓号，功能仍以结构和下寺报告为限。",
+    "b-130": "筒形铜件套在钟杖端部，蟠虺纹沿表面展开；它的价值在于把击钟动作与楚墓礼乐组合连接起来。",
+    "b-137": "仿古豆形的圈足和深腹承担陈设比例，黄釉地上粉彩云龙与光绪款共同呈现晚清官窑的复古趣味；征集来源不补出原始场合。",
+}
+
+CONTEXT_SENTENCE_SCAFFOLD = re.compile(
+    r"的器形、[^。]{1,48}与出土组合互相补充，礼仪位置不能只从一处纹饰推出"
+)
 
 
 def fallback_copy_tail(record: dict[str, Any], paragraph_index: int) -> str:
@@ -699,7 +745,13 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
             # one sentence after object names and materials are substituted.
             for sentence in re.split(r"(?<=[。！？；])", text):
                 sentence = sentence.strip()
-                if re.search(r"(出土于|出土|征集|现藏|属于[^，。]{0,16}(文化|代|时期)|\d{4}年)", sentence):
+                factual = re.search(r"(出土于|出土|征集|现藏|属于[^，。]{0,16}(文化|代|时期)|\d{4}年)", sentence)
+                # Provenance and date clauses are factual and normally stay
+                # out of the style-skeleton count.  A batch caption can hide
+                # behind the same words, though, so keep a sentence that
+                # matches the retired context formula in the scan.  This
+                # prevents “出土组合” from acting as a blanket skip.
+                if factual and not CONTEXT_SENTENCE_SCAFFOLD.search(sentence):
                     continue
                 normalized = re.sub(re.escape(title), "<TITLE>", sentence) if title else sentence
                 normalized = re.sub(r"\d+张", "<N>张", normalized)
