@@ -2,7 +2,7 @@
 .museum-opening{position:fixed;inset:0;z-index:90;isolation:isolate;overflow:hidden;color:var(--paper);background:transparent}
 .opening-shutter{position:absolute;inset:0;background:#111d17;z-index:-3;transition:transform .55s cubic-bezier(.65,0,.25,1)}
 .opening-shutter--left{right:50%}.opening-shutter--right{left:50%}
-.opening-art{position:absolute;inset:-4%;z-index:-2;background:linear-gradient(90deg,rgba(13,24,17,.92),rgba(13,24,17,.67),rgba(13,24,17,.92)),url("assets/visuals/hero-museum.webp") center 53%/cover;opacity:0;animation:opening-tableau 1.25s .04s ease-out forwards}
+.opening-art{position:absolute;inset:-4%;z-index:-2;background:radial-gradient(circle at 50% 47%,rgba(190,153,73,.18),transparent 24%),linear-gradient(116deg,transparent 0 32%,rgba(190,153,73,.08) 32.1% 32.3%,transparent 32.4% 67%,rgba(190,153,73,.07) 67.1% 67.3%,transparent 67.4%),repeating-linear-gradient(90deg,transparent 0 12.45%,rgba(208,178,108,.035) 12.5% 12.58%),linear-gradient(135deg,#0c1812,#17271d 51%,#0d1913);opacity:0;animation:opening-tableau 1.25s .04s ease-out forwards}
 .opening-axis{position:absolute;top:0;bottom:0;left:50%;width:1px;background:linear-gradient(transparent,rgba(213,184,118,.42),transparent);transform:scaleY(0);animation:axis-draw .7s .1s ease-out forwards;z-index:-1}
 .opening-frame{position:absolute;inset:27px 35px;border:1px solid rgba(206,179,116,.35);transform:scale(.96);opacity:0;animation:frame-appear .65s .1s ease-out forwards;pointer-events:none}
 .opening-frame::before,.opening-frame::after{content:"";position:absolute;width:24px;height:24px;border-color:var(--gold);border-style:solid}
