@@ -89,9 +89,10 @@ PHOTO_INVENTORY_PATTERNS = (
     r"{title}的多角度照片也保留了器物与展柜尺度的关系。",
 )
 
-PHOTO_COUNT_MARKER = re.compile(r"(?:\d+\s*张|\d+\s*个(?:观看角度)?|合计\s*\d+)")
-PHOTO_WORD_MARKER = re.compile(r"(?:照片|图组|现场照|现场图|器物照|标签照片|张图)")
+PHOTO_COUNT_MARKER = re.compile(r"(?:(?:\d+|[一二三四五六七八九十百千两]+)\s*张|合计\s*(?:\d+|[一二三四五六七八九十百千两]+))")
+PHOTO_WORD_MARKER = re.compile(r"(?:照片|图组|现场照|现场图|现场记录|器物照|标签照片|张图)")
 LABEL_WORD_MARKER = re.compile(r"(?:展签|标签)")
+PHOTO_DETAIL_MARKER = re.compile(r"(?:正面|侧面|局部|细部|名称|比例|整体|表面|原图|器物)")
 
 
 def strip_photo_inventory_sentences(text: str) -> str:
@@ -99,8 +100,8 @@ def strip_photo_inventory_sentences(text: str) -> str:
 
     The gallery card already exposes the count and role of every image.  A
     sentence is treated as inventory copy only when it carries a count, a
-    photo word, and a label word together; ordinary historical references to
-    a single photograph remain untouched.  Keeping the original sentence
+    photo word, and a label or role/detail word; ordinary historical references
+    to a single photograph remain untouched.  Keeping the original sentence
     boundaries avoids changing punctuation in paragraphs that need no scrub.
     """
     normalized = compact(text)
@@ -110,7 +111,7 @@ def strip_photo_inventory_sentences(text: str) -> str:
     if not any(
         PHOTO_COUNT_MARKER.search(segment)
         and PHOTO_WORD_MARKER.search(segment)
-        and LABEL_WORD_MARKER.search(segment)
+        and (LABEL_WORD_MARKER.search(segment) or PHOTO_DETAIL_MARKER.search(segment))
         for segment in segments
     ):
         return normalized
@@ -120,7 +121,7 @@ def strip_photo_inventory_sentences(text: str) -> str:
         if not (
             PHOTO_COUNT_MARKER.search(segment)
             and PHOTO_WORD_MARKER.search(segment)
-            and LABEL_WORD_MARKER.search(segment)
+            and (LABEL_WORD_MARKER.search(segment) or PHOTO_DETAIL_MARKER.search(segment))
         )
     ]
     return compact("".join(kept))
@@ -544,14 +545,15 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
                 errors.append(f"{group['id']} {group['title']}: nested title prefix")
             # Photo counts and label pairing belong in the gallery UI.  Flag
             # any inventory sentence that combines a count, photo wording, and
-            # a label reference; factual excavation prose without that trio is
+            # a label or role/detail reference; factual excavation prose without
+            # that trio is
             # intentionally left alone.
             for sentence in re.split(r"(?<=[。！？；])", text):
                 sentence = sentence.strip()
                 if not (
                     PHOTO_COUNT_MARKER.search(sentence)
                     and PHOTO_WORD_MARKER.search(sentence)
-                    and LABEL_WORD_MARKER.search(sentence)
+                    and (LABEL_WORD_MARKER.search(sentence) or PHOTO_DETAIL_MARKER.search(sentence))
                 ):
                     continue
                 normalized = re.sub(re.escape(title), "<TITLE>", sentence) if title else sentence
