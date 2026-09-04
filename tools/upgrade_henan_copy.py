@@ -17,6 +17,9 @@ from build_henan_field_archive import (
     COPY_REPAIRS,
     CONTEXT_SENTENCE_REPLACEMENTS,
     CONTEXT_SENTENCE_SCAFFOLD,
+    LOCATION_CALIBRATION_SCAFFOLD,
+    SURFACE_SCAFFOLD,
+    TARGETED_SENTENCE_REPAIRS,
     USAGE_SENTENCE_SCAFFOLD,
     fallback_copy_tail,
     strip_context_template_sentences,
@@ -218,6 +221,8 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
     a paragraph actually needs it.
     """
     normalized = compact(text)
+    for old, new in TARGETED_SENTENCE_REPAIRS.get(compact(record.get("id")), {}).items():
+        normalized = normalized.replace(old, new)
     segments = re.findall(r"[^。！？]*[。！？]|[^。！？]+$", normalized)
     if not segments:
         return normalized
@@ -241,6 +246,8 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             replacement = CONTEXT_SENTENCE_REPLACEMENTS.get(compact(record.get("id")))
             if replacement:
                 removed.append(replacement)
+            continue
+        if LOCATION_CALIBRATION_SCAFFOLD.search(segment) or SURFACE_SCAFFOLD.search(segment):
             continue
         if USAGE_SENTENCE_SCAFFOLD.search(segment):
             continue

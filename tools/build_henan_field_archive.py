@@ -146,6 +146,8 @@ def strip_context_template_sentences(text: str) -> str:
 def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
     """Remove material-mismatched or batch-generated catalogue tails."""
     normalized = compact(text)
+    for old, new in TARGETED_SENTENCE_REPAIRS.get(compact(record.get("id")), {}).items():
+        normalized = normalized.replace(old, new)
     segments = re.findall(r"[^。！？]*[。！？]|[^。！？]+$", normalized)
     if not segments:
         return normalized
@@ -177,6 +179,11 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             # Remove an unmapped occurrence rather than allowing a shared
             # caption to survive; the length guard supplies a record-aware
             # tail on the next pass.
+            continue
+        if LOCATION_CALIBRATION_SCAFFOLD.search(segment) or SURFACE_SCAFFOLD.search(segment):
+            # Targeted records were rewritten above.  If a future source
+            # record carries the old sentence, drop it instead of publishing
+            # the shared caption or vessel-only terminology.
             continue
         if USAGE_SENTENCE_SCAFFOLD.search(segment):
             # Known occurrences are supplied by COPY_REPAIRS.  Drop an
@@ -252,6 +259,85 @@ CONTEXT_SENTENCE_SCAFFOLD = re.compile(
 USAGE_SENTENCE_SCAFFOLD = re.compile(
     r"的用途要结合[^。]{1,120}与同组材料判断，先从[^。]{1,80}的器形和磨痕读起"
 )
+
+# Two older passes left provenance and surface sentences that read like a
+# single batch caption.  They also put vessel-only terms on non-vessels such
+# as the red-pottery silkworm pupa.  Keep the scan explicit so a rebuild cannot
+# silently reintroduce either scaffold.
+LOCATION_CALIBRATION_SCAFFOLD = re.compile(
+    r"从[^。]{1,120}的记录看，[^。]{1,80}的地点与年代相互校准，日常使用的判断因此有了边界"
+)
+SURFACE_SCAFFOLD = re.compile(
+    r"观察[^。]{1,100}时，[^。]{1,100}的表面光泽要和口沿、圈足的转折放在一起，[^。]{1,120}只呈现其中一面"
+)
+
+# Record-specific repairs for the two scaffolds above.  They retain the
+# source boundary while replacing the repeated sentence with an observation
+# that belongs to the object in that card.
+TARGETED_SENTENCE_REPAIRS: dict[str, dict[str, str]] = {
+    "A-005": {
+        "从河南巩义小芝田遗址出土的记录看，白陶鬶的地点与年代相互校准，日常使用的判断因此有了边界。": "小芝田遗址的出土背景，让白陶鬶回到中原龙山文化的炊煮器序列。",
+        "观察白陶鬶时，白陶水器／温器的表面光泽要和口沿、圈足的转折放在一起，河南巩义小芝田遗址只呈现其中一面。": "白陶鬶的细胎、长流与足部转折共同说明成型难度，侧面照片比表面反光更有辨识力。",
+    },
+    "A-009": {
+        "从河南淅川下王岗遗址出土的记录看，黑陶澄滤器的地点与年代相互校准，日常使用的判断因此有了边界。": "下王岗遗址的同批材料，是判断黑陶澄滤器是否参与液体过滤的重要参照。",
+    },
+    "A-011": {
+        "从征集，原始出土地点未见于本组展签的记录看，灰陶斝的地点与年代相互校准，日常使用的判断因此有了边界。": "征集记录没有保留灰陶斝的原始地点，这里只把它放在中原龙山文化的时间框架内。",
+    },
+    "A-016": {
+        "从河南出土，具体遗址在照片中未辨清的记录看，陶釜、陶灶的地点与年代相互校准，日常使用的判断因此有了边界。": "现有材料只确认陶釜、陶灶在河南出土并属仰韶文化，具体遗址仍留作待考。",
+    },
+    "A-017": {
+        "从河南郑州西山遗址出土，河南省文物考古研究院藏的记录看，陶钵的地点与年代相互校准，日常使用的判断因此有了边界。": "西山遗址与现藏机构信息可以核对陶钵的来源，具体层位不由展柜照片补写。",
+    },
+    "A-023": {
+        "从河南郸城段寨遗址出土的记录看，白陶鬶的地点与年代相互校准，日常使用的判断因此有了边界。": "段寨遗址的出土背景，让这件白陶鬶进入大汶口文化的炊煮器序列。",
+        "观察白陶鬶时，白陶水器／温器的表面光泽要和口沿、圈足的转折放在一起，河南郸城段寨遗址只呈现其中一面。": "段寨白陶鬶的浅色胎体、长流、鋬与足显示复杂接合，近照应从结构而非反光读。",
+    },
+    "A-031": {
+        "从河南淅川下王岗遗址出土的记录看，红陶蚕蛹的地点与年代相互校准，日常使用的判断因此有了边界。": "下王岗的出土记录只说明红陶蚕蛹进入仰韶文化遗址材料，陶塑的具体用途仍需谨慎。",
+        "观察红陶蚕蛹时，红陶塑形物的表面光泽要和口沿、圈足的转折放在一起，1972年河南淅川下王岗遗址只呈现其中一面。": "红陶蚕蛹没有口沿或圈足，分节、收尖与塑形痕迹才是判断制作的关键。",
+    },
+    "A-034": {
+        "从河南郑州后庄王遗址出土的记录看，红陶尖底缸的地点与年代相互校准，日常使用的判断因此有了边界。": "后庄王遗址的出土关系，把红陶尖底缸放回仰韶时期的储水或炊用讨论。",
+        "观察红陶尖底缸时，红陶缸的表面光泽要和口沿、圈足的转折放在一起，1958年河南郑州后庄王遗址只呈现其中一面。": "尖底器底与鼓腹决定红陶尖底缸的放置方式，正面和侧面应先看轮廓，再谈受火痕迹。",
+    },
+    "A-038": {
+        "从河南新郑裴李岗遗址出土的记录看，红陶圈足碗的地点与年代相互校准，日常使用的判断因此有了边界。": "裴李岗遗址的出土背景，提示圈足碗属于早期聚落的盛食器序列。",
+    },
+    "A-039": {
+        "从河南新郑裴李岗遗址出土的记录看，红陶三足钵的地点与年代相互校准，日常使用的判断因此有了边界。": "裴李岗遗址把三足钵放回早期聚落的盛食与加热器物组合。",
+    },
+    "A-044": {
+        "从河南巩义稍柴遗址出土的记录看，堆绳纹灰陶瓮的地点与年代相互校准，日常使用的判断因此有了边界。": "稍柴遗址的出土记录，为堆绳纹灰陶瓮的盛水与储藏可能保留了夏代聚落背景。",
+        "观察堆绳纹灰陶瓮时，灰陶水器的表面光泽要和口沿、圈足的转折放在一起，河南巩义稍柴遗址只呈现其中一面。": "堆绳纹沿灰陶瓮外壁起伏，粗粝胎面和大口深腹共同留下搬持、储水的线索。",
+    },
+    "A-051": {
+        "从河南禹州瓦店遗址出土的记录看，磨光黑陶觚的地点与年代相互校准，日常使用的判断因此有了边界。": "瓦店遗址让磨光黑陶觚进入夏代礼仪饮器的讨论，但陶质与青铜器不能直接等同。",
+    },
+    "A-068": {
+        "从河南郑州二里岗出土的记录看，绳纹陶斝的地点与年代相互校准，日常使用的判断因此有了边界。": "二里岗的出土记录，把绳纹陶斝置于郑州早商温酒器序列；具体使用仍要看同组材料。",
+    },
+    "A-074": {
+        "从疑为1988年河南偃师商城遗址出土的记录看，灰陶瓮的地点与年代相互校准，日常使用的判断因此有了边界。": "现有记录只把灰陶瓮暂系1988年偃师商城遗址，具体出土位置仍待发掘资料确认。",
+    },
+    "b-031": {
+        "观察陶囷时，陶质仓储明器的表面光泽要和口沿、圈足的转折放在一起，南阳市只呈现其中一面。": "陶囷是缩小的仓储模型，封闭仓体、取粮口和底部承托比表面反光更关键。",
+    },
+    "b-086": {
+        "观察汝窑天蓝釉刻花鹅颈瓷瓶时，汝窑青瓷的表面光泽要和口沿、圈足的转折放在一起，1987年宝丰县清凉寺窑址只呈现其中一面。": "汝窑鹅颈瓶的天蓝釉随S形器壁起伏，圈足的香灰胎与垫烧痕迹可由侧面和底部照核对。",
+    },
+    "b-132": {
+        "观察黄釉蓝彩九桃纹瓷盘时，釉上彩瓷器的表面光泽要和口沿、圈足的转折放在一起，征集记录只呈现其中一面。": "浅腹、圈足和九桃彩绘共同展开盘面，近照可见蓝彩叠色与釉面光泽。",
+    },
+    "b-142": {
+        "观察白釉绿彩二龙戏珠纹瓷盘时，釉上彩瓷器的表面光泽要和口沿、圈足的转折放在一起，征集记录只呈现其中一面。": "白釉盘的浅腹和圈足先决定端持尺度，绿彩二龙戏珠纹再沿盘面铺开；征集记录不补原始场合。",
+    },
+    "b-144": {
+        "观察五彩云龙纹瓷炉时，五彩瓷香炉的表面光泽要和口沿、圈足的转折放在一起，征集记录只呈现其中一面。": "五彩瓷炉的敞口、炉腹和承足决定承香与陈设方向，云龙彩绘的层次从正面和侧面合看。",
+    },
+}
 
 
 def fallback_copy_tail(record: dict[str, Any], paragraph_index: int) -> str:
@@ -845,7 +931,12 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
                 # behind the same words, though, so keep a sentence that
                 # matches the retired context formula in the scan.  This
                 # prevents “出土组合” from acting as a blanket skip.
-                if factual and not CONTEXT_SENTENCE_SCAFFOLD.search(sentence):
+                if factual and not (
+                    CONTEXT_SENTENCE_SCAFFOLD.search(sentence)
+                    or LOCATION_CALIBRATION_SCAFFOLD.search(sentence)
+                    or SURFACE_SCAFFOLD.search(sentence)
+                    or USAGE_SENTENCE_SCAFFOLD.search(sentence)
+                ):
                     continue
                 normalized = re.sub(re.escape(title), "<TITLE>", sentence) if title else sentence
                 normalized = re.sub(r"\d+张", "<N>张", normalized)
