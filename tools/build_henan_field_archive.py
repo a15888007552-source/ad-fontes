@@ -187,6 +187,13 @@ def strip_generated_scaffolds(text: str, record: dict[str, Any]) -> str:
             # Keep an unmapped future record from reintroducing the shared
             # caption; a later length guard can supply a local sentence.
             continue
+        if CERAMIC_SURFACE_SCAFFOLD.search(segment):
+            replacement = CERAMIC_SURFACE_REPLACEMENTS.get(compact(record.get("id")))
+            if replacement:
+                kept.append(replacement)
+            # Drop an unmapped occurrence rather than publishing another
+            # fixed ceramic caption.
+            continue
         if LOCATION_CALIBRATION_SCAFFOLD.search(segment) or SURFACE_SCAFFOLD.search(segment):
             # Targeted records were rewritten above.  If a future source
             # record carries the old sentence, drop it instead of publishing
@@ -286,6 +293,10 @@ PROVENANCE_CERAMIC_SCAFFOLD = re.compile(
     r"[^。！？]{0,100}的出土信息把[^。！？]{1,120}放回具体年代，[^。！？]{1,120}的器形与烧成线索仍需结合展签阅读"
 )
 
+CERAMIC_SURFACE_SCAFFOLD = re.compile(
+    r"[^。！？]{1,100}的胎色、收口和足部转折共同留下烧成线索，[^。！？]{1,140}所见的[^。！？]{1,80}更适合从受火与成型痕迹读起"
+)
+
 CERAMIC_PROVENANCE_REPLACEMENTS: dict[str, str] = {
     "A-003": "河南汤阴白营遗址的出土背景，让这件镂孔灰陶盘回到中原龙山文化的陶器序列。",
     "A-006": "下王岗遗址的出土记录，为陶鼎的龙山文化年代提供了可核坐标。",
@@ -338,6 +349,16 @@ CERAMIC_PROVENANCE_REPLACEMENTS: dict[str, str] = {
     "b-108": "开封出土记录让白地黑花“内酒”瓷瓶的明代文字瓷器背景有迹可循。",
     "b-110": "河南博物院的收藏记录只确认青花无双谱人物诗文瓷瓶的时代与器形，原始地点不另补。",
     "b-111": "现藏记录为仿哥釉铁锈花狮耳盘口瓷瓶保留清代器形与釉色信息，流传路径仍未知。",
+}
+
+CERAMIC_SURFACE_REPLACEMENTS: dict[str, str] = {
+    "A-012": "编织纹沿器腹压印，双耳和口沿的比例决定提持方式；局部胎色差异可见，烧成气氛仍不凭照片定论。",
+    "A-020": "镂孔高足红陶豆的盘部与足部形成通透的承托关系，孔壁修整和红陶受火面比泛谈收口更有辨识度。",
+    "A-022": "高圈足的镂孔节奏把镂孔高圈足陶豆抬离案面，盘部厚薄和孔缘修整留下了成型顺序。",
+    "A-033": "乳钉纹分布在器腹，三足接缝直接面对受火；红陶胎体的颗粒与足部修整应结合侧面照观察。",
+    "A-037": "小口、双耳与鼓腹共同组织红陶小口双耳壶的提持和倾倒动作，足部转折可从侧面轮廓复核。",
+    "A-049": "圈足把陶豆的盘部抬高并保持稳定，盘沿厚薄和足圈接合处比抽象的烧成线索更能说明制作。",
+    "A-050": "绳纹压印覆盖器腹，扁足承担托举和受热；足部与腹壁的接合痕迹可帮助判断成型顺序。",
 }
 
 # Record-specific repairs for the two scaffolds above.  They retain the
@@ -1014,6 +1035,7 @@ def validate(groups: list[dict[str, Any]], camera_names: list[str]) -> dict[str,
                 if factual and not (
                     CONTEXT_SENTENCE_SCAFFOLD.search(sentence)
                     or PROVENANCE_CERAMIC_SCAFFOLD.search(sentence)
+                    or CERAMIC_SURFACE_SCAFFOLD.search(sentence)
                     or LOCATION_CALIBRATION_SCAFFOLD.search(sentence)
                     or SURFACE_SCAFFOLD.search(sentence)
                     or USAGE_SENTENCE_SCAFFOLD.search(sentence)
