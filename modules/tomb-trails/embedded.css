@@ -142,6 +142,15 @@ body.is-embedded[data-museum="shangqiu"] {
   --embed-accent:#d8ad72;
   --embed-link:#ebc794;
 }
+body.is-embedded[data-museum="henan"] {
+  --embed-bg:#17241d;
+  --embed-ink:#f2eddf;
+  --embed-muted:#c8cdb8;
+  --embed-paper:rgba(13,24,18,.84);
+  --embed-line:rgba(216,196,142,.28);
+  --embed-accent:#d8bd7d;
+  --embed-link:#e7d29b;
+}
 body.is-embedded .trail {
   color:var(--embed-ink);
   background:var(--embed-paper);
