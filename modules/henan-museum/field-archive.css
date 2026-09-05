@@ -61,7 +61,7 @@
 .field-key>span:last-child{margin-left:auto}
 .field-key i{width:7px;height:7px;border-radius:50%;background:#7c825f}
 .field-key>span:nth-child(2) i{background:#b18a4d}
-.field-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--dark-line);border-left:1px solid var(--dark-line)}
+.field-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .field-card{display:grid;grid-template-rows:auto 1fr;min-width:0;min-height:455px;padding:0;border:0;border-right:1px solid var(--dark-line);border-bottom:1px solid var(--dark-line);background:rgba(255,255,255,.09);text-align:left;overflow:hidden;position:relative}
 .field-card::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;background:#8b7544;transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
 .field-card:hover::after,.field-card:focus-visible::after{transform:scaleX(1)}
@@ -217,4 +217,23 @@ body:has(.artifact-dialog[open]){overflow:hidden}
   .artifact-dialog-stage{height:52svh}.artifact-dialog-thumbs{grid-auto-columns:88px}.artifact-dialog-thumb{height:68px}
   .artifact-dialog-prose section{padding-left:42px}.artifact-inscription-grid{grid-template-columns:1fr}.artifact-inscription-grid>div{border-right:0;border-bottom:1px solid rgba(203,177,112,.24)}
   .music-shell{padding-top:65px;padding-bottom:62px}.music-evidence{margin-top:43px}.music-evidence figure{min-height:430px}.music-evidence figcaption{left:18px;right:18px;bottom:17px;font-size:9px}.music-evidence-copy{padding:32px 23px}.music-evidence-copy h3{font-size:25px}.music-facts{grid-template-columns:repeat(2,1fr)}.music-facts>div:nth-child(2){border-right:0}.music-facts>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.music-facts strong{font-size:12px}.music-evidence-copy>p:not(.eyebrow){font-size:13px}
+}
+
+/* Compact catalogue proportions shared with the Beilin catalogue. */
+.field-grid .field-card{grid-template-columns:112px minmax(0,1fr);grid-template-rows:1fr;height:172px;min-height:0;border:1px solid var(--dark-line)}
+.field-grid .field-card figure{width:112px;height:100%;aspect-ratio:auto}
+.field-grid .field-card>div{min-width:0;min-height:0;padding:13px 14px 12px}
+.field-grid .field-card h3{font-size:clamp(15px,1.2vw,19px);line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:7px 0}
+.field-grid .field-card small{font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.field-grid .field-card-summary{font-size:10px;line-height:1.65;margin-bottom:8px}
+.field-grid .field-card p{font-size:9px;line-height:1.5}
+.field-grid .field-card p span:first-child{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.field-grid .field-card-number{left:8px;top:8px;width:23px;height:26px;font-size:8px}
+.field-grid .field-card-origin{right:5px;bottom:5px;font-size:6px;padding:3px 4px}
+.field-grid .field-card-photo-count{left:5px;bottom:23px;font-size:7px;padding:3px 4px}
+@media(max-width:640px){
+ .field-grid .field-card{grid-template-columns:88px minmax(0,1fr);height:154px}
+ .field-grid .field-card figure{width:88px}
+ .field-grid .field-card>div{padding:11px 12px}
+ .field-grid .field-card h3{font-size:15px}
 }
