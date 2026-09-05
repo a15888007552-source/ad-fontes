@@ -2,7 +2,8 @@
   'use strict';
 
   const archive = window.HENAN_FIELD_ARCHIVE || { sourceCount: 817, groups: [] };
-  const groups = Array.isArray(archive.groups) ? archive.groups : [];
+  // The entrance photograph is retained as background material, not a collection object.
+  const groups = Array.isArray(archive.groups) ? archive.groups.filter(group => group.id !== 'A-001' && (group.photos?.some(photo => photo.role !== 'label') || group.image)) : [];
   const grid = document.querySelector('#field-grid');
   const filters = document.querySelector('#field-filters');
   const search = document.querySelector('#field-search');
@@ -51,7 +52,7 @@
   const photoRole = photo => roleLabels[photo?.role] || photo?.role || '现场照片';
 
   function objectPhotos(group) {
-    const values = Array.isArray(group.photos) ? group.photos.filter(photo => photoPath(photo)) : [];
+    const values = Array.isArray(group.photos) ? group.photos.filter(photo => photo.role !== 'label' && photoPath(photo)) : [];
     if (values.length) return values;
     return [{ asset: group.image, role: group.origin === '开放图片' ? 'online' : 'front', credit: group.credit, alt: group.alt }].filter(photo => photo.asset);
   }
@@ -151,7 +152,7 @@
     const facts = [
       ['年代', group.era || '待核'], ['材质 / 器类', group.material || group.categoryLabel || '待核'],
       ['出土或来源', group.provenance || group.findspot || '待核'],
-      ['现场记录', `${photos.length} 张 · ${group.sequenceLabel || group.sequence || '多角度图集'}`],
+      ['现场记录', `${photos.length} 张 · ${[...new Set(photos.map(photoRole))].join(' → ')}`],
     ];
     elements.facts.innerHTML = facts.map(([label, value]) => `<div><dt>${escapeHTML(label)}</dt><dd>${escapeHTML(value)}</dd></div>`).join('');
   }
