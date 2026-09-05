@@ -125,7 +125,17 @@
         button.textContent = label; button.setAttribute('aria-pressed', String(mode === value));
         button.addEventListener('click', () => { mode = value; render(); }); controls.append(button);
       }
-      anchor.before(controls);
+      const toolbarSelectors = {
+        beilin:'#catalogControls .control-row', baoji:'.archive-toolbar .filter-list',
+        qinhan:'.archive-tools .category-filters', 'xian-museum':'.filter-shell .primary-filters',
+        'shaanxi-history':'.filter-shell .primary-filters', 'shangqiu-museum':'.catalog-tools .filter-row',
+        'shaanxi-archaeology':'.artifact-catalog-toolbar'
+      };
+      const toolbar = document.querySelector(toolbarSelectors[museumId]);
+      if (toolbar) {
+        const trailing = toolbar.querySelector('#clearFilters,[data-artifact-count]');
+        if (trailing) trailing.before(controls); else toolbar.append(controls);
+      }
     }
     return {apply, select, mount, get, card, reset: () => { mode = 'recommended'; lastQuery = ''; }, aliases: item => (item.aliases || []).join(' '), badge: item => get(item) ? '<span class="museum-highlight-badge">重点文物</span>' : ''};
   }

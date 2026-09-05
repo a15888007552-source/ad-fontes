@@ -1,5 +1,5 @@
-.museum-highlight-controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1rem 0 1.5rem;padding:.75rem 0;border-block:1px solid currentColor}
-.museum-highlight-controls button{font:inherit;color:inherit;background:transparent;border:1px solid currentColor;padding:.45rem .8rem;cursor:pointer}
+ .museum-highlight-controls{display:inline-flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:0;padding:0;border:0;vertical-align:middle}
+.museum-highlight-controls button{font:inherit;color:inherit;background:transparent;border:1px solid currentColor;padding:.45rem .65rem;font-size:12px;cursor:pointer}
 .museum-highlight-controls button[aria-pressed=true]{font-weight:700;box-shadow:inset 0 -3px currentColor}
 .museum-highlight-controls button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 .museum-highlight-badge{display:inline-block;font:600 11px/1.5 sans-serif;letter-spacing:.08em;border:1px solid currentColor;padding:2px 5px;margin:0 .4rem .3rem 0;white-space:nowrap}
@@ -19,3 +19,6 @@
 .museum-editorial-image { clear:both; margin:1.25rem 0; text-align:center; }
 .museum-editorial-image img { display:block; max-width:100%; max-height:65vh; width:auto; height:auto; margin:auto; object-fit:contain; }
 .museum-editorial-image figcaption { margin-top:.6rem; font-size:.8rem; }
+
+.artifact-catalog-toolbar:has(.museum-highlight-controls){grid-template-columns:minmax(180px,1fr) minmax(140px,.55fr) auto auto}
+@media(max-width:900px){.artifact-catalog-toolbar:has(.museum-highlight-controls){display:flex;flex-wrap:wrap}.artifact-catalog-toolbar:has(.museum-highlight-controls)>label{flex:1 1 180px}}
