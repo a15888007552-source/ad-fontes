@@ -158,6 +158,26 @@
     return relations.map((relation) => `<button class="atlas-related-type" type="button" data-related-type="${mono(relation.id)}"><span>${mono(relation.nameZh)}</span><small>${mono(relation.romanization)}</small></button>`).join('');
   }
 
+  function recordPalette(object, type) {
+    const text = `${object?.title || ''} ${object?.material || ''} ${type?.nameZh || ''}`;
+    if (/金|银|鎏金|错金|黄金|金饰/.test(text)) return 'bronze-gold';
+    if (/玉|青釉|绿|翠|铜?锈|铜器|青铜|龙|虎|兽/.test(text)) return 'patina-green';
+    if (/石|墨|铁|黑|钟|磬|铭文|碑/.test(text)) return 'charcoal';
+    return 'warm-brown';
+  }
+
+  const recordBackgroundVariants = {
+    'bronze-gold': ['earthen-ochre', 'archival-linen'],
+    'patina-green': ['patina-olive', 'verdigris-shadow'],
+    charcoal: ['charcoal-slate', 'slate-gray'],
+    'warm-brown': ['walnut-mineral', 'oxblood-umber']
+  };
+  function recordBackground(palette, seed = '') {
+    const variants = recordBackgroundVariants[palette] || recordBackgroundVariants['warm-brown'];
+    const seedNumber = Number(String(seed).match(/\d+/)?.[0] || 0);
+    return `../assets/record-backgrounds/${variants[seedNumber % variants.length]}.webp`;
+  }
+
   function recordCards(type) {
     const records = localGroups(type).slice(0, 3);
     const localCards = records.map((group) => {
@@ -169,18 +189,22 @@
           .find(Boolean) || ''
         : '';
       const note = excerpt(rawNote, 2, 220);
-      return `<article class="atlas-object-record${image ? '' : ' atlas-object-record--no-image'}">
-        ${image ? `<img src="${mono(image)}" alt="${mono(group.title || type.nameZh)} · 现场档案照片" loading="lazy" />` : ''}
-        <div><p class="atlas-record-code">宝鸡馆藏实物 / ${mono(group.id)}</p><h6>${mono(group.title || type.nameZh)}</h6>
+      const palette = recordPalette(group, type);
+      return `<article class="atlas-object-record${image ? '' : ' atlas-object-record--no-image'}" style="--atlas-record-bg:url('${recordBackground(palette, group.id)}')">
+        ${image ? `<div class="atlas-object-record-image"><img src="${mono(image)}" alt="${mono(group.title || type.nameZh)} · 现场档案照片" loading="lazy" /></div>` : ''}
+        <div class="atlas-object-record-copy"><p class="atlas-record-code">宝鸡馆藏实物 / ${mono(group.id)}</p><h6>${mono(group.title || type.nameZh)}</h6>
         <dl><div><dt>年代</dt><dd>${mono(facts.period || group.era || '待核')}</dd></div><div><dt>出土地</dt><dd>${mono(facts.findspot || '待核')}</dd></div><div><dt>收藏单位</dt><dd>${mono(facts.collection || '待核')}</dd></div></dl>
         ${note ? `<p>${mono(note)}</p>` : ''}</div></article>`;
     });
-    const crossCards = (type.crossMuseumObjects || []).slice(0, 4).map((object) => `<article class="atlas-object-record atlas-object-record--cross">
-      ${object.image ? `<img src="${mono(object.image)}" alt="${mono(object.title || type.nameZh)} · ${mono(object.museum || '跨馆器例')}" loading="lazy" />` : ''}
-      <div><p class="atlas-record-code">${object.photographed ? '馆内实拍 / '+mono(object.photoFilename) : '跨馆器例'}</p><h6>${mono(object.title || type.nameZh)}</h6>
+    const crossCards = (type.crossMuseumObjects || []).slice(0, 4).map((object, index) => {
+      const palette = recordPalette(object, type);
+      return `<article class="atlas-object-record atlas-object-record--cross" style="--atlas-record-bg:url('${recordBackground(palette, object.photoFilename || object.title || index)}')">
+      ${object.image ? `<div class="atlas-object-record-image"><img src="${mono(object.image)}" alt="${mono(object.title || type.nameZh)} · ${mono(object.museum || '跨馆器例')}" loading="lazy" /></div>` : ''}
+      <div class="atlas-object-record-copy"><p class="atlas-record-code">${object.photographed ? '馆内实拍 / '+mono(object.photoFilename) : '跨馆器例'}</p><h6>${mono(object.title || type.nameZh)}</h6>
       <dl><div><dt>年代</dt><dd>${mono(object.period || '待核')}</dd></div><div><dt>${object.photographed ? '拍摄场馆' : '收藏单位'}</dt><dd>${mono(object.museum || '待核')}</dd></div><div><dt>对应器类</dt><dd>${mono(type.nameZh)}</dd></div></dl>
       ${object.note ? `<p>${mono(excerpt(object.note, 2, 220))}</p>` : ''}
-      ${object.href ? `<a href="${mono(object.href)}" target="_blank" rel="noreferrer">查看文物详情与图集 ↗</a>` : ''}</div></article>`);
+      ${object.href ? `<a href="${mono(object.href)}" target="_blank" rel="noreferrer">查看文物详情与图集 ↗</a>` : ''}</div></article>`;
+    });
     if (localCards.length || crossCards.length) return [...localCards, ...crossCards].join('');
     return '<p>暂无实拍器例。</p>';
   }

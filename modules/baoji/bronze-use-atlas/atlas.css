@@ -99,9 +99,13 @@
 #bronze-use-atlas .atlas-related-type span { font-size: .9rem; }
 #bronze-use-atlas .atlas-related-type small { color: #9b927f; font: .48rem/1 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; }
 #bronze-use-atlas .atlas-object-records { display: grid; gap: .75rem; }
-#bronze-use-atlas .atlas-object-record, #bronze-use-atlas .atlas-reference-record { border: 1px solid rgba(238,233,220,.13); background: #151612; }
-#bronze-use-atlas .atlas-object-record img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; }
-#bronze-use-atlas .atlas-object-record > div, #bronze-use-atlas .atlas-reference-record { padding: .9rem; }
+#bronze-use-atlas .atlas-object-record, #bronze-use-atlas .atlas-reference-record { position: relative; overflow: hidden; border: 1px solid rgba(238,233,220,.13); background: var(--atlas-record-bg, #151612) center / cover no-repeat; }
+#bronze-use-atlas .atlas-object-record::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,9,8,.04), rgba(8,9,8,.22)); pointer-events: none; }
+#bronze-use-atlas .atlas-object-record > *, #bronze-use-atlas .atlas-reference-record > * { position: relative; z-index: 1; }
+#bronze-use-atlas .atlas-object-record-image { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; padding: 0 !important; background: var(--atlas-record-bg, #151612) center / cover no-repeat; }
+#bronze-use-atlas .atlas-object-record-image::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(180deg, transparent, rgba(12,13,11,.55)); pointer-events: none; }
+#bronze-use-atlas .atlas-object-record img { display: block; width: 100%; height: 100%; object-fit: contain; }
+#bronze-use-atlas .atlas-object-record-copy { padding: .9rem; background: linear-gradient(180deg, rgba(16,17,14,.12), rgba(16,17,14,.28)); }
 #bronze-use-atlas .atlas-record-code { margin: 0 0 .35rem !important; color: #b98a46 !important; font: 500 .48rem/1.3 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace !important; letter-spacing: .06em; }
 #bronze-use-atlas .atlas-object-record h6, #bronze-use-atlas .atlas-reference-record h6 { margin: 0; color: #eee8dc; font-size: 1.15rem; font-weight: 500; }
 #bronze-use-atlas .atlas-object-record dl { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .5rem; margin: .75rem 0; }
