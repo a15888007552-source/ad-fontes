@@ -697,7 +697,7 @@ h3 { margin-bottom: 12px; font-size: clamp(24px, 3vw, 36px); }
 }
 
 #other.other-card .artifact-catalog-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-rows: 520px;
   align-items: stretch;
 }
