@@ -141,7 +141,7 @@
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       });
-    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0 });
     sections.forEach((section) => observer.observe(section));
     requestAnimationFrame(() => {
       sections.forEach((section) => {
