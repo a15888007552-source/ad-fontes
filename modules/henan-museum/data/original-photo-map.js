@@ -1,0 +1,30 @@
+window.HENAN_ORIGINAL_PHOTOS = {
+  "base": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/",
+  "assets": {
+    "assets/field/protected-lotus.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5885.JPG",
+    "assets/field/protected-cloud.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_6305.JPG",
+    "assets/field/artifact-prehistoric-figure-dish.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5498.JPG",
+    "assets/field/artifact-jiahu-flute.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5610.JPG",
+    "assets/field/artifact-bronze-ding.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5699.JPG",
+    "assets/field/artifact-oracle-shell.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5741.JPG",
+    "assets/field/artifact-fuhao-owl.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5751.JPG",
+    "assets/field/artifact-bronze-nao.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5793.JPG",
+    "assets/field/artifact-bronze-jian.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5861.JPG",
+    "assets/field/artifact-stone-chimes.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5907.JPG",
+    "assets/field/artifact-jade-suit.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5975.JPG",
+    "assets/field/artifact-four-gods.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5979.JPG",
+    "assets/field/artifact-tang-camel.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_6125.JPG",
+    "assets/field/artifact-ru-gooseneck.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_6206.JPG",
+    "assets/field/tomb-fuhao-assemblage.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5745.JPG",
+    "assets/field/tomb-jade-suit-detail.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5976.JPG",
+    "assets/field/tomb-four-gods-detail.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5983.JPG",
+    "assets/field/tomb-pottery-granary.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_6045.JPG",
+    "assets/field/artifact-wuzetian-gold.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/artifact-wuzetian-gold.png",
+    "assets/field/protected-white-green.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/protected-white-green.png",
+    "assets/field/artifact-qing-enamel-box.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/artifact-qing-enamel-box.jpg",
+    "assets/field/artifact-qing-enamel-bowl.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/artifact-qing-enamel-bowl.jpg",
+    "assets/field/artifact-qing-octagonal-lacquer-box.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/artifact-qing-octagonal-lacquer-box.jpg",
+    "assets/field/artifact-qing-carved-lacquer-box.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/artifact-qing-carved-lacquer-box.jpg",
+    "assets/field/artifact-qing-enamel-gourd.webp": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/artifact-qing-enamel-gourd.jpg"
+  }
+};

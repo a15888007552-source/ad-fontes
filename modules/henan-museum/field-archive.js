@@ -43,6 +43,9 @@
   const photoStem = filename => String(filename || '').replace(/\.[^.]+$/, '');
   const photoPath = (photo, kind = 'web') => {
     if (!photo) return '';
+    const originals = window.HENAN_ORIGINAL_PHOTOS;
+    if (originals && photo.filename) return originals.base + encodeURIComponent(photo.filename);
+    if (originals?.assets[photo.asset]) return originals.assets[photo.asset];
     if (kind === 'thumb' && photo.thumb) return photo.thumb;
     if (kind === 'web' && photo.web) return photo.web;
     if (photo.asset) return photo.asset;
