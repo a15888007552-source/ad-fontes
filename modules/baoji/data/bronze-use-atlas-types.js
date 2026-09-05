@@ -317,6 +317,58 @@
     type({ slug: 'nuji', nameZh: '弩机', nameEn: 'CROSSBOW TRIGGER', romanization: 'NUJI', categoryId: 'weapons', shortFunction: '扣弦 · 击发 · 远射', localBaojiGroupIds: ['photo-group-3847'], relationTypeIds: ['zu-arrowhead', 'jian-weapon', 'mao-weapon'], sourceIds: ['NMC-WEAPONS'], officialExampleLinks: ['https://www.chnmuseum.cn/zp/zpml/kgfjp/202110/t20211027_251877.shtml'] }),
   ];
 
+  // Explicitly matched photographs; links preserve each museum's original record and gallery.
+  const fieldExamples = [
+    {"typeId":"ding","title":"兽面乳钉纹铜方鼎（杜岭二号方鼎）","museum":"河南博物院","period":"商代早期","itemId":"A-065","image":"../henan-museum/assets/photos/thumbs/DSC_5699.webp","href":"../henan-museum/index.html?item=A-065#field-archive","photographed":true,"photoFilename":"DSC_5699.JPG"},
+    {"typeId":"li","title":"夔纹铜鬲","museum":"河南博物院","period":"商代前期","itemId":"A-057","image":"../henan-museum/assets/photos/thumbs/DSC_5674.webp","href":"../henan-museum/index.html?item=A-057#field-archive","photographed":true,"photoFilename":"DSC_5674.JPG"},
+    {"typeId":"gui","title":"“子”四耳铜簋","museum":"河南博物院","period":"西周","itemId":"A-094","image":"../henan-museum/assets/photos/thumbs/DSC_5814.webp","href":"../henan-museum/index.html?item=A-094#field-archive","photographed":true,"photoFilename":"DSC_5814.JPG"},
+    {"typeId":"fu","title":"“虢季”铜簠","museum":"河南博物院","period":"西周","itemId":"A-106","image":"../henan-museum/assets/photos/thumbs/DSC_5850.webp","href":"../henan-museum/index.html?item=A-106#field-archive","photographed":true,"photoFilename":"DSC_5850.JPG"},
+    {"typeId":"xu","title":"“谏”铜盨","museum":"河南博物院","period":"西周","itemId":"A-103","image":"../henan-museum/assets/photos/thumbs/DSC_5843.webp","href":"../henan-museum/index.html?item=A-103#field-archive","photographed":true,"photoFilename":"DSC_5843.JPG"},
+    {"typeId":"dou","title":"蟠螭纹填漆铜豆","museum":"河南博物院","period":"春秋时期","itemId":"A-110","image":"../henan-museum/assets/photos/thumbs/DSC_5866.webp","href":"../henan-museum/index.html?item=A-110#field-archive","photographed":true,"photoFilename":"DSC_5866.JPG"},
+    {"typeId":"dun","title":"蟠螭纹铜敦","museum":"河南博物院","period":"春秋时期","itemId":"A-112","image":"../henan-museum/assets/photos/thumbs/DSC_5872.webp","href":"../henan-museum/index.html?item=A-112#field-archive","photographed":true,"photoFilename":"DSC_5872.JPG"},
+    {"typeId":"jue","title":"窄流平底铜爵","museum":"河南博物院","period":"夏代晚期","itemId":"A-045","image":"../henan-museum/assets/photos/thumbs/DSC_5643.webp","href":"../henan-museum/index.html?item=A-045#field-archive","photographed":true,"photoFilename":"DSC_5643.JPG"},
+    {"typeId":"jiao","title":"“晨肇贮”铜角（父乙角）","museum":"河南博物院","period":"西周","itemId":"A-100","image":"../henan-museum/assets/photos/thumbs/DSC_5834.webp","href":"../henan-museum/index.html?item=A-100#field-archive","photographed":true,"photoFilename":"DSC_5834.JPG"},
+    {"typeId":"zhi","title":"“守父乙”铜觯","museum":"河南博物院","period":"商代晚期","itemId":"A-080","image":"../henan-museum/assets/photos/thumbs/DSC_5762.webp","href":"../henan-museum/index.html?item=A-080#field-archive","photographed":true,"photoFilename":"DSC_5762.JPG"},
+    {"typeId":"jia","title":"兽面纹铜斝","museum":"河南博物院","period":"商代前期","itemId":"A-060","image":"../henan-museum/assets/photos/thumbs/DSC_5683.webp","href":"../henan-museum/index.html?item=A-060#field-archive","photographed":true,"photoFilename":"DSC_5683.JPG"},
+    {"typeId":"zun","title":"妇好鸮尊","museum":"河南博物院","period":"商代晚期","itemId":"A-077","image":"../henan-museum/assets/photos/thumbs/DSC_5750.webp","href":"../henan-museum/index.html?item=A-077#field-archive","photographed":true,"photoFilename":"DSC_5750.JPG"},
+    {"typeId":"you","title":"鸮形铜卣","museum":"河南博物院","period":"商代晚期","itemId":"A-085","image":"../henan-museum/assets/photos/thumbs/DSC_5779.webp","href":"../henan-museum/index.html?item=A-085#field-archive","photographed":true,"photoFilename":"DSC_5779.JPG"},
+    {"typeId":"lei","title":"兽面纹铜罍","museum":"河南博物院","period":"商代前期","itemId":"A-064","image":"../henan-museum/assets/photos/thumbs/DSC_5695.webp","href":"../henan-museum/index.html?item=A-064#field-archive","photographed":true,"photoFilename":"DSC_5695.JPG"},
+    {"typeId":"hu","title":"莲鹤方壶","museum":"河南博物院","period":"春秋时期","itemId":"A-114","image":"../henan-museum/assets/photos/thumbs/DSC_5885.webp","href":"../henan-museum/index.html?item=A-114#field-archive","photographed":true,"photoFilename":"DSC_5885.JPG"},
+    {"typeId":"gong","title":"“父乙”铜觥","museum":"河南博物院","period":"商代晚期","itemId":"A-088","image":"../henan-museum/assets/photos/thumbs/DSC_5788.webp","href":"../henan-museum/index.html?item=A-088#field-archive","photographed":true,"photoFilename":"DSC_5788.JPG"},
+    {"typeId":"fangyi","title":"“爰”铜方彝","museum":"河南博物院","period":"商代晚期","itemId":"A-082","image":"../henan-museum/assets/photos/thumbs/DSC_5766.webp","href":"../henan-museum/index.html?item=A-082#field-archive","photographed":true,"photoFilename":"DSC_5766.JPG"},
+    {"typeId":"bu","title":"兽面纹铜瓿","museum":"河南博物院","period":"商代前期","itemId":"A-062","image":"../henan-museum/assets/photos/thumbs/DSC_5690.webp","href":"../henan-museum/index.html?item=A-062#field-archive","photographed":true,"photoFilename":"DSC_5690.JPG"},
+    {"typeId":"fou","title":"“孟滕姬”浴缶","museum":"河南博物院","period":"春秋（前770—前476）","itemId":"b-126","image":"../henan-museum/assets/photos/thumbs/DSC_6329.webp","href":"../henan-museum/index.html?item=b-126#field-archive","photographed":true,"photoFilename":"DSC_6329.JPG"},
+    {"typeId":"pan","title":"鱼龙纹铜盘","museum":"河南博物院","period":"西周","itemId":"A-102","image":"../henan-museum/assets/photos/thumbs/DSC_5840.webp","href":"../henan-museum/index.html?item=A-102#field-archive","photographed":true,"photoFilename":"DSC_5840.JPG"},
+    {"typeId":"yi","title":"“单”铜匜","museum":"河南博物院","period":"春秋（前770—前476）","itemId":"b-001","image":"../henan-museum/assets/photos/thumbs/DSC_5935.webp","href":"../henan-museum/index.html?item=b-001#field-archive","photographed":true,"photoFilename":"DSC_5935.JPG"},
+    {"typeId":"he","title":"兽面纹铜盉","museum":"河南博物院","period":"商代前期","itemId":"A-059","image":"../henan-museum/assets/photos/thumbs/DSC_5680.webp","href":"../henan-museum/index.html?item=A-059#field-archive","photographed":true,"photoFilename":"DSC_5680.JPG"},
+    {"typeId":"jian-water","title":"夔凤纹铜鉴","museum":"河南博物院","period":"春秋时期","itemId":"A-109","image":"../henan-museum/assets/photos/thumbs/DSC_5861.webp","href":"../henan-museum/index.html?item=A-109#field-archive","photographed":true,"photoFilename":"DSC_5861.JPG"},
+    {"typeId":"zhong","title":"“虢季”铜甬钟八件","museum":"河南博物院","period":"西周晚期","itemId":"A-107","image":"../henan-museum/assets/photos/thumbs/DSC_5853.webp","href":"../henan-museum/index.html?item=A-107#field-archive","photographed":true,"photoFilename":"DSC_5853.JPG"},
+    {"typeId":"bianzhong","title":"“王孙诰”编钟","museum":"河南博物院","period":"春秋（前770—前476）","itemId":"b-131","image":"../henan-museum/assets/photos/thumbs/DSC_6346.webp","href":"../henan-museum/index.html?item=b-131#field-archive","photographed":true,"photoFilename":"DSC_6346.JPG"},
+    {"typeId":"bo","title":"蟠龙纹铜镈钟","museum":"河南博物院","period":"春秋时期","itemId":"A-113","image":"../henan-museum/assets/photos/thumbs/DSC_5874.webp","href":"../henan-museum/index.html?item=A-113#field-archive","photographed":true,"photoFilename":"DSC_5874.JPG"},
+    {"typeId":"nao","title":"回字纹铜铙（三件）","museum":"河南博物院","period":"商代晚期","itemId":"A-089","image":"../henan-museum/assets/photos/thumbs/DSC_5793.webp","href":"../henan-museum/index.html?item=A-089#field-archive","photographed":true,"photoFilename":"DSC_5793.JPG"},
+    {"typeId":"biannao","title":"回字纹铜铙（三件）","museum":"河南博物院","period":"商代晚期","itemId":"A-089","image":"../henan-museum/assets/photos/thumbs/DSC_5793.webp","href":"../henan-museum/index.html?item=A-089#field-archive","photographed":true,"photoFilename":"DSC_5793.JPG"},
+    {"typeId":"zheng","title":"兽面纹铜钲","museum":"河南博物院","period":"西周","itemId":"A-108","image":"../henan-museum/assets/photos/thumbs/DSC_5859.webp","href":"../henan-museum/index.html?item=A-108#field-archive","photographed":true,"photoFilename":"DSC_5859.JPG"},
+    {"typeId":"qing","title":"石编磬十三件","museum":"河南博物院","period":"春秋时期","itemId":"A-117","image":"../henan-museum/assets/photos/thumbs/DSC_5907.webp","href":"../henan-museum/index.html?item=A-117#field-archive","photographed":true,"photoFilename":"DSC_5907.JPG"},
+    {"typeId":"bianqing","title":"石编磬十三件","museum":"河南博物院","period":"春秋时期","itemId":"A-117","image":"../henan-museum/assets/photos/thumbs/DSC_5907.webp","href":"../henan-museum/index.html?item=A-117#field-archive","photographed":true,"photoFilename":"DSC_5907.JPG"},
+    {"typeId":"jin","title":"云纹铜禁","museum":"河南博物院","period":"春秋晚期","itemId":"b-121","image":"../henan-museum/assets/photos/thumbs/DSC_6305.webp","href":"../henan-museum/index.html?item=b-121#field-archive","photographed":true,"photoFilename":"DSC_6305.JPG"},
+    {"typeId":"zu","title":"镂孔龙纹铜俎","museum":"河南博物院","period":"春秋（前770—前476）","itemId":"b-123","image":"../henan-museum/assets/photos/thumbs/DSC_6323.webp","href":"../henan-museum/index.html?item=b-123#field-archive","photographed":true,"photoFilename":"DSC_6323.JPG"},
+    {"typeId":"jing","title":"骑马狩猎纹铜镜","museum":"河南博物院","period":"唐代（618—907）","itemId":"b-074","image":"../henan-museum/assets/photos/thumbs/DSC_6171.webp","href":"../henan-museum/index.html?item=b-074#field-archive","photographed":true,"photoFilename":"DSC_6171.JPG"},
+    {"typeId":"deng","title":"坐人铜灯","museum":"河南博物院","period":"战国（前475—前221）","itemId":"b-008","image":"../henan-museum/assets/photos/thumbs/DSC_5955.webp","href":"../henan-museum/index.html?item=b-008#field-archive","photographed":true,"photoFilename":"DSC_5955.JPG"},
+    {"typeId":"lu","title":"鎏金铜盖炉","museum":"河南博物院","period":"东汉（25—220）","itemId":"b-019","image":"../henan-museum/assets/photos/thumbs/DSC_6001.webp","href":"../henan-museum/index.html?item=b-019#field-archive","photographed":true,"photoFilename":"DSC_6001.JPG"},
+    {"typeId":"xunlu","title":"铜博山炉","museum":"河南博物院","period":"汉代（前206—220）","itemId":"b-045","image":"../henan-museum/assets/photos/thumbs/DSC_6086.webp","href":"../henan-museum/index.html?item=b-045#field-archive","photographed":true,"photoFilename":"DSC_6086.JPG"},
+    {"typeId":"daigou","title":"错金嵌绿松石铜带钩","museum":"河南博物院","period":"战国（前475—前221）","itemId":"b-007","image":"../henan-museum/assets/photos/thumbs/DSC_5952.webp","href":"../henan-museum/index.html?item=b-007#field-archive","photographed":true,"photoFilename":"DSC_5952.JPG"},
+    {"typeId":"ge-weapon","title":"曲内铜戈","museum":"河南博物院","period":"商代前期","itemId":"A-063","image":"../henan-museum/assets/photos/thumbs/DSC_5693.webp","href":"../henan-museum/index.html?item=A-063#field-archive","photographed":true,"photoFilename":"DSC_5693.JPG"},
+    {"typeId":"yue-weapon","title":"直边弧刃铜钺","museum":"河南博物院","period":"商代前期","itemId":"A-073","image":"../henan-museum/assets/photos/thumbs/DSC_5732.webp","href":"../henan-museum/index.html?item=A-073#field-archive","photographed":true,"photoFilename":"DSC_5732.JPG"},
+    {"typeId":"nuji","title":"鎏金羽纹铜弩机","museum":"河南博物院","period":"东汉（25—220）","itemId":"b-026","image":"../henan-museum/assets/photos/thumbs/DSC_6026.webp","href":"../henan-museum/index.html?item=b-026#field-archive","photographed":true,"photoFilename":"DSC_6026.JPG"},
+    {"typeId":"quan","title":"“高奴禾石”铜权","museum":"陕西历史博物馆秦汉馆","period":"战国秦至秦代沿用","itemId":"qinhan-highlight-03","image":"https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2258.jpg","href":"../qinhan/index.html?item=qinhan-highlight-03#archive","photographed":true,"photoFilename":"DSC_2258.JPG"},
+    {"typeId":"xunlu","title":"鎏金银竹节铜熏炉","museum":"陕西历史博物馆秦汉馆","period":"西汉","itemId":"qinhan-highlight-04","image":"https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2620.jpg","href":"../qinhan/index.html?item=qinhan-highlight-04#archive","photographed":true,"photoFilename":"DSC_2620.JPG"},
+    {"typeId":"hufu","title":"杜虎符","museum":"陕西历史博物馆秦汉馆","period":"战国·秦","itemId":"du-tiger-tally","image":"https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2089.jpg","href":"../qinhan/index.html?item=du-tiger-tally#archive","photographed":true,"photoFilename":"DSC_2089.JPG"}
+  ];
+  for (const item of types) {
+    const matches = fieldExamples.filter(example => example.typeId === item.id);
+    item.crossMuseumObjects = [...matches, ...item.crossMuseumObjects].filter((example,index,all) => all.findIndex(other => other.href === example.href) === index);
+  }
+
   root.BAOJI_BRONZE_ATLAS = {
     version: '2.0.0',
     categories,
@@ -329,7 +381,7 @@
       canonicalBronzeTypes: types.filter((item) => item.canonical && item.materialClass === 'bronze').length,
       adjacentNonBronzeTypes: types.filter((item) => item.canonical && item.materialClass !== 'bronze').length,
       localBaojiTypes: types.filter((item) => item.localBaojiGroupIds.length).length,
-      externalAuthorityOnlyTypes: types.filter((item) => !item.localBaojiGroupIds.length).length,
+      externalAuthorityOnlyTypes: types.filter((item) => !item.localBaojiGroupIds.length && !item.crossMuseumObjects.length).length,
       weaponTypesIncluded: types.filter((item) => item.categoryId === 'weapons').length
     }
   };

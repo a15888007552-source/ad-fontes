@@ -100,7 +100,7 @@
 #bronze-use-atlas .atlas-related-type small { color: #9b927f; font: .48rem/1 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; }
 #bronze-use-atlas .atlas-object-records { display: grid; gap: .75rem; }
 #bronze-use-atlas .atlas-object-record, #bronze-use-atlas .atlas-reference-record { border: 1px solid rgba(238,233,220,.13); background: #151612; }
-#bronze-use-atlas .atlas-object-record img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; filter: saturate(.75) contrast(1.08); }
+#bronze-use-atlas .atlas-object-record img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; }
 #bronze-use-atlas .atlas-object-record > div, #bronze-use-atlas .atlas-reference-record { padding: .9rem; }
 #bronze-use-atlas .atlas-record-code { margin: 0 0 .35rem !important; color: #b98a46 !important; font: 500 .48rem/1.3 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace !important; letter-spacing: .06em; }
 #bronze-use-atlas .atlas-object-record h6, #bronze-use-atlas .atlas-reference-record h6 { margin: 0; color: #eee8dc; font-size: 1.15rem; font-weight: 500; }

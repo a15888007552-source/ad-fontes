@@ -175,15 +175,14 @@
         <dl><div><dt>年代</dt><dd>${mono(facts.period || group.era || '待核')}</dd></div><div><dt>出土地</dt><dd>${mono(facts.findspot || '待核')}</dd></div><div><dt>收藏单位</dt><dd>${mono(facts.collection || '待核')}</dd></div></dl>
         ${note ? `<p>${mono(note)}</p>` : ''}</div></article>`;
     });
-    const crossCards = (type.crossMuseumObjects || []).slice(0, 2).map((object) => `<article class="atlas-object-record atlas-object-record--cross">
+    const crossCards = (type.crossMuseumObjects || []).slice(0, 4).map((object) => `<article class="atlas-object-record atlas-object-record--cross">
       ${object.image ? `<img src="${mono(object.image)}" alt="${mono(object.title || type.nameZh)} · ${mono(object.museum || '跨馆器例')}" loading="lazy" />` : ''}
-      <div><p class="atlas-record-code">跨馆器例</p><h6>${mono(object.title || type.nameZh)}</h6>
-      <dl><div><dt>年代</dt><dd>${mono(object.period || '待核')}</dd></div><div><dt>收藏单位</dt><dd>${mono(object.museum || '待核')}</dd></div><div><dt>对应器类</dt><dd>${mono(type.nameZh)}</dd></div></dl>
+      <div><p class="atlas-record-code">${object.photographed ? '馆内实拍 / '+mono(object.photoFilename) : '跨馆器例'}</p><h6>${mono(object.title || type.nameZh)}</h6>
+      <dl><div><dt>年代</dt><dd>${mono(object.period || '待核')}</dd></div><div><dt>${object.photographed ? '拍摄场馆' : '收藏单位'}</dt><dd>${mono(object.museum || '待核')}</dd></div><div><dt>对应器类</dt><dd>${mono(type.nameZh)}</dd></div></dl>
       ${object.note ? `<p>${mono(excerpt(object.note, 2, 220))}</p>` : ''}
-      ${object.href ? `<a href="${mono(object.href)}" target="_blank" rel="noreferrer">打开馆藏页 ↗</a>` : ''}</div></article>`);
+      ${object.href ? `<a href="${mono(object.href)}" target="_blank" rel="noreferrer">查看文物详情与图集 ↗</a>` : ''}</div></article>`);
     if (localCards.length || crossCards.length) return [...localCards, ...crossCards].join('');
-    const sources = (type.sourceIds || []).map((id) => ({ id, source: atlas.sources?.[id] })).filter((item) => item.source && item.source.href).slice(0, 3);
-    return sources.map(({ id, source }) => `<article class="atlas-reference-record"><p class="atlas-record-code">器类参照 / ${mono(id)}</p><h6>${mono(source.institution || '正式馆藏机构')}</h6><p>${mono(source.label || `${type.nameZh}的正式器例参照。`)}</p><a href="${mono(source.href)}" target="_blank" rel="noreferrer">查看来源 ↗</a></article>`).join('') || `<article class="atlas-reference-record"><h6>${mono(type.nameZh)} · 器类参照</h6><p>具体器例需结合正式馆藏目录与考古资料核对。</p></article>`;
+    return '<p>暂无实拍器例。</p>';
   }
 
   function sourceLinks(type) {
