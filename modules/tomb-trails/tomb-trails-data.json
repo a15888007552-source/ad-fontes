@@ -857,7 +857,7 @@
     "objects": "河南博物院关联：妇好鸮尊、妇好铭文青铜器与商代礼器。",
     "value": "墓葬把文字、器类和身份放在同一处现场，能看到商代贵族如何以礼器、兵器和玉器组织身后秩序。",
     "importance": "妇好墓的意义不在于一件器物的传奇，而在于组合关系仍可追问：哪些器物用于礼仪，哪些器物标出军事身份，哪些玉器贴近身体。铭文与墓内位置互相校正，让“妇好”从称谓成为可以讨论的历史人物。",
-    "image": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5745.JPG",
+    "image": "../henan-museum/assets/tombs/fuhao-tomb.png",
     "source": [
       [
         "河南博物院｜馆藏与展览资料",
@@ -865,7 +865,7 @@
       ]
     ],
     "museumName": "河南博物院",
-    "credit": "河南博物院展厅｜妇好墓相关器物现场图"
+    "credit": "用户提供｜妇好墓"
   },
   {
     "museum": "henan",
@@ -877,7 +877,7 @@
     "objects": "河南博物院关联：北齐白釉绿彩长颈瓶及范粹墓出土器物。",
     "value": "一座有明确年代的墓，把早期白瓷的造型与装饰放进北朝丧葬礼俗，而不是孤立地当作“彩瓷样本”。",
     "importance": "范粹墓让器物的时间、地点和使用语境彼此靠近。白釉绿彩长颈瓶并非后世成熟彩瓷的缩小版；它的长颈、鼓腹、施彩范围和墓葬组合，共同说明北朝工匠正在试探新的白瓷表面。",
-    "image": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/protected-white-green.png",
+    "image": "../henan-museum/assets/tombs/fancui-tomb.png",
     "source": [
       [
         "河南博物院｜白釉绿彩长颈瓶资料",
@@ -885,11 +885,11 @@
       ]
     ],
     "museumName": "河南博物院",
-    "credit": "河南博物院展厅｜范粹墓出土白釉绿彩长颈瓶"
+    "credit": "用户提供｜范粹墓"
   },
   {
     "museum": "henan",
-    "name": "芒砀山汉墓壁画",
+    "name": "芒砀山汉墓",
     "kind": "西汉王陵墓葬",
     "date": "20世纪发掘与保护",
     "history": "芒砀山汉墓群位于永城，属于西汉梁国王陵体系。墓室顶部的云气、神兽与人物，把地下空间布置成一片有方向的天界。",
@@ -897,7 +897,7 @@
     "objects": "河南博物院关联：四神云气图壁画及西汉墓葬艺术资料。",
     "value": "壁画与墓室结构一起看，才能理解四神、云气和人物为什么被安排在头顶与通道等不同位置。",
     "importance": "四神云气图不是悬空的神兽图案。它贴着墓室建筑展开，颜色、方向与画面层次共同参与对死者空间的规划；揭取后的展陈让图像得以保存，也提醒我们把现在的平面观看与原来的墓室尺度区分开。",
-    "image": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_5983.JPG",
+    "image": "../henan-museum/assets/tombs/mangdang-han-tomb.png",
     "source": [
       [
         "河南博物院｜四神云气图资料",
@@ -905,26 +905,6 @@
       ]
     ],
     "museumName": "河南博物院",
-    "credit": "河南博物院展厅｜四神云气图壁画局部"
-  },
-  {
-    "museum": "henan",
-    "name": "汉墓随葬仓廪",
-    "kind": "汉代墓葬明器",
-    "date": "汉代；出土地点依馆藏记录",
-    "history": "陶仓、陶廪、陶囷与陶狗常见于汉代墓葬明器组合。它们把储粮、居处和守护缩成可随葬的体量，留下日常生活进入地下的具体方式。",
-    "discovery": "此类明器多在墓葬清理中成组发现；单件器物的原始位置与组合，仍要以发掘报告和馆方记录为准。",
-    "objects": "河南博物院关联：陶仓、陶廪、陶囷及汉代墓葬明器。",
-    "value": "明器把“来世生活”落实为仓储、屋舍和看守等具体设施，反映墓主人对秩序和供给的想象。",
-    "importance": "陶制仓廪看起来朴素，却把汉代社会的物资观念带进墓室：粮食要储存，空间要分隔，入口要有人看守。模型的缩小比例不是生活原状，但器形、门口和承托方式仍保存着当时人如何想象一座可持续运转的居所。",
-    "image": "https://raw.githubusercontent.com/a15888007552-source/ad-fontes-archive/main/assets/photos/original/henan/DSC_6045.JPG",
-    "source": [
-      [
-        "河南博物院｜基本陈列资料",
-        "https://www.chnmus.net/ch/exhibitions/permanent/huaxia/index.html"
-      ]
-    ],
-    "museumName": "河南博物院",
-    "credit": "河南博物院展厅｜汉墓陶仓明器"
+    "credit": "用户提供｜芒砀山汉墓"
   }
 ]
