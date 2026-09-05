@@ -548,10 +548,10 @@
       "findspot": null,
       "dimensions": null,
       "sequence_start": 36,
-      "sequence_end": 44,
-      "photo_count": 9,
+      "sequence_end": 43,
+      "photo_count": 8,
       "object_photo_count": 5,
-      "label_photo_count": 4,
+      "label_photo_count": 3,
       "main_sequence": 36,
       "main_image": "assets/processed/crop/qin-law.webp",
       "full_image": "assets/processed/full/qin-law.webp",
@@ -670,72 +670,50 @@
           "web": "assets/photos/web/DSC_2065.jpg",
           "original_hint": "https://github.com/a15888007552-source/ad-fontes-archive/releases/download/originals/DSC_2065.JPG",
           "sha256": "81a5f3ffab9297dd32c760336c876d4ff8dc44bec0e2f84dc6b1a942e04e8b77"
-        },
-        {
-          "sequence": 44,
-          "filename": "DSC_2066.JPG",
-          "role": "label",
-          "role_label": "展签证据",
-          "thumb": "assets/photos/thumb/DSC_2066.jpg",
-          "web": "assets/photos/web/DSC_2066.jpg",
-          "original_hint": "https://github.com/a15888007552-source/ad-fontes-archive/releases/download/originals/DSC_2066.JPG",
-          "sha256": "d057c47ccc1ac86e2b26cc495357a20307cf46cd9a2ea470df9fd0a63f006340"
         }
       ]
     },
     {
       "id": "han-clay-seals",
-      "title": "长安丞与备盗贼尉封泥",
+      "title": "长安狱丞与备盗贼尉封泥",
       "category": "制度",
       "era": "汉",
       "period": "汉",
       "material": null,
       "findspot": null,
       "dimensions": null,
-      "sequence_start": 45,
+      "sequence_start": 44,
       "sequence_end": 47,
-      "photo_count": 3,
-      "object_photo_count": 1,
+      "photo_count": 4,
+      "object_photo_count": 2,
       "label_photo_count": 2,
-      "main_sequence": 46,
-      "main_image": "assets/processed/crop/han-clay-seals.webp",
-      "full_image": "assets/processed/full/han-clay-seals.webp",
-      "processing": {
-        "method": "人工主体裁切",
-        "source_kind": "F 盘原片",
-        "source_filename": "DSC_2068.JPG",
-        "crop_box": [
-          1330,
-          1330,
-          2701,
-          3628
-        ],
-        "source_size": [
-          4032,
-          6048
-        ],
-        "generated": false,
-        "adjustments": [
-          "主体裁切",
-          "轻微自动对比",
-          "保守锐化",
-          "WebP 转码"
-        ]
-      },
-      "summary": "“备盗贼尉”“长安丞”等封泥延续了方寸见制度的线索。",
-      "interpretation": "“备盗贼尉”指向治安与盗贼防备，“长安丞”则与都城行政官署相关。封泥是文书制度留下的低成本材料：木牍或简册的封缄被开启后，正文往往散失，泥团上的官名却可能保存下来。它们延续前一组官印所呈现的制度线索，但拍摄序列位于秦简之后，因而单独保留，既维持参观顺序，也避免把不同来源的材料拼接成一件档案。",
+      "main_sequence": 44,
+      "main_image": "assets/photos/web/DSC_2066.jpg",
+      "full_image": "assets/photos/web/DSC_2066.jpg",
+      "processing": {},
+      "summary": "汉代官署名称与文书封缄方式",
+      "interpretation": "这两件封泥的展签分别题为“备盗贼尉”和“长安狱丞”。封泥是印章压在泥上的印痕，用于检验文书或容器的封缄是否被启开。陈列借助束简、绳索和封泥的位置表现封缄方式；相关封缄构造与封泥本身应分别理解。",
       "tags": [
         "封泥",
-        "长安",
-        "官署",
-        "治安"
+        "长安狱丞",
+        "备盗贼尉"
       ],
       "featured": false,
       "special_status": null,
       "sources": [],
-      "evidence_note": "现场照片与展签支持题名和基本年代；更细的尺寸、级别与考古语境需以馆方目录或正式发掘报告为准。",
-      "label_text": "03“備盗贼尉”封泥\nThe Clay Sealingof\nthe Preventire Lieutenost agaisst Bandits\n1955年陕西省文管会移交\n\n04“長安丞”封泥\nThe Clay Sealing of\nthe Director of Prisous in Changan",
+      "evidence_note": "名称据DSC_2067、DSC_2070展签。",
+      "label_text": "“备盗贼尉”封泥；“长安狱丞”封泥",
       "gallery": [
+        {
+          "sequence": 44,
+          "filename": "DSC_2066.JPG",
+          "role": "front",
+          "role_label": "整体",
+          "thumb": "assets/photos/thumb/DSC_2066.jpg",
+          "web": "assets/photos/web/DSC_2066.jpg",
+          "original_hint": "https://github.com/a15888007552-source/ad-fontes-archive/releases/download/originals/DSC_2066.JPG",
+          "sha256": "d057c47ccc1ac86e2b26cc495357a20307cf46cd9a2ea470df9fd0a63f006340"
+        },
         {
           "sequence": 45,
           "filename": "DSC_2067.JPG",
@@ -766,7 +744,8 @@
           "original_hint": "https://github.com/a15888007552-source/ad-fontes-archive/releases/download/originals/DSC_2070.JPG",
           "sha256": "a59b326c26cb8c248538c495d17aaa475b393b07ba9d2e364d123cc60374aeb5"
         }
-      ]
+      ],
+      "card_image": "assets/photos/thumb/DSC_2066.jpg"
     },
     {
       "id": "clay-warriors",
@@ -3655,9 +3634,9 @@
       "findspot": "东郊三店村汉墓；渭南澄城坡头村",
       "dimensions": null,
       "sequence_start": 264,
-      "sequence_end": 276,
-      "photo_count": 13,
-      "object_photo_count": 8,
+      "sequence_end": 275,
+      "photo_count": 12,
+      "object_photo_count": 7,
       "label_photo_count": 5,
       "main_sequence": 267,
       "main_image": "assets/processed/crop/wuzhu-minting.webp",
@@ -3817,16 +3796,6 @@
           "web": "assets/photos/web/DSC_2349.jpg",
           "original_hint": "https://github.com/a15888007552-source/ad-fontes-archive/releases/download/originals/DSC_2349.JPG",
           "sha256": "4e05300da0d55e4cf8bb324dc77a29a7e4369ab5a53309a9df21f305381baf6d"
-        },
-        {
-          "sequence": 276,
-          "filename": "DSC_2351.JPG",
-          "role": "detail",
-          "role_label": "局部",
-          "thumb": "assets/photos/thumb/DSC_2351.jpg",
-          "web": "assets/photos/web/DSC_2351.jpg",
-          "original_hint": "https://github.com/a15888007552-source/ad-fontes-archive/releases/download/originals/DSC_2351.JPG",
-          "sha256": "6a7d80229a78ccdcf06b10f4cdf05347d0763060c08463a1fc291dd2228424f3"
         }
       ]
     },
@@ -3839,36 +3808,15 @@
       "material": "铜、金、陶",
       "findspot": "阿房；新安砖厂；东庄头；长安三桥",
       "dimensions": null,
-      "sequence_start": 277,
+      "sequence_start": 276,
       "sequence_end": 283,
-      "photo_count": 7,
-      "object_photo_count": 4,
+      "photo_count": 8,
+      "object_photo_count": 5,
       "label_photo_count": 3,
-      "main_sequence": 282,
-      "main_image": "assets/processed/crop/wang-mang-currency.webp",
-      "full_image": "assets/processed/full/wang-mang-currency.webp",
-      "processing": {
-        "method": "人工主体裁切",
-        "source_kind": "F 盘原片",
-        "source_filename": "DSC_2357.JPG",
-        "crop_box": [
-          907,
-          483,
-          5140,
-          3628
-        ],
-        "source_size": [
-          6048,
-          4032
-        ],
-        "generated": false,
-        "adjustments": [
-          "主体裁切",
-          "轻微自动对比",
-          "保守锐化",
-          "WebP 转码"
-        ]
-      },
+      "main_sequence": 276,
+      "main_image": "assets/photos/web/DSC_2351.jpg",
+      "full_image": "assets/photos/web/DSC_2351.jpg",
+      "processing": {},
       "summary": "错金“一刀平五千”、契刀、货泉等把王莽时期频繁改币的复杂性集中呈现。",
       "interpretation": "王莽在位前后多次改革币制，重新启用刀、布等古代形制，并设置复杂面值。“一刀平五千”由环首与刀身组合，环部错金“一刀”，刀身铸“平五千”，工艺华丽而面值极高；契刀、货布、幺泉等又属于不同改革阶段。频繁更换币种增加折算与执行成本，精美器形并不能证明制度运行成功。照片可比较形制和文字，经济效果需依史籍、出土组合与数量研究。",
       "tags": [
@@ -3883,6 +3831,16 @@
       "evidence_note": "现场照片与展签支持题名和基本年代；更细的尺寸、级别与考古语境需以馆方目录或正式发掘报告为准。",
       "label_text": "01错金“一刀平五千”铜钱\n02错金“一刀平五千”铜钱\n03错金“一刀平五千”铜钱\nRe(e-mosey sth gold islaid isscriprlons of\nMidoo Ping Wuqian\n新朝\n1959年陕西西安阿房官址出土\n1964年陕西清南龙开公社出土\n06错金“一刀平五千”铜钱\n07“契刀五百”铜钱\n08“么布二百”铜钱\nKnife-monry snirh ixacriprlons of =Qidao ube\nCoin scith Inscriptiosr e/ *Vao)\n所期\n1965年陕西西安新安砖厂出土\n1971年陕西成阳礼泉驶马公社东庄头出土\n1956年西北文化部文物处移交\n\n03错金“一刀平五千”铜钱\n04错金“一刀平五千”铜钱\n05错金“一刀平五千”铜钱\nidao Ping Wugi\n新朝\n1964年陕西西安汉域六村公社出土\n所朝\n1959年陕西西安网房官址出士\n1981年陈尊祥捐\n09“幼泉二十”铜钱\n10“么泉一十”铜钱\n08“么布二百”铜钱\nCols anith Insscriptiosr of -Voo\nOols srith isseripnlosr of\n1950年西省文警会移交\n折期\n1956年西北文化部文物处移交\n\n刀平五千”铜钱\ncithpold inlald tnscriptionsof\n/uqian\"\n西安汉城六村堡公社出土\n十”铜钱\n11“始建国”陶瓦残片\n12“五作”灰陶块\nscriptions of-Yaoquan Yishi\"\nTilefragment\ntcith inscriptions of \"Shf Jfanguo\"\nGreypotteryfragment\n省文管会移交\n新朝\n1955年西安市文管会移交\n陕西西安长安三桥好汉庙出士，\n1954年中国科学院赠",
       "gallery": [
+        {
+          "sequence": 276,
+          "filename": "DSC_2351.JPG",
+          "role": "front",
+          "role_label": "整体",
+          "thumb": "assets/photos/thumb/DSC_2351.jpg",
+          "web": "assets/photos/web/DSC_2351.jpg",
+          "original_hint": "https://github.com/a15888007552-source/ad-fontes-archive/releases/download/originals/DSC_2351.JPG",
+          "sha256": "6a7d80229a78ccdcf06b10f4cdf05347d0763060c08463a1fc291dd2228424f3"
+        },
         {
           "sequence": 277,
           "filename": "DSC_2352.JPG",
@@ -3953,7 +3911,8 @@
           "original_hint": "https://github.com/a15888007552-source/ad-fontes-archive/releases/download/originals/DSC_2359.JPG",
           "sha256": "922b42a6e23e84d27065a06e25d124d3cc82ca6f11aa023be15c38ce8ab01088"
         }
-      ]
+      ],
+      "card_image": "assets/photos/thumb/DSC_2351.jpg"
     },
     {
       "id": "han-gold",

@@ -62,7 +62,7 @@
 | qinhan | 11 | 石铠甲与石胄 | stone-armor | 原记录·已核 |  |
 | qinhan | 12 | 彩绘骑兵俑（杨家湾出土） | qinhan-highlight-12 | 用户补图 | Generic target is not uniquely identified among multiple cavalry figures plus unrelated seal.；No safe object-label pair identifies the intended child. |
 | qinhan | 13 | “重卅斤”铜权 | qinhan-highlight-13 | 用户补图 | Exact current record, label and actual object photo are not bound. |
-| qinhan | 14 | “长安丞”“备盗贼尉”封泥 | qinhan-highlight-14 | 用户补图 | Visible second label appears to contain 獄 (長安獄丞), while target says 长安丞.；Do not rename the combined theme or promote two children before resolving the inscription. |
+| qinhan | 14 | “长安狱丞”“备盗贼尉”封泥 | qinhan-highlight-14 | 用户补图 | Visible second label appears to contain 獄 (長安獄丞), while target says 长安丞.；Do not rename the combined theme or promote two children before resolving the inscription. |
 | qinhan | 15 | “一刀平五千”钱 | qinhan-highlight-15 | 用户补图 | Multiple target specimens and other currencies prevent unique child binding.；Use 王莽居摄时期/西汉末 context rather than automatically flattening to 新朝.；Do not use National Museum or Henan photos. |
 | xian-museum | 1 | 三彩腾空马 | xian-057-5058 | 原记录·已核 |  |
 | xian-museum | 2 | 史君墓石椁 | xian-059-5073 | 原记录·用户批准 | label_photo_missing: data.js 指向 focus-5077.webp，但文件不存在。；identity_scope: 未查看标签，不能完成石椁与具体展示物绑定。 |

@@ -2797,7 +2797,7 @@
     {
       "editorial_id": "qinhan-highlight-14",
       "museum_id": "qinhan",
-      "canonical_title": "“长安丞”“备盗贼尉”封泥",
+      "canonical_title": "“长安狱丞”“备盗贼尉”封泥",
       "record_id": "qinhan-highlight-14",
       "status": "editorial_accepted",
       "content_review": "pending",
@@ -2848,9 +2848,8 @@
         "Do not rename the combined theme or promote two children before resolving the inscription."
       ],
       "aliases": [
-        "“备盗贼尉”封泥",
-        "“長安丞”封泥",
-        "“長安獄丞”封泥"
+        "长安狱丞封泥",
+        "备盗贼尉封泥"
       ],
       "curatorial_rank": 14,
       "current_display_status": "not_verified",

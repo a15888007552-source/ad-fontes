@@ -30,13 +30,15 @@
     function nativeRecord(row, records) {
       const relatedId = row.supplement_image?.related_record_id || beilinRelated[row.record_id];
       const related = records.find(item=>item.id===relatedId);
-      const base = related ? structuredClone(related) : {};
+      // Qinhan's older records often describe a mixed display case. A named
+      // object may reuse selected photos, never that case's identity or gallery.
+      const base = related && museumId !== 'qinhan' ? structuredClone(related) : {};
       const asset = row.supplement_image;
       const url = absoluteMedia(asset.path);
       const photo = {sequence:1,number:1,filename:asset.original_filename || asset.path.split('/').pop(),role: museumId==='shaanxi-archaeology'?'整体':'front',role_label:asset.caption,caption:asset.caption,isLabel:false,thumb:url,web:url,preview:url,src:url,focus:url,original:url,width:asset.width || '',height:asset.height || '',display_width:asset.width || '',display_height:asset.height || '',sourceSize:[]};
       const item = {...base,id:row.record_id,name:row.canonical_title,title:row.canonical_title,
         period:row.period,period_label:row.period,era:row.period,summary:row.card_tagline,
-        category:base.category || (museumId==='beilin'?'古董/文物':'其他器物'),
+        category:asset.category || base.category || (museumId==='beilin'?'古董/文物':'其他器物'),
         categoryLabel:base.categoryLabel || '文物',tags:base.tags || [],aliases:row.aliases || [],
         _highlightApplied:false,_editorialOnly:false,_nativeHighlight:true,
         sequence:base.sequence ?? row.curatorial_rank,index:base.index ?? row.curatorial_rank,
@@ -49,7 +51,17 @@
         if (!related) {item.image_source='supplement';item.image_source_label=asset.caption;}
       }
       if (museumId==='baoji') {item.featured=base.featured || photo;item.hasObjectPhoto=true;delete item.treasureId;}
-      if (museumId==='qinhan') {item.main_image=base.main_image || url;item.full_image=base.full_image || url;item.gallery=base.gallery?.length?base.gallery:[photo];item.processing=base.processing || {};item.sources=base.sources || [];item.photo_count=item.gallery.length;item.object_photo_count=item.gallery.filter(p=>p.role!=='label').length;item.label_photo_count=item.gallery.length-item.object_photo_count;}
+      if (museumId==='qinhan') {
+        const sourcePhotos = new Map(records.filter(r=>!r._nativeHighlight).flatMap(r=>r.gallery || []).map(p=>[p.filename,p]));
+        const selected = (asset.gallery_filenames || []).map(name=>sourcePhotos.get(name)).filter(Boolean);
+        item.gallery = selected.length ? selected.map(p=>({...p,role:p.filename===asset.main_filename?'front':'detail',role_label:asset.photo_labels?.[p.filename] || (p.filename===asset.main_filename?'整体':'局部')})) : [photo];
+        const main = item.gallery.find(p=>p.filename===asset.main_filename) || item.gallery[0];
+        item.main_image=main.web;item.full_image=main.web;item.card_image=main.thumb;
+        item.main_sequence=main.sequence;item.photos=item.gallery;item.processing={};item.sources=[];
+        item.photo_count=item.gallery.length;item.object_photo_count=item.gallery.length;item.label_photo_count=0;
+        item.label_text=asset.label_text || '';item.material=asset.material || '';
+        item.tags=row.aliases || [];
+      }
       if (museumId==='xian-museum') item.cover=base.cover || url;
       if (museumId==='shaanxi-history') item.localMedia=url;
       if (museumId==='shangqiu-museum') {item.site=base.site || '';item.paragraphs=base.paragraphs || [];item._supplementPhotos=related ? null : [photo];}

@@ -1945,10 +1945,22 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "editorial_only",
     "supplement_image": {
-      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/qin-weights.webp",
-      "caption": "相关展柜配图",
+      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2258.jpg",
+      "caption": "“高奴禾石”铜权",
       "provenance": "existing_site_photo_user_selected",
-      "related_record_id": "qin-weights"
+      "related_record_id": "qin-weights",
+      "main_filename": "DSC_2258.JPG",
+      "gallery_filenames": [
+        "DSC_2258.JPG",
+        "DSC_2260.JPG",
+        "DSC_2261.JPG"
+      ],
+      "category": "制度",
+      "material": "铜",
+      "label_text": "“高奴禾石”铜权",
+      "binding_evidence": [
+        "DSC_2262.JPG：对应展签，已与器物照片对照"
+      ]
     },
     "detail_supplement": null,
     "collection_owner": null,
@@ -1986,10 +1998,23 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "editorial_only",
     "supplement_image": {
-      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/brick-and-bells.webp",
-      "caption": "相关展柜配图",
+      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2620.jpg",
+      "caption": "鎏金银竹节铜熏炉",
       "provenance": "existing_site_photo_user_selected",
-      "related_record_id": "brick-and-bells"
+      "related_record_id": "brick-and-bells",
+      "main_filename": "DSC_2620.JPG",
+      "gallery_filenames": [
+        "DSC_2620.JPG",
+        "DSC_2621.JPG"
+      ],
+      "category": "城市生活",
+      "material": "铜、金、银",
+      "label_text": "鎏金银竹节熏炉",
+      "binding_evidence": [
+        "DSC_2620.JPG：熏炉整体",
+        "DSC_2621.JPG：炉盖与炉体铭文局部",
+        "DSC_2622.JPG：鎏金银竹节熏炉展签"
+      ]
     },
     "detail_supplement": null,
     "collection_owner": null,
@@ -2151,10 +2176,22 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "editorial_only",
     "supplement_image": {
-      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/steppe-gold.webp",
-      "caption": "相关展柜配图",
+      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2508.jpg",
+      "caption": "神兽金饰",
       "provenance": "existing_site_photo_user_selected",
-      "related_record_id": "steppe-gold"
+      "related_record_id": "steppe-gold",
+      "main_filename": "DSC_2508.JPG",
+      "gallery_filenames": [
+        "DSC_2508.JPG",
+        "DSC_2509.JPG",
+        "DSC_2510.JPG"
+      ],
+      "category": "边疆交流",
+      "material": "金",
+      "label_text": "神兽金饰",
+      "binding_evidence": [
+        "DSC_2511.JPG：对应展签，已与器物照片对照"
+      ]
     },
     "detail_supplement": null,
     "collection_owner": null,
@@ -2188,10 +2225,22 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "editorial_only",
     "supplement_image": {
-      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/animals.webp",
-      "caption": "相关展柜配图",
+      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2469.jpg",
+      "caption": "漆猪",
       "provenance": "existing_site_photo_user_selected",
-      "related_record_id": "animals"
+      "related_record_id": "animals",
+      "main_filename": "DSC_2469.JPG",
+      "gallery_filenames": [
+        "DSC_2469.JPG",
+        "DSC_2470.JPG",
+        "DSC_2471.JPG"
+      ],
+      "category": "城市生活",
+      "material": "漆器",
+      "label_text": "漆猪",
+      "binding_evidence": [
+        "DSC_2472.JPG：对应展签，已与器物照片对照"
+      ]
     },
     "detail_supplement": null,
     "collection_owner": null,
@@ -2283,10 +2332,21 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "editorial_only",
     "supplement_image": {
-      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/clay-warriors.webp",
-      "caption": "相关展柜配图",
+      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2071.jpg",
+      "caption": "跪射俑",
       "provenance": "existing_site_photo_user_selected",
-      "related_record_id": "clay-warriors"
+      "related_record_id": "clay-warriors",
+      "main_filename": "DSC_2071.JPG",
+      "gallery_filenames": [
+        "DSC_2071.JPG",
+        "DSC_2072.JPG"
+      ],
+      "category": "军备",
+      "material": "陶",
+      "label_text": "跪射俑",
+      "binding_evidence": [
+        "DSC_2075.JPG：对应展签，已与器物照片对照"
+      ]
     },
     "detail_supplement": null,
     "collection_owner": null,
@@ -2347,10 +2407,22 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "editorial_only",
     "supplement_image": {
-      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/cavalry-and-frontier-seal.webp",
-      "caption": "相关展柜配图",
+      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2148.jpg",
+      "caption": "彩绘陶骑兵俑",
       "provenance": "existing_site_photo_user_selected",
-      "related_record_id": "cavalry-and-frontier-seal"
+      "related_record_id": "cavalry-and-frontier-seal",
+      "main_filename": "DSC_2148.JPG",
+      "gallery_filenames": [
+        "DSC_2148.JPG",
+        "DSC_2150.JPG",
+        "DSC_2152.JPG"
+      ],
+      "category": "军备",
+      "material": "陶",
+      "label_text": "彩绘陶骑兵俑",
+      "binding_evidence": [
+        "DSC_2153.JPG：对应展签，已与器物照片对照"
+      ]
     },
     "detail_supplement": null,
     "collection_owner": null,
@@ -2424,14 +2496,13 @@ window.MUSEUM_HIGHLIGHTS = [
   {
     "museum_id": "qinhan",
     "record_id": "qinhan-highlight-14",
-    "canonical_title": "“长安丞”“备盗贼尉”封泥",
+    "canonical_title": "“长安狱丞”“备盗贼尉”封泥",
     "period": "汉",
-    "card_tagline": "官印离开后，字留在封缄用的泥上",
-    "intro": "封泥不是金属印章本身，而是盖印后留下的泥质封缄痕迹。“长安丞”“备盗贼尉”等印文，将官署名称保存在很小的泥块上。它们适合与铜印并看：印章是反复使用的工具，封泥则留下某次封缄行为的结果。阅读文字之外，还应保留泥块的完整外形，背面的绳槽等痕迹可能同样与使用方式有关。",
+    "card_tagline": "官署名称，留在文书封缄的泥面上",
+    "intro": "这两件封泥的展签分别题为“备盗贼尉”和“长安狱丞”，名称涉及汉代治安与监狱事务。封泥是印章压在泥上的印痕，用于检验文书或容器的封缄是否被启开，不能与印章本身混同。陈列借助束简、绳索和封泥的位置表现封缄方式；这些配合展示的结构不等于整套原始文书保存至今。读印文时，应保留“狱”字所限定的职掌，不将“长安狱丞”简写成另一官名“长安丞”。",
     "aliases": [
-      "“备盗贼尉”封泥",
-      "“長安丞”封泥",
-      "“長安獄丞”封泥"
+      "长安狱丞封泥",
+      "备盗贼尉封泥"
     ],
     "sources": [],
     "curatorial_rank": 14,
@@ -2443,10 +2514,26 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "editorial_only",
     "supplement_image": {
-      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/han-clay-seals.webp",
-      "caption": "相关展柜配图",
+      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2066.jpg",
+      "caption": "“长安狱丞”“备盗贼尉”封泥",
       "provenance": "existing_site_photo_user_selected",
-      "related_record_id": "han-clay-seals"
+      "related_record_id": "han-clay-seals",
+      "main_filename": "DSC_2066.JPG",
+      "gallery_filenames": [
+        "DSC_2066.JPG",
+        "DSC_2068.JPG"
+      ],
+      "category": "制度",
+      "material": "泥",
+      "label_text": "“长安狱丞”“备盗贼尉”封泥",
+      "binding_evidence": [
+        "DSC_2067.JPG：对应展签，已与器物照片对照",
+        "DSC_2070.JPG：对应展签，已与器物照片对照"
+      ],
+      "photo_labels": {
+        "DSC_2066.JPG": "备盗贼尉封泥及封缄陈列",
+        "DSC_2068.JPG": "长安狱丞封泥及封缄陈列"
+      }
     },
     "detail_supplement": null,
     "collection_owner": null,
@@ -2484,10 +2571,24 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "editorial_only",
     "supplement_image": {
-      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/wang-mang-currency.webp",
-      "caption": "相关展柜配图",
+      "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2351.jpg",
+      "caption": "错金“一刀平五千”铜钱",
       "provenance": "existing_site_photo_user_selected",
-      "related_record_id": "wang-mang-currency"
+      "related_record_id": "wang-mang-currency",
+      "main_filename": "DSC_2351.JPG",
+      "gallery_filenames": [
+        "DSC_2351.JPG"
+      ],
+      "category": "经济",
+      "material": "铜、金",
+      "label_text": "错金“一刀平五千”铜钱",
+      "binding_evidence": [
+        "DSC_2352.JPG：对应展签，已与器物照片对照",
+        "DSC_2354.JPG：对应展签，已与器物照片对照"
+      ],
+      "photo_labels": {
+        "DSC_2351.JPG": "一刀平五千及契刀五百钱陈列"
+      }
     },
     "detail_supplement": null,
     "collection_owner": null,

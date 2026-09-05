@@ -605,7 +605,7 @@ img { display: block; max-width: 100%; }
 }
 
 #archive.archive-section .archive-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-rows: 500px;
   gap: 1rem;
 }
@@ -629,7 +629,7 @@ img { display: block; max-width: 100%; }
 }
 
 #archive.archive-section .card-image img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -656,6 +656,8 @@ img { display: block; max-width: 100%; }
 #archive.archive-section .card-copy h3 {
   font-size: var(--record-title);
   line-height: 1.25;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 #archive.archive-section .card-summary {

@@ -132,7 +132,7 @@ function cardTemplate(group, index) {
     <article class="object-card${group.featured ? " is-featured" : ""}" style="--card-order:${index % 12}">
       <button type="button" data-open-id="${escapeHTML(group.id)}" aria-label="打开${escapeHTML(group.title)}详情">
         <span class="card-image">
-          <img src="${escapeHTML(qinhanMediaUrl(group.main_image))}" alt="${escapeHTML(group.title)}的主体裁切图" loading="lazy" decoding="async" />
+          <img src="${escapeHTML(qinhanMediaUrl(group.card_image || group.main_image))}" alt="${escapeHTML(group.title)}" loading="lazy" decoding="async" />
           ${group.processing.method ? `<span class="image-process">${escapeHTML(group.processing.method)} · 非生成式</span>` : ''}
         </span>
         <span class="card-copy">
@@ -161,7 +161,24 @@ function renderArchive() {
   elements.loadMore.textContent = `继续加载（还剩 ${groups.length - shown.length} 组）`;
   bindOpeners(elements.grid);
   mountCards(elements.grid);
+  fitCardTitles();
 }
+
+function fitCardTitles() {
+  elements.grid.querySelectorAll('.card-copy h3').forEach(title => fitTitle(title, 14));
+}
+function fitTitle(title, minimumSize) {
+    title.style.fontSize = '';
+    title.style.whiteSpace = 'nowrap';
+    const available = title.clientWidth;
+    if (!available || title.scrollWidth <= available) return;
+    const fitted = Math.floor(parseFloat(getComputedStyle(title).fontSize) * available / title.scrollWidth * 10) / 10;
+    title.style.fontSize = `${Math.max(minimumSize, fitted)}px`;
+    if (title.scrollWidth > available + 1) title.style.whiteSpace = 'normal';
+}
+new ResizeObserver(fitCardTitles).observe(elements.grid);
+document.fonts.ready.then(fitCardTitles);
+new ResizeObserver(() => fitTitle(elements.dialogTitle, 20)).observe(elements.dialogTitle.parentElement);
 
 function bindOpeners(root = document) {
   root.querySelectorAll("[data-open-id]").forEach((button) => {
@@ -232,6 +249,7 @@ function openGroup(id, { syncUrl = false } = {}) {
     requestAnimationFrame(() => elements.dialog.classList.add("is-ready"));
     window.setTimeout(() => elements.dialog.classList.remove("is-opening"), 650);
   }
+  requestAnimationFrame(() => fitTitle(elements.dialogTitle, 20));
   if (syncUrl) syncItemToUrl(group.id);
 }
 

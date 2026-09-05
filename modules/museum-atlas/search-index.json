@@ -3042,7 +3042,7 @@
       "museum_id": "qinhan",
       "museum_name": "陕西历史博物馆·秦汉馆",
       "id": "han-clay-seals",
-      "title": "长安丞与备盗贼尉封泥",
+      "title": "长安狱丞与备盗贼尉封泥",
       "period": "汉",
       "type": "制度",
       "material": "",
@@ -3055,7 +3055,7 @@
         "汉代"
       ],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "modules/qinhan/assets/processed/crop/han-clay-seals.webp"
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2066.jpg"
     },
     {
       "museum_id": "qinhan",
@@ -3360,7 +3360,7 @@
         "币制"
       ],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "modules/qinhan/assets/processed/crop/wang-mang-currency.webp"
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2351.jpg"
     },
     {
       "museum_id": "qinhan",
@@ -17155,7 +17155,7 @@
       "origin": "",
       "keywords": [],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/qin-weights.webp",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2258.jpg",
       "record_kind": "editorial_only",
       "aliases": [
         "“高奴禾石”铜权",
@@ -17182,7 +17182,7 @@
       "origin": "",
       "keywords": [],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/brick-and-bells.webp",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2620.jpg",
       "record_kind": "editorial_only",
       "aliases": [
         "鎏金银竹节熏炉",
@@ -17263,7 +17263,7 @@
       "origin": "",
       "keywords": [],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/steppe-gold.webp",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2508.jpg",
       "record_kind": "editorial_only",
       "aliases": [
         "神兽金饰",
@@ -17290,7 +17290,7 @@
       "origin": "",
       "keywords": [],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/animals.webp",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2469.jpg",
       "record_kind": "editorial_only",
       "aliases": [
         "漆猪",
@@ -17344,7 +17344,7 @@
       "origin": "",
       "keywords": [],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/clay-warriors.webp",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2071.jpg",
       "record_kind": "editorial_only",
       "aliases": [
         "跪射俑",
@@ -17371,7 +17371,7 @@
       "origin": "",
       "keywords": [],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/cavalry-and-frontier-seal.webp",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2148.jpg",
       "record_kind": "editorial_only",
       "aliases": [
         "彩绘陶骑兵俑",
@@ -17417,21 +17417,20 @@
       "museum_id": "qinhan",
       "museum_name": "陕西历史博物馆·秦汉馆",
       "id": "qinhan-highlight-14",
-      "title": "“长安丞”“备盗贼尉”封泥",
+      "title": "“长安狱丞”“备盗贼尉”封泥",
       "period": "汉",
       "type": "文物介绍",
       "material": "",
       "origin": "",
       "keywords": [],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/han-clay-seals.webp",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2066.jpg",
       "record_kind": "editorial_only",
       "aliases": [
-        "“备盗贼尉”封泥",
-        "“長安丞”封泥",
-        "“長安獄丞”封泥"
+        "长安狱丞封泥",
+        "备盗贼尉封泥"
       ],
-      "card_tagline": "官印离开后，字留在封缄用的泥上",
+      "card_tagline": "官署名称，留在文书封缄的泥面上",
       "is_highlight": true,
       "curatorial_rank": 14,
       "content_review": "editorial_accepted",
@@ -17452,7 +17451,7 @@
       "origin": "",
       "keywords": [],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/wang-mang-currency.webp",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/thumb/DSC_2351.jpg",
       "record_kind": "editorial_only",
       "aliases": [
         "错金“一刀平五千”铜钱",
