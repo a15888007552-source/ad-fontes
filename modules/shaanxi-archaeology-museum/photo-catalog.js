@@ -310,7 +310,6 @@
         </div>
         <div class="artifact-catalog-grid"></div>
         <nav class="artifact-catalog-pager" data-artifact-pager aria-label="文物目录分页"></nav>`;
-      highlights.mount(root.querySelector(".artifact-catalog-grid"), applyFilter);
       applyFilter();
       const requestedItem = getItemFromLocation();
       if (requestedItem) openArtifact(artifacts.find((item) => item.id === requestedItem), { syncUrl: false });

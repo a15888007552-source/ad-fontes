@@ -106,38 +106,13 @@
       return records;
     }
     function select(records, {query = '', filtered = false, manualSort = false} = {}) {
-      if (lastQuery && !query.trim()) mode = 'recommended';
-      lastQuery = query.trim();
       let output = [...records];
       if (!filtered) output.push(...textRecords.filter(item => !output.some(other=>other.id===item.id) && (!query.trim() || norm([item.title,item.period,item.summary,...item.aliases].join(' ')).includes(norm(query)))));
-      if (mode === 'highlights') output = output.filter(item => get(item));
       if (query.trim()) output.sort((a, b) => relevance(b, query) - relevance(a, query) || rank(get(a)) - rank(get(b)));
       else if (!manualSort) output.sort((a, b) => rank(get(a)) - rank(get(b)));
-      if (!query.trim() && !filtered && mode === 'recommended' && rows.length) output = output.filter(item => get(item)).sort((a,b) => rank(get(a)) - rank(get(b))).slice(0, 6);
-      if (controls) controls.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.highlightMode === mode)));
       return output;
     }
-    function mount(anchor, render) {
-      if (!anchor || controls || !rows.length) return;
-      controls = document.createElement('div'); controls.className = 'museum-highlight-controls'; controls.setAttribute('aria-label', '文物浏览范围');
-      for (const [value, label] of [['recommended', '重点文物'], ['highlights', `查看全部重点（${rows.length}）`], ['all', '全部文物']]) {
-        const button = document.createElement('button'); button.type = 'button'; button.dataset.highlightMode = value;
-        button.textContent = label; button.setAttribute('aria-pressed', String(mode === value));
-        button.addEventListener('click', () => { mode = value; render(); }); controls.append(button);
-      }
-      const toolbarSelectors = {
-        beilin:'#categoryTabs', baoji:'.archive-toolbar .filter-list',
-        qinhan:'.archive-tools .category-filters', 'xian-museum':'.filter-shell .primary-filters',
-        'shaanxi-history':'.filter-shell .primary-filters', 'shangqiu-museum':'.catalog-tools .filter-row',
-        'shaanxi-archaeology':'.artifact-catalog-toolbar'
-      };
-      const toolbar = document.querySelector(toolbarSelectors[museumId]);
-      if (toolbar) {
-        const trailing = toolbar.querySelector('#clearFilters,[data-artifact-count]');
-        if (trailing) trailing.before(controls); else toolbar.append(controls);
-      }
-    }
-    return {apply, select, mount, get, card, reset: () => { mode = 'recommended'; lastQuery = ''; }, aliases: item => (item.aliases || []).join(' '), badge: item => get(item) ? '<span class="museum-highlight-badge">重点文物</span>' : ''};
+    return {apply, select, get, card, total: count => count + textRecords.length, aliases: item => (item.aliases || []).join(' '), badge: item => get(item) ? '<span class="museum-highlight-badge">重点文物</span>' : ''};
   }
   window.MuseumHighlights = {create, eligible, relevance, norm};
 })();

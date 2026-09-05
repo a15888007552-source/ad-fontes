@@ -361,9 +361,7 @@ function renderCategoryTabs() {
     fragment.append(button);
   });
 
-  const highlightControls = elements.categoryTabs.querySelector(".museum-highlight-controls");
   elements.categoryTabs.replaceChildren(fragment);
-  if (highlightControls) elements.categoryTabs.append(highlightControls);
 }
 
 function applyFilters() {
@@ -383,7 +381,6 @@ function applyFilters() {
     groups = [...groups].sort((a, b) => a.sequence_start - b.sequence_start);
   }
 
-  highlights?.mount(elements.catalogGrid, applyFilters);
   state.filtered = highlights ? highlights.select(groups, {query: state.query, filtered: state.category !== "全部" || state.musicOnly, manualSort: state.sort !== "sequence"}) : groups;
   renderCards();
 }
@@ -523,12 +520,11 @@ function renderCards() {
     registerReveal(card, (index % 8) * 24);
   });
   elements.catalogGrid.setAttribute("aria-busy", "false");
-  elements.resultCount.textContent = `显示 ${state.filtered.length} / ${state.groups.length} 件`;
+  elements.resultCount.textContent = `显示 ${state.filtered.length} / ${highlights ? highlights.total(state.groups.length) : state.groups.length} 件`;
   elements.emptyState.hidden = state.filtered.length !== 0;
 }
 
 function clearFilters() {
-  highlights?.reset();
   state.query = "";
   state.category = "全部";
   state.sort = "sequence";

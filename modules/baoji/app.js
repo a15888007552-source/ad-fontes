@@ -827,7 +827,6 @@
   }
 
   function renderArchive() {
-    highlights.mount(document.querySelector("#archive-grid"), () => { state.visible = 36; renderArchive(); });
     const target = $('#archive-grid');
     const more = $('#archive-more');
     if (!target) return;

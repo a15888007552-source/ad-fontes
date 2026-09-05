@@ -116,7 +116,6 @@
   }
 
   function renderCatalog() {
-    highlights.mount(grid, renderCatalog);
     const items = highlights.select(catalog.filter(matches), {query: state.query, filtered: state.category !== "全部"});
     grid.replaceChildren(...items.map(card));
     visibleCount.textContent = String(items.length).padStart(2, "0");
@@ -246,7 +245,6 @@
 
   searchInput.addEventListener("input", () => { state.query = searchInput.value; renderCatalog(); });
   resetFilter.addEventListener("click", () => {
-    highlights.reset();
     state.category = "全部";
     state.query = "";
     searchInput.value = "";

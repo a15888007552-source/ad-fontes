@@ -322,7 +322,6 @@
   }
 
   function render() {
-    highlights.mount(grid, render);
     const output = highlights.select(filteredItems(), {query: searchInput.value, filtered: activeFilter !== "all" || activeCategory !== "all", manualSort: ["title", "chronology"].includes(sortSelect.value)});
     grid.innerHTML = output.map(cardHtml).join("");
     empty.hidden = output.length !== 0;
@@ -546,7 +545,6 @@
   sortSelect.addEventListener("change", render);
   window.addEventListener("resize", scheduleTitleFit, { passive: true });
   document.getElementById("clear-filters").addEventListener("click", () => {
-    highlights.reset();
       sortSelect.value = "sequence";
     activeFilter = "all";
     activeCategory = "all";

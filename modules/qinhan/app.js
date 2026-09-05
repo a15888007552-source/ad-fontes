@@ -152,7 +152,6 @@ function cardTemplate(group, index) {
 }
 
 function renderArchive() {
-  highlights.mount(elements.grid, () => { state.visible = 12; renderArchive(); });
   const groups = filteredGroups();
   const shown = groups.slice(0, state.visible);
   elements.grid.innerHTML = shown.map(cardTemplate).join("");
@@ -486,12 +485,7 @@ elements.search.addEventListener("input", () => {
   }, 120);
 });
 
-elements.featured.addEventListener("change", () => {
-  state.featuredOnly = elements.featured.checked;
-  state.visible = 12;
-  renderArchive();
-  pulseArchive();
-});
+
 
 elements.loadMore.addEventListener("click", () => {
   state.visible += 12;
