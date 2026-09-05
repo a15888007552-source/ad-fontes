@@ -1,0 +1,24 @@
+{
+  "syntaxFiles": 9,
+  "adopted": 105,
+  "verifiedBeforeUserOverride": 24,
+  "userApprovedWithoutFurtherVerification": 81,
+  "withExistingPhotos": 56,
+  "textOnly": 49,
+  "byMuseum": {
+    "beilin": 15,
+    "baoji": 15,
+    "shaanxi-history": 15,
+    "qinhan": 15,
+    "xian-museum": 15,
+    "shaanxi-archaeology": 15,
+    "shangqiu-museum": 15
+  },
+  "defaultSixEach": true,
+  "searchTextOnly": true,
+  "noResultsRemainEmpty": true,
+  "indexRecords": 1055,
+  "originalRecords": 1006,
+  "originalIdsAndImagePathsPreserved": true,
+  "duplicateJointKeys": 0
+}

@@ -21,6 +21,7 @@
   const root = findRoot();
   if (!root) return;
 
+  const highlights = window.MuseumHighlights.create("shaanxi-archaeology");
   let artifacts = [];
   let visible = [];
   let activeArtifact = null;
@@ -35,13 +36,14 @@
   document.body.append(dialog);
 
   const cardHtml = (artifact) => {
+    if (artifact._editorialOnly) return highlights.card(artifact);
     const photo = artifact.photos[0];
     const thumbUrl = mediaUrl(photo.thumb);
     const webUrl = mediaUrl(photo.web);
     const number = String(artifact.index).padStart(3, "0");
     const period = artifact.period || "年代以现场资料为限";
     return `
-      <article class="artifact-catalog-card" tabindex="0" role="button" data-artifact-id="${artifact.id}" aria-label="查看${escapeHtml(artifact.title)}详情">
+      <article class="artifact-catalog-card" data-reviewed-highlight="${Boolean(highlights.get(artifact))}" tabindex="0" role="button" data-artifact-id="${artifact.id}" aria-label="查看${escapeHtml(artifact.title)}详情">
         <figure class="artifact-card-media">
           <img src="${escapeHtml(thumbUrl)}"
                srcset="${escapeHtml(thumbUrl)} 480w, ${escapeHtml(webUrl)} 1600w"
@@ -52,7 +54,7 @@
         </figure>
         <div class="artifact-card-copy">
           <p class="artifact-card-kicker"><span>${number}</span><span>${escapeHtml(artifact.category)}</span></p>
-          <h3>${escapeHtml(artifact.title)}</h3>
+          ${highlights.badge(artifact)}<h3>${escapeHtml(artifact.title)}</h3>
           <p class="artifact-card-period">${escapeHtml(period)}</p>
           <p class="artifact-card-summary">${escapeHtml(artifact.summary)}</p>
           <div class="artifact-card-footer"><span>文物图 ${artifact.photos.length}</span><span>进入详情 →</span></div>
@@ -94,9 +96,10 @@
     const query = root.querySelector("[data-artifact-search]")?.value.trim().toLowerCase() || "";
     const category = root.querySelector("[data-artifact-category]")?.value || "";
     visible = artifacts.filter((artifact) => {
-      const haystack = [artifact.title, artifact.category, artifact.period, artifact.findspot, artifact.material, artifact.summary].join(" ").toLowerCase();
+      const haystack = [artifact.title, highlights.aliases(artifact), artifact.category, artifact.period, artifact.findspot, artifact.material, artifact.summary].join(" ").toLowerCase();
       return (!query || haystack.includes(query)) && (!category || artifact.category === category);
     });
+    visible = highlights.select(visible, {query, filtered: Boolean(category)});
     renderCards();
   }
 
@@ -213,9 +216,10 @@
           <h2>${escapeHtml(artifact.title)}</h2>
           ${detailArchiveMarkup(artifact)}
           <section><h3>文物说明</h3><p>${escapeHtml(artifact.description)}</p></section>
-          <section><h3>历史与研究价值</h3><p>${escapeHtml(artifact.significance)}</p></section>
+          ${artifact.highlightSources?.length ? `<section><h3>资料来源</h3>${artifact.highlightSources.map(source => `<p><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)} ↗</a></p>`).join("")}</section>` : ""}
+          ${!highlights.get(artifact) ? `<section><h3>历史与研究价值</h3><p>${escapeHtml(artifact.significance)}</p></section>
           <section><h3>观看提示</h3><p>${escapeHtml(artifact.viewing_notes)}</p></section>
-          <aside class="artifact-evidence"><strong>资料边界</strong><p>${escapeHtml(artifact.evidence_note)}</p></aside>
+          <aside class="artifact-evidence"><strong>资料边界</strong><p>${escapeHtml(artifact.evidence_note)}</p></aside>` : ''}
         </article>
       </div>`;
     dialog.showModal();
@@ -293,7 +297,7 @@
 
   (embeddedPayload ? Promise.resolve(embeddedPayload) : loadArtifactData())
     .then((payload) => {
-      artifacts = payload.artifacts || [];
+      artifacts = highlights.apply(payload.artifacts || []);
       visible = [...artifacts];
       const legacyToolbar = root.closest("#other")?.querySelector(".object-toolbar");
       if (legacyToolbar) legacyToolbar.hidden = true;
@@ -306,7 +310,8 @@
         </div>
         <div class="artifact-catalog-grid"></div>
         <nav class="artifact-catalog-pager" data-artifact-pager aria-label="文物目录分页"></nav>`;
-      renderCards();
+      highlights.mount(root.querySelector(".artifact-catalog-grid"), applyFilter);
+      applyFilter();
       const requestedItem = getItemFromLocation();
       if (requestedItem) openArtifact(artifacts.find((item) => item.id === requestedItem), { syncUrl: false });
     })

@@ -1,0 +1,1366 @@
+[
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-005",
+    "title": "颜氏家庙碑",
+    "period": "唐建中元年(780)",
+    "type": "碑",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "碑额篆书",
+      "碑额楷书",
+      "碑文楷书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1278.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-006",
+    "title": "颜勤礼碑",
+    "period": "唐大历十四年(779)",
+    "type": "碑",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "碑文楷书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1283.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-007",
+    "title": "多宝塔感应碑",
+    "period": "唐天宝十一年(752)",
+    "type": "碑",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "碑额隶书",
+      "碑文楷书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1289.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-010",
+    "title": "玄秘塔碑",
+    "period": "唐会昌元年（841）",
+    "type": "碑",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "碑额篆书",
+      "碑额楷书",
+      "碑文楷书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1304.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-013",
+    "title": "曹全碑",
+    "period": "东汉中平二年(185)",
+    "type": "碑",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "碑文隶书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1320.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-018",
+    "title": "集王书圣教序碑",
+    "period": "唐咸亨三年（672）",
+    "type": "碑",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "碑文行书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1340.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-019",
+    "title": "同州三藏圣教序碑",
+    "period": "唐龙朔三年(663)",
+    "type": "碑",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "碑额隶书",
+      "碑额楷书",
+      "碑文楷书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1347.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-020",
+    "title": "皇甫诞碑",
+    "period": "唐贞观年间(627-649)",
+    "type": "碑",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "碑额篆书",
+      "碑额楷书",
+      "碑文楷书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1355.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-074",
+    "title": "《开成石经·尔雅》拓本",
+    "period": "唐开成二年(837)刻",
+    "type": "碑文",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "拓本",
+      "楷书",
+      "汉代"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1593.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-132",
+    "title": "《石台孝经》拓本",
+    "period": "唐天宝四年(745)刻",
+    "type": "碑文",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "拓本",
+      "隶书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1803.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-168",
+    "title": "大秦景教流行中国碑",
+    "period": "唐建中二年（781）",
+    "type": "禁止出国（境）展览文物",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "螭首龟趺",
+      "汉文正文",
+      "叙利亚文题名",
+      "汉代"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1942.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-171",
+    "title": "《道因法师碑》拓本",
+    "period": "唐龙朔三年(663)",
+    "type": "碑文",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "拓本",
+      "碑文楷书"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1961.jpg"
+  },
+  {
+    "museum_id": "beilin",
+    "museum_name": "西安碑林博物馆",
+    "id": "artifact-173",
+    "title": "昭陵六骏",
+    "period": "唐贞观十年（636）",
+    "type": "禁止出国（境）展览文物",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "浮雕"
+    ],
+    "site_path": "modules/beilin/index.html",
+    "image_path": "assets/photos/web/DSC_1970.jpg"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "han-clay-seals",
+    "title": "长安丞与备盗贼尉封泥",
+    "period": "汉",
+    "type": "制度",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "封泥",
+      "长安",
+      "官署",
+      "治安",
+      "汉代"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/han-clay-seals.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "clay-warriors",
+    "title": "兵马俑：军阵中的人物差异",
+    "period": "秦",
+    "type": "军备",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "兵马俑",
+      "军阵",
+      "甲胄",
+      "陶俑"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/clay-warriors.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "du-tiger-tally",
+    "title": "杜虎符",
+    "period": "战国晚期",
+    "type": "制度",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "虎符",
+      "错金",
+      "兵权",
+      "铭文"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/du-tiger-tally.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "stone-armor",
+    "title": "石铠甲与石胄",
+    "period": "秦",
+    "type": "军备",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "石铠甲",
+      "秦陵",
+      "编缀",
+      "陪葬"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/stone-armor.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "cavalry-and-frontier-seal",
+    "title": "杨家湾骑兵俑与“汉归义羌长”印",
+    "period": "西汉—东汉",
+    "type": "边疆交流",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "骑兵俑",
+      "羌",
+      "官印",
+      "边疆",
+      "汉代"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/cavalry-and-frontier-seal.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "qin-weights",
+    "title": "“高奴禾石”铜权与秦半两",
+    "period": "秦",
+    "type": "经济",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "铜权",
+      "半两",
+      "度量衡",
+      "统一"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/qin-weights.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "wang-mang-currency",
+    "title": "王莽币制与“一刀平五千”",
+    "period": "新朝",
+    "type": "经济",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "王莽",
+      "一刀平五千",
+      "错金",
+      "币制"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/wang-mang-currency.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "animals",
+    "title": "动物形象：家畜、瑞兽与玩赏",
+    "period": "春秋—东汉",
+    "type": "思想信仰",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "动物",
+      "漆器",
+      "陶俑",
+      "象征",
+      "汉代"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/animals.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "steppe-gold",
+    "title": "北方金饰与多元交流",
+    "period": "战国",
+    "type": "边疆交流",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "金饰",
+      "鹿",
+      "琥珀",
+      "交流"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/steppe-gold.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "queen-seal",
+    "title": "皇后之玺",
+    "period": "西汉",
+    "type": "国宝专题",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "皇后之玺",
+      "皇后玉玺",
+      "螭虎钮",
+      "吕后",
+      "玺印制度",
+      "汉代"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/queen-seal.webp"
+  },
+  {
+    "museum_id": "qinhan",
+    "museum_name": "陕西历史博物馆·秦汉馆",
+    "id": "brick-and-bells",
+    "title": "陶俑、钟架与竹节熏炉",
+    "period": "汉",
+    "type": "城市生活",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "陶俑",
+      "钟架",
+      "熏炉",
+      "参观尾声",
+      "汉代"
+    ],
+    "site_path": "modules/qinhan/index.html",
+    "image_path": "modules/qinhan/assets/processed/crop/brick-and-bells.webp"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-036",
+    "title": "八曲葵花形螺钿铜镜",
+    "period": "唐开元二十四年（736）",
+    "type": "铜器",
+    "material": "铜、漆、贝",
+    "origin": "2001年西安理工大学曲江校区李墓",
+    "keywords": [
+      "唐代螺钿镜",
+      "铜器",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2737.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-055",
+    "title": "贺家铜轮牙马车",
+    "period": "",
+    "type": "遗址与车马器",
+    "material": "铜、木",
+    "origin": "",
+    "keywords": [
+      "西周马车与实验室考古",
+      "遗址与车马器"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2806.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-077",
+    "title": "浮雕蛙纹陶釜",
+    "period": "仰韶中期（距今5700-5000年）",
+    "type": "陶器",
+    "material": "陶",
+    "origin": "2009年西安高陵区杨官寨遗址北区环壕H900",
+    "keywords": [
+      "动物纹饰",
+      "陶器"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2894.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-081",
+    "title": "镂空人面覆盆形器",
+    "period": "仰韶中期（距今5700-5000年）",
+    "type": "陶器",
+    "material": "陶",
+    "origin": "",
+    "keywords": [
+      "人面镂空装饰、覆盆形器",
+      "陶器"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2905.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-083",
+    "title": "神面立柱石雕",
+    "period": "龙山晚期至夏代早期（距今4300－3800年）",
+    "type": "石雕",
+    "material": "石",
+    "origin": "",
+    "keywords": [
+      "神面纹饰、立柱形石刻",
+      "石雕"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2912.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-085",
+    "title": "口簧",
+    "period": "",
+    "type": "乐器",
+    "material": "",
+    "origin": "出土于皇城台（据展签说明文字推断为石峁遗址皇城台）",
+    "keywords": [
+      "口簧、弹拨体鸣乐器",
+      "乐器",
+      "音乐"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2919.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-108",
+    "title": "芮公鼎",
+    "period": "春秋（公元前770-前476年）",
+    "type": "青铜礼器",
+    "material": "铜",
+    "origin": "2017年澄城刘家洼遗址东1区M3",
+    "keywords": [
+      "有铭青铜鼎",
+      "青铜礼器",
+      "青铜器"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2997.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-138",
+    "title": "透影白瓷杯",
+    "period": "",
+    "type": "瓷器",
+    "material": "白瓷",
+    "origin": "",
+    "keywords": [
+      "瓷器工艺",
+      "瓷器"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3085.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-146",
+    "title": "罗婉顺墓志并盖",
+    "period": "唐天宝六年（747）",
+    "type": "墓志",
+    "material": "石",
+    "origin": "2020年咸阳渭城区龚东村唐元大谦、罗婉顺夫妇墓",
+    "keywords": [
+      "墓志铭文",
+      "墓志",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3107.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-147",
+    "title": "唐昭容上官氏墓志并盖与墓葬记录",
+    "period": "唐景云元年（710）",
+    "type": "墓志、墓葬资料",
+    "material": "石",
+    "origin": "2013年咸阳渭城区邓村唐昭容上官氏墓",
+    "keywords": [
+      "墓葬与墓志",
+      "墓志、墓葬资料",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3112.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-158",
+    "title": "李倕冠饰及身体装饰组佩",
+    "period": "唐",
+    "type": "金器、玉石器",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "冠饰、组佩",
+      "金器、玉石器",
+      "玉器",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3156.jpg"
+  },
+  {
+    "museum_id": "shaanxi-archaeology",
+    "museum_name": "陕西考古博物馆",
+    "id": "artifact-159",
+    "title": "李倕墓志",
+    "period": "唐",
+    "type": "石刻",
+    "material": "石",
+    "origin": "",
+    "keywords": [
+      "墓志",
+      "石刻",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-archaeology-museum/index.html",
+    "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3159.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3333",
+    "title": "四十二年逨鼎",
+    "period": "西周晚期",
+    "type": "礼器与容器",
+    "material": "",
+    "origin": "2003年眉县马家镇杨家村窖藏出土",
+    "keywords": [
+      "礼器与容器",
+      "ritual",
+      "青铜器"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3333.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3390",
+    "title": "单五父壶",
+    "period": "",
+    "type": "礼器与容器",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "礼器与容器",
+      "ritual"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3391.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3415",
+    "title": "四十三年逨鼎",
+    "period": "西周晚期",
+    "type": "礼器与容器",
+    "material": "",
+    "origin": "2003年眉县马家镇杨家村窖藏出土",
+    "keywords": [
+      "礼器与容器",
+      "ritual",
+      "青铜器"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3415.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3520",
+    "title": "刖人守门方鼎",
+    "period": "西周",
+    "type": "礼器与容器",
+    "material": "",
+    "origin": "1988年渭滨区茹家庄窖藏出土",
+    "keywords": [
+      "礼器与容器",
+      "ritual",
+      "青铜器"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3520.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3524",
+    "title": "朕彝",
+    "period": "西周",
+    "type": "礼器与容器",
+    "material": "",
+    "origin": "1975年岐山县京当镇董家村一号窖藏出土",
+    "keywords": [
+      "礼器与容器",
+      "ritual"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3524.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3649",
+    "title": "秦公钟",
+    "period": "春秋",
+    "type": "乐器与礼乐",
+    "material": "",
+    "origin": "1978年陈仓区太公庙村出土",
+    "keywords": [
+      "乐器与礼乐",
+      "music",
+      "青铜器",
+      "音乐",
+      "乐器"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3649.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3656",
+    "title": "秦公镈",
+    "period": "春秋",
+    "type": "乐器与礼乐",
+    "material": "",
+    "origin": "1978年陈仓区太公庙村出士",
+    "keywords": [
+      "乐器与礼乐",
+      "music",
+      "青铜器",
+      "音乐",
+      "乐器"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3656.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3740",
+    "title": "逨盉",
+    "period": "西周晚期",
+    "type": "礼器与容器",
+    "material": "",
+    "origin": "2003年眉县马家镇杨家村窖藏出土",
+    "keywords": [
+      "礼器与容器",
+      "ritual",
+      "青铜器"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3740.jpg"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "photo-group-3761",
+    "title": "象尊",
+    "period": "西周",
+    "type": "礼器与容器",
+    "material": "",
+    "origin": "1974年渭滨区茹家庄鱼国墓地一号墓出士",
+    "keywords": [
+      "礼器与容器",
+      "ritual",
+      "青铜器"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3761.jpg"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-001-painted-mirror",
+    "title": "西汉彩绘人物车马镜",
+    "period": "西汉",
+    "type": "铜镜与绘画",
+    "material": "铜、矿物颜料",
+    "origin": "1963年西安市红庙坡村出土",
+    "keywords": [
+      "forbidden",
+      "featured",
+      "汉代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/supplement/painted-mirror-01.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-003-4859",
+    "title": "玉舞人",
+    "period": "汉代",
+    "type": "玉石器",
+    "material": "玉",
+    "origin": "西安博物院藏",
+    "keywords": [
+      "玉器",
+      "汉代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/featured-4859.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-005-4867",
+    "title": "鎏金羊灯",
+    "period": "汉代",
+    "type": "生活器用",
+    "material": "铜",
+    "origin": "西安博物院藏",
+    "keywords": [
+      "汉代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-4867.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-028-4955",
+    "title": "大业元年魏天得造佛像",
+    "period": "隋大业元年",
+    "type": "佛教造像",
+    "material": "石",
+    "origin": "西安市灞桥区出土",
+    "keywords": [],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-4955.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-032-4974",
+    "title": "彩绘百枝陶灯",
+    "period": "汉代",
+    "type": "陶器",
+    "material": "陶",
+    "origin": "西安博物院藏",
+    "keywords": [
+      "汉代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-4974.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-035-4989",
+    "title": "八瓣仕女狩猎纹银杯",
+    "period": "唐代",
+    "type": "金银器",
+    "material": "鎏金银",
+    "origin": "西安博物院藏",
+    "keywords": [
+      "唐代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-4989.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-038-4997",
+    "title": "白釉“盈”字款葵口盘（瓷）",
+    "period": "唐代",
+    "type": "瓷器",
+    "material": "瓷",
+    "origin": "西安市雁塔区出土",
+    "keywords": [
+      "唐代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-4997.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-044-5013",
+    "title": "勾连云纹玉杯",
+    "period": "年代待考",
+    "type": "玉石器",
+    "material": "玉",
+    "origin": "西安博物院藏",
+    "keywords": [
+      "玉器"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-5013.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-048-5024",
+    "title": "永盂",
+    "period": "西周",
+    "type": "青铜礼器",
+    "material": "青铜",
+    "origin": "1969年西安市蓝田县出土",
+    "keywords": [
+      "青铜器"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-5024.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-051-5043",
+    "title": "凤流提梁盉",
+    "period": "战国",
+    "type": "青铜器",
+    "material": "青铜",
+    "origin": "西安博物院藏",
+    "keywords": [
+      "青铜器"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-5043.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-054-5051",
+    "title": "鎏金舍利银椁",
+    "period": "唐代",
+    "type": "金银器",
+    "material": "银",
+    "origin": "西安市新城区出土",
+    "keywords": [
+      "唐代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-5051.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-057-5058",
+    "title": "三彩腾空马",
+    "period": "唐代",
+    "type": "陶俑与雕塑",
+    "material": "三彩陶",
+    "origin": "1966年西安市莲湖区西安制药厂唐墓出土",
+    "keywords": [
+      "唐代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-5058.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-058-5067",
+    "title": "蓝釉点彩驴",
+    "period": "唐代",
+    "type": "陶俑与雕塑",
+    "material": "釉陶",
+    "origin": "西安地区出土",
+    "keywords": [
+      "唐代"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-5067.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-059-5073",
+    "title": "史君墓石椁",
+    "period": "北周",
+    "type": "墓葬石刻",
+    "material": "青石",
+    "origin": "西安市未央区出土",
+    "keywords": [
+      "music"
+    ],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-5073.webp"
+  },
+  {
+    "museum_id": "xian-museum",
+    "museum_name": "西安博物院",
+    "id": "xian-062-5087",
+    "title": "磁州窑“风吹十里透瓶香”白地黑花梅瓶",
+    "period": "元代",
+    "type": "瓷器",
+    "material": "瓷",
+    "origin": "西安市雁塔区出土",
+    "keywords": [],
+    "site_path": "modules/xian-museum/index.html",
+    "image_path": "modules/xian-museum/assets/photos/focus-5087.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-3925",
+    "title": "人面鱼纹盆",
+    "period": "新石器时代",
+    "type": "陶瓷器",
+    "material": "陶器",
+    "origin": "西安市临潼区姜寨遗址出土",
+    "keywords": [],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-3921.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4039",
+    "title": "多友鼎",
+    "period": "西周",
+    "type": "青铜器",
+    "material": "铜器",
+    "origin": "西安市长安区斗门镇下泉村出土",
+    "keywords": [
+      "青铜器"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4036.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4276",
+    "title": "独孤信多面体煤精组印",
+    "period": "西魏",
+    "type": "玺印",
+    "material": "器物",
+    "origin": "安康市旬阳县城东门外出土",
+    "keywords": [],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4273.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4394",
+    "title": "鸳鸯莲瓣纹金碗",
+    "period": "唐",
+    "type": "金银器",
+    "material": "金银器",
+    "origin": "西安市何家村窖藏出土",
+    "keywords": [
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4391.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4445",
+    "title": "三彩载乐骆驼俑",
+    "period": "唐",
+    "type": "陶俑与雕塑",
+    "material": "陶器",
+    "origin": "",
+    "keywords": [
+      "music",
+      "forbidden",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4441.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4523",
+    "title": "耀州窑青釉刻花提梁倒流壶",
+    "period": "五代",
+    "type": "陶瓷器",
+    "material": "陶器",
+    "origin": "1968年陕西彬县出土",
+    "keywords": [
+      "forbidden"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4518.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4618",
+    "title": "鎏金舞马衔杯纹银壶",
+    "period": "唐",
+    "type": "金银器",
+    "material": "金银器",
+    "origin": "西安市何家村唐代窖藏出土",
+    "keywords": [
+      "music",
+      "forbidden",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4613.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4626",
+    "title": "鎏金鹦鹉纹提梁银罐",
+    "period": "唐",
+    "type": "金银器",
+    "material": "金银器",
+    "origin": "西安市何家村唐代窖藏出土",
+    "keywords": [
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4624.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4681",
+    "title": "镶金兽首玛瑙杯",
+    "period": "唐",
+    "type": "玉石器",
+    "material": "玉石器",
+    "origin": "西安市何家村唐代窖藏出土",
+    "keywords": [
+      "forbidden",
+      "玉器",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4675.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "field-4698",
+    "title": "葡萄花鸟纹银香囊",
+    "period": "唐",
+    "type": "金银器",
+    "material": "金银器",
+    "origin": "西安市何家村唐代窖藏出土",
+    "keywords": [
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/photos/focus-4697.webp"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "wall-que-lou",
+    "title": "懿德太子墓壁画·阙楼图",
+    "period": "唐",
+    "type": "唐墓壁画",
+    "material": "壁画 / 绘画",
+    "origin": "乾陵陪葬墓·懿德太子墓",
+    "keywords": [
+      "wall",
+      "forbidden",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/supplement/quelou.jpg"
+  },
+  {
+    "museum_id": "shaanxi-history",
+    "museum_name": "陕西历史博物馆",
+    "id": "wall-gongnv",
+    "title": "永泰公主墓壁画·宫女图",
+    "period": "唐",
+    "type": "唐墓壁画",
+    "material": "壁画 / 绘画",
+    "origin": "乾陵陪葬墓·永泰公主墓",
+    "keywords": [
+      "wall",
+      "forbidden",
+      "唐代"
+    ],
+    "site_path": "modules/shaanxi-history/index.html",
+    "image_path": "modules/shaanxi-history/assets/supplement/gongnv.jpg"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "stone-tool",
+    "title": "石镞范",
+    "period": "春秋",
+    "type": "商周",
+    "material": "石",
+    "origin": "",
+    "keywords": [
+      "商周",
+      "商丘博物馆"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5152.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "bronze-jue",
+    "title": "青铜爵",
+    "period": "商",
+    "type": "商周",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "商周",
+      "商丘博物馆",
+      "馆藏精选"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5171.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "oracle-bones",
+    "title": "卜骨与卜甲",
+    "period": "商",
+    "type": "商周",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "商周",
+      "商丘博物馆",
+      "馆藏精选"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5178.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "dragon-handled-dipper",
+    "title": "龙首柄铜鐎斗",
+    "period": "汉",
+    "type": "汉梁",
+    "material": "铜",
+    "origin": "",
+    "keywords": [
+      "汉梁",
+      "商丘博物馆",
+      "馆藏精选"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5200.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "bronze-tray-vessel",
+    "title": "青铜簠",
+    "period": "春秋",
+    "type": "商周",
+    "material": "青铜",
+    "origin": "",
+    "keywords": [
+      "商周",
+      "商丘博物馆"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5217.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "cloud-thunder-ding",
+    "title": "云雷纹铜鼎",
+    "period": "西周",
+    "type": "商周",
+    "material": "青铜",
+    "origin": "",
+    "keywords": [
+      "商周",
+      "商丘博物馆",
+      "馆藏精选"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5224.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "proto-celadon-hu",
+    "title": "原始青瓷铺首衔环壶",
+    "period": "汉",
+    "type": "汉梁",
+    "material": "原始青瓷",
+    "origin": "",
+    "keywords": [
+      "汉梁",
+      "商丘博物馆",
+      "馆藏精选"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5262.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "stone-inkstone",
+    "title": "带盖石砚",
+    "period": "汉",
+    "type": "汉梁",
+    "material": "",
+    "origin": "",
+    "keywords": [
+      "汉梁",
+      "商丘博物馆"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5285.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "jade-suit",
+    "title": "金缕玉衣",
+    "period": "汉",
+    "type": "汉梁",
+    "material": "玉、金丝",
+    "origin": "永城市黄土山一号汉代石室墓出土",
+    "keywords": [
+      "汉梁",
+      "商丘博物馆",
+      "馆藏精选",
+      "永城市黄土山一号汉代石室墓出土"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5324.webp"
+  },
+  {
+    "museum_id": "shangqiu-museum",
+    "museum_name": "商丘博物馆",
+    "id": "inscribed-four-loop-jar",
+    "title": "白釉褐彩“风花雪月”四系瓷瓶",
+    "period": "宋",
+    "type": "唐宋",
+    "material": "瓷",
+    "origin": "",
+    "keywords": [
+      "唐宋",
+      "商丘博物馆"
+    ],
+    "site_path": "modules/shangqiu-museum/index.html",
+    "image_path": "assets/photos/thumbs/DSC_5406.webp"
+  },
+  {
+    "museum_id": "baoji",
+    "museum_name": "中国青铜器博物院",
+    "id": "he-zun",
+    "title": "何尊",
+    "period": "西周早期 · 成王五年",
+    "type": "青铜尊 · 宅兹中国",
+    "material": "",
+    "origin": "1963年陕西宝鸡陈仓区贾村出土",
+    "keywords": [
+      "何尊铭文",
+      "宅兹中国",
+      "青铜器"
+    ],
+    "site_path": "modules/baoji/index.html",
+    "image_path": "modules/baoji/assets/photos/web/DSC_3465.jpg"
+  }
+]

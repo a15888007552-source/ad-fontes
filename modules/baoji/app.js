@@ -2,6 +2,7 @@
   'use strict';
 
   const data = window.BAOJI_DATA || { site: {}, treasures: [] };
+  const highlights = window.MuseumHighlights.create("baoji");
   const photoData = window.BAOJI_PHOTO_INDEX || { sourceCount: 625, groups: [], photos: [] };
   const unavailablePhotoNames = new Set([
     'DSC_3390.JPG',
@@ -23,7 +24,7 @@
     filter: 'all',
     query: '',
     visible: 36,
-    groups: Array.isArray(photoData.groups) ? photoData.groups : [],
+    groups: highlights.apply(Array.isArray(photoData.groups) ? photoData.groups : []),
   };
   let revealObserver = null;
   let activeDetailId = null;
@@ -510,6 +511,8 @@
   } = {}) {
     if (!item) return;
     const group = groupForTreasure(item.id);
+    const reviewed = group && highlights.get(group);
+    if (reviewed) item = {...item, displayName: reviewed.canonical_title, lead: reviewed.card_tagline, description: reviewed.intro, sources: [...(item.sources || []), ...reviewed.sources.map(source => [source.title, source.url])]};
     const values = galleryForTreasure(item, group);
     const dialogContent = $('#dialog-content');
     if (!dialogContent) return;
@@ -559,7 +562,8 @@
     dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(group.number || 'PHOTO GROUP')} / ${escapeHTML(group.categoryLabel || '其他器物')}</p><h2 id="dialog-title">${escapeHTML(group.title || '器物卡片')}<small>${escapeHTML(sequence)}</small></h2></div><p class="dialog-lead">${escapeHTML(group.summary || '现场展签与照片序列记录。')}${escapeHTML(unitNote)}</p></div>
       <div class="dialog-facts"><div class="dialog-fact"><span class="dialog-fact-label">类别</span><span class="dialog-fact-value">${escapeHTML(group.categoryLabel || '其他器物')}</span></div><div class="dialog-fact"><span class="dialog-fact-label">照片数</span><span class="dialog-fact-value">${photos.length} 张</span></div><div class="dialog-fact"><span class="dialog-fact-label">音乐重点</span><span class="dialog-fact-value">${group.musicFocus ? '是 · 乐器 / 礼乐' : '否'}</span></div><div class="dialog-fact"><span class="dialog-fact-label">证据状态</span><span class="dialog-fact-value">${escapeHTML(group.status || '现场展签 / 照片顺序')}</span></div></div>
       <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, main ? `现场顺序 · ${filenameOf(main)}` : '', fallback, group.title || '器物条目')}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
-      ${genericSequenceMarkup(group, photos)}`;
+      ${genericSequenceMarkup(group, photos)}
+      ${group.highlightSources?.length ? sourcesMarkup({sources: group.highlightSources}) : ''}`;
     const groupFacts = dialogContent.querySelector(".dialog-facts");
     if (groupFacts) groupFacts.outerHTML = detailArchiveMarkup(group, [["PHOTO / 照片数", `${photos.length} 张`], ["CONTEXT / 音乐重点", group.musicFocus ? '是 · 乐器 / 礼乐' : '否'], ["EVIDENCE / 证据状态", group.status || '现场展签 / 照片顺序']]);
     bindGallery();
@@ -772,6 +776,7 @@
     if (!query) return true;
     const haystack = [
       group.title,
+      highlights.aliases(group),
       group.categoryLabel,
       group.labelEvidence,
       group.summary,
@@ -784,9 +789,10 @@
     return haystack.includes(query);
   }
 
-  function filteredGroups() { return state.groups.filter(groupMatches); }
+  function filteredGroups() { return highlights.select(state.groups.filter(groupMatches), {query: state.query, filtered: state.filter !== "all"}); }
 
   function archiveCardMarkup(group) {
+    if (group._editorialOnly) return highlights.card(group);
     const featured = objectPhoto(group);
     const availablePhotos = availableGroupPhotos(group);
     const fallback = groupVisualFallback(group);
@@ -799,7 +805,7 @@
         ? `<div class="archive-card-media archive-card-media--fallback" style="--fallback-art:url('${escapeHTML(fallback.path)}')" role="img" aria-label="${escapeHTML(`${group.title || '器物条目'}：本条目暂无器物本体影像`)}"><span class="archive-card-fallback-note">${escapeHTML(fallback.label)}</span><span class="archive-card-label">${escapeHTML(range)}</span></div>`
       : `<div class="archive-card-media archive-card-media--evidence"><span>暂无器物主图</span><small>${escapeHTML(range)} · 仅保留现场证据</small></div>`;
     const unitNote = Number(group.unitCount || 1) > 1 ? ` · ${group.unitCount}组` : '';
-    return `<article class="archive-card${music ? ' archive-card--music' : ''}${featured || fallback ? '' : ' archive-card--evidence'}"><button type="button" data-group-id="${escapeHTML(group.id)}" aria-label="打开${escapeHTML(group.title || '器物卡片')}详情">${media}<div class="archive-card-body"><div class="archive-card-top"><h3 title="${escapeHTML(group.title || '器物卡片')}">${escapeHTML(group.title || '器物卡片')}</h3>${music ? '<span class="music-badge">♫ MUSIC</span>' : ''}</div><div class="archive-card-meta"><span>${escapeHTML(group.categoryLabel || '其他器物')}</span><span>${availablePhotos.length} 张${unitNote}</span></div><p class="archive-card-summary">${escapeHTML(group.summary || '现场器物照片按顺序归档')}</p></div></button></article>`;
+    return `<article class="archive-card${music ? ' archive-card--music' : ''}${featured || fallback ? '' : ' archive-card--evidence'}"><button type="button" data-group-id="${escapeHTML(group.id)}" aria-label="打开${escapeHTML(group.title || '器物卡片')}详情">${media}<div class="archive-card-body"><div class="archive-card-top"><h3 title="${escapeHTML(group.title || '器物卡片')}">${escapeHTML(group.title || '器物卡片')}</h3>${music ? '<span class="music-badge">♫ MUSIC</span>' : ''}</div><div class="archive-card-meta"><span>${escapeHTML(group.categoryLabel || '其他器物')}</span><span>${availablePhotos.length} 张${unitNote}</span></div>${highlights.badge(group)}<p class="archive-card-summary">${escapeHTML(group.summary || '现场器物照片按顺序归档')}</p></div></button></article>`;
   }
 
   function updateFilterCounts() {
@@ -821,6 +827,7 @@
   }
 
   function renderArchive() {
+    highlights.mount(document.querySelector("#archive-grid"), () => { state.visible = 36; renderArchive(); });
     const target = $('#archive-grid');
     const more = $('#archive-more');
     if (!target) return;
@@ -856,7 +863,7 @@
       const response = await fetch('data/photo-index.json', { cache: 'no-store' });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const remote = await response.json();
-      if (Array.isArray(remote.groups)) state.groups = remote.groups;
+      if (Array.isArray(remote.groups)) state.groups = highlights.apply(remote.groups);
       updateFilterCounts();
       renderArchive();
       const shouldResolveInitial = introDeferred;

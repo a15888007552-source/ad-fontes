@@ -1,0 +1,374 @@
+{
+  "schema": "museum-highlights-binding-audit-v1",
+  "candidate_ids_used": false,
+  "items": [
+    {
+      "editorial_id": "beilin-highlight-01",
+      "museum_id": "beilin",
+      "rank": 1,
+      "canonical_title": "石台孝经",
+      "record_id": "artifact-132",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "仅找到《石台孝经》拓本；原碑照片暂缺，不能把拓本改成原碑。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-02",
+      "museum_id": "beilin",
+      "rank": 2,
+      "canonical_title": "开成石经",
+      "record_id": "artifact-074",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "仅找到《开成石经·尔雅》拓本，不能等同整部开成石经原石。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-03",
+      "museum_id": "beilin",
+      "rank": 3,
+      "canonical_title": "曹全碑",
+      "record_id": "artifact-013",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安碑林博物馆",
+      "identity_kind": "original_stele",
+      "verified_photo_paths": [
+        "assets/photos/web/DSC_1320.jpg",
+        "research/highlights-20260905/beilin-evidence/DSC_1322.JPG"
+      ],
+      "evidence": [
+        {
+          "source": "view_image",
+          "observed": "实际查看原碑正面与对应展签；名称、年代、撰书者及碑形吻合。"
+        },
+        {
+          "title": "曹全碑",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=145&c=View&m=home",
+          "publisher": "西安碑林博物馆",
+          "accessed_at": "2026-09-05",
+          "supports": "器物身份与正文中的已核事实"
+        }
+      ],
+      "blockers": [],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-04",
+      "museum_id": "beilin",
+      "rank": 4,
+      "canonical_title": "大秦景教流行中国碑",
+      "record_id": "artifact-168",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "原碑图组已定位，介绍图 DSC_1952.JPG 在当前本地媒体缺失，未完成展签图复核。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-05",
+      "museum_id": "beilin",
+      "rank": 5,
+      "canonical_title": "昭陵六骏石刻",
+      "record_id": "artifact-173",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "六骏组像包含原石与复制品，尚未逐件核对标签及影像身份；已纠正旧正文将飒露紫与白蹄乌收藏地点颠倒的错误。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-06",
+      "museum_id": "beilin",
+      "rank": 6,
+      "canonical_title": "集王书圣教序碑",
+      "record_id": "artifact-018",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安碑林博物馆",
+      "identity_kind": "original_stele",
+      "verified_photo_paths": [
+        "assets/photos/web/DSC_1340.jpg",
+        "research/highlights-20260905/beilin-evidence/DSC_1344.JPG"
+      ],
+      "evidence": [
+        {
+          "source": "view_image",
+          "observed": "实际查看原碑正面与对应展签；名称、年代、撰书者及碑形吻合。"
+        },
+        {
+          "title": "集王书圣教序碑",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=2579&c=View&m=home",
+          "publisher": "西安碑林博物馆",
+          "accessed_at": "2026-09-05",
+          "supports": "器物身份与正文中的已核事实"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "集王圣教序碑",
+        "怀仁集王羲之书圣教序"
+      ]
+    },
+    {
+      "editorial_id": "beilin-highlight-07",
+      "museum_id": "beilin",
+      "rank": 7,
+      "canonical_title": "颜勤礼碑",
+      "record_id": "artifact-006",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "展签原图下载不完整，未将OCR候选当作原图核验。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-08",
+      "museum_id": "beilin",
+      "rank": 8,
+      "canonical_title": "多宝塔感应碑",
+      "record_id": "artifact-007",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "展签原图下载不完整，未将OCR候选当作原图核验。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-09",
+      "museum_id": "beilin",
+      "rank": 9,
+      "canonical_title": "玄秘塔碑",
+      "record_id": "artifact-010",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安碑林博物馆",
+      "identity_kind": "original_stele",
+      "verified_photo_paths": [
+        "assets/photos/web/DSC_1304.jpg",
+        "research/highlights-20260905/beilin-evidence/DSC_1307.JPG"
+      ],
+      "evidence": [
+        {
+          "source": "view_image",
+          "observed": "实际查看原碑正面与对应展签；名称、年代、撰书者及碑形吻合。"
+        },
+        {
+          "title": "玄秘塔碑",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=148&c=View&m=home",
+          "publisher": "西安碑林博物馆",
+          "accessed_at": "2026-09-05",
+          "supports": "器物身份与正文中的已核事实"
+        }
+      ],
+      "blockers": [],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-10",
+      "museum_id": "beilin",
+      "rank": 10,
+      "canonical_title": "皇甫诞碑",
+      "record_id": "artifact-020",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安碑林博物馆",
+      "identity_kind": "original_stele",
+      "verified_photo_paths": [
+        "assets/photos/web/DSC_1355.jpg",
+        "research/highlights-20260905/beilin-evidence/DSC_1359.JPG"
+      ],
+      "evidence": [
+        {
+          "source": "view_image",
+          "observed": "实际查看原碑正面与对应展签；名称、年代、撰书者及碑形吻合。"
+        },
+        {
+          "title": "皇甫诞碑",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=2578&c=View&m=home",
+          "publisher": "西安碑林博物馆",
+          "accessed_at": "2026-09-05",
+          "supports": "器物身份与正文中的已核事实"
+        }
+      ],
+      "blockers": [],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-11",
+      "museum_id": "beilin",
+      "rank": 11,
+      "canonical_title": "颜氏家庙碑",
+      "record_id": "artifact-005",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "展签原图下载不完整，未将OCR候选当作原图核验。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-12",
+      "museum_id": "beilin",
+      "rank": 12,
+      "canonical_title": "迴元观钟楼铭",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "当前181条器物记录未找到可确认对象，照片暂缺。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-13",
+      "museum_id": "beilin",
+      "rank": 13,
+      "canonical_title": "李寿石椁",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "当前181条器物记录未找到可确认石椁对象，照片暂缺。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-14",
+      "museum_id": "beilin",
+      "rank": 14,
+      "canonical_title": "道因法师碑",
+      "record_id": "artifact-171",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": null,
+      "identity_kind": "unresolved",
+      "verified_photo_paths": [],
+      "evidence": [],
+      "blockers": [
+        "匹配到的是《道因法师碑》拓本，不能替代原碑身份。"
+      ],
+      "aliases": []
+    },
+    {
+      "editorial_id": "beilin-highlight-15",
+      "museum_id": "beilin",
+      "rank": 15,
+      "canonical_title": "同州三藏圣教序碑",
+      "record_id": "artifact-019",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安碑林博物馆",
+      "identity_kind": "original_stele",
+      "verified_photo_paths": [
+        "assets/photos/web/DSC_1347.jpg",
+        "research/highlights-20260905/beilin-evidence/DSC_1352.JPG"
+      ],
+      "evidence": [
+        {
+          "source": "view_image",
+          "observed": "实际查看原碑正面与对应展签；名称、年代、撰书者及碑形吻合。"
+        },
+        {
+          "title": "同州三藏圣教序碑",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=2599&c=View&m=home",
+          "publisher": "西安碑林博物馆",
+          "accessed_at": "2026-09-05",
+          "supports": "器物身份与正文中的已核事实"
+        }
+      ],
+      "blockers": [],
+      "aliases": []
+    }
+  ]
+}

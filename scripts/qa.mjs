@@ -312,14 +312,19 @@ function atlasQa() {
 function searchIndexQa() {
   const index = readJson("modules/museum-atlas/search-index.json");
   exactKeys(index, ["schema_version", "records"], "search-index root");
-  assert(index.schema_version === 1 && Array.isArray(index.records) && index.records.length === 1006, `search-index expected 1006 records, found ${index.records?.length}`);
+  assert(index.schema_version === 1 && Array.isArray(index.records) && index.records.filter(record => record.record_kind !== "editorial_only").length === 1006, `search-index expected 1006 records, found ${index.records?.length}`);
   const expectedKeys = ["museum_id", "museum_name", "id", "title", "period", "type", "material", "origin", "keywords", "site_path", "image_path"];
   const allowedEmpty = new Set(["beilin:artifact-057", "baoji:photo-group-3619", "baoji:photo-group-3881"]);
   const seen = new Set();
   const museums = new Set();
   const byMuseum = new Map();
   for (const record of index.records) {
-    assert(isPlainObject(record) && JSON.stringify(Object.keys(record)) === JSON.stringify(expectedKeys), "search record schema/order mismatch");
+    const optionalKeys = ["aliases","card_tagline","is_highlight","curatorial_rank","content_review","record_binding","object_identity","photo_match","object_identity_id","publication_approval","record_kind"];
+    assert(isPlainObject(record) && expectedKeys.every(key => Object.hasOwn(record,key)) && Object.keys(record).every(key => expectedKeys.includes(key) || optionalKeys.includes(key)), "search record schema mismatch");
+    if (record.aliases !== undefined) assert(Array.isArray(record.aliases) && record.aliases.every(alias => typeof alias === "string"), "invalid aliases");
+    if (record.is_highlight !== undefined) assert(typeof record.is_highlight === "boolean", "invalid highlight flag");
+    if (record.curatorial_rank !== undefined) assert(Number.isInteger(record.curatorial_rank) && record.curatorial_rank > 0, "invalid highlight rank");
+    for (const field of ["card_tagline","content_review","record_binding","object_identity","photo_match","object_identity_id"]) if (record[field] !== undefined) assert(typeof record[field] === "string", `invalid ${field}`);
     for (const field of ["museum_id", "museum_name", "id", "title", "site_path"]) assert(nonEmpty(record[field]), `search record missing ${field}`);
     for (const field of ["period", "type", "material", "origin", "image_path"]) assert(typeof record[field] === "string", `search record invalid ${field}`);
     assert(Array.isArray(record.keywords) && record.keywords.every((keyword) => typeof keyword === "string"), `search keywords invalid for ${record.id}`);
@@ -329,7 +334,7 @@ function searchIndexQa() {
     seen.add(composite);
     museums.add(record.museum_id);
     if (!byMuseum.has(record.museum_id)) byMuseum.set(record.museum_id, record);
-    if (!record.image_path) assert(allowedEmpty.has(composite), `unexpected empty image path ${composite}`);
+    if (!record.image_path) assert(record.record_kind === "editorial_only" || allowedEmpty.has(composite), `unexpected empty image path ${composite}`);
     if (record.image_path) {
       const moduleId = record.site_path.match(/^modules\/([^/]+)\//)?.[1] || null;
       const candidates = [record.image_path, moduleId ? `modules/${moduleId}/${record.image_path}` : "", record.image_path.startsWith("modules/") ? record.image_path : ""];

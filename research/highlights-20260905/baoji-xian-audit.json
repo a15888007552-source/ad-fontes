@@ -1,0 +1,1438 @@
+{
+  "schema": "museum-highlights-binding-audit-v1",
+  "generated_at": "2026-09-05",
+  "scope": {
+    "repo": "D:/Documents-Offload/website-henan-release",
+    "branch": "main",
+    "source_state": "read-only audit; no source files, images, commits, or deployment changed",
+    "package": "C:/Users/GusGumee/Downloads/museum_highlights_other_7_105_codex.zip",
+    "package_readme": "00_README_CODEX.md (read from zip before auditing)",
+    "museums": [
+      "baoji",
+      "xian-museum"
+    ],
+    "items_per_museum": 15,
+    "total_items": 30,
+    "candidate_ids_used": false,
+    "matching_rule": "Resolve current records from repository title, provenance, object photographs, label photographs, original/replica identity, and collection owner. Package existing_record_id and related IDs were ignored as matching evidence.",
+    "approval_rule": "Only pass when an object photo and an actual readable label photo were viewed and no binding blocker remained. OCR-only labels, missing/unreadable labels, name similarity, and unresolved original/replica or owner conflicts remain pending.",
+    "viewing_tool": "view_image",
+    "image_policy": "No AI or replacement images used. Existing repository assets only; supplemental mirror images retain their third-party watermark/provenance blocker."
+  },
+  "source_files": [
+    "modules/baoji/data/photo-index.json",
+    "modules/baoji/data/treasures.js",
+    "modules/xian-museum/data.js",
+    "modules/baoji/assets/photos/web/",
+    "modules/xian-museum/assets/photos/"
+  ],
+  "official_sources": [
+    {
+      "url": "https://www.bjqtm.com/gzzx/gnyw/%E4%BD%95%E5%B0%8A%EF%BC%9A%E7%A9%BF%E8%B6%8A%E5%8D%83%E5%B9%B4%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%B9%8B%E6%BA%90",
+      "publisher": "宝鸡青铜器博物院",
+      "supports": "何尊身份、年代、出土地点、馆藏及‘中国’概念的历史语境"
+    },
+    {
+      "url": "https://www.bjqtm.com/dczp/qtq/%E9%80%A8%E7%9B%98",
+      "publisher": "宝鸡青铜器博物院",
+      "supports": "逨盘身份、时代、杨家村窖藏与馆藏珍品资料"
+    },
+    {
+      "url": "https://www.bjqtm.com/gzzx/gnyw/%E9%9D%92%E9%93%9C%E8%BE%89%E8%80%80-%E6%8E%A2%E8%AE%BF%E5%AE%9D%E9%B8%A1%E9%9D%92%E9%93%9C%E5%99%A8%E5%8D%9A%E7%89%A9%E9%99%A2%E7%9A%84%E5%9B%BD%E5%AE%B6%E5%AE%9D%E8%97%8F",
+      "publisher": "宝鸡青铜器博物院",
+      "supports": "逨器群、㝬簋、秦公镈、刖人守门鼎等官方语境；不替代当前照片展签"
+    },
+    {
+      "url": "https://www.xabwy.com/showtwo.html?id=1795",
+      "publisher": "西安博物院",
+      "supports": "三彩腾空马与蓝釉驮骡的馆方对象语境；不自动覆盖当前标签缺失"
+    },
+    {
+      "url": "https://www.xabwy.com/showtwo.html?id=944",
+      "publisher": "西安博物院",
+      "supports": "蓝釉驮骡馆方条目；用于说明驴/骡标题需展签确认"
+    },
+    {
+      "url": "https://www.xabwy.com/showtwo.html?id=480&num=3&type=39",
+      "publisher": "西安博物院",
+      "supports": "八瓣仕女狩猎纹银杯、玉舞人官方展览资料；不把同名展品自动等同"
+    }
+  ],
+  "summary": {
+    "total": 30,
+    "pass": 4,
+    "pending": 26,
+    "by_museum": {
+      "baoji": {
+        "total": 15,
+        "pass": 0,
+        "pending": 15,
+        "reason": "no current Baoji target group has a source-linked labelPhoto/labelPhotos file or isLabel=true photo; OCR may exist but cannot be visually attributed to a target object; additional owner/replica/title/set conflicts remain on specific items"
+      },
+      "xian-museum": {
+        "total": 15,
+        "pass": 4,
+        "pending": 11,
+        "reason": "four exact object+readable-label bindings pass; remaining items have missing/unreadable labels, supplemental-image provenance, period/pair scope, or original/replica blockers"
+      }
+    },
+    "pass_editorial_ids": [
+      "xian-museum-highlight-01",
+      "xian-museum-highlight-08",
+      "xian-museum-highlight-11",
+      "xian-museum-highlight-15"
+    ],
+    "pending_priority": [
+      "Baoji rank 1-6 remain blocked primarily by absence of label photos; Xian rank 2-6 have missing/unreadable label files or title/period conflicts."
+    ],
+    "gate_note": "Pass means current record binding is evidenced by viewed object+label images. It does not grant permission to invent unverified content fields or imply an original object when original/replica status is unmarked."
+  },
+  "follow_up_checks": {
+    "baoji_first6": {
+      "checked_at": "2026-09-05",
+      "checked": true,
+      "scope": "photo-index labelPhoto/labelPhotos/labelEvidence and labelFacts fields, original filename mapping, adjacent numbered assets, canonical and legacy read-only Baoji module assets",
+      "result": "No first-six target group exposes a source-linked labelPhoto/labelPhotos file; every listed group photo remains isLabel=false. Adjacent numbered files either were absent or belonged to a neighboring photo group; no target label original/archive asset was found in the canonical or legacy module.",
+      "ocr_policy": "OCR is retained as a lead and is not treated as an actual viewed label.",
+      "viewed_target_groups": {
+        "photo-group-3465": [
+          "DSC_3465.jpg",
+          "DSC_3466.jpg",
+          "DSC_3467.jpg"
+        ],
+        "photo-group-3325": [
+          "DSC_3325.jpg",
+          "DSC_3326.jpg",
+          "DSC_3327.jpg",
+          "DSC_3329.jpg"
+        ],
+        "photo-group-3487": [
+          "DSC_3487.jpg",
+          "DSC_3490.jpg",
+          "DSC_3492.jpg",
+          "DSC_3493.jpg",
+          "DSC_3502.jpg"
+        ],
+        "photo-group-3656": [
+          "DSC_3656.jpg",
+          "DSC_3657.jpg"
+        ],
+        "photo-group-3740": [
+          "DSC_3740.jpg",
+          "DSC_3741.jpg",
+          "DSC_3742.jpg",
+          "DSC_3743.jpg"
+        ],
+        "photo-group-3524": [
+          "DSC_3524.jpg",
+          "DSC_3525.jpg",
+          "DSC_3526.jpg"
+        ]
+      },
+      "lai_pan_replica_scope": "unresolved: the text '此为复制品' occurs only in unlinked group OCR metadata; no source filename or readable label image establishes whether it describes the photographed 逨盘, a display-case reconstruction, or another associated object."
+    }
+  },
+  "items": [
+    {
+      "editorial_id": "baoji-highlight-01",
+      "museum_id": "baoji",
+      "rank": 1,
+      "canonical_title": "何尊",
+      "record_id": "photo-group-3465",
+      "record_ids": [
+        "photo-group-3465",
+        "he-zun"
+      ],
+      "status": "pending",
+      "content_review": "现有宝鸡 treasures.js 将其定为西周早期、1963年贾村出土并藏于中国青铜器博物院；当前对象照片与何尊器形相符，官方馆方页面也支持这些身份事实。候选包 ID 未参与匹配。",
+      "record_binding": "对象照片文件名与 photo-index 的何尊组精确绑定；当前 JSON/JS 没有 source-linked labelPhoto/labelPhotos，且组内照片均 isLabel=false，故尚未完成用户要求的展签绑定。",
+      "object_identity": "看过 DSC_3465/3466/3467 对象图；器形为带扉棱、兽面纹的青铜尊。未见原件/复制品标识，不能据无标识推断为原件。",
+      "photo_match": "目标组对象图已查看；没有可读目标展签图（组内所有照片 isLabel=false）。",
+      "collection_owner": "中国青铜器博物院（treasures.js；未由当前组的可视展签复核）",
+      "identity_kind": "current_object_photo_no_label",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3465.jpg",
+        "modules/baoji/assets/photos/web/DSC_3466.jpg",
+        "modules/baoji/assets/photos/web/DSC_3467.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3465 title=何尊; photos=DSC_3465/3466/3467; all isLabel=false; no labelPhoto/labelPhotos filename mapping; OCR only contains 何尊/英文残片。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/treasures.js",
+          "observed": "id=he-zun; 西周早期; 1963陕西宝鸡陈仓区贾村出土; collection=中国青铜器博物院。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.bjqtm.com/gzzx/gnyw/%E4%BD%95%E5%B0%8A%EF%BC%9A%E7%A9%BF%E8%B6%8A%E5%8D%83%E5%B9%B4%E7%9A%84%E4%B8%AD%E5%9B%BD%E4%B9%8B%E6%BA%90",
+          "observed": "宝鸡青铜器博物院页面列出何尊、西周早期、1963年贾村镇出土及馆藏；‘中国’为地理方位概念的限制也得到馆方说明。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 当前组所有照片 isLabel=false，且 JSON/JS 没有 labelPhoto/labelPhotos 文件名映射；OCR 不替代展签实图。",
+        "original_replica_unresolved: 没有原件/复制品身份标记。"
+      ],
+      "aliases": [
+        "何尊"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-02",
+      "museum_id": "baoji",
+      "rank": 2,
+      "canonical_title": "逨盘",
+      "record_id": "photo-group-3325",
+      "record_ids": [
+        "photo-group-3325",
+        "lai-pan"
+      ],
+      "status": "pending",
+      "content_review": "标题、杨家村窖藏来源、时代和馆藏在当前组 OCR 与 treasures.js/馆方资料间相互支持；但‘此为复制品’没有回指到具体文件名，且在目标对象照片中不可见，不能判定它描述的是当前逨盘、展柜复原还是其他相邻展示物；不能将该照片绑定为逨盘原件。",
+      "record_binding": "精确绑定到 photo-group-3325；目标组对象照片彼此一致，但 OCR 展签没有 source filename，原件/复制品身份不能归属于当前对象。",
+      "object_identity": "看过 DSC_3325/3326/3327/3329；四张图均为同一大型浅腹四兽足盘及其铭文视图，器形与逨盘相符；没有可读目标展签或可见复制品标记，OCR 标记的归属范围未解决。",
+      "photo_match": "目标组对象图已查看；没有可读目标展签图（组内所有照片 isLabel=false），只有未绑定文件名的 OCR。",
+      "collection_owner": "OCR 与 treasures.js 均称中国青铜器博物院，但未由当前组可视展签复核；复制品标记范围未解决。",
+      "identity_kind": "replica_mark_scope_unresolved",
+      "replica_mark_scope": "unresolved: ‘此为复制品’ 仅出现在未绑定文件名的 group OCR，无法确认指向当前逨盘、展柜复原或其他关联对象。",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3325.jpg",
+        "modules/baoji/assets/photos/web/DSC_3326.jpg",
+        "modules/baoji/assets/photos/web/DSC_3327.jpg",
+        "modules/baoji/assets/photos/web/DSC_3329.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3325 title=逨盘; findspot=眉县马家镇杨家村窖藏; labelEvidence OCR 含时代、来源、收藏单位及‘此为复制品’，但没有 source filename 或 labelPhoto/labelPhotos 映射，且组内 photos=DSC_3325/3326/3327/3329 全部 isLabel=false。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/treasures.js",
+          "observed": "id=lai-pan; 逨盘; 2003年陕西眉县杨家村窖藏; collection=中国青铜器博物院。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.bjqtm.com/dczp/qtq/%E9%80%A8%E7%9B%98",
+          "observed": "宝鸡青铜器博物院官方珍品页支持逨盘、西周晚期、眉县杨家村窖藏与器物规格；该页描述的是馆藏珍品，不能消除当前照片组 OCR 中未绑定来源的‘此为复制品’标记。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 当前组所有照片 isLabel=false，且 JSON/JS 没有 labelPhoto/labelPhotos 文件名映射；OCR 不能替代展签实图。",
+        "replica_mark_scope_unresolved: 未绑定来源的 OCR 含‘此为复制品’，无法判断该标记是当前逨盘、展柜复原还是其他关联对象；需可视展签或馆方档案确认后才能绑定原件 lai-pan。"
+      ],
+      "aliases": [
+        "逨盘",
+        "西周逨盘",
+        "中华第一盘"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-03",
+      "museum_id": "baoji",
+      "rank": 3,
+      "canonical_title": "㝬簋（胡簋）",
+      "record_id": "photo-group-3487",
+      "record_ids": [
+        "photo-group-3487",
+        "hu-gui"
+      ],
+      "status": "pending",
+      "content_review": "当前组对象与标题、时代、齐村窖藏来源相符；但 label OCR 的收藏单位是扶风县博物馆，而 treasures.js 的 hu-gui 记录写中国青铜器博物院，出现实际馆主冲突。候选包 ID 未参与匹配。",
+      "record_binding": "精确找到 photo-group-3487，并与 treasures.js 的 hu-gui 名称相联；不能把它当作中国青铜器博物院原件而发布。",
+      "object_identity": "看过 DSC_3487/3490/3492/3493/3502 对象图；大型方座、双耳簋与㝬簋形制相符。未见可读目标展签或原件/复制品标记。",
+      "photo_match": "目标组对象图已查看；没有可读目标展签图（组内所有照片 isLabel=false），仅有 OCR。",
+      "collection_owner": "冲突：photo-index OCR=扶风县博物馆；treasures.js hu-gui=中国青铜器博物院。",
+      "identity_kind": "owner_conflict",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3487.jpg",
+        "modules/baoji/assets/photos/web/DSC_3490.jpg",
+        "modules/baoji/assets/photos/web/DSC_3492.jpg",
+        "modules/baoji/assets/photos/web/DSC_3493.jpg",
+        "modules/baoji/assets/photos/web/DSC_3502.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3487 title=㝬簋; findspot=1978年扶风县法门镇齐村窖藏; OCR labelFacts collection=扶风县博物馆; photos=DSC_3487/3490/3492/3493/3502 全部 isLabel=false; no labelPhoto/labelPhotos filename mapping。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/treasures.js",
+          "observed": "id=hu-gui; name=㝬簋; collection=中国青铜器博物院。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.bjqtm.com/gzzx/gnyw/%E9%9D%92%E9%93%9C%E8%BE%89%E8%80%80-%E6%8E%A2%E8%AE%BF%E5%9B%BD%E5%AE%B6%E5%AE%9D%E8%97%8F",
+          "observed": "宝鸡青铜器博物院官方文章将㝬簋列入叙述，但当前照片的收藏单位仍须回到可视展签/馆藏档案解决。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 当前组所有照片 isLabel=false，且 JSON/JS 没有 labelPhoto/labelPhotos 文件名映射；OCR 不能替代用户要求的展签实图。",
+        "owner_conflict: 扶风县博物馆与中国青铜器博物院两种收藏单位未解决。"
+      ],
+      "aliases": [
+        "㝬簋",
+        "胡簋",
+        "害簋（旧 OCR 不采用）"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-04",
+      "museum_id": "baoji",
+      "rank": 4,
+      "canonical_title": "秦公镈（三件）",
+      "record_id": "photo-group-3656",
+      "record_ids": [
+        "photo-group-3656"
+      ],
+      "status": "pending",
+      "content_review": "当前 photo-index 仅找到一个秦公镈组，标题写秦公镈，但 OCR 展签读作秦公钟（bo）；照片组只有两张对象图，不足以证明三件独立镈及其逐件身份。",
+      "record_binding": "已按标题与照片精确找到 photo-group-3656，但该组不能绑定包内‘三件’入口。",
+      "object_identity": "看过 DSC_3656/3657 对象图；为大型钟/镈类青铜乐器，器类细分不能只凭外形定案。未见可读目标展签。",
+      "photo_match": "目标组对象图已查看；无可读标签图（两张照片均 isLabel=false），OCR 与组标题发生钟/镈冲突。",
+      "collection_owner": "中国青铜器博物院（OCR；未由可视展签复核）",
+      "identity_kind": "title_and_set_cardinality_conflict",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3656.jpg",
+        "modules/baoji/assets/photos/web/DSC_3657.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3656 title=秦公镈; two object photos DSC_3656/3657, both isLabel=false; OCR label title=秦公钟（bo）; no labelPhoto/labelPhotos filename mapping。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.bjqtm.com/gzzx/gnyw/%E9%9D%92%E9%93%9C%E8%BE%89%E8%80%80-%E6%8E%A2%E8%AE%BF%E5%9B%BD%E5%AE%B6%E5%AE%9D%E8%97%8F",
+          "observed": "馆方文章的图片目录同时出现秦公镈等周秦器物，但未提供当前两张照片对应的三件逐件标签。"
+        }
+      ],
+      "blockers": [
+        "title_conflict: 组标题秦公镈，OCR 展签秦公钟（bo）。",
+        "set_cardinality_unverified: 当前组不是三件独立记录，不能按三件发布。",
+        "no_label_photo: 展签仅 OCR；当前组没有 isLabel=true 或 labelPhoto/labelPhotos 文件名映射。"
+      ],
+      "aliases": [
+        "秦公镈（三件）",
+        "秦公镈",
+        "秦公钟（OCR/标签）"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-05",
+      "museum_id": "baoji",
+      "rank": 5,
+      "canonical_title": "逨盉",
+      "record_id": "photo-group-3740",
+      "record_ids": [
+        "photo-group-3740"
+      ],
+      "status": "pending",
+      "content_review": "当前组 title、2003年眉县马家镇杨家村窖藏、馆藏与 OCR 事实均指向逨盉；官方馆方文章还展示逨盉及其器形说明。用户要求的展签实图缺失，所以仍待绑定。",
+      "record_binding": "精确绑定到 photo-group-3740；没有把相邻逨器误并为同一件。",
+      "object_identity": "看过 DSC_3740/3741/3742/3743 对象图；凤鸟形盖、长流、动物连接件与逨盉对象形态相符。未见可读目标展签或原件/复制品标识。",
+      "photo_match": "目标组对象图已查看；无可视标签图（四张照片均 isLabel=false），只有 OCR。",
+      "collection_owner": "中国青铜器博物院（OCR）",
+      "identity_kind": "current_object_photo_no_label",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3740.jpg",
+        "modules/baoji/assets/photos/web/DSC_3741.jpg",
+        "modules/baoji/assets/photos/web/DSC_3742.jpg",
+        "modules/baoji/assets/photos/web/DSC_3743.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3740 title=逨盉; findspot=2003年眉县马家镇杨家村窖藏; OCR labelFacts collection=中国青铜器博物院; photos=DSC_3740/3741/3742/3743 全部 isLabel=false; no labelPhoto/labelPhotos filename mapping。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.bjqtm.com/gzzx/gnyw/%E9%9D%92%E9%93%9C%E8%BE%89%E8%80%80-%E6%8E%A2%E8%AE%BF%E5%9B%BD%E5%AE%B6%E5%AE%9D%E8%97%8F",
+          "observed": "宝鸡馆方文章列出逨盉并说明其与杨家村窖藏、器形构件相关。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 当前组所有照片 isLabel=false，且 JSON/JS 没有 labelPhoto/labelPhotos 文件名映射；当前照片组没有可视展签。"
+      ],
+      "aliases": [
+        "逨盉"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-06",
+      "museum_id": "baoji",
+      "rank": 6,
+      "canonical_title": "朕匜（亻朕匜）",
+      "record_id": "photo-group-3524",
+      "record_ids": [
+        "photo-group-3524"
+      ],
+      "status": "pending",
+      "content_review": "当前组名称依据英文展签器类和器形校正为（左亻右朕）匜，OCR 还给出1975年岐山县京当镇董家村一号窖藏与岐山县博物馆；这支持标题与来源，但 OCR 尾部疑似‘此为复…’，身份需复核。",
+      "record_binding": "精确绑定到 photo-group-3524；未把旧索引的‘彝’当作当前器名。",
+      "object_identity": "看过 DSC_3524/3525/3526 对象图；长流/鋬的水器形制与匜相符。没有可读目标展签确认其是否复制品。",
+      "photo_match": "目标组对象图已查看；没有可读标签图（三张照片均 isLabel=false），仅 OCR。",
+      "collection_owner": "岐山县博物馆（OCR；当前组未有可视标签）",
+      "identity_kind": "replica_possible_label_ocr_only",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3524.jpg",
+        "modules/baoji/assets/photos/web/DSC_3525.jpg",
+        "modules/baoji/assets/photos/web/DSC_3526.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3524 title=（左亻右朕）匜; findspot=岐山县京当镇董家村一号窖藏; OCR labelFacts collection=岐山县博物馆; OCR 尾部为‘此为复’；photos=DSC_3524/3525/3526 全部 isLabel=false; no labelPhoto/labelPhotos filename mapping。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 当前组所有照片 isLabel=false，且 JSON/JS 没有 labelPhoto/labelPhotos 文件名映射；OCR 不能替代展签实图。",
+        "replica_possible: OCR 展签疑似包含复制品说明，但文字被截断，需可视展签或档案。"
+      ],
+      "aliases": [
+        "朕匜（亻朕匜）",
+        "（左亻右朕）匜",
+        "朕匜"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-07",
+      "museum_id": "baoji",
+      "rank": 7,
+      "canonical_title": "刖人守门方鼎",
+      "record_id": "photo-group-3520",
+      "record_ids": [
+        "photo-group-3520"
+      ],
+      "status": "pending",
+      "content_review": "对象照片与当前标题相符，OCR 展签给出西周、1988年渭滨区茹家庄窖藏、中国青铜器博物院；公开来源之间的年份/地点曾有冲突，按包内要求仍不能只凭 OCR 结束核验。",
+      "record_binding": "精确绑定到 photo-group-3520；没有套用山西刖人守囿车或其他器物。",
+      "object_identity": "看过 DSC_3520 对象图；方鼎腹下小门与人物形象可见，器物形制支持标题。未见原件/复制品标识。",
+      "photo_match": "对象图已查看；没有可视标签图（isLabel=0），仅 OCR。",
+      "collection_owner": "中国青铜器博物院（OCR）",
+      "identity_kind": "current_object_photo_no_label",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3520.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3520 title=刖人守门方鼎; OCR labelFacts period=西周, findspot=1988年渭滨区茹家庄窖藏, collection=中国青铜器博物院; no isLabel photo。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.bjqtm.com/gzzx/gnyw/%E9%9D%92%E9%93%9C%E8%BE%89%E8%80%80-%E6%8E%A2%E8%AE%BF%E5%9B%BD%E5%AE%B6%E5%AE%9D%E8%97%8F",
+          "observed": "宝鸡馆方文章以‘刖人奴隶守门鼎’列入其器物图片目录，但不能替代当前组的可视展签与档案核对。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 展签只有 OCR。",
+        "provenance_conflict: 包内说明已指出公开出土地/年份冲突，需馆方展签或档案确认后才能发布具体年月。"
+      ],
+      "aliases": [
+        "刖人守门方鼎",
+        "刖人奴隶守门鼎"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-08",
+      "museum_id": "baoji",
+      "rank": 8,
+      "canonical_title": "四十二年逨鼎",
+      "record_id": "photo-group-3333",
+      "record_ids": [
+        "photo-group-3333"
+      ],
+      "status": "pending",
+      "content_review": "当前组标题、四十二年逨鼎、杨家村窖藏来源和中国青铜器博物院 OCR 展签信息一致；需可视展签确认具体个体。",
+      "record_binding": "精确绑定到 photo-group-3333；没有将同窖藏其他逨鼎合并。",
+      "object_identity": "看过 DSC_3333 对象图；立耳、深腹、三足鼎形清楚，未见原件/复制品标识。",
+      "photo_match": "对象图已查看；无可视标签图（isLabel=0），OCR 显示四十二年逨鼎。",
+      "collection_owner": "中国青铜器博物院（OCR）",
+      "identity_kind": "current_object_photo_no_label",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3333.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3333 title=四十二年逨鼎; findspot=2003年眉县马家镇杨家村窖藏; OCR labelFacts collection=中国青铜器博物院; no isLabel photo。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.bjqtm.com/gzzx/gnyw/%E9%9D%92%E9%93%9C%E8%BE%89%E8%80%80-%E6%8E%A2%E8%AE%BF%E5%9B%BD%E5%AE%B6%E5%AE%9D%E8%97%8F",
+          "observed": "馆方文章明确列出四十二年逨鼎并将其置于杨家村窖藏器群叙述中。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 需实际查看展签。",
+        "individual_identity_unresolved: 包内说明提示同名多件；当前组未给甲/乙或完整个体档案。"
+      ],
+      "aliases": [
+        "四十二年逨鼎",
+        "四十二年逨鼎（逨器群）"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-09",
+      "museum_id": "baoji",
+      "rank": 9,
+      "canonical_title": "四十三年逨鼎",
+      "record_id": "photo-group-3415",
+      "record_ids": [
+        "photo-group-3415"
+      ],
+      "status": "pending",
+      "content_review": "当前组标题、四十三年逨鼎、杨家村窖藏来源和 OCR 展签信息一致；包内提示该名涉及多件器，本组无甲/乙标识。",
+      "record_binding": "精确绑定到 photo-group-3415；仅确认此照片组，不把器群所有同名鼎当作一件。",
+      "object_identity": "看过 DSC_3415 对象图；鼎形与同器群相符。未见原件/复制品标识。",
+      "photo_match": "对象图已查看；无可视标签图（isLabel=0），OCR 标题为四十三年逨鼎。",
+      "collection_owner": "中国青铜器博物院（OCR）",
+      "identity_kind": "same_name_multiple_individuals",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3415.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3415 title=四十三年逨鼎; photos=DSC_3415/3417; OCR labelFacts collection=中国青铜器博物院; no isLabel photo。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.bjqtm.com/gzzx/gnyw/%E9%9D%92%E9%93%9C%E8%BE%89%E8%80%80-%E6%8E%A2%E8%AE%BF%E5%AE%9D%E9%B8%A1%E9%9D%92%E9%93%9C%E5%99%A8%E5%8D%9A%E7%89%A9%E9%99%A2%E7%9A%84%E5%9B%BD%E5%AE%B6%E5%AE%9D%E8%97%8F",
+          "observed": "馆方文章提到四十三年逨鼎（含不同个体/编号叙述），进一步说明不能不加区分地合并。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 需实际查看展签。",
+        "individual_identity_unresolved: 当前组没有甲/乙/壬/癸等个体标记或尺寸档案。"
+      ],
+      "aliases": [
+        "四十三年逨鼎",
+        "四十三年逨鼎（器群入口）"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-10",
+      "museum_id": "baoji",
+      "rank": 10,
+      "canonical_title": "秦公钟（五件）",
+      "record_id": "photo-group-3649",
+      "record_ids": [
+        "photo-group-3649"
+      ],
+      "status": "pending",
+      "content_review": "当前组标题与 OCR 展签均为秦公钟、春秋、1978年陈仓区太公庙村出土、中国青铜器博物院；对象图显示多钟陈列，但不能从陈列图确定恰为五件或逐件来源。",
+      "record_binding": "精确绑定到 photo-group-3649 这一组照片；暂不把它扩成五个独立对象。",
+      "object_identity": "看过 DSC_3649 对象图；可见多件悬挂钟的陈列场景，组级对象身份支持秦公钟，但未见逐件标签/原件身份。",
+      "photo_match": "对象组图已查看；无可视标签图（isLabel=0），仅 OCR。",
+      "collection_owner": "中国青铜器博物院（OCR）",
+      "identity_kind": "set_count_unverified",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3649.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3649 title=秦公钟; six object/display photos DSC_3649—3654; OCR labelFacts collection=中国青铜器博物院; no isLabel photo。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 需实际查看组展签。",
+        "set_cardinality_unverified: 照片显示钟组，但未证明五件的逐件数量/编号/同一收藏身份。"
+      ],
+      "aliases": [
+        "秦公钟（五件）",
+        "秦公钟"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-11",
+      "museum_id": "baoji",
+      "rank": 11,
+      "canonical_title": "单五父壶",
+      "record_id": "photo-group-3390",
+      "record_ids": [
+        "photo-group-3390"
+      ],
+      "status": "pending",
+      "content_review": "当前组标题为单五父壶，但该组只有 DSC_3391 一张对象照片，时代、来源、馆藏与标签 OCR 均为空；不足以绑定包内入口。",
+      "record_binding": "仅按当前 photo-index 标题找到 photo-group-3390；不把相邻杨家村器群或其他方壶记录替代本件。",
+      "object_identity": "看过 DSC_3391 对象图；只能确认一件青铜壶的局部/侧面，无法据此核定单五父壶个体。",
+      "photo_match": "对象图已查看但角度/信息不足；没有标签图或 OCR。",
+      "collection_owner": "未知",
+      "identity_kind": "limited_single_photo_no_label",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3391.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3390 title=单五父壶; photos only DSC_3391.JPG; era/findspot/labelEvidence/labelFacts absent."
+        }
+      ],
+      "blockers": [
+        "label_missing: 无展签图与 OCR。",
+        "provenance_owner_missing: 当前组无时代、出土与收藏单位。",
+        "photo_insufficient: 单张局部视图无法完成个体/套组核验。"
+      ],
+      "aliases": [
+        "单五父壶",
+        "单五父方壶（不得自动互换）"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-12",
+      "museum_id": "baoji",
+      "rank": 12,
+      "canonical_title": "鲤鱼尊",
+      "record_id": null,
+      "record_ids": [],
+      "status": "pending",
+      "content_review": "在当前宝鸡 photo-index、treasures.js、搜索索引及模块字符串中未找到‘鲤鱼尊’的实际记录；不能用其他动物形尊替代。",
+      "record_binding": "未形成当前记录绑定。",
+      "object_identity": "没有可查看的当前对象照片或标签图；未推断器形、时代、出土地或馆藏。",
+      "photo_match": "无当前照片路径。",
+      "collection_owner": null,
+      "identity_kind": "unmatched_no_record",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "目标标题无精确组匹配。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/treasures.js",
+          "observed": "四条 treasures 记录中无鲤鱼尊。"
+        }
+      ],
+      "blockers": [
+        "no_current_record: 当前数据没有精确记录。",
+        "no_object_photo: 无可视对象图。",
+        "no_label_photo: 无展签图。",
+        "do_not_substitute: 不能以象尊、伯各尊或其他尊类代替。"
+      ],
+      "aliases": [
+        "鲤鱼尊"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-13",
+      "museum_id": "baoji",
+      "rank": 13,
+      "canonical_title": "象尊",
+      "record_id": "photo-group-3761",
+      "record_ids": [
+        "photo-group-3761"
+      ],
+      "status": "pending",
+      "content_review": "当前组标题、1974年渭滨区茹家庄鱼国墓地一号墓来源、西周与中国青铜器博物院 OCR 信息一致；用户要求的展签实图缺失。",
+      "record_binding": "精确绑定到 photo-group-3761；没有把其他动物形尊并入。",
+      "object_identity": "看过 DSC_3761 对象图；象形器物、长鼻与背部开口清晰，支持象尊标题。未见原件/复制品标识。",
+      "photo_match": "对象图已查看；无可视标签图（isLabel=0），仅 OCR。",
+      "collection_owner": "中国青铜器博物院（OCR）",
+      "identity_kind": "current_object_photo_no_label",
+      "verified_photo_paths": [
+        "modules/baoji/assets/photos/web/DSC_3761.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "photo-group-3761 title=象尊; findspot=渭滨区茹家庄鱼国墓地一号墓; OCR labelFacts collection=中国青铜器博物院; no isLabel photo。"
+        }
+      ],
+      "blockers": [
+        "no_label_photo: 需实际查看展签。"
+      ],
+      "aliases": [
+        "象尊"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-14",
+      "museum_id": "baoji",
+      "rank": 14,
+      "canonical_title": "青铜母子虎",
+      "record_id": null,
+      "record_ids": [],
+      "status": "pending",
+      "content_review": "当前数据未找到‘青铜母子虎’精确记录；发现的‘虎形玉佩’材质与器物身份不同，不能替代。",
+      "record_binding": "未形成当前记录绑定。",
+      "object_identity": "没有当前对象照片或标签图；不编写救幼、母爱、亲吻等故事。",
+      "photo_match": "无当前照片路径。",
+      "collection_owner": null,
+      "identity_kind": "unmatched_no_record",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "无标题=青铜母子虎的精确组；存在的虎形玉佩是玉器，不能互换。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/treasures.js",
+          "observed": "treasures 中无青铜母子虎。"
+        }
+      ],
+      "blockers": [
+        "no_current_record: 当前数据没有精确记录。",
+        "no_object_photo: 无可视对象图。",
+        "no_label_photo: 无展签图。",
+        "material_conflict_risk: 不能以虎形玉佩或其他虎形器替代。"
+      ],
+      "aliases": [
+        "青铜母子虎"
+      ]
+    },
+    {
+      "editorial_id": "baoji-highlight-15",
+      "museum_id": "baoji",
+      "rank": 15,
+      "canonical_title": "大鸟尊",
+      "record_id": null,
+      "record_ids": [],
+      "status": "pending",
+      "content_review": "当前数据未找到‘大鸟尊’精确记录。包内已将本项列为 label_verification_required，不能补写出土地、尺寸、羽纹、盖钮或年代。",
+      "record_binding": "未形成当前记录绑定。",
+      "object_identity": "没有当前对象照片或独立标签图；不以三足铜鸟、玉鸟等异物代替。",
+      "photo_match": "无当前照片路径。",
+      "collection_owner": null,
+      "identity_kind": "unmatched_label_required",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/baoji/data/photo-index.json",
+          "observed": "无标题=大鸟尊的精确组。"
+        },
+        {
+          "source": "package",
+          "path": "00_README_CODEX.md",
+          "observed": "包内明确要求本项先核展签，禁止凭空补写具体出土地、尺寸、装饰与年代。"
+        }
+      ],
+      "blockers": [
+        "no_current_record: 当前数据没有精确记录。",
+        "no_object_photo: 无可视对象图。",
+        "no_label_photo: 该项明确要求独立展签验证。",
+        "do_not_substitute: 不得以其他鸟形器代替。"
+      ],
+      "aliases": [
+        "大鸟尊"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-01",
+      "museum_id": "xian-museum",
+      "rank": 1,
+      "canonical_title": "三彩腾空马",
+      "record_id": "xian-057-5058",
+      "record_ids": [
+        "xian-057-5058"
+      ],
+      "status": "pass",
+      "review_details": {
+        "content_review": "对象图 focus-5058 与标签图 focus-5066 均已实际查看。标签可读‘三彩腾空马／唐代／1966年西安市莲湖区出土’，与当前 data.js 标题、时代及西安莲湖区来源相符；标签与对象共同完成绑定。对‘胡人’等人物族属不作超出证据的确定断言。",
+        "record_binding": "PASS：current data.js record xian-057-5058 resolved independently by exact title + object photo + matching label photo; package candidate ID ignored.",
+        "object_identity": "对象为三彩釉陶腾空马及骑手；对象图与标签同组对应，未见复制品标记。此 PASS 仅确认当前西安博物院记录绑定，不额外宣称原件档案状态。",
+        "photo_match": "PASS：object focus-5058 viewed; label focus-5066 viewed and legible.",
+        "normalization_basis": "对象 focus-5058 与同条目可读展签 focus-5066 的题名、时代、出土地一致，current data.js 的精确记录 ID 与官方馆方页面相互支持。规范化的 verified 表示当前对象—展签—记录身份已核实；没有把未由标签或档案明确说明的原件状态写成事实。"
+      },
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安博物院（当前 data.js sourceMuseum；标签裁切未显示馆名）",
+      "identity_kind": "matching_museum_label_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-5058.webp",
+        "modules/xian-museum/assets/photos/focus-5066.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-057-5058; title=三彩腾空马; period=唐代; findspot/ origin=西安莲湖区; labelNumbers=[5066]."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5058.webp",
+          "observed": "已查看对象图：三彩骑手与腾空马形制清楚。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5066.webp",
+          "observed": "已查看标签图：可读三彩腾空马、唐代、1966年西安市莲湖区出土。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.xabwy.com/showtwo.html?id=1795",
+          "observed": "西安博物院官方页面支持三彩腾空马为馆藏重要文物，1966年出土于西安市莲湖区西安制药厂，并给出38厘米/52厘米规格；不把页面铜雕复制品当原件。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "三彩腾空马",
+        "唐三彩腾空马"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-02",
+      "museum_id": "xian-museum",
+      "rank": 2,
+      "canonical_title": "史君墓石椁",
+      "record_id": "xian-059-5073",
+      "record_ids": [
+        "xian-059-5073"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-5073 已查看，当前 data.js 标题/北周/未央区井上村来源可匹配；标签编号 5077 在源数据列出，但对应图片缺失。",
+      "record_binding": "当前记录可由标题和对象图定位到 xian-059-5073，但未完成用户要求的可视展签确认。",
+      "object_identity": "看过石椁对象图；未见复制品标识。不能与陕历博安伽墓围屏石榻混用。",
+      "photo_match": "对象图已查看；label candidate focus-5077.webp 不存在。",
+      "collection_owner": "西安博物院（current data.js；无标签实图复核）",
+      "identity_kind": "current_object_photo_label_missing",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-5073.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-059-5073; labelNumbers=[5077]; object photos focus-5073—5076; focus-5077 missing."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5073.webp",
+          "observed": "已查看石椁浮雕对象图。"
+        }
+      ],
+      "blockers": [
+        "label_photo_missing: data.js 指向 focus-5077.webp，但文件不存在。",
+        "identity_scope: 未查看标签，不能完成石椁与具体展示物绑定。"
+      ],
+      "aliases": [
+        "史君墓石椁",
+        "史君墓石椁（不得与安伽墓石榻互换）"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-03",
+      "museum_id": "xian-museum",
+      "rank": 3,
+      "canonical_title": "彩绘人物车马镜",
+      "record_id": "xian-001-painted-mirror",
+      "record_ids": [
+        "xian-001-painted-mirror"
+      ],
+      "status": "pending",
+      "content_review": "当前 record 与补充图标题、1963年红庙坡村来源和西汉信息一致；补充图为带小红书水印的 web-sourced images，不是本次现场实拍，且没有展签图。",
+      "record_binding": "按当前 data.js 独立记录 xian-001-painted-mirror 绑定；不把补充图当现场标签/现场照片。",
+      "object_identity": "已查看 supplement/painted-mirror-01/02/03；彩绘铜镜对象和局部清楚，但图源/版权与实拍身份需解决。",
+      "photo_match": "对象补充图已查看；无 label photo；图中有小红书水印/账号，需保留来源并核版权。",
+      "collection_owner": "西安博物院（current data.js；补充图不带馆方标签）",
+      "identity_kind": "supplemental_web_image_no_label",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/supplement/painted-mirror-01.webp",
+        "modules/xian-museum/assets/supplement/painted-mirror-02.webp",
+        "modules/xian-museum/assets/supplement/painted-mirror-03.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-001-painted-mirror; title=西汉彩绘人物车马镜; origin=1963年西安市红庙坡村出土; photoRange=用户补充图片1—7; labelNumbers=[]。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/supplement/painted-mirror-01.webp",
+          "observed": "已查看对象补充图；图像有小红书水印，不是展签。"
+        },
+        {
+          "source": "package",
+          "path": "00_README_CODEX.md",
+          "observed": "包内要求补充图保留来源，不标成本次实拍。"
+        }
+      ],
+      "blockers": [
+        "label_missing: 没有对象对应展签图。",
+        "photo_provenance_rights: 补充图带第三方平台水印，来源/授权和现场实拍身份未解决。",
+        "no_auto_publish: 在来源与标签未解决前不得发布为已绑定现场照片。"
+      ],
+      "aliases": [
+        "西汉彩绘人物车马镜",
+        "彩绘人物车马镜"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-04",
+      "museum_id": "xian-museum",
+      "rank": 4,
+      "canonical_title": "勾连云纹玉杯",
+      "record_id": "xian-044-5013",
+      "record_ids": [
+        "xian-044-5013"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-5013 已查看，与 xian-044-5013 的玉杯标题和器形相符；当前 data.js 时代为‘年代待考’，包内建议‘秦’不能自动覆盖。标签 focus-5015 缺失。",
+      "record_binding": "定位到 xian-044-5013；未用候选包 ID，也未用照片 xian-006-4869 的另一件玉杯替代。",
+      "object_identity": "看过 focus-5013；连续勾连云纹玉杯清楚，未见复制品标识。",
+      "photo_match": "对象图已查看；label candidate focus-5015.webp 不存在。",
+      "collection_owner": "西安博物院（current data.js；无标签实图复核）",
+      "identity_kind": "period_conflict_label_missing",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-5013.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-044-5013; title=勾连云纹玉杯; period=年代待考; labelNumbers=[5015]; object photos focus-5013/5014; focus-5015 missing."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5013.webp",
+          "observed": "已查看对象图：勾连云纹玉杯。"
+        },
+        {
+          "source": "package",
+          "path": "00_README_CODEX.md",
+          "observed": "包内明确要求以当前展签复核秦代提议，且 4869 是另一件玉杯。"
+        }
+      ],
+      "blockers": [
+        "label_photo_missing: focus-5015.webp 不存在。",
+        "period_conflict: current data=年代待考；包内秦代不能在没有展签时写入。",
+        "do_not_substitute: focus-4869 为另一件玉杯。"
+      ],
+      "aliases": [
+        "勾连云纹玉杯"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-05",
+      "museum_id": "xian-museum",
+      "rank": 5,
+      "canonical_title": "永盂",
+      "record_id": "xian-048-5024",
+      "record_ids": [
+        "xian-048-5024"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-5024 已查看，当前 record 的西周/蓝田县/青铜标题链条清楚；data.js 的 labelNumbers=[5029]，但 focus-5029 不是可读完整展签。",
+      "record_binding": "定位到 xian-048-5024；不能仅因 5029 编号存在就视为标签已核。",
+      "object_identity": "看过 focus-5024；大型青铜盂可见。focus-5029 只见器物下部/被裁切的标签区域，无法核读铭文或展签字段。",
+      "photo_match": "对象图已查看；focus-5029 存在但不可读，不能作为合格标签证据。",
+      "collection_owner": "西安博物院（current data.js；标签图不可读）",
+      "identity_kind": "object_photo_label_unreadable",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-5024.webp",
+        "modules/xian-museum/assets/photos/focus-5029.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-048-5024; title=永盂; period=西周; findspot=西安市蓝田县; labelNumbers=[5029]."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5024.webp",
+          "observed": "已查看对象图：大型青铜盂。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5029.webp",
+          "observed": "已查看编号 5029 图，但标签文字未完整进入画面，无法核对。"
+        }
+      ],
+      "blockers": [
+        "label_unreadable: 5029 图不足以读出标题/来源/馆藏。",
+        "inscription_provenance_unverified: 包内要求展签与释文复核，当前图像不能完成。"
+      ],
+      "aliases": [
+        "永盂"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-06",
+      "museum_id": "xian-museum",
+      "rank": 6,
+      "canonical_title": "蓝釉点彩驮骡",
+      "record_id": "xian-058-5067",
+      "record_ids": [
+        "xian-058-5067"
+      ],
+      "status": "pending",
+      "content_review": "当前 data.js 标题为‘蓝釉点彩驴’，包内拟改为‘蓝釉点彩驮骡’；对象图看过且确有驮载动物，但标签 focus-5072 缺失，不能据名称相似自动确认同件/改名。",
+      "record_binding": "定位到 xian-058-5067 作为当前蓝釉动物记录；包内新标题未绑定。",
+      "object_identity": "看过 focus-5067；蓝釉点彩驮载动物可见，驴/骡的名称区分需展签或馆方资料确认；未见复制品标识。",
+      "photo_match": "对象图已查看；label candidate focus-5072.webp 不存在。",
+      "collection_owner": "西安博物院（current data.js；无标签实图复核）",
+      "identity_kind": "title_variant_label_missing",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-5067.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-058-5067; current title=蓝釉点彩驴; period=唐代; labelNumbers=[5072]; focus-5072 missing."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5067.webp",
+          "observed": "已查看对象图：蓝釉点彩负载动物。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.xabwy.com/showtwo.html?id=944",
+          "observed": "西安博物院官方页面有‘蓝釉驮骡’条目并称唐代、西安市莲湖区西安制药厂出土、现藏西安博物院；但缺失的当前展签仍使其不能与 xian-058-5067 自动等同。"
+        }
+      ],
+      "blockers": [
+        "label_photo_missing: focus-5072.webp 不存在。",
+        "title_identity_conflict: current title 驴，包内标题 驮骡，需同件展签确认。",
+        "provenance_granularity: 官网蓝釉驮骡资料与 current data 西安地区来源粒度不同，不能自动合并。"
+      ],
+      "aliases": [
+        "蓝釉点彩驮骡",
+        "蓝釉点彩驴",
+        "蓝釉驮骡（官网条目）"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-07",
+      "museum_id": "xian-museum",
+      "rank": 7,
+      "canonical_title": "鎏金羊灯",
+      "record_id": "xian-005-4867",
+      "record_ids": [
+        "xian-005-4867"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-4867 已查看，current data.js 标题/汉代/铜/馆藏来源一致；图中邻近标签不属于该器，不能把邻标当作本件证据。",
+      "record_binding": "定位到 xian-005-4867；未把邻近展柜标签关联到羊灯。",
+      "object_identity": "看过 focus-4867；鎏金羊形灯对象清楚。包内要求开合结构与原件/复制品身份核对，当前没有本件展签。",
+      "photo_match": "对象图已查看；labelNumbers=[]，无标签路径。",
+      "collection_owner": "西安博物院（current data.js；无本件标签实图）",
+      "identity_kind": "object_photo_no_label",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-4867.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-005-4867; title=鎏金羊灯; period=汉代; material=铜; labelNumbers=[]。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4867.webp",
+          "observed": "已查看对象图；可见羊形器物，附近标签不是可确认的本件标签。"
+        }
+      ],
+      "blockers": [
+        "label_missing: current record 没有本件标签图。",
+        "mechanism_identity_unverified: 开合结构/原件身份未由本件展签或档案确认。"
+      ],
+      "aliases": [
+        "鎏金羊灯"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-08",
+      "museum_id": "xian-museum",
+      "rank": 8,
+      "canonical_title": "八瓣仕女狩猎纹银杯",
+      "record_id": "xian-035-4989",
+      "record_ids": [
+        "xian-035-4989"
+      ],
+      "status": "pass",
+      "review_details": {
+        "content_review": "对象图 focus-4989 与标签图 focus-4991 均已实际查看。标签可读‘八瓣仕女狩猎纹银杯／唐代／2002年西安市未央区马旗寨村出土’，与对象图的八瓣银杯和当前记录标题/时代吻合；当前记录没有 findspot，但标签补充了本件出土信息。不得与陕历博何家村同题材银杯混淆。",
+        "record_binding": "PASS：current data.js xian-035-4989 resolved by exact object + matching label; package candidate ID ignored.",
+        "object_identity": "对象与标签组合相符，未见复制品标识。PASS 仅确认西安博物院当前记录的绑定；不把相邻文创或别馆器物当本件。",
+        "photo_match": "PASS：object focus-4989 viewed; label focus-4991 viewed and legible.",
+        "normalization_basis": "对象 focus-4989 与同条目可读展签 focus-4991 的题名、时代、出土地和器形相互吻合，current data.js 记录与官方馆方页面支持同一件西安博物院器物。规范化的 verified 表示当前对象—展签—记录身份已核实；没有把未由标签或档案明确说明的原件状态写成事实。"
+      },
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安博物院（current data.js；官方馆方页面亦将该器列为西安博物院器物）",
+      "identity_kind": "matching_museum_label_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-4989.webp",
+        "modules/xian-museum/assets/photos/focus-4991.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-035-4989; title=八瓣仕女狩猎纹银杯; period=唐代; labelNumbers=[4991]; object photos focus-4989/4990."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4989.webp",
+          "observed": "已查看八瓣银杯对象图，器形和仕女/狩猎纹饰清楚。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4991.webp",
+          "observed": "已查看标签图，可读标题、唐代及2002年西安市未央区马旗寨村出土。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.xabwy.com/showtwo.html?id=480&num=3&type=39",
+          "observed": "西安博物院官方展览页面列出唐代八瓣仕女狩猎纹银杯、西安博物院及口径9厘米/高4.2厘米，支持器物身份与器形；未把外馆同题材器物并入。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "八瓣仕女狩猎纹银杯"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-09",
+      "museum_id": "xian-museum",
+      "rank": 9,
+      "canonical_title": "玉舞人",
+      "record_id": "xian-003-4859",
+      "record_ids": [
+        "xian-003-4859"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-4859 与标签图 focus-4860 已查看。标签可读玉舞人、玉、西安博物院藏，能绑定标题/材质/馆藏；但当前 record=汉代，包内=西汉且包内提示不同展览/杜陵一对身份可能混淆，不能把这些更细内容当已核。",
+      "record_binding": "当前 record xian-003-4859 的标题绑定证据较强，但包内的西汉/杜陵一对内容尚未绑定到这张照片。",
+      "object_identity": "看过对象图；呈一对相连舞人形象。标签没有出土点/时代/数量说明，不能断言为杜陵出土、汉宣帝御用或唯一一对。",
+      "photo_match": "对象与标签均已查看；标签确认标题/材质/馆藏，但不足以解决展览对象/组合身份。",
+      "collection_owner": "西安博物院（标签明确写西安博物院藏）",
+      "identity_kind": "matching_label_pair_and_period_scope_unresolved",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/featured-4859.webp",
+        "modules/xian-museum/assets/photos/focus-4860.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-003-4859; title=玉舞人; period=汉代; labelNumbers=[4860]; object photo featured-4859."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/featured-4859.webp",
+          "observed": "已查看对象图：相连的玉舞人形象。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4860.webp",
+          "observed": "已查看标签图：可读玉舞人、玉、西安博物院藏，但未给出西汉/杜陵/数量细节。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.xabwy.com/showtwo.html?id=480&num=3&type=39",
+          "observed": "西安博物院官方展览页面确有汉代玉舞人及杜陵一对的叙述，但不能仅凭同名把当前照片认定为该特定展品。"
+        }
+      ],
+      "blockers": [
+        "period_scope_conflict: current record=汉代，包内 canonical=西汉，标签未给更细断代。",
+        "pair_identity_unresolved: 需逐一核对杜陵一对/本次展览对象；不能据同名和成对形象自动认定。"
+      ],
+      "aliases": [
+        "玉舞人",
+        "汉代高髻玉舞人（官网展览中的其他具体说明不自动套用）"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-10",
+      "museum_id": "xian-museum",
+      "rank": 10,
+      "canonical_title": "彩绘百枝陶灯",
+      "record_id": "xian-032-4974",
+      "record_ids": [
+        "xian-032-4974"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-4974 已查看；focus-4976 文件存在但只显示被裁切的橙色背景/标签底部，不能读出完整标题、来源或馆藏。",
+      "record_binding": "定位到 xian-032-4974；未把部分标签文字当作可核展签。",
+      "object_identity": "看过多枝陶灯对象图，形制可见；实际枝数、修复部件和原件身份未由完整标签确认。",
+      "photo_match": "对象图已查看；label candidate focus-4976.webp 存在但不可读。",
+      "collection_owner": "西安博物院（current data.js；标签裁切不可核）",
+      "identity_kind": "object_photo_label_unreadable",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-4974.webp",
+        "modules/xian-museum/assets/photos/focus-4976.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-032-4974; title=彩绘百枝陶灯; labelNumbers=[4976]; object photos focus-4974/4975."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4974.webp",
+          "observed": "已查看彩绘多枝陶灯对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4976.webp",
+          "observed": "已查看编号 4976 图，但标签文字被裁切，不能核读。"
+        }
+      ],
+      "blockers": [
+        "label_unreadable: 4976 图不具备完整展签文字。",
+        "object_scope_unverified: 枝数/修复部件/具体对象身份未核。"
+      ],
+      "aliases": [
+        "彩绘百枝陶灯"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-11",
+      "museum_id": "xian-museum",
+      "rank": 11,
+      "canonical_title": "白釉“盈”字款葵口盘",
+      "record_id": "xian-038-4997",
+      "record_ids": [
+        "xian-038-4997"
+      ],
+      "status": "pass",
+      "review_details": {
+        "content_review": "对象图 focus-4997 与标签图 focus-4999 均已实际查看。current data.js title 为‘白釉“盈”字款葵口盘（瓷）’，标签可读白釉‘盈’字款葵口盘（瓷）／唐代／2002年西安市雁塔区出土，标题、材质、时代、出土区与对象一致。‘盈’与大盈库的关系仍只能作为待研究问题，未作为本次 PASS 的事实。",
+        "record_binding": "PASS：current data.js xian-038-4997 independently resolved by exact object + matching label; package candidate ID ignored.",
+        "object_identity": "对象与标签匹配，未见复制品标识。对象图未直接显示底款，但标签明确给出器名，不把底款细节或宫廷归属过度扩写。",
+        "photo_match": "PASS：object focus-4997 viewed; label focus-4999 viewed and legible.",
+        "normalization_basis": "对象 focus-4997 与同条目可读展签 focus-4999 的题名、材质、时代、出土地一致，current data.js 精确记录与展签配对；“盈”字及大盈库关系仍按原说明保持边界。规范化的 verified 表示当前对象—展签—记录身份已核实；没有把未由标签或档案明确说明的原件状态写成事实。"
+      },
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安博物院（current data.js；标签裁切未显示馆名）",
+      "identity_kind": "matching_museum_label_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-4997.webp",
+        "modules/xian-museum/assets/photos/focus-4999.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-038-4997; title=白釉“盈”字款葵口盘（瓷）; period=唐代; findspot=西安市雁塔区; labelNumbers=[4999]."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4997.webp",
+          "observed": "已查看白釉葵口盘对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4999.webp",
+          "observed": "已查看标签图，可读标题（含瓷）、唐代、2002年西安市雁塔区出土。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "白釉“盈”字款葵口盘",
+        "白釉“盈”字款葵口盘（瓷）"
+      ],
+      "approved_intro": "盘口做成花瓣般的起伏，白釉让轮廓与器面显得清楚；另一处值得找的细节，是器底的“盈”字款。题款与器形提供的是不同信息：前者涉及器物的使用、管理或归属问题，后者说明制作与装饰。“盈”字的含义需要结合其他题款器物与文献讨论，不能直接等同于某位皇帝的签名。",
+      "copy_adjustment": "移除排版指令及本站制作过程表述；保留器物事实与历史不确定性。"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-12",
+      "museum_id": "xian-museum",
+      "rank": 12,
+      "canonical_title": "鎏金舍利银椁",
+      "record_id": "xian-054-5051",
+      "record_ids": [
+        "xian-054-5051"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-5051 与标签图 focus-5052 已查看。标签可读鎏金舍利银椁／唐代／1971年西安市新城区出土，与当前 record 标题、时代和新城区来源相符；但包内明确要求核原件/复制品及是否有舍利内容物，标签未提供这些信息。",
+      "record_binding": "当前 record xian-054-5051 的标题/对象/标签绑定证据充分，但按用户的原件/复制品身份门槛仍为 pending。",
+      "object_identity": "对象与标签匹配，未见复制品标识；不能据器名或外形推定实际舍利内容物，也不能套用法门寺八重宝函。",
+      "photo_match": "对象和标签均已查看，标题/时代/出土区可读。",
+      "collection_owner": "西安博物院（current data.js；标签未显示馆名）",
+      "identity_kind": "matching_label_original_and_relic_scope_unresolved",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-5051.webp",
+        "modules/xian-museum/assets/photos/focus-5052.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-054-5051; title=鎏金舍利银椁; period=唐代; findspot=西安市新城区秦川机械厂基建工地; labelNumbers=[5052]."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5051.webp",
+          "observed": "已查看鎏金银椁对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5052.webp",
+          "observed": "已查看标签图，可读标题、唐代、1971年西安市新城区出土。"
+        }
+      ],
+      "blockers": [
+        "original_replica_unverified: 标签没有原件/复制品信息。",
+        "relic_content_unverified: 没有证据证明实际内容物或塔寺来源。"
+      ],
+      "aliases": [
+        "鎏金舍利银椁"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-13",
+      "museum_id": "xian-museum",
+      "rank": 13,
+      "canonical_title": "大业元年魏天得造佛像",
+      "record_id": "xian-028-4955",
+      "record_ids": [
+        "xian-028-4955"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-4955 已查看，与 current data.js 标题/隋大业元年/灞桥区来源相符；label candidate focus-4956.webp 缺失，题记姓名与纪年不能由实际展签核对。",
+      "record_binding": "定位到 xian-028-4955，但未完成标签实图和题记身份验证。",
+      "object_identity": "看过石佛像对象图；未见复制品标识。不能把题记中的魏天得或发愿文当作已读事实。",
+      "photo_match": "对象图已查看；focus-4956.webp 不存在。",
+      "collection_owner": "西安博物院（current data.js；无标签实图复核）",
+      "identity_kind": "object_photo_label_missing",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-4955.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-028-4955; title=大业元年魏天得造佛像; period=隋大业元年; labelNumbers=[4956]; focus-4956 missing."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-4955.webp",
+          "observed": "已查看石佛像对象图。"
+        }
+      ],
+      "blockers": [
+        "label_photo_missing: focus-4956.webp 不存在。",
+        "inscription_unverified: 魏天得姓名与大业元年题记未由展签/原刻复核。"
+      ],
+      "aliases": [
+        "大业元年魏天得造佛像"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-14",
+      "museum_id": "xian-museum",
+      "rank": 14,
+      "canonical_title": "凤流提梁盉",
+      "record_id": "xian-051-5043",
+      "record_ids": [
+        "xian-051-5043"
+      ],
+      "status": "pending",
+      "content_review": "对象图 focus-5043 已查看，与 current data.js 的青铜盉对象相符；label candidate focus-5045.webp 缺失，‘凤流’定名、战国断代和具体来源不能由对象图单独确认。",
+      "record_binding": "定位到 xian-051-5043；未用名称相似器物或包内候选 ID 代替标签核验。",
+      "object_identity": "看过青铜带提梁/动物形流对象图；未见复制品标识，器类细分仍待展签。",
+      "photo_match": "对象图已查看；focus-5045.webp 不存在。",
+      "collection_owner": "西安博物院（current data.js；无标签实图复核）",
+      "identity_kind": "object_photo_label_missing",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-5043.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-051-5043; title=凤流提梁盉; period=战国; labelNumbers=[5045]; object photos focus-5043/5044; focus-5045 missing."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5043.webp",
+          "observed": "已查看青铜器对象图。"
+        }
+      ],
+      "blockers": [
+        "label_photo_missing: focus-5045.webp 不存在。",
+        "title_period_unverified: 凤流器名和战国断代不能只靠对象外形确认。",
+        "provenance_missing: 当前记录来源为西安博物院藏，未有本件出土信息。"
+      ],
+      "aliases": [
+        "凤流提梁盉"
+      ]
+    },
+    {
+      "editorial_id": "xian-museum-highlight-15",
+      "museum_id": "xian-museum",
+      "rank": 15,
+      "canonical_title": "磁州窑“风吹十里透瓶香”白地黑花梅瓶",
+      "record_id": "xian-062-5087",
+      "record_ids": [
+        "xian-062-5087"
+      ],
+      "status": "pass",
+      "review_details": {
+        "content_review": "对象图 focus-5087 与标签图 focus-5088 均已实际查看。标签可读磁州窑‘风吹十里透瓶香’白地黑花梅瓶（瓷）／元代／1972年西安市雁塔区出土，与 current data.js 标题（不含末尾‘瓷’括注）、元代、雁塔区来源和对象形制吻合。",
+        "record_binding": "PASS：current data.js xian-062-5087 independently resolved by exact object + matching label; package candidate ID ignored.",
+        "object_identity": "对象与标签匹配，未见复制品标识。PASS 仅确认记录绑定；窑口/年代的更细学术解释仍按标签与现有资料边界表达。",
+        "photo_match": "PASS：object focus-5087 viewed; label focus-5088 viewed and legible.",
+        "normalization_basis": "对象 focus-5087 与同条目可读展签 focus-5088 的题名、时代、出土地和器形一致，current data.js 精确记录与现场图组相符。规范化的 verified 表示当前对象—展签—记录身份已核实；没有把未由标签或档案明确说明的原件状态写成事实。"
+      },
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "西安博物院（current data.js；标签裁切未显示馆名）",
+      "identity_kind": "matching_museum_label_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/xian-museum/assets/photos/focus-5087.webp",
+        "modules/xian-museum/assets/photos/focus-5088.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/xian-museum/data.js",
+          "observed": "id=xian-062-5087; title=磁州窑‘风吹十里透瓶香’白地黑花梅瓶; period=元代; findspot=西安市雁塔区; labelNumbers=[5087,5088]."
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5087.webp",
+          "observed": "已查看白地黑花梅瓶对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "modules/xian-museum/assets/photos/focus-5088.webp",
+          "observed": "已查看标签图，可读标题（含瓷）、元代、1972年西安市雁塔区出土。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "磁州窑“风吹十里透瓶香”白地黑花梅瓶",
+        "磁州窑白地黑花梅瓶"
+      ]
+    }
+  ]
+}

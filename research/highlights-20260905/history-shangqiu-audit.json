@@ -1,0 +1,1793 @@
+{
+  "schema": "museum-highlights-binding-audit-v1",
+  "generated_at": "2026-09-05",
+  "scope": "陕西历史博物馆 15 项 + 商丘博物馆 15 项，共 30 项候选的只读重匹配审计",
+  "repo": "D:/Documents-Offload/website-henan-release",
+  "branch": "main",
+  "read_only": true,
+  "candidate_id_policy": "候选包中的 existing_record_id、candidate id 和原始编号均未用于绑定；每项按当前数据的对象名称、时代、出土地/来源、展签和实物照片重新匹配。",
+  "pass_gate": "pass 还要求原件/复制品身份有正面证据；不能只凭未见复制品标记认定原件。原字段说明保存在各项 review_details.pre_normalization。",
+  "source_files": [
+    "C:/Users/GusGumee/Downloads/museum_highlights_other_7_105_codex.zip!/museum_highlights_other_7_105/README.md",
+    "C:/Users/GusGumee/Downloads/museum_highlights_other_7_105_codex.zip!/museum_highlights_other_7_105/candidates.json",
+    "D:/Documents-Offload/website-henan-release/modules/shaanxi-history/data.js",
+    "D:/Documents-Offload/website-henan-release/modules/shaanxi-history/media-url.js",
+    "D:/Documents-Offload/website-henan-release/data/shaanxi-history-externalized-media.json",
+    "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/data/catalog.js",
+    "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/data/content-prehan.js",
+    "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/data/content-han.js",
+    "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/data/content-late.js",
+    "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/data/content.js",
+    "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/data/photo-manifest.js"
+  ],
+  "photo_scope": {
+    "shaanxi_history": "当前 release 的陕西对象 focus 路径由 shaanxiHistoryMediaUrl/外置媒体清单解析；当前 release 工作树没有对应本地图像。为核对展签，使用了同一只读旧工作树 D:/Documents-Offload/website 中的同名对象和 photo 标签文件；这些查看路径在各项中明确标为 read-only reference，不将其伪装成当前 release 本地资产。",
+    "shangqiu_museum": "对象和展签均为当前 release 的 modules/shangqiu-museum/assets/photos/web/DSC_*.webp；未把缩略图或邻近展签当作对象证据。",
+    "view_method": "逐项使用 view_image 实际查看对象图和可用展签图；仅有 OCR、标题或官方网页而无图的项目不计为已审结。"
+  },
+  "summary": {
+    "total": 30,
+    "pass": 9,
+    "pending": 21,
+    "by_museum": {
+      "shaanxi-history": {
+        "total": 15,
+        "pass": 9,
+        "pending": 6
+      },
+      "shangqiu-museum": {
+        "total": 15,
+        "pass": 0,
+        "pending": 15
+      }
+    },
+    "main_blockers": [
+      "陕西三彩载乐骆驼俑的包内出土信息（1959 年中堡村）与当前 data.js（1970 年西安）不一致，现有标签照片旋转且出土地文字不能可靠读全。",
+      "陕西懿德阙楼图、永泰宫女图只有 supplement 图片；没有当前字段照片/展签来区分原壁画、高清复制品或展陈复原。",
+      "陕西章怀客使图有官方专题条目，但当前 data.js 没有可绑定的客使图 record，也没有当前对象/展签照片。",
+      "陕西黑釉油滴碗和鎏金金杯两个候选均被实际照片证明是不同器物，不能用名称或相邻记录代替。",
+      "商丘金缕玉衣对象和展签相符，但照片显示的是组装展示；金丝及玉片是原件还是整理/复原组合，当前资料未说明。",
+      "商丘水利图碑在当前站点只有拓片资产，没有碑体对象图、展签或 catalog record。",
+      "商丘玄鸟画像石门楣、白玉舞人佩、门吏陶俑没有当前 catalog record 与可核的对象/展签图；商丘陶狗候选实际对应汉代绿釉红陶狗，非候选叙述的通济渠宋代陶狗。",
+      "商丘原先 8 项 exact object/label 记录没有原件/复制品正面身份说明，已统一降为 pending；‘商丘博物馆藏’证明收藏/展示归属，不单独证明原件。"
+    ],
+    "follow_up_checks": [
+      "向陕西历史博物馆索取三彩骆驼的当前展签原图或馆藏档案，统一 1959/1970 出土地信息。",
+      "向陕西历史博物馆确认两幅 supplement 壁画图的原件/高清复制品/数字复原身份，并补当前展签或字段照片；客使图需建立当前 record。",
+      "向商丘博物馆索取金缕玉衣组成件与原件/复原说明，以及水利图碑碑体照片、展签和当前 catalog 编号。",
+      "为商丘三项无 record 候选补对象与展签原图；对陶狗候选先取得通济渠故道出土宋代对象的实际馆藏记录，再与 field 5271 绿釉红陶狗分开。"
+    ]
+  },
+  "official_sources": [
+    "https://www.sxhm.com/collections/detail/512.html",
+    "https://www.sxhm.com/collections/detail/10117.html",
+    "https://www.sxhm.com/en/detail/469.html",
+    "https://www.sxhm.com/collections/detail/9948",
+    "https://www.sxhm.com/collections/detail/509.html",
+    "https://www.sxhm.com/collections/detail/446.html",
+    "https://www.sxhm.com/collections/detail/439.html",
+    "https://www.sxhm.com/collections/detail/9975.html",
+    "https://www.sxhm.com/collections/detail/10026.html",
+    "https://www.sxhm.com/collections/detail/508.html",
+    "https://www.sxhm.com/collections/detail/427.html",
+    "https://www.sxhm.com/collections/detail/468.html",
+    "https://www.sxhm.com/collections/detail/510.html",
+    "https://www.sxhm.com/Temporary/detail/1649.html",
+    "https://wwj.shaanxi.gov.cn/wwsx/szjs/202411/t20241122_3212521.html",
+    "http://hnsqbwg.com/"
+  ],
+  "items": [
+    {
+      "editorial_id": "shaanxi-history-highlight-01",
+      "museum_id": "shaanxi-history",
+      "rank": 1,
+      "canonical_title": "镶金兽首玛瑙杯",
+      "record_id": "field-4681",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js 及官方 sxhm 藏品页）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4675.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4681.webp"
+      ],
+      "photo_path_notes": "第一项是当前 release 的运行时对象路径；第二项是只读旧工作树中的展签查看路径，当前 release 外置媒体清单未列出该 label 文件。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4681；title=镶金兽首玛瑙杯；period=唐；findspot=西安市何家村唐代窖藏；object focus-4675 等。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4675.webp",
+          "observed": "已查看对象图：带金塞、兽首形口部和条带玛瑙纹理的杯体。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4681.webp",
+          "observed": "已查看展签：镶金兽首玛瑙杯；英文为 Agate Rhyton Inlaid with Gold Plug；展签说明整块缠丝玛瑙雕成及金塞。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/512.html",
+          "observed": "官方藏品页支持唐代镶金兽首形玛瑙杯、何家村考古来源及来通/酒器形制的谨慎描述。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "镶金兽首形玛瑙杯",
+        "唐镶金兽首形玛瑙杯",
+        "Agate Rhyton Inlaid with Gold Plug"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current data.js 的 field-4681 为唐代镶金兽首玛瑙杯，来源为西安市何家村唐代窖藏；对象 focus-4675 与展签 photo-4681 实际查看后，器名、唐代和器形一致。陕西历史博物馆官方藏品页支持镶金兽首形玛瑙杯、何家村来源及其酒器/来通形制的保守表述。",
+          "record_binding": "PASS：按当前名称、何家村来源、对象形制和展签精确绑定 field-4681；没有沿用候选包的编号。",
+          "object_identity": "PASS：对象图显示带金塞的带状玛瑙兽首杯；展签可读‘镶金兽首玛瑙杯’及英文 Agate Rhyton Inlaid with Gold Plug。当前对象/官方藏品资料均按考古馆藏实物表述，未见复制品或临摹标记。",
+          "photo_match": "PASS：对象 focus-4675 已查看；展签 photo-4681 已查看且标题、材质/形制说明可读。当前 release 的 focus 路径需经 shaanxiHistoryMediaUrl 解析，标签图使用同一只读旧工作树的查看引用。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-02",
+      "museum_id": "shaanxi-history",
+      "rank": 2,
+      "canonical_title": "鎏金舞马衔杯纹皮囊式银壶",
+      "record_id": "field-4618",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js、展签/官方馆方资料）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4613.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4618.webp"
+      ],
+      "photo_path_notes": "对象路径是当前 release 的 resolver 路径；展签文件只在只读旧工作树中用于实际查看。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4618；title=鎏金舞马衔杯纹银壶；period=唐；findspot=西安市何家村窖藏；object focus-4613 等。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4613.webp",
+          "observed": "已查看袋形鎏金银壶、提梁和舞马衔杯纹对象。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4618.webp",
+          "observed": "已查看展签：鎏金舞马衔杯纹银壶；英文 Gilt Silver Jar with Dancing Horse Holding a Cup。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/10117.html",
+          "observed": "陕西历史博物馆官方页面支持该唐代银壶的馆藏身份、题名和尺寸信息。"
+        },
+        {
+          "source": "official",
+          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202204/t20220407_2216581.html",
+          "observed": "陕西省文物局页面支持鎏金舞马衔杯纹银壶与何家村窖藏背景。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "鎏金舞马衔杯纹银壶",
+        "鎏金舞马衔杯纹皮囊式银壶",
+        "Gilt Silver Jar with Dancing Horse Holding a Cup"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：当前实际记录 field-4618 的题名为鎏金舞马衔杯纹银壶，唐代、何家村窖藏；对象 focus-4613 和展签 photo-4618 均已查看，展签题名与舞马衔杯纹饰吻合。‘皮囊式’是候选包的形制限定/别名，当前记录不含该词；官方馆方及陕西省文物局页面支持器名、唐代和何家村来源。",
+          "record_binding": "PASS：实际匹配到 field-4618；按对象的袋形银壶、舞马衔杯纹、何家村来源和展签绑定，未把候选编号当作记录 ID。",
+          "object_identity": "PASS：对象图为带提梁、袋形壶体和舞马衔杯纹的鎏金银壶；展签可读‘鎏金舞马衔杯纹银壶’及英文 Gilt Silver Jar with Dancing Horse Holding a Cup。未见复制品标记，当前官方资料以考古馆藏对象叙述。",
+          "photo_match": "PASS：对象 focus-4613 与展签 photo-4618 均已实际查看并可读；对象运行时路径遵循陕西媒体解析器，标签为只读旧工作树查看引用。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-03",
+      "museum_id": "shaanxi-history",
+      "rank": 3,
+      "canonical_title": "葡萄花鸟纹银香囊",
+      "record_id": "field-4698",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js、官方藏品页）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4697.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4698.webp"
+      ],
+      "photo_path_notes": "展签查看路径为只读旧工作树引用；当前 release 的对象路径由 shaanxiHistoryMediaUrl 解析。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4698；title=葡萄花鸟纹银香囊；period=唐；findspot=西安市何家村窖藏；object focus-4697。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4697.webp",
+          "observed": "已查看悬挂球形镂空银香囊对象图及内部活动构件。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4698.webp",
+          "observed": "已查看展签：葡萄花鸟纹银香囊；英文 Silver Sachet in Open-work with Grapes, Flowers and Birds。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/9948",
+          "observed": "陕西历史博物馆官方藏品页支持唐代葡萄花鸟纹银香囊、馆藏身份及规格。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/info/news/detail/1334.html",
+          "observed": "馆方文章支持香囊的球体、悬挂和内部活动结构描述。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "葡萄花鸟纹银香囊",
+        "唐葡萄花鸟纹银香囊"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：当前实际记录 field-4698 为唐代葡萄花鸟纹银香囊，来源为西安市何家村窖藏；focus-4697 对象图与 photo-4698 展签都已查看，展签题名、英文、葡萄花鸟纹和香囊结构与对象一致。官方藏品页及馆方文章支持器物身份和结构的保守说明。",
+          "record_binding": "PASS：精确绑定 current data.js 的 field-4698；按悬挂球形镂空银香囊、何家村来源和展签确定，没有使用候选 ID。",
+          "object_identity": "PASS：对象图显示镂空球形银香囊、链条和内部可活动结构；展签可读‘葡萄花鸟纹银香囊’及英文 Silver Sachet in Open-work with Grapes, Flowers and Birds。未见复制品标记。",
+          "photo_match": "PASS：对象 focus-4697 与展签 photo-4698 均已实际查看，展签可读；对象运行时媒体路径遵循现有 resolver。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      },
+      "approved_intro": "银香囊的镂空外壳让香气散出，内部的机环与活轴则共同承托香盂。外球转动时，香盂可以调整方向，减少香料倾洒。它值得看的不仅是葡萄、花鸟纹，还包括被外壳遮住的结构。外壳可以开启，内部承托香盂的结构随之显露。装饰与机巧相互配合，使随身携香成为可能。",
+      "copy_adjustment": "移除排版指令及本站制作过程表述；保留器物事实与历史不确定性。"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-04",
+      "museum_id": "shaanxi-history",
+      "rank": 4,
+      "canonical_title": "三彩载乐骆驼俑",
+      "record_id": "field-4445",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "陕西历史博物馆（current data.js/官方藏品页；具体出土地与年份待核）",
+      "identity_kind": "archaeological_object_provenance_conflict",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4441.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4445.webp"
+      ],
+      "photo_path_notes": "展签为只读旧工作树查看引用；当前 release 对象路径需经陕西媒体 resolver 解析。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4445；title=三彩载乐骆驼俑；period=唐；current essay/findspot 写 1970 年西安；object focus-4441 等。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4441.webp",
+          "observed": "已查看骆驼台座、七名坐姿乐手和中央站立人物。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4445.webp",
+          "observed": "已查看旋转展签；题名/英文 Tri-Colored Glazed Camel and Performers、唐代可辨，出土地文字无法可靠转录。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/509.html",
+          "observed": "官方藏品页支持唐三彩载乐骆驼俑、骆驼及八人组合描述，但本次页面核对未消除候选 1959 年中堡村与 current data.js 1970 年西安的冲突。"
+        }
+      ],
+      "blockers": [
+        "provenance_year_conflict: 候选材料=1959 年中堡村；current data.js=1970 年西安。",
+        "label_provenance_unreadable: 当前可视展签旋转且出土地细节过小，不能作为年份/地点最终证据。",
+        "original_replica_status_not_explicit: 未见复制品标记，但尚无档案级原件说明。"
+      ],
+      "aliases": [
+        "三彩载乐骆驼俑",
+        "唐三彩载乐骆驼俑",
+        "Tri-Colored Glazed Camel and Performers"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：current data.js 的 field-4445、focus-4441 对象图和 photo-4445 展签均指向唐三彩载乐骆驼俑；对象与‘骆驼载八人、七名男乐手及一名立姿女性’的官方描述相符。但候选材料给出 1959 年中堡村出土，current data.js 写 1970 年西安，展签图旋转且出土地文字不能可靠读全，不能把两个年份合并或择一发布。",
+          "record_binding": "对象标题、唐代和骆驼载乐队形制可绑定到 field-4445；出土地/年份尚未绑定，故不是完整通过。",
+          "object_identity": "对象图显示骆驼、台座、七名坐姿乐手和一名站立人物，与 field-4445 及官方藏品页的器形相符；展签标题和英文可辨，但没有足以解决出土年份冲突的清晰文字。未见复制品标记。",
+          "photo_match": "对象 focus-4441 已查看；photo-4445 已查看但展签旋转、文字小且出土地部分不可可靠读全，只能算标题/时代部分匹配。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-05",
+      "museum_id": "shaanxi-history",
+      "rank": 5,
+      "canonical_title": "多友鼎",
+      "record_id": "field-4039",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4036.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4039.webp"
+      ],
+      "photo_path_notes": "标签查看路径为只读旧工作树；当前 release 的对象媒体由现有 resolver 解析。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4039；title=多友鼎；period=西周；findspot=西安市长安区斗门镇下泉村；object focus-4036 等。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4036.webp",
+          "observed": "已查看多友鼎青铜器对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4039.webp",
+          "observed": "已查看展签：多友鼎、西周、西安市长安区斗门镇下泉村出土，英文 General Duo You；圆圈编号可见为 042。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/446.html",
+          "observed": "官方藏品页支持多友鼎、出土/考古背景、长篇铭文及西周战争叙述。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "多友鼎",
+        "General Duo You bronze ding"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current data.js 的 field-4039 为西周多友鼎，来源为西安市长安区斗门镇下泉村；对象 focus-4036 与展签 photo-4039 实际查看，展签可读‘多友鼎’、西周、下泉村出土及 General Duo You。官方藏品页支持器名、长铭文和西周战争语境。",
+          "record_binding": "PASS：按对象、展签题名、时代和出土地绑定到 field-4039；展签圆圈内展示编号为 042，不将其误当 current data.js 的 record ID 039。",
+          "object_identity": "PASS：对象图为三足青铜鼎；展签明确多友鼎、下泉村出土和西周。当前对象与官方考古馆藏叙述一致，未见复制品标记。",
+          "photo_match": "PASS：focus-4036 对象和 photo-4039 展签均已查看且可读。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-06",
+      "museum_id": "shaanxi-history",
+      "rank": 6,
+      "canonical_title": "独孤信多面体煤精组印",
+      "record_id": "field-4276",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4273.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4276.webp"
+      ],
+      "photo_path_notes": "标签查看路径为只读旧工作树；当前 release 对象路径遵循陕西媒体 resolver。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4276；title=独孤信多面体煤精组印；period=西魏；findspot=1981 年安康市旬阳县城东门外；object focus-4273/4275。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4273.webp",
+          "observed": "已查看多面体煤精组印对象图及多面印面。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4276.webp",
+          "observed": "已查看展签：独孤信多面体煤精组印；西魏；26 面、14 面有官职铭文；旬阳城东门外出土。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/439.html",
+          "observed": "官方藏品页支持西魏、26 个印面及 14 个有方形官职铭文印面的描述。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "独孤信多面体煤精组印",
+        "独孤信印",
+        "Dugu Xin jet seal"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current data.js 的 field-4276 为西魏独孤信多面体煤精组印，来源为 1981 年安康市旬阳县城东门外；对象 focus-4273 与展签 photo-4276 实际查看。展签明确 26 面、14 面有官职铭文；官方藏品页支持同一形制和铭文事实。",
+          "record_binding": "PASS：按多面煤精印体、独孤信题名、旬阳来源和展签绑定到 field-4276；没有把同类印章或候选编号当作当前记录。",
+          "object_identity": "PASS：对象图显示黑褐色多面煤精印；展签可读独孤信多面体煤精组印、西魏、旬阳城东门外出土及 26 面/14 面铭文。未见复制品标记。",
+          "photo_match": "PASS：focus-4273 对象和 photo-4276 展签均已查看且文字足以确认身份。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-07",
+      "museum_id": "shaanxi-history",
+      "rank": 7,
+      "canonical_title": "鸳鸯莲瓣纹金碗",
+      "record_id": "field-4394",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4391.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4394.webp"
+      ],
+      "photo_path_notes": "标签查看路径为只读旧工作树；当前 release 对象媒体由陕西现有 resolver 解析。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4394；title=鸳鸯莲瓣纹金碗；period=唐；findspot=西安市何家村窖藏；object focus-4391/4393/4591/4592。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4391.webp",
+          "observed": "已查看莲瓣分区金碗对象图及鸳鸯/花卉纹饰。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4394.webp",
+          "observed": "已查看展签：鸳鸯莲瓣纹金碗、唐、西安市何家村窖藏出土，英文 Gold Bowl with Mandarin Duck and Lotus Pattern。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/9975.html",
+          "observed": "官方藏品页支持唐代鸳鸯莲瓣纹金碗的题名、材质和规格，并标示当前展出状态；不把未展出误写成没有馆藏记录。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "鸳鸯莲瓣纹金碗",
+        "Gold Bowl with Mandarin Duck and Lotus Pattern"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current data.js 的 field-4394 为唐代鸳鸯莲瓣纹金碗，何家村窖藏来源；focus-4391 对象与 photo-4394 展签均已查看，展签可读题名、唐代、何家村窖藏出土和 Gold Bowl with Mandarin Duck and Lotus Pattern。官方藏品页支持器名和唐代馆藏身份。",
+          "record_binding": "PASS：按莲瓣分区、金碗对象、何家村来源和展签绑定 field-4394；没有把其他唐代金碗并入。",
+          "object_identity": "PASS：对象图为莲瓣分区金碗，动物/植物纹饰可见；展签题名和何家村来源清楚。官方页面虽标注当前未展出，不影响本项对当前记录身份的绑定；未见复制品标记。",
+          "photo_match": "PASS：对象 focus-4391 与展签 photo-4394 均已实际查看；标签较暗但题名、时代、何家村来源可辨。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-08",
+      "museum_id": "shaanxi-history",
+      "rank": 8,
+      "canonical_title": "鎏金鹦鹉纹提梁银罐",
+      "record_id": "field-4626",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js、展签、官方藏品页）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4624.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4626.webp"
+      ],
+      "photo_path_notes": "展签为只读旧工作树查看引用；当前 release 对象路径由现有陕西媒体 resolver 解析。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4626；title=鎏金鹦鹉纹提梁银罐；period=唐；findspot=西安市何家村窖藏；object focus-4624/4625。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4624.webp",
+          "observed": "已查看带盖提梁银罐及鎏金鹦鹉、花卉纹对象。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4626.webp",
+          "observed": "已查看展签：鎏金鹦鹉纹提梁银罐；英文 Silver Jar with Loop Handle and Gilt Parrots。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/10026.html",
+          "observed": "官方藏品页支持唐代鎏金鹦鹉纹提梁银罐、器名、材质和规格。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/info/news/detail/18381.html",
+          "observed": "馆方新闻页面将该鹦鹉纹提梁银罐作为馆藏器物叙述。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "鎏金鹦鹉纹提梁银罐",
+        "Gilt Parrot Silver Jar with Loop Handle"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current data.js 的 field-4626 为唐代鎏金鹦鹉纹提梁银罐，何家村窖藏来源；focus-4624 和 photo-4626 已查看，展签题名与鹦鹉/花卉纹饰及提梁结构相符。官方藏品页和馆方文章支持器物身份。",
+          "record_binding": "PASS：按带提梁的鎏金银罐、鹦鹉纹、何家村来源和展签绑定 field-4626。",
+          "object_identity": "PASS：对象图为带盖、带提梁的鎏金银罐，鹦鹉纹可见；展签可读鎏金鹦鹉纹提梁银罐及英文 Silver Jar with Loop Handle and Gilt Parrots。未见复制品标记。",
+          "photo_match": "PASS：对象 focus-4624 与展签 photo-4626 均已实际查看且可读。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-09",
+      "museum_id": "shaanxi-history",
+      "rank": 9,
+      "canonical_title": "青釉提梁倒注壶",
+      "record_id": "field-4523",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4518.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4523.webp"
+      ],
+      "photo_path_notes": "展签查看路径为只读旧工作树；当前 release 的对象路径由 shaanxiHistoryMediaUrl 解析。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4523；title=耀州窑青釉刻花提梁倒流壶；period=五代；findspot=1968 年陕西彬县出土；object focus-4518/4519/4520/4521。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4518.webp",
+          "observed": "已查看青釉提梁倒流壶对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4523.webp",
+          "observed": "已查看展签：倒流壶、五代（907—979），英文 Celadon Pot with a Loop Handle，并有倒流结构说明。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/508.html",
+          "observed": "官方藏品页支持五代青釉提梁倒流壶、考古来源及底部注水孔/倒流原理。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "耀州窑青釉刻花提梁倒流壶",
+        "青釉提梁倒注壶",
+        "青釉提梁倒流壶",
+        "Celadon Pot with a Loop Handle"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：候选的‘青釉提梁倒注壶’实际匹配 current data.js 的 field-4523，完整题名为耀州窑青釉刻花提梁倒流壶，五代，1968 年陕西彬县出土；对象 focus-4518 与 photo-4523 展签已查看。展签标题为‘倒流壶’，时代和倒流结构可读，官方藏品页支持底部注水孔及倒流原理。",
+          "record_binding": "PASS：按青釉、提梁、倒流/倒注结构和展签绑定 field-4523；‘倒注壶’列为候选别名，不替换当前 record 的‘倒流壶’。",
+          "object_identity": "PASS：对象图显示青釉提梁壶及反向注水结构；展签可读倒流壶、五代（907—979）及英文 Celadon Pot with a Loop Handle。未见复制品标记。",
+          "photo_match": "PASS：对象 focus-4518 和展签 photo-4523 均已查看，标题/时代/结构说明足以确认。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      },
+      "approved_intro": "这件壶的盖与器身连在一起，不能像普通茶壶那样揭盖加水。注入口设在底部，使用时先倒置注入液体，再翻回正放；内部管道的安排使液体不从底孔直接漏出。壶身的花纹、提梁和兽形流值得细看，而最关键的结构藏在器内。底孔与壶内管道相连，注水和倾倒依赖这套隐藏的通道。",
+      "copy_adjustment": "移除排版指令及本站制作过程表述；保留器物事实与历史不确定性。"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-10",
+      "museum_id": "shaanxi-history",
+      "rank": 10,
+      "canonical_title": "黑釉油滴碗",
+      "record_id": null,
+      "near_miss_record_id": "field-4515",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "近似记录 field-4515 的馆藏单位为陕西历史博物馆；黑釉油滴碗的馆藏单位未确认。",
+      "identity_kind": "near_miss_misidentified_object",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4514.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4515.webp"
+      ],
+      "photo_path_notes": "两项均为只读旧工作树中实际查看的近似对象/展签；当前 release 外置对象媒体存在对应 focus 路径，但不能据此制造油滴碗标签。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4515；title=黑釉兔毫盏；period=北宋；findspot=西安市蓝田县吕氏家族墓；没有黑釉油滴碗 exact title。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4514.webp",
+          "observed": "已查看黑釉盏对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4515.webp",
+          "observed": "已查看展签：黑釉兔毫盏、北宋、西安市蓝田县吕氏家族墓出土，英文 Black Glazed Cup。"
+        }
+      ],
+      "blockers": [
+        "exact_record_missing: 当前 data.js 没有黑釉油滴碗记录。",
+        "near_miss_conflict: field-4515 被标签明确为黑釉兔毫盏，不能代替油滴碗。",
+        "candidate_object_photo_missing: 没有油滴碗对象与展签照片。"
+      ],
+      "aliases": [
+        "黑釉油滴碗"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：当前 data.js 没有与‘黑釉油滴碗’相符的记录。实际查看的近似记录 field-4515 题名为黑釉兔毫盏，北宋，蓝田县吕氏家族墓出土；不能将兔毫盏或黑釉对象外形改写成油滴碗。",
+          "record_binding": "MISMATCH：field-4515 仅是实际照片能找到的近似记录，不能作为候选黑釉油滴碗的绑定 record；当前 exact record 缺失。",
+          "object_identity": "MISMATCH：focus-4514 显示黑釉盏，photo-4515 展签明确‘黑釉兔毫盏’、北宋及吕氏家族墓出土；其兔毫纹与候选油滴碗不是同一身份。",
+          "photo_match": "MISMATCH：已查看对象和展签，两者相互证明是 field-4515 黑釉兔毫盏，而不是黑釉油滴碗；没有候选油滴碗的对象/展签照片。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-11",
+      "museum_id": "shaanxi-history",
+      "rank": 11,
+      "canonical_title": "懿德太子墓阙楼图",
+      "record_id": "wall-que-lou",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "陕西历史博物馆（主题记录与官方页面）；图像本身的原件/复制品身份未确认",
+      "identity_kind": "mural_supplement_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/cover/assets/supplement/quelou.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=wall-que-lou；title=懿德太子墓壁画·阙楼图；findspot=乾陵陪葬墓·懿德太子墓；photo=cover/assets/supplement/quelou.jpg；非 field photo。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/cover/assets/supplement/quelou.jpg",
+          "observed": "已查看阙楼图像；无可读当前展签、拍摄编号或原件/复制品标记。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/Temporary/detail/1649.html",
+          "observed": "官方专题页明确高清复制品展示与原壁画留在唐墓壁画馆的边界，不能把复制品展示图当作原件证明。"
+        },
+        {
+          "source": "official",
+          "url": "https://wwj.shaanxi.gov.cn/wwsx/szjs/202411/t20241122_3212521.html",
+          "observed": "陕西省文物局页面支持懿德太子墓阙楼图的墓室壁画主题与来源。"
+        }
+      ],
+      "blockers": [
+        "supplement_not_field_photo: 当前图片是 supplement，不是对象/展签字段照片。",
+        "original_copy_unresolved: 原壁画、高清复制品、数字复原身份未定。",
+        "label_missing: 没有可视当前展签。"
+      ],
+      "aliases": [
+        "懿德太子墓壁画·阙楼图",
+        "阙楼图"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：current data.js 有 wall-que-lou 主题记录，题名和懿德太子墓来源一致；但它引用的是 cover/assets/supplement/quelou.jpg。该图已查看，确为阙楼形制的墓室壁画图像，却没有当前字段展签或原件摄影。官方资料还说明相关展陈会使用高清复制品、原壁画留在唐墓壁画馆，故不能把 supplement 图直接当作原壁画原件。",
+          "record_binding": "主题级绑定到 current record wall-que-lou 已成立；照片/记录不能证明当前图像是该 record 的原件字段照片，也不能完成原件与复制品绑定。",
+          "object_identity": "图像内容与懿德太子墓阙楼图主题相符；未见复制品字样或展签，无法确定是原壁画、高清复制品、数字复原或出版物图像。",
+          "photo_match": "PENDING：已查看 modules/shaanxi-history/cover/assets/supplement/quelou.jpg；这是 supplement 图片，不是当前字段对象/标签照片，不能按普通文物对象图通过。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-12",
+      "museum_id": "shaanxi-history",
+      "rank": 12,
+      "canonical_title": "章怀太子墓客使图",
+      "record_id": null,
+      "near_miss_record_id": "wall-hunting",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "陕西历史博物馆（官方藏品页的主题馆藏归属）；当前 record 与实际照片缺失",
+      "identity_kind": "official_subject_no_current_record",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "未找到 title=章怀太子墓客使图的当前记录；wall-hunting 为章怀太子墓壁画·狩猎出行图，不同画面。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/468.html",
+          "observed": "官方藏品页支持章怀太子墓客使图的墓道位置、六人队列及使者/鸿胪寺官员主题；页面不能替代当前仓库 record/photo 绑定。"
+        }
+      ],
+      "blockers": [
+        "exact_record_missing: current data.js 无客使图记录。",
+        "object_photo_missing: 无当前对象图。",
+        "label_photo_missing: 无当前展签图。",
+        "original_copy_unresolved: 无当前图像来区分原壁画与复制/复原展示。"
+      ],
+      "aliases": [
+        "章怀太子墓壁画·客使图",
+        "客使图",
+        "章怀墓客使图"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：官方陕西历史博物馆藏品页有‘客使图’专题条目，说明其位于章怀太子墓墓道东壁并描绘六人使者/官员队列；但 current data.js 没有客使图 record，只有无关的 wall-hunting 狩猎出行图，不能用近似壁画记录完成绑定。",
+          "record_binding": "RECORD MISSING：当前 data.js 无章怀太子墓客使图实际 record；wall-hunting 不是同一画面，不能作为 record_id。",
+          "object_identity": "官方 subject 证据足以确认候选主题存在，但当前项目没有对象图、字段照片或展签来确认所要发布的具体图像及其原件/复制品状态。",
+          "photo_match": "PENDING：没有当前对象照片或标签照片；未将无关 wall-hunting 图片当作客使图照片。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-13",
+      "museum_id": "shaanxi-history",
+      "rank": 13,
+      "canonical_title": "永泰公主墓宫女图",
+      "record_id": "wall-gongnv",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "陕西历史博物馆（current data.js 主题记录与官方页面）；图像原件/复制品身份未确认",
+      "identity_kind": "mural_supplement_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/cover/assets/supplement/gongnv.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=wall-gongnv；title=永泰公主墓壁画·宫女图；findspot=乾陵陪葬墓·永泰公主墓；photo=cover/assets/supplement/gongnv.jpg。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/cover/assets/supplement/gongnv.jpg",
+          "observed": "已查看宫女壁画图像；没有可读当前展签、编号或原件/复制品标记。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/510.html",
+          "observed": "官方藏品页支持永泰公主墓壁画宫女图及考古来源。"
+        },
+        {
+          "source": "official",
+          "url": "https://en.sxhm.com/en/new/treasure/detail/18047.html",
+          "observed": "官方英文页面支持宫女图的唐代墓葬来源和尺寸信息，但不替代当前 supplement 图的原件/复制品鉴定。"
+        }
+      ],
+      "blockers": [
+        "supplement_not_field_photo: 当前图片是 supplement，不是对象/展签字段照片。",
+        "original_copy_unresolved: 原壁画、高清复制品、数字复原身份未定。",
+        "label_missing: 没有当前可视展签。"
+      ],
+      "aliases": [
+        "永泰公主墓壁画·宫女图",
+        "宫女图",
+        "永泰墓宫女图"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：current data.js 有 wall-gongnv 主题记录，来源为乾陵陪葬墓·永泰公主墓；已查看 cover/assets/supplement/gongnv.jpg，画面与宫女主题相符。但该图没有当前字段展签/原件照片，不能确认原壁画、高清复制品或数字复原身份。",
+          "record_binding": "主题级绑定到 wall-gongnv；当前图片属于 supplement，未完成当前字段照片与展签的 record/photo 双重绑定。",
+          "object_identity": "supplement 图显示唐墓壁画宫女形象，和 wall-gongnv 主题一致；没有原件/复制品标记，不能把图像的来源层级升级为原壁画实物。",
+          "photo_match": "PENDING：已实际查看 supplement/gongnv.jpg，但没有当前字段对象图和展签图；因此只确认主题相符，不确认原件/复制品。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-14",
+      "museum_id": "shaanxi-history",
+      "rank": 14,
+      "canonical_title": "人面鱼纹盆（姜寨遗址）",
+      "record_id": "field-3925",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
+      "identity_kind": "archaeological_object_no_replica_mark",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-3921.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-3925.webp"
+      ],
+      "photo_path_notes": "展签查看路径为只读旧工作树；当前 release 对象媒体由现有陕西 resolver 解析。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-3925；title=人面鱼纹盆；period=新石器时代；findspot=西安市临潼区姜寨遗址；object focus-3921/3923/3924。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-3921.webp",
+          "observed": "已查看盆内人面鱼纹对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-3925.webp",
+          "observed": "已查看展签：人面鱼纹盆、新石器时代、西安市临潼区姜寨遗址出土，英文 Pottery Basin with Human Face and Fish Patterns。"
+        },
+        {
+          "source": "official",
+          "url": "https://www.sxhm.com/collections/detail/427.html",
+          "observed": "官方藏品页支持新石器/仰韶时期人面鱼纹盆及姜寨考古来源。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "人面鱼纹盆",
+        "人面鱼纹盆（姜寨遗址）",
+        "Pottery Basin with Human Face and Fish Patterns"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current data.js 的 field-3925 为新石器时代人面鱼纹盆，西安市临潼区姜寨遗址出土；focus-3921 对象图和 photo-3925 展签已查看，展签明确题名、时代、姜寨遗址和英文 Pottery Basin with Human Face and Fish Patterns。官方藏品页支持仰韶/新石器时代及考古来源。",
+          "record_binding": "PASS：按人面与鱼纹盆形、姜寨遗址来源和展签绑定 field-3925；候选括号中的姜寨信息与实际展签一致。",
+          "object_identity": "PASS：对象图显示红陶盆内的人面鱼纹；展签题名、时代和姜寨出土信息清楚，未见复制品标记。",
+          "photo_match": "PASS：对象 focus-3921 与展签 photo-3925 均已实际查看且可读。"
+        },
+        "original_copy_status": "已达到原件身份门槛的依据：当前对象照片与可读展签精确对应 current record；陕西历史博物馆官方藏品页将同一器物作为考古来源的馆藏对象呈现。结论不是由单纯未见复制品标记推出。"
+      },
+      "approved_intro": "这件彩陶盆出土于临潼姜寨遗址。看盆内图案时，可以比较人面与鱼纹怎样组合、排列，以及黑彩与陶胎颜色形成的对照。同类纹样并非只发现一件，不同遗址的材料应分别放回各自的出土环境。图像的具体含义仍有不同解释；它提供的是研究仰韶文化装饰与观念的材料，不是一段已经能够逐句读出的史前文字。",
+      "copy_adjustment": "移除排版指令及本站制作过程表述；保留器物事实与历史不确定性。"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-15",
+      "museum_id": "shaanxi-history",
+      "rank": 15,
+      "canonical_title": "金筐宝钿团花纹金杯",
+      "record_id": null,
+      "near_miss_record_id": "field-4665",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "近似记录 field-4665 的馆藏单位为陕西历史博物馆；候选金筐宝钿团花纹金杯的馆藏单位未确认。",
+      "identity_kind": "near_miss_misidentified_object",
+      "verified_photo_paths": [
+        "modules/shaanxi-history/assets/photos/focus-4663.webp",
+        "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4665.webp"
+      ],
+      "photo_path_notes": "两项为只读旧工作树中实际查看的近似对象/展签；当前 release 外置对象媒体存在对应 focus 路径，但标签不能被改作候选标题。",
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shaanxi-history/data.js",
+          "observed": "id=field-4665；title=掐丝团花纹金杯；period=唐；findspot=何家村；没有金筐宝钿团花纹金杯 exact title。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/focus-4663.webp",
+          "observed": "已查看团花纹金杯对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website/modules/shaanxi-history/assets/photos/photo-4665.webp",
+          "observed": "已查看展签：掐丝团花纹金杯，英文 Gold Cup with Filigree Floral Medallions。"
+        }
+      ],
+      "blockers": [
+        "exact_record_missing: 当前 data.js 没有金筐宝钿团花纹金杯记录。",
+        "near_miss_conflict: field-4665 展签明确为掐丝团花纹金杯，不能代替候选题名。",
+        "candidate_object_photo_missing: 没有候选 exact title 的对象与展签照片。"
+      ],
+      "aliases": [
+        "金筐宝钿团花纹金杯"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：当前 data.js 没有‘金筐宝钿团花纹金杯’ exact title。实际查看的近似记录 field-4665 题名为掐丝团花纹金杯，唐代、何家村；对象 focus-4663 与 photo-4665 的标签明确是掐丝团花纹金杯，不能将两种装饰工艺/题名视作同一记录。",
+          "record_binding": "MISMATCH：field-4665 是实际找到的近似金杯记录，不是候选金筐宝钿团花纹金杯的 verified record；当前 exact record 缺失。",
+          "object_identity": "MISMATCH：对象图显示团花纹金杯，展签明确‘掐丝团花纹金杯’及 Gold Cup with Filigree Floral Medallions；没有证据把它改名为金筐宝钿团花纹金杯。",
+          "photo_match": "MISMATCH：已查看对象 focus-4663 与展签 photo-4665，两者相互证明是 field-4665 近似器物；没有候选 exact title 的对象/展签图。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-01",
+      "museum_id": "shangqiu-museum",
+      "rank": 1,
+      "canonical_title": "金缕玉衣",
+      "record_id": "jade-suit",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（current catalog/photo-manifest；展签为馆内标签）",
+      "identity_kind": "assembled_burial_suit_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5324.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5329.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=jade-suit；title=金缕玉衣；period=汉；provenance=永城市黄土山一号汉代石室墓出土；start=5324；end=5329；label=5329。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5324—5328 为对象照片，DSC_5329 为展签照片，source site=商丘博物馆。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5324.webp",
+          "observed": "已查看玻璃柜内完整玉衣组装展示。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5329.webp",
+          "observed": "已查看展签：金缕玉衣、汉（206 BCE—220）、永城市黄土山一号汉墓出土。"
+        },
+        {
+          "source": "context",
+          "url": "https://henan.china.com/news/dsxy/2023/0116/2530339145.html",
+          "observed": "公开报道提及商丘博物馆数字展陈中的汉代金缕玉衣/芒砀山背景；未用于证明当前组装展示的原件组成。"
+        }
+      ],
+      "blockers": [
+        "assembled_status_unresolved: 照片是组装展示，未说明玉片和金丝逐件原件/整理/复原状态。",
+        "original_copy_status_unresolved: 展签无原件/复制品说明，不能据无标记推断全部为原件。"
+      ],
+      "aliases": [
+        "金缕玉衣",
+        "汉代金缕玉衣",
+        "Jade burial suit"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：current catalog 的 jade-suit、对象 DSC_5324 和展签 DSC_5329 均精确指向金缕玉衣；展签可读汉代（206 BCE—220）、永城市黄土山一号汉墓出土。照片中的玉衣是玻璃柜内的组装展示，当前资料没有逐件说明玉片、金丝是否全为原件，或是否包含整理/复原部件。",
+          "record_binding": "对象和展签已精确绑定 current catalog record jade-suit；记录身份成立，但原件/组装状态未达到完整发布门槛。",
+          "object_identity": "看过 DSC_5324 对象图：完整玉衣组装展示；DSC_5329 展签明确金缕玉衣及黄土山一号汉墓出土。没有复制品字样，但‘无复制品字样’不能证明每一组成件均为原件，故保持 pending。",
+          "photo_match": "对象 DSC_5324 和展签 DSC_5329 均已实际查看；标题、时代和出土墓葬可读，组装/原件状态不可由照片解决。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-02",
+      "museum_id": "shangqiu-museum",
+      "rank": 2,
+      "canonical_title": "清乾隆开归陈汝水利图碑",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "未确认；拓片资产的站点归属不能替代碑体馆藏单位",
+      "identity_kind": "rubbing_no_current_stele_record",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/treasures/shuili-stele-rubbing.webp",
+        "modules/shangqiu-museum/assets/treasures/shuili-stele-rubbing-source.jpg"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "未找到清乾隆开归陈汝水利图碑的 actual record；现有 catalog 记录不含该题名。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/treasures/shuili-stele-rubbing.webp",
+          "observed": "已查看黑白水利图拓片资产，不是碑体摄影。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/treasures/shuili-stele-rubbing-source.jpg",
+          "observed": "已查看来源图，同样是拓片/图版，不是可核对原件与展签的对象照片。"
+        }
+      ],
+      "blockers": [
+        "exact_record_missing: current catalog 无碑体记录。",
+        "object_photo_missing: 只有拓片，没有碑体对象图。",
+        "label_photo_missing: 没有当前展签。",
+        "original_copy_unresolved: 拓片不能证明碑体原件/复制品或拓本版本。"
+      ],
+      "aliases": [
+        "清乾隆开归陈汝水利图碑",
+        "开归陈汝水利图碑",
+        "水利图碑拓本"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：当前 Shangqiu catalog.js 未找到清乾隆开归陈汝水利图碑 record。现有 shuili-stele-rubbing.webp 与 shuili-stele-rubbing-source.jpg 已查看，内容是黑白地图/文字拓片，不是碑体对象照片，也没有对应当前展签编号。",
+          "record_binding": "RECORD MISSING：当前站点只有水利图碑拓片 asset，没有可绑定的 actual catalog record、对象组或标签编号。",
+          "object_identity": "只能确认现有资产表现一件水利图碑的拓本/拓片，不足以确认碑体、清乾隆刻石、完整题名或原件/复制品状态。",
+          "photo_match": "PENDING：已查看两张水利图资产，但二者都是拓片/来源图；没有碑体对象图和展签图，不能按对象照片通过。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-03",
+      "museum_id": "shangqiu-museum",
+      "rank": 3,
+      "canonical_title": "玄鸟驭龙伏虎降牛画像石门楣",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "未确认",
+      "identity_kind": "missing_record_and_photos",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "未找到玄鸟驭龙伏虎降牛画像石门楣 exact title 或可用实际记录。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "未找到可与该题名和对象身份同时绑定的对象/展签照片组。"
+        }
+      ],
+      "blockers": [
+        "exact_record_missing: 无当前 catalog record。",
+        "object_photo_missing: 无实物照片。",
+        "label_photo_missing: 无展签照片。",
+        "owner_and_original_status_missing: 馆藏单位及原件/复制品身份均未确认。"
+      ],
+      "aliases": [
+        "玄鸟驭龙伏虎降牛画像石门楣"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：current Shangqiu catalog.js、content-prehan.js、content-han.js、content-late.js 和 content.js 中没有该题名的实际记录。当前 photo-manifest 也没有可据以确认此门楣的对象/展签组。",
+          "record_binding": "RECORD MISSING：没有 actual record；未把其他汉画像石、门楣或相邻照片误绑到候选题名。",
+          "object_identity": "没有对象照片或可读展签，无法确认玄鸟、驭龙、伏虎降牛图像组合，也无法确认石门楣具体个体。",
+          "photo_match": "PENDING：当前 release 没有该候选的对象图与标签图。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-04",
+      "museum_id": "shangqiu-museum",
+      "rank": 4,
+      "canonical_title": "云雷纹铜鼎",
+      "record_id": "cloud-thunder-ding",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "未由当前 cloud-thunder-ding catalog 字段或可读展签确认；不能套用其他商丘器物的馆藏单位",
+      "identity_kind": "matching_object_label_owner_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5224.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5226.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=cloud-thunder-ding；title=云雷纹铜鼎；period=西周；photo range 5224—5226；当前记录缺完整 material/provenance/owner。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5224—5225 标为对象照片，DSC_5226 标为展签照片，source site=商丘博物馆。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5224.webp",
+          "observed": "已查看三足、双耳和云雷纹带青铜鼎对象。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5226.webp",
+          "observed": "已查看展签：云雷纹铜鼎、Bronze ding with thunder patterns、西周；底部出土地行过模糊。"
+        }
+      ],
+      "blockers": [
+        "provenance_unreadable: 展签出土地文字无法可靠读全。",
+        "owner_missing: current record/展签未清晰给出馆藏单位。",
+        "original_copy_status_unresolved: 未见原件/复制品说明。"
+      ],
+      "aliases": [
+        "云雷纹铜鼎",
+        "Bronze ding with thunder patterns"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：current catalog 的 cloud-thunder-ding、对象 DSC_5224 和展签 DSC_5226 的题名/器形/西周大方向一致。展签下方的出土地文字过于模糊，current catalog 也没有完整 provenance 与 collection owner 字段，因此不能把该项当作资料完整的 pass。",
+          "record_binding": "对象和展签已绑定 actual record cloud-thunder-ding；绑定的是当前记录的题名和器形，出土地与馆藏权属仍待展签清晰版/档案复核。",
+          "object_identity": "对象图为三足青铜鼎，双立耳和云雷纹带清楚；展签可读云雷纹铜鼎、Western Zhou，但底部出土地不可可靠转录。未见复制品标记，原件状态仍未有正面说明。",
+          "photo_match": "对象 DSC_5224 与展签 DSC_5226 均已实际查看；标题、英文器类和时代可读，出土地/馆藏行不可清晰读取。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-05",
+      "museum_id": "shangqiu-museum",
+      "rank": 5,
+      "canonical_title": "白玉舞人佩",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "未确认",
+      "identity_kind": "missing_record_and_photos",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "未找到白玉舞人佩 exact title；名称相近的玉器记录不足以完成对象绑定。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "未找到可与白玉舞人佩题名和身份同时绑定的对象/展签照片组。"
+        }
+      ],
+      "blockers": [
+        "exact_record_missing: 无当前 catalog record。",
+        "object_photo_missing: 无实物照片。",
+        "label_photo_missing: 无展签照片。",
+        "owner_and_original_status_missing: 馆藏单位与原件/复制品状态未确认。"
+      ],
+      "aliases": [
+        "白玉舞人佩"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：current Shangqiu catalog 未找到白玉舞人佩 exact record。现有 jade-ritual-ornaments 等名称相近记录不能据题名替代；没有对象/展签照片证明候选的白玉材质、舞人形象与具体个体。",
+          "record_binding": "RECORD MISSING：没有 actual record；未把其他玉礼仪饰件或同类玉舞人名称相近记录当作候选绑定。",
+          "object_identity": "没有对象图和展签，无法确认白玉、舞人形象、佩饰用途或具体组合。",
+          "photo_match": "PENDING：当前 release 没有该候选对象与标签照片。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-06",
+      "museum_id": "shangqiu-museum",
+      "rank": 6,
+      "canonical_title": "陶狗（通济渠故道出土）",
+      "record_id": null,
+      "near_miss_record_id": "green-glazed-dog",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "近似记录 green-glazed-dog 的展陈来源为商丘博物馆；候选通济渠故道陶狗的馆藏单位未确认",
+      "identity_kind": "near_miss_misidentified_object",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5271.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5274.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=green-glazed-dog；title=绿釉红陶狗；period=汉；photo range 5271—5274；未找到通济渠故道出土陶狗 exact record。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5271 为对象照片，DSC_5274 为展签照片。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5271.webp",
+          "observed": "已查看绿釉红陶狗对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5274.webp",
+          "observed": "已查看展签：绿釉红陶狗、Green-glazed red pottery dog、汉（202 BCE—AD 220）；不是宋代通济渠陶狗。"
+        }
+      ],
+      "blockers": [
+        "exact_record_missing: 通济渠故道陶狗无 current catalog record。",
+        "near_miss_conflict: green-glazed-dog 为汉代绿釉红陶狗，不能代替候选。",
+        "candidate_object_photo_missing: 候选 exact object/label 图缺失。"
+      ],
+      "aliases": [
+        "陶狗（通济渠故道出土）",
+        "通济渠故道陶狗"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：候选要求的陶狗（通济渠故道出土）没有当前 exact record。实际找到并查看的近似记录 green-glazed-dog 是绿釉红陶狗，汉代，照片 DSC_5271、展签 DSC_5274；它不是候选叙述中的宋代/通济渠故道陶狗，不能借用该记录。",
+          "record_binding": "MISMATCH：green-glazed-dog 仅为实际照片中的近似犬形陶器，不能绑定候选 rank 6；通济渠故道陶狗 exact record 缺失。",
+          "object_identity": "MISMATCH：DSC_5271 为绿釉红陶狗，DSC_5274 展签可读汉代；候选的通济渠故道出土陶狗未有对象和展签证据。",
+          "photo_match": "MISMATCH：已查看对象/标签，二者证明近似记录是汉代绿釉红陶狗；没有候选通济渠陶狗照片。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-07",
+      "museum_id": "shangqiu-museum",
+      "rank": 7,
+      "canonical_title": "门吏陶俑",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "未确认",
+      "identity_kind": "missing_record_and_photos",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "未找到门吏陶俑 exact title 或可核实际记录。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "未找到可与门吏陶俑题名/身份同时绑定的对象和展签照片。"
+        }
+      ],
+      "blockers": [
+        "exact_record_missing: 无当前 catalog record。",
+        "object_photo_missing: 无实物照片。",
+        "label_photo_missing: 无展签照片。",
+        "owner_and_original_status_missing: 馆藏单位与原件/复制品状态未确认。"
+      ],
+      "aliases": [
+        "门吏陶俑"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PENDING：current Shangqiu catalog 和 photo-manifest 未找到门吏陶俑的 actual record、对象组或展签组。名称相近的陶俑记录不能证明门吏身份。",
+          "record_binding": "RECORD MISSING：没有 actual record；没有将其他人物陶俑、门吏题材或相邻照片误绑。",
+          "object_identity": "没有对象图与可读展签，无法确认门吏姿态、服饰、时代或具体墓葬来源。",
+          "photo_match": "PENDING：当前 release 没有该候选的对象与标签照片。"
+        },
+        "original_copy_status": "当前证据不足以达到原件身份门槛；原件/复制品/拓本/摹本/数字复原状态与其他未决问题保留在 pre_normalization 和 blockers 中。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-08",
+      "museum_id": "shangqiu-museum",
+      "rank": 8,
+      "canonical_title": "龙首柄铜鐎斗",
+      "record_id": "dragon-handled-dipper",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（展签明确‘商丘博物馆藏’，current catalog/photo-manifest 一致）",
+      "identity_kind": "museum_object_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5200.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5203.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=dragon-handled-dipper；title=龙首柄铜鐎斗；period=汉；material=铜；photo range 5200—5203。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5200—5202 为对象图，DSC_5203 为展签，source site=商丘博物馆。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5200.webp",
+          "observed": "已查看龙首柄三足铜鐎斗对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5203.webp",
+          "observed": "已查看展签：龙首柄铜鐎斗、Bronze jiaodou with dragon-headed handle、汉、商丘博物馆藏。"
+        }
+      ],
+      "blockers": [
+        "original_copy_status_unresolved: 当前仅有对象/展签对应证据，缺少原件、复制品、整理或复原的正面身份说明。"
+      ],
+      "aliases": [
+        "龙首柄铜鐎斗",
+        "汉代龙首柄鐎斗",
+        "Bronze jiaodou with dragon-headed handle"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current catalog 的 dragon-handled-dipper、对象 DSC_5200 和展签 DSC_5203 精确一致。展签可读龙首柄铜鐎斗、Bronze jiaodou with dragon-headed handle、汉，并明确商丘博物馆藏。",
+          "record_binding": "PASS：按龙首长柄、三足鐎斗器形、题名和展签绑定 actual record dragon-handled-dipper。",
+          "object_identity": "PASS：对象图显示浅腹三足铜器与龙首长柄；展签题名、汉代及馆藏单位清楚，未见复制品/复原标记，按当前馆藏展示对象处理。",
+          "photo_match": "PASS：对象 DSC_5200 与展签 DSC_5203 均已实际查看且标题、器类、时代、馆藏可读。"
+        },
+        "original_copy_status": "原先的 pass 只依据馆内对象/展签与 current record 对应、且未见复制品标记；没有原件、复制品、整理或复原的正面说明，因此按新增原件身份门槛降为 pending。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-09",
+      "museum_id": "shangqiu-museum",
+      "rank": 9,
+      "canonical_title": "原始青瓷铺首衔环壶",
+      "record_id": "proto-celadon-hu",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（catalog metaRows 的收藏字段；展签为馆内标签）",
+      "identity_kind": "museum_object_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5262.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5265.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=proto-celadon-hu；title=原始青瓷铺首衔环壶；period=汉；material=原始青瓷；photo range 5262—5265；metaRows 含收藏=商丘博物馆。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5262—5264 为对象图，DSC_5265 为展签。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5262.webp",
+          "observed": "已查看灰青釉壶体及铺首衔环对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5265.webp",
+          "observed": "已查看展签：原始青瓷铺首衔环壶、Proto-celadon pot with animal mask ring handles、汉；底部永城出土字样部分可见。"
+        }
+      ],
+      "blockers": [
+        "original_copy_status_unresolved: 当前仅有对象/展签对应证据，缺少原件、复制品、整理或复原的正面身份说明。"
+      ],
+      "aliases": [
+        "原始青瓷铺首衔环壶",
+        "汉代原始青瓷壶",
+        "Proto-celadon pot with animal mask ring handles"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current catalog 的 proto-celadon-hu、对象 DSC_5262 和展签 DSC_5265 精确指向原始青瓷铺首衔环壶。展签题名、Proto-celadon pot with animal mask ring handles、汉可读，底部出土地行可辨为永城出土但不把模糊细节扩写；catalog metaRows 标有商丘博物馆收藏。",
+          "record_binding": "PASS：按原始青瓷材质、铺首衔环、对象形制和展签绑定 actual record proto-celadon-hu。",
+          "object_identity": "PASS：对象图显示灰青釉圆腹壶与兽面铺首衔环；展签明确器名、汉代，未见复制品/复原标记。精确出土地文字不作为额外发布事实。",
+          "photo_match": "PASS：对象 DSC_5262 与展签 DSC_5265 均已实际查看；题名与时代清楚，底部来源只作部分读取。"
+        },
+        "original_copy_status": "原先的 pass 只依据馆内对象/展签与 current record 对应、且未见复制品标记；没有原件、复制品、整理或复原的正面说明，因此按新增原件身份门槛降为 pending。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-10",
+      "museum_id": "shangqiu-museum",
+      "rank": 10,
+      "canonical_title": "青铜爵",
+      "record_id": "bronze-jue",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（展签明确‘商丘博物馆藏’，current catalog/photo-manifest 一致）",
+      "identity_kind": "museum_object_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5171.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5173.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=bronze-jue；title=青铜爵（展签题名更具体为双柱菱形纹铜爵）；period=商；photo range 5171—5173。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5171—5172 为对象图，DSC_5173 为展签。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5171.webp",
+          "observed": "已查看带长流、双柱和三足的爵对象。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5173.webp",
+          "observed": "已查看展签：双柱菱形纹铜爵、Bronze Jue、商、商丘博物馆藏。"
+        }
+      ],
+      "blockers": [
+        "original_copy_status_unresolved: 当前仅有对象/展签对应证据，缺少原件、复制品、整理或复原的正面身份说明。"
+      ],
+      "aliases": [
+        "双柱菱形纹铜爵",
+        "青铜爵",
+        "Bronze Jue"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：候选的通称‘青铜爵’实际绑定 current catalog 的 bronze-jue，完整题名为双柱菱形纹铜爵，商代；对象 DSC_5171 与展签 DSC_5173 已查看，展签题名、Bronze Jue、商（1600—1046 BCE）和商丘博物馆藏清楚。",
+          "record_binding": "PASS：按长流、三足、双柱与菱形纹对象及展签绑定 actual record bronze-jue；通称列为别名。",
+          "object_identity": "PASS：对象图为带长流和双柱的青铜爵；展签明确双柱菱形纹铜爵、商代及馆藏单位，未见复制品标记。",
+          "photo_match": "PASS：对象 DSC_5171 与展签 DSC_5173 均已实际查看且可读。"
+        },
+        "original_copy_status": "原先的 pass 只依据馆内对象/展签与 current record 对应、且未见复制品标记；没有原件、复制品、整理或复原的正面说明，因此按新增原件身份门槛降为 pending。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-11",
+      "museum_id": "shangqiu-museum",
+      "rank": 11,
+      "canonical_title": "卜骨与卜甲",
+      "record_id": "oracle-bones",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（current catalog site 字段；标签照片主要显示出土信息）",
+      "identity_kind": "museum_object_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5178.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5180.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5182.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5181.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5183.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=oracle-bones；title=卜骨与卜甲；period=商；photo range 5178—5183；labels=5181,5183。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5178/5180/5182 标为对象图，DSC_5181/5183 标为标签图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5178.webp",
+          "observed": "已查看骨/甲片残片对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5181.webp",
+          "observed": "已查看展签：卜骨、商、柘城孟庄遗址出土。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5183.webp",
+          "observed": "已查看展签：卜甲、商、柘城孟庄遗址出土。"
+        }
+      ],
+      "blockers": [
+        "original_copy_status_unresolved: 当前仅有对象/展签对应证据，缺少原件、复制品、整理或复原的正面身份说明。"
+      ],
+      "aliases": [
+        "卜骨与卜甲",
+        "卜骨",
+        "卜甲",
+        "Oracle bones and shells"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current catalog 的 oracle-bones、对象 DSC_5178/5180/5182 和两张展签 DSC_5181/5183 实际查看后相互一致。展签分别可读卜骨、卜甲、商及柘城孟庄遗址出土；current catalog 将该组作为卜骨与卜甲记录。",
+          "record_binding": "PASS：按骨/甲残片组合、两张分别标注卜骨与卜甲的展签和商代孟庄来源绑定 actual record oracle-bones。",
+          "object_identity": "PASS：对象照片显示骨与甲类占卜材料；两张标签分别确认卜骨/卜甲、商代和出土遗址，未见复制品或现代仿制标记。馆藏单位以 current catalog 的商丘博物馆 site 字段为准。",
+          "photo_match": "PASS：三张对象图与两张标签图均已查看；标签的器类、时代和出土信息可读。"
+        },
+        "original_copy_status": "原先的 pass 只依据馆内对象/展签与 current record 对应、且未见复制品标记；没有原件、复制品、整理或复原的正面说明，因此按新增原件身份门槛降为 pending。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-12",
+      "museum_id": "shangqiu-museum",
+      "rank": 12,
+      "canonical_title": "石镞范",
+      "record_id": "stone-tool",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（展签明确‘商丘博物馆藏’，current catalog/photo-manifest 一致）",
+      "identity_kind": "museum_object_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5152.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5153.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=stone-tool；title=石镞范；period=春秋；material=石；photo range 5152—5153。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5152 为对象图，DSC_5153 为展签。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5152.webp",
+          "observed": "已查看石制箭镞范对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5153.webp",
+          "observed": "已查看展签：石镞范、Stone arrowhead、春秋、商丘博物馆藏。"
+        }
+      ],
+      "blockers": [
+        "original_copy_status_unresolved: 当前仅有对象/展签对应证据，缺少原件、复制品、整理或复原的正面身份说明。"
+      ],
+      "aliases": [
+        "石镞范",
+        "Stone arrowhead mold"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current catalog 的 stone-tool、对象 DSC_5152 和展签 DSC_5153 精确一致。展签可读石镞范、Stone arrowhead、春秋（770—476 BCE）和商丘博物馆藏；对象为带箭镞形腔的石范。",
+          "record_binding": "PASS：按石质箭镞范形制、题名和展签绑定 actual record stone-tool。",
+          "object_identity": "PASS：对象图显示有凹腔的石制范具；展签明确石镞范、春秋及馆藏单位，未见复制品标记。",
+          "photo_match": "PASS：对象 DSC_5152 与展签 DSC_5153 均已实际查看且可读。"
+        },
+        "original_copy_status": "原先的 pass 只依据馆内对象/展签与 current record 对应、且未见复制品标记；没有原件、复制品、整理或复原的正面说明，因此按新增原件身份门槛降为 pending。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-13",
+      "museum_id": "shangqiu-museum",
+      "rank": 13,
+      "canonical_title": "青铜簠",
+      "record_id": "bronze-tray-vessel",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（展签明确‘商丘博物馆藏’，current catalog/photo-manifest 一致）",
+      "identity_kind": "museum_object_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5217.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5218.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5219.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5220.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=bronze-tray-vessel；title=青铜簠；period=春秋；material=青铜；photo range 5217—5220。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5217—5219 为对象图，DSC_5220 为展签。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5217.webp",
+          "observed": "已查看方形带盖青铜簠对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5220.webp",
+          "observed": "已查看展签：青铜簠（fǔ）、Bronze Fu、春秋、商丘博物馆藏。"
+        }
+      ],
+      "blockers": [
+        "original_copy_status_unresolved: 当前仅有对象/展签对应证据，缺少原件、复制品、整理或复原的正面身份说明。"
+      ],
+      "aliases": [
+        "青铜簠",
+        "青铜簠（fǔ）",
+        "Bronze Fu"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current catalog 的 bronze-tray-vessel、对象 DSC_5217—5219 和展签 DSC_5220 精确一致。展签可读青铜簠（fǔ）、Bronze Fu、春秋（770—476 BCE）和商丘博物馆藏；对象盖、方形器体与两侧耳相符。",
+          "record_binding": "PASS：按方形带盖青铜簠对象、展签题名和春秋时代绑定 actual record bronze-tray-vessel。",
+          "object_identity": "PASS：对象图显示盖、方形腹和双耳；展签明确青铜簠及馆藏单位，未见复制品标记。",
+          "photo_match": "PASS：三张对象图及展签 DSC_5220 均已实际查看。"
+        },
+        "original_copy_status": "原先的 pass 只依据馆内对象/展签与 current record 对应、且未见复制品标记；没有原件、复制品、整理或复原的正面说明，因此按新增原件身份门槛降为 pending。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-14",
+      "museum_id": "shangqiu-museum",
+      "rank": 14,
+      "canonical_title": "带盖石砚",
+      "record_id": "stone-inkstone",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（current catalog site 字段及馆内展签上下文）",
+      "identity_kind": "museum_object_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5285.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5286.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=stone-inkstone；title=带盖石砚；period=汉；photo range 5285—5286；catalog content 细化为东汉。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5285 为对象图，DSC_5286 为展签。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5285.webp",
+          "observed": "已查看带盖石砚对象图。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5286.webp",
+          "observed": "已查看展签：带盖石砚、Lidded stone ink slab、东汉、夏邑县坞沟乡朱小楼出土。"
+        }
+      ],
+      "blockers": [
+        "original_copy_status_unresolved: 当前仅有对象/展签对应证据，缺少原件、复制品、整理或复原的正面身份说明。"
+      ],
+      "aliases": [
+        "带盖石砚",
+        "东汉带盖石砚",
+        "Lidded stone ink slab"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current catalog 的 stone-inkstone、对象 DSC_5285 和展签 DSC_5286 精确一致。展签可读带盖石砚、Lidded stone ink slab、东汉（25—220）及夏邑县坞沟乡朱小楼出土；对象的砚与盖相互匹配。",
+          "record_binding": "PASS：按带盖石砚对象、题名、东汉时代和朱小楼来源绑定 actual record stone-inkstone。",
+          "object_identity": "PASS：对象图显示石砚与盖；展签明确带盖石砚、东汉和出土地，未见复制品标记。",
+          "photo_match": "PASS：对象 DSC_5285 与展签 DSC_5286 均已实际查看且可读。"
+        },
+        "original_copy_status": "原先的 pass 只依据馆内对象/展签与 current record 对应、且未见复制品标记；没有原件、复制品、整理或复原的正面说明，因此按新增原件身份门槛降为 pending。"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-15",
+      "museum_id": "shangqiu-museum",
+      "rank": 15,
+      "canonical_title": "白釉褐彩“风花雪月”四系瓷瓶",
+      "record_id": "inscribed-four-loop-jar",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "collection_owner": "商丘博物馆（展签明确‘商丘博物馆藏’，current catalog/photo-manifest 一致）",
+      "identity_kind": "museum_object_original_copy_unresolved",
+      "verified_photo_paths": [
+        "modules/shangqiu-museum/assets/photos/web/DSC_5406.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5408.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5409.webp",
+        "modules/shangqiu-museum/assets/photos/web/DSC_5410.webp"
+      ],
+      "evidence": [
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/catalog.js",
+          "observed": "id=inscribed-four-loop-jar；title=白釉褐彩‘风花雪月’四系瓷瓶；period=宋；material=瓷；photo range 5406—5410。"
+        },
+        {
+          "source": "repo",
+          "path": "modules/shangqiu-museum/data/photo-manifest.js",
+          "observed": "DSC_5406/5408/5409 为对象图，DSC_5410 为展签。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5406.webp",
+          "observed": "已查看白釉褐彩四系瓷瓶及‘风花雪月’字样。"
+        },
+        {
+          "source": "view_image",
+          "path": "D:/Documents-Offload/website-henan-release/modules/shangqiu-museum/assets/photos/web/DSC_5410.webp",
+          "observed": "已查看展签：白釉褐彩‘风花雪月’四系瓷瓶、White-glazed porcelain four-loop vase、宋、商丘博物馆藏。"
+        }
+      ],
+      "blockers": [
+        "original_copy_status_unresolved: 当前仅有对象/展签对应证据，缺少原件、复制品、整理或复原的正面身份说明。"
+      ],
+      "aliases": [
+        "白釉褐彩“风花雪月”四系瓷瓶",
+        "白釉褐彩‘风花雪月’四系瓷瓶",
+        "White-glazed porcelain four-loop vase"
+      ],
+      "review_details": {
+        "pre_normalization": {
+          "content_review": "PASS：current catalog 的 inscribed-four-loop-jar、对象 DSC_5406/5408/5409 和展签 DSC_5410 精确一致。展签可读白釉褐彩‘风花雪月’四系瓷瓶、White-glazed porcelain four-loop vase、宋及商丘博物馆藏。",
+          "record_binding": "PASS：按白釉褐彩、‘风花雪月’字样、四系器形和展签绑定 actual record inscribed-four-loop-jar。",
+          "object_identity": "PASS：对象图显示白釉褐彩四系瓷瓶及器身文字；展签明确题名、宋代和馆藏单位，未见复制品标记。",
+          "photo_match": "PASS：对象 DSC_5406/5408/5409 与展签 DSC_5410 均已实际查看且可读。"
+        },
+        "original_copy_status": "原先的 pass 只依据馆内对象/展签与 current record 对应、且未见复制品标记；没有原件、复制品、整理或复原的正面说明，因此按新增原件身份门槛降为 pending。"
+      }
+    }
+  ],
+  "normalization": {
+    "enum_fields": {
+      "content_review": [
+        "passed",
+        "pending"
+      ],
+      "record_binding": [
+        "verified",
+        "pending"
+      ],
+      "object_identity": [
+        "verified",
+        "pending"
+      ],
+      "photo_match": [
+        "verified",
+        "pending"
+      ]
+    },
+    "rule": "四个审核字段统一为枚举；仅陕西 9 项保留 pass。商丘原先 8 项 pass 因缺少原件身份正面说明降为 pending；所有原说明保存在 review_details.pre_normalization。"
+  }
+}

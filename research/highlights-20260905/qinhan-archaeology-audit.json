@@ -1,0 +1,2320 @@
+{
+  "schema": "qinhan-archaeology-audit",
+  "schema_version": "qinhan-archaeology-audit-20260905.v3-owner-audit-release-main",
+  "version_date": "2026-09-05",
+  "scope": {
+    "repo": "D:\\Documents-Offload\\website-henan-release",
+    "git_ref": "main",
+    "git_commit": "96c91dc8d6cc16ab3b7b867d2cec678830b6612b",
+    "package": "C:\\Users\\GusGumee\\Downloads\\museum_highlights_other_7_105_codex.zip",
+    "source_data": [
+      "modules/qinhan/data/archive.json",
+      "modules/shaanxi-archaeology-museum/data/artifacts-data.js",
+      "modules/shaanxi-archaeology-museum/data/catalog.json"
+    ],
+    "app_data_use": "陕西考古博物馆当前 index.html uses data/artifacts-data.js; catalog.json was inspected secondarily.",
+    "read_only_audit": true,
+    "site_code_changed": false,
+    "commit_or_deploy": false,
+    "requested_workspace": "D:\\Documents-Offload\\website-henan-release\\main",
+    "actual_workspace": "D:\\Documents-Offload\\website-henan-release",
+    "workspace_path_note": "The requested /main denotes the main branch; the filesystem repository root is website-henan-release and has no child main directory.",
+    "source_comparison_basis": "Prior visual audit used main Git blobs from D:\\Documents-Offload\\website at commit 96c91dc8d6cc16ab3b7b867d2cec678830b6612b. Release audit rechecked the current working tree at the same main commit with the comparisons recorded below."
+  },
+  "media_resolver": {
+    "qinhan": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/",
+    "shaanxi_archaeology": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/",
+    "photo_note": "verified_photo_paths use current resolver-backed URLs; no unrelated web image used."
+  },
+  "summary": {
+    "total": 30,
+    "pass": 8,
+    "pending": 22,
+    "qinhan": {
+      "total": 15,
+      "pass": 3,
+      "pending": 12
+    },
+    "shaanxi_archaeology": {
+      "total": 15,
+      "pass": 5,
+      "pending": 10
+    },
+    "front6": {
+      "qinhan_pass": 2,
+      "qinhan_pending": 4,
+      "shaanxi_archaeology_pass": 3,
+      "shaanxi_archaeology_pending": 3,
+      "combined_pass": 5,
+      "combined_pending": 7
+    },
+    "pass_rule": "Pass requires content_review=passed, record_binding=verified, object_identity=verified, photo_match=verified, a concrete collection_owner supported by current label or item-specific official/research evidence, and preserved object identity/scope. A combined Qinhan theme remains pending until a dedicated child record is bound; a Shaanxi combined record may pass only for the clearly evidenced component while retaining its parent record."
+  },
+  "items": [
+    {
+      "editorial_id": "qinhan-highlight-01",
+      "museum_id": "qinhan",
+      "canonical_title": "杜虎符",
+      "record_id": "du-tiger-tally",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆",
+      "identity_kind": "original_object",
+      "verified_photo_paths": [
+        {
+          "role": "object_front",
+          "filename": "DSC_2085.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2085.jpg",
+          "viewed": true
+        },
+        {
+          "role": "object_side",
+          "filename": "DSC_2089.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2089.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2092.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2092.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/du-tiger-tally",
+          "details": "杜虎符; 战国晚期; 沈家桥村; gallery 57-59."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2085/2092",
+          "details": "Viewed the actual tiger tally and its label: 杜虎符, 战国晚期, 1975年西安南郊沈家桥村出土; label identifies the left half."
+        },
+        {
+          "kind": "official_source",
+          "source": "https://www.sxhm.com/collections/detail/518.html",
+          "details": "Shaanxi History Museum official page supports 错金杜虎符, 秦, archaeological source, left-half form and military-tally function."
+        },
+        {
+          "kind": "collection_owner",
+          "source": "https://www.sxhm.com/Temporary/detail/17801.html",
+          "details": "陕西历史博物馆官网文章明确称“陕西历史博物馆馆藏文物‘战国错金杜虎符’”为展览核心展品；与当前杜虎符照片、标签和 archive.json 记录相符。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "错金杜虎符",
+        "杜虎符（错金）"
+      ],
+      "curatorial_rank": 1,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-02",
+      "museum_id": "qinhan",
+      "canonical_title": "皇后之玺",
+      "record_id": "queen-seal",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西历史博物馆",
+      "identity_kind": "original_object",
+      "verified_photo_paths": [
+        {
+          "role": "object_front",
+          "filename": "DSC_2586.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2586.jpg",
+          "viewed": true
+        },
+        {
+          "role": "object_side",
+          "filename": "DSC_2587.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2587.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2588.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2588.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/queen-seal",
+          "details": "皇后之玺; 西汉; 韩家湾; gallery 482-484."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2586/2588",
+          "details": "Viewed the actual white-jade seal and label: 皇后之玺, 西汉, 1968年咸阳韩家湾出土."
+        },
+        {
+          "kind": "official_source",
+          "source": "https://www.sxhm.com/collections/detail/466.html",
+          "details": "Shaanxi History Museum official page supports the Han 皇后之玺玉印; Lü Hou attribution remains an inference from form/findspot."
+        },
+        {
+          "kind": "collection_owner",
+          "source": "https://www.sxhm.com/collections/detail/466.html",
+          "details": "陕西历史博物馆官网的“藏品”条目直接列出汉“皇后之玺”玉印并给出本馆展出信息；该馆藏页与当前物件/标签相符。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "汉“皇后之玺”玉印",
+        "皇后玉玺"
+      ],
+      "curatorial_rank": 2,
+      "current_display_status": "not_verified",
+      "editorial_notes": [
+        "“吕后所用”仍是官网基于出土地点的推测；本审计只确认器物、时代、出土地与收藏单位。"
+      ]
+    },
+    {
+      "editorial_id": "qinhan-highlight-03",
+      "museum_id": "qinhan",
+      "canonical_title": "“高奴禾石”铜权",
+      "record_id": "qin-weights",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_composite_display_no_isolated_target",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object_component",
+      "verified_photo_paths": [
+        {
+          "role": "related_object",
+          "filename": "DSC_2258.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2258.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_object",
+          "filename": "DSC_2260.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2260.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2262.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2262.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/qin-weights",
+          "details": "Current record is combined “高奴禾石”铜权与秦半两; gallery 200-203."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2258/2262",
+          "details": "Viewed bronze weight and label: “高奴禾石”铜权, 秦, 1964年陕西西安高窑村出土."
+        },
+        {
+          "kind": "official_source",
+          "source": "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202605/t20260520_4659282.html",
+          "details": "Beijing official source supports the Qin standard-weight identity but gives a different findspot wording (阿房宫遗址)."
+        }
+      ],
+      "blockers": [
+        "Current record is a combined theme; target child is not uniquely bound.",
+        "Label/findspot and external source differ; do not silently merge them."
+      ],
+      "aliases": [
+        "“高奴禾石”铜权",
+        "高奴禾石权"
+      ],
+      "curatorial_rank": 3,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-04",
+      "museum_id": "qinhan",
+      "canonical_title": "鎏金银竹节铜熏炉",
+      "record_id": "brick-and-bells",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_composite_display_no_isolated_target",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object_component",
+      "verified_photo_paths": [
+        {
+          "role": "related_display",
+          "filename": "DSC_2614.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2614.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_display",
+          "filename": "DSC_2615.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2615.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2622.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2622.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/brick-and-bells",
+          "details": "Current record is combined “陶俑、钟架与竹节熏炉”; gallery 506-512."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2614/2622",
+          "details": "Viewed the actual composite display and label 鎏金银竹节熏炉 / Gilt and silvered incense burner with bamboo-shaped stand; no isolated child view."
+        },
+        {
+          "kind": "official_source",
+          "source": "https://sn.cri.cn/20160825/251b3514-6d94-9529-27a4-1be1d805b35c.html",
+          "details": "CRI report supports name, 58cm, gilt/silvered bronze and Maoling-area discovery for this type."
+        }
+      ],
+      "blockers": [
+        "No separate child record or isolated target-object photo.",
+        "Do not import external dimensions/context without target-specific catalogue binding."
+      ],
+      "aliases": [
+        "鎏金银竹节熏炉",
+        "竹节熏炉"
+      ],
+      "curatorial_rank": 4,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-05",
+      "museum_id": "qinhan",
+      "canonical_title": "彩绘雁鱼铜灯",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "collection_owner": "not_stated",
+      "identity_kind": "unknown",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json",
+          "details": "No exact current group or uniquely bound photo/label for 彩绘雁鱼铜灯."
+        },
+        {
+          "kind": "source_check",
+          "source": "https://www.sohu.com/a/378789602_556506",
+          "details": "Fetched package source; no reliable target-specific text usable for binding."
+        }
+      ],
+      "blockers": [
+        "No exact current record and no verified current object-label pair.",
+        "Do not use another museum lamp photo or dimensions."
+      ],
+      "aliases": [
+        "彩绘雁鱼灯",
+        "雁鱼铜灯"
+      ],
+      "curatorial_rank": 5,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-06",
+      "museum_id": "qinhan",
+      "canonical_title": "鎏金铜蚕",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "collection_owner": "not_stated",
+      "identity_kind": "unknown",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json",
+          "details": "No exact current group or uniquely bound photo/label for 鎏金铜蚕."
+        },
+        {
+          "kind": "source_check",
+          "source": "https://sn.cri.cn/2024-09-20/7bc9ef08-a511-d2c7-a453-6328c5542639.html",
+          "details": "Fetched but yielded no usable target-specific text."
+        },
+        {
+          "kind": "source_check",
+          "source": "https://www.shiquan.gov.cn/Content-2749680.html",
+          "details": "Official page returned an internal error."
+        }
+      ],
+      "blockers": [
+        "Exact current record and actual object-plus-label pair are absent.",
+        "External pages did not supply a stable target-specific evidence chain."
+      ],
+      "aliases": [
+        "鎏金铜蚕",
+        "石泉铜蚕"
+      ],
+      "curatorial_rank": 6,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-07",
+      "museum_id": "qinhan",
+      "canonical_title": "神兽金饰",
+      "record_id": "steppe-gold",
+      "status": "pending",
+      "content_review": "passed",
+      "record_binding": "pending_new_child_record",
+      "object_identity": "verified_original_object_component",
+      "photo_match": "verified_object_and_label",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object_component",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_2508.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2508.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2511.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2511.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/steppe-gold",
+          "details": "Combined group 北方金饰与多元交流 contains a distinct 神兽金饰 child; target object/label are gallery 409/412."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2508/2511",
+          "details": "Viewed isolated openwork gold animal decoration and label: 神兽金饰, 战国, 1957年陕西榆林神木纳林高兔村出土."
+        },
+        {
+          "kind": "source",
+          "source": "https://www.sina.cn/news/detail/5300679762515063.html",
+          "details": "Report supports 神兽金饰, 1957 神木纳林高兔村, Warring States/Xiongnu context."
+        },
+        {
+          "kind": "child_binding",
+          "source": "DSC_2508/DSC_2511 via current Qinhan resolver",
+          "details": "The viewed object-label subset is sufficient for a future child record: object DSC_2508 and label DSC_2511; no other photos are needed for this minimal binding."
+        }
+      ],
+      "blockers": [
+        "The object and label are visually unambiguous, but the current record is the combined theme 北方金饰与多元交流; it is not a safe direct child overwrite.",
+        "Create/bind the proposed child ID only after the child record is added without changing the parent theme ID."
+      ],
+      "aliases": [
+        "神兽金饰",
+        "金质神兽纹饰"
+      ],
+      "curatorial_rank": 7,
+      "current_display_status": "not_verified",
+      "suggested_child_record_id": "qinhan-steppe-gold-spirit-animal",
+      "child_photo_subset": [
+        {
+          "role": "object",
+          "filename": "DSC_2508.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2508.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2511.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2511.jpg",
+          "viewed": true
+        }
+      ]
+    },
+    {
+      "editorial_id": "qinhan-highlight-08",
+      "museum_id": "qinhan",
+      "canonical_title": "漆猪",
+      "record_id": "animals",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_label_object_discrepancy",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object_component",
+      "verified_photo_paths": [
+        {
+          "role": "label",
+          "filename": "DSC_2472.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2472.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_display",
+          "filename": "DSC_2465.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2465.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_display",
+          "filename": "DSC_2474.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2474.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/animals",
+          "details": "Current group contains multiple animal objects; target label present but no isolated pig-object pair."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2472/2474",
+          "details": "Viewed label 漆猪, 春秋, 陕西宝鸡凤翔秦公一号大墓出土; adjacent visible objects are bear/dog-like forms, not a safe pig match."
+        },
+        {
+          "kind": "source",
+          "source": "https://culture.gmw.cn/2024-05/20/content_37332681.htm",
+          "details": "Guangming report supports lacquer pig from Qin Gong No.1 tomb and dimensions, but not current photo binding."
+        }
+      ],
+      "blockers": [
+        "Label was seen but no safe isolated pig-object match.",
+        "Do not substitute adjacent bear/dog photos."
+      ],
+      "aliases": [
+        "漆猪",
+        "Lacquered pig"
+      ],
+      "curatorial_rank": 8,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-09",
+      "museum_id": "qinhan",
+      "canonical_title": "“丝路一号”汉代古船",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "collection_owner": "not_stated",
+      "identity_kind": "unknown",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json",
+          "details": "No exact current Qinhan group or photo-label pair for “丝路一号” boat."
+        },
+        {
+          "kind": "source",
+          "source": "https://www.ctdsb.net/c1476_202405/2141055.html",
+          "details": "Jimu report identifies the Han wooden boat “丝路一号” and describes size/construction."
+        },
+        {
+          "kind": "source",
+          "source": "https://culture.gmw.cn/2024-05/23/content_37339538.htm",
+          "details": "Guangming corroborating exhibition source was fetched."
+        }
+      ],
+      "blockers": [
+        "No actual current Qinhan photo and label bound to a record.",
+        "External exhibition reporting cannot replace current record binding."
+      ],
+      "aliases": [
+        "“丝路一号”汉代古船",
+        "汉代木船"
+      ],
+      "curatorial_rank": 9,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-10",
+      "museum_id": "qinhan",
+      "canonical_title": "跪射俑",
+      "record_id": "clay-warriors",
+      "status": "pending",
+      "content_review": "passed",
+      "record_binding": "pending_new_child_record",
+      "object_identity": "verified_original_object_component",
+      "photo_match": "verified_object_and_label",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object_component",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_2071.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2071.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2075.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2075.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/clay-warriors",
+          "details": "Combined group contains the kneeling-archer child; object and label are in the same sequence."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2071/2075",
+          "details": "Viewed kneeling armored archer and label 跪射俑 / Kneeling Archer, 秦, 秦始皇兵马俑二号坑出土."
+        },
+        {
+          "kind": "source",
+          "source": "https://culture.gmw.cn/2024-05/23/content_37339289.htm",
+          "details": "Guangming package source checked for the target item."
+        },
+        {
+          "kind": "child_binding",
+          "source": "DSC_2071/DSC_2075 via current Qinhan resolver",
+          "details": "The viewed object-label subset is sufficient for a future child record: object DSC_2071 and label DSC_2075; no other photos are needed for this minimal binding."
+        }
+      ],
+      "blockers": [
+        "The object and label are visually unambiguous, but the current record is the combined 兵马俑：军阵中的人物差异 theme; it is not a safe direct child overwrite.",
+        "Create/bind the proposed child ID only after the child record is added without changing the parent theme ID."
+      ],
+      "aliases": [
+        "跪射俑",
+        "Kneeling Archer"
+      ],
+      "curatorial_rank": 10,
+      "current_display_status": "not_verified",
+      "suggested_child_record_id": "qinhan-clay-warriors-kneeling-archer",
+      "child_photo_subset": [
+        {
+          "role": "object",
+          "filename": "DSC_2071.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2071.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2075.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2075.jpg",
+          "viewed": true
+        }
+      ]
+    },
+    {
+      "editorial_id": "qinhan-highlight-11",
+      "museum_id": "qinhan",
+      "canonical_title": "石铠甲与石胄",
+      "record_id": "stone-armor",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西省考古研究院",
+      "identity_kind": "original_components",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_2094.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2094.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2093.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2093.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label_detail",
+          "filename": "DSC_2097.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2097.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/stone-armor",
+          "details": "Record title 石铠甲及石胄; 秦; K9801陪葬坑; gallery 60-63."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2094/2093/2097",
+          "details": "Viewed actual stone armor/corslet and label: 秦始皇帝陵K9801陪葬坑出土, 陕西省考古研究院藏; label explains stone pieces/copper-strip binding."
+        },
+        {
+          "kind": "scope_note",
+          "source": "current label",
+          "details": "Do not infer ancient connecting materials beyond the label or display."
+        },
+        {
+          "kind": "collection_owner",
+          "source": "DSC_2093/DSC_2097 current label",
+          "details": "实际标签清楚标注“陕西省考古研究院藏”；该标签与石铠甲及石胄 current record、实物照片相配。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "石铠甲及石胄",
+        "Stone armor and corslet"
+      ],
+      "curatorial_rank": 11,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-12",
+      "museum_id": "qinhan",
+      "canonical_title": "彩绘骑兵俑（杨家湾出土）",
+      "record_id": "cavalry-and-frontier-seal",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_target_not_unique",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object_component",
+      "verified_photo_paths": [
+        {
+          "role": "label",
+          "filename": "DSC_2153.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2153.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2158.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2158.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_object",
+          "filename": "DSC_2159.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2159.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2162.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2162.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_object",
+          "filename": "DSC_2163.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2163.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/cavalry-and-frontier-seal",
+          "details": "Combined group has multiple Yangjiawan cavalry figures and a separate Eastern Han seal; gallery 103-122."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2153/2158/2159/2162",
+          "details": "Viewed several cavalry photos and labels for items 03-06; no unique target child."
+        },
+        {
+          "kind": "source_check",
+          "source": "https://sn.people.com.cn/n2/2024/0518/c378288-40848399.html",
+          "details": "Package source was blocked in this audit."
+        }
+      ],
+      "blockers": [
+        "Generic target is not uniquely identified among multiple cavalry figures plus unrelated seal.",
+        "No safe object-label pair identifies the intended child."
+      ],
+      "aliases": [
+        "彩绘陶骑兵俑",
+        "杨家湾骑兵俑"
+      ],
+      "curatorial_rank": 12,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-13",
+      "museum_id": "qinhan",
+      "canonical_title": "“重卅斤”铜权",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "collection_owner": "not_stated",
+      "identity_kind": "unknown",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json",
+          "details": "No exact current record or uniquely bound photo-label pair for “重卅斤”铜权."
+        },
+        {
+          "kind": "source_check",
+          "source": "https://culture.gmw.cn/2024-05/20/content_37332527.htm",
+          "details": "Package source fetched but cannot establish current record/photo binding."
+        }
+      ],
+      "blockers": [
+        "Exact current record, label and actual object photo are not bound."
+      ],
+      "aliases": [
+        "“重卅斤”铜权"
+      ],
+      "curatorial_rank": 13,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-14",
+      "museum_id": "qinhan",
+      "canonical_title": "“长安丞”“备盗贼尉”封泥",
+      "record_id": "han-clay-seals",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_label_object_discrepancy",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_label_object_discrepancy",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object_component",
+      "verified_photo_paths": [
+        {
+          "role": "object_pair",
+          "filename": "DSC_2068.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2068.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label_03",
+          "filename": "DSC_2067.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2067.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label_04",
+          "filename": "DSC_2070.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2070.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/han-clay-seals",
+          "details": "Record title 长安丞与备盗贼尉封泥; gallery 45-47."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2068/2067/2070",
+          "details": "Viewed two seal pieces and both labels. 03 is 備盗贼尉; visible 04 reads 長安獄丞 with English Director of Prisons in Chang’an, differing from target/OCR 长安丞."
+        },
+        {
+          "kind": "scope_note",
+          "source": "label discrepancy",
+          "details": "Inscription identity must be resolved before promotion; keep combined theme ID."
+        }
+      ],
+      "blockers": [
+        "Visible second label appears to contain 獄 (長安獄丞), while target says 长安丞.",
+        "Do not rename the combined theme or promote two children before resolving the inscription."
+      ],
+      "aliases": [
+        "“备盗贼尉”封泥",
+        "“長安丞”封泥",
+        "“長安獄丞”封泥"
+      ],
+      "curatorial_rank": 14,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "qinhan-highlight-15",
+      "museum_id": "qinhan",
+      "canonical_title": "“一刀平五千”钱",
+      "record_id": "wang-mang-currency",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_target_not_unique",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object_component",
+      "verified_photo_paths": [
+        {
+          "role": "label",
+          "filename": "DSC_2352.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2352.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_object",
+          "filename": "DSC_2353.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2353.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2354.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2354.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_object",
+          "filename": "DSC_2355.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2355.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2356.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2356.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_display",
+          "filename": "DSC_2357.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2357.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_display",
+          "filename": "DSC_2359.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/photos/web/DSC_2359.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/qinhan/data/archive.json#/groups/wang-mang-currency",
+          "details": "Combined record contains several 一刀平五千 specimens plus other Wang Mang currencies; gallery 277-283."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2352-2359",
+          "details": "Viewed mixed currency display and labels listing multiple target specimens and different findspots."
+        },
+        {
+          "kind": "comparison_source",
+          "source": "https://www.chnmuseum.cn/zp/zpml/hb/202208/t20220817_257039.shtml",
+          "details": "National Museum source checked for general type only; not a current Qinhan object record."
+        },
+        {
+          "kind": "comparison_source",
+          "source": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/dzjp/zpjc/qtq/article00661c8be4de44b2bb12c9c2980975ab.html",
+          "details": "Henan Museum comparison source checked for general type only; not a substitute photo."
+        }
+      ],
+      "blockers": [
+        "Multiple target specimens and other currencies prevent unique child binding.",
+        "Use 王莽居摄时期/西汉末 context rather than automatically flattening to 新朝.",
+        "Do not use National Museum or Henan photos."
+      ],
+      "aliases": [
+        "错金“一刀平五千”铜钱",
+        "一刀平五千"
+      ],
+      "curatorial_rank": 15,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-01",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "李倕冠饰",
+      "record_id": "artifact-158",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_reconstruction_scope",
+      "photo_match": "pending_composite_display_no_isolated_target",
+      "collection_owner": "not_stated",
+      "identity_kind": "conservation_reconstruction_component",
+      "verified_photo_paths": [
+        {
+          "role": "related_display",
+          "filename": "DSC_3156.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3156.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_3158.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3158.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-158",
+          "details": "Record title 李倕冠饰及身体装饰组佩; 唐; 孟村李倕墓; display 495-496, label 497."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_3156/3158",
+          "details": "Viewed reconstructed crown/body-ornament case display and label naming both components."
+        },
+        {
+          "kind": "source",
+          "source": "https://k.sina.com.cn/article_7517400647_1c0126e4705903jkzn.html",
+          "details": "Report describes conservation reconstruction from hundreds of components and warns against treating it as untouched original or calling Li Chui a princess."
+        }
+      ],
+      "blockers": [
+        "Crown is not separately recorded from body ornaments.",
+        "Display is a conservation reconstruction; visible connections are not all necessarily original."
+      ],
+      "aliases": [
+        "李倕冠饰",
+        "李倕冠饰及身体装饰组佩（组合记录）"
+      ],
+      "curatorial_rank": 1,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-02",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "上官婉儿墓志",
+      "record_id": "artifact-147",
+      "status": "pending",
+      "content_review": "passed",
+      "record_binding": "pending",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西省考古研究院",
+      "identity_kind": "original_stone_epitaph_component",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_3112.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3112.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_3118.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3118.jpg",
+          "viewed": true
+        },
+        {
+          "role": "context_panel",
+          "filename": "DSC_3119.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3119.jpg",
+          "viewed": true
+        },
+        {
+          "role": "context_panel",
+          "filename": "DSC_3121.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3121.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-147",
+          "details": "Record title 唐昭容上官氏墓志并盖; 唐景云元年(710); 2013邓村墓; display 456-459, labels 460-462."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_3112/3118",
+          "details": "Viewed inscribed slab and label 唐昭容上官氏墓志并盖 with Tang period/findspot."
+        },
+        {
+          "kind": "source",
+          "source": "https://www.sina.cn/news/detail/5232847721860638.html",
+          "details": "Shaanxi cultural-heritage source describes epitaph/cover, discovery context and inscription."
+        },
+        {
+          "kind": "source",
+          "source": "https://www.thepaper.cn/newsDetail_forward_17849286",
+          "details": "ThePaper lists Shangguan epitaph in exhibition context."
+        },
+        {
+          "kind": "collection_owner",
+          "source": "https://collection.sina.cn/yejie/2019-05-14/detail-ihvhiqax8510573.d.html",
+          "details": "展品解读明确记载2013年出土的《上官婉儿墓志》“现藏陕西省考古研究院”；当前 DSC_3112/3118 标签确认同一上官氏墓志并盖记录。"
+        },
+        {
+          "kind": "research_collection_context",
+          "source": "https://www.sohu.com/a/321152740_199807",
+          "details": "页面注明来源为社科院考古所中国考古网，介绍《陕西省考古研究院新入藏墓志》；内容称该院近年新入藏墓志汇编收录上官婉儿墓志，作为研究院入藏墓志的机构性佐证。"
+        }
+      ],
+      "blockers": [
+        "原记录为墓志并盖组合，已核证据仅覆盖墓志石；尚未建立保留父记录的组件绑定，不能把组合整体更名为单件。"
+      ],
+      "aliases": [
+        "唐昭容上官氏墓志",
+        "上官婉儿墓志铭"
+      ],
+      "curatorial_rank": 2,
+      "current_display_status": "not_verified",
+      "editorial_notes": [
+        "通过项只覆盖当前照片中可辨认的墓志石这一 component；父记录仍保留“墓志并盖”组合，不能把盖的独立编号或细节另行臆造。"
+      ]
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-03",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "罗婉顺墓志",
+      "record_id": "artifact-146",
+      "status": "pending",
+      "content_review": "passed",
+      "record_binding": "pending",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西省考古研究院",
+      "identity_kind": "original_stone_epitaph_component",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_3107.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3107.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_3111.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3111.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-146",
+          "details": "Record title 罗婉顺墓志并盖; 唐天宝六年(747); 2020龚东村夫妇墓; display 451-454, label 455."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_3107/3111",
+          "details": "Viewed inscribed slab and label 罗婉顺墓志并盖 with period/context."
+        },
+        {
+          "kind": "official_source",
+          "source": "https://www.cnr.cn/sxpd/sx/20201120/t20201120_525337057.shtml",
+          "details": "CNR supports 2020 excavation, epitaph/cover identity and inscription context."
+        },
+        {
+          "kind": "collection_owner",
+          "source": "https://www.southacademic.com/attachment/0/15/15280/1315607.pdf",
+          "details": "研究文献第143页明确记载《罗婉顺墓志铭》2020年出土于陕西省西咸新区秦汉新城，“原石现藏于陕西省考古研究院”；当前照片和标签对应 artifact-146 的罗婉顺墓志并盖。"
+        }
+      ],
+      "blockers": [
+        "原记录为墓志并盖组合，已核证据仅覆盖墓志石；尚未建立保留父记录的组件绑定，不能把组合整体更名为单件。"
+      ],
+      "aliases": [
+        "罗婉顺墓志并盖",
+        "罗婉顺墓志"
+      ],
+      "curatorial_rank": 3,
+      "current_display_status": "not_verified",
+      "editorial_notes": [
+        "通过项只覆盖当前照片中可辨认的墓志石这一 component；父记录仍保留“墓志并盖”组合，不能把盖的独立编号或细节另行臆造。"
+      ]
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-04",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "镂空人面覆盆形器",
+      "record_id": "artifact-081",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西考古博物馆",
+      "identity_kind": "original_object",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_2905.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2905.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2907.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2907.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-081",
+          "details": "Exact title; 仰韶中期; 2008杨官寨遗址北区环壕G8-2段; display 261-262, label 263."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2905/2907",
+          "details": "Viewed actual openwork human-face basin-shaped object and exact label."
+        },
+        {
+          "kind": "source_check",
+          "source": "https://www.cnr.cn/sxpd/dqzs/20230715/t20230715_526330116.shtml",
+          "details": "Package source checked for Yangguanzhai exhibition context; current label supplies object binding."
+        },
+        {
+          "kind": "collection_owner",
+          "source": "https://news.bjd.com.cn/2026/04/20/11699429.shtml",
+          "details": "京报网文章明确称杨官寨遗址出土的“镂空人面覆盆形器”现藏于陕西考古博物馆；当前 DSC_2905/2907 与 artifact-081 的器物及标签完全对应。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "镂空人面覆盆形器"
+      ],
+      "curatorial_rank": 4,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-05",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "石峁神面立柱形石雕",
+      "record_id": "artifact-083",
+      "status": "pending",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_object",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_2912.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2912.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2915.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2915.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-083",
+          "details": "Record title 神面立柱石雕; 龙山晚期至夏代早期; 2019石峁皇城台; display 268-270, label 271."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2912/2915",
+          "details": "Viewed actual deity-face pillar and exact label 神面立柱石雕 / Stone sculpture of deity faces."
+        },
+        {
+          "kind": "source",
+          "source": "https://zqb.cyol.com/html/2022-07/12/nw.D110000zgqnb_20220712_1-05.htm",
+          "details": "China Youth Daily supports deity-face stone sculpture from Shimao Huangchengtai."
+        },
+        {
+          "kind": "collection_owner_candidate_grouped_only",
+          "source": "https://lsbwg.yulinu.edu.cn/info/1042/1312.htm",
+          "details": "榆林大学博物馆官网称陕西考古博物馆馆藏石峁文物包括“一件石雕人头、两件圆雕立柱及一件浮雕石柱”，但未把 artifact-083 的“神面立柱石雕”映射到其中某一件具体立柱；当前标签也未标收藏单位。"
+        }
+      ],
+      "blockers": [
+        "collection_owner_not_explicitly_verified_for_exact_pillar"
+      ],
+      "aliases": [
+        "神面立柱石雕",
+        "石峁神面立柱形石雕"
+      ],
+      "curatorial_rank": 5,
+      "current_display_status": "not_verified",
+      "editorial_notes": [
+        "官方页面确认陕西考古博物馆有一组石峁立柱类馆藏，但属于分组语境，不能据此把具体神面立柱石雕的收藏单位写成已核实；保持 pending，待逐件馆藏记录或标签补证。"
+      ]
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-06",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "石峁骨质口簧",
+      "record_id": "artifact-085",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_modern_ancient_identity",
+      "photo_match": "pending_modern_ancient_mix",
+      "collection_owner": "not_stated",
+      "identity_kind": "uncertain_ancient_or_modern",
+      "verified_photo_paths": [
+        {
+          "role": "related_display",
+          "filename": "DSC_2919.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2919.jpg",
+          "viewed": true
+        },
+        {
+          "role": "comparison_panel",
+          "filename": "DSC_2920.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2920.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-085",
+          "details": "Record title 口簧; period/material blank; 皇城台 origin includes an inference note."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2919/2920",
+          "details": "Viewed display mixing modern mouth harps and archaeological comparison; panel compares 石峁口簧 and 现代口簧 without isolating a bone specimen."
+        },
+        {
+          "kind": "source",
+          "source": "https://zqb.cyol.com/html/2022-07/12/nw.D110000zgqnb_20220712_1-05.htm",
+          "details": "Source mentions an 皇城台 bone mouth harp in broader context but does not bind the current mixed display to one specimen."
+        }
+      ],
+      "blockers": [
+        "Modern and archaeological mouth harps are mixed; ancient bone specimen is not uniquely identified.",
+        "Period/material/original status incomplete."
+      ],
+      "aliases": [
+        "口簧",
+        "石峁骨口簧"
+      ],
+      "curatorial_rank": 6,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-07",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "八曲葵花形螺钿铜镜",
+      "record_id": "artifact-036",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西省考古研究院",
+      "identity_kind": "original_object",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_2737.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2737.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2741.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2741.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-036",
+          "details": "Exact title; 唐开元二十四年(736); 李倕墓; display 103-105, label 106."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2737/2741",
+          "details": "Viewed actual eight-lobed mother-of-pearl inlaid bronze mirror and exact label with Li Chui tomb context."
+        },
+        {
+          "kind": "source",
+          "source": "https://k.sina.com.cn/article_7517400647_1c0126e4705903jkzn.html",
+          "details": "Li Chui tomb report mentions mother-of-pearl inlaid bronze mirrors; current label identifies this specific mirror."
+        },
+        {
+          "kind": "collection_owner",
+          "source": "https://www.dili360.com/index.php/ch/mag/detail/768.htm",
+          "details": "中国国家地理网文章明确称出土于西安理工大学李倕墓的唐代螺钿背菱花镜“现藏于陕西省考古研究院”；当前 DSC_2737/2741 以标签锁定 artifact-036 的八曲葵花形螺钿铜镜。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "八曲葵花形螺钿铜镜",
+        "李倕墓八曲镜"
+      ],
+      "curatorial_rank": 7,
+      "current_display_status": "not_verified",
+      "record_field_variants": {
+        "current_record_findspot_field": "2001年西安理工大学曲江校区李墓",
+        "viewed_label": "2001年西安理工大学曲江校区李倕墓",
+        "resolution": "Object title and label/photo are direct; preserve the label spelling in audit and treat the current data field 李墓 as an OCR/truncation discrepancy."
+      },
+      "verification_notes": [
+        "Release recheck confirmed object DSC_2737 and label DSC_2741; label visibly reads 八曲葵花形螺钿铜镜 and 李倕墓."
+      ],
+      "editorial_notes": [
+        "“螺钿背菱花镜”是研究/媒体来源的名称变体；当前馆内标签“八曲葵花形螺钿铜镜”控制编辑名称。保留它与 artifact-158 李倕冠饰/服装配饰复原的分离，不把同墓出土当作同一件器物。"
+      ],
+      "approved_intro": "这面铜镜以八曲轮廓形成花瓣式边缘，镜背用螺钿组织装饰。螺钿是把贝壳加工成薄片再镶入器表，不是用颜料直接画出珠光。观看细部时，可沿贝片边缘辨认不同形状怎样拼合，再看它们与铜镜轮廓的关系。它既是照容器，也保存了复合材料装饰的做法，残存的贝片与漆层，为辨认原有纹饰提供了线索。",
+      "copy_adjustment": "移除排版指令及本站制作过程表述；保留器物事实与历史不确定性。"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-08",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "苏统师墓白瓷深腹杯",
+      "record_id": "artifact-138",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_related_record_only",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_label_object_discrepancy",
+      "collection_owner": "not_stated",
+      "identity_kind": "possible_original_object",
+      "verified_photo_paths": [
+        {
+          "role": "related_display",
+          "filename": "DSC_3085.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3085.jpg",
+          "viewed": true
+        },
+        {
+          "role": "related_context",
+          "filename": "DSC_3087.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3087.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-138",
+          "details": "Nearest current record is artifact-138 透影白瓷杯; current release data has period 隋大业四年（608）, findspot 西安苏统师墓, material 白瓷, dimensions about 8cm × 7cm, and label sequence 433."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_3085/3087",
+          "details": "Viewed DSC_3085: several white porcelain cups are shown together; the central deep cup is plausible but the frame does not isolate a uniquely identifiable editorial target."
+        },
+        {
+          "kind": "source",
+          "source": "https://www.thepaper.cn/newsDetail_forward_17849286",
+          "details": "Viewed DSC_3087: the oblique/dark current display panel and label do not present the editorial wording 苏统师墓白瓷深腹杯 with sufficient certainty; current record title remains 透影白瓷杯."
+        }
+      ],
+      "blockers": [
+        "Current title differs; multiple cups lack a unique target label.",
+        "Do not promote artifact-138 merely from similar porcelain terminology."
+      ],
+      "aliases": [
+        "透影白瓷杯",
+        "苏统师墓白瓷深腹杯"
+      ],
+      "curatorial_rank": 8,
+      "current_display_status": "not_verified",
+      "record_field_variants": {
+        "current_record_title": "透影白瓷杯",
+        "current_period": "隋大业四年（608）",
+        "current_findspot": "西安苏统师墓",
+        "current_material": "白瓷",
+        "editorial_title": "苏统师墓白瓷深腹杯"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-09",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "芮公鼎（刘家洼出土）",
+      "record_id": "artifact-108",
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_candidate_needs_independent_verification",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "verified_object_and_label",
+      "collection_owner": "not_stated",
+      "identity_kind": "possible_original_object",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_2997.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2997.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_2999.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2999.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-108",
+          "details": "Record title 芮公鼎; 春秋; 2017澄城刘家洼东1区M3; display 347-348, label 349."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2997/2999",
+          "details": "Viewed actual ding and label with Liujiwa context."
+        },
+        {
+          "kind": "audit_instruction",
+          "source": "museum_highlights_other_7_105/02_review_and_binding_audit.md",
+          "details": "Package requires independent verification of tomb number, inscription and collection/loan identity before release."
+        }
+      ],
+      "blockers": [
+        "Direct photo-label match is present, but required independent excavation/context and collection verification is incomplete.",
+        "Do not merge with other Rui bronzes."
+      ],
+      "aliases": [
+        "芮公鼎",
+        "刘家洼芮公鼎"
+      ],
+      "curatorial_rank": 9,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-10",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "西陵县侯夫人墓乐舞俑组合",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "collection_owner": "not_stated",
+      "identity_kind": "unknown",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js",
+          "details": "No exact current record or verified object-label pair for the Xiling County Marquis Lady tomb music/dance ensemble."
+        },
+        {
+          "kind": "source",
+          "source": "https://www.thepaper.cn/newsDetail_forward_17849286",
+          "details": "ThePaper describes the ensemble and instruments but warns current display arrangement is not original excavation position."
+        }
+      ],
+      "blockers": [
+        "No exact current record/photo-label pair.",
+        "Instrument names/count and original arrangement require label or excavation-report verification."
+      ],
+      "aliases": [
+        "西陵县侯夫人墓乐舞俑组合"
+      ],
+      "curatorial_rank": 10,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-11",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "税村隋墓甲骑具装俑",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_near_match_rejected",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_near_match_rejected",
+      "collection_owner": "not_stated",
+      "identity_kind": "unknown",
+      "verified_photo_paths": [
+        {
+          "role": "near_match_object",
+          "filename": "DSC_3083.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3083.jpg",
+          "viewed": true
+        },
+        {
+          "role": "near_match_label",
+          "filename": "DSC_3084.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3084.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js",
+          "details": "No exact target record. Nearby artifact-137 is 石棺鎏金铜提手, not a mounted armored figure."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_3083/3084",
+          "details": "Viewed nearby gilded bronze sarcophagus handle and its label; target is absent."
+        },
+        {
+          "kind": "source",
+          "source": "https://www.thepaper.cn/newsDetail_forward_17849286",
+          "details": "ThePaper mentions Taxicun mounted armored figures but cannot bind them to artifact-137."
+        }
+      ],
+      "blockers": [
+        "Near-match artifact-137 rejected: it is a sarcophagus handle.",
+        "No exact current record/photo-label pair."
+      ],
+      "aliases": [
+        "税村隋墓甲骑具装俑"
+      ],
+      "curatorial_rank": 11,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-12",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "浮雕蛙纹陶釜",
+      "record_id": "artifact-077",
+      "status": "pass",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "陕西考古博物馆",
+      "identity_kind": "original_object",
+      "verified_photo_paths": [
+        {
+          "role": "object_and_label",
+          "filename": "DSC_2894.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2894.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-077",
+          "details": "Exact title; 仰韶中期; 2009杨官寨遗址北区环壕H900; display 251-253."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2894",
+          "details": "Viewed actual frog-relief pottery fu and label together; label visibly identifies 浮雕蛙纹陶釜 and Yangguanzhai H900."
+        },
+        {
+          "kind": "scope_note",
+          "source": "current record + direct photo",
+          "details": "Pass relies on current record and direct object-and-label photograph; no usable independent external source was found."
+        },
+        {
+          "kind": "collection_owner",
+          "source": "https://www.sohu.com/a/565327770_121124400",
+          "details": "文章以“来源：文物陕西”发布，图注明确为“红陶浮雕蛙纹釜 陕西考古博物馆藏”；正文给出杨官寨出土与陕西考古博物馆展出语境，当前 DSC_2894 同时显示实物和 artifact-077 标签。"
+        }
+      ],
+      "blockers": [],
+      "aliases": [
+        "浮雕蛙纹陶釜"
+      ],
+      "curatorial_rank": 12,
+      "current_display_status": "not_verified",
+      "editorial_notes": [
+        "来源文章称“红陶浮雕蛙纹釜”，当前馆内标签为“浮雕蛙纹陶釜”；两者按杨官寨/H900、器形与直接实物标签作为名称变体处理，不扩大为其他蛙纹陶器。"
+      ],
+      "approved_intro": "这件陶釜的外壁以浮雕方式表现蛙形，动物的身体因此凸出器面，而不是只用黑彩描画。它出土于杨官寨遗址。炊器的器形和表面的动物装饰可以分别观察：前者涉及盛放与加热，后者说明器物也被赋予视觉形象。至于蛙纹是否与某种仪式或生育观念有关，单凭图案还不能作出确定判断。",
+      "copy_adjustment": "移除排版指令及本站制作过程表述；保留器物事实与历史不确定性。"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-13",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "韩休墓乐舞图",
+      "record_id": null,
+      "status": "pending",
+      "content_review": "pending",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "collection_owner": "not_stated",
+      "identity_kind": "unknown",
+      "verified_photo_paths": [],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js",
+          "details": "No exact current record or verified photo-label pair for Han Xiu tomb music/dance image."
+        },
+        {
+          "kind": "source_check",
+          "source": "https://www.sina.cn/news/detail/5132532031160796.html",
+          "details": "Fetched as exhibition/context support only; cannot replace current binding."
+        }
+      ],
+      "blockers": [
+        "Exact current record and current photo-label pair are absent."
+      ],
+      "aliases": [
+        "韩休墓乐舞图"
+      ],
+      "curatorial_rank": 13,
+      "current_display_status": "not_verified"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-14",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "贺家铜轮牙马车遗迹",
+      "record_id": "artifact-055",
+      "status": "pending",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "not_stated",
+      "identity_kind": "archaeological_assemblage_and_conservation_display",
+      "verified_photo_paths": [
+        {
+          "role": "assemblage",
+          "filename": "DSC_2806.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2806.jpg",
+          "viewed": true
+        },
+        {
+          "role": "overview_and_label",
+          "filename": "DSC_2809.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2809.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-055",
+          "details": "Record title 贺家铜轮牙马车; category 遗址与车马器; display 170-172, label 173."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_2806/2809",
+          "details": "Viewed archaeological horse/cart remains, wheel elements and label 贺家铜轮牙马车; display is an assemblage/conservation research presentation."
+        },
+        {
+          "kind": "source",
+          "source": "https://www.thepaper.cn/newsDetail_forward_17849286",
+          "details": "ThePaper lists Hejia vehicle among archaeology museum highlights."
+        },
+        {
+          "kind": "collection_owner_unresolved",
+          "source": "https://www.ce.cn/culture/gd/202204/20/t20220420_37512418.shtml; https://www.tang.org.cn/35613.html",
+          "details": "现有报道最多说明贺家铜轮牙马车目前/馆藏于陕西考古博物馆，属于展陈地点或二手馆藏表述；未找到可核验的馆方/研究院逐件收藏单位记录。采购信息只证明研究院参与仿制实施，不能反推原件所有权。"
+        }
+      ],
+      "blockers": [
+        "collection_owner_not_explicitly_verified; available sources establish display venue/conservation assemblage, not legal collection ownership"
+      ],
+      "aliases": [
+        "贺家铜轮牙马车",
+        "贺家铜轮牙马车遗迹"
+      ],
+      "curatorial_rank": 14,
+      "current_display_status": "not_verified",
+      "record_field_variants": {
+        "current_record_period": "blank",
+        "viewed_label_period": "西周",
+        "resolution": "Use label-supported 西周 only if later copy needs the period; do not invent it into the current data record during this audit."
+      },
+      "editorial_notes": [
+        "当前 record 是贺家铜轮牙马车的考古 assemblage 与保护/展示研究，不等于一辆完整、原状或完全复原的古车。",
+        "public copy 不得把保护展示中的组合件写成完整 intact/fully restored ancient car。"
+      ]
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-15",
+      "museum_id": "shaanxi-archaeology",
+      "canonical_title": "李倕墓志",
+      "record_id": "artifact-159",
+      "status": "pending",
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "collection_owner": "not_stated",
+      "identity_kind": "original_stone_epitaph",
+      "verified_photo_paths": [
+        {
+          "role": "object",
+          "filename": "DSC_3159.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3159.jpg",
+          "viewed": true
+        },
+        {
+          "role": "label",
+          "filename": "DSC_3161.JPG",
+          "resolved_url": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3161.jpg",
+          "viewed": true
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "current_record",
+          "source": "modules/shaanxi-archaeology-museum/data/artifacts-data.js#/artifacts/artifact-159",
+          "details": "Record title 李倕墓志; 唐; display 498-499, label 500."
+        },
+        {
+          "kind": "visual",
+          "source": "DSC_3159/3161",
+          "details": "Viewed actual inscribed epitaph stone and label 李倕墓志 / Epitaph for Li Chui; 2001孟村李倕墓出土."
+        },
+        {
+          "kind": "source",
+          "source": "https://k.sina.com.cn/article_7517400647_1c0126e4705903jkzn.html",
+          "details": "Report supports 2001 excavation and Li Chui tomb context; label supplies object-specific identity."
+        },
+        {
+          "kind": "collection_owner_unresolved",
+          "source": "https://k.sina.com.cn/article_7517400647_1c0126e4705903jkzn.html; https://www.sohu.com/a/518498568_121124392",
+          "details": "已核来源支持李倕墓/墓志的出土与身份，但未给出 artifact-159 墓志石本身的明确收藏单位；有关李倕冠饰或服装配饰复原的馆藏表述不能覆盖墓志。"
+        }
+      ],
+      "blockers": [
+        "collection_owner_not_explicitly_verified_for_Li_Chui_epitaph"
+      ],
+      "aliases": [
+        "李倕墓志",
+        "李倕墓志铭"
+      ],
+      "curatorial_rank": 15,
+      "current_display_status": "not_verified",
+      "editorial_notes": [
+        "李倕墓志保持原石身份；不得用李倕冠饰/服装配饰复原的收藏单位替代墓志本身的收藏单位。"
+      ]
+    }
+  ],
+  "theme_preservation": [
+    {
+      "museum_id": "qinhan",
+      "theme_id": "qin-weights",
+      "target_editorial_ids": [
+        "qinhan-highlight-03"
+      ],
+      "rule": "Preserve combined theme ID; child pending."
+    },
+    {
+      "museum_id": "qinhan",
+      "theme_id": "brick-and-bells",
+      "target_editorial_ids": [
+        "qinhan-highlight-04"
+      ],
+      "rule": "Preserve combined theme ID; composite display does not create unique child."
+    },
+    {
+      "museum_id": "qinhan",
+      "theme_id": "clay-warriors",
+      "target_editorial_ids": [
+        "qinhan-highlight-10"
+      ],
+      "rule": "Preserve combined theme ID; target is pending until proposed child ID qinhan-clay-warriors-kneeling-archer is created/bound to DSC_2071 object + DSC_2075 label."
+    },
+    {
+      "museum_id": "qinhan",
+      "theme_id": "cavalry-and-frontier-seal",
+      "target_editorial_ids": [
+        "qinhan-highlight-12"
+      ],
+      "rule": "Preserve combined theme ID; generic cavalry child pending."
+    },
+    {
+      "museum_id": "qinhan",
+      "theme_id": "wang-mang-currency",
+      "target_editorial_ids": [
+        "qinhan-highlight-15"
+      ],
+      "rule": "Preserve combined theme ID; multiple knife-coin specimens prevent unique child binding."
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "theme_id": "artifact-147",
+      "target_editorial_ids": [
+        "shaanxi-archaeology-highlight-02"
+      ],
+      "rule": "Pass only as clearly labelled epitaph component; retain epitaph-and-cover record."
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "theme_id": "artifact-146",
+      "target_editorial_ids": [
+        "shaanxi-archaeology-highlight-03"
+      ],
+      "rule": "Pass only as clearly labelled epitaph component; retain epitaph-and-cover record."
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "theme_id": "artifact-158",
+      "target_editorial_ids": [
+        "shaanxi-archaeology-highlight-01"
+      ],
+      "rule": "Pending; crown/body ornaments remain combined reconstruction record."
+    }
+  ],
+  "source_checks": [
+    {
+      "url": "https://www.sxhm.com/collections/detail/518.html",
+      "status": "verified_official",
+      "supports": [
+        "qinhan-highlight-01"
+      ]
+    },
+    {
+      "url": "https://www.sxhm.com/collections/detail/466.html",
+      "status": "verified_official",
+      "supports": [
+        "qinhan-highlight-02"
+      ]
+    },
+    {
+      "url": "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202605/t20260520_4659282.html",
+      "status": "verified_official_with_findspot_variant",
+      "supports": [
+        "qinhan-highlight-03"
+      ]
+    },
+    {
+      "url": "https://sn.people.com.cn/n2/2020/0529/c378288-34049632.html",
+      "status": "blocked_timeout_or_400",
+      "supports": [
+        "qinhan-highlight-04"
+      ]
+    },
+    {
+      "url": "https://sn.cri.cn/20160825/251b3514-6d94-9529-27a4-1be1d805b35c.html",
+      "status": "verified_text",
+      "supports": [
+        "qinhan-highlight-04"
+      ]
+    },
+    {
+      "url": "https://www.sohu.com/a/378789602_556506",
+      "status": "fetched_no_usable_matching_text",
+      "supports": [
+        "qinhan-highlight-05"
+      ]
+    },
+    {
+      "url": "https://sn.cri.cn/2024-09-20/7bc9ef08-a511-d2c7-a453-6328c5542639.html",
+      "status": "fetched_no_usable_matching_text",
+      "supports": [
+        "qinhan-highlight-06"
+      ]
+    },
+    {
+      "url": "https://www.shiquan.gov.cn/Content-2749680.html",
+      "status": "blocked_internal_error",
+      "supports": [
+        "qinhan-highlight-06"
+      ]
+    },
+    {
+      "url": "https://ent.people.com.cn/n1/2024/0518/c1012-40238537-9.html",
+      "status": "blocked_502",
+      "supports": [
+        "qinhan-highlight-07"
+      ]
+    },
+    {
+      "url": "https://www.sina.cn/news/detail/5300679762515063.html",
+      "status": "verified_text",
+      "supports": [
+        "qinhan-highlight-07"
+      ]
+    },
+    {
+      "url": "https://culture.gmw.cn/2024-05/20/content_37332681.htm",
+      "status": "verified_text",
+      "supports": [
+        "qinhan-highlight-08"
+      ]
+    },
+    {
+      "url": "https://www.ctdsb.net/c1476_202405/2141055.html",
+      "status": "verified_text",
+      "supports": [
+        "qinhan-highlight-09"
+      ]
+    },
+    {
+      "url": "https://culture.gmw.cn/2024-05/23/content_37339289.htm",
+      "status": "fetched",
+      "supports": [
+        "qinhan-highlight-10"
+      ]
+    },
+    {
+      "url": "https://sn.people.com.cn/n2/2024/0518/c378288-40848399.html",
+      "status": "blocked_internal_error",
+      "supports": [
+        "qinhan-highlight-12"
+      ]
+    },
+    {
+      "url": "https://www.chnmuseum.cn/zp/zpml/hb/202208/t20220817_257039.shtml",
+      "status": "fetched_comparison_only",
+      "supports": [
+        "qinhan-highlight-15"
+      ]
+    },
+    {
+      "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/dzjp/zpjc/qtq/article00661c8be4de44b2bb12c9c2980975ab.html",
+      "status": "fetched_comparison_only",
+      "supports": [
+        "qinhan-highlight-15"
+      ]
+    },
+    {
+      "url": "https://k.sina.com.cn/article_7517400647_1c0126e4705903jkzn.html",
+      "status": "verified_text",
+      "supports": [
+        "shaanxi-archaeology-highlight-01",
+        "shaanxi-archaeology-highlight-07",
+        "shaanxi-archaeology-highlight-15"
+      ]
+    },
+    {
+      "url": "https://sn.people.com.cn/n2/2023/0123/c226647-40277062-13.html",
+      "status": "blocked_internal_error",
+      "supports": [
+        "shaanxi-archaeology-highlight-01",
+        "shaanxi-archaeology-highlight-07"
+      ]
+    },
+    {
+      "url": "https://www.sina.cn/news/detail/5232847721860638.html",
+      "status": "verified_text",
+      "supports": [
+        "shaanxi-archaeology-highlight-02"
+      ]
+    },
+    {
+      "url": "https://www.thepaper.cn/newsDetail_forward_17849286",
+      "status": "verified_text",
+      "supports": [
+        "shaanxi-archaeology-highlight-02",
+        "shaanxi-archaeology-highlight-08",
+        "shaanxi-archaeology-highlight-10",
+        "shaanxi-archaeology-highlight-11",
+        "shaanxi-archaeology-highlight-14"
+      ]
+    },
+    {
+      "url": "https://www.cnr.cn/sxpd/sx/20201120/t20201120_525337057.shtml",
+      "status": "verified_text",
+      "supports": [
+        "shaanxi-archaeology-highlight-03"
+      ]
+    },
+    {
+      "url": "https://www.cnr.cn/sxpd/dqzs/20230715/t20230715_526330116.shtml",
+      "status": "fetched_context_only",
+      "supports": [
+        "shaanxi-archaeology-highlight-04"
+      ]
+    },
+    {
+      "url": "https://zqb.cyol.com/html/2022-07/12/nw.D110000zgqnb_20220712_1-05.htm",
+      "status": "verified_context",
+      "supports": [
+        "shaanxi-archaeology-highlight-05",
+        "shaanxi-archaeology-highlight-06"
+      ]
+    },
+    {
+      "url": "https://yn.people.com.cn/n2/2022/0524/c372453-35282923.html",
+      "status": "blocked_internal_error",
+      "supports": [
+        "shaanxi-archaeology-highlight-05"
+      ]
+    },
+    {
+      "url": "https://www.sina.cn/news/detail/5132532031160796.html",
+      "status": "fetched_context_only",
+      "supports": [
+        "shaanxi-archaeology-highlight-13"
+      ]
+    },
+    {
+      "url": "https://www.sxhm.com/Temporary/detail/17801.html",
+      "status": "verified_official_collection_owner",
+      "supports": [
+        "qinhan-highlight-01"
+      ],
+      "details": "陕西历史博物馆官网明确称杜虎符为陕西历史博物馆馆藏文物。"
+    },
+    {
+      "url": "https://www.sxhm.com/collections/detail/466.html",
+      "status": "verified_official_collection_record",
+      "supports": [
+        "qinhan-highlight-02"
+      ],
+      "details": "陕西历史博物馆官网藏品条目与本馆展出信息；当前对象的收藏单位按本馆藏品页记录。"
+    },
+    {
+      "url": "DSC_2093/DSC_2097 current label",
+      "status": "verified_current_label_collection_owner",
+      "supports": [
+        "qinhan-highlight-11"
+      ],
+      "details": "实际展签明确标注陕西省考古研究院藏。"
+    },
+    {
+      "url": "https://collection.sina.cn/yejie/2019-05-14/detail-ihvhiqax8510573.d.html",
+      "status": "verified_item_specific_research_press_owner",
+      "supports": [
+        "shaanxi-archaeology-highlight-02"
+      ],
+      "details": "上官婉儿墓志条目明确写现藏陕西省考古研究院。"
+    },
+    {
+      "url": "https://www.sohu.com/a/321152740_199807",
+      "status": "verified_institutional_research_context",
+      "supports": [
+        "shaanxi-archaeology-highlight-02"
+      ],
+      "details": "页面署名来源为社科院考古所中国考古网，介绍陕西省考古研究院新入藏墓志汇编并列举上官婉儿墓志。"
+    },
+    {
+      "url": "https://www.southacademic.com/attachment/0/15/15280/1315607.pdf",
+      "status": "verified_item_specific_research_owner",
+      "supports": [
+        "shaanxi-archaeology-highlight-03"
+      ],
+      "details": "研究文献第143页明确记载罗婉顺墓志原石现藏陕西省考古研究院。"
+    },
+    {
+      "url": "https://news.bjd.com.cn/2026/04/20/11699429.shtml",
+      "status": "verified_state_media_item_owner",
+      "supports": [
+        "shaanxi-archaeology-highlight-04"
+      ],
+      "details": "京报网明确称杨官寨镂空人面覆盆形器现藏陕西考古博物馆。"
+    },
+    {
+      "url": "https://lsbwg.yulinu.edu.cn/info/1042/1312.htm",
+      "status": "grouped_collection_context_not_exact_item",
+      "supports": [
+        "shaanxi-archaeology-highlight-05"
+      ],
+      "details": "榆林大学博物馆官网只列陕西考古博物馆一组石峁人头/立柱/浮雕石柱，未绑定 artifact-083 的具体柱件，故不能放行收藏单位。"
+    },
+    {
+      "url": "https://www.dili360.com/index.php/ch/mag/detail/768.htm",
+      "status": "verified_item_specific_research_press_owner_name_variant",
+      "supports": [
+        "shaanxi-archaeology-highlight-07"
+      ],
+      "details": "中国国家地理网明确称李倕墓螺钿背菱花镜现藏陕西省考古研究院；当前标签采用八曲葵花形名称，名称变体留在 editorial_notes。"
+    },
+    {
+      "url": "https://www.sohu.com/a/565327770_121124400",
+      "status": "verified_source_label_item_owner",
+      "supports": [
+        "shaanxi-archaeology-highlight-12"
+      ],
+      "details": "文中图注为红陶浮雕蛙纹釜“陕西考古博物馆藏”，文末来源注明文物陕西。"
+    },
+    {
+      "url": "https://www.ce.cn/culture/gd/202204/20/t20220420_37512418.shtml; https://www.tang.org.cn/35613.html",
+      "status": "display_venue_or_secondary_claim_not_accepted_as_owner",
+      "supports": [
+        "shaanxi-archaeology-highlight-14"
+      ],
+      "details": "报道提供目前在/馆藏于陕西考古博物馆的展陈语境，但没有逐件官方/研究院所有权记录，故保持 pending。"
+    },
+    {
+      "url": "https://k.sina.com.cn/article_7517400647_1c0126e4705903jkzn.html; https://www.sohu.com/a/518498568_121124392",
+      "status": "identity_context_without_item_owner",
+      "supports": [
+        "shaanxi-archaeology-highlight-15"
+      ],
+      "details": "来源支持李倕墓志的出土/身份，却没有李倕墓志石本身的明确收藏单位；冠饰复原的馆藏信息不作替代。"
+    }
+  ],
+  "limitations": [
+    "Current display status/on-view dates were not verified; all items retain current_display_status=not_verified.",
+    "Owner audit treats not_stated as unresolved, not as a negative ownership finding. A venue/display statement, grouped holding, same-tomb provenance, or replica/conservation contract is not promoted to collection ownership.",
+    "The three owner-pending items retain direct object/label evidence where available; their status remains pending until the exact-item collection unit is documented.",
+    "Scope and identity-range cautions for epitaph-and-cover, mirror, and Hejia assemblage were moved to editorial_notes; blockers now contain only unresolved binding/ownership conditions.",
+    "Blocked/comparison-only external sources cannot replace current object/photo/label binding.",
+    "This report is the only artifact written; no site source, data file, commit or deployment changed.",
+    "Release working tree has highlight integration changes in app/index/catalog files; this audit treats them as rendering-layer changes and separately records the data/resolver comparison rather than assuming a clean tree."
+  ],
+  "source_comparison": {
+    "prior_source": {
+      "repo": "D:\\Documents-Offload\\website",
+      "ref": "main",
+      "commit": "96c91dc8d6cc16ab3b7b867d2cec678830b6612b",
+      "basis": "main Git blobs; direct working-tree module paths were absent there, so the prior audit used the main blobs extracted to a temporary read-only snapshot."
+    },
+    "release_source": {
+      "repo": "D:\\Documents-Offload\\website-henan-release",
+      "branch": "main",
+      "commit": "96c91dc8d6cc16ab3b7b867d2cec678830b6612b",
+      "working_tree": "dirty in unrelated/highlight integration files; no source edits made by this audit."
+    },
+    "files": [
+      {
+        "path": "modules/qinhan/data/archive.json",
+        "comparison": "semantic_json_equal_to_prior_main_and_release_main_blob; current working bytes differ only by CRLF",
+        "current_sha256": "66a420293b298e3a04a229d77f5a77b8516a92e298d84bd1c1811256326aad32",
+        "release_main_blob_sha256": "98875041b01be7efe58f056a6109fc7f4834a603388093e3d301e8edfbcf7343",
+        "reusable_for_evidence": true
+      },
+      {
+        "path": "modules/qinhan/data/photo-manifest.json",
+        "comparison": "semantic_json_equal_to_prior_main_and_release_main_blob; current working bytes differ only by CRLF",
+        "current_sha256": "1b69cc842cf8370b3993d8e0c1537df96ef9aea1ca5231107ccb5b0c91b5dce1",
+        "release_main_blob_sha256": "a52c5ad4ed12d29f78e32227cb9e5d3040fdda6b1823ee8af6ea190e57bb260b",
+        "reusable_for_evidence": true
+      },
+      {
+        "path": "modules/qinhan/media-url.js",
+        "comparison": "normalized_text_equal; current R2 resolver keeps modules/qinhan prefix and same public base",
+        "current_sha256": "cb6d1246064e4b1b911aab85561b721002cd1ea0990eabc26f1632a15e7b8640",
+        "release_main_blob_sha256": "7a9ae710cf11e4543b07c3677f0ac02282c7dff190703a8e746f3c1d1210102f",
+        "reusable_for_evidence": true
+      },
+      {
+        "path": "modules/qinhan/app.js",
+        "comparison": "working-tree diff is limited to MuseumHighlights hooks/alias selection/badge mounting; qinhanMediaUrl call sites and data loading remain the same",
+        "current_sha256": "aa6ebe453c886bfa41c3c7b68f81f7948d274432c4d9a1b4798e24aaea7e8f06",
+        "release_main_blob_sha256": "c6b18525c9b3411d747e0dd95106c0e715dd93366fae414adc91a99ed3272e1d",
+        "reusable_for_evidence": "limited_after_focused_recheck",
+        "rechecked_after_worktree_diff": true
+      },
+      {
+        "path": "modules/qinhan/index.html",
+        "comparison": "working-tree diff adds shared museum-highlights CSS/JS only; R2 paths unchanged",
+        "current_sha256": "35b563bffdee02f1bac5b25f9e9d47934abb4cbcd9ba0ee9edd1f550499b2f6c",
+        "release_main_blob_sha256": "c5267cc312835a1eec2b6fd07e188b3a229206d056c3c6bf7835cfe983fc8ed4",
+        "reusable_for_evidence": "limited_after_focused_recheck",
+        "rechecked_after_worktree_diff": true
+      },
+      {
+        "path": "modules/shaanxi-archaeology-museum/data/artifacts-data.js",
+        "comparison": "byte_equal to prior main and release main blob; current live index embeds this data",
+        "current_sha256": "49586156de0aac244b55628eac9a47f5230998872c4c5aa3613a3c1d41313a87",
+        "release_main_blob_sha256": "49586156de0aac244b55628eac9a47f5230998872c4c5aa3613a3c1d41313a87",
+        "reusable_for_evidence": true
+      },
+      {
+        "path": "modules/shaanxi-archaeology-museum/data/catalog.json",
+        "comparison": "byte/semantic equal to prior main and release main blob; secondary catalogue only",
+        "current_sha256": "076aebbae176ce5566d5471bdf2fe4073e4df6bcbab7f01a8a66b548885a5030",
+        "release_main_blob_sha256": "076aebbae176ce5566d5471bdf2fe4073e4df6bcbab7f01a8a66b548885a5030",
+        "reusable_for_evidence": true
+      },
+      {
+        "path": "modules/shaanxi-archaeology-museum/data/photo-manifest.json",
+        "comparison": "byte/semantic equal to prior main and release main blob",
+        "current_sha256": "a87f376e99e8aa0ead161088e7c8df5c1847f50ca76b67dd7cb2dc8435e4dced",
+        "release_main_blob_sha256": "a87f376e99e8aa0ead161088e7c8df5c1847f50ca76b67dd7cb2dc8435e4dced",
+        "reusable_for_evidence": true
+      },
+      {
+        "path": "modules/shaanxi-archaeology-museum/media-url.js",
+        "comparison": "normalized_text equal; current resolver keeps modules/shaanxi-archaeology-museum prefix and same public base",
+        "current_sha256": "5dce56697ee5f8f29206629fdfbd59c6aebe127e6a9068f4aa7ebdfe0565c06d",
+        "release_main_blob_sha256": "39cb33c154690ebb16b5307793e1681b9d665d7be1faf271f8a37e6fd61dc4fe",
+        "reusable_for_evidence": true
+      },
+      {
+        "path": "shared/js/media-url.js",
+        "comparison": "normalized_text equal; current generic resolver behavior unchanged",
+        "current_sha256": "b3d0ceffb5e57c10f8380afd1533593c3d05c0e3283c7d71cd79e44b270c301c",
+        "release_main_blob_sha256": "0c065de76174989176928381445a4d26b01fad97b8746417848cb10828877dbc",
+        "reusable_for_evidence": true
+      },
+      {
+        "path": "modules/shaanxi-archaeology-museum/index.html",
+        "comparison": "working-tree diff adds shared museum-highlights CSS/JS only; live data/artifact script and R2 paths unchanged",
+        "current_sha256": "9567d86b2f209da8e82858795fe2da9d934c2ed283776d018742182fc6c8e0e5",
+        "release_main_blob_sha256": "01e7ca64ccc7bfd80de91f7fbd598b8db81d59cde0fbbc0eb4e7c2cc9ac594a6",
+        "reusable_for_evidence": "limited_after_focused_recheck",
+        "rechecked_after_worktree_diff": true
+      },
+      {
+        "path": "modules/shaanxi-archaeology-museum/photo-catalog.js",
+        "comparison": "working-tree diff adds MuseumHighlights alias/badge/filter hooks only; mediaUrl call path unchanged",
+        "current_sha256": "a8674a068595b06098683d0cf318cc627bdbcba2c4d9faada1ba94d3224dbc63",
+        "release_main_blob_sha256": "f8fff31fa0dfddf2bcd3afdb57fd711c51cf06cd670a3826e24e4581fed3028c",
+        "reusable_for_evidence": "limited_after_focused_recheck",
+        "rechecked_after_worktree_diff": true
+      },
+      {
+        "path": "modules/museum-atlas/search-index.json",
+        "comparison": "working-tree serialization differs, but 1006 record keys and all audited target (museum_id,id) payloads remain unchanged",
+        "current_sha256": "b711a4ec6c54351d4863795c2f8cc1d14de3afacd4f4e2e71a14a8219d263133",
+        "release_main_blob_sha256": "5144df44bae28beb633f55cfcc81af8bcb7c917cdfcb144fe0e23bcde4560f94",
+        "reusable_for_evidence": true
+      }
+    ],
+    "conclusion": "Core live data and resolver behavior compare equal between the prior main-blob snapshot and the release main working tree. Rendering files differ because of highlight integration and were focused-rechecked; they do not alter object IDs, photo sequences or R2 path mapping. Composite Qinhan targets remain pending by policy until dedicated child IDs are added."
+  },
+  "release_recheck": {
+    "performed": true,
+    "workspace": "D:\\Documents-Offload\\website-henan-release",
+    "branch": "main",
+    "filesystem_note": "There is no D:/Documents-Offload/website-henan-release/main directory; main is the current branch at the repository root.",
+    "records_reloaded": "All 30 target records/parent groups were looked up from the release working tree; no audited (museum_id,id) record key or referenced photo sequence drifted from the compared main data.",
+    "focused_changed_files": [
+      "modules/qinhan/app.js",
+      "modules/qinhan/index.html",
+      "modules/shaanxi-archaeology-museum/index.html",
+      "modules/shaanxi-archaeology-museum/photo-catalog.js",
+      "modules/museum-atlas/search-index.json"
+    ],
+    "focused_result": "These working-tree changes add MuseumHighlights selection/badges/aliases and links; they do not change the qinhanMediaUrl or shaanxiArchaeologyMediaUrl R2 mapping. The current object/label evidence was checked against the release worktree data and current resolver paths.",
+    "composite_policy": "qinhan-highlight-07 and qinhan-highlight-10 remain pending despite direct object-label subsets. Each has a proposed child ID and the minimal object/label photo subset; no parent combined theme is renamed or directly overwritten."
+  },
+  "owner_reaudit": {
+    "date": "2026-09-05",
+    "policy": "Pass requires a concrete collection owner supported by the current viewed label or an item-specific official/research source. Display venue, a grouped collection statement, a replica/conservation contract, or another object from the same tomb is insufficient.",
+    "checked_count": 11,
+    "pass_count": 8,
+    "pending_count": 3,
+    "accepted_owner_items": [
+      "qinhan-highlight-01",
+      "qinhan-highlight-02",
+      "qinhan-highlight-11",
+      "shaanxi-archaeology-highlight-02",
+      "shaanxi-archaeology-highlight-03",
+      "shaanxi-archaeology-highlight-04",
+      "shaanxi-archaeology-highlight-07",
+      "shaanxi-archaeology-highlight-12"
+    ],
+    "owner_pending_items": [
+      "shaanxi-archaeology-highlight-05",
+      "shaanxi-archaeology-highlight-14",
+      "shaanxi-archaeology-highlight-15"
+    ],
+    "scope_notes_moved_to_editorial_notes": [
+      "shaanxi-archaeology-highlight-02: epitaph component pass retains combined epitaph-and-cover record",
+      "shaanxi-archaeology-highlight-03: epitaph component pass retains combined epitaph-and-cover record",
+      "shaanxi-archaeology-highlight-07: mirror is separate from artifact-158 crown/body-ornament reconstruction; source name variant is retained",
+      "shaanxi-archaeology-highlight-14: assemblage/conservation display scope and prohibition on calling it a complete intact/fully restored car"
+    ],
+    "true_blockers_retained": [
+      "shaanxi-archaeology-highlight-05: exact pillar owner not mapped by grouped source",
+      "shaanxi-archaeology-highlight-14: owner evidence establishes venue/display, not item-specific collection ownership",
+      "shaanxi-archaeology-highlight-15: no item-specific owner statement for epitaph stone"
+    ]
+  }
+}

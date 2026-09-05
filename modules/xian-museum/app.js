@@ -3,6 +3,8 @@
 
   const data = window.XIAN_DATA || { items: [], categories: [], stats: {} };
   const items = Array.isArray(data.items) ? data.items : [];
+  const highlights = window.MuseumHighlights.create("xian-museum");
+  highlights.apply(items);
   const itemById = new Map(items.map((item) => [String(item.id), item]));
   const grid = document.getElementById("object-grid");
   const empty = document.getElementById("empty-state");
@@ -93,6 +95,7 @@
   const tagLabel = (tag) => ({ music: "♫ 音乐关联", group: "展柜图组", forbidden: "禁止出境", featured: "镇馆重点" }[tag] || tag);
   const itemText = (item) => [
     item.title,
+    highlights.aliases(item),
     item.period,
     item.material,
     item.category,
@@ -200,6 +203,7 @@
   }
 
   function cardHtml(item, index) {
+    if (item._editorialOnly) return highlights.card(item);
     const cover = assetFor(item.cover || item.photos?.[0]?.src);
     const tags = [];
     if (isGroup(item)) tags.push("group");
@@ -207,7 +211,7 @@
     if (hasTag(item, "forbidden")) tags.push("forbidden");
     const photoCount = Array.isArray(item.photos) ? item.photos.length : 0;
     const delay = Math.min(index, 15) * 18;
-    return `<button class="object-card card-enter" style="--title-size:${titleSize(item.title)};--card-delay:${delay}ms" type="button" data-item-id="${escapeHtml(item.id)}" aria-label="打开 ${escapeHtml(item.title)} 详情">
+    return `<button class="object-card card-enter" style="--title-size:${titleSize(item.title)};--card-delay:${delay}ms" type="button" data-item-id="${escapeHtml(item.id)}" data-reviewed-highlight="${Boolean(highlights.get(item))}" aria-label="打开 ${escapeHtml(item.title)} 详情">
       <span class="card-image"${cover ? ` style="background-image:linear-gradient(rgba(7,18,21,.35),rgba(7,18,21,.35)),url('${escapeHtml(cover)}')"` : ""}>
         ${cover ? `<img src="${escapeHtml(cover)}" alt="${escapeHtml(item.title)}" loading="lazy">` : `<span class="image-placeholder" aria-hidden="true">西</span>`}
         <span class="card-number">${String(item.sequence ?? "—").padStart(3, "0")}</span>
@@ -215,7 +219,7 @@
       </span>
       <span class="card-body">
         <span class="card-kicker"><span>${escapeHtml(item.category || "观物档案")}</span><span>${escapeHtml(item.period || "")}</span></span>
-        <span class="card-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span>
+        ${highlights.badge(item)}<span class="card-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span>
         <span class="card-origin">${escapeHtml(item.origin || "出土 / 来源未完整记录")}</span>
         <span class="card-summary">${escapeHtml(item.summary || "")}</span>
         <span class="card-bottom"><span class="card-tags">${tags.map((tag) => `<span class="mini-tag ${tag}">${escapeHtml(tagLabel(tag))}</span>`).join("")}<span class="mini-tag">${photoCount} 图</span></span><span class="card-open" aria-hidden="true">查看档案 →</span></span>
@@ -249,7 +253,8 @@
   }
 
   function render() {
-    const output = filteredItems();
+    highlights.mount(grid, render);
+    const output = highlights.select(filteredItems(), {query: searchInput.value, filtered: activeFilter !== "all" || activeCategory !== "all", manualSort: ["title", "chronology"].includes(sortSelect.value)});
     grid.innerHTML = output.map(cardHtml).join("");
     grid.hidden = output.length === 0;
     empty.hidden = output.length !== 0;
@@ -401,6 +406,8 @@
     searchInput.addEventListener("input", render);
     sortSelect.addEventListener("change", render);
     document.getElementById("clear-filters").addEventListener("click", () => {
+    highlights.reset();
+      sortSelect.value = "sequence";
       activeFilter = "all";
       activeCategory = "all";
       searchInput.value = "";

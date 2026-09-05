@@ -3,6 +3,8 @@
 
   const data = window.SHAANXI_DATA || { items: [], categories: [], wallPaintings: [], stats: {} };
   const items = Array.isArray(data.items) ? data.items : [];
+  const highlights = window.MuseumHighlights.create("shaanxi-history");
+  highlights.apply(items);
   const itemById = new Map(items.map((item) => [String(item.id), item]));
   const grid = document.getElementById("object-grid");
   const empty = document.getElementById("empty-state");
@@ -154,6 +156,7 @@
   const displayNumber = (item) => item.displayNumber || (Number.isFinite(Number(item.sequence)) ? String(item.sequence).padStart(3, "0") : "—");
   const textFor = (item) => [
     item.title,
+    highlights.aliases(item),
     item.period,
     item.material,
     item.type,
@@ -290,6 +293,7 @@
   }
 
   function cardHtml(item, index) {
+    if (item._editorialOnly) return highlights.card(item);
     const cover = cardCoverFor(item);
     const tags = (item.tags || []).filter((tag) => ["music", "forbidden", "greek", "wall"].includes(tag));
     const photoCount = (item.photos || []).length;
@@ -298,7 +302,7 @@
     const delay = Math.min(index, 11) * 18;
     const baseTitleSize = Number.parseFloat(titleSize(item.title));
     const inlineStyle = `--title-size:${baseTitleSize}px;--card-delay:${delay}ms`;
-    return `<button class="object-card card-enter" style="${escapeHtml(inlineStyle)}" type="button" data-title-size="${baseTitleSize}" data-item-id="${escapeHtml(item.id)}" aria-label="打开 ${escapeHtml(item.title)} 详情">
+    return `<button class="object-card card-enter" style="${escapeHtml(inlineStyle)}" type="button" data-title-size="${baseTitleSize}" data-item-id="${escapeHtml(item.id)}" data-reviewed-highlight="${Boolean(highlights.get(item))}" aria-label="打开 ${escapeHtml(item.title)} 详情">
       <span class="card-image">
         ${cover ? `<img src="${escapeHtml(cover)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async">` : `<span class="image-placeholder" aria-hidden="true">陕</span>`}
         <span class="card-number">${escapeHtml(displayNumber(item))}</span>
@@ -306,7 +310,7 @@
       </span>
       <span class="card-body">
         <span class="card-kicker"><span>${escapeHtml(item.category || "观物档案")}</span><span>${escapeHtml(item.period || "")}</span></span>
-        <span class="card-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span>
+        ${highlights.badge(item)}<span class="card-title" title="${escapeHtml(item.title)}">${escapeHtml(item.title)}</span>
         <span class="card-origin">${escapeHtml(item.origin || "出土 / 来源未完整记录")}</span>
         <span class="card-lead">${escapeHtml(cardLead)}</span>
         <span class="card-bottom">
@@ -318,7 +322,8 @@
   }
 
   function render() {
-    const output = filteredItems();
+    highlights.mount(grid, render);
+    const output = highlights.select(filteredItems(), {query: searchInput.value, filtered: activeFilter !== "all" || activeCategory !== "all", manualSort: ["title", "chronology"].includes(sortSelect.value)});
     grid.innerHTML = output.map(cardHtml).join("");
     empty.hidden = output.length !== 0;
     grid.hidden = output.length === 0;
@@ -541,6 +546,8 @@
   sortSelect.addEventListener("change", render);
   window.addEventListener("resize", scheduleTitleFit, { passive: true });
   document.getElementById("clear-filters").addEventListener("click", () => {
+    highlights.reset();
+      sortSelect.value = "sequence";
     activeFilter = "all";
     activeCategory = "all";
     searchInput.value = "";

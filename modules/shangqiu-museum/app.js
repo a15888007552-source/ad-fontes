@@ -3,6 +3,8 @@
 
   const photos = Array.isArray(window.SHANGQIU_PHOTOS) ? window.SHANGQIU_PHOTOS : [];
   const catalog = Array.isArray(window.SHANGQIU_CATALOG) ? window.SHANGQIU_CATALOG : [];
+  const highlights = window.MuseumHighlights.create("shangqiu-museum");
+  highlights.apply(catalog);
   const photoByNumber = new Map(photos.map((photo) => [photo.number, photo]));
   const artifactById = new Map(catalog.map((artifact) => [artifact.id, artifact]));
   const state = { category: "全部", query: "", zoom: 1, x: 0, y: 0, dragging: false, pointerId: null, dragX: 0, dragY: 0 };
@@ -81,11 +83,12 @@
 
   function matches(artifact) {
     const categoryMatch = state.category === "全部" || artifact.category === state.category;
-    const haystack = `${artifact.title} ${artifact.era} ${artifact.category} ${artifact.site}`.toLowerCase();
+    const haystack = `${artifact.title} ${highlights.aliases(artifact)} ${artifact.era} ${artifact.category} ${artifact.site} ${artifact.summary || ""}`.toLowerCase();
     return categoryMatch && haystack.includes(state.query.trim().toLowerCase());
   }
 
   function card(artifact) {
+    if (artifact._editorialOnly) return highlights.card(artifact, true);
     const photo = primaryPhoto(artifact);
     const introduction = artifact.summary || artifact.paragraphs?.[0] || "器物的形制、材质与装饰共同留下时代信息，打开详情可继续辨读。";
     const materialLabel = artifact.material ? "质地" : "类别";
@@ -100,7 +103,7 @@
       <img src="${photo?.thumb || ""}" alt="${artifact.title}" loading="lazy" decoding="async" />
       <span class="card-copy">
         <span class="card-topline"><span>${artifact.featured ? "馆藏精选" : "器物档案"}</span>${artifact.featured ? '<span class="featured-dot" aria-label="馆藏精选"></span>' : ""}</span>
-        <h3>${artifact.title}</h3>
+        ${highlights.badge(artifact)}<h3>${artifact.title}</h3>
         <span class="card-facts" aria-label="文物基本信息">
           <span><small>年代</small><b>${artifact.era}</b></span>
           <span><small>${materialLabel}</small><b>${materialValue}</b></span>
@@ -113,7 +116,8 @@
   }
 
   function renderCatalog() {
-    const items = catalog.filter(matches);
+    highlights.mount(grid, renderCatalog);
+    const items = highlights.select(catalog.filter(matches), {query: state.query, filtered: state.category !== "全部"});
     grid.replaceChildren(...items.map(card));
     visibleCount.textContent = String(items.length).padStart(2, "0");
     emptyState.hidden = items.length > 0;
@@ -242,6 +246,7 @@
 
   searchInput.addEventListener("input", () => { state.query = searchInput.value; renderCatalog(); });
   resetFilter.addEventListener("click", () => {
+    highlights.reset();
     state.category = "全部";
     state.query = "";
     searchInput.value = "";

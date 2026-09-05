@@ -3,6 +3,7 @@ const projectUrl = (value) => {
   const source = String(value || "");
   return /^(?:[a-z]+:|\/|#)/i.test(source) ? source : `${PROJECT_ROOT_PREFIX}${source}`;
 };
+const highlights = window.MuseumHighlights?.create("beilin");
 const DATA_URL = projectUrl("data/artifact-groups.json");
 const IS_EMBEDDED = new URLSearchParams(window.location.search).get("embed") === "1";
 const HIDDEN_DOCUMENT_ROLES = new Set(["label", "title"]);
@@ -154,6 +155,7 @@ function searchableText(group) {
   return normalizeSearch(
     [
       group.name,
+      ...(group.aliases || []),
       ...(group.name_candidates || []),
       group.category,
       group.period_label,
@@ -379,7 +381,8 @@ function applyFilters() {
     groups = [...groups].sort((a, b) => a.sequence_start - b.sequence_start);
   }
 
-  state.filtered = groups;
+  highlights?.mount(elements.catalogGrid, applyFilters);
+  state.filtered = highlights ? highlights.select(groups, {query: state.query, filtered: state.category !== "全部" || state.musicOnly, manualSort: state.sort !== "sequence"}) : groups;
   renderCards();
 }
 
@@ -431,6 +434,7 @@ function setImageWithFallback(image, photo, preferred = []) {
 }
 
 function createCard(group, index) {
+  if (group._editorialOnly) return highlights.card(group, true);
   const card = makeElement("article", `artifact-card${group.special_status ? " special" : ""}`);
   const button = makeElement("button", "artifact-card-button");
   button.type = "button";
@@ -475,6 +479,7 @@ function createCard(group, index) {
   const meta = makeElement("p", "card-meta");
   meta.append(makeElement("span", "card-number", group.id.split("-")[1]));
   meta.append(makeElement("span", "card-category", categoryLabel(group.category)));
+  if (highlights?.get(group)) meta.insertAdjacentHTML("beforeend", highlights.badge(group));
   const title = makeElement("h3", "", group.name);
   const period = makeElement("p", "card-period", group.period_label || "年代见现场展签");
   const excerpt = makeElement("div", "card-excerpt");
@@ -521,6 +526,7 @@ function renderCards() {
 }
 
 function clearFilters() {
+  highlights?.reset();
   state.query = "";
   state.category = "全部";
   state.sort = "sequence";
@@ -1024,6 +1030,7 @@ async function initialize() {
     if (!Array.isArray(catalog.groups) || catalog.assigned_photo_count !== catalog.photo_count) {
       throw new Error("Catalog validation failed");
     }
+    highlights?.apply(catalog.groups);
     state.catalog = catalog;
     state.groups = catalog.groups.map((group) => {
       const _displayPhotos = (group.photos || []).filter((photo) => !HIDDEN_DOCUMENT_ROLES.has(photo.role));

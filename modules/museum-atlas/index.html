@@ -2355,7 +2355,9 @@
       transition: none;
     }
   }
-</style></head>
+</style><link rel="stylesheet" href="../../shared/css/museum-highlights.css?v=20260905">
+<script src="../../shared/js/museum-highlights.js?v=20260905"></script>
+</head>
 <body>
   <div class="atlas-opening" id="atlas-opening" role="status" aria-label="正在打开博物馆图鉴" tabindex="0">
     <div class="atlas-opening__wash" aria-hidden="true"></div>
@@ -2617,7 +2619,7 @@
       if (!trigger || !dialog || !closeButton || !input || !select || !status || !results) return;
 
       const repositoryRoot = new URL("../../", document.baseURI);
-      const searchIndexUrl = new URL("modules/museum-atlas/search-index.json?rev=20260829-shangqiu-backgrounds2", repositoryRoot);
+      const searchIndexUrl = new URL("modules/museum-atlas/search-index.json?rev=20260905-highlights-104-images", repositoryRoot);
       const expectedKeys = ["museum_id", "museum_name", "id", "title", "period", "type", "material", "origin", "keywords", "site_path", "image_path"];
       const allowedEmptyImageIds = new Set([]);
       const recordContextImageIds = new Set([
@@ -2657,7 +2659,7 @@
         const seen = new Set();
         const museums = new Set();
         for (const record of payload.records) {
-          if (!isObject(record) || Object.keys(record).length !== expectedKeys.length || Object.keys(record).some((key, index) => key !== expectedKeys[index])) {
+          if (!isObject(record) || expectedKeys.some(key => !(key in record)) || Object.keys(record).some(key => !expectedKeys.includes(key) && !["aliases","card_tagline","is_highlight","curatorial_rank","content_review","record_binding","object_identity","photo_match","object_identity_id","publication_approval","record_kind"].includes(key))) {
             throw new Error("invalid search record schema");
           }
           for (const field of ["museum_id", "museum_name", "id", "title", "site_path"]) {
@@ -2669,6 +2671,10 @@
           if (!Array.isArray(record.keywords) || record.keywords.some((keyword) => typeof keyword !== "string")) {
             throw new Error("invalid keyword array");
           }
+          if (record.aliases !== undefined && (!Array.isArray(record.aliases) || record.aliases.some(alias => typeof alias !== "string"))) throw new Error("invalid aliases");
+          if (record.is_highlight !== undefined && typeof record.is_highlight !== "boolean") throw new Error("invalid highlight flag");
+          if (record.curatorial_rank !== undefined && (!Number.isInteger(record.curatorial_rank) || record.curatorial_rank < 1)) throw new Error("invalid highlight rank");
+          for (const field of ["card_tagline","content_review","record_binding","object_identity","photo_match","object_identity_id","publication_approval","record_kind"]) if (record[field] !== undefined && typeof record[field] !== "string") throw new Error(`invalid ${field}`);
           if (!isSafeLocalPath(record.site_path) || !isSafeLocalPath(record.image_path, true)) {
             throw new Error("unsafe repository path");
           }
@@ -2676,7 +2682,7 @@
           if (seen.has(compositeId)) throw new Error("duplicate search record");
           seen.add(compositeId);
           museums.add(record.museum_id);
-          if (!record.image_path && !allowedEmptyImageIds.has(compositeId)) {
+          if (!record.image_path && record.record_kind !== "editorial_only" && !allowedEmptyImageIds.has(compositeId)) {
             throw new Error("unexpected empty image path");
           }
         }
@@ -2738,7 +2744,8 @@
         type: normalizeSearch(record.type),
         material: normalizeSearch(record.material),
         origin: normalizeSearch(record.origin),
-        keywords: normalizeSearch(record.keywords.join(" ")),
+        keywords: normalizeSearch([...record.keywords, ...(record.aliases || [])].join(" ")),
+        aliases: (record.aliases || []).map(normalizeSearch),
         museum: normalizeSearch(record.museum_name),
       });
 
@@ -2749,6 +2756,7 @@
         const all = [fields.title, fields.period, fields.type, fields.material, fields.origin, fields.keywords, fields.museum].filter(Boolean).join(" ");
         if (!queryTokens.every((token) => all.includes(token))) return -1;
         if (fields.title === normalizedQuery) return 700;
+        if (fields.aliases.includes(normalizedQuery)) return 650;
         if (fields.title.startsWith(normalizedQuery)) return 600;
         if (fields.title.includes(normalizedQuery)) return 500;
         if (queryTokens.every((token) => fields.title.includes(token))) return 400;
@@ -2758,6 +2766,11 @@
         return 0;
       };
 
+      const highlightRank = record => window.MuseumHighlights.eligible(record) ? record.curatorial_rank : Infinity;
+      let browseMode = "recommended", lastMuseum = "", previousQuery = "";
+      const highlightControls = document.createElement("div");
+      highlightControls.className = "museum-highlight-controls";
+      results.before(highlightControls);
       const findMatches = (query, museumId) => {
         const recordsList = searchIndex?.records || [];
         return recordsList.map((record, sourceOrder) => ({
@@ -2766,13 +2779,13 @@
           rank: museumId && record.museum_id !== museumId ? -1 : rankRecord(record, query),
         }))
           .filter((entry) => entry.rank >= 0)
-          .sort((left, right) => right.rank - left.rank || left.sourceOrder - right.sourceOrder)
+          .sort((left, right) => right.rank - left.rank || highlightRank(left.record) - highlightRank(right.record) || left.sourceOrder - right.sourceOrder)
           .map((entry) => entry.record);
       };
 
       const buildRecordHref = (record) => {
         const target = new URL(record.site_path, repositoryRoot);
-        target.searchParams.set("item", record.id);
+        target.searchParams.set(record.record_kind === "editorial_only" ? "editorial" : "item", record.id);
         return target.href;
       };
 
@@ -2819,6 +2832,9 @@
         const title = document.createElement("h3");
         title.className = "atlas-search-result__title";
         title.textContent = record.title;
+        if (window.MuseumHighlights.eligible(record)) {
+          const badge = document.createElement("span"); badge.className = "museum-highlight-badge"; badge.textContent = "重点文物"; body.append(badge);
+        }
         const metadata = document.createElement("p");
         metadata.className = "atlas-search-result__meta";
         metadata.textContent = [record.period, record.type, record.material].filter(Boolean).join(" · ") || "档案条目";
@@ -2838,11 +2854,25 @@
         const query = input.value;
         const museumId = select.value;
         clearResults();
+        highlightControls.hidden = true;
         if (!query.trim() && !museumId) {
           setStatus("输入关键词，开始跨馆查找。");
           return;
         }
-        const matches = query.trim() ? findMatches(query, museumId) : searchIndex.records.filter((record) => record.museum_id === museumId);
+        if (museumId !== lastMuseum || (previousQuery && !query.trim())) browseMode = "recommended";
+        lastMuseum = museumId; previousQuery = query.trim();
+        let matches = query.trim() ? findMatches(query, museumId) : searchIndex.records.filter((record) => record.museum_id === museumId).sort((a,b) => highlightRank(a) - highlightRank(b));
+        const approved = searchIndex.records.filter(record => record.museum_id === museumId && window.MuseumHighlights.eligible(record));
+        highlightControls.replaceChildren();
+        highlightControls.hidden = !approved.length;
+        if (approved.length) {
+          for (const [mode,label] of [["recommended","重点文物"],["highlights",`查看全部重点（${approved.length}）`],["all","全部文物"]]) {
+            const button = document.createElement("button"); button.type = "button"; button.textContent = label; button.setAttribute("aria-pressed", String(mode === browseMode));
+            button.addEventListener("click", () => { browseMode = mode; render(); }); highlightControls.append(button);
+          }
+          if (browseMode === "highlights") matches = matches.filter(record => window.MuseumHighlights.eligible(record));
+          else if (!query.trim() && browseMode === "recommended") matches = matches.filter(record => window.MuseumHighlights.eligible(record)).slice(0,6);
+        }
         if (!matches.length) {
           setStatus("没有找到匹配对象。");
           return;

@@ -1,0 +1,921 @@
+{
+  "instruction": "用户于本轮明确要求停止核实并直接采用全部编辑稿。保留原审计结果，不伪造已核；缺图或冲突对象作为无照片文字条目展示。",
+  "items": [
+    {
+      "editorial_id": "beilin-highlight-01",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "assets/photos/web/DSC_1803.jpg",
+        "caption": "石台孝经拓本",
+        "provenance": "existing_site_photo_user_selected"
+      }
+    },
+    {
+      "editorial_id": "beilin-highlight-02",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "assets/photos/web/DSC_1593.jpg",
+        "caption": "开成石经·尔雅拓本",
+        "provenance": "existing_site_photo_user_selected"
+      }
+    },
+    {
+      "editorial_id": "beilin-highlight-03",
+      "mode": "existing_record",
+      "record_id": "artifact-013",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-04",
+      "mode": "existing_record",
+      "record_id": "artifact-168",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-05",
+      "mode": "existing_record",
+      "record_id": "artifact-173",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-06",
+      "mode": "existing_record",
+      "record_id": "artifact-018",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-07",
+      "mode": "existing_record",
+      "record_id": "artifact-006",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-08",
+      "mode": "existing_record",
+      "record_id": "artifact-007",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-09",
+      "mode": "existing_record",
+      "record_id": "artifact-010",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-10",
+      "mode": "existing_record",
+      "record_id": "artifact-020",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-11",
+      "mode": "existing_record",
+      "record_id": "artifact-005",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "beilin-highlight-12",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/beilin-highlight-12.png",
+        "caption": "拓片局部",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-b3ad0010-1082-4072-9b8b-105db858d03f.png"
+      }
+    },
+    {
+      "editorial_id": "beilin-highlight-13",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/beilin-highlight-13.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-7007454a-06c7-40b5-8913-d6db5786bc08.png"
+      }
+    },
+    {
+      "editorial_id": "beilin-highlight-14",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "assets/photos/web/DSC_1961.jpg",
+        "caption": "道因法师碑拓本",
+        "provenance": "existing_site_photo_user_selected"
+      }
+    },
+    {
+      "editorial_id": "beilin-highlight-15",
+      "mode": "existing_record",
+      "record_id": "artifact-019",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "baoji-highlight-01",
+      "mode": "existing_record",
+      "record_id": "photo-group-3465",
+      "publication_approval": "user_approved",
+      "index_record_id": "he-zun"
+    },
+    {
+      "editorial_id": "baoji-highlight-02",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/baoji/assets/photos/web/DSC_3325.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "photo-group-3325"
+      }
+    },
+    {
+      "editorial_id": "baoji-highlight-03",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/baoji/assets/photos/web/DSC_3487.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "photo-group-3487"
+      }
+    },
+    {
+      "editorial_id": "baoji-highlight-04",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/baoji/assets/photos/web/DSC_3656.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "photo-group-3656"
+      }
+    },
+    {
+      "editorial_id": "baoji-highlight-05",
+      "mode": "existing_record",
+      "record_id": "photo-group-3740",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "baoji-highlight-06",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/baoji/assets/photos/web/DSC_3524.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "photo-group-3524"
+      }
+    },
+    {
+      "editorial_id": "baoji-highlight-07",
+      "mode": "existing_record",
+      "record_id": "photo-group-3520",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "baoji-highlight-08",
+      "mode": "existing_record",
+      "record_id": "photo-group-3333",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "baoji-highlight-09",
+      "mode": "existing_record",
+      "record_id": "photo-group-3415",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "baoji-highlight-10",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/baoji/assets/photos/web/DSC_3649.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "photo-group-3649"
+      }
+    },
+    {
+      "editorial_id": "baoji-highlight-11",
+      "mode": "existing_record",
+      "record_id": "photo-group-3390",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "baoji-highlight-12",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/baoji-highlight-12.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-c76d0434-40c3-4bc1-b8dd-da84ba8c3b2b.png"
+      }
+    },
+    {
+      "editorial_id": "baoji-highlight-13",
+      "mode": "existing_record",
+      "record_id": "photo-group-3761",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "baoji-highlight-14",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/baoji-highlight-14.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-12fbe6c3-17de-4bf9-8043-a546ca0b750e.png"
+      }
+    },
+    {
+      "editorial_id": "baoji-highlight-15",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/baoji-highlight-15.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-5e0cef3e-fd7d-41d8-899b-242904fe1c4e.png"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-01",
+      "mode": "existing_record",
+      "record_id": "field-4681",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-02",
+      "mode": "existing_record",
+      "record_id": "field-4618",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-03",
+      "mode": "existing_record",
+      "record_id": "field-4698",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-04",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/photos/focus-4441.webp",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "field-4445"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-05",
+      "mode": "existing_record",
+      "record_id": "field-4039",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-06",
+      "mode": "existing_record",
+      "record_id": "field-4276",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-07",
+      "mode": "existing_record",
+      "record_id": "field-4394",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-08",
+      "mode": "existing_record",
+      "record_id": "field-4626",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-09",
+      "mode": "existing_record",
+      "record_id": "field-4523",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-10",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shaanxi-history-highlight-10.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-ecd08153-e5bc-4943-98dd-a248bb7918a2.png"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-11",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/supplement/quelou.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "wall-que-lou"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-12",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shaanxi-history-highlight-12.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-c2913092-9eab-4cd8-89e2-ca9e94822e66.png"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-13",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/supplement/gongnv.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "wall-gongnv"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-14",
+      "mode": "existing_record",
+      "record_id": "field-3925",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-history-highlight-15",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shaanxi-history-highlight-15.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-d352f84b-62bd-4c0a-9ee2-de7aa35f07b4.png"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-01",
+      "mode": "existing_record",
+      "record_id": "du-tiger-tally",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "qinhan-highlight-02",
+      "mode": "existing_record",
+      "record_id": "queen-seal",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "qinhan-highlight-03",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/qin-weights.webp",
+        "caption": "相关展柜配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "qin-weights"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-04",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/brick-and-bells.webp",
+        "caption": "相关展柜配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "brick-and-bells"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-05",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/qinhan-highlight-05.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-03513396-5d48-4902-8863-19029c4022ee.png"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-06",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/qinhan-highlight-06.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-b3629362-1b0f-43f3-a53f-0cd0f30d6e81.png"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-07",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/steppe-gold.webp",
+        "caption": "相关展柜配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "steppe-gold"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-08",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/animals.webp",
+        "caption": "相关展柜配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "animals"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-09",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/qinhan-highlight-09.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-88ee5672-d035-4fae-b6b0-a9aec60dfe9d.png"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-10",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/clay-warriors.webp",
+        "caption": "相关展柜配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "clay-warriors"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-11",
+      "mode": "existing_record",
+      "record_id": "stone-armor",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "qinhan-highlight-12",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/cavalry-and-frontier-seal.webp",
+        "caption": "相关展柜配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "cavalry-and-frontier-seal"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-13",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/qinhan-highlight-13.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-43648f63-b02d-40d3-aa19-f679c411ae06.png"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-14",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/han-clay-seals.webp",
+        "caption": "相关展柜配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "han-clay-seals"
+      }
+    },
+    {
+      "editorial_id": "qinhan-highlight-15",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/wang-mang-currency.webp",
+        "caption": "相关展柜配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "wang-mang-currency"
+      }
+    },
+    {
+      "editorial_id": "xian-museum-highlight-01",
+      "mode": "existing_record",
+      "record_id": "xian-057-5058",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-02",
+      "mode": "existing_record",
+      "record_id": "xian-059-5073",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-03",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/xian-museum/assets/supplement/painted-mirror-01.webp",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "xian-001-painted-mirror"
+      }
+    },
+    {
+      "editorial_id": "xian-museum-highlight-04",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/xian-museum/assets/photos/focus-5013.webp",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "xian-044-5013"
+      }
+    },
+    {
+      "editorial_id": "xian-museum-highlight-05",
+      "mode": "existing_record",
+      "record_id": "xian-048-5024",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-06",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/xian-museum/assets/photos/focus-5067.webp",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "xian-058-5067"
+      }
+    },
+    {
+      "editorial_id": "xian-museum-highlight-07",
+      "mode": "existing_record",
+      "record_id": "xian-005-4867",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-08",
+      "mode": "existing_record",
+      "record_id": "xian-035-4989",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-09",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/xian-museum/assets/photos/featured-4859.webp",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "xian-003-4859"
+      }
+    },
+    {
+      "editorial_id": "xian-museum-highlight-10",
+      "mode": "existing_record",
+      "record_id": "xian-032-4974",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-11",
+      "mode": "existing_record",
+      "record_id": "xian-038-4997",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-12",
+      "mode": "existing_record",
+      "record_id": "xian-054-5051",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-13",
+      "mode": "existing_record",
+      "record_id": "xian-028-4955",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "xian-museum-highlight-14",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "modules/xian-museum/assets/photos/focus-5043.webp",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "xian-051-5043"
+      }
+    },
+    {
+      "editorial_id": "xian-museum-highlight-15",
+      "mode": "existing_record",
+      "record_id": "xian-062-5087",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-01",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3156.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "artifact-158"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-02",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3112.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "artifact-147"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-03",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3107.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "artifact-146"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-04",
+      "mode": "existing_record",
+      "record_id": "artifact-081",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-05",
+      "mode": "existing_record",
+      "record_id": "artifact-083",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-06",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2919.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "artifact-085"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-07",
+      "mode": "existing_record",
+      "record_id": "artifact-036",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-08",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3085.jpg",
+        "caption": "馆内展品配图",
+        "provenance": "existing_site_photo_user_selected",
+        "related_record_id": "artifact-138"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-09",
+      "mode": "existing_record",
+      "record_id": "artifact-108",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-10",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shaanxi-archaeology-highlight-10.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-a75445ff-5922-4f8c-83d2-d86ae58bcacb.png"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-11",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shaanxi-archaeology-highlight-11.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-477d4a12-5e26-411e-95c1-ef7838100928.png"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-12",
+      "mode": "existing_record",
+      "record_id": "artifact-077",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-13",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shaanxi-archaeology-highlight-13.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-146ac6c8-cb8c-4f87-88bb-e4c80f079643.png"
+      }
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-14",
+      "mode": "existing_record",
+      "record_id": "artifact-055",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shaanxi-archaeology-highlight-15",
+      "mode": "existing_record",
+      "record_id": "artifact-159",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-01",
+      "mode": "existing_record",
+      "record_id": "jade-suit",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-02",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shangqiu-museum-highlight-02.png",
+        "caption": "拓片",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-7788af8b-4abe-4408-b85c-47895f6acc46.png"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-03",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_removed"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-04",
+      "mode": "existing_record",
+      "record_id": "cloud-thunder-ding",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-05",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shangqiu-museum-highlight-05.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-23e2fcb7-2a7f-4e02-b43c-2fa035c8084e.png"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-06",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shangqiu-museum-highlight-06.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-65c18a68-9620-4a04-957c-96e6a3e520a8.png"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-07",
+      "mode": "text_only",
+      "record_id": null,
+      "publication_approval": "user_approved",
+      "supplement_image": {
+        "path": "shared/assets/highlights/shangqiu-museum-highlight-07.png",
+        "caption": "文物配图",
+        "provenance": "user_supplied_reference",
+        "original_filename": "codex-clipboard-9d7fceaa-03b5-4fae-9a1e-611a38e83d7d.png"
+      }
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-08",
+      "mode": "existing_record",
+      "record_id": "dragon-handled-dipper",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-09",
+      "mode": "existing_record",
+      "record_id": "proto-celadon-hu",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-10",
+      "mode": "existing_record",
+      "record_id": "bronze-jue",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-11",
+      "mode": "existing_record",
+      "record_id": "oracle-bones",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-12",
+      "mode": "existing_record",
+      "record_id": "stone-tool",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-13",
+      "mode": "existing_record",
+      "record_id": "bronze-tray-vessel",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-14",
+      "mode": "existing_record",
+      "record_id": "stone-inkstone",
+      "publication_approval": "user_approved"
+    },
+    {
+      "editorial_id": "shangqiu-museum-highlight-15",
+      "mode": "existing_record",
+      "record_id": "inscribed-four-loop-jar",
+      "publication_approval": "user_approved"
+    }
+  ]
+}

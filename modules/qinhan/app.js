@@ -92,16 +92,18 @@ function mountDetailArchiveFields(anchor, group) {
   elements.dialogMeta = elements.dialog.querySelector("#dialog-meta");
 }
 
+const highlights = window.MuseumHighlights.create("qinhan");
 function filteredGroups() {
   if (!state.data) return [];
-  return state.data.groups.filter((group) => {
+  const matched = state.data.groups.filter((group) => {
     if (!isPublicArtifact(group)) return false;
     if (state.category !== "全部" && group.category !== state.category) return false;
-    if (state.featuredOnly && !group.featured) return false;
+    if (state.featuredOnly && !highlights.get(group)) return false;
     if (!state.query) return true;
-    const haystack = normalize([group.title, group.category, group.era, group.summary, group.interpretation, ...group.tags].join(" "));
+    const haystack = normalize([group.title, highlights.aliases(group), group.category, group.era, group.summary, group.interpretation, ...group.tags].join(" "));
     return haystack.includes(normalize(state.query));
   });
+  return highlights.select(matched, {query: state.query, filtered: state.category !== "全部" || state.featuredOnly});
 }
 
 function renderFilters() {
@@ -124,6 +126,7 @@ function renderFilters() {
 }
 
 function cardTemplate(group, index) {
+  if (group._editorialOnly) return highlights.card(group);
   const status = group.special_status ? `<span class="card-special">${escapeHTML(group.special_status)}</span>` : "";
   const tags = group.tags.slice(0, 3).map((tag) => `<span>${escapeHTML(tag)}</span>`).join("");
   return `
@@ -138,7 +141,7 @@ function cardTemplate(group, index) {
           ${status}
           <h3>${escapeHTML(group.title)}</h3>
           <span class="card-era">${escapeHTML(group.era)}</span>
-          <span class="card-summary">${escapeHTML(group.summary)}</span>
+          ${highlights.badge(group)}<span class="card-summary">${escapeHTML(group.summary)}</span>
           <span class="card-tags" aria-label="文物标签">${tags}</span>
           <span class="card-metrics" aria-label="图像与序列信息"><span>对象图 ${escapeHTML(group.object_photo_count)}</span><span>展签 ${escapeHTML(group.label_photo_count)}</span><span>序列 ${escapeHTML(group.sequence_start)}—${escapeHTML(group.sequence_end)}</span></span>
           <span class="card-footer"><b>打开详情 ↗</b></span>
@@ -149,6 +152,7 @@ function cardTemplate(group, index) {
 }
 
 function renderArchive() {
+  highlights.mount(elements.grid, () => { state.visible = 12; renderArchive(); });
   const groups = filteredGroups();
   const shown = groups.slice(0, state.visible);
   elements.grid.innerHTML = shown.map(cardTemplate).join("");
@@ -445,12 +449,13 @@ async function init() {
     const response = await fetch("data/archive.json?v=20260813-motion1", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
+    highlights.apply(state.data.groups);
     const publicGroups = state.data.groups.filter(isPublicArtifact);
     const publicObjects = publicGroups.reduce((sum, group) => sum + group.object_photo_count, 0);
     const publicLabels = publicGroups.reduce((sum, group) => sum + group.label_photo_count, 0);
     document.querySelector("#stat-photos").textContent = state.data.photo_count;
     document.querySelector("#stat-groups").textContent = publicGroups.length;
-    document.querySelector("#stat-featured").textContent = publicGroups.filter((group) => group.featured).length;
+    document.querySelector("#stat-featured").textContent = publicGroups.filter((group) => highlights.get(group)).length;
     elements.count.textContent = `${publicGroups.length} 个文物条目 · ${publicObjects} 张对象图 · ${publicLabels} 张证据图`;
     renderFilters();
     renderArchive();

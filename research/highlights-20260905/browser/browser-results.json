@@ -1,0 +1,421 @@
+{
+  "environment": "existing in-app browser",
+  "baseUrl": "http://127.0.0.1:8766",
+  "notes": "Earlier unlabelled cases precede user instruction to publish all. Immediate pre-debounce samples are superseded by after-debounce cases.",
+  "checks": [
+    {
+      "museum": "beilin",
+      "test": "no-results",
+      "result": "显示 0 / 181 件",
+      "empty": true
+    },
+    {
+      "museum": "beilin",
+      "test": "clear-default",
+      "titles": []
+    },
+    {
+      "museum": "beilin",
+      "test": "ordinary-preserved",
+      "result": "显示 0 / 181 件"
+    },
+    {
+      "museum": "beilin",
+      "test": "alias",
+      "titles": [
+        "集王书圣教序碑",
+        "《集王书圣教序碑》"
+      ]
+    },
+    {
+      "museum": "beilin",
+      "test": "clear-button",
+      "result": "显示 5 / 181 件",
+      "titles": [
+        "曹全碑",
+        "集王书圣教序碑",
+        "玄秘塔碑",
+        "皇甫诞碑",
+        "同州三藏圣教序碑"
+      ]
+    },
+    {
+      "museum": "beilin",
+      "test": "all-records",
+      "result": "显示 181 / 181 件"
+    },
+    {
+      "museum": "beilin",
+      "test": "keyboard-clear",
+      "count": "显示 5 / 181 件"
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "default",
+      "titles": [
+        "镶金兽首玛瑙杯",
+        "鎏金舞马衔杯纹皮囊式银壶",
+        "葡萄花鸟纹银香囊",
+        "多友鼎",
+        "独孤信多面体煤精组印",
+        "鸳鸯莲瓣纹金碗"
+      ]
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "all-highlights",
+      "count": 9
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "all-records",
+      "count": 297
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "ordinary-query",
+      "titles": [
+        "黑釉兔毫盏"
+      ]
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "no-results",
+      "empty": true,
+      "count": 0
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "category-query",
+      "titles": [
+        "多友鼎"
+      ]
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "click-deep-link",
+      "url": "http://127.0.0.1:8766/modules/shaanxi-history/index.html?item=field-4039#collection",
+      "dialog": ""
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "escape-return",
+      "dialog": null,
+      "url": "http://127.0.0.1:8766/modules/shaanxi-history/index.html#collection"
+    },
+    {
+      "museum": "xian-museum",
+      "test": "default",
+      "titles": [
+        "三彩腾空马",
+        "八瓣仕女狩猎纹银杯",
+        "白釉“盈”字款葵口盘",
+        "磁州窑“风吹十里透瓶香”白地黑花梅瓶"
+      ]
+    },
+    {
+      "museum": "xian-museum",
+      "test": "exact",
+      "titles": [
+        "三彩腾空马"
+      ]
+    },
+    {
+      "museum": "xian-museum",
+      "test": "empty",
+      "visible": true
+    },
+    {
+      "museum": "baoji",
+      "test": "pending-not-featured",
+      "rendered": 36,
+      "newBadges": 0,
+      "controls": 0
+    },
+    {
+      "museum": "baoji",
+      "test": "ordinary-exact",
+      "titles": [
+        "何尊"
+      ]
+    },
+    {
+      "museum": "baoji",
+      "test": "empty",
+      "text": "没有找到与当前筛选相符的器物照片。试试清空搜索词，或切换到“全部”。"
+    },
+    {
+      "museum": "shangqiu-museum",
+      "test": "default",
+      "titles": [
+        "龙首柄铜鐎斗",
+        "原始青瓷铺首衔环壶",
+        "青铜爵",
+        "卜骨与卜甲",
+        "石镞范",
+        "青铜簠"
+      ]
+    },
+    {
+      "museum": "shangqiu-museum",
+      "test": "all-highlights",
+      "count": 8
+    },
+    {
+      "museum": "shangqiu-museum",
+      "test": "ordinary-preserved",
+      "count": 84
+    },
+    {
+      "museum": "shangqiu-museum",
+      "test": "empty",
+      "visible": true
+    },
+    {
+      "museum": "qinhan",
+      "test": "final-default",
+      "titles": [
+        "杜虎符",
+        "皇后之玺",
+        "石铠甲与石胄"
+      ]
+    },
+    {
+      "museum": "qinhan",
+      "test": "alias",
+      "titles": [
+        "杜虎符",
+        "皇后之玺",
+        "石铠甲与石胄"
+      ]
+    },
+    {
+      "museum": "qinhan",
+      "test": "empty",
+      "cards": 3
+    },
+    {
+      "museum": "qinhan",
+      "test": "alias-after-debounce",
+      "titles": [
+        "皇后之玺"
+      ]
+    },
+    {
+      "museum": "qinhan",
+      "test": "empty-after-debounce",
+      "cards": 0
+    },
+    {
+      "museum": "qinhan",
+      "test": "clear-after-debounce",
+      "titles": [
+        "杜虎符",
+        "皇后之玺",
+        "石铠甲与石胄"
+      ]
+    },
+    {
+      "museum": "shaanxi-archaeology",
+      "test": "final-default",
+      "titles": [
+        "镂空人面覆盆形器",
+        "八曲葵花形螺钿铜镜",
+        "浮雕蛙纹陶釜"
+      ]
+    },
+    {
+      "museum": "shaanxi-archaeology",
+      "test": "detail-deeplink-sources",
+      "title": "八曲葵花形螺钿铜镜",
+      "sources": [
+        "考古博物馆里的年味：展品实拍 ↗",
+        "资料出处 ↗",
+        "资料出处 ↗"
+      ]
+    },
+    {
+      "museum": "shaanxi-archaeology",
+      "test": "empty",
+      "titles": []
+    },
+    {
+      "museum": "atlas",
+      "test": "beilin-filter-default",
+      "titles": [
+        "曹全碑",
+        "集王书圣教序碑",
+        "玄秘塔碑",
+        "皇甫诞碑",
+        "同州三藏圣教序碑"
+      ]
+    },
+    {
+      "museum": "atlas",
+      "test": "verified-alias",
+      "titles": [
+        "集王书圣教序碑"
+      ]
+    },
+    {
+      "museum": "atlas",
+      "test": "empty",
+      "titles": []
+    },
+    {
+      "museum": "atlas",
+      "test": "clear-default",
+      "titles": [
+        "曹全碑",
+        "集王书圣教序碑",
+        "玄秘塔碑",
+        "皇甫诞碑",
+        "同州三藏圣教序碑"
+      ]
+    },
+    {
+      "museum": "shangqiu",
+      "test": "final-pending-withdrawal",
+      "badges": 0,
+      "controls": 0
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "manual-sort-recommended",
+      "count": 6
+    },
+    {
+      "museum": "shaanxi-history",
+      "test": "sort-clear-restored",
+      "count": 6,
+      "sort": "参观顺序\n时代顺序\n名称"
+    },
+    {
+      "museum": "shaanxi-archaeology",
+      "revision": "user-approved-all",
+      "test": "default-six",
+      "titles": [
+        "李倕冠饰",
+        "上官婉儿墓志",
+        "罗婉顺墓志",
+        "镂空人面覆盆形器",
+        "石峁神面立柱形石雕",
+        "石峁骨质口簧"
+      ]
+    },
+    {
+      "museum": "shaanxi-archaeology",
+      "revision": "user-approved-all",
+      "test": "text-detail",
+      "title": "李倕冠饰",
+      "url": "http://127.0.0.1:8766/modules/shaanxi-archaeology-museum/index.html?editorial=shaanxi-archaeology-highlight-01#other"
+    },
+    {
+      "museum": "shaanxi-archaeology",
+      "revision": "user-approved-all",
+      "test": "all-highlights-page1",
+      "titles": [
+        "李倕冠饰",
+        "上官婉儿墓志",
+        "罗婉顺墓志",
+        "镂空人面覆盆形器",
+        "石峁神面立柱形石雕",
+        "石峁骨质口簧",
+        "八曲葵花形螺钿铜镜",
+        "苏统师墓白瓷深腹杯",
+        "芮公鼎（刘家洼出土）",
+        "西陵县侯夫人墓乐舞俑组合",
+        "税村隋墓甲骑具装俑",
+        "浮雕蛙纹陶釜"
+      ]
+    },
+    {
+      "museum": "shaanxi-archaeology",
+      "revision": "user-approved-all",
+      "test": "all-highlights-page2",
+      "titles": [
+        "韩休墓乐舞图",
+        "贺家铜轮牙马车遗迹",
+        "李倕墓志"
+      ]
+    },
+    {
+      "museum": "beilin",
+      "revision": "user-approved-all",
+      "test": "default-six-and-all15-entry",
+      "badges": 6,
+      "all15": 1
+    },
+    {
+      "museum": "baoji",
+      "revision": "user-approved-all",
+      "test": "default-six-and-all15-entry",
+      "badges": 6,
+      "all15": 1
+    },
+    {
+      "museum": "qinhan",
+      "revision": "user-approved-all",
+      "test": "default-six-and-all15-entry",
+      "badges": 6,
+      "all15": 1
+    },
+    {
+      "museum": "shaanxi-history",
+      "revision": "user-approved-all",
+      "test": "default-six-and-all15-entry",
+      "badges": 6,
+      "all15": 1
+    },
+    {
+      "museum": "xian-museum",
+      "revision": "user-approved-all",
+      "test": "default-six-and-all15-entry",
+      "badges": 6,
+      "all15": 1
+    },
+    {
+      "museum": "shangqiu-museum",
+      "revision": "user-approved-all",
+      "test": "default-six-and-all15-entry",
+      "badges": 6,
+      "all15": 1
+    },
+    {
+      "museum": "shangqiu-museum",
+      "revision": "user-approved-all",
+      "test": "text-only-query",
+      "titles": [
+        "玄鸟驭龙伏虎降牛画像石门楣"
+      ]
+    },
+    {
+      "museum": "shangqiu-museum",
+      "revision": "user-approved-all",
+      "test": "empty",
+      "titles": []
+    },
+    {
+      "museum": "atlas",
+      "revision": "user-approved-all",
+      "test": "text-only-search",
+      "titles": [
+        "李寿石椁"
+      ]
+    },
+    {
+      "museum": "beilin",
+      "revision": "user-approved-all",
+      "test": "atlas-to-text-detail",
+      "title": "李寿石椁",
+      "url": "http://127.0.0.1:8766/modules/beilin/index.html?editorial=beilin-highlight-13"
+    },
+    {
+      "museum": "beilin",
+      "revision": "user-approved-all",
+      "test": "text-dialog-escape",
+      "open": 0,
+      "url": "http://127.0.0.1:8766/modules/beilin/index.html"
+    }
+  ]
+}

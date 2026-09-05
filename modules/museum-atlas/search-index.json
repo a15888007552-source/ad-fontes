@@ -71,7 +71,7 @@
       "museum_name": "西安碑林博物馆",
       "id": "artifact-005",
       "title": "颜氏家庙碑",
-      "period": "唐建中元年(780)",
+      "period": "唐·建中元年（780）",
       "type": "碑",
       "material": "",
       "origin": "",
@@ -81,14 +81,24 @@
         "碑文楷书"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1278.jpg"
+      "image_path": "assets/photos/web/DSC_1278.jpg",
+      "aliases": [],
+      "card_tagline": "晚年颜真卿怎样书写家族记忆",
+      "is_highlight": true,
+      "curatorial_rank": 11,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-005"
     },
     {
       "museum_id": "beilin",
       "museum_name": "西安碑林博物馆",
       "id": "artifact-006",
       "title": "颜勤礼碑",
-      "period": "唐大历十四年(779)",
+      "period": "唐·大历十四年（779）",
       "type": "碑",
       "material": "",
       "origin": "",
@@ -96,14 +106,24 @@
         "碑文楷书"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1283.jpg"
+      "image_path": "assets/photos/web/DSC_1283.jpg",
+      "aliases": [],
+      "card_tagline": "颜真卿为曾祖父书写的家世记录",
+      "is_highlight": true,
+      "curatorial_rank": 7,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-006"
     },
     {
       "museum_id": "beilin",
       "museum_name": "西安碑林博物馆",
       "id": "artifact-007",
       "title": "多宝塔感应碑",
-      "period": "唐天宝十一年(752)",
+      "period": "唐·天宝十一年（752）",
       "type": "碑",
       "material": "",
       "origin": "",
@@ -112,7 +132,17 @@
         "碑文楷书"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1289.jpg"
+      "image_path": "assets/photos/web/DSC_1289.jpg",
+      "aliases": [],
+      "card_tagline": "看颜真卿较早时期的楷书",
+      "is_highlight": true,
+      "curatorial_rank": 8,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-007"
     },
     {
       "museum_id": "beilin",
@@ -152,7 +182,7 @@
       "museum_name": "西安碑林博物馆",
       "id": "artifact-010",
       "title": "玄秘塔碑",
-      "period": "唐会昌元年（841）",
+      "period": "唐·会昌元年（841）",
       "type": "碑",
       "material": "",
       "origin": "",
@@ -162,7 +192,17 @@
         "碑文楷书"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1304.jpg"
+      "image_path": "assets/photos/web/DSC_1304.jpg",
+      "aliases": [],
+      "card_tagline": "柳公权为端甫法师碑书写的楷字",
+      "is_highlight": true,
+      "curatorial_rank": 9,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-010"
     },
     {
       "museum_id": "beilin",
@@ -203,7 +243,7 @@
       "museum_name": "西安碑林博物馆",
       "id": "artifact-013",
       "title": "曹全碑",
-      "period": "东汉中平二年(185)",
+      "period": "东汉·中平二年（185）",
       "type": "碑",
       "material": "",
       "origin": "",
@@ -211,7 +251,17 @@
         "碑文隶书"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1320.jpg"
+      "image_path": "assets/photos/web/DSC_1320.jpg",
+      "aliases": [],
+      "card_tagline": "从一位县令的生平读汉隶的结构",
+      "is_highlight": true,
+      "curatorial_rank": 3,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-013"
     },
     {
       "museum_id": "beilin",
@@ -281,7 +331,7 @@
       "museum_name": "西安碑林博物馆",
       "id": "artifact-018",
       "title": "集王书圣教序碑",
-      "period": "唐咸亨三年（672）",
+      "period": "唐·咸亨三年（672）",
       "type": "碑",
       "material": "",
       "origin": "",
@@ -289,14 +339,27 @@
         "碑文行书"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1340.jpg"
+      "image_path": "assets/photos/web/DSC_1340.jpg",
+      "aliases": [
+        "集王圣教序碑",
+        "怀仁集王羲之书圣教序"
+      ],
+      "card_tagline": "用王羲之的字，组成唐代的新文章",
+      "is_highlight": true,
+      "curatorial_rank": 6,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-018"
     },
     {
       "museum_id": "beilin",
       "museum_name": "西安碑林博物馆",
       "id": "artifact-019",
       "title": "同州三藏圣教序碑",
-      "period": "唐龙朔三年(663)",
+      "period": "唐·龙朔三年（663）刻",
       "type": "碑",
       "material": "",
       "origin": "",
@@ -306,14 +369,24 @@
         "碑文楷书"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1347.jpg"
+      "image_path": "assets/photos/web/DSC_1347.jpg",
+      "aliases": [],
+      "card_tagline": "褚遂良书风在另一通圣教序碑上的保存",
+      "is_highlight": true,
+      "curatorial_rank": 15,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-019"
     },
     {
       "museum_id": "beilin",
       "museum_name": "西安碑林博物馆",
       "id": "artifact-020",
       "title": "皇甫诞碑",
-      "period": "唐贞观年间(627-649)",
+      "period": "唐·贞观年间",
       "type": "碑",
       "material": "",
       "origin": "",
@@ -323,7 +396,17 @@
         "碑文楷书"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1355.jpg"
+      "image_path": "assets/photos/web/DSC_1355.jpg",
+      "aliases": [],
+      "card_tagline": "欧阳询楷书中的紧密结构",
+      "is_highlight": true,
+      "curatorial_rank": 10,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-020"
     },
     {
       "museum_id": "beilin",
@@ -2674,7 +2757,7 @@
       "museum_name": "西安碑林博物馆",
       "id": "artifact-168",
       "title": "大秦景教流行中国碑",
-      "period": "唐建中二年（781）",
+      "period": "唐·建中二年（781）",
       "type": "禁止出国（境）展览文物",
       "material": "",
       "origin": "",
@@ -2685,7 +2768,17 @@
         "汉代"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1942.jpg"
+      "image_path": "assets/photos/web/DSC_1942.jpg",
+      "aliases": [],
+      "card_tagline": "汉文与叙利亚文共同记下一段入唐宗教史",
+      "is_highlight": true,
+      "curatorial_rank": 4,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-168"
     },
     {
       "museum_id": "beilin",
@@ -2754,8 +2847,8 @@
       "museum_id": "beilin",
       "museum_name": "西安碑林博物馆",
       "id": "artifact-173",
-      "title": "昭陵六骏",
-      "period": "唐贞观十年（636）",
+      "title": "昭陵六骏石刻",
+      "period": "唐·贞观年间",
       "type": "禁止出国（境）展览文物",
       "material": "",
       "origin": "",
@@ -2763,7 +2856,17 @@
         "浮雕"
       ],
       "site_path": "modules/beilin/index.html",
-      "image_path": "assets/photos/web/DSC_1970.jpg"
+      "image_path": "assets/photos/web/DSC_1970.jpg",
+      "aliases": [],
+      "card_tagline": "六匹战马，四件原刻与两件复制品",
+      "is_highlight": true,
+      "curatorial_rank": 5,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:artifact-173"
     },
     {
       "museum_id": "beilin",
@@ -2977,7 +3080,7 @@
       "museum_name": "陕西历史博物馆·秦汉馆",
       "id": "du-tiger-tally",
       "title": "杜虎符",
-      "period": "战国晚期",
+      "period": "战国·秦",
       "type": "制度",
       "material": "",
       "origin": "",
@@ -2988,7 +3091,20 @@
         "铭文"
       ],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "modules/qinhan/assets/processed/crop/du-tiger-tally.webp"
+      "image_path": "modules/qinhan/assets/processed/crop/du-tiger-tally.webp",
+      "aliases": [
+        "错金杜虎符",
+        "杜虎符（错金）"
+      ],
+      "card_tagline": "调兵之前，要让两半虎符合在一起",
+      "is_highlight": true,
+      "curatorial_rank": 1,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:du-tiger-tally"
     },
     {
       "museum_id": "qinhan",
@@ -3006,7 +3122,20 @@
         "陪葬"
       ],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "modules/qinhan/assets/processed/crop/stone-armor.webp"
+      "image_path": "modules/qinhan/assets/processed/crop/stone-armor.webp",
+      "aliases": [
+        "石铠甲及石胄",
+        "Stone armor and corslet"
+      ],
+      "card_tagline": "用石片编成的甲，不是实战时穿的铁甲",
+      "is_highlight": true,
+      "curatorial_rank": 11,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:stone-armor"
     },
     {
       "museum_id": "qinhan",
@@ -3462,7 +3591,20 @@
         "汉代"
       ],
       "site_path": "modules/qinhan/index.html",
-      "image_path": "modules/qinhan/assets/processed/crop/queen-seal.webp"
+      "image_path": "modules/qinhan/assets/processed/crop/queen-seal.webp",
+      "aliases": [
+        "汉“皇后之玺”玉印",
+        "皇后玉玺"
+      ],
+      "card_tagline": "身份写在印面上，主人姓名却没有写出",
+      "is_highlight": true,
+      "curatorial_rank": 2,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:queen-seal"
     },
     {
       "museum_id": "qinhan",
@@ -4103,7 +4245,7 @@
       "museum_name": "陕西考古博物馆",
       "id": "artifact-036",
       "title": "八曲葵花形螺钿铜镜",
-      "period": "唐开元二十四年（736）",
+      "period": "唐",
       "type": "铜器",
       "material": "铜、漆、贝",
       "origin": "2001年西安理工大学曲江校区李墓",
@@ -4113,7 +4255,20 @@
         "唐代"
       ],
       "site_path": "modules/shaanxi-archaeology-museum/index.html",
-      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2737.jpg"
+      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2737.jpg",
+      "aliases": [
+        "八曲葵花形螺钿铜镜",
+        "李倕墓八曲镜"
+      ],
+      "card_tagline": "贝片镶在镜背，组合成花鸟图案",
+      "is_highlight": true,
+      "curatorial_rank": 7,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:artifact-036"
     },
     {
       "museum_id": "shaanxi-archaeology",
@@ -4414,8 +4569,8 @@
       "museum_id": "shaanxi-archaeology",
       "museum_name": "陕西考古博物馆",
       "id": "artifact-055",
-      "title": "贺家铜轮牙马车",
-      "period": "",
+      "title": "贺家铜轮牙马车遗迹",
+      "period": "西周",
       "type": "遗址与车马器",
       "material": "铜、木",
       "origin": "",
@@ -4424,7 +4579,20 @@
         "遗址与车马器"
       ],
       "site_path": "modules/shaanxi-archaeology-museum/index.html",
-      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2806.jpg"
+      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2806.jpg",
+      "aliases": [
+        "贺家铜轮牙马车",
+        "贺家铜轮牙马车遗迹"
+      ],
+      "card_tagline": "木头消失后，车的结构仍能从遗迹中辨认",
+      "is_highlight": true,
+      "curatorial_rank": 14,
+      "content_review": "editorial_accepted",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:artifact-055"
     },
     {
       "museum_id": "shaanxi-archaeology",
@@ -4784,7 +4952,7 @@
       "museum_name": "陕西考古博物馆",
       "id": "artifact-077",
       "title": "浮雕蛙纹陶釜",
-      "period": "仰韶中期（距今5700-5000年）",
+      "period": "新石器时代·仰韶文化",
       "type": "陶器",
       "material": "陶",
       "origin": "2009年西安高陵区杨官寨遗址北区环壕H900",
@@ -4793,7 +4961,19 @@
         "陶器"
       ],
       "site_path": "modules/shaanxi-archaeology-museum/index.html",
-      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2894.jpg"
+      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2894.jpg",
+      "aliases": [
+        "浮雕蛙纹陶釜"
+      ],
+      "card_tagline": "蛙形装饰，附在炊器的表面",
+      "is_highlight": true,
+      "curatorial_rank": 12,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:artifact-077"
     },
     {
       "museum_id": "shaanxi-archaeology",
@@ -4848,7 +5028,7 @@
       "museum_name": "陕西考古博物馆",
       "id": "artifact-081",
       "title": "镂空人面覆盆形器",
-      "period": "仰韶中期（距今5700-5000年）",
+      "period": "新石器时代·仰韶文化",
       "type": "陶器",
       "material": "陶",
       "origin": "",
@@ -4857,7 +5037,19 @@
         "陶器"
       ],
       "site_path": "modules/shaanxi-archaeology-museum/index.html",
-      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2905.jpg"
+      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2905.jpg",
+      "aliases": [
+        "镂空人面覆盆形器"
+      ],
+      "card_tagline": "眼和嘴镂空，鼻子却凸出器面",
+      "is_highlight": true,
+      "curatorial_rank": 4,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:artifact-081"
     },
     {
       "museum_id": "shaanxi-archaeology",
@@ -4879,8 +5071,8 @@
       "museum_id": "shaanxi-archaeology",
       "museum_name": "陕西考古博物馆",
       "id": "artifact-083",
-      "title": "神面立柱石雕",
-      "period": "龙山晚期至夏代早期（距今4300－3800年）",
+      "title": "石峁神面立柱形石雕",
+      "period": "新石器时代晚期",
       "type": "石雕",
       "material": "石",
       "origin": "",
@@ -4889,7 +5081,20 @@
         "石雕"
       ],
       "site_path": "modules/shaanxi-archaeology-museum/index.html",
-      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2912.jpg"
+      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2912.jpg",
+      "aliases": [
+        "神面立柱石雕",
+        "石峁神面立柱形石雕"
+      ],
+      "card_tagline": "石柱上的面部，不宜随意安上神的名字",
+      "is_highlight": true,
+      "curatorial_rank": 5,
+      "content_review": "editorial_accepted",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:artifact-083"
     },
     {
       "museum_id": "shaanxi-archaeology",
@@ -5295,8 +5500,8 @@
       "museum_id": "shaanxi-archaeology",
       "museum_name": "陕西考古博物馆",
       "id": "artifact-108",
-      "title": "芮公鼎",
-      "period": "春秋（公元前770-前476年）",
+      "title": "芮公鼎（刘家洼出土）",
+      "period": "春秋",
       "type": "青铜礼器",
       "material": "铜",
       "origin": "2017年澄城刘家洼遗址东1区M3",
@@ -5306,7 +5511,20 @@
         "青铜器"
       ],
       "site_path": "modules/shaanxi-archaeology-museum/index.html",
-      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2997.jpg"
+      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2997.jpg",
+      "aliases": [
+        "芮公鼎",
+        "刘家洼芮公鼎"
+      ],
+      "card_tagline": "“芮公”铭文，把青铜鼎与一个诸侯国联系起来",
+      "is_highlight": true,
+      "curatorial_rank": 9,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_candidate_needs_independent_verification",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "verified_object_and_label",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:artifact-108"
     },
     {
       "museum_id": "shaanxi-archaeology",
@@ -6154,7 +6372,20 @@
         "唐代"
       ],
       "site_path": "modules/shaanxi-archaeology-museum/index.html",
-      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3159.jpg"
+      "image_path": "modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3159.jpg",
+      "aliases": [
+        "李倕墓志",
+        "李倕墓志铭"
+      ],
+      "card_tagline": "冠饰的主人，为什么能够知道姓名",
+      "is_highlight": true,
+      "curatorial_rank": 15,
+      "content_review": "editorial_accepted",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:artifact-159"
     },
     {
       "museum_id": "shaanxi-archaeology",
@@ -6762,7 +6993,20 @@
         "青铜器"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": "modules/baoji/assets/photos/web/DSC_3333.jpg"
+      "image_path": "modules/baoji/assets/photos/web/DSC_3333.jpg",
+      "aliases": [
+        "四十二年逨鼎",
+        "四十二年逨鼎（逨器群）"
+      ],
+      "card_tagline": "把册命、功劳与赏赐写进鼎内",
+      "is_highlight": true,
+      "curatorial_rank": 8,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确绑定到 photo-group-3333；没有将同窖藏其他逨鼎合并。",
+      "object_identity": "看过 DSC_3333 对象图；立耳、深腹、三足鼎形清楚，未见原件/复制品标识。",
+      "photo_match": "对象图已查看；无可视标签图（isLabel=0），OCR 显示四十二年逨鼎。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:photo-group-3333"
     },
     {
       "museum_id": "baoji",
@@ -6947,7 +7191,7 @@
       "museum_name": "中国青铜器博物院",
       "id": "photo-group-3390",
       "title": "单五父壶",
-      "period": "",
+      "period": "西周晚期",
       "type": "礼器与容器",
       "material": "",
       "origin": "",
@@ -6956,7 +7200,20 @@
         "ritual"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": "modules/baoji/assets/photos/web/DSC_3391.jpg"
+      "image_path": "modules/baoji/assets/photos/web/DSC_3391.jpg",
+      "aliases": [
+        "单五父壶",
+        "单五父方壶（不得自动互换）"
+      ],
+      "card_tagline": "同出成对青铜壶中的一件",
+      "is_highlight": true,
+      "curatorial_rank": 11,
+      "content_review": "editorial_accepted",
+      "record_binding": "仅按当前 photo-index 标题找到 photo-group-3390；不把相邻杨家村器群或其他方壶记录替代本件。",
+      "object_identity": "看过 DSC_3391 对象图；只能确认一件青铜壶的局部/侧面，无法据此核定单五父壶个体。",
+      "photo_match": "对象图已查看但角度/信息不足；没有标签图或 OCR。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:photo-group-3390"
     },
     {
       "museum_id": "baoji",
@@ -7039,7 +7296,20 @@
         "青铜器"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": "modules/baoji/assets/photos/web/DSC_3415.jpg"
+      "image_path": "modules/baoji/assets/photos/web/DSC_3415.jpg",
+      "aliases": [
+        "四十三年逨鼎",
+        "四十三年逨鼎（器群入口）"
+      ],
+      "card_tagline": "任官时的训诫，不只是一个年份",
+      "is_highlight": true,
+      "curatorial_rank": 9,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确绑定到 photo-group-3415；仅确认此照片组，不把器群所有同名鼎当作一件。",
+      "object_identity": "看过 DSC_3415 对象图；鼎形与同器群相符。未见原件/复制品标识。",
+      "photo_match": "对象图已查看；无可视标签图（isLabel=0），OCR 标题为四十三年逨鼎。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:photo-group-3415"
     },
     {
       "museum_id": "baoji",
@@ -7370,7 +7640,20 @@
         "青铜器"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": "modules/baoji/assets/photos/web/DSC_3520.jpg"
+      "image_path": "modules/baoji/assets/photos/web/DSC_3520.jpg",
+      "aliases": [
+        "刖人守门方鼎",
+        "刖人奴隶守门鼎"
+      ],
+      "card_tagline": "上层盛食物，下层设炭火与小门",
+      "is_highlight": true,
+      "curatorial_rank": 7,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确绑定到 photo-group-3520；没有套用山西刖人守囿车或其他器物。",
+      "object_identity": "看过 DSC_3520 对象图；方鼎腹下小门与人物形象可见，器物形制支持标题。未见原件/复制品标识。",
+      "photo_match": "对象图已查看；没有可视标签图（isLabel=0），仅 OCR。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:photo-group-3520"
     },
     {
       "museum_id": "baoji",
@@ -8348,7 +8631,19 @@
         "青铜器"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": "modules/baoji/assets/photos/web/DSC_3740.jpg"
+      "image_path": "modules/baoji/assets/photos/web/DSC_3740.jpg",
+      "aliases": [
+        "逨盉"
+      ],
+      "card_tagline": "凤鸟盖、虎形连接件与龙形构件组成的倾注器",
+      "is_highlight": true,
+      "curatorial_rank": 5,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确绑定到 photo-group-3740；没有把相邻逨器误并为同一件。",
+      "object_identity": "看过 DSC_3740/3741/3742/3743 对象图；凤鸟形盖、长流、动物连接件与逨盉对象形态相符。未见可读目标展签或原件/复制品标识。",
+      "photo_match": "目标组对象图已查看；无可视标签图（四张照片均 isLabel=false），只有 OCR。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:photo-group-3740"
     },
     {
       "museum_id": "baoji",
@@ -8448,7 +8743,19 @@
         "青铜器"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": "modules/baoji/assets/photos/web/DSC_3761.jpg"
+      "image_path": "modules/baoji/assets/photos/web/DSC_3761.jpg",
+      "aliases": [
+        "象尊"
+      ],
+      "card_tagline": "象鼻既是造型，也是倾注的出口",
+      "is_highlight": true,
+      "curatorial_rank": 13,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确绑定到 photo-group-3761；没有把其他动物形尊并入。",
+      "object_identity": "看过 DSC_3761 对象图；象形器物、长鼻与背部开口清晰，支持象尊标题。未见原件/复制品标识。",
+      "photo_match": "对象图已查看；无可视标签图（isLabel=0），仅 OCR。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:photo-group-3761"
     },
     {
       "museum_id": "baoji",
@@ -8911,7 +9218,7 @@
       "museum_name": "中国青铜器博物院",
       "id": "he-zun",
       "title": "何尊",
-      "period": "西周早期 · 成王五年",
+      "period": "西周早期",
       "type": "青铜尊 · 宅兹中国",
       "material": "",
       "origin": "1963年陕西宝鸡陈仓区贾村出土",
@@ -8921,7 +9228,19 @@
         "青铜器"
       ],
       "site_path": "modules/baoji/index.html",
-      "image_path": "modules/baoji/assets/photos/web/DSC_3465.jpg"
+      "image_path": "modules/baoji/assets/photos/web/DSC_3465.jpg",
+      "aliases": [
+        "何尊"
+      ],
+      "card_tagline": "“宅兹中国”四字，在器底铭文中",
+      "is_highlight": true,
+      "curatorial_rank": 1,
+      "content_review": "editorial_accepted",
+      "record_binding": "对象照片文件名与 photo-index 的何尊组精确绑定；当前 JSON/JS 没有 source-linked labelPhoto/labelPhotos，且组内照片均 isLabel=false，故尚未完成用户要求的展签绑定。",
+      "object_identity": "看过 DSC_3465/3466/3467 对象图；器形为带扉棱、兽面纹的青铜尊。未见原件/复制品标识，不能据无标识推断为原件。",
+      "photo_match": "目标组对象图已查看；没有可读目标展签图（组内所有照片 isLabel=false）。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:photo-group-3465"
     },
     {
       "museum_id": "baoji",
@@ -9027,7 +9346,7 @@
       "museum_name": "西安博物院",
       "id": "xian-005-4867",
       "title": "鎏金羊灯",
-      "period": "汉代",
+      "period": "西汉",
       "type": "生活器用",
       "material": "铜",
       "origin": "西安博物院藏",
@@ -9035,7 +9354,19 @@
         "汉代"
       ],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-4867.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-4867.webp",
+      "aliases": [
+        "鎏金羊灯"
+      ],
+      "card_tagline": "羊背打开后，可以成为灯盘",
+      "is_highlight": true,
+      "curatorial_rank": 7,
+      "content_review": "editorial_accepted",
+      "record_binding": "定位到 xian-005-4867；未把邻近展柜标签关联到羊灯。",
+      "object_identity": "看过 focus-4867；鎏金羊形灯对象清楚。包内要求开合结构与原件/复制品身份核对，当前没有本件展签。",
+      "photo_match": "对象图已查看；labelNumbers=[]，无标签路径。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-005-4867"
     },
     {
       "museum_id": "xian-museum",
@@ -9369,13 +9700,25 @@
       "museum_name": "西安博物院",
       "id": "xian-028-4955",
       "title": "大业元年魏天得造佛像",
-      "period": "隋大业元年",
+      "period": "隋·大业元年（605）",
       "type": "佛教造像",
       "material": "石",
       "origin": "西安市灞桥区出土",
       "keywords": [],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-4955.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-4955.webp",
+      "aliases": [
+        "大业元年魏天得造佛像"
+      ],
+      "card_tagline": "造像题记，留下供养人的姓名与年份",
+      "is_highlight": true,
+      "curatorial_rank": 13,
+      "content_review": "editorial_accepted",
+      "record_binding": "定位到 xian-028-4955，但未完成标签实图和题记身份验证。",
+      "object_identity": "看过石佛像对象图；未见复制品标识。不能把题记中的魏天得或发愿文当作已读事实。",
+      "photo_match": "对象图已查看；focus-4956.webp 不存在。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-028-4955"
     },
     {
       "museum_id": "xian-museum",
@@ -9421,7 +9764,7 @@
       "museum_name": "西安博物院",
       "id": "xian-032-4974",
       "title": "彩绘百枝陶灯",
-      "period": "汉代",
+      "period": "汉",
       "type": "陶器",
       "material": "陶",
       "origin": "西安博物院藏",
@@ -9429,7 +9772,19 @@
         "汉代"
       ],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-4974.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-4974.webp",
+      "aliases": [
+        "彩绘百枝陶灯"
+      ],
+      "card_tagline": "灯盏向外分枝，组成树状轮廓",
+      "is_highlight": true,
+      "curatorial_rank": 10,
+      "content_review": "editorial_accepted",
+      "record_binding": "定位到 xian-032-4974；未把部分标签文字当作可核展签。",
+      "object_identity": "看过多枝陶灯对象图，形制可见；实际枝数、修复部件和原件身份未由完整标签确认。",
+      "photo_match": "对象图已查看；label candidate focus-4976.webp 存在但不可读。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-032-4974"
     },
     {
       "museum_id": "xian-museum",
@@ -9464,7 +9819,7 @@
       "museum_name": "西安博物院",
       "id": "xian-035-4989",
       "title": "八瓣仕女狩猎纹银杯",
-      "period": "唐代",
+      "period": "唐",
       "type": "金银器",
       "material": "鎏金银",
       "origin": "西安博物院藏",
@@ -9472,7 +9827,19 @@
         "唐代"
       ],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-4989.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-4989.webp",
+      "aliases": [
+        "八瓣仕女狩猎纹银杯"
+      ],
+      "card_tagline": "杯口、杯腹与图案一起分成八瓣",
+      "is_highlight": true,
+      "curatorial_rank": 8,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-035-4989"
     },
     {
       "museum_id": "xian-museum",
@@ -9504,8 +9871,8 @@
       "museum_id": "xian-museum",
       "museum_name": "西安博物院",
       "id": "xian-038-4997",
-      "title": "白釉“盈”字款葵口盘（瓷）",
-      "period": "唐代",
+      "title": "白釉“盈”字款葵口盘",
+      "period": "唐",
       "type": "瓷器",
       "material": "瓷",
       "origin": "西安市雁塔区出土",
@@ -9513,7 +9880,20 @@
         "唐代"
       ],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-4997.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-4997.webp",
+      "aliases": [
+        "白釉“盈”字款葵口盘",
+        "白釉“盈”字款葵口盘（瓷）"
+      ],
+      "card_tagline": "一个“盈”字，藏在白瓷盘的题款中",
+      "is_highlight": true,
+      "curatorial_rank": 11,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-038-4997"
     },
     {
       "museum_id": "xian-museum",
@@ -9660,7 +10040,19 @@
         "青铜器"
       ],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-5024.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-5024.webp",
+      "aliases": [
+        "永盂"
+      ],
+      "card_tagline": "一件盛器的铭文，记录土地的授予",
+      "is_highlight": true,
+      "curatorial_rank": 5,
+      "content_review": "editorial_accepted",
+      "record_binding": "定位到 xian-048-5024；不能仅因 5029 编号存在就视为标签已核。",
+      "object_identity": "看过 focus-5024；大型青铜盂可见。focus-5029 只见器物下部/被裁切的标签区域，无法核读铭文或展签字段。",
+      "photo_match": "对象图已查看；focus-5029 存在但不可读，不能作为合格标签证据。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-048-5024"
     },
     {
       "museum_id": "xian-museum",
@@ -9742,7 +10134,7 @@
       "museum_name": "西安博物院",
       "id": "xian-054-5051",
       "title": "鎏金舍利银椁",
-      "period": "唐代",
+      "period": "唐",
       "type": "金银器",
       "material": "银",
       "origin": "西安市新城区出土",
@@ -9750,7 +10142,19 @@
         "唐代"
       ],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-5051.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-5051.webp",
+      "aliases": [
+        "鎏金舍利银椁"
+      ],
+      "card_tagline": "银做成椁的形状，用于舍利供养",
+      "is_highlight": true,
+      "curatorial_rank": 12,
+      "content_review": "editorial_accepted",
+      "record_binding": "当前 record xian-054-5051 的标题/对象/标签绑定证据充分，但按用户的原件/复制品身份门槛仍为 pending。",
+      "object_identity": "对象与标签匹配，未见复制品标识；不能据器名或外形推定实际舍利内容物，也不能套用法门寺八重宝函。",
+      "photo_match": "对象和标签均已查看，标题/时代/出土区可读。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-054-5051"
     },
     {
       "museum_id": "xian-museum",
@@ -9785,7 +10189,7 @@
       "museum_name": "西安博物院",
       "id": "xian-057-5058",
       "title": "三彩腾空马",
-      "period": "唐代",
+      "period": "唐",
       "type": "陶俑与雕塑",
       "material": "三彩陶",
       "origin": "1966年西安市莲湖区西安制药厂唐墓出土",
@@ -9793,7 +10197,20 @@
         "唐代"
       ],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-5058.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-5058.webp",
+      "aliases": [
+        "三彩腾空马",
+        "唐三彩腾空马"
+      ],
+      "card_tagline": "马的四蹄展开，骑手仍坐得稳",
+      "is_highlight": true,
+      "curatorial_rank": 1,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-057-5058"
     },
     {
       "museum_id": "xian-museum",
@@ -9823,7 +10240,20 @@
         "music"
       ],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-5073.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-5073.webp",
+      "aliases": [
+        "史君墓石椁",
+        "史君墓石椁（不得与安伽墓石榻互换）"
+      ],
+      "card_tagline": "房屋形石椁上，汉文与粟特文并存",
+      "is_highlight": true,
+      "curatorial_rank": 2,
+      "content_review": "editorial_accepted",
+      "record_binding": "当前记录可由标题和对象图定位到 xian-059-5073，但未完成用户要求的可视展签确认。",
+      "object_identity": "看过石椁对象图；未见复制品标识。不能与陕历博安伽墓围屏石榻混用。",
+      "photo_match": "对象图已查看；label candidate focus-5077.webp 不存在。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-059-5073"
     },
     {
       "museum_id": "xian-museum",
@@ -9856,13 +10286,26 @@
       "museum_name": "西安博物院",
       "id": "xian-062-5087",
       "title": "磁州窑“风吹十里透瓶香”白地黑花梅瓶",
-      "period": "元代",
+      "period": "元",
       "type": "瓷器",
       "material": "瓷",
       "origin": "西安市雁塔区出土",
       "keywords": [],
       "site_path": "modules/xian-museum/index.html",
-      "image_path": "modules/xian-museum/assets/photos/focus-5087.webp"
+      "image_path": "modules/xian-museum/assets/photos/focus-5087.webp",
+      "aliases": [
+        "磁州窑“风吹十里透瓶香”白地黑花梅瓶",
+        "磁州窑白地黑花梅瓶"
+      ],
+      "card_tagline": "一句题诗，把瓷瓶与贮酒联系起来",
+      "is_highlight": true,
+      "curatorial_rank": 15,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-062-5087"
     },
     {
       "museum_id": "xian-museum",
@@ -10041,14 +10484,28 @@
       "museum_id": "shaanxi-history",
       "museum_name": "陕西历史博物馆",
       "id": "field-3925",
-      "title": "人面鱼纹盆",
-      "period": "新石器时代",
+      "title": "人面鱼纹盆（姜寨遗址）",
+      "period": "新石器时代·仰韶文化",
       "type": "陶瓷器",
       "material": "陶器",
       "origin": "西安市临潼区姜寨遗址出土",
       "keywords": [],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-3921.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-3921.webp",
+      "aliases": [
+        "人面鱼纹盆",
+        "人面鱼纹盆（姜寨遗址）",
+        "Pottery Basin with Human Face and Fish Patterns"
+      ],
+      "card_tagline": "先分清是哪一件，再看人面与鱼纹",
+      "is_highlight": true,
+      "curatorial_rank": 14,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-3925"
     },
     {
       "museum_id": "shaanxi-history",
@@ -10471,7 +10928,7 @@
       "museum_name": "陕西历史博物馆",
       "id": "field-4039",
       "title": "多友鼎",
-      "period": "西周",
+      "period": "西周晚期",
       "type": "青铜器",
       "material": "铜器",
       "origin": "西安市长安区斗门镇下泉村出土",
@@ -10479,7 +10936,20 @@
         "青铜器"
       ],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-4036.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-4036.webp",
+      "aliases": [
+        "多友鼎",
+        "General Duo You bronze ding"
+      ],
+      "card_tagline": "战争经过，不只留在后世史书里",
+      "is_highlight": true,
+      "curatorial_rank": 5,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-4039"
     },
     {
       "museum_id": "shaanxi-history",
@@ -11572,7 +12042,21 @@
       "origin": "安康市旬阳县城东门外出土",
       "keywords": [],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-4273.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-4273.webp",
+      "aliases": [
+        "独孤信多面体煤精组印",
+        "独孤信印",
+        "Dugu Xin jet seal"
+      ],
+      "card_tagline": "一枚多面印，分别处理不同事务",
+      "is_highlight": true,
+      "curatorial_rank": 6,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-4276"
     },
     {
       "museum_id": "shaanxi-history",
@@ -12122,7 +12606,20 @@
         "唐代"
       ],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-4391.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-4391.webp",
+      "aliases": [
+        "鸳鸯莲瓣纹金碗",
+        "Gold Bowl with Mandarin Duck and Lotus Pattern"
+      ],
+      "card_tagline": "莲瓣分区里，还藏着不同动物",
+      "is_highlight": true,
+      "curatorial_rank": 7,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-4394"
     },
     {
       "museum_id": "shaanxi-history",
@@ -12818,7 +13315,7 @@
       "museum_id": "shaanxi-history",
       "museum_name": "陕西历史博物馆",
       "id": "field-4523",
-      "title": "耀州窑青釉刻花提梁倒流壶",
+      "title": "青釉提梁倒注壶",
       "period": "五代",
       "type": "陶瓷器",
       "material": "陶器",
@@ -12827,7 +13324,22 @@
         "forbidden"
       ],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-4518.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-4518.webp",
+      "aliases": [
+        "耀州窑青釉刻花提梁倒流壶",
+        "青釉提梁倒注壶",
+        "青釉提梁倒流壶",
+        "Celadon Pot with a Loop Handle"
+      ],
+      "card_tagline": "壶盖打不开，液体从底部注入",
+      "is_highlight": true,
+      "curatorial_rank": 9,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-4523"
     },
     {
       "museum_id": "shaanxi-history",
@@ -13230,7 +13742,7 @@
       "museum_id": "shaanxi-history",
       "museum_name": "陕西历史博物馆",
       "id": "field-4618",
-      "title": "鎏金舞马衔杯纹银壶",
+      "title": "鎏金舞马衔杯纹皮囊式银壶",
       "period": "唐",
       "type": "金银器",
       "material": "金银器",
@@ -13241,7 +13753,21 @@
         "唐代"
       ],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-4613.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-4613.webp",
+      "aliases": [
+        "鎏金舞马衔杯纹银壶",
+        "鎏金舞马衔杯纹皮囊式银壶",
+        "Gilt Silver Jar with Dancing Horse Holding a Cup"
+      ],
+      "card_tagline": "银壶做成皮囊形，壶身装饰衔杯舞马",
+      "is_highlight": true,
+      "curatorial_rank": 2,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-4618"
     },
     {
       "museum_id": "shaanxi-history",
@@ -13271,7 +13797,20 @@
         "唐代"
       ],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-4624.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-4624.webp",
+      "aliases": [
+        "鎏金鹦鹉纹提梁银罐",
+        "Gilt Parrot Silver Jar with Loop Handle"
+      ],
+      "card_tagline": "鹦鹉和折枝花，装饰一件带提梁的银罐",
+      "is_highlight": true,
+      "curatorial_rank": 8,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-4626"
     },
     {
       "museum_id": "shaanxi-history",
@@ -13378,7 +13917,21 @@
         "唐代"
       ],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-4675.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-4675.webp",
+      "aliases": [
+        "镶金兽首形玛瑙杯",
+        "唐镶金兽首形玛瑙杯",
+        "Agate Rhyton Inlaid with Gold Plug"
+      ],
+      "card_tagline": "金塞下面，是一个真正能出酒的孔",
+      "is_highlight": true,
+      "curatorial_rank": 1,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-4681"
     },
     {
       "museum_id": "shaanxi-history",
@@ -13485,7 +14038,20 @@
         "唐代"
       ],
       "site_path": "modules/shaanxi-history/index.html",
-      "image_path": "modules/shaanxi-history/assets/photos/focus-4697.webp"
+      "image_path": "modules/shaanxi-history/assets/photos/focus-4697.webp",
+      "aliases": [
+        "葡萄花鸟纹银香囊",
+        "唐葡萄花鸟纹银香囊"
+      ],
+      "card_tagline": "外壳转动，里面的香盂仍可保持平衡",
+      "is_highlight": true,
+      "curatorial_rank": 3,
+      "content_review": "passed",
+      "record_binding": "verified",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:field-4698"
     },
     {
       "museum_id": "shaanxi-history",
@@ -14642,7 +15208,20 @@
         "商丘博物馆"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5152.webp"
+      "image_path": "assets/photos/thumbs/DSC_5152.webp",
+      "aliases": [
+        "石镞范",
+        "Stone arrowhead mold"
+      ],
+      "card_tagline": "箭头的形状，先被做进铸范里",
+      "is_highlight": true,
+      "curatorial_rank": 12,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:stone-tool"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -14740,7 +15319,21 @@
         "馆藏精选"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5171.webp"
+      "image_path": "assets/photos/thumbs/DSC_5171.webp",
+      "aliases": [
+        "双柱菱形纹铜爵",
+        "青铜爵",
+        "Bronze Jue"
+      ],
+      "card_tagline": "流、尾与三足，组成有方向的器形",
+      "is_highlight": true,
+      "curatorial_rank": 10,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:bronze-jue"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -14789,7 +15382,22 @@
         "馆藏精选"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5178.webp"
+      "image_path": "assets/photos/thumbs/DSC_5178.webp",
+      "aliases": [
+        "卜骨与卜甲",
+        "卜骨",
+        "卜甲",
+        "Oracle bones and shells"
+      ],
+      "card_tagline": "钻凿、灼痕和裂纹，都是可以观察的痕迹",
+      "is_highlight": true,
+      "curatorial_rank": 11,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:oracle-bones"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -14870,7 +15478,21 @@
         "馆藏精选"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5200.webp"
+      "image_path": "assets/photos/thumbs/DSC_5200.webp",
+      "aliases": [
+        "龙首柄铜鐎斗",
+        "汉代龙首柄鐎斗",
+        "Bronze jiaodou with dragon-headed handle"
+      ],
+      "card_tagline": "长柄末端做成龙首的炊器",
+      "is_highlight": true,
+      "curatorial_rank": 8,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:dragon-handled-dipper"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -14950,7 +15572,21 @@
         "商丘博物馆"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5217.webp"
+      "image_path": "assets/photos/thumbs/DSC_5217.webp",
+      "aliases": [
+        "青铜簠",
+        "青铜簠（fǔ）",
+        "Bronze Fu"
+      ],
+      "card_tagline": "盖与器身相合，形成方形盛食器",
+      "is_highlight": true,
+      "curatorial_rank": 13,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:bronze-tray-vessel"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -14983,7 +15619,20 @@
         "馆藏精选"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5224.webp"
+      "image_path": "assets/photos/thumbs/DSC_5224.webp",
+      "aliases": [
+        "云雷纹铜鼎",
+        "Bronze ding with thunder patterns"
+      ],
+      "card_tagline": "上腹云雷纹，下腹弦纹",
+      "is_highlight": true,
+      "curatorial_rank": 4,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:cloud-thunder-ding"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -15144,7 +15793,21 @@
         "馆藏精选"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5262.webp"
+      "image_path": "assets/photos/thumbs/DSC_5262.webp",
+      "aliases": [
+        "原始青瓷铺首衔环壶",
+        "汉代原始青瓷壶",
+        "Proto-celadon pot with animal mask ring handles"
+      ],
+      "card_tagline": "陶瓷壶上，保留了金属器常见的附件形式",
+      "is_highlight": true,
+      "curatorial_rank": 9,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:proto-celadon-hu"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -15240,7 +15903,21 @@
         "商丘博物馆"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5285.webp"
+      "image_path": "assets/photos/thumbs/DSC_5285.webp",
+      "aliases": [
+        "带盖石砚",
+        "东汉带盖石砚",
+        "Lidded stone ink slab"
+      ],
+      "card_tagline": "研墨的器面与保护它的盖，保存了书写的一环",
+      "is_highlight": true,
+      "curatorial_rank": 14,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:stone-inkstone"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -15339,7 +16016,21 @@
         "永城市黄土山一号汉代石室墓出土"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5324.webp"
+      "image_path": "assets/photos/thumbs/DSC_5324.webp",
+      "aliases": [
+        "金缕玉衣",
+        "汉代金缕玉衣",
+        "Jade burial suit"
+      ],
+      "card_tagline": "玉片经过编联，重新组成殓葬衣具",
+      "is_highlight": true,
+      "curatorial_rank": 1,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:jade-suit"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -15661,7 +16352,21 @@
         "商丘博物馆"
       ],
       "site_path": "modules/shangqiu-museum/index.html",
-      "image_path": "assets/photos/thumbs/DSC_5406.webp"
+      "image_path": "assets/photos/thumbs/DSC_5406.webp",
+      "aliases": [
+        "白釉褐彩“风花雪月”四系瓷瓶",
+        "白釉褐彩‘风花雪月’四系瓷瓶",
+        "White-glazed porcelain four-loop vase"
+      ],
+      "card_tagline": "四个字和四个系耳，都值得单独查看",
+      "is_highlight": true,
+      "curatorial_rank": 15,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:inscribed-four-loop-jar"
     },
     {
       "museum_id": "shangqiu-museum",
@@ -15938,6 +16643,1284 @@
       ],
       "site_path": "modules/shangqiu-museum/index.html",
       "image_path": "assets/photos/thumbs/DSC_5477.webp"
+    },
+    {
+      "museum_id": "beilin",
+      "museum_name": "西安碑林博物馆",
+      "id": "beilin-highlight-01",
+      "title": "石台孝经",
+      "period": "唐·天宝四年（745）",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/beilin/index.html",
+      "image_path": "assets/photos/web/DSC_1803.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [],
+      "card_tagline": "玄宗注释、书写的《孝经》刻在石台上",
+      "is_highlight": true,
+      "curatorial_rank": 1,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:beilin-highlight-01"
+    },
+    {
+      "museum_id": "beilin",
+      "museum_name": "西安碑林博物馆",
+      "id": "beilin-highlight-02",
+      "title": "开成石经",
+      "period": "唐·开成二年（837）",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/beilin/index.html",
+      "image_path": "assets/photos/web/DSC_1593.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [],
+      "card_tagline": "把十二部儒家经典刻成可校读的文本",
+      "is_highlight": true,
+      "curatorial_rank": 2,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:beilin-highlight-02"
+    },
+    {
+      "museum_id": "beilin",
+      "museum_name": "西安碑林博物馆",
+      "id": "beilin-highlight-12",
+      "title": "迴元观钟楼铭",
+      "period": "唐·开成元年（836）",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/beilin/index.html",
+      "image_path": "shared/assets/highlights/beilin-highlight-12.png",
+      "record_kind": "editorial_only",
+      "aliases": [],
+      "card_tagline": "柳公权的字刻在道观钟楼铭上",
+      "is_highlight": true,
+      "curatorial_rank": 12,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:beilin-highlight-12"
+    },
+    {
+      "museum_id": "beilin",
+      "museum_name": "西安碑林博物馆",
+      "id": "beilin-highlight-13",
+      "title": "李寿石椁",
+      "period": "唐·贞观五年（631）墓葬",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/beilin/index.html",
+      "image_path": "shared/assets/highlights/beilin-highlight-13.png",
+      "record_kind": "editorial_only",
+      "aliases": [],
+      "card_tagline": "石椁内壁刻着乐舞、田猎与天象",
+      "is_highlight": true,
+      "curatorial_rank": 13,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:beilin-highlight-13"
+    },
+    {
+      "museum_id": "beilin",
+      "museum_name": "西安碑林博物馆",
+      "id": "beilin-highlight-14",
+      "title": "道因法师碑",
+      "period": "唐·龙朔三年（663）",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/beilin/index.html",
+      "image_path": "assets/photos/web/DSC_1961.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [],
+      "card_tagline": "欧阳通书写的佛教人物碑",
+      "is_highlight": true,
+      "curatorial_rank": 14,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "beilin:beilin-highlight-14"
+    },
+    {
+      "museum_id": "baoji",
+      "museum_name": "中国青铜器博物院",
+      "id": "baoji-highlight-02",
+      "title": "逨盘",
+      "period": "西周晚期",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/baoji/index.html",
+      "image_path": "modules/baoji/assets/photos/web/DSC_3325.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "逨盘",
+        "西周逨盘",
+        "中华第一盘"
+      ],
+      "card_tagline": "一篇把家族世系与周王世系并写的铭文",
+      "is_highlight": true,
+      "curatorial_rank": 2,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确绑定到 photo-group-3325；目标组对象照片彼此一致，但 OCR 展签没有 source filename，原件/复制品身份不能归属于当前对象。",
+      "object_identity": "看过 DSC_3325/3326/3327/3329；四张图均为同一大型浅腹四兽足盘及其铭文视图，器形与逨盘相符；没有可读目标展签或可见复制品标记，OCR 标记的归属范围未解决。",
+      "photo_match": "目标组对象图已查看；没有可读目标展签图（组内所有照片 isLabel=false），只有未绑定文件名的 OCR。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:baoji-highlight-02"
+    },
+    {
+      "museum_id": "baoji",
+      "museum_name": "中国青铜器博物院",
+      "id": "baoji-highlight-03",
+      "title": "㝬簋（胡簋）",
+      "period": "西周晚期",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/baoji/index.html",
+      "image_path": "modules/baoji/assets/photos/web/DSC_3487.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "㝬簋",
+        "胡簋",
+        "害簋（旧 OCR 不采用）"
+      ],
+      "card_tagline": "周王自作的祭器，也是一次自我陈述",
+      "is_highlight": true,
+      "curatorial_rank": 3,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确找到 photo-group-3487，并与 treasures.js 的 hu-gui 名称相联；不能把它当作中国青铜器博物院原件而发布。",
+      "object_identity": "看过 DSC_3487/3490/3492/3493/3502 对象图；大型方座、双耳簋与㝬簋形制相符。未见可读目标展签或原件/复制品标记。",
+      "photo_match": "目标组对象图已查看；没有可读目标展签图（组内所有照片 isLabel=false），仅有 OCR。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:baoji-highlight-03"
+    },
+    {
+      "museum_id": "baoji",
+      "museum_name": "中国青铜器博物院",
+      "id": "baoji-highlight-04",
+      "title": "秦公镈（三件）",
+      "period": "春秋早期",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/baoji/index.html",
+      "image_path": "modules/baoji/assets/photos/web/DSC_3656.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "秦公镈（三件）",
+        "秦公镈",
+        "秦公钟（OCR/标签）"
+      ],
+      "card_tagline": "乐器上的铭文，记下秦人的先祖",
+      "is_highlight": true,
+      "curatorial_rank": 4,
+      "content_review": "editorial_accepted",
+      "record_binding": "已按标题与照片精确找到 photo-group-3656，但该组不能绑定包内‘三件’入口。",
+      "object_identity": "看过 DSC_3656/3657 对象图；为大型钟/镈类青铜乐器，器类细分不能只凭外形定案。未见可读目标展签。",
+      "photo_match": "目标组对象图已查看；无可读标签图（两张照片均 isLabel=false），OCR 与组标题发生钟/镈冲突。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:baoji-highlight-04"
+    },
+    {
+      "museum_id": "baoji",
+      "museum_name": "中国青铜器博物院",
+      "id": "baoji-highlight-06",
+      "title": "朕匜（亻朕匜）",
+      "period": "西周",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/baoji/index.html",
+      "image_path": "modules/baoji/assets/photos/web/DSC_3524.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "朕匜（亻朕匜）",
+        "（左亻右朕）匜",
+        "朕匜"
+      ],
+      "card_tagline": "一场争讼，被铸进盥洗用的水器",
+      "is_highlight": true,
+      "curatorial_rank": 6,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确绑定到 photo-group-3524；未把旧索引的‘彝’当作当前器名。",
+      "object_identity": "看过 DSC_3524/3525/3526 对象图；长流/鋬的水器形制与匜相符。没有可读目标展签确认其是否复制品。",
+      "photo_match": "目标组对象图已查看；没有可读标签图（三张照片均 isLabel=false），仅 OCR。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:baoji-highlight-06"
+    },
+    {
+      "museum_id": "baoji",
+      "museum_name": "中国青铜器博物院",
+      "id": "baoji-highlight-10",
+      "title": "秦公钟（五件）",
+      "period": "春秋早期",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/baoji/index.html",
+      "image_path": "modules/baoji/assets/photos/web/DSC_3649.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "秦公钟（五件）",
+        "秦公钟"
+      ],
+      "card_tagline": "与秦公镈同出的另一组青铜乐器",
+      "is_highlight": true,
+      "curatorial_rank": 10,
+      "content_review": "editorial_accepted",
+      "record_binding": "精确绑定到 photo-group-3649 这一组照片；暂不把它扩成五个独立对象。",
+      "object_identity": "看过 DSC_3649 对象图；可见多件悬挂钟的陈列场景，组级对象身份支持秦公钟，但未见逐件标签/原件身份。",
+      "photo_match": "对象组图已查看；无可视标签图（isLabel=0），仅 OCR。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:baoji-highlight-10"
+    },
+    {
+      "museum_id": "baoji",
+      "museum_name": "中国青铜器博物院",
+      "id": "baoji-highlight-12",
+      "title": "鲤鱼尊",
+      "period": "西周",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/baoji/index.html",
+      "image_path": "shared/assets/highlights/baoji-highlight-12.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "鲤鱼尊"
+      ],
+      "card_tagline": "鱼背开口，鱼嘴却不是出酒口",
+      "is_highlight": true,
+      "curatorial_rank": 12,
+      "content_review": "editorial_accepted",
+      "record_binding": "未形成当前记录绑定。",
+      "object_identity": "没有可查看的当前对象照片或标签图；未推断器形、时代、出土地或馆藏。",
+      "photo_match": "无当前照片路径。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:baoji-highlight-12"
+    },
+    {
+      "museum_id": "baoji",
+      "museum_name": "中国青铜器博物院",
+      "id": "baoji-highlight-14",
+      "title": "青铜母子虎",
+      "period": "西周",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/baoji/index.html",
+      "image_path": "shared/assets/highlights/baoji-highlight-14.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "青铜母子虎"
+      ],
+      "card_tagline": "一大一小两只虎，形成紧凑的造型",
+      "is_highlight": true,
+      "curatorial_rank": 14,
+      "content_review": "editorial_accepted",
+      "record_binding": "未形成当前记录绑定。",
+      "object_identity": "没有当前对象照片或标签图；不编写救幼、母爱、亲吻等故事。",
+      "photo_match": "无当前照片路径。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:baoji-highlight-14"
+    },
+    {
+      "museum_id": "baoji",
+      "museum_name": "中国青铜器博物院",
+      "id": "baoji-highlight-15",
+      "title": "大鸟尊",
+      "period": "西周",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/baoji/index.html",
+      "image_path": "shared/assets/highlights/baoji-highlight-15.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "大鸟尊"
+      ],
+      "card_tagline": "先找开口，再辨认一只青铜鸟",
+      "is_highlight": true,
+      "curatorial_rank": 15,
+      "content_review": "editorial_accepted",
+      "record_binding": "未形成当前记录绑定。",
+      "object_identity": "没有当前对象照片或独立标签图；不以三足铜鸟、玉鸟等异物代替。",
+      "photo_match": "无当前照片路径。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "baoji:baoji-highlight-15"
+    },
+    {
+      "museum_id": "shaanxi-history",
+      "museum_name": "陕西历史博物馆",
+      "id": "shaanxi-history-highlight-04",
+      "title": "三彩载乐骆驼俑",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-history/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/photos/focus-4441.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "三彩载乐骆驼俑",
+        "唐三彩载乐骆驼俑",
+        "Tri-Colored Glazed Camel and Performers"
+      ],
+      "card_tagline": "骆驼背上，七位乐人围着一位舞者",
+      "is_highlight": true,
+      "curatorial_rank": 4,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:shaanxi-history-highlight-04"
+    },
+    {
+      "museum_id": "shaanxi-history",
+      "museum_name": "陕西历史博物馆",
+      "id": "shaanxi-history-highlight-10",
+      "title": "黑釉油滴碗",
+      "period": "宋",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-history/index.html",
+      "image_path": "shared/assets/highlights/shaanxi-history-highlight-10.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "黑釉油滴碗"
+      ],
+      "card_tagline": "黑釉中的银亮斑点，不是后来画上去的",
+      "is_highlight": true,
+      "curatorial_rank": 10,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:shaanxi-history-highlight-10"
+    },
+    {
+      "museum_id": "shaanxi-history",
+      "museum_name": "陕西历史博物馆",
+      "id": "shaanxi-history-highlight-11",
+      "title": "懿德太子墓阙楼图",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-history/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/supplement/quelou.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "懿德太子墓壁画·阙楼图",
+        "阙楼图"
+      ],
+      "card_tagline": "墓道上的建筑，表现的是等级与秩序",
+      "is_highlight": true,
+      "curatorial_rank": 11,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:shaanxi-history-highlight-11"
+    },
+    {
+      "museum_id": "shaanxi-history",
+      "museum_name": "陕西历史博物馆",
+      "id": "shaanxi-history-highlight-12",
+      "title": "章怀太子墓客使图",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-history/index.html",
+      "image_path": "shared/assets/highlights/shaanxi-history-highlight-12.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "章怀太子墓壁画·客使图",
+        "客使图",
+        "章怀墓客使图"
+      ],
+      "card_tagline": "不同服饰的人物，被安排在同一会见场景中",
+      "is_highlight": true,
+      "curatorial_rank": 12,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:shaanxi-history-highlight-12"
+    },
+    {
+      "museum_id": "shaanxi-history",
+      "museum_name": "陕西历史博物馆",
+      "id": "shaanxi-history-highlight-13",
+      "title": "永泰公主墓宫女图",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-history/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-history/assets/supplement/gongnv.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "永泰公主墓壁画·宫女图",
+        "宫女图",
+        "永泰墓宫女图"
+      ],
+      "card_tagline": "九位侍女的器物、衣纹与行进次序",
+      "is_highlight": true,
+      "curatorial_rank": 13,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:shaanxi-history-highlight-13"
+    },
+    {
+      "museum_id": "shaanxi-history",
+      "museum_name": "陕西历史博物馆",
+      "id": "shaanxi-history-highlight-15",
+      "title": "金筐宝钿团花纹金杯",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-history/index.html",
+      "image_path": "shared/assets/highlights/shaanxi-history-highlight-15.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "金筐宝钿团花纹金杯"
+      ],
+      "card_tagline": "金丝围出的格子，说明一种精细金工",
+      "is_highlight": true,
+      "curatorial_rank": 15,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-history:shaanxi-history-highlight-15"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-03",
+      "title": "“高奴禾石”铜权",
+      "period": "战国秦至秦代沿用",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/qin-weights.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "“高奴禾石”铜权",
+        "高奴禾石权"
+      ],
+      "card_tagline": "同一件铜权，留下不同时期的文字",
+      "is_highlight": true,
+      "curatorial_rank": 3,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_composite_display_no_isolated_target",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-03"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-04",
+      "title": "鎏金银竹节铜熏炉",
+      "period": "西汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/brick-and-bells.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "鎏金银竹节熏炉",
+        "竹节熏炉"
+      ],
+      "card_tagline": "竹节长柄，把山形炉体高高托起",
+      "is_highlight": true,
+      "curatorial_rank": 4,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_composite_display_no_isolated_target",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-04"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-05",
+      "title": "彩绘雁鱼铜灯",
+      "period": "西汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "shared/assets/highlights/qinhan-highlight-05.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "彩绘雁鱼灯",
+        "雁鱼铜灯"
+      ],
+      "card_tagline": "鱼腹容灯，雁颈导烟",
+      "is_highlight": true,
+      "curatorial_rank": 5,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-05"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-06",
+      "title": "鎏金铜蚕",
+      "period": "西汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "shared/assets/highlights/qinhan-highlight-06.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "鎏金铜蚕",
+        "石泉铜蚕"
+      ],
+      "card_tagline": "一条金色铜蚕，留下汉代对蚕的观察",
+      "is_highlight": true,
+      "curatorial_rank": 6,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-06"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-07",
+      "title": "神兽金饰",
+      "period": "战国",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/steppe-gold.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "神兽金饰",
+        "金质神兽纹饰"
+      ],
+      "card_tagline": "多种动物特征，组合成一件金饰",
+      "is_highlight": true,
+      "curatorial_rank": 7,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_new_child_record",
+      "object_identity": "verified_original_object_component",
+      "photo_match": "verified_object_and_label",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-07"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-08",
+      "title": "漆猪",
+      "period": "春秋·秦",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/animals.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "漆猪",
+        "Lacquered pig"
+      ],
+      "card_tagline": "睡卧的猪形，保存了漆器的另一种面貌",
+      "is_highlight": true,
+      "curatorial_rank": 8,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_label_object_discrepancy",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-08"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-09",
+      "title": "“丝路一号”汉代古船",
+      "period": "汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "shared/assets/highlights/qinhan-highlight-09.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "“丝路一号”汉代古船",
+        "汉代木船"
+      ],
+      "card_tagline": "木板之间，用榫板与木钉连接",
+      "is_highlight": true,
+      "curatorial_rank": 9,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-09"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-10",
+      "title": "跪射俑",
+      "period": "秦",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/clay-warriors.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "跪射俑",
+        "Kneeling Archer"
+      ],
+      "card_tagline": "从膝、足和双手，看一个持弩姿态",
+      "is_highlight": true,
+      "curatorial_rank": 10,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_new_child_record",
+      "object_identity": "verified_original_object_component",
+      "photo_match": "verified_object_and_label",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-10"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-12",
+      "title": "彩绘骑兵俑（杨家湾出土）",
+      "period": "西汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/cavalry-and-frontier-seal.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "彩绘陶骑兵俑",
+        "杨家湾骑兵俑"
+      ],
+      "card_tagline": "把骑手、战马与整队排列一起看",
+      "is_highlight": true,
+      "curatorial_rank": 12,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_target_not_unique",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-12"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-13",
+      "title": "“重卅斤”铜权",
+      "period": "秦",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "shared/assets/highlights/qinhan-highlight-13.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "“重卅斤”铜权"
+      ],
+      "card_tagline": "铭文写三十斤，不能按今天的一斤换算",
+      "is_highlight": true,
+      "curatorial_rank": 13,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-13"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-14",
+      "title": "“长安丞”“备盗贼尉”封泥",
+      "period": "汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/han-clay-seals.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "“备盗贼尉”封泥",
+        "“長安丞”封泥",
+        "“長安獄丞”封泥"
+      ],
+      "card_tagline": "官印离开后，字留在封缄用的泥上",
+      "is_highlight": true,
+      "curatorial_rank": 14,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_label_object_discrepancy",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_label_object_discrepancy",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-14"
+    },
+    {
+      "museum_id": "qinhan",
+      "museum_name": "陕西历史博物馆·秦汉馆",
+      "id": "qinhan-highlight-15",
+      "title": "“一刀平五千”钱",
+      "period": "西汉末·王莽居摄时期",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/qinhan/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/qinhan/assets/processed/crop/wang-mang-currency.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "错金“一刀平五千”铜钱",
+        "一刀平五千"
+      ],
+      "card_tagline": "刀形钱上的文字，规定了它的名义价值",
+      "is_highlight": true,
+      "curatorial_rank": 15,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_target_component",
+      "photo_match": "pending_target_not_unique",
+      "publication_approval": "user_approved",
+      "object_identity_id": "qinhan:qinhan-highlight-15"
+    },
+    {
+      "museum_id": "xian-museum",
+      "museum_name": "西安博物院",
+      "id": "xian-museum-highlight-03",
+      "title": "彩绘人物车马镜",
+      "period": "西汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/xian-museum/index.html",
+      "image_path": "modules/xian-museum/assets/supplement/painted-mirror-01.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "西汉彩绘人物车马镜",
+        "彩绘人物车马镜"
+      ],
+      "card_tagline": "镜背的彩绘，把人物与车马排成画面",
+      "is_highlight": true,
+      "curatorial_rank": 3,
+      "content_review": "editorial_accepted",
+      "record_binding": "按当前 data.js 独立记录 xian-001-painted-mirror 绑定；不把补充图当现场标签/现场照片。",
+      "object_identity": "已查看 supplement/painted-mirror-01/02/03；彩绘铜镜对象和局部清楚，但图源/版权与实拍身份需解决。",
+      "photo_match": "对象补充图已查看；无 label photo；图中有小红书水印/账号，需保留来源并核版权。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-museum-highlight-03"
+    },
+    {
+      "museum_id": "xian-museum",
+      "museum_name": "西安博物院",
+      "id": "xian-museum-highlight-04",
+      "title": "勾连云纹玉杯",
+      "period": "秦（以馆方当前展签复核）",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/xian-museum/index.html",
+      "image_path": "modules/xian-museum/assets/photos/focus-5013.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "勾连云纹玉杯"
+      ],
+      "card_tagline": "细长杯身与高足，连成一件玉器",
+      "is_highlight": true,
+      "curatorial_rank": 4,
+      "content_review": "editorial_accepted",
+      "record_binding": "定位到 xian-044-5013；未用候选包 ID，也未用照片 xian-006-4869 的另一件玉杯替代。",
+      "object_identity": "看过 focus-5013；连续勾连云纹玉杯清楚，未见复制品标识。",
+      "photo_match": "对象图已查看；label candidate focus-5015.webp 不存在。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-museum-highlight-04"
+    },
+    {
+      "museum_id": "xian-museum",
+      "museum_name": "西安博物院",
+      "id": "xian-museum-highlight-06",
+      "title": "蓝釉点彩驮骡",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/xian-museum/index.html",
+      "image_path": "modules/xian-museum/assets/photos/focus-5067.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "蓝釉点彩驮骡",
+        "蓝釉点彩驴",
+        "蓝釉驮骡（官网条目）"
+      ],
+      "card_tagline": "骡背上的行囊，比“蓝色的驴”更值得看",
+      "is_highlight": true,
+      "curatorial_rank": 6,
+      "content_review": "editorial_accepted",
+      "record_binding": "定位到 xian-058-5067 作为当前蓝釉动物记录；包内新标题未绑定。",
+      "object_identity": "看过 focus-5067；蓝釉点彩驮载动物可见，驴/骡的名称区分需展签或馆方资料确认；未见复制品标识。",
+      "photo_match": "对象图已查看；label candidate focus-5072.webp 不存在。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-museum-highlight-06"
+    },
+    {
+      "museum_id": "xian-museum",
+      "museum_name": "西安博物院",
+      "id": "xian-museum-highlight-09",
+      "title": "玉舞人",
+      "period": "西汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/xian-museum/index.html",
+      "image_path": "modules/xian-museum/assets/photos/featured-4859.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "玉舞人",
+        "汉代高髻玉舞人（官网展览中的其他具体说明不自动套用）"
+      ],
+      "card_tagline": "袖、腰与手臂，把舞姿压缩在小件玉器中",
+      "is_highlight": true,
+      "curatorial_rank": 9,
+      "content_review": "editorial_accepted",
+      "record_binding": "当前 record xian-003-4859 的标题绑定证据较强，但包内的西汉/杜陵一对内容尚未绑定到这张照片。",
+      "object_identity": "看过对象图；呈一对相连舞人形象。标签没有出土点/时代/数量说明，不能断言为杜陵出土、汉宣帝御用或唯一一对。",
+      "photo_match": "对象与标签均已查看；标签确认标题/材质/馆藏，但不足以解决展览对象/组合身份。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-museum-highlight-09"
+    },
+    {
+      "museum_id": "xian-museum",
+      "museum_name": "西安博物院",
+      "id": "xian-museum-highlight-14",
+      "title": "凤流提梁盉",
+      "period": "战国",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/xian-museum/index.html",
+      "image_path": "modules/xian-museum/assets/photos/focus-5043.webp",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "凤流提梁盉"
+      ],
+      "card_tagline": "鸟形的流口与提梁，共同服务于倾注",
+      "is_highlight": true,
+      "curatorial_rank": 14,
+      "content_review": "editorial_accepted",
+      "record_binding": "定位到 xian-051-5043；未用名称相似器物或包内候选 ID 代替标签核验。",
+      "object_identity": "看过青铜带提梁/动物形流对象图；未见复制品标识，器类细分仍待展签。",
+      "photo_match": "对象图已查看；focus-5045.webp 不存在。",
+      "publication_approval": "user_approved",
+      "object_identity_id": "xian-museum:xian-museum-highlight-14"
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "museum_name": "陕西考古博物馆",
+      "id": "shaanxi-archaeology-highlight-01",
+      "title": "李倕冠饰",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3156.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "李倕冠饰",
+        "李倕冠饰及身体装饰组佩（组合记录）"
+      ],
+      "card_tagline": "从散落饰件中，重新辨认一套头饰",
+      "is_highlight": true,
+      "curatorial_rank": 1,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_reconstruction_scope",
+      "photo_match": "pending_composite_display_no_isolated_target",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:shaanxi-archaeology-highlight-01"
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "museum_name": "陕西考古博物馆",
+      "id": "shaanxi-archaeology-highlight-02",
+      "title": "上官婉儿墓志",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3112.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "唐昭容上官氏墓志",
+        "上官婉儿墓志铭"
+      ],
+      "card_tagline": "一篇墓志，补充了史书以外的生平叙述",
+      "is_highlight": true,
+      "curatorial_rank": 2,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:shaanxi-archaeology-highlight-02"
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "museum_name": "陕西考古博物馆",
+      "id": "shaanxi-archaeology-highlight-03",
+      "title": "罗婉顺墓志",
+      "period": "唐·天宝年间",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3107.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "罗婉顺墓志并盖",
+        "罗婉顺墓志"
+      ],
+      "card_tagline": "署名“颜真卿书”的早期书法石刻",
+      "is_highlight": true,
+      "curatorial_rank": 3,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "verified",
+      "photo_match": "verified",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:shaanxi-archaeology-highlight-03"
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "museum_name": "陕西考古博物馆",
+      "id": "shaanxi-archaeology-highlight-06",
+      "title": "石峁骨质口簧",
+      "period": "约公元前2000年",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_2919.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "口簧",
+        "石峁骨口簧"
+      ],
+      "card_tagline": "骨片、簧舌与穿绳孔，留下发声的办法",
+      "is_highlight": true,
+      "curatorial_rank": 6,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_child_split_from_combined_record",
+      "object_identity": "pending_modern_ancient_identity",
+      "photo_match": "pending_modern_ancient_mix",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:shaanxi-archaeology-highlight-06"
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "museum_name": "陕西考古博物馆",
+      "id": "shaanxi-archaeology-highlight-08",
+      "title": "苏统师墓白瓷深腹杯",
+      "period": "隋",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "image_path": "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/modules/shaanxi-archaeology-museum/assets/photos/web/DSC_3085.jpg",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "透影白瓷杯",
+        "苏统师墓白瓷深腹杯"
+      ],
+      "card_tagline": "很薄的杯壁，是早期白瓷的一种精细做法",
+      "is_highlight": true,
+      "curatorial_rank": 8,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_related_record_only",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_label_object_discrepancy",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:shaanxi-archaeology-highlight-08"
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "museum_name": "陕西考古博物馆",
+      "id": "shaanxi-archaeology-highlight-10",
+      "title": "西陵县侯夫人墓乐舞俑组合",
+      "period": "十六国时期",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "image_path": "shared/assets/highlights/shaanxi-archaeology-highlight-10.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "西陵县侯夫人墓乐舞俑组合"
+      ],
+      "card_tagline": "乐器留在陶俑手中，乐队才有了可辨认的形状",
+      "is_highlight": true,
+      "curatorial_rank": 10,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:shaanxi-archaeology-highlight-10"
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "museum_name": "陕西考古博物馆",
+      "id": "shaanxi-archaeology-highlight-11",
+      "title": "税村隋墓甲骑具装俑",
+      "period": "隋",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "image_path": "shared/assets/highlights/shaanxi-archaeology-highlight-11.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "税村隋墓甲骑具装俑"
+      ],
+      "card_tagline": "骑手和马匹，都被表现为披甲状态",
+      "is_highlight": true,
+      "curatorial_rank": 11,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_near_match_rejected",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_near_match_rejected",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:shaanxi-archaeology-highlight-11"
+    },
+    {
+      "museum_id": "shaanxi-archaeology",
+      "museum_name": "陕西考古博物馆",
+      "id": "shaanxi-archaeology-highlight-13",
+      "title": "韩休墓乐舞图",
+      "period": "唐",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shaanxi-archaeology-museum/index.html",
+      "image_path": "shared/assets/highlights/shaanxi-archaeology-highlight-13.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "韩休墓乐舞图"
+      ],
+      "card_tagline": "舞者居中，乐人分列两侧",
+      "is_highlight": true,
+      "curatorial_rank": 13,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending_no_exact_current_record",
+      "object_identity": "pending_identity_evidence",
+      "photo_match": "pending_no_current_photo",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shaanxi-archaeology:shaanxi-archaeology-highlight-13"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "shangqiu-museum-highlight-02",
+      "title": "清乾隆开归陈汝水利图碑",
+      "period": "清·乾隆年间",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "shared/assets/highlights/shangqiu-museum-highlight-02.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "清乾隆开归陈汝水利图碑",
+        "开归陈汝水利图碑",
+        "水利图碑拓本"
+      ],
+      "card_tagline": "右边刻河渠地图，左边记治水经过",
+      "is_highlight": true,
+      "curatorial_rank": 2,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:shangqiu-museum-highlight-02"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "shangqiu-museum-highlight-05",
+      "title": "白玉舞人佩",
+      "period": "汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "shared/assets/highlights/shangqiu-museum-highlight-05.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "白玉舞人佩"
+      ],
+      "card_tagline": "两面透雕，把衣袖与身体连成轮廓",
+      "is_highlight": true,
+      "curatorial_rank": 5,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:shangqiu-museum-highlight-05"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "shangqiu-museum-highlight-06",
+      "title": "陶狗（通济渠故道出土）",
+      "period": "宋",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "shared/assets/highlights/shangqiu-museum-highlight-06.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "陶狗（通济渠故道出土）",
+        "通济渠故道陶狗"
+      ],
+      "card_tagline": "运河遗址里的陶狗，留下市井生活的细节",
+      "is_highlight": true,
+      "curatorial_rank": 6,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:shangqiu-museum-highlight-06"
+    },
+    {
+      "museum_id": "shangqiu-museum",
+      "museum_name": "商丘博物馆",
+      "id": "shangqiu-museum-highlight-07",
+      "title": "门吏陶俑",
+      "period": "汉",
+      "type": "文物介绍",
+      "material": "",
+      "origin": "",
+      "keywords": [],
+      "site_path": "modules/shangqiu-museum/index.html",
+      "image_path": "shared/assets/highlights/shangqiu-museum-highlight-07.png",
+      "record_kind": "editorial_only",
+      "aliases": [
+        "门吏陶俑"
+      ],
+      "card_tagline": "双手收在袖内，站成守候的姿势",
+      "is_highlight": true,
+      "curatorial_rank": 7,
+      "content_review": "editorial_accepted",
+      "record_binding": "pending",
+      "object_identity": "pending",
+      "photo_match": "pending",
+      "publication_approval": "user_approved",
+      "object_identity_id": "shangqiu-museum:shangqiu-museum-highlight-07"
     }
   ]
 }
