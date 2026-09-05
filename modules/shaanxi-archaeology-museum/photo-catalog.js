@@ -36,7 +36,6 @@
   document.body.append(dialog);
 
   const cardHtml = (artifact) => {
-    if (artifact._editorialOnly) return highlights.card(artifact, cardHtml);
     const photo = artifact.photos[0];
     const thumbUrl = mediaUrl(photo.thumb);
     const webUrl = mediaUrl(photo.web);
@@ -217,9 +216,10 @@
           ${detailArchiveMarkup(artifact)}
           <section><h3>文物说明</h3><p>${escapeHtml(artifact.description)}</p></section>
           ${artifact.highlightSources?.length ? `<section><h3>资料来源</h3>${artifact.highlightSources.map(source => `<p><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)} ↗</a></p>`).join("")}</section>` : ""}
-          ${!highlights.get(artifact) ? `<section><h3>历史与研究价值</h3><p>${escapeHtml(artifact.significance)}</p></section>
-          <section><h3>观看提示</h3><p>${escapeHtml(artifact.viewing_notes)}</p></section>
-          <aside class="artifact-evidence"><strong>资料边界</strong><p>${escapeHtml(artifact.evidence_note)}</p></aside>` : ''}
+          ${artifact.form_and_craft ? `<section><h3>形制与工艺</h3><p>${escapeHtml(artifact.form_and_craft)}</p></section>` : ''}
+          ${artifact.significance ? `<section><h3>历史与研究价值</h3><p>${escapeHtml(artifact.significance)}</p></section>` : ''}
+          ${artifact.viewing_notes ? `<section><h3>观看提示</h3><p>${escapeHtml(artifact.viewing_notes)}</p></section>` : ''}
+          ${artifact.evidence_note ? `<aside class="artifact-evidence"><strong>资料边界</strong><p>${escapeHtml(artifact.evidence_note)}</p></aside>` : ''}
         </article>
       </div>`;
     dialog.showModal();

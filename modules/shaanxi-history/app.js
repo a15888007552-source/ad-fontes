@@ -293,7 +293,6 @@
   }
 
   function cardHtml(item, index) {
-    if (item._editorialOnly) return highlights.card(item, cardHtml);
     const cover = cardCoverFor(item);
     const tags = (item.tags || []).filter((tag) => ["music", "forbidden", "greek", "wall"].includes(tag));
     const photoCount = (item.photos || []).length;

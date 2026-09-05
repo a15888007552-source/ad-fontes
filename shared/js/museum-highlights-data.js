@@ -27,6 +27,40 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "石台孝经拓本",
       "provenance": "existing_site_photo_user_selected"
     },
+    "detail_supplement": {
+      "record_id": "beilin-highlight-01",
+      "canonical_title": "石台孝经",
+      "legacy_artifact_record_id": "artifact-132",
+      "object_scope": "beilin-highlight-01 当前站内配图为《石台孝经》拓本；下述尺寸、结构与雕饰均指其所据原碑。",
+      "editorial_notes": [
+        "旧记录 artifact-132 与当前 beilin-highlight-01 配图均为《石台孝经》拓本；原碑事实保留用于说明拓本所据对象，不改变站内图片。"
+      ],
+      "research": {
+        "history": "当前配图为《石台孝经》拓本；原碑于天宝四年（745）刻成，唐玄宗李隆基作《孝经》序、注并亲书，宰相李林甫与国子祭酒李齐古主持镌刻。原碑现藏西安碑林；碑额又有肃宗李亨题篆，见证经书、御注和皇室题额被置于同一纪念物中。",
+        "form_and_craft": "碑由四块高590厘米、宽120厘米的长方形巨石结体，碑首、碑身、碑座共用35块石料；碑首雕神龙，三层石台碑座线刻双狮与蔓草，碑额为李亨篆书“大唐开元天宝圣文神武皇帝注孝经台”。正文用八分隶书刻写，字势丰厚端庄。",
+        "contribution": "它把《孝经》正文、玄宗御注与序文固定在帝王主持的巨型石刻上，使经典传播与“以孝治天下”的政治表达相互叠合。玄宗八分书和李亨篆额同碑，是研究盛唐唐隶、皇室书写和经学公共化的重要实物。",
+        "viewing_guide": "读当前拓本先分清《孝经》正文、玄宗序注与碑额题字，不把不同层次连读；再看隶书蚕头燕尾、波磔和行列秩序。结合原碑资料观察神龙碑首、三层石台及双狮蔓草，理解巨石拼接、立体雕饰与文字布局如何共同构成纪念物。"
+      },
+      "inscription": {
+        "excerpt": "朕闻上古，其风朴略，虽因心之孝已萌，而资敬之礼犹简。及乎仁义既有，亲誉益著。圣人知孝之可以教人也，故因严以教敬，因亲以教爱，于是以顺移忠之道昭矣，立身扬名之义彰矣。",
+        "translation": "我听说，上古风俗质朴简略，人的孝心虽已萌发，敬亲的礼节却还很简约。后来仁义兴起，尊亲的声誉更加显著。圣人知道孝可以教化人，于是借尊严教人敬重，借亲爱教人慈爱；由顺亲而移于忠君的道理因此明白，修身行道、扬名后世的意义也更加彰显。",
+        "excerpt_note": "节选自唐玄宗《孝经序》，不是《孝经》正文；按传世古籍标点，属公共文本短节选。"
+      },
+      "sources": [
+        {
+          "label": "西安碑林博物馆：《石台孝经》",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=2580&c=View&m=home",
+          "layer": "museum_official_collection_page",
+          "scope": "原碑年代、四石结体、35石组合、雕饰、李亨题额与玄宗序注书写；用于核对当前拓本所据原碑的碑体事实。"
+        },
+        {
+          "label": "中国哲学书电子化计划：《孝经注疏·御制序并注》",
+          "url": "https://ctext.org/xiaojing-zhushu/yu-zhi-xu-bing-zhu/zhs",
+          "layer": "authoritative_classical_text",
+          "scope": "唐玄宗《孝经序》原文及《孝经》注疏文本，供碑文短节选与译意核对。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -59,6 +93,40 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "开成石经·尔雅拓本",
       "provenance": "existing_site_photo_user_selected"
     },
+    "detail_supplement": {
+      "record_id": "beilin-highlight-02",
+      "canonical_title": "开成石经",
+      "legacy_artifact_record_id": "artifact-074",
+      "object_scope": "beilin-highlight-02 当前站内配图仅为《开成石经·尔雅》拓本；下述整套数量和原石形制不等同于这一件拓本。",
+      "editorial_notes": [
+        "旧记录 artifact-074 与当前 beilin-highlight-02 配图均为《开成石经·尔雅》拓本；本项仅对应《尔雅》部分，不改变站内图片或扩写为整套原石。"
+      ],
+      "research": {
+        "history": "当前配图仅为《开成石经·尔雅》拓本；原石所据的唐文宗开成二年（837）石经，原刻于长安国子监，后称《开成石经》。馆方著录整套为114石、228面、160卷、65万余字，含十二部经书；《尔雅》部分原石随整套石经陈列于西安碑林。",
+        "form_and_craft": "整套石经每石高216厘米、宽83至99厘米，双面刻经，正文以端整楷书排成连续行列。《尔雅》不是叙事碑，而是按释诂、释言、释亲、释宫、释乐等门类解释古语、名物和制度的训诂书。当前拓本主要呈现字形与行款，整套原石的尺度、字口深浅及石间接续须结合原石陈列理解。",
+        "contribution": "开成石经以大规模刻石保存经文，为后世读经、校经提供可反复核对的文本基准，也使《尔雅》进入官方经籍的石刻体系。它的价值不只在“石质图书馆”的规模，还在于把唐代经学、书写规范和国家教育制度联系在一起。",
+        "viewing_guide": "从当前《尔雅》拓本选读《释诂》一小段，留意“某某，某也”的反复句式，再看楷书的字距和列线。可与今本《尔雅》对读，把异体、篇次或标点差异当作校勘线索，也不要据单面拓本推断整套石经的全部面貌。"
+      },
+      "inscription": {
+        "excerpt": "初、哉、首、基、肇、祖、元、胎、俶、落、权舆，始也。林、烝、天、帝、皇、王、后、辟、公、侯，君也。",
+        "translation": "“初、哉、首、基、肇、祖、元、胎、俶、落、权舆”这些词，都表示开始；“林、烝、天、帝、皇、王、后、辟、公、侯”这些词，都指君主。",
+        "excerpt_note": "节选自《尔雅·释诂》，按传世古籍标点；本项仅摘录一小段，不是整套开成石经全文。"
+      },
+      "sources": [
+        {
+          "label": "西安碑林博物馆：《开成石经》",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=2583&c=View&m=home",
+          "layer": "museum_official_collection_page",
+          "scope": "开成二年、114石228面、十二部经书、规模与碑林陈列背景；用于核对当前《尔雅》拓本所处的整套石经层级。"
+        },
+        {
+          "label": "中国哲学书电子化计划：《尔雅·释诂》",
+          "url": "https://ctext.org/er-ya/shi-gu/zhs",
+          "layer": "authoritative_classical_text",
+          "scope": "《释诂》原文及所据多种古籍底本信息，供碑文短节选、训诂结构和译意核对。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -87,6 +155,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安碑林博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -115,6 +184,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -143,6 +213,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -174,6 +245,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安碑林博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -202,6 +274,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -234,6 +307,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -262,6 +336,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安碑林博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -290,6 +365,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安碑林博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -318,6 +394,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -350,6 +427,29 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "拓片局部",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-b3ad0010-1082-4072-9b8b-105db858d03f.png"
+    },
+    "detail_supplement": {
+      "record_id": "beilin-highlight-12",
+      "canonical_title": "迴元观钟楼铭",
+      "research": {
+        "history": "《大唐迴元观钟楼铭并序》立于唐文宗开成元年（836），令狐楚撰文、柳公权书写，邵建和刻字。1986年，碑石在西安太乙路北段的基建工地出土。它此前长期不见著录，出土后为柳公权传世碑刻补入了一件保存较完整的作品。铭文兼记迴元观的沿革与文宗赐钟，既是书法作品，也是唐长安道观史的材料。",
+        "form_and_craft": "原石为横置的青石刻铭，正文用楷书。此处配图为拓本，白色字口与墨底呈现刀刻留下的文字轮廓。可对照长横、竖画与转折观察柳体的骨架：字内收紧，笔画向外撑开，疏密并非平均分配。拓片只能显示所拓石面，不能单凭墨色判断原石的颜色或保存状况。",
+        "contribution": "铭文把钟声与宗教劝诫联系起来，称其可以使人警醒、减少贪欲。对音乐史而言，这里的重点是钟在城市宗教生活中的功能，以及施赐、建楼、撰铭之间的联系。文字并未留下钟的音高、节奏或固定曲目，不能据此复原具体声响。",
+        "viewing_guide": "先读右侧题名，再分辨撰文者、书写者与刻工的署名，不要把三种工作归于一人。观看正文时，将道观沿革与赐钟、劝诫的叙述分开；读到钟声的功用，应区分作者希望声音产生的教化效果与实际演奏记录。"
+      },
+      "inscription": {
+        "excerpt": "大唐迴元觀鐘樓銘并序\n\n贪淫由是衰息，昏醉以之醒悟。",
+        "translation": "题名意为《大唐迴元观钟楼铭及序》。正文节选说：贪欲与放纵因此逐渐止息，昏沉醉迷的人由此醒悟。这里说的是钟声的宗教劝诫作用。",
+        "excerpt_note": "题名与正文短节选，二者不是连续的一段。"
+      },
+      "sources": [
+        {
+          "label": "西安碑林博物馆：首次展出国宝级文物唐碑",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=2454&c=View&m=home",
+          "layer": "museum_official_collection_page",
+          "scope": "出土经过、撰书刻者、碑形及赐钟铭文"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -384,6 +484,24 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-7007454a-06c7-40b5-8913-d6db5786bc08.png"
     },
+    "detail_supplement": {
+      "record_id": "beilin-highlight-13",
+      "canonical_title": "李寿石椁",
+      "research": {
+        "history": "李寿是唐高祖李渊的堂弟，参加唐初征战，封淮安王，卒于贞观五年（631），墓在献陵附近。1973年，陕西三原出土其石椁及墓葬石刻，现藏西安碑林。石椁与龟形墓志虽在同一组陈列中，仍是两件功能不同的器物：前者围护棺木，后者记述墓主身份与生平。",
+        "form_and_craft": "石椁由28块青石构成，长355厘米、高220厘米、宽185厘米，正面设双扇石门。外壁刻卫士、文臣、武将和四神，内壁以阴线刻出侍从、出行、狩猎、农牧及乐舞等场景。内外雕刻方式不同，形成门外守卫与内部生活图像的区分。",
+        "contribution": "内壁乐伎、舞伎图像是研究初唐乐舞的重要材料，但一幅画面首先能说明的是人物配置、动作和所绘器物。它不能独立给出曲名、音高或完整演奏程序。石椁将乐舞与仪仗、生产和侍奉场景并列，也应放回整套墓葬图像中理解。",
+        "viewing_guide": "观看整体时先辨认屋宇形椁体与前方龟形墓志，再看石门、人物及四神所在的位置。外部全景并不能显示内壁全部乐舞线刻；研究乐器细节，需要对照内壁的独立照片或可靠摹图，不能从这张正面陈列照补想。"
+      },
+      "sources": [
+        {
+          "label": "西安碑林博物馆：李寿石椁墓志墓门",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=139&c=View&m=home",
+          "layer": "museum_official_collection_page",
+          "scope": "墓主、出土年份、石椁组合、尺寸、内外壁图像及龟形墓志"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -416,6 +534,40 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "道因法师碑拓本",
       "provenance": "existing_site_photo_user_selected"
     },
+    "detail_supplement": {
+      "record_id": "beilin-highlight-14",
+      "canonical_title": "道因法师碑",
+      "legacy_artifact_record_id": "artifact-171",
+      "object_scope": "beilin-highlight-14 当前站内配图为《道因法师碑》拓本；下述尺寸、浮雕与透雕均指其所据原碑。",
+      "editorial_notes": [
+        "旧记录 artifact-171 与当前 beilin-highlight-14 配图均为《道因法师碑》拓本；原碑事实保留用于说明拓本所据对象，不改变站内图片。"
+      ],
+      "research": {
+        "history": "当前配图为《道因法师碑》拓本；原碑于唐龙朔三年（663）十月立，李俨撰文、欧阳通书。碑文追述道因（587—658）由濮阳入佛门，在益州多宝寺讲经，后来赴长安大慈恩寺协助玄奘证译梵本；原碑北宋移入西安碑林。",
+        "form_and_craft": "原碑螭首龟趺，通高312厘米，碑文正书34行、每行73字，横额正书七字；横额上透雕三佛，龟趺两侧有华丽浮雕和线刻胡人形象。欧阳通楷书严谨遒健，横画收锋峻利，带有承继欧阳询而更见险峻的面貌。",
+        "contribution": "此碑是欧阳通传世碑版中仅存的两种之一，与《泉男生墓志》相表里，为观察初唐楷书由欧阳询传统向更强劲、峻整风格发展的关键材料。碑文又把佛经翻译、寺院讲学和玄奘译场纳入一篇纪念文字，兼具书法史与佛教史价值。",
+        "viewing_guide": "读当前拓本可先看碑题、撰书者和34行行款，再观察露锋、横画收笔和字势的紧峻；结合原碑资料再看额上三佛、龟趺浮雕与胡人线刻，分辨文字平面和碑体雕饰各自的作用。"
+      },
+      "inscription": {
+        "excerpt": "大哉乾元，播物垂象，肇有书契，文籍生焉。虽十翼精微，阴阳之化不测；九流沈奥，仁义之涂斯阐。",
+        "translation": "乾元广大，万物由此播生并呈现形象，文字契刻由此开始，典籍也随之产生。即使《十翼》的义理精微，阴阳变化仍难以穷尽；九流学说深奥，仁义之路也由此得到阐明。",
+        "excerpt_note": "节选自李俨《益州多宝寺道因法师碑文并序》，据《全唐文》传本；属公共文本短节选，不作整通碑文转录。"
+      },
+      "sources": [
+        {
+          "label": "西安碑林博物馆：《道因法师碑》",
+          "url": "https://www.beilin-museum.com/index.php?a=index&aid=2598&c=View&m=home",
+          "layer": "museum_official_collection_page",
+          "scope": "龙朔三年、撰书者、迁藏、尺寸、行款、三佛透雕、龟趺纹饰与欧阳通书法评价；用于核对当前拓本所据原碑的形制。"
+        },
+        {
+          "label": "维基文库：《益州多宝寺道因法师碑文（并序）》",
+          "url": "https://zh.wikisource.org/zh-hans/%E7%9B%8A%E5%B7%9E%E5%A4%9A%E5%AF%B6%E5%AF%BA%E9%81%93%E5%9B%A0%E6%B3%95%E5%B8%AB%E7%A2%91%E6%96%87%EF%BC%88%E4%B8%A6%E5%BA%8F%EF%BC%89",
+          "layer": "public_domain_classical_text",
+          "scope": "李俨碑文并序的公共文本转录，收录于《全唐文》卷二百一；供开篇节选和道因生平叙述核对。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -444,6 +596,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安碑林博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -478,6 +631,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -519,6 +673,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "photo-group-3325"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -560,6 +715,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "photo-group-3487"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -601,6 +757,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "photo-group-3656"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -635,6 +792,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -672,6 +830,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "photo-group-3524"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -707,6 +866,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -742,6 +902,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -777,6 +938,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -813,6 +975,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "photo-group-3649"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -844,6 +1007,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -879,6 +1043,30 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-c76d0434-40c3-4bc1-b8dd-da84ba8c3b2b.png"
     },
+    "detail_supplement": {
+      "record_id": "baoji-highlight-12",
+      "canonical_title": "鲤鱼尊",
+      "research": {
+        "history": "馆方藏品页将其定为西周盛酒器，称1988年出土于茹家庄窖藏；馆方另一篇教育文章则把同年出土地点写作宝鸡桥梁厂基建工地，并据造型、装饰判断为西周晚期。两篇馆方材料对出土地的表述并不一致，其具体出土背景仍待进一步核对。动物形尊属于商周礼器中把容器做成鸟兽形的类型，特殊礼仪用途仍有讨论。",
+        "form_and_craft": "器身整体写实作鲤鱼，鱼身肥硕分尾，圆眼、鱼鳃和鳞纹均以线刻区分。鱼背开长方口，上置与器身相扣的盖，盖面有鱼脊状钮、环钮、鱼纹和龙蛇状纹。鱼腹下四个人形足承托。关键结构在鱼嘴：口腔虽中空，却有隔断，不与器腔相通；背部开口才是注入酒液的入口。",
+        "contribution": "它把动物写实、青铜铸造和容器功能压缩在同一件器物中，特别适合讨论象生器如何在观赏形象与实际使用之间取得平衡。四足人物和盖部纹饰还提示工匠并非只塑鱼身，而是同时设计承托、开合与装饰系统。",
+        "viewing_guide": "先找鱼背方口和盖，再沿鱼嘴确认隔断，最后看四个弓腰承托的人形足；近看鱼鳞、鳃部简化窃曲纹与盖上小纹样。鱼嘴虽有流的外形，却因隔断不与器腔相通；动物形尊与“灌祭”的关系仍属讨论中的解释。"
+      },
+      "sources": [
+        {
+          "label": "宝鸡青铜器博物院：西周鲤鱼尊",
+          "url": "https://www.bjqtm.com/?p=2205",
+          "layer": "museum_official_collection_page",
+          "scope": "馆方藏品页的年代、器类、形制、结构和纹饰；该页记载的出土地点与馆方教育文章存在差异，本稿未将冲突地点写成确定事实。"
+        },
+        {
+          "label": "宝博微课堂：西周鱼尊",
+          "url": "https://www.bjqtm.com/xcjy/dwxc/%E5%AE%9D%E5%8D%9A%E5%BE%AE%E8%AF%BE%E5%A0%82%EF%BC%9A%E8%A5%BF%E5%91%A8%E9%B1%BC%E5%B0%8A",
+          "layer": "museum_official_education_article",
+          "scope": "馆方教育文章对鱼尊中空器腹、鱼嘴隔断、背部开口、人形足、纹饰和动物形酒器用途讨论的补充。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -909,6 +1097,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -943,6 +1132,24 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "文物配图",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-12fbe6c3-17de-4bf9-8043-a546ca0b750e.png"
+    },
+    "detail_supplement": {
+      "record_id": "baoji-highlight-14",
+      "canonical_title": "青铜母子虎",
+      "research": {
+        "history": "馆方将其定为西周青铜圆雕，1988年宝鸡茹家庄西周遗址出土。现有材料未见铭文记录，墓葬位置和用途也尚无定论；“母子虎”是依据大小虎组合形成的通行名称，现有资料未说明其寓意。它是西周动物形青铜艺术中以两只虎的咬合关系制造视觉焦点的实例。",
+        "form_and_craft": "大虎张口匍匐，双耳竖起，双目突出；眉、鼻、面颊以阴线和圆点刻出，口中衔小虎。小虎倒颈仰口，四肢和尾部自然下垂，身体以直线、点状纹表现斑纹。大虎肩侧有旋涡纹，虎身与四足饰重环纹、条带纹，纹样随着立体体面转折。",
+        "contribution": "大小两虎的体量、朝向和咬合被统一成一件立体构图，能观察西周工匠怎样用圆雕、线刻与纹饰组织动物形象。它的价值首先在造型和工艺史，也为研究西周动物意象、装饰语汇和器物观看方式提供材料；现有资料不足以判定礼仪或实用功能。",
+        "viewing_guide": "观看时先辨认大虎的匍匐姿势与小虎倒颈，再沿鼻梁、眉眼、虎须和斑纹查看线刻深浅，最后看肩侧旋涡纹与腹足重环纹如何连续。名称呈现的是大小虎的组合关系，器物的实际用途仍需结合考古语境判断。"
+      },
+      "sources": [
+        {
+          "label": "宝鸡青铜器博物院：西周青铜母子虎",
+          "url": "https://www.bjqtm.com/?p=2208",
+          "layer": "museum_official_collection_page",
+          "scope": "馆方藏品页的年代、出土信息、圆雕构成、大小虎姿态、阴线和纹饰；未据名称扩写寓意或用途。"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -983,6 +1190,36 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-5e0cef3e-fd7d-41d8-899b-242904fe1c4e.png"
     },
+    "detail_supplement": {
+      "record_id": "baoji-highlight-15",
+      "canonical_title": "大鸟尊",
+      "research": {
+        "history": "馆方藏品页将其定为西周大鸟尊、盛酒器，1974年宝鸡茹家庄西周墓地一号墓乙室出土；陕西省备案的一级文物名录也列有“西周大鸟尊”。馆方教育文章把同件称作鸟尊，定为西周中期，并说明背部原有的盖可能已佚。",
+        "form_and_craft": "尊体作挺立鸟形，身躯丰满，尖勾喙，三足，足根肌肉隆起；尾部为长方形，左右呈阶梯式下垂。腹部中空，背部开长方形尊口；鸟身与足上部饰鳞毛状羽纹，尾部饰锁链状羽纹，腹部有残破。",
+        "contribution": "它显示动物形尊并非简单动物雕像，而是在中空器腹、背部开口和承重三足的基础上塑造鸟的姿态。与同院鲤鱼尊并读，可讨论西周盛酒器如何借用鱼、鸟等身体形态，同时保留容器的开合和稳定需求。",
+        "viewing_guide": "先找背部方口，再看三足与尾部是否共同支撑器身；顺着尖喙、颈胸到阶梯尾观察轮廓，最后比较鳞毛状、锁链状纹饰的分区。腹部残破使器形保存状态成为观看的一部分，现有资料不足以复原缺失细节。"
+      },
+      "sources": [
+        {
+          "label": "宝鸡青铜器博物院：西周大鸟尊",
+          "url": "https://www.bjqtm.com/?p=2035",
+          "layer": "museum_official_collection_page",
+          "scope": "馆方独立藏品页的名称、年代、出土墓室、盛酒器属性、鸟形结构、三足、开口、纹饰和残破信息。"
+        },
+        {
+          "label": "宝博微课堂：宝鸡青铜器博物院藏商周青铜酒器——动物造型尊",
+          "url": "https://www.bjqtm.com/xcjy/dwxc/%E5%AE%9D%E5%8D%9A%E5%BE%AE%E8%AF%BE%E5%A0%82%EF%BC%9A%E5%AE%9D%E9%B8%A1%E9%9D%92%E9%93%9C%E5%99%A8%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F%E5%95%86%E5%91%A8%E9%9D%92%E9%93%9C%E9%85%92%E5%99%A8%EF%BC%8D",
+          "layer": "museum_official_education_article",
+          "scope": "馆方教育文章中鸟尊段落对西周中期、茹家庄出土、背部原有盖可能佚失和动物形酒器比较的补充。"
+        },
+        {
+          "label": "陕西省文物局：陕西省通过国家文物局备案一级文物名录",
+          "url": "https://wwj.shaanxi.gov.cn/zfxxgk/fdzdgknr/tjxx/202506/P020250624574830954353.pdf",
+          "layer": "provincial_heritage_register",
+          "scope": "陕西省文物局公布的备案名录中列有宝鸡青铜器博物院“西周大鸟尊”；仅用于文物名录身份核对。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1015,6 +1252,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js 及官方 sxhm 藏品页）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1055,6 +1293,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js、展签/官方馆方资料）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1090,6 +1329,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js、官方藏品页）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1131,6 +1371,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "field-4445"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1162,6 +1403,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1194,6 +1436,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1237,6 +1480,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1276,6 +1520,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js、展签、官方藏品页）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1313,6 +1558,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1347,6 +1593,30 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "文物配图",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-ecd08153-e5bc-4943-98dd-a248bb7918a2.png"
+    },
+    "detail_supplement": {
+      "record_id": "shaanxi-history-highlight-10",
+      "canonical_title": "黑釉油滴碗",
+      "research": {
+        "history": "陕西历史博物馆官网首页将其列为馆藏精品；陕西日报采访将其定为宋代（报道正文称北宋）、国家一级文物，出土地为蒲城县城关镇。其窑址、墓葬层位和确切窑口尚未确定；关于“北方窑口仿制建窑黑瓷”的说法属于研究判断，仍可随着窑址和工艺证据继续讨论。",
+        "form_and_craft": "碗呈大喇叭形敞口，口沿微向内收，腹部向下渐收，底部为低矮实心圈足；胎薄质坚，通体施厚重黑釉，釉色匀净润泽。碗内银灰色斑点大小、疏密有别，是釉层在高温下形成的结晶效果，属于油滴釉，不是后加彩绘。",
+        "contribution": "它的研究价值在南北窑业互动与烧成技术史：油滴斑依赖铁元素在釉层中的分解、聚集和冷却结晶，火候和釉层状态稍有变化便会改变斑点。大口径器形又不同于常见小型茶盏，使它可用于讨论油滴釉在宋代茶事之外的功能扩展；相关功能解释尚无定论。",
+        "viewing_guide": "观看时先让眼睛适应黑釉，再比较斑点在碗内的大小、光泽和疏密；随后看口沿、收腹与圈足的比例，理解素面器形如何托住窑变纹样。斗茶联系提供了时代背景，但本件的具体用途仍未有定论。"
+      },
+      "sources": [
+        {
+          "label": "陕西历史博物馆官网首页：黑釉“油滴”碗",
+          "url": "https://www.sxhm.com/Site/Index/index.html",
+          "layer": "museum_official_homepage",
+          "scope": "陕历博官网当前馆藏精品列表对该器名称和馆藏归属的确认。"
+        },
+        {
+          "label": "陕西日报：窑火凝星 千载流光",
+          "url": "https://esb.sxdaily.com.cn/pc/content/202608/17/content_2585439.html",
+          "layer": "provincial_newspaper_interview",
+          "scope": "陕西日报采访讲解员和现场报道对年代、蒲城出土地、黑釉油滴形制、结晶成因、宋代斗茶背景及北方窑口研究观点的介绍。"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -1392,6 +1662,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "wall-que-lou"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1428,6 +1699,24 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "文物配图",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-c2913092-9eab-4cd8-89e2-ca9e94822e66.png"
+    },
+    "detail_supplement": {
+      "record_id": "shaanxi-history-highlight-12",
+      "canonical_title": "章怀太子墓客使图",
+      "research": {
+        "history": "此图位于章怀太子墓墓道东壁，属隋唐时期墓室壁画。画面六人分成前后三人两组：陕西历史博物馆将前组三人辨为唐鸿胪寺官员，后组三人则依据形貌、服饰推断可能分别来自东罗马、新罗、靺鞨。后组三人均作向前躬身姿态；相关族属仍是馆方依据图像作出的推断，画面未提供使者姓名及具体外交事件的直接信息。",
+        "form_and_craft": "前组三人头戴笼冠，着宽袖红袍、白裙，系绶带，持笏，穿上翘鞋，构成三角形站位；后组三人的冠服和姿态与前组有别。作为墓道壁画，重点不在孤立肖像，而在连续空间中以服饰、持物和队列区分身份。",
+        "contribution": "作品把唐代官员与外来使者置于同一画面，为观察唐代礼宾机构、服饰标识以及墓葬图像中的跨区域交往提供一手视觉材料。它能说明当时如何组织身份差异；至于画中人所对应的到访日期、路线和完整仪式，仍需其他史料互证。",
+        "viewing_guide": "先看墓道东壁的位置，再看六人分组、笼冠与笏、服色和躬身姿态的差异。后组三人的身份目前只能依据外观作出馆方推断，具体使者姓名、乐舞、对白及完整仪式动作仍无从确定。"
+      },
+      "sources": [
+        {
+          "label": "陕西历史博物馆：客使图藏品页",
+          "url": "https://www.sxhm.com/collections/detail/468.html",
+          "layer": "museum_official_collection_page",
+          "scope": "作品名称、隋唐年代、章怀太子墓墓道东壁位置、六人分组、服饰细节及三位使者的馆方推断。"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -1470,6 +1759,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "wall-gongnv"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1502,6 +1792,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆（current data.js、展签和官方藏品页）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1536,6 +1827,24 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "文物配图",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-d352f84b-62bd-4c0a-9ee2-de7aa35f07b4.png"
+    },
+    "detail_supplement": {
+      "record_id": "shaanxi-history-highlight-15",
+      "canonical_title": "金筐宝钿团花纹金杯",
+      "research": {
+        "history": "此杯1970年出土于西安何家村唐代窖藏，早期称“掐丝团花纹金杯”。陕西历史博物馆结合法门寺地宫清理记录中“真金函一枚金筐宝钿真珠装”的名称，以及一件金函上可见的同类工艺，改定为“金筐宝钿团花纹金杯”。据此重建的是器名与工艺的考释沿革，金杯本身仍以何家村窖藏为出土地点。",
+        "form_and_craft": "杯高5.9厘米、口径6.8厘米，重230克；杯体厚重而线条流转，设单侧固定的六字形耳柄。器表饰四朵团花，并见两层八组云头纹。金筐宝钿以金丝围出纹样、焊接于器表，再以金珠围饰并预留镶嵌位置；纹样区的空位究竟是宝石脱落还是尚未完成，馆方报道保留了两种可能。",
+        "contribution": "杯耳形式与粟特金银器常见的带环耳杯有可比较之处，而团花、云头等装饰又呈现中国化审美，显示唐代金银器对外来器形与本土纹样的结合。它尤其适合说明金丝焊接、金珠装饰和镶嵌预留如何共同构成器物表面，使用者身份则尚缺乏直接证据。",
+        "viewing_guide": "先观察单侧耳柄与杯体的比例，再看团花、云头的重复组织及金丝、金珠形成的边界。空置纹样区目前存在“脱落”与“未完成”两种解释；器名中的“皇家”或女性使用说法属于解释性推断，尚非这件器物已经证实的历史。"
+      },
+      "sources": [
+        {
+          "label": "陕西历史博物馆：皇家金杯数字文创说明",
+          "url": "https://www.sxhm.com/info/announcement/detail/10202.html",
+          "layer": "museum_official_announcement",
+          "scope": "何家村出土信息、尺寸重量、器名沿革、金筐宝钿工艺、耳杯形制比较及纹样镶嵌现状的馆方说明。"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -1572,6 +1881,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1603,6 +1913,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西历史博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1639,6 +1950,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "qin-weights"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1679,6 +1991,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "brick-and-bells"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1714,6 +2027,30 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "文物配图",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-03513396-5d48-4902-8863-19029c4022ee.png"
+    },
+    "detail_supplement": {
+      "record_id": "qinhan-highlight-05",
+      "canonical_title": "彩绘雁鱼铜灯",
+      "research": {
+        "history": "彩绘雁鱼铜灯1985年出土于陕西神木县店塔村西汉墓，现列入陕西历史博物馆秦汉馆相关展陈。器物以雁首衔鱼为视觉主题，既是汉代铜灯，也把灯具结构、烟气处理和调光操作组织在同一件器物之中。",
+        "form_and_craft": "全器由雁首衔鱼、雁体、灯罩和灯盘四部分组成，可以拆卸清洗。雁体可盛水，点灯后的烟气经雁颈通道导入水中，以减少烟尘；灯罩和灯盘能够旋转开合，用来挡风并调整亮度和照射方向。彩绘、动物造型与可操作的转动和导烟结构共同构成其形制特点。",
+        "contribution": "它为理解汉代灯具如何同时处理照明、清洁与使用环境提供了具体材料：动物形象不是附加装饰，而与中空容水、颈部导烟和可调部件相互配合。由此可以讨论汉代工匠对日常器用的功能设计，具体祭祀场合与固定燃灯仪式则尚待其他材料确认。",
+        "viewing_guide": "观看时先辨认雁首、鱼、雁体、灯罩和灯盘的连接关系，再看灯罩与灯盘的旋转界面，以及雁颈通道通向水腔的路径。报道所述的点灯状态可作为结构说明；实际室内烟量、照度及仪式环境，尚无这件器物本身的直接记录。"
+      },
+      "sources": [
+        {
+          "label": "陕西历史博物馆：秦汉馆彩绘雁鱼铜灯活动报道",
+          "url": "https://www.sxhm.com/info/news/detail/16072.html",
+          "layer": "museum_official_news",
+          "scope": "陕西历史博物馆秦汉馆展陈中的彩绘雁鱼铜灯及馆方对其设计巧思的介绍。"
+        },
+        {
+          "label": "光明网／国家文物局新闻中心：彩绘雁鱼铜灯报道",
+          "url": "https://culture.gmw.cn/2024-05/23/content_37339538.htm",
+          "layer": "national_cultural_authority_press",
+          "scope": "神木店塔村西汉墓出土信息、雁首衔鱼、四部分拆洗、旋转调光与雁颈导烟入水结构。"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -1755,6 +2092,30 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-b3629362-1b0f-43f3-a53f-0cd0f30d6e81.png"
     },
+    "detail_supplement": {
+      "record_id": "qinhan-highlight-06",
+      "canonical_title": "鎏金铜蚕",
+      "research": {
+        "history": "鎏金铜蚕为西汉遗物，陕西历史博物馆登记为1984年12月石泉县前池乡谭家湾出土。地方官方报道记述，发现者在淘金时从河沙中拾得，附近还发现五铢钱；这一发现经过与馆方登记共同构成目前公开可见的来源信息。它将石泉地区的蚕桑传统与汉代物质文化联系起来，与某一处完整墓葬随葬组合的关系仍不明确。",
+        "form_and_craft": "器物通长5.6厘米，腹围1.9厘米，胸高1.8厘米，重10克，铜质表面鎏金。蚕体腹部九节清楚，胸、腹、尾部足肢俱全，头部上扬，呈近似吐丝或活动中的姿态；身体比例和节段起伏具有写实性，小型化制作仍保留了可辨的生物结构。",
+        "contribution": "它是研究汉代蚕桑生产、地方记忆与金属工艺结合的一件实物线索，补充了文字记载之外对蚕形、节段和足肢的视觉认识。关于它究竟是纪念性物件、墓葬用品还是另有用途，馆方只提出可能性，现有公开材料不足以作出单一结论。",
+        "viewing_guide": "先看鎏金表面和蚕体的九节腹部，再找胸、腹、尾部足肢及上扬的头部姿态；小尺寸和金色表面容易使节段细节被忽略。它首先呈现的是蚕形的具体表现，货币、官府赏赐、丝路信物或固定祭祀功能等身份，目前没有来源确认。"
+      },
+      "sources": [
+        {
+          "label": "陕西历史博物馆：鎏金铜蚕藏品页",
+          "url": "https://www.sxhm.com/collections/detail/731.html?mobile-app=true&theme=false",
+          "layer": "museum_official_collection_page",
+          "scope": "西汉年代、石泉谭家湾出土、一级文物信息、尺寸重量、材质、九节腹部及形态描述。"
+        },
+        {
+          "label": "安康市人民政府：鎏金铜蚕发现与价值报道",
+          "url": "https://www.ankang.gov.cn/Content-108552.html",
+          "layer": "government_official_museum_interview",
+          "scope": "地方发现经过、五铢钱伴见、尺寸形态及石泉蚕桑历史的官方采访信息。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1795,6 +2156,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "steppe-gold"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1831,6 +2193,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "animals"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1871,6 +2234,24 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-88ee5672-d035-4fae-b6b0-a9aec60dfe9d.png"
     },
+    "detail_supplement": {
+      "record_id": "qinhan-highlight-09",
+      "canonical_title": "“丝路一号”汉代古船",
+      "research": {
+        "history": "这艘木船出自汉长安城遗址北侧的渭河故道，现作为陕西历史博物馆秦汉馆的重要展项。权威报道将其称为汉代古船，并把发现地点与汉长安城水系联系起来；“丝路一号”是展陈传播中的称呼，现有公开材料能够确认的是出土地、木船结构和年代背景，具体航次仍无从由现有材料还原。",
+        "form_and_craft": "船长9.71米、宽1.98米，载重量报道约为3至5吨。船体由16块木板构成，板材以不同的榫卯、木质连接板和木钉相连，不使用铁钉；报道列出的用材包括榆木、圆柏和槐木。船体尺度、板材组合与连接方式共同显示出大型木船的结构性工艺。",
+        "contribution": "它为研究汉代船舶制造、渭河水运和木构连接技术提供了难得的实物材料。榫卯与木钉结构也为跨区域技术比较提出了问题，权威报道据此讨论东西方工艺交流；至于是否驶入地中海、承担某次丝路贸易或行经已知航线，仍缺乏直接证据。",
+        "viewing_guide": "观看时先按船体尺度建立比例感，再沿16块船板寻找榫卯、连接板和木钉的位置，并留意不同木材的标注。“丝路一号”是传播性命名，现存结构是主要观看线索；船员、货物和具体航程尚没有这件船体提供的直接记录。"
+      },
+      "sources": [
+        {
+          "label": "光明网／国家文物局新闻中心：汉代古船报道",
+          "url": "https://culture.gmw.cn/2024-05/20/content_37331775.htm",
+          "layer": "national_cultural_authority_press",
+          "scope": "汉长安城遗址北侧渭河故道出土、秦汉馆展陈、船体尺寸载重、榫卯木钉、16块木板及用材信息。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1907,6 +2288,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "clay-warriors"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1933,6 +2315,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西省考古研究院",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -1969,6 +2352,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "cavalry-and-frontier-seal"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2004,6 +2388,34 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-43648f63-b02d-40d3-aa19-f679c411ae06.png"
     },
+    "detail_supplement": {
+      "record_id": "qinhan-highlight-13",
+      "canonical_title": "“重卅斤”铜权",
+      "research": {
+        "history": "秦“重卅斤”铜权出土于西安市阎良区塬头村，现藏陕西历史博物馆秦汉馆相关收藏。陕西历史博物馆目录题作“秦‘重卅斤’铜石权”；本条沿用展陈中较常见的“铜权”称呼，完整题名可用于与其他秦代权量区分。",
+        "form_and_craft": "器物底径约15厘米，高约11厘米，重7.5千克，整体呈扁圆球形，顶部有鼻钮。器底另有一条凹槽，用于校正重量误差。钮、扁圆形器体、铭文和校准结构组成一件可操作的衡量器，而不是只有象征意义的纪念物。",
+        "contribution": "铭文把器物的标准重量直接写出，凹槽又显示制作和使用中存在校准环节，为理解秦代度量衡统一如何落实到具体器物提供了材料。7.5千克是现代实测值，与铭文“卅斤”的换算关系仍须置于秦代计量制度中理解。",
+        "viewing_guide": "先看顶部鼻钮和扁圆器体，再寻找“重卅斤”三字及器底校准凹槽；底部若未在展柜中呈现，可结合标签或馆方图像观察。“卅斤”应放回秦代计量制度中理解，其他同铭权量则属于不同的比较对象。"
+      },
+      "inscription": {
+        "excerpt": "重卅斤",
+        "translation": "重量为三十斤（按秦代计量制度理解）"
+      },
+      "sources": [
+        {
+          "label": "陕西历史博物馆：秦“重卅斤”铜石权藏品页",
+          "url": "https://www.sxhm.com/collections/detail/4612.html",
+          "layer": "museum_official_collection_page",
+          "scope": "馆方题名、秦代年代、塬头村出土、收藏与文物等级信息。"
+        },
+        {
+          "label": "光明网／国家文物局新闻中心：秦“重卅斤”铜权报道",
+          "url": "https://culture.gmw.cn/2024-05/20/content_37332527.htm",
+          "layer": "national_cultural_authority_press",
+          "scope": "出土地点、秦汉馆展陈、尺寸重量、器形、铭文及器底凹槽校准信息。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2036,6 +2448,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "han-clay-seals"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2076,6 +2489,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "wang-mang-currency"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2111,6 +2525,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安博物院（当前 data.js sourceMuseum；标签裁切未显示馆名）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2142,6 +2557,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2178,6 +2594,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "xian-001-painted-mirror"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2213,6 +2630,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "xian-044-5013"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2243,6 +2661,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2284,6 +2703,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "xian-058-5067"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2314,6 +2734,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2348,6 +2769,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安博物院（current data.js；官方馆方页面亦将该器列为西安博物院器物）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2392,6 +2814,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "xian-003-4859"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2417,6 +2840,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2443,6 +2867,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安博物院（current data.js；标签裁切未显示馆名）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2468,6 +2893,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2493,6 +2919,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2523,6 +2950,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "xian-051-5043"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2554,6 +2982,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "西安博物院（current data.js；标签裁切未显示馆名）",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2594,6 +3023,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "artifact-158"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2642,6 +3072,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "artifact-147"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2682,6 +3113,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "artifact-146"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2716,6 +3148,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西考古博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2755,6 +3188,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2803,6 +3237,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "artifact-085"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2842,6 +3277,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西省考古研究院",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2882,6 +3318,7 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "existing_site_photo_user_selected",
       "related_record_id": "artifact-138"
     },
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2908,6 +3345,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -2942,6 +3380,36 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "文物配图",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-a75445ff-5922-4f8c-83d2-d86ae58bcacb.png"
+    },
+    "detail_supplement": {
+      "record_id": "shaanxi-archaeology-highlight-10",
+      "canonical_title": "西陵县侯夫人墓乐舞俑组合",
+      "research": {
+        "history": "这套乐舞俑组合出土于咸阳坡刘村十六国墓M2，研究与展览报道将其称为西陵县侯夫人墓出土的一套完整乐俑组合。报道列出的七件乐俑被描述为席地而坐；当前配图呈现中央站立舞者与两侧坐俑等七人可见范围，两者所对应的展示范围并不完全相同。墓葬本身又被置于咸阳十六国墓葬类型与随葬组合的比较研究中。墓主称谓来自墓葬材料的辨识，个人传记与更多身份细节仍无直接依据。",
+        "form_and_craft": "报道列出的整套组合持物乐器依次为笙、竖箜篌、节鼓、箫、琴、瑟、阮咸。当前配图所见为中央站立舞者与两侧坐俑等七人范围，图像局部无法与七类乐器逐一对应；乐器清单与配图范围需要分开理解。公开报道尚未提供每件俑的尺寸、彩绘保存状况和原始摆放间距，现代展陈排列与考古位置的关系仍需以发掘记录为准。",
+        "contribution": "这是关中十六国墓葬中首次发现竖箜篌的报道实例，也为讨论汉晋以来墓葬乐舞图像、乐器传播和组合方式提供了新材料。整套乐俑及配图中舞者与坐俑的关系，可用于观察墓葬中的人物编排；实际演奏的曲目、音高、编制和完整表演仍无法由这组材料独立复原。",
+        "viewing_guide": "观看当前配图时，可先看中央站立舞者与两侧坐俑形成的构图，再结合整套乐器清单理解这组墓葬材料。竖箜篌仍是报道中的关键识别点，但七类乐器并不都在当前图像局部中清楚可见；曲名、音高和仪式动作仍属未知，当代展柜的间距和方向也不等同于原墓队列。"
+      },
+      "sources": [
+        {
+          "label": "澎湃新闻：陕西考古博物馆展览报道",
+          "url": "https://www.thepaper.cn/newsDetail_forward_17849286",
+          "layer": "authoritative_media_exhibition_report",
+          "scope": "西陵县侯夫人墓乐俑组合、席地而坐、七类乐器清单及关中十六国墓首次发现竖箜篌的展览信息。"
+        },
+        {
+          "label": "西北大学：咸阳坡刘村十六国墓M2研究文献记录",
+          "url": "https://ccabrjlab.nwu.edu.cn/__local/2/47/F7/9BE7A861A368C32D475F39DB9BA_ADB915A3_554B0.pdf",
+          "layer": "university_archaeology_institution_page",
+          "scope": "列出李雨生、耿庆刚《咸阳坡刘村十六国墓M2研究》发表于《考古与文物》2023年第2期98—106页，作者分别来自西北大学文化遗产学院和陕西省考古研究院。"
+        },
+        {
+          "label": "山东大学考古学科：十六国墓葬研究讲座摘要",
+          "url": "https://www.archaeology.sdu.edu.cn/info/1027/4689.htm",
+          "layer": "university_archaeology_institution_page",
+          "scope": "咸阳坡刘M2（西陵县侯夫人墓）在咸阳十六国墓葬类型与随葬组合研究中的位置。"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -2982,6 +3450,36 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-477d4a12-5e26-411e-95c1-ef7838100928.png"
     },
+    "detail_supplement": {
+      "record_id": "shaanxi-archaeology-highlight-11",
+      "canonical_title": "税村隋墓甲骑具装俑",
+      "research": {
+        "history": "此俑出土于陕西潼关税村隋代壁画墓。发掘报道显示，墓葬为长斜坡墓道、多重院落、单室砖墓，平面呈“甲”字形，并有壁画、二百余件彩绘陶俑和石棺等高等级墓葬材料；墓主可能与杨隋宗室有关、至少亲王级，这一判断仍属研究推测，墓主姓名尚未确定。展览报道将其中一件标作税村隋墓出土的贴金彩绘甲骑具装俑。",
+        "form_and_craft": "“甲骑具装”指骑手与马匹同时以披甲形象表现；公开展览报道明确使用“贴金彩绘”这一名称。现有可访问的一手页面尚未给出这件个体的尺寸、贴金和彩绘具体分布及保存等级，由此可确认的是展签所支持的类型与工艺称谓；税村墓中其他俑的标本数据与本件需分开。",
+        "contribution": "将这件人马具装俑放回税村隋墓的壁画、陶俑和石棺组合中，可以观察隋代高等级墓葬如何并置身份、武备和仪卫形象，为研究隋代墓葬制度与视觉表达提供线索。这件俑呈现的是墓葬中的人马具装形象，尚不足以直接复原现存军装或战术，墓主身份也仍处于推断层级。",
+        "viewing_guide": "观看时先确认展签中的“税村隋墓”“贴金彩绘”“甲骑具装”三层信息，再看骑手与马匹是否同时呈现防护装备，最后观察可见的金彩残留。其他隋墓或同墓不同编号俑的尺寸、铠甲细节与本件应当分开，真实战斗动作和墓主姓名目前也没有这件俑提供的直接证据。"
+      },
+      "sources": [
+        {
+          "label": "文化和旅游部：陕西潼关税村隋代壁画墓报道",
+          "url": "https://www.mct.gov.cn/whzx/whyw/201112/t20111201_708500.htm",
+          "layer": "ministry_official_press_repost",
+          "scope": "税村隋墓发掘、墓葬形制、壁画、彩绘陶俑、石棺及墓主等级判断的官方报道。"
+        },
+        {
+          "label": "澎湃新闻：陕西考古博物馆展览报道",
+          "url": "https://www.thepaper.cn/newsDetail_forward_17849286",
+          "layer": "authoritative_media_exhibition_report",
+          "scope": "税村隋墓出土、贴金彩绘甲骑具装俑的展览身份及其与陕西考古博物馆重点展项的对应。"
+        },
+        {
+          "label": "国会图书馆联合目录：潼关税村隋代壁画墓书目",
+          "url": "https://ci.nii.ac.jp/ncid/BB12971427",
+          "layer": "archaeological_report_bibliography",
+          "scope": "陕西省考古研究院等编发掘报告《潼关税村隋代壁画墓》的出版与责任者信息，供进一步核对个体标本。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3012,6 +3510,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": "陕西考古博物馆",
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3046,6 +3545,36 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "文物配图",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-146ac6c8-cb8c-4f87-88bb-e4c80f079643.png"
+    },
+    "detail_supplement": {
+      "record_id": "shaanxi-archaeology-highlight-13",
+      "canonical_title": "韩休墓乐舞图",
+      "research": {
+        "history": "《乐舞图》出土于2014年西安市长安区唐韩休墓，现藏陕西历史博物馆。陕西历史博物馆记载，韩休为唐玄宗时期宰相，墓葬发掘由陕西省考古研究院、陕西历史博物馆和长安区文物部门合作完成，墓室壁画曾整体揭取、搬迁并在实验室修复后展出。",
+        "form_and_craft": "报道记载，东壁乐舞图长约4米，两侧各有一组乐舞人物，中间为男女舞者，人物之间绘有芭蕉树；画面另有三个人物轮廓较淡，并可见重绘痕迹。陕西历史博物馆据此强调其细部描写和多次改绘线索。公开图像未能确认的乐器、动作和人物身份，目前仍属未知。",
+        "contribution": "作品把盛唐墓葬空间中的乐舞图像、人物组织和绘画层累保存下来，既可用于研究唐墓壁画的视觉表达，也可用于观察画面在使用或修改过程中留下的痕迹。它提供的是图像与壁面工艺证据，所表现的曲目、音高、舞种名称或真实演出场合尚无足够证据确定。",
+        "viewing_guide": "先定位东壁的横向构图，再看两侧乐舞群、中部男女舞者、芭蕉树以及轮廓较淡和重绘处；整体揭取与修复信息也应纳入观看。人物排列呈现的是画面构图，尚不足以复原一场完整的音乐会或固定礼仪；不清楚的乐器和动作可保留为空缺。"
+      },
+      "sources": [
+        {
+          "label": "陕西历史博物馆：韩休墓壁画考古发掘与保护展",
+          "url": "https://www.sxhm.com/Temporary/detail/17861.html",
+          "layer": "museum_official_exhibition_page",
+          "scope": "韩休身份、2014年发掘合作、壁画整体揭取搬迁修复、乐舞图展出及重绘线索。"
+        },
+        {
+          "label": "国家大剧院：陕西古代乐舞文物特展图录",
+          "url": "https://www.chncpa.org/zwzt/zlzt/ssgdyw/",
+          "layer": "museum_official_exhibition_catalog",
+          "scope": "唐墓壁画《乐舞图》、唐代年代、2014年长安区韩休墓出土及陕西历史博物馆收藏的明确对应。"
+        },
+        {
+          "label": "中国新闻网：韩休墓壁画发掘报道",
+          "url": "https://www.chinanews.com.cn/cul/2014/11-20/6797625.shtml",
+          "layer": "authoritative_media_archaeology_report",
+          "scope": "东壁乐舞图约4米、两组乐舞人物、中央男女舞者、芭蕉树及人物轮廓与重绘的现场解读。"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -3086,6 +3615,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3121,6 +3651,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3161,6 +3692,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3202,6 +3734,40 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-7788af8b-4abe-4408-b85c-47895f6acc46.png"
     },
+    "detail_supplement": {
+      "record_id": "shangqiu-museum-highlight-02",
+      "canonical_title": "清乾隆开归陈汝水利图碑",
+      "research": {
+        "history": "商丘博物馆及地方资料将其称作清乾隆开、归、陈、汝水利图石碑，研究文章也题作《开归陈汝四郡治河图》。碑刻于乾隆二十三年（1758），缘起于乾隆二十二至二十三年豫东水灾及四府治河工程，由河南巡抚胡宝瑔主持相关治理并勒石记录。原立于永城西关三里道口村山西会馆，后入藏商丘博物馆。",
+        "form_and_craft": "青石碑身呈长条形，正面磨光，图文分为左右两区：左侧为胡宝瑔撰写的竖行楷书碑记，右侧为阴刻河渠综合图。图上以不同线条区分黄河、河流、堤坝，并标出府州县、河沟源流、方位及工程长宽深等注记；碑记与地图不是两件材料，而是同一治河工程的文字、图示两种记录。",
+        "contribution": "这是把地方水利档案固定在石材上的例子，能同时进入清代河工行政、区域环境史、地图史和碑刻史研究。图中河道、沟渠和工程注记可与地方志、奏折及后来的河道变迁互校，但它服务于特定治河和记功语境，不能直接当作现代比例地图或无立场的自然地理图。",
+        "viewing_guide": "先从左右分区读整体，再按图面方向寻找黄河、干河、支沟和府州县名，随后回到左侧碑记，看工程缘起与治理目标如何对应。所涉州县数量在不同记载中有差异，碑文完整校勘也仍待进一步资料；数字和文字宜结合原碑辨读。"
+      },
+      "inscription": {
+        "excerpt": "凡有守土之责者，按此而岁治之。",
+        "translation": "凡承担守土职责者，都应依此图每年治理河道。"
+      },
+      "sources": [
+        {
+          "label": "商丘映象·商丘博物馆：馆藏文物介绍（商丘市文化广电和旅游局稿件）",
+          "url": "https://www.sohu.com/a/707742932_100182943",
+          "layer": "municipal_culture_bureau_republished",
+          "scope": "市文广旅局署名稿件对该碑馆藏身份、青石材质、左右图文布局、阴刻河渠图和碑记内容的介绍。"
+        },
+        {
+          "label": "商丘师范学院图书馆《图书月报》特藏档案：清乾隆《开、归、陈、汝水利图碑》（拓片）",
+          "url": "https://tsg.sqnu.edu.cn/20251001.pdf",
+          "layer": "university_library_special_collection",
+          "scope": "高校图书馆特藏整理对1758年刻立背景、原立地点、地图覆盖和水利史/地图史价值的整理；碑文短句取自其公开转录并明确为节选。"
+        },
+        {
+          "label": "《第一批古代名碑名刻文物名录》地方政府转载表",
+          "url": "https://www.tianshui.gov.cn/wlj/info/1802/229252.htm",
+          "layer": "government_heritage_register_republished",
+          "scope": "政府转载的名录条目确认“清乾隆开、归、陈、汝水利图石碑”与商丘博物馆的对应关系；不用于补写碑文或工程数字。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3233,6 +3799,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3267,6 +3834,24 @@ window.MUSEUM_HIGHLIGHTS = [
       "caption": "文物配图",
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-23e2fcb7-2a7f-4e02-b43c-2fa035c8084e.png"
+    },
+    "detail_supplement": {
+      "record_id": "shangqiu-museum-highlight-05",
+      "canonical_title": "白玉舞人佩",
+      "research": {
+        "history": "商丘博物馆馆藏介绍把它列作汉白玉舞人佩，归入馆内以西汉梁国王陵区出土玉器为主的收藏脉络；本件墓号、层位和是否成对，现阶段仍待结合展签和考古资料确认。舞人佩这一器类把乐舞形象转为随身佩饰，但这一类型背景不等于本件个体的具体使用记录。",
+        "form_and_craft": "白玉质，扁平片状，双面透雕。舞人着交领系带长衣，折腰翘袖，一袖从腰部下垂，另一袖抛过头顶并与肩部连接；五官、袖口、裙摆用阴线刻出，腰部有网格纹，上下各有圆孔。",
+        "contribution": "器物把运动中的长袖、腰身和裙摆压缩在薄片上，显示透雕既追求通透和动态，也要保留肩、袖、腰等连接点以维持结构。它可为汉代玉雕工艺、佩饰使用和乐舞图像史提供交叉材料；但未有墓葬组合资料时，不能据舞姿推定佩戴者身份或具体仪礼。",
+        "viewing_guide": "先看外轮廓是否为一个舞人，再沿抛袖、肩部连接和腰部网格观察线刻，最后找上下穿系孔，理解它如何从图像变成可悬佩的器物。若展柜呈现成对器物，数量和组合关系仍应以展签为准；两面透雕表现的是同一器物的双面加工。"
+      },
+      "sources": [
+        {
+          "label": "商丘映象·商丘博物馆：馆藏文物介绍（商丘市文化广电和旅游局稿件）",
+          "url": "https://www.sohu.com/a/707742932_100182943",
+          "layer": "municipal_culture_bureau_republished",
+          "scope": "市文广旅局署名稿件对商丘馆汉白玉舞人佩的玉质、片状器形、双面透雕、服饰动作、阴线、网格纹和穿孔的介绍；不借用其他馆同名器物的墓号和尺寸。"
+        }
+      ]
     },
     "collection_owner": null,
     "official_treasure": null,
@@ -3308,6 +3893,36 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-65c18a68-9620-4a04-957c-96e6a3e520a8.png"
     },
+    "detail_supplement": {
+      "record_id": "shangqiu-museum-highlight-06",
+      "canonical_title": "陶狗（通济渠故道出土）",
+      "research": {
+        "history": "这件宋代陶狗出土于大运河通济渠商丘南关段遗址，现藏商丘博物馆。其出土与唐宋至北宋河岸、码头和“河市”遗存同处一个考古叙事中：运河既是国家漕运通道，也连接商丘城市生活。本件具体出土层位和伴出单位尚未明确，相关生活场景仍只能作为考古背景，不能落实到某一家店铺或居民。",
+        "form_and_craft": "这是一件小型陶塑狗，姿态生动，耳侧蝴蝶结式装饰仍清楚可见；胎质、制作工艺、尺寸和完整色彩记录目前仍有待实物和考古资料补充。它的可爱外观不等于玩具、陪葬或家养宠物等用途已经确定。",
+        "contribution": "这件器物的价值在于把运河考古从河堤、船运和瓷片推进到日常物件的尺度：它可以与同段出土的砖瓦、陶瓷、钱币等共同讨论宋代河市的生活面貌和物质交流。单件陶狗不能证明当时宠物观念的普遍性。",
+        "viewing_guide": "现场可先观察耳侧装饰、身姿和残留色彩，再将它与遗址地图或河市资料并读；展厅的270度全息影像呈现数字演绎，玻璃柜中的陶狗保留原件的物质信息。这样既能看到器物的亲近感，也能回到运河考古的生活背景。"
+      },
+      "sources": [
+        {
+          "label": "《大运河：商丘生命之河的湮没与重生》（商丘日报报道）",
+          "url": "https://m.sqrb.com.cn/content/2026-02/09/content_270201.html",
+          "layer": "state_media_original",
+          "scope": "商丘日报记者报道对宋代陶狗出土于通济渠商丘南关段、现藏商丘博物馆、耳侧蝴蝶结和遗址考古背景的现场信息。"
+        },
+        {
+          "label": "《大运河：商丘生命之河的湮没与重生》（搜狐转载）",
+          "url": "https://www.sohu.com/a/985921602_120401473",
+          "layer": "state_media_reprint",
+          "scope": "商丘日报报道的可访问转载，补充南关段河市遗存、考古阶段及陶狗与钱币、砖瓦陶瓷等出土背景；不用于推定本件具体层位。"
+        },
+        {
+          "label": "商丘映象·商丘博物馆：馆藏文物介绍（商丘市文化广电和旅游局稿件）",
+          "url": "https://www.sohu.com/a/707742932_100182943",
+          "layer": "municipal_culture_bureau_republished",
+          "scope": "市文广旅局署名稿件确认商丘馆以270度全息展柜展示馆藏宋代陶狗，并提示数字展示与原件展示的区别。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3343,6 +3958,30 @@ window.MUSEUM_HIGHLIGHTS = [
       "provenance": "user_supplied_reference",
       "original_filename": "codex-clipboard-9d7fceaa-03b5-4fae-9a1e-611a38e83d7d.png"
     },
+    "detail_supplement": {
+      "record_id": "shangqiu-museum-highlight-07",
+      "canonical_title": "门吏陶俑",
+      "research": {
+        "history": "商丘博物馆馆藏介绍将其定为汉门吏陶俑，泥质灰陶、明器。本件墓号、出土地点和随葬组合尚未明确，因此墓门位置和具体族属、个人身份仍无法确定；“门吏”是依据形象和墓葬角色形成的名称。",
+        "form_and_craft": "俑作站立姿，双手相和，收在腹前的袖口内，背部稍弓；头戴武弁冠，双目墨绘、唇部涂朱。身穿交领直裾长衣，衣领、衣襟、袖口有红色线描曲回形纹、圆点纹和“Z”形纹，足着齐头翘首履。左右胸各有近椭圆孔，腹部有方孔。",
+        "contribution": "它保存了灰陶胎体、人物姿态、冠服和残存彩绘几层信息，适合研究汉代明器中的人物分工、服饰制度和设色工艺。与门吏名称相应的守护/侍从含义仍需结合原始墓葬记录，角色名称本身不能提供确定的职官履历。",
+        "viewing_guide": "先看双手藏袖和背部微弓的姿势，再找武弁冠、交领直裾和鞋头，最后近看眼、唇及衣饰彩绘的残留。胸腹孔洞是形制中的可见细节，其具体用途仍需修复或考古资料说明。"
+      },
+      "sources": [
+        {
+          "label": "商丘映象·商丘博物馆：馆藏文物介绍（商丘市文化广电和旅游局稿件）",
+          "url": "https://www.sohu.com/a/707742932_100182943",
+          "layer": "municipal_culture_bureau_republished",
+          "scope": "市文广旅局署名稿件对汉门吏陶俑的材质、明器属性、站姿、手势、武弁冠、冠服、彩绘纹样和胸腹孔洞的介绍。"
+        },
+        {
+          "label": "商丘博物馆来源：不藏了！商丘博物馆“显眼包”文物，组团出道啦！",
+          "url": "https://www.sohu.com/a/916807215_100182943",
+          "layer": "museum_official_social_repost",
+          "scope": "商丘博物馆来源的馆内展示指认，确认“汉门吏陶俑”作为商丘馆展出对象；不用于补写出土地、墓号或角色履历。"
+        }
+      ]
+    },
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3370,6 +4009,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3397,6 +4037,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3424,6 +4065,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3452,6 +4094,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3478,6 +4121,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3505,6 +4149,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3532,6 +4177,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",
@@ -3559,6 +4205,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "publication_approval": "user_approved",
     "record_kind": "existing_record",
     "supplement_image": null,
+    "detail_supplement": null,
     "collection_owner": null,
     "official_treasure": null,
     "current_display_status": "not_verified",

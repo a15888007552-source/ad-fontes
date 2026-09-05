@@ -74,7 +74,7 @@ function detailArchiveMarkup(group) {
     ["PRIMARY VIEW / 主图文件", primaryPhoto?.filename],
     ["PROCESSING / 图片处理", processing.method ? `${processing.method} · 非生成式` : ""],
     ["SOURCE / 处理来源", processing.source_kind && sourceSize ? `${processing.source_kind} · ${sourceSize} px` : processing.source_kind],
-    ["PRESERVATION / 原片状态", "F 盘只读保留 · SHA-256 已记录"],
+    ["PRESERVATION / 原片状态", group._supplementCaption ? "" : "F 盘只读保留 · SHA-256 已记录"],
   ];
   return '<section class="detail-archive-fields" aria-label="文物档案">'
     + '<h3 class="detail-archive-heading"><span>ARTIFACT ARCHIVE</span><small>文物档案</small></h3>'
@@ -126,7 +126,6 @@ function renderFilters() {
 }
 
 function cardTemplate(group, index) {
-  if (group._editorialOnly) return highlights.card(group, cardTemplate);
   const status = group.special_status ? `<span class="card-special">${escapeHTML(group.special_status)}</span>` : "";
   const tags = group.tags.slice(0, 3).map((tag) => `<span>${escapeHTML(tag)}</span>`).join("");
   return `
@@ -134,7 +133,7 @@ function cardTemplate(group, index) {
       <button type="button" data-open-id="${escapeHTML(group.id)}" aria-label="打开${escapeHTML(group.title)}详情">
         <span class="card-image">
           <img src="${escapeHTML(qinhanMediaUrl(group.main_image))}" alt="${escapeHTML(group.title)}的主体裁切图" loading="lazy" decoding="async" />
-          <span class="image-process">${escapeHTML(group.processing.method)} · 非生成式</span>
+          ${group.processing.method ? `<span class="image-process">${escapeHTML(group.processing.method)} · 非生成式</span>` : ''}
         </span>
         <span class="card-copy">
           <span class="card-topline"><span>${String(index + 1).padStart(2, "0")}</span><span>${escapeHTML(group.category)}</span></span>
@@ -215,7 +214,7 @@ function openGroup(id, { syncUrl = false } = {}) {
   const dialogAlreadyOpen = elements.dialog.open || elements.dialog.hasAttribute("open");
   state.activeGroup = group;
   mountDetailArchiveFields(elements.dialogMeta, group);
-  elements.dialogKicker.textContent = `${group.category} · ${group.era} · ${group.photo_count} 张现场照片`;
+  elements.dialogKicker.textContent = `${group.category} · ${group.era} · ${group.photo_count} 张${group._supplementCaption ? '配图' : '现场照片'}`;
   elements.dialogSpecial.innerHTML = group.special_status ? `<span class="dialog-special">${escapeHTML(group.special_status)}</span>` : "";
   elements.dialogTitle.textContent = group.title;
   elements.dialogSummary.textContent = group.summary;

@@ -9,6 +9,7 @@ const files = ['beilin-audit.json','baoji-xian-audit.json','history-shangqiu-aud
 const reviews = files.flatMap(file => fs.existsSync(`${dir}/${file}`) ? read(`${dir}/${file}`).items : []);
 const reviewed = new Map(reviews.map(row => [row.editorial_id, row]));
 const publication = new Map(read(`${dir}/publication-approval.json`).items.map(row => [row.editorial_id,row]));
+const detailResearch = new Map(fs.readdirSync(dir).filter(name => name.endsWith('-detail-research.json')).flatMap(name => {const data=read(`${dir}/${name}`);return Array.isArray(data)?data:data.items;}).map(item => [item.record_id,item]));
 const indexPath = 'modules/museum-atlas/search-index.json';
 const index = read(indexPath);
 index.records = index.records.filter(record => record.record_kind !== 'editorial_only');
@@ -51,6 +52,7 @@ for (const draft of drafts) {
     content_review:passed?'passed':'editorial_accepted',record_binding:passed?'verified':audit?.record_binding || 'pending',object_identity:passed?'verified':audit?.object_identity || 'pending',photo_match:passed?'verified':audit?.photo_match || 'pending',
     publication_approval:accepted?'user_approved':null, record_kind:textOnly?'editorial_only':'existing_record',
     supplement_image:permission?.supplement_image || null,
+    detail_supplement:detailResearch.get(recordId) || detailResearch.get(draft.editorial_id) || null,
     collection_owner:passed?audit.collection_owner:null, official_treasure:null,current_display_status:'not_verified',
     object_identity_id:audit.object_identity_id || `${draft.museum_id}:${recordId}`,
   };

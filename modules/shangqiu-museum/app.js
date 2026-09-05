@@ -46,6 +46,7 @@
   }
 
   function objectPhotos(artifact) {
+    if (artifact._supplementPhotos) return artifact._supplementPhotos;
     const labelNumbers = new Set(artifact.labels || []);
     const all = rangePhotos(artifact);
     const objects = all.filter((photo) => !labelNumbers.has(photo.number));
@@ -88,7 +89,6 @@
   }
 
   function card(artifact) {
-    if (artifact._editorialOnly) return highlights.card(artifact, card, true);
     const photo = primaryPhoto(artifact);
     const introduction = artifact.summary || artifact.paragraphs?.[0] || "器物的形制、材质与装饰共同留下时代信息，打开详情可继续辨读。";
     const materialLabel = artifact.material ? "质地" : "类别";
@@ -204,7 +204,15 @@
     }));
     document.querySelector("#object-reading").hidden = cleanParagraphs.length === 0;
     const sources = String(artifact.sources || "").trim();
-    document.querySelector("#dialog-sources").textContent = sources;
+    const sourceContainer = document.querySelector("#dialog-sources");
+    sourceContainer.replaceChildren(...sources.split(/\n/).filter(Boolean).map(line => {
+      const paragraph=document.createElement('p');
+      const match=line.match(/https?:\/\/\S+/);
+      if (!match) {paragraph.textContent=line;return paragraph;}
+      const link=document.createElement('a');link.href=match[0];link.target='_blank';link.rel='noopener noreferrer';
+      link.textContent=line.slice(0,match.index).replace(/[：:\s]+$/,'') || '资料来源';
+      paragraph.append(link);return paragraph;
+    }));
     document.querySelector("#object-sources").hidden = !sources;
     filmstrip.replaceChildren();
     images.forEach((photo, index) => {

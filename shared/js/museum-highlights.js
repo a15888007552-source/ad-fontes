@@ -17,70 +17,48 @@
   function create(museumId) {
     const rows = (window.MUSEUM_HIGHLIGHTS || []).filter(row => row.museum_id === museumId && eligible(row));
     const byId = new Map(rows.map(row => [String(row.record_id), row]));
-    const textRecords = rows.filter(row => row.record_kind === 'editorial_only').map(row => ({id:row.record_id,title:row.canonical_title,name:row.canonical_title,period:row.period,period_label:row.period,summary:row.card_tagline,aliases:row.aliases,category:'文物介绍',_editorialOnly:true}));
-    function supplement(row, detail = false) {
-      if (!row?.supplement_image) return '<span class="museum-editorial-photo-note">暂无对应照片</span>';
+    // Legacy editorial links now open the museum's own detail view.
+    const legacyUrl = new URL(location.href);
+    if (legacyUrl.searchParams.has('editorial')) {
+      legacyUrl.searchParams.set('item', legacyUrl.searchParams.get('editorial'));
+      legacyUrl.searchParams.delete('editorial');
+      history.replaceState(null, '', legacyUrl);
+    }
+    const beilinRelated = {'beilin-highlight-01':'artifact-132','beilin-highlight-02':'artifact-074','beilin-highlight-14':'artifact-171'};
+    const absoluteMedia = path => new URL(/^(?:https?:)?\/\//i.test(path) ? path : '../../' + path, document.baseURI).href;
+    const sectionsFor = research => [['历史背景',research.history],['形制与工艺',research.form_and_craft],['历史意义',research.contribution],['观看提示',research.viewing_guide]].filter(([,text])=>text).map(([heading,text])=>({heading,text}));
+    function nativeRecord(row, records) {
+      const relatedId = row.supplement_image?.related_record_id || beilinRelated[row.record_id];
+      const related = records.find(item=>item.id===relatedId);
+      const base = related ? structuredClone(related) : {};
       const asset = row.supplement_image;
-      const url = new URL(/^(?:https?:)?\/\//i.test(asset.path) ? asset.path : '../../' + asset.path, document.baseURI).href;
-      const img = `<img src="${escape(url)}" alt="${escape(row.canonical_title + ' · ' + asset.caption)}" loading="${detail ? 'eager' : 'lazy'}" decoding="async">`;
-      return detail ? `<figure class="museum-editorial-image"><a href="${escape(url)}" target="_blank" rel="noopener">${img}</a><figcaption>${escape(asset.caption)} · <a href="${escape(url)}" target="_blank" rel="noopener">查看原图 ↗</a></figcaption></figure>` : `<span class="museum-editorial-cover">${img}</span>`;
+      const url = absoluteMedia(asset.path);
+      const photo = {sequence:1,number:1,filename:asset.original_filename || asset.path.split('/').pop(),role: museumId==='shaanxi-archaeology'?'整体':'front',role_label:asset.caption,caption:asset.caption,isLabel:false,thumb:url,web:url,preview:url,src:url,focus:url,original:url,width:asset.width || '',height:asset.height || '',display_width:asset.width || '',display_height:asset.height || '',sourceSize:[]};
+      const item = {...base,id:row.record_id,name:row.canonical_title,title:row.canonical_title,
+        period:row.period,period_label:row.period,era:row.period,summary:row.card_tagline,
+        category:base.category || (museumId==='beilin'?'古董/文物':'其他器物'),
+        categoryLabel:base.categoryLabel || '文物',tags:base.tags || [],aliases:row.aliases || [],
+        _highlightApplied:false,_editorialOnly:false,_nativeHighlight:true,
+        sequence:base.sequence ?? row.curatorial_rank,index:base.index ?? row.curatorial_rank,
+        research:base.research || {},photos:base.photos?.length ? base.photos : [photo]};
+      if (!related) {item._supplementCaption=asset.caption;item.status='文物资料';item.sequenceLabel='配图';}
+      if (museumId==='beilin') {
+        item.main_photo=base.main_photo || photo;item.subitems=base.subitems || [];item.form_labels=base.form_labels || [];
+        item.photo_count=item.photos.length;item.display_photo_count=item.photos.filter(p=>!['label','title'].includes(p.role)).length;
+        item.sequence_start=base.sequence_start ?? row.curatorial_rank;item.sequence_end=base.sequence_end ?? row.curatorial_rank;
+        if (!related) {item.image_source='supplement';item.image_source_label=asset.caption;}
+      }
+      if (museumId==='baoji') {item.featured=base.featured || photo;item.hasObjectPhoto=true;delete item.treasureId;}
+      if (museumId==='qinhan') {item.main_image=base.main_image || url;item.full_image=base.full_image || url;item.gallery=base.gallery?.length?base.gallery:[photo];item.processing=base.processing || {};item.sources=base.sources || [];item.photo_count=item.gallery.length;item.object_photo_count=item.gallery.filter(p=>p.role!=='label').length;item.label_photo_count=item.gallery.length-item.object_photo_count;}
+      if (museumId==='xian-museum') item.cover=base.cover || url;
+      if (museumId==='shaanxi-history') item.localMedia=url;
+      if (museumId==='shangqiu-museum') {item.site=base.site || '';item.paragraphs=base.paragraphs || [];item._supplementPhotos=related ? null : [photo];}
+      item._detailSupplement=row.detail_supplement || null;
+      return item;
     }
-    let textDialog;
-    function openText(id, sync = true) {
-      const row = byId.get(id); if (!row || row.record_kind !== 'editorial_only') return;
-      if (!textDialog) { textDialog = document.createElement('dialog'); textDialog.className = 'museum-editorial-dialog'; document.body.append(textDialog); textDialog.addEventListener('close', () => { const url = new URL(location.href); url.searchParams.delete('editorial'); history.replaceState(null,'',url); }); }
-      textDialog.innerHTML = `<button type="button" class="museum-editorial-close" aria-label="关闭文物介绍">关闭 ×</button><p>重点文物 · ${escape(row.period)}</p><h2>${escape(row.canonical_title)}</h2><p class="museum-editorial-tagline">${escape(row.card_tagline)}</p>${supplement(row, true)}<p>${escape(row.intro)}</p><div class="museum-editorial-sources">${row.sources.map(s=>`<a href="${escape(s.url)}" target="_blank" rel="noopener noreferrer">${escape(s.title)} ↗</a>`).join('')}</div>`;
-      textDialog.querySelector('button').addEventListener('click',()=>textDialog.close());
-      if (!textDialog.open) textDialog.showModal();
-      if (sync) { const url = new URL(location.href); url.searchParams.set('editorial',id); history.pushState(null,'',url); }
-    }
-    document.addEventListener('click', event => { const button = event.target.closest('[data-museum-editorial]'); if (button && byId.has(button.dataset.museumEditorial)) { event.preventDefault(); event.stopImmediatePropagation(); openText(button.dataset.museumEditorial); } }, true);
-    document.addEventListener('keydown', event => {
-      const opener = event.target.closest('[data-museum-editorial][role="button"]');
-      if (opener && ['Enter',' '].includes(event.key)) { event.preventDefault(); event.stopImmediatePropagation(); openText(opener.dataset.museumEditorial); }
-    }, true);
-    const initialText = new URL(location.href).searchParams.get('editorial');
-    if (initialText) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',()=>openText(initialText,false),{once:true}); else setTimeout(()=>openText(initialText,false),0); }
-    let nativeCardSeed;
-    const nativeCardsById = new Map();
-    function card(item, renderNative, node = false) {
-      if (!item._editorialOnly) return null;
-      const row = byId.get(item.id);
-      const adapted = {...structuredClone(nativeCardsById.get(row.supplement_image?.related_record_id) || nativeCardSeed), ...item, _editorialOnly:false,
-        era:item.period, period_label:item.period, card_excerpt:item.summary, cardLead:item.summary,
-        featured:false, special_status:null, music_focus:null, musicFocus:false, tags:[],
-        origin:'', site:'', material:'', sequence:row.curatorial_rank, index:row.curatorial_rank};
-      const rendered = renderNative(adapted, row.curatorial_rank - 1);
-      const template = document.createElement('template');
-      if (typeof rendered === 'string') template.innerHTML = rendered;
-      else template.content.append(rendered);
-      const root = template.content.firstElementChild;
-      const opener = root.matches('button,[role="button"]') ? root : root.querySelector('button');
-      opener.dataset.museumEditorial = item.id;
-      const asset = row.supplement_image;
-      const url = new URL(/^(?:https?:)?\/\//i.test(asset.path) ? asset.path : '../../' + asset.path, document.baseURI).href;
-      root.querySelectorAll('img').forEach(image => {
-        image.removeAttribute('srcset'); image.removeAttribute('sizes');
-        image.src = url; image.alt = item.title + ' · ' + asset.caption;
-        image.loading = 'lazy'; image.decoding = 'async'; image.onerror = null;
-      });
-      root.querySelectorAll('[style]').forEach(element => {
-        if (element.style.backgroundImage) element.style.backgroundImage = 'none';
-      });
-      root.querySelectorAll('.card-photo-count,.artifact-photo-count').forEach(element => element.textContent='配图 1');
-      root.querySelectorAll('.card-number').forEach(element => element.textContent=String(row.curatorial_rank).padStart(2,'0'));
-      root.querySelectorAll('.archive-card-label').forEach(element => element.textContent=asset.caption);
-      root.querySelectorAll('.archive-card-meta').forEach(element => element.textContent=item.period + ' · 配图 1');
-      root.querySelectorAll('.card-metrics').forEach(element => element.textContent='配图 1');
-      root.querySelectorAll('.image-process,.card-flags').forEach(element => element.remove());
-      root.querySelectorAll('.artifact-card-footer span:first-child').forEach(element => element.textContent='配图 1');
-      return node ? root : root.outerHTML;
-    }
-    let mode = 'recommended', controls, lastQuery = '';
     const get = item => byId.get(String(item.id));
     function apply(records) {
-      if (!nativeCardSeed && records.length) nativeCardSeed = structuredClone(records[0]);
-      records.forEach(record => nativeCardsById.set(record.id, structuredClone(record)));
+      rows.filter(row=>row.record_kind==='editorial_only' && !records.some(item=>item.id===row.record_id)).forEach(row=>records.push(nativeRecord(row,records)));
       records.forEach(item => {
         const row = get(item);
         if (!row || item._highlightApplied) return;
@@ -89,30 +67,45 @@
         const sources = row.sources.map(s => ({label: s.title, url: s.url}));
         if (museumId === 'beilin') {
           item.name = row.canonical_title; item.period_label = row.period; item.card_excerpt = row.card_tagline;
-          item.research = {...item.research, history: row.intro, sources: [...(item.research?.sources || []), ...sources.map(s => ({...s, layer: 'museum_official_collection_page'}))]};
+          item.research = {...item.research, history: item.research?.history || row.intro, sources: [...(item.research?.sources || []), ...sources.map(s => ({...s, layer: 'museum_official_collection_page'}))]};
         } else {
           item.title = row.canonical_title;
           item.summary = row.card_tagline;
           if (['baoji', 'qinhan', 'shangqiu-museum'].includes(museumId)) item.era = row.period;
           else item.period = row.period;
-          if (museumId === 'baoji') { item.research = {...item.research, history: row.intro}; item.highlightSources = sources.map(s => [s.label, s.url]); }
-          if (museumId === 'qinhan') { item.interpretation = row.intro; item.sources = [...new Set([...(item.sources || []), ...sources.map(s => s.url)])]; }
-          if (museumId === 'shaanxi-history') { item.cardLead = row.card_tagline; item.essay = [{heading: '文物介绍', text: row.intro}, ...(item.essay || []).slice(1)]; item.sources = [...(item.sources || []), ...sources]; }
-          if (museumId === 'xian-museum') { item.sections = [{heading: '文物介绍', text: row.intro}, ...(item.sections || []).slice(1)]; item.sources = [...(item.sources || []), ...sources]; }
-          if (museumId === 'shangqiu-museum') { item.paragraphs = [row.intro, ...(item.paragraphs || []).slice(1)]; item.sources = [item.sources, ...sources.map(s => `${s.label}：${s.url}`)].filter(Boolean).join('\n'); }
-          if (museumId === 'shaanxi-archaeology') { item.description = row.intro; item.highlightSources = sources; }
+          if (museumId === 'baoji') { item.research = {...item.research, history: item.research?.history || row.intro}; item.highlightSources = sources.map(s => [s.label, s.url]); }
+          if (museumId === 'qinhan') { item.interpretation ||= row.intro; item.sources = [...new Set([...(item.sources || []), ...sources.map(s => s.url)])]; }
+          if (museumId === 'shaanxi-history') { item.cardLead = row.card_tagline; item.essay = item.essay?.length ? item.essay : [{heading: '文物介绍', text: row.intro}]; item.sources = [...(item.sources || []), ...sources]; }
+          if (museumId === 'xian-museum') { item.sections = item.sections?.length ? item.sections : [{heading: '文物介绍', text: row.intro}]; item.sources = [...(item.sources || []), ...sources]; }
+          if (museumId === 'shangqiu-museum') { item.paragraphs = item.paragraphs?.length ? item.paragraphs : [row.intro]; item.sources = [item.sources, ...sources.map(s => `${s.label}：${s.url}`)].filter(Boolean).join('\n'); }
+          if (museumId === 'shaanxi-archaeology') { item.description ||= row.intro; item.highlightSources = sources; }
         }
+      });
+      records.forEach(item => {
+        const row=get(item); if (!row) return;
+        const detail=row.detail_supplement;
+        if (!detail) return;
+        const sources=(detail.sources || []).map(source=>({...source,label:source.label || source.title}));
+        item.research={...item.research,...detail.research,sources:[...(item.research?.sources || []),...sources]};
+        if (detail.inscription) item.inscription=detail.inscription;
+        const parts=sectionsFor(detail.research || {});
+        if (detail.inscription?.excerpt) parts.push({heading:'铭文节选与释读',text:[detail.inscription.excerpt_note,detail.inscription.excerpt,detail.inscription.translation].filter(Boolean).join('\n\n')});
+        if (museumId==='baoji') {Object.assign(item.research,{form:detail.research.form_and_craft,significance:detail.research.contribution,viewing:detail.research.viewing_guide});item.highlightSources=[...(item.highlightSources || []),...sources.map(s=>[s.label,s.url])];}
+        if (museumId==='qinhan') {item.interpretation=parts.map(p=>p.heading+'\n'+p.text).join('\n\n');item.sources=[...new Set([...(item.sources || []),...sources.map(s=>s.url)])];}
+        if (museumId==='xian-museum' || museumId==='shaanxi-history') {const key=museumId==='xian-museum'?'sections':'essay';item[key]=parts.concat((item[key] || []).filter(p=>!['文物介绍',...parts.map(p=>p.heading)].includes(p.heading)));item.sources=[...(item.sources || []),...sources];}
+        if (museumId==='shangqiu-museum') {item.paragraphs=parts.map(p=>p.text);item.sources=[item.sources,...sources.map(s=>s.label+'：'+s.url)].filter(Boolean).join('\n');}
+        if (museumId==='shaanxi-archaeology') {item.description=detail.research.history;item.significance=detail.research.contribution;item.viewing_notes=detail.research.viewing_guide;item.form_and_craft=detail.research.form_and_craft;item.highlightSources=[...(item.highlightSources || []),...sources];}
       });
       return records;
     }
     function select(records, {query = '', filtered = false, manualSort = false} = {}) {
       let output = [...records];
-      if (!filtered) output.push(...textRecords.filter(item => !output.some(other=>other.id===item.id) && (!query.trim() || norm([item.title,item.period,item.summary,...item.aliases].join(' ')).includes(norm(query)))));
+
       if (query.trim()) output.sort((a, b) => relevance(b, query) - relevance(a, query) || rank(get(a)) - rank(get(b)));
       else if (!manualSort) output.sort((a, b) => rank(get(a)) - rank(get(b)));
       return output;
     }
-    return {apply, select, get, card, total: count => count + textRecords.length, aliases: item => (item.aliases || []).join(' '), badge: item => get(item) ? '<span class="museum-highlight-badge">重点文物</span>' : ''};
+    return {apply, select, get, total: count => count, aliases: item => (item.aliases || []).join(' '), badge: item => get(item) ? '<span class="museum-highlight-badge">重点文物</span>' : ''};
   }
   window.MuseumHighlights = {create, eligible, relevance, norm};
 })();

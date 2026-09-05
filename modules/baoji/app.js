@@ -561,7 +561,7 @@
     const unitNote = Number(group.unitCount || 1) > 1 ? `；同名器物合并 ${group.unitCount} 组现场照片` : '';
     dialogContent.innerHTML = `<div class="dialog-header"><div><p class="dialog-kicker">${escapeHTML(group.number || 'PHOTO GROUP')} / ${escapeHTML(group.categoryLabel || '其他器物')}</p><h2 id="dialog-title">${escapeHTML(group.title || '器物卡片')}<small>${escapeHTML(sequence)}</small></h2></div><p class="dialog-lead">${escapeHTML(group.summary || '现场展签与照片序列记录。')}${escapeHTML(unitNote)}</p></div>
       <div class="dialog-facts"><div class="dialog-fact"><span class="dialog-fact-label">类别</span><span class="dialog-fact-value">${escapeHTML(group.categoryLabel || '其他器物')}</span></div><div class="dialog-fact"><span class="dialog-fact-label">照片数</span><span class="dialog-fact-value">${photos.length} 张</span></div><div class="dialog-fact"><span class="dialog-fact-label">音乐重点</span><span class="dialog-fact-value">${group.musicFocus ? '是 · 乐器 / 礼乐' : '否'}</span></div><div class="dialog-fact"><span class="dialog-fact-label">证据状态</span><span class="dialog-fact-value">${escapeHTML(group.status || '现场展签 / 照片顺序')}</span></div></div>
-      <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, main ? `现场顺序 · ${filenameOf(main)}` : '', fallback, group.title || '器物条目')}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
+      <div class="dialog-body-grid"><div>${galleryMarkup(photos, main, main ? (group._supplementCaption || `现场顺序 · ${filenameOf(main)}`) : '', fallback, group.title || '器物条目')}</div><div class="dialog-copy">${researchMarkup(group)}</div></div>
       ${genericSequenceMarkup(group, photos)}
       ${group.highlightSources?.length ? sourcesMarkup({sources: group.highlightSources}) : ''}`;
     const groupFacts = dialogContent.querySelector(".dialog-facts");
@@ -792,7 +792,6 @@
   function filteredGroups() { return highlights.select(state.groups.filter(groupMatches), {query: state.query, filtered: state.filter !== "all"}); }
 
   function archiveCardMarkup(group) {
-    if (group._editorialOnly) return highlights.card(group, archiveCardMarkup);
     const featured = objectPhoto(group);
     const availablePhotos = availableGroupPhotos(group);
     const fallback = groupVisualFallback(group);

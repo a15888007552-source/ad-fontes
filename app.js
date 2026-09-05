@@ -43,6 +43,7 @@ const ROLE_LABELS = {
 };
 
 const SOURCE_LAYER_LABELS = {
+  authoritative_classical_text: "古籍原文",
   local_label_photo: "现场主证据",
   museum_official_collection_page: "馆方对象资料",
   wikipedia_overview: "维基百科概述",
@@ -433,7 +434,6 @@ function setImageWithFallback(image, photo, preferred = []) {
 }
 
 function createCard(group, index) {
-  if (group._editorialOnly) return highlights.card(group, createCard, true);
   const card = makeElement("article", `artifact-card${group.special_status ? " special" : ""}`);
   const button = makeElement("button", "artifact-card-button");
   button.type = "button";
@@ -476,7 +476,7 @@ function createCard(group, index) {
 
   const copy = makeElement("div", "card-copy");
   const meta = makeElement("p", "card-meta");
-  meta.append(makeElement("span", "card-number", group.id.split("-")[1]));
+  meta.append(makeElement("span", "card-number", group.id.split("-").at(-1).padStart(3, '0')));
   meta.append(makeElement("span", "card-category", categoryLabel(group.category)));
   if (highlights?.get(group)) meta.insertAdjacentHTML("beforeend", highlights.badge(group));
   const title = makeElement("h3", "", group.name);
@@ -551,10 +551,11 @@ function formatRole(role) {
 }
 
 function isSupplementalImage(group, photo) {
-  return group?.image_source === "user_pdf" || photo?.source_type === "user_pdf";
+  return ['user_pdf','supplement'].includes(group?.image_source) || photo?.source_type === "user_pdf";
 }
 
 function imageKindLabel(group, photo) {
+  if (group?.image_source === 'supplement') return group.image_source_label || '文物配图';
   return isSupplementalImage(group, photo) ? "PDF资料图" : "现场文物照片";
 }
 
@@ -585,7 +586,7 @@ function selectPhoto(index, updateLightbox = false) {
   }
   elements.detailMainImage.alt = `${group.name}：${formatRole(photo.role)}，${imageKindLabel(group, photo)}`;
   elements.galleryRoleLabel.textContent = formatRole(photo.role);
-  elements.imageCaption.textContent = `${formatRole(photo.role)} · ${photo.filename} · ${imageEvidenceLabel(group, photo)} · ${photo.display_width} × ${photo.display_height}`;
+  elements.imageCaption.textContent = `${formatRole(photo.role)} · ${photo.filename} · ${imageEvidenceLabel(group, photo)}${photo.display_width && photo.display_height ? ` · ${photo.display_width} × ${photo.display_height}` : ''}`;
 
   elements.photoThumbs.querySelectorAll(".photo-thumb").forEach((thumb, thumbIndex) => {
     thumb.setAttribute("aria-current", String(thumbIndex === state.currentPhotoIndex));
@@ -629,12 +630,12 @@ function renderFacts(group) {
   const labelSequences = group.label_photo_sequences?.length
     ? group.label_photo_sequences.join("、")
     : group.label_photo_sequence || "—";
-  const evidenceTerm = group.image_source === "user_pdf" ? "资料来源" : "展签依据";
-  const evidenceDescription = group.image_source === "user_pdf"
+  const evidenceTerm = isSupplementalImage(group) ? "资料来源" : "展签依据";
+  const evidenceDescription = isSupplementalImage(group)
     ? group.image_source_label || "用户提供 PDF 资料图"
     : `摄影序号 ${labelSequences} · 已提取为卡片文字`;
-  const imageTerm = group.image_source === "user_pdf" ? "PDF资料图" : "文物影像";
-  const imageDescription = group.image_source === "user_pdf"
+  const imageTerm = isSupplementalImage(group) ? "文物配图" : "文物影像";
+  const imageDescription = isSupplementalImage(group)
     ? `${artifactPhotoCount(group)} 张（不属于现场拍摄）`
     : `${artifactPhotoCount(group)} 张（展签与题名牌不进入画廊）`;
   const rows = [
@@ -643,7 +644,7 @@ function renderFacts(group) {
     factRow("形制 / 书体", form),
     factRow(imageTerm, imageDescription),
     factRow(evidenceTerm, evidenceDescription),
-    factRow("校读状态", RESEARCH_STATUS_LABELS[group.research?.status] || "现场档案"),
+    factRow("校读状态", RESEARCH_STATUS_LABELS[group.research?.status] || (group._supplementCaption ? "文物资料" : "现场档案")),
   ];
   if (group.music_focus) {
     rows.splice(3, 0, factRow("音乐关联", group.music_focus.tier_label));
@@ -771,7 +772,7 @@ function renderDetail(group) {
   elements.viewingGuideText.textContent = group.research?.viewing_guide || "请结合整体、局部与展签照片分层观察。";
   const inscription = group.inscription;
   if (inscription && elements.inscriptionResearch) {
-    elements.inscriptionExcerptText.textContent = inscription.excerpt || "";
+    elements.inscriptionExcerptText.textContent = [inscription.excerpt_note, inscription.excerpt].filter(Boolean).join('\n\n');
     elements.inscriptionTranslationText.textContent = inscription.translation || "";
     elements.inscriptionResearch.hidden = false;
   } else if (elements.inscriptionResearch) {
