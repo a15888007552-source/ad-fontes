@@ -25,8 +25,46 @@
     inscriptionNote: dialog.querySelector('#artifact-inscription-note'), sources: dialog.querySelector('#artifact-dialog-sources'),
   };
 
+  const pageSize = 9;
+  const previousPage = more.cloneNode(false);
+  previousPage.id = 'field-previous';
+  previousPage.textContent = '上一页';
+  more.before(previousPage);
+  let imageObserver;
+  let revealObserver;
+  let imageQueue = [];
+  let activeLoads = 0;
+
+  function drainImages() {
+    while (activeLoads < 2 && imageQueue.length) {
+      const img = imageQueue.shift();
+      if (!img.isConnected || !img.dataset.src) continue;
+      activeLoads++;
+      const done = () => { activeLoads--; drainImages(); };
+      img.addEventListener('load', done, { once: true });
+      img.addEventListener('error', done, { once: true });
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+    }
+  }
+  function observeImages() {
+    imageObserver?.disconnect();
+    imageQueue = [];
+    const images = grid.querySelectorAll('img[data-src]');
+    if (!('IntersectionObserver' in window)) { imageQueue.push(...images); drainImages(); return; }
+    imageObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        imageObserver.unobserve(entry.target);
+        imageQueue.push(entry.target);
+      });
+      drainImages();
+    }, { rootMargin: '100px 0px' });
+    images.forEach(img => imageObserver.observe(img));
+  }
+
   const state = {
-    filter: 'all', query: '', visible: 24, activeGroup: null, activePhotos: [], activePhoto: 0,
+    filter: 'all', query: '', page: 0, activeGroup: null, activePhotos: [], activePhoto: 0,
     lastOpener: null, scale: 1, offsetX: 0, offsetY: 0, dragging: false, pointerId: null,
     dragStartX: 0, dragStartY: 0, dragOriginX: 0, dragOriginY: 0,
     swipeStartX: 0, swipeStartY: 0, swiping: false,
@@ -109,28 +147,31 @@
     const photos = objectPhotos(group);
     const origin = group.origin || (photos.some(item => item.role === 'online') ? '开放图片' : '本次实拍');
     return `<button class="field-card" type="button" data-artifact="${escapeHTML(group.id)}" aria-haspopup="dialog" aria-label="打开${escapeHTML(group.title)}的完整图集与研究说明" style="--field-position:${escapeHTML(group.position || 'center')}">
-      <figure><img src="${escapeHTML(photoPath(photo, 'thumb') || photoPath(photo))}" alt="${escapeHTML(photo.alt || `${group.title} · ${photoRole(photo)}`)}" width="520" height="520" loading="lazy" decoding="async"><span class="field-card-number">${String(group.number || index + 1).padStart(2, '0')}</span><span class="field-card-photo-count">${photos.length} 张</span><span class="field-card-origin">${escapeHTML(origin)}</span></figure>
+      <figure><img data-src="${escapeHTML(photoPath(photo, 'thumb') || photoPath(photo))}" alt="${escapeHTML(photo.alt || `${group.title} · ${photoRole(photo)}`)}" width="520" height="520" loading="eager" decoding="async"><span class="field-card-number">${String(group.number || index + 1).padStart(2, '0')}</span><span class="field-card-photo-count">${photos.length} 张</span><span class="field-card-origin">${escapeHTML(origin)}</span></figure>
       <div><small>${escapeHTML(group.era || '年代待核')} / ${escapeHTML(group.material || group.categoryLabel || '器物')}</small><h3>${escapeHTML(group.title || '待核器物')}</h3><p class="field-card-summary">${escapeHTML(leadFor(group))}</p><p><span>${escapeHTML(group.provenance || group.findspot || '展签与照片序列待核')}</span><span aria-hidden="true">↗</span></p></div>
     </button>`;
   }
 
   function render() {
     const matched = groups.filter(matches);
-    const shown = matched.slice(0, state.visible);
+    const shown = matched.slice(state.page * pageSize, (state.page + 1) * pageSize);
     grid.innerHTML = shown.length ? shown.map(renderCard).join('') : '<p class="field-empty">没有找到相符器物。可以换一个器名、年代或出土地再试。</p>';
-    status.textContent = `显示 ${shown.length} / ${matched.length} 件 · 共 ${groups.length} 组器物档案`;
-    more.hidden = shown.length >= matched.length;
-    if (!more.hidden) more.innerHTML = `继续展开 ${Math.min(24, matched.length - shown.length)} 件 <span>↓</span>`;
+    status.textContent = `第 ${matched.length ? state.page + 1 : 0} / ${Math.ceil(matched.length / pageSize)} 页 · 共 ${matched.length} 件`;
+    previousPage.hidden = state.page === 0;
+    more.hidden = (state.page + 1) * pageSize >= matched.length;
+    more.textContent = '下一页 →';
     bindReveal();
+    observeImages();
   }
 
   function bindReveal() {
+    revealObserver?.disconnect();
     const cards = [...grid.querySelectorAll('.field-card')];
     if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
       cards.forEach(card => card.classList.add('is-field-visible'));
       return;
     }
-    const observer = new IntersectionObserver(entries => {
+    const observer = revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('is-field-visible');
@@ -212,6 +253,11 @@
     elements.count.textContent = `${String(state.activePhoto + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
     elements.previous.disabled = total < 2; elements.next.disabled = total < 2;
     [...elements.thumbs.children].forEach((thumb, thumbIndex) => {
+      const preview = thumb.querySelector('img');
+      if (thumbIndex === state.activePhoto && preview?.dataset.src) {
+        preview.src = preview.dataset.src;
+        delete preview.dataset.src;
+      }
       thumb.classList.toggle('is-active', thumbIndex === state.activePhoto);
       thumb.setAttribute('aria-current', thumbIndex === state.activePhoto ? 'true' : 'false');
     });
@@ -219,7 +265,7 @@
   }
 
   function renderGallery(group, photos) {
-    elements.thumbs.innerHTML = photos.map((photo, index) => `<button class="artifact-dialog-thumb" type="button" data-photo-index="${index}" aria-label="查看第${index + 1}张：${escapeHTML(photoRole(photo))}"><img src="${escapeHTML(photoPath(photo, 'thumb'))}" alt="" loading="lazy"><span>${escapeHTML(photoRole(photo))}</span></button>`).join('');
+    elements.thumbs.innerHTML = photos.map((photo, index) => `<button class="artifact-dialog-thumb" type="button" data-photo-index="${index}" aria-label="查看第${index + 1}张：${escapeHTML(photoRole(photo))}"><img data-src="${escapeHTML(photoPath(photo, 'thumb'))}" alt="" decoding="async"><span>${escapeHTML(photoRole(photo))}</span></button>`).join('');
     setPhoto(0);
   }
 
@@ -255,12 +301,18 @@
   filters.addEventListener('click', event => {
     const button = event.target.closest('[data-field-filter]');
     if (!button) return;
-    state.filter = button.dataset.fieldFilter; state.visible = 24;
+    state.filter = button.dataset.fieldFilter; state.page = 0;
     filters.querySelectorAll('[data-field-filter]').forEach(item => item.classList.toggle('is-active', item === button));
     render();
   });
-  search.addEventListener('input', () => { state.query = search.value.trim().toLowerCase(); state.visible = 24; render(); });
-  more.addEventListener('click', () => { state.visible += 24; render(); });
+  search.addEventListener('input', () => { state.query = search.value.trim().toLowerCase(); state.page = 0; render(); });
+  function turnPage(step) {
+    state.page += step;
+    render();
+    grid.scrollIntoView({ block: 'start' });
+  }
+  more.addEventListener('click', () => turnPage(1));
+  previousPage.addEventListener('click', () => turnPage(-1));
   grid.addEventListener('click', event => {
     const card = event.target.closest('[data-artifact]');
     if (!card) return;
