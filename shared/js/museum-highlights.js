@@ -126,7 +126,7 @@
         button.addEventListener('click', () => { mode = value; render(); }); controls.append(button);
       }
       const toolbarSelectors = {
-        beilin:'#catalogControls .control-row', baoji:'.archive-toolbar .filter-list',
+        beilin:'#categoryTabs', baoji:'.archive-toolbar .filter-list',
         qinhan:'.archive-tools .category-filters', 'xian-museum':'.filter-shell .primary-filters',
         'shaanxi-history':'.filter-shell .primary-filters', 'shangqiu-museum':'.catalog-tools .filter-row',
         'shaanxi-archaeology':'.artifact-catalog-toolbar'

@@ -361,7 +361,9 @@ function renderCategoryTabs() {
     fragment.append(button);
   });
 
+  const highlightControls = elements.categoryTabs.querySelector(".museum-highlight-controls");
   elements.categoryTabs.replaceChildren(fragment);
+  if (highlightControls) elements.categoryTabs.append(highlightControls);
 }
 
 function applyFilters() {
