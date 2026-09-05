@@ -35,17 +35,52 @@
       if (sync) { const url = new URL(location.href); url.searchParams.set('editorial',id); history.pushState(null,'',url); }
     }
     document.addEventListener('click', event => { const button = event.target.closest('[data-museum-editorial]'); if (button && byId.has(button.dataset.museumEditorial)) { event.preventDefault(); event.stopImmediatePropagation(); openText(button.dataset.museumEditorial); } }, true);
+    document.addEventListener('keydown', event => {
+      const opener = event.target.closest('[data-museum-editorial][role="button"]');
+      if (opener && ['Enter',' '].includes(event.key)) { event.preventDefault(); event.stopImmediatePropagation(); openText(opener.dataset.museumEditorial); }
+    }, true);
     const initialText = new URL(location.href).searchParams.get('editorial');
     if (initialText) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',()=>openText(initialText,false),{once:true}); else setTimeout(()=>openText(initialText,false),0); }
-    function card(item, node = false) {
+    let nativeCardSeed;
+    const nativeCardsById = new Map();
+    function card(item, renderNative, node = false) {
       if (!item._editorialOnly) return null;
-      const markup = `<article class="museum-editorial-card"><button type="button" data-museum-editorial="${escape(item.id)}"><span class="museum-highlight-badge">重点文物</span><small>${escape(item.period)}</small><h3>${escape(item.title)}</h3><p>${escape(item.summary)}</p>${supplement(byId.get(item.id))}<span>阅读介绍 ↗</span></button></article>`;
-      if (!node) return markup;
-      const template = document.createElement('template'); template.innerHTML=markup; return template.content.firstElementChild;
+      const row = byId.get(item.id);
+      const adapted = {...structuredClone(nativeCardsById.get(row.supplement_image?.related_record_id) || nativeCardSeed), ...item, _editorialOnly:false,
+        era:item.period, period_label:item.period, card_excerpt:item.summary, cardLead:item.summary,
+        featured:false, special_status:null, music_focus:null, musicFocus:false, tags:[],
+        origin:'', site:'', material:'', sequence:row.curatorial_rank, index:row.curatorial_rank};
+      const rendered = renderNative(adapted, row.curatorial_rank - 1);
+      const template = document.createElement('template');
+      if (typeof rendered === 'string') template.innerHTML = rendered;
+      else template.content.append(rendered);
+      const root = template.content.firstElementChild;
+      const opener = root.matches('button,[role="button"]') ? root : root.querySelector('button');
+      opener.dataset.museumEditorial = item.id;
+      const asset = row.supplement_image;
+      const url = new URL(/^(?:https?:)?\/\//i.test(asset.path) ? asset.path : '../../' + asset.path, document.baseURI).href;
+      root.querySelectorAll('img').forEach(image => {
+        image.removeAttribute('srcset'); image.removeAttribute('sizes');
+        image.src = url; image.alt = item.title + ' · ' + asset.caption;
+        image.loading = 'lazy'; image.decoding = 'async'; image.onerror = null;
+      });
+      root.querySelectorAll('[style]').forEach(element => {
+        if (element.style.backgroundImage) element.style.backgroundImage = 'none';
+      });
+      root.querySelectorAll('.card-photo-count,.artifact-photo-count').forEach(element => element.textContent='配图 1');
+      root.querySelectorAll('.card-number').forEach(element => element.textContent=String(row.curatorial_rank).padStart(2,'0'));
+      root.querySelectorAll('.archive-card-label').forEach(element => element.textContent=asset.caption);
+      root.querySelectorAll('.archive-card-meta').forEach(element => element.textContent=item.period + ' · 配图 1');
+      root.querySelectorAll('.card-metrics').forEach(element => element.textContent='配图 1');
+      root.querySelectorAll('.image-process,.card-flags').forEach(element => element.remove());
+      root.querySelectorAll('.artifact-card-footer span:first-child').forEach(element => element.textContent='配图 1');
+      return node ? root : root.outerHTML;
     }
     let mode = 'recommended', controls, lastQuery = '';
     const get = item => byId.get(String(item.id));
     function apply(records) {
+      if (!nativeCardSeed && records.length) nativeCardSeed = structuredClone(records[0]);
+      records.forEach(record => nativeCardsById.set(record.id, structuredClone(record)));
       records.forEach(item => {
         const row = get(item);
         if (!row || item._highlightApplied) return;

@@ -203,7 +203,7 @@
   }
 
   function cardHtml(item, index) {
-    if (item._editorialOnly) return highlights.card(item);
+    if (item._editorialOnly) return highlights.card(item, cardHtml);
     const cover = assetFor(item.cover || item.photos?.[0]?.src);
     const tags = [];
     if (isGroup(item)) tags.push("group");

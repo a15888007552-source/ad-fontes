@@ -126,7 +126,7 @@ function renderFilters() {
 }
 
 function cardTemplate(group, index) {
-  if (group._editorialOnly) return highlights.card(group);
+  if (group._editorialOnly) return highlights.card(group, cardTemplate);
   const status = group.special_status ? `<span class="card-special">${escapeHTML(group.special_status)}</span>` : "";
   const tags = group.tags.slice(0, 3).map((tag) => `<span>${escapeHTML(tag)}</span>`).join("");
   return `

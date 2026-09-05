@@ -88,7 +88,7 @@
   }
 
   function card(artifact) {
-    if (artifact._editorialOnly) return highlights.card(artifact, true);
+    if (artifact._editorialOnly) return highlights.card(artifact, card, true);
     const photo = primaryPhoto(artifact);
     const introduction = artifact.summary || artifact.paragraphs?.[0] || "器物的形制、材质与装饰共同留下时代信息，打开详情可继续辨读。";
     const materialLabel = artifact.material ? "质地" : "类别";

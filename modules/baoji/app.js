@@ -792,7 +792,7 @@
   function filteredGroups() { return highlights.select(state.groups.filter(groupMatches), {query: state.query, filtered: state.filter !== "all"}); }
 
   function archiveCardMarkup(group) {
-    if (group._editorialOnly) return highlights.card(group);
+    if (group._editorialOnly) return highlights.card(group, archiveCardMarkup);
     const featured = objectPhoto(group);
     const availablePhotos = availableGroupPhotos(group);
     const fallback = groupVisualFallback(group);

@@ -36,7 +36,7 @@
   document.body.append(dialog);
 
   const cardHtml = (artifact) => {
-    if (artifact._editorialOnly) return highlights.card(artifact);
+    if (artifact._editorialOnly) return highlights.card(artifact, cardHtml);
     const photo = artifact.photos[0];
     const thumbUrl = mediaUrl(photo.thumb);
     const webUrl = mediaUrl(photo.web);

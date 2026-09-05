@@ -434,7 +434,7 @@ function setImageWithFallback(image, photo, preferred = []) {
 }
 
 function createCard(group, index) {
-  if (group._editorialOnly) return highlights.card(group, true);
+  if (group._editorialOnly) return highlights.card(group, createCard, true);
   const card = makeElement("article", `artifact-card${group.special_status ? " special" : ""}`);
   const button = makeElement("button", "artifact-card-button");
   button.type = "button";
