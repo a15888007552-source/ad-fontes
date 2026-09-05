@@ -157,7 +157,8 @@ body:has(.artifact-dialog[open]){overflow:hidden}
 .artifact-dialog{width:min(1240px,calc(100vw - 42px));max-height:calc(100svh - 38px)}
 .artifact-dialog-header{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.64fr);align-items:end;gap:44px;padding:58px 68px 35px;border-bottom:1px solid rgba(221,205,161,.25)}
 .artifact-dialog-header .eyebrow{color:#c6ad70}
-.artifact-dialog-header h2{font-size:clamp(35px,4vw,58px);font-weight:400;line-height:1.26;letter-spacing:.015em;margin:11px 0 0}
+.artifact-dialog-header h2{font-size:clamp(35px,4vw,58px);font-weight:400;line-height:1.26;letter-spacing:.015em;margin:11px 0 0;white-space:nowrap}
+.artifact-dialog-header>div{min-width:0}
 .artifact-dialog-header>p{max-width:520px;color:#b9c1ac;font:14px/2 var(--serif)}
 .artifact-dialog-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 68px;border-left:1px solid rgba(221,205,161,.22);border-bottom:1px solid rgba(221,205,161,.22)}
 .artifact-dialog-facts>div{min-width:0;padding:15px 17px;border-right:1px solid rgba(221,205,161,.22)}

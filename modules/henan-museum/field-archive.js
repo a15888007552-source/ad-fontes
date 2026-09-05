@@ -46,7 +46,7 @@
     if (kind === 'web' && photo.web) return photo.web;
     if (photo.asset) return photo.asset;
     const stem = photoStem(photo.filename);
-    return stem ? `assets/photos/${kind}/${stem}.webp` : '';
+    return stem ? `assets/photos/${kind === 'thumb' ? 'thumbs' : kind}/${stem}.webp` : '';
   };
   const photoRole = photo => roleLabels[photo?.role] || photo?.role || '现场照片';
 
@@ -225,6 +225,18 @@
     history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
   }
 
+  function fitDialogTitle() {
+    if (!dialog.open) return;
+    const title = elements.title;
+    title.style.removeProperty('font-size');
+    const size = parseFloat(getComputedStyle(title).fontSize);
+    if (title.scrollWidth > title.clientWidth && title.clientWidth > 0) {
+      title.style.fontSize = `${Math.floor(size * title.clientWidth / title.scrollWidth * 0.98)}px`;
+    }
+  }
+  window.addEventListener('resize', fitDialogTitle);
+  document.fonts?.ready.then(fitDialogTitle);
+
   function openGroup(group, opener, updateUrl = true) {
     const photos = objectPhotos(group);
     state.activeGroup = group; state.activePhotos = photos; state.lastOpener = opener || document.activeElement;
@@ -233,6 +245,7 @@
     renderFacts(group, photos); renderProse(group); renderInscription(group); renderSources(group); renderGallery(group, photos);
     if (updateUrl) syncUrl(group.id);
     if (!dialog.open) dialog.showModal();
+    fitDialogTitle();
   }
 
   filters.addEventListener('click', event => {
