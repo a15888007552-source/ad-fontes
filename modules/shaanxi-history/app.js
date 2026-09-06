@@ -472,10 +472,9 @@
       "field-4681": "整块缠丝玛瑙琢成兽首角杯，金质口鼻与天然纹带相接，见证中亚器形进入唐代宫廷后的重新制作。",
       "wall-maqiu": "骑手策马击球，人物与坐骑在疾驰中彼此穿插，是唐代马球运动、服饰与鞍具最具代表性的图像记录之一。",
       "wall-hunting": "数十骑出行于山林之间，鹰犬、旗帜与马队构成长卷式场面，保存了唐代贵族游猎制度的视觉细节。",
-      "wall-que-lou": "高大的阙楼、城垣和山水共同界定墓主人身份；建筑形象为唐代宫阙布局与等级秩序提供了稀见资料。",
-      "wall-gongnv": "九名宫女手持器物徐行，衣裙、发式与行列节奏细致可辨，成为观察唐代宫廷女性生活的重要图像。",
     };
-    const treasureItems = items.filter((item) => hasTag(item, "forbidden"));
+    const treasureDuplicateIds = new Set(["wall-que-lou", "wall-gongnv", "chunhua-dading"]);
+    const treasureItems = items.filter((item) => hasTag(item, "forbidden") && !treasureDuplicateIds.has(String(item.id)));
     holder.innerHTML = treasureItems.map((item, index) => `<button class="treasure-card" type="button" data-item-id="${escapeHtml(item.id)}" aria-label="打开 ${escapeHtml(item.title)} 详情">
       <span class="treasure-image"><img src="${escapeHtml(cardCoverFor(item))}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async"><b>${String(index + 1).padStart(2, "0")}</b></span>
       <span class="treasure-copy"><span class="treasure-meta">${escapeHtml(item.period || "")} · ${escapeHtml(item.category || "馆藏文物")}</span><strong>${escapeHtml(item.title)}</strong><span class="treasure-note">${escapeHtml(notes[item.id] || item.summary || "查看完整馆藏资料。")}</span><i>展开完整资料与图组 →</i></span>
