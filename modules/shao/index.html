@@ -80,9 +80,9 @@
   <section class="launch" aria-label="打开远程音乐台">
     <div class="launch-copy">
       <strong>进入远程音乐台</strong>
-      <span>当前入口：117.50.180.243:30869</span>
+      <span>当前入口：AutoDL · 本机 SSH 连接</span>
     </div>
-    <a class="button" href="http://117.50.180.243:30869/" target="_blank" rel="noopener noreferrer">打开音乐台 ↗</a>
+    <a class="button" href="http://127.0.0.1:6006/" target="_blank" rel="noopener noreferrer">打开音乐台 ↗</a>
   </section>
 
   <h2 class="sec-h">下次怎么继续用 · Next time</h2>
@@ -90,12 +90,12 @@
     <article class="step">
       <span class="step-num">01 · 先开机器</span>
       <h2>启动同一台 GPU</h2>
-      <p>打开优云智算，找到实例 <b>host</b>，确认状态为“运行中”。不要为了这个页面重新租一台机器。</p>
+      <p>打开 <a href="https://www.autodl.com/console/instance/list" target="_blank" rel="noopener noreferrer">AutoDL 控制台</a>，找到内蒙 B 区实例 <b>c0984eadaa-0a4c22c9</b>，确认状态为“运行中”。</p>
     </article>
     <article class="step">
       <span class="step-num">02 · 打开入口</span>
       <h2>从这里进入</h2>
-      <p>点击上面的“打开音乐台”。如果打不开，先检查实例是否运行；远程地址也可能在重启后发生变化。</p>
+      <p>先双击桌面的“Shao - AutoDL”快捷入口，连接会在后台运行，再点击上面的“打开音乐台”。本机地址固定为 127.0.0.1:6006；切换 VPN 后若连接断开，重新打开快捷入口即可。</p>
     </article>
     <article class="step">
       <span class="step-num">03 · 写清楚需求</span>
@@ -109,9 +109,9 @@
     </article>
   </section>
 
-  <div class="notice"><strong>最重要的省钱提醒：</strong>关闭浏览器网页不等于关闭 GPU。用完后回到优云智算，点击实例的“关闭”；否则实例可能继续按小时计费。若只是误关了网页、实例仍在运行，下次直接重新打开本页即可。</div>
+  <div class="notice"><strong>最重要的省钱提醒：</strong>关闭浏览器网页不等于关闭 GPU。用完后回到 AutoDL 控制台，点击实例的“关机”；否则实例继续按小时计费。关闭 SSH 窗口也不会关闭远程 GPU。再次使用时，先开机并建立 SSH 连接。</div>
 
-  <p class="recovery"><b>任务恢复：</b>生成页面会记住最近的任务 ID；如果页面刷新或重新打开，可用“恢复任务”继续查看已经提交的结果。任务历史依赖远程实例，不是永久云盘，所以重要音频请及时下载保存。</p>
+  <p class="recovery"><b>保存作品：</b>请在当前生成页面试听并下载结果，生成期间尽量不要刷新页面。任务列表依赖远程服务的当前会话，重要音频请及时保存到本机。</p>
 
   <footer>
     <a href="../../index.html">Ad Fontes · 溯源</a><br>
