@@ -1,0 +1,90 @@
+/* Chapter objects, reading rhythm, and finite interaction. */
+:root{--motion-ease:cubic-bezier(.2,.7,.2,1)}
+nav.views{gap:5px;padding:4px;border:1px solid var(--line);border-radius:5px}
+nav.views button{position:relative;min-height:40px;border-radius:2px;transition:background-color .22s,color .22s,transform .18s var(--motion-ease)}
+nav.views button:hover{transform:translateY(-2px);background:var(--panel)}
+nav.views button.on{background:var(--acc);color:var(--bg)}
+nav.views button:active{transform:translateY(0) scale(.97)}
+.epnav button{transition:background-color .25s,color .25s;min-height:64px}
+.epnav button.on{background:var(--panel)}
+.epnav button.on::after{animation:rule-open .28s var(--motion-ease)}
+.chapter-hero{display:grid;grid-template-columns:minmax(230px,.8fr) minmax(0,1.5fr);gap:clamp(24px,4vw,60px);margin:30px 0 34px;padding:clamp(24px,3vw,44px);border:1px solid var(--line);background:var(--panel);position:relative;overflow:hidden}
+.chapter-hero::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--acc)}
+.chapter-title{align-self:center}
+.chapter-kicker{font:600 11px/1.5 var(--sans);color:var(--acc);letter-spacing:.28em}
+.chapter-title .span{font:12px/1.7 var(--sans);color:var(--mut);letter-spacing:.1em;margin:22px 0 13px}
+.chapter-title h2{font:500 clamp(32px,3.5vw,52px)/1.35 var(--kai);letter-spacing:.08em;margin:0;text-wrap:balance}
+.chapter-motto{font:15px/1.8 var(--kai);letter-spacing:.3em;color:var(--mut);margin-top:12px}
+.chapter-rule{height:1px;background:var(--acc);width:54px;margin:24px 0;transform-origin:left;animation:rule-open .5s var(--motion-ease)}
+.chapter-caption{font:15px/1.95 var(--serif);color:var(--ink);max-width:28em;margin:0;text-align:justify}
+.chapter-gallery{display:grid;min-width:0;gap:18px}
+.chapter-gallery.is-pair{grid-template-columns:1fr 1fr;align-items:center}
+.chapter-object{margin:0;min-width:0}
+.chapter-image{position:relative;display:grid;place-items:center;height:clamp(310px,32vw,440px);background:color-mix(in srgb,var(--bg) 65%,var(--panel));border:1px solid var(--line);overflow:hidden;cursor:zoom-in}
+.chapter-image img{display:block;width:100%;height:100%;max-height:440px;object-fit:contain;transition:transform .4s var(--motion-ease)}
+.chapter-image:hover img{transform:scale(1.025)}
+.chapter-image:focus-visible{outline:2px solid var(--acc);outline-offset:4px}
+.image-expand{position:absolute;right:10px;bottom:10px;width:28px;height:28px;display:grid;place-items:center;background:var(--bg);color:var(--acc);border:1px solid var(--line);font:16px var(--sans);transition:transform .2s}
+.chapter-image:hover .image-expand{transform:translate(2px,-2px)}
+.chapter-object figcaption{padding-top:12px;display:grid;gap:5px;font:12px/1.5 var(--sans);color:var(--mut)}
+.chapter-object figcaption small{font-size:10.5px;line-height:1.5}
+.art-entry{background:none;border:0;color:var(--ink);font:600 16px/1.5 var(--kai);padding:0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;gap:10px}
+.art-entry span{color:var(--acc);transition:transform .18s}
+.art-entry:hover span{transform:translateX(4px)}
+.art-entry:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.typechips{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+.chip-count{font:11px var(--sans);margin-left:9px;opacity:.8}
+.chip{transition:background-color .18s,color .18s,transform .18s}
+.chip:active{transform:scale(.96)}
+.card{animation:entry-settle .32s var(--motion-ease) both;transform-style:flat}
+.card:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.card .k{line-height:1.9}
+.card:hover{transform:translateY(-3px);border-color:var(--acc)}
+.source-links{padding:14px 0 0 18px;font:12px/1.8 var(--sans);border-top:1px solid var(--line)}
+.source-links a,.source-library a{color:var(--acc);text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+.source-library{columns:2;column-gap:36px}
+.source-library li{break-inside:avoid;margin-bottom:12px}
+.organ-filters{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;border-block:1px solid var(--line);padding:18px 0;margin:24px 0}
+.organ-filters label{font:12px var(--sans);color:var(--mut);display:flex;align-items:center;gap:10px}
+.organ-filters select{font:14px var(--serif);background:var(--panel);color:var(--ink);border:1px solid var(--line);padding:9px 30px 9px 12px;max-width:100%}
+.organ-count{margin-left:auto;font:12px var(--sans);color:var(--mut)}
+.organ-empty{padding:38px 0;color:var(--mut)}
+.bacat .bch{margin:0;font-weight:500}
+.bacat .bch small{font:12px var(--sans);color:var(--mut)}
+#artdlg{max-width:1120px;width:min(96vw,1120px);padding:36px 28px 28px;max-height:94vh;overflow:auto}
+#art-close{position:absolute;right:12px;top:8px;z-index:2}
+.art-view{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(180px,.7fr);gap:30px;align-items:center}
+.art-view>img{width:100%;max-height:78vh;object-fit:contain}
+.art-view-text h2{font:500 28px/1.5 var(--kai);margin:0 0 15px}
+#art-caption{font:12px/1.8 var(--sans);color:var(--mut)}
+#art-note{font:16px/1.95 var(--serif)}
+dialog[open]{animation:dialog-enter .22s var(--motion-ease)}
+.load-message{padding:48px 0;min-height:260px}
+.load-message button{padding:10px 18px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+@keyframes rule-open{from{transform:scaleX(.2)}to{transform:scaleX(1)}}
+@keyframes entry-settle{from{transform:translateY(6px)}to{transform:none}}
+@keyframes dialog-enter{from{opacity:.8;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:800px){
+ .chapter-hero{grid-template-columns:1fr;gap:24px;padding:24px}
+ .chapter-title h2{font-size:36px}
+ .chapter-caption{max-width:none}
+ .chapter-title .span{margin-top:12px}
+ .chapter-rule{margin:15px 0}
+ .chapter-image{height:330px}
+ .chapter-gallery.is-pair .chapter-image{height:230px}
+ .source-library{columns:1}
+ .art-view{grid-template-columns:1fr;gap:12px}
+ .art-view>img{max-height:62vh}
+}
+@media(max-width:460px){
+ .chapter-hero{padding:20px;margin-top:18px}
+ .chapter-gallery.is-pair{grid-template-columns:1fr}
+ .chapter-gallery.is-pair .chapter-image{height:240px}
+ .chapter-title h2{font-size:32px}
+ .organ-count{margin-left:0}
+ nav.views button{min-height:42px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .chapter-image:hover img,.card:hover,nav.views button:hover{transform:none}
+}

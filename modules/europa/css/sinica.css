@@ -11,14 +11,14 @@ body{font-family:var(--serif);background:#12100C;color:#E8DFD0;line-height:1.78}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
 /* ── 七朝代主题 ── */
-#app[data-ep=yuangu]{--bg:#141A15;--panel:#1C2620;--ink:#DCE3CC;--mut:#93A28C;--acc:#6FA287;--acc2:#C9A227;--line:#33413A;--dfont:var(--kai)}
-#app[data-ep=qinhan]{--bg:#1F1411;--panel:#2A1B15;--ink:#E9D9BF;--mut:#AB9074;--acc:#C4432F;--acc2:#93763F;--line:#483226;--dfont:var(--kai)}
-#app[data-ep=weijin]{--bg:#E7E3D4;--panel:#F1EEE2;--ink:#30342B;--mut:#6E7465;--acc:#59784F;--acc2:#7A6A8C;--line:#C4C0AB;--dfont:var(--kai)}
-#app[data-ep=suitang]{--bg:#31211A;--panel:#3D2B20;--ink:#F2E2C4;--mut:#BC9D79;--acc:#D98E2B;--acc2:#3E6B8E;--line:#584130;--dfont:var(--kai)}
-#app[data-ep=songyuan]{--bg:#DFE5DF;--panel:#ECF1EA;--ink:#2B332F;--mut:#65756D;--acc:#42807E;--acc2:#8C5A50;--line:#BAC6BC;--dfont:var(--kai)}
-#app[data-ep=mingqing]{--bg:#F2F1E9;--panel:#FBFAF4;--ink:#212939;--mut:#5E6877;--acc:#2C4C8A;--acc2:#A63C2E;--line:#D2D2C5;--dfont:var(--kai)}
-#app[data-ep=xiandai]{--bg:#EFEBE0;--panel:#F9F6ED;--ink:#22201B;--mut:#5E5A51;--acc:#C7202F;--acc2:#29426B;--line:#CCC6B6;--dfont:var(--sans)}
-#app[data-ep=atlas]{--bg:#E9E0C9;--panel:#F2EBD8;--ink:#38301F;--mut:#787050;--acc:#7A2E1D;--acc2:#3E5C4B;--line:#C7BB93;--dfont:var(--kai)}
+:is(#app,#dlg,#intro,#artdlg)[data-ep=yuangu]{--bg:#141A15;--panel:#1C2620;--ink:#DCE3CC;--mut:#93A28C;--acc:#6FA287;--acc2:#C9A227;--line:#33413A;--dfont:var(--kai)}
+:is(#app,#dlg,#intro,#artdlg)[data-ep=qinhan]{--bg:#1F1411;--panel:#2A1B15;--ink:#E9D9BF;--mut:#AB9074;--acc:#C4432F;--acc2:#93763F;--line:#483226;--dfont:var(--kai)}
+:is(#app,#dlg,#intro,#artdlg)[data-ep=weijin]{--bg:#E7E3D4;--panel:#F1EEE2;--ink:#30342B;--mut:#6E7465;--acc:#59784F;--acc2:#7A6A8C;--line:#C4C0AB;--dfont:var(--kai)}
+:is(#app,#dlg,#intro,#artdlg)[data-ep=suitang]{--bg:#31211A;--panel:#3D2B20;--ink:#F2E2C4;--mut:#BC9D79;--acc:#D98E2B;--acc2:#3E6B8E;--line:#584130;--dfont:var(--kai)}
+:is(#app,#dlg,#intro,#artdlg)[data-ep=songyuan]{--bg:#DFE5DF;--panel:#ECF1EA;--ink:#2B332F;--mut:#65756D;--acc:#42807E;--acc2:#8C5A50;--line:#BAC6BC;--dfont:var(--kai)}
+:is(#app,#dlg,#intro,#artdlg)[data-ep=mingqing]{--bg:#F2F1E9;--panel:#FBFAF4;--ink:#212939;--mut:#5E6877;--acc:#2C4C8A;--acc2:#A63C2E;--line:#D2D2C5;--dfont:var(--kai)}
+:is(#app,#dlg,#intro,#artdlg)[data-ep=xiandai]{--bg:#EFEBE0;--panel:#F9F6ED;--ink:#22201B;--mut:#5E5A51;--acc:#C7202F;--acc2:#29426B;--line:#CCC6B6;--dfont:var(--sans)}
+:is(#app,#dlg,#intro,#artdlg)[data-ep=atlas]{--bg:#E9E0C9;--panel:#F2EBD8;--ink:#38301F;--mut:#787050;--acc:#7A2E1D;--acc2:#3E5C4B;--line:#C7BB93;--dfont:var(--kai)}
 #app[data-ep=xiandai]{font-family:var(--sans)}
 
 /* ── 骨架 ── */
