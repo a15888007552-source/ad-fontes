@@ -21,6 +21,16 @@ const SINICA_DATA = Object.assign(
   })))
 );
 
+const DICTIONARY_PARTS = await Promise.all(
+  ["ancient","han","weijin","tang","song","ming","modern","objects","meta"].map(async part => {
+    const response = await fetch(`./data/sinica/dictionary-${part}.json`);
+    if(!response.ok) throw new Error(`Sinica dictionary ${part}: HTTP ${response.status}`);
+    return response.json();
+  })
+);
+const DICTIONARY = DICTIONARY_PARTS.at(-1);
+const SOURCE_LIBRARY = Object.assign({}, ...DICTIONARY_PARTS.map(part=>part.sources||{}));
+
 const BAYIN = SINICA_DATA.BAYIN;
 const CANAL = SINICA_DATA.CANAL;
 const CITY = SINICA_DATA.CITY;
@@ -32,10 +42,11 @@ const GLOSS = SINICA_DATA.GLOSS;
 const GREATWALL = SINICA_DATA.GREATWALL;
 const HISTDEEP = SINICA_DATA.HISTDEEP;
 const HISTEVENTS = SINICA_DATA.HISTEVENTS;
-const L = SINICA_DATA.L;
+const L = [...SINICA_DATA.L, ...DICTIONARY_PARTS.flatMap(part=>part.relations||[])];
 const LINEAGES = SINICA_DATA.LINEAGES;
-const M = SINICA_DATA.M;
+const M = [...SINICA_DATA.M, ...DICTIONARY_PARTS.flatMap(part=>part.entries)];
 const PORTRAITS = SINICA_DATA.PORTRAITS;
+M.filter(m=>m.image).forEach(m=>{PORTRAITS[m.i]={u:m.image,c:m.cite}});
 const REGIONS = SINICA_DATA.REGIONS;
 const REIGN = SINICA_DATA.REIGN;
 const RIVERS = SINICA_DATA.RIVERS;
@@ -56,7 +67,7 @@ const EPC={"yuangu":"#B08D2E","qinhan":"#B14A32","weijin":"#5F7E5B","suitang":"#
 let CITYGALLERY={};
 let cityGalleryLoaded=false;
 const CITYGALLERY_READY=fetch("assets/city/huaxia-gallery-data.json",{cache:"no-cache"}).then(r=>r.ok?r.json():{}).then(d=>{CITYGALLERY=d||{};cityGalleryLoaded=true}).catch(()=>{cityGalleryLoaded=true});
-const ART={};
+const ART=DICTIONARY.art;
 const YFIX={};
 
 
@@ -151,28 +162,37 @@ function observe(){/* 卡片始终不透明；入场淡入改由纯CSS动画完�
 /* ══════════ 年鉴（分章） ══════════ */
 let typeFilter="all";
 function cardHTML(m){
-  return `<div class="card" data-m="${m.i}" tabindex="0">
+  return `<div class="card" data-m="${m.i}" tabindex="0" role="button" aria-label="阅读${m.n}">
     <div class="cbadge">${m.y}</div>
     <div class="chead">${med(m,54)}
       <div><h4>${m.n}</h4><div class="orig">${m.o||""}</div><div class="dts">${m.d}</div></div></div>
     <p class="k">${m.k}</p>
-    <div class="s">${m.s}${m.ba?` · 八音之${m.ba}`:""}</div></div>`;
+    <div class="s">${m.s}</div></div>`;
+}
+function sourceLinks(m){
+  return (m.sourceKeys||[]).map(key=>{
+    const source=SOURCE_LIBRARY[key];if(!source)return "";
+    return source.url?`<li><a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label} ↗</a></li>`:`<li>${source.label}</li>`;
+  }).join("");
+}
+function chapterHero(ep){
+  const era=EP[ep], works=ART[ep]||[];
+  return `<div class="chapter-hero">
+    <div class="chapter-title"><div class="chapter-kicker">乐纪华夏 · ${String(EPK.indexOf(ep)+1).padStart(2,"0")}</div><p class="span">${era.span}</p><h2>${era.zh}</h2><div class="chapter-motto">${era.en}</div><div class="chapter-rule" aria-hidden="true"></div><p class="chapter-caption">${works[0]?.note||""}</p></div>
+    <div class="chapter-gallery ${works.length>1?'is-pair':''}">${works.map((art,index)=>`<figure class="chapter-object"><a class="chapter-image" href="${art.u}" data-art="${ep}:${index}" aria-label="放大查看${art.title}"><img src="${art.u}" alt="${art.title}，${art.date}" decoding="async" ${index===0?'fetchpriority="high"':'loading="lazy"'}><span class="image-expand" aria-hidden="true">↗</span></a><figcaption><button class="art-entry" data-entry="${art.entry}">${art.title} <span>→</span></button><span>${art.date}</span><small>${art.credit}</small></figcaption></figure>`).join("")}</div>
+  </div>`;
 }
 function renderAlm(){
   const e=EP[curEp];
   const ms=M.filter(m=>m.e===curEp&&(typeFilter==="all"||m.y===typeFilter)).sort((a,b)=>yrs(a)[0]-yrs(b)[0]);
   const sch=SCHOL[curEp]||{};
   const deb=sch.debates||[];
-  const art=ART[curEp];
   $("#v-alm").innerHTML=`
-  <div class="hero">${art?`<div class="heroart" style="background-image:url('${art.u}')"></div>`:`<div class="heroph">${e.en}</div>`}
-    <div class="heroinner"><div class="span">${e.span}</div>
-      <div class="herolat">${e.en}</div><h2>${e.zh}</h2></div>
-    ${art?`<div class="artcredit">底图 — ${art.title||""} ${art.artist||""}</div>`:""}</div>
+  ${chapterHero(curEp)}
   <div class="ephead">
     <div>
       <p class="intro">${e.intro}</p>
-      <div class="theme">本章视觉主题 — <b>${e.theme}</b></div>
+      <div class="theme"><b>${e.theme}</b></div>
     </div>
     <div>
       <div class="quotebox"><p>${e.quote}</p><span>${e.qs}</span></div>
@@ -182,7 +202,7 @@ function renderAlm(){
   <div class="events">${(e.events||[]).map(v=>`<div><b>${v[0]}</b><span>${v[1]}</span></div>`).join("")}</div>
   ${sch.essay?`<div class="scholbox"><h4>史料与史观</h4><p>${xlink(sch.essay)}</p></div>`:""}
   ${deb.length?`<div class="debates">${deb.map(d=>`<div class="debate"><h4>${d.t}</h4><p>${xlink(d.b)}</p><span class="ref">${d.ref||""}</span></div>`).join("")}</div>`:""}
-  <div class="typechips">${["all",...TYPES].map(t=>`<button class="chip ${typeFilter===t?'on':''}" data-t="${t}">${t==="all"?"全部":t}</button>`).join("")}</div>
+  <div class="typechips" aria-label="条目类别">${["all",...TYPES].map(t=>`<button class="chip ${typeFilter===t?'on':''}" data-t="${t}" aria-pressed="${typeFilter===t}">${t==="all"?"全部":t}<span class="chip-count">${M.filter(m=>m.e===curEp&&(t==="all"||m.y===t)).length}</span></button>`).join("")}</div>
   <div class="grid">${ms.map(cardHTML).join("")}</div>`;
   document.querySelectorAll("#v-alm .typechips .chip").forEach(b=>b.onclick=()=>{typeFilter=b.dataset.t;renderAlm()});
   observe();
@@ -201,7 +221,7 @@ function openM(id){
   $("#dwrap").innerHTML=`
   <div class="dhead">
     <div><h4>${m.n}</h4><div class="orig">${m.o||""}</div>
-    <div class="meta">${m.d} · ${EP[m.e].zh} · ${m.s}${m.ba?` · 八音之${m.ba}`:""}</div></div>
+    <div class="meta">${m.d} · ${EP[m.e].zh} · ${m.s}</div></div>
     <div class="dnav"><button id="dprev" title="上一条（←）">‹ 前</button><button id="dnext" title="下一条（→）">后 ›</button></div>
     <button class="dclose" id="dx" aria-label="关闭">✕</button></div>
   <div class="dcols"><div>
@@ -211,6 +231,7 @@ function openM(id){
     ${m.deep?`<h5>深 读</h5><p>${xlink(m.deep,id)}</p>`:""}
     <h5>${lb.w}</h5><ul class="works">${(m.w||[]).map(w=>`<li>${w}</li>`).join("")}</ul>
     ${m.cite?`<p class="citeline">文献定位 — ${m.cite}</p>`:""}
+    ${m.sourceKeys?.length?`<ul class="source-links" aria-label="文献与藏品来源">${sourceLinks(m)}</ul>`:""}
   </div><div>
     ${p?`<figure class="pfig"><img src="${p.u}" alt="${m.n}"><figcaption>${p.c||""}</figcaption></figure>`:`<div class="bigmed" style="width:110px">${med(m,110)}</div>`}
     <h5>${lb.c} · ${cs.join(" → ")||"—"}</h5>
@@ -218,7 +239,7 @@ function openM(id){
     <h5>关系之网（${rels.length}）</h5>
     <ul class="conn">${rel||"<li>—</li>"}</ul>
   </div></div>`;
-  const dg=$("#dlg");if(!dg.open)dg.showModal();
+  const dg=$("#dlg");dg.dataset.ep=m.e;if(!dg.open)dg.showModal();
   dg.dataset.m=id;setHash("m="+id);
   $("#dx").onclick=()=>dg.close();
   $("#dprev").onclick=()=>openM(NAVORDER[(ni-1+NAVORDER.length)%NAVORDER.length]);
@@ -361,7 +382,7 @@ function miniMap(cs){
 }
 
 /* ══════════ 长河 ══════════ */
-const SEG=[[-6200,-1200,.012],[-1200,500,.115],[500,2060,.66]];
+const SEG=[[-7000,-1200,.012],[-1200,500,.115],[500,2060,.66]];
 function tx(y){let x=56;for(const[a,b,k]of SEG){if(y<=a)break;x+=(Math.min(y,b)-a)*k}return x}
 let tlDone=false;
 function renderTL(){
@@ -379,7 +400,7 @@ function renderTL(){
   const H=lanes.length*23+92,W=tx(2060)+240;
   let g="";
   EPK.forEach(k=>{const[a,b]=EPYR[k];g+=`<rect x="${tx(a)}" y="40" width="${tx(b)-tx(a)}" height="${H-70}" fill="${EPC[k]}" opacity=".07"/><text x="${tx(a)+6}" y="30" font-size="13" fill="${EPC[k]}" font-family="var(--sans)" letter-spacing=".2em">${EP[k].zh}</text>`});
-  const ticks=[-6000,-1000,-500,-221,220,589,960,1368,1600,1800,1900,1950,2000];
+  const ticks=[-7000,-6000,-1000,-500,-221,220,589,960,1368,1600,1800,1900,1950,2000];
   ticks.forEach(y=>{const x=tx(y);g+=`<line x1="${x}" y1="40" x2="${x}" y2="${H-30}" stroke="var(--line)" stroke-width="1"/><text x="${x+3}" y="${H-14}" font-size="11" fill="var(--mut)" font-family="var(--sans)">${y<0?"前"+(-y):y}</text>`});
   let bl="";
   bars.forEach(({m,a,b,li})=>{
@@ -510,18 +531,35 @@ function renderLineage(){
 }
 
 /* ══════════ 器物志 ══════════ */
-let baDone=false;
+let baPeriod="all",baFamily="all";
+const ORGAN_FAMILIES=[
+  ["金","金声","钟、铙、方响与云锣，铸体、片体和锣面各有发声方式。"],
+  ["石","石声","磬的磨制、厚薄与编悬，把石材变为有次序的音高。"],
+  ["丝","弦声","琴瑟、琵琶、胡琴与键盘击弦器并观：同由弦振动，弹、擦、击各有技法。"],
+  ["竹","管声","横吹、竖吹与编管，各以气柱和孔位组织声音。"],
+  ["匏","笙竽","列管植簧的结构连接气流、簧片与音管。"],
+  ["土","陶声","陶埙的腔体与指孔，以及烧造工艺留下的声音可能。"],
+  ["革","鼓声","膜张力、击点与槌法，形成鼓的音色和节奏。"],
+  ["木","击木","柷、敔、拍板：起止与击节同样属于合奏的技艺。"],
+  ["骨","骨管","史前骨笛先于八音分类，在材料与制音工艺中自有其历史。"],
+  ["簧管","簧管续篇","唢呐的声音由簧哨与管腔相配而成，不能仅因木质管身归入八音之木。"],
+  ["图像","乐舞图像","陶俑、砖画与卷轴保存持器姿态、合奏位置与观看关系。"],
+  ["媒介","声音的载体","唱片与录音保存一次演奏，也改变音乐的传播和学习。"]
+];
 function renderBa(){
-  if(baDone)return;baDone=true;
-  const cats=BAYIN.cats||[];
+  const instruments=M.filter(m=>m.y==="器"&&(baPeriod==="all"||m.e===baPeriod));
   $("#bawrap").innerHTML=`
-  <div class="bayinhero"><div class="mlat">ORGANOGRAPHIA · 八音</div><h2>器物志</h2>
-    <div class="essay">${xlink(BAYIN.essay||"")}</div></div>
-  ${cats.map(c=>{
-    const ms=(c.ids||[]).map(id=>byId[id]).filter(Boolean);
+  <div class="bayinhero"><div class="mlat">ORGANOGRAPHIA · 材与声</div><h2>器物志</h2>
+    <div class="essay">八音以金、石、土、革、丝、木、匏、竹组织礼乐之器。此后器物不断迁徙、改制，弹、擦、击与吹奏的手艺也各有传承。由骨管至录音，从乐器本体到乐舞图像，器物史还须记录人的双手、身体与合奏的场面。</div></div>
+  <div class="organ-filters"><label>时代 <select id="organ-period"><option value="all">历代</option>${EPK.map(k=>`<option value="${k}" ${baPeriod===k?'selected':''}>${EP[k].zh}</option>`).join("")}</select></label><label>器类 <select id="organ-family"><option value="all">全部器类</option>${ORGAN_FAMILIES.map(([k,n])=>`<option value="${k}" ${baFamily===k?'selected':''}>${n}</option>`).join("")}</select></label><span class="organ-count">${instruments.filter(m=>baFamily==="all"||m.ba===baFamily).length} 条</span></div>
+  ${ORGAN_FAMILIES.filter(([k])=>baFamily==="all"||k===baFamily).map(([key,name,note])=>{
+    const ms=instruments.filter(m=>m.ba===key);
     if(!ms.length)return"";
-    return `<div class="bacat"><div class="bch">${c.cat}</div><div class="bnote">${c.note||""}</div></div>
+    return `<div class="bacat"><h3 class="bch">${name} <small>${ms.length}</small></h3><div class="bnote">${note}</div></div>
     <div class="bagrid">${ms.map(cardHTML).join("")}</div>`}).join("")}`;
+  if(!instruments.some(m=>baFamily==="all"||m.ba===baFamily))$("#bawrap").insertAdjacentHTML("beforeend",'<p class="organ-empty">这一时代尚无此类条目。</p>');
+  $("#organ-period").onchange=e=>{baPeriod=e.target.value;renderBa()};
+  $("#organ-family").onchange=e=>{baFamily=e.target.value;renderBa()};
 }
 
 /* ══════════ 史境 ══════════ */
@@ -644,13 +682,14 @@ function setView(v){
   if(v==="musio")renderMusio();
   if(v==="gl"){renderGlChips();renderGloss()}
   setHash("v="+v);
+  if(!RM&&$("#v-"+v).animate)$("#v-"+v).animate([{opacity:.7,transform:"translateY(7px)"},{opacity:1,transform:"none"}],{duration:240,easing:"cubic-bezier(.2,.7,.2,1)"});
 }
 $("#views").addEventListener("click",e=>{
   const b=e.target.closest("button");if(!b)return;setView(b.dataset.v);
 });
 document.addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openM(c.dataset.m)});
 document.addEventListener("keydown",e=>{
-  if(e.key==="Enter"&&e.target.closest){const c=e.target.closest(".card");if(c){openM(c.dataset.m);return}}
+  if((e.key==="Enter"||e.key===" ")&&e.target.closest){const c=e.target.closest(".card");if(c){e.preventDefault();openM(c.dataset.m);return}}
   const dlg=$("#dlg");
   if(dlg.open){
     if(e.key==="ArrowLeft"){const b=$("#dprev");b&&b.click()}
@@ -671,11 +710,27 @@ $("#introgrid").innerHTML=VIEWDESC.map(v=>`<div><b>${v[0]}</b><span>${v[1]}</spa
 const tcnt={};M.forEach(m=>tcnt[m.y]=(tcnt[m.y]||0)+1);
 $("#stats").textContent=`${M.length} 条目 · ${TYPES.map(t=>t+(tcnt[t]||0)).join(" · ")} · ${L.length} 重关系`;
 const intro=$("#intro");
+intro.dataset.ep=curEp;
 function showIntro(){if(!intro.open)intro.showModal()}
 function closeIntro(){try{intro.close()}catch(e){}try{localStorage.setItem("sinarum_seen","1")}catch(e){}}
 $("#introx").onclick=closeIntro;$("#introgo").onclick=closeIntro;
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&intro.open)closeIntro()});
 
 renderEpnav();renderAlm();
+document.querySelectorAll('[data-entry-total]').forEach(el=>el.textContent=M.length);
+$("#source-library").innerHTML=Object.entries(SOURCE_LIBRARY).map(([key,source])=>`<li>${source.url?`<a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label} ↗</a>`:source.label}</li>`).join("");
+const artDialog=$("#artdlg");
+$("#art-close").onclick=()=>artDialog.close();
+document.addEventListener("click",event=>{
+  const entry=event.target.closest("[data-entry]");if(entry){openM(entry.dataset.entry);return}
+  const link=event.target.closest("[data-art]");if(!link)return;
+  event.preventDefault();
+  const [ep,index]=link.dataset.art.split(":"),art=ART[ep]?.[Number(index)];if(!art)return;
+  artDialog.dataset.ep=ep;
+  $("#art-image").src=art.u;$("#art-image").alt=art.title;
+  $("#art-title").textContent=art.title;$("#art-caption").textContent=`${art.date} · ${art.credit}`;
+  $("#art-note").textContent=art.note;
+  if(!artDialog.open)artDialog.showModal();
+});
 let seen=false;try{seen=!!localStorage.getItem("sinarum_seen")}catch(e){}
 if(location.hash)readHash();else if(!seen)setTimeout(showIntro,__mirrorDirection?700:0);
