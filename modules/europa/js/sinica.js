@@ -187,12 +187,16 @@ function renderAlm(){
   const ms=M.filter(m=>m.e===curEp&&(typeFilter==="all"||m.y===typeFilter)).sort((a,b)=>yrs(a)[0]-yrs(b)[0]);
   const sch=SCHOL[curEp]||{};
   const deb=sch.debates||[];
+  const art=(ART[curEp]||[])[0];
   $("#v-alm").innerHTML=`
-  ${chapterHero(curEp)}
+  <div class="hero">${art?`<div class="heroart" style="background-image:url('${art.u}')"></div>`:`<div class="heroph">${e.en}</div>`}
+    <div class="heroinner"><div class="span">${e.span}</div>
+      <div class="herolat">${e.en}</div><h2>${e.zh}</h2></div>
+    ${art?`<div class="artcredit">底图 — ${art.title||""}</div>`:""}</div>
   <div class="ephead">
     <div>
       <p class="intro">${e.intro}</p>
-      <div class="theme"><b>${e.theme}</b></div>
+      <div class="theme">本章视觉主题 — <b>${e.theme}</b></div>
     </div>
     <div>
       <div class="quotebox"><p>${e.quote}</p><span>${e.qs}</span></div>
@@ -202,7 +206,7 @@ function renderAlm(){
   <div class="events">${(e.events||[]).map(v=>`<div><b>${v[0]}</b><span>${v[1]}</span></div>`).join("")}</div>
   ${sch.essay?`<div class="scholbox"><h4>史料与史观</h4><p>${xlink(sch.essay)}</p></div>`:""}
   ${deb.length?`<div class="debates">${deb.map(d=>`<div class="debate"><h4>${d.t}</h4><p>${xlink(d.b)}</p><span class="ref">${d.ref||""}</span></div>`).join("")}</div>`:""}
-  <div class="typechips" aria-label="条目类别">${["all",...TYPES].map(t=>`<button class="chip ${typeFilter===t?'on':''}" data-t="${t}" aria-pressed="${typeFilter===t}">${t==="all"?"全部":t}<span class="chip-count">${M.filter(m=>m.e===curEp&&(t==="all"||m.y===t)).length}</span></button>`).join("")}</div>
+  <div class="typechips">${["all",...TYPES].map(t=>`<button class="chip ${typeFilter===t?'on':''}" data-t="${t}">${t==="all"?"全部":t}</button>`).join("")}</div>
   <div class="grid">${ms.map(cardHTML).join("")}</div>`;
   document.querySelectorAll("#v-alm .typechips .chip").forEach(b=>b.onclick=()=>{typeFilter=b.dataset.t;renderAlm()});
   observe();
