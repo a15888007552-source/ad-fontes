@@ -1,6 +1,7 @@
 /* Musician bodies are editorial wayfinding symbols, not a quantitative ranking
    of historical contribution. Named focal figures and recorded graph links
    determine a restrained range of sizes; appearance stays stable per person. */
+import {createSkyLandmarks} from './sky-landmarks.js?v=20260911-depth2';
 const TAU=Math.PI*2;
 const LEVEL={beet:1,bach:.98,moza:.94,hayd:.83,mont:.84,josq:.83,pale:.81,dufa:.76,wagn:.89,debu:.84,stra:.85,scho:.83,lisz:.79,chop:.79,schb:.80,brah:.79,mahl:.80};
 const SUNS={beet:[.58,.79,1],bach:[1,.76,.34],moza:[.90,.96,1],mont:[.80,.53,1],josq:[.68,.83,1],pale:[1,.82,.48],wagn:[1,.50,.24],debu:[.50,.86,1],stra:[.78,.85,1]};
@@ -131,7 +132,7 @@ function createSpaceEnvironment(gl,program,buffer){
 }
 
 export function createDeepSky(gl,program,buffer){
- const environment=createSpaceEnvironment(gl,program,buffer);
+ const environment=createSpaceEnvironment(gl,program,buffer),landmarks=createSkyLandmarks(gl,program,buffer);
  const data=[];for(let i=0;i<3600;i++){const u=seedOf('sky'+i),v=seedOf('depth'+i),az=i*2.3999632297,z=2*u-1,r=2800+v*750,s=Math.sqrt(1-z*z);data.push(Math.cos(az)*s*r,z*r,Math.sin(az)*s*r,.66+v*.34,.78+u*.18,1-v*.20,1.0+Math.pow(v,7)*3.2,.24+v*.52);}
  const mist=[];
  for(let galaxy=0;galaxy<2;galaxy++)for(let i=0;i<180;i++){const t=i/179,a=t*12.5+galaxy,rad=35+t*210,x=Math.cos(a)*rad,y=Math.sin(a)*rad*.24;
@@ -143,7 +144,8 @@ export function createDeepSky(gl,program,buffer){
  return{draw(args){const{matrix,dpr,time}=args;environment.draw(args);gl.useProgram(p);gl.uniformMatrix4fv(mvp,false,matrix);gl.uniform1f(dprLoc,dpr);gl.uniform1f(timeLoc,time);
   for(const[b,count]of[[gpu,data.length/8],[mistGPU,mist.length/8]]){gl.bindBuffer(gl.ARRAY_BUFFER,b);for(const[a,size,offset]of attrs){gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,size,gl.FLOAT,false,32,offset);}gl.drawArrays(gl.POINTS,0,count);}
   gl.blendFunc(gl.SRC_ALPHA,gl.ONE);for(const[a]of attrs)gl.disableVertexAttribArray(a);
- },destroy(){environment.destroy();for(const b of[gpu,mistGPU])gl.deleteBuffer(b);gl.deleteProgram(p);}};
+  landmarks.draw(args);
+ },getState:()=>landmarks.getState(),destroy(){environment.destroy();landmarks.destroy();for(const b of[gpu,mistGPU])gl.deleteBuffer(b);gl.deleteProgram(p);}};
 }
 
 export function createMeteors(gl,program,buffer){

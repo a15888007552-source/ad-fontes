@@ -1,11 +1,12 @@
 /* An astronomical reading of the existing Europa graph. Positions are editorial
    groupings by period; every interactive star and relationship comes from data. */
 import {VOLUMES as ATLAS,FLOW_GLSL,EXTINCTION_GLSL,flowPoint,createStellarVolumes} from './stellar-volumes.js?v=20260911-epochs2';
-import {bodyFor,createCelestialBodies,createMeteors,createDeepSky} from './celestial-bodies.js?v=20260911-spaceflow2';
+import {bodyFor,createCelestialBodies,createMeteors,createDeepSky} from './celestial-bodies.js?v=20260911-depth2';
 import {createRelationshipLines} from './relationship-lines.js?v=20260911-epochs2';
 import {relationSwatch} from './relation-styles.js?v=20260911-epochs2';
-import {ERA_CORES,createEraCores} from './era-cores.js?v=20260911-spaceflow2';
-import {createEpochOverview} from './epoch-overview.js?v=20260911-release1';
+import {ERA_CORES,createEraCores} from './era-cores.js?v=20260911-depth2';
+import {createEpochOverview} from './epoch-overview.js?v=20260911-depth2';
+import {createCosmicEvents} from './cosmic-events.js?v=20260911-cosmic2';
 const TAU=Math.PI*2;
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -111,7 +112,7 @@ export function createGalaxy(container,options){
  const la={position:gl.getAttribLocation(lineProgram,'aPosition'),color:gl.getAttribLocation(lineProgram,'aColor'),mvp:gl.getUniformLocation(lineProgram,'uMVP'),time:gl.getUniformLocation(lineProgram,'uTime'),mode:gl.getUniformLocation(lineProgram,'uMode'),eye:gl.getUniformLocation(lineProgram,'uEye'),opacity:gl.getUniformLocation(lineProgram,'uOpacity'),pulse:gl.getUniformLocation(lineProgram,'uPulse')};
  function buffer(data,usage=gl.STATIC_DRAW){const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,data,usage);return b;}
  const atlas=createStellarVolumes(gl,buffer);
- const celestial=createCelestialBodies(gl,program,buffer,nodes),meteors=createMeteors(gl,program,buffer),deepSky=createDeepSky(gl,program,buffer);
+ const celestial=createCelestialBodies(gl,program,buffer,nodes),meteors=createMeteors(gl,program,buffer),deepSky=createDeepSky(gl,program,buffer),cosmic=createCosmicEvents(gl,program,buffer);
  const relationshipLines=createRelationshipLines(gl,program,buffer);
  const core=createEraCores(gl,program,buffer);
  const volumeKey=()=>state.filter==='medieval'&&state.medievalPhase==='late'?'medieval-late':state.filter;
@@ -136,7 +137,7 @@ export function createGalaxy(container,options){
   }
  }
  async function switchAtlas(key){
-  const spec=ATLAS[key];state.atlasReady=false;state.atlasOpacity=0;state.atlasError=null;state.time=0;meteors.reset();container.dataset.epoch=state.filter;root.dataset.epoch=state.filter;root.dataset.medievalPhase=state.medievalPhase;container.setAttribute('aria-busy',spec?'true':'false');
+  const spec=ATLAS[key];state.atlasReady=false;state.atlasOpacity=0;state.atlasError=null;state.time=0;meteors.reset();cosmic.reset();container.dataset.epoch=state.filter;root.dataset.epoch=state.filter;root.dataset.medievalPhase=state.medievalPhase;container.setAttribute('aria-busy',spec?'true':'false');
   credit.hidden=true;core.select(key);renderCoreNote(key);
   if(spec){
    root.style.setProperty('--g-gold',spec.color);
@@ -343,9 +344,12 @@ export function createGalaxy(container,options){
   if(state.coreFocus)goal.target=core.center(state.time,mode());
   const moving=cameraStep(dt);if(layoutDirty)resize();if(dirty)updateGeometry();matrix=getMatrix();layoutCoreLabel();layoutLabels();overview.layout(matrix,width,height,state.filter==='all');
   gl.bindFramebuffer(gl.FRAMEBUFFER,sceneTarget.framebuffer);gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(.004,.007,.012,1);gl.depthMask(true);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.disable(gl.DEPTH_TEST);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);
-  deepSky.draw({matrix,dpr,time:state.time,basis:cameraBasis,eye:cameraEye,target:sceneTarget.framebuffer,width:canvas.width,height:canvas.height,center:width<760||document.body.classList.contains('galaxy-immersive')?0:width<1180?.035:.18});
+  deepSky.draw({matrix,dpr,time:state.time,basis:cameraBasis,eye:cameraEye,target:sceneTarget.framebuffer,width:canvas.width,height:canvas.height,profile:ATLAS[volumeKey()]||home,profileKey:volumeKey(),center:width<760||document.body.classList.contains('galaxy-immersive')?0:width<1180?.035:.18});
   if(!mode()){
+   const skyFrame={matrix,time:state.time,width,height,dpr,eye:cameraEye,basis:cameraBasis,cameraTarget:camera.target,home,center:width<760||document.body.classList.contains('galaxy-immersive')?0:width<1180?.035:.18,obstacles,clusters:overview.getState().groups};
+   cosmic.drawPortals(skyFrame);
    overview.draw(matrix,state.time,dpr);
+   cosmic.drawEvents(skyFrame);
   }else if(state.atlasReady){const v=atlas.active;drawPoints(v.fog,v.fogCount,0);drawPoints(v.dust,v.dustCount,0);drawLines(v.lines,v.lineCount);atlas.animate(state.time);drawPoints(v.streamBuffer,v.streams.length/8,1);}
   if(mode()&&state.atlasReady){const opacity=state.atlasOpacity,focal=height/(2*Math.tan(42*Math.PI/360))*dpr;core.draw({matrix,time:state.time,mode:mode(),basis:cameraBasis,eye:cameraEye,focal,dpr,opacity});relationshipLines.draw(matrix,state.time,mode(),canvas.width,canvas.height,dpr,opacity);celestial.draw({matrix,time:state.time,eye:cameraEye,focal,opacity,activeId:activeId()});meteors.draw(matrix,state.time,cameraBasis,camera.target);}composeLight();
   frameRevision++;
@@ -475,6 +479,6 @@ export function createGalaxy(container,options){
  document.addEventListener('visibilitychange',visibility);
  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();contextLost=true;cancelAnimationFrame(raf);raf=0;container.dataset.ready='false';options.onContextLost?.();});
  updateMotionButton();container.dataset.ready='true';container.dataset.nodeCount=nodes.length;container.dataset.linkCount=links.length;
- container.galaxySnapshot=()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,nodes:nodes.length,links:links.length,frameRevision,names:state.names,relationshipStyle:relationshipLines.getState(),cruise:state.cruise,trail:[...state.trail],via:state.via,bodies:mode()?celestial.getState():{instances:0,rings:0,coronae:0},overview:state.filter==='all'?overview.getState():null,meteors:meteors.getState(),cameraDistance:camera.distance,cameraYaw:camera.yaw,cameraPitch:camera.pitch,time:state.time,renderSize:[canvas.width,canvas.height],atlasReady:state.atlasReady,atlasError:state.atlasError,geometry:atlas.active?{kind:atlas.active.kind,bounds:atlas.active.bounds,points:atlas.active.dustCount,segments:atlas.active.lineCount/2}:null,frameTiming:{p95:frameIntervals.length?[...frameIntervals].sort((a,b)=>a-b)[Math.floor((frameIntervals.length-1)*.95)]:null,longFrames},flowProbe:world(mode()?[170,120,25]:[310,60,170]),projectedStars:nodes.filter(inFilter).map(n=>({id:n.id,world:n.worldPosition,screen:n.screen,renderable:n.renderable,radius:n.body.radius,type:n.body.type,name:n.m.n}))});
- return{setState,focus,reset,pauseAnimation,resumeAnimation,visibleNodeIds:(filter)=>nodes.filter(n=>(filter==='all'||n.m.e===filter)&&(filter!=='medieval'||medievalLate.has(n.id)===(state.medievalPhase==='late'))).map(n=>n.id),getState:()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,nodes:nodes.length,links:links.length,geometryRevision,frameRevision,cameraDistance:camera.distance}),destroy(){destroyed=true;pauseAnimation();resizeObserver.disconnect();document.removeEventListener('visibilitychange',visibility);document.removeEventListener('keydown',escape);atlas.destroy();celestial.destroy();core.destroy();relationshipLines.destroy();meteors.destroy();deepSky.destroy();overview.destroy();atlasNote.remove();credit.remove();for(const b of[dustBuffer,nebulaBuffer,filamentBuffer,axialBuffer,lightflowBuffer,orbitBuffer,quad])gl.deleteBuffer(b);for(const t of[sceneTarget,glowA,glowB]){gl.deleteFramebuffer(t.framebuffer);gl.deleteTexture(t.texture);if(t.depth)gl.deleteRenderbuffer(t.depth);}for(const p of[pointProgram,lineProgram,blurProgram,compositeProgram])gl.deleteProgram(p);container.innerHTML='';}};
+ container.galaxySnapshot=()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,nodes:nodes.length,links:links.length,frameRevision,names:state.names,relationshipStyle:relationshipLines.getState(),cruise:state.cruise,trail:[...state.trail],via:state.via,bodies:mode()?celestial.getState():{instances:0,rings:0,coronae:0},overview:state.filter==='all'?overview.getState():null,meteors:meteors.getState(),cosmic:state.filter==='all'?cosmic.getState():null,cameraDistance:camera.distance,cameraYaw:camera.yaw,cameraPitch:camera.pitch,time:state.time,renderSize:[canvas.width,canvas.height],atlasReady:state.atlasReady,atlasError:state.atlasError,geometry:atlas.active?{kind:atlas.active.kind,bounds:atlas.active.bounds,points:atlas.active.dustCount,segments:atlas.active.lineCount/2}:null,frameTiming:{p95:frameIntervals.length?[...frameIntervals].sort((a,b)=>a-b)[Math.floor((frameIntervals.length-1)*.95)]:null,longFrames},flowProbe:world(mode()?[170,120,25]:[310,60,170]),projectedStars:nodes.filter(inFilter).map(n=>({id:n.id,world:n.worldPosition,screen:n.screen,renderable:n.renderable,radius:n.body.radius,type:n.body.type,name:n.m.n}))});
+ return{setState,focus,reset,pauseAnimation,resumeAnimation,visibleNodeIds:(filter)=>nodes.filter(n=>(filter==='all'||n.m.e===filter)&&(filter!=='medieval'||medievalLate.has(n.id)===(state.medievalPhase==='late'))).map(n=>n.id),getState:()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,nodes:nodes.length,links:links.length,geometryRevision,frameRevision,cameraDistance:camera.distance}),destroy(){destroyed=true;pauseAnimation();resizeObserver.disconnect();document.removeEventListener('visibilitychange',visibility);document.removeEventListener('keydown',escape);atlas.destroy();celestial.destroy();core.destroy();relationshipLines.destroy();meteors.destroy();cosmic.destroy();deepSky.destroy();overview.destroy();atlasNote.remove();credit.remove();for(const b of[dustBuffer,nebulaBuffer,filamentBuffer,axialBuffer,lightflowBuffer,orbitBuffer,quad])gl.deleteBuffer(b);for(const t of[sceneTarget,glowA,glowB]){gl.deleteFramebuffer(t.framebuffer);gl.deleteTexture(t.texture);if(t.depth)gl.deleteRenderbuffer(t.depth);}for(const p of[pointProgram,lineProgram,blurProgram,compositeProgram])gl.deleteProgram(p);container.innerHTML='';}};
 }

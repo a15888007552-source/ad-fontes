@@ -1,6 +1,6 @@
 import { initRealMapView, stopRealMapView } from "./map-real.js";
 import { createListeningLibrary } from "./listening.js?v=20260831-listening1";
-import {RELATION_STYLE,relationSwatch} from './relation-styles.js?v=20260911-release1';
+import {RELATION_STYLE,relationSwatch} from './relation-styles.js?v=20260911-cosmic2';
 
 const listening = createListeningLibrary();
 
@@ -1547,7 +1547,7 @@ async function init3D(){
   if(net3dLoading)return net3dLoading;
   if(net3d){net3d.destroy();net3d=null;}
   setNetState("正在展开音乐家的星系……");
-  net3dLoading=import("./galaxy.js?v=20260911-release1").then(({createGalaxy})=>{
+  net3dLoading=import("./galaxy.js?v=20260911-cosmic2").then(({createGalaxy})=>{
     net3d=createGalaxy($("#net3d"),{
       ...netData(),periods:EP,colors:EPC,relationColors:RELC,portraits:PORTRAITS,
       onSelect:id=>openM(id,"星丛"),

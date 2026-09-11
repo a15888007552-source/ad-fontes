@@ -1,7 +1,7 @@
 /* These are interpretive centers, separate from the dictionary's people.
    Their musical themes draw on the existing period introductions. */
 import {FLOW_GLSL,flowPoint} from './stellar-volumes.js?v=20260911-epochs2';
-import {createCelestialBodies} from './celestial-bodies.js?v=20260911-spaceflow2';
+import {createCelestialBodies} from './celestial-bodies.js?v=20260911-depth2';
 const TAU=Math.PI*2;
 export const ERA_CORES={
  all:{kind:0,name:'时间之井',theme:'记忆与传递',text:'群星在不同的轨道上相遇，作品、记忆与影响向更远处传递。',center:[0,4,0],clearance:105,size:168},
