@@ -1,6 +1,6 @@
 import { initRealMapView, stopRealMapView } from "./map-real.js";
 import { createListeningLibrary } from "./listening.js?v=20260831-listening1";
-import {RELATION_STYLE,relationSwatch} from './relation-styles.js?v=20260911-cosmic2';
+import {RELATION_STYLE,relationSwatch,normalizeRelation,EVIDENCE_STATUS} from './relation-styles.js?v=20260911-relations3';
 
 const listening = createListeningLibrary();
 
@@ -1031,7 +1031,7 @@ function readHash(){
 let selectedId=null,selectedSource="",selectedCity=null,selectionToastTimer=0;
 function relationIds(id){
   const out=new Set();
-  L.forEach(l=>{if(l[0]===id)out.add(l[1]);else if(l[1]===id)out.add(l[0])});
+  L.forEach(l=>{const taxonomy=normalizeRelation(l);if(taxonomy.cat==='待核')return;if(taxonomy.source===id)out.add(taxonomy.target);else if(taxonomy.target===id)out.add(taxonomy.source)});
   return out;
 }
 function announceSelection(m,rels,source){
@@ -1074,8 +1074,8 @@ function openM(id,source="年鉴名录",opts={}){
   listening.stop();
   const restoreScroll=Number.isFinite(Number(opts.restoreScroll))?Number(opts.restoreScroll):null;
   const rels=L.filter(l=>l[0]===id||l[1]===id);
-  const rel=rels.map(l=>{const o=byId[l[0]===id?l[1]:l[0]];if(!o)return"";
-    return `<li><b>${l[2]}</b> · <a data-m="${o.i}">${o.n}</a><br><small style="color:var(--mut)">${l[3]||""}</small></li>`}).join("");
+  const rel=rels.map(l=>{const o=byId[l[0]===id?l[1]:l[0]];if(!o)return"";const taxonomy=normalizeRelation(l);
+    return `<li><b>${taxonomy.cat}</b> · <a data-m="${o.i}">${o.n}</a><br><small style="color:var(--mut)">${l[3]||""}${taxonomy.review?`<br><span style="color:#9a7548">待核：${taxonomy.review}</span>`:""}</small></li>`}).join("");
   const cs=(m.c||[]).filter(c=>CITY[c]);
   const p=PORTRAITS[m.i];
   const ni=NAVORDER.indexOf(id);
@@ -1406,33 +1406,30 @@ function renderTL(){
 }
 
 /* ══════════ 星丛 ══════════ */
-const RELC={...Object.fromEntries(Object.entries(RELATION_STYLE).map(([key,s])=>[key,s.color])),"其他":"#8A8272"};
-function relCat(t){
-  if(/师|徒|学统|衣钵|教父/.test(t))return"师承";
-  if(/对峙|竞争|论战|戏仿/.test(t))return"对峙";
-  if(/父子|翁婿|夫妇|亲缘/.test(t))return"亲缘";
-  if(/知交|同盟|交游|同侪|师友|庇护|提携|举荐|资助|景仰|朝圣|私淑/.test(t))return"知交";
-  return"影响"}
-let net2d=null,net3d=null,netFilter="all",netRelation=null;
+const RELC=Object.fromEntries(Object.entries(RELATION_STYLE).map(([key,s])=>[key,s.color]));
+let net2d=null,net3d=null,netFilter="all",netRelations=new Set();
 function netData(){
   const deg={};L.forEach(l=>{deg[l[0]]=(deg[l[0]]||0)+1;deg[l[1]]=(deg[l[1]]||0)+1});
   const nodes=M.map(m=>({id:m.i,m,deg:deg[m.i]||0}));
-  const links=L.filter(l=>byId[l[0]]&&byId[l[1]]).map(l=>({source:l[0],target:l[1],cat:relCat(l[2]),t:l[2],note:l[3]||""}));
+  const links=L.filter(l=>byId[l[0]]&&byId[l[1]]).map((row,index)=>{
+    const normalized=normalizeRelation(row);
+    return{...normalized,status:normalized.evidence,index,rawIndex:index,t:normalized.rawLabel};
+  }).filter(link=>link.cat!=="待核");
   return{nodes,links};
 }
 function netLegend(){
   $("#netchips").innerHTML=`<button class="chip ${netFilter==="all"?"on":""}" data-f="all" aria-pressed="${netFilter==="all"}">完整星系</button>`+
     EPK.map(k=>`<button class="chip ${netFilter===k?"on":""}" data-f="${k}" style="--epoch-color:${EPC[k]}" aria-pressed="${netFilter===k}">${EP[k].zh}</button>`).join("");
   const graph=netData(),spatial=$("#tog3d").classList.contains("on"),phaseIds=spatial&&netFilter==="medieval"?net3d?.visibleNodeIds?.("medieval"):null,visible=new Set(graph.nodes.filter(n=>(netFilter==="all"||n.m.e===netFilter)&&(!phaseIds||phaseIds.includes(n.id))).map(n=>n.id));
-  if(netRelation&&!graph.links.some(l=>l.cat===netRelation&&visible.has(l.source)&&visible.has(l.target)))netRelation=null;
-  $("#netleg").innerHTML=Object.entries(RELATION_STYLE).map(([key,s])=>{const count=graph.links.filter(l=>l.cat===key&&visible.has(l.source)&&visible.has(l.target)).length;return`<button type="button" class="galaxy-relation-key" data-relation-type="${key}" style="--relation-color:${s.color}" aria-pressed="${netRelation===key}" title="${s.name} · ${count} 条；点击突出此类关系" ${count?'':'disabled'}>${relationSwatch(key)}<span>${key}</span><small>${count}</small></button>`;}).join('');
-  $("#netleg").querySelectorAll('[data-relation-type]').forEach(b=>b.onclick=()=>{netRelation=netRelation===b.dataset.relationType?null:b.dataset.relationType;$("#netleg").querySelectorAll('[data-relation-type]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.relationType===netRelation));net3d?.setState?.({relationType:netRelation});net2d?.applyFilter?.();});
+  for(const key of [...netRelations])if(!graph.links.some(l=>l.cat===key&&visible.has(l.source)&&visible.has(l.target)))netRelations.delete(key);
+  $("#netleg").innerHTML=Object.entries(RELATION_STYLE).filter(([key])=>key!=="待核"||graph.links.some(l=>l.cat===key)).map(([key,s])=>{const count=graph.links.filter(l=>l.cat===key&&visible.has(l.source)&&visible.has(l.target)).length;const selected=netRelations.has(key);return`<button type="button" class="galaxy-relation-key" data-relation-type="${key}" style="--relation-color:${s.color}" aria-pressed="${selected}" title="${s.name} · ${count} 条；点击开关此类关系" ${count?'':'disabled'}>${relationSwatch(key)}<span>${key}</span><small>${count}</small></button>`;}).join('');
+  $("#netleg").querySelectorAll('[data-relation-type]').forEach(b=>b.onclick=()=>{const key=b.dataset.relationType;$("#v-net").classList.add("intro-collapsed");if(netRelations.has(key))netRelations.delete(key);else netRelations.add(key);$("#netleg").querySelectorAll('[data-relation-type]').forEach(x=>x.setAttribute('aria-pressed',netRelations.has(x.dataset.relationType)));net3d?.setState?.({relationTypes:[...netRelations]});net2d?.applyFilter?.();});
   $("#galaxy-person-count").textContent=spatial&&netFilter==="all"?EPK.length:visible.size;
   $("#galaxy-person-count").nextElementSibling.textContent=spatial&&netFilter==="all"?"个时代星群":"位音乐家";
   $("#galaxy-relation-count").textContent=spatial&&netFilter==="all"?graph.nodes.length:graph.links.filter(l=>visible.has(l.source)&&visible.has(l.target)).length;
   $("#galaxy-relation-count").nextElementSibling.textContent=spatial&&netFilter==="all"?"位音乐家":"条关联";
   $("#netchips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
-    netFilter=b.dataset.f;netLegend();
+    netFilter=b.dataset.f;$("#v-net").classList.add("intro-collapsed");netLegend();
     if(net2d)net2d.applyFilter();
     if(net3d)apply3DSelection();
   });
@@ -1478,13 +1475,20 @@ function build2D(){
   const rr=d=>9+Math.min(d.deg,12)*1.5;
   const svg=d3.select(box).append("svg").attr("viewBox",`0 0 ${W} ${H}`);
   const defs=svg.append("defs");
+  Object.entries(RELATION_STYLE).filter(([key])=>key!=="待核").forEach(([key,s])=>{
+    defs.append("marker").attr("id","rel-arrow-"+s.kind).attr("viewBox","0 0 8 8").attr("refX",7).attr("refY",4).attr("markerWidth",5).attr("markerHeight",5).attr("orient","auto-start-reverse").attr("markerUnits","userSpaceOnUse").append("path").attr("d","M0,1 L7,4 L0,7 Z").attr("fill",s.color);
+  });
   const portraitNodes=new Set(nodes.filter(n=>PORTRAITS[n.id]&&(n.m.b||n.deg>=5)).map(n=>n.id));
   nodes.forEach(n=>{if(portraitNodes.has(n.id)){
     const p=defs.append("pattern").attr("id","pt-"+n.id).attr("width",1).attr("height",1).attr("patternContentUnits","objectBoundingBox");
     p.append("image").attr("href",PORTRAITS[n.id].u).attr("width",1).attr("height",1).attr("preserveAspectRatio","xMidYMin slice")}});
   const root=svg.append("g");
   const lk=root.append("g").selectAll("path").data(links).join("path")
-    .attr("fill","none").attr("stroke",d=>RELC[d.cat]).attr("stroke-width",1.1).attr("opacity",.42);
+    .attr("class",d=>`rel2d rel2d-${RELATION_STYLE[d.cat]?.kind??7}`)
+    .attr("fill","none").attr("stroke",d=>RELC[d.cat]||RELC['待核']).attr("stroke-width",d=>d.evidence==='documented'?1.35:1.1)
+    .attr("stroke-dasharray",d=>d.evidence==='historiographical'?'6 5':d.evidence==='comparative'?'8 4 1 4':null)
+    .attr("marker-end",d=>d.directional?`url(#rel-arrow-${RELATION_STYLE[d.cat]?.kind??7})`:null)
+    .attr("opacity",d=>(EVIDENCE_STATUS[d.evidence]?.opacity??.55)*.42);
   const nd=root.append("g").selectAll("g").data(nodes).join("g").attr("class","n2node").attr("data-m",d=>d.id).style("cursor","pointer");
   nd.append("circle").attr("r",rr)
     .attr("fill",d=>portraitNodes.has(d.id)?`url(#pt-${d.id})`:EPC[d.m.e])
@@ -1502,26 +1506,42 @@ function build2D(){
     lk.attr("d",d=>{const sx=d.source.x,sy=d.source.y,ex=d.target.x,ey=d.target.y;
       return `M${sx},${sy}Q${(sx+ex)/2+(sy-ey)*.13},${(sy+ey)/2+(ex-sx)*.13} ${ex},${ey}`});
     nd.attr("transform",d=>`translate(${d.x},${d.y})`)};
-  sim.stop();for(let i=0;i<90;i++)sim.tick();draw();sim.on("tick",draw).alpha(.18).restart();
+  sim.stop();for(let i=0;i<90;i++)sim.tick();draw();
   /* 初始自动取景 */
   const xs=nodes.map(n=>n.x),ys=nodes.map(n=>n.y);
   const bx0=Math.min(...xs)-46,bx1=Math.max(...xs)+46,by0=Math.min(...ys)-46,by1=Math.max(...ys)+46;
   const k=Math.min(W/(bx1-bx0),H/(by1-by0),1.5);
-  const zm=d3.zoom().scaleExtent([.3,4.5]).on("zoom",e=>root.attr("transform",e.transform));
+  const vis=d=>netFilter==="all"||d.m.e===netFilter;
+  let zoomScale=k;
+  function arrangeLabels(){
+    const rel=selectedId?relationIds(selectedId):new Set(),placed=[];
+    const ordered=[...nodes].sort((a,b)=>{const score=n=>n.id===selectedId?4:rel.has(n.id)?3:(n.m.b||n.deg>=6)?2:1;return score(b)-score(a)||b.deg-a.deg});
+    const threshold=zoomScale<1.05?2:zoomScale<1.75?1:0;
+    nd.select("text").attr("display","none");
+    for(const d of ordered){
+      if(!vis(d))continue;
+      const forced=d.id===selectedId||rel.has(d.id),anchor=d.m.b||d.deg>=6;
+      if(!forced&&!anchor&&threshold>0)continue;
+      const w=Math.max(34,d.m.n.length*12+12),h=17,x=d.x-w/2,y=d.y+rr(d)+8,box={x,y,w,h};
+      if(!forced&&placed.some(p=>p.x<box.x+box.w&&p.x+p.w>box.x&&p.y<box.y+box.h&&p.y+p.h>box.y))continue;
+      d._labelBox=box;placed.push(box);nd.filter(n=>n.id===d.id).select("text").attr("display",null);
+    }
+  }
+  const zm=d3.zoom().scaleExtent([.3,4.5]).on("zoom",e=>{zoomScale=e.transform.k;root.attr("transform",e.transform);arrangeLabels()});
   svg.call(zm).call(zm.transform,d3.zoomIdentity.translate((W-k*(bx0+bx1))/2,(H-k*(by0+by1))/2).scale(k));
+  sim.on("tick",()=>{draw();arrangeLabels()}).alpha(.18).restart();
   nd.call(d3.drag()
     .on("start",(e,d)=>{if(!e.active)sim.alphaTarget(.22).restart();d.fx=d.x;d.fy=d.y})
     .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y})
     .on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null}));
   const tip=$("#tltip");
-  const vis=d=>netFilter==="all"||d.m.e===netFilter;
   function applyFilter(){
     const rel=selectedId?relationIds(selectedId):new Set();
     nd.classed("is-selected",d=>d.id===selectedId).classed("is-related",d=>!!selectedId&&rel.has(d.id));
     nd.attr("opacity",d=>!vis(d)?.08:!selectedId?1:(d.id===selectedId||rel.has(d.id)?1:.1));
-    lk.attr("opacity",l=>{const ok=vis(l.source)&&vis(l.target)&&(!netRelation||l.cat===netRelation);if(!ok)return .015;if(!selectedId)return .42;return l.source.id===selectedId||l.target.id===selectedId?.96:.035})
-      .attr("stroke-width",l=>selectedId&&(l.source.id===selectedId||l.target.id===selectedId)?2.8:1.1);
-    nd.select("text").attr("display",d=>(vis(d)&&(d.deg>=6||d.m.b||d.id===selectedId||rel.has(d.id)))?null:"none");
+    lk.attr("opacity",l=>{const ok=vis(l.source)&&vis(l.target)&&(!netRelations.size||netRelations.has(l.cat));const related=l.source.id===selectedId||l.target.id===selectedId;if(!ok)return .015;const base=EVIDENCE_STATUS[l.evidence]?.opacity??.55;return base*(selectedId?(related?.96:.035):.42)})
+      .attr("stroke-width",l=>selectedId&&(l.source.id===selectedId||l.target.id===selectedId)?2.8:(l.evidence==='documented'?1.35:1.1));
+    nd.select("text").attr("display","none");arrangeLabels();
   }
   nd.on("mouseenter",(e,d)=>{
     const nb=new Set();links.forEach(l=>{if(l.source.id===d.id)nb.add(l.target.id);if(l.target.id===d.id)nb.add(l.source.id)});
@@ -1529,9 +1549,9 @@ function build2D(){
     lk.attr("opacity",l=>l.source.id===d.id||l.target.id===d.id?.95:.05)
       .attr("stroke-width",l=>l.source.id===d.id||l.target.id===d.id?2.2:1.1);
     nd.select("text").attr("display",o=>(o.id===d.id||nb.has(o.id)||o.deg>=6||o.m.b)?null:"none");
-    const rl=links.filter(l=>l.source.id===d.id||l.target.id===d.id).slice(0,6)
-      .map(l=>`${l.t}·${(l.source.id===d.id?l.target:l.source).m.n}`).join("；");
-    tip.style.display="block";tip.innerHTML=`<b>${d.m.n}</b> ${d.m.d}<br>${rl}`})
+     const rl=links.filter(l=>l.source.id===d.id||l.target.id===d.id).slice(0,6)
+       .map(l=>`${l.cat} · ${(l.source.id===d.id?l.target:l.source).m.n}`).join("；");
+     tip.style.display="block";tip.innerHTML=`<b>${d.m.n}</b> ${d.m.d}<br>${rl}`})
   .on("mousemove",e=>{tip.style.left=(e.clientX+16)+"px";tip.style.top=(e.clientY+14)+"px"})
   .on("mouseleave",()=>{tip.style.display="none";applyFilter()})
   .on("click",(e,d)=>{if(!e.defaultPrevented)openM(d.id,"平面星图")});
@@ -1540,18 +1560,18 @@ function build2D(){
   net2d={applyFilter,focus,sim,reset};applyFilter();netLegend();syncSelection();
 }
 function apply3DSelection(){
-  net3d?.setState?.({filter:netFilter,selectedId,relationType:netRelation});
+  net3d?.setState?.({filter:netFilter,selectedId,relationTypes:[...netRelations]});
 }
 async function init3D(){
   if(net3d&&$("#net3d").dataset.ready==="true")return true;
   if(net3dLoading)return net3dLoading;
   if(net3d){net3d.destroy();net3d=null;}
   setNetState("正在展开音乐家的星系……");
-  net3dLoading=import("./galaxy.js?v=20260911-cosmic2").then(({createGalaxy})=>{
+  net3dLoading=import("./galaxy.js?v=20260911-relations4").then(({createGalaxy})=>{
     net3d=createGalaxy($("#net3d"),{
       ...netData(),periods:EP,colors:EPC,relationColors:RELC,portraits:PORTRAITS,
       onSelect:id=>openM(id,"星丛"),
-      onPhaseChange:()=>{netLegend();net3d?.setState?.({relationType:netRelation});},
+      onPhaseChange:()=>{netLegend();net3d?.setState?.({relationTypes:[...netRelations]});},
       onContextLost:()=>{$("#tog2d").click();setNetState("星系画面暂时中断，已切换到人物关系图。")}
     });
     apply3DSelection();setNetState("");return true;

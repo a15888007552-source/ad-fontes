@@ -1,17 +1,17 @@
 /* Musician bodies are editorial wayfinding symbols, not a quantitative ranking
-   of historical contribution. Named focal figures and recorded graph links
-   determine a restrained range of sizes; appearance stays stable per person. */
+   of historical contribution. Their modest, stable variation is keyed to the
+   person id; it does not encode degree, status, influence, or historical distance. */
 import {createSkyLandmarks} from './sky-landmarks.js?v=20260911-depth2';
 const TAU=Math.PI*2;
 const LEVEL={beet:1,bach:.98,moza:.94,hayd:.83,mont:.84,josq:.83,pale:.81,dufa:.76,wagn:.89,debu:.84,stra:.85,scho:.83,lisz:.79,chop:.79,schb:.80,brah:.79,mahl:.80};
-const SUNS={beet:[.58,.79,1],bach:[1,.76,.34],moza:[.90,.96,1],mont:[.80,.53,1],josq:[.68,.83,1],pale:[1,.82,.48],wagn:[1,.50,.24],debu:[.50,.86,1],stra:[.78,.85,1]};
+const SUNS={beet:[.58,.79,1],bach:[1,.76,.34],moza:[.90,.96,1],mont:[.80,.53,1],josq:[.68,.83,1],pale:[1,.82,.48],wagn:[1,.50,.24],debu:[.50,.86,1],stra:[.78,.85,1],mach:[.76,.83,.98]};
 const COLORS=[[.75,.53,.32],[.30,.58,.87],[.78,.40,.40],[.31,.65,.48],[.58,.43,.80],[.69,.83,.90]];
 const BODY_TYPES={hayd:3,lisz:3,mahl:3,chop:4,rave:5,tcha:2};
 const BODY_COLORS={hayd:[.85,.67,.35],lisz:[.26,.73,.64],mahl:[.74,.50,.80]};
 const TYPES=['恒星','岩质天体','气态行星','环状行星','行星与卫星','冰晶天体'];
 function seedOf(s){let x=2166136261;for(const c of s){x^=c.charCodeAt(0);x=Math.imul(x,16777619);}return(x>>>0)/4294967296;}
 export function bodyFor(n){
- const seed=seedOf(n.id),level=LEVEL[n.id]??Math.min(.68,.12+Math.sqrt(Math.min(n.deg,18)/18)*.48);
+  const seed=seedOf(n.id),level=LEVEL[n.id]??(.56+seed*.10);
  const type=SUNS[n.id]?0:(BODY_TYPES[n.id]??1+Math.floor(seed*5)),radius=4.8+Math.pow(level,1.4)*18;
  return{type,radius:radius+(n.id==='beet'?2:0),color:SUNS[n.id]||BODY_COLORS[n.id]||COLORS[Math.floor(seed*37)%COLORS.length],seed,tilt:.30+seed*1.13,description:n.id==='beet'?'蓝白恒星':TYPES[type],satellite:type===4||type===3&&seed>.64};
 }
