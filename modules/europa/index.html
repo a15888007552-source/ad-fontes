@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./css/index.css?v=20260831-restore-cards">
 <link rel="stylesheet" href="./css/map-real.css">
 <link rel="stylesheet" href="./css/europa-liquid-interactions.css">
+<link rel="stylesheet" href="./css/galaxy.css?v=20260910-refine2">
 
 <body class="europa-opening-active">
 <div id="europa-opening" role="dialog" aria-modal="true" aria-labelledby="europa-opening-title">
@@ -98,19 +99,26 @@
     <div id="realmap-view" class="realmap-wrap"></div>
   </section>
   <section class="view" id="v-net">
-    <h3 class="rub">CONSTELLATIO · 师承与影响之网</h3>
-    <div class="nettog">
-      <button class="chip on" id="tog2d">平面星图</button>
-      <button class="chip" id="tog3d">立体星丛 · 3D</button>
+    <div class="galaxy-intro">
+      <p class="galaxy-kicker"><span></span>CONSTELLATIO / EUROPA</p>
+      <h2>星丛</h2>
+      <p class="galaxy-latin">A galaxy of musical lives.</p>
+      <p class="galaxy-prose">从一颗星，走向另一颗星。<br>循着师承、交游与影响，<br>看见音乐家的相遇。</p>
+      <div class="galaxy-census"><div><strong id="galaxy-person-count">—</strong><span>位音乐家</span></div><i></i><div><strong id="galaxy-relation-count">—</strong><span>条关联</span></div></div>
+      <div class="galaxy-start"><span>从这里出发</span><button type="button" data-galaxy-focus="bach">巴赫 <span>↗</span></button><button type="button" data-galaxy-focus="beet">贝多芬 <span>↗</span></button><button type="button" data-galaxy-focus="debu">德彪西 <span>↗</span></button></div>
     </div>
-    <div class="chips" id="netchips"></div>
+    <div class="nettog" aria-label="星丛观察方式">
+      <button class="chip on" id="tog3d" aria-pressed="true">星系</button>
+      <button class="chip" id="tog2d" aria-pressed="false">关系图</button>
+    </div>
+    <aside class="galaxy-epochs"><div class="galaxy-side-title"><span>时代星群</span><small>PERIODS</small></div><div class="chips" id="netchips"></div></aside>
     <div class="viz-state" id="netstate" role="status" aria-live="polite" hidden></div>
     <div class="netbox">
-      <div id="netwrap2d"></div>
-      <div id="net3d"><div class="hint3d">拖拽旋转 · 滚轮缩放 · 影响关系沿连线流动</div></div>
-      <div class="legend" id="netleg"></div>
+      <div id="netwrap2d" style="display:none"></div>
+      <div id="net3d" style="display:block" aria-label="音乐家三维星系"></div>
     </div>
-    <p class="mapnote">※ 节点为音乐家肖像、大小对应关系数量；连线按关系类型着色；悬停高亮邻域，点击开传。平面模式为 D3 力导向布局，立体模式为 WebGL 三维星丛。</p>
+    <div class="galaxy-footer"><div class="galaxy-key"><span class="galaxy-key-title">天体为人物 · 连线为关联</span><div class="legend" id="netleg"></div></div><div class="galaxy-controls"><span class="galaxy-gesture" id="galaxy-gesture">拖动旋转 · 滚轮缩放 · 点星探索 · 双击开传</span><button type="button" id="galaxy-cruise" aria-label="慢速巡航" aria-pressed="false" title="慢速巡航"><svg viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="8" ry="4" transform="rotate(-35 10 10)"/><circle cx="10" cy="10" r="2"/><circle cx="16" cy="6" r="1.3" fill="currentColor"/></svg></button><button type="button" id="galaxy-names" class="galaxy-names-toggle" aria-label="显示人物姓名" aria-pressed="false" title="显示人物姓名">名</button><button type="button" id="galaxy-motion" aria-label="暂停星系流动" aria-pressed="false" title="暂停星系流动"><svg viewBox="0 0 20 20"><path d="M7 5v10M13 5v10"/></svg></button><button type="button" id="galaxy-reset" aria-label="回到星系全景" title="回到全景"><svg viewBox="0 0 20 20"><path d="M4 6a7 7 0 1 1-1 7M4 2v4h4"/></svg></button><button type="button" id="galaxy-immersive" aria-label="进入沉浸模式" aria-pressed="false" title="沉浸模式"><svg viewBox="0 0 20 20"><path d="M3 7V3h4m6 0h4v4M3 13v4h4m6 0h4v-4"/></svg></button></div></div>
+    <p class="galaxy-caption">星群按时代聚合，连线依词典所录的师承、影响与交游。</p>
   </section>
   <section class="view" id="v-lin">
     <h3 class="rub">STEMMA · 师承与传统的谱系（按学派 / 技法 / 制度之传递）</h3>
@@ -172,7 +180,7 @@
 
 
 
-<script type="module" src="./js/index.js?v=20260831-restore-cards"></script>
+<script type="module" src="./js/index.js?v=20260910-refine2"></script>
 <script type="module" src="./js/europa-liquid-interactions.js"></script>
 <script>
 (function(){

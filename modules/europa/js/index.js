@@ -1063,8 +1063,8 @@ function locateMusician(id,target){
   }else if(target==="tl"){
     setView("tl");syncSelection();requestAnimationFrame(()=>focusTimeline(id));
   }else if(target==="net"){
-    netFilter="all";setView("net");netLegend();$("#tog2d").click();
-    Promise.resolve(init2D()).then(()=>{syncSelection();net2d?.focus?.(id)});
+    netFilter="all";setView("net");netLegend();
+    showGalaxy().then(ok=>{syncSelection();if(ok)net3d?.focus?.(id,{preview:false});else net2d?.focus?.(id)});
   }
   announceSelection(m,L.filter(l=>l[0]===id||l[1]===id),`详情面板 → ${target==="map"?"舆图":target==="tl"?"年表":"星丛"}`);
 }
@@ -1420,18 +1420,19 @@ function netData(){
   return{nodes,links};
 }
 function netLegend(){
-  $("#netleg").innerHTML=EPK.map(k=>`<span><i style="background:${EPC[k]}"></i>${EP[k].zh}</span>`).join("")+
-    Object.entries(RELC).filter(([k])=>k!=="其他").map(([k,c])=>`<span><s style="border-color:${c}"></s>${k}</span>`).join("")+
-    `<span><i style="background:none;border:1.4px solid #35301F"></i>重点条目</span>`;
-  $("#netchips").innerHTML=`<button class="chip ${netFilter==="all"?"on":""}" data-f="all">全部</button>`+
-    EPK.map(k=>`<button class="chip ${netFilter===k?"on":""}" data-f="${k}">${EP[k].zh}</button>`).join("");
+  $("#netleg").innerHTML=Object.entries(RELC).filter(([k])=>k!=="其他").map(([k,c])=>`<span><s style="border-color:${c}"></s>${k}</span>`).join("");
+  $("#netchips").innerHTML=`<button class="chip ${netFilter==="all"?"on":""}" data-f="all" aria-pressed="${netFilter==="all"}">完整星系</button>`+
+    EPK.map(k=>`<button class="chip ${netFilter===k?"on":""}" data-f="${k}" style="--epoch-color:${EPC[k]}" aria-pressed="${netFilter===k}">${EP[k].zh}</button>`).join("");
+  const graph=netData(),visible=new Set(graph.nodes.filter(n=>netFilter==="all"||n.m.e===netFilter).map(n=>n.id));
+  $("#galaxy-person-count").textContent=visible.size;
+  $("#galaxy-relation-count").textContent=graph.links.filter(l=>visible.has(l.source)&&visible.has(l.target)).length;
   $("#netchips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
     netFilter=b.dataset.f;netLegend();
     if(net2d)net2d.applyFilter();
     if(net3d)apply3DSelection();
   });
 }
-const VIZ_ASSETS={d3:"assets/js/d3.v7.9.0.min.js",graph3d:"assets/js/3d-force-graph-1.80.0.min.js"};
+const VIZ_ASSETS={d3:"assets/js/d3.v7.9.0.min.js"};
 const vizLoads={};let net2dLoading=null,net3dLoading=null;
 function loadVizScript(key,test){
   if(test())return Promise.resolve();
@@ -1530,61 +1531,51 @@ function build2D(){
   .on("mouseleave",()=>{tip.style.display="none";applyFilter()})
   .on("click",(e,d)=>{if(!e.defaultPrevented)openM(d.id,"平面星图")});
   function focus(id){const d=nodes.find(n=>n.id===id);if(!d)return;const k=1.85,t=d3.zoomIdentity.translate(W/2-d.x*k,H/2-d.y*k).scale(k);svg.transition().duration(RM?0:420).call(zm.transform,t)}
-  net2d={applyFilter,focus,sim};applyFilter();netLegend();syncSelection();
+  function reset(){svg.transition().duration(RM?0:420).call(zm.transform,d3.zoomIdentity.translate((W-k*(bx0+bx1))/2,(H-k*(by0+by1))/2).scale(k))}
+  net2d={applyFilter,focus,sim,reset};applyFilter();netLegend();syncSelection();
 }
 function apply3DSelection(){
-  if(!net3d)return;
-  const vis=d=>netFilter==="all"||d.m.e===netFilter,rel=selectedId?relationIds(selectedId):new Set();
-  net3d.nodeColor(d=>!vis(d)?"#24242D":d.id===selectedId?"#F1D36B":selectedId&&!rel.has(d.id)?"#33343F":EPC[d.m.e])
-    .linkVisibility(l=>{const s=l.source.id||l.source,t=l.target.id||l.target,ok=netFilter==="all"||((l.source.m?l.source.m.e:byId[s]?.e)===netFilter&&(l.target.m?l.target.m.e:byId[t]?.e)===netFilter);return ok&&(!selectedId||s===selectedId||t===selectedId)})
-    .linkWidth(l=>{const s=l.source.id||l.source,t=l.target.id||l.target;return selectedId&&(s===selectedId||t===selectedId)?2.8:(l.cat==="师承"?1.35:.55)})
-    .linkOpacity(selectedId ? .78 : .38);
+  net3d?.setState?.({filter:netFilter,selectedId});
 }
 async function init3D(){
-  if(net3d)return true;
+  if(net3d&&$("#net3d").dataset.ready==="true")return true;
   if(net3dLoading)return net3dLoading;
-  try{const probe=document.createElement("canvas");if(!probe.getContext("webgl2")&&!probe.getContext("webgl"))return false}catch(_){return false}
-  setNetState(stateHTML("按需载入 · WEBGL","正在载入立体星丛","3D 引擎仅在你主动点击后下载；如设备不支持，将自动回到平面模式。"));
-  net3dLoading=loadVizScript("graph3d",()=>typeof ForceGraph3D!=="undefined").then(()=>build3D()).catch(err=>{
-    console.warn("3D init failed",err);net3d=null;return false;
-  }).finally(()=>{net3dLoading=null});
+  if(net3d){net3d.destroy();net3d=null;}
+  setNetState("正在展开音乐家的星系……");
+  net3dLoading=import("./galaxy.js?v=20260910-refine2").then(({createGalaxy})=>{
+    net3d=createGalaxy($("#net3d"),{
+      ...netData(),periods:EP,colors:EPC,relationColors:RELC,portraits:PORTRAITS,
+      onSelect:id=>openM(id,"星丛"),
+      onContextLost:()=>{$("#tog2d").click();setNetState("星系画面暂时中断，已切换到人物关系图。")}
+    });
+    apply3DSelection();setNetState("");return true;
+  }).catch(err=>{console.warn("Galaxy init failed",err);net3d=null;return false}).finally(()=>{net3dLoading=null});
   return net3dLoading;
 }
-function build3D(){
-  try{
-    const el=$("#net3d");
-    el.innerHTML="<div class=\"hint3d\">拖拽旋转 · 滚轮缩放 · 点击节点打开详情</div>";
-    const {nodes,links}=netData();
-    const vis=d=>netFilter==="all"||d.m.e===netFilter;
-    const graph=ForceGraph3D()(el)
-      .width(el.clientWidth||1200).height(690)
-      .backgroundColor("#0E0C14")
-      .nodeVal(d=>2+Math.min(d.deg,12))
-      .nodeColor(d=>vis(d)?EPC[d.m.e]:"#2A2A33")
-      .nodeOpacity(.95)
-      .nodeLabel(d=>`<div style="text-align:center;font-family:'Segoe UI','Microsoft YaHei',sans-serif;background:rgba(14,12,20,.94);padding:9px 12px;border:1px solid #6B5B36;border-radius:2px;max-width:210px">${PORTRAITS[d.id]?`<img loading="lazy" decoding="async" src="${PORTRAITS[d.id].u}" style="width:90px;display:block;margin:0 auto 6px" alt="">`:""}<b style="color:#E9D9A8;font-size:14px">${d.m.n}</b><br><span style="color:#C9BFA0;font-size:11.5px">${d.m.d} · ${d.m.s}</span></div>`)
-      .linkColor(l=>RELC[l.cat]).linkOpacity(.4)
-      .linkWidth(l=>l.cat==="师承"?1.5:.6)
-      .linkVisibility(l=>netFilter==="all"||(l.source.m&&vis(l.source)&&vis(l.target)))
-      .linkDirectionalParticles(l=>l.cat==="影响"||l.cat==="师承"?2:0)
-      .linkDirectionalParticleWidth(1.7).linkDirectionalParticleSpeed(.0045)
-      .onNodeClick(d=>openM(d.id,"立体星丛"));
-    if(typeof graph.warmupTicks==="function")graph.warmupTicks(45);
-    if(typeof graph.cooldownTicks==="function")graph.cooldownTicks(110);
-    net3d=graph.graphData({nodes,links});apply3DSelection();setNetState("");
-    return true;
-  }catch(err){console.warn("3D init failed",err);net3d=null;return false}
+async function showGalaxy(){
+  const b=$("#tog3d");b.disabled=true;b.classList.add("on");b.setAttribute("aria-pressed","true");
+  $("#tog2d").classList.remove("on");$("#tog2d").setAttribute("aria-pressed","false");
+  document.body.classList.remove("galaxy-flat-view");
+  $("#netwrap2d").style.display="none";$("#net3d").style.display="block";net2d?.sim?.stop?.();
+  const ok=await init3D();b.disabled=false;
+  if(!ok){
+    await $("#tog2d").onclick();
+    setNetState("此设备暂时无法展开星系，已为你保留可阅读的人物关系图。");return false;
+  }
+  if(b.classList.contains("on")&&$("#v-net").classList.contains("on"))net3d.resumeAnimation();
+  $("#galaxy-reset").onclick=()=>net3d?.reset?.();
+  $("#galaxy-gesture").textContent="拖动旋转 · 滚轮缩放 · 点星探索 · 双击开传";
+  apply3DSelection();return true;
 }
-$("#tog2d").onclick=()=>{$("#tog2d").classList.add("on");$("#tog3d").classList.remove("on");
-  $("#net3d").style.display="none";$("#netwrap2d").style.display="block";net3d?.pauseAnimation?.();init2D()};
-$("#tog3d").onclick=async()=>{
-  const b=$("#tog3d");b.disabled=true;b.textContent="正在载入 3D…";
-  $("#netwrap2d").style.display="none";$("#net3d").style.display="block";
-  const ok=await init3D();b.disabled=false;b.textContent="立体星丛 · 3D";
-  if(!ok){$("#net3d").style.display="none";$("#netwrap2d").style.display="block";$("#tog2d").classList.add("on");b.classList.remove("on");
-    setNetState(stateHTML("性能降级 · FALLBACK","此设备未能启动 3D 模式","已自动返回平面星图；人物、关系和定位功能均可继续使用。",`<button class="state-action" data-net-back2d>使用平面星图</button>`));
-    $("#netstate [data-net-back2d]")?.addEventListener("click",()=>{$("#tog2d").click();setNetState("")});await init2D();return}
-  b.classList.add("on");$("#tog2d").classList.remove("on");net3d?.resumeAnimation?.();apply3DSelection()};
+$("#tog2d").onclick=async()=>{
+  $("#tog2d").classList.add("on");$("#tog2d").setAttribute("aria-pressed","true");
+  $("#tog3d").classList.remove("on");$("#tog3d").setAttribute("aria-pressed","false");
+  document.body.classList.add("galaxy-flat-view");
+  $("#net3d").style.display="none";$("#netwrap2d").style.display="block";net3d?.pauseAnimation?.();
+  await init2D();$("#galaxy-reset").onclick=()=>net2d?.reset?.();
+  $("#galaxy-gesture").textContent="拖动平移 · 滚轮缩放 · 点选开传";
+};
+$("#tog3d").onclick=showGalaxy;
 
 /* ══════════ 术语 GLOSSARIUM ══════════ */
 let glFilter="all";
@@ -1789,6 +1780,8 @@ qi.addEventListener("keydown",e=>{if(e.key==="Escape"){sres.style.display="none"
 function setView(v){
   const b=document.querySelector(`#views button[data-v="${v}"]`);if(!b)return;
   listening.stop();
+  document.body.classList.toggle("europa-galaxy-active",v==="net");
+  if(v!=="net"){document.body.classList.remove("galaxy-immersive");$("#galaxy-immersive")?.setAttribute("aria-pressed","false")}
   document.querySelectorAll("#views button").forEach(x=>x.classList.toggle("on",x===b));
   document.querySelectorAll(".view").forEach(s=>s.classList.remove("on"));
   $("#v-"+v).classList.add("on");
@@ -1797,11 +1790,11 @@ function setView(v){
   $("#epnav").style.display=themed?"flex":"none";
   if(v!=="real")stopRealMapView();
   if(v!=="map"&&typeof mapStop==="function")mapStop();
-  if(v!=="net")net3d?.pauseAnimation?.();
+  if(v!=="net"){net3d?.pauseAnimation?.();net2d?.sim?.stop?.();}
   if(v==="map")initMapView();
   if(v==="real")initRealMapView();
   if(v==="tl")renderTL();
-  if(v==="net"){netLegend();if($("#tog3d").classList.contains("on"))net3d?.resumeAnimation?.();else init2D()}
+  if(v==="net"){netLegend();if($("#tog3d").classList.contains("on"))showGalaxy();else $("#tog2d").onclick()}
   if(v==="lin")renderLineage();
   if(v==="hist")renderHist();
   if(v==="musio"&&!musioDone){renderMusio();musioDone=true}
@@ -1836,7 +1829,7 @@ $("#roam").onclick=()=>{const i=Math.floor((performance.now()*131.77)%NAVORDER.l
 const VIEWDESC=[["年 鉴","七时代分章：篇首名画、导论小论文、大事记、史学争鸣与音乐家名录卡片。"],
 ["年 表","全体音乐家按生卒排成生命横道，时代色带贯穿。"],
 ["舆 图","真实经纬度投影的欧洲音乐史研究地图：国界、河流、拉丁地名；点城市见驻留者与典故。卫星实景地图见“实 景”。"],
-["星 丛","师承与影响之网：平面 D3 力导向 + WebGL 立体星丛，节点为肖像。"],
+["星 丛","音乐家依时代聚合成星系，循人物关联阅读传记；可切换为平面关系图。"],
 ["师 承",`${LINEAGES.length}条传统脉络的谱系带，肖像节点＋关系箭头。`],
 ["史 脉",`${HISTEVENTS.length}个重要历史事件的垂直时间轴，点开读前因—经过—后果—史学评价。`],
 ["术 语",`${GLOSS.length}条核心概念，逐条注原语与文献出处。`],
