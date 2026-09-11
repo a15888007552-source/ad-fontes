@@ -1,4 +1,4 @@
-import {buildStellarData} from './stellar-volumes.js?v=20260910-planets1';
+import {buildStellarData} from './stellar-volumes.js?v=20260911-epochs2';
 self.onmessage=({data:{id,key}})=>{
  try{
   const volume=buildStellarData(key);

@@ -6,9 +6,10 @@ const mix=(a,b,t)=>a.map((v,i)=>v+(b[i]-v)*Math.max(0,Math.min(1,t)));
 const gold=[1,.68,.29],ivory=[1,.90,.68],blue=[.18,.48,1],teal=[.18,.85,.83],pink=[1,.25,.40],violet=[.67,.42,1];
 export const VOLUMES={
  greek:{mode:1,title:'星核与尘埃盘',code:'M 104',shape:'象牙色星核悬于薄盘之中，铜金色星流绕核回旋。',color:'#ddc5a0',home:1330,yaw:.62,pitch:.23,source:'https://esahubble.org/images/opo0328a/'},
- medieval:{mode:2,title:'向上生长的星柱',code:'M 16',shape:'三束金赭色星柱穿过蓝色雾气，丝流沿柱身盘旋上升。',color:'#d2ab67',home:1440,yaw:.48,pitch:.12,source:'https://esawebb.org/images/weic2216b/'},
+ medieval:{mode:2,title:'层叠的银蓝穹顶',code:'M 13',shape:'银蓝色星流舒展成层叠穹顶，长线贯穿，细流相互叠合。',color:'#b7cce6',home:1420,yaw:.16,pitch:.28,source:'https://esahubble.org/images/opo0840a/'},
+ 'medieval-late':{mode:8,title:'交错的周期星流',code:'M 13',shape:'几组周期不同的弧形星流交织，相遇的位置不断变化。',color:'#a6c3ec',home:1380,yaw:.26,pitch:.33,source:'https://esahubble.org/images/opo0840a/'},
  ren:{mode:3,title:'双旋臂与伴星',code:'M 51',shape:'蓝色旋臂缀满玫红星结，向远处的金色伴星伸展。',color:'#c58c99',home:1440,yaw:.30,pitch:.91,source:'https://esahubble.org/images/heic0506a/'},
- baroque:{mode:4,title:'展开的双极星云',code:'NGC 6302',shape:'紫金色丝束围成两座空腔，星流由中央向两端舒展。',color:'#c8a7d8',home:1680,yaw:.65,pitch:.16,source:'https://science.nasa.gov/asset/hubble/ngc-6302/'},
+ baroque:{mode:4,title:'相向的弧形光幕',code:'WR 140',shape:'金色大光幕与紫蓝色小光幕相向展开，绵延的光带穿过中央。',color:'#d4b98b',home:1460,yaw:.12,pitch:.16,source:'https://esawebb.org/images/WR140a/'},
  classical:{mode:5,title:'层叠的星环',code:'M 57',shape:'青碧内环与蔷薇色外环相扣，星流绕着中央空隙运行。',color:'#8fd3be',home:1270,yaw:.57,pitch:.91,source:'https://esawebb.org/images/weic2320b/'},
  romantic:{mode:6,title:'云山与星海',code:'NGC 3324',shape:'赭金色云山叠起，蓝色星流从山脊上方涌过。',color:'#dea470',home:1450,yaw:.28,pitch:.18,source:'https://esawebb.org/images/weic2205a/'},
  modern:{mode:7,title:'破碎的纤维星云',code:'M 1',shape:'金色纤维穿过冰蓝色星雾，交织成不规则的空间网络。',color:'#8ccada',home:1370,yaw:.36,pitch:.28,source:'https://esawebb.org/images/weic2417a/'}
@@ -19,25 +20,27 @@ uniform float uTime;uniform float uMode;
 vec3 flow(vec3 p){
  float t=uTime,r=length(p.xz),a,c,s;
  if(uMode<.5){a=t*(.043+.034*exp(-r/400.0));p.y+=(sin(r*.009+t*.48)-sin(r*.009))*(12.0+r*.039);}
- else if(uMode<1.5){a=t*.043;p.y+=sin(r*.012+t*.42)*5.0;}
- else if(uMode<2.5){a=t*.024+sin(p.y*.005+t*.35)*.04;p.x+=sin(p.y*.006+t*.45)*14.0;p.z+=cos(p.y*.007+t*.39)*18.0;}
- else if(uMode<3.5){a=t*.037+sin(t*.24)*.075*exp(-r/370.0);p.y+=sin(r*.012+t*.42)*13.0;}
- else if(uMode<4.5){a=t*.031;float b=1.0+.035*sin(p.y*.009+t*.47);p.xz*=b;p.y*=1.0+.035*sin(t*.41);}
- else if(uMode<5.5){a=t*.04;float b=1.0+.035*sin(atan(p.z,p.x)*3.0+t*.54);p.xz*=b;p.y+=sin(r*.012+t*.47)*12.0;}
- else if(uMode<6.5){a=sin(t*.17)*.13;p.y+=sin(p.x*.006+p.z*.008+t*.39)*22.0;p.z+=sin(p.x*.004+t*.31)*19.0;}
- else{a=t*.027+sin(p.y*.007+t*.35)*.025;p*=1.0+.03*sin(length(p)*.014+t*.47);}
+ else if(uMode<1.5){a=t*.016*(r<220.0?3.0:r<390.0?2.0:1.5);p.y+=sin(r*.012+t*.42)*5.0;}
+ else if(uMode<2.5){a=sin(t*.13)*.055;p.y+=sin(p.x*.006+t*.27)*9.0;p.z+=sin(p.x*.004+t*.22)*11.0;}
+ else if(uMode<3.5){a=t*.037+sin(t*.24)*.075*exp(-r/370.0)+.044*sin(atan(p.z,p.x)*4.0-t*.76)*exp(-r/450.0);p.y+=sin(r*.012+t*.42)*13.0;}
+ else if(uMode<4.5){a=sin(t*.14)*.045;float b=1.0+.037*sin(t*.52+(p.x<0.0?0.0:3.14159));p.x*=b;p.y*=b;p.z+=sin(p.x*.007+t*.36)*13.0;}
+ else if(uMode<5.5){a=t*.04;float b=1.0+.026*sin(atan(p.z,p.x)*2.0-t*.48);p.xz*=b;p.y+=sin(r*.012+t*.48)*12.0;}
+ else if(uMode<6.5){a=sin(t*.17)*.13;p.y+=sin(p.x*.006+p.z*.008+t*.39)*22.0;p.z+=sin(p.x*.004+t*.31)*19.0;float pulse=1.0+.025*sin(t*.35)*exp(-length(p-vec3(0.0,105.0,0.0))/560.0);p=vec3(p.x,p.y-105.0,p.z)*pulse+vec3(0.0,105.0,0.0);}
+ else if(uMode<7.5){a=t*.027+sin(p.y*.007+t*.35)*.025;p*=1.0+.020*sin(length(p)*.014+t*.47)+.014*sin(p.x*.014+p.y*.01+t*.36);}
+ else{a=t*.028;p.y+=sin(p.x*.009+t*.54)*16.0;p.z+=sin(p.y*.007+t*.36)*12.0;}
  c=cos(a);s=sin(a);p.xz=vec2(c*p.x-s*p.z,s*p.x+c*p.z);return p;
 }`;
 export function flowPoint(position,t,mode=0){
  let[x,y,z]=position,r=Math.hypot(x,z),a;
  if(!mode){a=t*(.043+.034*Math.exp(-r/400));y+=(Math.sin(r*.009+t*.48)-Math.sin(r*.009))*(12+r*.039);}
- else if(mode===1){a=t*.043;y+=Math.sin(r*.012+t*.42)*5;}
- else if(mode===2){a=t*.024+Math.sin(y*.005+t*.35)*.04;x+=Math.sin(y*.006+t*.45)*14;z+=Math.cos(y*.007+t*.39)*18;}
- else if(mode===3){a=t*.037+Math.sin(t*.24)*.075*Math.exp(-r/370);y+=Math.sin(r*.012+t*.42)*13;}
- else if(mode===4){a=t*.031;const b=1+.035*Math.sin(y*.009+t*.47);x*=b;z*=b;y*=1+.035*Math.sin(t*.41);}
- else if(mode===5){a=t*.04;const b=1+.035*Math.sin(Math.atan2(z,x)*3+t*.54);x*=b;z*=b;y+=Math.sin(r*.012+t*.47)*12;}
- else if(mode===6){a=Math.sin(t*.17)*.13;y+=Math.sin(x*.006+z*.008+t*.39)*22;z+=Math.sin(x*.004+t*.31)*19;}
- else{a=t*.027+Math.sin(y*.007+t*.35)*.025;const b=1+.03*Math.sin(Math.hypot(x,y,z)*.014+t*.47);x*=b;y*=b;z*=b;}
+ else if(mode===1){a=t*.016*(r<220?3:r<390?2:1.5);y+=Math.sin(r*.012+t*.42)*5;}
+ else if(mode===2){a=Math.sin(t*.13)*.055;y+=Math.sin(x*.006+t*.27)*9;z+=Math.sin(x*.004+t*.22)*11;}
+ else if(mode===3){a=t*.037+Math.sin(t*.24)*.075*Math.exp(-r/370)+.044*Math.sin(Math.atan2(z,x)*4-t*.76)*Math.exp(-r/450);y+=Math.sin(r*.012+t*.42)*13;}
+ else if(mode===4){a=Math.sin(t*.14)*.045;const b=1+.037*Math.sin(t*.52+(x<0?0:3.14159));x*=b;y*=b;z+=Math.sin(x*.007+t*.36)*13;}
+ else if(mode===5){a=t*.04;const b=1+.026*Math.sin(Math.atan2(z,x)*2-t*.48);x*=b;z*=b;y+=Math.sin(r*.012+t*.48)*12;}
+ else if(mode===6){a=Math.sin(t*.17)*.13;y+=Math.sin(x*.006+z*.008+t*.39)*22;z+=Math.sin(x*.004+t*.31)*19;const pulse=1+.025*Math.sin(t*.35)*Math.exp(-Math.hypot(x,y-105,z)/560);x*=pulse;y=(y-105)*pulse+105;z*=pulse;}
+ else if(mode===7){a=t*.027+Math.sin(y*.007+t*.35)*.025;const b=1+.020*Math.sin(Math.hypot(x,y,z)*.014+t*.47)+.014*Math.sin(x*.014+y*.01+t*.36);x*=b;y*=b;z*=b;}
+ else{a=t*.028;y+=Math.sin(x*.009+t*.54)*16;z+=Math.sin(y*.007+t*.36)*12;}
  const c=Math.cos(a),s=Math.sin(a);return[c*x-s*z,y,s*x+c*z];
 }
 export const EXTINCTION_GLSL=`uniform vec3 uEye;
@@ -92,13 +95,18 @@ export function buildStellarData(key){
    trace(t=>{const a=t*TAU;return[Math.cos(a)*r,Math.sin(a)*r*.72,Math.sin(phase)*Math.cos(a)*r*.42];},ivory,.038,130,8);
   }
  }else if(key==='medieval'){
-  for(let column=0;column<3;column++)for(let k=0;k<137;k++){
-   const phase=random()*TAU,height=[880,690,530][column],x0=[-200,40,238][column],z0=[-40,135,-130][column],scale=.6+random()*.48;
-   const fn=t=>{const y=-410+t*height,neck=1-.63*t+.21*Math.sin(t*9),radius=(58+17*Math.sin(t*18+column))*neck*scale+22*Math.exp(-Math.pow((t-.88)/.10,2)),a=phase+t*3.8;
-    return warp([x0+Math.sin(t*3.1+column)*65+Math.cos(a)*radius,y,z0+Math.cos(t*4+column)*55+Math.sin(a)*radius],10);};
-   trace(fn,t=>mix([.57,.26,.06],mix(gold,ivory,.24),Math.pow(t,.65)),k%13===0?.17:.071,185,13);
+  for(let k=0;k<350;k++){
+   const layer=random(),r=255+layer*260,depth=(random()-.5)*335,phase=random()*TAU;
+   trace(t=>{const a=.10+t*(Math.PI-.20),x=Math.cos(a)*r,y=Math.sin(a)*r*.66-120,z=depth+Math.sin(a*2+phase)*35;return warp([x,y,z],7);},mix([.23,.43,.83],[.83,.91,1],Math.pow(1-layer,.6)),k%14===0?.16:.062,180,11);
   }
-  ball([30,-120,-100],[270,270,185],blue,10000,.15);
+  for(let k=0;k<52;k++){const z=(random()-.5)*300,h=-110+random()*60;trace(t=>[-490+t*980,h+Math.sin(t*Math.PI)*80,z+Math.sin(t*TAU)*25],[.60,.73,.97],.05,160,9);}
+  ball([0,30,-110],[310,110,150],[.14,.29,.62],10000,.10);
+ }else if(key==='medieval-late'){
+  for(let voice=0;voice<4;voice++)for(let k=0;k<95;k++){
+   const layer=random(),r=275+layer*118,tilt=[.38,-.55,1.05,-1.0][voice],phase=voice*1.19,offset=(random()-.5)*15;
+   trace(t=>{const a=t*TAU+phase,x=Math.cos(a)*r,y=Math.sin(a)*r*.76,z=Math.sin(a*2+phase)*55+offset;return warp([x,y*Math.cos(tilt)-z*Math.sin(tilt),y*Math.sin(tilt)+z*Math.cos(tilt)],5);},[[.69,.83,1],[.24,.53,.94],[.70,.57,.94],[.91,.83,.58]][voice],k%12===0?.16:.052,175,7);
+  }
+  ball([0,0,0],[125,95,130],[.10,.24,.54],5500,.10);
  }else if(key==='ren'){
   for(let arm=0;arm<2;arm++)for(let k=0;k<175;k++){
    const offset=gaussian()*.11,height=gaussian()*18,rscale=.89+random()*.22,phase=random()*TAU;
@@ -112,13 +120,11 @@ export function buildStellarData(key){
    trace(t=>[320+120*t+Math.sin(t*Math.PI)*50,15+Math.sin(t*Math.PI)*75+o,-125-135*t+Math.sin(t*TAU)*12+o],t=>mix(blue,gold,t),.055,112,10);
   }
  }else if(key==='baroque'){
-  for(const sign of[-1,1])for(let k=0;k<252;k++){
-   const phase=random()*TAU,scale=.80+random()*.28,length=440+random()*70;
-   const fn=t=>{const r=(20+Math.pow(t,.74)*276*(1-.18*t)+18*Math.sin(t*5.5))*scale,a=phase+t*1.25+Math.sin(t*11+phase)*.05,y=sign*(18+t*length);
-    const x=Math.cos(a)*r*1.13,z=Math.sin(a)*r*.94;return warp([x*.94-y*.34,x*.34+y*.94,z],10+19*t);};
-   trace(fn,t=>mix(mix(ivory,gold,t*.6),mix(violet,[.87,.42,.16],.5+.5*Math.sin(phase*3)),Math.min(1,t*1.4)),k%14===0?.20:.075,185,8);
+  for(const sign of[-1,1])for(let k=0;k<195;k++){
+   const layer=random(),r=(240+layer*270)*(sign<0?1:.72),depth=(random()-.5)*150,phase=random()*TAU;
+   trace(t=>{const a=-1.30+t*2.60,x=sign*(30+Math.cos(a)*r),y=Math.sin(a)*r*.70+(sign>0?35:0),z=depth+Math.cos(a)*65+Math.sin(a*3+phase)*8;return warp([x,y,z],6);},sign<0?mix([.70,.32,.075],[1,.86,.57],1-layer*.8):mix([.30,.31,.71],[.81,.71,.98],1-layer*.8),k%13===0?.18:.067,170,8);
   }
-  ball([0,0,0],[26,34,26],[1,.83,.61],5800,.7);
+  for(let k=0;k<78;k++){const z=(random()-.5)*115,h=(random()-.5)*30;trace(t=>[-485+t*900,-135-Math.sin(t*Math.PI)*48+h,z+Math.sin(t*TAU)*40],mix(gold,ivory,random()*.35),k%11===0?.16:.053,176,6);}
  }else if(key==='classical'){
   for(let k=0;k<485;k++){
    const phase=random()*TAU,cross=random()*TAU,layer=random(),R=305+layer*45,minor=55+layer*62;
@@ -163,7 +169,7 @@ export function buildStellarData(key){
 export function createStellarVolumes(gl,buffer){
  const cache=new Map(),waiting=new Map();let active=null,disposed=false,serial=0,worker=null;
  try{
-  worker=new Worker(new URL('./stellar-worker.js?v=20260910-planets1',import.meta.url),{type:'module'});
+  worker=new Worker(new URL('./stellar-worker.js?v=20260911-epochs2',import.meta.url),{type:'module'});
   worker.onmessage=({data})=>{const promise=waiting.get(data.id);if(!promise)return;waiting.delete(data.id);data.error?promise.reject(new Error(data.error)):promise.resolve(data.volume);};
   worker.onerror=e=>{for(const p of waiting.values())p.reject(new Error(e.message||'星云构建失败'));waiting.clear();};
  }catch{}
@@ -189,10 +195,10 @@ export function createStellarVolumes(gl,buffer){
   }
   gl.bindBuffer(gl.ARRAY_BUFFER,active.streamBuffer);gl.bufferSubData(gl.ARRAY_BUFFER,0,active.streams);
  }
- function assignNodes(nodes,volume){
+ function assignNodes(nodes,volume,exclusion=null){
   const placed=[],pool=volume.candidates,spec=volume.spec,sy=Math.sin(spec.yaw),cy=Math.cos(spec.yaw),sp=Math.sin(spec.pitch),cp=Math.cos(spec.pitch),view=[sy*cp,sp,cy*cp],right=[cy,0,-sy],up=[-sy*sp,cp,-cy*sp];
   const samples=[];
-  for(let i=0;i<pool.length;i+=7){const depth=pool[i]*view[0]+pool[i+1]*view[1]+pool[i+2]*view[2],scale=spec.home/(spec.home-depth),x=(pool[i]*right[0]+pool[i+2]*right[2])*scale,y=(pool[i]*up[0]+pool[i+1]*up[1]+pool[i+2]*up[2])*scale;samples.push({i,x,y,weight:.4+pool[i+6]});}
+  for(let i=0;i<pool.length;i+=7){if(exclusion&&Math.hypot(pool[i]-exclusion.center[0],pool[i+1]-exclusion.center[1],pool[i+2]-exclusion.center[2])<exclusion.clearance)continue;const depth=pool[i]*view[0]+pool[i+1]*view[1]+pool[i+2]*view[2],scale=spec.home/(spec.home-depth),x=(pool[i]*right[0]+pool[i+2]*right[2])*scale,y=(pool[i]*up[0]+pool[i+1]*up[1]+pool[i+2]*up[2])*scale;samples.push({i,x,y,weight:.4+pool[i+6]});}
   nodes.sort((a,b)=>b.deg-a.deg).forEach(n=>{
    let best=-1,score=-1;
    let chosen=null;

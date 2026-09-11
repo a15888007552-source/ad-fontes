@@ -16,7 +16,7 @@ export function bodyFor(n){
 }
 
 export function createCelestialBodies(gl,program,buffer,nodes){
- for(const n of nodes)n.body=bodyFor(n);
+ for(const n of nodes)if(!n.body)n.body=bodyFor(n);
  const instanced=gl.getExtension('ANGLE_instanced_arrays');
  const pointLimit=gl.getParameter(gl.ALIASED_POINT_SIZE_RANGE)[1];
  const vertex=`precision highp float;
@@ -27,10 +27,11 @@ export function createCelestialBodies(gl,program,buffer,nodes){
  vec3 unorient(vec3 p,float tilt,float azimuth){float c=cos(azimuth),s=sin(azimuth);p.xz=vec2(c*p.x+s*p.z,-s*p.x+c*p.z);c=cos(tilt);s=sin(tilt);p.yz=vec2(c*p.y+s*p.z,-s*p.y+c*p.z);return p;}
  void main(){
   vec3 p=aPosition;vLocal=p;float kind=aShape.y,seed=aShape.z;
-  if(uPass<.5&&kind>4.5)p*=1.0+.10*sin(p.x*7.0+seed*13.0)*sin(p.y*9.0+p.z*6.0);
+  if(uPass<.5&&kind>4.5&&kind<5.5)p*=1.0+.10*sin(p.x*7.0+seed*13.0)*sin(p.y*9.0+p.z*6.0);
+  if(kind>6.5)p*=1.4/max(.001,abs(p.x)+abs(p.y)+abs(p.z));
   float rotation=aTilt.y+uTime*(.07+seed*.11);
   if(uPass>2.5)p*=1.065;
-  vec3 normal=uPass>.5&&uPass<1.5?vec3(0.0,1.0,0.0):normalize(p);
+  vec3 normal=uPass>.5&&uPass<1.5?vec3(0.0,1.0,0.0):kind>6.5?normalize(sign(p)):normalize(p);
   vLight=unorient(normalize(vec3(-.6,.7,1.0)),aTilt.x,rotation);
   vNormal=orient(normal,aTilt.x,rotation);vWorld=aCenter+orient(p,aTilt.x,rotation)*aShape.x;
   vColor=aColor;vInfo=vec3(kind,seed,aShape.w);gl_Position=uMVP*vec4(vWorld,1.0);
@@ -43,6 +44,7 @@ export function createCelestialBodies(gl,program,buffer,nodes){
  float grain(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);return mix(mix(mix(grainHash(i),grainHash(i+vec3(1,0,0)),f.x),mix(grainHash(i+vec3(0,1,0)),grainHash(i+vec3(1,1,0)),f.x),f.y),mix(mix(grainHash(i+vec3(0,0,1)),grainHash(i+vec3(1,0,1)),f.x),mix(grainHash(i+vec3(0,1,1)),grainHash(i+vec3(1,1,1)),f.x),f.y),f.z);}
  void main(){
   if(vInfo.z<.01)discard;float type=vInfo.x,seed=vInfo.y;vec3 p=normalize(vLocal),n=normalize(vNormal),view=normalize(uEye-vWorld);
+  if(type>5.5&&type<6.5){if(uPass>.5)discard;gl_FragColor=vec4(.0003,.0006,.0012,vInfo.z);return;}
   float light=max(0.0,dot(n,normalize(vec3(-.6,.7,1.0)))),limb=max(0.0,dot(n,view));
   if(uPass>2.5){if(type<1.5||type>4.5)discard;float rim=pow(1.0-abs(dot(n,view)),4.0);vec3 air=mix(vColor,vec3(.32,.65,1.0),.60);gl_FragColor=vec4(air,rim*(.035+.15*light)*vInfo.z);return;}
   if(uPass>1.5){float altitude=length(vLocal)-1.0;float pulse=.42+.58*pow(.5+.5*sin(altitude*14.0+vLocal.x*5.0-uTime*1.4+seed*20.0),3.0);gl_FragColor=vec4(mix(vColor,vec3(1.0,.86,.65),.16),pulse*.62*vInfo.z);return;}
@@ -99,11 +101,49 @@ export function createCelestialBodies(gl,program,buffer,nodes){
  return{draw,getState:()=>({instances:count,rings:ringCount,coronae:starCount,instanced:!!instanced}),destroy(){for(const g of[sphere,ring,corona]){gl.deleteBuffer(g.vertices);gl.deleteBuffer(g.indices);}for(const b of[bodyBuffer,ringBuffer,coronaBuffer])gl.deleteBuffer(b);gl.deleteProgram(p);gl.deleteProgram(haloProgram);}};
 }
 
+function createSpaceEnvironment(gl,program,buffer){
+ const quad=buffer(new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1])),vertex='attribute vec2 aPosition;varying vec2 vUV;void main(){vUV=aPosition*.5+.5;gl_Position=vec4(aPosition,0.0,1.0);}';
+ const sky=program(vertex,`precision highp float;varying vec2 vUV;uniform vec3 uRight;uniform vec3 uUp;uniform vec3 uBack;uniform vec3 uEye;uniform float uTime;uniform float uAspect;uniform float uCenter;
+ float hash(vec3 p){p=fract(p*.1031);p+=dot(p,p.yzx+33.33);return fract((p.x+p.y)*p.z);}
+ float noise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);return mix(mix(mix(hash(i),hash(i+vec3(1,0,0)),f.x),mix(hash(i+vec3(0,1,0)),hash(i+vec3(1,1,0)),f.x),f.y),mix(mix(hash(i+vec3(0,0,1)),hash(i+vec3(1,0,1)),f.x),mix(hash(i+vec3(0,1,1)),hash(i+vec3(1,1,1)),f.x),f.y),f.z);}
+ float fbm(vec3 p){float f=0.0,a=.55;for(int i=0;i<4;i++){f+=a*noise(p);p=p.yzx*2.07+vec3(13.1,7.7,4.3);a*=.48;}return f;}
+ void main(){vec2 q=vUV*2.0-1.0;q.x-=uCenter;q.y+=.015;vec3 ray=normalize(uRight*q.x*uAspect*.383864+uUp*q.y*.383864-uBack);
+  vec3 p=ray*4.8+uEye*.000045+vec3(uTime*.003,0.0,uTime*.0016),warp=vec3(noise(p*.74+8.0),noise(p*.74+24.0),noise(p*.74+47.0));
+  float broad=fbm(p*1.3+warp*.8),detail=fbm(p*7.2+warp*2.1),cuts=smoothstep(.39,.68,fbm(p*4.3+warp*3.0));
+  vec2 field=vec2(dot(ray,vec3(.62161,0.0,.783327)),dot(ray,vec3(.3266,.90897,-.2590)));
+  float veil=exp(-pow((field.y-.22-.13*sin(field.x*3.7+.5)+.12*(broad-.5))/.17,2.0));
+  float lower=exp(-dot((field-vec2(.49,-.32))/vec2(.43,.25),(field-vec2(.49,-.32))/vec2(.43,.25)));
+  float cloud=(.07+veil*.94+lower*.47)*(.25+.85*smoothstep(.23,.78,broad))*pow(.35+detail*.90,1.8)*(1.0-cuts*.63);
+  float hue=clamp(.60+field.x*.34+field.y*.28+(warp.x-.5)*.25,0.0,1.0);vec3 color=vec3(.004,.009,.021)+mix(vec3(.100,.048,.137),vec3(.043,.105,.168),hue)*cloud;
+  color+=vec3(.057,.034,.026)*pow(max(0.0,detail-.49)*3.0,2.0)*veil*.35;gl_FragColor=vec4(color,1.0);
+ }`);
+ const copy=program(vertex,'precision mediump float;varying vec2 vUV;uniform sampler2D uImage;void main(){gl_FragColor=texture2D(uImage,vUV);}'),pos=gl.getAttribLocation(sky,'aPosition'),copyPos=gl.getAttribLocation(copy,'aPosition'),imageLoc=gl.getUniformLocation(copy,'uImage'),u={};
+ for(const n of['uRight','uUp','uBack','uEye','uTime','uAspect','uCenter'])u[n]=gl.getUniformLocation(sky,n);
+ const texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+ const target=gl.createFramebuffer();gl.bindFramebuffer(gl.FRAMEBUFFER,target);gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,texture,0);
+ let skyW=0,skyH=0,lastTime=-Infinity,lastView=[];
+ function rect(location){gl.bindBuffer(gl.ARRAY_BUFFER,quad);gl.enableVertexAttribArray(location);gl.vertexAttribPointer(location,2,gl.FLOAT,false,8,0);gl.drawArrays(gl.TRIANGLES,0,6);gl.disableVertexAttribArray(location);}
+ return{draw({time,basis,eye,width,height,target:sceneTarget,center}){const w=Math.ceil(width/4),h=Math.ceil(height/4),view=[...basis.right,...basis.up,...eye,center];gl.disable(gl.BLEND);gl.activeTexture(gl.TEXTURE0);
+  if(w!==skyW||h!==skyH){skyW=w;skyH=h;gl.bindTexture(gl.TEXTURE_2D,texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,w,h,0,gl.RGBA,gl.UNSIGNED_BYTE,null);lastTime=-Infinity;}
+  if(Math.abs(time-lastTime)>.10||view.some((v,i)=>Math.abs(v-(lastView[i]??Infinity))>.0001)){gl.bindFramebuffer(gl.FRAMEBUFFER,target);gl.viewport(0,0,w,h);gl.useProgram(sky);for(const k of['Right','Up','Back'])gl.uniform3fv(u['u'+k],basis[k.toLowerCase()]);gl.uniform3fv(u.uEye,eye);gl.uniform1f(u.uTime,time);gl.uniform1f(u.uAspect,width/height);gl.uniform1f(u.uCenter,center);rect(pos);lastTime=time;lastView=view;}
+  gl.bindFramebuffer(gl.FRAMEBUFFER,sceneTarget);gl.viewport(0,0,width,height);gl.useProgram(copy);gl.bindTexture(gl.TEXTURE_2D,texture);gl.uniform1i(imageLoc,0);rect(copyPos);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);
+ },destroy(){gl.deleteBuffer(quad);gl.deleteTexture(texture);gl.deleteFramebuffer(target);gl.deleteProgram(sky);gl.deleteProgram(copy);}};
+}
+
 export function createDeepSky(gl,program,buffer){
- const data=[];for(let i=0;i<1250;i++){const u=seedOf('sky'+i),v=seedOf('depth'+i),az=i*2.3999632297,z=2*u-1,r=2800+v*750,s=Math.sqrt(1-z*z);data.push(Math.cos(az)*s*r,z*r,Math.sin(az)*s*r,.66+v*.34,.78+u*.18,1-v*.20,.7+Math.pow(v,7)*2.6,.10+v*.27);}
- const gpu=buffer(new Float32Array(data)),p=program('attribute vec3 aPosition;attribute vec3 aColor;attribute vec2 aStyle;uniform mat4 uMVP;uniform float uDPR;varying vec3 vColor;varying float vAlpha;void main(){gl_Position=uMVP*vec4(aPosition,1.0);gl_PointSize=aStyle.x*uDPR;vColor=aColor;vAlpha=aStyle.y;}','precision mediump float;varying vec3 vColor;varying float vAlpha;void main(){vec2 q=gl_PointCoord*2.0-1.0;float r=dot(q,q);if(r>1.0)discard;gl_FragColor=vec4(vColor,exp(-r*3.4)*vAlpha);}');
- const mvp=gl.getUniformLocation(p,'uMVP'),dprLoc=gl.getUniformLocation(p,'uDPR'),attrs=[['aPosition',3,0],['aColor',3,12],['aStyle',2,24]].map(([name,size,offset])=>[gl.getAttribLocation(p,name),size,offset]);
- return{draw(matrix,dpr){gl.useProgram(p);gl.uniformMatrix4fv(mvp,false,matrix);gl.uniform1f(dprLoc,dpr);gl.bindBuffer(gl.ARRAY_BUFFER,gpu);for(const[a,size,offset]of attrs){gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,size,gl.FLOAT,false,32,offset);}gl.drawArrays(gl.POINTS,0,data.length/8);for(const[a]of attrs)gl.disableVertexAttribArray(a);},destroy(){gl.deleteBuffer(gpu);gl.deleteProgram(p);}};
+ const environment=createSpaceEnvironment(gl,program,buffer);
+ const data=[];for(let i=0;i<3600;i++){const u=seedOf('sky'+i),v=seedOf('depth'+i),az=i*2.3999632297,z=2*u-1,r=2800+v*750,s=Math.sqrt(1-z*z);data.push(Math.cos(az)*s*r,z*r,Math.sin(az)*s*r,.66+v*.34,.78+u*.18,1-v*.20,1.0+Math.pow(v,7)*3.2,.24+v*.52);}
+ const mist=[];
+ for(let galaxy=0;galaxy<2;galaxy++)for(let i=0;i<180;i++){const t=i/179,a=t*12.5+galaxy,rad=35+t*210,x=Math.cos(a)*rad,y=Math.sin(a)*rad*.24;
+  mist.push((galaxy?1550:-1850)+x,(galaxy?800:-550)+y+x*.32,-2050+Math.sin(a)*rad*.32,.42,.43,.56,12+t*13,.042*(1-t*.7));
+ }
+ const mistGPU=buffer(new Float32Array(mist));
+ const gpu=buffer(new Float32Array(data)),p=program('attribute vec3 aPosition;attribute vec3 aColor;attribute vec2 aStyle;uniform mat4 uMVP;uniform float uDPR;uniform float uTime;varying vec3 vColor;varying float vAlpha;void main(){gl_Position=uMVP*vec4(aPosition,1.0);gl_PointSize=aStyle.x*uDPR;vColor=aColor;vAlpha=aStyle.y*(.86+.14*sin(uTime*.75+aPosition.x*.027+aPosition.y*.019));}','precision mediump float;varying vec3 vColor;varying float vAlpha;void main(){vec2 q=gl_PointCoord*2.0-1.0;float r=dot(q,q);if(r>1.0)discard;gl_FragColor=vec4(vColor,exp(-r*3.4)*vAlpha);}');
+ const mvp=gl.getUniformLocation(p,'uMVP'),dprLoc=gl.getUniformLocation(p,'uDPR'),timeLoc=gl.getUniformLocation(p,'uTime'),attrs=[['aPosition',3,0],['aColor',3,12],['aStyle',2,24]].map(([name,size,offset])=>[gl.getAttribLocation(p,name),size,offset]);
+ return{draw(args){const{matrix,dpr,time}=args;environment.draw(args);gl.useProgram(p);gl.uniformMatrix4fv(mvp,false,matrix);gl.uniform1f(dprLoc,dpr);gl.uniform1f(timeLoc,time);
+  for(const[b,count]of[[gpu,data.length/8],[mistGPU,mist.length/8]]){gl.bindBuffer(gl.ARRAY_BUFFER,b);for(const[a,size,offset]of attrs){gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,size,gl.FLOAT,false,32,offset);}gl.drawArrays(gl.POINTS,0,count);}
+  gl.blendFunc(gl.SRC_ALPHA,gl.ONE);for(const[a]of attrs)gl.disableVertexAttribArray(a);
+ },destroy(){environment.destroy();for(const b of[gpu,mistGPU])gl.deleteBuffer(b);gl.deleteProgram(p);}};
 }
 
 export function createMeteors(gl,program,buffer){
