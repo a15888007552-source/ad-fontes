@@ -136,7 +136,7 @@ export function createDeepSky(gl,program,buffer){
  const data=[];for(let i=0;i<3600;i++){const u=seedOf('sky'+i),v=seedOf('depth'+i),az=i*2.3999632297,z=2*u-1,r=2800+v*750,s=Math.sqrt(1-z*z);data.push(Math.cos(az)*s*r,z*r,Math.sin(az)*s*r,.66+v*.34,.78+u*.18,1-v*.20,1.0+Math.pow(v,7)*3.2,.24+v*.52);}
  const mist=[];
  for(let galaxy=0;galaxy<2;galaxy++)for(let i=0;i<180;i++){const t=i/179,a=t*12.5+galaxy,rad=35+t*210,x=Math.cos(a)*rad,y=Math.sin(a)*rad*.24;
-  mist.push((galaxy?1550:-1850)+x,(galaxy?800:-550)+y+x*.32,-2050+Math.sin(a)*rad*.32,.42,.43,.56,12+t*13,.042*(1-t*.7));
+  mist.push((galaxy?2900:-3400)+x,(galaxy?1450:-1500)+y+x*.32,-3400+Math.sin(a)*rad*.32,.42,.43,.56,12+t*13,.042*(1-t*.7));
  }
  const mistGPU=buffer(new Float32Array(mist));
  const gpu=buffer(new Float32Array(data)),p=program('attribute vec3 aPosition;attribute vec3 aColor;attribute vec2 aStyle;uniform mat4 uMVP;uniform float uDPR;uniform float uTime;uniform float uDim;varying vec3 vColor;varying float vAlpha;void main(){gl_Position=uMVP*vec4(aPosition,1.0);gl_PointSize=aStyle.x*uDPR;vColor=aColor;vAlpha=aStyle.y*uDim*(.86+.14*sin(uTime*.75+aPosition.x*.027+aPosition.y*.019));}','precision mediump float;uniform float uDim;varying vec3 vColor;varying float vAlpha;void main(){vec2 q=gl_PointCoord*2.0-1.0;float r=dot(q,q);if(r>1.0)discard;gl_FragColor=vec4(vColor,exp(-r*3.4)*vAlpha);}');
