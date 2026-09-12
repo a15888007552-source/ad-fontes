@@ -34,7 +34,7 @@ export function createSkyLandmarks(gl,program,buffer){
   const sy=Math.sin(profile.yaw),cy=Math.cos(profile.yaw),sp=Math.sin(profile.pitch),cp=Math.cos(profile.pitch),right=[cy,0,-sy],up=[-sy*sp,cp,-cy*sp],back=[sy*cp,sp,cy*cp];frame={right,up,back};
   const focal=height/(2*Math.tan(21*Math.PI/180)),distance=(profile.home||profile.distance)*Math.max(1,1350/(width/dpr)),target=profile.target||[0,10,0];
   const at=(x,y,depth)=>target.map((v,k)=>v+back[k]*(distance-depth)+right[k]*(x-width*(.5+center*.5))*depth/focal+up[k]*(height*.4925-y)*depth/focal);
-  galaxyOrigin=at(width*.49,height*.225,3300);galaxyRadius=width*.14*3300/focal;
+  galaxyOrigin=at(width*.74,height*.16,3900);galaxyRadius=width*.10*3900/focal;
   const unit=a=>{const l=Math.hypot(...a);return a.map(v=>v/l);},cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],gb=unit(target.map((v,k)=>v+back[k]*distance-galaxyOrigin[k])),gr=unit(cross(up,gb));galaxyFrame={right:gr,up:cross(gb,gr),back:gb};
   planetOrigin=at(width*1.025,height*1.03,3100);planetRadius=height*.36*3100/focal;
   light=right.map((v,k)=>-v*.79+up[k]*.57-back[k]*.25);const length=Math.hypot(...light);light=light.map(v=>v/length);

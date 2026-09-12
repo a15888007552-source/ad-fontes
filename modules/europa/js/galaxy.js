@@ -132,7 +132,7 @@ export function createGalaxy(container,options){
  const celestial=createCelestialBodies(gl,program,buffer,nodes),meteors=createMeteors(gl,program,buffer),deepSky=createDeepSky(gl,program,buffer),cosmic=createCosmicEvents(gl,program,buffer,{hostState:{viewApplicable:()=>state.filter==='all'&&!mode(),paused:()=>state.paused||!state.active||contextLost,reduced:()=>reduced}});
  const relationshipLines=createRelationshipLines(gl,program,buffer);
  const core=createEraCores(gl,program,buffer);
- const volumeKey=()=>state.filter==='medieval'&&state.medievalPhase==='late'?'medieval-late':state.filter;
+ const volumeKey=()=>state.filter; // Ars Nova 与早期中世纪共用同一座穹顶，相位选择器只筛人物
  const mode=()=>ATLAS[volumeKey()]?.mode||0;
  const overview=createEpochOverview({gl,program,buffer,container,keys:epochKeys,periods,project,request,onPointerDown:pointerDown,onEnter:key=>{if(key==='medieval')state.medievalPhase='all';root.querySelector(`#netchips [data-f="${key}"]`)?.click();}});
  const world=p=>flowPoint(p,state.time,mode());
