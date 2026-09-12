@@ -1,17 +1,17 @@
 /* Musician bodies are editorial wayfinding symbols, not a quantitative ranking
-   of historical contribution. Named focal figures and recorded graph links
-   determine a restrained range of sizes; appearance stays stable per person. */
+   of historical contribution. Their modest, stable variation is keyed to the
+   person id; it does not encode degree, status, influence, or historical distance. */
 import {createSkyLandmarks} from './sky-landmarks.js?v=20260911-depth2';
 const TAU=Math.PI*2;
 const LEVEL={beet:1,bach:.98,moza:.94,hayd:.83,mont:.84,josq:.83,pale:.81,dufa:.76,wagn:.89,debu:.84,stra:.85,scho:.83,lisz:.79,chop:.79,schb:.80,brah:.79,mahl:.80};
-const SUNS={beet:[.58,.79,1],bach:[1,.76,.34],moza:[.90,.96,1],mont:[.80,.53,1],josq:[.68,.83,1],pale:[1,.82,.48],wagn:[1,.50,.24],debu:[.50,.86,1],stra:[.78,.85,1]};
+const SUNS={beet:[.58,.79,1],bach:[1,.76,.34],moza:[.90,.96,1],mont:[.80,.53,1],josq:[.68,.83,1],pale:[1,.82,.48],wagn:[1,.50,.24],debu:[.50,.86,1],stra:[.78,.85,1],mach:[.76,.83,.98]};
 const COLORS=[[.75,.53,.32],[.30,.58,.87],[.78,.40,.40],[.31,.65,.48],[.58,.43,.80],[.69,.83,.90]];
 const BODY_TYPES={hayd:3,lisz:3,mahl:3,chop:4,rave:5,tcha:2};
 const BODY_COLORS={hayd:[.85,.67,.35],lisz:[.26,.73,.64],mahl:[.74,.50,.80]};
 const TYPES=['恒星','岩质天体','气态行星','环状行星','行星与卫星','冰晶天体'];
 function seedOf(s){let x=2166136261;for(const c of s){x^=c.charCodeAt(0);x=Math.imul(x,16777619);}return(x>>>0)/4294967296;}
 export function bodyFor(n){
- const seed=seedOf(n.id),level=LEVEL[n.id]??Math.min(.68,.12+Math.sqrt(Math.min(n.deg,18)/18)*.48);
+  const seed=seedOf(n.id),level=LEVEL[n.id]??(.56+seed*.10);
  const type=SUNS[n.id]?0:(BODY_TYPES[n.id]??1+Math.floor(seed*5)),radius=4.8+Math.pow(level,1.4)*18;
  return{type,radius:radius+(n.id==='beet'?2:0),color:SUNS[n.id]||BODY_COLORS[n.id]||COLORS[Math.floor(seed*37)%COLORS.length],seed,tilt:.30+seed*1.13,description:n.id==='beet'?'蓝白恒星':TYPES[type],satellite:type===4||type===3&&seed>.64};
 }
@@ -139,9 +139,9 @@ export function createDeepSky(gl,program,buffer){
   mist.push((galaxy?1550:-1850)+x,(galaxy?800:-550)+y+x*.32,-2050+Math.sin(a)*rad*.32,.42,.43,.56,12+t*13,.042*(1-t*.7));
  }
  const mistGPU=buffer(new Float32Array(mist));
- const gpu=buffer(new Float32Array(data)),p=program('attribute vec3 aPosition;attribute vec3 aColor;attribute vec2 aStyle;uniform mat4 uMVP;uniform float uDPR;uniform float uTime;varying vec3 vColor;varying float vAlpha;void main(){gl_Position=uMVP*vec4(aPosition,1.0);gl_PointSize=aStyle.x*uDPR;vColor=aColor;vAlpha=aStyle.y*(.86+.14*sin(uTime*.75+aPosition.x*.027+aPosition.y*.019));}','precision mediump float;varying vec3 vColor;varying float vAlpha;void main(){vec2 q=gl_PointCoord*2.0-1.0;float r=dot(q,q);if(r>1.0)discard;gl_FragColor=vec4(vColor,exp(-r*3.4)*vAlpha);}');
- const mvp=gl.getUniformLocation(p,'uMVP'),dprLoc=gl.getUniformLocation(p,'uDPR'),timeLoc=gl.getUniformLocation(p,'uTime'),attrs=[['aPosition',3,0],['aColor',3,12],['aStyle',2,24]].map(([name,size,offset])=>[gl.getAttribLocation(p,name),size,offset]);
- return{draw(args){const{matrix,dpr,time}=args;environment.draw(args);gl.useProgram(p);gl.uniformMatrix4fv(mvp,false,matrix);gl.uniform1f(dprLoc,dpr);gl.uniform1f(timeLoc,time);
+ const gpu=buffer(new Float32Array(data)),p=program('attribute vec3 aPosition;attribute vec3 aColor;attribute vec2 aStyle;uniform mat4 uMVP;uniform float uDPR;uniform float uTime;uniform float uDim;varying vec3 vColor;varying float vAlpha;void main(){gl_Position=uMVP*vec4(aPosition,1.0);gl_PointSize=aStyle.x*uDPR;vColor=aColor;vAlpha=aStyle.y*uDim*(.86+.14*sin(uTime*.75+aPosition.x*.027+aPosition.y*.019));}','precision mediump float;uniform float uDim;varying vec3 vColor;varying float vAlpha;void main(){vec2 q=gl_PointCoord*2.0-1.0;float r=dot(q,q);if(r>1.0)discard;gl_FragColor=vec4(vColor,exp(-r*3.4)*vAlpha);}');
+ const mvp=gl.getUniformLocation(p,'uMVP'),dprLoc=gl.getUniformLocation(p,'uDPR'),timeLoc=gl.getUniformLocation(p,'uTime'),dimLoc=gl.getUniformLocation(p,'uDim'),attrs=[['aPosition',3,0],['aColor',3,12],['aStyle',2,24]].map(([name,size,offset])=>[gl.getAttribLocation(p,name),size,offset]);
+ return{draw(args){const{matrix,dpr,time}=args;environment.draw(args);gl.useProgram(p);gl.uniformMatrix4fv(mvp,false,matrix);gl.uniform1f(dprLoc,dpr);gl.uniform1f(timeLoc,time);gl.uniform1f(dimLoc,args.dim??1);
   for(const[b,count]of[[gpu,data.length/8],[mistGPU,mist.length/8]]){gl.bindBuffer(gl.ARRAY_BUFFER,b);for(const[a,size,offset]of attrs){gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,size,gl.FLOAT,false,32,offset);}gl.drawArrays(gl.POINTS,0,count);}
   gl.blendFunc(gl.SRC_ALPHA,gl.ONE);for(const[a]of attrs)gl.disableVertexAttribArray(a);
   landmarks.draw(args);

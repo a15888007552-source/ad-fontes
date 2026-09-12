@@ -98,6 +98,7 @@ body.europa-galaxy-active .mirror-axis{font-size:13px}
 .galaxy-hover b{display:block;font-weight:500;color:#e5d6b4;font-size:14px;margin-bottom:3px}
 .galaxy-hover small{display:block;color:#849fa9;font-size:10px;line-height:1.7}
 .galaxy-hover .gh-note{border-top:1px solid #bbcdd32a;padding-top:8px;margin-top:7px;color:#b0c1c6;font-size:11px}
+.galaxy-hover .gh-review{border-top:1px solid #d7bd8330;padding-top:7px;margin-top:7px;color:#d3bb88;font-size:10px}
 .galaxy-flat-view #v-net .galaxy-intro{opacity:0;pointer-events:none}
 .galaxy-flat-view #v-net .galaxy-start{pointer-events:none}
 .galaxy-flat-view #v-net .galaxy-epochs{top:88px}
@@ -272,3 +273,128 @@ body:not(.galaxy-flat-view) #v-net[data-epoch=all] .galaxy-footer{justify-conten
 #v-net.has-era-core .galaxy-phase-context{font:10px/1.8 var(--sans);color:#7995aa;margin:9px 0 29px;letter-spacing:.035em}
 #v-net.has-era-core.is-observing .galaxy-intro{display:none!important}
 body.galaxy-immersive .galaxy-era-entry strong{font-size:14px}
+
+/* Research reading layer: the explanatory chrome yields to the canvas after
+   the first deliberate gesture, while the existing night palette remains. */
+#v-net{height:clamp(640px,calc(100dvh - var(--galaxy-mast-height,91px)),1080px);min-height:640px}
+.galaxy-reading-note{max-width:260px;margin:19px 0 0;padding-top:13px;border-top:1px solid #aac4ce1c;color:#7f969f;font:10px/1.75 var(--sans);letter-spacing:.015em;transition:opacity .28s,transform .28s,max-height .32s,margin .32s,padding .32s}
+.galaxy-intro-reopen{display:none;margin-top:7px;padding:5px 0;border:0;border-bottom:1px solid #cdb47a66;background:none;color:#d7bd83;font:10px/1.5 var(--sans);letter-spacing:.06em;cursor:pointer}
+#v-net .galaxy-intro{transition:top .42s ease,width .42s ease,transform .42s ease}
+#v-net.intro-collapsed .galaxy-intro{top:20px;width:190px;pointer-events:auto}
+#v-net.intro-collapsed .galaxy-intro h2{font:300 27px/1.1 var(--sans);letter-spacing:.12em;margin:6px 0 0;color:#e5e1d1;transition:font-size .35s,margin .35s}
+#v-net.intro-collapsed .galaxy-latin,#v-net.intro-collapsed .galaxy-prose,#v-net.intro-collapsed .galaxy-census,#v-net.intro-collapsed .galaxy-start,#v-net.intro-collapsed .galaxy-reading-note,#v-net.intro-collapsed .galaxy-atlas-note{max-height:0;opacity:0;overflow:hidden;pointer-events:none;margin:0;padding:0;border:0;transform:translateY(-4px)}
+#v-net.intro-collapsed .galaxy-intro-reopen{display:inline-flex;opacity:.82}
+#v-net.intro-collapsed .galaxy-intro-reopen:hover{opacity:1;color:#f1d59d}
+.galaxy-evidence-note{display:block;max-width:560px;margin-top:9px;color:#718a95;font:9px/1.55 var(--sans);letter-spacing:.02em}
+#v-net .galaxy-focus-card{width:clamp(300px,23vw,340px);max-height:calc(100% - 300px)}
+.gfc-stats{display:grid;grid-template-columns:auto auto;column-gap:8px;align-items:baseline;margin:14px 0 5px;padding:10px 0;border-top:1px solid #9bb9c022;border-bottom:1px solid #9bb9c022;color:#a8bdc2}
+.gfc-stats strong{font:400 23px/1 Georgia,serif;color:#e0c68d}
+.gfc-stats span{font:10px/1.6 var(--sans);letter-spacing:.05em}
+.gfc-stats small{grid-column:1/-1;margin-top:5px;color:#78929d;font:9px/1.6 var(--sans)}
+.gfc-route{grid-template-columns:27px 1fr 14px}
+.gfc-route small em{font-style:normal;color:#d6bf8d}
+.gfc-route p{margin:5px 0 0;color:#9bb0b7;font:10px/1.7 var(--sans)}
+.gfc-route-swatch .rel-swatch{width:27px}
+.rel-style-2 .rel-dash{stroke-dasharray:7 5}
+.rel-style-6 .rel-dotdash{stroke-dasharray:9 5}
+.galaxy-controls button[data-tooltip]{position:relative}
+.galaxy-controls button[data-tooltip]:hover::after,.galaxy-controls button[data-tooltip]:focus-visible::after{content:attr(data-tooltip);position:absolute;right:50%;bottom:calc(100% + 9px);transform:translateX(50%);z-index:20;padding:5px 8px;border:1px solid #9bb6be45;border-radius:2px;background:#08131eeb;color:#dbe3df;white-space:nowrap;font:10px/1.4 var(--sans);letter-spacing:.03em;pointer-events:none;box-shadow:0 8px 26px #0006}
+.galaxy-controls button[data-tooltip]:hover::before,.galaxy-controls button[data-tooltip]:focus-visible::before{content:"";position:absolute;right:50%;bottom:calc(100% + 4px);z-index:21;width:6px;height:6px;background:#08131eeb;border-right:1px solid #9bb6be45;border-bottom:1px solid #9bb6be45;transform:translateX(50%) rotate(45deg);pointer-events:none}
+@media (max-width:900px){
+  #v-net{height:clamp(600px,calc(100dvh - var(--galaxy-mast-height,126px)),940px);min-height:600px}
+  .galaxy-intro{left:clamp(20px,4vw,42px);top:clamp(24px,5dvh,56px);width:clamp(240px,31vw,310px)}
+  .galaxy-epochs{right:clamp(20px,4vw,42px);top:clamp(24px,5dvh,56px);width:clamp(150px,23vw,190px)}
+  #v-net .netbox{inset:0}
+  #v-net .galaxy-focus-card{left:clamp(20px,4vw,42px);width:min(320px,34vw);max-height:calc(100% - 300px)}
+  .galaxy-footer{left:clamp(20px,4vw,42px);right:clamp(20px,4vw,42px);bottom:clamp(36px,5dvh,64px)}
+  body:not(.galaxy-flat-view) #v-net[data-epoch=all] .galaxy-epochs{display:block;top:auto;bottom:clamp(102px,14dvh,150px);opacity:1}
+  body:not(.galaxy-flat-view) #v-net[data-epoch=all] .galaxy-epochs .galaxy-side-title{display:none}
+}
+@media (max-width:760px){
+  #v-net{height:clamp(560px,calc(100dvh - var(--galaxy-mast-height,150px)),920px);min-height:560px}
+  #v-net .netbox{inset:0}
+  .galaxy-intro{left:max(20px,env(safe-area-inset-left));top:clamp(18px,3dvh,31px);width:calc(100% - 40px)}
+  .galaxy-intro h2{font-size:clamp(58px,16vw,78px)}
+  .galaxy-reading-note{max-width:270px;font-size:9px;line-height:1.65;margin-top:13px}
+  #v-net.intro-collapsed .galaxy-intro{left:max(20px,env(safe-area-inset-left));top:14px;width:190px}
+  #v-net.intro-collapsed .galaxy-intro h2{font-size:24px}
+  #v-net .nettog{top:auto;bottom:clamp(175px,25dvh,235px);left:50%;gap:18px}
+  #v-net .nettog .chip{min-height:35px;padding:8px 2px}
+  .galaxy-epochs{left:max(20px,env(safe-area-inset-left));right:max(20px,env(safe-area-inset-right));top:auto;bottom:clamp(105px,15dvh,150px);width:auto}
+  #v-net #netchips{justify-content:center;gap:2px clamp(10px,4vw,18px)}
+  #v-net #netchips .chip{min-height:30px;padding:6px 0}
+  .galaxy-footer{left:max(20px,env(safe-area-inset-left));right:max(20px,env(safe-area-inset-right));bottom:calc(15px + env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:stretch;gap:9px}
+  .galaxy-key{order:2;min-width:0}
+  .galaxy-controls{order:1;justify-content:flex-end}
+  .galaxy-key-title{margin-bottom:6px}
+  #v-net .legend{max-width:none;justify-content:center;gap:4px 10px}
+  .galaxy-evidence-note{max-width:100%;font-size:8px;text-align:center}
+  .galaxy-gesture{display:none}
+  .galaxy-controls button[data-tooltip]:hover::after{display:none}
+  .galaxy-controls button[data-tooltip]:focus-visible::after{display:block;bottom:calc(100% + 8px)}
+  #v-net .galaxy-focus-card{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:calc(106px + env(safe-area-inset-bottom));width:auto;max-height:44dvh;padding:13px 15px;background:#0a1520ed}
+  #v-net .gfc-head h4{font-size:24px}
+  #v-net .gfc-summary{font-size:11px;line-height:1.75;margin:10px 0}
+  .gfc-route{padding:8px 0}
+  .gfc-route p{font-size:9px;line-height:1.55}
+  .galaxy-caption{left:max(20px,env(safe-area-inset-left));right:max(20px,env(safe-area-inset-right));bottom:calc(2px + env(safe-area-inset-bottom));text-align:left}
+  body.galaxy-immersive #v-net .galaxy-focus-card{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:calc(74px + env(safe-area-inset-bottom));max-height:53dvh;width:auto}
+  body.galaxy-flat-view #v-net .netbox{inset:42px 0 calc(158px + env(safe-area-inset-bottom))}
+}
+@media (max-width:440px){
+  #v-net{height:clamp(540px,calc(100dvh - var(--galaxy-mast-height,151px)),820px);min-height:540px}
+  .galaxy-intro h2{font-size:clamp(56px,17vw,69px)}
+  #v-net .nettog{bottom:clamp(166px,24dvh,205px)}
+  .galaxy-epochs{bottom:clamp(98px,14dvh,125px)}
+  .galaxy-footer{gap:6px}
+  #v-net .legend{font-size:8px;gap:3px 7px}
+  .galaxy-evidence-note{font-size:7.5px}
+  .galaxy-controls{gap:5px}
+  .galaxy-controls button{width:31px;height:31px}
+  #v-net .galaxy-focus-card{max-height:42dvh}
+}
+@media (min-width:761px) and (max-width:1100px){
+  #v-net .galaxy-focus-card{top:8%;bottom:auto;left:4%;width:280px;max-height:calc(100% - 300px)}
+  #v-net.intro-collapsed .galaxy-intro{left:4%;top:18px}
+}
+@media (min-width:1440px){
+  .galaxy-reading-note{max-width:300px}
+  #v-net .galaxy-focus-card{width:340px}
+}
+@media (min-width:1800px){
+  /* The base yearbook scales long pages at very wide widths. The constellation
+     is already viewport-bound, so keep its 100dvh canvas in the viewport. */
+  body.europa-galaxy-active{zoom:1}
+}
+@media (prefers-reduced-motion:reduce){
+  #v-net .galaxy-intro,#v-net .galaxy-reading-note,#v-net .galaxy-intro-reopen{transition:none!important}
+}
+
+/* ── Celestial control panel (Stage 6) ─────────────────────────────── */
+#v-net .galaxy-cel-toggle{height:36px;width:36px;border:1px solid #9bb6be33;background:#0a1520cc;color:#c8b98f;font:15px/1 var(--sans);cursor:pointer;pointer-events:auto}
+#v-net .galaxy-cel-toggle:hover{border-color:#c5bd9f66;color:#dbc69c}
+#v-net .celestial-panel{position:absolute;right:3.5%;bottom:105px;z-index:8;width:262px;padding:13px 15px;background:#0a1520ee;border:1px solid #bcd2d42d;border-top-color:#d7bd8380;backdrop-filter:blur(12px);box-shadow:0 20px 70px #02080c5c;pointer-events:auto;font:12px/1.7 var(--sans);color:#b5c6ca}
+#v-net .celestial-panel[hidden]{display:none}
+#v-net .celestial-panel .cp-section{display:flex;flex-direction:column;gap:7px}
+#v-net .celestial-panel .cp-debug{margin-top:11px;border-top:1px solid #9eb8bc22;padding-top:9px}
+#v-net .celestial-panel .cp-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:26px}
+#v-net .celestial-panel .cp-row span{font-size:11.5px;letter-spacing:.04em;color:#9db0b9}
+#v-net .celestial-panel button[role=switch]{position:relative;height:20px;width:36px;border:1px solid #9bb6be3d;background:#07111de8;cursor:pointer;padding:0}
+#v-net .celestial-panel button[role=switch] i{position:absolute;top:2px;left:2px;height:14px;width:14px;background:#5f7582;transition:left .15s,background .15s}
+#v-net .celestial-panel button[role=switch][aria-pressed=true] i{left:18px;background:#d7bd83}
+#v-net .celestial-panel input[type=range]{width:130px;accent-color:#d7bd83}
+#v-net .celestial-panel button[data-perf-step]{min-height:24px;padding:2px 12px;border:1px solid #9bb6be3d;background:#07111de8;color:#dbc69c;font:11px var(--sans);letter-spacing:.08em;cursor:pointer}
+#v-net .celestial-panel .cp-debug-toggle{align-self:flex-start;min-height:26px;padding:2px 8px;border:0;background:none;color:#a3bdca;font:11px var(--sans);letter-spacing:.06em;cursor:pointer}
+#v-net .celestial-panel .cp-debug-toggle:hover{color:#dbc69c}
+#v-net .celestial-panel .cp-grid{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+#v-net .celestial-panel .cp-grid button{min-height:26px;padding:3px 9px;border:1px solid #9bb6be2e;background:#07111dd9;color:#b5c6ca;font:11px var(--sans);cursor:pointer}
+#v-net .celestial-panel .cp-grid button:hover{border-color:#c5bd9f55;color:#e2d5ae}
+#v-net .celestial-panel .cp-grid button:focus-visible,#v-net .celestial-panel button[role=switch]:focus-visible,#v-net .galaxy-cel-toggle:focus-visible,#v-net .celestial-panel button[data-perf-step]:focus-visible,#v-net .celestial-panel .cp-debug-toggle:focus-visible{outline:1px solid #d7bd83;outline-offset:2px}
+#v-net .celestial-toast{position:absolute;top:14%;left:50%;transform:translateX(-50%) translateY(-6px);z-index:9;padding:7px 16px;background:#0a1520e8;border:1px solid #d7bd8350;color:#e2d5ae;font:12px/1.6 var(--sans);letter-spacing:.14em;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none}
+#v-net .celestial-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:760px){#v-net .celestial-panel{right:12px;left:12px;width:auto;bottom:96px;max-height:min(430px,58dvh);overflow:auto}#v-net .celestial-toast{top:9%}}
+@media(max-width:440px){#v-net .celestial-panel{bottom:92px}}
+@media(prefers-reduced-motion:reduce){#v-net .celestial-toast,#v-net .celestial-panel button[role=switch] i{transition:none!important}}
+#v-net .celestial-panel .cp-status{font:11px/1.6 var(--sans);letter-spacing:.05em;color:#8fb0a9;border:1px solid #9eb8bc22;background:#07111d99;padding:5px 9px;margin-bottom:9px}
+#v-net .celestial-panel .cp-status.warn{color:#d8b98a;border-color:#d7bd8340}
+#v-net .celestial-panel .cp-grid button:disabled{opacity:.38;cursor:not-allowed}

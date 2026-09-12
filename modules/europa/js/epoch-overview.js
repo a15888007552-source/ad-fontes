@@ -38,9 +38,9 @@ export function createEpochOverview({gl,program,buffer,container,keys,periods,on
   vec3 world=uAnchors[int(aGroup+.5)]+(uRight*q.x+uUp*q.y+uBack*q.z)*uScale;vec4 clip=uMVP*vec4(world,1.0);gl_Position=clip;gl_PointSize=aStyle.x*uDPR*1260.0/max(clip.w,100.0);
   float fade=uParticles>.5&&aGroup>.5&&abs(aGroup-4.0)>.4?pow(max(.01,sin(t*3.14159)),.32):1.0,light=.85+.50*pow(.5+.5*cos(t*19.0-uTime*2.1+aMotion.x*.37),10.0);vColor=aColor;vAlpha=aStyle.y*fade*light*(abs(uHover-aGroup)<.4?1.45:1.0);
  }`,
- 'precision mediump float;uniform float uPoints;varying vec3 vColor;varying float vAlpha;void main(){float a=vAlpha;if(uPoints>.5){vec2 q=gl_PointCoord*2.0-1.0;float r=dot(q,q);if(r>1.0)discard;a*=exp(-r*3.0);}gl_FragColor=vec4(vColor,a);}');
+ 'precision mediump float;uniform float uPoints;uniform float uDim;varying vec3 vColor;varying float vAlpha;void main(){float a=vAlpha*uDim;if(uPoints>.5){vec2 q=gl_PointCoord*2.0-1.0;float r=dot(q,q);if(r>1.0)discard;a*=exp(-r*3.0);}gl_FragColor=vec4(vColor,a);}');
  const attrs=[['aPosition',3,0],['aColor',3,12],['aStyle',2,24],['aGroup',1,32],['aMotion',2,36]].map(([n,s,o])=>[gl.getAttribLocation(p,n),s,o]),u={};
- for(const n of['uMVP','uAnchors[0]','uRight','uUp','uBack','uScale','uTime','uDPR','uHover','uPoints','uParticles'])u[n]=gl.getUniformLocation(p,n);
+ for(const n of['uMVP','uAnchors[0]','uRight','uUp','uBack','uScale','uTime','uDPR','uHover','uPoints','uParticles','uDim'])u[n]=gl.getUniformLocation(p,n);
  const dust=[],mist=[],threads=[];
  const gauss=()=>Math.sqrt(-2*Math.log(Math.max(.00001,random())))*Math.cos(TAU*random());
  function bandColor(t){const at=Math.max(0,Math.min(5.999,t*6)),i=Math.floor(at),f=at-i;return palette[i].map((v,k)=>{const c=v+(palette[i+1][k]-v)*f;return c*.36+[.48,.64,.77][k]*.64;});}
@@ -57,9 +57,9 @@ export function createEpochOverview({gl,program,buffer,container,keys,periods,on
   float w=uWidth*(.70+.28*sin(t*5.0+.3)),lateral=aPosition.y+sin(t*14.0+uTime*.28+aPosition.z*9.0)*.035;
   vec3 world=center+normal*(lateral*w)+uBack*(aPosition.z*w);vec4 clip=uMVP*vec4(world,1.0);gl_Position=clip;gl_PointSize=aStyle.x*uDPR*1260.0/max(clip.w,100.0);
   float light=.84+.55*pow(.5+.5*cos(t*32.0-uTime*.52),12.0),lane=.26+.74*smoothstep(.025,.15,abs(lateral-.10*sin(t*17.0+.7)));vColor=aColor;vAlpha=aStyle.y*envelope*light*lane;
- }`,'precision mediump float;uniform float uPoints;varying vec3 vColor;varying float vAlpha;void main(){float a=vAlpha;if(uPoints>.5){vec2 q=gl_PointCoord*2.0-1.0;float rr=dot(q,q);if(rr>1.0)discard;a*=exp(-rr*4.7);}gl_FragColor=vec4(vColor,a);}');
+ }`,'precision mediump float;uniform float uPoints;uniform float uDim;varying vec3 vColor;varying float vAlpha;void main(){float a=vAlpha*uDim;if(uPoints>.5){vec2 q=gl_PointCoord*2.0-1.0;float rr=dot(q,q);if(rr>1.0)discard;a*=exp(-rr*4.7);}gl_FragColor=vec4(vColor,a);}');
  const ba=[['aPosition',3,0],['aColor',3,12],['aStyle',2,24]].map(([n,s,o])=>[gl.getAttribLocation(bandProgram,n),s,o]),bu={};
- for(const n of['uMVP','uOrigin','uRight','uUp','uBack','uSpan','uHeight','uWidth','uDepth','uTime','uDPR','uFlow','uPoints'])bu[n]=gl.getUniformLocation(bandProgram,n);
+ for(const n of['uMVP','uOrigin','uRight','uUp','uBack','uSpan','uHeight','uWidth','uDepth','uTime','uDPR','uFlow','uPoints','uDim'])bu[n]=gl.getUniformLocation(bandProgram,n);
  let scale=60,hover=-1,buttonWidth=140,basis=null,bandOrigin=[0,0,0],bandSpan=1,bandHeight=1,bandWidth=1,bandDepth=1;
  function resize(width,height,home,introRight,immersive){
   const sy=Math.sin(home.yaw),cy=Math.cos(home.yaw),sp=Math.sin(home.pitch),cp=Math.cos(home.pitch),right=[cy,0,-sy],up=[-sy*sp,cp,-cy*sp],back=[sy*cp,sp,cy*cp];basis={right,up,back};
@@ -77,10 +77,10 @@ export function createEpochOverview({gl,program,buffer,container,keys,periods,on
    g.box={x:s.x-buttonWidth/2,y:top,w:buttonWidth,h:radius*2+26};});
  }
  function hit(x,y){return groups.find(g=>!layer.hidden&&!g.button.hidden&&g.box&&x>=g.box.x&&x<=g.box.x+g.box.w&&y>=g.box.y&&y<=g.box.y+g.box.h)?.key||null;}
- function draw(matrix,time,dpr){if(!basis)return;
-  gl.useProgram(bandProgram);gl.uniformMatrix4fv(bu.uMVP,false,matrix);gl.uniform3fv(bu.uOrigin,bandOrigin);for(const k of['Right','Up','Back'])gl.uniform3fv(bu['u'+k],basis[k.toLowerCase()]);gl.uniform1f(bu.uSpan,bandSpan);gl.uniform1f(bu.uHeight,bandHeight);gl.uniform1f(bu.uWidth,bandWidth);gl.uniform1f(bu.uDepth,bandDepth);gl.uniform1f(bu.uTime,time);gl.uniform1f(bu.uDPR,dpr);
+ function draw(matrix,time,dpr,dim=1){if(!basis)return;
+  gl.useProgram(bandProgram);gl.uniformMatrix4fv(bu.uMVP,false,matrix);gl.uniform3fv(bu.uOrigin,bandOrigin);for(const k of['Right','Up','Back'])gl.uniform3fv(bu['u'+k],basis[k.toLowerCase()]);gl.uniform1f(bu.uSpan,bandSpan);gl.uniform1f(bu.uHeight,bandHeight);gl.uniform1f(bu.uWidth,bandWidth);gl.uniform1f(bu.uDepth,bandDepth);gl.uniform1f(bu.uTime,time);gl.uniform1f(bu.uDPR,dpr);gl.uniform1f(bu.uDim,dim);
   for(const[b,count,isPoint,flow]of[[mistGPU,mist.length/8,1,0],[dustGPU,dust.length/8,1,1],[threadGPU,threads.length/8,0,0]]){gl.bindBuffer(gl.ARRAY_BUFFER,b);for(const[a,s,o]of ba){gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,s,gl.FLOAT,false,32,o);}gl.uniform1f(bu.uPoints,isPoint);gl.uniform1f(bu.uFlow,flow);gl.drawArrays(isPoint?gl.POINTS:gl.LINES,0,count);}for(const[a]of ba)gl.disableVertexAttribArray(a);
-  gl.useProgram(p);gl.uniformMatrix4fv(u.uMVP,false,matrix);gl.uniform3fv(u['uAnchors[0]'],anchors);for(const k of['Right','Up','Back'])gl.uniform3fv(u['u'+k],basis[k.toLowerCase()]);gl.uniform1f(u.uScale,scale);gl.uniform1f(u.uTime,time);gl.uniform1f(u.uDPR,dpr);gl.uniform1f(u.uHover,hover);
+  gl.useProgram(p);gl.uniformMatrix4fv(u.uMVP,false,matrix);gl.uniform3fv(u['uAnchors[0]'],anchors);for(const k of['Right','Up','Back'])gl.uniform3fv(u['u'+k],basis[k.toLowerCase()]);gl.uniform1f(u.uScale,scale);gl.uniform1f(u.uTime,time);gl.uniform1f(u.uDPR,dpr);gl.uniform1f(u.uDim,dim);gl.uniform1f(u.uHover,hover);
   for(const[b,count,isPoint]of[[lineGPU,lines.length/11,0],[pointGPU,points.length/11,1]]){gl.bindBuffer(gl.ARRAY_BUFFER,b);for(const[a,s,o]of attrs){gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,s,gl.FLOAT,false,44,o);}gl.uniform1f(u.uPoints,isPoint);gl.uniform1f(u.uParticles,isPoint);gl.drawArrays(isPoint?gl.POINTS:gl.LINES,0,count);}for(const[a]of attrs)gl.disableVertexAttribArray(a);
  }
  return{resize,layout,draw,hit,hover(key){hover=keys.indexOf(key);},getState:()=>({groups:groups.map(g=>({key:g.key,screen:g.screen})),points:points.length/11,segments:lines.length/22,tracers:tracerCount,band:{points:dust.length/8+mist.length/8,segments:threads.length/16}}),destroy(){layer.remove();for(const b of[pointGPU,lineGPU,dustGPU,mistGPU,threadGPU])gl.deleteBuffer(b);gl.deleteProgram(p);gl.deleteProgram(bandProgram);}};

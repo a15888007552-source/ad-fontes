@@ -1,16 +1,17 @@
 /* An astronomical reading of the existing Europa graph. Positions are editorial
    groupings by period; every interactive star and relationship comes from data. */
 import {VOLUMES as ATLAS,FLOW_GLSL,EXTINCTION_GLSL,flowPoint,createStellarVolumes} from './stellar-volumes.js?v=20260911-epochs2';
-import {bodyFor,createCelestialBodies,createMeteors,createDeepSky} from './celestial-bodies.js?v=20260911-depth2';
-import {createRelationshipLines} from './relationship-lines.js?v=20260911-epochs2';
-import {relationSwatch} from './relation-styles.js?v=20260911-epochs2';
+import {bodyFor,createCelestialBodies,createMeteors,createDeepSky} from './celestial-bodies.js?v=20260911-depth3';
+import {createRelationshipLines} from './relationship-lines.js?v=20260911-relations3';
+import {relationSwatch,EVIDENCE_STATUS} from './relation-styles.js?v=20260911-relations3';
 import {ERA_CORES,createEraCores} from './era-cores.js?v=20260911-depth2';
 import {createEpochOverview} from './epoch-overview.js?v=20260911-depth2';
 import {createCosmicEvents} from './cosmic-events.js?v=20260911-cosmic2';
+import {createCelestialPanel} from './celestial-panel.js';
 const TAU=Math.PI*2;
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const STAR_NAMES={buso:'布索尼',berl:'柏辽兹',bach:'巴赫',beet:'贝多芬',moza:'莫扎特',hayd:'海顿',lisz:'李斯特',chop:'肖邦',schb:'舒伯特',schm:'舒曼',brah:'勃拉姆斯',wagn:'瓦格纳',verd:'威尔第',pucc:'普契尼',debu:'德彪西',rave:'拉威尔',mahl:'马勒',tcha:'柴科夫斯基',stra:'斯特拉文斯基',scho:'勋伯格',webe:'韦伯恩',mont:'蒙特威尔第',pale:'帕莱斯特里纳',josq:'若斯坎',dufa:'迪费',ocke:'奥克冈',coup:'库普兰',peri:'佩里',cpeb:'C. P. E. 巴赫',cweb:'韦伯'};
+const STAR_NAMES={buso:'布索尼',berl:'柏辽兹',bach:'巴赫',beet:'贝多芬',moza:'莫扎特',hayd:'海顿',lisz:'李斯特',chop:'肖邦',schb:'舒伯特',schm:'舒曼',brah:'勃拉姆斯',wagn:'瓦格纳',verd:'威尔第',pucc:'普契尼',debu:'德彪西',rave:'拉威尔',mahl:'马勒',tcha:'柴科夫斯基',stra:'斯特拉文斯基',scho:'勋伯格',webe:'韦伯恩',mont:'蒙特威尔第',pale:'帕莱斯特里纳',josq:'若斯坎',dufa:'迪费',ocke:'奥克冈',coup:'库普兰',peri:'佩里',cpeb:'C. P. E. 巴赫',cweb:'韦伯',mach:'马肖'};
 const WAYFINDERS=new Set(['bach','beet','moza','mont','josq','wagn','debu','stra','mahl','scho','schb','lisz']);
 function rng(seed=91745){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 function hash(s){let x=2166136261;for(const c of s){x^=c.charCodeAt(0);x=Math.imul(x,16777619);}return x>>>0;}
@@ -26,15 +27,31 @@ export function createGalaxy(container,options){
  const gauss=()=>Math.sqrt(-2*Math.log(Math.max(random(),.00001)))*Math.cos(TAU*random());
  const root=document.getElementById('v-net');root.dataset.epoch='all';
  const $=id=>document.getElementById(id);
- const state={active:false,paused:reduced,filter:'all',medievalPhase:'early',relationType:null,selectedId:null,focusId:null,coreFocus:false,hoverId:null,names:false,cruise:false,trail:[],via:null,time:0,atlasReady:false,atlasOpacity:0,atlasError:null};
+ const collapseIntro=()=>root.classList.add('intro-collapsed');
+ const restoreIntro=()=>root.classList.remove('intro-collapsed');
+ const celestialApplicableVal=()=>state.filter==='all'&&!mode();
+ const state={active:false,paused:reduced,filter:'all',medievalPhase:'all',relationTypes:[],selectedId:null,focusId:null,coreFocus:false,hoverId:null,names:false,cruise:false,trail:[],via:null,time:0,atlasReady:false,atlasOpacity:0,atlasError:null};
  const medievalLate=new Set(['vitr','mach','land','jaco','cico']);
  let pendingVisit=null,lastPick=null;
  const home={yaw:-.90,pitch:.43,distance:1260,target:[0,18,0]};
  const camera={...home,target:[...home.target]},goal={...home,target:[...home.target]};
  let raf=0,last=0,width=1,height=1,dpr=1,dirty=true,matrix=null,drag=null,layoutDirty=true,destroyed=false,contextLost=false;
+ /* STAGE 9B.1 contextual visual hierarchy: EXPLORE/FOCUS/RELATION derived
+    from existing state (via → RELATION, focusId/coreFocus → FOCUS); targets
+    are lerped ~300-700ms. Pure render intensity — no scheduling/lifecycle change. */
+ const ctxDim = { e: 1, p: 1, c: 1, d: 1, o: 1, b: 1 };
+ function ctxTargets() {
+  if (state.via) return { e: .32, p: .5, c: .45, d: .6, o: .5, b: .34 };
+  if (state.focusId || state.coreFocus) return { e: .45, p: .55, c: .55, d: .68, o: .62, b: .4 };
+  return { e: 1, p: 1, c: 1, d: 1, o: 1, b: 1 };
+ }
+ function ctxStep(dt) {
+  const t = ctxTargets(), k = Math.min(1, dt * 4.5);
+  for (const key of ['e','p','c','d','o','b']) ctxDim[key] += (t[key] - ctxDim[key]) * k;
+ }
  let geometryRevision=0,relationRevision=0,frameRevision=0,cameraEye=[0,0,1300],cameraBasis=null,longFrames=0,obstacles=[];
  const frameIntervals=[];
- container.innerHTML='<canvas class="galaxy-canvas" tabindex="0" aria-label="音乐家星系。拖动旋转，滚轮缩放；方向键调整视角，加减键缩放。点选天体探索人物关联，双击阅读传记。"></canvas><div class="galaxy-shade"></div><div class="galaxy-grain" aria-hidden="true"></div><div class="galaxy-label-layer" aria-label="星系中的音乐家"></div><div class="galaxy-hover" hidden></div><aside class="galaxy-focus-card" aria-live="polite" hidden></aside>';
+ container.innerHTML='<canvas class="galaxy-canvas" tabindex="0" aria-label="音乐家三维星丛。拖动旋转，滚轮缩放；方向键调整视角，加减键缩放。点选天体探索人物关联，双击阅读传记。"></canvas><div class="galaxy-shade"></div><div class="galaxy-grain" aria-hidden="true"></div><div class="galaxy-label-layer" aria-label="星丛中的音乐家"></div><div class="galaxy-hover" hidden></div><aside class="galaxy-focus-card" aria-live="polite" hidden></aside>';
  const canvas=container.querySelector('canvas'),labels=container.querySelector('.galaxy-label-layer'),hover=container.querySelector('.galaxy-hover'),card=container.querySelector('.galaxy-focus-card');
  const gl=canvas.getContext('webgl',{alpha:false,antialias:false,depth:false,powerPreference:'high-performance',preserveDrawingBuffer:false});
  if(!gl)throw new Error('WebGL is not available');
@@ -112,19 +129,19 @@ export function createGalaxy(container,options){
  const la={position:gl.getAttribLocation(lineProgram,'aPosition'),color:gl.getAttribLocation(lineProgram,'aColor'),mvp:gl.getUniformLocation(lineProgram,'uMVP'),time:gl.getUniformLocation(lineProgram,'uTime'),mode:gl.getUniformLocation(lineProgram,'uMode'),eye:gl.getUniformLocation(lineProgram,'uEye'),opacity:gl.getUniformLocation(lineProgram,'uOpacity'),pulse:gl.getUniformLocation(lineProgram,'uPulse')};
  function buffer(data,usage=gl.STATIC_DRAW){const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,data,usage);return b;}
  const atlas=createStellarVolumes(gl,buffer);
- const celestial=createCelestialBodies(gl,program,buffer,nodes),meteors=createMeteors(gl,program,buffer),deepSky=createDeepSky(gl,program,buffer),cosmic=createCosmicEvents(gl,program,buffer);
+ const celestial=createCelestialBodies(gl,program,buffer,nodes),meteors=createMeteors(gl,program,buffer),deepSky=createDeepSky(gl,program,buffer),cosmic=createCosmicEvents(gl,program,buffer,{hostState:{viewApplicable:()=>state.filter==='all'&&!mode(),paused:()=>state.paused||!state.active||contextLost,reduced:()=>reduced}});
  const relationshipLines=createRelationshipLines(gl,program,buffer);
  const core=createEraCores(gl,program,buffer);
  const volumeKey=()=>state.filter==='medieval'&&state.medievalPhase==='late'?'medieval-late':state.filter;
  const mode=()=>ATLAS[volumeKey()]?.mode||0;
- const overview=createEpochOverview({gl,program,buffer,container,keys:epochKeys,periods,project,request,onPointerDown:pointerDown,onEnter:key=>{if(key==='medieval')state.medievalPhase='early';root.querySelector(`#netchips [data-f="${key}"]`)?.click();}});
+ const overview=createEpochOverview({gl,program,buffer,container,keys:epochKeys,periods,project,request,onPointerDown:pointerDown,onEnter:key=>{if(key==='medieval')state.medievalPhase='all';root.querySelector(`#netchips [data-f="${key}"]`)?.click();}});
  const world=p=>flowPoint(p,state.time,mode());
  const atlasNote=document.createElement('div');atlasNote.className='galaxy-atlas-note';atlasNote.hidden=true;root.querySelector('.galaxy-intro').appendChild(atlasNote);
  const credit=document.createElement('p');credit.className='galaxy-credit';credit.hidden=true;root.appendChild(credit);
  let coreLabelBox=null,coreScreens=[];
  function renderCoreNote(key){
   const c=ERA_CORES[key]||ERA_CORES.all,spec=ATLAS[key];atlasNote.hidden=false;
-  atlasNote.innerHTML=`${state.filter==='medieval'?`<div class="galaxy-phase-picker" aria-label="中世纪的两个阶段"><button type="button" data-phase="early" aria-pressed="${state.medievalPhase==='early'}"><span>01</span> Ars nova 之前</button><button type="button" data-phase="late" aria-pressed="${state.medievalPhase==='late'}"><span>02</span> Ars nova 与十四世纪</button></div><p class="galaxy-phase-context">${state.medievalPhase==='early'?'圣咏、游吟传统与早期复调':'法国新艺术与意大利十四世纪音乐'}</p>`:''}<span class="galaxy-plate-kicker">时代之核 · ${esc(c.theme)}</span><h3>${esc(c.name)}</h3><p>${esc(c.text)}</p><button type="button" class="galaxy-core-open">靠近核心 ↗</button>${spec?`<a class="galaxy-reference-link" href="${spec.source}" target="_blank" rel="noopener">天体参照 · ${esc(spec.code)} ↗</a>`:''}<span class="galaxy-plate-status"></span>`;
+  atlasNote.innerHTML=`${state.filter==='medieval'?`<div class="galaxy-phase-picker" aria-label="中世纪人物范围"><button type="button" data-phase="all" aria-pressed="${state.medievalPhase==='all'}"><span>00</span> 完整中世纪</button><button type="button" data-phase="early" aria-pressed="${state.medievalPhase==='early'}"><span>01</span> Ars nova 之前</button><button type="button" data-phase="late" aria-pressed="${state.medievalPhase==='late'}"><span>02</span> Ars nova 与十四世纪</button></div><p class="galaxy-phase-context">${state.medievalPhase==='all'?'圣咏、游吟传统、早期复调与十四世纪新艺术人物全部展开':state.medievalPhase==='early'?'圣咏、游吟传统与早期复调':'法国新艺术与意大利十四世纪音乐'}</p>`:''}<span class="galaxy-plate-kicker">时代之核 · ${esc(c.theme)}</span><h3>${esc(c.name)}</h3><p>${esc(c.text)}</p><button type="button" class="galaxy-core-open">靠近核心 ↗</button>${spec?`<a class="galaxy-reference-link" href="${spec.source}" target="_blank" rel="noopener">天体参照 · ${esc(spec.code)} ↗</a>`:''}<span class="galaxy-plate-status"></span>`;
   atlasNote.querySelectorAll('[data-phase]').forEach(b=>b.onclick=()=>{if(state.medievalPhase===b.dataset.phase)return;state.medievalPhase=b.dataset.phase;pendingVisit=null;switchAtlas(volumeKey());options.onPhaseChange?.();});
   atlasNote.querySelector('.galaxy-core-open').onclick=()=>state.coreFocus?reset():focusCore();root.classList.add('has-era-core');
  }
@@ -137,7 +154,7 @@ export function createGalaxy(container,options){
   }
  }
  async function switchAtlas(key){
-  const spec=ATLAS[key];state.atlasReady=false;state.atlasOpacity=0;state.atlasError=null;state.time=0;meteors.reset();cosmic.reset();container.dataset.epoch=state.filter;root.dataset.epoch=state.filter;root.dataset.medievalPhase=state.medievalPhase;container.setAttribute('aria-busy',spec?'true':'false');
+  const spec=ATLAS[key];state.atlasReady=false;state.atlasOpacity=0;state.atlasError=null;state.time=0;meteors.reset();cosmic.reset(0);container.dataset.epoch=state.filter;root.dataset.epoch=state.filter;root.dataset.medievalPhase=state.medievalPhase;container.setAttribute('aria-busy',spec?'true':'false');
   credit.hidden=true;core.select(key);renderCoreNote(key);
   if(spec){
    root.style.setProperty('--g-gold',spec.color);
@@ -163,7 +180,7 @@ export function createGalaxy(container,options){
   gl.disable(gl.BLEND);gl.useProgram(blurProgram);gl.uniform1i(blurLoc.image,0);gl.activeTexture(gl.TEXTURE0);gl.viewport(0,0,glowWidth,glowHeight);
   gl.bindFramebuffer(gl.FRAMEBUFFER,glowA.framebuffer);gl.bindTexture(gl.TEXTURE_2D,sceneTarget.texture);gl.uniform2f(blurLoc.step,3/canvas.width,0);gl.uniform1f(blurLoc.extract,1);drawQuad(blurLoc.position);
   gl.bindFramebuffer(gl.FRAMEBUFFER,glowB.framebuffer);gl.bindTexture(gl.TEXTURE_2D,glowA.texture);gl.uniform2f(blurLoc.step,0,1.4/glowHeight);gl.uniform1f(blurLoc.extract,0);drawQuad(blurLoc.position);
-  gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,canvas.width,canvas.height);gl.useProgram(compositeProgram);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,sceneTarget.texture);gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,glowB.texture);gl.uniform1i(compositeLoc.scene,0);gl.uniform1i(compositeLoc.glow,1);gl.uniform1f(compositeLoc.bloom,mode()?1.15:.5);drawQuad(compositeLoc.position);gl.activeTexture(gl.TEXTURE0);
+  gl.bindFramebuffer(gl.FRAMEBUFFER,null);gl.viewport(0,0,canvas.width,canvas.height);gl.useProgram(compositeProgram);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,sceneTarget.texture);gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,glowB.texture);gl.uniform1i(compositeLoc.scene,0);gl.uniform1i(compositeLoc.glow,1);gl.uniform1f(compositeLoc.bloom,(mode()?1.15:.5)*ctxDim.b);drawQuad(compositeLoc.position);gl.activeTexture(gl.TEXTURE0);
  }
  const dust=[];
  function particle(x,y,z,r,g,b,size,opacity){dust.push(x,y,z,r,g,b,size,opacity);}
@@ -248,11 +265,11 @@ export function createGalaxy(container,options){
  for(const r of[180,330,480,650])for(let j=0;j<240;j++){if(j%3===0)continue;const a=j/240*TAU,b=(j+1)/240*TAU;orbits.push(Math.cos(a)*r,-160,Math.sin(a)*r,.23,.47,.54,.062,Math.cos(b)*r,-160,Math.sin(b)*r,.23,.47,.54,.062);}
  const orbitBuffer=buffer(new Float32Array(orbits));
  function activeId(){return state.hoverId||state.focusId||state.selectedId;}
- function inFilter(n){return !!n&&state.filter!=='all'&&n.m.e===state.filter&&(state.filter!=='medieval'||medievalLate.has(n.id)===(state.medievalPhase==='late'));}
+ function inFilter(n){return !!n&&state.filter!=='all'&&n.m.e===state.filter&&(state.filter!=='medieval'||state.medievalPhase==='all'||medievalLate.has(n.id)===(state.medievalPhase==='late'));}
  function updateGeometry(){
   const active=activeId(),near=active?adjacency.get(active)||new Set():null;
-  for(const n of nodes)n.emphasis=!active||n.id===active||near.has(n.id)?1:.42;
-  relationshipLines.update(links.filter(l=>inFilter(l.source)&&inFilter(l.target)),{active:state.hoverId,filter:state.filter,category:state.relationType,chosen:state.via?.index,revision:relationRevision});
+  for(const n of nodes)n.emphasis=!active||n.id===active||near.has(n.id)?1:.20;
+  relationshipLines.update(links.filter(l=>inFilter(l.source)&&inFilter(l.target)),{active,filter:state.filter,categories:state.relationTypes,chosen:state.via?.index,revision:relationRevision});
   geometryRevision++;dirty=false;
  }
  function getMatrix(){
@@ -281,14 +298,14 @@ export function createGalaxy(container,options){
   const introBox=obstacles.find(o=>o.x<width*.20&&o.y<height*.3);overview.resize(width,height,home,introBox?introBox.x+introBox.w:width*.21,document.body.classList.contains('galaxy-immersive'));
   layoutDirty=false;
  }
- function drawPoints(b,count,star){
+ function drawPoints(b,count,star,dimOverride){
   gl.useProgram(pointProgram);gl.bindBuffer(gl.ARRAY_BUFFER,b);
   gl.enableVertexAttribArray(pa.position);gl.vertexAttribPointer(pa.position,3,gl.FLOAT,false,32,0);gl.enableVertexAttribArray(pa.color);gl.vertexAttribPointer(pa.color,3,gl.FLOAT,false,32,12);gl.enableVertexAttribArray(pa.style);gl.vertexAttribPointer(pa.style,2,gl.FLOAT,false,32,24);
-  gl.uniformMatrix4fv(pu.uMVP,false,matrix);gl.uniform1f(pu.uDPR,dpr);gl.uniform1f(pu.uTime,state.time);gl.uniform1f(pu.uMode,mode());gl.uniform1f(pu.uStar,star);gl.uniform1f(pu.uPointLimit,maxPoint);gl.uniform3fv(pu.uEye,cameraEye);gl.uniform1f(pu.uOpacity,mode()?state.atlasOpacity:.12);
+  gl.uniformMatrix4fv(pu.uMVP,false,matrix);gl.uniform1f(pu.uDPR,dpr);gl.uniform1f(pu.uTime,state.time);gl.uniform1f(pu.uMode,mode());gl.uniform1f(pu.uStar,star);gl.uniform1f(pu.uPointLimit,maxPoint);gl.uniform3fv(pu.uEye,cameraEye);gl.uniform1f(pu.uOpacity,(mode()?state.atlasOpacity:.12)*(dimOverride??ctxDim.o));
   gl.drawArrays(gl.POINTS,0,count);gl.disableVertexAttribArray(pa.position);gl.disableVertexAttribArray(pa.color);gl.disableVertexAttribArray(pa.style);
  }
- function drawLines(b,count){
-  gl.useProgram(lineProgram);gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.enableVertexAttribArray(la.position);gl.vertexAttribPointer(la.position,3,gl.FLOAT,false,28,0);gl.enableVertexAttribArray(la.color);gl.vertexAttribPointer(la.color,4,gl.FLOAT,false,28,12);gl.uniformMatrix4fv(la.mvp,false,matrix);gl.uniform1f(la.time,state.time);gl.uniform1f(la.mode,mode());gl.uniform3fv(la.eye,cameraEye);gl.uniform1f(la.opacity,mode()?state.atlasOpacity:1);gl.uniform1f(la.pulse,b===orbitBuffer?0:1);gl.drawArrays(gl.LINES,0,count);gl.disableVertexAttribArray(la.position);gl.disableVertexAttribArray(la.color);
+ function drawLines(b,count,dimOverride){
+  gl.useProgram(lineProgram);gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.enableVertexAttribArray(la.position);gl.vertexAttribPointer(la.position,3,gl.FLOAT,false,28,0);gl.enableVertexAttribArray(la.color);gl.vertexAttribPointer(la.color,4,gl.FLOAT,false,28,12);gl.uniformMatrix4fv(la.mvp,false,matrix);gl.uniform1f(la.time,state.time);gl.uniform1f(la.mode,mode());gl.uniform3fv(la.eye,cameraEye);gl.uniform1f(la.opacity,(mode()?state.atlasOpacity:1)*(dimOverride??ctxDim.o));gl.uniform1f(la.pulse,b===orbitBuffer?0:1);gl.drawArrays(gl.LINES,0,count);gl.disableVertexAttribArray(la.position);gl.disableVertexAttribArray(la.color);
  }
  function overlap(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;}
  function readObstacles(){
@@ -300,25 +317,29 @@ export function createGalaxy(container,options){
  }
  function layoutLabels(){
   if(state.filter==='all'){return;}
-  const active=activeId(),focal=height/(2*Math.tan(42*Math.PI/360)),placed=[];
+   const active=activeId(),near=active?adjacency.get(active)||new Set():new Set(),focal=height/(2*Math.tan(42*Math.PI/360)),placed=[];
   for(const n of nodes){
    n.worldPosition=world(n.position);const p=n.screen=project(n.worldPosition,matrix,width,height);
    const bodyRadius=n.body.radius*focal/Math.max(100,p.d),extent=bodyRadius*(n.body.satellite?3.4:n.body.type===3?2.3:1.1)+4;
    const eclipsed=coreScreens.some(c=>p.d>c.d&&Math.hypot(p.x-c.x,p.y-c.y)+bodyRadius<c.radius*.94);
    n.hitRadius=Math.max(9,extent);n.screenRadius=bodyRadius;
    const box={x:p.x-extent,y:p.y-extent,w:extent*2,h:extent*2};
-   n.renderable=!eclipsed&&(!mode()||state.atlasReady)&&inFilter(n)&&p.d>100&&p.z<1&&box.x>8&&box.y>12&&box.x+box.w<width-8&&box.y+box.h<height-10&&!obstacles.some(o=>overlap(box,o));
-   if(n.label.hidden===n.renderable)n.label.hidden=!n.renderable;n.label.classList.remove('show-name');
-   if(!n.renderable)continue;
+    // Keep the celestial body for every person in the selected era. UI panels
+    // and label collision avoidance may hide its name, but must not delete the
+    // underlying small planet or star from the scene.
+    n.renderable=!eclipsed&&(!mode()||state.atlasReady)&&inFilter(n)&&p.d>100&&p.z<1;
+    n.labelRenderable=n.renderable&&box.x>8&&box.y>12&&box.x+box.w<width-8&&box.y+box.h<height-10&&!obstacles.some(o=>overlap(box,o));
+   if(n.label.hidden===n.labelRenderable)n.label.hidden=!n.labelRenderable;n.label.classList.remove('show-name');
+   if(!n.labelRenderable)continue;
    const size=Math.max(18,Math.min(42,bodyRadius*2.2)),x=p.x-size/2,y=p.y-size/2,transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px)`;
    if(transform!==n.lastTransform){n.label.style.transform=transform;n.lastTransform=transform;}
    if(!n.lastHitSize||Math.abs(n.lastHitSize-size)>.7){n.label.style.width=size+'px';n.label.style.height=size+'px';n.lastHitSize=size;}
-   n.labelOrigin={x,y};n.label.classList.toggle('is-focus',n.id===active);
+    n.labelOrigin={x,y};n.label.classList.toggle('is-focus',n.id===active);n.label.style.opacity=active&&n.id!==active&&!near.has(n.id)?'.32':'1';
   }
   let count=0;const candidates=active?[...priority].sort((a,b)=>(b.id===active?1:0)-(a.id===active?1:0)):priority;
   for(const n of candidates){
    const neighbor=state.focusId&&!card.hidden&&adjacency.get(state.focusId)?.has(n.id);
-   if(!n.renderable||!(state.names||n.id===state.focusId||n.id===state.selectedId||neighbor&&count<8)||count>=18)continue;
+   if(!n.labelRenderable||!(state.names||n.id===state.focusId||n.id===state.selectedId||neighbor&&count<8)||count>=18)continue;
    const p=n.screen,r=n.screenRadius*(n.body.satellite?3.4:n.body.type===3?2.3:n.body.type===0?1.5:1.15),w=n.shortName.length*14+22,h=32;
    const options=[[p.x+r+10,p.y-h/2],[p.x-r-w-10,p.y-h/2],[p.x-w/2,p.y-r-h-10],[p.x-w/2,p.y+r+10]];
    for(const[x,y]of options){const box={x,y,w,h};if(x<10||y<10||x+w>width-10||y+h>height-10||obstacles.some(o=>overlap(box,o))||coreLabelBox&&overlap(box,coreLabelBox)||placed.some(o=>overlap(box,o)))continue;
@@ -340,18 +361,20 @@ export function createGalaxy(container,options){
   if(!state.paused)state.time+=dt;
   if(state.cruise&&!state.paused){goal.yaw+=dt*.040;const base=ATLAS[volumeKey()]?.pitch??home.pitch;goal.pitch=base+Math.sin(state.time*.12)*.065;}
   if(state.atlasReady)state.atlasOpacity=Math.min(1,state.atlasOpacity+dt*1.7);
+  ctxStep(dt);
+  cosmic.setContextDim(ctxDim.e, ctxDim.p);
   const focused=byId.get(state.focusId);if(focused&&inFilter(focused))goal.target=world(focused.position);
   if(state.coreFocus)goal.target=core.center(state.time,mode());
   const moving=cameraStep(dt);if(layoutDirty)resize();if(dirty)updateGeometry();matrix=getMatrix();layoutCoreLabel();layoutLabels();overview.layout(matrix,width,height,state.filter==='all');
   gl.bindFramebuffer(gl.FRAMEBUFFER,sceneTarget.framebuffer);gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(.004,.007,.012,1);gl.depthMask(true);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.disable(gl.DEPTH_TEST);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);
-  deepSky.draw({matrix,dpr,time:state.time,basis:cameraBasis,eye:cameraEye,target:sceneTarget.framebuffer,width:canvas.width,height:canvas.height,profile:ATLAS[volumeKey()]||home,profileKey:volumeKey(),center:width<760||document.body.classList.contains('galaxy-immersive')?0:width<1180?.035:.18});
+  deepSky.draw({matrix,dpr,time:state.time,basis:cameraBasis,eye:cameraEye,target:sceneTarget.framebuffer,width:canvas.width,height:canvas.height,dim:ctxDim.d,profile:ATLAS[volumeKey()]||home,profileKey:volumeKey(),center:width<760||document.body.classList.contains('galaxy-immersive')?0:width<1180?.035:.18});
   if(!mode()){
    const skyFrame={matrix,time:state.time,width,height,dpr,eye:cameraEye,basis:cameraBasis,cameraTarget:camera.target,home,center:width<760||document.body.classList.contains('galaxy-immersive')?0:width<1180?.035:.18,obstacles,clusters:overview.getState().groups};
    cosmic.drawPortals(skyFrame);
-   overview.draw(matrix,state.time,dpr);
+   overview.draw(matrix,state.time,dpr,ctxDim.o);
    cosmic.drawEvents(skyFrame);
-  }else if(state.atlasReady){const v=atlas.active;drawPoints(v.fog,v.fogCount,0);drawPoints(v.dust,v.dustCount,0);drawLines(v.lines,v.lineCount);atlas.animate(state.time);drawPoints(v.streamBuffer,v.streams.length/8,1);}
-  if(mode()&&state.atlasReady){const opacity=state.atlasOpacity,focal=height/(2*Math.tan(42*Math.PI/360))*dpr;core.draw({matrix,time:state.time,mode:mode(),basis:cameraBasis,eye:cameraEye,focal,dpr,opacity});relationshipLines.draw(matrix,state.time,mode(),canvas.width,canvas.height,dpr,opacity);celestial.draw({matrix,time:state.time,eye:cameraEye,focal,opacity,activeId:activeId()});meteors.draw(matrix,state.time,cameraBasis,camera.target);}composeLight();
+  }else if(state.atlasReady){const v=atlas.active;drawPoints(v.fog,v.fogCount,0);drawPoints(v.dust,v.dustCount,0);drawLines(v.lines,v.lineCount,ctxDim.o);atlas.animate(state.time);drawPoints(v.streamBuffer,v.streams.length/8,1,ctxDim.e);}
+  if(mode()&&state.atlasReady){const opacity=state.atlasOpacity,focal=height/(2*Math.tan(42*Math.PI/360))*dpr;core.draw({matrix,time:state.time,mode:mode(),basis:cameraBasis,eye:cameraEye,focal,dpr,opacity:opacity*ctxDim.c});relationshipLines.draw(matrix,state.time,mode(),canvas.width,canvas.height,dpr,opacity);celestial.draw({matrix,time:state.time,eye:cameraEye,focal,opacity,activeId:activeId()});meteors.draw(matrix,state.time,cameraBasis,camera.target);}composeLight();
   frameRevision++;
   if(!state.paused||moving||(state.atlasReady&&state.atlasOpacity<1))raf=requestAnimationFrame(frame);else last=0;
  }
@@ -367,14 +390,16 @@ export function createGalaxy(container,options){
   const related=links.filter(l=>l.source.id===n.id||l.target.id===n.id).sort((a,b)=>{const an=a.source.id===n.id?a.target:a.source,bn=b.source.id===n.id?b.target:b.source;return Number(inFilter(bn))-Number(inFilter(an))||bn.deg-an.deg;});
   const portrait=portraits[n.id];
   const trail=state.trail.slice(-5),via=state.via,from=via&&byId.get(via.from);
-  card.innerHTML=`<div class="gfc-topline"><span>近星观测</span><button type="button" class="gfc-close" aria-label="返回星丛全景">返回星丛 ↗</button></div><nav class="gfc-trail" aria-label="已探索的人物">${trail.map((id,i)=>`<button type="button" data-trail="${esc(id)}" ${id===n.id?'aria-current="step"':''}>${esc(byId.get(id).shortName)}</button>${i<trail.length-1?'<span>›</span>':''}`).join('')}</nav><div class="gfc-head">${portrait?`<img src="${esc(portrait.u)}" alt="${esc(n.m.n)}的肖像" loading="lazy" decoding="async">`:''}<div><h4 class="${n.shortName.length>5?'gfc-long-name':''}">${esc(n.shortName)}</h4>${n.shortName!==n.m.n?`<span class="gfc-fullname">${esc(n.m.n)}</span>`:''}</div></div><div class="gfc-dates">${esc(n.m.d)} · ${esc(periods[n.m.e]?.zh||'')}</div><div class="gfc-body-kind"><i style="background:rgb(${n.body.color.map(v=>Math.round(v*255)).join(',')})"></i>${esc(n.body.description)}</div><p class="gfc-summary">${esc(n.m.s||'')}</p>${from?`<div class="gfc-arrival"><small>由 ${esc(from.shortName)} 而来</small><strong>${esc(via.relation)}</strong>${via.note?`<p>${esc(via.note)}</p>`:''}</div>`:''}<button type="button" class="gfc-open">阅读传记与作品 <span>↗</span></button><div class="gfc-path-heading"><span>沿关联前往</span><small>${related.length} 条</small></div><div class="gfc-relations">${related.map(l=>{const to=l.source.id===n.id?l.target:l.source;return`<button type="button" class="gfc-route" data-relation="${l.index}" data-destination="${esc(to.id)}"><span class="gfc-route-swatch" style="--relation-color:${esc(relationColors[l.cat])}">${relationSwatch(l.cat)}</span><span><b>${esc(to.shortName)}</b><small>${esc(l.t)}${!inFilter(to)?' · '+esc(periods[to.m.e]?.zh||''):''}</small></span><i>↗</i></button>`;}).join('')||'<p>词典中暂无已录人物关联。</p>'}</div>`;
+  const categorySummary=[...new Set(related.map(l=>l.cat))].join(' · ');
+  card.innerHTML=`<div class="gfc-topline"><span>关系阅读器</span><button type="button" class="gfc-close" aria-label="返回星丛全景">返回星丛 ↗</button></div><nav class="gfc-trail" aria-label="已探索的人物">${trail.map((id,i)=>`<button type="button" data-trail="${esc(id)}" ${id===n.id?'aria-current="step"':''}>${esc(byId.get(id).shortName)}</button>${i<trail.length-1?'<span>›</span>':''}`).join('')}</nav><div class="gfc-head">${portrait?`<img src="${esc(portrait.u)}" alt="${esc(n.m.n)}的肖像" loading="lazy" decoding="async">`:''}<div><h4 class="${n.shortName.length>5?'gfc-long-name':''}">${esc(n.shortName)}</h4>${n.shortName!==n.m.n?`<span class="gfc-fullname">${esc(n.m.n)}</span>`:''}</div></div><div class="gfc-dates">${esc(n.m.d)} · ${esc(periods[n.m.e]?.zh||'')}</div><div class="gfc-body-kind"><i style="background:rgb(${n.body.color.map(v=>Math.round(v*255)).join(',')})"></i>${esc(n.body.description)}</div><p class="gfc-summary">${esc(n.m.s||'')}</p><div class="gfc-stats"><strong>${related.length}</strong><span>条直接关系</span><small>${esc(categorySummary||'词典尚未归类')}</small></div>${from?`<div class="gfc-arrival"><small>由 ${esc(from.shortName)} 而来</small><strong>${esc(via.relation)}</strong>${via.note?`<p>${esc(via.note)}</p>`:''}</div>`:''}<button type="button" class="gfc-open">阅读传记与作品 <span>↗</span></button><div class="gfc-path-heading"><span>沿关联前往</span><small>${related.length} 条</small></div><div class="gfc-relations">${related.map(l=>{const to=l.source.id===n.id?l.target:l.source;const direction=l.directional?`${l.source.id===n.id?'→':'←'} ${l.source.id===n.id?'从当前人物指向对方':'对方指向当前人物'}`:'双向 / 无方向';const evidence=EVIDENCE_STATUS[l.evidence]?.label||l.evidence;return`<button type="button" class="gfc-route" data-relation="${l.index}" data-destination="${esc(to.id)}"><span class="gfc-route-swatch" style="--relation-color:${esc(relationColors[l.cat])}">${relationSwatch(l.cat)}</span><span><b>${esc(to.shortName)}</b><small><em>${esc(l.cat)}</em> · ${esc(evidence)} · ${esc(direction)}</small>${l.note?`<p>${esc(l.note)}</p>`:''}${l.review?`<p class="gfc-review">待核：${esc(l.review)}</p>`:''}</span><i>↗</i></button>`;}).join('')||'<p>词典中暂无已录人物关联。</p>'}</div>`;
   card.hidden=false;card.scrollTop=0;root.classList.add('is-observing');layoutDirty=true;card.querySelector('.gfc-close').onclick=reset;card.querySelector('.gfc-open').onclick=()=>choose(n);
   card.querySelectorAll('[data-relation]').forEach(b=>b.onclick=()=>{const l=links[Number(b.dataset.relation)];visit(b.dataset.destination,{from:n.id,to:b.dataset.destination,index:l.index,relation:l.t,note:l.note});});
   card.querySelectorAll('[data-trail]').forEach(b=>b.onclick=()=>{const i=state.trail.indexOf(b.dataset.trail);visit(b.dataset.trail,null,state.trail.slice(0,i+1));});
  }
  function visit(id,via=null,trail=null,preview=true){
-  const n=byId.get(id);if(!n)return;
-  stopCruise();const path=trail||(via?[...state.trail,id].slice(-8):[id]);
+   const n=byId.get(id);if(!n)return;
+   collapseIntro();
+   stopCruise();const path=trail||(via?[...state.trail,id].slice(-8):[id]);
   if(!inFilter(n)){pendingVisit={id,via,trail:path,preview};if(n.m.e==='medieval')state.medievalPhase=medievalLate.has(id)?'late':'early';if(state.filter===n.m.e){switchAtlas(volumeKey());options.onPhaseChange?.();}else root.querySelector(`#netchips [data-f="${n.m.e}"]`)?.click();return;}
   if(!state.atlasReady){pendingVisit={id,via,trail:path,preview};return;}
   state.trail=path;state.via=via;focus(id,{preview});
@@ -387,7 +412,7 @@ export function createGalaxy(container,options){
   dirty=true;layoutDirty=true;if(preview){if(!state.trail.length)state.trail=[id];showCard(n);}else{card.hidden=true;root.classList.remove('is-observing');}request();
  }
  function choose(n){focus(n.id);onSelect(n.id);}
- function clearFocus(){state.focusId=null;state.coreFocus=false;state.selectedId=null;state.hoverId=null;state.trail=[];state.via=null;card.hidden=true;hover.hidden=true;root.classList.remove('is-observing','is-core-observing');atlasNote.querySelector('.galaxy-core-open').textContent='靠近核心 ↗';dirty=true;layoutDirty=true;request();}
+ function clearFocus(){restoreIntro();state.focusId=null;state.coreFocus=false;state.selectedId=null;state.hoverId=null;state.trail=[];state.via=null;card.hidden=true;hover.hidden=true;root.classList.remove('is-observing','is-core-observing');atlasNote.querySelector('.galaxy-core-open').textContent='靠近核心 ↗';dirty=true;layoutDirty=true;request();}
  function hitNode(x,y){let best=null,score=Infinity;for(const n of nodes){if(!n.renderable||!n.screen)continue;const d=Math.hypot(x-n.screen.x,y-n.screen.y),radius=Math.max(10,n.hitRadius);if(d<radius&&d/radius<score){best=n;score=d/radius;}}return best;}
  function positionHover(x,y){
   const rect=hover.getBoundingClientRect(),w=rect.width,h=rect.height,locations=[[x+25,y-15],[x-w-25,y-15],[x-w/2,y+28],[x-w/2,y-h-28]];
@@ -399,7 +424,7 @@ export function createGalaxy(container,options){
   if(!state.hoverId)return null;
   const active=activeId();let found=null,min=8;
   for(const l of links){
-   if(!inFilter(l.source)||!inFilter(l.target)||state.relationType&&l.cat!==state.relationType||active&&(l.source.id!==active&&l.target.id!==active))continue;
+    if(!inFilter(l.source)||!inFilter(l.target)||state.relationTypes.length&&!state.relationTypes.includes(l.cat)||active&&(l.source.id!==active&&l.target.id!==active))continue;
    let prev=project(world(l.points[0]),matrix,width,height);
    for(let i=1;i<l.points.length;i++){
     const p=project(world(l.points[i]),matrix,width,height),vx=p.x-prev.x,vy=p.y-prev.y,len=vx*vx+vy*vy;
@@ -423,27 +448,29 @@ export function createGalaxy(container,options){
   else{
    if(hitCore(x,y)){canvas.style.cursor='pointer';hover.hidden=true;return;}
    const l=hitLink(x,y);
-   if(l){hover.innerHTML=`<b>${esc(l.source.m.n)} · ${esc(l.target.m.n)}</b><small>${esc(l.t)}</small>${l.note?`<div class="gh-note">${esc(l.note)}</div>`:''}`;hover.hidden=false;positionHover(x,y);}
+    if(l){hover.innerHTML=`<b>${esc(l.source.m.n)} · ${esc(l.target.m.n)}</b><small>${esc(l.cat)} · ${esc(EVIDENCE_STATUS[l.evidence]?.label||l.evidence)}${l.directional?' · '+esc(l.source.m.n)+' → '+esc(l.target.m.n):' · 无方向'}</small>${l.note?`<div class="gh-note">${esc(l.note)}</div>`:''}${l.review?`<div class="gh-review">待核：${esc(l.review)}</div>`:''}`;hover.hidden=false;positionHover(x,y);}
    else hover.hidden=true;
   }
  }
- function pointerDown(e){if(e.button!==0)return;stopCruise();drag={x:e.clientX,y:e.clientY,travel:0,id:state.hoverId};state.hoverId=null;hover.hidden=true;dirty=true;request();canvas.setPointerCapture(e.pointerId);canvas.focus({preventScroll:true});}
- function pointerUp(e){const d=drag;drag=null;if(d&&d.travel<7){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;if(state.filter==='all'){const key=overview.hit(x,y);if(key){if(key==='medieval')state.medievalPhase='early';root.querySelector(`#netchips [data-f="${key}"]`)?.click();}return;}const now=performance.now();if(lastPick&&now-lastPick.time<450&&Math.hypot(e.clientX-lastPick.x,e.clientY-lastPick.y)<12){const n=byId.get(lastPick.id);lastPick=null;if(n)choose(n);return;}const n=hitNode(x,y);if(n){lastPick={id:n.id,time:now,x:e.clientX,y:e.clientY};visit(n.id);}else{lastPick=null;if(hitCore(x,y))focusCore();else clearFocus();}}}
+ function pointerDown(e){if(e.button!==0)return;collapseIntro();stopCruise();drag={x:e.clientX,y:e.clientY,travel:0,id:state.hoverId};state.hoverId=null;hover.hidden=true;dirty=true;request();canvas.setPointerCapture(e.pointerId);canvas.focus({preventScroll:true});}
+ function pointerUp(e){const d=drag;drag=null;if(d&&d.travel<7){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;if(state.filter==='all'){const key=overview.hit(x,y);if(key){if(key==='medieval')state.medievalPhase='all';root.querySelector(`#netchips [data-f="${key}"]`)?.click();}return;}const now=performance.now();if(lastPick&&now-lastPick.time<450&&Math.hypot(e.clientX-lastPick.x,e.clientY-lastPick.y)<12){const n=byId.get(lastPick.id);lastPick=null;if(n)choose(n);return;}const n=hitNode(x,y);if(n){lastPick={id:n.id,time:now,x:e.clientX,y:e.clientY};visit(n.id);}else{lastPick=null;if(hitCore(x,y))focusCore();else clearFocus();}}}
  function pointerLeave(){if(drag)return;state.hoverId=null;hover.hidden=true;dirty=true;request();}
- function wheel(e){e.preventDefault();stopCruise();goal.distance=clamp(goal.distance*Math.exp(e.deltaY*.0007),400,2300);request();}
+ function wheel(e){e.preventDefault();collapseIntro();stopCruise();goal.distance=clamp(goal.distance*Math.exp(e.deltaY*.0007),400,2300);request();}
  function keydown(e){
   if(e.target!==canvas)return;
   if(e.key.startsWith('Arrow')||['+','=','-','_'].includes(e.key))stopCruise();
   if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-','_',' '].includes(e.key)){e.preventDefault();e.stopPropagation();}
   if(e.key==='ArrowLeft')goal.yaw+=.11;if(e.key==='ArrowRight')goal.yaw-=.11;if(e.key==='ArrowUp')goal.pitch+=.08;if(e.key==='ArrowDown')goal.pitch-=.08;
+  if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-','_',' '].includes(e.key))collapseIntro();
   goal.pitch=clamp(goal.pitch,-1.45,1.45);
   if(e.key==='+'||e.key==='=')goal.distance=clamp(goal.distance*.9,400,2300);if(e.key==='-'||e.key==='_')goal.distance=clamp(goal.distance*1.1,400,2300);if(e.key===' ')toggleMotion();request();
  }
  canvas.addEventListener('pointerdown',pointerDown);canvas.addEventListener('pointermove',pointerMove);canvas.addEventListener('pointerup',pointerUp);canvas.addEventListener('pointercancel',()=>{drag=null;});canvas.addEventListener('lostpointercapture',()=>{drag=null;});canvas.addEventListener('pointerleave',pointerLeave);canvas.addEventListener('wheel',wheel,{passive:false});canvas.addEventListener('keydown',keydown);
  function setState(next){
-  const previousFilter=state.filter,previousSelected=state.selectedId;
+   const previousFilter=state.filter,previousSelected=state.selectedId;
   if(next.filter!==undefined)state.filter=next.filter;
-  if(next.relationType!==undefined)state.relationType=next.relationType;
+   if(next.relationTypes!==undefined)state.relationTypes=Array.isArray(next.relationTypes)?next.relationTypes.filter(Boolean):[];
+   if(next.relationType!==undefined)state.relationTypes=next.relationType?[next.relationType]:[];
   if(next.selectedId!==undefined)state.selectedId=next.selectedId;
   if(previousFilter!==state.filter){
    if(pendingVisit&&byId.get(pendingVisit.id)?.m.e!==state.filter)pendingVisit=null;
@@ -451,20 +478,21 @@ export function createGalaxy(container,options){
    switchAtlas(volumeKey());
   }else if(state.selectedId&&state.selectedId!==previousSelected&&!pendingVisit)focus(state.selectedId,{preview:state.focusId===state.selectedId&&!card.hidden});
   else if(!state.selectedId&&previousSelected&&!pendingVisit)clearFocus();
-  $('galaxy-gesture').textContent=state.filter==='all'?'依时间展开 · 点击星群进入时代':'拖动旋转 · 悬停看关联 · 双击开传';
+   if(previousFilter!==state.filter||previousSelected!==state.selectedId)collapseIntro();$('galaxy-gesture').textContent=state.filter==='all'?'依时间展开 · 点击星群进入时代':'拖动旋转 · 悬停看关联 · 双击开传';
   dirty=true;request();
  }
- function reset(){stopCruise();lastPick=null;const spec=ATLAS[volumeKey()];Object.assign(goal,spec?{yaw:spec.yaw,pitch:spec.pitch,distance:spec.home,target:[0,10,0]}:home,{target:spec?[0,10,0]:[...home.target]});clearFocus();request();}
+ function reset(){stopCruise();lastPick=null;const spec=ATLAS[volumeKey()];Object.assign(goal,spec?{yaw:spec.yaw,pitch:spec.pitch,distance:spec.home,target:[0,10,0]}:home,{target:spec?[0,10,0]:[...home.target]});clearFocus();restoreIntro();request();}
  function stopCruise(){state.cruise=false;const b=$('galaxy-cruise');if(b)b.setAttribute('aria-pressed','false');}
  const cruiseButton=$('galaxy-cruise');cruiseButton.onclick=()=>{state.cruise=!state.cruise;cruiseButton.setAttribute('aria-pressed',state.cruise);request();};
- function updateMotionButton(){const b=$('galaxy-motion');b.setAttribute('aria-pressed',state.paused);b.setAttribute('aria-label',state.paused?'继续星系流动':'暂停星系流动');b.title=state.paused?'继续星系流动':'暂停星系流动';b.innerHTML=state.paused?'<svg viewBox="0 0 20 20"><path d="m7 4 9 6-9 6z" fill="currentColor" stroke="none"/></svg>':'<svg viewBox="0 0 20 20"><path d="M7 5v10M13 5v10"/></svg>';}
+ function updateMotionButton(){const b=$('galaxy-motion');b.setAttribute('aria-pressed',state.paused);b.setAttribute('aria-label',state.paused?'继续星系流动':'暂停星系流动');b.title=state.paused?'继续星系流动':'暂停星系流动';b.dataset.tooltip=state.paused?'继续运动':'暂停运动';b.innerHTML=state.paused?'<svg viewBox="0 0 20 20"><path d="m7 4 9 6-9 6z" fill="currentColor" stroke="none"/></svg>':'<svg viewBox="0 0 20 20"><path d="M7 5v10M13 5v10"/></svg>';}
  function toggleMotion(){state.paused=!state.paused;root.classList.toggle('galaxy-motion-paused',state.paused);updateMotionButton();request();}
  $('galaxy-motion').onclick=toggleMotion;
- const namesButton=$('galaxy-names');namesButton.onclick=()=>{state.names=!state.names;namesButton.setAttribute('aria-pressed',state.names);namesButton.title=state.names?'收起人物姓名':'显示人物姓名';namesButton.setAttribute('aria-label',namesButton.title);dirty=true;request();};
+ const namesButton=$('galaxy-names');namesButton.onclick=()=>{state.names=!state.names;namesButton.setAttribute('aria-pressed',state.names);namesButton.title=state.names?'收起人物姓名':'显示人物姓名';namesButton.dataset.tooltip=state.names?'收起姓名':'显示姓名';namesButton.setAttribute('aria-label',namesButton.title);collapseIntro();dirty=true;request();};
  $('galaxy-reset').onclick=reset;
  const immersiveButton=$('galaxy-immersive');
- function immersive(force){const on=force===undefined?!document.body.classList.contains('galaxy-immersive'):force;document.body.classList.toggle('galaxy-immersive',on);immersiveButton.setAttribute('aria-pressed',on);immersiveButton.setAttribute('aria-label',on?'退出沉浸模式':'进入沉浸模式');layoutDirty=true;request();}
+ function immersive(force){const on=force===undefined?!document.body.classList.contains('galaxy-immersive'):force;document.body.classList.toggle('galaxy-immersive',on);immersiveButton.setAttribute('aria-pressed',on);immersiveButton.setAttribute('aria-label',on?'退出沉浸模式':'进入沉浸模式');immersiveButton.dataset.tooltip=on?'退出沉浸':'沉浸模式';layoutDirty=true;request();}
  immersiveButton.onclick=()=>immersive();
+ $('galaxy-intro-restore')?.addEventListener('click',restoreIntro);
  const escape=e=>{if(e.key!=='Escape'||document.querySelector('dialog[open]'))return;if(document.body.classList.contains('galaxy-immersive'))immersive(false);else if(!card.hidden)reset();};
  document.addEventListener('keydown',escape);
  root.querySelectorAll('[data-galaxy-focus]').forEach(b=>{b.onclick=()=>{
@@ -478,7 +506,13 @@ export function createGalaxy(container,options){
  const resizeObserver=new ResizeObserver(()=>{layoutDirty=true;request();});resizeObserver.observe(container);resizeObserver.observe(document.querySelector('header.mast'));
  document.addEventListener('visibilitychange',visibility);
  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();contextLost=true;cancelAnimationFrame(raf);raf=0;container.dataset.ready='false';options.onContextLost?.();});
+ const celestialPanel=createCelestialPanel({root,cosmic:{trigger:(id,o)=>cosmic.trigger(id,o),startChain:id=>cosmic.startChain(id),stopAllChains:()=>cosmic.stopAllChains(),stopAllEvents:()=>cosmic.stopAllEvents(),resetSky:()=>cosmic.resetSky(),configure:p=>cosmic.configure(p),listEvents:()=>cosmic.listEvents(),getRegistry:()=>cosmic.getRegistry()},snapshot:()=>container.galaxySnapshot?container.galaxySnapshot():null});
+ cosmic.setNotifyHandler(def=>celestialPanel.showToast(def));
  updateMotionButton();container.dataset.ready='true';container.dataset.nodeCount=nodes.length;container.dataset.linkCount=links.length;
- container.galaxySnapshot=()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,nodes:nodes.length,links:links.length,frameRevision,names:state.names,relationshipStyle:relationshipLines.getState(),cruise:state.cruise,trail:[...state.trail],via:state.via,bodies:mode()?celestial.getState():{instances:0,rings:0,coronae:0},overview:state.filter==='all'?overview.getState():null,meteors:meteors.getState(),cosmic:state.filter==='all'?cosmic.getState():null,cameraDistance:camera.distance,cameraYaw:camera.yaw,cameraPitch:camera.pitch,time:state.time,renderSize:[canvas.width,canvas.height],atlasReady:state.atlasReady,atlasError:state.atlasError,geometry:atlas.active?{kind:atlas.active.kind,bounds:atlas.active.bounds,points:atlas.active.dustCount,segments:atlas.active.lineCount/2}:null,frameTiming:{p95:frameIntervals.length?[...frameIntervals].sort((a,b)=>a-b)[Math.floor((frameIntervals.length-1)*.95)]:null,longFrames},flowProbe:world(mode()?[170,120,25]:[310,60,170]),projectedStars:nodes.filter(inFilter).map(n=>({id:n.id,world:n.worldPosition,screen:n.screen,renderable:n.renderable,radius:n.body.radius,type:n.body.type,name:n.m.n}))});
- return{setState,focus,reset,pauseAnimation,resumeAnimation,visibleNodeIds:(filter)=>nodes.filter(n=>(filter==='all'||n.m.e===filter)&&(filter!=='medieval'||medievalLate.has(n.id)===(state.medievalPhase==='late'))).map(n=>n.id),getState:()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,nodes:nodes.length,links:links.length,geometryRevision,frameRevision,cameraDistance:camera.distance}),destroy(){destroyed=true;pauseAnimation();resizeObserver.disconnect();document.removeEventListener('visibilitychange',visibility);document.removeEventListener('keydown',escape);atlas.destroy();celestial.destroy();core.destroy();relationshipLines.destroy();meteors.destroy();cosmic.destroy();deepSky.destroy();overview.destroy();atlasNote.remove();credit.remove();for(const b of[dustBuffer,nebulaBuffer,filamentBuffer,axialBuffer,lightflowBuffer,orbitBuffer,quad])gl.deleteBuffer(b);for(const t of[sceneTarget,glowA,glowB]){gl.deleteFramebuffer(t.framebuffer);gl.deleteTexture(t.texture);if(t.depth)gl.deleteRenderbuffer(t.depth);}for(const p of[pointProgram,lineProgram,blurProgram,compositeProgram])gl.deleteProgram(p);container.innerHTML='';}};
+ container.cosmicTrigger=(id,options)=>cosmic.trigger(id,options);
+ container.cosmicStartChain=(id)=>cosmic.startChain(id);
+ container.cosmicStopAllChains=()=>cosmic.stopAllChains();
+ container.cosmicStopAllEvents=()=>cosmic.stopAllEvents();
+ container.galaxySnapshot=()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,relationTypes:[...state.relationTypes],nodes:nodes.length,links:links.length,frameRevision,names:state.names,relationshipStyle:relationshipLines.getState(),cruise:state.cruise,trail:[...state.trail],via:state.via,bodies:mode()?celestial.getState():{instances:0,rings:0,coronae:0},overview:state.filter==='all'?overview.getState():null,meteors:meteors.getState(),cosmic:state.filter==='all'?cosmic.getState():null,cosmicRegistry:cosmic.getRegistry(),cosmicWorldState:cosmic.getWorldState(),celestialApplicable:celestialApplicableVal(),celestialContextDim:{...ctxDim},cameraDistance:camera.distance,cameraYaw:camera.yaw,cameraPitch:camera.pitch,time:state.time,renderSize:[canvas.width,canvas.height],atlasReady:state.atlasReady,atlasError:state.atlasError,geometry:atlas.active?{kind:atlas.active.kind,bounds:atlas.active.bounds,points:atlas.active.dustCount,segments:atlas.active.lineCount/2}:null,frameTiming:{p95:frameIntervals.length?[...frameIntervals].sort((a,b)=>a-b)[Math.floor((frameIntervals.length-1)*.95)]:null,longFrames},flowProbe:world(mode()?[170,120,25]:[310,60,170]),projectedStars:nodes.filter(inFilter).map(n=>({id:n.id,world:n.worldPosition,screen:n.screen,renderable:n.renderable,radius:n.body.radius,type:n.body.type,name:n.m.n}))});
+ return{setState,focus,reset,collapseIntro,restoreIntro,pauseAnimation,resumeAnimation,triggerCosmicEvent:(id,options)=>cosmic.trigger(id,options),visibleNodeIds:(filter)=>nodes.filter(n=>(filter==='all'||n.m.e===filter)&&(filter!=='medieval'||state.medievalPhase==='all'||medievalLate.has(n.id)===(state.medievalPhase==='late'))).map(n=>n.id),getState:()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,relationTypes:[...state.relationTypes],nodes:nodes.length,links:links.length,geometryRevision,frameRevision,cameraDistance:camera.distance}),destroy(){destroyed=true;pauseAnimation();celestialPanel.destroy();resizeObserver.disconnect();document.removeEventListener('visibilitychange',visibility);document.removeEventListener('keydown',escape);atlas.destroy();celestial.destroy();core.destroy();relationshipLines.destroy();meteors.destroy();cosmic.destroy();deepSky.destroy();overview.destroy();atlasNote.remove();credit.remove();for(const b of[dustBuffer,nebulaBuffer,filamentBuffer,axialBuffer,lightflowBuffer,orbitBuffer,quad])gl.deleteBuffer(b);for(const t of[sceneTarget,glowA,glowB]){gl.deleteFramebuffer(t.framebuffer);gl.deleteTexture(t.texture);if(t.depth)gl.deleteRenderbuffer(t.depth);}for(const p of[pointProgram,lineProgram,blurProgram,compositeProgram])gl.deleteProgram(p);container.innerHTML='';}};
 }
