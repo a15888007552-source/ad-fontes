@@ -370,6 +370,7 @@ body.galaxy-immersive .galaxy-era-entry strong{font-size:14px}
   #v-net .galaxy-intro,#v-net .galaxy-reading-note,#v-net .galaxy-intro-reopen{transition:none!important}
 }
 
+
 /* ── Celestial control panel (Stage 6) ─────────────────────────────── */
 #v-net .galaxy-cel-toggle{height:36px;width:36px;border:1px solid #9bb6be33;background:#0a1520cc;color:#c8b98f;font:15px/1 var(--sans);cursor:pointer;pointer-events:auto}
 #v-net .galaxy-cel-toggle:hover{border-color:#c5bd9f66;color:#dbc69c}
@@ -398,3 +399,4 @@ body.galaxy-immersive .galaxy-era-entry strong{font-size:14px}
 #v-net .celestial-panel .cp-status{font:11px/1.6 var(--sans);letter-spacing:.05em;color:#8fb0a9;border:1px solid #9eb8bc22;background:#07111d99;padding:5px 9px;margin-bottom:9px}
 #v-net .celestial-panel .cp-status.warn{color:#d8b98a;border-color:#d7bd8340}
 #v-net .celestial-panel .cp-grid button:disabled{opacity:.38;cursor:not-allowed}
+
