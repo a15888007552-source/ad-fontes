@@ -6,3 +6,8 @@ desktop.ini
 # editor
 .vscode/
 *.swp
+
+# local QA artifacts
+artifacts/
+.pytest_cache/
+__pycache__/
