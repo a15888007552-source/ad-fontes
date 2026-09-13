@@ -2,10 +2,20 @@ name: history-shrink
 on:
   workflow_dispatch:
     inputs:
+      confirmation:
+        description: "必须明确输入 REWRITE_AD_FONTES_HISTORY 才能继续"
+        required: true
+        type: string
       path:
         description: "从全部历史中移除的路径"
         default: "assets/photos/original"
-        required: false
+        required: true
+        type: string
+      dry_run:
+        description: "只报告目标范围，不重写历史或推送（默认开启）"
+        default: true
+        required: true
+        type: boolean
 
 permissions:
   contents: write
@@ -13,8 +23,51 @@ permissions:
 jobs:
   shrink:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CONFIRMATION: ${{ inputs.confirmation }}
+      TARGET_PATH: ${{ inputs.path }}
+      DRY_RUN: ${{ inputs.dry_run }}
     steps:
+      - name: Validate manual confirmation and target path
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$CONFIRMATION" != "REWRITE_AD_FONTES_HISTORY" ]]; then
+            echo "ABORT: confirmation must exactly equal REWRITE_AD_FONTES_HISTORY"
+            exit 1
+          fi
+          target="${TARGET_PATH//$'\r'/}"
+          target="${target//$'\n'/}"
+          if [[ -z "$target" || "$target" == "." || "$target" == "/" || "$target" == "*" ]]; then
+            echo "ABORT: target path is empty or broad ($target)"
+            exit 1
+          fi
+          if [[ "$target" == /* || "$target" == ./* || "$target" == *:* || "$target" == *\\* ]]; then
+            echo "ABORT: target path must be a repository-relative POSIX path: $target"
+            exit 1
+          fi
+          if [[ "$target" == "assets" || "$target" == "modules" || "$target" == assets/ || "$target" == modules/ ]]; then
+            echo "ABORT: broad top-level target is not allowed: $target"
+            exit 1
+          fi
+          if [[ "$target" == *\** || "$target" == *\?* || "$target" == *\[* || "$target" == *\]* ]]; then
+            echo "ABORT: wildcard target is not allowed: $target"
+            exit 1
+          fi
+          if [[ "$target" == .. || "$target" == ../* || "$target" == */../* || "$target" == */.. ]]; then
+            echo "ABORT: path traversal is not allowed: $target"
+            exit 1
+          fi
+          if [[ "$target" != */* ]]; then
+            echo "ABORT: root-level target paths are too broad; specify a nested path: $target"
+            exit 1
+          fi
+          echo "Validated target path: $target"
+          echo "Dry run: $DRY_RUN"
+
       - name: Install git-filter-repo
+        if: ${{ inputs.dry_run == false }}
         run: |
           curl -sL -o /tmp/git-filter-repo https://raw.githubusercontent.com/newren/git-filter-repo/main/git-filter-repo
           chmod +x /tmp/git-filter-repo
@@ -29,7 +82,42 @@ jobs:
           echo "TREE_BEFORE=$(git rev-parse HEAD^{tree})" >> "$GITHUB_ENV"
           echo "HEAD_SHA_BEFORE=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
+      - name: Dry-run report (no rewrite and no push)
+        if: ${{ inputs.dry_run == true }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/repo
+          echo "=== HISTORY SHRINK DRY RUN ==="
+          echo "TARGET_PATH=$TARGET_PATH"
+          echo "HEAD_SHA=$HEAD_SHA_BEFORE"
+          echo "HEAD_TREE=$TREE_BEFORE"
+          echo "FORCE PUSH WOULD BE REQUIRED ONLY WHEN dry_run=false"
+          echo "=== Matching historical paths (up to 40) ==="
+          matches="$(git rev-list --objects --all -- "$TARGET_PATH" || true)"
+          if [[ -n "$matches" ]]; then
+            printf '%s\n' "$matches" | head -n 40
+          else
+            echo "No matching historical paths found"
+          fi
+          echo "DRY_RUN=true: no history rewrite performed"
+
+      - name: Review rewrite scope and warn before force push
+        if: ${{ inputs.dry_run == false }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/repo
+          echo "=== REWRITE SCOPE REVIEW ==="
+          echo "TARGET_PATH=$TARGET_PATH"
+          echo "HEAD_SHA_BEFORE=$HEAD_SHA_BEFORE"
+          echo "TREE_BEFORE=$TREE_BEFORE"
+          echo "BRANCHES=$(git branch -r | tr '\n' ' ')"
+          echo "WARNING: the next steps rewrite all history and FORCE PUSH all branches and tags."
+          echo "WARNING: stop this workflow now if the target scope is not exact."
+
       - name: Rewrite history (remove path from every commit)
+        if: ${{ inputs.dry_run == false }}
         run: |
           cd /tmp/repo
           /tmp/git-filter-repo --invert-paths --path "${{ inputs.path }}" --force
@@ -38,6 +126,7 @@ jobs:
           echo "NEW HISTORY SIZE: $(du -sh .git | cut -f1)"
 
       - name: Safety check (HEAD tree must be unchanged)
+        if: ${{ inputs.dry_run == false }}
         run: |
           if [ "$TREE_BEFORE" != "$TREE_AFTER" ]; then
             echo "ABORT: HEAD tree changed during rewrite ($TREE_BEFORE -> $TREE_AFTER)"; exit 1
@@ -45,6 +134,7 @@ jobs:
           echo "OK: HEAD tree identical ($TREE_BEFORE)"
 
       - name: Force push all branches
+        if: ${{ inputs.dry_run == false }}
         run: |
           cd /tmp/repo
           git remote add origin "https://x-access-token:${{ github.token }}@github.com/a15888007552-source/ad-fontes.git"
@@ -52,6 +142,7 @@ jobs:
           git push --force origin --tags || true
 
       - name: Report
+        if: ${{ inputs.dry_run == false }}
         run: |
           cd /tmp/repo
           echo "=== 新历史前 3 条提交 ==="

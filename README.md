@@ -31,8 +31,13 @@ modules/
 - [ ] 模块一逐条内容审校:100 人 bio 对照来源核对(独立一期)
 - [ ] 将 `cite` 引注在页面上渲染为可见的规范引用
 - [ ] 模块二:布索尼《肖像尝试》译注
-- [ ] 发布到 GitHub Pages
+- [x] 发布到 GitHub Pages
 - [ ] 让仓库根目录默认指向总馆入口或专题首页
+
+## 开发与质量
+
+- [本地开发与 QA](docs/DEVELOPMENT.md)
+- [研究完整性边界](docs/SCHOLARLY_INTEGRITY.md)
 
 ## Shao Music Desk
 
