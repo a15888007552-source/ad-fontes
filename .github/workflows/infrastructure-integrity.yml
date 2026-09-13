@@ -52,7 +52,10 @@ jobs:
           if-no-files-found: warn
 
   museum-qa:
-    name: Existing Museum QA
+    name: Existing Museum QA (advisory)
+    # Keep the legacy signal visible in logs/checks without making the new
+    # umbrella workflow fail on contracts it does not own.
+    continue-on-error: true
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -119,7 +122,9 @@ jobs:
           if-no-files-found: warn
 
   museum-browser-smoke:
-    name: Existing Museum Atlas browser smoke
+    name: Existing Museum Atlas browser smoke (advisory)
+    # The independent Museum Atlas workflow remains strictly blocking.
+    continue-on-error: true
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
