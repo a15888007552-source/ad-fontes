@@ -52,7 +52,7 @@ body{font-family:var(--serif);background:#0F0D0B;color:#E8DFD0;line-height:1.75}
 
 /* ── 骨架 ─────────────────────────────── */
 .chronograph-progress{position:fixed;z-index:1200;top:0;left:0;width:100%;height:2px;pointer-events:none;transform:scaleX(0);transform-origin:left center;will-change:transform;background:linear-gradient(90deg,#8C2B1F 0%,#C9A227 58%,#E9D9A8 100%);box-shadow:0 0 8px rgba(201,162,39,.42)}
-header.mast{padding:18px 4vw 13px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;position:relative;isolation:isolate;overflow:hidden;background-color:color-mix(in srgb,var(--bg) 96%,transparent)}
+header.mast{padding:18px 4vw 13px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;position:relative;isolation:isolate;overflow:visible;background-color:color-mix(in srgb,var(--bg) 96%,transparent)}
 .mast-brand{display:flex;align-items:center;gap:clamp(10px,1.4vw,16px);min-width:min(100%,350px)}
 .archive-orbis{position:relative;flex:0 0 auto;width:clamp(58px,6.2vw,78px);aspect-ratio:1;border-radius:50%;padding:3px;background:#0B1113;box-shadow:0 0 0 1px var(--line),0 8px 24px rgba(8,6,4,.18);contain:layout paint}
 .archive-orbis::before,.archive-orbis::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
