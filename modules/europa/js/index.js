@@ -926,7 +926,7 @@ function renderChapterRail(ep,e){
         ${hasExtension?`<img class="art-extension" loading="lazy" decoding="async" src="${sideArt.extension}" alt="" aria-hidden="true">`:""}
         <div class="art-original-frame"><img class="art-original" loading="lazy" decoding="async" src="${sideArt.u}" alt="${sideArt.title}"></div>
       </div>
-      <figcaption><b>${sideArt.title}</b>　${sideArt.artist}，${sideArt.year}${sideArt.c?`<br>${sideArt.c}`:""}${hasExtension?`<br><span class="art-provenance">原作保持完整比例，未裁切、未改绘；外围为 AI 生成展示背景，不属于历史作品。</span>`:""}</figcaption>
+      <figcaption><b>${sideArt.title}</b>　${sideArt.artist}，${sideArt.year}${sideArt.c?`<br>${sideArt.c}`:""}</figcaption>
     </figure>`:""}
     <section class="eprail-card"><span class="eprail-kicker">CHAPTER ROUTE · 本章路线</span><h3>${e.zh}的时间坐标</h3><ul class="eprail-list">${events.map(v=>`<li><b>${v[0]}</b><span>${v[1]}</span></li>`).join("")}</ul><p class="eprail-more">前三个节点 · 完整大事记见下方</p></section>
     <section class="eprail-card eprail-note"><span class="eprail-kicker">KEYWORDS · 阅读关键词</span><p class="eprail-keywords">${topics.map(x=>`<span class="term-chip">${x}</span>`).join("")}</p></section>
