@@ -89,7 +89,7 @@
 
   function shortLead(text, max = 260) {
     const source = String(text || '').trim();
-    if (!source) return `${type.nameZh}的器形、功能与组合关系，需结合具体器例、时代与出土语境判断。`;
+    if (!source) return `${type.nameZh}的器形、功能与组合关系，可从具体器例、时代与出土语境来读。`;
     const sentences = source.match(/[^。！？]+[。！？]?/g) || [source];
     const lead = sentences.slice(0, 2).join('').trim();
     return lead.length > max ? `${lead.slice(0, max - 1)}…` : lead;
@@ -174,7 +174,7 @@
       seen.add(key);
       return true;
     }).slice(0, 6);
-    if (!links.length) return '<li><span>来源待核</span><span>器物资料尚待补充具体来源。</span></li>';
+    if (!links.length) return '<li><span>来源待核</span><span>器物资料尚未补充具体来源。</span></li>';
     return links.map(({ id, source }) => `<li>
       ${source.href ? `<a href="${escapeHTML(source.href)}" target="_blank" rel="noreferrer">${escapeHTML(id)}</a>` : `<span>${escapeHTML(id)}</span>`}
       <span>${escapeHTML(source.label || source.institution || '正式器例资料')}</span>
@@ -213,8 +213,8 @@
   const historyText = copy['史料记载'];
   const combinationText = copy['器物组合'];
   const functionalSection = {
-    'music': { code: '04 / SOUND & ACOUSTICS', title: '声音与声学', en: 'SOUND / ACOUSTICS', primary: '声音关键词', lead: '乐器的功能不能只用“内容物”解释；器体、悬挂、击奏方式与声音传播共同构成它的使用路径。' },
-    'ritual-accessories': { code: '04 / HOLD & SERVE', title: '承置与取用', en: 'HOLD / SERVE', primary: '动作关键词', lead: '承器与取用器的作用体现在器物之间：它们支撑、挹取、传递或奉持，不应套用容器的内容物逻辑。' },
+    'music': { code: '04 / SOUND & ACOUSTICS', title: '声音与声学', en: 'SOUND / ACOUSTICS', primary: '声音关键词', lead: '乐器的功能由器体、悬挂、击奏方式与声音传播共同构成。' },
+    'ritual-accessories': { code: '04 / HOLD & SERVE', title: '承置与取用', en: 'HOLD / SERVE', primary: '动作关键词', lead: '承器与取用器的作用体现在器物之间：它们支撑、挹取、传递或奉持。' },
     'daily-life': { code: '04 / DAILY USE', title: '日常使用', en: 'DAILY / DOMESTIC', primary: '使用关键词', lead: '镜、灯、炉与熏炉等生活器具，应从照面、照明、受热和散香等具体动作进入。' },
     'chariot-harness': { code: '04 / FITTING & USE', title: '装配与行用', en: 'FITTING / USE', primary: '装配关键词', lead: '车马器的功能依附于车舆和马具系统，连接、系固与装饰的位置比孤立器名更重要。' },
     'architecture': { code: '04 / JOIN & FIX', title: '连接与固定', en: 'JOIN / FIX', primary: '构件关键词', lead: '建筑铜构件不以盛放内容物为功能核心，而应观察套接、固定、受力和建筑部位之间的关系。' },
@@ -262,7 +262,7 @@
           <p class="detail-section-lead">${escapeHTML(shortLead(useText || type.shortFunction, 320))}</p>
         </div>
         <ol class="detail-action-chain">${actionItems}</ol>
-        ${textBlock(useText, '具体动作仍需结合器物形制、组合关系与使用语境判断。')}
+        ${textBlock(useText, '具体动作可从器物形制、组合关系与使用语境来读。')}
       </div>
     </section>
 
@@ -276,7 +276,7 @@
           <article class="detail-data-block"><h3>核心功能</h3><p>${escapeHTML(type.shortFunction)}</p></article>
           <article class="detail-data-block"><h3>${escapeHTML(functionalSection.primary)}</h3><p>${escapeHTML((type.contentKeywords || []).join(' · '))}</p></article>
         </div>
-        ${textBlock(purposeText, '用途判断应回到器形、时代、组合关系与相关史料，避免把单一解释扩大为所有器例的固定结论。')}
+        ${textBlock(purposeText, '用途判断落在器形、时代、组合关系与相关史料上。')}
       </div>
     </section>
 

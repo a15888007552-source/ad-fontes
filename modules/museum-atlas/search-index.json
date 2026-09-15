@@ -10151,7 +10151,7 @@
       "curatorial_rank": 12,
       "content_review": "editorial_accepted",
       "record_binding": "当前 record xian-054-5051 的标题/对象/标签绑定证据充分，但按用户的原件/复制品身份门槛仍为 pending。",
-      "object_identity": "对象与标签匹配，未见复制品标识；不能据器名或外形推定实际舍利内容物，也不能套用法门寺八重宝函。",
+      "object_identity": "对象与标签匹配，未见复制品标识；实际舍利内容物无从核对，也不套用法门寺八重宝函。",
       "photo_match": "对象和标签均已查看，标题/时代/出土区可读。",
       "publication_approval": "user_approved",
       "object_identity_id": "xian-museum:xian-054-5051"
@@ -16843,7 +16843,7 @@
       "curatorial_rank": 4,
       "content_review": "editorial_accepted",
       "record_binding": "已按标题与照片精确找到 photo-group-3656，但该组不能绑定包内‘三件’入口。",
-      "object_identity": "看过 DSC_3656/3657 对象图；为大型钟/镈类青铜乐器，器类细分不能只凭外形定案。未见可读目标展签。",
+      "object_identity": "看过 DSC_3656/3657 对象图；为大型钟/镈类青铜乐器。未见可读目标展签。",
       "photo_match": "目标组对象图已查看；无可读标签图（两张照片均 isLabel=false），OCR 与组标题发生钟/镈冲突。",
       "publication_approval": "user_approved",
       "object_identity_id": "baoji:baoji-highlight-04"
@@ -17596,7 +17596,7 @@
       "curatorial_rank": 14,
       "content_review": "editorial_accepted",
       "record_binding": "定位到 xian-051-5043；未用名称相似器物或包内候选 ID 代替标签核验。",
-      "object_identity": "看过青铜带提梁/动物形流对象图；未见复制品标识，器类细分仍待展签。",
+      "object_identity": "看过青铜带提梁/动物形流对象图；未见复制品标识，器类细分待展签。",
       "photo_match": "对象图已查看；focus-5045.webp 不存在。",
       "publication_approval": "user_approved",
       "object_identity_id": "xian-museum:xian-museum-highlight-14"

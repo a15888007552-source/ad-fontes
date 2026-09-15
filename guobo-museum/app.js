@@ -309,7 +309,7 @@ function openObject(
   dialogTitle.textContent = item.title;
   dialogDescription.textContent = item.description;
   dialogTags.innerHTML = item.tags.map((tag) => `<span>${tag}</span>`).join("");
-  dialogBoundary.textContent = "图片：本人参观拍摄 · 文字：首轮离线整理 · 版本/编号信息以官网与现场展签为准";
+  dialogBoundary.textContent = "图片：本人参观拍摄 · 文字：离线整理 · 版本与编号信息可对照官网与现场展签";
   if (item.sourceUrl) {
     dialogSource.hidden = false;
     dialogSource.href = item.sourceUrl;
