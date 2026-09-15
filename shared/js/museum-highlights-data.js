@@ -704,7 +704,7 @@ window.MUSEUM_HIGHLIGHTS = [
     "curatorial_rank": 3,
     "is_highlight": true,
     "content_review": "editorial_accepted",
-    "record_binding": "精确找到 photo-group-3487，并与 treasures.js 的 hu-gui 名称相联；不能把它当作中国青铜器博物院原件而发布。",
+    "record_binding": "精确找到 photo-group-3487，并与 treasures.js 的 hu-gui 名称相联；不能把它当作宝鸡青铜器博物院原件而发布。",
     "object_identity": "看过 DSC_3487/3490/3492/3493/3502 对象图；大型方座、双耳簋与㝬簋形制相符。未见可读目标展签或原件/复制品标记。",
     "photo_match": "目标组对象图已查看；没有可读目标展签图（组内所有照片 isLabel=false），仅有 OCR。",
     "publication_approval": "user_approved",
