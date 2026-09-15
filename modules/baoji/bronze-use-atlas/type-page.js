@@ -251,7 +251,7 @@
           <div><p class="detail-section-code">02 / FORM</p><h2 id="form-title">形制与工艺<span>FORM / CRAFT</span></h2></div>
           <div><p class="detail-section-lead">${escapeHTML(shortLead(formText, 320))}</p><div class="detail-keywords">${keywordChips(type.formKeywords)}</div></div>
         </div>
-        ${textBlock(formText, '形制特征需结合器口、器腹、足部或连接部位观察，不能只凭器名判断。')}
+        ${textBlock(formText, '形制特征需结合器口、器腹、足部或连接部位观察。')}
       </div>
     </section>
 
