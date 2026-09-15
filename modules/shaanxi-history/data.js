@@ -339,7 +339,7 @@ window.SHAANXI_DATA = {
       "material": "陶器",
       "type": "陶瓷器",
       "category": "陶瓷器",
-      "origin": "来源尚待核定",
+      "origin": "出土来源待补",
       "photoRange": "DSC_3905",
       "cover": "assets/photos/focus-3905.webp",
       "photos": [
@@ -352,7 +352,7 @@ window.SHAANXI_DATA = {
       ],
       "tags": [],
       "tagsText": "",
-      "summary": "新石器时代 · 陶器 · 来源尚待核定",
+      "summary": "新石器时代 · 陶器 · 出土来源待补",
       "cardLead": "新石器时代团纹尖底瓶，器身修长，腹部渐收成尖底，属仰韶文化典型器。",
       "essay": [
         {
