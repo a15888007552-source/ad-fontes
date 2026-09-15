@@ -22,7 +22,7 @@
 .music-facts>div:last-child{border-right:0}
 .music-facts small{display:block;font:8px var(--sans);letter-spacing:.1em;color:#929b83;margin-bottom:7px}
 .music-facts strong{font-size:13px;font-weight:400;color:#d8d6bd;white-space:nowrap}
-.music-evidence-copy>p:not(.eyebrow){font-size:13px;line-height:2.05;color:#c3c8b4;text-align:justify}
+.music-evidence-copy>p:not(.eyebrow){font-size:13px;line-height:2.05;color:#c3c8b4;text-align:justify;text-indent:2em}
 .music-evidence-copy>p+p{margin-top:13px}
 
 .tomb-chapter{position:relative;isolation:isolate;overflow:hidden;background:#101713;color:var(--paper)}
@@ -33,7 +33,7 @@
 .tomb-heading .eyebrow{color:#d0b875}
 .tomb-heading h2{margin-top:15px;font-size:clamp(38px,4.1vw,62px);line-height:1.35;font-weight:400;letter-spacing:.025em;white-space:nowrap}
 .tomb-intro{border-top:1px solid rgba(216,196,142,.35);padding-top:20px}
-.tomb-intro p{font-size:14px;line-height:2.05;color:#c8c9b6}
+.tomb-intro p{font-size:14px;line-height:2.05;color:#c8c9b6;text-indent:2em}
 .tomb-intro p+p{margin-top:12px}
 .tomb-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(216,196,142,.25);border-left:1px solid rgba(216,196,142,.25)}
 .tomb-card{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);min-height:340px;border-right:1px solid rgba(216,196,142,.25);border-bottom:1px solid rgba(216,196,142,.25);background:rgba(18,28,22,.66);backdrop-filter:blur(4px)}
@@ -97,7 +97,7 @@
 .artifact-dialog-copy dt{font:9px var(--sans);letter-spacing:.1em;color:#929a83}
 .artifact-dialog-copy dd{font:12px/1.8 var(--serif);color:#d3d6c1;margin-top:4px}
 .artifact-dialog-prose{display:grid;gap:15px}
-.artifact-dialog-prose p{font-size:14px;line-height:2.05;color:#c4c9b4;text-align:justify}
+.artifact-dialog-prose p{font-size:14px;line-height:2.05;color:#c4c9b4;text-align:justify;text-indent:2em}
 .artifact-dialog-source{color:#d6bd83;margin-top:25px}
 .artifact-dialog-source[hidden]{display:none}
 body:has(.artifact-dialog[open]){overflow:hidden}
@@ -190,7 +190,7 @@ body:has(.artifact-dialog[open]){overflow:hidden}
 .artifact-dialog-prose section{position:relative;padding:25px 0 26px 52px;border-top:1px solid rgba(221,205,161,.21);counter-increment:archive-prose}
 .artifact-dialog-prose section::before{content:"0" counter(archive-prose);position:absolute;left:0;top:27px;color:#c1a765;font:9px var(--mono);letter-spacing:.08em}
 .artifact-dialog-prose h3{margin:0 0 10px;color:#d6bd83;font:10px/1.5 var(--sans);font-weight:400;letter-spacing:.12em}
-.artifact-dialog-prose p{margin:0;color:#c5cbb7;font-size:14px;line-height:2.05;text-align:justify}
+.artifact-dialog-prose p{margin:0;color:#c5cbb7;font-size:14px;line-height:2.05;text-align:justify;text-indent:2em}
 .artifact-inscription{border:1px solid rgba(203,177,112,.36);background:rgba(8,14,10,.28)}
 .artifact-inscription header{padding:23px 25px 18px;border-bottom:1px solid rgba(203,177,112,.24)}
 .artifact-inscription header .eyebrow{color:#9e8957}

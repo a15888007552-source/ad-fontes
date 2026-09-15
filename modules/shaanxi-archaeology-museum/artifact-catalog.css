@@ -155,7 +155,7 @@
 .artifact-dialog-copy section { margin-top: 2rem; padding-top: 1.3rem; border-top: 1px solid var(--catalog-line); }
 .artifact-dialog-copy section h3 { margin: 0 0 0.75rem; color: var(--catalog-accent); font-size: 0.84rem; letter-spacing: 0.1em; }
 .artifact-dialog-copy section p,
-.artifact-evidence p { margin: 0; color: #5f5b54; font-size: 0.98rem; line-height: 1.95; }
+.artifact-evidence p { margin: 0; color: #5f5b54; font-size: 0.98rem; line-height: 1.95; text-indent: 2em; }
 .artifact-facts { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--catalog-line); border-left: 1px solid var(--catalog-line); }
 .artifact-fact { min-width: 0; padding: 0.85rem 1rem; border-right: 1px solid var(--catalog-line); border-bottom: 1px solid var(--catalog-line); }
 .artifact-fact dt { margin-bottom: 0.25rem; color: var(--catalog-accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; }

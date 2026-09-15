@@ -176,7 +176,7 @@ h2, h3 { font-weight: 500; }
 .museum-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid color-mix(in srgb, var(--line-dark) 76%, transparent); border-left: 1px solid color-mix(in srgb, var(--line-dark) 76%, transparent); background: color-mix(in srgb, var(--paper) 84%, transparent); box-shadow: 0 22px 54px rgba(49, 35, 20, .16); backdrop-filter: blur(14px) saturate(.74); }
 .museum-facts article { min-height: 168px; padding: 22px 24px; border-right: 1px solid color-mix(in srgb, var(--line-dark) 76%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--line-dark) 76%, transparent); background: color-mix(in srgb, var(--surface) 44%, transparent); }
 .museum-facts h3 { margin: 0 0 10px; color: var(--red); font: 700 12px/1.4 var(--sans); letter-spacing: .1em; }
-.museum-facts p { margin: 0; color: color-mix(in srgb, var(--ink) 78%, var(--muted)); font-size: 14px; line-height: 1.9; }
+.museum-facts p { margin: 0; color: color-mix(in srgb, var(--ink) 78%, var(--muted)); font-size: 14px; line-height: 1.9; text-indent: 2em; }
 .museum-photo-note { position: absolute; z-index: 2; right: max(18px, calc((100vw - 1320px) / 2)); bottom: 12px; margin: 0; padding: 4px 7px; color: rgba(255,255,255,.88); background: rgba(20,17,13,.5); font: 500 9px/1.3 var(--sans); letter-spacing: .06em; backdrop-filter: blur(7px); }
 
 .treasures { position: relative; overflow: hidden; color: #f6ead6; background: #171411; }
@@ -276,7 +276,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .special-copy { display: grid; grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr); gap: 70px; align-items: start; }
 .special-copy .eyebrow { color: var(--gold); }
 .special-copy h2 { max-width: 520px; font-size: clamp(27px, 3vw, 40px); }
-.special-copy > div:last-child > p { margin: 0 0 16px; color: var(--muted); font-size: 14px; line-height: 1.9; }
+.special-copy > div:last-child > p { margin: 0 0 16px; color: var(--muted); font-size: 14px; line-height: 1.9; text-indent: 2em; }
 .special-preview { grid-column: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 30px; border: 1px solid var(--line); background: var(--line); }
 .special-card { min-width: 0; min-height: 100px; display: grid; grid-template-columns: 120px minmax(0, 1fr); padding: 0; border: 0; color: inherit; background: var(--surface); text-align: left; cursor: pointer; }
 .special-card:hover, .special-card:focus-visible { position: relative; z-index: 1; outline: 2px solid var(--gold); outline-offset: -2px; }
@@ -299,7 +299,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .method-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
 .method-grid article { padding-top: 12px; border-top: 2px solid var(--ink); }
 .method-grid b { color: var(--red); font: 700 11px/1.4 var(--sans); letter-spacing: .06em; }
-.method-grid p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.method-grid p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; text-indent: 2em; }
 .site-footer { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font: 600 9px/1.4 var(--sans); letter-spacing: .06em; }
 .site-footer a { color: var(--red); text-decoration: none; }
 
@@ -336,7 +336,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .dialog-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; margin: 18px 0 22px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font: 400 11px/1.55 var(--sans); }
 .dialog-meta b { display: block; margin-bottom: 2px; color: var(--ink); font: 700 9px/1.4 var(--sans); letter-spacing: .05em; }
 .dialog-essay h3 { margin: 22px 0 7px; color: var(--red); font: 600 15px/1.4 var(--serif); }
-.dialog-essay p { margin: 0; color: color-mix(in srgb, var(--ink) 86%, var(--muted)); font-size: 14px; line-height: 1.95; }
+.dialog-essay p { margin: 0; color: color-mix(in srgb, var(--ink) 86%, var(--muted)); font-size: 14px; line-height: 1.95; text-indent: 2em; }
 .dialog-evidence { margin-top: 26px; padding: 12px 14px; border-left: 2px solid var(--gold); color: var(--muted); background: color-mix(in srgb, var(--surface) 58%, transparent); font: 400 10px/1.75 var(--sans); }
 .dialog-evidence b { color: var(--ink); }
 .dialog-evidence a { color: var(--red); }

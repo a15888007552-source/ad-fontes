@@ -128,7 +128,7 @@ h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.15; }
 h1 { margin: 1.35rem 0 1.3rem; font-size: clamp(4rem, 9vw, 8rem); letter-spacing: -.09em; }
 h1 em { color: var(--gold); font-style: normal; }
-.hero-intro { width: 100%; max-width: 570px; margin-bottom: 1.6rem; color: color-mix(in oklch, var(--paper-light) 82%, transparent); font-family: var(--serif); font-size: clamp(1rem, 1.8vw, 1.22rem); line-height: 1.95; }
+.hero-intro { width: 100%; max-width: 570px; margin-bottom: 1.6rem; color: color-mix(in oklch, var(--paper-light) 82%, transparent); font-family: var(--serif); font-size: clamp(1rem, 1.8vw, 1.22rem); line-height: 1.95; text-indent: 2em; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
 .official-button-large { min-height: 48px; padding-inline: 1.05rem; }
 .jump-link { padding-bottom: .15rem; border-bottom: 1px solid color-mix(in oklch, var(--gold) 70%, transparent); color: var(--gold-soft); font-size: .74rem; letter-spacing: .08em; transition: color 180ms ease, border-color 180ms ease; }
@@ -171,7 +171,7 @@ h1 em { color: var(--gold); font-style: normal; }
 .dialog-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(1.4rem, 4vw, 3rem); }
 .dialog-kicker { margin-bottom: .75rem; color: var(--gold); }
 .dialog-copy h2 { margin: 0 0 .9rem; color: var(--gold-soft); font-size: clamp(2rem, 4vw, 3.6rem); letter-spacing: -.07em; }
-.dialog-description { margin-bottom: 1.1rem; color: color-mix(in oklch, var(--paper-light) 78%, transparent); font-family: var(--serif); font-size: .98rem; line-height: 2; }
+.dialog-description { margin-bottom: 1.1rem; color: color-mix(in oklch, var(--paper-light) 78%, transparent); font-family: var(--serif); font-size: .98rem; line-height: 2; text-indent: 2em; }
 .dialog-tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.25rem; }
 .dialog-tags span { padding: .22rem .48rem; border: 1px solid color-mix(in oklch, var(--gold) 46%, transparent); color: var(--gold-soft); font-family: var(--mono); font-size: .6rem; letter-spacing: .08em; }
 .dialog-boundary { margin-bottom: 1.2rem; color: color-mix(in oklch, var(--paper-light) 53%, transparent); font-family: var(--mono); font-size: .6rem; line-height: 1.7; }

@@ -380,6 +380,7 @@ img {
 
 .museum-columns p {
   margin: 0;
+  text-indent: 2em;
 }
 
 .text-link,
@@ -937,6 +938,7 @@ kbd {
 .method-steps p {
   margin: 0;
   color: var(--ink-soft);
+  text-indent: 2em;
 }
 
 .method-note {
@@ -1335,6 +1337,7 @@ dialog::backdrop {
   font-family: var(--serif);
   font-size: 17px;
   line-height: 1.9;
+  text-indent: 2em;
 }
 
 .research-copy .music-research {

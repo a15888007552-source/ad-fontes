@@ -158,7 +158,7 @@ h1, h2, h3, .brand strong, .vertical-label { font-family: var(--display); font-s
 .section-heading { position: relative; z-index: 1; max-width: 52rem; margin-bottom: 3.6rem; }
 .section-heading h2 { margin: 0; font-size: clamp(3rem, 6vw, 6.6rem); line-height: .96; letter-spacing: .012em; }
 .chronology .section-heading h2, .treasures-heading h2 { white-space: nowrap; }
-.section-heading > p:last-child { max-width: 40rem; color: rgba(238,230,214,.56); line-height: 1.9; }
+.section-heading > p:last-child { max-width: 40rem; color: rgba(238,230,214,.56); line-height: 1.9; text-indent: 2em; }
 .path-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line-dark); }
 .path-card { position: relative; min-height: 560px; padding: 0; display: flex; flex-direction: column; overflow: hidden; border-right: 1px solid var(--line-dark); background: rgba(23,9,13,.72); transition: background .35s ease, transform .35s var(--ease); }
 .path-card:last-child { border-right: 0; }
@@ -173,7 +173,7 @@ h1, h2, h3, .brand strong, .vertical-label { font-family: var(--display); font-s
 .path-era { position: relative; z-index: 1; margin: auto 0 .7rem; color: rgba(238,230,214,.5); font-size: .62rem; letter-spacing: .17em; }
 .path-card h3 { position: relative; z-index: 1; margin: 0; font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: .025em; }
 .path-card h3 { white-space: nowrap; }
-.path-copy > p:not(.path-era) { position: relative; z-index: 1; color: rgba(238,230,214,.58); line-height: 1.8; }
+.path-copy > p:not(.path-era) { position: relative; z-index: 1; color: rgba(238,230,214,.58); line-height: 1.8; text-indent: 2em; }
 .path-card a { position: relative; z-index: 1; align-self: flex-start; margin-top: 1.2rem; color: var(--bronze-light); text-underline-offset: .35rem; font-size: .76rem; }
 
 /* Two masterpieces */
@@ -330,8 +330,8 @@ footer a { color: var(--bronze-light); text-underline-offset: .32em; }
 .reading-heading span { color: var(--bronze-light); font-size: .58rem; letter-spacing: .16em; }
 .dialog-copy h3 { margin: 0; font: 500 1.15rem/1.35 var(--serif); }
 .reading-paragraphs { display: grid; gap: 1rem; }
-.reading-paragraphs p { margin: 0; color: rgba(238,230,214,.8); font: .88rem/1.95 var(--serif); text-align: justify; text-justify: inter-ideograph; }
-.reading-paragraphs p::first-letter { margin-left: 2em; }
+.reading-paragraphs p { margin: 0; color: rgba(238,230,214,.8); font: .88rem/1.95 var(--serif); text-align: justify; text-justify: inter-ideograph; text-indent: 2em; }
+.reading-paragraphs p::first-letter { margin-left: 0; }
 .dialog-copy .object-sources { margin-top: .45rem; padding: 1.15rem 0 0; border-top: 2px solid var(--bronze-light); }
 .object-sources h3 { color: var(--bronze-light); font-size: .86rem; }
 .object-sources p { margin: .55rem 0 0; color: rgba(238,230,214,.66); font: .72rem/1.7 var(--serif); }

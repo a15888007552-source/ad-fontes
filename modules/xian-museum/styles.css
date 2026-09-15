@@ -93,7 +93,7 @@ a { color: inherit; }
 .museum-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .museum-facts article { min-height: 165px; padding: 20px 23px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .museum-facts h3 { margin: 0 0 10px; color: var(--red); font: 700 12px/1.4 var(--sans); letter-spacing: .08em; }
-.museum-facts p { margin: 0; color: color-mix(in srgb, var(--ink) 78%, var(--muted)); font-size: 14px; line-height: 1.9; }
+.museum-facts p { margin: 0; color: color-mix(in srgb, var(--ink) 78%, var(--muted)); font-size: 14px; line-height: 1.9; text-indent: 2em; }
 .source-note { margin-top: 18px; color: var(--muted); font: 400 10px/1.8 var(--sans); }
 .source-note a { color: var(--green); text-decoration: none; }
 .source-note a:hover, .source-note a:focus-visible { color: var(--red); text-decoration: underline; outline: 0; }
@@ -156,7 +156,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .method-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .method-grid article { min-height: 140px; padding-top: 12px; border-top: 2px solid var(--green); }
 .method-grid b { color: var(--red); font: 700 11px/1.4 var(--sans); letter-spacing: .06em; }
-.method-grid p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.method-grid p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; text-indent: 2em; }
 .site-footer { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font: 600 9px/1.4 var(--sans); letter-spacing: .06em; }
 .site-footer a { color: var(--red); text-decoration: none; }
 .site-footer a:hover, .site-footer a:focus-visible { text-decoration: underline; text-underline-offset: 4px; outline: 0; }
@@ -195,7 +195,7 @@ kbd { padding: 2px 6px; border: 1px solid var(--line); color: var(--muted); back
 .dialog-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; margin: 18px 0 22px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font: 400 11px/1.55 var(--sans); }
 .dialog-meta b { display: block; margin-bottom: 2px; color: var(--ink); font: 700 9px/1.4 var(--sans); letter-spacing: .05em; }
 .dialog-essay h3 { margin: 22px 0 7px; color: var(--red); font: 600 15px/1.4 var(--serif); }
-.dialog-essay p { margin: 0; color: color-mix(in srgb, var(--ink) 86%, var(--muted)); font-size: 14px; line-height: 1.95; }
+.dialog-essay p { margin: 0; color: color-mix(in srgb, var(--ink) 86%, var(--muted)); font-size: 14px; line-height: 1.95; text-indent: 2em; }
 .dialog-evidence { margin-top: 26px; padding: 12px 14px; border-left: 2px solid var(--gold); color: var(--muted); background: color-mix(in srgb, var(--surface) 58%, transparent); font: 400 10px/1.75 var(--sans); }
 .dialog-evidence b { color: var(--ink); }
 .dialog-evidence a { color: var(--green); }
@@ -341,7 +341,7 @@ body { background-image: radial-gradient(circle at 84% 7%, rgba(24,109,112,.08),
 .route-copy { min-width:0; display:flex; flex-direction:column; padding:26px 25px 22px; }
 .route-copy small { color:var(--red); font:700 9px/1.4 var(--sans); letter-spacing:.1em; }
 .route-copy h3 { margin:9px 0 0; color:var(--ink); font-size:clamp(24px,2.2vw,34px); font-weight:500; line-height:1.2; letter-spacing:-.055em; }
-.route-copy p { margin:15px 0 0; color:var(--muted); font-size:11px; line-height:1.85; }
+.route-copy p { margin:15px 0 0; color:var(--muted); font-size:11px; line-height:1.85; text-indent:2em; }
 .route-enter { align-self:flex-start; min-height:42px; margin-top:auto; padding:14px 0 0; border:0; border-bottom:1px solid var(--green); color:var(--green-dark); background:none; cursor:pointer; font:700 9px/1.3 var(--sans); letter-spacing:.04em; }
 .route-enter:hover,.route-enter:focus-visible { color:var(--red); border-color:var(--red); outline:0; }
 .route-object:hover img,.route-object:focus-visible img { transform:scale(1.04); filter:saturate(1) contrast(1.06); }
