@@ -1,0 +1,17 @@
+{
+  "name": "ad-fontes-copilot-assistant",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A source-bounded, read-only research assistant for the Ad Fontes website.",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "dev": "node --env-file-if-exists=.env --watch server.mjs"
+  },
+  "dependencies": {
+    "@github/copilot-sdk": "1.0.14"
+  }
+}
