@@ -3,8 +3,8 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 
 const ROOT = path.resolve(process.cwd());
-const PUBLIC_ORIGIN = "https://a15888007552-source.github.io";
-const PUBLIC_ROOT = "/ad-fontes/";
+const PUBLIC_ORIGIN = "https://gusgumee.studio";
+const PUBLIC_ROOT = "/";
 const PUBLIC_BASE = `${PUBLIC_ORIGIN}${PUBLIC_ROOT}`;
 const MEDIA_ORIGIN = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev";
 const RETIRED_WORKER_ORIGIN = "https://ad-fontes-media.gusgumee777.workers.dev";
