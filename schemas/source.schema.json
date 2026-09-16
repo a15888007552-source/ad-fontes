@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://a15888007552-source.github.io/ad-fontes/schemas/source.schema.json",
+  "$id": "https://gusgumee.studio/schemas/source.schema.json",
   "title": "Ad Fontes structured source record",
   "type": "object",
   "required": [
