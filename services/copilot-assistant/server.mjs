@@ -13,7 +13,7 @@ const ALLOW_ORIGINS = (process.env.ALLOW_ORIGIN || "http://localhost:4173,http:/
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
-const SITE_BASE_URL = (process.env.SITE_BASE_URL || "https://a15888007552-source.github.io/ad-fontes/").replace(/\/?$/, "/");
+const SITE_BASE_URL = (process.env.SITE_BASE_URL || "https://gusgumee.studio/").replace(/\/?$/, "/");
 const MODEL = process.env.COPILOT_MODEL || "auto";
 const MAX_BODY_BYTES = 20 * 1024;
 const MAX_MESSAGE_CHARS = 1800;

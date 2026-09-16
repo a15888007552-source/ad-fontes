@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /modules/busoni/
+
+Sitemap: https://gusgumee.studio/sitemap.xml
