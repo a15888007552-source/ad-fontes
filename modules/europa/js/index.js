@@ -83,29 +83,6 @@ const IMGV="v12";for(const _k in PORTRAITS){if(PORTRAITS[_k].u.indexOf("?")<0)PO
 
 
 
-
-
-
-
-
-GLOSS.push(
-{term:"断代史",orig:"period history",def:"以相对完整的历史时期为单位，集中考察该时期音乐风格、制度、体裁和文化语境的著述方式。诺顿断代史中译本总序强调，中世纪、文艺复兴、巴洛克、古典、浪漫、二十世纪已成为西方音乐史研究的基本分期，但每一分期的边界和命名仍会引发争议。",ref:"诺顿音乐断代史中译本总序",ep:"modern"},
-{term:"礼仪记忆",orig:"liturgical memory",def:"中世纪音乐不能只按作品目录理解；圣咏首先嵌入每日时辰、弥撒、节期和修院教育之中。记谱之前的口传训练、礼仪秩序和共同记忆构成了圣咏的真实载体。",ref:"Hoppin《中世纪音乐》",ep:"medieval"},
-{term:"通奏低音",orig:"basso continuo",def:"巴洛克时期贯穿声乐与器乐的低音-和声实践；它既是伴奏技术，也是把单声旋律、和声逻辑和即兴实践结合起来的制度。",ref:"Hill《巴洛克音乐》",ep:"baroque"},
-{term:"音乐修辞",orig:"musical rhetoric",def:"巴洛克音乐常以演说、情感说服和戏剧姿态来理解声音组织；歌剧、协奏风格、宣叙调、咏叹调和宫廷仪式都体现音乐作为修辞行动的一面。",ref:"Hill《巴洛克音乐》",ep:"baroque"},
-{term:"奏鸣原则",orig:"sonata principle",def:"古典时期器乐中以调性对比、主题陈述、展开与再现组织大规模时间的原则。它不是固定公式，而是一套能制造期待、冲突和解决的戏剧语法。",ref:"Downs《古典音乐》",ep:"classical"},
-{term:"公共音乐会",orig:"public concert",def:"十八世纪后期逐渐扩张的市民听众制度，使音乐从宫廷与教会专属场域进入售票、出版、评论和业余演奏共同塑造的公共空间。",ref:"Downs《古典音乐》",ep:"classical"},
-{term:"绝对音乐 / 标题音乐",orig:"absolute music / program music",def:"十九世纪音乐批评的核心对立：前者强调器乐的自律形式，后者强调文学、图像、戏剧或哲学纲领。二者的争论塑造了浪漫主义的审美地图。",ref:"Plantinga《浪漫音乐》",ep:"romantic"},
-{term:"动机网络",orig:"Leitmotiv network",def:"瓦格纳以后，主导动机不只是角色标签，而是让戏剧、记忆、欲望和管弦织体互相牵连的结构机制；十九世纪后半叶的音乐叙事由此获得新的连续性。",ref:"Plantinga《浪漫音乐》",ep:"romantic"},
-{term:"多中心现代性",orig:"multiple modernities",def:"二十世纪音乐不宜只写成一条从调性到无调性、从序列到先锋的单线进步史；民族现代主义、爵士、电声、电影、流行文化和后现代并置构成多个中心。",ref:"Morgan《二十世纪音乐》",ep:"modern"},
-{term:"技术媒介",orig:"technological mediation",def:"录音、广播、电影、电声设备和计算机不仅扩大音色材料，也改变作曲、传播、聆听和音乐作品存在方式，是二十世纪音乐史的重要变量。",ref:"Morgan《二十世纪音乐》",ep:"modern"}
-);
-
-
-
-
-
-
 /* ══════════ 基础数据 ══════════ */
 
 
