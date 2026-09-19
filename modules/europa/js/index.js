@@ -1956,8 +1956,9 @@ function searchVariants(value){
 
 const personSearchIndex = new Map();
 for (const m of M) {
-  const fields = [m.n, m.o, m.s, ...(m.w || []), m.k || ""].join(" ");
-  personSearchIndex.set(m.i, searchVariants(fields).join(" "));
+  const baseText = normalizeSearchText([m.n, m.o, m.s, ...(m.w || []), m.k || ""].join(" "));
+  const nameAliases = searchVariants(m.o).join(" ");
+  personSearchIndex.set(m.i, { baseText, nameAliases });
 }
 
 const qi=$("#q"),sres=$("#sres");
@@ -1969,8 +1970,10 @@ qi.addEventListener("input",()=>{
   const variantTokenGroups = queryVariants.map(v=>v.split(" ").filter(Boolean)).filter(g=>g.length>0);
   if(!variantTokenGroups.length){sres.style.display="none";return}
   const hits=M.filter(m=>{
-    const text = personSearchIndex.get(m.i) || "";
-    return variantTokenGroups.some(tokens=>tokens.every(token=>text.includes(token)));
+    const entry = personSearchIndex.get(m.i);
+    if(!entry) return false;
+    const { baseText, nameAliases } = entry;
+    return variantTokenGroups.some(tokens=>tokens.every(token=>baseText.includes(token) || nameAliases.includes(token)));
   }).slice(0,14);
   sres.innerHTML=hits.map(m=>{const p=PORTRAITS[m.i];
     return `<div data-m="${m.i}">${p?`<img loading="lazy" decoding="async" src="${p.u}" alt="">`:`<span style="width:32px;text-align:center;color:var(--acc)">◉</span>`}<div><span class="sn">${m.n}</span><small>${m.d} · ${EP[m.e].zh} · ${m.s}</small></div></div>`}).join("")||`<div class="empty-mini"><b>没有找到匹配条目</b><small>可尝试姓氏、作品名或流派；也可以一键清除检索。</small><button class="state-action" data-search-clear>清除检索</button></div>`;
