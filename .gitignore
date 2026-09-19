@@ -9,5 +9,6 @@ desktop.ini
 
 # local QA artifacts
 artifacts/
+work/
 .pytest_cache/
 __pycache__/

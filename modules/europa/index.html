@@ -70,13 +70,13 @@
   </section>
   <section class="view" id="v-map">
     <h3 class="rub">EUROPA · 音乐地理（滚轮缩放 · 拖拽平移）</h3>
-    <div class="map-view-switch" role="region" aria-label="研究地图与实景卫星地图切换">
+    <div class="map-view-switch" role="region" aria-label="研究地图与全球实景卫星地图切换">
       <div>
         <span class="map-view-switch-kicker">两套地图并存</span>
         <strong>当前是音乐史研究地图</strong>
-        <span>需要卫星影像、地形和建筑级地点标记，请进入“实景卫星地图”。</span>
+        <span>需要全球卫星影像、3D地形和世界各大洲建筑级音乐地标，请进入“全球音乐实景地图”。</span>
       </div>
-      <button type="button" class="map-real-jump" data-open-view="real">进入实景卫星地图 →</button>
+      <button type="button" class="map-real-jump" data-open-view="real">进入全球实景地图 →</button>
     </div>
     <div class="chips" id="mapchips"></div>
     <div class="viz-state" id="mapstate" role="status" aria-live="polite" hidden></div>
@@ -95,7 +95,7 @@
     <p class="mapnote">※ 城市按真实经纬度投影；海岸线为 Natural Earth 50m 数据简化。历史疆界流变不居，故只绘海陆，不绘国界。</p>
   </section>
   <section class="view" id="v-real">
-    <h3 class="rub">REALIS · 欧洲实景地图（缩放到城市后显示地点）</h3>
+    <h3 class="rub">TERRA MUSICA · 全球音乐实景地图（支持全球与大洲视野 · 缩放到城市显示地点）</h3>
     <div id="realmap-view" class="realmap-wrap"></div>
   </section>
   <section class="view" id="v-net">
@@ -182,7 +182,7 @@
 
 
 
-<script type="module" src="./js/index.js?v=20260911-relations3"></script>
+<script type="module" src="./js/index.js?v=20260918-search51"></script>
 <script type="module" src="./js/europa-liquid-interactions.js"></script>
 <script>
 (function(){

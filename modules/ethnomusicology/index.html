@@ -1,0 +1,3632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>民族音乐学年鉴 · Annales Ethnomusicologiae</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --serif: "Palatino Linotype", Palatino, Georgia, "Noto Serif SC", "Songti SC", SimSun, serif;
+  --title: "Cinzel", "Noto Serif SC", "Songti SC", serif;
+  --sans: "Segoe UI", -apple-system, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --kai: "KaiTi", "STKaiti", "Noto Serif SC", serif;
+  
+  /* 典籍暗色调 (Dark Archive) */
+  --bg: #12100e;
+  --bg-subtle: #191512;
+  --panel: #1e1915;
+  --panel-hover: #26201a;
+  --border: #382e25;
+  --border-light: #2b231c;
+  --line: #483b2f;
+  --ink: #e8ded0;
+  --ink-bright: #faf4ea;
+  --mut: #9e8f7c;
+  --mut-dim: #736756;
+  
+  /* 主题色彩 */
+  --acc: #b84a2d;        /* 赭赤 */
+  --acc-gold: #c2983b;   /* 泥金 */
+  --acc-blue: #3a6888;   /* 靛青 */
+  --acc-green: #487352;  /* 苍绿 */
+  --acc-purple: #6c527e; /* 绛紫 */
+  
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.35);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.5);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.75);
+  --r: 6px;
+  --rl: 12px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="parchment"] {
+  --bg: #f8f4ed;
+  --bg-subtle: #f2ece0;
+  --panel: #ffffff;
+  --panel-hover: #fcfaf6;
+  --border: #dfd7c8;
+  --border-light: #ece5d8;
+  --line: #d3c9b7;
+  --ink: #26211c;
+  --ink-bright: #120e0b;
+  --mut: #786d5e;
+  --mut-dim: #a49988;
+  --acc: #a3381d;
+  --acc-gold: #966f1e;
+  --acc-blue: #2a526e;
+  --acc-green: #375b40;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.09);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.14);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: rgba(184, 74, 45, 0.35); color: inherit; }
+html { font-size: 15px; scroll-behavior: smooth; }
+body {
+  font-family: var(--serif);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.74;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+/* 羊皮纸/暗纹理底色 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: radial-gradient(#fff 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 0;
+}
+
+/* 顶部装订线 */
+.chronograph-line {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #8c2b1f 0%, #c2983b 50%, #3a6888 100%);
+  z-index: 1000;
+}
+
+/* ─── MASTHEAD (标头) ─── */
+header.mast {
+  position: sticky;
+  top: 0;
+  z-index: 800;
+  backdrop-filter: blur(14px);
+  background-color: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 4vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  transition: background-color 0.3s;
+}
+
+.mast-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+}
+.brand-seal {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--acc-gold);
+  background: radial-gradient(circle at 35% 35%, #2a2016, #0d0a07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(194, 152, 59, 0.3);
+  flex-shrink: 0;
+}
+.brand-seal::after {
+  content: "樂";
+  font-family: var(--kai);
+  font-size: 23px;
+  color: var(--acc-gold);
+  font-weight: 700;
+}
+.brand-text h1 {
+  font-family: var(--title);
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--ink-bright);
+  line-height: 1.2;
+}
+.brand-text .sub {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  color: var(--mut);
+  letter-spacing: 0.05em;
+}
+
+/* 视图导航 */
+nav.view-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-subtle);
+  padding: 3px;
+  border-radius: var(--r);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+.view-btn {
+  background: transparent;
+  border: none;
+  color: var(--mut);
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s var(--ease);
+}
+.view-btn:hover {
+  color: var(--ink-bright);
+  background: rgba(255,255,255,0.05);
+}
+.view-btn.active {
+  background: var(--panel);
+  color: var(--acc-gold);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+/* 实用工具区 */
+.mast-tools {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search-wrap {
+  position: relative;
+}
+.search-input {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px 6px 32px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  width: 170px;
+  transition: all 0.25s var(--ease);
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--acc-gold);
+  width: 240px;
+  box-shadow: 0 0 12px rgba(194, 152, 59, 0.2);
+}
+.search-wrap::before {
+  content: "🔍";
+  position: absolute;
+  left: 10px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.tool-btn {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 6px 11px;
+  border-radius: var(--r);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s;
+}
+.tool-btn:hover {
+  background: var(--panel);
+  border-color: var(--acc-gold);
+}
+
+/* ─── SECONDARY BAR: STATS & ERA FILTER ─── */
+.sub-bar {
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-light);
+  padding: 9px 4vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.82rem;
+}
+.stats-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  color: var(--mut);
+}
+.stats-pills strong {
+  color: var(--acc-gold);
+  font-weight: 600;
+}
+.era-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+}
+.era-pill {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--mut-dim);
+  font-family: var(--serif);
+  font-size: 0.78rem;
+  padding: 3px 9px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.era-pill:hover {
+  color: var(--ink);
+}
+.era-pill.active {
+  background: rgba(194, 152, 59, 0.12);
+  color: var(--acc-gold);
+  border-color: rgba(194, 152, 59, 0.35);
+}
+
+/* ─── MAIN CONTENT ─── */
+main.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 32px 4vw 80px;
+}
+
+.view-section {
+  display: none;
+  animation: fadeIn 0.3s var(--ease);
+}
+.view-section.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 章节大题头 */
+.section-header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.section-header h2 {
+  font-family: var(--title);
+  font-size: 1.7rem;
+  color: var(--ink-bright);
+  letter-spacing: 0.03em;
+}
+.section-header p {
+  color: var(--mut);
+  font-size: 0.92rem;
+  max-width: 850px;
+  margin-top: 4px;
+}
+
+/* ─── VIEW 1: SCHOLARS ALMANAC ─── */
+.almanac-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+.scholar-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+  position: relative;
+}
+.scholar-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--acc-gold);
+  box-shadow: var(--shadow-md);
+  background: var(--panel-hover);
+}
+
+.card-media {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  background: #000;
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s var(--ease);
+  opacity: 0.88;
+}
+.scholar-card:hover .card-media img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+.card-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(18, 16, 14, 0.9) 100%);
+}
+.card-media-tag {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(18, 16, 14, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(194, 152, 59, 0.4);
+  color: var(--acc-gold);
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card-dates {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--mut);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.card-title {
+  font-family: var(--serif);
+  font-size: 1.22rem;
+  color: var(--ink-bright);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+.card-orig {
+  font-family: var(--title);
+  font-size: 0.78rem;
+  color: var(--acc-gold);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+.card-school {
+  font-size: 0.82rem;
+  color: var(--mut);
+  margin-bottom: 10px;
+  line-height: 1.4;
+  border-left: 2px solid var(--acc);
+  padding-left: 8px;
+}
+.card-desc {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 14px;
+  flex: 1;
+}
+.card-quote {
+  font-family: var(--kai);
+  font-size: 0.84rem;
+  color: var(--mut);
+  background: var(--bg-subtle);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 14px;
+  border-left: 2px solid var(--line);
+  line-height: 1.5;
+}
+.card-concepts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.card-concepts span {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--mut);
+  font-size: 0.74rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.8rem;
+  color: var(--acc-gold);
+}
+
+/* ─── VIEW 2: CHRONOGRAPHIA ─── */
+.timeline-stream {
+  position: relative;
+  padding-left: 32px;
+  border-left: 2px solid var(--line);
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -40px; top: 6px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--panel);
+  border: 3px solid var(--acc-gold);
+  box-shadow: 0 0 10px rgba(194, 152, 59, 0.4);
+}
+.chrono-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  align-items: center;
+  transition: border-color 0.2s;
+}
+.chrono-box:hover {
+  border-color: var(--acc-gold);
+}
+.chrono-media {
+  width: 100%;
+  height: 150px;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--border);
+}
+.chrono-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.chrono-year {
+  font-family: var(--title);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--acc-gold);
+  margin-bottom: 4px;
+}
+.chrono-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: rgba(184, 74, 45, 0.15);
+  color: var(--acc);
+  border: 1px solid rgba(184, 74, 45, 0.3);
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.chrono-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-bright);
+  margin-bottom: 8px;
+}
+.chrono-desc {
+  font-size: 0.9rem;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* ─── VIEW 3: THEORIA (DEBATES) ─── */
+.debates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.debate-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.debate-banner {
+  padding: 24px 28px;
+  background: linear-gradient(135deg, var(--bg-subtle) 0%, rgba(30, 25, 21, 0.8) 100%);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.debate-header-text h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--ink-bright);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.debate-header-text .debate-sub {
+  color: var(--acc-gold);
+  font-size: 0.86rem;
+}
+.debate-thumbs {
+  display: flex;
+  gap: 10px;
+}
+.debate-thumbs img {
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.debate-body {
+  padding: 28px;
+}
+.axiom-box {
+  background: rgba(194, 152, 59, 0.08);
+  border: 1px solid rgba(194, 152, 59, 0.35);
+  border-radius: var(--r);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  color: var(--ink-bright);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+.axiom-box strong {
+  color: var(--acc-gold);
+}
+.debate-problem {
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--acc);
+  padding: 12px 18px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  font-size: 0.92rem;
+}
+.arguments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.arg-item {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r);
+  padding: 18px 20px;
+}
+.arg-claim {
+  font-family: var(--serif);
+  font-weight: 700;
+  color: var(--ink-bright);
+  font-size: 0.96rem;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 6px;
+}
+.arg-evidence {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* ─── VIEW 4: METHODOLOGIA (NEW!) ─── */
+.method-block {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: 28px;
+  margin-bottom: 36px;
+  box-shadow: var(--shadow-sm);
+}
+.method-block-title {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--ink-bright);
+  border-left: 4px solid var(--acc-gold);
+  padding-left: 12px;
+  margin-bottom: 16px;
+}
+.reflections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.ref-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r);
+  padding: 18px 20px;
+}
+.ref-num {
+  font-family: var(--title);
+  font-size: 1.2rem;
+  color: var(--acc-gold);
+  font-weight: 700;
+}
+.ref-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink-bright);
+  margin: 4px 0 10px;
+}
+.ref-dilemma {
+  font-size: 0.85rem;
+  color: var(--acc);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.ref-remedy {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+.dual-camp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+@media (max-width: 820px) {
+  .dual-camp-grid { grid-template-columns: 1fr; }
+}
+.camp-box {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 22px;
+}
+.camp-box h4 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--acc-gold);
+  margin-bottom: 8px;
+}
+
+.boas-defects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+.defect-card {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r);
+  padding: 14px 16px;
+}
+.defect-card h5 {
+  font-family: var(--serif);
+  color: var(--acc);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+.defect-card p {
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.sachs-material-showcase {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: center;
+  background: var(--bg-subtle);
+  border-radius: var(--r);
+  border: 1px solid var(--border);
+  padding: 20px;
+  margin-top: 18px;
+}
+@media (max-width: 768px) {
+  .sachs-material-showcase { grid-template-columns: 1fr; }
+}
+.sachs-img-wrap {
+  height: 200px;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: #000;
+}
+.sachs-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+/* ─── VIEW 5: ORIENS & HOGAKU ─── */
+.hero-pano {
+  position: relative;
+  height: 320px;
+  border-radius: var(--rl);
+  overflow: hidden;
+  margin-bottom: 36px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+.hero-pano img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.hero-pano-content {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 20%, rgba(18, 16, 14, 0.95) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px 36px;
+}
+.hero-pano-content h3 {
+  font-family: var(--title);
+  font-size: 1.8rem;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.hero-pano-content p {
+  color: var(--mut);
+  font-size: 0.92rem;
+  max-width: 900px;
+  margin-top: 6px;
+}
+
+.hogaku-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.hogaku-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.hogaku-card-media {
+  height: 200px;
+  overflow: hidden;
+  background: #000;
+}
+.hogaku-card-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+.hogaku-card:hover .hogaku-card-media img {
+  transform: scale(1.05);
+}
+.hogaku-card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.hogaku-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--ink-bright);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.hogaku-hs {
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  color: var(--acc-gold);
+  margin-bottom: 10px;
+}
+.hogaku-role {
+  font-size: 0.85rem;
+  color: var(--acc);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.hogaku-desc {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.hogaku-acoustics {
+  background: var(--bg-subtle);
+  border-left: 2px solid var(--acc-gold);
+  padding: 10px 12px;
+  font-size: 0.84rem;
+  color: var(--mut);
+  line-height: 1.55;
+  border-radius: 0 var(--r) var(--r) 0;
+}
+
+/* 美学原理三栏 */
+.aesthetics-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+.aes-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 20px;
+}
+.aes-box h4 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--acc-gold);
+  margin-bottom: 8px;
+}
+.aes-box p {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* ─── VIEW 6: ORGANOLOGIA (H-S SYSTEM) ─── */
+.organ-family-block {
+  margin-bottom: 48px;
+}
+.family-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.family-head h3 {
+  font-family: var(--title);
+  font-size: 1.4rem;
+  color: var(--ink-bright);
+}
+.family-code {
+  font-family: var(--sans);
+  color: var(--acc-gold);
+  font-weight: 700;
+}
+.family-def {
+  color: var(--mut);
+  font-size: 0.92rem;
+  margin-bottom: 20px;
+}
+.specimen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 22px;
+}
+.specimen-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.specimen-media {
+  height: 180px;
+  background: #000;
+  overflow: hidden;
+}
+.specimen-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.specimen-body {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.specimen-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-bright);
+  margin-bottom: 2px;
+}
+.specimen-meta {
+  font-size: 0.78rem;
+  color: var(--mut);
+  margin-bottom: 8px;
+}
+.specimen-code {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--acc-gold);
+  background: var(--bg-subtle);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 10px;
+}
+.specimen-acoustics {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* 简单弦鸣 vs 复合弦鸣对比框 */
+.ontological-callout {
+  background: linear-gradient(135deg, rgba(58, 104, 136, 0.12) 0%, rgba(30, 25, 21, 0.9) 100%);
+  border: 1px solid rgba(58, 104, 136, 0.4);
+  border-radius: var(--rl);
+  padding: 24px;
+  margin-bottom: 36px;
+}
+.ontological-callout h4 {
+  font-family: var(--title);
+  font-size: 1.25rem;
+  color: #6eb2e4;
+  margin-bottom: 10px;
+}
+.onto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 14px;
+}
+.onto-col {
+  background: var(--bg-subtle);
+  border-radius: var(--r);
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+.onto-col h5 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--acc-gold);
+  margin-bottom: 6px;
+}
+.onto-col p {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ─── VIEW 7: GEOGRAPHIA ─── */
+.geo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 26px;
+}
+.geo-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.geo-media {
+  height: 200px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+.geo-media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.geo-body {
+  padding: 22px;
+}
+.geo-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-bright);
+  margin-bottom: 4px;
+}
+.geo-region {
+  font-size: 0.8rem;
+  color: var(--acc-gold);
+  margin-bottom: 14px;
+}
+.geo-section-item {
+  margin-bottom: 14px;
+}
+.geo-label {
+  font-size: 0.78rem;
+  color: var(--mut);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+.geo-val {
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+.geo-val.cents {
+  font-family: var(--sans);
+  background: var(--bg-subtle);
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  color: var(--acc-gold);
+}
+
+/* ─── VIEW 8: BIBLIOTHECA ─── */
+.biblio-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 26px;
+}
+.book-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.book-top {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.book-author-avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--acc-gold);
+  flex-shrink: 0;
+}
+.book-author-avatar img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.book-meta h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--ink-bright);
+  font-weight: 700;
+  line-height: 1.3;
+}
+.book-orig {
+  font-family: var(--title);
+  font-size: 0.78rem;
+  color: var(--mut);
+  margin-top: 2px;
+}
+.book-author {
+  font-size: 0.84rem;
+  color: var(--acc-gold);
+  margin-top: 4px;
+}
+.book-thesis {
+  background: var(--bg-subtle);
+  border-left: 2px solid var(--acc);
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.book-detail-grid {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--mut);
+}
+.book-detail-grid strong {
+  color: var(--ink-bright);
+}
+
+/* ─── MODAL INSPECTOR ─── */
+dialog.inspector-dialog {
+  margin: auto;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: var(--rl);
+  max-width: 780px;
+  width: 92vw;
+  box-shadow: var(--shadow-lg);
+  padding: 0;
+  overflow: hidden;
+}
+dialog.inspector-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+}
+.modal-header {
+  position: relative;
+  height: 240px;
+  background: #000;
+  overflow: hidden;
+}
+.modal-header img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.modal-header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, var(--panel) 100%);
+}
+.modal-close-btn {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+.modal-close-btn:hover {
+  background: var(--acc);
+  border-color: var(--acc);
+}
+.modal-header-info {
+  position: absolute;
+  left: 28px; bottom: 16px; right: 28px;
+}
+.modal-header-info h3 {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--ink-bright);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.modal-header-info .modal-subtitle {
+  font-family: var(--title);
+  color: var(--acc-gold);
+  font-size: 0.88rem;
+  margin-top: 3px;
+}
+.modal-content {
+  padding: 24px 28px 32px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.modal-lead {
+  font-size: 0.98rem;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.modal-quote-box {
+  font-family: var(--kai);
+  font-size: 0.94rem;
+  color: var(--acc-gold);
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--acc-gold);
+  padding: 12px 18px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+.modal-section-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--ink-bright);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin: 20px 0 12px;
+}
+.modal-books-list {
+  list-style: none;
+  padding: 0;
+}
+.modal-books-list li {
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border-light);
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+/* ─── LIVE SEARCH DROPDOWN ─── */
+.search-results-dropdown {
+  position: absolute;
+  top: 100%; right: 0;
+  width: 320px;
+  max-height: 380px;
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-lg);
+  display: none;
+  z-index: 1200;
+  margin-top: 6px;
+}
+.search-result-item {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.15s;
+}
+.search-result-item:hover {
+  background: var(--panel-hover);
+}
+.search-result-item img {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.search-result-info h5 {
+  font-size: 0.88rem;
+  color: var(--ink-bright);
+  font-weight: 600;
+}
+.search-result-info small {
+  font-size: 0.75rem;
+  color: var(--mut);
+}
+
+/* ─── FOOTER ─── */
+footer.colophon {
+  border-top: 1px solid var(--border);
+  padding: 40px 4vw;
+  background: var(--bg-subtle);
+  font-size: 0.85rem;
+  color: var(--mut);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.colophon a {
+  color: var(--acc-gold);
+  text-decoration: none;
+}
+.colophon a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<div class="chronograph-line"></div>
+
+<!-- MASTHEAD -->
+<header class="mast">
+  <a href="#" class="mast-brand">
+    <div class="brand-seal"></div>
+    <div class="brand-text">
+      <h1>民族音乐学年鉴</h1>
+      <div class="sub">ANNALES ETHNOMUSICOLOGIAE · 数字人文通典</div>
+    </div>
+  </a>
+
+  <!-- 视图切换 (8大核心视窗) -->
+  <nav class="view-nav" id="viewNav">
+    <button type="button" class="view-btn active" data-target="almanac">学者年鉴</button>
+    <button type="button" class="view-btn" data-target="chronographia">百年编年</button>
+    <button type="button" class="view-btn" data-target="theoria">理论辩难</button>
+    <button type="button" class="view-btn" data-target="methodologia">史学与方法论</button>
+    <button type="button" class="view-btn" data-target="oriens">东亚与邦乐</button>
+    <button type="button" class="view-btn" data-target="organologia">乐器学</button>
+    <button type="button" class="view-btn" data-target="geographia">声音地理</button>
+    <button type="button" class="view-btn" data-target="bibliotheca">经典文库</button>
+  </nav>
+
+  <!-- 工具栏 -->
+  <div class="mast-tools">
+    <div class="search-wrap">
+      <input type="text" id="globalSearch" class="search-input" placeholder="检索学者、乐器、方法论..." autocomplete="off">
+      <div class="search-results-dropdown" id="searchResults"></div>
+    </div>
+    <button type="button" class="tool-btn" id="roamBtn" title="随机漫游一个知识节点">🎲 漫游</button>
+    <button type="button" class="tool-btn" id="themeToggle" title="切换暗色典籍/羊皮纸亮色">🌓 纸简</button>
+  </div>
+</header>
+
+<!-- SECONDARY BAR: STATS & ERA FILTER -->
+<div class="sub-bar">
+  <div class="stats-pills">
+    <span>收录泰斗 <strong>29</strong> 位</span>
+    <span>编年坐标 <strong>16</strong> 个</span>
+    <span>乐器标本 <strong>12</strong> 件</span>
+    <span>全球声音体系 <strong>6</strong> 处</span>
+    <span>史学方法论反思 <strong>5</strong> 大枢纽</span>
+    <span>传世图鉴 <strong>53</strong> 幅</span>
+  </div>
+
+  <div class="era-pills" id="eraPills">
+    <button type="button" class="era-pill active" data-era="all">全部断代</button>
+    <button type="button" class="era-pill" data-era="comparative">比较音乐学奠基 (1885–1914)</button>
+    <button type="button" class="era-pill" data-era="fieldwork">留声机与田野时代 (1890–1950)</button>
+    <button type="button" class="era-pill" data-era="golden">人类学黄金时代 (1950–1980)</button>
+    <button type="button" class="era-pill" data-era="contemporary">构成性与反思前沿 (1980–现今)</button>
+  </div>
+</div>
+
+<!-- MAIN CONTAINER -->
+<main class="container">
+
+  <!-- ================= VIEW 1: SCHOLARS ALMANAC ================= -->
+  <section class="view-section active" id="view-almanac">
+    <div class="section-header">
+      <div>
+        <h2>学者年鉴 · 思想谱系与学术坐标</h2>
+        <p>汇聚比较音乐学、民族音乐学与声音人类学百年泰斗。涵盖欧洲比较学派、北美田野学派、中国早期先驱与当代反思大师。点击卡片开启深度视窗。</p>
+      </div>
+    </div>
+
+    <div class="almanac-grid" id="scholarsGrid">
+
+      <article class="scholar-card" data-era="comparative" data-id="ellis" onclick="openInspector('scholar', 'ellis')">
+        <div class="card-media">
+          <img src="assets/img/ellis.jpg" alt="亚历山大·约翰·埃利斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">律制实测</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>英国皇家学会</span>
+            <span>1814–1890</span>
+          </div>
+          <h3 class="card-title">亚历山大·约翰·埃利斯</h3>
+          <div class="card-orig">Alexander John Ellis</div>
+          <div class="card-school">比较音乐学奠基人 · 音分制发明者</div>
+          <p class="card-desc">1885年发表划时代论文《论各民族的音乐律制》，发明以半音等于100音分（Cent）的对数度量法，实测全球各民族乐律，彻底打破欧洲十二平均律的自然本能神话。</p>
+          <div class="card-quote">“各民族的音乐律制并不是自然存在的，更不是从音乐本质中必然产生的，它们纯粹是人工的、多样的。”</div>
+          <div class="card-concepts"><span>1200音分制 (Cents System)</span><span>律制人工发明论</span><span>非西方微音程客观实测</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="adler" onclick="openInspector('scholar', 'adler')">
+        <div class="card-media">
+          <img src="assets/img/adler.jpg" alt="吉多·阿德勒" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">学科体系</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>维也纳大学音乐学系</span>
+            <span>1855–1941</span>
+          </div>
+          <h3 class="card-title">吉多·阿德勒</h3>
+          <div class="card-orig">Guido Adler</div>
+          <div class="card-school">现代音乐学学科体系奠基人</div>
+          <p class="card-desc">1885年发表《音乐学的范围、方法与目的》，首次将音乐学严格划分为‘历史音乐学’与‘体系音乐学’，并在体系音乐学中正式确立‘比较音乐学’的独立学科地位。</p>
+          <div class="card-quote">“比较音乐学的任务，在于为了民族学目的而对各民族、特别是文明程度较低民族的民歌与器乐进行比较研究并加以分类。”</div>
+          <div class="card-concepts"><span>学科二分法体系</span><span>比较音乐学学科定位</span><span>音乐风格分类学</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="stumpf" onclick="openInspector('scholar', 'stumpf')">
+        <div class="card-media">
+          <img src="assets/img/stumpf.jpg" alt="卡尔·施通普夫" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">音响心理学</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>柏林大学心理学研究所</span>
+            <span>1848–1936</span>
+          </div>
+          <h3 class="card-title">卡尔·施通普夫</h3>
+          <div class="card-orig">Carl Stumpf</div>
+          <div class="card-school">柏林比较音乐学派创始人 · 音乐心理学家</div>
+          <p class="card-desc">1900年在柏林建立欧洲最早的柏林留声机档案馆（Berlin Phonogramm-Archiv），开创性地将实验心理学、声学测量与民族学留声机录音深度结合。</p>
+          <div class="card-quote">“如果我们不了解人类最原始的知觉心理机制，就永远不可能洞悉高级音乐形式是如何从感官深处生长出来的。”</div>
+          <div class="card-concepts"><span>音协和感实验 (Konsonanz)</span><span>柏林留声机档案馆</span><span>跨文化知觉实验</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="hornbostel" onclick="openInspector('scholar', 'hornbostel')">
+        <div class="card-media">
+          <img src="assets/img/hornbostel.jpg" alt="埃里克·莫里茨·冯·霍恩博斯特尔" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">档案实证</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>柏林留声机档案馆馆长</span>
+            <span>1877–1935</span>
+          </div>
+          <h3 class="card-title">埃里克·莫里茨·冯·霍恩博斯特尔</h3>
+          <div class="card-orig">Erich Moritz von Hornbostel</div>
+          <div class="card-school">柏林学派实际掌舵人 · 乐器分类学宗师</div>
+          <p class="card-desc">长期主持柏林留声机档案馆，收藏全球上万根爱迪生蜡管。与萨克斯合著1914年霍恩博斯特尔-萨克斯乐器分类法，将文化圈理论（Kulturkreis）应用于全球调式演化分析。</p>
+          <div class="card-quote">“蜡管留声机不是简单的记录工具，它是音乐学的显微镜，让我们第一次能够对飘忽即逝的声音切片进行反复解剖与复现。”</div>
+          <div class="card-concepts"><span>萨克斯-霍恩博斯特尔分类体系</span><span>文化圈传播论</span><span>客观记谱转写规程</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="sachs" onclick="openInspector('scholar', 'sachs')">
+        <div class="card-media">
+          <img src="assets/img/sachs.jpg" alt="库尔特·萨克斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">乐器分类与源泉</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>柏林大学</span>
+            <span>1881–1959</span>
+          </div>
+          <h3 class="card-title">库尔特·萨克斯</h3>
+          <div class="card-orig">Curt Sachs</div>
+          <div class="card-school">现代乐器学（Organology）之父 · 音乐源泉论宗师</div>
+          <p class="card-desc">乐器学集大成者，创立H-S四大乐器家族体系。在《音乐的源泉》中深刻断言‘器乐产生自古代人类的两种基本需求——节奏和噪音’，彻底翻转了旋律审美中心主义。</p>
+          <div class="card-quote">“器乐产生自古代人类的两种基本需求——节奏和噪音；乐器的演变史就是人类文明身体延伸与心灵物化的地质层。”</div>
+          <div class="card-concepts"><span>四分法分类法 (体鸣/膜鸣/弦鸣/气鸣)</span><span>节奏与噪音双原初冲动</span><span>自弦竹筒琴发生学</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="bartok" onclick="openInspector('scholar', 'bartok')">
+        <div class="card-media">
+          <img src="assets/img/bartok.jpg" alt="贝拉·巴托克" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">田野记谱</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>布达佩斯李斯特音乐学院</span>
+            <span>1881–1945</span>
+          </div>
+          <h3 class="card-title">贝拉·巴托克</h3>
+          <div class="card-orig">Béla Bartók</div>
+          <div class="card-school">东欧民间音乐田野大师 · 现代作曲巨擘</div>
+          <p class="card-desc">带着爱迪生留声机深入匈牙利、罗马尼亚、斯洛伐克、土耳其与阿拉伯农村，采集转写上万首纯粹口传民歌，提炼出非均分节奏与五度链调式，深刻革新20世纪现代音乐语言。</p>
+          <div class="card-quote">“民间音乐不是野蛮粗糙的原材料，而是自然界中最为纯洁、最为完美的艺术结晶，如同花朵与矿石一般遵循着不可动摇的法则。”</div>
+          <div class="card-concepts"><span>阿克萨克节奏 (Aksak 偏快加拍)</span><span>自然生长的五度律与泛音音阶</span><span>忠实转写规范</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="koda" onclick="openInspector('scholar', 'koda')">
+        <div class="card-media">
+          <img src="assets/img/koda.jpg" alt="佐尔坦·柯达伊" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">全民音乐性</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>匈牙利科学院</span>
+            <span>1882–1967</span>
+          </div>
+          <h3 class="card-title">佐尔坦·柯达伊</h3>
+          <div class="card-orig">Zoltán Kodály</div>
+          <div class="card-school">民间音乐采录大师 · 音乐教育革新家</div>
+          <p class="card-desc">与巴托克并肩开展东欧民间歌曲科学大普查，将母语民间音乐作为国民音乐教育根基，创立柯达伊手势与首调唱名教学法，深信音乐是所有人与生俱来的母语。</p>
+          <div class="card-quote">“如果一个民族遗忘了自己的母语民歌，那么他在精神上就沦为了寄人篱下的游民。”</div>
+          <div class="card-concepts"><span>母语民歌教育法</span><span>五声性民间思维</span><span>柯达伊手势音高教学法</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="fieldwork" data-id="fewkes" onclick="openInspector('scholar', 'fewkes')">
+        <div class="card-media">
+          <img src="assets/img/fewkes.jpg" alt="杰西·沃尔特·富克斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">蜡管开创</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>史密森学会美洲民族学局 (BAE)</span>
+            <span>1850–1930</span>
+          </div>
+          <h3 class="card-title">杰西·沃尔特·富克斯</h3>
+          <div class="card-orig">Jesse Walter Fewkes</div>
+          <div class="card-school">人类学田野音响采集第一人</div>
+          <p class="card-desc">1890年3月在缅因州使用便携式爱迪生圆筒留声机录制帕萨马科迪印第安人（Passamaquoddy）口传歌唱，开创了人类学与音乐学实地音响采录的历史新纪元。</p>
+          <div class="card-quote">“圆筒上的细微刻痕，让那些即将消逝在文明车轮之下的古老声音获得了跨越时空的永生。”</div>
+          <div class="card-concepts"><span>实地圆筒录音法</span><span>濒危口传声音抢救</span><span>北美原住民仪式声景</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="fieldwork" data-id="densmore" onclick="openInspector('scholar', 'densmore')">
+        <div class="card-media">
+          <img src="assets/img/densmore.jpg" alt="弗朗西丝·登斯莫尔" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">原住民抢救</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>史密森学会美洲民族学局</span>
+            <span>1867–1957</span>
+          </div>
+          <h3 class="card-title">弗朗西丝·登斯莫尔</h3>
+          <div class="card-orig">Frances Densmore</div>
+          <div class="card-school">北美印第安音乐抢救记录第一人</div>
+          <p class="card-desc">奉献五十余载，深入北美各原住民部落，独立采集转写超过3000根蜡管录音。1916年留下了她为黑脚族酋长‘高山酋长’播放留声机的传世经典照片。</p>
+          <div class="card-quote">“印第安人的歌唱绝非随兴的娱乐，那是他们向神明祈雨、治愈病患与维系部落生死的最高法术。”</div>
+          <div class="card-concepts"><span>抢救性民族志记述</span><span>部落仪式歌唱功能学</span><span>音响档案系统转录</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="fieldwork" data-id="boas" onclick="openInspector('scholar', 'boas')">
+        <div class="card-media">
+          <img src="assets/img/boas.jpg" alt="弗朗茨·博厄斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">历史特殊论</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>哥伦比亚大学人类学系</span>
+            <span>1858–1942</span>
+          </div>
+          <h3 class="card-title">弗朗茨·博厄斯</h3>
+          <div class="card-orig">Franz Boas</div>
+          <div class="card-school">现代文化人类学之父 · 历史特殊论宗师</div>
+          <p class="card-desc">摧毁19世纪单线进化论（摩尔根/泰勒），创立历史特殊论、文化相对主义与文化整体论。断言人类发展的一般法则不能被轻易建立，每一处环境与群体都具备独特的历史形成脉络。</p>
+          <div class="card-quote">“我们知道环境是独特的，并剧烈地改变着人类的行为。忽视具体社会环境的影响是毫无理由的。”</div>
+          <div class="card-concepts"><span>历史特殊论 (反单线进化论)</span><span>文化相对主义与整体论</span><span>克服思维与行为惯性</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="dahlhaus" onclick="openInspector('scholar', 'dahlhaus')">
+        <div class="card-media">
+          <img src="assets/img/dahlhaus.jpg" alt="卡尔·达尔豪斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">反目的论史学</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>柏林工业大学音乐学研究所</span>
+            <span>1928–1989</span>
+          </div>
+          <h3 class="card-title">卡尔·达尔豪斯</h3>
+          <div class="card-orig">Carl Dahlhaus</div>
+          <div class="card-school">西方音乐史学泰斗 · 音乐自律美学反思大师</div>
+          <p class="card-desc">20世纪下半叶最重要的西方音乐史学家。在《音乐史的基础》中对‘进化论进步史观’展开彻底的反目的论批判，揭示‘作品自律性’（Autonomie）美学理论背后的历史构造性。</p>
+          <div class="card-quote">“音乐史不是朝着某一既定终点的连续进步，它是一场充满断裂、美学预设与不同观念相互抗衡的复杂对话。”</div>
+          <div class="card-concepts"><span>反目的论历史编纂学</span><span>作品概念的历史化</span><span>结构史与事件史辩证法</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="contemporary" data-id="geertz" onclick="openInspector('scholar', 'geertz')">
+        <div class="card-media">
+          <img src="assets/img/geertz.jpg" alt="克利福德·格尔茨" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">深描阐释学</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>普林斯顿高等研究院 (IAS)</span>
+            <span>1926–2006</span>
+          </div>
+          <h3 class="card-title">克利福德·格尔茨</h3>
+          <div class="card-orig">Clifford Geertz</div>
+          <div class="card-school">阐释人类学宗师 · ‘深描’理论创立者</div>
+          <p class="card-desc">提出‘文化是人自己编织的意义之网’，创立以‘深描’（Thick Description）为核心的阐释人类学方法。其文化三系统理论直接启发了蒂莫西·赖斯等人的现代音乐人类学重构。</p>
+          <div class="card-quote">“人是悬挂在由他自己所编织的意义之网中的动物，我以为文化就是这些网络，对文化的分析不是实验科学，而是一门寻求意义的解释科学。”</div>
+          <div class="card-concepts"><span>深描 (Thick Description)</span><span>意义之网 (Webs of Significance)</span><span>地方性知识</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="contemporary" data-id="rice" onclick="openInspector('scholar', 'rice')">
+        <div class="card-media">
+          <img src="assets/img/gaida.jpg" alt="蒂莫西·赖斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">三维动态事象</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>加州大学洛杉矶分校 (UCLA) 民族音乐学系</span>
+            <span>1945–现今</span>
+          </div>
+          <h3 class="card-title">蒂莫西·赖斯</h3>
+          <div class="card-orig">Timothy Rice</div>
+          <div class="card-school">现代音乐人类学三维重构领袖 · 保加利亚田野大师</div>
+          <p class="card-desc">1987年发表经典名篇《重构民族音乐学》，将格尔茨三系统与梅里亚姆模式融合，提出‘历史建构、社会维护、个体创造与体验’三维动态分析框架。深入保加利亚盖达风笛田野。</p>
+          <div class="card-quote">“音乐不是漂浮在空中的纯形式，它是历史如何建构人们的经验、社会如何维护声音的意义、个体如何在每一次演奏中重新创造自我的三维交点。”</div>
+          <div class="card-concepts"><span>三维重构模式 (历史建构/社会维护/个体创造)</span><span>盖达风笛身体化师徒传习</span><span>音乐事象 (Musical Event)</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="fieldwork" data-id="herskovits" onclick="openInspector('scholar', 'herskovits')">
+        <div class="card-media">
+          <img src="assets/img/herskovits.jpg" alt="梅尔维尔·J·赫斯科维茨" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">涵化与相对论</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>西北大学人类学系</span>
+            <span>1895–1963</span>
+          </div>
+          <h3 class="card-title">梅尔维尔·J·赫斯科维茨</h3>
+          <div class="card-orig">Melville J. Herskovits</div>
+          <div class="card-school">文化相对论系统化大师 · 梅里亚姆之导师</div>
+          <p class="card-desc">博厄斯杰出高足，系统建立‘文化相对主义’认识论体系，开创跨大西洋黑人非裔文化与涵化（Acculturation）研究，直接培养并塑造了阿兰·梅里亚姆的学术视野。</p>
+          <div class="card-quote">“评价的判断基于经验，而经验是由每一个体根据其自身的文化教化所阐释的。”</div>
+          <div class="card-concepts"><span>文化相对主义系统论</span><span>涵化理论 (Acculturation)</span><span>非洲大西洋离散声景</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="tylor" onclick="openInspector('scholar', 'tylor')">
+        <div class="card-media">
+          <img src="assets/img/tylor.jpg" alt="爱德华·伯内特·泰勒" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">单线进化论</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>牛津大学人类学系</span>
+            <span>1832–1917</span>
+          </div>
+          <h3 class="card-title">爱德华·伯内特·泰勒</h3>
+          <div class="card-orig">Edward Burnett Tylor</div>
+          <div class="card-school">19世纪人类学之父 · 进化论学派代表</div>
+          <p class="card-desc">在《原始文化》中首次给出‘文化’的现代科学经典定义。主张人类心智同一性与单线进化论（蒙昧-野蛮-文明），成为后来博厄斯学派与现代民族音乐学全力反思的经典理论靶子。</p>
+          <div class="card-quote">“文化或文明是一个复合的整体，包括知识、信仰、艺术、道德、法律、风俗以及作为社会成员的人所习得的任何其他能力和习惯。”</div>
+          <div class="card-concepts"><span>文化的经典定义 (1871)</span><span>心智一致性假设</span><span>遗留物概念 (Survivals)</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="golden" data-id="kunst" onclick="openInspector('scholar', 'kunst')">
+        <div class="card-media">
+          <img src="assets/img/kunst.jpg" alt="雅普·昆斯特" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">学科定名</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>阿姆斯特丹大学</span>
+            <span>1891–1960</span>
+          </div>
+          <h3 class="card-title">雅普·昆斯特</h3>
+          <div class="card-orig">Jaap Kunst</div>
+          <div class="card-school">‘民族音乐学’定名人 · 爪哇甘美兰研究泰斗</div>
+          <p class="card-desc">1950年发表《音乐学》(Musicologica)，首次正式提出去除连字符的‘Ethno-musicology’（民族音乐学），取代带有优越感与欧洲中心论色彩的‘比较音乐学’。印尼甘美兰权威。</p>
+          <div class="card-quote">“这门学科的名字应当是‘民族音乐学’，它研究的不是优劣高下的比较，而是所有民族音乐在自身文化脉络中的本质结构。”</div>
+          <div class="card-concepts"><span>民族音乐学学科定名 (1950)</span><span>甘美兰宏大分层结构 (Colotomic)</span><span>斯连德罗与佩罗格律实测</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="golden" data-id="hood" onclick="openInspector('scholar', 'hood')">
+        <div class="card-media">
+          <img src="assets/img/hood.jpg" alt="曼特尔·胡德" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">双重音乐才能</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>加利福尼亚大学洛杉矶分校 (UCLA) 民族音乐学研究所</span>
+            <span>1918–2005</span>
+          </div>
+          <h3 class="card-title">曼特尔·胡德</h3>
+          <div class="card-orig">Mantle Hood</div>
+          <div class="card-school">‘双重音乐才能’倡导者 · UCLA学派领袖</div>
+          <p class="card-desc">1960年发表《音乐才能的挑战》，创立著名的‘双重音乐才能’（Bi-musicality）学说。主张研究者不能做岸上观花的外行，必须亲身拜师学习异文化乐器演练，以身体实践获取真知。</p>
+          <div class="card-quote">“你若不能亲手敲响甘美兰的深沉铜锣，你就永远不可能理解爪哇人骨子里的时间意识与宇宙秩序。”</div>
+          <div class="card-concepts"><span>双重音乐才能 (Bi-musicality)</span><span>身体化表演实践民族志</span><span>UCLA全球世界音乐乐团教学模式</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="golden" data-id="merriam" onclick="openInspector('scholar', 'merriam')">
+        <div class="card-media">
+          <img src="assets/img/merriam.jpg" alt="阿兰·P·梅里亚姆" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">三重模式</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>西北大学</span>
+            <span>1923–1980</span>
+          </div>
+          <h3 class="card-title">阿兰·P·梅里亚姆</h3>
+          <div class="card-orig">Alan P. Merriam</div>
+          <div class="card-school">音乐人类学宗师 · 三重模式创立者</div>
+          <p class="card-desc">1964年出版划时代经典《音乐人类学》，提出震撼学界的‘概念-行为-声音’（Concept-Behavior-Sound）三重动态循环分析框架，将学科重新定义为‘研究文化中的音乐’（The Study of Music in Culture）。</p>
+          <div class="card-quote">“音乐声音不是孤立的物理波形，若没有人类头脑中的概念作为驱动、没有社会性肉身行为作为执行，声音根本无从发生。”</div>
+          <div class="card-concepts"><span>三重模式 (概念-行为-声音)</span><span>文化中的音乐 (Music in Culture)</span><span>音乐的十大社会功能</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="golden" data-id="blacking" onclick="openInspector('scholar', 'blacking')">
+        <div class="card-media">
+          <img src="assets/img/blacking.jpg" alt="约翰·布莱金" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">人的音乐性</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>英国贝尔法斯特女王大学社会人类学系</span>
+            <span>1928–1990</span>
+          </div>
+          <h3 class="card-title">约翰·布莱金</h3>
+          <div class="card-orig">John Blacking</div>
+          <div class="card-school">生物文化音乐学先驱 · 反精英主义巨擘</div>
+          <p class="card-desc">在南非文达人（Venda）村落进行近两年深入田野，1973年出版《人的音乐性》，提出‘音乐是人类组织的声音’（Humanly Organized Sound），并深刻断言音乐是人类物种共有的本能潜能。</p>
+          <div class="card-quote">“音乐是人类组织的声音；而其深层目的，则是为了创造组织完备的人性（Soundly Organized Humanity）。”</div>
+          <div class="card-concepts"><span>人类组织的声音 (Humanly Organized Sound)</span><span>组织完备的人性 (Soundly Organized Humanity)</span><span>文达人多姆巴(Domba)巨蟒舞仪轨</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="contemporary" data-id="seeger" onclick="openInspector('scholar', 'seeger')">
+        <div class="card-media">
+          <img src="assets/img/seeger.jpg" alt="安东尼·西格" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">构成性本体论</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>加州大学洛杉矶分校 (UCLA)</span>
+            <span>1945–现今</span>
+          </div>
+          <h3 class="card-title">安东尼·西格</h3>
+          <div class="card-orig">Anthony Seeger</div>
+          <div class="card-school">构成性音乐人类学领袖 · 史密森民道唱片总监</div>
+          <p class="card-desc">在巴西亚马逊河流域苏雅印第安人（Suyá/Kisêdjê）中进行长期田野，1987年出版《苏雅人为什么歌唱》，提出革命性的‘音乐人类学’（Musical Anthropology）：音乐不是被动反映社会，而是积极‘建构’社会。</p>
+          <div class="card-quote">“苏雅人并非生活在一个先验存在的社会结构中然后再去唱歌，恰恰相反，他们正是通过一年四季的歌唱，才创造了他们的社会结构本身。”</div>
+          <div class="card-concepts"><span>构成性本体论 (Constitutive Ontology)</span><span>阿基亚(Akia)个人高喊歌 vs 恩格雷(Ngére)集体和声歌</span><span>音乐人类学 vs 音乐的人类学</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="contemporary" data-id="nettl" onclick="openInspector('scholar', 'nettl')">
+        <div class="card-media">
+          <img src="assets/img/nettl.jpg" alt="布鲁诺·内特尔" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">元理论批评</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>伊利诺伊大学厄巴纳-香槟分校 (UIUC)</span>
+            <span>1930–2020</span>
+          </div>
+          <h3 class="card-title">布鲁诺·内特尔</h3>
+          <div class="card-orig">Bruno Nettl</div>
+          <div class="card-school">学科全景元理论大师 · 史学编纂宗师</div>
+          <p class="card-desc">执教逾半个世纪，出版巨著《民族音乐学研究：31个核心议题与概念》，对跨文化音乐普遍性、音乐起源、田野伦理、都市音乐变迁与局内人视阈进行了极其宏大的哲学反思。</p>
+          <div class="card-quote">“民族音乐学从来不是一种单一的方法，而是一系列不断自我质疑、永不满足的探索态度。”</div>
+          <div class="card-concepts"><span>音乐无普遍语言论 (No Universal Language)</span><span>四声态与核心音域分析</span><span>学科反思性史学</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="golden" data-id="lomax" onclick="openInspector('scholar', 'lomax')">
+        <div class="card-media">
+          <img src="assets/img/lomax.jpg" alt="阿兰·洛马克斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">歌唱计量学</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>美国国会图书馆民歌档案库</span>
+            <span>1915–2002</span>
+          </div>
+          <h3 class="card-title">阿兰·洛马克斯</h3>
+          <div class="card-orig">Alan Lomax</div>
+          <div class="card-school">歌唱计量学（Cantometrics）创立者 · 口传文化抢救者</div>
+          <p class="card-desc">携带数十吨录音设备走遍美国南部黑人监狱、阿巴拉契亚山脉、西班牙、意大利与加勒比海。创立量化分析歌唱风格与社会结构关联的‘歌唱计量学’。</p>
+          <div class="card-quote">“民间艺术是全人类文化多样性的基因库；一旦丧失，我们将沦入全球文化均质化的精神沙漠。”</div>
+          <div class="card-concepts"><span>歌唱计量学 (Cantometrics 37项参数)</span><span>文化均等主义 (Cultural Equity)</span><span>蓝调与原生态歌者发掘 (Lead Belly, Muddy Waters)</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="wgj" onclick="openInspector('scholar', 'wgj')">
+        <div class="card-media">
+          <img src="assets/img/wgj.jpg" alt="王光祈" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">比较学先驱</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>德国柏林大学</span>
+            <span>1892–1936</span>
+          </div>
+          <h3 class="card-title">王光祈</h3>
+          <div class="card-orig">Wang Guangqi</div>
+          <div class="card-school">中国比较音乐学第一人 · 现代东方音乐学开拓者</div>
+          <p class="card-desc">五四运动少年中国学会领袖，赴德留学师从霍恩博斯特尔与萨克斯，1934年以博士论文《论中国古代剧院》获波恩大学哲学博士，著《东西乐制之研究》《东方民族之音乐》，奠定中国现代音乐学基石。</p>
+          <div class="card-quote">“吾辈治音乐学，当取东西各民族乐制并存互考，既不妄自尊大，亦不妄自菲薄，方见人类心灵同异之全貌。”</div>
+          <div class="card-concepts"><span>三大乐系说 (中国乐系、希腊乐系、波斯阿拉伯乐系)</span><span>东西律制数理比勘</span><span>近世中国音乐学奠基</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="fieldwork" data-id="yyd" onclick="openInspector('scholar', 'yyd')">
+        <div class="card-media">
+          <img src="assets/img/yyd.jpg" alt="杨荫浏" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">抢救性实测</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>中央音乐学院民族音乐研究所 (中国艺术研究院音乐研究所所长)</span>
+            <span>1899–1984</span>
+          </div>
+          <h3 class="card-title">杨荫浏</h3>
+          <div class="card-orig">Yang Yinliu</div>
+          <div class="card-school">中国民族音乐学泰斗 · 传统音乐记谱大师</div>
+          <p class="card-desc">1950年使用当时极其罕见的进口钢丝录音机，抢救录制盲人音乐家阿炳（华彦钧）的《二泉映月》《听松》《大浪淘沙》等六首绝世孤品。著《中国古代音乐史稿》，终生践行田野普查。</p>
+          <div class="card-quote">“不走入民间艺人破旧的柴门，不坐在田间地头的板凳上亲耳倾听，我们写出的音乐史就永远只是死掉的故纸堆。”</div>
+          <div class="card-concepts"><span>抢救性钢丝录音</span><span>工尺谱精密对译实测</span><span>乐律史与乐人生活史合一</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="contemporary" data-id="yry" onclick="openInspector('scholar', 'yry')">
+        <div class="card-media">
+          <img src="assets/img/yry.jpg" alt="于润洋" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">美学与方法论</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>中央音乐学院院长</span>
+            <span>1932–2015</span>
+          </div>
+          <h3 class="card-title">于润洋</h3>
+          <div class="card-orig">Yu Runyang</div>
+          <div class="card-school">音乐美学家 · 音乐学学科理论领袖</div>
+          <p class="card-desc">深入阐释音乐音响结构与人类精神世界的本体关联，主持中国现代音乐学史论建设，深刻辨析西方历史音乐学与民族音乐学美学方法论在中国的融合与发展。</p>
+          <div class="card-quote">“音乐既是高度形式化的声音建筑，又是人类历史意识与主体情感最为深沉的精神积淀。”</div>
+          <div class="card-concepts"><span>音乐美学本体论</span><span>历史语境与形式辩证法</span><span>现代音乐学学科自省</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="contemporary" data-id="levistrauss" onclick="openInspector('scholar', 'levistrauss')">
+        <div class="card-media">
+          <img src="assets/img/levistrauss.jpg" alt="克劳德·列维-斯特劳斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">结构同构</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>法兰西学院</span>
+            <span>1908–2009</span>
+          </div>
+          <h3 class="card-title">克劳德·列维-斯特劳斯</h3>
+          <div class="card-orig">Claude Lévi-Strauss</div>
+          <div class="card-school">结构人类学宗师 · 神话与音乐同构论者</div>
+          <p class="card-desc">结构主义人类学开创者。在四卷本巨著《神话学》中，将神话结构的无意识运行机制与西方大型交响乐（赋格、奏鸣曲）及原住民仪式音乐作深刻同构比勘。</p>
+          <div class="card-quote">“音乐与神话是同一种母体的两个不同面相，它们都要求克服连续的时间，而让听者进入一种无时间的深层结构秩序。”</div>
+          <div class="card-concepts"><span>神话与音乐的同构性</span><span>二元对立深层语法</span><span>时间超越机制</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="guid" onclick="openInspector('scholar', 'guid')">
+        <div class="card-media">
+          <img src="assets/img/guid.jpg" alt="阿雷佐的圭多" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">记谱技术革命</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>意大利阿雷佐大教堂修道院</span>
+            <span>约991–1033</span>
+          </div>
+          <h3 class="card-title">阿雷佐的圭多</h3>
+          <div class="card-orig">Guido d'Arezzo</div>
+          <div class="card-school">四线谱与唱名法发明者 · 口传向书面转折枢纽</div>
+          <p class="card-desc">发明四线谱表与六声音阶唱名（Ut-Re-Mi-Fa-Sol-La），创立‘圭多之手’口传记忆体系，将原本需要修道士口传身授十年的圣咏记忆周期缩短至一年。</p>
+          <div class="card-quote">“未学记谱之盲歌者，虽复唱诵百年，仍如瞎子引路，盲目而行；借此四线新图，童子一年即可明察万般乐调。”</div>
+          <div class="card-concepts"><span>四线谱绝对音高标定</span><span>六声音阶 (Hexachord)</span><span>圭多之手 (Guidonian Hand)</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="greg" onclick="openInspector('scholar', 'greg')">
+        <div class="card-media">
+          <img src="assets/img/greg.jpg" alt="教皇格里高利一世" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">口传圣咏神话</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>罗马教廷</span>
+            <span>约540–604</span>
+          </div>
+          <h3 class="card-title">教皇格里高利一世</h3>
+          <div class="card-orig">Pope Gregory I (St. Gregory the Great)</div>
+          <div class="card-school">格里高利圣咏神圣命名者 · 口传记忆神话化身</div>
+          <p class="card-desc">中世纪图像中圣灵化作白鸽停在其耳畔低语传授圣乐的神话化身。在他统治时代及随后三百年内，所谓的格里高利圣咏完全处于没有任何乐谱记录的纯粹无字口头传统之中。</p>
+          <div class="card-quote">“白鸽落在教皇的右肩，将天国的旋律逐一倾注入他的耳中，随后被教皇口授传予抄写僧侣。”</div>
+          <div class="card-concepts"><span>口头传统神圣起源神话</span><span>圣灵白鸽口传隐喻</span><span>纽姆谱出现前三百年的纯口授史</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+      <article class="scholar-card" data-era="comparative" data-id="pyth" onclick="openInspector('scholar', 'pyth')">
+        <div class="card-media">
+          <img src="assets/img/pyth.jpg" alt="毕达哥拉斯" loading="lazy" decoding="async">
+          <div class="card-media-overlay"></div>
+          <div class="card-media-tag">单弦琴测音</div>
+        </div>
+        <div class="card-body">
+          <div class="card-dates">
+            <span>毕达哥拉斯学派 (克罗托内)</span>
+            <span>约前570–前495</span>
+          </div>
+          <h3 class="card-title">毕达哥拉斯</h3>
+          <div class="card-orig">Pythagoras of Samos</div>
+          <div class="card-school">古希腊数理声学与天体音乐哲学宗师</div>
+          <p class="card-desc">利用单弦琴（Monochord）通过弦长二等分（八度 2:1）、三等分（纯五度 3:2）发现纯五度生律法，创立西方数理音乐理论与万物皆数的天体和谐理论。</p>
+          <div class="card-quote">“天体的运行轨迹与琴弦的振动比例完全遵从同一组纯粹数字的奥秘；音乐即是宇宙灵魂的声学显现。”</div>
+          <div class="card-concepts"><span>单弦琴弦长数理比值</span><span>五度相生律 (Pythagorean Tuning)</span><span>宇宙天体和声体系</span></div>
+          <div class="card-action">
+            <span>阅读深度评述与著述</span>
+            <span>深度档案 ↗</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= VIEW 2: CHRONOGRAPHIA ================= -->
+  <section class="view-section" id="view-chronographia">
+    <div class="section-header">
+      <div>
+        <h2>编年史 · 跨世纪声音探索历程 (1885–2026)</h2>
+        <p>从声学测音实验室的音叉，到深入荒野雨林的留声机蜡管，追踪人类丈量全球声音传统的百年重大范式演进。</p>
+      </div>
+    </div>
+
+    <div class="timeline-stream">
+
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/ellis.jpg" alt="双重学科奠基元年：埃利斯音分制与阿德勒学科大纲" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1885</div>
+            <span class="chrono-category">学科诞生</span>
+            <h3 class="chrono-title">双重学科奠基元年：埃利斯音分制与阿德勒学科大纲</h3>
+            <p class="chrono-desc">在英国，埃利斯发表《论各民族的音乐律制》，以音叉精密实测全球非西方乐律，创立1200音分对数度量法，彻底击碎欧洲十二律自然神话；在奥地利，阿德勒发表《音乐学的范围、方法与目的》，在体系音乐学中正式确立‘比较音乐学’（Vergleichende Musikwissenschaft）独立学科地位。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/fewkes.jpg" alt="富克斯与便携式爱迪生留声机：人类学田野录音首创" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1890</div>
+            <span class="chrono-category">技术革命</span>
+            <h3 class="chrono-title">富克斯与便携式爱迪生留声机：人类学田野录音首创</h3>
+            <p class="chrono-desc">人类学家富克斯在缅因州携带爱迪生蜡管留声机，成功录制了帕萨马科迪（Passamaquoddy）印第安人萨满歌谣。这是人类历史上首次将机器录音技术引入实地民族志田野，人类声音第一次摆脱了主观记忆与人耳转写的误差，成为可客观反复复现的物理标本。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/stumpf.jpg" alt="柏林留声机档案馆建立：比较音乐学学派鼎盛" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1900–1904</div>
+            <span class="chrono-category">档案与实验室</span>
+            <h3 class="chrono-title">柏林留声机档案馆建立：比较音乐学学派鼎盛</h3>
+            <p class="chrono-desc">心理学家施通普夫与霍恩博斯特尔在柏林大学心理研究所正式成立柏林留声机档案馆（Berlin Phonogramm-Archiv）。随后三十年间，档案馆收藏了来自非洲、大洋洲、亚洲与美洲的上万根蜡管，成为全球比较音乐学的科研中枢，开启了基于实验室精准转写的黄金时代。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/bartok.jpg" alt="巴托克与柯达伊深入东欧乡野：万首口传民歌大抢救" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1905–1918</div>
+            <span class="chrono-category">田野实录</span>
+            <h3 class="chrono-title">巴托克与柯达伊深入东欧乡野：万首口传民歌大抢救</h3>
+            <p class="chrono-desc">巴托克与柯达伊肩挑爱迪生留声机，走遍匈牙利、罗马尼亚、斯洛伐克、土耳其乡村，对数以万计的古老口传农民歌曲进行毫秒级精密转写。他们发现了非均分阿克萨克（Aksak）节奏与自然五度链，打破了古典音乐长达数百年的等音节律霸权。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/sachs.jpg" alt="霍恩博斯特尔-萨克斯乐器分类法发表：器官学物理宪章" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1914</div>
+            <span class="chrono-category">分类学革命</span>
+            <h3 class="chrono-title">霍恩博斯特尔-萨克斯乐器分类法发表：器官学物理宪章</h3>
+            <p class="chrono-desc">霍恩博斯特尔与萨克斯在《民族学杂志》合著发表《乐器分类学》，以振动发音体物理性质为唯一准绳，创立杜威十进制‘体鸣、膜鸣、弦鸣、气鸣’四大类体系，彻底推翻欧洲‘管、弦、打’传统分类的逻辑混乱，奠定全球乐器学（Organology）百年基石。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/densmore.jpg" alt="登斯莫尔为高山酋长播放留声机：北美原住民声音史诗" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1916</div>
+            <span class="chrono-category">田野经典</span>
+            <h3 class="chrono-title">登斯莫尔为高山酋长播放留声机：北美原住民声音史诗</h3>
+            <p class="chrono-desc">弗朗西丝·登斯莫尔在史密森学会资助下，为黑脚族酋长‘高山酋长’录制仪轨歌唱，并留下西方人类学史上最具象征意义的经典影像。她用半个多世纪的独身坚守，从北美数十个濒危部落手中抢救录制了3000余首仪式绝响。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/wgj.jpg" alt="王光祈留德师从萨克斯：中国比较音乐学破土发轫" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1926–1934</div>
+            <span class="chrono-category">中国奠基</span>
+            <h3 class="chrono-title">王光祈留德师从萨克斯：中国比较音乐学破土发轫</h3>
+            <p class="chrono-desc">王光祈在柏林大学与波恩大学师从萨克斯与霍恩博斯特尔，将柏林学派的律制实测与比较方法引入中国，先后出版《东西乐制之研究》《东方民族之音乐》《中国音乐史》，提出著名的‘世界三大乐系说’，成为中国比较音乐学走向世界的开拓第一人。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/kunst.jpg" alt="昆斯特提出‘民族音乐学’定名 & 杨荫浏抢救录制阿炳绝响" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1950</div>
+            <span class="chrono-category">定名与绝响</span>
+            <h3 class="chrono-title">昆斯特提出‘民族音乐学’定名 & 杨荫浏抢救录制阿炳绝响</h3>
+            <p class="chrono-desc">在欧洲，荷兰学者雅普·昆斯特出版《音乐学》，正式提出‘Ethno-musicology’（民族音乐学），宣告比较音乐学从欧洲中心主义中蜕变；同年夏天，在中国无锡，杨荫浏先生携进口钢丝录音机，为贫病交加的盲艺人阿炳抢救录制下《二泉映月》《听松》等六首中国民间音乐千古绝响。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/merriam.jpg" alt="美国民族音乐学会（SEM）成立：北美学派全面接棒" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1955</div>
+            <span class="chrono-category">学会成立</span>
+            <h3 class="chrono-title">美国民族音乐学会（SEM）成立：北美学派全面接棒</h3>
+            <p class="chrono-desc">威拉德·罗兹、大卫·麦卡莱斯特、阿兰·梅里亚姆与查尔斯·西格等人在波士顿正式创立民族音乐学会（Society for Ethnomusicology, SEM），并创办权威会刊《Ethnomusicology》，标志着学科全球学术中心从战后欧洲向北美大学人类学与音乐学系全面转移。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/hood.jpg" alt="曼特尔·胡德确立‘双重音乐才能’：实践民族志革命" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1960</div>
+            <span class="chrono-category">方法论革新</span>
+            <h3 class="chrono-title">曼特尔·胡德确立‘双重音乐才能’：实践民族志革命</h3>
+            <p class="chrono-desc">胡德在加州大学洛杉矶分校（UCLA）开创世界音乐乐团教学模式，发表论文《音乐才能的挑战》，提出‘双重音乐才能’（Bi-musicality）。要求学者必须像局内人一样熟练掌握异文化乐器演奏，以身体在场实践取代案头冷漠解剖。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/merriam.jpg" alt="梅里亚姆《音乐人类学》出版：‘概念-行为-声音’三重模式" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1964</div>
+            <span class="chrono-category">范式确立</span>
+            <h3 class="chrono-title">梅里亚姆《音乐人类学》出版：‘概念-行为-声音’三重模式</h3>
+            <p class="chrono-desc">梅里亚姆出版学科圣经《音乐人类学》，将学科确立为‘研究文化中的音乐’（Music in Culture），提出概念驱动行为、行为制造声音、声音反馈概念的动态闭环，彻底打破形式主义音响分析的局限，推动民族音乐学向人类学大踏步迈进。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/blacking.jpg" alt="布莱金《人的音乐性》出版：生物文化音乐学与文达田野" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1973</div>
+            <span class="chrono-category">反精英主义</span>
+            <h3 class="chrono-title">布莱金《人的音乐性》出版：生物文化音乐学与文达田野</h3>
+            <p class="chrono-desc">布莱金基于南非文达人田野研究，发表名著《人的音乐性》，提出‘音乐是人类组织的声音’（Humanly Organized Sound），猛烈批判西方精英主义音乐教育对普通人音乐潜能的压制，证明音乐是全人类通有的物种进化天赋。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/yyd.jpg" alt="中国南京首届全国民族音乐学学术会议：本土学会诞生" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1980</div>
+            <span class="chrono-category">中国新时期</span>
+            <h3 class="chrono-title">中国南京首届全国民族音乐学学术会议：本土学会诞生</h3>
+            <p class="chrono-desc">中国音乐家协会与南京艺术学院在南京联合召开首届全国民族音乐学学术讨论会（董维松、高厚永发起），正式成立中国民族音乐学会。这是改革开放后中国音乐学界重新融入世界前沿、系统普查中华五十六个民族传统音乐的里程碑开端。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/seeger.jpg" alt="安东尼·西格《苏雅人为什么歌唱》：构成性音乐人类学诞生" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">1987</div>
+            <span class="chrono-category">本体论转向</span>
+            <h3 class="chrono-title">安东尼·西格《苏雅人为什么歌唱》：构成性音乐人类学诞生</h3>
+            <p class="chrono-desc">西格通过巴西亚马逊苏雅印第安人的Akia与Ngére仪式歌唱，提出革命性的‘音乐人类学’（Musical Anthropology），翻转梅里亚姆的容器论，论证音乐不是被动反映社会结构，而是能动地生产、创造并维系了人类社会结构本身。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/nettl.jpg" alt="内特尔元理论总结 & 中国传统音乐学与音乐人类学大辨析" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">2000s</div>
+            <span class="chrono-category">新世纪对话</span>
+            <h3 class="chrono-title">内特尔元理论总结 & 中国传统音乐学与音乐人类学大辨析</h3>
+            <p class="chrono-desc">布鲁诺·内特尔第三次修订《民族音乐学研究：31个核心议题与概念》，对跨文化通则、音域音态、口传记忆进行深刻反思；在中国，洛秦等学者对‘民族音乐学’、‘传统音乐学’与‘音乐人类学’展开深入学科史梳理，确立本土双轨并进范式。</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="chrono-box">
+          <div class="chrono-media">
+            <img src="assets/img/cosmograph.webp" alt="生态音乐学、声音人类学与全球口传遗产数字重返" loading="lazy">
+          </div>
+          <div>
+            <div class="chrono-year">2010s–2026</div>
+            <span class="chrono-category">当代前沿</span>
+            <h3 class="chrono-title">生态音乐学、声音人类学与全球口传遗产数字重返</h3>
+            <p class="chrono-desc">学科迈入生态音乐学（Ecomusicology）、感官声音人类学（Anthropology of Sound）以及全球早期蜡管声音遗产数字化重返（Digital Repatriation）的新纪元。从雨林生物声景到都市机器噪音，从后殖民解殖到人工智能声学生成，人类对自我声音本质的探索迈向全新维度。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIEW 3: THEORIA (DEBATES) ================= -->
+  <section class="view-section" id="view-theoria">
+    <div class="section-header">
+      <div>
+        <h2>理论辩难与思想争鸣 · 四大核心公理</h2>
+        <p>针对口传传统、容器论批判、中国学科定名与人类物种音乐性四大关键论争展开义理辨正与学术史深剖。</p>
+      </div>
+    </div>
+
+    <div class="debates-list">
+
+      <article class="debate-card" id="debate_gregorian">
+        <div class="debate-banner">
+          <div class="debate-header-text">
+            <h3>口传圣咏佯谬与人类音乐发生学公理</h3>
+            <div class="debate-sub">西方音乐史被遮蔽的‘口头传统’根基 · 记谱法绝非文明的先行条件</div>
+          </div>
+          <div class="debate-thumbs"><img src="assets/img/neume.jpg" alt="Debate figure" loading="lazy"><img src="assets/img/greg.jpg" alt="Debate figure" loading="lazy"><img src="assets/img/guid.jpg" alt="Debate figure" loading="lazy"></div>
+        </div>
+        <div class="debate-body">
+          <div class="debate-problem">
+            <strong>核心争鸣焦点：</strong> 为什么说‘非书面传统音乐的学科是民族音乐学’暴露了西方中心论的短视？在纽姆谱发明前完全靠口传的早期基督教圣咏，难道不是口传音乐？世上是否有任何一个音乐文明能越过口传而直接降生于纸面？
+          </div>
+          <div class="axiom-box">
+            【人类音乐发生学第一公理】：口传性（Orality）是全人类一切音乐实践绝对先在的、原生的本体母态；而书面记谱（Scripturality）永远只是在特定社会高度分工、集权化统治与标准化复制需要下诞生的、极晚起的、局部的、选择性的第二性技术补丁。
+          </div>
+          <div class="arguments-grid">
+            
+          <div class="arg-item">
+            <div class="arg-claim">教皇格里高利一世时代的‘纯口头帝国’</div>
+            <p class="arg-evidence">公元6世纪末格里高利一世在位期间，罗马教会根本没有任何音高记谱法。数千首圣咏完全依附于歌唱修士的身体记忆、咽喉肌肉记忆与师徒口授。一个合格的领唱修士（Cantor）需要耗费10至15年时间将全年的礼仪圣咏死记硬背入脑。</p>
+          </div>
+          <div class="arg-item">
+            <div class="arg-claim">早期无音高纽姆谱（Adiastematic Neumes）的‘助记备忘录’属性</div>
+            <p class="arg-evidence">9世纪在瑞士圣加尔修道院等地出现的原始纽姆谱，没有任何谱线，不标示绝对音高，也不标示精确音程。它在本质上不是用来‘初次视唱’未见乐谱的工具，而仅仅是给已经将整首圣咏背得滚瓜烂熟的修士提供一个视线提醒——提示何处上滑、何处转音。若无口传肉身先在，纽姆谱就是一堆无法解读的死符。</p>
+          </div>
+          <div class="arg-item">
+            <div class="arg-claim">学科藩篱的虚妄与比较音乐学的去魅力量</div>
+            <p class="arg-evidence">西方传统历史音乐学长久以来陷入‘记谱至上主义’（Text-centrism），将能够写在五线谱上的欧洲艺术音乐自封为人类音乐的‘正典’，而将世界上绝大多数依靠耳朵与身体代代相传的音乐打入冷宫，斥为‘异国情调’的民族学标本。口传圣咏的历史事实彻底颠覆了这种狂妄：欧洲音乐的童年与中非雨林俾格米人的歌唱在存在论上没有任何两样，都是纯粹的‘口传心授’！</p>
+          </div>
+          </div>
+        </div>
+      </article>
+      <article class="debate-card" id="debate_merriam_seeger">
+        <div class="debate-banner">
+          <div class="debate-header-text">
+            <h3>‘文化中的音乐’容器论批判与‘音乐即文化’的本体论翻转</h3>
+            <div class="debate-sub">从梅里亚姆的三重模式到西格的构成性本体论 · 鱼与水 vs 浪与海</div>
+          </div>
+          <div class="debate-thumbs"><img src="assets/img/merriam.jpg" alt="Debate figure" loading="lazy"><img src="assets/img/seeger.jpg" alt="Debate figure" loading="lazy"></div>
+        </div>
+        <div class="debate-body">
+          <div class="debate-problem">
+            <strong>核心争鸣焦点：</strong> ‘文化中的音乐’（Music in culture）中的‘文化’与‘音乐’，是否依然是一种机械的外部包含关系（容器论）？音乐只是被动反映社会结构的镜子，还是积极生产社会结构的熔炉？
+          </div>
+          <div class="axiom-box">
+            【构成性音乐本体论（Constitutive Ontology）】：音乐从来不是被动盛放在一个名叫‘文化’的大碗里的水；音乐就是奔腾的波浪本身，是人类通过声音震动、身体聚集与仪式表演，亲手编织并确认其社会关系、权力秩序与宇宙认同的创造性母体。
+          </div>
+          <div class="arguments-grid">
+            
+          <div class="arg-item">
+            <div class="arg-claim">梅里亚姆 1964年‘三重模式’与容器论残留</div>
+            <p class="arg-evidence">梅里亚姆在《音乐人类学》中界定学科为‘研究文化中的音乐’，提出‘概念-行为-声音’模式。其功绩在于将音响拉回人类语境；但其隐伏的理论陷阱是：依然在潜意识中将‘文化/社会’预设为一个早已成型、先验存在的坚硬‘容器’，而音乐只是容器里被决定的内容物（反映经济基础、反映阶级结构）。</p>
+          </div>
+          <div class="arg-item">
+            <div class="arg-claim">梅里亚姆 1977年的自我反思与‘音乐即文化’</div>
+            <p class="arg-evidence">面对学界批判，梅里亚姆在1977年发表经典文章，主动修正纲领，将口号从‘Music in culture’跃迁为‘Music as culture’（音乐即文化）——承认音乐表演本身就是文化的活体实践，两者不可分割。</p>
+          </div>
+          <div class="arg-item">
+            <div class="arg-claim">西格 1987年《苏雅人为什么歌唱》的革命性翻转</div>
+            <p class="arg-evidence">安东尼·西格在巴西亚马逊苏雅印第安人村落中提出了‘音乐人类学’（Musical Anthropology）。苏雅人在旱季与雨季之交，通过男人在广场高喊Akia歌，向村庄四周的女性亲属展示狩猎与成年活力；通过全族合唱Ngére仪式，平息森林中亡灵与动物的愤怒。西格惊人地指出：苏雅人不是生活在一个既定的亲属社会里再去唱歌，他们正是依靠这年复一年的歌唱，才‘发明’并‘维系’了他们的社会关系！若停止歌唱，苏雅社会在物理与符号意义上都将瞬间解体！</p>
+          </div>
+          </div>
+        </div>
+      </article>
+      <article class="debate-card" id="debate_china_naming">
+        <div class="debate-banner">
+          <div class="debate-header-text">
+            <h3>中国民族音乐学的三场命名与学科定位大论争</h3>
+            <div class="debate-sub">从南京会议到洛秦学术史梳理 · 传统音乐学与音乐人类学的四十载辨析</div>
+          </div>
+          <div class="debate-thumbs"><img src="assets/img/wgj.jpg" alt="Debate figure" loading="lazy"><img src="assets/img/yyd.jpg" alt="Debate figure" loading="lazy"><img src="assets/img/yry.jpg" alt="Debate figure" loading="lazy"></div>
+        </div>
+        <div class="debate-body">
+          <div class="debate-problem">
+            <strong>核心争鸣焦点：</strong> 中国学界在引进Ethnomusicology时，为何经历了‘民族音乐学’、‘传统音乐学’、‘音乐人类学’长达数十年的剧烈争鸣？其背后的国家文化战略与学术方法论分歧何在？
+          </div>
+          <div class="axiom-box">
+            【双轨并进与范式共生】：‘中国传统音乐学’以本土五大类传统音乐（民歌、歌舞、说唱、戏曲、器乐）的文献考辨、形态分析与遗产抢救为主脉；而‘音乐人类学’以跨文化田野民族志、社会文化阐释与前沿哲学对话为旗帜。两者不是水火不容，而是中国学术面向本土深耕与面向世界对话的双翼。
+          </div>
+          <div class="arguments-grid">
+            
+          <div class="arg-item">
+            <div class="arg-claim">第一阶段（1980年代）：魏廷格 vs 乔建中 —— 民族音乐学还是传统音乐学？</div>
+            <p class="arg-evidence">1980年南京召开首届全国民族音乐学学术讨论会（董维松、高厚永发起）。随后魏廷格先生撰文主张学科应定名为‘民族音乐学’（严格对应西方Ethnomusicology）；乔建中等学者则指出：‘民族音乐学’在汉语语境下极易被误解为仅仅研究少数民族音乐，或者与‘民族民间音乐’发生混淆，因而主张成立‘中国传统音乐学会’，专注于中华各民族数千年丰厚传统音乐形态的系统挖掘。</p>
+          </div>
+          <div class="arg-item">
+            <div class="arg-claim">第二阶段（1990年代）：赵宋光提倡‘音乐文化人类学’</div>
+            <p class="arg-evidence">赵宋光先生立足于认识论与马克思主义哲学深度，认为仅停留在音响形态学远远不够，学科应命名为‘音乐文化人类学’，强调从人类生存实践、思维发生机制与文化生成规律去透视音乐，开启了跨学科理论自觉。</p>
+          </div>
+          <div class="arg-item">
+            <div class="arg-claim">第三阶段（2000年代至今）：洛秦的学术史诊断与分工共识</div>
+            <p class="arg-evidence">洛秦教授在深入考辨西方学科译名流变后指出：‘民族音乐学’、‘音乐民族学’、‘音乐人类学’与‘传统音乐学’代表了四种不同的学术关照。当下中国学界已经达成健康的共识：以研究中国本土汉族及少数民族历史传统为主的通常称‘中国传统音乐学’；而借鉴西方人类学理论、关注全球文化与当下活态社会田野的则普遍自认‘音乐人类学/民族音乐学’。</p>
+          </div>
+          </div>
+        </div>
+      </article>
+      <article class="debate-card" id="debate_blacking_universal">
+        <div class="debate-banner">
+          <div class="debate-header-text">
+            <h3>布莱金‘人的音乐性’与物种生物文化天赋</h3>
+            <div class="debate-sub">解构西方音乐学院的精英造神神话 · 音乐是全人类通有的生存本能</div>
+          </div>
+          <div class="debate-thumbs"><img src="assets/img/blacking.jpg" alt="Debate figure" loading="lazy"><img src="assets/img/venda.jpg" alt="Debate figure" loading="lazy"></div>
+        </div>
+        <div class="debate-body">
+          <div class="debate-problem">
+            <strong>核心争鸣焦点：</strong> 西方古典音乐教育长期灌输‘只有少数具备非凡天赋的人才有音乐才华’，90%以上的普通人被贴上‘五音不全’、‘无音乐细胞’的自卑标签。这种精英主义神话是如何被民族音乐学粉碎的？
+          </div>
+          <div class="axiom-box">
+            【布莱金物种音乐本能假说】：正如乔姆斯基证明所有人类儿童皆具备与生俱来的普遍语法（Universal Grammar）一样，人类大脑与神经系统在进化史中早已被雕琢出与生俱来的‘音乐性’（Musicianship）。任何社会将音乐技能垄断为少数特权阶级的专利，都是对人类物种生物潜能的残酷剥夺与人为压抑。
+          </div>
+          <div class="arguments-grid">
+            
+          <div class="arg-item">
+            <div class="arg-claim">南非文达人儿童的惊人田野发现</div>
+            <p class="arg-evidence">布莱金在南非文达山村发现，没有任何一个文达儿童被视为‘不会唱歌’。六岁幼童在没有任何乐谱与学院辅导的情况下，就能自如运用极为繁复的切分节奏与五度相间合唱。音乐参与是每个人融入氏族的自然呼吸，如同学会走路与说话一样自然。</p>
+          </div>
+          <div class="arg-item">
+            <div class="arg-claim">西方精英主义教育体制的经济学批判</div>
+            <p class="arg-evidence">布莱金指出，西方现代音乐教育实际上是资本主义分工体制的衍生品——它通过制造极少数万众瞩目的‘演奏家大师’，将广大众人贬黜为只能掏钱买门票和唱片的‘被动消费者’。这种体制为了维持高昂的门槛，人为制造了‘才能匮乏’的假象。</p>
+          </div>
+          <div class="arg-item">
+            <div class="arg-claim">从‘人类组织的声音’走向‘组织完备的人性’</div>
+            <p class="arg-evidence">布莱金的传世名言宣告：音乐不仅是物理上被人类节律组织起来的声音（Humanly organized sound）；其终极价值，是在共同演奏、歌唱与共鸣中，消除人与人之间的冷漠与隔阂，从而达至一个‘组织完备的人性社会’（Soundly organized humanity）。</p>
+          </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= VIEW 4: METHODOLOGIA (史学与方法论工坊 - NEW!) ================= -->
+  <section class="view-section" id="view-methodologia">
+    <div class="section-header">
+      <div>
+        <h2>方法论与史学反思工坊 · 西方音乐史对镜</h2>
+        <p>对于西方音乐史学者而言，民族音乐学与声音人类学绝非仅仅提供‘异国情调的原始音乐知识点’，而是构成了一面强有力的哲学反思之镜。它迫使我们从欧洲中心主义的‘单线发展史’舒适区退出来，将‘作品’、‘自律性’、‘记谱’与‘天才’等神圣化范畴彻底历史化，回到具体的社会语境、媒介技术与身体实践中去。</p>
+      </div>
+    </div>
+
+    <!-- 1. 西方音乐史对镜：四大史学认识论反思 -->
+    <div class="method-block">
+      <h3 class="method-block-title">一、 西方音乐史对镜：跨出单线进化论舒适区的四大反思</h3>
+      <div class="reflections-grid">
+
+        <div class="ref-card">
+          <span class="ref-num">01</span>
+          <h4 class="ref-title">警惕单线进化史：破除‘原始—古典—成熟—先进’的升级神话</h4>
+          <div class="ref-dilemma"><strong>【传统史学盲区】</strong> 传统西方音乐史常潜意识地将格里高利圣咏视为‘单音稚拙幼年’，复调时代视为‘初具规模’，巴赫/贝多芬视为‘顶峰成熟’。这种线性进步史观在人类学面前彻底破产。</div>
+          <div class="ref-remedy"><strong>【人类学破局法】</strong> 任何一种音乐形式都是特定社会、制度与感官需求的完满表达，绝非通往某一未来终点的‘过渡阶段’。欧洲中世纪圣咏与中非雨林复调合唱具有完全同等的人类心灵完满性，差异只在于历史脉络，不存在生物或美学上的阶梯等级。</div>
+        </div>
+        <div class="ref-card">
+          <span class="ref-num">02</span>
+          <h4 class="ref-title">范畴的历史化：‘作品’与‘自律性’不是天赐本质，而是近代发明</h4>
+          <div class="ref-dilemma"><strong>【传统史学盲区】</strong> 西方古典音乐学长期受‘作品中心论’（Werk-concept）统治，默认音乐天然以乐谱、天才作曲家和固定作品的形式存在。</div>
+          <div class="ref-remedy"><strong>【人类学破局法】</strong> 达尔豪斯（Carl Dahlhaus）深刻指出：‘作品自律性’本身是18世纪末浪漫主义为对抗商品化而构筑的特定美学理论。如果拿‘作品’去套用口传圣咏、爵士即兴、印度拉格或日本邦乐，就等于用近代欧洲的一把特定尺子去强行裁剪全人类的声音经验。</div>
+        </div>
+        <div class="ref-card">
+          <span class="ref-num">03</span>
+          <h4 class="ref-title">记谱意识形态批判：谱面至上主义的去魅</h4>
+          <div class="ref-dilemma"><strong>【传统史学盲区】</strong> 将‘能写在五线谱上的音乐’视为正典，而将无法记谱的滑音、微音程、呼吸间歇、杂音嘶鸣打入冷宫或视为‘不精确’。</div>
+          <div class="ref-remedy"><strong>【人类学破局法】</strong> 记谱从来不是对声音的完全记录，它永远是高度选择性的政治技术。纽姆谱的发明是为了加洛林帝国的礼仪标准化与政治集中；五线谱的推广抹杀了欧洲各地民间活态的微音程变异。乐谱是声音的‘干制标本’，真正的音乐本体存在于每一次不可重复的肉身发声与听觉互动之中。</div>
+        </div>
+        <div class="ref-card">
+          <span class="ref-num">04</span>
+          <h4 class="ref-title">细化‘影响’机制：告别粗糙的‘中心—边缘’下行传播叙事</h4>
+          <div class="ref-dilemma"><strong>【传统史学盲区】</strong> 论及音乐交流时，习惯使用‘东方主义影响’、‘借鉴异国元素’等松散词汇，仿佛非西方音乐只是欧洲大师调味罐里的香料。</div>
+          <div class="ref-remedy"><strong>【人类学破局法】</strong> 人类音乐学要求学者追踪具体的人际接触路径、技术媒介、翻译摩擦与再语境化（Re-contextualization）。关注异文化声音如何在接触地带被当地社会改写、再分类与重新赋予社会权力意义。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 欧洲扶手椅 vs 美国田野现场 -->
+    <div class="method-block">
+      <h3 class="method-block-title">二、 欧洲「扶手椅」学派 vs 美国「田野现场」学派的大分野</h3>
+      <p style="color:var(--mut); font-size:0.9rem; margin-bottom:18px;">20世纪民族音乐学两大主流学派的方法论气质与认识论基石对峙：</p>
+      <div class="dual-camp-grid">
+        <div class="camp-box">
+          <h4>🏛️ 欧洲比较音乐学派（柏林学派 · 扶手椅实验室）</h4>
+          <p style="font-size:0.84rem; color:var(--acc-gold); margin-bottom:8px;"><strong>核心代表：</strong> 斯图姆普夫、霍恩博斯特尔、萨克斯、拉赫曼</p>
+          <p style="font-size:0.88rem; color:var(--ink); line-height:1.6; margin-bottom:10px;"><strong>核心方法：</strong> 以柏林留声机档案馆为中枢；学者居于书斋与实验室（Armchair）；依靠探险家寄回的爱迪生蜡管进行精密声学测音、客观五线谱转写与跨文化横向比勘。</p>
+          <p style="font-size:0.84rem; color:var(--acc-green); margin-bottom:6px;"><strong>学术贡献：</strong> 极其精密客观的数理声学公度衡（音分制、音叉对比、H-S乐器分类法），建立了现代乐器学与调式谱系实证标尺。</p>
+          <p style="font-size:0.84rem; color:var(--acc);"><strong>固有盲区：</strong> 脱离声音发生的活态社会语境；把声音从仪式、身体、信仰中抽离为孤立的‘物理标本’；易受文化圈传播论的中心-边缘思维束缚。</p>
+        </div>
+
+        <div class="camp-box">
+          <h4>🏕️ 北美音乐人类学派（田野民族志学派 · 身体在场）</h4>
+          <p style="font-size:0.84rem; color:var(--acc-gold); margin-bottom:8px;"><strong>核心代表：</strong> 博厄斯、胡德、梅里亚姆、布莱金、西格、赖斯</p>
+          <p style="font-size:0.88rem; color:var(--ink); line-height:1.6; margin-bottom:10px;"><strong>核心方法：</strong> 深受文化人类学浸润；学者必须亲自前往田野现场长期沉浸（至少一年）；主张‘参与观察’、‘深描’与学徒制身体演练（双重音乐才能 Bi-musicality）。</p>
+          <p style="font-size:0.84rem; color:var(--acc-green); margin-bottom:6px;"><strong>学术贡献：</strong> 揭示音乐在社会再生产中的动态生成机制；将声音与权力、性别、宇宙观、阶级深度绑定；瓦解欧洲中心主义霸权。</p>
+          <p style="font-size:0.84rem; color:var(--acc);"><strong>固有盲区：</strong> 有时过度偏向社会学与人类学阐释，而出现弱化乐音本体声学结构分析的偏向（梅里亚姆后期学界反思）。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 博厄斯历史特殊论：三支柱与五大理论缺陷 -->
+    <div class="method-block">
+      <h3 class="method-block-title">三、 博厄斯历史特殊论：三大学派分支与五大内在理论缺陷</h3>
+      <p style="color:var(--acc-gold); font-size:0.88rem; margin-bottom:14px;"><strong>来源出处：</strong> 结合第三讲课堂笔记与人类学认识论深度反思</p>
+      
+      <!-- 三大支柱 -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:14px; margin-bottom:20px;">
+
+        <div style="background:var(--bg-subtle); border-left:3px solid var(--acc-gold); padding:12px 14px; border-radius:4px;">
+          <strong style="color:var(--ink-bright); font-size:0.92rem;">文化整体论 (Cultural Holism)</strong>
+          <p style="font-size:0.84rem; color:var(--mut); margin-top:4px;">每种文化都是不可分割的有机整体，其意义只能从自身脉络中解读。后由其学生克罗伯（Kroeber）发扬光大。</p>
+        </div>
+        <div style="background:var(--bg-subtle); border-left:3px solid var(--acc-gold); padding:12px 14px; border-radius:4px;">
+          <strong style="color:var(--ink-bright); font-size:0.92rem;">文化多元发生论 (Multilinear)</strong>
+          <p style="font-size:0.84rem; color:var(--mut); margin-top:4px;">文化多样性源于环境回应、独立发明与横向借入的综合，断然否定摩尔根、泰勒的单线单向进化论。</p>
+        </div>
+        <div style="background:var(--bg-subtle); border-left:3px solid var(--acc-gold); padding:12px 14px; border-radius:4px;">
+          <strong style="color:var(--ink-bright); font-size:0.92rem;">文化相对主义 (Cultural Relativism)</strong>
+          <p style="font-size:0.84rem; color:var(--mut); margin-top:4px;">拒绝用单一文明标尺评判他者，主张‘同情性理解’（Empathetic Understanding）。后由赫斯科维茨系统化。</p>
+        </div>
+      </div>
+
+      <h4 style="font-family:var(--serif); color:var(--acc); font-size:1.05rem; margin:16px 0 8px;">
+        【历史特殊论的五大内在理论缺陷 (课堂深度解析)】
+      </h4>
+      <div class="boas-defects-grid">
+
+        <div class="defect-card">
+          <h5>① 归纳无穷困境 (Infinite Induction)</h5>
+          <p>博厄斯主张‘积累足够多个案后再归纳规律’。但在逻辑上，经验个案永远无法穷尽，任何时候都可以说‘材料还不够多，下结论为时过早’，导致历史特殊论从严谨谨慎滑向了无限期悬置理论建构的‘不作为’。</p>
+        </div>
+        <div class="defect-card">
+          <h5>② 描述与解释的混淆 (Description vs. Explanation)</h5>
+          <p>详尽记录地方民族志材料只是完成‘描述’（这究竟是什么），但要回答‘为什么是这样’必须依托跨个案的比较理论框架。原则性排斥比较，导致历史特殊论解释力先天不足。</p>
+        </div>
+        <div class="defect-card">
+          <h5>③ 文化整体论的封闭性悖论 (Hermeneutic Enclosure)</h5>
+          <p>将文化视作只能从内部理解的有机闭环，由此引发严峻悖论：作为外来者的西方人类学家，在认识论上究竟如何可能真正进入异文化的内部视角？这一矛盾后来直接催生了后殖民主义批判与局内人/局外人论争。</p>
+        </div>
+        <div class="defect-card">
+          <h5>④ 无文字社会历史重建的推测性 (Speculative History)</h5>
+          <p>博厄斯强调历史性，主张通过传播史解释特征。但广大口传原住民社会缺乏文字档案，其历史往往无法证实，使其构建的‘历史’在很多情况下只是事后的叙事假说，并不比进化论更具客观实证根基。</p>
+        </div>
+        <div class="defect-card">
+          <h5>⑤ 相对主义与普世价值的政治悖论 (Moral Paralysis)</h5>
+          <p>如果绝对坚持每种文化价值自足、外部无权干涉，那么人类学将无法谴责任何文化内部的种族屠杀、残害女性等暴行。文化相对主义与普世人权伦理之间的张力至今仍是学界最激烈的伦理战场。</p>
+        </div>
+      </div>
+
+      <div class="axiom-box" style="margin-top:20px;">
+        【与西方音乐史家达尔豪斯的哲学对照】：博厄斯与达尔豪斯同样持有鲜明的‘反目的论’立场（反对进步史观）。但达尔豪斯更为诚实——他公开承认自己在运用一套特定的美学理论（作品自律性）来对抗另一套理论；而博厄斯则以‘反理论’的纯经验客观姿态，悄悄潜植了一整套关于文化整体性与相对性的隐性理论，使其理论预设在方法论外衣下变得不透明。
+      </div>
+    </div>
+
+    <!-- 4. 萨克斯《音乐的源泉》：器乐的两大原初冲动与竹筒琴 -->
+    <div class="method-block">
+      <h3 class="method-block-title">四、 萨克斯《音乐的源泉》：器乐的两大原初冲动——‘节奏与噪音’</h3>
+      <div class="axiom-box" style="margin-bottom:14px;">
+        <strong>【核心论断】：</strong> 器乐产生自古代人类的两种基本需求——节奏和噪音。
+      </div>
+      <p style="font-size:0.92rem; color:var(--ink); line-height:1.7;">萨克斯将声乐与器乐从发生学上严格区分：声乐源自语言高潮、情感呼喊与自然模仿；而最早的器物绝非为了演奏‘动听的旋律’，而是人类为了实现集体动作同步、威慑野兽、通神辟邪而创造的‘节律与响度强化工具’。把音乐的第一属性设定为‘纯正音高与歌唱旋律’，纯属近代欧洲室内乐的资产阶级审美神话！</p>
+
+      <div class="sachs-material-showcase">
+        <div class="sachs-img-wrap">
+          <img src="assets/img/bamboo_zither.jpg" alt="Bamboo Tube Zither">
+        </div>
+        <div>
+          <h4 style="font-family:var(--serif); font-size:1.15rem; color:var(--acc-gold); margin-bottom:6px;">
+            物质文化发生学经典标本：自弦竹筒琴 (Idiochord Tube Zither / 瓦里哈 Valiha)
+          </h4>
+          <p style="font-size:0.88rem; color:var(--ink); line-height:1.65;">
+            在马达加斯加与东南亚广泛分布的竹筒琴（如Valiha），其琴弦不是外购的金属或丝线，而是直接用刀在竹管天然坚硬表层挑出两道平行的竹皮纤维，两头不断，下方垫入硬木或贝壳作为琴马张紧！这一实物案例向音乐史家揭示：乐器从来不是抽象理论的发明，而是具体的竹木物质材料、日常生产工具与身体切削动作交互生长的奇迹。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 蒂莫西·赖斯：三维动态事象模式 -->
+    <div class="method-block">
+      <h3 class="method-block-title">五、 蒂莫西·赖斯：三维动态事象模式 (Toward the Remodeling, 1987)</h3>
+      <div class="sachs-material-showcase" style="margin-bottom:20px;">
+        <div class="sachs-img-wrap">
+          <img src="assets/img/gaida.jpg" alt="Gaida Player">
+        </div>
+        <div>
+          <h4 style="font-family:var(--serif); font-size:1.1rem; color:var(--acc-gold); margin-bottom:6px;">
+            保加利亚盖达风笛 (Gaida) 与身体化传习录
+          </h4>
+          <p style="font-size:0.88rem; color:var(--ink); line-height:1.65;">
+            赖斯将格尔茨的阐释人类学引入音乐学，打破了以往研究只看‘大结构’而忽视‘具体活生生的人’的教条，让风笛手瓦里梅佐夫的个人生命史与保加利亚国家现代化剧变在同一首舞曲中交织共鸣。
+          </p>
+        </div>
+      </div>
+
+      <div class="arguments-grid">
+
+        <div class="arg-item">
+          <div class="arg-claim">维度一：历史的建构 (Historically Constructed)</div>
+          <p class="arg-evidence">特定音乐形式在时间轴线上是如何被世代积累、媒介演变、制度规定与传统习得所塑造的（吸收历史音乐学的深度）。</p>
+        </div>
+        <div class="arg-item">
+          <div class="arg-claim">维度二：社会的维护 (Socially Maintained)</div>
+          <p class="arg-evidence">声音体系如何在当下的社会结构中被仪式、节庆、社群规范、阶层认同与经济赞助所持续维系和再生产（吸收社会人类学的广度）。</p>
+        </div>
+        <div class="arg-item">
+          <div class="arg-claim">维度三：个体的创造与体验 (Individually Created and Experienced)</div>
+          <p class="arg-evidence">具体的乐师在身体演奏中如何感受肌肉发力，如何在每一次演出中根据听众反馈进行即兴变奏与主体生命抒发（吸收现象学与阐释学的温度）。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. 学科定义的四次历史演进 -->
+    <div class="method-block">
+      <h3 class="method-block-title">六、 学科定义的四次历史演化全景谱系</h3>
+      <div class="arguments-grid">
+
+        <div class="arg-item">
+          <div class="arg-claim">1885 阿德勒 · 比较音乐学 (Vergleichende Musikwissenschaft)</div>
+          <p class="arg-evidence">体系音乐学分支；对各民族未开化与文明民族民间歌曲进行搜集、比较与分类。</p>
+        </div>
+        <div class="arg-item">
+          <div class="arg-claim">1950 昆斯特 · 民族音乐学 (Ethno-musicology)</div>
+          <p class="arg-evidence">脱离欧洲中心优劣比较；研究所有民族音乐在其自身文化脉络中的本质规律。</p>
+        </div>
+        <div class="arg-item">
+          <div class="arg-claim">1964 梅里亚姆 · 文化中的音乐研究 (Study of Music in Culture)</div>
+          <p class="arg-evidence">概念-行为-声音三元动态闭环；将音乐视为人类社会文化行为的不可分割产物。</p>
+        </div>
+        <div class="arg-item">
+          <div class="arg-claim">1987 西格/赖斯/泰顿 · 音乐人类学 & 人们制造音乐的研究 (Musical Anthropology)</div>
+          <p class="arg-evidence">构成性本体论；音乐创造社会结构本身；关注具身体验与活态音乐事象。</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= VIEW 5: ORIENS & HOGAKU ================= -->
+  <section class="view-section" id="view-oriens">
+    <div class="section-header">
+      <div>
+        <h2>东亚音乐文化圈与日本传统邦乐大系</h2>
+        <p>李欣阳同学《外国民族音乐》笔记与第二讲专题全面融合：雅乐左方唐乐与右方高丽乐对峙、三管三鼓两弦器乐解剖、都节阴阳调式及序破急美学。</p>
+      </div>
+    </div>
+
+    <!-- Hero Panorama -->
+    <div class="hero-pano">
+      <img src="assets/img/gagaku.jpg" alt="Gagaku Orchestra" loading="lazy">
+      <div class="hero-pano-content">
+        <h3>东亚音乐文化圈与日本传统邦乐大系</h3>
+        <p>东亚音乐文化圈以中、日、韩为核心纽带。自隋唐以来，大陆宫廷燕乐、佛乐及西域乐器东渡日本，在平安时代经历了深度的本土化整合（国风暗黑化与精炼化），形成了以‘雅乐’为顶峰，以‘能乐’、‘筝曲’、‘尺八’、‘三味线’为分支的宏大邦乐谱系。李欣阳同学在《外国民族音乐》笔记中精确提炼了‘雅乐分类、三管三鼓两弦、都节音阶与序破急’四大审美支柱。</p>
+      </div>
+    </div>
+
+    <!-- 雅乐宫廷三大体裁 -->
+    <h3 style="font-family:var(--serif); font-size:1.3rem; margin-bottom:16px; color:var(--ink-bright); border-left:3px solid var(--acc-gold); padding-left:10px;">
+      宫廷雅乐体裁：唐乐（左方） vs 高丽乐（右方）
+    </h3>
+    <div class="arguments-grid" style="margin-bottom:36px;">
+
+      <div class="arg-item">
+        <div class="arg-claim">唐乐 (Tōgaku · 左方乐)</div>
+        <p style="font-size:0.84rem; color:var(--acc-gold); margin-bottom:6px;"><strong>渊源：</strong> 源自中国唐代宫廷燕乐、西域九部乐与天竺乐</p>
+        <p style="font-size:0.84rem; color:var(--mut); margin-bottom:6px;"><strong>装束：</strong> 赤色系袭装（左方红袍）</p>
+        <p style="font-size:0.84rem; color:var(--mut); margin-bottom:8px;"><strong>编制：</strong> 三管（笙、篳篥、龙笛）+ 两弦（乐筝、乐琵琶）+ 三鼓（鞨鼓、太鼓、钲鼓）</p>
+        <p style="font-size:0.88rem; color:var(--ink); line-height:1.6; margin-bottom:8px;">由鞨鼓（Kakko）领奏指挥；旋律庄严沉静，笙的‘合竹’和弦形成笼罩全场的音响光晕，乐琵琶与乐筝在重拍处作骨干音点缀，严禁旋律性加花。</p>
+        <p style="font-size:0.8rem; color:var(--acc);"><strong>传世曲目：</strong> 《越天乐》(Etenraku)、《兰陵王》(Ranryōō)、《春莺啭》(Shun'ōden)</p>
+      </div>
+      <div class="arg-item">
+        <div class="arg-claim">高丽乐 (Komagaku · 右方乐)</div>
+        <p style="font-size:0.84rem; color:var(--acc-gold); margin-bottom:6px;"><strong>渊源：</strong> 源自朝鲜半岛（高句丽、百济、新罗）及渤海国音乐</p>
+        <p style="font-size:0.84rem; color:var(--mut); margin-bottom:6px;"><strong>装束：</strong> 绿色系袭装（右方青/绿袍）</p>
+        <p style="font-size:0.84rem; color:var(--mut); margin-bottom:8px;"><strong>编制：</strong> 高丽笛（Komabue）+ 篳篥 + 三之鼓（San-no-tsuzumi）+ 太鼓 + 钲鼓（严格无弦乐，无笙）</p>
+        <p style="font-size:0.88rem; color:var(--ink); line-height:1.6; margin-bottom:8px;">由三之鼓领奏；节奏更为硬朗、跃动，跳跃感明显强于唐乐；纯管乐与打击乐编制，无笙的和声遮蔽，音色更为古朴峭拔。</p>
+        <p style="font-size:0.8rem; color:var(--acc);"><strong>传世曲目：</strong> 《纳曾利》(Nasori)、《胡饮酒》(Konju)、《贵德》(Kitoku)</p>
+      </div>
+      <div class="arg-item">
+        <div class="arg-claim">催马乐与朗咏 (Saibara & Rōei)</div>
+        <p style="font-size:0.84rem; color:var(--acc-gold); margin-bottom:6px;"><strong>渊源：</strong> 平安贵族在管弦伴奏下歌唱的声乐体裁</p>
+        <p style="font-size:0.84rem; color:var(--mut); margin-bottom:6px;"><strong>装束：</strong> 平安朝公卿狩衣或直衣</p>
+        <p style="font-size:0.84rem; color:var(--mut); margin-bottom:8px;"><strong>编制：</strong> 人声歌唱为主，配以龙笛、笙、乐筝与拍子（笏拍子）伴奏</p>
+        <p style="font-size:0.88rem; color:var(--ink); line-height:1.6; margin-bottom:8px;">催马乐是将日本古代民间风俗歌（方言土谣）雅乐化；朗咏则是用庄严悠长的和风旋律吟诵汉诗（如白居易诗篇）及和歌片段。</p>
+        <p style="font-size:0.8rem; color:var(--acc);"><strong>传世曲目：</strong> 催马乐《伊势海》《东屋》；朗咏《嘉辰令月》《东岸居士》</p>
+      </div>
+    </div>
+
+    <!-- 邦乐六大核心乐器与舞乐 -->
+    <h3 style="font-family:var(--serif); font-size:1.3rem; margin-bottom:16px; color:var(--ink-bright); border-left:3px solid var(--acc-gold); padding-left:10px;">
+      器乐与仪式解剖：三管三鼓两弦、舞乐面具与普化吹禅
+    </h3>
+    <div class="hogaku-grid">
+
+      <div class="hogaku-card" onclick="openInspector('hogaku', 'sho')">
+        <div class="hogaku-card-media">
+          <img src="assets/img/sho.jpg" alt="笙 (Shō)" loading="lazy">
+        </div>
+        <div class="hogaku-card-body">
+          <h4 class="hogaku-title">笙 (Shō)</h4>
+          <div class="hogaku-hs">422.31 自由簧多管气鸣乐器</div>
+          <div class="hogaku-role">雅乐的‘天光之声’与立体和声发生器</div>
+          <p class="hogaku-desc">由17根不同长度的细竹管环形排列插入圆形木制风箱构成。竹管根部装有金属自由簧片（含金银合金）。笙的最大特征是吹吸皆可发音，循环发声，形成连续不断的声音云雾。</p>
+          <div class="hogaku-acoustics"><strong>声学奥秘：</strong> 演奏时同时按压多孔，产生被称为‘合竹’（Aitake）的5至6音非三和弦音团。如‘乞’、‘一’、‘工’、‘凢’等合竹，在物理上创造了如同现代微复调一般的空灵共鸣，被日本古典美学视为‘照耀大地、盘旋空中的金色天光’。</div>
+        </div>
+      </div>
+      <div class="hogaku-card" onclick="openInspector('hogaku', 'koto')">
+        <div class="hogaku-card-media">
+          <img src="assets/img/koto.jpg" alt="筝 (Gakusō / Koto)" loading="lazy">
+        </div>
+        <div class="hogaku-card-body">
+          <h4 class="hogaku-title">筝 (Gakusō / Koto)</h4>
+          <div class="hogaku-hs">312.22 简单弦鸣乐器 / 半圆柱型筝族</div>
+          <div class="hogaku-role">骨干节奏点缀 · 俗乐巅峰八桥十三弦</div>
+          <p class="hogaku-desc">长约180厘米的桐木共鸣箱，张设13根生丝弦（今多用合成纤维），每弦下置活动的‘筝柱’（可移动琴马）。雅乐中称为‘乐筝’，仅用‘静掻’（Shizugaki）与‘早掻’（Hayagaki）固定节奏型标记小节骨干；近世江户时代八桥检校将其改造为俗乐主角，开创筝曲黄金时代。</p>
+          <div class="hogaku-acoustics"><strong>声学奥秘：</strong> 流派分为生田流（Ikuta-ryū，戴方形指甲，斜向拨弦，重器乐技巧）与山田流（Yamada-ryū，戴圆形指甲，正向拨弦，重歌唱朗诵配合）。代表作《六段之调》(Rokudan no Shirabe)奠定了变奏手事体裁的最高法则。</div>
+        </div>
+      </div>
+      <div class="hogaku-card" onclick="openInspector('hogaku', 'biwa')">
+        <div class="hogaku-card-media">
+          <img src="assets/img/biwa.jpg" alt="琵琶 (Biwa)" loading="lazy">
+        </div>
+        <div class="hogaku-card-body">
+          <h4 class="hogaku-title">琵琶 (Biwa)</h4>
+          <div class="hogaku-hs">321.321 复合弦鸣乐器 / 颈部折角鲁特类</div>
+          <div class="hogaku-role">结构性重拍敲击 · 盲僧叙事咏唱的史诗载体</div>
+          <p class="hogaku-desc">四弦四柱（乐琵琶、平家琵琶）或四弦五柱/五弦五柱（萨摩琵琶、筑前琵琶）。琴体宽大扁平，用沉重的木制大拨子（Bachi）猛烈刮拨琴弦，兼击面板发声。</p>
+          <div class="hogaku-acoustics"><strong>声学奥秘：</strong> 雅乐中的乐琵琶严禁演奏旋律，仅以‘割弹’与‘拨音’在每小节强拍给出深沉刚劲的低频脉冲；而盲僧‘琵琶法师’则以平家琵琶弹唱《平家物语》，拨子剧烈拍击产生如金戈铁马般的轰鸣与沙哑泛音（Sawari），具有极强的人文震撼力。</div>
+        </div>
+      </div>
+      <div class="hogaku-card" onclick="openInspector('hogaku', 'bugaku_dance')">
+        <div class="hogaku-card-media">
+          <img src="assets/img/bugaku.jpg" alt="舞乐 (Bugaku)" loading="lazy">
+        </div>
+        <div class="hogaku-card-body">
+          <h4 class="hogaku-title">舞乐 (Bugaku)</h4>
+          <div class="hogaku-hs">舞台仪式综合表演体裁</div>
+          <div class="hogaku-role">左舞与右舞的对称仪式美学</div>
+          <p class="hogaku-desc">伴随雅乐进行的日本宫廷面具舞蹈。分为左舞（Sa-mai，左方唐乐伴奏，着赤红色袍，动作舒缓端正）与右舞（U-mai，右方高丽乐伴奏，着青绿色袍，动作矫健敏捷）。</p>
+          <div class="hogaku-acoustics"><strong>声学奥秘：</strong> 以著名的《兰陵王》（Ranryōō）为例：舞者头戴狰狞金铜龙面具，手持金杖，在《兰陵王破阵乐》沉重鼓点与龙笛悠长高音中，以毫厘不爽的几何对称步法起舞，呈现出超越人世悲欢的神圣威仪。</div>
+        </div>
+      </div>
+      <div class="hogaku-card" onclick="openInspector('hogaku', 'shakuhachi')">
+        <div class="hogaku-card-media">
+          <img src="assets/img/shakuhachi.jpg" alt="尺八 (Shakuhachi)" loading="lazy">
+        </div>
+        <div class="hogaku-card-body">
+          <h4 class="hogaku-title">尺八 (Shakuhachi)</h4>
+          <div class="hogaku-hs">421.111 端吹无管嘴直竹笛 / 边缘切口</div>
+          <div class="hogaku-role">普化宗虚无僧‘吹禅’法器 · 禅宗解脱之音</div>
+          <p class="hogaku-desc">长一尺八寸（约54.5厘米），取竹根部坚硬五节制成，前四孔后一孔。吹口向外削出斜面歌口（Utaguchi）。唐代作为雅乐乐器东传，后在宫廷中衰落，江户时代被普化宗僧人（虚无僧 Komusō）奉为独门‘法器’，头戴天盖斗笠隐匿身份，行化乞食。</p>
+          <div class="hogaku-acoustics"><strong>声学奥秘：</strong> 尺八音响追求‘一音成佛’。演奏者通过极其精妙的俯仰头（Meri-Kari）动作改变气息入射角，可使同一孔位滑移数个半音并产生巨大的音色撕裂感与气鸣杂音（气声、啸音、竹声合一），将自然之风物化于禅寂之中。</div>
+        </div>
+      </div>
+      <div class="hogaku-card" onclick="openInspector('hogaku', 'shamisen')">
+        <div class="hogaku-card-media">
+          <img src="assets/img/shamisen.jpg" alt="三味线 (Shamisen)" loading="lazy">
+        </div>
+        <div class="hogaku-card-body">
+          <h4 class="hogaku-title">三味线 (Shamisen)</h4>
+          <div class="hogaku-hs">321.31 复合弦鸣 / 长颈无品皮膜鲁特</div>
+          <div class="hogaku-role">江户町人世俗文化灵魂 · 地歌/长歌/净琉璃</div>
+          <p class="hogaku-desc">由琉球‘三线’传入日本本土演变而成。长方形木制琴面蒙猫皮或狗皮，三根弦，无品，用银杏叶形大木拨或象牙拨弹奏。下端设有独特的‘触弦’结构（Sawari），琴弦轻触指板产生迷人的沙沙嘶鸣声。</p>
+          <div class="hogaku-acoustics"><strong>声学奥秘：</strong> 在歌舞伎长歌（Nagauta）、义太夫节（Gidayū-bushi，文乐木偶剧叙事）以及三曲合奏（Sankyoku，筝、三味线、尺八）中担任主导。在‘地歌’（Jiuta）结构中，歌唱之间插入纯器乐炫技段落‘手事’（Tegoto），技巧极其丰富。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 音阶律制与美学哲学 -->
+    <h3 style="font-family:var(--serif); font-size:1.3rem; margin-bottom:16px; color:var(--ink-bright); border-left:3px solid var(--acc-gold); padding-left:10px;">
+      邦乐调式律制与美学哲学核心
+    </h3>
+    <div class="aesthetics-strip">
+
+      <div class="aes-box">
+        <h4>都节音阶 (Miyako-bushi / 阴音阶)</h4>
+        <p style="font-family:var(--sans); font-size:0.8rem; color:var(--acc-gold); margin-bottom:8px;"><strong>音程结构：</strong> D - Eb - G - Ab - c (音程关系：小二度 - 大三度 - 小二度 - 大三度)</p>
+        <p>江户时期城市俗乐（地歌、筝曲、三味线）的核心音阶。含有两个典型的小二度半音倾向（Eb与Ab），音响色彩深沉、哀婉、内省，充满物哀（Mono no aware）的感伤色彩。</p>
+      </div>
+      <div class="aes-box">
+        <h4>田舍音阶 (Inaka-bushi / 阳音阶)</h4>
+        <p style="font-family:var(--sans); font-size:0.8rem; color:var(--acc-gold); margin-bottom:8px;"><strong>音程结构：</strong> D - E - G - A - B - d (音程关系：大二度 - 小三度 - 大二度 - 大二度)</p>
+        <p>日本民间乡村民谣（民谣 Min'yō、童谣）的基础音阶。全无小二度半音，色彩开朗、纯朴、明朗，富有农耕劳作的自然气息。</p>
+      </div>
+      <div class="aes-box">
+        <h4>律音阶 (Ritsu) 与 吕音阶 (Ryo)</h4>
+        <p style="font-family:var(--sans); font-size:0.8rem; color:var(--acc-gold); margin-bottom:8px;"><strong>音程结构：</strong> 律：D - E - G - A - B - d；吕：C - D - E - G - A - c</p>
+        <p>日本古代宫廷雅乐所采纳的受中国雅乐律制影响的古阶体系，与俗乐的阴阳二体系形成鲜明的阶层审美对峙。</p>
+      </div>
+      <div class="aes-box">
+        <h4>序 · 破 · 急 (Jo-Ha-Kyū)</h4>
+        <p>源自世阿弥能乐理论与雅乐套曲结构。‘序’为引子，节奏自由缓慢，铺陈虚空；‘破’为展开，节拍确立，织体丰富，渐次加速；‘急’为高潮与尾声，突飞猛进，瞬间爆发而后戛然而止。它不仅是音乐的时间法则，更是东亚生命节律与宇宙起落的哲学映射。</p>
+      </div>
+      <div class="aes-box">
+        <h4>侘寂 (Wabi-Sabi) 与 物哀 (Mono no aware)</h4>
+        <p>追求不完美、粗糙、枯槁与短暂之美。在尺八的吹禅杂音、三味线拨子撞击蒙皮的木质钝响、以及筝曲单音余韵的自然消逝中，音乐不追求西方交响乐宏伟对称的形式丰碑，而专注于当下微茫音响瞬间的寂灭与感动。</p>
+      </div>
+      <div class="aes-box">
+        <h4>间 (Ma · 空间与留白)</h4>
+        <p>日本音乐中‘沉默’并非声音的中断，而是最具张力的存在。音与音之间的寂静间歇，蕴含着无限的呼吸与倾听期待。老子‘大音希声’在邦乐中化为具体的休止符与余音悬停。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIEW 6: ORGANOLOGIA ================= -->
+  <section class="view-section" id="view-organologia">
+    <div class="section-header">
+      <div>
+        <h2>乐器分类学 · 霍恩博斯特尔-萨克斯体系 (H-S System)</h2>
+        <p>1914年建立的物理振动体四大家族。彻底告别欧洲中心主义分类，追踪人类声学工程物化史。</p>
+      </div>
+    </div>
+
+    <!-- 简单弦鸣 vs 复合弦鸣 核心本体论解析 -->
+    <div class="ontological-callout">
+      <h4>弦鸣乐器的根本本体论分野：31 简单弦鸣（琴族） vs 32 复合弦鸣（鲁特/竖琴）</h4>
+      <p style="font-size:0.92rem; color:var(--ink);">萨克斯与霍恩博斯特尔在3xxx弦鸣乐器分类中做出的最具革命性的洞见，在于区分了琴弦张力对共鸣箱的‘结构依存性’：</p>
+      <div class="onto-grid">
+        <div class="onto-col">
+          <h5>31 简单弦鸣乐器 / 琴族 (Simple / Zithers)</h5>
+          <p><strong>判准法则：</strong> 乐器在本质上仅由一个‘弦架’构成。若把共鸣箱拆除或剥离，琴弦依然紧绷在弦架两端，<strong>调音状态依然完好，仍可正常演奏发音！</strong></p>
+          <p style="margin-top:6px; color:var(--mut);"><strong>代表乐器：</strong> 中国古琴、古筝、日本筝、马达加斯加瓦里哈竹筒琴、古希腊单弦琴（Monochord）。</p>
+        </div>
+        <div class="onto-col">
+          <h5>32 复合弦鸣乐器 (Composite Chordophones)</h5>
+          <p><strong>判准法则：</strong> 琴颈（Neck）或支架与共鸣箱在结构上不可分割地嵌合在一起。<strong>一旦拆毁共鸣箱，琴弦张力将彻底崩溃，乐器随之瓦解！</strong></p>
+          <p style="margin-top:6px; color:var(--mut);"><strong>代表乐器：</strong> 中国琵琶、印度西塔琴、西非科拉琴、欧洲小提琴、乌德琴、吉他。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 四大家族及其实物标本 -->
+
+    <div class="organ-family-block">
+      <div class="family-head">
+        <span class="family-code">1xxx</span>
+        <h3>体鸣乐器 (Idiophones)</h3>
+      </div>
+      <p class="family-def"><strong>物理定义：</strong> 乐器本身的材料因其具有弹性而直接发声，无需张设琴弦、膜皮，亦无需空气柱激励。</p>
+      <p style="font-size:0.82rem; color:var(--mut); margin-bottom:18px;"><strong>主要细分分支：</strong> 11 拍击体鸣乐器 (Concussion - 如响板、拍板、钹) · 12 击打体鸣乐器 (Percussion - 如钟、锣、木琴、石磬) · 13 拨奏/簧片体鸣乐器 (Plucked/Lamellophones - 如拇指琴 Mbira、口弦) · 14 摩擦体鸣乐器 (Friction - 如玻璃琴、刮琴)</p>
+      <div class="specimen-grid">
+        
+          <div class="specimen-card" onclick="openInspector('organ', '曾侯乙编钟 (Zenghouyi Bells)')">
+            <div class="specimen-media">
+              <img src="assets/img/bianzhong.jpg" alt="曾侯乙编钟 (Zenghouyi Bells)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">曾侯乙编钟 (Zenghouyi Bells)</h4>
+              <div class="specimen-meta">中国湖北随州 · 战国早期 (前433年)</div>
+              <div class="specimen-code">111.242 双音合瓦型青铜编钟</div>
+              <p class="specimen-acoustics">65件青铜钟总重量达2.5吨。由于独特的‘合瓦型’剖面结构，产生两组独立的声学节线，使每件钟敲击正鼓部与侧鼓部能准确发出互为三度的两个不同纯正乐音，具备一钟双音绝技，跨越五个半八度，展现了公元前5世纪人类声学工程的最高奇迹。</p>
+            </div>
+          </div>
+          <div class="specimen-card" onclick="openInspector('organ', '巴拉风木琴 (Balafon)')">
+            <div class="specimen-media">
+              <img src="assets/img/balafon.jpg" alt="巴拉风木琴 (Balafon)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">巴拉风木琴 (Balafon)</h4>
+              <div class="specimen-meta">西非曼丁哥文化圈 (马里 / 几内亚)</div>
+              <div class="specimen-code">111.212 带共鸣葫芦架击木琴</div>
+              <p class="specimen-acoustics">由硬木音条固定在竹木框架上构成，每个音条下方悬挂按体积严格调谐的干燥葫芦作为声学共鸣腔。在葫芦壁上钻孔并贴上极薄的蜘蛛卵囊膜（Spider-egg membrane），木槌击奏时卵膜剧烈震颤，产生西非特有的沙沙嘶鸣嗡嗡声（Buzzing timbre），使声音极具穿透力。</p>
+            </div>
+          </div>
+          <div class="specimen-card" onclick="openInspector('organ', '姆比拉拇指琴 (Mbira dzaVadzimu)')">
+            <div class="specimen-media">
+              <img src="assets/img/mbira.jpg" alt="姆比拉拇指琴 (Mbira dzaVadzimu)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">姆比拉拇指琴 (Mbira dzaVadzimu)</h4>
+              <div class="specimen-meta">津巴布韦绍纳人 (Shona People)</div>
+              <div class="specimen-code">121.22 盒装拨片体鸣乐器 / 簧片琴</div>
+              <p class="specimen-acoustics">在坚硬木板上固定22至28根经过锻打的金属键（传统用铁矿石冶炼）。演奏者将琴置于大型干燥葫芦壳共鸣器（Deze）内，双手拇指与食指弹拨。琴板与葫芦边缘绑有贝壳或啤酒盖，弹奏时产生持续的嗡鸣声，被绍纳人视为打开通往祖先神灵（Vadzimu）意识维度的声学门匙。</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="organ-family-block">
+      <div class="family-head">
+        <span class="family-code">2xxx</span>
+        <h3>膜鸣乐器 (Membranophones)</h3>
+      </div>
+      <p class="family-def"><strong>物理定义：</strong> 通过张紧在框架或共鸣体开口上的柔韧薄膜（动物皮膜、合成膜）受激励振动发声。</p>
+      <p style="font-size:0.82rem; color:var(--mut); margin-bottom:18px;"><strong>主要细分分支：</strong> 21 击膜乐器 (Struck drums - 绝大多数打击鼓) · 22 拨膜乐器 (Plucked drums - 膜中心附弦被拨击) · 23 摩擦膜乐器 (Friction drums - 如库卡鼓 Cuíca) · 24 吹膜乐器 (Singing membranes / Kazoos - 卡祖笛、笛膜)</p>
+      <div class="specimen-grid">
+        
+          <div class="specimen-card" onclick="openInspector('organ', '金贝鼓 (Djembe)')">
+            <div class="specimen-media">
+              <img src="assets/img/djembe.jpg" alt="金贝鼓 (Djembe)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">金贝鼓 (Djembe)</h4>
+              <div class="specimen-meta">西非 (几内亚 / 马里 / 塞内加尔)</div>
+              <div class="specimen-code">211.261 单头高脚杯形木击鼓</div>
+              <p class="specimen-acoustics">整木掏空雕刻呈圣杯状，鼓面张紧山羊皮。依靠击打鼓面中心、中圈与边缘的不同手指手法，产生三层分明的基频与泛音结构：中心产生深沉浑厚的低音（Bass ~60-80Hz）、中环产生圆润饱满的中音（Tone ~300Hz）、边缘手指甩击产生清脆如爆竹的清音（Slap >1000Hz）。</p>
+            </div>
+          </div>
+          <div class="specimen-card" onclick="openInspector('organ', '塔布拉鼓 (Tabla & Dagga)')">
+            <div class="specimen-media">
+              <img src="assets/img/tabla.jpg" alt="塔布拉鼓 (Tabla & Dagga)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">塔布拉鼓 (Tabla & Dagga)</h4>
+              <div class="specimen-meta">北印度 (Hindustani Classical)</div>
+              <div class="specimen-code">211.222 壶形与杯形双对鼓</div>
+              <p class="specimen-acoustics">右手木制高音鼓（Dayan）与左手铜/泥制低音鼓（Bayan）。鼓面最大奥秘在于中央涂有由铁粉、米浆与炭灰反复碾磨烘烤而成的黑色硬调音斑（Siyahi）。该质点增加了鼓皮局部的振动质量，彻底消除了普通圆形膜的非谐波泛音，使其产生近乎完美纯净的正弦波钟琴音色，且可通过左手手腕挤压膜边进行滑音（Meend）。</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="organ-family-block">
+      <div class="family-head">
+        <span class="family-code">3xxx</span>
+        <h3>弦鸣乐器 (Chordophones)</h3>
+      </div>
+      <p class="family-def"><strong>物理定义：</strong> 在固定的两个端点之间张设张紧的琴弦，由琴弦的横向振动产生原始声频。</p>
+      <p style="font-size:0.82rem; color:var(--mut); margin-bottom:18px;"><strong>主要细分分支：</strong> 31 简单弦鸣乐器 / 琴族 (Simple / Zithers - 乐器仅由弦轴架组成，即使剥离共鸣箱，琴弦仍保持张力并可调音演奏) · 32 复合弦鸣乐器 (Composite - 共鸣体与弦架在结构上不可分割，拆毁共鸣箱则弦张力必然崩溃。包括321琉特类、322竖琴类、323哈普鲁特类)</p>
+      <div class="specimen-grid">
+        
+          <div class="specimen-card" onclick="openInspector('organ', '中国古琴 (Guqin / 七弦琴)')">
+            <div class="specimen-media">
+              <img src="assets/img/guqin.jpg" alt="中国古琴 (Guqin / 七弦琴)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">中国古琴 (Guqin / 七弦琴)</h4>
+              <div class="specimen-meta">中国古代士大夫雅乐与文人修身传统</div>
+              <div class="specimen-code">311.22 简单弦鸣 / 无柱板箱型琴族</div>
+              <p class="specimen-acoustics">长三尺六寸五分，象征一年三百六十五日。七弦无柱，面板设十三徽标记泛音节点。演奏产生散音（空弦深厚象征大地）、泛音（轻触徽位空灵象征天体）、按音（手指滑动深沉象征人事）。其‘无马’设计使琴弦直接贴近面板，手指滑行时产生丰富的‘走手音’与漆木摩擦细微声，体现‘琴者，禁也；禁人邪念，反其天真’的哲学。</p>
+            </div>
+          </div>
+          <div class="specimen-card" onclick="openInspector('organ', '西非科拉琴 (Kora)')">
+            <div class="specimen-media">
+              <img src="assets/img/kora.jpg" alt="西非科拉琴 (Kora)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">西非科拉琴 (Kora)</h4>
+              <div class="specimen-meta">西非冈比亚 / 塞内加尔 / 几内亚 (格里奥特吟游诗人传统)</div>
+              <div class="specimen-code">323.2 复合弦鸣 / 双排弦哈普鲁特琴 (Harp-lute)</div>
+              <p class="specimen-acoustics">由剖半的巨大圆形葫芦蒙上牛皮构成共鸣球，一根坚硬长木柄穿透葫芦。琴码两侧垂直立起两排共21根尼龙弦（传统用羚羊皮条）。演奏者双手各用拇指与食指弹拨，左手弹奏低音循环节奏型（Kumbengo），右手弹奏极其华丽快速的高音即兴加花（Birimintingo），兼具竖琴的晶莹与琉特琴的穿透。</p>
+            </div>
+          </div>
+          <div class="specimen-card" onclick="openInspector('organ', '印度西塔琴 (Sitar)')">
+            <div class="specimen-media">
+              <img src="assets/img/sitar.jpg" alt="印度西塔琴 (Sitar)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">印度西塔琴 (Sitar)</h4>
+              <div class="specimen-meta">北印度古典音乐体系 (Hindustani Classical)</div>
+              <div class="specimen-code">321.321 复合弦鸣 / 弧形品位长颈长琉特类</div>
+              <p class="specimen-acoustics">采用干燥葫芦做共鸣箱，长木指板上嵌有16-20个可移动的弧形黄铜品。除主旋律弦与持续音弦（Chikari）外，指板内部深处还隐藏张设了11至13根‘交感共鸣弦’（Taraf）。当上方旋律弦弹响特定拉格音高时，下方的交感弦通过声学共振自动苏醒震响；配合经过精密微弧打磨的骆驼骨琴桥（Javari），产生持续延绵、如同梦境般神秘泛音迷雾。</p>
+            </div>
+          </div>
+          <div class="specimen-card" onclick="openInspector('organ', '中国琵琶 (Pipa)')">
+            <div class="specimen-media">
+              <img src="assets/img/pipa.jpg" alt="中国琵琶 (Pipa)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">中国琵琶 (Pipa)</h4>
+              <div class="specimen-meta">中国传统器乐 / 丝绸之路东传演变</div>
+              <div class="specimen-code">321.321 复合弦鸣 / 浅体半梨形短颈琉特类</div>
+              <p class="specimen-acoustics">四弦，早期横抱用拨子弹奏（如正仓院唐代五弦琵琶），宋元以来演进为竖抱并以指甲（今用赛璐珞假指甲）轮指弹奏。相与品结合构成十二平均律或多纯律半音体系。文曲（如《塞上曲》《阳春白雪》）以按抚揉吟展现内省幽思，武曲（如《十面埋伏》《霸王卸甲》）以煞弦、绞弦、推挽模拟万马奔腾金鼓齐鸣。</p>
+            </div>
+          </div>
+          <div class="specimen-card" onclick="openInspector('organ', '自弦竹筒琴 (Idiochord Bamboo Tube Zither / 瓦里哈)')">
+            <div class="specimen-media">
+              <img src="assets/img/bamboo_zither.jpg" alt="自弦竹筒琴 (Idiochord Bamboo Tube Zither / 瓦里哈)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">自弦竹筒琴 (Idiochord Bamboo Tube Zither / 瓦里哈)</h4>
+              <div class="specimen-meta">马达加斯加 / 东南亚传统竹乐器圈</div>
+              <div class="specimen-code">311.11 简单弦鸣 / 自弦管状琴族 (Idiochord)</div>
+              <p class="specimen-acoustics">琴身取整段天然粗竹管。最神奇的物理发生学特征在于：琴弦并非外来丝线或金属，而是直接用锐利小刀在坚硬竹皮表层剥离出数条平行的纵向竹纤维皮条，两端不割断，在皮条下方两端塞入坚硬的小木块或贝壳作为琴马垫起张紧！这一萨克斯在《音乐的源泉》中高度推崇的活化石乐器，雄辩证明弦鸣乐器并非来自抽象先验的乐理设计，而是从具体竹木材料的物理纤维结构与人类日常切削手工艺中自然长出来的！</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="organ-family-block">
+      <div class="family-head">
+        <span class="family-code">4xxx</span>
+        <h3>气鸣乐器 (Aerophones)</h3>
+      </div>
+      <p class="family-def"><strong>物理定义：</strong> 振动发声体为处于运动状态中的空气柱或游离气团。</p>
+      <p style="font-size:0.82rem; color:var(--mut); margin-bottom:18px;"><strong>主要细分分支：</strong> 41 自由气鸣乐器 (Free aerophones - 被激励的空气不受管壁限制，如风鸣器 Bullroarer、手风琴游离簧) · 42 狭义管乐器 (True wind instruments - 空气在限制性的管状共鸣腔内振动，分为421边缘吹口笛族、422簧鸣族、423唇震号角族)</p>
+      <div class="specimen-grid">
+        
+          <div class="specimen-card" onclick="openInspector('organ', '贾湖骨笛 (Jiahu Gudi)')">
+            <div class="specimen-media">
+              <img src="assets/img/jiahu_flute.webp" alt="贾湖骨笛 (Jiahu Gudi)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">贾湖骨笛 (Jiahu Gudi)</h4>
+              <div class="specimen-meta">中国河南漯河舞阳贾湖遗址 · 新石器时代前期 (距今约9000–7800年)</div>
+              <div class="specimen-code">421.111 端吹开管无嘴直笛</div>
+              <p class="specimen-acoustics">由丹顶鹤尺骨截去两端精心钻孔磨制而成。出土数十支，分为五孔、六孔、七孔及八孔。通过现代声学实验室测音，七孔骨笛已具备完整的六声音阶乃至含有半音变化的七声音阶（如小三度与纯五度），并在主孔旁微钻小孔做校音之用。这是迄今为止全人类考古发现的最早可吹奏精密多音程旋律管乐器，比苏美尔、古埃及文明早两千余年。</p>
+            </div>
+          </div>
+          <div class="specimen-card" onclick="openInspector('organ', '迪吉里杜管 (Didgeridoo / Yidaki)')">
+            <div class="specimen-media">
+              <img src="assets/img/didgeridoo.jpg" alt="迪吉里杜管 (Didgeridoo / Yidaki)" loading="lazy">
+            </div>
+            <div class="specimen-body">
+              <h4 class="specimen-title">迪吉里杜管 (Didgeridoo / Yidaki)</h4>
+              <div class="specimen-meta">澳大利亚北部原住民 (阿纳姆地 Yolngu人)</div>
+              <div class="specimen-code">423.111 唇振直筒自然号角类</div>
+              <p class="specimen-acoustics">由白蚁天然蛀空的桉树干枝制成，吹口涂以蜂蜡密封。演奏完全依赖循环呼吸法（Circular breathing），持续吹奏数十分钟而不中断。演奏者通过嘴唇张力产生极低的无人声基频持续低音（Drone ~50-80Hz），同时利用声带在管内嘶吼嚎叫并协同舌、颊改变口腔容积，模拟袋鼠跳跃、澳洲野犬吠叫与雷霆轰鸣，是原住民链接造梦时代（Dreamtime）创世神话的声波桥梁。</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIEW 7: GEOGRAPHIA ================= -->
+  <section class="view-section" id="view-geographia">
+    <div class="section-header">
+      <div>
+        <h2>声音地理 · 全球音律体系与田野民族志实测</h2>
+        <p>走出欧洲均分律的狭隘藩篱：爪哇五音近均分、印度22细微分、文达人身体律动与苏雅人森林呼喊。</p>
+      </div>
+    </div>
+
+    <div class="geo-grid">
+
+      <article class="geo-card" onclick="openInspector('geo', 'java')">
+        <div class="geo-media">
+          <img src="assets/img/gamelan.jpg" alt="印度尼西亚 · 爪哇宫廷甘美兰 (Central Javanese Gamelan)" loading="lazy">
+        </div>
+        <div class="geo-body">
+          <h3 class="geo-title">印度尼西亚 · 爪哇宫廷甘美兰 (Central Javanese Gamelan)</h3>
+          <div class="geo-region">东南亚 · 梭罗 (Surakarta) 与日惹 (Yogyakarta) 克拉通王宫</div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">律制体系</div>
+            <div class="geo-val">斯连德罗 (Slendro · 五音近均分律) 与 佩罗格 (Pelog · 七音不均等律)</div>
+          </div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">埃利斯音分实测与数理特征</div>
+            <div class="geo-val cents">Slendro: 每级约 240 Cents（五等分八度）；Pelog: 包含极狭窄的小二度（~110-150 Cents）与极宽的大三度（~380-450 Cents）。两套律制共存于同一宫廷乐团，互不通融。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">社会与仪式结构</div>
+            <div class="geo-val">宏大分层结构 (Colotomic Cycle)。巨型大悬锣 (Gong Ageng) 敲击标记最宏大的时间周期（Gongan，如64拍一击），次级锣器（Kenong, Kempul, Ketuk）在内部进行二分或四分节奏细分，前端高音金属琴（Saron, Bonang）则演奏快速旋律加花变奏。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">哲学与宇宙观</div>
+            <div class="geo-val">体现爪哇印度教-伊斯兰教宇宙观（Rasa）：音乐不追求情绪的戏剧性起伏与高潮爆发，而是追求极致的平静、克制与循环时间的永恒冥想。</div>
+          </div>
+        </div>
+      </article>
+      <article class="geo-card" onclick="openInspector('geo', 'hindustani')">
+        <div class="geo-media">
+          <img src="assets/img/sitar.jpg" alt="北印度 · 印度斯坦古典音乐体系 (Hindustani Classical)" loading="lazy">
+        </div>
+        <div class="geo-body">
+          <h3 class="geo-title">北印度 · 印度斯坦古典音乐体系 (Hindustani Classical)</h3>
+          <div class="geo-region">南亚 · 恒河流域、德里与贝拿勒斯</div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">律制体系</div>
+            <div class="geo-val">22 微音程律 (22 Shrutis) · 萨达 (Sa-Re-Ga-Ma-Pa-Dha-Ni)</div>
+          </div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">埃利斯音分实测与数理特征</div>
+            <div class="geo-val cents">以基音 Sa 为绝对锚点，将八度音程划分为22个微音程等级（Shruti，每级约22-90 Cents）。拉格演奏时，特定音级如微升音（Tivra）或微降音（Komal）可依据情绪需要做极细微的上下滑动悬停。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">社会与仪式结构</div>
+            <div class="geo-val">古鲁-弟子传习传承体系 (Guru-Shishya Parampara) 与流派 Gharana。结构分为无固定节拍、纯旋律探索的长大引子‘阿拉普’(Alap - Jor - Jhala)，随后塔布拉鼓切入进入固定节拍律动‘加特’(Gat)。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">哲学与宇宙观</div>
+            <div class="geo-val">拉格 (Raga · 旋律意境色彩，与时辰、季节、情感对应) 与 塔拉 (Tala · 节拍节奏循环周期，如16拍 Tintal 4+4+4+4)。音乐是人类灵魂与宇宙大梵天（Nada Brahma · 声音即神）沟通的瑜伽冥想通道。</div>
+          </div>
+        </div>
+      </article>
+      <article class="geo-card" onclick="openInspector('geo', 'venda')">
+        <div class="geo-media">
+          <img src="assets/img/venda.jpg" alt="南非 · 文达人生物文化音乐体系 (Venda Musical Culture)" loading="lazy">
+        </div>
+        <div class="geo-body">
+          <h3 class="geo-title">南非 · 文达人生物文化音乐体系 (Venda Musical Culture)</h3>
+          <div class="geo-region">南部非洲 · 德兰士瓦北部锡巴萨山地 (Sibasa, Limpopo)</div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">律制体系</div>
+            <div class="geo-val">七音与六音阶多声部 · 复合节奏与连锁呼应律 (Cross-rhythm & Hocketing)</div>
+          </div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">埃利斯音分实测与数理特征</div>
+            <div class="geo-val cents">基于泛音列自然音高与身体舞蹈动作步幅的自然音阶，音高服从于身体动态，每个歌者根据自己在舞蹈队列中的空间位置发声。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">社会与仪式结构</div>
+            <div class="geo-val">女子成年仪式多姆巴巨蟒舞 (Domba Initiation Python Dance) 与全国性簧管舞蹈契科纳 (Tshikona)。数十位少女腰手相牵，模仿巨蟒在母体中蜷曲蠕动，低音母鼓（Ngoma）震荡群山，所有社会知识与生殖伦理皆在长达数月的歌舞中完成身体化灌输。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">哲学与宇宙观</div>
+            <div class="geo-val">约翰·布莱金田野圣地。确立‘音乐是人类组织的声音’（Humanly Organized Sound），证明音乐是人类物种普遍具备的生理本能。文达社会中不存在‘无音乐天赋者’，所有人皆在集体仪式中获得完整的社会化尊严。</div>
+          </div>
+        </div>
+      </article>
+      <article class="geo-card" onclick="openInspector('geo', 'suya')">
+        <div class="geo-media">
+          <img src="assets/img/seeger.jpg" alt="巴西亚马逊 · 苏雅人声音建构体系 (Suyá / Kisêdjê Soundscape)" loading="lazy">
+        </div>
+        <div class="geo-body">
+          <h3 class="geo-title">巴西亚马逊 · 苏雅人声音建构体系 (Suyá / Kisêdjê Soundscape)</h3>
+          <div class="geo-region">南美洲亚马孙河流域 · 欣古原住民国家公园 (Xingu Park)</div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">律制体系</div>
+            <div class="geo-val">高亢嘶吼单声部 (Akia) 与 低音沉降齐唱 (Ngére)</div>
+          </div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">埃利斯音分实测与数理特征</div>
+            <div class="geo-val cents">非西方等音律，Akia追求极度刺耳、穿透森林的高频极限音域（男青年用力挤压喉头嘶吼，声响可达数公里之外），音高以撕裂喉音为美。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">社会与仪式结构</div>
+            <div class="geo-val">安东尼·西格《苏雅人为什么歌唱》田野地。成年男性在村落广场中央背对背各自同时高喊自己的专属歌曲（Akia），向四周房屋内的母亲和姐妹宣示自己的成年活力与狩猎战功；而在老鼠节等神圣仪式中，全体氏族则以极低音合唱Ngére，维系宇宙平衡。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">哲学与宇宙观</div>
+            <div class="geo-val">声音构成性本体论 (Constitutive Ontology)。苏雅人不是先建立社会再唱歌，而是通过一年四季的声音行为，现场‘制造’了亲属制度、男女空间隔离与氏族结构。音乐即是社会再生产的核心引擎。</div>
+          </div>
+        </div>
+      </article>
+      <article class="geo-card" onclick="openInspector('geo', 'mande')">
+        <div class="geo-media">
+          <img src="assets/img/kora.jpg" alt="西非 · 曼丁哥格里奥特与埃威复节奏 (Mande Griots & Ewe Rhythms)" loading="lazy">
+        </div>
+        <div class="geo-body">
+          <h3 class="geo-title">西非 · 曼丁哥格里奥特与埃威复节奏 (Mande Griots & Ewe Rhythms)</h3>
+          <div class="geo-region">西非大草原 · 马里、几内亚、加纳沿海</div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">律制体系</div>
+            <div class="geo-val">七声音阶循环律 · 12/8 拍母节拍时间线矩阵 (Timeline)</div>
+          </div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">埃利斯音分实测与数理特征</div>
+            <div class="geo-val cents">以自然泛音列与经验音级为准，科拉琴（Kora）常采用 Tomora、Hardino 等四种传统调弦法；铁钟时间线（Gankogui）为不可撼动的恒定声学参照系。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">社会与仪式结构</div>
+            <div class="geo-val">格里奥特 (Griot / Jali) 世袭职业阶层。他们是帝国的‘活历史字典’、外交官、家谱保管人与乐师，世世代代用科拉琴和巴拉风弹唱13世纪松迪亚塔·凯塔（Sunjata Keita）建立马里帝国的伟大史诗。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">哲学与宇宙观</div>
+            <div class="geo-val">埃威鼓乐的复节奏（Polyrhythm）与交错拍子（Cross-rhythm，如 3:2 与 4:3 复合对位）。时间线不是简单的节拍器，而是多维时空的交汇点；任何单一节奏都必须在与母钟的相位偏离中获得存在的张力。</div>
+          </div>
+        </div>
+      </article>
+      <article class="geo-card" onclick="openInspector('geo', 'gregorian')">
+        <div class="geo-media">
+          <img src="assets/img/neume.jpg" alt="欧洲中世纪 · 早期圣咏口头传统 (Early Western Chant)" loading="lazy">
+        </div>
+        <div class="geo-body">
+          <h3 class="geo-title">欧洲中世纪 · 早期圣咏口头传统 (Early Western Chant)</h3>
+          <div class="geo-region">西欧修道院 · 瑞士圣加尔 (St. Gall) 与 艾因西德伦 (Einsiedeln)</div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">律制体系</div>
+            <div class="geo-val">八种教会调式 (Eight Church Modes · 毕达哥拉斯纯五度生律)</div>
+          </div>
+          
+          <div class="geo-section-item">
+            <div class="geo-label">埃利斯音分实测与数理特征</div>
+            <div class="geo-val cents">全音为 204 Cents（9:8），大半音（利马 Limma）为 90 Cents（256:243），纯五度为 702 Cents（3:2）。纯正非平均律。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">社会与仪式结构</div>
+            <div class="geo-val">本笃会修道院每日八次日课（Divine Office）与弥撒圣祭。在9-10世纪无高低音准标定的原始纽姆谱（Adiastematic Neumes）出现之前，修士完全依靠10-15年的严酷口授复述，将数千首繁复圣咏牢固刻入肉身记忆。</div>
+          </div>
+
+          <div class="geo-section-item">
+            <div class="geo-label">哲学与宇宙观</div>
+            <div class="geo-val">彻底击碎西方音乐学自封的‘书面文明优越论’。西方古典音乐母体（格里高利圣咏）在历史前半程完全是一门典型的‘非书面口头传统’；文字记谱并非天赐必然，而是政治权力集中与帝国礼仪标准化需要的后起技术工具。</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= VIEW 8: BIBLIOTHECA ================= -->
+  <section class="view-section" id="view-bibliotheca">
+    <div class="section-header">
+      <div>
+        <h2>经典文库 · 田野名著深度研读指南</h2>
+        <p>精读影响学科百年走向的8部划时代巨著，掌握民族志田野方法论、核心论点与前沿理论评析。</p>
+      </div>
+    </div>
+
+    <div class="biblio-list">
+
+      <article class="book-card">
+        <div class="book-top">
+          <div class="book-author-avatar">
+            <img src="assets/img/seeger.jpg" alt="安东尼·西格 (Anthony Seeger)" loading="lazy">
+          </div>
+          <div class="book-meta">
+            <h3>《苏雅人为什么歌唱：一个亚马孙流域群落的音乐人类学》</h3>
+            <div class="book-orig">Why Suyá Sing: A Musical Anthropology of an Amazonian People (1987)</div>
+            <div class="book-author">安东尼·西格 (Anthony Seeger) · <span style="color:var(--acc);">构成性本体论</span></div>
+          </div>
+        </div>
+        <div class="book-thesis">
+          <strong>核心命题：</strong> 音乐不是社会结构的附庸或反光镜，而是社会结构借以生成、维系与更新的母体。苏雅人的仪式歌唱在时空维度上制造了亲属、性别与空间方位。
+        </div>
+        <div class="book-detail-grid">
+          <p><strong>田野方法：</strong> 长达两年的沉浸式田野调查、录音分析、口述史转写、亲属关系图谱绘制与仪式结构符号学分析。</p>
+          <p style="margin-top:6px;"><strong>经典案例：</strong> 老鼠仪式（Ngsob-ghö）、成年男子背对背在村落中央广场高声呼喊的 Akia 个人歌、全氏族低沉整齐的 Ngére 齐唱。</p>
+          <p style="margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; color:var(--ink);"><strong>研读笔记：</strong> 西格在该书中首次系统确立‘音乐人类学’（Musical Anthropology）与传统的‘音乐的人类学’（Anthropology of Music）的区别：前者将声音表演本身视为创造社会现实的主体力量，开辟了声音人类学的全新范式。</p>
+        </div>
+      </article>
+      <article class="book-card">
+        <div class="book-top">
+          <div class="book-author-avatar">
+            <img src="assets/img/blacking.jpg" alt="约翰·布莱金 (John Blacking)" loading="lazy">
+          </div>
+          <div class="book-meta">
+            <h3>《人的音乐性》</h3>
+            <div class="book-orig">How Musical is Man? (1973)</div>
+            <div class="book-author">约翰·布莱金 (John Blacking) · <span style="color:var(--acc);">生物文化音乐学</span></div>
+          </div>
+        </div>
+        <div class="book-thesis">
+          <strong>核心命题：</strong> 基于南非文达人（Venda）田野工作，论证音乐能力是人类物种普遍拥有的生理与神经发育潜能。猛烈抨击西方学院派将95%的人斥为‘无音乐细胞’的虚伪精英主义。
+        </div>
+        <div class="book-detail-grid">
+          <p><strong>田野方法：</strong> 社会人类学参与观察、儿童歌曲（Ngano）形态学转写、少女成年多姆巴巨蟒舞仪式追踪、音高感知跨文化实验。</p>
+          <p style="margin-top:6px;"><strong>经典案例：</strong> 文达儿童复杂节奏复调歌唱、多姆巴巨蟒舞（Domba）、契科纳簧管舞（Tshikona）。</p>
+          <p style="margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; color:var(--ink);"><strong>研读笔记：</strong> 布莱金提出‘人类组织的声音’（Humanly Organized Sound）与‘组织完备的人性’（Soundly Organized Humanity）的千古名言，将音乐学从死板的形式乐谱中解放出来，成为反思人类社会正义的有力思想武器。</p>
+        </div>
+      </article>
+      <article class="book-card">
+        <div class="book-top">
+          <div class="book-author-avatar">
+            <img src="assets/img/merriam.jpg" alt="阿兰·P·梅里亚姆 (Alan P. Merriam)" loading="lazy">
+          </div>
+          <div class="book-meta">
+            <h3>《音乐人类学》</h3>
+            <div class="book-orig">The Anthropology of Music (1964)</div>
+            <div class="book-author">阿兰·P·梅里亚姆 (Alan P. Merriam) · <span style="color:var(--acc);">三重动态分析框架</span></div>
+          </div>
+        </div>
+        <div class="book-thesis">
+          <strong>核心命题：</strong> 确立民族音乐学作为一门独立社会科学的圣经之作。提出‘概念-行为-声音’（Concept-Behavior-Sound）三重模式，系统阐述音乐的情感表达、审美享乐、仪式整合等十大社会功能。
+        </div>
+        <div class="book-detail-grid">
+          <p><strong>田野方法：</strong> 博厄斯学派历史特殊论与功能主义人类学综合，北美平头印第安人与中非巴松格人田野比较。</p>
+          <p style="margin-top:6px;"><strong>经典案例：</strong> 平头印第安人萨满梦兆歌曲起源观念、巴松格人（Basongye）的巫术乐器禁忌与歌者社会地位调查。</p>
+          <p style="margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; color:var(--ink);"><strong>研读笔记：</strong> 梅里亚姆虽然晚年主动修正了其‘文化中的音乐’的容器论倾向，但他提出的三重循环模型至今仍是全球大学民族音乐学训练最核心的基础分析工具。</p>
+        </div>
+      </article>
+      <article class="book-card">
+        <div class="book-top">
+          <div class="book-author-avatar">
+            <img src="assets/img/sachs.jpg" alt="埃里克·M·冯·霍恩博斯特尔 & 库尔特·萨克斯" loading="lazy">
+          </div>
+          <div class="book-meta">
+            <h3>《乐器分类学》</h3>
+            <div class="book-orig">Systematik der Musikinstrumente (1914)</div>
+            <div class="book-author">埃里克·M·冯·霍恩博斯特尔 & 库尔特·萨克斯 · <span style="color:var(--acc);">分类学物理宪章</span></div>
+          </div>
+        </div>
+        <div class="book-thesis">
+          <strong>核心命题：</strong> 现代乐器学（Organology）的根本文献。采用严谨的物理振动体标准与杜威十进制数字编码，建立‘1体鸣、2膜鸣、3弦鸣、4气鸣’四大类体系，彻底摒弃欧洲中心主义偏见。
+        </div>
+        <div class="book-detail-grid">
+          <p><strong>田野方法：</strong> 声学物理学、形态解剖学、全球博物馆实物比勘与比较语言学。</p>
+          <p style="margin-top:6px;"><strong>经典案例：</strong> 简单弦鸣乐器（琴族）与复合弦鸣乐器（琉特/竖琴）的本体论区分，排箫、风鸣器与管乐器的精准界定。</p>
+          <p style="margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; color:var(--ink);"><strong>研读笔记：</strong> 该体系不仅适用于人类已知的所有古代与现代表演乐器，而且其开放式的十进制编码规则，使新出土的考古乐器与新兴电子声学乐器能够无缝归类。</p>
+        </div>
+      </article>
+      <article class="book-card">
+        <div class="book-top">
+          <div class="book-author-avatar">
+            <img src="assets/img/ellis.jpg" alt="亚历山大·约翰·埃利斯 (Alexander J. Ellis)" loading="lazy">
+          </div>
+          <div class="book-meta">
+            <h3>《论各民族的音乐律制》</h3>
+            <div class="book-orig">On the Musical Scales of Various Nations (1885)</div>
+            <div class="book-author">亚历山大·约翰·埃利斯 (Alexander J. Ellis) · <span style="color:var(--acc);">律制科学实测</span></div>
+          </div>
+        </div>
+        <div class="book-thesis">
+          <strong>核心命题：</strong> 比较音乐学诞生宣言。发明1200音分制（Cent），通过对全球数十种乐律的精密实测，宣告‘各民族的律制绝非自然存在，而是纯粹人工的、多样的’，在物理实证上打碎西方优越论。
+        </div>
+        <div class="book-detail-grid">
+          <p><strong>田野方法：</strong> 赫尔姆霍茨共鸣器、精密校准音叉群、对数数学计算与非西方乐人面对面声学测量。</p>
+          <p style="margin-top:6px;"><strong>经典案例：</strong> 爪哇宫廷甘美兰的斯连德罗与佩罗格律、阿拉伯传统四分之三音律、中国古琴徽位生律法。</p>
+          <p style="margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; color:var(--ink);"><strong>研读笔记：</strong> 埃利斯的音分概念使得微小到几音分的细微差别都能在数学上被精确描述与跨文化横向比较，成为跨文化音乐学无法撼动的测量公度衡。</p>
+        </div>
+      </article>
+      <article class="book-card">
+        <div class="book-top">
+          <div class="book-author-avatar">
+            <img src="assets/img/nettl.jpg" alt="布鲁诺·内特尔 (Bruno Nettl)" loading="lazy">
+          </div>
+          <div class="book-meta">
+            <h3>《民族音乐学研究：31个核心议题与概念》</h3>
+            <div class="book-orig">The Study of Ethnomusicology: Thirty-One Issues and Concepts (2005)</div>
+            <div class="book-author">布鲁诺·内特尔 (Bruno Nettl) · <span style="color:var(--acc);">学科元理论全景</span></div>
+          </div>
+        </div>
+        <div class="book-thesis">
+          <strong>核心命题：</strong> 当代民族音乐学最权威的元理论通论。以极高的哲学反思深度，对音乐起源、跨文化普遍性、田野工作伦理、都市流行音乐变迁等31个重大学术命题进行全景式剖析。
+        </div>
+        <div class="book-detail-grid">
+          <p><strong>田野方法：</strong> 跨学科史学回顾、认识论批判、比较个案分析与长期教学科研反思。</p>
+          <p style="margin-top:6px;"><strong>经典案例：</strong> 北美黑脚族印第安人的‘无灵感不歌唱’信仰、波斯古典音乐的拉迪夫（Radif）即兴传统、跨文化音乐普遍特征的假象辨析。</p>
+          <p style="margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; color:var(--ink);"><strong>研读笔记：</strong> 内特尔以清醒的批判笔调提醒后学：民族音乐学不是搜奇猎奇的陈列室，而是一面持续逼迫学者审视自身偏见、反省文明预设的透镜。</p>
+        </div>
+      </article>
+      <article class="book-card">
+        <div class="book-top">
+          <div class="book-author-avatar">
+            <img src="assets/img/wgj.jpg" alt="王光祈 (Wang Guangqi)" loading="lazy">
+          </div>
+          <div class="book-meta">
+            <h3>《东方民族之音乐》与《东西乐制之研究》</h3>
+            <div class="book-orig">Comparative Studies on Eastern and Western Musical Systems (1926/1929)</div>
+            <div class="book-author">王光祈 (Wang Guangqi) · <span style="color:var(--acc);">中国比较音乐学破土</span></div>
+          </div>
+        </div>
+        <div class="book-thesis">
+          <strong>核心命题：</strong> 中国第一部运用现代欧洲比较音乐学与声学音分方法系统研究东方诸国音乐体系的开山巨著。提出世界三大乐系说（中国乐系、希腊乐系、波斯阿拉伯乐系），奠定中国近现代音乐学根基。
+        </div>
+        <div class="book-detail-grid">
+          <p><strong>田野方法：</strong> 德文原版声学测音文献考释、中国古代乐律（三分损益法、十二律、新律）数理复原与跨文化横向比勘。</p>
+          <p style="margin-top:6px;"><strong>经典案例：</strong> 中国五声音阶与希腊四音列比对、印度拉格微音程与中国工尺调式对比。</p>
+          <p style="margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; color:var(--ink);"><strong>研读笔记：</strong> 王光祈在贫病交加的异国书斋中，以惊人的学术抱负打破了近代国人或盲目崇洋、或盲目复古的极端心理，确立了平等科学的国际比较视野。</p>
+        </div>
+      </article>
+      <article class="book-card">
+        <div class="book-top">
+          <div class="book-author-avatar">
+            <img src="assets/img/yry.jpg" alt="洛秦 (Luo Qin)" loading="lazy">
+          </div>
+          <div class="book-meta">
+            <h3>《称“民族音乐学”还是“音乐人类学”？论汉语学术语境中的译名问题及其“解决”与选择》</h3>
+            <div class="book-orig">Debates on Chinese Terminology of Ethnomusicology (2006)</div>
+            <div class="book-author">洛秦 (Luo Qin) · <span style="color:var(--acc);">学科命名学术史</span></div>
+          </div>
+        </div>
+        <div class="book-thesis">
+          <strong>核心命题：</strong> 系统梳理自1980年南京会议以来中国学界关于‘民族音乐学’、‘传统音乐学’、‘音乐民族学’与‘音乐人类学’长达四十余年的译名之争与范式演进，提出兼收并蓄的分工方案。
+        </div>
+        <div class="book-detail-grid">
+          <p><strong>田野方法：</strong> 概念史（Begriffsgeschichte）、学术史文献计量、国际学术思潮演进与中国本土学科体制机制深度分析。</p>
+          <p style="margin-top:6px;"><strong>经典案例：</strong> 1980年南京首届学术讨论会、1986年中国传统音乐学会定名、当代高等音乐学院学科目录设置。</p>
+          <p style="margin-top:8px; border-top:1px dashed var(--border); padding-top:6px; color:var(--ink);"><strong>研读笔记：</strong> 该文为理解当代中国音乐学术的建制化进程提供了最清晰的历史向导，指出译名之争表面是语词之辩，实则是中国学者在本土文化自觉与国际学术对话之间的战略抉择。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<!-- MODAL INSPECTOR DIALOG -->
+<dialog class="inspector-dialog" id="inspectorDialog">
+  <div class="modal-header">
+    <img id="modalImg" src="" alt="">
+    <div class="modal-header-overlay"></div>
+    <button type="button" class="modal-close-btn" onclick="closeInspector()">✕</button>
+    <div class="modal-header-info">
+      <h3 id="modalTitle">标题</h3>
+      <div class="modal-subtitle" id="modalSubtitle">副标题</div>
+    </div>
+  </div>
+  <div class="modal-content" id="modalContent">
+    <!-- Injected dynamically -->
+  </div>
+</dialog>
+
+<!-- COLOPHON -->
+<footer class="colophon">
+  <div>
+    <strong>民族音乐学年鉴 · Annales Ethnomusicologiae</strong><br>
+    数字人文通典 · 架构对齐 <a href="https://gusgumee.studio/modules/europa/index.html" target="_blank">Europa Module</a>
+  </div>
+  <div>
+    基于李欣阳课堂笔记、西方音乐史专业对镜、博厄斯历史特殊论五大缺陷反思与实地田野调查综合研制<br>
+    支持完全离线运行 · 本地资源自动索引
+  </div>
+</footer>
+
+<!-- CLIENT SCRIPTS & DATA STORAGE -->
+<script>
+window.ETHNO_DATA = {
+  scholars: [{"id": "ellis", "name": "亚历山大·约翰·埃利斯", "orig": "Alexander John Ellis", "dates": "1814–1890", "era": "comparative", "role": "比较音乐学奠基人 · 音分制发明者", "school": "英国皇家学会 / 伦敦语言学会", "img": "assets/img/ellis.jpg", "tag": "律制实测", "summary": "1885年发表划时代论文《论各民族的音乐律制》，发明以半音等于100音分（Cent）的对数度量法，实测全球各民族乐律，彻底打破欧洲十二平均律的自然本能神话。", "quote": "各民族的音乐律制并不是自然存在的，更不是从音乐本质中必然产生的，它们纯粹是人工的、多样的。", "books": ["《论各民族的音乐律制》(On the Musical Scales of Various Nations, 1885)", "《论音调的感觉》(Sensations of Tone 译注修订, 1875)"], "concepts": ["1200音分制 (Cents System)", "律制人工发明论", "非西方微音程客观实测"], "detail": "埃利斯是语音学家与数学家，早年翻译并增订了赫尔姆霍茨的声学巨著。他在1885年宣读的论文标志着比较音乐学的科学实证基石确立。他通过精密音叉测量了爪哇甘美兰、阿拉伯乌德琴、中国古琴及印度西塔琴的音阶，证明全球存在截然不同却高度自洽的律制逻辑，为文化相对主义音乐观奠定了声学基础。"}, {"id": "adler", "name": "吉多·阿德勒", "orig": "Guido Adler", "dates": "1855–1941", "era": "comparative", "role": "现代音乐学学科体系奠基人", "school": "维也纳大学音乐学系", "img": "assets/img/adler.jpg", "tag": "学科体系", "summary": "1885年发表《音乐学的范围、方法与目的》，首次将音乐学严格划分为‘历史音乐学’与‘体系音乐学’，并在体系音乐学中正式确立‘比较音乐学’的独立学科地位。", "quote": "比较音乐学的任务，在于为了民族学目的而对各民族、特别是文明程度较低民族的民歌与器乐进行比较研究并加以分类。", "books": ["《音乐学的范围、方法与目的》(Umfang, Methode und Ziel der Musikwissenschaft, 1885)", "《音乐风格的阶段》(Der Stil in der Musik, 1911)"], "concepts": ["学科二分法体系", "比较音乐学学科定位", "音乐风格分类学"], "detail": "阿德勒确立了现代音乐学的学科宪章。他的划时代贡献在于没有将欧洲之外的传统视为无足轻重的噪音，而是将各民族民间音乐、口传音乐与非欧洲高级文明音乐作为体系音乐学不可或缺的实证分支，开启了百年比较研究。"}, {"id": "stumpf", "name": "卡尔·施通普夫", "orig": "Carl Stumpf", "dates": "1848–1936", "era": "comparative", "role": "柏林比较音乐学派创始人 · 音乐心理学家", "school": "柏林大学心理学研究所 / 柏林留声机档案馆", "img": "assets/img/stumpf.jpg", "tag": "音响心理学", "summary": "1900年在柏林建立欧洲最早的柏林留声机档案馆（Berlin Phonogramm-Archiv），开创性地将实验心理学、声学测量与民族学留声机录音深度结合。", "quote": "如果我们不了解人类最原始的知觉心理机制，就永远不可能洞悉高级音乐形式是如何从感官深处生长出来的。", "books": ["《音响心理学》(Tonpsychologie, 1883/1890)", "《音乐的起源》(Die Anfänge der Musik, 1911)"], "concepts": ["音协和感实验 (Konsonanz)", "柏林留声机档案馆", "跨文化知觉实验"], "detail": "施通普夫1900年利用访德的暹罗（泰国）皇家宫廷乐团首次进行了系统的蜡管录音与音律实验，奠定了柏林学派‘实验室式’的严谨风格，并培养了霍恩博斯特尔、萨克斯等一代泰斗。"}, {"id": "hornbostel", "name": "埃里克·莫里茨·冯·霍恩博斯特尔", "orig": "Erich Moritz von Hornbostel", "dates": "1877–1935", "era": "comparative", "role": "柏林学派实际掌舵人 · 乐器分类学宗师", "school": "柏林留声机档案馆馆长", "img": "assets/img/hornbostel.jpg", "tag": "档案实证", "summary": "长期主持柏林留声机档案馆，收藏全球上万根爱迪生蜡管。与萨克斯合著1914年霍恩博斯特尔-萨克斯乐器分类法，将文化圈理论（Kulturkreis）应用于全球调式演化分析。", "quote": "蜡管留声机不是简单的记录工具，它是音乐学的显微镜，让我们第一次能够对飘忽即逝的声音切片进行反复解剖与复现。", "books": ["《乐器分类学》(Systematik der Musikinstrumente, 1914 与萨克斯合著)", "《比较音乐学文集》(Opera Omnia, 1975)"], "concepts": ["萨克斯-霍恩博斯特尔分类体系", "文化圈传播论", "客观记谱转写规程"], "detail": "霍恩博斯特尔虽然罕有前往海外田野，但他凭借档案馆的上万根蜡管与无可比拟的敏锐听觉，制定了科学的比较音乐学记谱法则与音程分析模板，成为全球学界公认的掌门人。"}, {"id": "sachs", "name": "库尔特·萨克斯", "orig": "Curt Sachs", "dates": "1881–1959", "era": "comparative", "role": "现代乐器学（Organology）之父 · 音乐源泉论宗师", "school": "柏林大学 / 纽约大学 / 纽约大都会艺术博物馆", "img": "assets/img/sachs.jpg", "tag": "乐器分类与源泉", "summary": "乐器学集大成者，创立H-S四大乐器家族体系。在《音乐的源泉》中深刻断言‘器乐产生自古代人类的两种基本需求——节奏和噪音’，彻底翻转了旋律审美中心主义。", "quote": "器乐产生自古代人类的两种基本需求——节奏和噪音；乐器的演变史就是人类文明身体延伸与心灵物化的地质层。", "books": ["《音乐的源泉》(The Wellsprings of Music, 1962)", "《乐器史》(The History of Musical Instruments, 1940)", "《世界舞蹈史》(World History of the Dance, 1937)"], "concepts": ["四分法分类法 (体鸣/膜鸣/弦鸣/气鸣)", "节奏与噪音双原初冲动", "自弦竹筒琴发生学"], "detail": "萨克斯深刻批判将音乐窄化为优美旋律的欧洲古典偏见。他指出早期人类器物首先服务于运动组织、身体同步、震慑与仪式狂喜。他对自弦竹筒琴的解剖，展示了弦鸣原理如何从天然竹纤维材质中生长出来，奠定了乐器物质文化研究基石。"}, {"id": "bartok", "name": "贝拉·巴托克", "orig": "Béla Bartók", "dates": "1881–1945", "era": "comparative", "role": "东欧民间音乐田野大师 · 现代作曲巨擘", "school": "布达佩斯李斯特音乐学院 / 哥伦比亚大学", "img": "assets/img/bartok.jpg", "tag": "田野记谱", "summary": "带着爱迪生留声机深入匈牙利、罗马尼亚、斯洛伐克、土耳其与阿拉伯农村，采集转写上万首纯粹口传民歌，提炼出非均分节奏与五度链调式，深刻革新20世纪现代音乐语言。", "quote": "民间音乐不是野蛮粗糙的原材料，而是自然界中最为纯洁、最为完美的艺术结晶，如同花朵与矿石一般遵循着不可动摇的法则。", "books": ["《匈牙利民间音乐》(Hungarian Folk Music, 1931)", "《塞尔维亚-克罗地亚民间歌曲》(Serbo-Croatian Folk Songs, 1951 与洛德合著)"], "concepts": ["阿克萨克节奏 (Aksak 偏快加拍)", "自然生长的五度律与泛音音阶", "忠实转写规范"], "detail": "巴托克展现了学者与作曲家的完美结合。他的转写精确到了装饰音、微升微降与滑音的毫秒级变化，打破了古典音乐长久以来的等值小节线束缚，确立了欧洲民间音乐研究的最高典范。"}, {"id": "koda", "name": "佐尔坦·柯达伊", "orig": "Zoltán Kodály", "dates": "1882–1967", "era": "comparative", "role": "民间音乐采录大师 · 音乐教育革新家", "school": "匈牙利科学院 / 布达佩斯音乐学院", "img": "assets/img/koda.jpg", "tag": "全民音乐性", "summary": "与巴托克并肩开展东欧民间歌曲科学大普查，将母语民间音乐作为国民音乐教育根基，创立柯达伊手势与首调唱名教学法，深信音乐是所有人与生俱来的母语。", "quote": "如果一个民族遗忘了自己的母语民歌，那么他在精神上就沦为了寄人篱下的游民。", "books": ["《匈牙利民间音乐》(Folk Music of Hungary, 1937)", "《论匈牙利民歌结构》(1906)"], "concepts": ["母语民歌教育法", "五声性民间思维", "柯达伊手势音高教学法"], "detail": "柯达伊将田野采录成果直接反哺给国民基础教育，证明无字口传音乐不仅具有深厚的历史学价值，更是塑造现代公民文化认同与感官健全的核心力量。"}, {"id": "fewkes", "name": "杰西·沃尔特·富克斯", "orig": "Jesse Walter Fewkes", "dates": "1850–1930", "era": "fieldwork", "role": "人类学田野音响采集第一人", "school": "史密森学会美洲民族学局 (BAE)", "img": "assets/img/fewkes.jpg", "tag": "蜡管开创", "summary": "1890年3月在缅因州使用便携式爱迪生圆筒留声机录制帕萨马科迪印第安人（Passamaquoddy）口传歌唱，开创了人类学与音乐学实地音响采录的历史新纪元。", "quote": "圆筒上的细微刻痕，让那些即将消逝在文明车轮之下的古老声音获得了跨越时空的永生。", "books": ["《祖尼人仪轨歌曲采录报告》(1890)", "《霍皮族卡奇那仪式与音乐》(Hopi Katcinas, 1903)"], "concepts": ["实地圆筒录音法", "濒危口传声音抢救", "北美原住民仪式声景"], "detail": "富克斯原本是动物学家与人类学家。他的1890年田野录音直接促成了赫明威西南探险队的音响档案建立，证明留声机完全可以走出实验室，进入荒野与原住民村落展开鲜活的历史见证。"}, {"id": "densmore", "name": "弗朗西丝·登斯莫尔", "orig": "Frances Densmore", "dates": "1867–1957", "era": "fieldwork", "role": "北美印第安音乐抢救记录第一人", "school": "史密森学会美洲民族学局", "img": "assets/img/densmore.jpg", "tag": "原住民抢救", "summary": "奉献五十余载，深入北美各原住民部落，独立采集转写超过3000根蜡管录音。1916年留下了她为黑脚族酋长‘高山酋长’播放留声机的传世经典照片。", "quote": "印第安人的歌唱绝非随兴的娱乐，那是他们向神明祈雨、治愈病患与维系部落生死的最高法术。", "books": ["《齐佩瓦音乐》(Chippewa Music, 1910/1913)", "《特顿苏族音乐》(Teton Sioux Music, 1918)"], "concepts": ["抢救性民族志记述", "部落仪式歌唱功能学", "音响档案系统转录"], "detail": "登斯莫尔克服了早期极为恶劣的交通与技术条件，以惊人的毅力记录了苏族、曼丹族、纳瓦霍族等数十个部落的濒危仪轨，为史密森学会奠定了全球最丰富的原住民音响宝库。"}, {"id": "boas", "name": "弗朗茨·博厄斯", "orig": "Franz Boas", "dates": "1858–1942", "era": "fieldwork", "role": "现代文化人类学之父 · 历史特殊论宗师", "school": "哥伦比亚大学人类学系", "img": "assets/img/boas.jpg", "tag": "历史特殊论", "summary": "摧毁19世纪单线进化论（摩尔根/泰勒），创立历史特殊论、文化相对主义与文化整体论。断言人类发展的一般法则不能被轻易建立，每一处环境与群体都具备独特的历史形成脉络。", "quote": "我们知道环境是独特的，并剧烈地改变着人类的行为。忽视具体社会环境的影响是毫无理由的。", "books": ["《原始人的心智》(The Mind of Primitive Man, 1911)", "《原始艺术》(Primitive Art, 1927)"], "concepts": ["历史特殊论 (反单线进化论)", "文化相对主义与整体论", "克服思维与行为惯性"], "detail": "博厄斯要求学者克服自身文化偏见，区分‘肌体决定行为’与‘文化决定行为’。尽管其‘反理论’姿态存在归纳无穷困境与相对主义悖论，但其将范畴历史化、回归地方经验的准则，成为整个美国民族音乐学范式的哲学底色。"}, {"id": "dahlhaus", "name": "卡尔·达尔豪斯", "orig": "Carl Dahlhaus", "dates": "1928–1989", "era": "comparative", "role": "西方音乐史学泰斗 · 音乐自律美学反思大师", "school": "柏林工业大学音乐学研究所", "img": "assets/img/dahlhaus.jpg", "tag": "反目的论史学", "summary": "20世纪下半叶最重要的西方音乐史学家。在《音乐史的基础》中对‘进化论进步史观’展开彻底的反目的论批判，揭示‘作品自律性’（Autonomie）美学理论背后的历史构造性。", "quote": "音乐史不是朝着某一既定终点的连续进步，它是一场充满断裂、美学预设与不同观念相互抗衡的复杂对话。", "books": ["《音乐史的基础》(Foundations of Music History, 1977)", "《19世纪音乐》(Nineteenth-Century Music, 1980)"], "concepts": ["反目的论历史编纂学", "作品概念的历史化", "结构史与事件史辩证法"], "detail": "达尔豪斯与人类学历史特殊论在‘反目的论’上高度共鸣，但他更为自觉地澄明自身的理论前提：西方音乐史学者必须意识到‘作品’本身就是18-19世纪特定的历史产物，绝非全人类放之四海而皆准的普遍范畴。"}, {"id": "geertz", "name": "克利福德·格尔茨", "orig": "Clifford Geertz", "dates": "1926–2006", "era": "contemporary", "role": "阐释人类学宗师 · ‘深描’理论创立者", "school": "普林斯顿高等研究院 (IAS)", "img": "assets/img/geertz.jpg", "tag": "深描阐释学", "summary": "提出‘文化是人自己编织的意义之网’，创立以‘深描’（Thick Description）为核心的阐释人类学方法。其文化三系统理论直接启发了蒂莫西·赖斯等人的现代音乐人类学重构。", "quote": "人是悬挂在由他自己所编织的意义之网中的动物，我以为文化就是这些网络，对文化的分析不是实验科学，而是一门寻求意义的解释科学。", "books": ["《文化的解释》(The Interpretation of Cultures, 1973)", "《地方性知识》(Local Knowledge, 1983)"], "concepts": ["深描 (Thick Description)", "意义之网 (Webs of Significance)", "地方性知识"], "detail": "格尔茨的巴厘岛斗鸡深描成为人类学不朽经典。他证明同一声响与动作在不同层级的语境中具有截然不同的社会意义，促使民族音乐学彻底告别死板的音响切片，转入对活态仪式微观政治学与象征体系的深层释义。"}, {"id": "rice", "name": "蒂莫西·赖斯", "orig": "Timothy Rice", "dates": "1945–现今", "era": "contemporary", "role": "现代音乐人类学三维重构领袖 · 保加利亚田野大师", "school": "加州大学洛杉矶分校 (UCLA) 民族音乐学系", "img": "assets/img/gaida.jpg", "tag": "三维动态事象", "summary": "1987年发表经典名篇《重构民族音乐学》，将格尔茨三系统与梅里亚姆模式融合，提出‘历史建构、社会维护、个体创造与体验’三维动态分析框架。深入保加利亚盖达风笛田野。", "quote": "音乐不是漂浮在空中的纯形式，它是历史如何建构人们的经验、社会如何维护声音的意义、个体如何在每一次演奏中重新创造自我的三维交点。", "books": ["《愿它充满你的灵魂：保加利亚音乐体验》(May It Fill Your Soul, 1994)", "《重构民族音乐学》(Toward the Remodeling of Ethnomusicology, 1987)"], "concepts": ["三维重构模式 (历史建构/社会维护/个体创造)", "盖达风笛身体化师徒传习", "音乐事象 (Musical Event)"], "detail": "赖斯师从曼特尔·胡德与布莱金。他亲自拜保加利亚风笛大师瓦里梅佐夫（Varimezov）为师，通过身体肌肉记忆习得复杂的非对称加拍节拍。他将‘个体体验’重新带回人类学中心，弥补了早期功能主义抹杀具体个人生命感受的缺陷。"}, {"id": "herskovits", "name": "梅尔维尔·J·赫斯科维茨", "orig": "Melville J. Herskovits", "dates": "1895–1963", "era": "fieldwork", "role": "文化相对论系统化大师 · 梅里亚姆之导师", "school": "西北大学人类学系", "img": "assets/img/herskovits.jpg", "tag": "涵化与相对论", "summary": "博厄斯杰出高足，系统建立‘文化相对主义’认识论体系，开创跨大西洋黑人非裔文化与涵化（Acculturation）研究，直接培养并塑造了阿兰·梅里亚姆的学术视野。", "quote": "评价的判断基于经验，而经验是由每一个体根据其自身的文化教化所阐释的。", "books": ["《人类及其创造：文化人类学科学》(Man and His Works, 1948)", "《黑人过去的迷思》(The Myth of the Negro Past, 1941)"], "concepts": ["文化相对主义系统论", "涵化理论 (Acculturation)", "非洲大西洋离散声景"], "detail": "赫斯科维茨将博厄斯的相对主义从单纯的方法论提升为系统的社会科学认识论。他论证黑人音乐在残酷的美洲奴隶制压迫下如何通过重组非洲节奏记忆（泛非洲底色）实现精神抵抗与文化新生，为现代爵士、蓝调与加勒比音乐研究指明了方向。"}, {"id": "tylor", "name": "爱德华·伯内特·泰勒", "orig": "Edward Burnett Tylor", "dates": "1832–1917", "era": "comparative", "role": "19世纪人类学之父 · 进化论学派代表", "school": "牛津大学人类学系", "img": "assets/img/tylor.jpg", "tag": "单线进化论", "summary": "在《原始文化》中首次给出‘文化’的现代科学经典定义。主张人类心智同一性与单线进化论（蒙昧-野蛮-文明），成为后来博厄斯学派与现代民族音乐学全力反思的经典理论靶子。", "quote": "文化或文明是一个复合的整体，包括知识、信仰、艺术、道德、法律、风俗以及作为社会成员的人所习得的任何其他能力和习惯。", "books": ["《原始文化》(Primitive Culture, 1871)", "《人类学》(Anthropology, 1881)"], "concepts": ["文化的经典定义 (1871)", "心智一致性假设", "遗留物概念 (Survivals)"], "detail": "泰勒将文化定义从‘教养/修养’中解放为全人类生活方式的总和，具有划时代功绩；但他坚信全球音乐必然服从从简单向复杂的单一线性进化，这一预设在20世纪被实证测音与深描民族志彻底瓦解。"}, {"id": "kunst", "name": "雅普·昆斯特", "orig": "Jaap Kunst", "dates": "1891–1960", "era": "golden", "role": "‘民族音乐学’定名人 · 爪哇甘美兰研究泰斗", "school": "阿姆斯特丹大学 / 荷兰皇家热带研究所", "img": "assets/img/kunst.jpg", "tag": "学科定名", "summary": "1950年发表《音乐学》(Musicologica)，首次正式提出去除连字符的‘Ethno-musicology’（民族音乐学），取代带有优越感与欧洲中心论色彩的‘比较音乐学’。印尼甘美兰权威。", "quote": "这门学科的名字应当是‘民族音乐学’，它研究的不是优劣高下的比较，而是所有民族音乐在自身文化脉络中的本质结构。", "books": ["《爪哇的音乐》(Music in Java, 1949 经典巨著)", "《民族音乐学》(Ethnomusicology, 1959)"], "concepts": ["民族音乐学学科定名 (1950)", "甘美兰宏大分层结构 (Colotomic)", "斯连德罗与佩罗格律实测"], "detail": "昆斯特在荷属东印度群岛（印度尼西亚）工作三十年，对爪哇宫廷甘美兰的铜锣循环结构（Gong Ageng, Kenong）、乐器层级与音律进行了极尽详尽的测量与绘图，将东南亚高雅音乐传统带入世界学术殿堂。"}, {"id": "hood", "name": "曼特尔·胡德", "orig": "Mantle Hood", "dates": "1918–2005", "era": "golden", "role": "‘双重音乐才能’倡导者 · UCLA学派领袖", "school": "加利福尼亚大学洛杉矶分校 (UCLA) 民族音乐学研究所", "img": "assets/img/hood.jpg", "tag": "双重音乐才能", "summary": "1960年发表《音乐才能的挑战》，创立著名的‘双重音乐才能’（Bi-musicality）学说。主张研究者不能做岸上观花的外行，必须亲身拜师学习异文化乐器演练，以身体实践获取真知。", "quote": "你若不能亲手敲响甘美兰的深沉铜锣，你就永远不可能理解爪哇人骨子里的时间意识与宇宙秩序。", "books": ["《民族音乐学家》(The Ethnomusicologist, 1971)", "《爪哇中爪哇古典音乐的核律》(The Nuclear Theme as a Determinant of Patet in Javanese Music, 1954)"], "concepts": ["双重音乐才能 (Bi-musicality)", "身体化表演实践民族志", "UCLA全球世界音乐乐团教学模式"], "detail": "胡德在UCLA建立了全美首个涵盖全球乐种表演的民族音乐学系，购置了昂贵的爪哇甘美兰整套乐器，要求所有博士生必须在乐团中演奏达标，彻底扭转了西方学界空谈乐谱的学院偏狭。"}, {"id": "merriam", "name": "阿兰·P·梅里亚姆", "orig": "Alan P. Merriam", "dates": "1923–1980", "era": "golden", "role": "音乐人类学宗师 · 三重模式创立者", "school": "西北大学 / 印第安纳大学人类学系", "img": "assets/img/merriam.jpg", "tag": "三重模式", "summary": "1964年出版划时代经典《音乐人类学》，提出震撼学界的‘概念-行为-声音’（Concept-Behavior-Sound）三重动态循环分析框架，将学科重新定义为‘研究文化中的音乐’（The Study of Music in Culture）。", "quote": "音乐声音不是孤立的物理波形，若没有人类头脑中的概念作为驱动、没有社会性肉身行为作为执行，声音根本无从发生。", "books": ["《音乐人类学》(The Anthropology of Music, 1964 学科圣经)", "《平头印第安人的民族音乐学》(Ethnomusicology of the Flathead Indians, 1967)"], "concepts": ["三重模式 (概念-行为-声音)", "文化中的音乐 (Music in Culture)", "音乐的十大社会功能"], "detail": "梅里亚姆的人类学训练师从赫斯科维茨（Herskovits）。他坚决反对将音乐学局限于乐音内部结构的形式主义，主张追踪从音乐观念（信仰、美学、禁忌）到行为（身体操作、社会互动、经济酬劳）再到声音结果的全过程，后在1977年进一步提出‘音乐即文化’（Music as Culture）。"}, {"id": "blacking", "name": "约翰·布莱金", "orig": "John Blacking", "dates": "1928–1990", "era": "golden", "role": "生物文化音乐学先驱 · 反精英主义巨擘", "school": "英国贝尔法斯特女王大学社会人类学系", "img": "assets/img/blacking.jpg", "tag": "人的音乐性", "summary": "在南非文达人（Venda）村落进行近两年深入田野，1973年出版《人的音乐性》，提出‘音乐是人类组织的声音’（Humanly Organized Sound），并深刻断言音乐是人类物种共有的本能潜能。", "quote": "音乐是人类组织的声音；而其深层目的，则是为了创造组织完备的人性（Soundly Organized Humanity）。", "books": ["《人的音乐性》(How Musical is Man?, 1973)", "《文达儿童歌曲》(Venda Children's Songs, 1967)"], "concepts": ["人类组织的声音 (Humanly Organized Sound)", "组织完备的人性 (Soundly Organized Humanity)", "文达人多姆巴(Domba)巨蟒舞仪轨"], "detail": "布莱金不仅是人类学家，也是钢琴家。他在南非种族隔离阴影下，深入文达人村落，发现所有文达儿童都能毫不费力地掌握极其复杂的多声部与多节奏交织。他猛烈抨击西方学院派将95%的人斥为‘无音乐细胞’的虚伪精英主义，主张音乐才能如同语言能力一般，是整个人类物种普遍拥有的进化天赋。"}, {"id": "seeger", "name": "安东尼·西格", "orig": "Anthony Seeger", "dates": "1945–现今", "era": "contemporary", "role": "构成性音乐人类学领袖 · 史密森民道唱片总监", "school": "加州大学洛杉矶分校 (UCLA) / 史密森学会 (Folkways)", "img": "assets/img/seeger.jpg", "tag": "构成性本体论", "summary": "在巴西亚马逊河流域苏雅印第安人（Suyá/Kisêdjê）中进行长期田野，1987年出版《苏雅人为什么歌唱》，提出革命性的‘音乐人类学’（Musical Anthropology）：音乐不是被动反映社会，而是积极‘建构’社会。", "quote": "苏雅人并非生活在一个先验存在的社会结构中然后再去唱歌，恰恰相反，他们正是通过一年四季的歌唱，才创造了他们的社会结构本身。", "books": ["《苏雅人为什么歌唱》(Why Suyá Sing: A Musical Anthropology of an Amazonian People, 1987)", "《声音的档案与声音的未来》(Folkways 系列主编)"], "concepts": ["构成性本体论 (Constitutive Ontology)", "阿基亚(Akia)个人高喊歌 vs 恩格雷(Ngére)集体和声歌", "音乐人类学 vs 音乐的人类学"], "detail": "西格彻底翻转了梅里亚姆‘文化中的音乐’的容器论假设。他指出，在苏雅人社会中，个人的成年仪式、两性分工、氏族盟约乃至村落空间方位，全都在高亢刺耳的Akia呼喊与低沉神圣的Ngére齐唱中被仪式性地生产出来。音乐不是社会结构的镜子，音乐就是结构生成的熔炉。"}, {"id": "nettl", "name": "布鲁诺·内特尔", "orig": "Bruno Nettl", "dates": "1930–2020", "era": "contemporary", "role": "学科全景元理论大师 · 史学编纂宗师", "school": "伊利诺伊大学厄巴纳-香槟分校 (UIUC)", "img": "assets/img/nettl.jpg", "tag": "元理论批评", "summary": "执教逾半个世纪，出版巨著《民族音乐学研究：31个核心议题与概念》，对跨文化音乐普遍性、音乐起源、田野伦理、都市音乐变迁与局内人视阈进行了极其宏大的哲学反思。", "quote": "民族音乐学从来不是一种单一的方法，而是一系列不断自我质疑、永不满足的探索态度。", "books": ["《民族音乐学研究：31个核心议题与概念》(The Study of Ethnomusicology, 1983/2005/2015)", "《黑脚族音乐思想》(Blackfoot Musical Thought, 1989)"], "concepts": ["音乐无普遍语言论 (No Universal Language)", "四声态与核心音域分析", "学科反思性史学"], "detail": "内特尔以清醒的批判意识著称。他澄清了无数流行神话，例如他证明‘音乐是全人类通用的语言’是一个彻头彻尾的浪漫主义谬误——音乐在不同文化中的语法、功能、情感投射截然不同，无法未经翻译而自然相通。"}, {"id": "lomax", "name": "阿兰·洛马克斯", "orig": "Alan Lomax", "dates": "1915–2002", "era": "golden", "role": "歌唱计量学（Cantometrics）创立者 · 口传文化抢救者", "school": "美国国会图书馆民歌档案库 / 哥伦比亚大学", "img": "assets/img/lomax.jpg", "tag": "歌唱计量学", "summary": "携带数十吨录音设备走遍美国南部黑人监狱、阿巴拉契亚山脉、西班牙、意大利与加勒比海。创立量化分析歌唱风格与社会结构关联的‘歌唱计量学’。", "quote": "民间艺术是全人类文化多样性的基因库；一旦丧失，我们将沦入全球文化均质化的精神沙漠。", "books": ["《民间歌唱风格与文化》(Folk Song Style and Culture, 1968)", "《歌唱的土地》(The Land Where the Blues Began, 1993)"], "concepts": ["歌唱计量学 (Cantometrics 37项参数)", "文化均等主义 (Cultural Equity)", "蓝调与原生态歌者发掘 (Lead Belly, Muddy Waters)"], "detail": "洛马克斯建立了全球首个结合统计学、声学参数与人类学社会结构的量化模型（包含喉音紧张度、鼻音度、合唱多声性、身体摆动幅度等37项指标），证明严密的专制社会往往与紧缩喉音单声部对应，而平等协作的采集狩猎社群则涌现丰富的复调合唱。"}, {"id": "wgj", "name": "王光祈", "orig": "Wang Guangqi", "dates": "1892–1936", "era": "comparative", "role": "中国比较音乐学第一人 · 现代东方音乐学开拓者", "school": "德国柏林大学 / 波恩大学", "img": "assets/img/wgj.jpg", "tag": "比较学先驱", "summary": "五四运动少年中国学会领袖，赴德留学师从霍恩博斯特尔与萨克斯，1934年以博士论文《论中国古代剧院》获波恩大学哲学博士，著《东西乐制之研究》《东方民族之音乐》，奠定中国现代音乐学基石。", "quote": "吾辈治音乐学，当取东西各民族乐制并存互考，既不妄自尊大，亦不妄自菲薄，方见人类心灵同异之全貌。", "books": ["《东方民族之音乐》(1929)", "《东西乐制之研究》(1926)", "《中国音乐史》(1934)"], "concepts": ["三大乐系说 (中国乐系、希腊乐系、波斯阿拉伯乐系)", "东西律制数理比勘", "近世中国音乐学奠基"], "detail": "王光祈是在欧洲核心学派受教的第一位中国学者。他熟练掌握德文与声学测音工具，直接将柏林学派的音分对比与乐器分类方法引入中国古代黄钟九寸律、三分损益法与十八律的研究，具有里程碑式的学术史意义。"}, {"id": "yyd", "name": "杨荫浏", "orig": "Yang Yinliu", "dates": "1899–1984", "era": "fieldwork", "role": "中国民族音乐学泰斗 · 传统音乐记谱大师", "school": "中央音乐学院民族音乐研究所 (中国艺术研究院音乐研究所所长)", "img": "assets/img/yyd.jpg", "tag": "抢救性实测", "summary": "1950年使用当时极其罕见的进口钢丝录音机，抢救录制盲人音乐家阿炳（华彦钧）的《二泉映月》《听松》《大浪淘沙》等六首绝世孤品。著《中国古代音乐史稿》，终生践行田野普查。", "quote": "不走入民间艺人破旧的柴门，不坐在田间地头的板凳上亲耳倾听，我们写出的音乐史就永远只是死掉的故纸堆。", "books": ["《中国古代音乐史稿》(1981 上下两巨册)", "《中国音乐史纲》(1952)", "《定县秧歌选》(1953)"], "concepts": ["抢救性钢丝录音", "工尺谱精密对译实测", "乐律史与乐人生活史合一"], "detail": "杨荫浏精通古琴、琵琶、昆曲与三弦，又熟稔现代音律测定。他带领团队跋山涉水走遍大江南北，记录了智化寺京音乐、西安鼓乐、湖南道情、十番锣鼓等数百种濒危民间乐种，其学风堪称中国田野民族音乐学的定海神针。"}, {"id": "yry", "name": "于润洋", "orig": "Yu Runyang", "dates": "1932–2015", "era": "contemporary", "role": "音乐美学家 · 音乐学学科理论领袖", "school": "中央音乐学院院长 / 中国音乐家协会副主席", "img": "assets/img/yry.jpg", "tag": "美学与方法论", "summary": "深入阐释音乐音响结构与人类精神世界的本体关联，主持中国现代音乐学史论建设，深刻辨析西方历史音乐学与民族音乐学美学方法论在中国的融合与发展。", "quote": "音乐既是高度形式化的声音建筑，又是人类历史意识与主体情感最为深沉的精神积淀。", "books": ["《现代西方音乐哲学导论》(2000)", "《悲情咏叹：西方音乐史学与美学论集》(2004)"], "concepts": ["音乐美学本体论", "历史语境与形式辩证法", "现代音乐学学科自省"], "detail": "于润洋先生长期引领中国音乐学术的学科规范化与思想深化。他对音乐学方法论的深邃辨析，为新时期中国民族音乐学与传统音乐学在哲学反思与跨学科交叉上的飞跃提供了强大的学理支撑。"}, {"id": "levistrauss", "name": "克劳德·列维-斯特劳斯", "orig": "Claude Lévi-Strauss", "dates": "1908–2009", "era": "contemporary", "role": "结构人类学宗师 · 神话与音乐同构论者", "school": "法兰西学院", "img": "assets/img/levistrauss.jpg", "tag": "结构同构", "summary": "结构主义人类学开创者。在四卷本巨著《神话学》中，将神话结构的无意识运行机制与西方大型交响乐（赋格、奏鸣曲）及原住民仪式音乐作深刻同构比勘。", "quote": "音乐与神话是同一种母体的两个不同面相，它们都要求克服连续的时间，而让听者进入一种无时间的深层结构秩序。", "books": ["《神话学：生食与熟食》(The Raw and the Cooked, 1964 乐章式结构)", "《结构人类学》(Anthropologie structurale, 1958)"], "concepts": ["神话与音乐的同构性", "二元对立深层语法", "时间超越机制"], "detail": "列维-斯特劳斯将《生食与熟食》直接按奏鸣曲式、变奏曲与康塔塔的乐章来组织。他认为音乐是人类心智创造的最纯粹的符号结构，这一洞见极大启发了现代声音人类学对仪式声音象征意义的挖掘。"}, {"id": "guid", "name": "阿雷佐的圭多", "orig": "Guido d'Arezzo", "dates": "约991–1033", "era": "comparative", "role": "四线谱与唱名法发明者 · 口传向书面转折枢纽", "school": "意大利阿雷佐大教堂修道院", "img": "assets/img/guid.jpg", "tag": "记谱技术革命", "summary": "发明四线谱表与六声音阶唱名（Ut-Re-Mi-Fa-Sol-La），创立‘圭多之手’口传记忆体系，将原本需要修道士口传身授十年的圣咏记忆周期缩短至一年。", "quote": "未学记谱之盲歌者，虽复唱诵百年，仍如瞎子引路，盲目而行；借此四线新图，童子一年即可明察万般乐调。", "books": ["《微论》(Micrologus, 约1026)", "《反思之篇》(Prologus in Antiphonarium)"], "concepts": ["四线谱绝对音高标定", "六声音阶 (Hexachord)", "圭多之手 (Guidonian Hand)"], "detail": "圭多是理解西方音乐‘口传转书面’最关键的历史坐标。正因为有他的技术发明，欧洲圣咏才从不稳定的身体口传记忆中剥离出来，成为了可以被远距离运输、审查与标准化复制的书面乐谱技术。"}, {"id": "greg", "name": "教皇格里高利一世", "orig": "Pope Gregory I (St. Gregory the Great)", "dates": "约540–604", "era": "comparative", "role": "格里高利圣咏神圣命名者 · 口传记忆神话化身", "school": "罗马教廷", "img": "assets/img/greg.jpg", "tag": "口传圣咏神话", "summary": "中世纪图像中圣灵化作白鸽停在其耳畔低语传授圣乐的神话化身。在他统治时代及随后三百年内，所谓的格里高利圣咏完全处于没有任何乐谱记录的纯粹无字口头传统之中。", "quote": "白鸽落在教皇的右肩，将天国的旋律逐一倾注入他的耳中，随后被教皇口授传予抄写僧侣。", "books": ["《教牧规程》(Regula Pastoralis)", "罗马礼仪圣咏体系编定传说"], "concepts": ["口头传统神圣起源神话", "圣灵白鸽口传隐喻", "纽姆谱出现前三百年的纯口授史"], "detail": "格里高利一世是解开‘口传圣咏佯谬’的核心象征。现代音乐史学已经证明，在他生活的公元6世纪，罗马教会根本没有任何纽姆谱。他所维系的全部圣咏礼仪，完全依赖修道院歌唱首领一代代严格的肌肉记忆与口传复述。"}, {"id": "pyth", "name": "毕达哥拉斯", "orig": "Pythagoras of Samos", "dates": "约前570–前495", "era": "comparative", "role": "古希腊数理声学与天体音乐哲学宗师", "school": "毕达哥拉斯学派 (克罗托内)", "img": "assets/img/pyth.jpg", "tag": "单弦琴测音", "summary": "利用单弦琴（Monochord）通过弦长二等分（八度 2:1）、三等分（纯五度 3:2）发现纯五度生律法，创立西方数理音乐理论与万物皆数的天体和谐理论。", "quote": "天体的运行轨迹与琴弦的振动比例完全遵从同一组纯粹数字的奥秘；音乐即是宇宙灵魂的声学显现。", "books": ["《单弦琴声学实测残篇》", "天体音乐假说 (Musica Universalis)"], "concepts": ["单弦琴弦长数理比值", "五度相生律 (Pythagorean Tuning)", "宇宙天体和声体系"], "detail": "毕达哥拉斯将音乐第一次从巫术仪式中抽象为纯粹的数理关系。其五度相生律与古代中国的三分损益法在数理逻辑上不谋而合，成为全球比较音乐学实测各民族纯五度演化谱系最早的理论源头。"}],
+  debates: [{"id": "debate_gregorian", "title": "口传圣咏佯谬与人类音乐发生学公理", "subtitle": "西方音乐史被遮蔽的‘口头传统’根基 · 记谱法绝非文明的先行条件", "imgs": ["assets/img/neume.jpg", "assets/img/greg.jpg", "assets/img/guid.jpg"], "core_problem": "为什么说‘非书面传统音乐的学科是民族音乐学’暴露了西方中心论的短视？在纽姆谱发明前完全靠口传的早期基督教圣咏，难道不是口传音乐？世上是否有任何一个音乐文明能越过口传而直接降生于纸面？", "axiom": "【人类音乐发生学第一公理】：口传性（Orality）是全人类一切音乐实践绝对先在的、原生的本体母态；而书面记谱（Scripturality）永远只是在特定社会高度分工、集权化统治与标准化复制需要下诞生的、极晚起的、局部的、选择性的第二性技术补丁。", "arguments": [{"claim": "教皇格里高利一世时代的‘纯口头帝国’", "evidence": "公元6世纪末格里高利一世在位期间，罗马教会根本没有任何音高记谱法。数千首圣咏完全依附于歌唱修士的身体记忆、咽喉肌肉记忆与师徒口授。一个合格的领唱修士（Cantor）需要耗费10至15年时间将全年的礼仪圣咏死记硬背入脑。"}, {"claim": "早期无音高纽姆谱（Adiastematic Neumes）的‘助记备忘录’属性", "evidence": "9世纪在瑞士圣加尔修道院等地出现的原始纽姆谱，没有任何谱线，不标示绝对音高，也不标示精确音程。它在本质上不是用来‘初次视唱’未见乐谱的工具，而仅仅是给已经将整首圣咏背得滚瓜烂熟的修士提供一个视线提醒——提示何处上滑、何处转音。若无口传肉身先在，纽姆谱就是一堆无法解读的死符。"}, {"claim": "学科藩篱的虚妄与比较音乐学的去魅力量", "evidence": "西方传统历史音乐学长久以来陷入‘记谱至上主义’（Text-centrism），将能够写在五线谱上的欧洲艺术音乐自封为人类音乐的‘正典’，而将世界上绝大多数依靠耳朵与身体代代相传的音乐打入冷宫，斥为‘异国情调’的民族学标本。口传圣咏的历史事实彻底颠覆了这种狂妄：欧洲音乐的童年与中非雨林俾格米人的歌唱在存在论上没有任何两样，都是纯粹的‘口传心授’！"}]}, {"id": "debate_merriam_seeger", "title": "‘文化中的音乐’容器论批判与‘音乐即文化’的本体论翻转", "subtitle": "从梅里亚姆的三重模式到西格的构成性本体论 · 鱼与水 vs 浪与海", "imgs": ["assets/img/merriam.jpg", "assets/img/seeger.jpg"], "core_problem": "‘文化中的音乐’（Music in culture）中的‘文化’与‘音乐’，是否依然是一种机械的外部包含关系（容器论）？音乐只是被动反映社会结构的镜子，还是积极生产社会结构的熔炉？", "axiom": "【构成性音乐本体论（Constitutive Ontology）】：音乐从来不是被动盛放在一个名叫‘文化’的大碗里的水；音乐就是奔腾的波浪本身，是人类通过声音震动、身体聚集与仪式表演，亲手编织并确认其社会关系、权力秩序与宇宙认同的创造性母体。", "arguments": [{"claim": "梅里亚姆 1964年‘三重模式’与容器论残留", "evidence": "梅里亚姆在《音乐人类学》中界定学科为‘研究文化中的音乐’，提出‘概念-行为-声音’模式。其功绩在于将音响拉回人类语境；但其隐伏的理论陷阱是：依然在潜意识中将‘文化/社会’预设为一个早已成型、先验存在的坚硬‘容器’，而音乐只是容器里被决定的内容物（反映经济基础、反映阶级结构）。"}, {"claim": "梅里亚姆 1977年的自我反思与‘音乐即文化’", "evidence": "面对学界批判，梅里亚姆在1977年发表经典文章，主动修正纲领，将口号从‘Music in culture’跃迁为‘Music as culture’（音乐即文化）——承认音乐表演本身就是文化的活体实践，两者不可分割。"}, {"claim": "西格 1987年《苏雅人为什么歌唱》的革命性翻转", "evidence": "安东尼·西格在巴西亚马逊苏雅印第安人村落中提出了‘音乐人类学’（Musical Anthropology）。苏雅人在旱季与雨季之交，通过男人在广场高喊Akia歌，向村庄四周的女性亲属展示狩猎与成年活力；通过全族合唱Ngére仪式，平息森林中亡灵与动物的愤怒。西格惊人地指出：苏雅人不是生活在一个既定的亲属社会里再去唱歌，他们正是依靠这年复一年的歌唱，才‘发明’并‘维系’了他们的社会关系！若停止歌唱，苏雅社会在物理与符号意义上都将瞬间解体！"}]}, {"id": "debate_china_naming", "title": "中国民族音乐学的三场命名与学科定位大论争", "subtitle": "从南京会议到洛秦学术史梳理 · 传统音乐学与音乐人类学的四十载辨析", "imgs": ["assets/img/wgj.jpg", "assets/img/yyd.jpg", "assets/img/yry.jpg"], "core_problem": "中国学界在引进Ethnomusicology时，为何经历了‘民族音乐学’、‘传统音乐学’、‘音乐人类学’长达数十年的剧烈争鸣？其背后的国家文化战略与学术方法论分歧何在？", "axiom": "【双轨并进与范式共生】：‘中国传统音乐学’以本土五大类传统音乐（民歌、歌舞、说唱、戏曲、器乐）的文献考辨、形态分析与遗产抢救为主脉；而‘音乐人类学’以跨文化田野民族志、社会文化阐释与前沿哲学对话为旗帜。两者不是水火不容，而是中国学术面向本土深耕与面向世界对话的双翼。", "arguments": [{"claim": "第一阶段（1980年代）：魏廷格 vs 乔建中 —— 民族音乐学还是传统音乐学？", "evidence": "1980年南京召开首届全国民族音乐学学术讨论会（董维松、高厚永发起）。随后魏廷格先生撰文主张学科应定名为‘民族音乐学’（严格对应西方Ethnomusicology）；乔建中等学者则指出：‘民族音乐学’在汉语语境下极易被误解为仅仅研究少数民族音乐，或者与‘民族民间音乐’发生混淆，因而主张成立‘中国传统音乐学会’，专注于中华各民族数千年丰厚传统音乐形态的系统挖掘。"}, {"claim": "第二阶段（1990年代）：赵宋光提倡‘音乐文化人类学’", "evidence": "赵宋光先生立足于认识论与马克思主义哲学深度，认为仅停留在音响形态学远远不够，学科应命名为‘音乐文化人类学’，强调从人类生存实践、思维发生机制与文化生成规律去透视音乐，开启了跨学科理论自觉。"}, {"claim": "第三阶段（2000年代至今）：洛秦的学术史诊断与分工共识", "evidence": "洛秦教授在深入考辨西方学科译名流变后指出：‘民族音乐学’、‘音乐民族学’、‘音乐人类学’与‘传统音乐学’代表了四种不同的学术关照。当下中国学界已经达成健康的共识：以研究中国本土汉族及少数民族历史传统为主的通常称‘中国传统音乐学’；而借鉴西方人类学理论、关注全球文化与当下活态社会田野的则普遍自认‘音乐人类学/民族音乐学’。"}]}, {"id": "debate_blacking_universal", "title": "布莱金‘人的音乐性’与物种生物文化天赋", "subtitle": "解构西方音乐学院的精英造神神话 · 音乐是全人类通有的生存本能", "imgs": ["assets/img/blacking.jpg", "assets/img/venda.jpg"], "core_problem": "西方古典音乐教育长期灌输‘只有少数具备非凡天赋的人才有音乐才华’，90%以上的普通人被贴上‘五音不全’、‘无音乐细胞’的自卑标签。这种精英主义神话是如何被民族音乐学粉碎的？", "axiom": "【布莱金物种音乐本能假说】：正如乔姆斯基证明所有人类儿童皆具备与生俱来的普遍语法（Universal Grammar）一样，人类大脑与神经系统在进化史中早已被雕琢出与生俱来的‘音乐性’（Musicianship）。任何社会将音乐技能垄断为少数特权阶级的专利，都是对人类物种生物潜能的残酷剥夺与人为压抑。", "arguments": [{"claim": "南非文达人儿童的惊人田野发现", "evidence": "布莱金在南非文达山村发现，没有任何一个文达儿童被视为‘不会唱歌’。六岁幼童在没有任何乐谱与学院辅导的情况下，就能自如运用极为繁复的切分节奏与五度相间合唱。音乐参与是每个人融入氏族的自然呼吸，如同学会走路与说话一样自然。"}, {"claim": "西方精英主义教育体制的经济学批判", "evidence": "布莱金指出，西方现代音乐教育实际上是资本主义分工体制的衍生品——它通过制造极少数万众瞩目的‘演奏家大师’，将广大众人贬黜为只能掏钱买门票和唱片的‘被动消费者’。这种体制为了维持高昂的门槛，人为制造了‘才能匮乏’的假象。"}, {"claim": "从‘人类组织的声音’走向‘组织完备的人性’", "evidence": "布莱金的传世名言宣告：音乐不仅是物理上被人类节律组织起来的声音（Humanly organized sound）；其终极价值，是在共同演奏、歌唱与共鸣中，消除人与人之间的冷漠与隔阂，从而达至一个‘组织完备的人性社会’（Soundly organized humanity）。"}]}],
+  organology: {"intro": {"title": "乐器分类学与霍恩博斯特尔-萨克斯体系 (H-S System)", "published": "1914年由霍恩博斯特尔与萨克斯发表于《民族学杂志》(Zeitschrift für Ethnologie)", "principle": "根据乐器初始发声振动体的物理属性，采用杜威十进制分类法，彻底摒弃西方传统的‘管乐/弦乐/打击乐’带有严重欧洲中心主义与逻辑混乱的旧分类。", "classes_count": "4大基础家族（1940年萨克斯补遗第5大族：电鸣乐器 Electrophones 5xxx）"}, "families": [{"code": "1xxx", "name": "体鸣乐器 (Idiophones)", "definition": "乐器本身的材料因其具有弹性而直接发声，无需张设琴弦、膜皮，亦无需空气柱激励。", "subdivisions": ["11 拍击体鸣乐器 (Concussion - 如响板、拍板、钹)", "12 击打体鸣乐器 (Percussion - 如钟、锣、木琴、石磬)", "13 拨奏/簧片体鸣乐器 (Plucked/Lamellophones - 如拇指琴 Mbira、口弦)", "14 摩擦体鸣乐器 (Friction - 如玻璃琴、刮琴)"], "specimens": [{"name": "曾侯乙编钟 (Zenghouyi Bells)", "region": "中国湖北随州 · 战国早期 (前433年)", "code": "111.242 双音合瓦型青铜编钟", "img": "assets/img/bianzhong.jpg", "acoustics": "65件青铜钟总重量达2.5吨。由于独特的‘合瓦型’剖面结构，产生两组独立的声学节线，使每件钟敲击正鼓部与侧鼓部能准确发出互为三度的两个不同纯正乐音，具备一钟双音绝技，跨越五个半八度，展现了公元前5世纪人类声学工程的最高奇迹。"}, {"name": "巴拉风木琴 (Balafon)", "region": "西非曼丁哥文化圈 (马里 / 几内亚)", "code": "111.212 带共鸣葫芦架击木琴", "img": "assets/img/balafon.jpg", "acoustics": "由硬木音条固定在竹木框架上构成，每个音条下方悬挂按体积严格调谐的干燥葫芦作为声学共鸣腔。在葫芦壁上钻孔并贴上极薄的蜘蛛卵囊膜（Spider-egg membrane），木槌击奏时卵膜剧烈震颤，产生西非特有的沙沙嘶鸣嗡嗡声（Buzzing timbre），使声音极具穿透力。"}, {"name": "姆比拉拇指琴 (Mbira dzaVadzimu)", "region": "津巴布韦绍纳人 (Shona People)", "code": "121.22 盒装拨片体鸣乐器 / 簧片琴", "img": "assets/img/mbira.jpg", "acoustics": "在坚硬木板上固定22至28根经过锻打的金属键（传统用铁矿石冶炼）。演奏者将琴置于大型干燥葫芦壳共鸣器（Deze）内，双手拇指与食指弹拨。琴板与葫芦边缘绑有贝壳或啤酒盖，弹奏时产生持续的嗡鸣声，被绍纳人视为打开通往祖先神灵（Vadzimu）意识维度的声学门匙。"}]}, {"code": "2xxx", "name": "膜鸣乐器 (Membranophones)", "definition": "通过张紧在框架或共鸣体开口上的柔韧薄膜（动物皮膜、合成膜）受激励振动发声。", "subdivisions": ["21 击膜乐器 (Struck drums - 绝大多数打击鼓)", "22 拨膜乐器 (Plucked drums - 膜中心附弦被拨击)", "23 摩擦膜乐器 (Friction drums - 如库卡鼓 Cuíca)", "24 吹膜乐器 (Singing membranes / Kazoos - 卡祖笛、笛膜)"], "specimens": [{"name": "金贝鼓 (Djembe)", "region": "西非 (几内亚 / 马里 / 塞内加尔)", "code": "211.261 单头高脚杯形木击鼓", "img": "assets/img/djembe.jpg", "acoustics": "整木掏空雕刻呈圣杯状，鼓面张紧山羊皮。依靠击打鼓面中心、中圈与边缘的不同手指手法，产生三层分明的基频与泛音结构：中心产生深沉浑厚的低音（Bass ~60-80Hz）、中环产生圆润饱满的中音（Tone ~300Hz）、边缘手指甩击产生清脆如爆竹的清音（Slap >1000Hz）。"}, {"name": "塔布拉鼓 (Tabla & Dagga)", "region": "北印度 (Hindustani Classical)", "code": "211.222 壶形与杯形双对鼓", "img": "assets/img/tabla.jpg", "acoustics": "右手木制高音鼓（Dayan）与左手铜/泥制低音鼓（Bayan）。鼓面最大奥秘在于中央涂有由铁粉、米浆与炭灰反复碾磨烘烤而成的黑色硬调音斑（Siyahi）。该质点增加了鼓皮局部的振动质量，彻底消除了普通圆形膜的非谐波泛音，使其产生近乎完美纯净的正弦波钟琴音色，且可通过左手手腕挤压膜边进行滑音（Meend）。"}]}, {"code": "3xxx", "name": "弦鸣乐器 (Chordophones)", "definition": "在固定的两个端点之间张设张紧的琴弦，由琴弦的横向振动产生原始声频。", "subdivisions": ["31 简单弦鸣乐器 / 琴族 (Simple / Zithers - 乐器仅由弦轴架组成，即使剥离共鸣箱，琴弦仍保持张力并可调音演奏)", "32 复合弦鸣乐器 (Composite - 共鸣体与弦架在结构上不可分割，拆毁共鸣箱则弦张力必然崩溃。包括321琉特类、322竖琴类、323哈普鲁特类)"], "specimens": [{"name": "中国古琴 (Guqin / 七弦琴)", "region": "中国古代士大夫雅乐与文人修身传统", "code": "311.22 简单弦鸣 / 无柱板箱型琴族", "img": "assets/img/guqin.jpg", "acoustics": "长三尺六寸五分，象征一年三百六十五日。七弦无柱，面板设十三徽标记泛音节点。演奏产生散音（空弦深厚象征大地）、泛音（轻触徽位空灵象征天体）、按音（手指滑动深沉象征人事）。其‘无马’设计使琴弦直接贴近面板，手指滑行时产生丰富的‘走手音’与漆木摩擦细微声，体现‘琴者，禁也；禁人邪念，反其天真’的哲学。"}, {"name": "西非科拉琴 (Kora)", "region": "西非冈比亚 / 塞内加尔 / 几内亚 (格里奥特吟游诗人传统)", "code": "323.2 复合弦鸣 / 双排弦哈普鲁特琴 (Harp-lute)", "img": "assets/img/kora.jpg", "acoustics": "由剖半的巨大圆形葫芦蒙上牛皮构成共鸣球，一根坚硬长木柄穿透葫芦。琴码两侧垂直立起两排共21根尼龙弦（传统用羚羊皮条）。演奏者双手各用拇指与食指弹拨，左手弹奏低音循环节奏型（Kumbengo），右手弹奏极其华丽快速的高音即兴加花（Birimintingo），兼具竖琴的晶莹与琉特琴的穿透。"}, {"name": "印度西塔琴 (Sitar)", "region": "北印度古典音乐体系 (Hindustani Classical)", "code": "321.321 复合弦鸣 / 弧形品位长颈长琉特类", "img": "assets/img/sitar.jpg", "acoustics": "采用干燥葫芦做共鸣箱，长木指板上嵌有16-20个可移动的弧形黄铜品。除主旋律弦与持续音弦（Chikari）外，指板内部深处还隐藏张设了11至13根‘交感共鸣弦’（Taraf）。当上方旋律弦弹响特定拉格音高时，下方的交感弦通过声学共振自动苏醒震响；配合经过精密微弧打磨的骆驼骨琴桥（Javari），产生持续延绵、如同梦境般神秘泛音迷雾。"}, {"name": "中国琵琶 (Pipa)", "region": "中国传统器乐 / 丝绸之路东传演变", "code": "321.321 复合弦鸣 / 浅体半梨形短颈琉特类", "img": "assets/img/pipa.jpg", "acoustics": "四弦，早期横抱用拨子弹奏（如正仓院唐代五弦琵琶），宋元以来演进为竖抱并以指甲（今用赛璐珞假指甲）轮指弹奏。相与品结合构成十二平均律或多纯律半音体系。文曲（如《塞上曲》《阳春白雪》）以按抚揉吟展现内省幽思，武曲（如《十面埋伏》《霸王卸甲》）以煞弦、绞弦、推挽模拟万马奔腾金鼓齐鸣。"}, {"name": "自弦竹筒琴 (Idiochord Bamboo Tube Zither / 瓦里哈)", "region": "马达加斯加 / 东南亚传统竹乐器圈", "code": "311.11 简单弦鸣 / 自弦管状琴族 (Idiochord)", "img": "assets/img/bamboo_zither.jpg", "acoustics": "琴身取整段天然粗竹管。最神奇的物理发生学特征在于：琴弦并非外来丝线或金属，而是直接用锐利小刀在坚硬竹皮表层剥离出数条平行的纵向竹纤维皮条，两端不割断，在皮条下方两端塞入坚硬的小木块或贝壳作为琴马垫起张紧！这一萨克斯在《音乐的源泉》中高度推崇的活化石乐器，雄辩证明弦鸣乐器并非来自抽象先验的乐理设计，而是从具体竹木材料的物理纤维结构与人类日常切削手工艺中自然长出来的！"}]}, {"code": "4xxx", "name": "气鸣乐器 (Aerophones)", "definition": "振动发声体为处于运动状态中的空气柱或游离气团。", "subdivisions": ["41 自由气鸣乐器 (Free aerophones - 被激励的空气不受管壁限制，如风鸣器 Bullroarer、手风琴游离簧)", "42 狭义管乐器 (True wind instruments - 空气在限制性的管状共鸣腔内振动，分为421边缘吹口笛族、422簧鸣族、423唇震号角族)"], "specimens": [{"name": "贾湖骨笛 (Jiahu Gudi)", "region": "中国河南漯河舞阳贾湖遗址 · 新石器时代前期 (距今约9000–7800年)", "code": "421.111 端吹开管无嘴直笛", "img": "assets/img/jiahu_flute.webp", "acoustics": "由丹顶鹤尺骨截去两端精心钻孔磨制而成。出土数十支，分为五孔、六孔、七孔及八孔。通过现代声学实验室测音，七孔骨笛已具备完整的六声音阶乃至含有半音变化的七声音阶（如小三度与纯五度），并在主孔旁微钻小孔做校音之用。这是迄今为止全人类考古发现的最早可吹奏精密多音程旋律管乐器，比苏美尔、古埃及文明早两千余年。"}, {"name": "迪吉里杜管 (Didgeridoo / Yidaki)", "region": "澳大利亚北部原住民 (阿纳姆地 Yolngu人)", "code": "423.111 唇振直筒自然号角类", "img": "assets/img/didgeridoo.jpg", "acoustics": "由白蚁天然蛀空的桉树干枝制成，吹口涂以蜂蜡密封。演奏完全依赖循环呼吸法（Circular breathing），持续吹奏数十分钟而不中断。演奏者通过嘴唇张力产生极低的无人声基频持续低音（Drone ~50-80Hz），同时利用声带在管内嘶吼嚎叫并协同舌、颊改变口腔容积，模拟袋鼠跳跃、澳洲野犬吠叫与雷霆轰鸣，是原住民链接造梦时代（Dreamtime）创世神话的声波桥梁。"}]}]},
+  hogaku: {"intro": {"title": "东亚音乐文化圈与日本传统邦乐大系", "subtitle": "唐乐流播 · 宫廷雅乐 · 三管三鼓两弦 · 普化吹禅 · 近代俗乐", "hero_img": "assets/img/gagaku.jpg", "hero_caption": "日本奈良万叶雅乐祭演奏现场（宫廷雅乐管弦管乐群与打击群）", "lead": "东亚音乐文化圈以中、日、韩为核心纽带。自隋唐以来，大陆宫廷燕乐、佛乐及西域乐器东渡日本，在平安时代经历了深度的本土化整合（国风暗黑化与精炼化），形成了以‘雅乐’为顶峰，以‘能乐’、‘筝曲’、‘尺八’、‘三味线’为分支的宏大邦乐谱系。李欣阳同学在《外国民族音乐》笔记中精确提炼了‘雅乐分类、三管三鼓两弦、都节音阶与序破急’四大审美支柱。"}, "court": [{"id": "togaku", "name": "唐乐 (Tōgaku · 左方乐)", "origin": "源自中国唐代宫廷燕乐、西域九部乐与天竺乐", "costume": "赤色系袭装（左方红袍）", "instrumentation": "三管（笙、篳篥、龙笛）+ 两弦（乐筝、乐琵琶）+ 三鼓（鞨鼓、太鼓、钲鼓）", "features": "由鞨鼓（Kakko）领奏指挥；旋律庄严沉静，笙的‘合竹’和弦形成笼罩全场的音响光晕，乐琵琶与乐筝在重拍处作骨干音点缀，严禁旋律性加花。", "repertoire": "《越天乐》(Etenraku)、《兰陵王》(Ranryōō)、《春莺啭》(Shun'ōden)"}, {"id": "komagaku", "name": "高丽乐 (Komagaku · 右方乐)", "origin": "源自朝鲜半岛（高句丽、百济、新罗）及渤海国音乐", "costume": "绿色系袭装（右方青/绿袍）", "instrumentation": "高丽笛（Komabue）+ 篳篥 + 三之鼓（San-no-tsuzumi）+ 太鼓 + 钲鼓（严格无弦乐，无笙）", "features": "由三之鼓领奏；节奏更为硬朗、跃动，跳跃感明显强于唐乐；纯管乐与打击乐编制，无笙的和声遮蔽，音色更为古朴峭拔。", "repertoire": "《纳曾利》(Nasori)、《胡饮酒》(Konju)、《贵德》(Kitoku)"}, {"id": "saibara", "name": "催马乐与朗咏 (Saibara & Rōei)", "origin": "平安贵族在管弦伴奏下歌唱的声乐体裁", "costume": "平安朝公卿狩衣或直衣", "instrumentation": "人声歌唱为主，配以龙笛、笙、乐筝与拍子（笏拍子）伴奏", "features": "催马乐是将日本古代民间风俗歌（方言土谣）雅乐化；朗咏则是用庄严悠长的和风旋律吟诵汉诗（如白居易诗篇）及和歌片段。", "repertoire": "催马乐《伊势海》《东屋》；朗咏《嘉辰令月》《东岸居士》"}], "instruments": [{"id": "sho", "name": "笙 (Shō)", "hs": "422.31 自由簧多管气鸣乐器", "img": "assets/img/sho.jpg", "role": "雅乐的‘天光之声’与立体和声发生器", "desc": "由17根不同长度的细竹管环形排列插入圆形木制风箱构成。竹管根部装有金属自由簧片（含金银合金）。笙的最大特征是吹吸皆可发音，循环发声，形成连续不断的声音云雾。", "acoustics": "演奏时同时按压多孔，产生被称为‘合竹’（Aitake）的5至6音非三和弦音团。如‘乞’、‘一’、‘工’、‘凢’等合竹，在物理上创造了如同现代微复调一般的空灵共鸣，被日本古典美学视为‘照耀大地、盘旋空中的金色天光’。"}, {"id": "koto", "name": "筝 (Gakusō / Koto)", "hs": "312.22 简单弦鸣乐器 / 半圆柱型筝族", "img": "assets/img/koto.jpg", "role": "骨干节奏点缀 · 俗乐巅峰八桥十三弦", "desc": "长约180厘米的桐木共鸣箱，张设13根生丝弦（今多用合成纤维），每弦下置活动的‘筝柱’（可移动琴马）。雅乐中称为‘乐筝’，仅用‘静掻’（Shizugaki）与‘早掻’（Hayagaki）固定节奏型标记小节骨干；近世江户时代八桥检校将其改造为俗乐主角，开创筝曲黄金时代。", "acoustics": "流派分为生田流（Ikuta-ryū，戴方形指甲，斜向拨弦，重器乐技巧）与山田流（Yamada-ryū，戴圆形指甲，正向拨弦，重歌唱朗诵配合）。代表作《六段之调》(Rokudan no Shirabe)奠定了变奏手事体裁的最高法则。"}, {"id": "biwa", "name": "琵琶 (Biwa)", "hs": "321.321 复合弦鸣乐器 / 颈部折角鲁特类", "img": "assets/img/biwa.jpg", "role": "结构性重拍敲击 · 盲僧叙事咏唱的史诗载体", "desc": "四弦四柱（乐琵琶、平家琵琶）或四弦五柱/五弦五柱（萨摩琵琶、筑前琵琶）。琴体宽大扁平，用沉重的木制大拨子（Bachi）猛烈刮拨琴弦，兼击面板发声。", "acoustics": "雅乐中的乐琵琶严禁演奏旋律，仅以‘割弹’与‘拨音’在每小节强拍给出深沉刚劲的低频脉冲；而盲僧‘琵琶法师’则以平家琵琶弹唱《平家物语》，拨子剧烈拍击产生如金戈铁马般的轰鸣与沙哑泛音（Sawari），具有极强的人文震撼力。"}, {"id": "bugaku_dance", "name": "舞乐 (Bugaku)", "hs": "舞台仪式综合表演体裁", "img": "assets/img/bugaku.jpg", "role": "左舞与右舞的对称仪式美学", "desc": "伴随雅乐进行的日本宫廷面具舞蹈。分为左舞（Sa-mai，左方唐乐伴奏，着赤红色袍，动作舒缓端正）与右舞（U-mai，右方高丽乐伴奏，着青绿色袍，动作矫健敏捷）。", "acoustics": "以著名的《兰陵王》（Ranryōō）为例：舞者头戴狰狞金铜龙面具，手持金杖，在《兰陵王破阵乐》沉重鼓点与龙笛悠长高音中，以毫厘不爽的几何对称步法起舞，呈现出超越人世悲欢的神圣威仪。"}, {"id": "shakuhachi", "name": "尺八 (Shakuhachi)", "hs": "421.111 端吹无管嘴直竹笛 / 边缘切口", "img": "assets/img/shakuhachi.jpg", "role": "普化宗虚无僧‘吹禅’法器 · 禅宗解脱之音", "desc": "长一尺八寸（约54.5厘米），取竹根部坚硬五节制成，前四孔后一孔。吹口向外削出斜面歌口（Utaguchi）。唐代作为雅乐乐器东传，后在宫廷中衰落，江户时代被普化宗僧人（虚无僧 Komusō）奉为独门‘法器’，头戴天盖斗笠隐匿身份，行化乞食。", "acoustics": "尺八音响追求‘一音成佛’。演奏者通过极其精妙的俯仰头（Meri-Kari）动作改变气息入射角，可使同一孔位滑移数个半音并产生巨大的音色撕裂感与气鸣杂音（气声、啸音、竹声合一），将自然之风物化于禅寂之中。"}, {"id": "shamisen", "name": "三味线 (Shamisen)", "hs": "321.31 复合弦鸣 / 长颈无品皮膜鲁特", "img": "assets/img/shamisen.jpg", "role": "江户町人世俗文化灵魂 · 地歌/长歌/净琉璃", "desc": "由琉球‘三线’传入日本本土演变而成。长方形木制琴面蒙猫皮或狗皮，三根弦，无品，用银杏叶形大木拨或象牙拨弹奏。下端设有独特的‘触弦’结构（Sawari），琴弦轻触指板产生迷人的沙沙嘶鸣声。", "acoustics": "在歌舞伎长歌（Nagauta）、义太夫节（Gidayū-bushi，文乐木偶剧叙事）以及三曲合奏（Sankyoku，筝、三味线、尺八）中担任主导。在‘地歌’（Jiuta）结构中，歌唱之间插入纯器乐炫技段落‘手事’（Tegoto），技巧极其丰富。"}], "aesthetics": {"scales": [{"name": "都节音阶 (Miyako-bushi / 阴音阶)", "intervals": "D - Eb - G - Ab - c (音程关系：小二度 - 大三度 - 小二度 - 大三度)", "desc": "江户时期城市俗乐（地歌、筝曲、三味线）的核心音阶。含有两个典型的小二度半音倾向（Eb与Ab），音响色彩深沉、哀婉、内省，充满物哀（Mono no aware）的感伤色彩。"}, {"name": "田舍音阶 (Inaka-bushi / 阳音阶)", "intervals": "D - E - G - A - B - d (音程关系：大二度 - 小三度 - 大二度 - 大二度)", "desc": "日本民间乡村民谣（民谣 Min'yō、童谣）的基础音阶。全无小二度半音，色彩开朗、纯朴、明朗，富有农耕劳作的自然气息。"}, {"name": "律音阶 (Ritsu) 与 吕音阶 (Ryo)", "intervals": "律：D - E - G - A - B - d；吕：C - D - E - G - A - c", "desc": "日本古代宫廷雅乐所采纳的受中国雅乐律制影响的古阶体系，与俗乐的阴阳二体系形成鲜明的阶层审美对峙。"}], "principles": [{"title": "序 · 破 · 急 (Jo-Ha-Kyū)", "text": "源自世阿弥能乐理论与雅乐套曲结构。‘序’为引子，节奏自由缓慢，铺陈虚空；‘破’为展开，节拍确立，织体丰富，渐次加速；‘急’为高潮与尾声，突飞猛进，瞬间爆发而后戛然而止。它不仅是音乐的时间法则，更是东亚生命节律与宇宙起落的哲学映射。"}, {"title": "侘寂 (Wabi-Sabi) 与 物哀 (Mono no aware)", "text": "追求不完美、粗糙、枯槁与短暂之美。在尺八的吹禅杂音、三味线拨子撞击蒙皮的木质钝响、以及筝曲单音余韵的自然消逝中，音乐不追求西方交响乐宏伟对称的形式丰碑，而专注于当下微茫音响瞬间的寂灭与感动。"}, {"title": "间 (Ma · 空间与留白)", "text": "日本音乐中‘沉默’并非声音的中断，而是最具张力的存在。音与音之间的寂静间歇，蕴含着无限的呼吸与倾听期待。老子‘大音希声’在邦乐中化为具体的休止符与余音悬停。"}]}},
+  geographia: [{"id": "java", "name": "印度尼西亚 · 爪哇宫廷甘美兰 (Central Javanese Gamelan)", "region": "东南亚 · 梭罗 (Surakarta) 与日惹 (Yogyakarta) 克拉通王宫", "img": "assets/img/gamelan.jpg", "tuning_system": "斯连德罗 (Slendro · 五音近均分律) 与 佩罗格 (Pelog · 七音不均等律)", "cents_data": "Slendro: 每级约 240 Cents（五等分八度）；Pelog: 包含极狭窄的小二度（~110-150 Cents）与极宽的大三度（~380-450 Cents）。两套律制共存于同一宫廷乐团，互不通融。", "social_structure": "宏大分层结构 (Colotomic Cycle)。巨型大悬锣 (Gong Ageng) 敲击标记最宏大的时间周期（Gongan，如64拍一击），次级锣器（Kenong, Kempul, Ketuk）在内部进行二分或四分节奏细分，前端高音金属琴（Saron, Bonang）则演奏快速旋律加花变奏。", "philosophy": "体现爪哇印度教-伊斯兰教宇宙观（Rasa）：音乐不追求情绪的戏剧性起伏与高潮爆发，而是追求极致的平静、克制与循环时间的永恒冥想。"}, {"id": "hindustani", "name": "北印度 · 印度斯坦古典音乐体系 (Hindustani Classical)", "region": "南亚 · 恒河流域、德里与贝拿勒斯", "img": "assets/img/sitar.jpg", "tuning_system": "22 微音程律 (22 Shrutis) · 萨达 (Sa-Re-Ga-Ma-Pa-Dha-Ni)", "cents_data": "以基音 Sa 为绝对锚点，将八度音程划分为22个微音程等级（Shruti，每级约22-90 Cents）。拉格演奏时，特定音级如微升音（Tivra）或微降音（Komal）可依据情绪需要做极细微的上下滑动悬停。", "social_structure": "古鲁-弟子传习传承体系 (Guru-Shishya Parampara) 与流派 Gharana。结构分为无固定节拍、纯旋律探索的长大引子‘阿拉普’(Alap - Jor - Jhala)，随后塔布拉鼓切入进入固定节拍律动‘加特’(Gat)。", "philosophy": "拉格 (Raga · 旋律意境色彩，与时辰、季节、情感对应) 与 塔拉 (Tala · 节拍节奏循环周期，如16拍 Tintal 4+4+4+4)。音乐是人类灵魂与宇宙大梵天（Nada Brahma · 声音即神）沟通的瑜伽冥想通道。"}, {"id": "venda", "name": "南非 · 文达人生物文化音乐体系 (Venda Musical Culture)", "region": "南部非洲 · 德兰士瓦北部锡巴萨山地 (Sibasa, Limpopo)", "img": "assets/img/venda.jpg", "tuning_system": "七音与六音阶多声部 · 复合节奏与连锁呼应律 (Cross-rhythm & Hocketing)", "cents_data": "基于泛音列自然音高与身体舞蹈动作步幅的自然音阶，音高服从于身体动态，每个歌者根据自己在舞蹈队列中的空间位置发声。", "social_structure": "女子成年仪式多姆巴巨蟒舞 (Domba Initiation Python Dance) 与全国性簧管舞蹈契科纳 (Tshikona)。数十位少女腰手相牵，模仿巨蟒在母体中蜷曲蠕动，低音母鼓（Ngoma）震荡群山，所有社会知识与生殖伦理皆在长达数月的歌舞中完成身体化灌输。", "philosophy": "约翰·布莱金田野圣地。确立‘音乐是人类组织的声音’（Humanly Organized Sound），证明音乐是人类物种普遍具备的生理本能。文达社会中不存在‘无音乐天赋者’，所有人皆在集体仪式中获得完整的社会化尊严。"}, {"id": "suya", "name": "巴西亚马逊 · 苏雅人声音建构体系 (Suyá / Kisêdjê Soundscape)", "region": "南美洲亚马孙河流域 · 欣古原住民国家公园 (Xingu Park)", "img": "assets/img/seeger.jpg", "tuning_system": "高亢嘶吼单声部 (Akia) 与 低音沉降齐唱 (Ngére)", "cents_data": "非西方等音律，Akia追求极度刺耳、穿透森林的高频极限音域（男青年用力挤压喉头嘶吼，声响可达数公里之外），音高以撕裂喉音为美。", "social_structure": "安东尼·西格《苏雅人为什么歌唱》田野地。成年男性在村落广场中央背对背各自同时高喊自己的专属歌曲（Akia），向四周房屋内的母亲和姐妹宣示自己的成年活力与狩猎战功；而在老鼠节等神圣仪式中，全体氏族则以极低音合唱Ngére，维系宇宙平衡。", "philosophy": "声音构成性本体论 (Constitutive Ontology)。苏雅人不是先建立社会再唱歌，而是通过一年四季的声音行为，现场‘制造’了亲属制度、男女空间隔离与氏族结构。音乐即是社会再生产的核心引擎。"}, {"id": "mande", "name": "西非 · 曼丁哥格里奥特与埃威复节奏 (Mande Griots & Ewe Rhythms)", "region": "西非大草原 · 马里、几内亚、加纳沿海", "img": "assets/img/kora.jpg", "tuning_system": "七声音阶循环律 · 12/8 拍母节拍时间线矩阵 (Timeline)", "cents_data": "以自然泛音列与经验音级为准，科拉琴（Kora）常采用 Tomora、Hardino 等四种传统调弦法；铁钟时间线（Gankogui）为不可撼动的恒定声学参照系。", "social_structure": "格里奥特 (Griot / Jali) 世袭职业阶层。他们是帝国的‘活历史字典’、外交官、家谱保管人与乐师，世世代代用科拉琴和巴拉风弹唱13世纪松迪亚塔·凯塔（Sunjata Keita）建立马里帝国的伟大史诗。", "philosophy": "埃威鼓乐的复节奏（Polyrhythm）与交错拍子（Cross-rhythm，如 3:2 与 4:3 复合对位）。时间线不是简单的节拍器，而是多维时空的交汇点；任何单一节奏都必须在与母钟的相位偏离中获得存在的张力。"}, {"id": "gregorian", "name": "欧洲中世纪 · 早期圣咏口头传统 (Early Western Chant)", "region": "西欧修道院 · 瑞士圣加尔 (St. Gall) 与 艾因西德伦 (Einsiedeln)", "img": "assets/img/neume.jpg", "tuning_system": "八种教会调式 (Eight Church Modes · 毕达哥拉斯纯五度生律)", "cents_data": "全音为 204 Cents（9:8），大半音（利马 Limma）为 90 Cents（256:243），纯五度为 702 Cents（3:2）。纯正非平均律。", "social_structure": "本笃会修道院每日八次日课（Divine Office）与弥撒圣祭。在9-10世纪无高低音准标定的原始纽姆谱（Adiastematic Neumes）出现之前，修士完全依靠10-15年的严酷口授复述，将数千首繁复圣咏牢固刻入肉身记忆。", "philosophy": "彻底击碎西方音乐学自封的‘书面文明优越论’。西方古典音乐母体（格里高利圣咏）在历史前半程完全是一门典型的‘非书面口头传统’；文字记谱并非天赐必然，而是政治权力集中与帝国礼仪标准化需要的后起技术工具。"}],
+  chrono: [{"year": "1885", "title": "双重学科奠基元年：埃利斯音分制与阿德勒学科大纲", "category": "学科诞生", "img": "assets/img/ellis.jpg", "desc": "在英国，埃利斯发表《论各民族的音乐律制》，以音叉精密实测全球非西方乐律，创立1200音分对数度量法，彻底击碎欧洲十二律自然神话；在奥地利，阿德勒发表《音乐学的范围、方法与目的》，在体系音乐学中正式确立‘比较音乐学’（Vergleichende Musikwissenschaft）独立学科地位。"}, {"year": "1890", "title": "富克斯与便携式爱迪生留声机：人类学田野录音首创", "category": "技术革命", "img": "assets/img/fewkes.jpg", "desc": "人类学家富克斯在缅因州携带爱迪生蜡管留声机，成功录制了帕萨马科迪（Passamaquoddy）印第安人萨满歌谣。这是人类历史上首次将机器录音技术引入实地民族志田野，人类声音第一次摆脱了主观记忆与人耳转写的误差，成为可客观反复复现的物理标本。"}, {"year": "1900–1904", "title": "柏林留声机档案馆建立：比较音乐学学派鼎盛", "category": "档案与实验室", "img": "assets/img/stumpf.jpg", "desc": "心理学家施通普夫与霍恩博斯特尔在柏林大学心理研究所正式成立柏林留声机档案馆（Berlin Phonogramm-Archiv）。随后三十年间，档案馆收藏了来自非洲、大洋洲、亚洲与美洲的上万根蜡管，成为全球比较音乐学的科研中枢，开启了基于实验室精准转写的黄金时代。"}, {"year": "1905–1918", "title": "巴托克与柯达伊深入东欧乡野：万首口传民歌大抢救", "category": "田野实录", "img": "assets/img/bartok.jpg", "desc": "巴托克与柯达伊肩挑爱迪生留声机，走遍匈牙利、罗马尼亚、斯洛伐克、土耳其乡村，对数以万计的古老口传农民歌曲进行毫秒级精密转写。他们发现了非均分阿克萨克（Aksak）节奏与自然五度链，打破了古典音乐长达数百年的等音节律霸权。"}, {"year": "1914", "title": "霍恩博斯特尔-萨克斯乐器分类法发表：器官学物理宪章", "category": "分类学革命", "img": "assets/img/sachs.jpg", "desc": "霍恩博斯特尔与萨克斯在《民族学杂志》合著发表《乐器分类学》，以振动发音体物理性质为唯一准绳，创立杜威十进制‘体鸣、膜鸣、弦鸣、气鸣’四大类体系，彻底推翻欧洲‘管、弦、打’传统分类的逻辑混乱，奠定全球乐器学（Organology）百年基石。"}, {"year": "1916", "title": "登斯莫尔为高山酋长播放留声机：北美原住民声音史诗", "category": "田野经典", "img": "assets/img/densmore.jpg", "desc": "弗朗西丝·登斯莫尔在史密森学会资助下，为黑脚族酋长‘高山酋长’录制仪轨歌唱，并留下西方人类学史上最具象征意义的经典影像。她用半个多世纪的独身坚守，从北美数十个濒危部落手中抢救录制了3000余首仪式绝响。"}, {"year": "1926–1934", "title": "王光祈留德师从萨克斯：中国比较音乐学破土发轫", "category": "中国奠基", "img": "assets/img/wgj.jpg", "desc": "王光祈在柏林大学与波恩大学师从萨克斯与霍恩博斯特尔，将柏林学派的律制实测与比较方法引入中国，先后出版《东西乐制之研究》《东方民族之音乐》《中国音乐史》，提出著名的‘世界三大乐系说’，成为中国比较音乐学走向世界的开拓第一人。"}, {"year": "1950", "title": "昆斯特提出‘民族音乐学’定名 & 杨荫浏抢救录制阿炳绝响", "category": "定名与绝响", "img": "assets/img/kunst.jpg", "desc": "在欧洲，荷兰学者雅普·昆斯特出版《音乐学》，正式提出‘Ethno-musicology’（民族音乐学），宣告比较音乐学从欧洲中心主义中蜕变；同年夏天，在中国无锡，杨荫浏先生携进口钢丝录音机，为贫病交加的盲艺人阿炳抢救录制下《二泉映月》《听松》等六首中国民间音乐千古绝响。"}, {"year": "1955", "title": "美国民族音乐学会（SEM）成立：北美学派全面接棒", "category": "学会成立", "img": "assets/img/merriam.jpg", "desc": "威拉德·罗兹、大卫·麦卡莱斯特、阿兰·梅里亚姆与查尔斯·西格等人在波士顿正式创立民族音乐学会（Society for Ethnomusicology, SEM），并创办权威会刊《Ethnomusicology》，标志着学科全球学术中心从战后欧洲向北美大学人类学与音乐学系全面转移。"}, {"year": "1960", "title": "曼特尔·胡德确立‘双重音乐才能’：实践民族志革命", "category": "方法论革新", "img": "assets/img/hood.jpg", "desc": "胡德在加州大学洛杉矶分校（UCLA）开创世界音乐乐团教学模式，发表论文《音乐才能的挑战》，提出‘双重音乐才能’（Bi-musicality）。要求学者必须像局内人一样熟练掌握异文化乐器演奏，以身体在场实践取代案头冷漠解剖。"}, {"year": "1964", "title": "梅里亚姆《音乐人类学》出版：‘概念-行为-声音’三重模式", "category": "范式确立", "img": "assets/img/merriam.jpg", "desc": "梅里亚姆出版学科圣经《音乐人类学》，将学科确立为‘研究文化中的音乐’（Music in Culture），提出概念驱动行为、行为制造声音、声音反馈概念的动态闭环，彻底打破形式主义音响分析的局限，推动民族音乐学向人类学大踏步迈进。"}, {"year": "1973", "title": "布莱金《人的音乐性》出版：生物文化音乐学与文达田野", "category": "反精英主义", "img": "assets/img/blacking.jpg", "desc": "布莱金基于南非文达人田野研究，发表名著《人的音乐性》，提出‘音乐是人类组织的声音’（Humanly Organized Sound），猛烈批判西方精英主义音乐教育对普通人音乐潜能的压制，证明音乐是全人类通有的物种进化天赋。"}, {"year": "1980", "title": "中国南京首届全国民族音乐学学术会议：本土学会诞生", "category": "中国新时期", "img": "assets/img/yyd.jpg", "desc": "中国音乐家协会与南京艺术学院在南京联合召开首届全国民族音乐学学术讨论会（董维松、高厚永发起），正式成立中国民族音乐学会。这是改革开放后中国音乐学界重新融入世界前沿、系统普查中华五十六个民族传统音乐的里程碑开端。"}, {"year": "1987", "title": "安东尼·西格《苏雅人为什么歌唱》：构成性音乐人类学诞生", "category": "本体论转向", "img": "assets/img/seeger.jpg", "desc": "西格通过巴西亚马逊苏雅印第安人的Akia与Ngére仪式歌唱，提出革命性的‘音乐人类学’（Musical Anthropology），翻转梅里亚姆的容器论，论证音乐不是被动反映社会结构，而是能动地生产、创造并维系了人类社会结构本身。"}, {"year": "2000s", "title": "内特尔元理论总结 & 中国传统音乐学与音乐人类学大辨析", "category": "新世纪对话", "img": "assets/img/nettl.jpg", "desc": "布鲁诺·内特尔第三次修订《民族音乐学研究：31个核心议题与概念》，对跨文化通则、音域音态、口传记忆进行深刻反思；在中国，洛秦等学者对‘民族音乐学’、‘传统音乐学’与‘音乐人类学’展开深入学科史梳理，确立本土双轨并进范式。"}, {"year": "2010s–2026", "title": "生态音乐学、声音人类学与全球口传遗产数字重返", "category": "当代前沿", "img": "assets/img/cosmograph.webp", "desc": "学科迈入生态音乐学（Ecomusicology）、感官声音人类学（Anthropology of Sound）以及全球早期蜡管声音遗产数字化重返（Digital Repatriation）的新纪元。从雨林生物声景到都市机器噪音，从后殖民解殖到人工智能声学生成，人类对自我声音本质的探索迈向全新维度。"}],
+  biblio: [{"id": "book_suya", "title": "《苏雅人为什么歌唱：一个亚马孙流域群落的音乐人类学》", "orig_title": "Why Suyá Sing: A Musical Anthropology of an Amazonian People (1987)", "author": "安东尼·西格 (Anthony Seeger)", "img": "assets/img/seeger.jpg", "tag": "构成性本体论", "core_thesis": "音乐不是社会结构的附庸或反光镜，而是社会结构借以生成、维系与更新的母体。苏雅人的仪式歌唱在时空维度上制造了亲属、性别与空间方位。", "methodology": "长达两年的沉浸式田野调查、录音分析、口述史转写、亲属关系图谱绘制与仪式结构符号学分析。", "key_cases": "老鼠仪式（Ngsob-ghö）、成年男子背对背在村落中央广场高声呼喊的 Akia 个人歌、全氏族低沉整齐的 Ngére 齐唱。", "notes": "西格在该书中首次系统确立‘音乐人类学’（Musical Anthropology）与传统的‘音乐的人类学’（Anthropology of Music）的区别：前者将声音表演本身视为创造社会现实的主体力量，开辟了声音人类学的全新范式。"}, {"id": "book_blacking", "title": "《人的音乐性》", "orig_title": "How Musical is Man? (1973)", "author": "约翰·布莱金 (John Blacking)", "img": "assets/img/blacking.jpg", "tag": "生物文化音乐学", "summary": "基于南非文达人（Venda）田野工作，论证音乐能力是人类物种普遍拥有的生理与神经发育潜能。猛烈抨击西方学院派将95%的人斥为‘无音乐细胞’的虚伪精英主义。", "methodology": "社会人类学参与观察、儿童歌曲（Ngano）形态学转写、少女成年多姆巴巨蟒舞仪式追踪、音高感知跨文化实验。", "key_cases": "文达儿童复杂节奏复调歌唱、多姆巴巨蟒舞（Domba）、契科纳簧管舞（Tshikona）。", "notes": "布莱金提出‘人类组织的声音’（Humanly Organized Sound）与‘组织完备的人性’（Soundly Organized Humanity）的千古名言，将音乐学从死板的形式乐谱中解放出来，成为反思人类社会正义的有力思想武器。"}, {"id": "book_merriam", "title": "《音乐人类学》", "orig_title": "The Anthropology of Music (1964)", "author": "阿兰·P·梅里亚姆 (Alan P. Merriam)", "img": "assets/img/merriam.jpg", "tag": "三重动态分析框架", "summary": "确立民族音乐学作为一门独立社会科学的圣经之作。提出‘概念-行为-声音’（Concept-Behavior-Sound）三重模式，系统阐述音乐的情感表达、审美享乐、仪式整合等十大社会功能。", "methodology": "博厄斯学派历史特殊论与功能主义人类学综合，北美平头印第安人与中非巴松格人田野比较。", "key_cases": "平头印第安人萨满梦兆歌曲起源观念、巴松格人（Basongye）的巫术乐器禁忌与歌者社会地位调查。", "notes": "梅里亚姆虽然晚年主动修正了其‘文化中的音乐’的容器论倾向，但他提出的三重循环模型至今仍是全球大学民族音乐学训练最核心的基础分析工具。"}, {"id": "book_hs", "title": "《乐器分类学》", "orig_title": "Systematik der Musikinstrumente (1914)", "author": "埃里克·M·冯·霍恩博斯特尔 & 库尔特·萨克斯", "img": "assets/img/sachs.jpg", "tag": "分类学物理宪章", "summary": "现代乐器学（Organology）的根本文献。采用严谨的物理振动体标准与杜威十进制数字编码，建立‘1体鸣、2膜鸣、3弦鸣、4气鸣’四大类体系，彻底摒弃欧洲中心主义偏见。", "methodology": "声学物理学、形态解剖学、全球博物馆实物比勘与比较语言学。", "key_cases": "简单弦鸣乐器（琴族）与复合弦鸣乐器（琉特/竖琴）的本体论区分，排箫、风鸣器与管乐器的精准界定。", "notes": "该体系不仅适用于人类已知的所有古代与现代表演乐器，而且其开放式的十进制编码规则，使新出土的考古乐器与新兴电子声学乐器能够无缝归类。"}, {"id": "book_ellis", "title": "《论各民族的音乐律制》", "orig_title": "On the Musical Scales of Various Nations (1885)", "author": "亚历山大·约翰·埃利斯 (Alexander J. Ellis)", "img": "assets/img/ellis.jpg", "tag": "律制科学实测", "summary": "比较音乐学诞生宣言。发明1200音分制（Cent），通过对全球数十种乐律的精密实测，宣告‘各民族的律制绝非自然存在，而是纯粹人工的、多样的’，在物理实证上打碎西方优越论。", "methodology": "赫尔姆霍茨共鸣器、精密校准音叉群、对数数学计算与非西方乐人面对面声学测量。", "key_cases": "爪哇宫廷甘美兰的斯连德罗与佩罗格律、阿拉伯传统四分之三音律、中国古琴徽位生律法。", "notes": "埃利斯的音分概念使得微小到几音分的细微差别都能在数学上被精确描述与跨文化横向比较，成为跨文化音乐学无法撼动的测量公度衡。"}, {"id": "book_nettl", "title": "《民族音乐学研究：31个核心议题与概念》", "orig_title": "The Study of Ethnomusicology: Thirty-One Issues and Concepts (2005)", "author": "布鲁诺·内特尔 (Bruno Nettl)", "img": "assets/img/nettl.jpg", "tag": "学科元理论全景", "summary": "当代民族音乐学最权威的元理论通论。以极高的哲学反思深度，对音乐起源、跨文化普遍性、田野工作伦理、都市流行音乐变迁等31个重大学术命题进行全景式剖析。", "methodology": "跨学科史学回顾、认识论批判、比较个案分析与长期教学科研反思。", "key_cases": "北美黑脚族印第安人的‘无灵感不歌唱’信仰、波斯古典音乐的拉迪夫（Radif）即兴传统、跨文化音乐普遍特征的假象辨析。", "notes": "内特尔以清醒的批判笔调提醒后学：民族音乐学不是搜奇猎奇的陈列室，而是一面持续逼迫学者审视自身偏见、反省文明预设的透镜。"}, {"id": "book_wgj", "title": "《东方民族之音乐》与《东西乐制之研究》", "orig_title": "Comparative Studies on Eastern and Western Musical Systems (1926/1929)", "author": "王光祈 (Wang Guangqi)", "img": "assets/img/wgj.jpg", "tag": "中国比较音乐学破土", "summary": "中国第一部运用现代欧洲比较音乐学与声学音分方法系统研究东方诸国音乐体系的开山巨著。提出世界三大乐系说（中国乐系、希腊乐系、波斯阿拉伯乐系），奠定中国近现代音乐学根基。", "methodology": "德文原版声学测音文献考释、中国古代乐律（三分损益法、十二律、新律）数理复原与跨文化横向比勘。", "key_cases": "中国五声音阶与希腊四音列比对、印度拉格微音程与中国工尺调式对比。", "notes": "王光祈在贫病交加的异国书斋中，以惊人的学术抱负打破了近代国人或盲目崇洋、或盲目复古的极端心理，确立了平等科学的国际比较视野。"}, {"id": "book_luoqin", "title": "《称“民族音乐学”还是“音乐人类学”？论汉语学术语境中的译名问题及其“解决”与选择》", "orig_title": "Debates on Chinese Terminology of Ethnomusicology (2006)", "author": "洛秦 (Luo Qin)", "img": "assets/img/yry.jpg", "tag": "学科命名学术史", "summary": "系统梳理自1980年南京会议以来中国学界关于‘民族音乐学’、‘传统音乐学’、‘音乐民族学’与‘音乐人类学’长达四十余年的译名之争与范式演进，提出兼收并蓄的分工方案。", "methodology": "概念史（Begriffsgeschichte）、学术史文献计量、国际学术思潮演进与中国本土学科体制机制深度分析。", "key_cases": "1980年南京首届学术讨论会、1986年中国传统音乐学会定名、当代高等音乐学院学科目录设置。", "notes": "该文为理解当代中国音乐学术的建制化进程提供了最清晰的历史向导，指出译名之争表面是语词之辩，实则是中国学者在本土文化自觉与国际学术对话之间的战略抉择。"}],
+  methodologia: {"intro": {"title": "方法论与史学反思工坊 · 西方音乐史对镜", "subtitle": "走出单线进化论舒适区 · 欧洲扶手椅 vs 美国田野 · 萨克斯器乐源泉 · 赖斯三维模式", "lead": "对于西方音乐史学者而言，民族音乐学与声音人类学绝非仅仅提供‘异国情调的原始音乐知识点’，而是构成了一面强有力的哲学反思之镜。它迫使我们从欧洲中心主义的‘单线发展史’舒适区退出来，将‘作品’、‘自律性’、‘记谱’与‘天才’等神圣化范畴彻底历史化，回到具体的社会语境、媒介技术与身体实践中去。"}, "western_reflections": [{"num": "01", "title": "警惕单线进化史：破除‘原始—古典—成熟—先进’的升级神话", "dilemma": "传统西方音乐史常潜意识地将格里高利圣咏视为‘单音稚拙幼年’，复调时代视为‘初具规模’，巴赫/贝多芬视为‘顶峰成熟’。这种线性进步史观在人类学面前彻底破产。", "remedy": "任何一种音乐形式都是特定社会、制度与感官需求的完满表达，绝非通往某一未来终点的‘过渡阶段’。欧洲中世纪圣咏与中非雨林复调合唱具有完全同等的人类心灵完满性，差异只在于历史脉络，不存在生物或美学上的阶梯等级。"}, {"num": "02", "title": "范畴的历史化：‘作品’与‘自律性’不是天赐本质，而是近代发明", "dilemma": "西方古典音乐学长期受‘作品中心论’（Werk-concept）统治，默认音乐天然以乐谱、天才作曲家和固定作品的形式存在。", "remedy": "达尔豪斯（Carl Dahlhaus）深刻指出：‘作品自律性’本身是18世纪末浪漫主义为对抗商品化而构筑的特定美学理论。如果拿‘作品’去套用口传圣咏、爵士即兴、印度拉格或日本邦乐，就等于用近代欧洲的一把特定尺子去强行裁剪全人类的声音经验。"}, {"num": "03", "title": "记谱意识形态批判：谱面至上主义的去魅", "dilemma": "将‘能写在五线谱上的音乐’视为正典，而将无法记谱的滑音、微音程、呼吸间歇、杂音嘶鸣打入冷宫或视为‘不精确’。", "remedy": "记谱从来不是对声音的完全记录，它永远是高度选择性的政治技术。纽姆谱的发明是为了加洛林帝国的礼仪标准化与政治集中；五线谱的推广抹杀了欧洲各地民间活态的微音程变异。乐谱是声音的‘干制标本’，真正的音乐本体存在于每一次不可重复的肉身发声与听觉互动之中。"}, {"num": "04", "title": "细化‘影响’机制：告别粗糙的‘中心—边缘’下行传播叙事", "dilemma": "论及音乐交流时，习惯使用‘东方主义影响’、‘借鉴异国元素’等松散词汇，仿佛非西方音乐只是欧洲大师调味罐里的香料。", "remedy": "人类音乐学要求学者追踪具体的人际接触路径、技术媒介、翻译摩擦与再语境化（Re-contextualization）。关注异文化声音如何在接触地带被当地社会改写、再分类与重新赋予社会权力意义。"}], "armchair_vs_fieldwork": {"title": "欧洲「扶手椅」学派 vs 美国「田野现场」学派的大分野", "desc": "20世纪民族音乐学两大主流学派的方法论气质与认识论基石对峙：", "europe": {"name": "欧洲比较音乐学派（柏林学派 · 扶手椅实验室）", "representatives": "斯图姆普夫、霍恩博斯特尔、萨克斯、拉赫曼", "core_methods": "以柏林留声机档案馆为中枢；学者居于书斋与实验室（Armchair）；依靠探险家寄回的爱迪生蜡管进行精密声学测音、客观五线谱转写与跨文化横向比勘。", "strength": "极其精密客观的数理声学公度衡（音分制、音叉对比、H-S乐器分类法），建立了现代乐器学与调式谱系实证标尺。", "blindspot": "脱离声音发生的活态社会语境；把声音从仪式、身体、信仰中抽离为孤立的‘物理标本’；易受文化圈传播论的中心-边缘思维束缚。"}, "america": {"name": "北美音乐人类学派（田野民族志学派 · 身体在场）", "representatives": "博厄斯、胡德、梅里亚姆、布莱金、西格、赖斯", "core_methods": "深受文化人类学浸润；学者必须亲自前往田野现场长期沉浸（至少一年）；主张‘参与观察’、‘深描’与学徒制身体演练（双重音乐才能 Bi-musicality）。", "strength": "揭示音乐在社会再生产中的动态生成机制；将声音与权力、性别、宇宙观、阶级深度绑定；瓦解欧洲中心主义霸权。", "blindspot": "有时过度偏向社会学与人类学阐释，而出现弱化乐音本体声学结构分析的偏向（梅里亚姆后期学界反思）。"}}, "boas_defects": {"title": "博厄斯历史特殊论：三大学派分支与五大内在理论缺陷", "source": "结合第三讲课堂笔记与人类学认识论深度反思", "pillars": [{"title": "文化整体论 (Cultural Holism)", "desc": "每种文化都是不可分割的有机整体，其意义只能从自身脉络中解读。后由其学生克罗伯（Kroeber）发扬光大。"}, {"title": "文化多元发生论 (Multilinear)", "desc": "文化多样性源于环境回应、独立发明与横向借入的综合，断然否定摩尔根、泰勒的单线单向进化论。"}, {"title": "文化相对主义 (Cultural Relativism)", "desc": "拒绝用单一文明标尺评判他者，主张‘同情性理解’（Empathetic Understanding）。后由赫斯科维茨系统化。"}], "defects": [{"num": "①", "name": "归纳无穷困境 (Infinite Induction)", "detail": "博厄斯主张‘积累足够多个案后再归纳规律’。但在逻辑上，经验个案永远无法穷尽，任何时候都可以说‘材料还不够多，下结论为时过早’，导致历史特殊论从严谨谨慎滑向了无限期悬置理论建构的‘不作为’。"}, {"num": "②", "name": "描述与解释的混淆 (Description vs. Explanation)", "detail": "详尽记录地方民族志材料只是完成‘描述’（这究竟是什么），但要回答‘为什么是这样’必须依托跨个案的比较理论框架。原则性排斥比较，导致历史特殊论解释力先天不足。"}, {"num": "③", "name": "文化整体论的封闭性悖论 (Hermeneutic Enclosure)", "detail": "将文化视作只能从内部理解的有机闭环，由此引发严峻悖论：作为外来者的西方人类学家，在认识论上究竟如何可能真正进入异文化的内部视角？这一矛盾后来直接催生了后殖民主义批判与局内人/局外人论争。"}, {"num": "④", "name": "无文字社会历史重建的推测性 (Speculative History)", "detail": "博厄斯强调历史性，主张通过传播史解释特征。但广大口传原住民社会缺乏文字档案，其历史往往无法证实，使其构建的‘历史’在很多情况下只是事后的叙事假说，并不比进化论更具客观实证根基。"}, {"num": "⑤", "name": "相对主义与普世价值的政治悖论 (Moral Paralysis)", "detail": "如果绝对坚持每种文化价值自足、外部无权干涉，那么人类学将无法谴责任何文化内部的种族屠杀、残害女性等暴行。文化相对主义与普世人权伦理之间的张力至今仍是学界最激烈的伦理战场。"}], "dahlhaus_contrast": "【与西方音乐史家达尔豪斯的哲学对照】：博厄斯与达尔豪斯同样持有鲜明的‘反目的论’立场（反对进步史观）。但达尔豪斯更为诚实——他公开承认自己在运用一套特定的美学理论（作品自律性）来对抗另一套理论；而博厄斯则以‘反理论’的纯经验客观姿态，悄悄潜植了一整套关于文化整体性与相对性的隐性理论，使其理论预设在方法论外衣下变得不透明。"}, "sachs_impulse": {"title": "萨克斯《音乐的源泉》：器乐的两大原初冲动——‘节奏与噪音’", "source": "结合第一、二讲课件与乐器物质文化学", "thesis": "器乐产生自古代人类的两种基本需求——节奏和噪音。", "desc": "萨克斯将声乐与器乐从发生学上严格区分：声乐源自语言高潮、情感呼喊与自然模仿；而最早的器物绝非为了演奏‘动听的旋律’，而是人类为了实现集体动作同步、威慑野兽、通神辟邪而创造的‘节律与响度强化工具’。把音乐的第一属性设定为‘纯正音高与歌唱旋律’，纯属近代欧洲室内乐的资产阶级审美神话！", "case_study": {"instrument": "自弦竹筒琴 (Idiochord Tube Zither / 瓦里哈 Valiha)", "img": "assets/img/bamboo_zither.jpg", "valiha_img": "assets/img/valiha.jpg", "material_insight": "在马达加斯加与东南亚广泛分布的竹筒琴（如Valiha），其琴弦不是外购的金属或丝线，而是直接用刀在竹管天然坚硬表层挑出两道平行的竹皮纤维，两头不断，下方垫入硬木或贝壳作为琴马张紧！这一实物案例向音乐史家揭示：乐器从来不是抽象理论的发明，而是具体的竹木物质材料、日常生产工具与身体切削动作交互生长的奇迹。"}}, "rice_model": {"title": "蒂莫西·赖斯：三维动态事象模式 (Toward the Remodeling, 1987)", "source": "对梅里亚姆静态三重模式的划时代升级", "img": "assets/img/gaida.jpg", "dimensions": [{"dim": "维度一：历史的建构 (Historically Constructed)", "meaning": "特定音乐形式在时间轴线上是如何被世代积累、媒介演变、制度规定与传统习得所塑造的（吸收历史音乐学的深度）。"}, {"dim": "维度二：社会的维护 (Socially Maintained)", "meaning": "声音体系如何在当下的社会结构中被仪式、节庆、社群规范、阶层认同与经济赞助所持续维系和再生产（吸收社会人类学的广度）。"}, {"dim": "维度三：个体的创造与体验 (Individually Created and Experienced)", "meaning": "具体的乐师在身体演奏中如何感受肌肉发力，如何在每一次演出中根据听众反馈进行即兴变奏与主体生命抒发（吸收现象学与阐释学的温度）。"}], "significance": "赖斯将格尔茨的阐释人类学引入音乐学，打破了以往研究只看‘大结构’而忽视‘具体活生生的人’的教条，让风笛手瓦里梅佐夫的个人生命史与保加利亚国家现代化剧变在同一首舞曲中交织共鸣。"}, "four_definitions": [{"period": "1885 阿德勒", "term": "比较音乐学 (Vergleichende Musikwissenschaft)", "focus": "体系音乐学分支；对各民族未开化与文明民族民间歌曲进行搜集、比较与分类。"}, {"period": "1950 昆斯特", "term": "民族音乐学 (Ethno-musicology)", "focus": "脱离欧洲中心优劣比较；研究所有民族音乐在其自身文化脉络中的本质规律。"}, {"period": "1964 梅里亚姆", "term": "文化中的音乐研究 (Study of Music in Culture)", "focus": "概念-行为-声音三元动态闭环；将音乐视为人类社会文化行为的不可分割产物。"}, {"period": "1987 西格/赖斯/泰顿", "term": "音乐人类学 & 人们制造音乐的研究 (Musical Anthropology)", "focus": "构成性本体论；音乐创造社会结构本身；关注具身体验与活态音乐事象。"}]}
+};
+
+// 1. 视图切换逻辑
+const viewBtns = document.querySelectorAll('.view-btn');
+const viewSections = document.querySelectorAll('.view-section');
+
+viewBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    viewBtns.forEach(b => b.classList.remove('active'));
+    viewSections.forEach(s => s.classList.remove('active'));
+    
+    btn.classList.add('active');
+    const targetId = 'view-' + btn.getAttribute('data-target');
+    const targetSec = document.getElementById(targetId);
+    if(targetSec) {
+      targetSec.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+});
+
+// 2. 断代过滤器 (Era Filter)
+const eraPills = document.querySelectorAll('.era-pill');
+const scholarCards = document.querySelectorAll('.scholar-card');
+
+eraPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    eraPills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const era = pill.getAttribute('data-era');
+    
+    const almanacBtn = document.querySelector('[data-target="almanac"]');
+    if(!almanacBtn.classList.contains('active')) {
+      almanacBtn.click();
+    }
+
+    scholarCards.forEach(card => {
+      if(era === 'all' || card.getAttribute('data-era') === era) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// 3. 主题切换
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  if(current === 'parchment') {
+    document.documentElement.removeAttribute('data-theme');
+    themeToggle.textContent = '🌓 纸简';
+  } else {
+    document.documentElement.setAttribute('data-theme', 'parchment');
+    themeToggle.textContent = '🌓 典籍';
+  }
+});
+
+// 4. 深度视窗 (Modal Inspector)
+const dialog = document.getElementById('inspectorDialog');
+const modalImg = document.getElementById('modalImg');
+const modalTitle = document.getElementById('modalTitle');
+const modalSubtitle = document.getElementById('modalSubtitle');
+const modalContent = document.getElementById('modalContent');
+
+function openInspector(type, id) {
+  let data = null;
+  if(type === 'scholar') {
+    data = window.ETHNO_DATA.scholars.find(s => s.id === id);
+    if(!data) return;
+    modalImg.src = data.img;
+    modalTitle.textContent = data.name;
+    modalSubtitle.textContent = `${data.orig} (${data.dates}) · ${data.role}`;
+    
+    let booksHtml = data.books.map(b => `<li>${b}</li>`).join('');
+    modalContent.innerHTML = `
+      <p class="modal-lead">${data.summary}</p>
+      <div class="modal-quote-box">“${data.quote}”</div>
+      <h4 class="modal-section-title">学术贡献与历史评价</h4>
+      <p style="font-size:0.92rem; line-height:1.7; color:var(--ink);">${data.detail}</p>
+      <h4 class="modal-section-title">代表著述与重要文献</h4>
+      <ul class="modal-books-list">${booksHtml}</ul>
+      <h4 class="modal-section-title">核心概念标签</h4>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;">
+        ${data.concepts.map(c => `<span style="background:var(--bg-subtle); border:1px solid var(--border); padding:3px 9px; border-radius:4px; font-size:0.8rem; color:var(--acc-gold);">${c}</span>`).join('')}
+      </div>
+    `;
+  } else if(type === 'geo') {
+    data = window.ETHNO_DATA.geographia.find(g => g.id === id);
+    if(!data) return;
+    modalImg.src = data.img;
+    modalTitle.textContent = data.name;
+    modalSubtitle.textContent = data.region;
+    modalContent.innerHTML = `
+      <div class="axiom-box" style="margin-bottom:16px;">
+        <strong>律制特征与音分：</strong> ${data.cents_data}
+      </div>
+      <h4 class="modal-section-title">社会与仪式语境</h4>
+      <p style="font-size:0.92rem; line-height:1.7; color:var(--ink);">${data.social_structure}</p>
+      <h4 class="modal-section-title">哲学观与宇宙秩序</h4>
+      <p style="font-size:0.92rem; line-height:1.7; color:var(--ink);">${data.philosophy}</p>
+    `;
+  } else if(type === 'hogaku') {
+    data = window.ETHNO_DATA.hogaku.instruments.find(i => i.id === id);
+    if(!data) return;
+    modalImg.src = data.img;
+    modalTitle.textContent = data.name;
+    modalSubtitle.textContent = `${data.hs} · ${data.role}`;
+    modalContent.innerHTML = `
+      <p class="modal-lead">${data.desc}</p>
+      <div class="axiom-box">
+        <strong>声学与发声原理：</strong> ${data.acoustics}
+      </div>
+    `;
+  } else if(type === 'organ') {
+    let match = null;
+    for(let f of window.ETHNO_DATA.organology.families) {
+      let sp = f.specimens.find(s => s.name === id);
+      if(sp) { match = sp; break; }
+    }
+    if(!match) return;
+    modalImg.src = match.img;
+    modalTitle.textContent = match.name;
+    modalSubtitle.textContent = `${match.code} · ${match.region}`;
+    modalContent.innerHTML = `
+      <h4 class="modal-section-title">声学物理与物质文化学解析</h4>
+      <p style="font-size:0.92rem; line-height:1.7; color:var(--ink);">${match.acoustics}</p>
+    `;
+  }
+  dialog.showModal();
+}
+
+function closeInspector() {
+  dialog.close();
+}
+
+dialog.addEventListener('click', (e) => {
+  if(e.target === dialog) dialog.close();
+});
+
+// 5. 随机漫游 (Roam)
+document.getElementById('roamBtn').addEventListener('click', () => {
+  const scholars = window.ETHNO_DATA.scholars;
+  const randomIndex = Math.floor(Math.random() * scholars.length);
+  const randomScholar = scholars[randomIndex];
+  openInspector('scholar', randomScholar.id);
+});
+
+// 6. 全文即时检索与下拉框
+const searchInput = document.getElementById('globalSearch');
+const searchResults = document.getElementById('searchResults');
+
+searchInput.addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  if(!q) {
+    searchResults.style.display = 'none';
+    searchResults.innerHTML = '';
+    return;
+  }
+  
+  const hits = [];
+  // 搜学者
+  window.ETHNO_DATA.scholars.forEach(s => {
+    if(s.name.toLowerCase().includes(q) || s.orig.toLowerCase().includes(q) || s.summary.toLowerCase().includes(q) || s.concepts.some(c => c.toLowerCase().includes(q))) {
+      hits.push({ type: 'scholar', id: s.id, title: s.name, sub: s.orig, img: s.img });
+    }
+  });
+  // 搜乐器与邦乐
+  window.ETHNO_DATA.hogaku.instruments.forEach(i => {
+    if(i.name.toLowerCase().includes(q) || i.desc.toLowerCase().includes(q) || i.role.toLowerCase().includes(q)) {
+      hits.push({ type: 'hogaku', id: i.id, title: i.name, sub: i.role, img: i.img });
+    }
+  });
+  // 搜声音地理
+  window.ETHNO_DATA.geographia.forEach(g => {
+    if(g.name.toLowerCase().includes(q) || g.region.toLowerCase().includes(q) || g.tuning_system.toLowerCase().includes(q)) {
+      hits.push({ type: 'geo', id: g.id, title: g.name, sub: g.region, img: g.img });
+    }
+  });
+
+  if(hits.length === 0) {
+    searchResults.innerHTML = '<div style="padding:14px; color:var(--mut); font-size:0.85rem; text-align:center;">未找到匹配词条</div>';
+  } else {
+    searchResults.innerHTML = hits.slice(0, 8).map(h => `
+      <div class="search-result-item" onclick="openInspector('${h.type}', '${h.id}'); searchResults.style.display='none';">
+        <img src="${h.img}" alt="">
+        <div class="search-result-info">
+          <h5>${h.title}</h5>
+          <small>${h.sub}</small>
+        </div>
+      </div>
+    `).join('');
+  }
+  searchResults.style.display = 'block';
+});
+
+document.addEventListener('click', (e) => {
+  if(!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+    searchResults.style.display = 'none';
+  }
+});
+
+// 键盘快捷键 '/' 聚焦搜索
+document.addEventListener('keydown', (e) => {
+  if(e.key === '/' && document.activeElement !== searchInput) {
+    e.preventDefault();
+    searchInput.focus();
+  }
+  if(e.key === 'Escape' && dialog.open) {
+    dialog.close();
+  }
+});
+</script>
+</body>
+</html>

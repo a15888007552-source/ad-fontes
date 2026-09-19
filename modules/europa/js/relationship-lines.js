@@ -53,7 +53,7 @@ export function createRelationshipLines(gl,program,buffer){
    if(selectedCategories.size&&!selectedCategories.has(l.cat))continue;
    const related=!active||l.source.id===active||l.target.id===active;
    const style=RELATION_STYLE[l.cat]||RELATION_STYLE['待核'],kind=style.kind,h=parseInt(style.color.slice(1),16),color=[(h>>16&255)/255,(h>>8&255)/255,(h&255)/255];
-   const evidenceOpacity=EVIDENCE_STATUS[l.evidence]?.opacity??.55,alpha=(chosen===l.index?1:active?(related?.95:.035):.28)*evidenceOpacity,phase=l.index*.381966;
+   const evidenceOpacity=EVIDENCE_STATUS[l.evidence]?.opacity??.55,alpha=(chosen===l.index?1:active?(related?.95:.14):.28)*evidenceOpacity,phase=l.index*.381966;
    const strands=kind>=3&&kind<5?[-1,1]:[0],steps=kind===1?114:kind===6?80:96;visible++;
    for(const strand of strands)for(let i=0;i<steps;i++)for(const[step,side]of[[i,-1],[i,1],[i+1,1],[i,-1],[i+1,1],[i+1,-1]]){
     const t=step/steps,pos=point(l,t),next=point(l,t+.001);data.push(...pos,...next,...color,alpha,t,side,kind,strand,phase,l.evidenceCode??2);

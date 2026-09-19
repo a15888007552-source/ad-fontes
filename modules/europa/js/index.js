@@ -1,6 +1,7 @@
 import { initRealMapView, stopRealMapView } from "./map-real.js";
 import { createListeningLibrary } from "./listening.js?v=20260831-listening1";
 import {RELATION_STYLE,relationSwatch,normalizeRelation,EVIDENCE_STATUS} from './relation-styles.js?v=20260911-relations3';
+import { EuropaState } from "./state.js?v=20260918-state1";
 
 const listening = createListeningLibrary();
 
@@ -586,7 +587,7 @@ function openWorkArchive(workId,opts={}){
     <section class="work-archive-section work-archive-section-index"><h5>档案索引</h5><p class="work-archive-index-note">计数仅指当前已建档记录；空缺不表示历史上不存在。</p>${renderWorkArchiveIndex(work)}</section>
   </div>`;
   if(!dg.open)dg.show();
-  $("#work-archive-back").onclick=()=>openM(person.i,source,{restoreScroll:personScroll});
+  $("#work-archive-back").onclick=()=>openM(person.i,source,dg.dataset.sourceKey||"detail",{restoreScroll:personScroll});
   $("#dx").onclick=()=>dg.close();
   $("#dwrap").querySelectorAll("[data-version-open]").forEach(b=>b.onclick=()=>openVersionLineage(b.dataset.versionOpen));
   $("#dwrap").querySelectorAll("[data-fontes-open]").forEach(b=>b.onclick=()=>openFontes(b.dataset.fontesOpen));
@@ -813,7 +814,7 @@ async function loadResearchData(){
     const dg=$("#dlg");
     if(dg.open&&dg.dataset.kind==="musician"&&dg.dataset.m){
       const scroll=$("#dwrap")?.scrollTop||0;
-      openM(dg.dataset.m,dg.dataset.source||"年鉴名录",{restoreScroll:scroll});
+      openM(dg.dataset.m,dg.dataset.source||"年鉴名录",dg.dataset.sourceKey||"detail",{restoreScroll:scroll,historyMode:"replace"});
     }
   }catch(error){
     researchDataReady=false;
@@ -1018,17 +1019,129 @@ function xlink(txt,selfId){
 /* 传记导航序：全体按生年 */
 const NAVORDER=[...M].sort((a,b)=>yrs(a)[0]-yrs(b)[0]).map(m=>m.i);
 
-/* ══════════ URL 锚点 ══════════ */
-function setHash(h){try{history.replaceState(null,"",h?("#"+h):location.pathname+location.search)}catch(e){}}
+/* ══════════ URL 状态解析与同步 ══════════ */
+const REVERSE_VIEW_MAP = {
+  annals: "alm",
+  timeline: "tl",
+  map: "map",
+  constellation: "net",
+  genealogy: "lin",
+  history: "hist",
+  musicology: "musio",
+  terms: "gl",
+  bibliography: "bib",
+  places: "real",
+};
+
+const VALID_VIEW_CODES = new Set(Object.values(REVERSE_VIEW_MAP));
+let isRestoringUrl = false;
+
+function currentViewCode(){
+  const on=document.querySelector("#views button.on");
+  if(on?.dataset?.v)return on.dataset.v;
+  const canonical=EuropaState.getState().currentView;
+  return REVERSE_VIEW_MAP[canonical]||"alm";
+}
+
+function parseHashState(){
+  const raw=decodeURIComponent(location.hash.replace(/^#/,""));
+  if(!raw)return{view:null,person:null,isLegacyPersonOnly:false};
+  const params=new URLSearchParams(raw);
+  let v=params.get("v");
+  let m=params.get("m");
+  const isLegacyPersonOnly=!v&&!!m;
+  if(v&&REVERSE_VIEW_MAP[v])v=REVERSE_VIEW_MAP[v];
+  if(v&&!VALID_VIEW_CODES.has(v))v=null;
+  return{
+    view:v||null,
+    person:m||null,
+    isLegacyPersonOnly
+  };
+}
+
+function buildHashString({view,person}={}){
+  let v=(view&&REVERSE_VIEW_MAP[view])||view;
+  if(!v||!VALID_VIEW_CODES.has(v))v=currentViewCode()||"alm";
+  const p=person!==undefined?person:(EuropaState.getState().selectedPersonId||null);
+  if(p&&byId[p]){
+    return `v=${v}&m=${p}`;
+  }
+  return `v=${v}`;
+}
+
+function writeUrlState({view,person}={}, {mode="replace"}={}){
+  const newHash=buildHashString({view,person});
+  const currentHash=decodeURIComponent(location.hash.replace(/^#/,""));
+  if(currentHash===newHash)return;
+  const targetUrl="#"+newHash;
+  try{
+    if(mode==="push"){
+      history.pushState(null,"",targetUrl);
+    }else{
+      history.replaceState(null,"",targetUrl);
+    }
+  }catch(e){}
+}
+
+function setHash(h){
+  if(!h){
+    if(!isRestoringUrl&&location.hash){writeUrlState({person:null},{mode:"replace"});}
+    return;
+  }
+  const params=new URLSearchParams(h);
+  const v=params.get("v");
+  const m=params.get("m");
+  writeUrlState({view:v,person:m},{mode:"replace"});
+}
+
 function readHash(){
-  const h=decodeURIComponent(location.hash.replace(/^#/,""));
-  if(!h)return;
-  if(h.startsWith("m=")){const id=h.slice(2);if(byId[id])openM(id,"URL 直达");return}
-  if(h.startsWith("v=")){const v=h.slice(2);const b=document.querySelector(`#views button[data-v="${v}"]`);if(b)b.click();return}
+  isRestoringUrl=true;
+  try{
+    const raw=decodeURIComponent(location.hash.replace(/^#/,""));
+    if(!raw)return;
+    const {view,person}=parseHashState();
+
+    const targetViewCode=view||currentViewCode()||"alm";
+    if(targetViewCode!==currentViewCode()){
+      setView(targetViewCode,{historyMode:"none"});
+    }
+
+    if(person&&byId[person]){
+      const dg=$("#dlg");
+      const currentOpenId=(dg.open&&dg.dataset.kind==="musician")?dg.dataset.m:null;
+      if(currentOpenId!==person){
+        openM(person,"URL 直达","url",{historyMode:"none"});
+      }
+    }else{
+      const dg=$("#dlg");
+      if(dg.open&&["musician","work","version","fontes","performance","recording","reception"].includes(dg.dataset.kind)){
+        dg.close();
+      }else if(selectedId){
+        clearSelection();
+      }
+    }
+
+    const canonicalHash=buildHashString({
+      view:targetViewCode,
+      person:(person&&byId[person])?person:null
+    });
+    if(raw!==canonicalHash){
+      try{history.replaceState(null,"","#"+canonicalHash)}catch(e){}
+    }
+  }finally{
+    isRestoringUrl=false;
+  }
 }
 
 /* ══════════ 人物选择与右侧详情 ══════════ */
 let selectedId=null,selectedSource="",selectedCity=null,selectionToastTimer=0;
+function selectPersonState(id,source="年鉴名录",sourceKey="annals",reason="person-selected"){
+  const m=byId[id];if(!m)return false;
+  selectedId=id;selectedSource=source;
+  EuropaState.setState({selectedPersonId:id},{source:sourceKey,reason});
+  syncSelection();
+  return true;
+}
 function relationIds(id){
   const out=new Set();
   L.forEach(l=>{const taxonomy=normalizeRelation(l);if(taxonomy.cat==='待核')return;if(taxonomy.source===id)out.add(taxonomy.target);else if(taxonomy.target===id)out.add(taxonomy.source)});
@@ -1041,6 +1154,8 @@ function announceSelection(m,rels,source){
   selectionToastTimer=setTimeout(()=>toast.classList.remove("show"),3000);
 }
 function syncSelection(){
+  const globalSelectedId=EuropaState.getState().selectedPersonId;
+  selectedId=byId[globalSelectedId]?globalSelectedId:null;
   const rel=selectedId?relationIds(selectedId):new Set();
   document.querySelectorAll("[data-m]").forEach(el=>{
     el.classList.toggle("is-selected",!!selectedId&&el.dataset.m===selectedId);
@@ -1049,7 +1164,11 @@ function syncSelection(){
   if(net2d)net2d.applyFilter();
   if(net3d&&typeof apply3DSelection==="function")apply3DSelection();
 }
-function clearSelection(){selectedId=null;selectedSource="";syncSelection()}
+function clearSelection(){
+  selectedId=null;selectedSource="";
+  EuropaState.setState({selectedPersonId:null},{source:"dialog",reason:"selection-cleared"});
+  syncSelection();
+}
 function focusTimeline(id){
   const box=$("#tlbox"),bar=box&&box.querySelector(`.tlbar[data-m="${id}"]`);if(!box||!bar)return;
   const x=+bar.getAttribute("x"),y=+bar.getAttribute("y");
@@ -1057,19 +1176,22 @@ function focusTimeline(id){
 }
 function locateMusician(id,target){
   const m=byId[id];if(!m)return;
-  selectedId=id;
+  selectPersonState(id,"详情面板 → "+target,"detail","person-located");
   if(target==="map"){
     mapFilter="all";mapYear=null;routeOf=id;selectedCity=(m.c||[]).find(c=>CITY[c])||null;fitRoute(id);
-    setView("map");renderChips();renderMap();syncMapUI();if(selectedCity)cityPanel(selectedCity);
+    setView("map",{historyMode:"push"});renderChips();renderMap();syncMapUI();if(selectedCity)cityPanel(selectedCity);
   }else if(target==="tl"){
-    setView("tl");syncSelection();requestAnimationFrame(()=>focusTimeline(id));
+    setView("tl",{historyMode:"push"});syncSelection();requestAnimationFrame(()=>focusTimeline(id));
   }else if(target==="net"){
-    netFilter="all";setView("net");netLegend();
+    netFilter="all";setView("net",{historyMode:"push"});netLegend();
     showGalaxy().then(ok=>{syncSelection();if(ok)net3d?.focus?.(id,{preview:false});else net2d?.focus?.(id)});
   }
   announceSelection(m,L.filter(l=>l[0]===id||l[1]===id),`详情面板 → ${target==="map"?"舆图":target==="tl"?"年表":"星丛"}`);
 }
-function openM(id,source="年鉴名录",opts={}){
+function openM(id,source="年鉴名录",sourceKey="annals",opts={}){
+  if(typeof sourceKey==="object"&&sourceKey!==null){
+    opts=sourceKey;sourceKey=opts.sourceKey||"annals";
+  }
   const m=byId[id];if(!m)return;
   listening.stop();
   const restoreScroll=Number.isFinite(Number(opts.restoreScroll))?Number(opts.restoreScroll):null;
@@ -1079,7 +1201,7 @@ function openM(id,source="年鉴名录",opts={}){
   const cs=(m.c||[]).filter(c=>CITY[c]);
   const p=PORTRAITS[m.i];
   const ni=NAVORDER.indexOf(id);
-  selectedId=id;selectedSource=source;
+  selectPersonState(id,source,sourceKey,"person-selected");
   $("#dwrap").innerHTML=`
   <div class="dhead">
     <div><span class="selection-kicker"><i></i>已选中音乐家</span><h4 id="detail-title">${m.n}</h4><div class="orig">${m.o}</div>
@@ -1108,13 +1230,17 @@ function openM(id,source="年鉴名录",opts={}){
   const dg=$("#dlg");
   if(dg.open&&!(["musician","work","version","fontes","performance"].includes(dg.dataset.kind)))dg.close();
   delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;
-  dg.dataset.ep=m.e;dg.dataset.kind="musician";dg.dataset.m=id;dg.dataset.source=source;dg.setAttribute("aria-labelledby","detail-title");
+  dg.dataset.ep=m.e;dg.dataset.kind="musician";dg.dataset.m=id;dg.dataset.source=source;dg.dataset.sourceKey=sourceKey;dg.setAttribute("aria-labelledby","detail-title");
   if(!dg.open)dg.show();
-  setHash("m="+id);syncSelection();announceSelection(m,rels,source);
+  const historyMode=opts.historyMode!==undefined?opts.historyMode:"push";
+  if(historyMode!=="none"){
+    writeUrlState({person:id},{mode:historyMode});
+  }
+  syncSelection();announceSelection(m,rels,source);
   $("#dx").onclick=()=>dg.close();
-  $("#dprev").onclick=()=>openM(NAVORDER[(ni-1+NAVORDER.length)%NAVORDER.length],"前一位");
-  $("#dnext").onclick=()=>openM(NAVORDER[(ni+1)%NAVORDER.length],"后一位");
-  $("#dwrap").querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"相关人物"));
+  $("#dprev").onclick=()=>openM(NAVORDER[(ni-1+NAVORDER.length)%NAVORDER.length],"前一位","detail");
+  $("#dnext").onclick=()=>openM(NAVORDER[(ni+1)%NAVORDER.length],"后一位","detail");
+  $("#dwrap").querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"相关人物","detail"));
   $("#dwrap").querySelectorAll("[data-locate]").forEach(b=>b.onclick=()=>locateMusician(id,b.dataset.locate));
   $("#dwrap").querySelectorAll("[data-work-open]").forEach(b=>b.onclick=()=>openWorkArchive(b.dataset.workOpen));
   if(restoreScroll!=null)requestAnimationFrame(()=>{const wrap=$("#dwrap");if(wrap)wrap.scrollTop=restoreScroll});
@@ -1342,10 +1468,10 @@ function cityPanel(c){
   ${info?`<div class="cityhist">${info.hist}</div>`:(PILGRIM[c]?`<div class="lore" style="border-left-color:var(--gold,#B98A2E)">${PILGRIM[c]}</div>`:"")}
   ${!info&&CITY[c][2]?`<div class="lore">${CITY[c][2]}</div>`:""}
   <ul>${ms.map(m=>{return !byId[m.i]?`<li><a data-mf="${m.i}">${m.n}</a> <span style="color:var(--mut);font-size:11px">${m.d}</span><small style="color:var(--acc)">音乐学家</small></li>`:`<li><a data-m="${m.i}">${m.n}</a> <span style="color:var(--mut);font-size:11px">${m.d}</span><small>${m.s} · <a data-r="${m.i}" style="color:#8E2C3B">绘其行迹 →</a></small></li>`;}).join("")||"<li>此筛选条件下暂无驻留者；可在上方清除筛选。</li>"}</ul>`;
-  $("#mappanel").querySelectorAll("a[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"音乐舆图"));
+  $("#mappanel").querySelectorAll("a[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"音乐舆图","map"));
   $("#mappanel").querySelectorAll("a[data-mf]").forEach(a=>a.onclick=()=>openMusioFig(a.dataset.mf));
-  $("#mappanel").querySelectorAll("a[data-r]").forEach(a=>a.onclick=()=>{routeOf=a.dataset.r;selectedId=routeOf;fitRoute(routeOf);renderChips();renderMap();syncSelection();announceSelection(byId[routeOf],L.filter(l=>l[0]===routeOf||l[1]===routeOf),"音乐舆图 · 绘其行迹")});
-  bindGallery();
+  $("#mappanel").querySelectorAll("a[data-r]").forEach(a=>a.onclick=()=>{routeOf=a.dataset.r;selectPersonState(routeOf,"音乐舆图 · 绘其行迹","map","person-route");fitRoute(routeOf);renderChips();renderMap();syncSelection();announceSelection(byId[routeOf],L.filter(l=>l[0]===routeOf||l[1]===routeOf),"音乐舆图 · 绘其行迹")});
+  bindGallery();syncSelection();
   if(window.innerWidth<=920)$("#mappanel").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderChips(){
@@ -1396,7 +1522,7 @@ function renderTL(){
   $("#tlbox").innerHTML=`<svg width="${W}" height="${H}" role="img" aria-label="音乐家生命年表">${g}${bars}</svg>`;
   const tip=$("#tltip");
   $("#tlbox").querySelectorAll("[data-m]").forEach(el=>{
-    el.addEventListener("click",()=>openM(el.dataset.m,"生命年表"));
+    el.addEventListener("click",()=>openM(el.dataset.m,"生命年表","timeline"));
     el.addEventListener("mousemove",e=>{const m=byId[el.dataset.m];
       tip.style.display="block";tip.style.left=(e.clientX+16)+"px";tip.style.top=(e.clientY+14)+"px";
       tip.innerHTML=`<b>${m.n}</b> ${m.d}<br>${m.s}`});
@@ -1453,7 +1579,7 @@ function renderNetFallback(message){
   const box=$("#netwrap2d"),rank=netData().nodes.sort((a,b)=>b.deg-a.deg).slice(0,12);
   box.innerHTML=`<div class="empty-state"><b>图谱暂未就绪</b><p>${message}。你仍可从关系度最高的人物继续阅读；也可以重试平面模式。</p><div class="state-actions" style="justify-content:center"><button class="state-action" data-net-retry>重试平面星图</button></div><div class="chips" style="justify-content:center">${rank.map(n=>`<button class="chip" data-m="${n.id}">${n.m.n} · ${n.deg}</button>`).join("")}</div></div>`;
   box.querySelector("[data-net-retry]")?.addEventListener("click",()=>{net2dLoading=null;init2D()});
-  box.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>openM(b.dataset.m,"星图降级名录"));
+  box.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>openM(b.dataset.m,"星图降级名录","constellation"));
 }
 async function init2D(){
   if(net2d)return net2d;
@@ -1538,8 +1664,8 @@ function build2D(){
   function applyFilter(){
     const rel=selectedId?relationIds(selectedId):new Set();
     nd.classed("is-selected",d=>d.id===selectedId).classed("is-related",d=>!!selectedId&&rel.has(d.id));
-    nd.attr("opacity",d=>!vis(d)?.08:!selectedId?1:(d.id===selectedId||rel.has(d.id)?1:.1));
-    lk.attr("opacity",l=>{const ok=vis(l.source)&&vis(l.target)&&(!netRelations.size||netRelations.has(l.cat));const related=l.source.id===selectedId||l.target.id===selectedId;if(!ok)return .015;const base=EVIDENCE_STATUS[l.evidence]?.opacity??.55;return base*(selectedId?(related?.96:.035):.42)})
+    nd.attr("opacity",d=>!vis(d)?.08:!selectedId?1:(d.id===selectedId||rel.has(d.id)?1:.30));
+    lk.attr("opacity",l=>{const ok=vis(l.source)&&vis(l.target)&&(!netRelations.size||netRelations.has(l.cat));const related=l.source.id===selectedId||l.target.id===selectedId;if(!ok)return .015;const base=EVIDENCE_STATUS[l.evidence]?.opacity??.55;return base*(selectedId?(related?.95:.18):.42)})
       .attr("stroke-width",l=>selectedId&&(l.source.id===selectedId||l.target.id===selectedId)?2.8:(l.evidence==='documented'?1.35:1.1));
     nd.select("text").attr("display","none");arrangeLabels();
   }
@@ -1554,23 +1680,26 @@ function build2D(){
      tip.style.display="block";tip.innerHTML=`<b>${d.m.n}</b> ${d.m.d}<br>${rl}`})
   .on("mousemove",e=>{tip.style.left=(e.clientX+16)+"px";tip.style.top=(e.clientY+14)+"px"})
   .on("mouseleave",()=>{tip.style.display="none";applyFilter()})
-  .on("click",(e,d)=>{if(!e.defaultPrevented)openM(d.id,"平面星图")});
+  .on("click",(e,d)=>{if(!e.defaultPrevented)openM(d.id,"平面星图","constellation")});
   function focus(id){const d=nodes.find(n=>n.id===id);if(!d)return;const k=1.85,t=d3.zoomIdentity.translate(W/2-d.x*k,H/2-d.y*k).scale(k);svg.transition().duration(RM?0:420).call(zm.transform,t)}
   function reset(){svg.transition().duration(RM?0:420).call(zm.transform,d3.zoomIdentity.translate((W-k*(bx0+bx1))/2,(H-k*(by0+by1))/2).scale(k))}
   net2d={applyFilter,focus,sim,reset};applyFilter();netLegend();syncSelection();
 }
 function apply3DSelection(){
-  net3d?.setState?.({filter:netFilter,selectedId,relationTypes:[...netRelations]});
+  net3d?.setState?.({filter:netFilter,relationTypes:[...netRelations]});
+  net3d?.setSelectedPerson?.(selectedId);
 }
 async function init3D(){
   if(net3d&&$("#net3d").dataset.ready==="true")return true;
   if(net3dLoading)return net3dLoading;
   if(net3d){net3d.destroy();net3d=null;}
   setNetState("正在展开音乐家的星系……");
-  net3dLoading=import("./galaxy.js?v=20260911-relations4").then(({createGalaxy})=>{
+  net3dLoading=import("./galaxy.js?v=20260918-galaxy4").then(({createGalaxy})=>{
     net3d=createGalaxy($("#net3d"),{
       ...netData(),periods:EP,colors:EPC,relationColors:RELC,portraits:PORTRAITS,
-      onSelect:id=>openM(id,"星丛"),
+      onSelect:id=>openM(id,"星丛","constellation"),
+      onStateSelect:id=>selectPersonState(id,"星丛","constellation","person-highlight"),
+      onClearSelection:()=>clearSelection(),
       onPhaseChange:()=>{netLegend();net3d?.setState?.({relationTypes:[...netRelations]});},
       onContextLost:()=>{$("#tog2d").click();setNetState("星系画面暂时中断，已切换到人物关系图。")}
     });
@@ -1646,7 +1775,7 @@ function renderLineage(){
       <div class="linhead"><h4>${tr.t}</h4><p>${tr.m}</p></div>
       <div class="linflow">${flow}</div></div>`;
   }).join("");
-  $("#linwrap").querySelectorAll(".linnode").forEach(n=>n.onclick=()=>openM(n.dataset.m,"师承谱系"));
+  $("#linwrap").querySelectorAll(".linnode").forEach(n=>n.onclick=()=>openM(n.dataset.m,"师承谱系","genealogy"));
   syncSelection();
 }
 
@@ -1676,7 +1805,7 @@ function renderHist(){
         ${hasDeep?`<button class="hmore" data-y="${ev.y}">读前因后果 ▾</button>`:""}
       </div></div>`;
   }).join("");
-  $("#histwrap").querySelectorAll(".hm").forEach(n=>n.onclick=e=>{e.stopPropagation();openM(n.dataset.m,"历史事件")});
+  $("#histwrap").querySelectorAll(".hm").forEach(n=>n.onclick=e=>{e.stopPropagation();openM(n.dataset.m,"历史事件","history")});
   $("#histwrap").querySelectorAll(".hmore,.hcard").forEach(el=>el.onclick=e=>{
     if(e.target.closest(".hm"))return;
     const y=el.dataset.y;if(y&&(HISTDEEP[y]||HISTDEEP[+y]))openHist(+y)});
@@ -1706,7 +1835,7 @@ function openHist(y){
   </div>`;
   const dg=$("#dlg");if(dg.open)dg.close();dg.dataset.kind="history";dg.removeAttribute("aria-labelledby");dg.showModal();
   $("#dx").onclick=()=>dg.close();
-  $("#dwrap").querySelectorAll("[data-m]").forEach(n=>n.onclick=()=>openM(n.dataset.m,"历史事件深读"));
+  $("#dwrap").querySelectorAll("[data-m]").forEach(n=>n.onclick=()=>openM(n.dataset.m,"历史事件深读","history"));
 }
 
 /* ══════════ 音乐学发展 ══════════ */
@@ -1766,6 +1895,7 @@ function renderMusio(){
 }
 function openMusioFig(id){
   const f=MUSIO_BY[id];if(!f)return;
+  if(byId[id])selectPersonState(id,"音乐学","musicology","person-selected");
   const p=PORTRAITS[f.i];
   $("#dwrap").innerHTML=`
   <div class="dhead">
@@ -1782,29 +1912,82 @@ function openMusioFig(id){
   const dg=$("#dlg");if(dg.open)dg.close();dg.dataset.ep="atlas";dg.dataset.kind="musicology";dg.removeAttribute("aria-labelledby");dg.showModal();
   dg.dataset.m="";
   $("#dx").onclick=()=>dg.close();
-  $("#dwrap").querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"音乐学人物关系"));
+  $("#dwrap").querySelectorAll("[data-m]").forEach(a=>a.onclick=()=>openM(a.dataset.m,"音乐学人物关系","musicology"));
 }
 
 /* ══════════ 搜索 ══════════ */
+function normalizeSearchText(value){
+  return String(value ?? "")
+    .replace(/[łŁ]/g, "l")
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/[‐-‒–—―-]/g, " ")
+    .replace(/[’‘`´']/g, " ")
+    .replace(/[.,;:!?()[\]{}"“”«»/\\]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function searchVariants(value){
+  const base = normalizeSearchText(value);
+  if(!base) return [];
+  const variants = new Set();
+  variants.add(base);
+
+  const rawStr = String(value ?? "");
+  // 1. Umlaut/ligature expansion: ä->ae, ö->oe, ü->ue, ß->ss
+  if(/[äöüßÄÖÜ]/i.test(rawStr)){
+    const expanded = rawStr
+      .replace(/ä/g, "ae").replace(/Ä/g, "ae")
+      .replace(/ö/g, "oe").replace(/Ö/g, "oe")
+      .replace(/ü/g, "ue").replace(/Ü/g, "ue")
+      .replace(/ß/g, "ss");
+    variants.add(normalizeSearchText(expanded));
+  }
+
+  // 2. Digraph contraction: ae->a, oe->o, ue->u
+  if(/ae|oe|ue/.test(base)){
+    variants.add(base.replace(/ae/g, "a").replace(/oe/g, "o").replace(/ue/g, "u"));
+  }
+
+  return Array.from(variants);
+}
+
+const personSearchIndex = new Map();
+for (const m of M) {
+  const fields = [m.n, m.o, m.s, ...(m.w || []), m.k || ""].join(" ");
+  personSearchIndex.set(m.i, searchVariants(fields).join(" "));
+}
+
 const qi=$("#q"),sres=$("#sres");
 qi.addEventListener("input",()=>{
   listening.stop();
-  const q=qi.value.trim().toLowerCase();
-  if(!q){sres.style.display="none";return}
-  const hits=M.filter(m=>(m.n+m.o+(m.s||"")+(m.w||[]).join("")+(m.k||"")).toLowerCase().includes(q)).slice(0,14);
+  EuropaState.setState({searchQuery:qi.value},{source:"search",reason:"query-change"});
+  const queryVariants = searchVariants(qi.value);
+  if(!queryVariants.length){sres.style.display="none";return}
+  const variantTokenGroups = queryVariants.map(v=>v.split(" ").filter(Boolean)).filter(g=>g.length>0);
+  if(!variantTokenGroups.length){sres.style.display="none";return}
+  const hits=M.filter(m=>{
+    const text = personSearchIndex.get(m.i) || "";
+    return variantTokenGroups.some(tokens=>tokens.every(token=>text.includes(token)));
+  }).slice(0,14);
   sres.innerHTML=hits.map(m=>{const p=PORTRAITS[m.i];
     return `<div data-m="${m.i}">${p?`<img loading="lazy" decoding="async" src="${p.u}" alt="">`:`<span style="width:32px;text-align:center;color:var(--acc)">◉</span>`}<div><span class="sn">${m.n}</span><small>${m.d} · ${EP[m.e].zh} · ${m.s}</small></div></div>`}).join("")||`<div class="empty-mini"><b>没有找到匹配条目</b><small>可尝试姓氏、作品名或流派；也可以一键清除检索。</small><button class="state-action" data-search-clear>清除检索</button></div>`;
   sres.style.display="block";
-  sres.querySelectorAll("[data-m]").forEach(d=>d.onclick=()=>{sres.style.display="none";qi.value="";openM(d.dataset.m,"检索结果")});
-  sres.querySelector("[data-search-clear]")?.addEventListener("click",()=>{qi.value="";sres.style.display="none";qi.focus()});
+  sres.querySelectorAll("[data-m]").forEach(d=>d.onclick=()=>{sres.style.display="none";qi.value="";openM(d.dataset.m,"检索结果","search")});
+  sres.querySelector("[data-search-clear]")?.addEventListener("click",()=>{qi.value="";EuropaState.setState({searchQuery:""},{source:"search",reason:"query-clear"});sres.style.display="none";qi.focus()});
 });
 document.addEventListener("click",e=>{if(!e.target.closest(".search"))sres.style.display="none"});
 qi.addEventListener("keydown",e=>{if(e.key==="Escape"){sres.style.display="none";qi.blur()}});
 
 /* ══════════ 导航 ══════════ */
 
-function setView(v){
-  const b=document.querySelector(`#views button[data-v="${v}"]`);if(!b)return;
+function setView(v,{historyMode="push"}={}){
+  const targetCode = REVERSE_VIEW_MAP[v] || v;
+  const b=document.querySelector(`#views button[data-v="${targetCode}"]`);if(!b)return;
+  v = targetCode;
+  EuropaState.setState({currentView:v},{source:"navigation",reason:"view-change"});
   listening.stop();
   document.body.classList.toggle("europa-galaxy-active",v==="net");
   if(v!=="net"){document.body.classList.remove("galaxy-immersive");$("#galaxy-immersive")?.setAttribute("aria-pressed","false")}
@@ -1826,30 +2009,32 @@ function setView(v){
   if(v==="musio"&&!musioDone){renderMusio();musioDone=true}
   if(v==="gl")renderGloss();
   syncSelection();
-  setHash("v="+v);
+  if(historyMode!=="none"){
+    writeUrlState({view:v},{mode:historyMode});
+  }
   queueChronograph();
 }
-$("#views").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setView(b.dataset.v)});
+$("#views").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setView(b.dataset.v,{historyMode:"push"})});
 document.addEventListener("click",e=>{
   const b=e.target.closest("[data-open-view]");
   if(!b)return;
   e.preventDefault();
-  setView(b.dataset.openView);
+  setView(b.dataset.openView,{historyMode:"push"});
   window.scrollTo({top:0,behavior:RM?"auto":"smooth"});
 });
 $("#epnav").addEventListener("click",e=>{
   const b=e.target.closest("button");if(!b)return;
   curEp=b.dataset.ep;$("#app").dataset.ep=curEp;renderEpnav();renderAlm();window.scrollTo({top:0});
 });
-document.addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openM(c.dataset.m,"年鉴名录")});
-document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.closest){const c=e.target.closest(".card");if(c)openM(c.dataset.m,"年鉴名录")}});
+document.addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openM(c.dataset.m,"年鉴名录","annals")});
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.closest){const c=e.target.closest(".card");if(c)openM(c.dataset.m,"年鉴名录","annals")}});
 ["#mapchips","#netchips","#linchips","#histchips","#glchips","#mapstate","#mtloff","#mplay"].forEach(selector=>{
   $(selector)?.addEventListener("click",e=>{if(e.target.closest("button"))listening.stop()});
 });
 $("#myear")?.addEventListener("input",()=>listening.stop());
 
 /* ══════════ 随机漫游 ══════════ */
-$("#roam").onclick=()=>{const i=Math.floor((performance.now()*131.77)%NAVORDER.length);openM(NAVORDER[i],"随机漫游")};
+$("#roam").onclick=()=>{const i=Math.floor((performance.now()*131.77)%NAVORDER.length);openM(NAVORDER[i],"随机漫游","wander")};
 
 /* ══════════ 导览 / 凡例卡 ══════════ */
 const VIEWDESC=[["年 鉴","七时代分章：篇首名画、导论小论文、大事记、史学争鸣与音乐家名录卡片。"],
@@ -1870,7 +2055,7 @@ $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
 
 /* ══════════ 弹窗关闭清锚点 ══════════ */
-$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance","recording","reception"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;dg.removeAttribute("aria-labelledby");setHash(currentView());});
+$("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance","recording","reception"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;delete dg.dataset.sourceKey;dg.removeAttribute("aria-labelledby");if(!isRestoringUrl&&location.hash){writeUrlState({person:null},{mode:"replace"});}});
 function currentView(){const on=document.querySelector("#views button.on");return on?"v="+on.dataset.v:""}
 
 /* ══════════ 键盘导航 ══════════ */
@@ -1885,15 +2070,33 @@ document.addEventListener("keydown",e=>{
     return;
   }
   if(intro.open)return;
-  if(e.key>="1"&&e.key<="9"){setView(VIEWS[+e.key-1]);}
+  if(e.key>="1"&&e.key<="9"){setView(VIEWS[+e.key-1],{historyMode:"push"});}
   else if(e.key==="r"||e.key==="R"){$("#roam").click()}
   else if(e.key==="?"||e.key==="/"){e.preventDefault();showIntro()}
 });
 
 /* ══════════ URL 锚点 / 前进后退 ══════════ */
-window.addEventListener("popstate",()=>{if(!location.hash){$("#dlg").open&&$("#dlg").close()}else readHash()});
+window.addEventListener("popstate",()=>{
+  isRestoringUrl=true;
+  try{
+    const raw=decodeURIComponent(location.hash.replace(/^#/,""));
+    if(!raw){
+      const dg=$("#dlg");
+      if(dg.open&&(["musician","work","version","fontes","performance","recording","reception"].includes(dg.dataset.kind)))dg.close();
+      else if(selectedId)clearSelection();
+      if(currentViewCode()!=="alm"){
+        setView("alm",{historyMode:"none"});
+      }
+      return;
+    }
+    readHash();
+  }finally{
+    isRestoringUrl=false;
+  }
+});
 
 /* ══════════ 启动 ══════════ */
+EuropaState.setState({currentView:"annals"},{source:"initialization",reason:"default-view"});
 renderEpnav();renderAlm();loadResearchData();
 queueChronograph();
 if(location.hash){readHash()}

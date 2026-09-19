@@ -2,7 +2,7 @@
    groupings by period; every interactive star and relationship comes from data. */
 import {VOLUMES as ATLAS,FLOW_GLSL,EXTINCTION_GLSL,flowPoint,createStellarVolumes} from './stellar-volumes.js?v=20260911-epochs2';
 import {bodyFor,createCelestialBodies,createMeteors,createDeepSky} from './celestial-bodies.js?v=20260911-depth3';
-import {createRelationshipLines} from './relationship-lines.js?v=20260911-relations3';
+import {createRelationshipLines} from './relationship-lines.js?v=20260918-galaxy4';
 import {relationSwatch,EVIDENCE_STATUS} from './relation-styles.js?v=20260911-relations3';
 import {ERA_CORES,createEraCores} from './era-cores.js?v=20260911-depth2';
 import {createEpochOverview} from './epoch-overview.js?v=20260911-depth2';
@@ -21,7 +21,7 @@ function project(p,m,w,h){const x=m[0]*p[0]+m[4]*p[1]+m[8]*p[2]+m[12],y=m[1]*p[0
 function quadratic(a,b,c,t){const s=1-t;return[s*s*a[0]+2*s*t*b[0]+t*t*c[0],s*s*a[1]+2*s*t*b[1]+t*t*c[1],s*s*a[2]+2*s*t*b[2]+t*t*c[2]];}
 
 export function createGalaxy(container,options){
- const {nodes:inputNodes,links:inputLinks,periods,colors,relationColors,portraits,onSelect}=options;
+ const {nodes:inputNodes,links:inputLinks,periods,colors,relationColors,portraits,onSelect,onStateSelect,onClearSelection}=options;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const random=rng();
  const gauss=()=>Math.sqrt(-2*Math.log(Math.max(random(),.00001)))*Math.cos(TAU*random());
@@ -268,7 +268,7 @@ export function createGalaxy(container,options){
  function inFilter(n){return !!n&&state.filter!=='all'&&n.m.e===state.filter&&(state.filter!=='medieval'||state.medievalPhase==='all'||medievalLate.has(n.id)===(state.medievalPhase==='late'));}
  function updateGeometry(){
   const active=activeId(),near=active?adjacency.get(active)||new Set():null;
-  for(const n of nodes)n.emphasis=!active||n.id===active||near.has(n.id)?1:.20;
+  for(const n of nodes)n.emphasis=!active||n.id===active||near.has(n.id)?1:.28;
   relationshipLines.update(links.filter(l=>inFilter(l.source)&&inFilter(l.target)),{active,filter:state.filter,categories:state.relationTypes,chosen:state.via?.index,revision:relationRevision});
   geometryRevision++;dirty=false;
  }
@@ -338,7 +338,7 @@ export function createGalaxy(container,options){
   }
   let count=0;const candidates=active?[...priority].sort((a,b)=>(b.id===active?1:0)-(a.id===active?1:0)):priority;
   for(const n of candidates){
-   const neighbor=state.focusId&&!card.hidden&&adjacency.get(state.focusId)?.has(n.id);
+   const neighbor=(state.focusId&&!card.hidden||state.selectedId)&&near.has(n.id);
    if(!n.labelRenderable||!(state.names||n.id===state.focusId||n.id===state.selectedId||neighbor&&count<8)||count>=18)continue;
    const p=n.screen,r=n.screenRadius*(n.body.satellite?3.4:n.body.type===3?2.3:n.body.type===0?1.5:1.15),w=n.shortName.length*14+22,h=32;
    const options=[[p.x+r+10,p.y-h/2],[p.x-r-w-10,p.y-h/2],[p.x-w/2,p.y-r-h-10],[p.x-w/2,p.y+r+10]];
@@ -398,6 +398,7 @@ export function createGalaxy(container,options){
  }
  function visit(id,via=null,trail=null,preview=true){
    const n=byId.get(id);if(!n)return;
+   onStateSelect?.(id);
    collapseIntro();
    stopCruise();const path=trail||(via?[...state.trail,id].slice(-8):[id]);
   if(!inFilter(n)){pendingVisit={id,via,trail:path,preview};if(n.m.e==='medieval')state.medievalPhase=medievalLate.has(id)?'late':'early';if(state.filter===n.m.e){switchAtlas(volumeKey());options.onPhaseChange?.();}else root.querySelector(`#netchips [data-f="${n.m.e}"]`)?.click();return;}
@@ -407,12 +408,13 @@ export function createGalaxy(container,options){
  function focus(id,{preview=true}={}){
   const n=byId.get(id);if(!n)return;
   if(!inFilter(n)||!state.atlasReady){visit(id,null,null,preview);return;}
+  onStateSelect?.(id);
   state.focusId=id;state.coreFocus=false;root.classList.remove('is-core-observing');state.hoverId=null;hover.hidden=true;
   goal.target=world(n.position);goal.distance=width<760?850:680+Math.max(0,n.body.radius-18)*9;
   dirty=true;layoutDirty=true;if(preview){if(!state.trail.length)state.trail=[id];showCard(n);}else{card.hidden=true;root.classList.remove('is-observing');}request();
  }
  function choose(n){focus(n.id);onSelect(n.id);}
- function clearFocus(){restoreIntro();state.focusId=null;state.coreFocus=false;state.selectedId=null;state.hoverId=null;state.trail=[];state.via=null;card.hidden=true;hover.hidden=true;root.classList.remove('is-observing','is-core-observing');atlasNote.querySelector('.galaxy-core-open').textContent='靠近核心 ↗';dirty=true;layoutDirty=true;request();}
+ function clearFocus(notify=true){restoreIntro();state.focusId=null;state.coreFocus=false;state.selectedId=null;state.hoverId=null;state.trail=[];state.via=null;if(!pendingVisit&&notify)onClearSelection?.();card.hidden=true;hover.hidden=true;root.classList.remove('is-observing','is-core-observing');atlasNote.querySelector('.galaxy-core-open').textContent='靠近核心 ↗';dirty=true;layoutDirty=true;request();}
  function hitNode(x,y){let best=null,score=Infinity;for(const n of nodes){if(!n.renderable||!n.screen)continue;const d=Math.hypot(x-n.screen.x,y-n.screen.y),radius=Math.max(10,n.hitRadius);if(d<radius&&d/radius<score){best=n;score=d/radius;}}return best;}
  function positionHover(x,y){
   const rect=hover.getBoundingClientRect(),w=rect.width,h=rect.height,locations=[[x+25,y-15],[x-w-25,y-15],[x-w/2,y+28],[x-w/2,y-h-28]];
@@ -472,15 +474,30 @@ export function createGalaxy(container,options){
    if(next.relationTypes!==undefined)state.relationTypes=Array.isArray(next.relationTypes)?next.relationTypes.filter(Boolean):[];
    if(next.relationType!==undefined)state.relationTypes=next.relationType?[next.relationType]:[];
   if(next.selectedId!==undefined)state.selectedId=next.selectedId;
-  if(previousFilter!==state.filter){
-   if(pendingVisit&&byId.get(pendingVisit.id)?.m.e!==state.filter)pendingVisit=null;
-   clearFocus();
-   switchAtlas(volumeKey());
-  }else if(state.selectedId&&state.selectedId!==previousSelected&&!pendingVisit)focus(state.selectedId,{preview:state.focusId===state.selectedId&&!card.hidden});
-  else if(!state.selectedId&&previousSelected&&!pendingVisit)clearFocus();
-   if(previousFilter!==state.filter||previousSelected!==state.selectedId)collapseIntro();$('galaxy-gesture').textContent=state.filter==='all'?'依时间展开 · 点击星群进入时代':'拖动旋转 · 悬停看关联 · 双击开传';
-  dirty=true;request();
- }
+   if(previousFilter!==state.filter){
+    if(pendingVisit&&byId.get(pendingVisit.id)?.m.e!==state.filter)pendingVisit=null;
+    clearFocus(false);
+    switchAtlas(volumeKey());
+   }else if(state.selectedId&&state.selectedId!==previousSelected&&!pendingVisit)focus(state.selectedId,{preview:state.focusId===state.selectedId&&!card.hidden});
+   else if(!state.selectedId&&previousSelected&&!pendingVisit)clearFocus();
+    if(previousFilter!==state.filter||previousSelected!==state.selectedId)collapseIntro();$('galaxy-gesture').textContent=state.filter==='all'?'依时间展开 · 点击星群进入时代':'拖动旋转 · 悬停看关联 · 双击开传';
+   dirty=true;request();
+  }
+  function setSelectedPerson(id){
+    state.selectedId=id||null;
+    if(!state.selectedId){
+      state.focusId=null;
+      state.coreFocus=false;
+      card.hidden=true;
+      root.classList.remove('is-observing');
+    }else if(state.focusId&&state.focusId!==state.selectedId){
+      state.focusId=null;
+      state.coreFocus=false;
+      card.hidden=true;
+      root.classList.remove('is-observing');
+    }
+    dirty=true;layoutDirty=true;request();
+  }
  function reset(){stopCruise();lastPick=null;const spec=ATLAS[volumeKey()];Object.assign(goal,spec?{yaw:spec.yaw,pitch:spec.pitch,distance:spec.home,target:[0,10,0]}:home,{target:spec?[0,10,0]:[...home.target]});clearFocus();restoreIntro();request();}
  function stopCruise(){state.cruise=false;const b=$('galaxy-cruise');if(b)b.setAttribute('aria-pressed','false');}
  const cruiseButton=$('galaxy-cruise');cruiseButton.onclick=()=>{state.cruise=!state.cruise;cruiseButton.setAttribute('aria-pressed',state.cruise);request();};
@@ -514,5 +531,5 @@ export function createGalaxy(container,options){
  container.cosmicStopAllChains=()=>cosmic.stopAllChains();
  container.cosmicStopAllEvents=()=>cosmic.stopAllEvents();
  container.galaxySnapshot=()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,relationTypes:[...state.relationTypes],nodes:nodes.length,links:links.length,frameRevision,names:state.names,relationshipStyle:relationshipLines.getState(),cruise:state.cruise,trail:[...state.trail],via:state.via,bodies:mode()?celestial.getState():{instances:0,rings:0,coronae:0},overview:state.filter==='all'?overview.getState():null,meteors:meteors.getState(),cosmic:state.filter==='all'?cosmic.getState():null,cosmicRegistry:cosmic.getRegistry(),cosmicWorldState:cosmic.getWorldState(),celestialApplicable:celestialApplicableVal(),celestialContextDim:{...ctxDim},cameraDistance:camera.distance,cameraYaw:camera.yaw,cameraPitch:camera.pitch,time:state.time,renderSize:[canvas.width,canvas.height],atlasReady:state.atlasReady,atlasError:state.atlasError,geometry:atlas.active?{kind:atlas.active.kind,bounds:atlas.active.bounds,points:atlas.active.dustCount,segments:atlas.active.lineCount/2}:null,frameTiming:{p95:frameIntervals.length?[...frameIntervals].sort((a,b)=>a-b)[Math.floor((frameIntervals.length-1)*.95)]:null,longFrames},flowProbe:world(mode()?[170,120,25]:[310,60,170]),projectedStars:nodes.filter(inFilter).map(n=>({id:n.id,world:n.worldPosition,screen:n.screen,renderable:n.renderable,radius:n.body.radius,type:n.body.type,name:n.m.n}))});
- return{setState,focus,reset,collapseIntro,restoreIntro,pauseAnimation,resumeAnimation,triggerCosmicEvent:(id,options)=>cosmic.trigger(id,options),visibleNodeIds:(filter)=>nodes.filter(n=>(filter==='all'||n.m.e===filter)&&(filter!=='medieval'||state.medievalPhase==='all'||medievalLate.has(n.id)===(state.medievalPhase==='late'))).map(n=>n.id),getState:()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,relationTypes:[...state.relationTypes],nodes:nodes.length,links:links.length,geometryRevision,frameRevision,cameraDistance:camera.distance}),destroy(){destroyed=true;pauseAnimation();celestialPanel.destroy();resizeObserver.disconnect();document.removeEventListener('visibilitychange',visibility);document.removeEventListener('keydown',escape);atlas.destroy();celestial.destroy();core.destroy();relationshipLines.destroy();meteors.destroy();cosmic.destroy();deepSky.destroy();overview.destroy();atlasNote.remove();credit.remove();for(const b of[dustBuffer,nebulaBuffer,filamentBuffer,axialBuffer,lightflowBuffer,orbitBuffer,quad])gl.deleteBuffer(b);for(const t of[sceneTarget,glowA,glowB]){gl.deleteFramebuffer(t.framebuffer);gl.deleteTexture(t.texture);if(t.depth)gl.deleteRenderbuffer(t.depth);}for(const p of[pointProgram,lineProgram,blurProgram,compositeProgram])gl.deleteProgram(p);container.innerHTML='';}};
+  return{setState,setSelectedPerson,focus,reset,collapseIntro,restoreIntro,pauseAnimation,resumeAnimation,triggerCosmicEvent:(id,options)=>cosmic.trigger(id,options),visibleNodeIds:(filter)=>nodes.filter(n=>(filter==='all'||n.m.e===filter)&&(filter!=='medieval'||state.medievalPhase==='all'||medievalLate.has(n.id)===(state.medievalPhase==='late'))).map(n=>n.id),getState:()=>({active:state.active,paused:state.paused,core:core.getState(),coreFocus:state.coreFocus,filter:state.filter,medievalPhase:state.medievalPhase,selectedId:state.selectedId,focusId:state.focusId,relationTypes:[...state.relationTypes],nodes:nodes.length,links:links.length,geometryRevision,frameRevision,cameraDistance:camera.distance}),destroy(){destroyed=true;pauseAnimation();celestialPanel.destroy();resizeObserver.disconnect();document.removeEventListener('visibilitychange',visibility);document.removeEventListener('keydown',escape);atlas.destroy();celestial.destroy();core.destroy();relationshipLines.destroy();meteors.destroy();cosmic.destroy();deepSky.destroy();overview.destroy();atlasNote.remove();credit.remove();for(const b of[dustBuffer,nebulaBuffer,filamentBuffer,axialBuffer,lightflowBuffer,orbitBuffer,quad])gl.deleteBuffer(b);for(const t of[sceneTarget,glowA,glowB]){gl.deleteFramebuffer(t.framebuffer);gl.deleteTexture(t.texture);if(t.depth)gl.deleteRenderbuffer(t.depth);}for(const p of[pointProgram,lineProgram,blurProgram,compositeProgram])gl.deleteProgram(p);container.innerHTML='';}};
 }
