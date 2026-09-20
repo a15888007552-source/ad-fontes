@@ -2,7 +2,7 @@ import { initRealMapView, stopRealMapView } from "./map-real.js";
 import { createListeningLibrary } from "./listening.js?v=20260831-listening1";
 import {RELATION_STYLE,relationSwatch,normalizeRelation,EVIDENCE_STATUS} from './relation-styles.js?v=20260911-relations3';
 import { EuropaState } from "./state.js?v=20260918-state1";
-import { createAcousticLabUI } from "./acoustic-lab-ui.js";
+import { createAcousticLabUI } from "./acoustic-lab-ui.js?v=20260920-parchment-v5";
 
 let acousticLabInstance = null;
 const listening = createListeningLibrary();

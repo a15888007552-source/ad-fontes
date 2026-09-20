@@ -11,7 +11,155 @@
 <link rel="stylesheet" href="./css/map-real.css">
 <link rel="stylesheet" href="./css/europa-liquid-interactions.css">
 <link rel="stylesheet" href="./css/galaxy.css?v=20260911-relations3">
-<link rel="stylesheet" href="./css/acoustic-lab.css">
+<link rel="stylesheet" href="./css/acoustic-lab.css?v=20260920-parchment-v5">
+<style id="lab-theme-override">
+  #v-lab, .acoustic-lab-root {
+    background: transparent !important;
+    color: var(--ink, #35301F) !important;
+  }
+  .lab-card, .harmonic-card, .mode-card, .lab-visualizer-card {
+    background: var(--panel, #F2EBD8) !important;
+    border-color: var(--line, #C6BA92) !important;
+    color: var(--ink, #35301F) !important;
+    box-shadow: 0 3px 12px rgba(53, 48, 31, 0.05) !important;
+  }
+  .lab-title-area h2 {
+    color: var(--ink, #35301F) !important;
+  }
+  .lab-title-area h2 span.latin {
+    color: var(--acc, #7A2E1D) !important;
+    border-left-color: var(--line, #C6BA92) !important;
+  }
+  .lab-title-area p, .lab-card-hint {
+    color: var(--mut, #77704F) !important;
+  }
+  .lab-visualizer-card canvas {
+    background: #FAF5E8 !important;
+    border-color: var(--line, #C6BA92) !important;
+  }
+  .lab-visualizer-status, .lab-card-badge {
+    color: var(--acc, #7A2E1D) !important;
+  }
+  .tuning-chip {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 94%, var(--bg, #E9E0C9) 6%) !important;
+    border-color: var(--line, #C6BA92) !important;
+    color: var(--ink, #35301F) !important;
+  }
+  .tuning-chip.active {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 88%, var(--acc, #7A2E1D) 12%) !important;
+    border-color: var(--acc, #7A2E1D) !important;
+    box-shadow: inset 0 0 0 1px var(--acc, #7A2E1D) !important;
+  }
+  .tuning-chip-name {
+    color: var(--acc, #7A2E1D) !important;
+  }
+  .tuning-chip-desc {
+    color: var(--mut, #77704F) !important;
+  }
+  .tuning-quote-box {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 88%, var(--bg, #E9E0C9) 12%) !important;
+    border-left-color: var(--acc, #7A2E1D) !important;
+    color: var(--mut, #77704F) !important;
+  }
+  .keyboard-wrapper {
+    background: color-mix(in srgb, var(--bg, #E9E0C9) 75%, var(--panel, #F2EBD8) 25%) !important;
+    border-color: var(--line, #C6BA92) !important;
+    box-shadow: inset 0 2px 6px rgba(53, 48, 31, 0.12) !important;
+  }
+  .key.white {
+    background: #FAF7EE !important;
+    color: var(--ink, #35301F) !important;
+    border-color: #C6BA92 !important;
+  }
+  .key.white:hover {
+    background: #F4EEDC !important;
+  }
+  .key.white:active, .key.white.pressed {
+    background: var(--acc, #7A2E1D) !important;
+    color: #FFF !important;
+  }
+  .key.black {
+    background: #231C16 !important;
+    color: #EADCB8 !important;
+    border-color: #140F0A !important;
+  }
+  .key.black:hover {
+    background: #3B2E24 !important;
+  }
+  .key.black:active, .key.black.pressed {
+    background: var(--acc, #7A2E1D) !important;
+    color: #FFF !important;
+  }
+  .lab-nav {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 75%, var(--bg, #E9E0C9) 25%) !important;
+    border-color: var(--line, #C6BA92) !important;
+  }
+  .lab-tab-btn {
+    background: var(--panel, #F2EBD8) !important;
+    color: var(--mut, #77704F) !important;
+    border-color: var(--line, #C6BA92) !important;
+  }
+  .lab-tab-btn:hover {
+    color: var(--ink, #35301F) !important;
+    border-color: var(--acc, #7A2E1D) !important;
+  }
+  .lab-tab-btn.active {
+    background: var(--acc, #7A2E1D) !important;
+    color: var(--bg, #E9E0C9) !important;
+    border-color: var(--acc, #7A2E1D) !important;
+  }
+  .audition-label {
+    color: var(--acc, #7A2E1D) !important;
+  }
+  .audition-btn, .action-btn, .play-mode-btn {
+    background: var(--panel, #F2EBD8) !important;
+    color: var(--ink, #35301F) !important;
+    border-color: var(--line, #C6BA92) !important;
+  }
+  .audition-btn:hover, .action-btn:hover, .play-mode-btn:hover {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 92%, var(--acc, #7A2E1D) 8%) !important;
+    color: var(--acc, #7A2E1D) !important;
+    border-color: var(--acc, #7A2E1D) !important;
+  }
+  .matrix-grid {
+    background: var(--line, #C6BA92) !important;
+    border-color: var(--acc, #7A2E1D) !important;
+  }
+  .matrix-cell {
+    background: var(--panel, #F2EBD8) !important;
+    color: var(--ink, #35301F) !important;
+  }
+  .matrix-cell:hover {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 75%, var(--gold, #9A7B2D) 25%) !important;
+  }
+  .matrix-header {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 82%, var(--acc, #7A2E1D) 18%) !important;
+    color: var(--acc, #7A2E1D) !important;
+  }
+  .cents-table th {
+    color: var(--acc, #7A2E1D) !important;
+    border-bottom-color: var(--line, #C6BA92) !important;
+  }
+  .cents-table td {
+    color: var(--ink, #35301F) !important;
+    border-bottom-color: color-mix(in srgb, var(--line, #C6BA92) 60%, transparent) !important;
+  }
+  .mode-name, .harmonic-card h4 {
+    color: var(--acc, #7A2E1D) !important;
+  }
+  .mode-desc, .harmonic-card p {
+    color: var(--mut, #77704F) !important;
+  }
+  .drone-switch-bar {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 90%, var(--acc2, #3E5C4B) 10%) !important;
+    border-color: var(--line, #C6BA92) !important;
+    border-left-color: var(--acc2, #3E5C4B) !important;
+  }
+  .drone-switch-bar span {
+    color: var(--ink, #35301F) !important;
+  }
+</style>
+
 
 <body class="europa-opening-active">
 <div id="europa-opening" role="dialog" aria-modal="true" aria-labelledby="europa-opening-title">
