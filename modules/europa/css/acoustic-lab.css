@@ -265,37 +265,39 @@
   border-left: 3px solid var(--acc);
 }
 
-/* 交互琴键系统 (Piano Keyboard) - 象牙白与黑檀木古典质感 */
+/* 交互琴键系统 (Piano Keyboard) - 象牙白与黑檀木古典质感 · 全宽自适应排版 */
 .keyboard-wrapper {
   background: color-mix(in srgb, var(--bg) 75%, var(--panel) 25%);
-  padding: 16px 20px 22px;
+  padding: 14px 16px 20px;
   border-radius: 4px;
   border: 1px solid var(--line);
-  overflow-x: auto;
   position: relative;
   user-select: none;
   box-shadow: inset 0 2px 6px rgba(53, 48, 31, 0.12);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .keyboard {
   display: flex;
   position: relative;
-  height: 180px;
-  min-width: 720px;
+  height: 185px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .key {
   position: relative;
   cursor: pointer;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 4px 4px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   padding-bottom: 8px;
-  font-size: 11px;
   font-family: var(--sans);
-  transition: background 0.1s ease, transform 0.05s ease;
+  transition: background 0.1s ease, transform 0.05s ease, box-shadow 0.1s ease;
   box-sizing: border-box;
 }
 
@@ -304,58 +306,103 @@
 }
 
 .key.white {
-  width: 48px;
+  flex: 1 1 0;
+  width: auto;
   height: 100%;
-  background: #FAF7EE;
+  min-width: 0;
+  background: linear-gradient(180deg, #FDFBF5 0%, #F5EEDD 80%, #EBE0C5 100%);
   color: var(--ink);
   border: 1px solid #C6BA92;
   border-top: none;
   z-index: 1;
-  box-shadow: 0 3px 6px rgba(53, 48, 31, 0.14);
+  box-shadow: inset 0 1px 0 #FFF, 0 3px 6px rgba(53, 48, 31, 0.14);
 }
 
 .key.white:hover {
-  background: #F4EEDC;
+  background: linear-gradient(180deg, #FFFDF8 0%, #EDE2C7 80%, #E0D3B0 100%);
 }
 
 .key.white:active, .key.white.pressed {
-  background: var(--acc) !important;
+  background: linear-gradient(180deg, #8C2B1F 0%, #7A2E1D 70%, #5E1F13 100%) !important;
   color: #FFF !important;
-  box-shadow: inset 0 2px 4px rgba(53, 48, 31, 0.3);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.45);
 }
 
 .key.black {
-  width: 30px;
+  position: absolute;
+  top: 0;
   height: 60%;
-  background: #231C16;
+  width: clamp(28px, 6.2%, 52px);
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #382E25 0%, #1E1712 75%, #0F0B09 100%);
   color: #EADCB8;
-  margin-left: -15px;
-  margin-right: -15px;
-  z-index: 2;
-  border: 1px solid #140F0A;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.38);
+  z-index: 3;
+  border: 1px solid #0D0907;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .key.black:hover {
-  background: #3B2E24;
+  background: linear-gradient(180deg, #4A3C30 0%, #2B211A 75%, #18130F 100%);
 }
 
 .key.black:active, .key.black.pressed {
-  background: var(--acc) !important;
+  background: linear-gradient(180deg, #8C2B1F 0%, #7A2E1D 70%, #5E1F13 100%) !important;
   color: #FFF !important;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .key .key-note {
   font-weight: 700;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.key .key-sub {
+  font-size: 10px;
+  font-family: var(--serif);
+  color: var(--mut);
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.key.black .key-sub {
+  color: #C6BA92;
+  font-size: 9.5px;
+}
+
+.key:active .key-sub, .key.pressed .key-sub {
+  color: #FFF !important;
+  opacity: 0.9;
+}
+
+.key .key-freq {
+  font-size: 9.5px;
+  font-family: var(--mono);
+  color: var(--mut);
+  margin-top: 2px;
+  opacity: 0.85;
+}
+
+.key:active .key-freq, .key.pressed .key-freq {
+  color: #FFF !important;
 }
 
 .key .key-cent {
   font-size: 10px;
   font-family: var(--mono);
-  color: inherit;
-  opacity: 0.85;
+  color: var(--acc);
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+.key.black .key-cent {
+  color: #D1A858;
+}
+
+.key:active .key-cent, .key.pressed .key-cent {
+  color: #FFF !important;
 }
 
 /* 一键经典对比听辨按钮 */
@@ -783,5 +830,67 @@ input[type="range"] {
 
 .harmonic-row-item:hover {
   background: color-mix(in srgb, var(--panel) 92%, var(--gold) 8%);
+}
+
+/* 历史三大音差微音听辨卡片 */
+.comma-audition-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comma-item {
+  background: color-mix(in srgb, var(--panel) 75%, var(--bg) 25%);
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
+.comma-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.comma-header strong {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.comma-ratio {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--acc);
+  font-weight: 700;
+}
+
+.comma-desc {
+  font-size: 11px;
+  color: var(--mut);
+  line-height: 1.45;
+  margin: 0 0 8px;
+}
+
+/* 五度相生环与微音裂缝 SVG */
+.tuning-circle-svg {
+  display: block;
+  width: 220px;
+  height: 220px;
+  user-select: none;
+}
+
+.circle-node-group {
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.circle-node-group:hover circle {
+  fill: var(--acc);
+}
+
+.circle-node-group:hover text {
+  fill: #FFF;
 }
 

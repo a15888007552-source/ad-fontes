@@ -162,6 +162,60 @@ export function createAcousticLabUI(container) {
                 <tbody id="cents-table-body"></tbody>
               </table>
             </div>
+
+            <!-- 五度相生环与旋宫闭合图 (填充右下角空白) -->
+            <div class="lab-card" style="margin-top: 16px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                <h3 class="lab-card-title" style="margin:0;border:none;padding:0;">
+                  <span>五度相生环与旋宫图</span>
+                </h3>
+                <span class="lab-card-badge" id="tuning-circle-status">闭合正十二边形</span>
+              </div>
+              <p class="lab-card-hint" style="margin:6px 0 10px;line-height:1.5;">
+                十二律沿纯五度相生。观察环路在当前律制下是<strong>闭合</strong>还是产生<strong>音差裂口（黄钟不能还原 / 狼音）</strong>：
+              </p>
+              <div id="tuning-circle-container" style="display:flex;justify-content:center;padding:4px 0;"></div>
+              <div id="tuning-circle-explainer" style="font-family:var(--sans);font-size:11.5px;line-height:1.55;color:var(--ink);background:color-mix(in srgb,var(--panel) 70%,var(--bg) 30%);padding:8px 10px;border-radius:4px;border:1px solid var(--line);margin-top:8px;"></div>
+            </div>
+
+            <!-- 历史三大核心音差微音听辨台 -->
+            <div class="lab-card" style="margin-top: 16px;">
+              <h3 class="lab-card-title">
+                <span>历史律学三大音差微音听辨</span>
+                <span class="lab-card-badge">Microtonal Commas</span>
+              </h3>
+              <p class="lab-card-hint" style="margin-bottom: 10px;line-height:1.5;">
+                点击试听两音碰撞产生的<strong>物理干涉慢拍频（Acoustic Beats）</strong>，感受千年来东西方律学家争论不休的微音差距：
+              </p>
+              <div class="comma-audition-stack">
+                <div class="comma-item">
+                  <div class="comma-header">
+                    <strong>1. 毕达哥拉斯音差 (23.46 音分)</strong>
+                    <span class="comma-ratio">3¹²/2¹⁹ ≈ 1.0136</span>
+                  </div>
+                  <p class="comma-desc">12个纯五度 vs 7个八度之差。先秦三分损益“清黄钟”高出原黄钟约23.5c，无法旋宫转调。</p>
+                  <button class="action-btn" id="btn-play-pyth-comma" style="width:100%;justify-content:center;">▶ 听辨毕氏音差慢拍频 (3.6Hz 拍频)</button>
+                </div>
+
+                <div class="comma-item">
+                  <div class="comma-header">
+                    <strong>2. 普通音差 / 迪多莫斯音差 (21.51 音分)</strong>
+                    <span class="comma-ratio">81/80 = 1.0125</span>
+                  </div>
+                  <p class="comma-desc">五度相生大三度(408c)与纯律大三度(386c, 5:4)之差。文艺复兴多声和声纯正度之争。</p>
+                  <button class="action-btn" id="btn-play-syntonic-comma" style="width:100%;justify-content:center;">▶ 听辨普通音差拍频 (4.1Hz 拍频)</button>
+                </div>
+
+                <div class="comma-item">
+                  <div class="comma-header">
+                    <strong>3. 小半音差 / 减四度音差 (41.06 音分)</strong>
+                    <span class="comma-ratio">128/125 = 1.024</span>
+                  </div>
+                  <p class="comma-desc">三个纯律大三度与一个八度之差。巴洛克中庸全音律在升G与降E间产生刺耳的“狼音五度”。</p>
+                  <button class="action-btn danger" id="btn-play-diesis-comma" style="width:100%;justify-content:center;">⚡ 听辨小半音差粗糙度 (9.9Hz 粗糙感)</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -227,6 +281,26 @@ export function createAcousticLabUI(container) {
           <button class="action-btn" id="btn-toggle-drone">🔊 开启持续嗡鸣低音 (Drone)</button>
         </div>
 
+        <!-- Panel 3 调式与拉格五线谱动态视唱台 -->
+        <div class="lab-card" style="margin: 16px 0 20px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+            <h3 class="lab-card-title" style="margin:0;border:none;padding:0;">
+              <span>🎼 调式与拉格五线谱动态视唱台 (Modal Staff & Solfège/Sargam)</span>
+              <span class="lab-card-badge" id="mode-stave-badge">当前：多利亚 (Dorian) · D4 – D5</span>
+            </h3>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button class="action-btn" id="btn-mode-stave-asc">▶ 顺阶视唱 (Aaroh / 上行)</button>
+              <button class="action-btn" id="btn-mode-stave-desc">◀ 逆阶视唱 (Avroh / 下行)</button>
+              <button class="action-btn" id="btn-mode-stave-chord">🎼 调式骨架齐鸣 (Chord)</button>
+              <button class="action-btn danger" id="btn-mode-stave-stop">✕ 停止</button>
+            </div>
+          </div>
+          <p class="lab-card-hint" style="margin:6px 0 10px;line-height:1.55;">
+            高音五线谱实时标示调式音级、变音记号、主音（Finalis）与诵音（Tenor）/ 印度萨尔甘（Sargam: Sa-Re-Ga-Ma）。<strong>直接点击谱上任意音符即可发声</strong>：
+          </p>
+          <div class="stave-svg-container" id="mode-stave-container"></div>
+        </div>
+
         <h3 class="mode-section-title">中世纪八大教会调式 (Gregorian Modes)</h3>
         <div class="mode-grid" id="church-modes-grid"></div>
 
@@ -238,6 +312,25 @@ export function createAcousticLabUI(container) {
       <section class="lab-panel" id="panel-harmonies">
         <div class="lab-grid-2">
           <div>
+            <!-- Panel 4 和声切片与特里斯坦大谱表 -->
+            <div class="lab-card" style="margin-bottom: 20px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+                <h3 class="lab-card-title" style="margin:0;border:none;padding:0;">
+                  <span>🎼 经典和声总谱大谱表 (The Tristan & Mannheim Grand Staff)</span>
+                  <span class="lab-card-badge" id="harmony-stave-badge">特里斯坦和弦 (F-B-D#-G#) ➔ E7</span>
+                </h3>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <button class="action-btn active" id="btn-show-tristan-staff">特里斯坦和弦与解决</button>
+                  <button class="action-btn" id="btn-show-mannheim-staff">曼海姆火箭琶音</button>
+                  <button class="action-btn danger" id="btn-harmony-stave-stop">✕ 停止</button>
+                </div>
+              </div>
+              <p class="lab-card-hint" style="margin:6px 0 10px;line-height:1.55;">
+                高低音联合大谱表（Grand Staff）解构四部和声声部走向与半音化导音解决。<strong>直接点击各声部音符试听孤立声部</strong>：
+              </p>
+              <div class="stave-svg-container" id="harmony-grand-staff-container"></div>
+            </div>
+
             <div class="harmonic-card">
               <h4>1. 瓦格纳“特里斯坦和弦”解构 (The Tristan Chord)</h4>
               <p>《特里斯坦与伊索尔德》序曲开篇第2-3小节。西方现代和声瓦解古典调性功能的里程碑。和弦构成：<strong>F - B - D# - G#</strong>。它既非传统减七、亦非简单增六，带有强烈的悬置欲求与向属七和弦（E7）的半音化解决。</p>
@@ -291,6 +384,25 @@ export function createAcousticLabUI(container) {
       <section class="lab-panel" id="panel-avantgarde">
         <div class="lab-grid-2">
           <div>
+            <!-- Panel 5 先锋和声与微分音五线谱 -->
+            <div class="lab-card" style="margin-bottom: 20px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;">
+                <h3 class="lab-card-title" style="margin:0;border:none;padding:0;">
+                  <span>🎼 先锋音块与微分音五线谱 (Scriabin Mystic Chord & Quarter-Tone Staff)</span>
+                  <span class="lab-card-badge" id="avantgarde-stave-badge">斯克里亚宾神秘和弦 (六度叠置)</span>
+                </h3>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                  <button class="action-btn active" id="btn-show-scriabin-staff">神秘和弦谱</button>
+                  <button class="action-btn" id="btn-show-quarter-staff">哈巴24律1/4微分音谱</button>
+                  <button class="action-btn danger" id="btn-avantgarde-stave-stop">✕ 停止</button>
+                </div>
+              </div>
+              <p class="lab-card-hint" style="margin:6px 0 10px;line-height:1.55;">
+                展示 20 世纪对传统大小调调性的瓦解：四度叠置神秘和弦、1/4 音微分音记谱法（半升号 𝄪 与半降号 𝄳）。<strong>点击谱上音符直接试听</strong>：
+              </p>
+              <div class="stave-svg-container" id="avantgarde-stave-container"></div>
+            </div>
+
             <div class="harmonic-card">
               <h4>1. 斯克里亚宾“神秘和弦” (Scriabin Promethean Chord)</h4>
               <p>亚历山大·斯克里亚宾《普罗米修斯：火之诗》Op.60 的核心神秘和声。六音四度叠置：<strong>C - F# - Bb - E - A - D</strong>。融合全音阶与高阶自然泛音，瓦解传统大小调功能，代表俄国白银时代神智学宇宙神秘主义。</p>
@@ -350,10 +462,19 @@ export function createAcousticLabUI(container) {
             <span>勋伯格十二音序列 12×12 计算机 (12-Tone Matrix Engine)</span>
             <span class="lab-card-badge">点击任意行(P)或列(I)即刻自动合成演奏该音列</span>
           </h3>
-          <p class="lab-card-hint" style="margin-bottom:16px;line-height:1.65;">
+          <p class="lab-card-hint" style="margin-bottom:12px;line-height:1.65;">
             当前载入：<strong>勋伯格《钢琴组曲》Op.25 原型序列 (E - F - G - Db - Gb - Eb - Ab - D - B - C - A - Bb)</strong>。<br>
             矩阵自动生成 48 种变形：横向为<strong>原形 (Prime, P)</strong> 与<strong>逆行 (Retrograde, R)</strong>；纵向为<strong>倒影 (Inversion, I)</strong> 与<strong>逆行倒影 (Retrograde-Inversion, RI)</strong>。
           </p>
+
+          <!-- 勋伯格当前所选十二音序列五线谱动态视唱台 -->
+          <div class="stave-card-header" style="margin-top:14px;">
+            <h4 style="font-family:var(--serif);font-size:14px;color:var(--ink);margin:0;display:flex;justify-content:space-between;align-items:center;">
+              <span>🎼 序列五线谱记谱与实时视唱 (Serial Staff Notation & Real-time Playback)</span>
+              <span class="lab-card-badge" id="matrix-stave-badge">当前序列：P0 原型 (12音)</span>
+            </h4>
+          </div>
+          <div class="stave-svg-container" id="matrix-stave-container" style="margin: 8px 0 16px;"></div>
 
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px;">
             <button class="action-btn" id="btn-play-p0">▶ 演奏原型 P0</button>
@@ -680,6 +801,7 @@ export function createAcousticLabUI(container) {
         renderStaffSvg();
         renderKeyboard();
         renderCentsTable();
+        renderTuningCircleSvg();
       });
       tuningContainer.appendChild(chip);
     });
@@ -692,6 +814,16 @@ export function createAcousticLabUI(container) {
     oscStatus.textContent = `● 律制：${current.name}`;
   }
 
+  const BLACK_KEY_LEFTS = {
+    'C#4': 10,
+    'D#4': 20,
+    'F#4': 40,
+    'G#4': 50,
+    'A#4': 60,
+    'C#5': 80,
+    'D#5': 90
+  };
+
   function renderKeyboard() {
     pianoKeyboard.innerHTML = '';
     const tuning = TUNING_SYSTEMS[engine.tuningKey] || TUNING_SYSTEMS['12-tet'];
@@ -701,14 +833,32 @@ export function createAcousticLabUI(container) {
       keyElem.className = `key ${item.isBlack ? 'black' : 'white'}`;
       keyElem.dataset.note = item.note;
 
+      if (item.isBlack && BLACK_KEY_LEFTS[item.note] !== undefined) {
+        keyElem.style.left = `${BLACK_KEY_LEFTS[item.note]}%`;
+      }
+
       const noteName = item.note.replace(/\d+/, '');
       const noteIdx = PITCH_CLASSES.indexOf(noteName);
       const cent = tuning.cents[noteIdx % tuning.cents.length];
+      const freq = engine.getFrequency(item.note).toFixed(1);
+      const meta = NOTE_STAFF_MAP[item.note] || { solfege: '', lu: '' };
 
-      keyElem.innerHTML = `
-        <span class="key-note">${item.note}</span>
-        <span class="key-cent">${cent.toFixed(0)}c</span>
-      `;
+      if (item.isBlack) {
+        keyElem.innerHTML = `
+          <span class="key-note">${item.note}</span>
+          <span class="key-sub">${meta.solfege || ''}</span>
+          <span class="key-freq">${freq}Hz</span>
+          <span class="key-cent">${cent.toFixed(0)}c</span>
+        `;
+      } else {
+        const luText = meta.lu ? ` · ${meta.lu}` : '';
+        keyElem.innerHTML = `
+          <span class="key-note">${item.note}</span>
+          <span class="key-sub">${meta.solfege || ''}${luText}</span>
+          <span class="key-freq">${freq}Hz</span>
+          <span class="key-cent">${cent.toFixed(0)}c</span>
+        `;
+      }
 
       keyElem.addEventListener('mousedown', () => {
         keyElem.classList.add('pressed');
@@ -774,6 +924,188 @@ export function createAcousticLabUI(container) {
       centsTableBody.appendChild(row);
     });
   }
+
+  // ==========================================================================
+  // 五度相生环与旋宫闭合图 (Tuning Circle of Fifths & Comma Gap)
+  // ==========================================================================
+  const tuningCircleContainer = container.querySelector('#tuning-circle-container');
+  const tuningCircleStatus = container.querySelector('#tuning-circle-status');
+  const tuningCircleExplainer = container.querySelector('#tuning-circle-explainer');
+
+  function renderTuningCircleSvg() {
+    if (!tuningCircleContainer) return;
+    const tuningKey = engine.tuningKey;
+    const tuning = TUNING_SYSTEMS[tuningKey] || TUNING_SYSTEMS['12-tet'];
+
+    const FIFTHS = ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'];
+    const cx = 110, cy = 110, R = 78;
+
+    const nodes = FIFTHS.map((name, i) => {
+      const angle = i * (Math.PI / 6) - (Math.PI / 2);
+      return {
+        name,
+        noteStr: `${name}4`,
+        x: Math.round(cx + R * Math.cos(angle)),
+        y: Math.round(cy + R * Math.sin(angle)),
+        angle
+      };
+    });
+
+    let linesSvg = '';
+    let specialOverlay = '';
+    let centerLabel = '';
+    let statusText = '闭合正十二边形';
+    let explainerText = '';
+
+    if (tuningKey === '12-tet' || tuningKey === 'zhu-zaiyu') {
+      linesSvg = nodes.map((n, i) => {
+        const next = nodes[(i + 1) % nodes.length];
+        return `<line x1="${n.x}" y1="${n.y}" x2="${next.x}" y2="${next.y}" stroke="#9A7B2D" stroke-width="2.2" opacity="0.9"/>`;
+      }).join('\n');
+
+      centerLabel = `
+        <text x="${cx}" y="${cy - 7}" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#9A7B2D" text-anchor="middle">旋宫闭合</text>
+        <text x="${cx}" y="${cy + 8}" font-family="var(--mono)" font-size="9" fill="#5C5438" text-anchor="middle">Δc = 0.0c</text>
+        <text x="${cx}" y="${cy + 20}" font-family="var(--sans)" font-size="8.5" fill="#77704F" text-anchor="middle">朱载堉密率/等程律</text>
+      `;
+      statusText = '闭合正十二边形 (12-TET)';
+      explainerText = '<strong>十二平均律 / 朱载堉新法密率</strong>：纯五度设定为 700.0 音分（缩减 1/12 毕氏音差 ≈ 1.955c），相生十二次清黄钟与原黄钟完全重合（1200c），圆环无缝闭合，可在 24 个大小调间自由旋宫转调。';
+    } else if (tuningKey === 'pythagorean' || tuningKey === 'sanfen-sunyi') {
+      for (let i = 0; i < 11; i++) {
+        const n = nodes[i];
+        const next = nodes[i + 1];
+        linesSvg += `<line x1="${n.x}" y1="${n.y}" x2="${next.x}" y2="${next.y}" stroke="#5C5438" stroke-width="1.8"/>`;
+      }
+      const fNode = nodes[11];
+      const cNode = nodes[0];
+      const midX = (fNode.x + cNode.x) / 2;
+      const midY = (fNode.y + cNode.y) / 2;
+
+      linesSvg += `<line x1="${fNode.x}" y1="${fNode.y}" x2="${cNode.x}" y2="${cNode.y}" stroke="#7A2E1D" stroke-width="2.2" stroke-dasharray="3,3"/>`;
+
+      specialOverlay = `
+        <circle cx="${midX}" cy="${midY}" r="11" fill="#7A2E1D" stroke="#FAF5E8" stroke-width="1.5"/>
+        <text x="${midX}" y="${midY + 3.5}" font-family="var(--mono)" font-size="7.5" font-weight="bold" fill="#FFF" text-anchor="middle">+23.5c</text>
+      `;
+
+      centerLabel = `
+        <text x="${cx}" y="${cy - 7}" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#7A2E1D" text-anchor="middle">毕氏音差裂缝</text>
+        <text x="${cx}" y="${cy + 8}" font-family="var(--mono)" font-size="9" fill="#7A2E1D" text-anchor="middle">+23.46 音分</text>
+        <text x="${cx}" y="${cy + 20}" font-family="var(--sans)" font-size="8.5" fill="#7A2E1D" text-anchor="middle">黄钟不能还原</text>
+      `;
+      statusText = '黄钟不能还原 (裂口 +23.5c)';
+      explainerText = '<strong>三分损益律 / 毕达哥拉斯律</strong>：各级纯五度为纯正 3:2 (701.96c)。第十二次生律之“清黄钟”频率比 $(3/2)^{12} \\div 2^7 \\approx 1.01364$，产生 23.46 音分裂口，无法形成闭合正十二边形。';
+    } else if (tuningKey === 'meantone') {
+      nodes.forEach((n, i) => {
+        const next = nodes[(i + 1) % nodes.length];
+        if (i === 8) {
+          linesSvg += `<line x1="${n.x}" y1="${n.y}" x2="${next.x}" y2="${next.y}" stroke="#C83220" stroke-width="3.5" stroke-dasharray="4,2"/>`;
+        } else {
+          linesSvg += `<line x1="${n.x}" y1="${n.y}" x2="${next.x}" y2="${next.y}" stroke="#5C5438" stroke-width="1.6"/>`;
+        }
+      });
+
+      const gSharp = nodes[8];
+      const eFlat = nodes[9];
+      const midX = (gSharp.x + eFlat.x) / 2;
+      const midY = (gSharp.y + eFlat.y) / 2;
+      specialOverlay = `
+        <circle cx="${midX}" cy="${midY}" r="12" fill="#C83220" stroke="#FAF5E8" stroke-width="1.5"/>
+        <text x="${midX}" y="${midY + 3.5}" font-family="var(--sans)" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">🐺</text>
+      `;
+
+      centerLabel = `
+        <text x="${cx}" y="${cy - 7}" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#C83220" text-anchor="middle">狼音五度</text>
+        <text x="${cx}" y="${cy + 8}" font-family="var(--mono)" font-size="9" fill="#C83220" text-anchor="middle">737.6c (+35.6c)</text>
+        <text x="${cx}" y="${cy + 20}" font-family="var(--sans)" font-size="8.5" fill="#7A2E1D" text-anchor="middle">G# — Eb 刺耳嚎叫</text>
+      `;
+      statusText = '狼音五度裂痕 (Wolf Fifth)';
+      explainerText = '<strong>1/4 中庸全音律</strong>：为让大三度达到纯律 5:4 (386.3c)，纯五度被削窄至 696.6c。全部误差累积至升G与降E之间，暴露出宽达 737.6 音分的“狼音五度”，破坏旋宫闭合。';
+    } else if (tuningKey === 'werckmeister-iii') {
+      const narrowed = [0, 1, 2, 5];
+      nodes.forEach((n, i) => {
+        const next = nodes[(i + 1) % nodes.length];
+        const isNarrow = narrowed.includes(i);
+        linesSvg += `<line x1="${n.x}" y1="${n.y}" x2="${next.x}" y2="${next.y}" stroke="${isNarrow ? '#C68A1E' : '#4A7A44'}" stroke-width="${isNarrow ? '2.5' : '1.5'}" stroke-dasharray="${isNarrow ? '3,2' : 'none'}"/>`;
+      });
+
+      centerLabel = `
+        <text x="${cx}" y="${cy - 7}" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#C68A1E" text-anchor="middle">良律调色</text>
+        <text x="${cx}" y="${cy + 8}" font-family="var(--mono)" font-size="9" fill="#5C5438" text-anchor="middle">4狭五度+8纯五度</text>
+        <text x="${cx}" y="${cy + 20}" font-family="var(--sans)" font-size="8.5" fill="#4A7A44" text-anchor="middle">闭合但调性各异</text>
+      `;
+      statusText = '不均等良律循环闭合';
+      explainerText = '<strong>韦克迈斯特第三良律</strong>：将音差巧妙分配给 C-G、G-D、D-A、B-F# 四个五度（各减 1/4 音差），其余八个五度保持绝对纯正。既完全消除了狼音使 24 个大小调旋宫闭合，又赋予各调独特性格。';
+    } else {
+      linesSvg = nodes.map((n, i) => {
+        const next = nodes[(i + 1) % nodes.length];
+        return `<line x1="${n.x}" y1="${n.y}" x2="${next.x}" y2="${next.y}" stroke="#8C8264" stroke-width="1.5"/>`;
+      }).join('\n');
+
+      centerLabel = `
+        <text x="${cx}" y="${cy - 5}" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#35301F" text-anchor="middle">${tuning.name.substring(0, 8)}</text>
+        <text x="${cx}" y="${cy + 12}" font-family="var(--mono)" font-size="9" fill="#5C5438" text-anchor="middle">非均等律制</text>
+      `;
+      statusText = `${tuning.name.substring(0, 10)}`;
+      explainerText = `<strong>${tuning.name}</strong>：${tuning.desc}`;
+    }
+
+    const nodesSvg = nodes.map((n) => `
+      <g class="circle-node-group" data-note="${n.noteStr}" tabindex="0" role="button" aria-label="纯五度节点 ${n.name}">
+        <circle cx="${n.x}" cy="${n.y}" r="13.5" fill="#FAF5E8" stroke="#5C5438" stroke-width="1.3"/>
+        <text x="${n.x}" y="${n.y + 4}" font-family="var(--serif)" font-size="10.5" font-weight="bold" fill="#35301F" text-anchor="middle" pointer-events="none">${n.name}</text>
+      </g>
+    `).join('\n');
+
+    tuningCircleContainer.innerHTML = `
+      <svg class="tuning-circle-svg" viewBox="0 0 220 220" width="220" height="220">
+        <circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="rgba(198, 186, 146, 0.4)" stroke-width="0.8" stroke-dasharray="2,2"/>
+        ${linesSvg}
+        ${specialOverlay}
+        ${centerLabel}
+        ${nodesSvg}
+      </svg>
+    `;
+
+    if (tuningCircleStatus) tuningCircleStatus.textContent = statusText;
+    if (tuningCircleExplainer) tuningCircleExplainer.innerHTML = explainerText;
+
+    tuningCircleContainer.querySelectorAll('.circle-node-group').forEach(grp => {
+      const note = grp.dataset.note;
+      grp.addEventListener('click', () => {
+        engine.playNote(note, 0.9);
+        highlightStaffNote(note);
+        highlightPianoKey(note, 0.9);
+        updateStaveTipByNote(note);
+      });
+    });
+  }
+
+  // 历史三大音差微音听辨按钮绑定
+  const btnPlayPythComma = container.querySelector('#btn-play-pyth-comma');
+  if (btnPlayPythComma) {
+    btnPlayPythComma.addEventListener('click', () => {
+      oscStatus.textContent = '🔊 正在试听毕达哥拉斯音差 (23.46音分)：C4 (261.63Hz) vs 清黄钟 (265.19Hz) 产生 3.56Hz 缓慢干涉拍频…';
+      engine.playPythagoreanComma(3.0);
+    });
+  }
+
+  const btnPlaySyntonicComma = container.querySelector('#btn-play-syntonic-comma');
+  if (btnPlaySyntonicComma) {
+    btnPlaySyntonicComma.addEventListener('click', () => {
+      oscStatus.textContent = '🔊 正在试听普通音差 (21.51音分)：纯律大三度 5:4 (327.0Hz) vs 毕氏大三度 81:64 (331.1Hz) 产生 4.1Hz 拍频…';
+      engine.playSyntonicComma(3.0);
+    });
+  }
+
+  const btnPlayDiesisComma = container.querySelector('#btn-play-diesis-comma');
+  if (btnPlayDiesisComma) {
+    btnPlayDiesisComma.addEventListener('click', () => {
+      oscStatus.textContent = '⚡ 正在试听小半音差 (41.06音分)：G#4 (415.3Hz) vs Ab4 (425.3Hz) 产生 9.9Hz 剧烈粗糙感…';
+      engine.playDiesisComma(3.0);
+    });
+  }
+
 
   // 五线谱尺度选择按钮
   if (staveScaleFilters) {
@@ -846,6 +1178,7 @@ export function createAcousticLabUI(container) {
   renderStaffSvg();
   renderKeyboard();
   renderCentsTable();
+  renderTuningCircleSvg();
 
   // 一键听辨绑定
   container.querySelector('#btn-play-c-major').addEventListener('click', () => {
@@ -900,6 +1233,7 @@ export function createAcousticLabUI(container) {
     updateTuningInfo();
     renderKeyboard();
     renderCentsTable();
+    renderTuningCircleSvg();
 
     // 弹奏 C - E - G
     engine.playNote('C4', 1.8);
@@ -1227,8 +1561,237 @@ export function createAcousticLabUI(container) {
   });
 
   // ==========================================================================
-  // 面板 3: 教会调式与拉格
+  // 面板 3: 教会调式与拉格五线谱动态视唱台
   // ==========================================================================
+  const modeStaveContainer = container.querySelector('#mode-stave-container');
+  const modeStaveBadge = container.querySelector('#mode-stave-badge');
+  let currentModalItem = CHURCH_MODES[0];
+  let isCurrentModalIndian = false;
+  let modalPlaybackTimers = [];
+
+  function stopModalPlayback() {
+    modalPlaybackTimers.forEach(tid => clearTimeout(tid));
+    modalPlaybackTimers = [];
+    engine.stopAll();
+  }
+
+  function renderModeStaffSvg(item = currentModalItem, isIndian = isCurrentModalIndian) {
+    if (!modeStaveContainer) return;
+    currentModalItem = item;
+    isCurrentModalIndian = isIndian;
+
+    if (modeStaveBadge) {
+      if (isIndian) {
+        modeStaveBadge.textContent = `当前：北印古典 ${item.name} · ${item.sargam}`;
+      } else {
+        modeStaveBadge.textContent = `当前：${item.name} · ${item.greek} (正音:${item.finalis} 诵音:${item.tenor})`;
+      }
+    }
+
+    const width = 940;
+    const height = 180;
+    const viewBox = '0 0 940 180';
+    const staffLines = [48, 62, 76, 90, 104];
+
+    const notes = isIndian ? item.notes : item.scale;
+    const startX = 130;
+    const endX = 860;
+    const stepX = (endX - startX) / (notes.length - 1);
+
+    const sargamTokens = isIndian ? item.sargam.split(/\s+/) : [];
+
+    let notesSvg = '';
+    notes.forEach((noteName, idx) => {
+      const x = Math.round(startX + idx * stepX);
+      const props = getNoteStaffProps(noteName, 48, 14);
+      const y = props.y;
+      const freq = engine.getFrequency(noteName).toFixed(1);
+
+      let ledgersSvg = '';
+      props.ledgerLines.forEach(ly => {
+        ledgersSvg += `<line x1="${x - 12}" y1="${ly}" x2="${x + 12}" y2="${ly}" stroke="#5C5438" stroke-width="1.3"/>`;
+      });
+
+      let accSvg = '';
+      if (props.acc) {
+        accSvg = `<text x="${x - 13}" y="${y + 4}" font-family="'Palatino Linotype', Georgia, serif" font-size="15" font-weight="bold" fill="#7A2E1D" text-anchor="middle">${props.acc}</text>`;
+      }
+
+      const stemUp = props.stemUp;
+      const stemX = stemUp ? x + 5.5 : x - 5.5;
+      const stemY2 = stemUp ? y - 30 : y + 30;
+
+      let topText = '';
+      let topColor = 'var(--ink)';
+      if (!isIndian) {
+        const rootLetter = noteName.replace(/[^A-G]/g, '');
+        if (rootLetter === item.finalis && idx === 0) {
+          topText = '【正音 Finalis】';
+          topColor = '#7A2E1D';
+        } else if (rootLetter === item.tenor) {
+          topText = '【诵音 Tenor】';
+          topColor = '#9A7B2D';
+        } else if (idx === 7) {
+          topText = '【八度还原】';
+          topColor = '#7A2E1D';
+        } else {
+          topText = `第 ${idx + 1} 级`;
+          topColor = '#77704F';
+        }
+      } else {
+        const sargamSyl = sargamTokens[idx] || '';
+        if (idx === 0) {
+          topText = `【${sargamSyl} · 瓦迪主音】`;
+          topColor = '#7A2E1D';
+        } else if (idx === 4) {
+          topText = `【${sargamSyl} · 从音】`;
+          topColor = '#9A7B2D';
+        } else {
+          topText = `【${sargamSyl}】`;
+          topColor = '#77704F';
+        }
+      }
+
+      notesSvg += `
+        <g class="staff-note-node" id="modal-stave-node-${idx}" data-note="${noteName}" data-idx="${idx}" tabindex="0" role="button" aria-label="${noteName}">
+          <rect x="${x - 18}" y="10" width="36" height="158" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+          <circle cx="${x}" cy="${y}" r="16" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+          ${ledgersSvg}
+          <ellipse class="stave-notehead" cx="${x}" cy="${y}" rx="6" ry="4.2" transform="rotate(-20, ${x}, ${y})" fill="#35301F" stroke="#1D1A10" stroke-width="0.5" pointer-events="all"/>
+          <line class="stave-stem" x1="${stemX}" y1="${y}" x2="${stemX}" y2="${stemY2}" stroke="#35301F" stroke-width="1.2" pointer-events="none"/>
+          ${accSvg}
+          <text x="${x}" y="24" font-family="var(--sans)" font-size="10.5" font-weight="bold" fill="${topColor}" text-anchor="middle">${topText}</text>
+          <text x="${x}" y="132" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#35301F" text-anchor="middle">${noteName}</text>
+          <text x="${x}" y="146" font-family="var(--sans)" font-size="10" fill="#77704F" text-anchor="middle">${props.solfege || ''}</text>
+          <text x="${x}" y="159" font-family="var(--mono)" font-size="9" fill="var(--acc)" text-anchor="middle">${freq}Hz</text>
+        </g>
+      `;
+    });
+
+    modeStaveContainer.innerHTML = `
+      <svg class="acoustic-stave-svg" viewBox="${viewBox}" width="100%">
+        <rect x="0" y="0" width="${width}" height="${height}" fill="#FAF5E8" rx="4" pointer-events="none" />
+        ${staffLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n        ')}
+        <line x1="28" y1="48" x2="28" y2="104" stroke="#655D44" stroke-width="2.5" pointer-events="none"/>
+        <g transform="translate(36, 114.0) scale(0.04, -0.04)" pointer-events="none">
+          <path d="${GCLEF_PATH}" fill="#7A2E1D"/>
+        </g>
+        <line x1="${width - 28}" y1="48" x2="${width - 28}" y2="104" stroke="#655D44" stroke-width="1.2" pointer-events="none"/>
+        <line x1="${width - 24}" y1="48" x2="${width - 24}" y2="104" stroke="#655D44" stroke-width="3" pointer-events="none"/>
+        ${notesSvg}
+      </svg>
+    `;
+
+    modeStaveContainer.querySelectorAll('.staff-note-node').forEach(node => {
+      const note = node.dataset.note;
+      const idx = parseInt(node.dataset.idx, 10);
+      node.addEventListener('click', () => {
+        playModalStaffNote(note, idx);
+      });
+      node.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          playModalStaffNote(note, idx);
+        }
+      });
+    });
+  }
+
+  function playModalStaffNote(noteName, idx) {
+    engine.playNote(noteName, 0.8);
+    const node = modeStaveContainer.querySelector(`#modal-stave-node-${idx}`);
+    if (node) {
+      node.classList.add('playing');
+      setTimeout(() => node.classList.remove('playing'), 500);
+
+      const ellipse = node.querySelector('.stave-notehead');
+      if (ellipse) {
+        const cx = ellipse.getAttribute('cx');
+        const cy = ellipse.getAttribute('cy');
+        const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        ring.setAttribute('cx', cx);
+        ring.setAttribute('cy', cy);
+        ring.setAttribute('r', '6');
+        ring.setAttribute('fill', 'none');
+        ring.setAttribute('stroke', '#8C2B1F');
+        ring.setAttribute('stroke-width', '2.5');
+        ring.setAttribute('class', 'stave-sound-ring');
+        node.appendChild(ring);
+        setTimeout(() => ring.remove(), 700);
+      }
+    }
+    const freq = engine.getFrequency(noteName).toFixed(1);
+    oscStatus.textContent = `🎼 调式五线谱试唱：${noteName} (${freq} Hz)`;
+  }
+
+  // 绑定调式五线谱播放按钮
+  const btnModeAsc = container.querySelector('#btn-mode-stave-asc');
+  const btnModeDesc = container.querySelector('#btn-mode-stave-desc');
+  const btnModeChord = container.querySelector('#btn-mode-stave-chord');
+  const btnModeStop = container.querySelector('#btn-mode-stave-stop');
+
+  if (btnModeAsc) {
+    btnModeAsc.addEventListener('click', () => {
+      stopModalPlayback();
+      const notes = isCurrentModalIndian ? currentModalItem.notes : currentModalItem.scale;
+      oscStatus.textContent = `🎼 正在顺阶演奏 ${currentModalItem.name}…`;
+      notes.forEach((note, idx) => {
+        const tid = setTimeout(() => {
+          playModalStaffNote(note, idx);
+        }, idx * 260);
+        modalPlaybackTimers.push(tid);
+      });
+    });
+  }
+
+  if (btnModeDesc) {
+    btnModeDesc.addEventListener('click', () => {
+      stopModalPlayback();
+      const notes = isCurrentModalIndian ? currentModalItem.notes : currentModalItem.scale;
+      oscStatus.textContent = `🎼 正在逆阶演奏 ${currentModalItem.name}…`;
+      const rev = [...notes].reverse();
+      rev.forEach((note, idx) => {
+        const origIdx = notes.length - 1 - idx;
+        const tid = setTimeout(() => {
+          playModalStaffNote(note, origIdx);
+        }, idx * 260);
+        modalPlaybackTimers.push(tid);
+      });
+    });
+  }
+
+  if (btnModeChord) {
+    btnModeChord.addEventListener('click', () => {
+      stopModalPlayback();
+      const notes = isCurrentModalIndian ? currentModalItem.notes : currentModalItem.scale;
+      let chordNotes = [];
+      if (!isCurrentModalIndian) {
+        const finalisNote = notes[0];
+        const tenorNote = notes.find(n => n.startsWith(currentModalItem.tenor)) || notes[4];
+        const octaveNote = notes[7];
+        chordNotes = [finalisNote, tenorNote, octaveNote];
+      } else {
+        chordNotes = [notes[0], notes[4], notes[7]];
+      }
+      engine.playChord(chordNotes, 2.5);
+      notes.forEach((note, idx) => {
+        if (chordNotes.includes(note)) {
+          playModalStaffNote(note, idx);
+        }
+      });
+      oscStatus.textContent = `🎼 调式核心骨架和弦齐鸣：${chordNotes.join(' - ')}`;
+    });
+  }
+
+  if (btnModeStop) {
+    btnModeStop.addEventListener('click', () => {
+      stopModalPlayback();
+      oscStatus.textContent = '● 调式演奏已停止';
+    });
+  }
+
+  renderModeStaffSvg(CHURCH_MODES[0], false);
+
   const churchModesGrid = container.querySelector('#church-modes-grid');
   const indianThaatsGrid = container.querySelector('#indian-thaats-grid');
 
@@ -1244,14 +1807,22 @@ export function createAcousticLabUI(container) {
       <div class="mode-desc">${mode.desc}</div>
       <button class="play-mode-btn">▶ 演奏音阶与终止式</button>
     `;
-    card.querySelector('button').addEventListener('click', () => {
+    card.addEventListener('click', () => {
+      renderModeStaffSvg(mode, false);
+    });
+    card.querySelector('button').addEventListener('click', (e) => {
+      e.stopPropagation();
+      renderModeStaffSvg(mode, false);
+      stopModalPlayback();
       oscStatus.textContent = `⛪ 正在演奏：${mode.name}…`;
       mode.scale.forEach((note, idx) => {
-        setTimeout(() => engine.playNote(note, 0.6), idx * 250);
+        const tid = setTimeout(() => playModalStaffNote(note, idx), idx * 250);
+        modalPlaybackTimers.push(tid);
       });
-      setTimeout(() => {
+      const tid2 = setTimeout(() => {
         engine.playNote(`${mode.finalis}4`, 1.5);
       }, mode.scale.length * 250 + 200);
+      modalPlaybackTimers.push(tid2);
     });
     churchModesGrid.appendChild(card);
   });
@@ -1267,11 +1838,22 @@ export function createAcousticLabUI(container) {
       <div class="mode-desc"><strong>情调：</strong>${thaat.mood}</div>
       <button class="play-mode-btn">🪕 上行与下行演奏 (Arohana / Avarohana)</button>
     `;
-    card.querySelector('button').addEventListener('click', () => {
+    card.addEventListener('click', () => {
+      renderModeStaffSvg(thaat, true);
+    });
+    card.querySelector('button').addEventListener('click', (e) => {
+      e.stopPropagation();
+      renderModeStaffSvg(thaat, true);
+      stopModalPlayback();
       oscStatus.textContent = `🪕 正在演奏北印古典拉格：${thaat.name}…`;
       const upDown = [...thaat.notes, ...thaat.notes.slice(0, -1).reverse()];
       upDown.forEach((note, idx) => {
-        setTimeout(() => engine.playNote(note, 0.5), idx * 220);
+        const tid = setTimeout(() => {
+          const origIdx = thaat.notes.indexOf(note);
+          if (origIdx !== -1) playModalStaffNote(note, origIdx);
+          else engine.playNote(note, 0.5);
+        }, idx * 220);
+        modalPlaybackTimers.push(tid);
       });
     });
     indianThaatsGrid.appendChild(card);
@@ -1288,8 +1870,251 @@ export function createAcousticLabUI(container) {
   });
 
   // ==========================================================================
-  // 面板 4: 和声切片与声学物理
+  // 面板 4: 经典和声总谱大谱表 (The Tristan & Mannheim Grand Staff)
   // ==========================================================================
+  const harmonyGrandStaffContainer = container.querySelector('#harmony-grand-staff-container');
+  const harmonyStaveBadge = container.querySelector('#harmony-stave-badge');
+  let harmonyStaffMode = 'tristan';
+  let harmonyPlaybackTimers = [];
+
+  function stopHarmonyPlayback() {
+    harmonyPlaybackTimers.forEach(tid => clearTimeout(tid));
+    harmonyPlaybackTimers = [];
+    engine.stopAll();
+  }
+
+  function renderHarmonyGrandStaffSvg(mode = harmonyStaffMode) {
+    if (!harmonyGrandStaffContainer) return;
+    harmonyStaffMode = mode;
+
+    const width = 940;
+    const height = 240;
+    const viewBox = '0 0 940 240';
+    const trebleLines = [40, 52, 64, 76, 88];
+    const bassLines = [126, 138, 150, 162, 174];
+
+    if (mode === 'tristan') {
+      if (harmonyStaveBadge) harmonyStaveBadge.textContent = '特里斯坦和弦 (F-B-D#-G#) ➔ 半音化导音叹息 ➔ 属七和弦 E7';
+
+      const barLines = [340, 610];
+
+      const bar1Notes = [
+        { note: 'F3', y: 138, ledgers: [], acc: '', x: 200, label: 'Bass: F3' },
+        { note: 'B3', y: 114, ledgers: [114], acc: '', x: 200, label: 'Tenor: B3' },
+        { note: 'D#4', y: 100, ledgers: [102], acc: '♯', x: 200, label: 'Alto: D#4' },
+        { note: 'G#4', y: 76, ledgers: [], acc: '♯', x: 200, label: 'Sop: G#4' }
+      ];
+
+      const bar2Notes = [
+        { note: 'G#4', y: 76, ledgers: [], acc: '♯', x: 450, label: 'G#4' },
+        { note: 'A4', y: 70, ledgers: [], acc: '', x: 530, label: 'A4' }
+      ];
+
+      const bar3Notes = [
+        { note: 'E3', y: 144, ledgers: [], acc: '', x: 740, label: 'Bass: E3' },
+        { note: 'G#3', y: 132, ledgers: [], acc: '♯', x: 740, label: 'Tenor: G#3' },
+        { note: 'B3', y: 114, ledgers: [114], acc: '', x: 740, label: 'Alto: B3' },
+        { note: 'D4', y: 100, ledgers: [102], acc: '', x: 740, label: 'Sop: D4' }
+      ];
+
+      let notesSvg = '';
+
+      notesSvg += `
+        <g class="harmony-chord-group" id="tristan-chord-group" style="cursor:pointer;" tabindex="0" role="button" aria-label="特里斯坦和弦">
+          <rect x="130" y="15" width="160" height="210" fill="transparent" />
+          <text x="200" y="24" font-family="var(--serif)" font-size="13" font-weight="bold" fill="#7A2E1D" text-anchor="middle">【特里斯坦和弦】</text>
+          <text x="200" y="38" font-family="var(--sans)" font-size="10" fill="#77704F" text-anchor="middle">半音化增六变异 · 极度欲求悬置</text>
+          ${bar1Notes.map(n => `
+            ${n.ledgers.map(ly => `<line x1="${n.x - 12}" y1="${ly}" x2="${n.x + 12}" y2="${ly}" stroke="#5C5438" stroke-width="1.3"/>`).join('')}
+            ${n.acc ? `<text x="${n.x - 14}" y="${n.y + 4}" font-family="'Palatino Linotype', Georgia, serif" font-size="15" font-weight="bold" fill="#7A2E1D" text-anchor="middle">${n.acc}</text>` : ''}
+            <ellipse class="stave-notehead" cx="${n.x}" cy="${n.y}" rx="6.5" ry="4.5" transform="rotate(-20, ${n.x}, ${n.y})" fill="#7A2E1D" stroke="#1D1A10" stroke-width="0.5"/>
+            <text x="${n.x + 16}" y="${n.y + 4}" font-family="var(--mono)" font-size="10" font-weight="bold" fill="#35301F">${n.note}</text>
+          `).join('')}
+          <text x="200" y="202" font-family="var(--mono)" font-size="10.5" font-weight="bold" fill="#7A2E1D" text-anchor="middle">F3 - B3 - D#4 - G#4</text>
+          <text x="200" y="216" font-family="var(--sans)" font-size="9.5" fill="#77704F" text-anchor="middle">点击弹奏此和弦</text>
+        </g>
+      `;
+
+      notesSvg += `
+        <g class="harmony-voice-group" id="tristan-voice-group" style="cursor:pointer;" tabindex="0" role="button" aria-label="半音化导音解决">
+          <rect x="360" y="15" width="230" height="210" fill="transparent" />
+          <text x="490" y="24" font-family="var(--serif)" font-size="13" font-weight="bold" fill="#9A7B2D" text-anchor="middle">【半音化导音叹息】</text>
+          <text x="490" y="38" font-family="var(--sans)" font-size="10" fill="#77704F" text-anchor="middle">G#4 ➔ A4 (高声部向上叹息解决)</text>
+          <path d="M 462 74 Q 490 62 516 68" fill="none" stroke="#9A7B2D" stroke-width="2" stroke-dasharray="3,2"/>
+          <polygon points="522,69 514,65 515,73" fill="#9A7B2D" />
+          ${bar2Notes.map(n => `
+            ${n.acc ? `<text x="${n.x - 14}" y="${n.y + 4}" font-family="'Palatino Linotype', Georgia, serif" font-size="15" font-weight="bold" fill="#7A2E1D" text-anchor="middle">${n.acc}</text>` : ''}
+            <ellipse class="stave-notehead" cx="${n.x}" cy="${n.y}" rx="6.5" ry="4.5" transform="rotate(-20, ${n.x}, ${n.y})" fill="#35301F" stroke="#1D1A10" stroke-width="0.5"/>
+            <text x="${n.x}" y="${n.y + 18}" font-family="var(--mono)" font-size="11" font-weight="bold" fill="#35301F" text-anchor="middle">${n.note}</text>
+          `).join('')}
+          <text x="490" y="202" font-family="var(--sans)" font-size="10.5" font-weight="bold" fill="#9A7B2D" text-anchor="middle">高声部半音级进导向属音</text>
+          <text x="490" y="216" font-family="var(--sans)" font-size="9.5" fill="#77704F" text-anchor="middle">点击试听叹息级进</text>
+        </g>
+      `;
+
+      notesSvg += `
+        <g class="harmony-chord-group" id="e7-chord-group" style="cursor:pointer;" tabindex="0" role="button" aria-label="E7属七和弦解决">
+          <rect x="630" y="15" width="220" height="210" fill="transparent" />
+          <text x="740" y="24" font-family="var(--serif)" font-size="13" font-weight="bold" fill="#35301F" text-anchor="middle">【属七和弦 E7 解决】</text>
+          <text x="740" y="38" font-family="var(--sans)" font-size="10" fill="#77704F" text-anchor="middle">显性功能调性暂态平衡</text>
+          ${bar3Notes.map(n => `
+            ${n.ledgers.map(ly => `<line x1="${n.x - 12}" y1="${ly}" x2="${n.x + 12}" y2="${ly}" stroke="#5C5438" stroke-width="1.3"/>`).join('')}
+            ${n.acc ? `<text x="${n.x - 14}" y="${n.y + 4}" font-family="'Palatino Linotype', Georgia, serif" font-size="15" font-weight="bold" fill="#7A2E1D" text-anchor="middle">${n.acc}</text>` : ''}
+            <ellipse class="stave-notehead" cx="${n.x}" cy="${n.y}" rx="6.5" ry="4.5" transform="rotate(-20, ${n.x}, ${n.y})" fill="#35301F" stroke="#1D1A10" stroke-width="0.5"/>
+            <text x="${n.x + 16}" y="${n.y + 4}" font-family="var(--mono)" font-size="10" font-weight="bold" fill="#35301F">${n.note}</text>
+          `).join('')}
+          <text x="740" y="202" font-family="var(--mono)" font-size="10.5" font-weight="bold" fill="#35301F" text-anchor="middle">E3 - G#3 - B3 - D4</text>
+          <text x="740" y="216" font-family="var(--sans)" font-size="9.5" fill="#77704F" text-anchor="middle">点击弹奏 E7 和弦</text>
+        </g>
+      `;
+
+      harmonyGrandStaffContainer.innerHTML = `
+        <svg class="acoustic-stave-svg" viewBox="${viewBox}" width="100%">
+          <rect x="0" y="0" width="${width}" height="${height}" fill="#FAF5E8" rx="4" pointer-events="none" />
+          ${trebleLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n          ')}
+          ${bassLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n          ')}
+          <line x1="28" y1="40" x2="28" y2="174" stroke="#655D44" stroke-width="2.5" pointer-events="none"/>
+          <line x1="24" y1="36" x2="24" y2="178" stroke="#7A2E1D" stroke-width="1.5" pointer-events="none"/>
+          <g transform="translate(36, 96.0) scale(0.036, -0.036)" pointer-events="none">
+            <path d="${GCLEF_PATH}" fill="#7A2E1D"/>
+          </g>
+          <g transform="translate(36, 172.0) scale(0.034, -0.034)" pointer-events="none">
+            <path d="${FCLEF_PATH}" fill="#35301F"/>
+          </g>
+          ${barLines.map(bx => `<line x1="${bx}" y1="40" x2="${bx}" y2="174" stroke="#655D44" stroke-width="1.2" stroke-dasharray="3,3" pointer-events="none"/>`).join('\n          ')}
+          <line x1="${width - 28}" y1="40" x2="${width - 28}" y2="174" stroke="#655D44" stroke-width="1.2" pointer-events="none"/>
+          <line x1="${width - 24}" y1="40" x2="${width - 24}" y2="174" stroke="#655D44" stroke-width="3" pointer-events="none"/>
+          ${notesSvg}
+        </svg>
+      `;
+
+      harmonyGrandStaffContainer.querySelector('#tristan-chord-group')?.addEventListener('click', () => {
+        oscStatus.textContent = '🎼 大谱表演奏：瓦格纳特里斯坦和弦 (F3 - B3 - D#4 - G#4)';
+        engine.playNote('F3', 2.8);
+        engine.playNote('B3', 2.8);
+        engine.playNote('D#4', 2.8);
+        engine.playNote('G#4', 2.8);
+      });
+
+      harmonyGrandStaffContainer.querySelector('#tristan-voice-group')?.addEventListener('click', () => {
+        oscStatus.textContent = '💧 大谱表声部走向：G#4 半音化叹息解决至 A4…';
+        engine.playNote('G#4', 1.0);
+        setTimeout(() => engine.playNote('A4', 1.8), 650);
+      });
+
+      harmonyGrandStaffContainer.querySelector('#e7-chord-group')?.addEventListener('click', () => {
+        oscStatus.textContent = '🎼 大谱表演奏：显性属七和弦 E7 (E3 - G#3 - B3 - D4)';
+        engine.playNote('E3', 2.5);
+        engine.playNote('G#3', 2.5);
+        engine.playNote('B3', 2.5);
+        engine.playNote('D4', 2.5);
+      });
+
+    } else if (mode === 'mannheim') {
+      if (harmonyStaveBadge) harmonyStaveBadge.textContent = '曼海姆火箭 (Mannheim Rocket：主和弦急速上升琶音 C3 – C6)';
+
+      const rocketNotes = [
+        { note: 'C3', y: 150, ledgers: [], clef: 'bass', x: 130 },
+        { note: 'G3', y: 138, ledgers: [], clef: 'bass', x: 215 },
+        { note: 'C4', y: 102, ledgers: [102], clef: 'mid', x: 300 },
+        { note: 'E4', y: 88, ledgers: [], clef: 'treble', x: 385 },
+        { note: 'G4', y: 76, ledgers: [], clef: 'treble', x: 470 },
+        { note: 'C5', y: 58, ledgers: [], clef: 'treble', x: 555 },
+        { note: 'E5', y: 46, ledgers: [], clef: 'treble', x: 640 },
+        { note: 'G5', y: 34, ledgers: [], clef: 'treble', x: 725 },
+        { note: 'C6', y: 16, ledgers: [28, 16], clef: 'treble', x: 810 }
+      ];
+
+      let notesSvg = '';
+      rocketNotes.forEach((n, idx) => {
+        const freq = engine.getFrequency(n.note).toFixed(1);
+        const stemUp = n.y > 64;
+        const stemX = stemUp ? n.x + 5.5 : n.x - 5.5;
+        const stemY2 = stemUp ? n.y - 28 : n.y + 28;
+
+        notesSvg += `
+          <g class="staff-note-node" id="mannheim-rocket-note-${idx}" data-note="${n.note}" data-idx="${idx}" tabindex="0" role="button" aria-label="${n.note}">
+            <rect x="${n.x - 18}" y="10" width="36" height="210" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+            <circle cx="${n.x}" cy="${n.y}" r="16" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+            ${n.ledgers.map(ly => `<line x1="${n.x - 11}" y1="${ly}" x2="${n.x + 11}" y2="${ly}" stroke="#5C5438" stroke-width="1.3"/>`).join('')}
+            <ellipse class="stave-notehead" cx="${n.x}" cy="${n.y}" rx="6" ry="4.2" transform="rotate(-20, ${n.x}, ${n.y})" fill="#7A2E1D" stroke="#1D1A10" stroke-width="0.5"/>
+            <line class="stave-stem" x1="${stemX}" y1="${n.y}" x2="${stemX}" y2="${stemY2}" stroke="#35301F" stroke-width="1.2" pointer-events="none"/>
+            <text x="${n.x}" y="20" font-family="var(--sans)" font-size="10.5" font-weight="bold" fill="var(--acc)" text-anchor="middle">#${idx + 1}</text>
+            <text x="${n.x}" y="202" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#35301F" text-anchor="middle">${n.note}</text>
+            <text x="${n.x}" y="215" font-family="var(--mono)" font-size="9" fill="#77704F" text-anchor="middle">${freq}Hz</text>
+          </g>
+        `;
+      });
+
+      const hairpinSvg = `
+        <path d="M 120 188 L 840 180 L 840 196 Z" fill="none" stroke="#7A2E1D" stroke-width="1.5" opacity="0.8"/>
+        <text x="120" y="193" font-family="var(--serif)" font-size="14" font-weight="bold" font-style="italic" fill="#7A2E1D">p</text>
+        <text x="855" y="193" font-family="var(--serif)" font-size="14" font-weight="bold" font-style="italic" fill="#7A2E1D">ff</text>
+        <text x="480" y="193" font-family="var(--sans)" font-size="10" font-weight="bold" fill="#7A2E1D" text-anchor="middle">crescendo molto 🚀</text>
+      `;
+
+      const curveSvg = `<path d="M 130 150 Q 480 90 810 16" fill="none" stroke="#9A7B2D" stroke-width="1.6" stroke-dasharray="4,3" opacity="0.6"/>`;
+
+      harmonyGrandStaffContainer.innerHTML = `
+        <svg class="acoustic-stave-svg" viewBox="${viewBox}" width="100%">
+          <rect x="0" y="0" width="${width}" height="${height}" fill="#FAF5E8" rx="4" pointer-events="none" />
+          ${trebleLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n          ')}
+          ${bassLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n          ')}
+          <line x1="28" y1="40" x2="28" y2="174" stroke="#655D44" stroke-width="2.5" pointer-events="none"/>
+          <line x1="24" y1="36" x2="24" y2="178" stroke="#7A2E1D" stroke-width="1.5" pointer-events="none"/>
+          <g transform="translate(36, 96.0) scale(0.036, -0.036)" pointer-events="none">
+            <path d="${GCLEF_PATH}" fill="#7A2E1D"/>
+          </g>
+          <g transform="translate(36, 172.0) scale(0.034, -0.034)" pointer-events="none">
+            <path d="${FCLEF_PATH}" fill="#35301F"/>
+          </g>
+          <line x1="${width - 28}" y1="40" x2="${width - 28}" y2="174" stroke="#655D44" stroke-width="1.2" pointer-events="none"/>
+          <line x1="${width - 24}" y1="40" x2="${width - 24}" y2="174" stroke="#655D44" stroke-width="3" pointer-events="none"/>
+          ${curveSvg}
+          ${hairpinSvg}
+          ${notesSvg}
+        </svg>
+      `;
+
+      harmonyGrandStaffContainer.querySelectorAll('.staff-note-node').forEach(node => {
+        const note = node.dataset.note;
+        node.addEventListener('click', () => {
+          engine.playNote(note, 0.7);
+          node.classList.add('playing');
+          setTimeout(() => node.classList.remove('playing'), 450);
+          oscStatus.textContent = `🚀 曼海姆火箭音符试听：${note}`;
+        });
+      });
+    }
+  }
+
+  const btnShowTristan = container.querySelector('#btn-show-tristan-staff');
+  const btnShowMannheim = container.querySelector('#btn-show-mannheim-staff');
+  const btnHarmonyStop = container.querySelector('#btn-harmony-stave-stop');
+
+  if (btnShowTristan && btnShowMannheim) {
+    btnShowTristan.addEventListener('click', () => {
+      btnShowTristan.classList.add('active');
+      btnShowMannheim.classList.remove('active');
+      renderHarmonyGrandStaffSvg('tristan');
+    });
+
+    btnShowMannheim.addEventListener('click', () => {
+      btnShowMannheim.classList.add('active');
+      btnShowTristan.classList.remove('active');
+      renderHarmonyGrandStaffSvg('mannheim');
+    });
+  }
+
+  if (btnHarmonyStop) {
+    btnHarmonyStop.addEventListener('click', () => {
+      stopHarmonyPlayback();
+      oscStatus.textContent = '● 和声大谱表演奏已停止';
+    });
+  }
+
+  renderHarmonyGrandStaffSvg('tristan');
+
   container.querySelector('#btn-tristan-chord').addEventListener('click', () => {
     oscStatus.textContent = '🎼 瓦格纳特里斯坦和弦：F3 - B3 - D#4 - G#4';
     engine.playNote('F3', 2.8);
@@ -1380,8 +2205,219 @@ export function createAcousticLabUI(container) {
   });
 
   // ==========================================================================
-  // 面板 5: 二十世纪先锋音块与微音
+  // 面板 5: 先锋音块与微分音五线谱 (Scriabin Mystic Chord & Quarter-Tone Staff)
   // ==========================================================================
+  const avantgardeStaveContainer = container.querySelector('#avantgarde-stave-container');
+  const avantgardeStaveBadge = container.querySelector('#avantgarde-stave-badge');
+  let avantGardeMode = 'scriabin';
+
+  function renderAvantGardeStaffSvg(mode = avantGardeMode) {
+    if (!avantgardeStaveContainer) return;
+    avantGardeMode = mode;
+
+    const width = 940;
+    const height = 240;
+    const viewBox = '0 0 940 240';
+
+    if (mode === 'scriabin') {
+      if (avantgardeStaveBadge) avantgardeStaveBadge.textContent = '斯克里亚宾神秘和弦 (C3 - F#3 - Bb3 - E4 - A4 - D5 六重四度叠置)';
+
+      const trebleLines = [40, 52, 64, 76, 88];
+      const bassLines = [126, 138, 150, 162, 174];
+
+      const scriabinNotes = [
+        { note: 'C3', y: 150, ledgers: [], acc: '', role: '基底根音', intv: '', cents: '0c', x: 220 },
+        { note: 'F#3', y: 126, ledgers: [], acc: '♯', role: '增四度', intv: '+600c (增四度)', cents: '600c', x: 220 },
+        { note: 'Bb3', y: 114, ledgers: [114], acc: '♭', role: '减四度', intv: '+400c (减四度)', cents: '1000c', x: 220 },
+        { note: 'E4', y: 88, ledgers: [], acc: '', role: '增四度', intv: '+600c (增四度)', cents: '1600c', x: 220 },
+        { note: 'A4', y: 70, ledgers: [], acc: '', role: '纯四度', intv: '+500c (纯四度)', cents: '2100c', x: 220 },
+        { note: 'D5', y: 52, ledgers: [], acc: '', role: '纯四度', intv: '+500c (纯四度)', cents: '2600c', x: 220 }
+      ];
+
+      const arpStartX = 420;
+      const arpEndX = 860;
+      const arpStep = (arpEndX - arpStartX) / 5;
+
+      let stackedSvg = `
+        <g class="scriabin-chord-block" id="btn-scriabin-chord-block" style="cursor:pointer;" tabindex="0" role="button" aria-label="斯克里亚宾神秘和弦齐鸣">
+          <rect x="130" y="20" width="220" height="205" fill="transparent"/>
+          <text x="220" y="24" font-family="var(--serif)" font-size="13" font-weight="bold" fill="#7A2E1D" text-anchor="middle">【六重四度叠置总柱】</text>
+          <text x="220" y="38" font-family="var(--sans)" font-size="10" fill="#77704F" text-anchor="middle">普罗米修斯神智学神秘和声</text>
+          ${scriabinNotes.map(n => `
+            ${n.ledgers.map(ly => `<line x1="${n.x - 12}" y1="${ly}" x2="${n.x + 12}" y2="${ly}" stroke="#5C5438" stroke-width="1.3"/>`).join('')}
+            ${n.acc ? `<text x="${n.x - 14}" y="${n.y + 4}" font-family="'Palatino Linotype', Georgia, serif" font-size="15" font-weight="bold" fill="#7A2E1D" text-anchor="middle">${n.acc}</text>` : ''}
+            <ellipse class="stave-notehead" cx="${n.x}" cy="${n.y}" rx="6.5" ry="4.5" transform="rotate(-20, ${n.x}, ${n.y})" fill="#7A2E1D" stroke="#1D1A10" stroke-width="0.5"/>
+            <text x="${n.x + 16}" y="${n.y + 4}" font-family="var(--mono)" font-size="10.5" font-weight="bold" fill="#35301F">${n.note}</text>
+          `).join('')}
+          <text x="220" y="200" font-family="var(--sans)" font-size="10.5" font-weight="bold" fill="#7A2E1D" text-anchor="middle">🎼 点击齐鸣神秘和弦</text>
+          <text x="220" y="214" font-family="var(--mono)" font-size="9" fill="#77704F" text-anchor="middle">泛音列第 8, 9, 10, 11, 13, 14 分音投射</text>
+        </g>
+      `;
+
+      let arpeggioSvg = '';
+      scriabinNotes.forEach((n, idx) => {
+        const ax = Math.round(arpStartX + idx * arpStep);
+        const freq = engine.getFrequency(n.note).toFixed(1);
+        const stemUp = n.y > 70;
+        const stemX = stemUp ? ax + 5.5 : ax - 5.5;
+        const stemY2 = stemUp ? n.y - 28 : n.y + 28;
+
+        arpeggioSvg += `
+          <g class="staff-note-node" id="scriabin-arp-node-${idx}" data-note="${n.note}" data-idx="${idx}" tabindex="0" role="button" aria-label="${n.note}">
+            <rect x="${ax - 20}" y="15" width="40" height="210" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+            <circle cx="${ax}" cy="${n.y}" r="16" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+            ${n.ledgers.map(ly => `<line x1="${ax - 12}" y1="${ly}" x2="${ax + 12}" y2="${ly}" stroke="#5C5438" stroke-width="1.3"/>`).join('')}
+            ${n.acc ? `<text x="${ax - 14}" y="${n.y + 4}" font-family="'Palatino Linotype', Georgia, serif" font-size="15" font-weight="bold" fill="#7A2E1D" text-anchor="middle">${n.acc}</text>` : ''}
+            <ellipse class="stave-notehead" cx="${ax}" cy="${n.y}" rx="6" ry="4.2" transform="rotate(-20, ${ax}, ${n.y})" fill="#35301F" stroke="#1D1A10" stroke-width="0.5"/>
+            <line class="stave-stem" x1="${stemX}" y1="${n.y}" x2="${stemX}" y2="${stemY2}" stroke="#35301F" stroke-width="1.2" pointer-events="none"/>
+            <text x="${ax}" y="22" font-family="var(--sans)" font-size="10.5" font-weight="bold" fill="var(--acc)" text-anchor="middle">层阶 ${idx + 1}</text>
+            <text x="${ax}" y="34" font-family="var(--serif)" font-size="10" fill="#7A2E1D" text-anchor="middle">${n.role}</text>
+            <text x="${ax}" y="198" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#35301F" text-anchor="middle">${n.note}</text>
+            <text x="${ax}" y="211" font-family="var(--mono)" font-size="9" fill="#77704F" text-anchor="middle">${freq}Hz</text>
+          </g>
+        `;
+      });
+
+      const sepLine = `<line x1="375" y1="20" x2="375" y2="215" stroke="#655D44" stroke-width="1.2" stroke-dasharray="3,3" pointer-events="none"/>`;
+
+      avantgardeStaveContainer.innerHTML = `
+        <svg class="acoustic-stave-svg" viewBox="${viewBox}" width="100%">
+          <rect x="0" y="0" width="${width}" height="${height}" fill="#FAF5E8" rx="4" pointer-events="none" />
+          ${trebleLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n          ')}
+          ${bassLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n          ')}
+          <line x1="28" y1="40" x2="28" y2="174" stroke="#655D44" stroke-width="2.5" pointer-events="none"/>
+          <line x1="24" y1="36" x2="24" y2="178" stroke="#7A2E1D" stroke-width="1.5" pointer-events="none"/>
+          <g transform="translate(36, 96.0) scale(0.036, -0.036)" pointer-events="none">
+            <path d="${GCLEF_PATH}" fill="#7A2E1D"/>
+          </g>
+          <g transform="translate(36, 172.0) scale(0.034, -0.034)" pointer-events="none">
+            <path d="${FCLEF_PATH}" fill="#35301F"/>
+          </g>
+          <line x1="${width - 28}" y1="40" x2="${width - 28}" y2="174" stroke="#655D44" stroke-width="1.2" pointer-events="none"/>
+          <line x1="${width - 24}" y1="40" x2="${width - 24}" y2="174" stroke="#655D44" stroke-width="3" pointer-events="none"/>
+          ${sepLine}
+          ${stackedSvg}
+          ${arpeggioSvg}
+        </svg>
+      `;
+
+      avantgardeStaveContainer.querySelector('#btn-scriabin-chord-block')?.addEventListener('click', () => {
+        oscStatus.textContent = '🌌 大谱表齐鸣：斯克里亚宾神秘和弦 (六重四度叠置)';
+        engine.playScriabinMystic(3.5);
+      });
+
+      avantgardeStaveContainer.querySelectorAll('.staff-note-node').forEach(node => {
+        const note = node.dataset.note;
+        node.addEventListener('click', () => {
+          engine.playNote(note, 0.8);
+          node.classList.add('playing');
+          setTimeout(() => node.classList.remove('playing'), 500);
+          oscStatus.textContent = `🌌 试听神秘和弦层阶音：${note}`;
+        });
+      });
+
+    } else if (mode === 'quarter') {
+      if (avantgardeStaveBadge) avantgardeStaveBadge.textContent = '阿洛伊斯·哈巴 24-TET 1/4 微分音阶 (C4 – E4 连续 50 音分级进记谱)';
+
+      const staffLines = [48, 62, 76, 90, 104];
+      const baseC = 261.625565;
+
+      const quarterNotes = [
+        { name: 'C4', cents: 0, acc: '', y: 118, ledgers: [118], label: '基准音' },
+        { name: 'C‡4', cents: 50, acc: '‡', y: 118, ledgers: [118], label: '+1/4音' },
+        { name: 'C#4', cents: 100, acc: '♯', y: 118, ledgers: [118], label: '传统半音' },
+        { name: 'C‡#4', cents: 150, acc: '‡♯', y: 118, ledgers: [118], label: '+3/4音' },
+        { name: 'D4', cents: 200, acc: '', y: 111, ledgers: [], label: '全音' },
+        { name: 'D‡4', cents: 250, acc: '‡', y: 111, ledgers: [], label: '+1/4音' },
+        { name: 'Eb4', cents: 300, acc: '♭', y: 104, ledgers: [], label: '小三度' },
+        { name: 'Ed4', cents: 350, acc: 'd', y: 104, ledgers: [], label: '中立三度', isSpecial: true },
+        { name: 'E4', cents: 400, acc: '', y: 104, ledgers: [], label: '大三度' }
+      ];
+
+      const startX = 130;
+      const endX = 860;
+      const stepX = (endX - startX) / (quarterNotes.length - 1);
+
+      let notesSvg = '';
+      quarterNotes.forEach((n, idx) => {
+        const x = Math.round(startX + idx * stepX);
+        const freq = (baseC * Math.pow(2, n.cents / 1200)).toFixed(1);
+        const noteColor = n.isSpecial ? '#7A2E1D' : '#35301F';
+        const stemUp = true;
+        const stemX = x + 5.5;
+        const stemY2 = n.y - 30;
+
+        notesSvg += `
+          <g class="staff-note-node" id="quarter-note-node-${idx}" data-cents="${n.cents}" data-freq="${freq}" data-name="${n.name}" tabindex="0" role="button" aria-label="${n.name} ${n.cents}音分">
+            <rect x="${x - 18}" y="15" width="36" height="155" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+            <circle cx="${x}" cy="${n.y}" r="16" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+            ${n.ledgers.map(ly => `<line x1="${x - 12}" y1="${ly}" x2="${x + 12}" y2="${ly}" stroke="#5C5438" stroke-width="1.3"/>`).join('')}
+            ${n.acc ? `<text x="${x - 13}" y="${n.y + 4}" font-family="'Palatino Linotype', Georgia, serif" font-size="${n.acc.length > 1 ? 12 : 15}" font-weight="bold" fill="${n.isSpecial ? '#7A2E1D' : '#35301F'}" text-anchor="middle">${n.acc}</text>` : ''}
+            <ellipse class="stave-notehead" cx="${x}" cy="${n.y}" rx="6" ry="4.2" transform="rotate(-20, ${x}, ${n.y})" fill="${noteColor}" stroke="#1D1A10" stroke-width="0.5"/>
+            <line class="stave-stem" x1="${stemX}" y1="${n.y}" x2="${stemX}" y2="${stemY2}" stroke="${noteColor}" stroke-width="1.2" pointer-events="none"/>
+            <text x="${x}" y="24" font-family="var(--sans)" font-size="10" font-weight="bold" fill="${n.isSpecial ? '#7A2E1D' : '#77704F'}" text-anchor="middle">${n.label}</text>
+            <text x="${x}" y="132" font-family="var(--serif)" font-size="12" font-weight="bold" fill="${noteColor}" text-anchor="middle">${n.name}</text>
+            <text x="${x}" y="145" font-family="var(--mono)" font-size="10" font-weight="bold" fill="var(--acc)" text-anchor="middle">${n.cents}c</text>
+            <text x="${x}" y="157" font-family="var(--mono)" font-size="9" fill="#77704F" text-anchor="middle">${freq}Hz</text>
+          </g>
+        `;
+      });
+
+      avantgardeStaveContainer.innerHTML = `
+        <svg class="acoustic-stave-svg" viewBox="0 0 940 180" width="100%">
+          <rect x="0" y="0" width="${width}" height="180" fill="#FAF5E8" rx="4" pointer-events="none" />
+          ${staffLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n          ')}
+          <line x1="28" y1="48" x2="28" y2="104" stroke="#655D44" stroke-width="2.5" pointer-events="none"/>
+          <g transform="translate(36, 114.0) scale(0.04, -0.04)" pointer-events="none">
+            <path d="${GCLEF_PATH}" fill="#7A2E1D"/>
+          </g>
+          <line x1="${width - 28}" y1="48" x2="${width - 28}" y2="104" stroke="#655D44" stroke-width="1.2" pointer-events="none"/>
+          <line x1="${width - 24}" y1="48" x2="${width - 24}" y2="104" stroke="#655D44" stroke-width="3" pointer-events="none"/>
+          ${notesSvg}
+        </svg>
+      `;
+
+      avantgardeStaveContainer.querySelectorAll('.staff-note-node').forEach(node => {
+        const cents = parseFloat(node.dataset.cents);
+        const freq = parseFloat(node.dataset.freq);
+        const name = node.dataset.name;
+        node.addEventListener('click', () => {
+          engine.playNote('C4', 0.8, freq);
+          node.classList.add('playing');
+          setTimeout(() => node.classList.remove('playing'), 500);
+          oscStatus.textContent = `🎼 哈巴微分音试听：${name} (${cents}音分 · ${freq} Hz)`;
+        });
+      });
+    }
+  }
+
+  const btnShowScriabin = container.querySelector('#btn-show-scriabin-staff');
+  const btnShowQuarter = container.querySelector('#btn-show-quarter-staff');
+  const btnAvantGardeStop = container.querySelector('#btn-avantgarde-stave-stop');
+
+  if (btnShowScriabin && btnShowQuarter) {
+    btnShowScriabin.addEventListener('click', () => {
+      btnShowScriabin.classList.add('active');
+      btnShowQuarter.classList.remove('active');
+      renderAvantGardeStaffSvg('scriabin');
+    });
+
+    btnShowQuarter.addEventListener('click', () => {
+      btnShowQuarter.classList.add('active');
+      btnShowScriabin.classList.remove('active');
+      renderAvantGardeStaffSvg('quarter');
+    });
+  }
+
+  if (btnAvantGardeStop) {
+    btnAvantGardeStop.addEventListener('click', () => {
+      engine.stopAll();
+      oscStatus.textContent = '● 先锋五线表演奏已停止';
+    });
+  }
+
+  renderAvantGardeStaffSvg('scriabin');
+
   container.querySelector('#btn-scriabin-mystic').addEventListener('click', () => {
     oscStatus.textContent = '🌌 斯克里亚宾“神秘和弦”：C3 - F#3 - Bb3 - E4 - A4 - D5 (四度叠置普罗米修斯和声)';
     engine.playScriabinMystic(3.5);
@@ -1446,8 +2482,118 @@ export function createAcousticLabUI(container) {
   });
 
   // ==========================================================================
-  // 面板 6: 勋伯格十二音序列矩阵计算机
+  // 面板 6: 勋伯格十二音序列矩阵计算机与五线谱视唱台
   // ==========================================================================
+  const matrixStaveContainer = container.querySelector('#matrix-stave-container');
+  const matrixStaveBadge = container.querySelector('#matrix-stave-badge');
+  let currentMatrixStaffPcs = [...SCHOENBERG_OP25_ROW];
+  let currentMatrixStaffLabel = 'P0 原型 (12音)';
+
+  function renderMatrixRowStaffSvg(pitchClasses = currentMatrixStaffPcs, label = currentMatrixStaffLabel) {
+    if (!matrixStaveContainer) return;
+    currentMatrixStaffPcs = pitchClasses;
+    currentMatrixStaffLabel = label;
+
+    if (matrixStaveBadge) {
+      matrixStaveBadge.textContent = `当前序列：${label}`;
+    }
+
+    const width = 940;
+    const height = 180;
+    const viewBox = '0 0 940 180';
+    const staffLines = [48, 62, 76, 90, 104];
+
+    const startX = 115;
+    const endX = 875;
+    const stepX = (endX - startX) / 11;
+
+    let notesSvg = '';
+    pitchClasses.forEach((pc, idx) => {
+      const x = Math.round(startX + idx * stepX);
+      const noteName = `${PITCH_CLASSES[pc]}4`;
+      const props = getNoteStaffProps(noteName, 48, 14);
+      const y = props.y;
+      const freq = engine.getFrequency(noteName).toFixed(1);
+
+      let ledgersSvg = '';
+      props.ledgerLines.forEach(ly => {
+        ledgersSvg += `<line x1="${x - 12}" y1="${ly}" x2="${x + 12}" y2="${ly}" stroke="#5C5438" stroke-width="1.3"/>`;
+      });
+
+      let accSvg = '';
+      if (props.acc) {
+        accSvg = `<text x="${x - 13}" y="${y + 4}" font-family="'Palatino Linotype', Georgia, serif" font-size="15" font-weight="bold" fill="#7A2E1D" text-anchor="middle">${props.acc}</text>`;
+      }
+
+      const stemUp = props.stemUp;
+      const stemX = stemUp ? x + 5.5 : x - 5.5;
+      const stemY2 = stemUp ? y - 30 : y + 30;
+
+      notesSvg += `
+        <g class="staff-note-node" id="matrix-staff-note-${idx}" data-note="${noteName}" data-idx="${idx}" tabindex="0" role="button" aria-label="${noteName}">
+          <rect x="${x - 18}" y="10" width="36" height="158" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+          <circle cx="${x}" cy="${y}" r="16" fill="transparent" pointer-events="all" style="cursor:pointer;" />
+          ${ledgersSvg}
+          <ellipse class="stave-notehead" cx="${x}" cy="${y}" rx="6" ry="4.2" transform="rotate(-20, ${x}, ${y})" fill="#35301F" stroke="#1D1A10" stroke-width="0.5" pointer-events="all"/>
+          <line class="stave-stem" x1="${stemX}" y1="${y}" x2="${stemX}" y2="${stemY2}" stroke="#35301F" stroke-width="1.2" pointer-events="none"/>
+          ${accSvg}
+          <text x="${x}" y="22" font-family="var(--sans)" font-size="10.5" font-weight="bold" fill="var(--acc)" text-anchor="middle">#${idx + 1}</text>
+          <text x="${x}" y="34" font-family="var(--mono)" font-size="9" fill="#77704F" text-anchor="middle">pc=${pc}</text>
+          <text x="${x}" y="132" font-family="var(--serif)" font-size="12" font-weight="bold" fill="#35301F" text-anchor="middle">${noteName}</text>
+          <text x="${x}" y="146" font-family="var(--mono)" font-size="9.5" fill="#77704F" text-anchor="middle">${freq}Hz</text>
+        </g>
+      `;
+    });
+
+    matrixStaveContainer.innerHTML = `
+      <svg class="acoustic-stave-svg" viewBox="${viewBox}" width="100%">
+        <rect x="0" y="0" width="${width}" height="${height}" fill="#FAF5E8" rx="4" pointer-events="none" />
+        ${staffLines.map(y => `<line x1="28" y1="${y}" x2="${width - 24}" y2="${y}" stroke="#655D44" stroke-width="1.1" pointer-events="none"/>`).join('\n        ')}
+        <line x1="28" y1="48" x2="28" y2="104" stroke="#655D44" stroke-width="2.5" pointer-events="none"/>
+        <g transform="translate(36, 114.0) scale(0.04, -0.04)" pointer-events="none">
+          <path d="${GCLEF_PATH}" fill="#7A2E1D"/>
+        </g>
+        <line x1="${width - 28}" y1="48" x2="${width - 28}" y2="104" stroke="#655D44" stroke-width="1.2" pointer-events="none"/>
+        <line x1="${width - 24}" y1="48" x2="${width - 24}" y2="104" stroke="#655D44" stroke-width="3" pointer-events="none"/>
+        ${notesSvg}
+      </svg>
+    `;
+
+    matrixStaveContainer.querySelectorAll('.staff-note-node').forEach(node => {
+      const note = node.dataset.note;
+      const idx = parseInt(node.dataset.idx, 10);
+      node.addEventListener('click', () => {
+        engine.playNote(note, 0.45);
+        animateMatrixStaffNote(idx);
+        oscStatus.textContent = `🎲 序列音符点奏：${note}`;
+      });
+    });
+  }
+
+  function animateMatrixStaffNote(idx) {
+    const node = matrixStaveContainer.querySelector(`#matrix-staff-note-${idx}`);
+    if (node) {
+      node.classList.add('playing');
+      setTimeout(() => node.classList.remove('playing'), 350);
+
+      const ellipse = node.querySelector('.stave-notehead');
+      if (ellipse) {
+        const cx = ellipse.getAttribute('cx');
+        const cy = ellipse.getAttribute('cy');
+        const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        ring.setAttribute('cx', cx);
+        ring.setAttribute('cy', cy);
+        ring.setAttribute('r', '6');
+        ring.setAttribute('fill', 'none');
+        ring.setAttribute('stroke', '#8C2B1F');
+        ring.setAttribute('stroke-width', '2.5');
+        ring.setAttribute('class', 'stave-sound-ring');
+        node.appendChild(ring);
+        setTimeout(() => ring.remove(), 600);
+      }
+    }
+  }
+
   let currentRow = [...SCHOENBERG_OP25_ROW];
   const matrixContainer = container.querySelector('#schoenberg-matrix');
 
@@ -1498,11 +2644,16 @@ export function createAcousticLabUI(container) {
     const rowName = `${reverse ? 'R' : 'P'}${mat[r][reverse ? 11 : 0]}`;
     oscStatus.textContent = `🎲 正在演奏十二音序列：${rowName}…`;
 
+    const rowPcs = cols.map(c => mat[r][c]);
+    renderMatrixRowStaffSvg(rowPcs, `${rowName} (${reverse ? '逆行' : '原型'} 12音)`);
+
     cols.forEach((c, idx) => {
       setTimeout(() => {
         const pitchClass = mat[r][c];
         const noteName = `${PITCH_CLASSES[pitchClass]}4`;
         engine.playNote(noteName, 0.35);
+
+        animateMatrixStaffNote(idx);
 
         const cell = container.querySelector(`#matrix-cell-${r}-${c}`);
         if (cell) {
@@ -1519,11 +2670,16 @@ export function createAcousticLabUI(container) {
     const colName = `${reverse ? 'RI' : 'I'}${mat[reverse ? 11 : 0][c]}`;
     oscStatus.textContent = `🎲 正在演奏十二音序列：${colName}…`;
 
+    const colPcs = rows.map(r => mat[r][c]);
+    renderMatrixRowStaffSvg(colPcs, `${colName} (${reverse ? '逆行倒影' : '倒影'} 12音)`);
+
     rows.forEach((r, idx) => {
       setTimeout(() => {
         const pitchClass = mat[r][c];
         const noteName = `${PITCH_CLASSES[pitchClass]}4`;
         engine.playNote(noteName, 0.35);
+
+        animateMatrixStaffNote(idx);
 
         const cell = container.querySelector(`#matrix-cell-${r}-${c}`);
         if (cell) {
@@ -1535,6 +2691,7 @@ export function createAcousticLabUI(container) {
   }
 
   renderMatrix();
+  renderMatrixRowStaffSvg(currentRow, 'P0 原型 (12音)');
 
   container.querySelector('#btn-play-p0').addEventListener('click', () => {
     const mat = compute12ToneMatrix(currentRow);
@@ -1560,6 +2717,7 @@ export function createAcousticLabUI(container) {
     }
     currentRow = newRow;
     renderMatrix();
+    renderMatrixRowStaffSvg(currentRow, '随机新序列 P0 (12音)');
     oscStatus.textContent = '🎲 已随机生成新的十二音序列原型！';
   });
 
@@ -1567,6 +2725,8 @@ export function createAcousticLabUI(container) {
     if (animId) cancelAnimationFrame(animId);
     stopStavePlayback();
     stopHarmonicsPlayback();
+    stopModalPlayback();
+    stopHarmonyPlayback();
     engine.stopAll();
   }
 

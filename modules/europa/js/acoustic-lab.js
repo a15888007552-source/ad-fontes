@@ -525,6 +525,102 @@ export class SoundEngine {
     osc1.stop(now + duration + 0.1);
     osc2.stop(now + duration + 0.1);
   }
+
+  // 1. 试听毕达哥拉斯音差 (Pythagorean Comma · 23.46c · 约3.57Hz慢拍频)
+  playPythagoreanComma(duration = 2.8) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const g = this.ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(0.32, now + 0.04);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    const baseF = C4_FREQ; // 261.63 Hz (黄钟)
+    const pythF = baseF * (531441 / 524288); // 265.19 Hz (清黄钟，高出23.46音分)
+
+    const osc1 = this.ctx.createOscillator();
+    osc1.type = 'triangle';
+    osc1.frequency.setValueAtTime(baseF, now);
+
+    const osc2 = this.ctx.createOscillator();
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(pythF, now);
+
+    osc1.connect(g);
+    osc2.connect(g);
+    g.connect(this.masterGain);
+
+    osc1.start(now);
+    osc2.start(now);
+    osc1.stop(now + duration + 0.05);
+    osc2.stop(now + duration + 0.05);
+  }
+
+  // 2. 试听普通音差 (Syntonic Comma · 21.51c · 纯律 vs 毕氏大三度 · 约4.1Hz拍频)
+  playSyntonicComma(duration = 2.8) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const g = this.ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(0.32, now + 0.04);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    const justE4 = C4_FREQ * 1.25; // 327.03 Hz (纯律大三度 5:4)
+    const pythE4 = C4_FREQ * (81 / 64); // 331.12 Hz (五度相生大三度 81:64)
+
+    const osc1 = this.ctx.createOscillator();
+    osc1.type = 'triangle';
+    osc1.frequency.setValueAtTime(justE4, now);
+
+    const osc2 = this.ctx.createOscillator();
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(pythE4, now);
+
+    osc1.connect(g);
+    osc2.connect(g);
+    g.connect(this.masterGain);
+
+    osc1.start(now);
+    osc2.start(now);
+    osc1.stop(now + duration + 0.05);
+    osc2.stop(now + duration + 0.05);
+  }
+
+  // 3. 试听小半音差 (Diesis · 41.06c · 中庸全音律狼音差 · 约9.9Hz粗糙感)
+  playDiesisComma(duration = 2.8) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const g = this.ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(0.32, now + 0.04);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    const f1 = 415.30; // G#4
+    const f2 = 415.30 * (128 / 125); // Ab4 (~425.26 Hz)
+
+    const osc1 = this.ctx.createOscillator();
+    osc1.type = 'sawtooth';
+    osc1.frequency.setValueAtTime(f1, now);
+
+    const osc2 = this.ctx.createOscillator();
+    osc2.type = 'sawtooth';
+    osc2.frequency.setValueAtTime(f2, now);
+
+    // 软化微弱低通滤波
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(1200, now);
+
+    osc1.connect(filter);
+    osc2.connect(filter);
+    filter.connect(g);
+    g.connect(this.masterGain);
+
+    osc1.start(now);
+    osc2.start(now);
+    osc1.stop(now + duration + 0.05);
+    osc2.stop(now + duration + 0.05);
+  }
 }
 
 // ==========================================================================
