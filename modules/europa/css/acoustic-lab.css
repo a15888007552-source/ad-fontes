@@ -1,0 +1,573 @@
+/* ==========================================================================
+   欧罗巴声学与乐律实验室 (Acoustic & Musicology Lab) - 样式表
+   Ad Fontes · Annales Musicorum Europae
+   ========================================================================== */
+
+:root {
+  --lab-bg: #0d0f12;
+  --lab-surface: #151921;
+  --lab-card: #1c222d;
+  --lab-border: #2c3545;
+  --lab-gold: #e5b95c;
+  --lab-gold-glow: rgba(229, 185, 92, 0.35);
+  --lab-teal: #4ecdc4;
+  --lab-teal-glow: rgba(78, 205, 196, 0.3);
+  --lab-rose: #ff6b6b;
+  --lab-text: #e2e8f0;
+  --lab-text-dim: #94a3b8;
+  --lab-font-serif: "Cinzel", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+  --lab-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --lab-font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+.acoustic-lab-root {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: var(--lab-text);
+  font-family: var(--lab-font-sans);
+  background: var(--lab-bg);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 顶部导言与示波器大屏 */
+.lab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--lab-border);
+}
+
+.lab-title-area h2 {
+  font-family: var(--lab-font-serif);
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.4rem 0;
+  color: var(--lab-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lab-title-area h2 span.latin {
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lab-text-dim);
+  border-left: 1px solid var(--lab-border);
+  padding-left: 0.75rem;
+}
+
+.lab-title-area p {
+  color: var(--lab-text-dim);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* 示波器视窗 */
+.lab-visualizer-card {
+  flex-shrink: 0;
+  background: #080a0d;
+  border: 1px solid var(--lab-border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 4px 16px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lab-visualizer-card canvas {
+  display: block;
+  width: 320px;
+  height: 90px;
+  background: #050608;
+  border-radius: 4px;
+}
+
+.lab-visualizer-status {
+  font-family: var(--lab-font-mono);
+  font-size: 0.75rem;
+  color: var(--lab-teal);
+  margin-top: 0.35rem;
+  letter-spacing: 0.05em;
+}
+
+/* 实验室导航选项卡 */
+.lab-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--lab-surface);
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid var(--lab-border);
+  flex-wrap: wrap;
+}
+
+.lab-tab-btn {
+  background: transparent;
+  color: var(--lab-text-dim);
+  border: none;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lab-tab-btn:hover {
+  color: var(--lab-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.lab-tab-btn.active {
+  color: #0d0f12;
+  background: var(--lab-gold);
+  font-weight: 600;
+  box-shadow: 0 0 12px var(--lab-gold-glow);
+}
+
+/* 选项卡面板容器 */
+.lab-panel {
+  display: none;
+  animation: labFadeIn 0.25s ease forwards;
+}
+
+.lab-panel.active {
+  display: block;
+}
+
+@keyframes labFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 律制与和声卡片通用布局 */
+.lab-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .lab-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lab-card {
+  background: var(--lab-surface);
+  border: 1px solid var(--lab-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.lab-card-title {
+  font-family: var(--lab-font-serif);
+  font-size: 1.15rem;
+  color: var(--lab-gold);
+  margin: 0 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 律制选择单选芯片 */
+.tuning-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.tuning-chip {
+  background: var(--lab-card);
+  border: 1px solid var(--lab-border);
+  border-radius: 6px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.tuning-chip:hover {
+  border-color: var(--lab-gold);
+  transform: translateY(-1px);
+}
+
+.tuning-chip.active {
+  border-color: var(--lab-gold);
+  background: rgba(229, 185, 92, 0.12);
+  box-shadow: 0 0 10px var(--lab-gold-glow);
+}
+
+.tuning-chip-name {
+  font-weight: 600;
+  color: var(--lab-gold);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.tuning-chip-desc {
+  font-size: 0.75rem;
+  color: var(--lab-text-dim);
+  line-height: 1.4;
+}
+
+/* 交互琴键系统 (Piano Keyboard) */
+.keyboard-wrapper {
+  background: #080a0d;
+  padding: 1rem 1.25rem 1.5rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--lab-border);
+  overflow-x: auto;
+  position: relative;
+  user-select: none;
+}
+
+.keyboard {
+  display: flex;
+  position: relative;
+  height: 180px;
+  min-width: 720px;
+}
+
+.key {
+  position: relative;
+  cursor: pointer;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-family: var(--lab-font-mono);
+  transition: background 0.1s ease, transform 0.05s ease;
+  box-sizing: border-box;
+}
+
+.key:active, .key.pressed {
+  transform: translateY(2px);
+}
+
+.key.white {
+  width: 48px;
+  height: 100%;
+  background: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid #94a3b8;
+  border-top: none;
+  z-index: 1;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.4);
+}
+
+.key.white:hover {
+  background: #e2e8f0;
+}
+
+.key.white:active, .key.white.pressed {
+  background: var(--lab-gold) !important;
+  color: #0d0f12 !important;
+}
+
+.key.black {
+  width: 30px;
+  height: 60%;
+  background: #1e293b;
+  color: #94a3b8;
+  margin-left: -15px;
+  margin-right: -15px;
+  z-index: 2;
+  border: 1px solid #0f172a;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+.key.black:hover {
+  background: #334155;
+}
+
+.key.black:active, .key.black.pressed {
+  background: #e5b95c !important;
+  color: #0d0f12 !important;
+}
+
+.key .key-note {
+  font-weight: 700;
+}
+
+.key .key-cent {
+  font-size: 0.65rem;
+  color: inherit;
+  opacity: 0.75;
+}
+
+/* 一键经典音程/狼音对比按钮组 */
+.audition-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.audition-btn {
+  background: var(--lab-card);
+  border: 1px solid var(--lab-border);
+  color: var(--lab-text);
+  padding: 0.5rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.audition-btn:hover {
+  border-color: var(--lab-teal);
+  color: var(--lab-teal);
+  background: rgba(78, 205, 196, 0.08);
+}
+
+.audition-btn.danger:hover {
+  border-color: var(--lab-rose);
+  color: var(--lab-rose);
+  background: rgba(255, 107, 107, 0.08);
+}
+
+/* 音分雷达/数据对比表 */
+.cents-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  font-family: var(--lab-font-mono);
+}
+
+.cents-table th, .cents-table td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-align: right;
+}
+
+.cents-table th:first-child, .cents-table td:first-child {
+  text-align: left;
+}
+
+.cents-table th {
+  color: var(--lab-gold);
+  font-weight: 600;
+}
+
+.diff-pos { color: var(--lab-rose); }
+.diff-neg { color: var(--lab-teal); }
+.diff-zero { color: var(--lab-text-dim); }
+
+/* 教会调式与拉格卡片 */
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.mode-card {
+  background: var(--lab-surface);
+  border: 1px solid var(--lab-border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.mode-card:hover {
+  border-color: var(--lab-gold);
+}
+
+.mode-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.mode-name {
+  font-weight: 700;
+  color: var(--lab-gold);
+  font-size: 1rem;
+}
+
+.mode-greek {
+  font-size: 0.75rem;
+  color: var(--lab-text-dim);
+  font-style: italic;
+}
+
+.mode-formula {
+  font-family: var(--lab-font-mono);
+  font-size: 0.75rem;
+  color: var(--lab-teal);
+  margin-bottom: 0.75rem;
+}
+
+.mode-desc {
+  font-size: 0.8rem;
+  color: var(--lab-text-dim);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.play-mode-btn {
+  background: rgba(229, 185, 92, 0.15);
+  border: 1px solid var(--lab-gold);
+  color: var(--lab-gold);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.play-mode-btn:hover {
+  background: var(--lab-gold);
+  color: #0d0f12;
+}
+
+/* 谭普拉琴无人机底噪开关 (Tanpura Drone) */
+.drone-switch-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--lab-card);
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--lab-border);
+  margin-bottom: 1.25rem;
+}
+
+.drone-switch-bar span {
+  font-size: 0.9rem;
+  color: var(--lab-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 勋伯格十二音矩阵 (12-Tone Matrix) */
+.matrix-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 40px repeat(12, 36px);
+  gap: 2px;
+  background: var(--lab-border);
+  border: 2px solid var(--lab-gold);
+  border-radius: 6px;
+  padding: 2px;
+  width: fit-content;
+  font-family: var(--lab-font-mono);
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.matrix-cell {
+  background: var(--lab-card);
+  color: var(--lab-text);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.matrix-cell:hover {
+  background: var(--lab-teal);
+  color: #0d0f12;
+}
+
+.matrix-header {
+  background: #11141a;
+  color: var(--lab-gold);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.matrix-header:hover {
+  background: var(--lab-gold);
+  color: #0d0f12;
+}
+
+.matrix-active-row {
+  background: rgba(78, 205, 196, 0.25) !important;
+}
+
+.matrix-playing-cell {
+  background: var(--lab-gold) !important;
+  color: #0d0f12 !important;
+  font-weight: 700;
+  transform: scale(1.1);
+  z-index: 5;
+}
+
+/* 和声与管弦特效卡片 */
+.harmonic-card {
+  background: var(--lab-surface);
+  border: 1px solid var(--lab-border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.harmonic-card h4 {
+  font-family: var(--lab-font-serif);
+  color: var(--lab-gold);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.harmonic-card p {
+  font-size: 0.85rem;
+  color: var(--lab-text-dim);
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.harmonic-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  background: rgba(78, 205, 196, 0.15);
+  border: 1px solid var(--lab-teal);
+  color: var(--lab-teal);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-btn:hover {
+  background: var(--lab-teal);
+  color: #0d0f12;
+}

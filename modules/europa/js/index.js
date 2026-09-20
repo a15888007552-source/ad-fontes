@@ -2,7 +2,9 @@ import { initRealMapView, stopRealMapView } from "./map-real.js";
 import { createListeningLibrary } from "./listening.js?v=20260831-listening1";
 import {RELATION_STYLE,relationSwatch,normalizeRelation,EVIDENCE_STATUS} from './relation-styles.js?v=20260911-relations3';
 import { EuropaState } from "./state.js?v=20260918-state1";
+import { createAcousticLabUI } from "./acoustic-lab-ui.js";
 
+let acousticLabInstance = null;
 const listening = createListeningLibrary();
 
 const EUROPA_DATA = Object.assign(
@@ -1008,6 +1010,8 @@ const REVERSE_VIEW_MAP = {
   terms: "gl",
   bibliography: "bib",
   places: "real",
+  lab: "lab",
+  acoustics: "lab",
 };
 
 const VALID_VIEW_CODES = new Set(Object.values(REVERSE_VIEW_MAP));
@@ -1980,6 +1984,7 @@ function setView(v,{historyMode="push"}={}){
   if(v!=="real")stopRealMapView();
   if(v!=="map"&&typeof mapStop==="function")mapStop();
   if(v!=="net"){net3d?.pauseAnimation?.();net2d?.sim?.stop?.();}
+  if(v!=="lab"&&acousticLabInstance){acousticLabInstance.engine.stopAll();}
   if(v==="map")initMapView();
   if(v==="real")initRealMapView();
   if(v==="tl")renderTL();
@@ -1988,6 +1993,12 @@ function setView(v,{historyMode="push"}={}){
   if(v==="hist")renderHist();
   if(v==="musio"&&!musioDone){renderMusio();musioDone=true}
   if(v==="gl")renderGloss();
+  if(v==="lab"){
+    if(!acousticLabInstance){
+      const mount=$("#lab-inline-mount");
+      if(mount)acousticLabInstance=createAcousticLabUI(mount);
+    }
+  }
   syncSelection();
   if(historyMode!=="none"){
     writeUrlState({view:v},{mode:historyMode});

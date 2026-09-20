@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <title>欧罗巴声学与乐律实验室 · LABORATORIUM HARMONICUM</title>
+  <meta name="description" content="基于 Web Audio API 的物理声学与乐律实验室：六大历史律制微音听辨、中世纪教会调式、印度拉格、瓦格纳特里斯坦和弦与勋伯格十二音序列矩阵计算机。">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/acoustic-lab.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0a0c10;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      background: #11141a;
+      border-bottom: 1px solid #2c3545;
+      font-size: 0.9rem;
+    }
+    .top-bar a {
+      color: #e5b95c;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+    }
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+    .top-bar span {
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="./index.html">← 返回欧罗巴音乐家年鉴主卷 (Ad Fontes)</a>
+    <span>AD FONTES · 纯前端 Web Audio 物理声学引擎 · 100% 本地离线可用</span>
+  </div>
+  <div id="lab-mount"></div>
+
+  <script type="module">
+    import { createAcousticLabUI } from './js/acoustic-lab-ui.js';
+    const mount = document.getElementById('lab-mount');
+    createAcousticLabUI(mount);
+  </script>
+</body>
+</html>
