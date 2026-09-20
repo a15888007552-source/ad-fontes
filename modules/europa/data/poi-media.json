@@ -3264,5 +3264,145 @@
       "file": "assets/img/poi/poi-cn-seu-art.jpg",
       "credit": "东南大学 (艺术学院) · 建筑与音乐学术实景"
     }
+  },
+  "poi-cn-xacom": {
+    "url": "assets/img/poi/poi-cn-xacom.jpg",
+    "file": "assets/img/poi/poi-cn-xacom.jpg",
+    "credit": "西安音乐学院标志性建筑实景 · 官方网站",
+    "source": "https://www.xacom.edu.cn/1765/list.htm",
+    "aiCreated": false
+  },
+  "poi-cn-ccom-guo": {
+    "url": "assets/img/poi/poi-cn-ccom-guo.jpg",
+    "file": "assets/img/poi/poi-cn-ccom-guo.jpg",
+    "credit": "中国音乐学院正门实景 · Wikimedia Commons",
+    "source": "https://zh.wikipedia.org/wiki/File:China_Conservatory_of_Music_(20250322145349).jpg",
+    "aiCreated": false
+  },
+  "poi-cn-sccm": {
+    "url": "assets/img/poi/poi-cn-sccm.jpg",
+    "file": "assets/img/poi/poi-cn-sccm.jpg",
+    "credit": "四川音乐学院新生路校区实景 · Wikimedia Commons",
+    "source": "https://zh.wikipedia.org/wiki/File:20250509_Sichuan_Yinyue_Xueyuan.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-whcm": {
+    "url": "assets/img/poi/poi-cn-whcm.jpg",
+    "file": "assets/img/poi/poi-cn-whcm.jpg",
+    "credit": "武汉音乐学院解放路校区实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:%E6%AD%A6%E6%B1%89%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2_9101.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-xhcm": {
+    "url": "assets/img/poi/poi-cn-xhcm.jpg",
+    "file": "assets/img/poi/poi-cn-xhcm.jpg",
+    "credit": "广州星海音乐厅实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Xinghai_Concert_Hall.JPG",
+    "aiCreated": false
+  },
+  "poi-cn-symc": {
+    "url": "assets/img/poi/poi-cn-symc.jpg",
+    "file": "assets/img/poi/poi-cn-symc.jpg",
+    "credit": "沈阳音乐学院三好街正门实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Shenyang_Conservatory_of_Music.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-tjcm": {
+    "url": "assets/img/poi/poi-cn-tjcm.jpg",
+    "file": "assets/img/poi/poi-cn-tjcm.jpg",
+    "credit": "天津音乐学院校区实景 · 中文维基百科",
+    "source": "https://zh.wikipedia.org/wiki/File:Tianjin_Conservatory_Of_Music.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-zjcm": {
+    "url": "assets/img/poi/poi-cn-zjcm.jpg",
+    "file": "assets/img/poi/poi-cn-zjcm.jpg",
+    "credit": "浙江音乐学院大剧院管风琴音乐厅实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Hangzhou_Conservatory_Sp%C3%A4th_organ_great_hall.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-hrbcm": {
+    "url": "assets/img/poi/poi-cn-hrbcm.jpg",
+    "file": "assets/img/poi/poi-cn-hrbcm.jpg",
+    "credit": "哈尔滨音乐学院校园实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:%E5%93%88%E5%B0%94%E6%BB%A8%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-bnu-music": {
+    "url": "assets/img/poi/poi-cn-bnu-music.jpg",
+    "file": "assets/img/poi/poi-cn-bnu-music.jpg",
+    "credit": "北京师范大学主校区东门实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:East_gate_of_Beijing_Normal_University_(20200921153346).jpg",
+    "aiCreated": false
+  },
+  "poi-cn-ecnu-music": {
+    "url": "assets/img/poi/poi-cn-ecnu-music.jpg",
+    "file": "assets/img/poi/poi-cn-ecnu-music.jpg",
+    "credit": "华东师范大学丽娃河校区实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Liwahe_ecnu.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-njnu-music": {
+    "url": "assets/img/poi/poi-cn-njnu-music.jpg",
+    "file": "assets/img/poi/poi-cn-njnu-music.jpg",
+    "credit": "南京师范大学随园校区（东方最美丽校园）实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Beautiful_Nanjing_Normal_University.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-ccnu-music": {
+    "url": "assets/img/poi/poi-cn-ccnu-music.jpg",
+    "file": "assets/img/poi/poi-cn-ccnu-music.jpg",
+    "credit": "华中师范大学桂子山行政主楼实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:CN-CCNU-Administration_Building.JPG",
+    "aiCreated": false
+  },
+  "poi-cn-nenu-music": {
+    "url": "assets/img/poi/poi-cn-nenu-music.jpg",
+    "file": "assets/img/poi/poi-cn-nenu-music.jpg",
+    "credit": "东北师范大学自由大路校区校门实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Northeast_Normal_University_School_gate.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-hnu-music": {
+    "url": "assets/img/poi/poi-cn-hnu-music.jpg",
+    "file": "assets/img/poi/poi-cn-hnu-music.jpg",
+    "credit": "湖南师范大学岳麓山校区实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Hunan_Normal_University_13.JPG",
+    "aiCreated": false
+  },
+  "poi-cn-snnu-music": {
+    "url": "assets/img/poi/poi-cn-snnu-music.jpg",
+    "file": "assets/img/poi/poi-cn-snnu-music.jpg",
+    "credit": "陕西师范大学图书馆实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:20191109_%E9%99%95%E8%A5%BF%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6%E5%9B%BE%E4%B9%A6%E9%A6%862.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-xmu": {
+    "url": "assets/img/poi/poi-cn-xmu.jpg",
+    "file": "assets/img/poi/poi-cn-xmu.jpg",
+    "credit": "厦门大学建南大礼堂实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Jiannan_Auditorium_of_XMU.JPG",
+    "aiCreated": false
+  },
+  "poi-cn-pku-art": {
+    "url": "assets/img/poi/poi-cn-pku-art.jpg",
+    "file": "assets/img/poi/poi-cn-pku-art.jpg",
+    "credit": "北京大学博雅塔与未名湖实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:10_Peking_University.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-henu-music": {
+    "url": "assets/img/poi/poi-cn-henu-music.jpg",
+    "file": "assets/img/poi/poi-cn-henu-music.jpg",
+    "credit": "河南大学明伦校区近代建筑群大礼堂实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Auditorium_of_Henan_University.jpg",
+    "aiCreated": false
+  },
+  "poi-cn-seu-art": {
+    "url": "assets/img/poi/poi-cn-seu-art.jpg",
+    "file": "assets/img/poi/poi-cn-seu-art.jpg",
+    "credit": "东南大学四牌楼国立中央大学大礼堂实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Auditorium_of_Southeast_University_in_winter.jpg",
+    "aiCreated": false
   }
 }
