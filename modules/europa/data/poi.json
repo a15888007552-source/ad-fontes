@@ -902,6 +902,62 @@
     "马拉维": {
       "lon": 124.2858,
       "lat": 8.0039
+    },
+    "高雄": {
+      "lon": 120.312,
+      "lat": 22.6273
+    },
+    "台中": {
+      "lon": 120.6736,
+      "lat": 24.1477
+    },
+    "彰化": {
+      "lon": 120.5435,
+      "lat": 24.0815
+    },
+    "屏东": {
+      "lon": 120.4883,
+      "lat": 22.6761
+    },
+    "勒克瑙": {
+      "lon": 80.9462,
+      "lat": 26.8467
+    },
+    "斋普尔": {
+      "lon": 75.7873,
+      "lat": 26.9124
+    },
+    "特里苏尔": {
+      "lon": 76.2144,
+      "lat": 10.5276
+    },
+    "坦贾武尔": {
+      "lon": 79.1378,
+      "lat": 10.787
+    },
+    "桑蒂尼开顿": {
+      "lon": 87.6893,
+      "lat": 23.6784
+    },
+    "吉隆坡": {
+      "lon": 101.6869,
+      "lat": 3.139
+    },
+    "波来古": {
+      "lon": 108.0,
+      "lat": 13.9833
+    },
+    "胡志明市": {
+      "lon": 106.6297,
+      "lat": 10.8231
+    },
+    "琅勃拉邦": {
+      "lon": 102.1347,
+      "lat": 19.8893
+    },
+    "清迈": {
+      "lon": 98.9853,
+      "lat": 18.7883
     }
   },
   "pois": [
@@ -15548,6 +15604,446 @@
       },
       "history": "位于菲律宾南部棉兰老岛拉瑙湖畔的伊斯兰文化历史重镇马拉维，是摩洛人马拉瑙族（Maranao）与马京达瑙族的核心聚集区与传统手工艺中心。",
       "musicRelation": "东南亚古老海洋南岛民族铜锣文化“库林堂”（Kulintang）发源地与最高演奏水准大本营。八面渐变音高凸脐青铜锣横向排列于木雕琴架上，配合大型吊锣（Agung）与独木鼓（Dabakan），以复杂的切分复多节奏展现前殖民时代的海洋波涛与神灵祭祀之声。"
+    },
+    {
+      "id": "poi-tw-npac-weiwuying",
+      "city": "高雄",
+      "name": "高雄卫武营国家艺术文化中心",
+      "category": "theatre",
+      "kindLabel": "全球最大单一屋顶综合剧院与亚洲最大管风琴殿堂",
+      "lon": 120.3431,
+      "lat": 22.6247,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "National Kaohsiung Center for the Arts",
+        "url": "https://en.wikipedia.org/wiki/National_Kaohsiung_Center_for_the_Arts"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-npac-weiwuying",
+        "file": "assets/img/poi/poi-tw-npac-weiwuying.jpg",
+        "credit": "高雄卫武营国家艺术文化中心实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Weiwuying_Dream.jpg"
+      },
+      "history": "位于高雄市凤山区，由荷兰麦肯诺（Mecanoo）建筑事务所建筑师法兰馨·侯班（Francine Houben）操刀，以老榕树群盘根错节的枝桠意象为灵感，建构出占地近十公顷、全球最大单一屋顶综合剧院。2018年落成启用，成为台湾南部国际艺术交流中枢。",
+      "musicRelation": "内设歌剧院、音乐厅、戏剧院与表演厅。其中葡萄园式音乐厅拥有全亚洲最大规模的管风琴（德国百年名厂 Johannes Klais Orgelbau 承造，拥有 9,085 支音管与 127 个音栓），打破过往台湾表演艺术“重北轻南”的格局，是南台湾交响乐、当代表演艺术与国际歌剧巡演旗舰总坛。"
+    },
+    {
+      "id": "poi-tw-ntso-taichung",
+      "city": "台中",
+      "name": "国立台湾交响乐团与雾峰音乐文化园区",
+      "category": "conservatory",
+      "kindLabel": "台湾历史最悠久交响乐团与雾峰音乐园区",
+      "lon": 120.6972,
+      "lat": 24.062,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "National Taiwan Symphony Orchestra",
+        "url": "https://en.wikipedia.org/wiki/National_Taiwan_Symphony_Orchestra"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-ntso-taichung",
+        "file": "assets/img/poi/poi-tw-ntso-taichung.jpg",
+        "credit": "国立台湾交响乐团雾峰演奏厅实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/f/f7/National_Taiwan_Symphony_Orchestra%2CWufeng_hall.jpg"
+      },
+      "history": "创立于1945年12月，前身为台湾省警备总司令部交响乐团与台湾省立交响乐团（省交），由留日音乐家蔡继琨创办。乐团常驻台中雾峰，是台湾建立最早的公立职业交响乐团，见证台湾战后交响乐从草创到繁盛的全部历程。",
+      "musicRelation": "乐团下辖全台首座综合性“音乐文化园区”，配有专业声学演奏厅、影音图书典藏室与青年管弦乐团培育基地。长期委约创作台湾本土交响作品，推动“听见台湾的声音”专案，是台湾交响音乐档案保存与交响乐推展的学术大本营。"
+    },
+    {
+      "id": "poi-tw-taichung-opera",
+      "city": "台中",
+      "name": "台中国家歌剧院",
+      "category": "theatre",
+      "kindLabel": "伊东丰雄美声涵洞与中部歌剧艺术中枢",
+      "lon": 120.6405,
+      "lat": 24.1629,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "National Taichung Theater",
+        "url": "https://en.wikipedia.org/wiki/National_Taichung_Theater"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-taichung-opera",
+        "file": "assets/img/poi/poi-tw-taichung-opera.jpg",
+        "credit": "台中国家歌剧院建筑外观实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/b/bf/National_Taichung_Theater_2019.jpg"
+      },
+      "history": "坐落于台中市西屯区七期重划区，由日本普利兹克建筑奖得主伊东丰雄设计，历时近十年建造，于2016年全面启用。建筑以连续曲面墙（Catenary Curve）构筑无梁柱空间，被国际媒体誉为“世界九大新地标”之一。",
+      "musicRelation": "建筑内部以独特的“美声涵洞”（Sound Cave）声学概念布局，包含大剧院（2007席）、中剧院（794席）及小剧场。其空间内壁曲面自然形成声音漫反射，为当代歌剧、室内乐及实验电子音乐提供无与伦比的现场声学沉浸体验。"
+    },
+    {
+      "id": "poi-tw-lukang-nanguan",
+      "city": "彰化",
+      "name": "鹿港龙山寺与聚英社南管古乐安位",
+      "category": "temple",
+      "kindLabel": "台湾南管古乐入台第一正宗与清代聚英社",
+      "lon": 120.4353,
+      "lat": 24.0531,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Lukang Longshan Temple",
+        "url": "https://en.wikipedia.org/wiki/Lukang_Longshan_Temple"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-lukang-nanguan",
+        "file": "assets/img/poi/poi-tw-lukang-nanguan.jpg",
+        "credit": "鹿港龙山寺戏台与藻井建筑实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Lugang_Lukang_Longshan_Temple_Zweites_Tor_4.jpg"
+      },
+      "history": "鹿港龙山寺始建于明郑永历年间，清乾隆五十一年（1786年）迁建现址，为台湾保存最完整的清代佛寺文保建筑。其戏台顶部的八角藻井（蜘蛛结网）不仅构件精绝，更具有独特的扩音与声音聚拢声学效应。",
+      "musicRelation": "台湾南管音乐渡海传习的核心发源地。清道光二十年（1840年）成立的“聚英社”是全台历史最悠久的南管馆阁之一，每年在此举行春祈秋报祭郎君典礼。上四管（琵琶、三弦、洞箫、二弦）与下四管（拍板、双钟、响盏、叫锣）严格遵奉泉州古法，完整存续汉唐清乐遗响。"
+    },
+    {
+      "id": "poi-tw-puyuma-nanwang",
+      "city": "台东",
+      "name": "卑南族南王部落与普悠玛民谣故里",
+      "category": "monument",
+      "kindLabel": "当代原住民民谣复兴策源地与金曲部落",
+      "lon": 121.1189,
+      "lat": 22.7877,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Puyuma people",
+        "url": "https://en.wikipedia.org/wiki/Puyuma_people"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-puyuma-nanwang",
+        "file": "assets/img/poi/poi-tw-puyuma-nanwang.jpg",
+        "credit": "台东卑南平原南王部落山水实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2010_07_17370_5871_Beinan_Township%2C_Taiwan%2C_Jhihben.JPG"
+      },
+      "history": "位于台东市西北郊卑南平原，南王部落（普悠玛 Puyuma）为卑南族八社之一。部落保留严密的男子集会所（palakuan）年长序列社会组织，年祭与大猎祭歌乐仪式承袭数百年。",
+      "musicRelation": "台湾当代原住民民谣与现代流行乐跨界融合的圣殿。这里是卑南族音乐之父陆森宝（BaLiwakes）故里，他创制《美丽的稻穗》《卑南王》《散步歌》等现代部落经典；孕育出陈建年、纪晓君、桑布伊、南王姐妹花等众多享誉华语乐坛的国宝级音乐家。"
+    },
+    {
+      "id": "poi-tw-paiwan-nasalflute",
+      "city": "屏东",
+      "name": "排湾族双管口鼻笛与三地门文化园区",
+      "category": "monument",
+      "kindLabel": "人类罕见双管口鼻笛非遗与百步蛇泛音",
+      "lon": 120.6483,
+      "lat": 22.7098,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Taiwan Indigenous Peoples Cultural Park",
+        "url": "https://en.wikipedia.org/wiki/Taiwan_Indigenous_Peoples_Cultural_Park"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-paiwan-nasalflute",
+        "file": "assets/img/poi/poi-tw-paiwan-nasalflute.jpg",
+        "credit": "三地门台湾原住民族文化园区实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Taiwanese_Indigenous_Cultural_Center_20171116a.jpg"
+      },
+      "history": "坐落于屏东县玛家乡与三地门乡交界之隘寮溪畔，依山傍水，为台湾原住民族传统聚落、乐舞与物质文化保护之核心国家级园区。",
+      "musicRelation": "排湾族与鲁凯族人类口述非物质文化遗产“双管口鼻笛”（Laladan/Kulafe）传习中枢。乐器以双竹管雕刻百步蛇图腾，一管无音孔吹奏持续低音，另一管开三至四音孔奏出幽咽哀婉的微分音旋律，传统上仅限部落贵族与勇士在悼念亡灵或求偶时以鼻息鸣奏，为世界民族器乐学独一无二之瑰宝。"
+    },
+    {
+      "id": "poi-in-varanasi-benares",
+      "city": "瓦拉纳西",
+      "name": "瓦拉纳西达萨斯瓦梅朵河坛与贝拿勒斯乐派",
+      "category": "monument",
+      "kindLabel": "联合国音乐之都与北印古典贝拿勒斯乐派祖庭",
+      "lon": 83.0104,
+      "lat": 25.3076,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Dashashwamedh Ghat",
+        "url": "https://en.wikipedia.org/wiki/Dashashwamedh_Ghat"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-varanasi-benares",
+        "file": "assets/img/poi/poi-in-varanasi-benares.jpg",
+        "credit": "瓦拉纳西恒河达萨斯瓦梅朵河坛晨昏实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/7/76/DASHASHWAMEDH_GHAT%2C_VARANASI.jpg"
+      },
+      "history": "瓦拉纳西达萨斯瓦梅朵河坛是恒河畔最神圣、最古老的河坛，相传由梵天创制。每晚在此举行的恒河祭（Ganga Aarti）以黄铜大火灯、海螺号角与数万人击掌颂歌回荡于恒河两岸，数千年未曾中断。",
+      "musicRelation": "联合国教科文组织授予之“音乐之都”，北印度古典音乐贝拿勒斯乐派（Benares Gharana）祖庭。印度国宝级双簧管申奈（Shehnai）大师比斯米拉·汗（Bismillah Khan）生于斯长于斯；贝拿勒斯塔布拉鼓派以沉厚掌击与多音色切分独步北印；萨朗吉琴（Sarangi）与图姆里（Thumri）轻古典声乐在此达到至高意境。"
+    },
+    {
+      "id": "poi-in-bhatkhande-lucknow",
+      "city": "勒克瑙",
+      "name": "勒克瑙巴特坎德音乐学院",
+      "category": "conservatory",
+      "kindLabel": "印度现代音乐理论十大调式That体系发源地",
+      "lon": 80.9328,
+      "lat": 26.8576,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Bhatkhande Sanskriti Vishwavidyalaya",
+        "url": "https://en.wikipedia.org/wiki/Bhatkhande_Sanskriti_Vishwavidyalaya"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-bhatkhande-lucknow",
+        "file": "assets/img/poi/poi-in-bhatkhande-lucknow.jpg",
+        "credit": "勒克瑙巴特坎德音乐学院校园主建筑实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Bhatkhande_Sangeet_Sansthan_1.jpg"
+      },
+      "history": "由印度现代音乐学拓荒者维什努·纳拉扬·巴特坎德（Vishnu Narayan Bhatkhande）于1926年创立于阿瓦德古都勒克瑙。学院坐落于凯萨尔巴格宫殿建筑群内，现升格为国家级文化大学，是印度最早实行现代学院制音乐教学的高等学府。",
+      "musicRelation": "现代印度音乐学理论基石奠定处。巴特坎德大师在此编纂四卷本《印度斯坦音乐大系》，系统将数以百计纷繁口传的拉格（Raga）科学归纳为十种母调式（That 体系），并创立现代印度音乐记谱符号系统；亦为勒克瑙乐派卡塔克古典舞、塔布拉鼓与萨朗吉演奏的学术殿堂。"
+    },
+    {
+      "id": "poi-in-jaipur-palace",
+      "city": "斋普尔",
+      "name": "斋普尔城市王宫与斋普尔-阿特劳利乐派",
+      "category": "monument",
+      "kindLabel": "北印古典克哈亚尔四大乐派与拉杰普特乐府",
+      "lon": 75.8236,
+      "lat": 26.9258,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "City Palace, Jaipur",
+        "url": "https://en.wikipedia.org/wiki/City_Palace,_Jaipur"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-jaipur-palace",
+        "file": "assets/img/poi/poi-in-jaipur-palace.jpg",
+        "credit": "斋普尔城市王宫庭院与孔雀门实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/4/40/Jaipur_03-2016_20_City_Palace_complex.jpg"
+      },
+      "history": "建于1727年，由斋普尔创建者萨瓦伊·贾伊·辛格二世建造，融合拉杰普特、莫卧儿与欧式古典建筑风格，拥有举世闻名的私人觐见厅（Diwan-i-Khas）与孔雀门庭院，历代拉贾斯坦大君在此设立宫廷乐府乐师班底。",
+      "musicRelation": "北印度古典声乐克哈亚尔（Khayal）四大乐派之一——斋普尔-阿特劳利乐派（Jaipur-Atrauli Gharana）圣地。传奇宗师阿拉迪亚·汗（Alladiya Khan）在此奠定该派风格，以极其严谨复杂的复合拉格（Jor-Ragas）、宽广跳进音程与精细微音装饰著称，孕育出20世纪最伟大的女高音基绍丽·阿蒙卡尔（Kishori Amonkar）。"
+    },
+    {
+      "id": "poi-in-kalamandalam-kerala",
+      "city": "特里苏尔",
+      "name": "喀拉拉卡拉曼达拉姆艺术大学",
+      "category": "conservatory",
+      "kindLabel": "南印度卡塔卡利梵剧歌乐与神庙交响乐圣所",
+      "lon": 76.2828,
+      "lat": 10.7485,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Kerala Kalamandalam",
+        "url": "https://en.wikipedia.org/wiki/Kerala_Kalamandalam"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-kalamandalam-kerala",
+        "file": "assets/img/poi/poi-in-kalamandalam-kerala.jpg",
+        "credit": "喀拉拉卡拉曼达拉姆传统戏剧殿堂库坦巴拉姆实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/4/48/Koothambalam_at_Kerala_Kalamandalam.jpg"
+      },
+      "history": "位于喀拉拉邦巴拉塔普扎河畔的彻鲁图鲁蒂，由著名诗人瓦拉托尔·纳拉亚纳·梅农（Vallathol）于1930年创办。校内建有完全按照古印度《舞论》（Natyasastra）形制打造的传统全木构雕花寺庙剧场（Koothambalam）。",
+      "musicRelation": "联合国教科文组织人类非物质文化遗产库迪亚塔姆梵剧（Koodiyattam）与卡塔卡利（Kathakali）歌乐复兴摇篮。学院完整存续南印寺庙打击乐交响“五部合奏”（Panchavadyam），由长筒彻恩达鼓（Chenda）、双头马达拉姆鼓（Maddalam）、钹与角号交织出惊心动魄的多节拍对位。"
+    },
+    {
+      "id": "poi-in-thiruvaiyaru-tyagaraja",
+      "city": "坦贾武尔",
+      "name": "蒂鲁瓦亚鲁泰亚伽拉贾陵庙与卡纳蒂克朝圣地",
+      "category": "monument",
+      "kindLabel": "南印音乐三圣泰亚伽拉贾陵墓与全印最高朝圣地",
+      "lon": 79.1039,
+      "lat": 10.8797,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Tyagaraja",
+        "url": "https://en.wikipedia.org/wiki/Tyagaraja"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-thiruvaiyaru-tyagaraja",
+        "file": "assets/img/poi/poi-in-thiruvaiyaru-tyagaraja.jpg",
+        "credit": "蒂鲁瓦亚鲁泰亚伽拉贾三摩地陵庙实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Thyagaraja_samadhi_in_Thiruvaiyaru.jpg"
+      },
+      "history": "坐落于南印度泰米尔纳德邦高韦里河（Cauvery）五大支流汇聚圣地蒂鲁瓦亚鲁。南印度古典卡纳蒂克音乐“三大圣乐宗师”之首——泰亚伽拉贾（Tyagaraja, 1767–1847）晚年在此出家并得道安葬于河畔三摩地陵庙。",
+      "musicRelation": "全球卡纳蒂克音乐家心中的至圣麦加。每年公历一月举办的“泰亚伽拉贾阿波达纳”（Tyagaraja Aradhana）音乐祭汇聚上千位维纳琴、姆里丹格姆鼓、长笛及声乐名家，万人同声齐唱宗师传世经典“五大吉塔”（Pancharatna Kritis），为东方古典音乐史规模最宏大壮丽的仪式性朝圣。"
+    },
+    {
+      "id": "poi-in-vishwa-bharati",
+      "city": "桑蒂尼开顿",
+      "name": "桑蒂尼开顿印度国际大学音乐学院",
+      "category": "conservatory",
+      "kindLabel": "泰戈尔歌曲体系与露天森林美育艺术圣地",
+      "lon": 87.6893,
+      "lat": 23.6784,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Visva-Bharati University",
+        "url": "https://en.wikipedia.org/wiki/Visva-Bharati_University"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-vishwa-bharati",
+        "file": "assets/img/poi/poi-in-vishwa-bharati.jpg",
+        "credit": "桑蒂尼开顿彩色玻璃祈祷殿乌帕萨纳格里哈实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/2/29/UPASANA_GRIHA_SANTINIKETAN_VISVA_BHARATI.jpg"
+      },
+      "history": "位于西孟加拉邦比尔布姆县，由诺贝尔文学奖得主罗宾德拉纳特·泰戈尔于1921年创立，校训为“全世界汇聚于一巢”，2023年被联合国教科文组织列入世界文化遗产。校区崇尚自然天人合一，教学活动多在婆罗双树林荫下举行。",
+      "musicRelation": "下设音乐与舞蹈学院（Sangit Bhavana），是泰戈尔歌曲（Rabindra Sangeet）与孟加拉民间神秘派鲍尔吟游歌手（Baul）音乐的学术研究母体。这里打破了西方学院的僵化室内规训，提倡在泥土与季风中歌唱，培养出无数享誉南亚的声乐与锡塔尔琴大师。"
+    },
+    {
+      "id": "poi-in-tanjor-brihadisvara",
+      "city": "坦贾武尔",
+      "name": "坦贾武尔布里哈迪斯瓦拉大庙与卡纳蒂克乐律石雕",
+      "category": "temple",
+      "kindLabel": "乔拉王朝千年古刹与婆罗多乐舞浮雕百科",
+      "lon": 79.1318,
+      "lat": 10.7828,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Brihadisvara Temple",
+        "url": "https://en.wikipedia.org/wiki/Brihadisvara_Temple"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-tanjor-brihadisvara",
+        "file": "assets/img/poi/poi-in-tanjor-brihadisvara.jpg",
+        "credit": "坦贾武尔布里哈迪斯瓦拉大庙千年花岗岩实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg"
+      },
+      "history": "乔拉帝国罗阇罗阇一世（Rajaraja I）于公元1010年建成的全花岗岩巨构神庙，被誉为“大乔拉神庙建筑巅峰”。高耸66米的维摩那塔身铭刻着古泰米尔语碑文，记载了当年受神庙供养的400位舞乐神女与乐师姓名俸禄。",
+      "musicRelation": "南印度乐舞考古学的活化石。神庙回廊墙面精细雕刻了古印度《舞论》记载的81种婆罗多古典舞姿（Karanas）及古代弦乐微调维纳琴、木管纳达斯瓦拉姆（Nadaswaram）浮雕；亦是近代坦贾武尔四杰（Tanjore Quartet）对卡纳蒂克声乐曲式与舞乐套曲规范化的灵感滥觞。"
+    },
+    {
+      "id": "poi-id-bali-ubud",
+      "city": "巴厘岛",
+      "name": "巴厘岛乌布王宫与克比扬甘美兰圣殿",
+      "category": "palace",
+      "kindLabel": "巴厘岛极速咬合克比扬甘美兰与凯卡克猴舞总坛",
+      "lon": 115.2625,
+      "lat": -8.5069,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Ubud Palace",
+        "url": "https://en.wikipedia.org/wiki/Ubud_Palace"
+      },
+      "imageSource": {
+        "mediaId": "poi-id-bali-ubud",
+        "file": "assets/img/poi/poi-id-bali-ubud.jpg",
+        "credit": "巴厘岛乌布皇宫雕花大门与表演庭院实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/8/87/Ubud_Palace_1.jpg"
+      },
+      "history": "坐落于巴厘岛文化艺术中心乌布的心脏地带，建于1800年代苏卡瓦提王朝时期。王宫以精湛绝伦的巴厘红砖石雕与镀金木雕构筑，庭院每晚向公众展演正统巴厘甘美兰乐舞，是全球民族音乐学学者必至之朝圣所。",
+      "musicRelation": "二十世纪初巴厘岛北方爆发的克比扬甘美兰（Gong Kebyar，意为“如花火绽放”）在此达到极盛。与爪哇宫廷甘美兰的冥想典雅形成强烈对照，克比扬以雷霆万钧的齐奏炸响、极速微秒级的多声部咬合对位（Kotekan）及成对青铜微差颤音（Ombak）震撼乐坛；亦为凯卡克猴舞（Kecak）多声部合唱与莱贡舞乐演练中枢。"
+    },
+    {
+      "id": "poi-sg-esplanade",
+      "city": "新加坡",
+      "name": "新加坡滨海艺术中心与杨秀桃音乐学院",
+      "category": "theatre",
+      "kindLabel": "大榴莲滨海剧院与杨秀桃音乐学院亚太枢纽",
+      "lon": 103.8558,
+      "lat": 1.2898,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Esplanade – Theatres on the Bay",
+        "url": "https://en.wikipedia.org/wiki/Esplanade_%E2%80%93_Theatres_on_the_Bay"
+      },
+      "imageSource": {
+        "mediaId": "poi-sg-esplanade",
+        "file": "assets/img/poi/poi-sg-esplanade.jpg",
+        "credit": "新加坡滨海艺术中心榴莲壳造型暮色实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Esplanade_Theatres_on_the_Bay_Singapore_at_blue_hour.jpg"
+      },
+      "history": "位于新加坡滨海湾北岸，由 DP Architects 与英国迈克尔·威尔福德合作设计，因外覆七千余片遮阳铝板形似热带水果而被称为“大榴莲”。2002年开幕，设有1800席音乐厅与2000席剧院，声学顾问由世界大师拉塞尔·约翰逊（Russell Johnson）操刀。",
+      "musicRelation": "新加坡交响乐团（SSO）与新加坡华乐团（SCO）旗舰驻地。其音乐厅声学混响罩、混响室与调音天幕可精确微调毫秒级延时；与毗邻的新加坡国立大学杨秀桃音乐学院（YST）紧密联动，共同确立现代东南亚最高水准古典交响、华乐现代性探索与当代跨界创作平台。"
+    },
+    {
+      "id": "poi-my-istanabudaya",
+      "city": "吉隆坡",
+      "name": "吉隆坡马来西亚国家剧院与玛蓉古乐圣殿",
+      "category": "theatre",
+      "kindLabel": "传统风筝屋宇与人类非遗玛蓉宫廷歌乐大本营",
+      "lon": 101.7058,
+      "lat": 3.1728,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Istana Budaya",
+        "url": "https://en.wikipedia.org/wiki/Istana_Budaya"
+      },
+      "imageSource": {
+        "mediaId": "poi-my-istanabudaya",
+        "file": "assets/img/poi/poi-my-istanabudaya.jpg",
+        "credit": "吉隆坡马来西亚国家文化剧院实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Kuala-Lumpur_Malaysia_Istana-Budaya-01.jpg"
+      },
+      "history": "位于吉隆坡蒂蒂旺沙湖畔，1999年由时任首相马哈蒂尔揭幕。建筑设计体现浓郁马来传统哲学，屋顶折面形同马来传统月亮风筝（Wau Bulan），门厅阶梯形如槟榔叶，是东南亚首座装备世界级机械化舞台与顶尖声学反射系统的国家级艺术殿堂。",
+      "musicRelation": "马来西亚国家交响乐团（NSO）与传统民间乐团常驻地。剧院特设传统音乐传承专案，全面保护联合国人类非遗“玛蓉古乐剧”（Mak Yong）与吉兰丹皮影戏（Wayang Kulit Kelantan），以三弦拉弦琴热巴普（Rebab）、横吹双簧管（Serunai）与悬挂铜锣（Gong Tetawak）演绎马来半岛前伊斯兰时期的泛灵歌乐长诗。"
+    },
+    {
+      "id": "poi-vn-gong-taynguyen",
+      "city": "波来古",
+      "name": "越南西原波来古公房与西原锣钲文化空间",
+      "category": "monument",
+      "kindLabel": "联合国人类非遗西原锣钲文化空间与巴拿族大公房",
+      "lon": 108.0,
+      "lat": 13.9833,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Space of gong culture",
+        "url": "https://en.wikipedia.org/wiki/Space_of_gong_culture"
+      },
+      "imageSource": {
+        "mediaId": "poi-vn-gong-taynguyen",
+        "file": "assets/img/poi/poi-vn-gong-taynguyen.jpg",
+        "credit": "越南西原高耸木构巴拿族公共房屋实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/9/97/Nh%C3%A0_r%C3%B4ng_%2826149678118%29.jpg"
+      },
+      "history": "坐落于越南中南高原嘉莱省波来古一带，耸立着高达二十余米、斧凿全木与茅草搭建的传统公房（Nhà Rông）。公房是西原少数民族（巴拿族、嘉莱族、埃地族）全村精神与宗教事务的核心枢纽。",
+      "musicRelation": "联合国教科文组织人类非物质文化遗产“西原锣钲文化空间”正统腹地。族人视青铜锣钲为神明栖居之圣物，每套由数面至二十余面无脐铜锣（Cồng）与凸脐铜钲（Chiêng）组成，由男子在公房前围成圆圈边舞边击，通过精密交织的复音节奏沟通天地，是东南亚刀耕火种与母系图腾音乐文明之巅峰。"
+    },
+    {
+      "id": "poi-vn-saigon-consv",
+      "city": "胡志明市",
+      "name": "胡志明市国家音乐学院与南部才子音乐传习所",
+      "category": "conservatory",
+      "kindLabel": "越南南方最高音乐学府与才子音乐传习总坛",
+      "lon": 106.6917,
+      "lat": 10.7769,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Ho Chi Minh City Conservatory of Music",
+        "url": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City_Conservatory_of_Music"
+      },
+      "imageSource": {
+        "mediaId": "poi-vn-saigon-consv",
+        "file": "assets/img/poi/poi-vn-saigon-consv.jpg",
+        "credit": "胡志明市国家音乐学院正门与主教学楼实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Conservatory_of_Ho_Chi_Minh_City.jpg"
+      },
+      "history": "创立于1956年，前身为国立西贡音乐戏剧学校，座落于胡志明市第一区阮攸街。作为越南南部建校最早、学科最完备的高等专业音乐教育重镇，融汇了法式学院派传统与湄公河三角洲民间歌乐。",
+      "musicRelation": "联合国人类非遗“南部才子音乐”（Đờn ca tài tử）与传统改良剧（Cải lương）学术研习中心。系统传授以月琴（Đàn kìm）、筝琴（Đàn tranh）、琵琶（Đàn tỳ bà）与独弦琴（Đàn bầu）组成的合奏体，其微音滑奏（Hơi/Điệu）与深沉颤指将热带水乡民间即兴独奏推向至高美学典范。"
+    },
+    {
+      "id": "poi-la-luangprabang",
+      "city": "琅勃拉邦",
+      "name": "老挝琅勃拉邦王宫与老挝笙乐非遗圣殿",
+      "category": "palace",
+      "kindLabel": "澜沧王朝宫廷乐府与人类非遗老挝芦笙Khaen祖庭",
+      "lon": 102.1353,
+      "lat": 19.8916,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Royal Palace, Luang Prabang",
+        "url": "https://en.wikipedia.org/wiki/Royal_Palace,_Luang_Prabang"
+      },
+      "imageSource": {
+        "mediaId": "poi-la-luangprabang",
+        "file": "assets/img/poi/poi-la-luangprabang.jpg",
+        "credit": "老挝琅勃拉邦霍坎王宫大殿实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/7/78/Haw_Kham_%28former_royal_palace%29%2C_Luang_Prabang%2C_Laos_%2810226523273%29.jpg"
+      },
+      "history": "位于老挝北部湄公河畔世界文化遗产古都琅勃拉邦，建于1904年西萨旺·冯国王统治时期，称为霍坎（Haw Kham）。融合了传统澜沧（Lan Xang）建筑飞檐与法兰西新古典主义风格，王宫附属皇家剧院至今仍是老挝传统罗摩衍那乐舞总殿。",
+      "musicRelation": "联合国教科文组织人类非物质文化遗产“老挝笙乐”（Khaen music）的核心圣所。老挝芦笙以十六根不同长短细竹管纵向双排捆扎，内嵌青铜自由簧片，可同时奏出旋律、和弦与持续低音，配合莫兰（Morlam）民谣说唱，是全南亚与东南亚吹管多声部乐器中最具原始交响色彩的乐器形态。"
+    },
+    {
+      "id": "poi-th-chiangmai-lanna",
+      "city": "清迈",
+      "name": "清迈契迪龙寺与兰纳王朝宫廷古乐馆",
+      "category": "temple",
+      "kindLabel": "泰北兰纳七百年古都与萨罗苏昂丝竹乐派",
+      "lon": 98.9866,
+      "lat": 18.7871,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Wat Chedi Luang",
+        "url": "https://en.wikipedia.org/wiki/Wat_Chedi_Luang"
+      },
+      "imageSource": {
+        "mediaId": "poi-th-chiangmai-lanna",
+        "file": "assets/img/poi/poi-th-chiangmai-lanna.jpg",
+        "credit": "清迈契迪龙寺主殿佛堂实景 · Wikimedia Commons",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Wat_Chedi_Luang_Assembly_Hall%2C_Chiang_Mai%2C_Thailand_-_Diliff.jpg"
+      },
+      "history": "始建于1391年，为泰北兰纳王国（Lanna Kingdom）最宏伟的皇家大佛塔与佛寺。位于清迈古城中央，大殿内保留了兰纳时期精美华丽的金箔柚木柱列与佛教乐舞壁画，见证了泰北独立于暹罗中部的璀璨音乐文化。",
+      "musicRelation": "泰北独特的兰纳传统丝竹乐团（Salaw-Saw-Sueng）保护传承总坛。不同于曼谷宫廷高亢刚劲的皮帕特管乐，兰纳乐派以椰壳拉弦琴萨罗（Salaw）、双弦拨弦木琴苏昂（Sueng）配以双面鼓，乐风空灵幽静、音调舒展缓慢，流传着古泰北民间叙事长歌卡索（Kha Saw）之遗响。"
     }
   ],
   "aliases": [
