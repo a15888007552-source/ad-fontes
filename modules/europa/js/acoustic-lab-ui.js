@@ -49,8 +49,8 @@ export function createAcousticLabUI(container) {
           <p>基于原生 Web Audio API 物理合成引擎 · 亲耳听辨历史律制微音差、中世纪教会调式、东方拉格与现代十二音序列</p>
         </div>
         <div class="lab-visualizer-card">
-          <canvas id="lab-osc-canvas" width="320" height="90"></canvas>
-          <div class="lab-visualizer-status" id="lab-osc-status">● 物理示波器就绪 · 点击发声</div>
+          <canvas id="lab-osc-canvas" width="320" height="84"></canvas>
+          <div class="lab-visualizer-status" id="lab-osc-status">● 物理声学示波器就绪 · 点击发声</div>
         </div>
       </header>
 
@@ -65,26 +65,26 @@ export function createAcousticLabUI(container) {
       <section class="lab-panel active" id="panel-tuning">
         <div class="lab-grid-2">
           <div>
-            <div class="lab-card" style="margin-bottom: 1.25rem;">
+            <div class="lab-card" style="margin-bottom: 20px;">
               <h3 class="lab-card-title">
                 <span>选择历史或民族律制</span>
-                <small id="current-tuning-name" style="font-size:0.85rem;color:var(--lab-teal);font-weight:normal;">当前：现代十二平均律</small>
+                <small id="current-tuning-name" class="lab-card-badge">当前：现代十二平均律</small>
               </h3>
               <div class="tuning-selector" id="tuning-chips-container"></div>
-              <p id="tuning-description" style="font-size:0.85rem;color:var(--lab-text-dim);margin:0;line-height:1.5;background:rgba(0,0,0,0.25);padding:0.75rem;border-radius:6px;border-left:3px solid var(--lab-gold);"></p>
+              <p id="tuning-description" class="tuning-quote-box"></p>
             </div>
 
             <div class="lab-card">
               <h3 class="lab-card-title">
                 <span>交互琴键 (C4 – E5)</span>
-                <span style="font-size:0.75rem;color:var(--lab-text-dim);">支持鼠标点击与长按</span>
+                <span class="lab-card-hint">支持鼠标点击与长按</span>
               </h3>
               <div class="keyboard-wrapper">
                 <div class="keyboard" id="piano-keyboard"></div>
               </div>
 
               <div class="audition-pills">
-                <span style="font-size:0.85rem;color:var(--lab-gold);display:flex;align-items:center;font-weight:600;">一键听辨：</span>
+                <span class="audition-label">一键听辨：</span>
                 <button class="audition-btn" id="btn-play-c-major">▶ 弹奏 C 大调主和弦 (C-E-G)</button>
                 <button class="audition-btn" id="btn-play-third-compare">🔍 纯律三度(386c) vs 平均律三度(400c)</button>
                 <button class="audition-btn danger" id="btn-play-wolf-fifth">🐺 听辨巴洛克“狼音五度” (G#4 - Eb5)</button>
@@ -95,8 +95,8 @@ export function createAcousticLabUI(container) {
 
           <div>
             <div class="lab-card">
-              <h3 class="lab-card-title">律制音分(Cent)与频率分析</h3>
-              <p style="font-size:0.8rem;color:var(--lab-text-dim);margin-bottom:0.75rem;">以 C4 (261.63Hz) 为基准，显示相对于 12-TET 的音分偏离微差：</p>
+              <h3 class="lab-card-title">律制音分 (Cent) 与频率分析</h3>
+              <p class="lab-card-hint" style="margin-bottom: 12px;">以 C4 (261.63Hz) 为基准，显示相对于 12-TET 的音分偏离微差：</p>
               <table class="cents-table">
                 <thead>
                   <tr>
@@ -120,10 +120,10 @@ export function createAcousticLabUI(container) {
           <button class="action-btn" id="btn-toggle-drone">🔊 开启持续嗡鸣低音 (Drone)</button>
         </div>
 
-        <h3 style="font-family:var(--lab-font-serif);color:var(--lab-gold);margin:1rem 0 0.75rem 0;">中世纪八大教会调式 (Gregorian Modes)</h3>
+        <h3 class="mode-section-title">中世纪八大教会调式 (Gregorian Modes)</h3>
         <div class="mode-grid" id="church-modes-grid"></div>
 
-        <h3 style="font-family:var(--lab-font-serif);color:var(--lab-gold);margin:1.75rem 0 0.75rem 0;">北印度古典十大母调 (That System)</h3>
+        <h3 class="mode-section-title" style="margin-top: 28px;">北印度古典十大母调 (That System)</h3>
         <div class="mode-grid" id="indian-thaats-grid"></div>
       </section>
 
@@ -155,8 +155,8 @@ export function createAcousticLabUI(container) {
           <div>
             <div class="lab-card">
               <h3 class="lab-card-title">梅西安有限移位调式</h3>
-              <p style="font-size:0.8rem;color:var(--lab-text-dim);line-height:1.5;">奥利维埃·梅西安在《我的音乐语言的技巧》中总结的不可移位对称调式：</p>
-              <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;">
+              <p class="lab-card-hint" style="line-height: 1.6; margin-bottom: 14px;">奥利维埃·梅西安在《我的音乐语言的技巧》中总结的不可移位对称调式：</p>
+              <div style="display:flex;flex-direction:column;gap:10px;">
                 <button class="action-btn" id="btn-messiaen-1">▶ 第一调式：全音阶 (Whole-tone Scale)</button>
                 <button class="action-btn" id="btn-messiaen-2">▶ 第二调式：八音阶 (Octatonic: 半-全-半-全)</button>
                 <button class="action-btn" id="btn-messiaen-3">▶ 普罗科菲耶夫替代和弦 (Neapolitan 6th)</button>
@@ -171,14 +171,14 @@ export function createAcousticLabUI(container) {
         <div class="lab-card">
           <h3 class="lab-card-title">
             <span>勋伯格十二音序列 12×12 计算机 (12-Tone Matrix Engine)</span>
-            <span style="font-size:0.8rem;color:var(--lab-teal);">点击任意行(P)或列(I)即刻自动合成演奏该音列</span>
+            <span class="lab-card-badge">点击任意行(P)或列(I)即刻自动合成演奏该音列</span>
           </h3>
-          <p style="font-size:0.85rem;color:var(--lab-text-dim);margin-bottom:1rem;line-height:1.5;">
+          <p class="lab-card-hint" style="margin-bottom:16px;line-height:1.65;">
             当前载入：<strong>勋伯格《钢琴组曲》Op.25 原型序列 (E - F - G - Db - Gb - Eb - Ab - D - B - C - A - Bb)</strong>。<br>
             矩阵自动生成 48 种变形：横向为<strong>原形 (Prime, P)</strong> 与<strong>逆行 (Retrograde, R)</strong>；纵向为<strong>倒影 (Inversion, I)</strong> 与<strong>逆行倒影 (Retrograde-Inversion, RI)</strong>。
           </p>
 
-          <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem;">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px;">
             <button class="action-btn" id="btn-play-p0">▶ 演奏原型 P0</button>
             <button class="action-btn" id="btn-play-r0">◀ 演奏逆行 R0</button>
             <button class="action-btn" id="btn-play-i0">▼ 演奏倒影 I0</button>
@@ -203,16 +203,20 @@ export function createAcousticLabUI(container) {
 
   function drawOscilloscope() {
     animId = requestAnimationFrame(drawOscilloscope);
+
+    // 背景：优雅温润的古典手稿羊皮纸色
+    canvasCtx.fillStyle = '#FAF5E8';
+    canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 绘制中心细准线（古籍标尺刻度）
+    canvasCtx.strokeStyle = 'rgba(198, 186, 146, 0.65)';
+    canvasCtx.lineWidth = 1;
+    canvasCtx.beginPath();
+    canvasCtx.moveTo(0, canvas.height / 2);
+    canvasCtx.lineTo(canvas.width, canvas.height / 2);
+    canvasCtx.stroke();
+
     if (!engine.analyser) {
-      canvasCtx.fillStyle = '#050608';
-      canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
-      // 绘制一条静态水平微光线
-      canvasCtx.strokeStyle = 'rgba(78, 205, 196, 0.2)';
-      canvasCtx.lineWidth = 1;
-      canvasCtx.beginPath();
-      canvasCtx.moveTo(0, canvas.height / 2);
-      canvasCtx.lineTo(canvas.width, canvas.height / 2);
-      canvasCtx.stroke();
       return;
     }
 
@@ -220,13 +224,10 @@ export function createAcousticLabUI(container) {
     const timeData = new Uint8Array(bufferLength);
     engine.analyser.getByteTimeDomainData(timeData);
 
-    canvasCtx.fillStyle = 'rgba(5, 6, 8, 0.3)';
-    canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
-
+    // 绘制波形：深绯红（Rubric Red #8C2B1F / 朱红古籍批注色）
     canvasCtx.lineWidth = 2;
-    canvasCtx.strokeStyle = '#4ecdc4';
-    canvasCtx.shadowBlur = 8;
-    canvasCtx.shadowColor = '#4ecdc4';
+    canvasCtx.strokeStyle = '#8C2B1F';
+    canvasCtx.shadowBlur = 0;
     canvasCtx.beginPath();
 
     const sliceWidth = (canvas.width * 1.0) / bufferLength;
@@ -242,7 +243,6 @@ export function createAcousticLabUI(container) {
 
     canvasCtx.lineTo(canvas.width, canvas.height / 2);
     canvasCtx.stroke();
-    canvasCtx.shadowBlur = 0; // 重置
   }
   drawOscilloscope();
 
@@ -509,8 +509,9 @@ export function createAcousticLabUI(container) {
   droneBtn.addEventListener('click', () => {
     const isOn = engine.toggleDrone();
     droneBtn.textContent = isOn ? '🔇 关闭嗡鸣低音 (Drone)' : '🔊 开启持续嗡鸣低音 (Drone)';
-    droneBtn.style.background = isOn ? 'var(--lab-gold)' : '';
-    droneBtn.style.color = isOn ? '#0d0f12' : '';
+    droneBtn.style.background = isOn ? 'var(--acc)' : '';
+    droneBtn.style.color = isOn ? '#FFF' : '';
+    droneBtn.style.borderColor = isOn ? 'var(--acc)' : '';
     oscStatus.textContent = isOn ? '🪕 谭普拉琴 (Tanpura) 嗡鸣低音已开启，空间已充满泛音' : '● 谭普拉琴嗡鸣已停止';
   });
 
