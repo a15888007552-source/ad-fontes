@@ -270,6 +270,44 @@ export function createAcousticLabUI(container) {
 
               <div id="harmonic-sliders-container" style="display:grid;gap:10px;"></div>
             </div>
+
+            <!-- Card 2: 傅里叶级数合成与声学波形物理 -->
+            <div class="sub-panel-card" style="margin-top:16px;">
+              <h4>
+                <span>傅里叶级数与经典声学波形物理 (Fourier Waveforms)</span>
+                <span style="font-size:11px;font-family:var(--mono);color:var(--mut);">y(t) = ∑ Aₙ sin(2πnft)</span>
+              </h4>
+              <p>傅里叶声学定理：任何复合声波均可严密分解为纯正弦基频与其整数倍谐波的振幅加权叠置。点击预设，实时联动上方管风琴音栓滑杆并重构时域波形：</p>
+              
+              <div class="waveform-formula-box">
+                <div><strong>方波 (Square)</strong>：仅含奇次谐波，振幅为 1/n ➔ 1 + 1/3·f₃ + 1/5·f₅ + 1/7·f₇</div>
+                <div style="margin-top:3px;"><strong>锯齿波 (Sawtooth)</strong>：全谐波递减，振幅为 1/n ➔ 1 + 1/2·f₂ + 1/3·f₃ + 1/4·f₄</div>
+                <div style="margin-top:3px;"><strong>三角波 (Triangle)</strong>：仅含奇次谐波，振幅为 1/n² ➔ 1 + 1/9·f₃ + 1/25·f₅</div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;">
+                <button class="action-btn" id="btn-wave-square">🔲 载入方波谐波 (1/n 奇次)</button>
+                <button class="action-btn" id="btn-wave-saw">📐 载入锯齿波 (1/n 全谐波)</button>
+                <button class="action-btn" id="btn-wave-triangle">🔺 载入三角波 (1/n² 奇次)</button>
+                <button class="action-btn" id="btn-wave-pulse">⚡ 载入脉冲波 (25% 窄带)</button>
+              </div>
+            </div>
+
+            <!-- Card 3: 亥姆霍兹共鸣器与开闭管空气柱驻波物理 -->
+            <div class="sub-panel-card">
+              <h4>
+                <span>亥姆霍兹共鸣器与管乐开闭管声学 (Acoustic Pipes)</span>
+                <span style="font-size:11px;color:var(--gold);">λ=2L vs λ=4L</span>
+              </h4>
+              <p>
+                <strong>开管乐器（长笛、小号）</strong>两端连通大气为波腹，形成全谐波驻波；<strong>闭管乐器（单簧管、排箫）</strong>封闭端为波节，只能激发奇次谐波，偶次谐波物理抵消。
+              </p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+                <button class="action-btn" id="btn-pipe-open">🎺 开管驻波 (λ=2L · 全谐波醇厚)</button>
+                <button class="action-btn" id="btn-pipe-closed">🪵 闭管驻波 (λ=4L · 奇次单簧管声)</button>
+                <button class="action-btn" id="btn-helmholtz-cavity">🏺 亥姆霍兹共振腔 (260Hz 空腔共鸣)</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -306,6 +344,38 @@ export function createAcousticLabUI(container) {
 
         <h3 class="mode-section-title" style="margin-top: 28px;">北印度古典十大母调 (That System)</h3>
         <div class="mode-grid" id="indian-thaats-grid"></div>
+
+        <!-- 中世纪六声音阶与东方微音体系 -->
+        <div class="mode-theory-grid">
+          <div class="sub-panel-card">
+            <h4>
+              <span>中世纪圭多手与六声音阶唱名 (The Guidonian Hand)</span>
+              <span style="font-size:11px;color:var(--acc);">Ut-Re-Mi-Fa-Sol-La</span>
+            </h4>
+            <p>11世纪阿雷佐的圭多（Guido d'Arezzo）将指节坐标映射为六声音阶，开创西方视唱练耳法。核心关键在于半音仅存在于 Mi 与 Fa 之间：</p>
+            <div class="waveform-formula-box">
+              <strong>六声唱名列</strong>：Ut (C) ➔ Re (D) ➔ Mi (E) ➔ Fa (F) ➔ Sol (G) ➔ La (A)<br>
+              <strong>自然六度</strong>：C4 起纯自然级进 · 全音-全音-半音(Mi-Fa)-全音-全音
+            </div>
+            <button class="action-btn" id="btn-play-guidonian" style="width:100%;justify-content:center;">🖐️ 演奏圭多中世纪六声音阶 (Hexachord)</button>
+          </div>
+
+          <div class="sub-panel-card">
+            <h4>
+              <span>古希腊四音列与古印度 22 斯鲁提 (Tetrachords & Shrutis)</span>
+              <span style="font-size:11px;color:var(--gold);">22 微音阶梯</span>
+            </h4>
+            <p>西方音乐基石为四音列（Tetrachord），其中<strong>四分音四音列 (Enharmonic)</strong> 包含两级 1/4 音微程；印度古典乐则将八度精细划分为 22 斯鲁提（Shrutis），是微滑音（Meend）的数学源泉：</p>
+            <div class="waveform-formula-box">
+              <strong>四分音四音列</strong>：E4 (329.6Hz) ➔ +¼音 ➔ F4 ➔ A4 (440Hz)<br>
+              <strong>22 斯鲁提微音</strong>：四微音、三微音、二微音区间，刻画微妙微分音情感
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="action-btn" id="btn-play-tetrachord" style="flex:1;">🏛️ 古希腊四分音四音列</button>
+              <button class="action-btn" id="btn-play-shrutis" style="flex:1;">🪕 印度 22 斯鲁提阶梯</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- 面板 4: 经典和声切片与声学物理 -->
@@ -375,6 +445,61 @@ export function createAcousticLabUI(container) {
                 </div>
               </div>
               <button class="action-btn" id="btn-play-beats" style="width:100%;justify-content:center;">▶ 试听当前拍频与粗糙度 (2.5秒)</button>
+            </div>
+
+            <!-- Card 2: 拉莫功能和声体系与四大正统终止式 -->
+            <div class="sub-panel-card" style="margin-top:16px;">
+              <h4>
+                <span>拉莫功能和声体系与四大经典终止式 (Rameau Cadences)</span>
+                <span style="font-size:11px;color:var(--acc);">T - S - D 功能循环</span>
+              </h4>
+              <p>拉莫1722年《和声学专论》确立现代功能和声（主T、下属S、属D）。四大终止式奠定西方调性音乐的收放与呼吸：</p>
+              
+              <div class="cadence-grid">
+                <div class="cadence-item-card">
+                  <strong>1. 正格终止 (Authentic)</strong>
+                  <span class="roman-nums">I – IV – V7 – I</span>
+                  <p>导音升半音解决至主音，纯五度低音坚决下跳，完满收束。</p>
+                  <button class="action-btn" id="btn-cadence-authentic">▶ 正格终止</button>
+                </div>
+                <div class="cadence-item-card">
+                  <strong>2. 变格终止 (Plagal)</strong>
+                  <span class="roman-nums">I – IV – I</span>
+                  <p>教会“阿门终止”，无导音张力，平缓圣洁如余音袅袅。</p>
+                  <button class="action-btn" id="btn-cadence-plagal">▶ 变格终止</button>
+                </div>
+                <div class="cadence-item-card">
+                  <strong>3. 阻碍终止 (Deceptive)</strong>
+                  <span class="roman-nums">V7 – vi</span>
+                  <p>属七并未解决到主和弦，转而落入平行副三和弦，虚晃一枪。</p>
+                  <button class="action-btn" id="btn-cadence-deceptive">▶ 阻碍终止</button>
+                </div>
+                <div class="cadence-item-card">
+                  <strong>4. 那不勒斯和弦 (Neapolitan)</strong>
+                  <span class="roman-nums">N6 (bII) – V7 – I</span>
+                  <p>降II级大三和弦第一转位，巴洛克极富悲剧异质色彩的张力。</p>
+                  <button class="action-btn" id="btn-cadence-neapolitan">▶ 那不勒斯</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: 塔蒂尼“第三音”与结合音物理 -->
+            <div class="sub-panel-card">
+              <h4>
+                <span>塔蒂尼“第三音”与结合音物理 (Tartini's Third Sound)</span>
+                <span style="font-size:11px;color:var(--gold);">f_diff = f₂ - f₁</span>
+              </h4>
+              <p>
+                1714年塔蒂尼发现：小提琴双音强奏时，内耳耳蜗非线性响应会产生物理并不存在的“差频第三音”。可用于校准双音绝对纯正度：
+              </p>
+              <div class="waveform-formula-box">
+                <strong>双音输入</strong>：f₁ = 800 Hz, f₂ = 1000 Hz<br>
+                <strong>内耳产生结合音</strong>：f₂ - f₁ = <strong>200 Hz (深沉低音 C3 附近)</strong>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button class="action-btn" id="btn-tartini-200" style="flex:1;">🎻 听辨 800+1000Hz (第三音: 200Hz)</button>
+                <button class="action-btn" id="btn-tartini-300" style="flex:1;">🎻 听辨 600+900Hz (纯八度下沉: 300Hz)</button>
+              </div>
             </div>
           </div>
         </div>
@@ -451,6 +576,61 @@ export function createAcousticLabUI(container) {
                 <button class="action-btn" id="btn-messiaen-2">▶ 第二调式：八音阶 (Octatonic: 半-全-半-全)</button>
               </div>
             </div>
+
+            <!-- 梅西安不可移位调式扩展 (Modes 3 & 4) -->
+            <div class="sub-panel-card" style="margin-top:16px;">
+              <h4>
+                <span>梅西安有限移位调式扩展 (Modes 3 & 4)</span>
+                <span style="font-size:11px;color:var(--gold);">Nonatonic & Symmetrical</span>
+              </h4>
+              <p>对称分割十二平均律，超越传统大小调明暗色彩：</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button class="action-btn" id="btn-messiaen-3" style="flex:1;">▶ 第三调式 (九音全-半-半)</button>
+                <button class="action-btn" id="btn-messiaen-4" style="flex:1;">▶ 第四调式 (半-半-小三-半)</button>
+              </div>
+            </div>
+
+            <!-- 约翰·凯奇预置钢琴物理声学 -->
+            <div class="sub-panel-card">
+              <h4>
+                <span>约翰·凯奇“预置钢琴”物理声学 (Prepared Piano)</span>
+                <span style="font-size:11px;color:var(--acc);">John Cage, 1940</span>
+              </h4>
+              <p>在钢琴琴弦间插入螺栓、橡胶与硬币，将弦乐器化为整支非谐波打击乐队：</p>
+              
+              <div class="prepared-piano-grid">
+                <button class="prepared-key-btn" id="btn-cage-bolt">
+                  <span class="key-icon">🔩</span>
+                  <span class="key-title">螺栓 (Bolt)</span>
+                  <span class="key-sub">金属沉重非谐碰撞</span>
+                </button>
+                <button class="prepared-key-btn" id="btn-cage-rubber">
+                  <span class="key-icon">🔘</span>
+                  <span class="key-title">橡胶块 (Rubber)</span>
+                  <span class="key-sub">短促干哑木鱼声</span>
+                </button>
+                <button class="prepared-key-btn" id="btn-cage-coin">
+                  <span class="key-icon">🪙</span>
+                  <span class="key-title">铜币 (Coin)</span>
+                  <span class="key-sub">微颤金属高频嗡鸣</span>
+                </button>
+                <button class="prepared-key-btn" id="btn-cage-sonata">
+                  <span class="key-icon">🎹</span>
+                  <span class="key-title">奏鸣曲主题片段</span>
+                  <span class="key-sub">《奏鸣曲与间奏曲》</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 泽纳基斯连续微滑奏音响曲面 -->
+            <div class="sub-panel-card">
+              <h4>
+                <span>泽纳基斯连续滑奏与随机音乐 (Xenakis Metastaseis)</span>
+                <span style="font-size:11px;color:var(--mut);">Stochastic Sound Mass</span>
+              </h4>
+              <p>建筑家作曲家泽纳基斯将高斯概率引入管弦乐，弦乐群连续滑奏构筑双曲抛物面声学建筑：</p>
+              <button class="action-btn" id="btn-xenakis-gliss" style="width:100%;justify-content:center;">📐 演奏泽纳基斯连续微滑奏音响曲面 (Metastaseis)</button>
+            </div>
           </div>
         </div>
       </section>
@@ -484,8 +664,53 @@ export function createAcousticLabUI(container) {
             <button class="audition-btn" id="btn-random-row">🎲 随机生成新十二音序列</button>
           </div>
 
-          <div class="matrix-container">
-            <div class="matrix-grid" id="schoenberg-matrix"></div>
+          <!-- 双栏并列结构：左侧 12×12 矩阵，右侧 序列密码、晶体对称与全面序列主义 -->
+          <div class="matrix-dashboard-grid">
+            <div class="matrix-container" style="margin-top:0;">
+              <div class="matrix-grid" id="schoenberg-matrix"></div>
+            </div>
+
+            <div class="matrix-side-column">
+              <!-- 右侧 Card 1: B-A-C-H 签名动机与六音列拓扑 -->
+              <div class="matrix-side-card">
+                <h4>
+                  <span>勋伯格密码：B-A-C-H 动机与六音列划分</span>
+                  <span style="font-size:11px;font-family:var(--mono);color:var(--acc);">Bb - A - C - B</span>
+                </h4>
+                <p>
+                  勋伯格在 Op.25 中将向巴赫致敬的 <strong>B-A-C-H</strong> 动机藏于序列末端（Bb-A-C-B）。序列分为对称的两组六音列（Hexachord A/B），内部音程向量呈现严格互补守恒。
+                </p>
+                <div class="waveform-formula-box">
+                  <strong>六音列 A</strong>：E - F - G - Db - Gb - Eb<br>
+                  <strong>六音列 B</strong>：Ab - D - [B - C - A - Bb] (含 BACH 逆行密码)
+                </div>
+                <button class="action-btn" id="btn-bach-motive" style="width:100%;justify-content:center;">🎼 试听并提取 B-A-C-H 密码四音动机</button>
+              </div>
+
+              <!-- 右侧 Card 2: 韦伯恩 Op.28 极致晶体对称序列 -->
+              <div class="matrix-side-card">
+                <h4>
+                  <span>韦伯恩 Op.28 极致晶体对称性 (Anton Webern)</span>
+                  <span style="font-size:11px;color:var(--gold);">String Quartet Op.28</span>
+                </h4>
+                <p>
+                  韦伯恩将序列结构推向极致纯净：全序列十二音仅由一个四音动机及其镜像变体无缝衍生，倒影完全等同于逆行，如晶体多面体般自洽：
+                </p>
+                <button class="action-btn" id="btn-webern-row" style="width:100%;justify-content:center;">💎 演奏韦伯恩 Op.28 晶体对称序列</button>
+              </div>
+
+              <!-- 右侧 Card 3: 布列兹与全面序列主义四维参数矩阵 -->
+              <div class="matrix-side-card">
+                <h4>
+                  <span>战后全面序列主义四维参数 (Total Serialism)</span>
+                  <span style="font-size:11px;color:var(--mut);">Pierre Boulez & Milton Babbitt</span>
+                </h4>
+                <p>
+                  达姆施塔特乐派将序列化推向全息四维：<strong>音高 (12音级)、时值 (1/16至12/16拍)、力度 (ppp至fff)、触键法 (顿音/重音/连音)</strong>。
+                </p>
+                <button class="action-btn" id="btn-total-serialism" style="width:100%;justify-content:center;">🎲 演奏全面序列主义四维综合片段</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1560,6 +1785,38 @@ export function createAcousticLabUI(container) {
     applyPreset([0, 0, 0, 0, 0, 0, 0, 0]);
   });
 
+  // 傅里叶波形谐波预设
+  container.querySelector('#btn-wave-square')?.addEventListener('click', () => {
+    oscStatus.textContent = '🔲 载入方波谐波：仅奇次谐波，振幅按 1/n 衰减 (1, 1/3, 1/5, 1/7)';
+    applyPreset([0.85, 0, 0.28, 0, 0.17, 0, 0.12, 0]);
+  });
+  container.querySelector('#btn-wave-saw')?.addEventListener('click', () => {
+    oscStatus.textContent = '📐 载入锯齿波谐波：全谐波连续递减，振幅按 1/n 衰减';
+    applyPreset([0.85, 0.42, 0.28, 0.21, 0.17, 0.14, 0.12, 0.10]);
+  });
+  container.querySelector('#btn-wave-triangle')?.addEventListener('click', () => {
+    oscStatus.textContent = '🔺 载入三角波谐波：仅奇次谐波，振幅按 1/n² 极速衰减 (柔美长笛基底)';
+    applyPreset([0.88, 0, 0.10, 0, 0.035, 0, 0.018, 0]);
+  });
+  container.querySelector('#btn-wave-pulse')?.addEventListener('click', () => {
+    oscStatus.textContent = '⚡ 载入脉冲波 (25% 占空比)：窄带尖锐泛音分布，双簧管与电声特征';
+    applyPreset([0.75, 0.55, 0.40, 0.10, 0.25, 0.45, 0.20, 0.15]);
+  });
+
+  // 亥姆霍兹共鸣器与开闭管空气柱驻波对比
+  container.querySelector('#btn-pipe-open')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎺 正在试听开管空气柱驻波 (λ=2L)：两端连通大气为波腹，产生完整偶次与奇次全谐波…';
+    engine.playPipeResonance(true, 2.6);
+  });
+  container.querySelector('#btn-pipe-closed')?.addEventListener('click', () => {
+    oscStatus.textContent = '🪵 正在试听闭管空气柱驻波 (λ=4L)：一端封闭为波节，偶次谐波抵消，仅激发出奇次谐波 (单簧管木质声)…';
+    engine.playPipeResonance(false, 2.6);
+  });
+  container.querySelector('#btn-helmholtz-cavity')?.addEventListener('click', () => {
+    oscStatus.textContent = '🏺 正在试听亥姆霍兹共振腔：260Hz 窄带空腔空气振荡滤波物理共鸣…';
+    engine.playHelmholtzCavity(2.4);
+  });
+
   // ==========================================================================
   // 面板 3: 教会调式与拉格五线谱动态视唱台
   // ==========================================================================
@@ -1867,6 +2124,33 @@ export function createAcousticLabUI(container) {
     droneBtn.style.color = isOn ? '#FFF' : '';
     droneBtn.style.borderColor = isOn ? 'var(--acc)' : '';
     oscStatus.textContent = isOn ? '🪕 谭普拉琴 (Tanpura) 嗡鸣低音已开启，空间充满泛音' : '● 谭普拉琴嗡鸣已停止';
+  });
+
+  // 中世纪六声音阶与古希腊四音列 / 印度 22 斯鲁提
+  container.querySelector('#btn-play-guidonian')?.addEventListener('click', () => {
+    stopModalPlayback();
+    oscStatus.textContent = '🖐️ 正在演奏中世纪圭多手自然六声音阶 (Ut-Re-Mi-Fa-Sol-La)，半音仅存在于 Mi-Fa 之间…';
+    const hexNotes = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4'];
+    hexNotes.forEach((n, idx) => {
+      const tid = setTimeout(() => {
+        engine.playNote(n, 0.6);
+        const origIdx = currentModalItem.scale ? currentModalItem.scale.indexOf(n) : -1;
+        if (origIdx !== -1) playModalStaffNote(n, origIdx);
+      }, idx * 280);
+      modalPlaybackTimers.push(tid);
+    });
+  });
+
+  container.querySelector('#btn-play-tetrachord')?.addEventListener('click', () => {
+    stopModalPlayback();
+    oscStatus.textContent = '🏛️ 正在演奏古希腊四分音四音列 (Enharmonic Tetrachord：包含两级 1/4 微分音)…';
+    engine.playEnharmonicTetrachord();
+  });
+
+  container.querySelector('#btn-play-shrutis')?.addEventListener('click', () => {
+    stopModalPlayback();
+    oscStatus.textContent = '🪕 正在听辨印度古典乐 22 斯鲁提 (Shrutis) 微分音阶梯…';
+    engine.playShrutiScale();
   });
 
   // ==========================================================================
@@ -2204,6 +2488,34 @@ export function createAcousticLabUI(container) {
     engine.playPlompBeats(beatVal, 440, 2.5);
   });
 
+  // 拉莫四大经典终止式
+  container.querySelector('#btn-cadence-authentic')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎼 正在演奏正格终止 (Authentic: I - IV - V7 - I) · 导音坚定解决至主音';
+    engine.playCadence('authentic');
+  });
+  container.querySelector('#btn-cadence-plagal')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎼 正在演奏变格终止 (Plagal: I - IV - I) · 教会“阿门”平缓圣洁余韵';
+    engine.playCadence('plagal');
+  });
+  container.querySelector('#btn-cadence-deceptive')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎼 正在演奏阻碍终止 (Deceptive: V7 - vi) · 期待落空，转入平行小调副三和弦';
+    engine.playCadence('deceptive');
+  });
+  container.querySelector('#btn-cadence-neapolitan')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎼 正在演奏那不勒斯六和弦终止 (N6 - V7 - I) · 降II级异质悲剧色彩张力';
+    engine.playCadence('neapolitan');
+  });
+
+  // 塔蒂尼第三音与结合音
+  container.querySelector('#btn-tartini-200')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎻 正在试听塔蒂尼结合音：800Hz + 1000Hz 强纯音输入，内耳产生 200Hz 差频第三音 (C3 附近)';
+    engine.playTartiniTones(800, 1000, 2.8);
+  });
+  container.querySelector('#btn-tartini-300')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎻 正在试听塔蒂尼纯五度结合音：600Hz + 900Hz 输入，内耳产生 300Hz 纯八度下沉结合音';
+    engine.playTartiniTones(600, 900, 2.8);
+  });
+
   // ==========================================================================
   // 面板 5: 先锋音块与微分音五线谱 (Scriabin Mystic Chord & Quarter-Tone Staff)
   // ==========================================================================
@@ -2481,6 +2793,45 @@ export function createAcousticLabUI(container) {
     });
   });
 
+  // 梅西安调式 3 与 4
+  container.querySelector('#btn-messiaen-3')?.addEventListener('click', () => {
+    oscStatus.textContent = '梅西安第三调式 (Nonatonic 九声音阶)：全-半-半 对称周期';
+    ['C4', 'D4', 'Eb4', 'E4', 'F#4', 'G4', 'Ab4', 'Bb4', 'B4', 'C5'].forEach((n, idx) => {
+      setTimeout(() => engine.playNote(n, 0.45), idx * 200);
+    });
+  });
+
+  container.querySelector('#btn-messiaen-4')?.addEventListener('click', () => {
+    oscStatus.textContent = '梅西安第四调式：半-半-小三-半 对称周期八音阶';
+    ['C4', 'Db4', 'D4', 'F4', 'F#4', 'G4', 'Ab4', 'B4', 'C5'].forEach((n, idx) => {
+      setTimeout(() => engine.playNote(n, 0.45), idx * 210);
+    });
+  });
+
+  // 约翰·凯奇预置钢琴按键
+  container.querySelector('#btn-cage-bolt')?.addEventListener('click', () => {
+    oscStatus.textContent = '🔩 预置钢琴试听：螺栓插入琴弦，金属沉重非谐碰撞击弦声';
+    engine.playPreparedPianoBolt(220, 1.2);
+  });
+  container.querySelector('#btn-cage-rubber')?.addEventListener('click', () => {
+    oscStatus.textContent = '🔘 预置钢琴试听：橡胶块消音，木鱼与非洲哑鼓干涩音色';
+    engine.playPreparedPianoRubber(160, 0.6);
+  });
+  container.querySelector('#btn-cage-coin')?.addEventListener('click', () => {
+    oscStatus.textContent = '🪙 预置钢琴试听：铜币夹塞，高频微金属蜂鸣与颤音';
+    engine.playPreparedPianoCoin(380, 1.4);
+  });
+  container.querySelector('#btn-cage-sonata')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎹 正在演播约翰·凯奇《奏鸣曲与间奏曲》(1948) 预置钢琴复节奏主题动机…';
+    engine.playCageSonataFragment();
+  });
+
+  // 泽纳基斯连续微滑奏音响曲面
+  container.querySelector('#btn-xenakis-gliss')?.addEventListener('click', () => {
+    oscStatus.textContent = '📐 正在演奏泽纳基斯《变态》(Metastaseis)：连续高斯滑奏音响曲面…';
+    engine.playXenakisGlissando(4.2);
+  });
+
   // ==========================================================================
   // 面板 6: 勋伯格十二音序列矩阵计算机与五线谱视唱台
   // ==========================================================================
@@ -2719,6 +3070,27 @@ export function createAcousticLabUI(container) {
     renderMatrix();
     renderMatrixRowStaffSvg(currentRow, '随机新序列 P0 (12音)');
     oscStatus.textContent = '🎲 已随机生成新的十二音序列原型！';
+  });
+
+  // 勋伯格密码 B-A-C-H 动机
+  container.querySelector('#btn-bach-motive')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎼 正在提取勋伯格 Op.25 隐藏的 B-A-C-H 致敬密码动机：Bb3 - A3 - C4 - B3';
+    const bachNotes = ['Bb3', 'A3', 'C4', 'B3'];
+    bachNotes.forEach((n, idx) => {
+      setTimeout(() => engine.playNote(n, 0.6), idx * 300);
+    });
+  });
+
+  // 韦伯恩 Op.28 晶体对称序列
+  container.querySelector('#btn-webern-row')?.addEventListener('click', () => {
+    oscStatus.textContent = '💎 正在演奏韦伯恩 Op.28 弦乐四重奏晶体对称序列 (全曲由单一四音动机镜像无缝衍生)…';
+    engine.playWebernRow(0.4);
+  });
+
+  // 全面序列主义
+  container.querySelector('#btn-total-serialism')?.addEventListener('click', () => {
+    oscStatus.textContent = '🎲 正在演奏战后全面序列主义 (Total Serialism: 音高+时值+力度+触键全息控制)…';
+    engine.playTotalSerialism();
   });
 
   function destroy() {

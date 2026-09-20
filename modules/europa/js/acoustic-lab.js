@@ -117,7 +117,10 @@ export const INDIAN_THAATS = [
   { id: 'kafi', name: '卡菲 (Kafi)', sargam: 'S R g M P D n S\'', notes: ['C4', 'D4', 'Eb4', 'F4', 'G4', 'A4', 'Bb4', 'C5'], mood: '春雨、思念，对应多利亚调式，民间霍利节欢歌' },
   { id: 'bhairav', name: '拜拉夫 (Bhairav)', sargam: 'S r G M P d N S\'', notes: ['C4', 'Db4', 'E4', 'F4', 'G4', 'Ab4', 'B4', 'C5'], mood: '破晓黎明、沉思敬畏，含小二度降Re与降Dha微音滑奏' },
   { id: 'bhairavi', name: '拜拉维 (Bhairavi)', sargam: 'S r g M P d n S\'', notes: ['C4', 'Db4', 'Eb4', 'F4', 'G4', 'Ab4', 'Bb4', 'C5'], mood: '音乐会终曲压轴之王、忧郁悲悯、全降音弗里几亚色彩' },
-  { id: 'todi', name: '托迪 (Todi)', sargam: 'S r g M# P d N S\'', notes: ['C4', 'Db4', 'Eb4', 'F#4', 'G4', 'Ab4', 'B4', 'C5'], mood: '上午十时、极度紧绷张力、灵魂探索的微音高峰' }
+  { id: 'todi', name: '托迪 (Todi)', sargam: 'S r g M# P d N S\'', notes: ['C4', 'Db4', 'Eb4', 'F#4', 'G4', 'Ab4', 'B4', 'C5'], mood: '上午十时、极度紧绷张力、灵魂探索的微音高峰' },
+  { id: 'asavari', name: '阿萨瓦里 (Asavari)', sargam: 'S R g M P d n S\'', notes: ['C4', 'D4', 'Eb4', 'F4', 'G4', 'Ab4', 'Bb4', 'C5'], mood: '早晨、庄严宏伟、带降Ga与降Dha哀愁色彩' },
+  { id: 'marwa', name: '马尔瓦 (Marwa)', sargam: 'S r G M# P D N S\'', notes: ['C4', 'Db4', 'E4', 'F#4', 'G4', 'A4', 'B4', 'C5'], mood: '日落薄暮、极度不安渴望、含增四度与降Re' },
+  { id: 'poorvi', name: '普尔维 (Poorvi)', sargam: 'S r G M# P d N S\'', notes: ['C4', 'Db4', 'E4', 'F#4', 'G4', 'Ab4', 'B4', 'C5'], mood: '薄暮祈祷、深沉神圣、降Re降Dha与升Ma交织' }
 ];
 
 // 勋伯格经典十二音序列（以《钢琴组曲》Op.25 为基准）
@@ -620,6 +623,347 @@ export class SoundEngine {
     osc2.start(now);
     osc1.stop(now + duration + 0.05);
     osc2.stop(now + duration + 0.05);
+  }
+
+  // 经典功能和声终止式 (Functional Cadences)
+  playCadence(type = 'authentic') {
+    this.ensureContext();
+    if (type === 'authentic') {
+      const chords = [
+        { notes: ['C3', 'G3', 'C4', 'E4', 'G4'], d: 0.9 },
+        { notes: ['F2', 'A3', 'C4', 'F4', 'A4'], d: 0.9 },
+        { notes: ['G2', 'G3', 'B3', 'D4', 'F4'], d: 1.1 },
+        { notes: ['C3', 'G3', 'C4', 'E4', 'C5'], d: 2.2 }
+      ];
+      chords.forEach((c, idx) => {
+        setTimeout(() => this.playChord(c.notes, c.d), idx * 800);
+      });
+    } else if (type === 'plagal') {
+      const chords = [
+        { notes: ['C3', 'G3', 'C4', 'E4', 'G4'], d: 1.1 },
+        { notes: ['F2', 'A3', 'C4', 'F4', 'C5'], d: 1.4 },
+        { notes: ['C3', 'G3', 'C4', 'E4', 'G4'], d: 2.5 }
+      ];
+      chords.forEach((c, idx) => {
+        setTimeout(() => this.playChord(c.notes, c.d), idx * 1000);
+      });
+    } else if (type === 'deceptive') {
+      const chords = [
+        { notes: ['C3', 'G3', 'C4', 'E4'], d: 0.9 },
+        { notes: ['F2', 'A3', 'C4', 'F4'], d: 0.9 },
+        { notes: ['G2', 'G3', 'B3', 'D4', 'F4'], d: 1.1 },
+        { notes: ['A2', 'E3', 'A3', 'C4', 'E4'], d: 2.4 }
+      ];
+      chords.forEach((c, idx) => {
+        setTimeout(() => this.playChord(c.notes, c.d), idx * 850);
+      });
+    } else if (type === 'neapolitan') {
+      const chords = [
+        { notes: ['C3', 'G3', 'C4', 'Eb4'], d: 0.9 },
+        { notes: ['F2', 'Ab3', 'Db4', 'F4'], d: 1.1 },
+        { notes: ['G2', 'G3', 'B3', 'D4', 'F4'], d: 1.1 },
+        { notes: ['C3', 'G3', 'C4', 'Eb4', 'C5'], d: 2.5 }
+      ];
+      chords.forEach((c, idx) => {
+        setTimeout(() => this.playChord(c.notes, c.d), idx * 900);
+      });
+    }
+  }
+
+  // 塔尔蒂尼“第三音”/差音实验 (Tartini Combination Tone: f1, f2 -> f2 - f1)
+  playTartiniTones(f1 = 800, f2 = 1000, duration = 3.0) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const g = this.ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(0.25, now + 0.05);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    const osc1 = this.ctx.createOscillator();
+    osc1.type = 'sine';
+    osc1.frequency.setValueAtTime(f1, now);
+
+    const osc2 = this.ctx.createOscillator();
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(f2, now);
+
+    const diffF = Math.abs(f2 - f1);
+    const oscDiff = this.ctx.createOscillator();
+    oscDiff.type = 'triangle';
+    oscDiff.frequency.setValueAtTime(diffF, now);
+    const diffGain = this.ctx.createGain();
+    diffGain.gain.setValueAtTime(0.12, now);
+
+    osc1.connect(g);
+    osc2.connect(g);
+    oscDiff.connect(diffGain);
+    diffGain.connect(g);
+    g.connect(this.masterGain);
+
+    osc1.start(now);
+    osc2.start(now);
+    oscDiff.start(now);
+    osc1.stop(now + duration + 0.1);
+    osc2.stop(now + duration + 0.1);
+    oscDiff.stop(now + duration + 0.1);
+  }
+
+  // 约翰·凯奇预置钢琴物理发声 (Prepared Piano Synthesis Models)
+  playPreparedPianoBolt(baseFreq = 220, duration = 1.2) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const freqs = [baseFreq, baseFreq * 2.76, baseFreq * 5.4, baseFreq * 8.91];
+    freqs.forEach((f, idx) => {
+      const osc = this.ctx.createOscillator();
+      osc.type = idx === 0 ? 'triangle' : 'sine';
+      osc.frequency.setValueAtTime(f, now);
+
+      const g = this.ctx.createGain();
+      g.gain.setValueAtTime(0, now);
+      g.gain.linearRampToValueAtTime(0.2 / (idx + 1), now + 0.005);
+      g.gain.exponentialRampToValueAtTime(0.0001, now + duration * (1 / (idx + 1)));
+
+      osc.connect(g);
+      g.connect(this.masterGain);
+      osc.start(now);
+      osc.stop(now + duration + 0.05);
+    });
+  }
+
+  playPreparedPianoRubber(baseFreq = 160, duration = 0.5) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(baseFreq, now);
+
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(320, now);
+    filter.frequency.exponentialRampToValueAtTime(100, now + duration);
+
+    const g = this.ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(0.35, now + 0.003);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(filter);
+    filter.connect(g);
+    g.connect(this.masterGain);
+    osc.start(now);
+    osc.stop(now + duration + 0.05);
+  }
+
+  playPreparedPianoCoin(baseFreq = 330, duration = 1.6) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(baseFreq, now);
+
+    const lfo = this.ctx.createOscillator();
+    lfo.frequency.setValueAtTime(38, now);
+    const lfoGain = this.ctx.createGain();
+    lfoGain.gain.setValueAtTime(45, now);
+    lfo.connect(osc.frequency);
+
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(1800, now);
+    filter.Q.setValueAtTime(3, now);
+
+    const g = this.ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(0.25, now + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(filter);
+    filter.connect(g);
+    g.connect(this.masterGain);
+    lfo.start(now);
+    osc.start(now);
+    lfo.stop(now + duration + 0.05);
+    osc.stop(now + duration + 0.05);
+  }
+
+  playCageSonataFragment() {
+    const pattern = [
+      { type: 'bolt', f: 220, t: 0 },
+      { type: 'rubber', f: 140, t: 160 },
+      { type: 'coin', f: 380, t: 320 },
+      { type: 'bolt', f: 290, t: 520 },
+      { type: 'rubber', f: 120, t: 720 },
+      { type: 'coin', f: 440, t: 880 },
+      { type: 'bolt', f: 180, t: 1100 }
+    ];
+    pattern.forEach(p => {
+      setTimeout(() => {
+        if (p.type === 'bolt') this.playPreparedPianoBolt(p.f, 1.0);
+        else if (p.type === 'rubber') this.playPreparedPianoRubber(p.f, 0.4);
+        else if (p.type === 'coin') this.playPreparedPianoCoin(p.f, 1.2);
+      }, p.t);
+    });
+  }
+
+  // 韦伯恩 Op.28 对称序列 (BACH 动机晶体衍生)
+  playWebernRow(duration = 0.35) {
+    const notes = ['Bb3', 'A3', 'C4', 'B3', 'D#4', 'E4', 'C#4', 'D4', 'F#4', 'F4', 'Ab4', 'G4'];
+    notes.forEach((n, idx) => {
+      setTimeout(() => this.playNote(n, duration), idx * 220);
+    });
+  }
+
+  // 全序列主义四维参数实验 (Total Serialism)
+  playTotalSerialism() {
+    const pitches = ['C3', 'Eb4', 'F#3', 'B4', 'G3', 'C#5', 'A2', 'D4', 'Ab3', 'E5', 'Bb2', 'F4'];
+    const durations = [0.15, 0.45, 0.25, 0.6, 0.1, 0.5, 0.3, 0.7, 0.18, 0.38, 0.55, 0.8];
+    pitches.forEach((p, idx) => {
+      setTimeout(() => {
+        this.playNote(p, durations[idx]);
+      }, idx * 240);
+    });
+  }
+
+  // 泽纳基斯《变态》连续高斯滑奏音响曲面 (Xenakis Metastaseis Glissandi)
+  playXenakisGlissando(duration = 4.0) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const glissLines = [
+      { start: 220, end: 580 },
+      { start: 330, end: 190 },
+      { start: 440, end: 880 },
+      { start: 660, end: 310 },
+      { start: 165, end: 415 }
+    ];
+
+    glissLines.forEach(line => {
+      const osc = this.ctx.createOscillator();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(line.start, now);
+      osc.frequency.exponentialRampToValueAtTime(line.end, now + duration);
+
+      const filter = this.ctx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(2400, now);
+
+      const g = this.ctx.createGain();
+      g.gain.setValueAtTime(0, now);
+      g.gain.linearRampToValueAtTime(0.08, now + 0.3);
+      g.gain.setValueAtTime(0.08, now + duration - 0.5);
+      g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      osc.connect(filter);
+      filter.connect(g);
+      g.connect(this.masterGain);
+      osc.start(now);
+      osc.stop(now + duration + 0.05);
+    });
+  }
+
+  // 空气柱开管 vs 闭管物理驻波声学对比 (Open vs Closed Pipe Acoustics)
+  playPipeResonance(isOpen = true, duration = 2.4) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const baseFreq = 130.81; // C3
+    // 开管 λ=2L 产生全谐波(1,2,3,4,5,6)；闭管 λ=4L 仅产生奇次谐波(1,3,5,7)
+    const partials = isOpen
+      ? [
+          { n: 1, g: 0.35 },
+          { n: 2, g: 0.22 },
+          { n: 3, g: 0.16 },
+          { n: 4, g: 0.11 },
+          { n: 5, g: 0.08 },
+          { n: 6, g: 0.05 }
+        ]
+      : [
+          { n: 1, g: 0.38 },
+          { n: 3, g: 0.26 },
+          { n: 5, g: 0.14 },
+          { n: 7, g: 0.08 }
+        ];
+
+    partials.forEach(p => {
+      const osc = this.ctx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(baseFreq * p.n, now);
+
+      const g = this.ctx.createGain();
+      g.gain.setValueAtTime(0, now);
+      g.gain.linearRampToValueAtTime(p.g, now + 0.08);
+      g.gain.setValueAtTime(p.g * 0.9, now + duration - 0.4);
+      g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      osc.connect(g);
+      g.connect(this.masterGain);
+      osc.start(now);
+      osc.stop(now + duration + 0.05);
+    });
+  }
+
+  // 亥姆霍兹共鸣腔空腔共振 (Helmholtz Resonator Cavity)
+  playHelmholtzCavity(duration = 2.0) {
+    this.ensureContext();
+    const now = this.ctx.currentTime;
+    const osc = this.ctx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(260.0, now); // 亥姆霍兹标准中空腔共鸣频率
+
+    const noiseBuffer = this.ctx.createBuffer(1, this.ctx.sampleRate * duration, this.ctx.sampleRate);
+    const output = noiseBuffer.getChannelData(0);
+    for (let i = 0; i < noiseBuffer.length; i++) {
+      output[i] = (Math.random() * 2 - 1) * Math.exp(-i / (this.ctx.sampleRate * 0.4));
+    }
+    const noise = this.ctx.createBufferSource();
+    noise.buffer = noiseBuffer;
+
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.setValueAtTime(260.0, now);
+    filter.Q.setValueAtTime(12, now); // 高Q值强共振
+
+    const noiseGain = this.ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.3, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    const oscGain = this.ctx.createGain();
+    oscGain.gain.setValueAtTime(0, now);
+    oscGain.gain.linearRampToValueAtTime(0.3, now + 0.05);
+    oscGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    noise.connect(filter);
+    filter.connect(noiseGain);
+    noiseGain.connect(this.masterGain);
+
+    osc.connect(oscGain);
+    oscGain.connect(this.masterGain);
+
+    noise.start(now);
+    osc.start(now);
+    noise.stop(now + duration + 0.05);
+    osc.stop(now + duration + 0.05);
+  }
+
+  // 古希腊四分音四音列 (Enharmonic Tetrachord)
+  playEnharmonicTetrachord() {
+    const freqs = [329.63, 339.2, 349.23, 440.0]; // E4, E+1/4, F4, A4
+    freqs.forEach((f, idx) => {
+      setTimeout(() => {
+        this.playNote('E4', 0.55, f);
+      }, idx * 300);
+    });
+  }
+
+  // 印度 22 斯鲁提微音阶梯片断 (Shruti Microtonal Sequence)
+  playShrutiScale() {
+    const baseSa = 261.63; // C4
+    // 选取代表性微差音分阶梯 (0, 22, 90, 112, 182, 204, 294, 316, 386, 408, 498, 520)
+    const shrutiCents = [0, 22, 90, 112, 182, 204, 294, 316, 386, 408, 498, 702];
+    shrutiCents.forEach((cents, idx) => {
+      const f = baseSa * Math.pow(2, cents / 1200);
+      setTimeout(() => {
+        this.playNote('C4', 0.35, f);
+      }, idx * 200);
+    });
   }
 }
 

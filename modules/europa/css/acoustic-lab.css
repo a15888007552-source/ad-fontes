@@ -495,6 +495,18 @@
   gap: 14px;
 }
 
+#indian-thaats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 1280px) {
+  #indian-thaats-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  }
+}
+
 .mode-card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -893,4 +905,196 @@ input[type="range"] {
 .circle-node-group:hover text {
   fill: #FFF;
 }
+
+/* ==========================================================================
+   面板 2-6 补白与声学扩展组件样式 (Ad Fontes Parchment System)
+   ========================================================================== */
+
+.sub-panel-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(53, 48, 31, 0.04);
+}
+
+.sub-panel-card h4 {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--acc);
+  margin: 0 0 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-left: 3px solid var(--acc);
+  padding-left: 8px;
+}
+
+.sub-panel-card p {
+  font-size: 12.5px;
+  color: var(--mut);
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}
+
+/* 傅里叶公式标尺框 */
+.waveform-formula-box {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: color-mix(in srgb, var(--bg) 60%, var(--panel) 40%);
+  border: 1px dashed var(--line);
+  padding: 7px 10px;
+  border-radius: 3px;
+  color: var(--ink);
+  margin: 8px 0 10px;
+  line-height: 1.5;
+}
+
+/* 曼海姆 / 拉莫四部终止式网格 (Cadence Grid) */
+.cadence-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cadence-item-card {
+  background: color-mix(in srgb, var(--panel) 75%, var(--bg) 25%);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cadence-item-card strong {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.cadence-item-card .roman-nums {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--acc);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cadence-item-card p {
+  font-size: 11px;
+  color: var(--mut);
+  line-height: 1.4;
+  margin: 0 0 8px;
+  flex: 1;
+}
+
+/* 约翰·凯奇预置钢琴按键 (Prepared Piano Tactile Keys) */
+.prepared-piano-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.prepared-key-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #FAF5E8;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  font-family: var(--sans);
+}
+
+.prepared-key-btn:hover {
+  background: color-mix(in srgb, #FAF5E8 85%, var(--acc) 15%);
+  border-color: var(--acc);
+  transform: translateY(-1px);
+}
+
+.prepared-key-btn:active {
+  transform: translateY(1px);
+}
+
+.prepared-key-btn .key-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.prepared-key-btn .key-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.prepared-key-btn .key-sub {
+  font-size: 10px;
+  color: var(--mut);
+}
+
+/* 勋伯格十二音序列双栏综合工作台 (Panel 6 Matrix Dashboard Grid) */
+.matrix-dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(480px, 1.15fr) 1fr;
+  gap: 22px;
+  align-items: start;
+  margin-top: 14px;
+}
+
+@media (max-width: 1080px) {
+  .matrix-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.matrix-side-card {
+  background: color-mix(in srgb, var(--panel) 80%, var(--bg) 20%);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.matrix-side-card h4 {
+  font-family: var(--serif);
+  font-size: 14.5px;
+  color: var(--acc);
+  margin: 0 0 6px 0;
+  border-left: 3px solid var(--acc);
+  padding-left: 8px;
+}
+
+.matrix-side-card p {
+  font-size: 12px;
+  color: var(--mut);
+  line-height: 1.55;
+  margin: 0 0 10px 0;
+}
+
+/* 圭多手与斯鲁提展示卡片 */
+.mode-theory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .mode-theory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
