@@ -3163,6 +3163,106 @@
       "credit": "中国朝鲜族非物质文化遗产馆 · Wikimedia Commons",
       "source": "https://en.wikipedia.org/wiki/Yanji",
       "aiCreated": false
+    },
+    "poi-cn-xacom": {
+      "url": "assets/img/poi/poi-cn-xacom.jpg",
+      "file": "assets/img/poi/poi-cn-xacom.jpg",
+      "credit": "西安音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-ccom-guo": {
+      "url": "assets/img/poi/poi-cn-ccom-guo.jpg",
+      "file": "assets/img/poi/poi-cn-ccom-guo.jpg",
+      "credit": "中国音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-sccm": {
+      "url": "assets/img/poi/poi-cn-sccm.jpg",
+      "file": "assets/img/poi/poi-cn-sccm.jpg",
+      "credit": "四川音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-whcm": {
+      "url": "assets/img/poi/poi-cn-whcm.jpg",
+      "file": "assets/img/poi/poi-cn-whcm.jpg",
+      "credit": "武汉音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-xhcm": {
+      "url": "assets/img/poi/poi-cn-xhcm.jpg",
+      "file": "assets/img/poi/poi-cn-xhcm.jpg",
+      "credit": "星海音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-symc": {
+      "url": "assets/img/poi/poi-cn-symc.jpg",
+      "file": "assets/img/poi/poi-cn-symc.jpg",
+      "credit": "沈阳音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-tjcm": {
+      "url": "assets/img/poi/poi-cn-tjcm.jpg",
+      "file": "assets/img/poi/poi-cn-tjcm.jpg",
+      "credit": "天津音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-zjcm": {
+      "url": "assets/img/poi/poi-cn-zjcm.jpg",
+      "file": "assets/img/poi/poi-cn-zjcm.jpg",
+      "credit": "浙江音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-hrbcm": {
+      "url": "assets/img/poi/poi-cn-hrbcm.jpg",
+      "file": "assets/img/poi/poi-cn-hrbcm.jpg",
+      "credit": "哈尔滨音乐学院 · 建筑与音乐学术实景"
+    },
+    "poi-cn-bnu-music": {
+      "url": "assets/img/poi/poi-cn-bnu-music.jpg",
+      "file": "assets/img/poi/poi-cn-bnu-music.jpg",
+      "credit": "北京师范大学 (艺术与传媒学院) · 建筑与音乐学术实景"
+    },
+    "poi-cn-ecnu-music": {
+      "url": "assets/img/poi/poi-cn-ecnu-music.jpg",
+      "file": "assets/img/poi/poi-cn-ecnu-music.jpg",
+      "credit": "华东师范大学 (音乐学院) · 建筑与音乐学术实景"
+    },
+    "poi-cn-njnu-music": {
+      "url": "assets/img/poi/poi-cn-njnu-music.jpg",
+      "file": "assets/img/poi/poi-cn-njnu-music.jpg",
+      "credit": "南京师范大学 (音乐学院) · 建筑与音乐学术实景"
+    },
+    "poi-cn-ccnu-music": {
+      "url": "assets/img/poi/poi-cn-ccnu-music.jpg",
+      "file": "assets/img/poi/poi-cn-ccnu-music.jpg",
+      "credit": "华中师范大学 (音乐学院) · 建筑与音乐学术实景"
+    },
+    "poi-cn-nenu-music": {
+      "url": "assets/img/poi/poi-cn-nenu-music.jpg",
+      "file": "assets/img/poi/poi-cn-nenu-music.jpg",
+      "credit": "东北师范大学 (音乐学院) · 建筑与音乐学术实景"
+    },
+    "poi-cn-hnu-music": {
+      "url": "assets/img/poi/poi-cn-hnu-music.jpg",
+      "file": "assets/img/poi/poi-cn-hnu-music.jpg",
+      "credit": "湖南师范大学 (音乐学院) · 建筑与音乐学术实景"
+    },
+    "poi-cn-snnu-music": {
+      "url": "assets/img/poi/poi-cn-snnu-music.jpg",
+      "file": "assets/img/poi/poi-cn-snnu-music.jpg",
+      "credit": "陕西师范大学 (音乐学院) · 建筑与音乐学术实景"
+    },
+    "poi-cn-xmu": {
+      "url": "assets/img/poi/poi-cn-xmu.jpg",
+      "file": "assets/img/poi/poi-cn-xmu.jpg",
+      "credit": "厦门大学 (艺术学院音乐系) · 建筑与音乐学术实景"
+    },
+    "poi-cn-pku-art": {
+      "url": "assets/img/poi/poi-cn-pku-art.jpg",
+      "file": "assets/img/poi/poi-cn-pku-art.jpg",
+      "credit": "北京大学 (艺术学院与百年讲堂) · 建筑与音乐学术实景"
+    },
+    "poi-cn-henu-music": {
+      "url": "assets/img/poi/poi-cn-henu-music.jpg",
+      "file": "assets/img/poi/poi-cn-henu-music.jpg",
+      "credit": "河南大学 (音乐学院) · 建筑与音乐学术实景"
+    },
+    "poi-cn-seu-art": {
+      "url": "assets/img/poi/poi-cn-seu-art.jpg",
+      "file": "assets/img/poi/poi-cn-seu-art.jpg",
+      "credit": "东南大学 (艺术学院) · 建筑与音乐学术实景"
     }
   }
 }

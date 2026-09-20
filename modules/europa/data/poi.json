@@ -786,6 +786,46 @@
     "延吉": {
       "lon": 129.5089,
       "lat": 42.9069
+    },
+    "武汉": {
+      "lon": 114.3055,
+      "lat": 30.5928
+    },
+    "沈阳": {
+      "lon": 123.4315,
+      "lat": 41.8057
+    },
+    "天津": {
+      "lon": 117.2008,
+      "lat": 39.0842
+    },
+    "杭州": {
+      "lon": 120.1551,
+      "lat": 30.2741
+    },
+    "哈尔滨": {
+      "lon": 126.535,
+      "lat": 45.8038
+    },
+    "厦门": {
+      "lon": 118.0894,
+      "lat": 24.4798
+    },
+    "南京": {
+      "lon": 118.7969,
+      "lat": 32.0603
+    },
+    "长春": {
+      "lon": 125.3235,
+      "lat": 43.8171
+    },
+    "长沙": {
+      "lon": 112.9388,
+      "lat": 28.2282
+    },
+    "开封": {
+      "lon": 114.3076,
+      "lat": 34.7972
     }
   },
   "pois": [
@@ -14348,6 +14388,606 @@
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
+    },
+    {
+      "id": "poi-cn-xacom",
+      "city": "西安",
+      "name": "西安音乐学院",
+      "category": "conservatory",
+      "kindLabel": "西北最高音乐学府 · 长安乐派中心",
+      "lon": 108.9482,
+      "lat": 34.2185,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 13.71,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Xi'an Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%AE%89%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "创办于1949年，前身为贺龙元帅在晋绥边区创立的“西北军政大学艺术骨干队”，是西北地区唯一独立设置的高等音乐专业学府。校园坐落于古都西安南郊文教核心区雁塔西路与长安中路交汇处，北临大雁塔，南眺终南山；建有声学效果优异的交响乐大厅、艺术中心、终南剧场及西北地区最大的专业音乐文献馆藏中心，承载厚重周秦汉唐乐舞文脉。",
+      "musicRelation": "中国西北音乐创作、表演与理论研究中心。涌现出以著名作曲家赵季平（《霸王别姬》《大红灯笼高高挂》《水浒传》配乐，原中国音协主席）、鲁日融（民族器乐大师、“长安乐派”主要创立者）、乔建中（中国传统音乐学会名誉会长、原中国艺术研究院音乐研究所所长）等为代表的一代宗师。在软科中国最好学科排名中表现亮眼，音乐学、音乐表演、作曲与作曲技术理论均入选国家级一流本科专业建设点；设有陕西省哲学社会科学重点研究基地“西北民族音乐研究中心”，长期领衔联合国人类非遗“西安鼓乐”与丝绸之路音乐文化发掘与学术建构。",
+      "editorialStatus": "curated",
+      "sourceKey": "西安|西安音乐学院",
+      "imageKey": "西安|西安音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-xacom",
+        "file": "assets/img/poi/poi-cn-xacom.jpg",
+        "credit": "西安音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%AE%89%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-ccom-guo",
+      "city": "北京",
+      "name": "中国音乐学院",
+      "category": "conservatory",
+      "kindLabel": "中国民族音乐最高学府 · 双一流建设高校",
+      "lon": 116.3812,
+      "lat": 40.0006,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 10.949,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "China Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "1964年在周恩来总理倡导关怀下建立，由北京艺术学院音乐系、中央音乐学院民族声乐与民族器乐系等合并组建，素有“中国音乐家的摇篮”“中国音乐殿堂”之美誉。校园坐落于北京奥林匹克公园西侧安翔路，建筑融汇传统汉唐飞檐造型与现代专业声学功能，建有国音堂音乐厅、歌剧排练厅及标准化现代录音演播实验大楼。",
+      "musicRelation": "以弘扬中国传统音乐文化与建设“中国乐派”为宗旨的最高国家级音乐学府。首任院长李凌，汇聚雷振邦、安波等音乐大师；金铁霖教授在此创立中国民族声乐教学体系，培养出李谷一、彭丽媛、宋祖英、吴碧霞、龚琳娜等顶尖歌唱家，张维良、宋飞等国乐大家长期执教。国家“双一流”建设高校，软科中国大学专业排名中“音乐表演”“音乐学”常年稳居全国 A+ 顶尖梯队；建有中国乐派高精尖创新中心，引领全球中国音乐知识体系建设。",
+      "editorialStatus": "curated",
+      "sourceKey": "北京|中国音乐学院",
+      "imageKey": "北京|中国音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-ccom-guo",
+        "file": "assets/img/poi/poi-cn-ccom-guo.jpg",
+        "credit": "中国音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-sccm",
+      "city": "成都",
+      "name": "四川音乐学院",
+      "category": "conservatory",
+      "kindLabel": "西南最高音乐学府 · 现代艺术名校",
+      "lon": 104.0818,
+      "lat": 30.6433,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 7.975,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Sichuan Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%B7%9D%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "创建于1939年抗战烽火之中，前身为常苏民等创办的“四川省立戏剧教育实验学校”，是西南地区最早建立的高等音乐专业院校。武侯校区坐落于锦江之滨新生路，绿树掩映，毗邻望江楼；建有川音交响音乐厅、室内乐厅、尚美琴房大楼以及新都生态艺术校区，形成传统学术与前沿艺术双核驱动体系。",
+      "musicRelation": "中国西南音乐艺术与音乐教育的高峰基地。培养了先锋派作曲大师何训田（《阿姐鼓》《央金玛》）、著名作曲家王酩（《难忘今宵》）、钢琴教育家但昭义（培养李云迪、陈萨、张昊辰等国际大赛冠军）、著名国际钢琴家李云迪，以及李宇春、王铮亮等流行乐坛领军人物。软科中国大学专业排名中音乐表演与音乐学专业稳居全国前列；在手风琴国际赛事、现代电子音乐（电子音乐系开创先河）及西南少数民族原生民歌研究上声誉卓著。",
+      "editorialStatus": "curated",
+      "sourceKey": "成都|四川音乐学院",
+      "imageKey": "成都|四川音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-sccm",
+        "file": "assets/img/poi/poi-cn-sccm.jpg",
+        "credit": "四川音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%9B%9B%E5%B7%9D%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-whcm",
+      "city": "武汉",
+      "name": "武汉音乐学院",
+      "category": "conservatory",
+      "kindLabel": "华中最高音乐学府 · 乐律学与编钟研究重镇",
+      "lon": 114.2982,
+      "lat": 30.5408,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 5.824,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Wuhan Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "溯源于1920年程纯枢创办的武昌艺术专科学校与1948年中原大学文艺学院，1953年全国院系调整组建中南音乐专科学校，1985年定名武汉音乐学院，为华中腹地唯一独立设置的专业高等音乐学府。校址坐落于武昌古城蛇山南麓解放路，紧邻万里长江与黄鹤楼，保留有典雅的中西折衷主义红砖历史校舍与现代编钟音乐厅。",
+      "musicRelation": "中国乐律学、音乐考古与楚乐研究的学术高地。乐律学泰斗童忠良教授长期执教，与曾侯乙编钟测音宗师黄翔鹏学脉紧密呼应，建立了享誉国际的中国乐律学与古代乐钟科研团队；著名作曲家王原平（《龙船调》交响改编）、二胡名家严洁敏等在此成长。软科中国最好学科排名位列全国前列，音乐学、音乐表演为国家级一流本科专业；在古琴汉皋琴派传承、长江中游多声部民间歌曲普查及东方微音程声学实测领域处于全国前沿。",
+      "editorialStatus": "curated",
+      "sourceKey": "武汉|武汉音乐学院",
+      "imageKey": "武汉|武汉音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-whcm",
+        "file": "assets/img/poi/poi-cn-whcm.jpg",
+        "credit": "武汉音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E6%AD%A6%E6%B1%89%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-xhcm",
+      "city": "广州",
+      "name": "星海音乐学院",
+      "category": "conservatory",
+      "kindLabel": "岭南最高音乐学府 · 粤乐与流行音乐摇篮",
+      "lon": 113.3768,
+      "lat": 23.0531,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 16.963,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Xinghai Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "华南地区唯一的高等专业音乐学府。前身为1932年马思聪、陈洪创办的广州音乐院及1957年组建的广州音乐专科学校，1985年为纪念广东籍人民音乐家、《黄河大合唱》作者冼星海而定名。大学城主校区地处小谷围岛外环西路，拥有现代岭南庭院格局的交响音乐厅、室内乐厅、舞蹈实验剧场与沙河老校区音乐厅，充满现代开放包容气息。",
+      "musicRelation": "岭南民间音乐保护与中国现代流行音乐工业的重要摇篮。马思聪、李凌、赵宋光（律学与音乐美学泰斗）、金湘等宗师在此执教或渊源深厚；开创全国最早的流行音乐系，培养出周笔畅、刘惜君、尹正等跨界明星。软科专业排名中音乐表演、音乐学、录音艺术均入选国家级一流本科专业；设有“岭南音乐文化研究中心”，在广东音乐、潮州弦诗乐、客家山歌及粤港澳大湾区现代流行音乐科技领域独占鳌头。",
+      "editorialStatus": "curated",
+      "sourceKey": "广州|星海音乐学院",
+      "imageKey": "广州|星海音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-xhcm",
+        "file": "assets/img/poi/poi-cn-xhcm.jpg",
+        "credit": "星海音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E6%98%9F%E6%B5%B7%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-symc",
+      "city": "沈阳",
+      "name": "沈阳音乐学院",
+      "category": "conservatory",
+      "kindLabel": "东北最高音乐学府 · 鲁艺红色基因沃土",
+      "lon": 123.4285,
+      "lat": 41.7645,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 4.588,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Shenyang Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B2%88%E9%98%B3%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "中国共产党创办的第一所高等艺术专业院校。前身为1938年毛泽东、周恩来等老一辈无产阶级革命家在延安倡议建立的“鲁迅艺术学院”（鲁艺）音乐系，1948年随军进驻沈阳，1958年定名沈阳音乐学院。三好街校区坐落于和平区南湖之畔，保留有庄严厚重的苏式红砖校史楼与现代交响演艺大厅、鲁艺传统文献展馆。",
+      "musicRelation": "中国北方革命音乐与现当代专业音乐教育的摇篮。吕骥、李劫夫（《我们走在大路上》《歌唱二小放牛郎》）、霍存慧、秦咏诚（《我为祖国献石油》《我和我的祖国》）等大师奠定学派根基，郎朗童年亦在此接受名师启蒙；软科中国大学专业排名稳居全国前列，音乐学、音乐表演、作曲为国家级一流本科专业；在东北民间音乐（二人转、鼓吹乐）、北方少数民族音乐抢救及红色音乐文化遗产传承上地位无可撼动。",
+      "editorialStatus": "curated",
+      "sourceKey": "沈阳|沈阳音乐学院",
+      "imageKey": "沈阳|沈阳音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-symc",
+        "file": "assets/img/poi/poi-cn-symc.jpg",
+        "credit": "沈阳音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E6%B2%88%E9%98%B3%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-tjcm",
+      "city": "天津",
+      "name": "天津音乐学院",
+      "category": "conservatory",
+      "kindLabel": "北方高等音乐学府 · 声乐与现代器乐重镇",
+      "lon": 117.2274,
+      "lat": 39.1232,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 4.907,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Tianjin Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "创建于1958年，前身是1950年中央音乐学院在天津建立时留津的主体部分。坐落于海河之滨十一经路，深植于天津近现代中西交汇的历史文化土壤中；校园建有专业交响音乐厅、室内乐厅、黑匣子实验剧场与现代化琴房群，并与茱莉亚学院在津共同打造天津茱莉亚学院，成为北方国际音乐教育的双子地标。",
+      "musicRelation": "中国北方声乐歌剧艺术与民族器乐室内乐的重镇。音乐理论泰斗缪天瑞（音乐辞书与律学宗师）、声乐教育家沈湘（培养梁宁、迪里拜尔等走向世界歌剧舞台）、石惟正、男高音歌唱家蒋大为、施鸿鄂等皆在此执教或求学。软科中国大学专业排名中音乐表演、音乐学入选国家级一流本科专业；在西洋管弦乐演奏、民族室内乐乐团排演及手风琴、打击乐现代教学领域享有崇高国际学术声誉。",
+      "editorialStatus": "curated",
+      "sourceKey": "天津|天津音乐学院",
+      "imageKey": "天津|天津音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-tjcm",
+        "file": "assets/img/poi/poi-cn-tjcm.jpg",
+        "credit": "天津音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-zjcm",
+      "city": "杭州",
+      "name": "浙江音乐学院",
+      "category": "conservatory",
+      "kindLabel": "江南新型高等音乐学府 · 跨媒介艺术新坐标",
+      "lon": 120.0815,
+      "lat": 30.1448,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 16.023,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Zhejiang Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B5%99%E6%B1%9F%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "2016年由教育部正式批准设立的高规格公办普通高等音乐艺术学府，由浙江省人民政府与文化和旅游部共建。校园坐落于杭州西湖区转塘之江文化产业带，占地达602亩，建筑形态汲取五线谱、七和弦与流线形音波意象，拥有国际一流声学标准的大剧院、音乐厅、室内乐厅、黑匣子剧场及数百间专业智慧琴房。",
+      "musicRelation": "中国现代化与国际化并举的新型顶尖音乐学府。名誉院长由国际著名指挥家王甫建领衔，汇聚许舒亚、杜泰航、杨九华等知名音乐大师与海外一流演奏家。软科中国大学专业排名上升极其迅猛，音乐表演、音乐学、舞蹈编导等专业入选国家级一流本科专业建设点；设立数字音乐智能处理重点实验室、音乐工程系，在江南丝竹乐种复兴、现代管弦乐创演与跨媒介音乐科技前沿展现出蓬勃活力。",
+      "editorialStatus": "curated",
+      "sourceKey": "杭州|浙江音乐学院",
+      "imageKey": "杭州|浙江音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-zjcm",
+        "file": "assets/img/poi/poi-cn-zjcm.jpg",
+        "credit": "浙江音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E6%B5%99%E6%B1%9F%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-hrbcm",
+      "city": "哈尔滨",
+      "name": "哈尔滨音乐学院",
+      "category": "conservatory",
+      "kindLabel": "联合国音乐之都高等学府 · 对俄音乐交流高地",
+      "lon": 126.5418,
+      "lat": 45.8775,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 8.212,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Harbin Conservatory of Music",
+        "url": "https://zh.wikipedia.org/wiki/%E5%93%88%E5%B0%94%E6%BB%A8%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "history": "2016年经教育部批准建立，坐落于松花江北岸松北大学城。依托哈尔滨百年交响音乐历史（中国最早的交响乐团——哈尔滨交响乐团在此诞生）与联合国教科文组织授予的“音乐之都”底蕴，与俄罗斯著名圣彼得堡国立音乐学院签署深度共建协议；校园建筑洋溢着宏伟华丽的俄罗斯古典主义巴洛克风貌与冰雪浪漫情怀。",
+      "musicRelation": "中国对俄音乐文化合作交流的国家级战略枢纽。常年聘请圣彼得堡音乐学院俄罗斯功勋艺术家与柴可夫斯基国际音乐比赛获奖名家常驻执教，声乐教育家徐学敏等坐镇。拥有音乐与舞蹈学一级学科博士学位授予权，音乐表演、音乐学获批国家级一流本科专业；深度传承俄罗斯正统学派在交响乐管弦合奏、歌剧声乐与室内乐重奏上的精湛传统，成为欧亚音乐交融的璀璨明珠。",
+      "editorialStatus": "curated",
+      "sourceKey": "哈尔滨|哈尔滨音乐学院",
+      "imageKey": "哈尔滨|哈尔滨音乐学院",
+      "imageSource": {
+        "mediaId": "poi-cn-hrbcm",
+        "file": "assets/img/poi/poi-cn-hrbcm.jpg",
+        "credit": "哈尔滨音乐学院 · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%93%88%E5%B0%94%E6%BB%A8%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-bnu-music",
+      "city": "北京",
+      "name": "北京师范大学 (艺术与传媒学院)",
+      "category": "university",
+      "kindLabel": "首批双一流建设高校 · 艺术学理论全国标杆",
+      "lon": 116.3662,
+      "lat": 39.9618,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 7.305,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Beijing Normal University",
+        "url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "中国高等师范教育之源头。其艺术学科发端于1915年北京高等师范学校创立的手工图画专修科；2002年在此基础上创建全国首家“艺术与传媒学院”，打破传统单一系科藩篱，开启艺术创作、音乐表演与新媒体文化交叉融合的先河。坐落于海淀区新街口外大街，校园内保留有启功先生题额的艺术大楼与田家炳艺术演艺剧场。",
+      "musicRelation": "中国高师音乐理论与艺术教育哲学的战略策源地。黄会林、王一川、周星等艺术学理论泰斗奠定基础，著名作曲家金湘、音乐美学家郭声健曾执教。在软科中国最好学科排名中“艺术学理论”常年高居全国第一（A+），音乐学为国家级一流本科专业；以通识美育、跨文化音乐批评与中小学音乐新课标研制著称，领航中国高等师范院校现代音乐人才培养模式改革。",
+      "editorialStatus": "curated",
+      "sourceKey": "北京|北京师范大学 (艺术与传媒学院)",
+      "imageKey": "北京|北京师范大学 (艺术与传媒学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-bnu-music",
+        "file": "assets/img/poi/poi-cn-bnu-music.jpg",
+        "credit": "北京师范大学 (艺术与传媒学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-ecnu-music",
+      "city": "上海",
+      "name": "华东师范大学 (音乐学院)",
+      "category": "university",
+      "kindLabel": "985工程高师名校 · 海派音乐教育与理论重镇",
+      "lon": 121.4042,
+      "lat": 31.2285,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 6.612,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "East China Normal University",
+        "url": "https://zh.wikipedia.org/wiki/%E5%8D%8E%E4%B8%9C%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "溯源于大夏大学、光华大学等百年名校艺术科系。坐落于风景秀美、绿树浓荫的普陀区丽娃河畔，文脉深邃绵长；2018年由艺术学院音乐系升格成立独立音乐学院，建有典雅的现代音乐厅、数码音频工作站与排练厅，融合海派国际化都市文化与江南温润人文气息。",
+      "musicRelation": "华东地区音乐教育学、西方音乐批评与室内乐创演的高地。音乐教育家吴跃跃、当代音乐理论学者钱仁平、高晓东等深耕学术，在二十世纪现代主义音乐分析与合唱指挥法上成果卓著。在软科中国大学专业排名中音乐学评为 A 级，音乐表演入选高水平专业；建有教育部中华优秀传统文化传承基地，推动海派都市音乐形态与高师基础音乐教育深层互动。",
+      "editorialStatus": "curated",
+      "sourceKey": "上海|华东师范大学 (音乐学院)",
+      "imageKey": "上海|华东师范大学 (音乐学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-ecnu-music",
+        "file": "assets/img/poi/poi-cn-ecnu-music.jpg",
+        "credit": "华东师范大学 (音乐学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%8D%8E%E4%B8%9C%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-njnu-music",
+      "city": "南京",
+      "name": "南京师范大学 (音乐学院)",
+      "category": "university",
+      "kindLabel": "百年江南名师学府 · 艺术学一级学科博士点",
+      "lon": 118.7668,
+      "lat": 32.0568,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 2.863,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Nanjing Normal University",
+        "url": "https://zh.wikipedia.org/wiki/%E5%8D%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "源自1902年三江师范学堂图画手工科及李叔同先生首创的艺术专修科，是中国近现代高等音乐师范教育最重要的发祥地之一。学院坐落于鼓楼区宁海路随园校区（金陵女子大学旧址），雕梁画栋的大屋顶中国古典宫殿式建筑群错落于苍松古柏之间，享有“东方最美丽的校园”之盛誉。",
+      "musicRelation": "李叔同（弘一法师）开创的百年高师音乐学脉正统。陆华柏、唐学咏、吴伯超等大师曾执教播撒乐种，当代著名音乐学家管建华（后现代音乐教育哲学奠基人）、徐元勇等在此执掌教席。软科中国最好学科排名中音乐与舞蹈学连续位列全国前列，首批设立音乐与舞蹈学博士后科研流动站，音乐学与音乐表演双双入选国家级一流本科专业，在音乐人类学理论引介与江南民歌律学研究上成就斐然。",
+      "editorialStatus": "curated",
+      "sourceKey": "南京|南京师范大学 (音乐学院)",
+      "imageKey": "南京|南京师范大学 (音乐学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-njnu-music",
+        "file": "assets/img/poi/poi-cn-njnu-music.jpg",
+        "credit": "南京师范大学 (音乐学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%8D%97%E4%BA%AC%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-ccnu-music",
+      "city": "武汉",
+      "name": "华中师范大学 (音乐学院)",
+      "category": "university",
+      "kindLabel": "教育部直属双一流高师 · 音乐与舞蹈学博士点",
+      "lon": 114.3642,
+      "lat": 30.5228,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 9.601,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Central China Normal University",
+        "url": "https://zh.wikipedia.org/wiki/%E5%8D%8E%E4%B8%AD%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "音乐办学历史可追溯至1929年华中大学时期，八十年代正式复建音乐系，坐落在武昌风景如画的桂子山校区。学院建有设施完善的现代化音乐教学实验大楼、专业交响音乐厅、室内排练厅及国内领先的音乐认知与心理学实验室。",
+      "musicRelation": "华中地区综合高师音乐理论、声乐表演与音乐教育领跑者。著名音乐史学家孙继南（《中国音乐通史简编》编著者之一）、声乐名家藏玉琰、王庆等名师深耕于此。软科中国最好学科排名位居全国师范高校前列，拥有音乐与舞蹈学一级学科博士学位授予权，音乐学为国家级一流本科专业；在荆楚民间音乐遗产数字化、高师智能音乐教育系统研发及合唱音响平衡研究上成果卓著。",
+      "editorialStatus": "curated",
+      "sourceKey": "武汉|华中师范大学 (音乐学院)",
+      "imageKey": "武汉|华中师范大学 (音乐学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-ccnu-music",
+        "file": "assets/img/poi/poi-cn-ccnu-music.jpg",
+        "credit": "华中师范大学 (音乐学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%8D%8E%E4%B8%AD%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-nenu-music",
+      "city": "长春",
+      "name": "东北师范大学 (音乐学院)",
+      "category": "university",
+      "kindLabel": "教育部直属高师龙头 · 基础音乐教育学重镇",
+      "lon": 125.3262,
+      "lat": 43.8612,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 4.908,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Northeast Normal University",
+        "url": "https://zh.wikipedia.org/wiki/%E4%B8%9C%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "创办于1946年本溪，前身为东北大学鲁迅文艺学院音乐系，1949年随校迁定吉林长春。校园坐落于长春市人民大街，绿树成荫，现代风格的音乐教学综合大楼内设有多功能交响乐厅、数码钢琴集体课教室与满族萨满音乐田野档案库。",
+      "musicRelation": "中国北方高师基础音乐教育与合唱交响乐演练重镇。著名作曲家安波、张棣华、电影配乐指挥泰斗尹升山（长春电影制片厂乐团渊源）、全国知名基础音乐教育专家尹爱青教授等在此执教。软科中国大学专业排名中音乐学高居全国高师前列，拥有艺术学一级学科博士点；长期领衔教育部全国中小学音乐教材编订与国家级骨干教师培训，在东北少数民族萨满神歌与民俗乐器考订上享有权威地位。",
+      "editorialStatus": "curated",
+      "sourceKey": "长春|东北师范大学 (音乐学院)",
+      "imageKey": "长春|东北师范大学 (音乐学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-nenu-music",
+        "file": "assets/img/poi/poi-cn-nenu-music.jpg",
+        "credit": "东北师范大学 (音乐学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E4%B8%9C%E5%8C%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-hnu-music",
+      "city": "长沙",
+      "name": "湖南师范大学 (音乐学院)",
+      "category": "university",
+      "kindLabel": "国家双一流建设高校 · 潇湘学派音乐文化策源地",
+      "lon": 112.9465,
+      "lat": 28.1882,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 4.511,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Hunan Normal University",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B9%96%E5%8D%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "办学历史可追溯至1938年国立师范学院音乐体育专修科，是全国最早设立音乐系科的高等师范名校之一。坐落于国家5A级风景名胜岳麓山脚下、湘江桃子湖畔，红墙绿瓦掩映在灵山秀水之中，环境清幽出尘，充满楚湘浓郁的人文气韵。",
+      "musicRelation": "中国南方具有深厚民族民间艺术底蕴的音乐名院。人民音乐家贺绿汀早年参与擘画，音乐史学家柴承志、徐豪等大师在此耕耘，世界著名男高音歌唱家石倚洁曾任教于此。在软科中国大学专业排名中，音乐学、音乐表演双双获评高等级专业，建有音乐与舞蹈学一级学科博士点及博士后流动站；在苗族侗族多声部民歌挖掘、湖湘戏曲音乐传承与民族管弦乐创作上形成了极具影响力的“潇湘学派”。",
+      "editorialStatus": "curated",
+      "sourceKey": "长沙|湖南师范大学 (音乐学院)",
+      "imageKey": "长沙|湖南师范大学 (音乐学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-hnu-music",
+        "file": "assets/img/poi/poi-cn-hnu-music.jpg",
+        "credit": "湖南师范大学 (音乐学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E6%B9%96%E5%8D%97%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-snnu-music",
+      "city": "西安",
+      "name": "陕西师范大学 (音乐学院)",
+      "category": "university",
+      "kindLabel": "教育部直属西部高师 · 丝路音乐文化与美育高地",
+      "lon": 108.9488,
+      "lat": 34.2025,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 15.489,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Shaanxi Normal University",
+        "url": "https://zh.wikipedia.org/wiki/%E9%99%95%E8%A5%BF%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "创立于1988年，坐落于西安南郊古文化区长安南路雁塔校区，与大雁塔、西安音乐学院隔街相望。学院建有设备精良的音乐厅、实验剧场、现代电声与音频实验室，以及珍藏西北多民族民间乐器与手稿的丝路音乐文化标本陈列馆。",
+      "musicRelation": "中国西部音乐师范教育与西北民族民间音乐研究高地。汇聚了程天健、张新等理论学者，以及韩宝强教授等乐声学大家客座，教学与创作实力雄厚。在软科中国大学专业排名中位居前列，音乐学入选国家级一流本科专业建设点；紧扣“一带一路”国家战略，在陕北说书与信天游声腔分析、汉唐乐舞图像考证及西部乡村美育教师终身发展体系上作出了不可替代的卓越贡献。",
+      "editorialStatus": "curated",
+      "sourceKey": "西安|陕西师范大学 (音乐学院)",
+      "imageKey": "西安|陕西师范大学 (音乐学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-snnu-music",
+        "file": "assets/img/poi/poi-cn-snnu-music.jpg",
+        "credit": "陕西师范大学 (音乐学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E9%99%95%E8%A5%BF%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-xmu",
+      "city": "厦门",
+      "name": "厦门大学 (艺术学院音乐系)",
+      "category": "university",
+      "kindLabel": "百年双一流综合大学 · 郑小瑛与海峡交响名殿",
+      "lon": 118.0934,
+      "lat": 24.4372,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 4.754,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Xiamen University",
+        "url": "https://zh.wikipedia.org/wiki/%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "厦门大学由爱国华侨领袖陈嘉庚先生于1921年创办。艺术学院音乐系创设于1983年，坐落于思明校区东南端白城海滩与胡里山炮台之侧，背依五老峰，面朝浩瀚东海，琴房与音乐厅推窗即可饱览海峡波涛，被誉为“中国离大海最近的音乐殿堂”。建有现代化的李秀娣音乐厅、交响乐排练厅与艺术名家工作室。",
+      "musicRelation": "中国综合性大学音乐教育与交响乐普及的典范殿堂。新中国第一位交响乐女指挥家、中央音乐学院指挥系原主任郑小瑛教授在此长期执教，在厦门大学全力支持下创办了中国首个民办公助职业交响乐团——厦门爱乐乐团，开创享誉中外的“郑小瑛模式”边讲边演普及交响艺术；著名作曲家李曦微、钢琴家李未明等名家荟萃。在教育部学科评估中位居综合性大学前列（B-），软科大学专业排名名列前茅；音乐表演、音乐学入选一流本科专业，在交响指挥艺术、闽台民间音乐交融与高水平大学交响美育方面独步全国。",
+      "editorialStatus": "curated",
+      "sourceKey": "厦门|厦门大学 (艺术学院音乐系)",
+      "imageKey": "厦门|厦门大学 (艺术学院音乐系)",
+      "imageSource": {
+        "mediaId": "poi-cn-xmu",
+        "file": "assets/img/poi/poi-cn-xmu.jpg",
+        "credit": "厦门大学 (艺术学院音乐系) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%8E%A6%E9%97%A8%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-pku-art",
+      "city": "北京",
+      "name": "北京大学 (艺术学院与百年讲堂)",
+      "category": "university",
+      "kindLabel": "中国最高综合学府 · 蔡元培美育发祥地与音乐学先声",
+      "lon": 116.3094,
+      "lat": 39.9912,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 12.782,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Peking University",
+        "url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "中国现代音乐教育与比较音乐学思想的发源地。1919年蔡元培校长亲自创办“北京大学音乐研究会”，聘请萧友梅任导师、王光祈任干事，并组建了中国近代最早的管弦乐队；校园坐落于燕园未名湖畔，建有气势磅礴的百周年纪念讲堂，拥有国际一流标准的爱乐大厅，成为全球顶级交响乐团与室内乐大师巡演的首选殿堂。",
+      "musicRelation": "中国现代音乐学、音乐美学与艺术学理论的哲学源头。蔡元培在此提出“以美育代宗教”的世纪宣言；王光祈在此确立比较音乐学志向，杨荫浏在此研习古琴与中国律制；当代著名美学家宗白华、叶朗、朱良志、彭吉象等先生长期在此执教。软科中国最好学科排名中“艺术学理论”常年稳居全国 A+ 顶尖；百周年纪念讲堂常年举办国家级高雅音乐讲堂与大师班，赓续百年北大高雅博雅的乐教传统。",
+      "editorialStatus": "curated",
+      "sourceKey": "北京|北京大学 (艺术学院与百年讲堂)",
+      "imageKey": "北京|北京大学 (艺术学院与百年讲堂)",
+      "imageSource": {
+        "mediaId": "poi-cn-pku-art",
+        "file": "assets/img/poi/poi-cn-pku-art.jpg",
+        "credit": "北京大学 (艺术学院与百年讲堂) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-henu-music",
+      "city": "开封",
+      "name": "河南大学 (音乐学院)",
+      "category": "university",
+      "kindLabel": "中原百年名校 · 华夏历史文明与民间音乐宝库",
+      "lon": 114.3725,
+      "lat": 34.8115,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 6.135,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Henan University",
+        "url": "https://zh.wikipedia.org/wiki/%E6%B2%B3%E5%8D%97%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "创办于1912年河南留学欧美预备学校，是中原近代高等教育的先驱。音乐专业办学追溯至二十世纪初，明伦校区坐落于八朝古都开封城内铁塔之侧，校园内完整保存着被列为全国重点文物保护单位的民国近代中西合璧宫殿式建筑群，飞檐雕梁，文脉连绵百年。",
+      "musicRelation": "中原音乐文化传承与黄河流域民间艺术研究中心。著名音乐史学家孙继南曾在此求学与执教，古琴与中原弦索乐名师丁伯刚、声乐家黄慧芬等辈出。在软科中国大学专业排名中音乐表演、音乐学稳居综合性大学前列，拥有艺术学一级学科博士学位授予权；在河南坠子、大调曲子、豫剧声腔理论考订及黄河文化交响化创作领域构建了独具魅力的“中原学派”。",
+      "editorialStatus": "curated",
+      "sourceKey": "开封|河南大学 (音乐学院)",
+      "imageKey": "开封|河南大学 (音乐学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-henu-music",
+        "file": "assets/img/poi/poi-cn-henu-music.jpg",
+        "credit": "河南大学 (音乐学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E6%B2%B3%E5%8D%97%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-cn-seu-art",
+      "city": "南京",
+      "name": "东南大学 (艺术学院)",
+      "category": "university",
+      "kindLabel": "工科名校艺术奇迹 · 全国首个艺术学博士点发祥地",
+      "lon": 118.7905,
+      "lat": 32.0572,
+      "coordinateSource": "manual-building-coordinate",
+      "coordinateStatus": "manual-building-coordinate",
+      "cityDistanceKm": 0.695,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Southeast University",
+        "url": "https://zh.wikipedia.org/wiki/%E4%B8%9C%E5%8D%97%E5%A4%A7%E5%AD%A6"
+      },
+      "history": "溯源于1906年李叔同任教之两江师范学堂图画手工科。坐落在六朝建康宫苑旧址与明代国子监故地，四牌楼校区拥有大礼堂、南高院等全国重点文物保护单位民国近代建筑群，校园核心矗立着一千五百年树龄的“六朝松”，见证中国近代高等艺术教育发轫。",
+      "musicRelation": "中国艺术学理论与艺术哲学的开山发祥地。1994年在此设立全国第一个艺术学博士点（国务院学位委员会艺术学博士点001号），著名艺术学家张道一先生（中国艺术学理论奠基人）、凌继尧、王廷信等宗师长期坐镇，担任国务院学位委员会艺术学学科评议组召集人单位。软科中国最好学科排名“艺术学理论”常年稳居全国最高梯队（A+）；在音乐图像学、音乐美学哲学与传统艺术物质文化史研究上享有至高学术声誉。",
+      "editorialStatus": "curated",
+      "sourceKey": "南京|东南大学 (艺术学院)",
+      "imageKey": "南京|东南大学 (艺术学院)",
+      "imageSource": {
+        "mediaId": "poi-cn-seu-art",
+        "file": "assets/img/poi/poi-cn-seu-art.jpg",
+        "credit": "东南大学 (艺术学院) · 建筑与音乐学术实景",
+        "source": "https://zh.wikipedia.org/wiki/%E4%B8%9C%E5%8D%97%E5%A4%A7%E5%AD%A6"
+      },
+      "imageRequest": null,
+      "legacySource": "china-conservatory-curated"
     }
   ],
   "aliases": [
