@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="./css/map-real.css">
 <link rel="stylesheet" href="./css/europa-liquid-interactions.css">
 <link rel="stylesheet" href="./css/galaxy.css?v=20260911-relations3">
-<link rel="stylesheet" href="./css/acoustic-lab.css?v=20260920-parchment-v5">
+<link rel="stylesheet" href="./css/acoustic-lab.css?v=20260920-stave-v7">
 <style id="lab-theme-override">
   #v-lab, .acoustic-lab-root {
     background: transparent !important;
@@ -157,6 +157,35 @@
   }
   .drone-switch-bar span {
     color: var(--ink, #35301F) !important;
+  }
+  .stave-svg-container {
+    background: #FAF5E8 !important;
+    border-color: var(--line, #C6BA92) !important;
+  }
+  .stave-filter-chip {
+    background: var(--panel, #F2EBD8) !important;
+    color: var(--mut, #77704F) !important;
+    border-color: var(--line, #C6BA92) !important;
+  }
+  .stave-filter-chip:hover {
+    border-color: var(--acc, #7A2E1D) !important;
+    color: var(--ink, #35301F) !important;
+  }
+  .stave-filter-chip.active {
+    background: var(--acc, #7A2E1D) !important;
+    color: #FFF !important;
+    border-color: var(--acc, #7A2E1D) !important;
+  }
+  .stave-toolbar {
+    background: color-mix(in srgb, var(--panel, #F2EBD8) 88%, var(--bg, #E9E0C9) 12%) !important;
+    border-color: var(--line, #C6BA92) !important;
+  }
+  .stave-status-pill {
+    color: var(--acc, #7A2E1D) !important;
+  }
+  .stave-keyboard-divider {
+    color: var(--ink, #35301F) !important;
+    border-top-color: color-mix(in srgb, var(--line, #C6BA92) 60%, transparent) !important;
   }
 </style>
 
@@ -335,7 +364,7 @@
 
 
 
-<script type="module" src="./js/index.js?v=20260918-search51"></script>
+<script type="module" src="./js/index.js?v=20260920-stave-v7"></script>
 <script type="module" src="./js/europa-liquid-interactions.js"></script>
 <script>
 (function(){
