@@ -80,16 +80,8 @@ export function createAcousticLabUI(container) {
       <section class="lab-panel active" id="panel-tuning">
         <div class="lab-grid-2">
           <div>
+            <!-- 置顶 HERO: 古典五线谱音阶视唱与交互演奏台 (首屏直达) -->
             <div class="lab-card" style="margin-bottom: 20px;">
-              <h3 class="lab-card-title">
-                <span>选择历史或民族律制</span>
-                <small id="current-tuning-name" class="lab-card-badge">当前：现代十二平均律</small>
-              </h3>
-              <div class="tuning-selector" id="tuning-chips-container"></div>
-              <p id="tuning-description" class="tuning-quote-box"></p>
-            </div>
-
-            <div class="lab-card">
               <div class="stave-card-header">
                 <h3 class="lab-card-title" style="margin-bottom:0;border:none;padding:0;">
                   <span>🎼 古典五线谱音阶视唱与交互演奏 (Interactive Musical Staff)</span>
@@ -141,6 +133,16 @@ export function createAcousticLabUI(container) {
                 <button class="audition-btn" id="btn-play-bach-color">🎹 巴赫良律色彩对比 (C大调纯净 vs F#大调紧张)</button>
                 <button class="audition-btn" id="btn-play-sanfen-diff">📜 三分损益“黄钟不能还原”旋宫音差</button>
               </div>
+            </div>
+
+            <!-- 律制选择卡片放在五线谱下方 -->
+            <div class="lab-card">
+              <h3 class="lab-card-title">
+                <span>选择历史或民族律制（点击切换调律与五线谱音高）</span>
+                <small id="current-tuning-name" class="lab-card-badge">当前：现代十二平均律</small>
+              </h3>
+              <div class="tuning-selector" id="tuning-chips-container"></div>
+              <p id="tuning-description" class="tuning-quote-box"></p>
             </div>
           </div>
 
