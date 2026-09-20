@@ -3263,6 +3263,160 @@
       "url": "assets/img/poi/poi-cn-seu-art.jpg",
       "file": "assets/img/poi/poi-cn-seu-art.jpg",
       "credit": "东南大学 (艺术学院) · 建筑与音乐学术实景"
+    },
+    "poi-tw-ntnu-music": {
+      "url": "assets/img/poi/poi-tw-ntnu-music.jpg",
+      "file": "assets/img/poi/poi-tw-ntnu-music.jpg",
+      "credit": "台湾师范大学主校区行政主楼实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:NTNU_Administration_Building_2024_01.jpg",
+      "aiCreated": false
+    },
+    "poi-tw-tnua": {
+      "url": "assets/img/poi/poi-tw-tnua.jpg",
+      "file": "assets/img/poi/poi-tw-tnua.jpg",
+      "credit": "台北艺术大学行政与教学楼实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:TNUA_administrative_building_20100123.jpg",
+      "aiCreated": false
+    },
+    "poi-tw-tttc": {
+      "url": "assets/img/poi/poi-tw-tttc.jpg",
+      "file": "assets/img/poi/poi-tw-tttc.jpg",
+      "credit": "台湾戏曲中心建筑实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:The_Xiqu_Center_of_Taiwan_20170405a.jpg",
+      "aiCreated": false
+    },
+    "poi-tw-tainanconfucian": {
+      "url": "assets/img/poi/poi-tw-tainanconfucian.jpg",
+      "file": "assets/img/poi/poi-tw-tainanconfucian.jpg",
+      "credit": "台南孔庙大成殿实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Confucius_Temple_Tainan_-_Ta_Cheng_Hall_%E8%87%BA%E5%8D%97%E5%AD%94%E5%BB%9F%E5%A4%A7%E6%88%90%E6%AE%BF_(2026)_-_img_06.jpg",
+      "aiCreated": false
+    },
+    "poi-tw-bunun-pasibutbut": {
+      "url": "assets/img/poi/poi-tw-bunun-pasibutbut.jpg",
+      "file": "assets/img/poi/poi-tw-bunun-pasibutbut.jpg",
+      "credit": "台东布农族部落实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:953,_Taiwan,_%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89%E6%A1%83%E6%BA%90%E6%9D%91_-_panoramio_(11).jpg",
+      "aiCreated": false
+    },
+    "poi-tw-hengchun-chenda": {
+      "url": "assets/img/poi/poi-tw-hengchun-chenda.jpg",
+      "file": "assets/img/poi/poi-tw-hengchun-chenda.jpg",
+      "credit": "恒春古城南门实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:South_Gate_of_Hengchun-01.2024-01-17.jpg",
+      "aiCreated": false
+    },
+    "poi-in-sangeetnatak": {
+      "url": "assets/img/poi/poi-in-sangeetnatak.jpg",
+      "file": "assets/img/poi/poi-in-sangeetnatak.jpg",
+      "credit": "新德里罗宾德拉大厦实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Rabindra_Bhawan,_Delhi.jpg",
+      "aiCreated": false
+    },
+    "poi-in-chennai": {
+      "url": "assets/img/poi/poi-in-chennai.jpg",
+      "file": "assets/img/poi/poi-in-chennai.jpg",
+      "credit": "金奈马德拉斯音乐学院大楼实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Madras_Music_Academy.jpg",
+      "aiCreated": false
+    },
+    "poi-in-tagore": {
+      "url": "assets/img/poi/poi-in-tagore.jpg",
+      "file": "assets/img/poi/poi-in-tagore.jpg",
+      "credit": "加尔各答乔拉桑科萨库尔巴里实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Jorasanko_Thakurbari.jpg",
+      "aiCreated": false
+    },
+    "poi-in-mysore": {
+      "url": "assets/img/poi/poi-in-mysore.jpg",
+      "file": "assets/img/poi/poi-in-mysore.jpg",
+      "credit": "麦索尔王宫全景晨曦实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Mysore_Palace_Morning.jpg",
+      "aiCreated": false
+    },
+    "poi-in-tansen": {
+      "url": "assets/img/poi/poi-in-tansen.jpg",
+      "file": "assets/img/poi/poi-in-tansen.jpg",
+      "credit": "瓜廖尔坦森音乐节现场实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Satish_Vyas_at_Tansen_Samaroh,_Gwalior_26_December_2020.jpg",
+      "aiCreated": false
+    },
+    "poi-in-maihar": {
+      "url": "assets/img/poi/poi-in-maihar.jpg",
+      "file": "assets/img/poi/poi-in-maihar.jpg",
+      "credit": "迈哈尔夏尔达德维山巅神庙实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Sharada_Temple_Maihar.JPG",
+      "aiCreated": false
+    },
+    "poi-in-ncpa": {
+      "url": "assets/img/poi/poi-in-ncpa.jpg",
+      "file": "assets/img/poi/poi-in-ncpa.jpg",
+      "credit": "孟买国家表演艺术中心建筑群实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Campus_of_National_Centre_for_the_Performing_Arts_in_Mumbai.jpg",
+      "aiCreated": false
+    },
+    "poi-id-kraton": {
+      "url": "assets/img/poi/poi-id-kraton.jpg",
+      "file": "assets/img/poi/poi-id-kraton.jpg",
+      "credit": "日惹王宫多诺普拉托诺门实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Jogja_-_Kraton_Yogyakarta_-_Donopratono_gate_(2025)_-_img_02.jpg",
+      "aiCreated": false
+    },
+    "poi-id-surakarta": {
+      "url": "assets/img/poi/poi-id-surakarta.jpg",
+      "file": "assets/img/poi/poi-id-surakarta.jpg",
+      "credit": "梭罗印尼艺术学院校长楼实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Rektorat_ISI_Surakarta.jpg",
+      "aiCreated": false
+    },
+    "poi-th-nationaltheatre": {
+      "url": "assets/img/poi/poi-th-nationaltheatre.jpg",
+      "file": "assets/img/poi/poi-th-nationaltheatre.jpg",
+      "credit": "曼谷国家大剧院实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Thailand_National_Theatre_%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4.jpg",
+      "aiCreated": false
+    },
+    "poi-mm-mandalay": {
+      "url": "assets/img/poi/poi-mm-mandalay.jpg",
+      "file": "assets/img/poi/poi-mm-mandalay.jpg",
+      "credit": "曼德勒皇宫金殿实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Mandalay_Palace,_Myanmar.jpg",
+      "aiCreated": false
+    },
+    "poi-vn-hue": {
+      "url": "assets/img/poi/poi-vn-hue.jpg",
+      "file": "assets/img/poi/poi-vn-hue.jpg",
+      "credit": "顺化皇城午门实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Hu%E1%BA%BF_(2024)_-_Meridian_Gate_-_Ng%E1%BB%8D_M%C3%B4n_(Ho%C3%A0ng_th%C3%A0nh_Hu%E1%BA%BF)_-_img_02.jpg",
+      "aiCreated": false
+    },
+    "poi-vn-hanoi": {
+      "url": "assets/img/poi/poi-vn-hanoi.jpg",
+      "file": "assets/img/poi/poi-vn-hanoi.jpg",
+      "credit": "河内文庙奎文阁实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Hanoi_Temple_of_Literature_(cropped).jpg",
+      "aiCreated": false
+    },
+    "poi-kh-angkorwat": {
+      "url": "assets/img/poi/poi-kh-angkorwat.jpg",
+      "file": "assets/img/poi/poi-kh-angkorwat.jpg",
+      "credit": "吴哥窟主殿建筑群晨景实景 · Wikimedia Commons",
+      "source": "https://en.wikipedia.org/wiki/File:Angkor_Wat.jpg",
+      "aiCreated": false
+    },
+    "poi-ph-ccp": {
+      "url": "assets/img/poi/poi-ph-ccp.jpg",
+      "file": "assets/img/poi/poi-ph-ccp.jpg",
+      "credit": "菲律宾文化中心主楼实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:CULTURAL_CENTER_OF_THE_PHILIPPINES_MAIN_BUILDING_3_-_Flickr.jpg",
+      "aiCreated": false
+    },
+    "poi-ph-kulintang": {
+      "url": "assets/img/poi/poi-ph-kulintang.jpg",
+      "file": "assets/img/poi/poi-ph-kulintang.jpg",
+      "credit": "棉兰老岛传统库林堂与邦萨摩洛打击乐器实景 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Mindanao_Bangsamoro_Islamic_Musical_Instruments.jpg",
+      "aiCreated": false
     }
   },
   "poi-cn-xacom": {
@@ -3403,6 +3557,160 @@
     "file": "assets/img/poi/poi-cn-seu-art.jpg",
     "credit": "东南大学四牌楼国立中央大学大礼堂实景 · Wikimedia Commons",
     "source": "https://commons.wikimedia.org/wiki/File:Auditorium_of_Southeast_University_in_winter.jpg",
+    "aiCreated": false
+  },
+  "poi-tw-ntnu-music": {
+    "url": "assets/img/poi/poi-tw-ntnu-music.jpg",
+    "file": "assets/img/poi/poi-tw-ntnu-music.jpg",
+    "credit": "台湾师范大学主校区行政主楼实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:NTNU_Administration_Building_2024_01.jpg",
+    "aiCreated": false
+  },
+  "poi-tw-tnua": {
+    "url": "assets/img/poi/poi-tw-tnua.jpg",
+    "file": "assets/img/poi/poi-tw-tnua.jpg",
+    "credit": "台北艺术大学行政与教学楼实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:TNUA_administrative_building_20100123.jpg",
+    "aiCreated": false
+  },
+  "poi-tw-tttc": {
+    "url": "assets/img/poi/poi-tw-tttc.jpg",
+    "file": "assets/img/poi/poi-tw-tttc.jpg",
+    "credit": "台湾戏曲中心建筑实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Xiqu_Center_of_Taiwan_20170405a.jpg",
+    "aiCreated": false
+  },
+  "poi-tw-tainanconfucian": {
+    "url": "assets/img/poi/poi-tw-tainanconfucian.jpg",
+    "file": "assets/img/poi/poi-tw-tainanconfucian.jpg",
+    "credit": "台南孔庙大成殿实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Confucius_Temple_Tainan_-_Ta_Cheng_Hall_%E8%87%BA%E5%8D%97%E5%AD%94%E5%BB%9F%E5%A4%A7%E6%88%90%E6%AE%BF_(2026)_-_img_06.jpg",
+    "aiCreated": false
+  },
+  "poi-tw-bunun-pasibutbut": {
+    "url": "assets/img/poi/poi-tw-bunun-pasibutbut.jpg",
+    "file": "assets/img/poi/poi-tw-bunun-pasibutbut.jpg",
+    "credit": "台东布农族部落实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:953,_Taiwan,_%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89%E6%A1%83%E6%BA%90%E6%9D%91_-_panoramio_(11).jpg",
+    "aiCreated": false
+  },
+  "poi-tw-hengchun-chenda": {
+    "url": "assets/img/poi/poi-tw-hengchun-chenda.jpg",
+    "file": "assets/img/poi/poi-tw-hengchun-chenda.jpg",
+    "credit": "恒春古城南门实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:South_Gate_of_Hengchun-01.2024-01-17.jpg",
+    "aiCreated": false
+  },
+  "poi-in-sangeetnatak": {
+    "url": "assets/img/poi/poi-in-sangeetnatak.jpg",
+    "file": "assets/img/poi/poi-in-sangeetnatak.jpg",
+    "credit": "新德里罗宾德拉大厦实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Rabindra_Bhawan,_Delhi.jpg",
+    "aiCreated": false
+  },
+  "poi-in-chennai": {
+    "url": "assets/img/poi/poi-in-chennai.jpg",
+    "file": "assets/img/poi/poi-in-chennai.jpg",
+    "credit": "金奈马德拉斯音乐学院大楼实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Madras_Music_Academy.jpg",
+    "aiCreated": false
+  },
+  "poi-in-tagore": {
+    "url": "assets/img/poi/poi-in-tagore.jpg",
+    "file": "assets/img/poi/poi-in-tagore.jpg",
+    "credit": "加尔各答乔拉桑科萨库尔巴里实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Jorasanko_Thakurbari.jpg",
+    "aiCreated": false
+  },
+  "poi-in-mysore": {
+    "url": "assets/img/poi/poi-in-mysore.jpg",
+    "file": "assets/img/poi/poi-in-mysore.jpg",
+    "credit": "麦索尔王宫全景晨曦实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Mysore_Palace_Morning.jpg",
+    "aiCreated": false
+  },
+  "poi-in-tansen": {
+    "url": "assets/img/poi/poi-in-tansen.jpg",
+    "file": "assets/img/poi/poi-in-tansen.jpg",
+    "credit": "瓜廖尔坦森音乐节现场实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Satish_Vyas_at_Tansen_Samaroh,_Gwalior_26_December_2020.jpg",
+    "aiCreated": false
+  },
+  "poi-in-maihar": {
+    "url": "assets/img/poi/poi-in-maihar.jpg",
+    "file": "assets/img/poi/poi-in-maihar.jpg",
+    "credit": "迈哈尔夏尔达德维山巅神庙实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Sharada_Temple_Maihar.JPG",
+    "aiCreated": false
+  },
+  "poi-in-ncpa": {
+    "url": "assets/img/poi/poi-in-ncpa.jpg",
+    "file": "assets/img/poi/poi-in-ncpa.jpg",
+    "credit": "孟买国家表演艺术中心建筑群实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Campus_of_National_Centre_for_the_Performing_Arts_in_Mumbai.jpg",
+    "aiCreated": false
+  },
+  "poi-id-kraton": {
+    "url": "assets/img/poi/poi-id-kraton.jpg",
+    "file": "assets/img/poi/poi-id-kraton.jpg",
+    "credit": "日惹王宫多诺普拉托诺门实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Jogja_-_Kraton_Yogyakarta_-_Donopratono_gate_(2025)_-_img_02.jpg",
+    "aiCreated": false
+  },
+  "poi-id-surakarta": {
+    "url": "assets/img/poi/poi-id-surakarta.jpg",
+    "file": "assets/img/poi/poi-id-surakarta.jpg",
+    "credit": "梭罗印尼艺术学院校长楼实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Rektorat_ISI_Surakarta.jpg",
+    "aiCreated": false
+  },
+  "poi-th-nationaltheatre": {
+    "url": "assets/img/poi/poi-th-nationaltheatre.jpg",
+    "file": "assets/img/poi/poi-th-nationaltheatre.jpg",
+    "credit": "曼谷国家大剧院实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Thailand_National_Theatre_%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4.jpg",
+    "aiCreated": false
+  },
+  "poi-mm-mandalay": {
+    "url": "assets/img/poi/poi-mm-mandalay.jpg",
+    "file": "assets/img/poi/poi-mm-mandalay.jpg",
+    "credit": "曼德勒皇宫金殿实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Mandalay_Palace,_Myanmar.jpg",
+    "aiCreated": false
+  },
+  "poi-vn-hue": {
+    "url": "assets/img/poi/poi-vn-hue.jpg",
+    "file": "assets/img/poi/poi-vn-hue.jpg",
+    "credit": "顺化皇城午门实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Hu%E1%BA%BF_(2024)_-_Meridian_Gate_-_Ng%E1%BB%8D_M%C3%B4n_(Ho%C3%A0ng_th%C3%A0nh_Hu%E1%BA%BF)_-_img_02.jpg",
+    "aiCreated": false
+  },
+  "poi-vn-hanoi": {
+    "url": "assets/img/poi/poi-vn-hanoi.jpg",
+    "file": "assets/img/poi/poi-vn-hanoi.jpg",
+    "credit": "河内文庙奎文阁实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Hanoi_Temple_of_Literature_(cropped).jpg",
+    "aiCreated": false
+  },
+  "poi-kh-angkorwat": {
+    "url": "assets/img/poi/poi-kh-angkorwat.jpg",
+    "file": "assets/img/poi/poi-kh-angkorwat.jpg",
+    "credit": "吴哥窟主殿建筑群晨景实景 · Wikimedia Commons",
+    "source": "https://en.wikipedia.org/wiki/File:Angkor_Wat.jpg",
+    "aiCreated": false
+  },
+  "poi-ph-ccp": {
+    "url": "assets/img/poi/poi-ph-ccp.jpg",
+    "file": "assets/img/poi/poi-ph-ccp.jpg",
+    "credit": "菲律宾文化中心主楼实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:CULTURAL_CENTER_OF_THE_PHILIPPINES_MAIN_BUILDING_3_-_Flickr.jpg",
+    "aiCreated": false
+  },
+  "poi-ph-kulintang": {
+    "url": "assets/img/poi/poi-ph-kulintang.jpg",
+    "file": "assets/img/poi/poi-ph-kulintang.jpg",
+    "credit": "棉兰老岛传统库林堂与邦萨摩洛打击乐器实景 · Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Mindanao_Bangsamoro_Islamic_Musical_Instruments.jpg",
     "aiCreated": false
   }
 }

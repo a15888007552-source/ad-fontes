@@ -826,6 +826,82 @@
     "开封": {
       "lon": 114.3076,
       "lat": 34.7972
+    },
+    "台南": {
+      "lon": 120.2039,
+      "lat": 22.9908
+    },
+    "台东": {
+      "lon": 121.1444,
+      "lat": 22.7583
+    },
+    "恒春": {
+      "lon": 120.7439,
+      "lat": 22.0039
+    },
+    "新德里": {
+      "lon": 77.209,
+      "lat": 28.6139
+    },
+    "金奈": {
+      "lon": 80.2707,
+      "lat": 13.0827
+    },
+    "加尔各答": {
+      "lon": 88.3639,
+      "lat": 22.5726
+    },
+    "麦索尔": {
+      "lon": 76.6552,
+      "lat": 12.2958
+    },
+    "瓜廖尔": {
+      "lon": 78.1828,
+      "lat": 26.2183
+    },
+    "迈哈尔": {
+      "lon": 80.76,
+      "lat": 24.27
+    },
+    "孟买": {
+      "lon": 72.8777,
+      "lat": 19.076
+    },
+    "日惹": {
+      "lon": 110.3695,
+      "lat": -7.7956
+    },
+    "梭罗": {
+      "lon": 110.8283,
+      "lat": -7.5755
+    },
+    "曼谷": {
+      "lon": 100.5018,
+      "lat": 13.7563
+    },
+    "曼德勒": {
+      "lon": 96.0891,
+      "lat": 21.9588
+    },
+    "顺化": {
+      "lon": 107.5909,
+      "lat": 16.4637
+    },
+    "河内": {
+      "lon": 105.8342,
+      "lat": 21.0278
+    },
+    "暹粒": {
+      "lon": 103.856,
+      "lat": 13.3633
+    },
+    "马尼拉": {
+      "lon": 120.9842,
+      "lat": 14.5995
+    },
+    "马拉维": {
+      "lon": 124.2858,
+      "lat": 8.0039
     }
   },
   "pois": [
@@ -14988,6 +15064,490 @@
       },
       "imageRequest": null,
       "legacySource": "china-conservatory-curated"
+    },
+    {
+      "id": "poi-tw-ntnu-music",
+      "city": "台北",
+      "name": "国立台湾师范大学音乐学系与文荟厅",
+      "category": "conservatory",
+      "kindLabel": "台湾高等音乐教育与民俗采集策源地",
+      "lon": 121.5278,
+      "lat": 25.0264,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "National Taiwan Normal University",
+        "url": "https://en.wikipedia.org/wiki/National_Taiwan_Normal_University"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-ntnu-music",
+        "file": "assets/img/poi/poi-tw-ntnu-music.jpg",
+        "credit": "台湾师范大学主校区行政主楼实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:NTNU_Administration_Building_2024_01.jpg"
+      },
+      "history": "创立于1946年，坐落于台北大安区和平东路一段，其前身为日治时期台湾总督府台北高等学校。校内文荟厅等历史红砖建筑群见证了战后台湾艺术文化启蒙与高等音乐教育的滥觞。",
+      "musicRelation": "台湾高等专业音乐教育的摇篮与民族音乐学实地采风发祥地。音乐泰斗许常惠、郭芝苑、马水龙均曾在此执教；1967年许常惠与史惟亮在此发起震撼海内外的“民俗音乐采集运动”，抢救原住民与客家、河洛民间歌谣，奠定现代台湾民族音乐学与学院作曲体系基石。"
+    },
+    {
+      "id": "poi-tw-tnua",
+      "city": "台北",
+      "name": "国立台北艺术大学与关渡音乐厅",
+      "category": "conservatory",
+      "kindLabel": "台湾当代艺术创作与传统音乐学府",
+      "lon": 121.4727,
+      "lat": 25.1317,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Taipei National University of the Arts",
+        "url": "https://en.wikipedia.org/wiki/Taipei_National_University_of_the_Arts"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-tnua",
+        "file": "assets/img/poi/poi-tw-tnua.jpg",
+        "credit": "台北艺术大学行政与教学楼实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:TNUA_administrative_building_20100123.jpg"
+      },
+      "history": "坐落于台北市北投区关渡平原俯瞰淡水河出海口的山峦之间，由建筑大师李祖原设计，红砖灰瓦融合闽南传统院落与现代主义造型，拥有专业交响乐厅与传统戏曲演艺剧场。",
+      "musicRelation": "台湾殿堂级综合表演艺术高等学府，下设全台首创的“传统音乐学系”（涵盖南管、北管、古琴、琵琶、戏曲等专业）与音乐研究所。作曲泰斗马水龙（《梆笛协奏曲》作者）、朱宗庆（朱宗庆打击乐团创办人）长期耕耘于此，是传统国乐与前卫现代严肃音乐的交汇中枢。"
+    },
+    {
+      "id": "poi-tw-tttc",
+      "city": "台北",
+      "name": "台湾戏曲中心与台湾国乐团",
+      "category": "music_venue",
+      "kindLabel": "台湾传统戏曲与国乐演艺总坛",
+      "lon": 121.5192,
+      "lat": 25.1039,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Taiwan Traditional Theatre Center",
+        "url": "https://en.wikipedia.org/wiki/Taiwan_Traditional_Theatre_Center"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-tttc",
+        "file": "assets/img/poi/poi-tw-tttc.jpg",
+        "credit": "台湾戏曲中心建筑实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:The_Xiqu_Center_of_Taiwan_20170405a.jpg"
+      },
+      "history": "位于台北士林区芝山捷运站旁，由姚仁喜建筑师事务所操刀设计，建筑以“一桌二椅”传统戏曲写意美学转化为不对称现代结构，是台湾国立传统艺术中心的北部旗舰驻地。",
+      "musicRelation": "台湾传统戏曲、民族器乐与民间乐曲档案研究的国家级中枢。台湾国乐团（NCO）、国光剧团驻地；内设“台湾音乐馆”，典藏全台最珍贵的民间音乐黑胶采风录音、乐谱手稿与民族乐器实物。"
+    },
+    {
+      "id": "poi-tw-tainanconfucian",
+      "city": "台南",
+      "name": "台南孔子庙与以成书院十三音",
+      "category": "church",
+      "kindLabel": "全台首学与三百年大成礼乐祖庭",
+      "lon": 120.2039,
+      "lat": 22.9908,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Tainan Confucian Temple",
+        "url": "https://en.wikipedia.org/wiki/Tainan_Confucian_Temple"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-tainanconfucian",
+        "file": "assets/img/poi/poi-tw-tainanconfucian.jpg",
+        "credit": "台南孔庙大成殿实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Confucius_Temple_Tainan_-_Ta_Cheng_Hall_%E8%87%BA%E5%8D%97%E5%AD%94%E5%BB%9F%E5%A4%A7%E6%88%90%E6%AE%BF_(2026)_-_img_06.jpg"
+      },
+      "history": "始建于明永历十九年（1665年，郑氏政权时期），被誉为“全台首学”，为台湾最早设立的文庙建筑群，大成殿朱栏重檐，列为国定古迹。",
+      "musicRelation": "台湾现存历史最悠久、规制最严整的释奠礼乐圣地。其附属“以成书院”创立于清道光十五年（1835年），传承国家级无形文化资产“以成书院十三音”（丝竹细乐与宫廷祭孔大成乐章），古朴典雅的八音礼乐三百余年薪火不绝。"
+    },
+    {
+      "id": "poi-tw-bunun-pasibutbut",
+      "city": "台东",
+      "name": "布农族祈祷小米丰收歌圣地 (雾鹿部落)",
+      "category": "landmark",
+      "kindLabel": "人类泛音复音奇迹八部合音发祥地",
+      "lon": 121.0375,
+      "lat": 23.1783,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Bunun people",
+        "url": "https://en.wikipedia.org/wiki/Bunun_people"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-bunun-pasibutbut",
+        "file": "assets/img/poi/poi-tw-bunun-pasibutbut.jpg",
+        "credit": "台东布农族部落实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:953,_Taiwan,_%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89%E6%A1%83%E6%BA%90%E6%9D%91_-_panoramio_(11).jpg"
+      },
+      "history": "位于台东县海端乡新武吕溪上游峡谷深处的雾鹿布农族古老部落，崇山峻岭环抱，完整保留了南岛语系高山族原住民独特的祭祀习俗与传统长屋社群形态。",
+      "musicRelation": "人类世界民族音乐学最震撼的发现之一——布农族“八部合音”（Pasibutbut / 祈祷小米丰收歌）核心圣地。1943年日本音乐学者黑泽隆朝在此录音并寄送联合国教科文组织，彻底打破了西方音乐学界“多声部复调唯独源于古希腊与欧洲”的教条偏见，其纯人声自然泛音阶差上升复音是世界无伴奏合唱艺术的瑰宝。"
+    },
+    {
+      "id": "poi-tw-hengchun-chenda",
+      "city": "恒春",
+      "name": "恒春古城与陈达民谣传习所",
+      "category": "landmark",
+      "kindLabel": "台湾本土民谣史诗《思想起》发祥地",
+      "lon": 120.7439,
+      "lat": 22.0039,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Hengchun",
+        "url": "https://en.wikipedia.org/wiki/Hengchun"
+      },
+      "imageSource": {
+        "mediaId": "poi-tw-hengchun-chenda",
+        "file": "assets/img/poi/poi-tw-hengchun-chenda.jpg",
+        "credit": "恒春古城南门实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:South_Gate_of_Hengchun-01.2024-01-17.jpg"
+      },
+      "history": "台湾现存保存最完整的清代城池建筑群，建于光绪元年（1875年），拥有东西南北四座城门及古城墙遗址，地处台湾最南端恒春半岛。",
+      "musicRelation": "台湾本土民谣史诗的核心摇篮。传奇盲人月琴说唱民间大师陈达在此诞生并弹唱一生，其即兴吟唱的《思想起》、《四季春》、《牛母伴》融合了平埔族与汉人移民的拓荒血泪，被许常惠誉为“未经雕琢的黑钻石”，深刻启发了战后台湾校园民歌运动与乡土音乐寻根潮。"
+    },
+    {
+      "id": "poi-in-sangeetnatak",
+      "city": "新德里",
+      "name": "桑吉特·纳塔克国家艺术学院 (罗宾德拉大厦)",
+      "category": "conservatory",
+      "kindLabel": "印度最高表演艺术学术中枢与非遗总殿",
+      "lon": 77.2319,
+      "lat": 28.6272,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Sangeet Natak Akademi",
+        "url": "https://en.wikipedia.org/wiki/Sangeet_Natak_Akademi"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-sangeetnatak",
+        "file": "assets/img/poi/poi-in-sangeetnatak.jpg",
+        "credit": "新德里罗宾德拉大厦实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Rabindra_Bhawan,_Delhi.jpg"
+      },
+      "history": "成立于1952年，是印度独立后设立的首个国家级表演艺术科学院，驻地位于新德里市中心的现代主义代表作罗宾德拉大厦（Rabindra Bhavan）。",
+      "musicRelation": "印度国家级音乐学研究、典籍考据与最高国家奖（Sangeet Natak Akademi Award）评定殿堂。系统保存了全印度各邦古典拉格（Raga）、塔拉节拍体系、吠陀唱诵及古乐谱珍稀档案，是贯通印度斯坦乐派与卡纳蒂克乐派的国家学术灯塔。"
+    },
+    {
+      "id": "poi-in-chennai",
+      "city": "金奈",
+      "name": "马德拉斯音乐学院与卡纳蒂克古典圣地",
+      "category": "conservatory",
+      "kindLabel": "南印度古典卡纳蒂克音乐世界心脏",
+      "lon": 80.2572,
+      "lat": 13.0456,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "The Music Academy (Chennai)",
+        "url": "https://en.wikipedia.org/wiki/The_Music_Academy_(Chennai)"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-chennai",
+        "file": "assets/img/poi/poi-in-chennai.jpg",
+        "credit": "金奈马德拉斯音乐学院大楼实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Madras_Music_Academy.jpg"
+      },
+      "history": "创立于1928年印度国大党年会期间，位于泰米尔纳德邦首府金奈（旧称马德拉斯），拥有享誉国际的专业声学礼堂与音乐理论研究所。",
+      "musicRelation": "南印度卡纳蒂克古典音乐（Carnatic Music）无与伦比的圣殿。每年12月至翌年1月主办全球规模最大的“马德拉斯音乐季”（Madras Music Season），汇集数千场维纳琴（Saraswati Veena）、姆里丹格姆双头鼓（Mridangam）、小提琴与卡纳蒂克高难度声乐会演，授予印度音乐界最高学术桂冠“桑吉塔·卡拉尼迪”（Sangita Kalanidhi）。"
+    },
+    {
+      "id": "poi-in-tagore",
+      "city": "加尔各答",
+      "name": "乔拉桑科萨库尔巴里 (泰戈尔故居与音乐圣地)",
+      "category": "house",
+      "kindLabel": "泰戈尔歌曲体系与近代孟加拉文艺复兴圣殿",
+      "lon": 88.3589,
+      "lat": 22.5856,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Jorasanko Thakur Bari",
+        "url": "https://en.wikipedia.org/wiki/Jorasanko_Thakur_Bari"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-tagore",
+        "file": "assets/img/poi/poi-in-tagore.jpg",
+        "credit": "加尔各答乔拉桑科萨库尔巴里实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Jorasanko_Thakurbari.jpg"
+      },
+      "history": "始建于18世纪的宏大红砖殖民地风格宅邸，诺贝尔文学奖获得者罗宾德拉纳特·泰戈尔的出生地与终老之所，现为加尔各答罗宾德拉·巴拉蒂大学校园的一部分。",
+      "musicRelation": "泰戈尔歌曲体系（Rabindra Sangeet，共2230首传世经典）的诞生母所。泰戈尔在此将古老印度斯坦古典拉格、西塔琴律动与孟加拉民谣包尔（Baul）诗歌融合，开创近现代东方声乐美学新流派；印度国歌《人民的意志》与孟加拉国国歌《金色的孟加拉》均在此孕育。"
+    },
+    {
+      "id": "poi-in-mysore",
+      "city": "麦索尔",
+      "name": "麦索尔王宫与卡纳蒂克宫廷乐府",
+      "category": "landmark",
+      "kindLabel": "瓦迪亚尔王朝维纳琴派与宫廷乐典祖庭",
+      "lon": 76.6552,
+      "lat": 12.3051,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Mysore Palace",
+        "url": "https://en.wikipedia.org/wiki/Mysore_Palace"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-mysore",
+        "file": "assets/img/poi/poi-in-mysore.jpg",
+        "credit": "麦索尔王宫全景晨曦实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Mysore_Palace_Morning.jpg"
+      },
+      "history": "印度卡纳塔克邦著名历史名城麦索尔的核心王宫，融汇印度-撒拉逊复兴风格与莫卧儿弧顶，拥有华丽的八角形孔雀亭与黄金王座殿堂。",
+      "musicRelation": "南印度古典卡纳蒂克乐派宫廷赞助史上的耀眼巅峰。历代瓦迪亚尔土邦王公皆为精通声律的作曲名宿，催生了独特的“麦索尔bani”维纳琴演奏流派，宫廷乐长韦奈·塞桑纳（Veene Sheshanna）将七弦维纳琴的微分音滑奏技术推向古典声学极致。"
+    },
+    {
+      "id": "poi-in-tansen",
+      "city": "瓜廖尔",
+      "name": "坦森陵墓与瓜廖尔乐派祖庭",
+      "category": "tomb",
+      "kindLabel": "北印印度斯坦古典声乐鼻祖安息之所",
+      "lon": 78.1728,
+      "lat": 26.2294,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Gwalior Fort",
+        "url": "https://en.wikipedia.org/wiki/Gwalior_Fort"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-tansen",
+        "file": "assets/img/poi/poi-in-tansen.jpg",
+        "credit": "瓜廖尔坦森音乐节现场实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Satish_Vyas_at_Tansen_Samaroh,_Gwalior_26_December_2020.jpg"
+      },
+      "history": "位于中央邦瓜廖尔古堡山脚下的苏菲派圣人穆罕默德·高斯陵墓建筑群内，莫卧儿阿克巴大帝宫廷九宝之首、传奇乐圣坦森（Miyan Tansen，1506–1589）长眠于此。",
+      "musicRelation": "北印古典印度斯坦音乐（Hindustani Classical Music）最古老、最正宗的古典歌唱流派“瓜廖尔乐派”（Gwalior Gharana）精神祖庭。相传坦森唱《梅加拉格》能引动降雨，唱《迪帕克拉格》能点燃宫灯；每年在此举行的“坦森音乐节”（Tansen Samaroh）是全印古典德鲁帕德（Dhrupad）与卡亚尔（Khayal）声乐泰斗朝拜圣会。"
+    },
+    {
+      "id": "poi-in-maihar",
+      "city": "迈哈尔",
+      "name": "迈哈尔夏尔达神庙与迈哈尔乐派发祥地",
+      "category": "church",
+      "kindLabel": "现代西塔琴与萨罗德器乐拉格圣殿",
+      "lon": 80.76,
+      "lat": 24.27,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Maihar",
+        "url": "https://en.wikipedia.org/wiki/Maihar"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-maihar",
+        "file": "assets/img/poi/poi-in-maihar.jpg",
+        "credit": "迈哈尔夏尔达德维山巅神庙实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Sharada_Temple_Maihar.JPG"
+      },
+      "history": "耸立在特里库塔山巅（需攀登1063级台阶）的古老印度教夏尔达德维（辩才天女化身）圣庙，俯瞰迈哈尔古城，自古即为乐器修行与神圣冥想之地。",
+      "musicRelation": "20世纪全球印度音乐复兴的灯塔——“迈哈尔乐派”（Maihar Gharana）诞生地。一代宗师乌斯塔德·阿拉乌丁·汗（Baba Allauddin Khan）在此隐居精研，调教出西塔琴神圣大师拉维·香卡（Ravi Shankar）、萨罗德琴大师阿里·阿克巴·汗（Ali Akbar Khan）与安娜普尔纳·德维，彻底奠定了现代印度器乐交响化与跨文化传播的最高标杆。"
+    },
+    {
+      "id": "poi-in-ncpa",
+      "city": "孟买",
+      "name": "印度国家表演艺术中心 (NCPA)",
+      "category": "music_venue",
+      "kindLabel": "南亚顶级现代交响与民间乐阵枢纽",
+      "lon": 72.8208,
+      "lat": 18.9272,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "National Centre for the Performing Arts (India)",
+        "url": "https://en.wikipedia.org/wiki/National_Centre_for_the_Performing_Arts_(India)"
+      },
+      "imageSource": {
+        "mediaId": "poi-in-ncpa",
+        "file": "assets/img/poi/poi-in-ncpa.jpg",
+        "credit": "孟买国家表演艺术中心建筑群实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Campus_of_National_Centre_for_the_Performing_Arts_in_Mumbai.jpg"
+      },
+      "history": "位于孟买阿拉伯海之滨的纳里曼角，建于1969年，由塔塔家族与现代建筑先驱菲利普·约翰逊协作规划，拥有5座世界级专业剧院与音乐厅。",
+      "musicRelation": "印度现代规模最宏大、声学设施最先进的跨文化音乐综合体。常驻印度交响乐团（Symphony Orchestra of India, SOI），长期作为塔布拉鼓（Tabla）大师扎基尔·侯赛因（Zakir Hussain）与世界爵士乐、印度古典乐跨界合作的全球策源地。"
+    },
+    {
+      "id": "poi-id-kraton",
+      "city": "日惹",
+      "name": "日惹王宫与爪哇宫廷甘美兰祖庭",
+      "category": "landmark",
+      "kindLabel": "人类非遗爪哇皇家甘美兰铜锣交响总殿",
+      "lon": 110.3644,
+      "lat": -7.8053,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Kraton Ngayogyakarta Hadiningrat",
+        "url": "https://en.wikipedia.org/wiki/Kraton_Ngayogyakarta_Hadiningrat"
+      },
+      "imageSource": {
+        "mediaId": "poi-id-kraton",
+        "file": "assets/img/poi/poi-id-kraton.jpg",
+        "credit": "日惹王宫多诺普拉托诺门实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Jogja_-_Kraton_Yogyakarta_-_Donopratono_gate_(2025)_-_img_02.jpg"
+      },
+      "history": "建于1755年日惹苏丹国建立之初的宏伟爪哇王宫建筑群，遵循传统宇宙观轴线布局，通体饰以精美金漆雕刻与多重凉亭殿宇（Bangsal）。",
+      "musicRelation": "联合国教科文组织人类非物质文化遗产“甘美兰”（Gamelan）最高尊崇殿堂。宫廷内供奉着拥有神格命名的古老传世青铜乐器群（如用于先知诞辰节庆典的Kyai Guntursari），确立了斯连德罗（Slendro五音）与佩洛格（Pelog七音）微调乐律学的皇家标准，与宫廷贝多约乐舞（Bedhaya）浑然一体。"
+    },
+    {
+      "id": "poi-id-surakarta",
+      "city": "梭罗",
+      "name": "梭罗印尼艺术学院与皮影甘美兰中心",
+      "category": "conservatory",
+      "kindLabel": "印尼皮影戏乐舞与中爪哇甘美兰学术中枢",
+      "lon": 110.8572,
+      "lat": -7.5583,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Institut Seni Indonesia Surakarta",
+        "url": "https://en.wikipedia.org/wiki/Institut_Seni_Indonesia_Surakarta"
+      },
+      "imageSource": {
+        "mediaId": "poi-id-surakarta",
+        "file": "assets/img/poi/poi-id-surakarta.jpg",
+        "credit": "梭罗印尼艺术学院校长楼实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Rektorat_ISI_Surakarta.jpg"
+      },
+      "history": "坐落于中爪哇文化重镇梭罗（苏拉卡尔塔），其前身为1964年设立的印尼传统舞蹈与器乐研究院，是印尼教育部直属的最高表演艺术高等学府。",
+      "musicRelation": "全球甘美兰器乐学、乐律声学与皮影戏（Wayang Kulit）乐曲传承的学术总坛。培养了跨越半个世纪的甘美兰作曲大师与皮影说唱师（Dhalang），系统整理了爪哇甘美兰记谱法（Kepatihan notation）与宫廷曲目库。"
+    },
+    {
+      "id": "poi-th-nationaltheatre",
+      "city": "曼谷",
+      "name": "曼谷国家大剧院与帕塔纳辛艺术学院",
+      "category": "music_venue",
+      "kindLabel": "泰王国宫廷乐舞与皮帕特古典管弦殿堂",
+      "lon": 100.4925,
+      "lat": 13.7583,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "National Theatre (Thailand)",
+        "url": "https://en.wikipedia.org/wiki/National_Theatre_(Thailand)"
+      },
+      "imageSource": {
+        "mediaId": "poi-th-nationaltheatre",
+        "file": "assets/img/poi/poi-th-nationaltheatre.jpg",
+        "credit": "曼谷国家大剧院实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Thailand_National_Theatre_%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%A3%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B2%E0%B8%95%E0%B8%B4.jpg"
+      },
+      "history": "位于曼谷拍那空区大皇宫北侧皇家田广场西隅，建于1965年，毗邻泰国国立博物馆与文化部帕塔纳辛艺术学院（Bunditpatanasilpa Institute）。",
+      "musicRelation": "泰王国最高规格的古典乐舞表演与研究阵地。完整继承拉玛王朝宫廷传统“皮帕特”（Piphat 锣圆、木琴拉纳特与比管）、“马霍里”（Mahori 弦乐交响）与“孔剧”（Khon 假面舞剧）声乐伴奏，是暹罗七平均律（7-TET）理论与器乐实践的国家总坛。"
+    },
+    {
+      "id": "poi-mm-mandalay",
+      "city": "曼德勒",
+      "name": "曼德勒皇宫与缅甸弯琴古乐圣地",
+      "category": "landmark",
+      "kindLabel": "贡榜王朝宫廷曲目《玛哈吉塔》与缅甸竖琴圣殿",
+      "lon": 96.0967,
+      "lat": 21.9928,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Mandalay Palace",
+        "url": "https://en.wikipedia.org/wiki/Mandalay_Palace"
+      },
+      "imageSource": {
+        "mediaId": "poi-mm-mandalay",
+        "file": "assets/img/poi/poi-mm-mandalay.jpg",
+        "credit": "曼德勒皇宫金殿实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Mandalay_Palace,_Myanmar.jpg"
+      },
+      "history": "敏东王于1857年建立的缅甸贡榜王朝最后一个皇家都城王宫，拥有壮观的正方形红砖城墙、护城河与层叠飞檐柚木大金殿。",
+      "musicRelation": "缅甸古典宫廷歌曲总集《玛哈吉塔》（Mahagita）的最后宫廷祖庭。这里是人类现存唯一完好保留的古老弓形竖琴——缅甸弯琴（Saung-gauk，凤凰与菩提叶舟形十三弦琴）与围锣（Hsaing Waing）乐团的皇家演艺中心，音色空灵高贵，承载千年佛教王权赞歌。"
+    },
+    {
+      "id": "poi-vn-hue",
+      "city": "顺化",
+      "name": "顺化皇城与大朝仪宫廷雅乐圣殿",
+      "category": "landmark",
+      "kindLabel": "联合国教科文组织人类非遗顺化雅乐发祥地",
+      "lon": 107.5786,
+      "lat": 16.4697,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Meridian Gate (Huế)",
+        "url": "https://en.wikipedia.org/wiki/Meridian_Gate_(Hu%E1%BA%BF)"
+      },
+      "imageSource": {
+        "mediaId": "poi-vn-hue",
+        "file": "assets/img/poi/poi-vn-hue.jpg",
+        "credit": "顺化皇城午门实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Hu%E1%BA%BF_(2024)_-_Meridian_Gate_-_Ng%E1%BB%8D_M%C3%B4n_(Ho%C3%A0ng_th%C3%A0nh_Hu%E1%BA%BF)_-_img_02.jpg"
+      },
+      "history": "越南阮朝（1802–1945年）十三代皇帝的皇居所在地，香江之畔的世界文化遗产，午门巍峨、太和殿宏阔，见证了越南封建礼制大成。",
+      "musicRelation": "联合国教科文组织人类口述与非物质文化遗产“顺化宫廷雅乐”（Nhã nhạc）正统发源地。太和殿前大朝仪、南郊祭天大典与宗庙祭礼的严格器乐编制（大乐与细乐，包含编磬、大鼓、笛、横琵琶与二胡），深刻融合了中国周秦礼乐制度与占婆古乐旋律。"
+    },
+    {
+      "id": "poi-vn-hanoi",
+      "city": "河内",
+      "name": "河内文庙与歌筹古乐圣地",
+      "category": "church",
+      "kindLabel": "千禧文庙与北越人类非遗底琴歌筹大本营",
+      "lon": 105.8358,
+      "lat": 21.0289,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Temple of Literature, Hanoi",
+        "url": "https://en.wikipedia.org/wiki/Temple_of_Literature,_Hanoi"
+      },
+      "imageSource": {
+        "mediaId": "poi-vn-hanoi",
+        "file": "assets/img/poi/poi-vn-hanoi.jpg",
+        "credit": "河内文庙奎文阁实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Hanoi_Temple_of_Literature_(cropped).jpg"
+      },
+      "history": "始建于李圣宗神武二年（1070年）的古都河内名胜，内设国子监，拥有大成殿、奎文阁及82方进士题名碑，为越南最高古代学府与儒学圣殿。",
+      "musicRelation": "人类急需保护非物质文化遗产——越南古典室内歌唱艺术“歌筹”（Ca trù）与儒家礼乐的核心展示所。由女歌者手持竹板（Phách）击节而歌，琴师弹奏特异的长颈三弦无品“底琴”（Đàn đáy），听者敲击赞赏鼓（Trống chầu），乐韵幽微孤高。"
+    },
+    {
+      "id": "poi-kh-angkorwat",
+      "city": "暹粒",
+      "name": "吴哥窟与皇家芭蕾品佩特乐团",
+      "category": "landmark",
+      "kindLabel": "高棉帝国千年浮雕乐器与品佩特神庙古乐发祥地",
+      "lon": 103.867,
+      "lat": 13.4125,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Angkor Wat",
+        "url": "https://en.wikipedia.org/wiki/Angkor_Wat"
+      },
+      "imageSource": {
+        "mediaId": "poi-kh-angkorwat",
+        "file": "assets/img/poi/poi-kh-angkorwat.jpg",
+        "credit": "吴哥窟主殿建筑群晨景实景 · Wikimedia Commons",
+        "source": "https://en.wikipedia.org/wiki/File:Angkor_Wat.jpg"
+      },
+      "history": "公元12世纪初苏利耶跋摩二世建造的高棉帝国须弥山水庙奇观，世界最大宗教建筑群，回廊雕刻着数千尊精美仙女阿卜娑罗（Apsara）雕像与神魔乐舞场景。",
+      "musicRelation": "联合国教科文组织人类非物质文化遗产“柬埔寨皇家芭蕾舞”与神庙祭祀“品佩特”（Pinpeat）打击吹奏古乐阵的源头。吴哥回廊壁画忠实镌刻了900年前铜锣圈（Kong vong）、木琴（Roneat）与双簧管（Sralai）的古老形态，古乐回荡如诸神降临。"
+    },
+    {
+      "id": "poi-ph-ccp",
+      "city": "马尼拉",
+      "name": "马尼拉菲律宾文化中心 (CCP)",
+      "category": "music_venue",
+      "kindLabel": "菲律宾现代国家艺术殿堂与昆迪曼音乐圣地",
+      "lon": 120.9889,
+      "lat": 14.5583,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Cultural Center of the Philippines",
+        "url": "https://en.wikipedia.org/wiki/Cultural_Center_of_the_Philippines"
+      },
+      "imageSource": {
+        "mediaId": "poi-ph-ccp",
+        "file": "assets/img/poi/poi-ph-ccp.jpg",
+        "credit": "菲律宾文化中心主楼实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:CULTURAL_CENTER_OF_THE_PHILIPPINES_MAIN_BUILDING_3_-_Flickr.jpg"
+      },
+      "history": "坐落于马尼拉湾畔罗哈斯大道旁，由菲律宾国家艺术家、建筑大师莱安德罗·洛克辛（Leandro Locsin）设计于1969年，采用巨型悬挑混凝土粗野主义建筑语汇。",
+      "musicRelation": "菲律宾国家交响乐乐府、菲律宾爱乐乐团（PPO）与罗达利亚（Rondalla 拨弦乐队）国际音乐节驻地。同时是西葡殖民化深情抒情曲“昆迪曼”（Kundiman）与南岛土著民族器乐交融创新的国家级中枢。"
+    },
+    {
+      "id": "poi-ph-kulintang",
+      "city": "马拉维",
+      "name": "棉兰老岛马拉维与库林堂铜锣非遗中心",
+      "category": "landmark",
+      "kindLabel": "东南亚古老南岛语族凸脐青铜锣排乐阵祖庭",
+      "lon": 124.2858,
+      "lat": 8.0039,
+      "source": {
+        "kind": "wikipedia-index",
+        "title": "Kulintang",
+        "url": "https://en.wikipedia.org/wiki/Kulintang"
+      },
+      "imageSource": {
+        "mediaId": "poi-ph-kulintang",
+        "file": "assets/img/poi/poi-ph-kulintang.jpg",
+        "credit": "棉兰老岛传统库林堂与邦萨摩洛打击乐器实景 · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Mindanao_Bangsamoro_Islamic_Musical_Instruments.jpg"
+      },
+      "history": "位于菲律宾南部棉兰老岛拉瑙湖畔的伊斯兰文化历史重镇马拉维，是摩洛人马拉瑙族（Maranao）与马京达瑙族的核心聚集区与传统手工艺中心。",
+      "musicRelation": "东南亚古老海洋南岛民族铜锣文化“库林堂”（Kulintang）发源地与最高演奏水准大本营。八面渐变音高凸脐青铜锣横向排列于木雕琴架上，配合大型吊锣（Agung）与独木鼓（Dabakan），以复杂的切分复多节奏展现前殖民时代的海洋波涛与神灵祭祀之声。"
     }
   ],
   "aliases": [
