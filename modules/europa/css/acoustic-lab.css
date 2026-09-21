@@ -29,22 +29,40 @@
   box-sizing: border-box;
 }
 
-/* 顶部导言与物理示波器 */
+/* ==========================================================================
+   顶部导言、声学音色台与物理示波器 (Acoustic Header & Timbre Console)
+   ========================================================================== */
 .lab-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 24px;
-  padding-bottom: 20px;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 26px;
+  padding-bottom: 22px;
   border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.lab-title-area {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.lab-kicker {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: var(--acc);
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 .lab-title-area h2 {
   font-family: var(--serif);
-  font-size: clamp(22px, 3.2vw, 32px);
-  letter-spacing: 0.08em;
-  margin: 0 0 6px 0;
+  font-size: clamp(24px, 3.4vw, 34px);
+  letter-spacing: 0.06em;
+  margin: 0 0 8px 0;
   color: var(--ink);
   font-weight: 600;
   display: flex;
@@ -57,9 +75,9 @@
   font-family: var(--sans);
   font-size: 12px;
   font-style: normal;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   font-weight: 700;
-  color: var(--acc);
+  color: var(--gold);
   text-transform: uppercase;
   border-left: 1px solid var(--line);
   padding-left: 12px;
@@ -68,43 +86,217 @@
 .lab-title-area p {
   color: var(--mut);
   margin: 0;
-  font-size: 15px;
-  line-height: 1.7;
-  max-width: 74ch;
+  font-size: 14.5px;
+  line-height: 1.75;
+  max-width: 72ch;
 }
 
-/* 物理声学示波器卡片 (Vintage Helmholtz Acoustic Visualizer) */
-.lab-visualizer-card {
+/* 控制台组装区：声学音色台 + 赫姆霍兹示波器 */
+.lab-control-deck {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
   flex-shrink: 0;
+}
+
+@media (max-width: 1180px) {
+  .lab-header {
+    flex-direction: column;
+  }
+  .lab-control-deck {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+/* 声学音色与空间混响选择控制台 (Vintage Acoustic Timbre Console) */
+.lab-timbre-console {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 4px;
-  padding: 10px 12px;
-  box-shadow: 0 3px 10px rgba(53, 48, 31, 0.08);
+  padding: 10px 14px;
+  box-shadow: 0 3px 12px rgba(53, 48, 31, 0.07);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  min-width: 290px;
+}
+
+.console-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.console-kicker {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--acc);
+  text-transform: uppercase;
+}
+
+.console-sub {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--mut);
+  font-weight: 600;
+}
+
+.timbre-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.timbre-btn {
+  display: flex;
   align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: color-mix(in srgb, var(--panel) 90%, var(--bg) 10%);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s var(--ease-out);
+}
+
+.timbre-btn:hover {
+  border-color: var(--gold);
+  color: var(--acc);
+  transform: translateY(-1px);
+}
+
+.timbre-btn.active {
+  background: var(--acc);
+  color: #FFF;
+  border-color: var(--acc);
+  box-shadow: 0 2px 6px rgba(122, 46, 29, 0.35);
+}
+
+.timbre-btn .inst-icon {
+  font-size: 13px;
+}
+
+.space-control-row {
+  border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+  padding-top: 6px;
+}
+
+.reverb-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 8px;
+  background: color-mix(in srgb, var(--panel) 85%, var(--acc2) 15%);
+  border: 1px solid color-mix(in srgb, var(--line) 80%, var(--acc2) 20%);
+  border-radius: 3px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.reverb-btn:hover {
+  border-color: var(--acc2);
+}
+
+.reverb-btn.active {
+  background: color-mix(in srgb, var(--acc2) 22%, var(--panel) 78%);
+  border-color: var(--acc2);
+  color: var(--ink);
+}
+
+.reverb-btn strong {
+  color: var(--acc2);
+}
+
+/* 物理声学示波器卡片 (Vintage Brass Helmholtz Acoustic Visualizer) */
+.lab-visualizer-card {
+  flex-shrink: 0;
+  background: #1C1712;
+  border: 2px solid #8C6F2A;
+  border-radius: 5px;
+  padding: 8px 10px;
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.85), 0 4px 16px rgba(40, 30, 20, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 340px;
+}
+
+.vis-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.vis-title {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  color: #D6C291;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.action-btn-compact {
+  padding: 2px 8px;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  background: #2E251C;
+  border: 1px solid #735A22;
+  color: #EBD699;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.action-btn-compact:hover {
+  background: #4A3C2A;
+  color: #FFF;
+}
+
+.vis-canvas-frame {
+  border: 1px solid #3D3122;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.9);
 }
 
 .lab-visualizer-card canvas {
   display: block;
-  width: 320px;
-  height: 84px;
-  background: #FAF5E8;
-  border: 1px solid var(--line);
-  border-radius: 3px;
+  width: 100%;
+  height: 86px;
+  background: #15120E;
 }
 
 .lab-visualizer-status {
-  font-family: var(--sans);
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  color: var(--acc);
-  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: #F5CE5D;
+  margin-top: 5px;
   font-weight: 600;
+  text-align: center;
 }
 
-/* 实验室导航选项卡 */
+/* ==========================================================================
+   实验室导航选项卡 (Lab Navigation Tabs)
+   ========================================================================== */
 .lab-nav {
   display: flex;
   gap: 6px;
@@ -120,17 +312,26 @@
   background: var(--panel);
   color: var(--mut);
   border: 1px solid var(--line);
-  padding: 9px 18px;
+  padding: 9px 16px;
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.18s var(--ease-out);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
+}
+
+.lab-tab-btn .tab-roman {
+  font-family: var(--serif);
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 13px;
+  border-right: 1px solid var(--line);
+  padding-right: 6px;
 }
 
 .lab-tab-btn:hover {
@@ -140,10 +341,15 @@
 }
 
 .lab-tab-btn.active {
-  color: var(--bg);
+  color: #FFF;
   background: var(--acc);
   border-color: var(--acc);
-  box-shadow: 0 2px 6px rgba(122, 46, 29, 0.28);
+  box-shadow: 0 2px 6px rgba(122, 46, 29, 0.32);
+}
+
+.lab-tab-btn.active .tab-roman {
+  color: #FFE6A8;
+  border-right-color: rgba(255, 255, 255, 0.35);
 }
 
 /* 选项卡面板容器 */
@@ -265,15 +471,51 @@
   border-left: 3px solid var(--acc);
 }
 
-/* 交互琴键系统 (Piano Keyboard) - 象牙白与黑檀木古典质感 · 全宽自适应排版 */
+/* ==========================================================================
+   交互琴键系统 (Piano Keyboard with Fallboard & Pedal)
+   ========================================================================== */
+.stave-keyboard-section {
+  margin-top: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 18px rgba(35, 25, 15, 0.12);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* 琴盖实木翻板 (Mahogany Fallboard with Gold Foil Stamp) */
+.keyboard-fallboard {
+  background: linear-gradient(180deg, #3A2318 0%, #25160E 60%, #170C07 100%);
+  border: 1px solid #1A0D06;
+  border-bottom: 2px solid #9A7B2D;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+.fallboard-metal-accent {
+  flex: 1 1 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.5), transparent);
+}
+
+.fallboard-brand {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  font-weight: 700;
+  color: #EBD699;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  user-select: none;
+}
+
 .keyboard-wrapper {
-  background: color-mix(in srgb, var(--bg) 75%, var(--panel) 25%);
-  padding: 14px 16px 20px;
-  border-radius: 4px;
-  border: 1px solid var(--line);
+  background: #1A1510;
+  padding: 10px 14px 16px;
   position: relative;
   user-select: none;
-  box-shadow: inset 0 2px 6px rgba(53, 48, 31, 0.12);
   width: 100%;
   box-sizing: border-box;
 }
@@ -297,66 +539,146 @@
   align-items: center;
   padding-bottom: 8px;
   font-family: var(--sans);
-  transition: background 0.1s ease, transform 0.05s ease, box-shadow 0.1s ease;
+  transition: background 0.08s ease, transform 0.05s ease, box-shadow 0.08s ease;
   box-sizing: border-box;
 }
 
 .key:active, .key.pressed {
-  transform: translateY(2px);
+  transform: translateY(2.5px);
 }
 
+/* 象牙白键 (Ivory White Keys) */
 .key.white {
   flex: 1 1 0;
   width: auto;
   height: 100%;
   min-width: 0;
-  background: linear-gradient(180deg, #FDFBF5 0%, #F5EEDD 80%, #EBE0C5 100%);
+  background: linear-gradient(180deg, #FAF8F2 0%, #F5EFE0 70%, #E8DEC5 100%);
   color: var(--ink);
-  border: 1px solid #C6BA92;
+  border: 1px solid #C4B58A;
   border-top: none;
   z-index: 1;
-  box-shadow: inset 0 1px 0 #FFF, 0 3px 6px rgba(53, 48, 31, 0.14);
+  box-shadow: inset 0 1px 0 #FFF, inset -1px 0 1px rgba(0,0,0,0.08), 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .key.white:hover {
-  background: linear-gradient(180deg, #FFFDF8 0%, #EDE2C7 80%, #E0D3B0 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF4E8 70%, #EFE5CD 100%);
 }
 
 .key.white:active, .key.white.pressed {
-  background: linear-gradient(180deg, #8C2B1F 0%, #7A2E1D 70%, #5E1F13 100%) !important;
+  background: linear-gradient(180deg, #9C3325 0%, #7A2E1D 70%, #5E1F13 100%) !important;
   color: #FFF !important;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.55), 0 0 12px rgba(201, 162, 39, 0.45);
 }
 
+/* 黑檀木黑键 (Ebony Black Keys) */
 .key.black {
   position: absolute;
   top: 0;
   height: 60%;
   width: clamp(28px, 6.2%, 52px);
   transform: translateX(-50%);
-  background: linear-gradient(180deg, #382E25 0%, #1E1712 75%, #0F0B09 100%);
-  color: #EADCB8;
+  background: linear-gradient(180deg, #302820 0%, #1A130F 80%, #0A0806 100%);
+  color: #EBD699;
   z-index: 3;
-  border: 1px solid #0D0907;
+  border: 1px solid #080604;
   border-top: none;
   border-radius: 0 0 3px 3px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .key.black:hover {
-  background: linear-gradient(180deg, #4A3C30 0%, #2B211A 75%, #18130F 100%);
+  background: linear-gradient(180deg, #44372D 0%, #261D17 80%, #120E0A 100%);
 }
 
 .key.black:active, .key.black.pressed {
-  background: linear-gradient(180deg, #8C2B1F 0%, #7A2E1D 70%, #5E1F13 100%) !important;
+  background: linear-gradient(180deg, #9C3325 0%, #7A2E1D 70%, #5E1F13 100%) !important;
   color: #FFF !important;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.6), 0 0 12px rgba(201, 162, 39, 0.5);
 }
 
 .key .key-note {
   font-weight: 700;
   font-size: 13px;
   line-height: 1.1;
+}
+
+/* 延音踏板控制栏 (Sustain Pedal Bar) */
+.keyboard-pedal-bar {
+  background: color-mix(in srgb, var(--panel) 90%, var(--bg) 10%);
+  border: 1px solid var(--line);
+  border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pedal-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--panel);
+  border: 1px solid #9A7B2D;
+  border-radius: 3px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 5px rgba(53, 48, 31, 0.08);
+}
+
+.pedal-btn .pedal-brass-icon {
+  width: 14px;
+  height: 8px;
+  border-radius: 2px 2px 4px 4px;
+  background: linear-gradient(180deg, #F5CE5D 0%, #C9A227 100%);
+  border: 1px solid #8C6F2A;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.pedal-btn .pedal-kbd {
+  background: color-mix(in srgb, var(--panel) 70%, var(--line) 30%);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-family: var(--mono);
+  color: var(--mut);
+}
+
+.pedal-btn:hover {
+  border-color: var(--acc);
+  color: var(--acc);
+}
+
+.pedal-btn.pressed {
+  background: #7A2E1D;
+  color: #FFF;
+  border-color: #7A2E1D;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.35);
+}
+
+.pedal-btn.pressed strong {
+  color: #FFE6A8;
+}
+
+.pedal-btn.pressed .pedal-kbd {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.pedal-tip {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  color: var(--mut);
+  line-height: 1.4;
 }
 
 .key .key-sub {
@@ -1097,4 +1419,14 @@ input[type="range"] {
   }
 }
 
+/* 避免主站全局悬浮翻卷条遮挡声学实验室琴键与踏板 */
+body:has(#v-lab.on) .mirror-switch,
+body:has(#v-lab.active) .mirror-switch {
+  opacity: 0.25;
+  transition: opacity 0.2s ease;
+}
 
+body:has(#v-lab.on) .mirror-switch:hover,
+body:has(#v-lab.active) .mirror-switch:hover {
+  opacity: 1;
+}

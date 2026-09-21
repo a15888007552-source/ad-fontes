@@ -127,32 +127,86 @@ export const INDIAN_THAATS = [
 export const SCHOENBERG_OP25_ROW = [4, 5, 7, 1, 6, 3, 8, 2, 11, 0, 9, 10]; // E, F, G, Db, Gb, Eb, Ab, D, B, C, A, Bb
 
 // ==========================================================================
-// 4. Web Audio 物理发声与声学合成引擎
+// 4. Web Audio 物理发声与真实声学采样引擎 (Acoustic Grand Piano & Historic Instruments)
 // ==========================================================================
+
+const MIDI_NOTE_NAMES = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+
+export function freqToSampleInfo(freq) {
+  const midi = 69 + 12 * Math.log2(Math.max(10, freq) / 440);
+  const roundedMidi = Math.min(108, Math.max(21, Math.round(midi)));
+  const octave = Math.floor(roundedMidi / 12) - 1;
+  const noteName = MIDI_NOTE_NAMES[roundedMidi % 12] + octave;
+  const baseFreq = 440 * Math.pow(2, (roundedMidi - 69) / 12);
+  const playbackRate = freq / baseFreq;
+  return { roundedMidi, noteName, baseFreq, playbackRate };
+}
 
 export class SoundEngine {
   constructor() {
     this.ctx = null;
     this.masterGain = null;
     this.analyser = null;
+    this.instrumentBus = null;
+    this.dryGain = null;
+    this.wetGain = null;
+    this.convolver = null;
+    this.reverbEnabled = true;
+
+    // 当前选定音色: 'piano' (默认真实音乐会大三角钢琴) | 'harpsichord' | 'strings' | 'sine'
+    this.currentInstrument = 'piano';
+
+    // 活跃声部与延音踏板
     this.activeVoices = new Map();
+    this.sustainPedal = false;
+    this.sustainedVoices = new Set();
+
+    // 谭普拉无人机
     this.droneGain = null;
     this.droneOscs = [];
     this.isDroneOn = false;
+
+    // 当前律制
     this.tuningKey = '12-tet';
-    
-    // 泛音加法合成活跃分音集合
+
+    // 泛音加法合成
     this.harmonicVoices = new Map();
+
+    // 真实声学采样缓存 Map<noteName, AudioBuffer>
+    this.sampleCache = {
+      piano: new Map(),
+      harpsichord: new Map()
+    };
+    this.loadingPromises = new Map();
   }
 
   init() {
     if (this.ctx) return;
     const AudioCtx = window.AudioContext || window.webkitAudioContext;
     this.ctx = new AudioCtx();
-    
-    // 总输出与增益控制
+
+    // 总音量
     this.masterGain = this.ctx.createGain();
-    this.masterGain.gain.setValueAtTime(0.7, this.ctx.currentTime);
+    this.masterGain.gain.setValueAtTime(0.82, this.ctx.currentTime);
+
+    // 空间混响 (Concert Hall Reverb) 模拟维也纳金色大厅木质空间共鸣
+    this.instrumentBus = this.ctx.createGain();
+    this.instrumentBus.gain.setValueAtTime(1.0, this.ctx.currentTime);
+
+    this.dryGain = this.ctx.createGain();
+    this.dryGain.gain.setValueAtTime(0.85, this.ctx.currentTime);
+
+    this.wetGain = this.ctx.createGain();
+    this.wetGain.gain.setValueAtTime(this.reverbEnabled ? 0.28 : 0.0001, this.ctx.currentTime);
+
+    this.convolver = this.createConcertHallReverb(2.6, 2.1);
+
+    this.instrumentBus.connect(this.dryGain);
+    this.instrumentBus.connect(this.convolver);
+    this.convolver.connect(this.wetGain);
+
+    this.dryGain.connect(this.masterGain);
+    this.wetGain.connect(this.masterGain);
 
     // 示波器与频谱分析器
     this.analyser = this.ctx.createAnalyser();
@@ -161,6 +215,27 @@ export class SoundEngine {
 
     this.masterGain.connect(this.analyser);
     this.analyser.connect(this.ctx.destination);
+
+    // 立即后台预加载键盘常用核心音区 (C4–E5) 与低音根音 (C2–C4)
+    this.preloadCoreSamples();
+  }
+
+  createConcertHallReverb(duration = 2.5, decay = 2.0) {
+    const rate = this.ctx.sampleRate;
+    const length = Math.floor(rate * duration);
+    const impulse = this.ctx.createBuffer(2, length, rate);
+    const left = impulse.getChannelData(0);
+    const right = impulse.getChannelData(1);
+
+    for (let i = 0; i < length; i++) {
+      const t = i / rate;
+      const factor = Math.exp(-decay * t);
+      left[i] = (Math.random() * 2 - 1) * factor;
+      right[i] = (Math.random() * 2 - 1) * factor;
+    }
+    const conv = this.ctx.createConvolver();
+    conv.buffer = impulse;
+    return conv;
   }
 
   ensureContext() {
@@ -170,9 +245,88 @@ export class SoundEngine {
     }
   }
 
+  // 预加载核心真实声学钢琴采样
+  preloadCoreSamples() {
+    const coreKeys = [
+      'C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'Gb4', 'G4', 'Ab4', 'A4', 'Bb4', 'B4',
+      'C5', 'Db5', 'D5', 'Eb5', 'E5',
+      'F2', 'B2', 'C3', 'Eb3', 'E3', 'G3', 'Ab3', 'A3', 'Bb3', 'C6', 'E6', 'G6', 'C7'
+    ];
+    coreKeys.forEach((note) => {
+      this.loadSample('piano', note);
+    });
+  }
+
+  async loadSample(instrument, noteName) {
+    if (!this.ctx) return null;
+    if (this.sampleCache[instrument]?.has(noteName)) {
+      return this.sampleCache[instrument].get(noteName);
+    }
+    const cacheKey = `${instrument}:${noteName}`;
+    if (this.loadingPromises.has(cacheKey)) {
+      return this.loadingPromises.get(cacheKey);
+    }
+
+    const promise = (async () => {
+      try {
+        const url = `./assets/audio/${instrument}/${noteName}.mp3`;
+        const resp = await fetch(url);
+        if (!resp.ok) return null;
+        const arrayBuf = await resp.arrayBuffer();
+        const audioBuf = await this.ctx.decodeAudioData(arrayBuf);
+        if (!this.sampleCache[instrument]) {
+          this.sampleCache[instrument] = new Map();
+        }
+        this.sampleCache[instrument].set(noteName, audioBuf);
+        return audioBuf;
+      } catch (err) {
+        return null;
+      } finally {
+        this.loadingPromises.delete(cacheKey);
+      }
+    })();
+
+    this.loadingPromises.set(cacheKey, promise);
+    return promise;
+  }
+
   setTuning(key) {
     if (TUNING_SYSTEMS[key]) {
       this.tuningKey = key;
+    }
+  }
+
+  setInstrument(name) {
+    if (['piano', 'harpsichord', 'strings', 'sine'].includes(name)) {
+      this.currentInstrument = name;
+      if (name === 'harpsichord') {
+        ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5', 'C3', 'G3'].forEach(n => this.loadSample('harpsichord', n));
+      }
+    }
+  }
+
+  setReverb(enabled) {
+    this.reverbEnabled = !!enabled;
+    if (!this.wetGain || !this.dryGain) return;
+    const now = this.ctx ? this.ctx.currentTime : 0;
+    if (this.reverbEnabled) {
+      this.wetGain.gain.cancelScheduledValues(now);
+      this.wetGain.gain.linearRampToValueAtTime(0.28, now + 0.12);
+      this.dryGain.gain.linearRampToValueAtTime(0.85, now + 0.12);
+    } else {
+      this.wetGain.gain.cancelScheduledValues(now);
+      this.wetGain.gain.linearRampToValueAtTime(0.0001, now + 0.12);
+      this.dryGain.gain.linearRampToValueAtTime(1.0, now + 0.12);
+    }
+  }
+
+  setSustainPedal(down) {
+    this.sustainPedal = !!down;
+    if (!this.sustainPedal) {
+      this.sustainedVoices.forEach(voice => {
+        this.stopVoice(voice);
+      });
+      this.sustainedVoices.clear();
     }
   }
 
@@ -201,88 +355,253 @@ export class SoundEngine {
     return freq;
   }
 
-  // 触发单音 (包含温润的泛音列结构与包络)
-  playNote(noteStr, duration = 0.8, customFreq = null) {
+  // 触发单音 (支持真实斯坦威钢琴、羽管键琴、古提琴与纯正弦)
+  playNote(noteStr, duration = 1.4, customFreq = null, velocity = 0.85) {
     this.ensureContext();
     const freq = customFreq || this.getFrequency(noteStr);
     const now = this.ctx.currentTime;
 
-    const voiceGain = this.ctx.createGain();
-    voiceGain.gain.setValueAtTime(0, now);
-    voiceGain.gain.linearRampToValueAtTime(0.35, now + 0.02);
-    voiceGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+    if (this.currentInstrument === 'piano' || this.currentInstrument === 'harpsichord') {
+      const { noteName, playbackRate } = freqToSampleInfo(freq);
+      const cachedBuf = this.sampleCache[this.currentInstrument]?.get(noteName);
 
-    // 1. 基频 (三角波带来柔和木质感)
-    const osc1 = this.ctx.createOscillator();
-    osc1.type = 'triangle';
-    osc1.frequency.setValueAtTime(freq, now);
+      if (cachedBuf) {
+        this.playSampleVoice(cachedBuf, playbackRate, now, duration, velocity);
+        return;
+      }
 
-    // 2. 八度泛音 (正弦波)
-    const osc2 = this.ctx.createOscillator();
-    osc2.type = 'sine';
-    osc2.frequency.setValueAtTime(freq * 2, now);
-    const osc2Gain = this.ctx.createGain();
-    osc2Gain.gain.setValueAtTime(0.25, now);
+      // 若采样正在加载，先用物理建模发声保底，并启动异步加载
+      this.loadSample(this.currentInstrument, noteName);
+      this.playPhysicalAcousticVoice(freq, now, duration, velocity);
+      return;
+    }
 
-    // 连接
-    osc1.connect(voiceGain);
-    osc2.connect(osc2Gain);
-    osc2Gain.connect(voiceGain);
-    voiceGain.connect(this.masterGain);
+    if (this.currentInstrument === 'strings') {
+      this.playBowedStringsVoice(freq, now, duration, velocity);
+      return;
+    }
 
-    osc1.start(now);
-    osc2.start(now);
-    osc1.stop(now + duration + 0.1);
-    osc2.stop(now + duration + 0.1);
+    // 纯正弦波
+    this.playSineVoice(freq, now, duration, velocity);
   }
 
-  // 持续按下琴键
-  startNote(noteStr) {
+  // 播放采样单音
+  playSampleVoice(buffer, playbackRate, startTime, duration, velocity = 0.85) {
+    const source = this.ctx.createBufferSource();
+    source.buffer = buffer;
+    source.playbackRate.setValueAtTime(playbackRate, startTime);
+
+    const gainNode = this.ctx.createGain();
+    gainNode.gain.setValueAtTime(0, startTime);
+    gainNode.gain.linearRampToValueAtTime(velocity * 0.95, startTime + 0.005);
+
+    // 自然声音衰减或平滑关音
+    const releaseStart = startTime + Math.max(0.2, duration - 0.2);
+    gainNode.gain.setValueAtTime(velocity * 0.95, releaseStart);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, releaseStart + 0.35);
+
+    source.connect(gainNode);
+    gainNode.connect(this.instrumentBus);
+
+    source.start(startTime);
+    source.stop(releaseStart + 0.4);
+    return { source, gainNode };
+  }
+
+  // 物理声学声学打击弦保底模型 (Acoustic Hammer Strike Physical Model)
+  playPhysicalAcousticVoice(freq, startTime, duration, velocity = 0.85) {
+    const gainNode = this.ctx.createGain();
+    gainNode.gain.setValueAtTime(0, startTime);
+    gainNode.gain.linearRampToValueAtTime(velocity * 0.5, startTime + 0.004);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+    // 琴槌击弦瞬态冲激
+    const osc1 = this.ctx.createOscillator();
+    osc1.type = 'triangle';
+    osc1.frequency.setValueAtTime(freq, startTime);
+
+    // 泛音列谐振 (轻微色散非谐性)
+    const osc2 = this.ctx.createOscillator();
+    osc2.type = 'sine';
+    osc2.frequency.setValueAtTime(freq * 2.0015, startTime);
+
+    const osc3 = this.ctx.createOscillator();
+    osc3.type = 'sine';
+    osc3.frequency.setValueAtTime(freq * 3.004, startTime);
+
+    const g2 = this.ctx.createGain();
+    g2.gain.setValueAtTime(0.35, startTime);
+    const g3 = this.ctx.createGain();
+    g3.gain.setValueAtTime(0.15, startTime);
+
+    // 动态低通滤波器 (琴槌击弦力度敏感)
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(Math.min(12000, freq * 6), startTime);
+    filter.frequency.exponentialRampToValueAtTime(freq * 2.5, startTime + duration * 0.5);
+
+    osc1.connect(gainNode);
+    osc2.connect(g2);
+    g2.connect(gainNode);
+    osc3.connect(g3);
+    g3.connect(gainNode);
+
+    gainNode.connect(filter);
+    filter.connect(this.instrumentBus);
+
+    osc1.start(startTime);
+    osc2.start(startTime);
+    osc3.start(startTime);
+
+    osc1.stop(startTime + duration + 0.1);
+    osc2.stop(startTime + duration + 0.1);
+    osc3.stop(startTime + duration + 0.1);
+  }
+
+  // 维奥尔古提琴与弓弦乐器模型 (Bowed Strings Model)
+  playBowedStringsVoice(freq, startTime, duration, velocity = 0.85) {
+    const gainNode = this.ctx.createGain();
+    gainNode.gain.setValueAtTime(0, startTime);
+    gainNode.gain.linearRampToValueAtTime(velocity * 0.35, startTime + 0.15); // 慢起弓
+    gainNode.gain.setValueAtTime(velocity * 0.35, startTime + duration - 0.2);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + duration + 0.2);
+
+    const osc1 = this.ctx.createOscillator();
+    osc1.type = 'sawtooth';
+    osc1.frequency.setValueAtTime(freq, startTime);
+
+    const osc2 = this.ctx.createOscillator();
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(freq * 1.001, startTime); // 微合唱
+
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(1400, startTime);
+    filter.Q.setValueAtTime(3.5, startTime);
+
+    osc1.connect(filter);
+    osc2.connect(filter);
+    filter.connect(gainNode);
+    gainNode.connect(this.instrumentBus);
+
+    osc1.start(startTime);
+    osc2.start(startTime);
+    osc1.stop(startTime + duration + 0.3);
+    osc2.stop(startTime + duration + 0.3);
+  }
+
+  // 赫姆霍兹纯正弦波 (Pure Sine Model)
+  playSineVoice(freq, startTime, duration, velocity = 0.85) {
+    const gainNode = this.ctx.createGain();
+    gainNode.gain.setValueAtTime(0, startTime);
+    gainNode.gain.linearRampToValueAtTime(velocity * 0.35, startTime + 0.02);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+    const osc = this.ctx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, startTime);
+
+    osc.connect(gainNode);
+    gainNode.connect(this.instrumentBus);
+
+    osc.start(startTime);
+    osc.stop(startTime + duration + 0.05);
+  }
+
+  // 持续按下琴键 (Hold key)
+  startNote(noteStr, velocity = 0.85) {
     this.ensureContext();
     if (this.activeVoices.has(noteStr)) return;
     const freq = this.getFrequency(noteStr);
     const now = this.ctx.currentTime;
 
+    if (this.currentInstrument === 'piano' || this.currentInstrument === 'harpsichord') {
+      const { noteName, playbackRate } = freqToSampleInfo(freq);
+      const cachedBuf = this.sampleCache[this.currentInstrument]?.get(noteName);
+
+      if (cachedBuf) {
+        const source = this.ctx.createBufferSource();
+        source.buffer = cachedBuf;
+        source.playbackRate.setValueAtTime(playbackRate, now);
+
+        const gainNode = this.ctx.createGain();
+        gainNode.gain.setValueAtTime(0, now);
+        gainNode.gain.linearRampToValueAtTime(velocity * 0.95, now + 0.006);
+
+        source.connect(gainNode);
+        gainNode.connect(this.instrumentBus);
+        source.start(now);
+
+        this.activeVoices.set(noteStr, { source, gainNode, isSample: true });
+        return;
+      }
+    }
+
+    // 物理声学持续音
     const voiceGain = this.ctx.createGain();
     voiceGain.gain.setValueAtTime(0, now);
-    voiceGain.gain.linearRampToValueAtTime(0.3, now + 0.03);
+    voiceGain.gain.linearRampToValueAtTime(velocity * 0.38, now + 0.02);
 
     const osc = this.ctx.createOscillator();
-    osc.type = 'triangle';
+    osc.type = this.currentInstrument === 'sine' ? 'sine' : 'triangle';
     osc.frequency.setValueAtTime(freq, now);
+
     osc.connect(voiceGain);
-    voiceGain.connect(this.masterGain);
+    voiceGain.connect(this.instrumentBus);
     osc.start(now);
 
-    this.activeVoices.set(noteStr, { osc, gain: voiceGain });
+    this.activeVoices.set(noteStr, { osc, gain: voiceGain, isSample: false });
   }
 
-  // 松开琴键
+  // 松开琴键 (Release key)
   stopNote(noteStr) {
     if (!this.activeVoices.has(noteStr)) return;
-    const { osc, gain } = this.activeVoices.get(noteStr);
-    const now = this.ctx.currentTime;
-    gain.gain.cancelScheduledValues(now);
-    gain.gain.setValueAtTime(gain.gain.value, now);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
-    osc.stop(now + 0.16);
+    const voice = this.activeVoices.get(noteStr);
     this.activeVoices.delete(noteStr);
+
+    if (this.sustainPedal) {
+      this.sustainedVoices.add(voice);
+      return;
+    }
+
+    this.stopVoice(voice);
+  }
+
+  stopVoice(voice) {
+    const now = this.ctx.currentTime;
+    if (voice.gainNode) {
+      // 真实琴弦制音器落弦阻尼
+      voice.gainNode.gain.cancelScheduledValues(now);
+      voice.gainNode.gain.setValueAtTime(voice.gainNode.gain.value, now);
+      voice.gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.28);
+      try { voice.source?.stop(now + 0.3); } catch(e) {}
+    } else if (voice.gain) {
+      voice.gain.gain.cancelScheduledValues(now);
+      voice.gain.gain.setValueAtTime(voice.gain.gain.value, now);
+      voice.gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.2);
+      try { voice.osc?.stop(now + 0.22); } catch(e) {}
+    }
   }
 
   // 停止所有发音
   stopAll() {
-    this.activeVoices.forEach((voice, key) => {
-      this.stopNote(key);
+    this.activeVoices.forEach((voice) => {
+      this.stopVoice(voice);
     });
+    this.activeVoices.clear();
+    this.sustainedVoices.forEach(v => this.stopVoice(v));
+    this.sustainedVoices.clear();
     this.stopDrone();
     this.stopAllHarmonics();
   }
 
-  // 齐鸣演奏和弦 (Simultaneous Chord Play)
-  playChord(notes, duration = 2.2) {
+  // 齐鸣演奏和弦 (Simultaneous Chord Play - 微人性化分音铺展)
+  playChord(notes, duration = 2.5, arpeggiateMs = 8) {
     this.ensureContext();
-    notes.forEach((noteStr) => {
-      this.playNote(noteStr, duration);
+    notes.forEach((noteStr, idx) => {
+      setTimeout(() => {
+        this.playNote(noteStr, duration);
+      }, idx * arpeggiateMs);
     });
   }
 

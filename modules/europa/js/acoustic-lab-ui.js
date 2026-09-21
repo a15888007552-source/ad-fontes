@@ -54,26 +54,65 @@ export function createAcousticLabUI(container) {
     <div class="acoustic-lab-root">
       <header class="lab-header">
         <div class="lab-title-area">
+          <div class="lab-kicker">✦ ACUSTICA HISTORICA · SPECULUM HARMONICUM · LABORATORIUM EUROPAE ✦</div>
           <h2>欧罗巴声学与乐律实验室 <span class="latin">LABORATORIUM HARMONICUM</span></h2>
-          <p>纯前端 Web Audio 物理声学引擎 · 考量东西方律制数理、自然泛音加法合成、教会调式、和声动力学与先锋音块微复调</p>
+          <p>纯前端 Web Audio 物理声学引擎 · 真实斯坦威音乐会大三角钢琴采样 · 历代生律数理 · 自然泛音列 · 教会调式与东方拉格 · 经典和声动力学 · 勋伯格十二音矩阵</p>
         </div>
-        <div class="lab-visualizer-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:6px;">
-            <span style="font-family:var(--sans);font-size:11px;color:var(--mut);letter-spacing:.08em;font-weight:600;">物理声学示波器</span>
-            <button class="action-btn" id="btn-toggle-osc-mode" style="padding:2px 8px;font-size:11px;">切换至频域谱</button>
+
+        <div class="lab-control-deck">
+          <!-- 声学音色与空间混响选择控制台 -->
+          <div class="lab-timbre-console">
+            <div class="console-label-row">
+              <span class="console-kicker">声学音色 (TIMBRE)</span>
+              <span class="console-sub" id="timbre-active-desc">真实斯坦威大三角钢琴 (Acoustic Grand)</span>
+            </div>
+            <div class="timbre-btn-group" id="timbre-selector">
+              <button class="timbre-btn active" data-inst="piano" type="button" title="音乐会斯坦威大三角钢琴 · 真实声学打击与泛音采样">
+                <span class="inst-icon">🎹</span>
+                <span class="inst-name">大三角钢琴</span>
+              </button>
+              <button class="timbre-btn" data-inst="harpsichord" type="button" title="巴洛克羽管键琴 (Harpsichord) · 欧洲古乐与巴赫平均律原声">
+                <span class="inst-icon">🏛️</span>
+                <span class="inst-name">古典羽管键琴</span>
+              </button>
+              <button class="timbre-btn" data-inst="strings" type="button" title="维奥尔古提琴与大提琴弦乐组 · 纯律持续音">
+                <span class="inst-icon">🎻</span>
+                <span class="inst-name">古提琴/弦乐</span>
+              </button>
+              <button class="timbre-btn" data-inst="sine" type="button" title="赫姆霍兹纯正弦波 · 物理声学实验室纯频测音">
+                <span class="inst-icon">🔬</span>
+                <span class="inst-name">物理纯正弦</span>
+              </button>
+            </div>
+            <div class="space-control-row">
+              <button class="reverb-btn active" id="btn-toggle-reverb" type="button" title="模拟维也纳金色大厅 / 莱比锡圣托马斯教堂木质大厅声场共鸣">
+                <span class="reverb-icon">🏛️</span>
+                <span class="reverb-text">金色大厅空间共鸣 (Hall Reverb): <strong id="reverb-status-label">开</strong></span>
+              </button>
+            </div>
           </div>
-          <canvas id="lab-osc-canvas" width="320" height="84"></canvas>
-          <div class="lab-visualizer-status" id="lab-osc-status">● 示波器就绪 · 点击发声</div>
+
+          <!-- 古典黄铜示波器 -->
+          <div class="lab-visualizer-card">
+            <div class="vis-header-row">
+              <span class="vis-title">赫姆霍兹物理声学示波器</span>
+              <button class="action-btn-compact" id="btn-toggle-osc-mode" type="button">切换至频域谱</button>
+            </div>
+            <div class="vis-canvas-frame">
+              <canvas id="lab-osc-canvas" width="340" height="90"></canvas>
+            </div>
+            <div class="lab-visualizer-status" id="lab-osc-status">● 物理声学引擎就绪 · 点击发声</div>
+          </div>
         </div>
       </header>
 
       <nav class="lab-nav" role="tablist">
-        <button class="lab-tab-btn active" data-tab="tuning">⚖️ 历史律制与中西算律 (Temperament)</button>
-        <button class="lab-tab-btn" data-tab="harmonics">🌊 自然泛音与音色物理 (Harmonics)</button>
-        <button class="lab-tab-btn" data-tab="modes">⛪ 教会调式与东方拉格 (Modes & Ragas)</button>
-        <button class="lab-tab-btn" data-tab="harmonies">🎼 经典和声与声学物理 (Harmonies)</button>
-        <button class="lab-tab-btn" data-tab="avantgarde">🌌 先锋音块与微音技法 (Avant-Garde)</button>
-        <button class="lab-tab-btn" data-tab="matrix">🎲 勋伯格十二音序列计算机 (12-Tone Matrix)</button>
+        <button class="lab-tab-btn active" data-tab="tuning"><span class="tab-roman">I</span> 历史律制与中西算律 (Temperament)</button>
+        <button class="lab-tab-btn" data-tab="harmonics"><span class="tab-roman">II</span> 自然泛音与音色物理 (Harmonics)</button>
+        <button class="lab-tab-btn" data-tab="modes"><span class="tab-roman">III</span> 教会调式与东方拉格 (Modes & Ragas)</button>
+        <button class="lab-tab-btn" data-tab="harmonies"><span class="tab-roman">IV</span> 经典和声与声学物理 (Harmonies)</button>
+        <button class="lab-tab-btn" data-tab="avantgarde"><span class="tab-roman">V</span> 先锋音块与微音技法 (Avant-Garde)</button>
+        <button class="lab-tab-btn" data-tab="matrix"><span class="tab-roman">VI</span> 勋伯格十二音序列计算机 (12-Tone Matrix)</button>
       </nav>
 
       <!-- 面板 1: 历史律制与中西算律 -->
@@ -117,12 +156,24 @@ export function createAcousticLabUI(container) {
                 </div>
               </div>
 
-              <h4 class="stave-keyboard-divider">
-                <span>🎹 联动琴键 (C4 – E5)</span>
-                <span class="lab-card-hint">支持鼠标与触控 · 与上方五线谱双向高亮联动</span>
-              </h4>
-              <div class="keyboard-wrapper">
-                <div class="keyboard" id="piano-keyboard"></div>
+              <!-- 琴键系统：附带实木翻板与延音踏板 -->
+              <div class="stave-keyboard-section">
+                <div class="keyboard-fallboard">
+                  <span class="fallboard-metal-accent left"></span>
+                  <span class="fallboard-brand">✦ STEINWAY &amp; SONS · CONCERT GRAND · AD FONTES ACUSTICA ✦</span>
+                  <span class="fallboard-metal-accent right"></span>
+                </div>
+                <div class="keyboard-wrapper">
+                  <div class="keyboard" id="piano-keyboard"></div>
+                </div>
+                <div class="keyboard-pedal-bar">
+                  <button class="pedal-btn" id="btn-toggle-sustain" type="button" title="踩下延音踏板使琴弦持续共鸣（快捷键：空格键）">
+                    <span class="pedal-brass-icon"></span>
+                    <span class="pedal-text">延音踏板 (Sustain Pedal): <strong id="pedal-status-label">关</strong></span>
+                    <kbd class="pedal-kbd">Space</kbd>
+                  </button>
+                  <span class="pedal-tip">踩下延音踏板时琴弦制音器抬起，声音延绵共振 · 弹奏和弦与琶音效果最佳</span>
+                </div>
               </div>
 
               <div class="audition-pills">
@@ -718,7 +769,77 @@ export function createAcousticLabUI(container) {
   `;
 
   // ==========================================================================
-  // 示波器动画循环 (Canvas Oscilloscope: Waveform & Spectrum)
+  // 声学音色与空间混响选择控制
+  // ==========================================================================
+  const timbreBtns = container.querySelectorAll('.timbre-btn');
+  const timbreActiveDesc = container.querySelector('#timbre-active-desc');
+  const btnToggleReverb = container.querySelector('#btn-toggle-reverb');
+  const reverbStatusLabel = container.querySelector('#reverb-status-label');
+
+  const TIMBRE_DESCRIPTIONS = {
+    piano: '真实斯坦威大三角钢琴 (Acoustic Concert Grand)',
+    harpsichord: '巴洛克古典羽管键琴 (Flemish Double-Manual Harpsichord)',
+    strings: '维奥尔古提琴与弦乐合奏 (Viola da Gamba & Strings)',
+    sine: '赫姆霍兹纯正弦波 (Helmholtz Acoustic Pure Sine)'
+  };
+
+  timbreBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const inst = btn.dataset.inst;
+      timbreBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      engine.setInstrument(inst);
+      if (timbreActiveDesc) {
+        timbreActiveDesc.textContent = TIMBRE_DESCRIPTIONS[inst] || inst;
+      }
+      if (oscStatus) {
+        oscStatus.textContent = `● 已切换音色：${TIMBRE_DESCRIPTIONS[inst] || inst}`;
+      }
+    });
+  });
+
+  if (btnToggleReverb && reverbStatusLabel) {
+    btnToggleReverb.addEventListener('click', () => {
+      const newState = !engine.reverbEnabled;
+      engine.setReverb(newState);
+      btnToggleReverb.classList.toggle('active', newState);
+      reverbStatusLabel.textContent = newState ? '开' : '关';
+      if (oscStatus) {
+        oscStatus.textContent = newState
+          ? '● 已开启金色大厅空间共鸣 (Vienna Musikverein Acoustic Reverb)'
+          : '● 已关闭空间共鸣 (Dry Acoustic Studio)';
+      }
+    });
+  }
+
+  // 延音踏板控制 (Sustain Pedal)
+  const btnToggleSustain = container.querySelector('#btn-toggle-sustain');
+  const pedalStatusLabel = container.querySelector('#pedal-status-label');
+
+  function toggleSustainPedal() {
+    const newState = !engine.sustainPedal;
+    engine.setSustainPedal(newState);
+    if (btnToggleSustain) btnToggleSustain.classList.toggle('pressed', newState);
+    if (pedalStatusLabel) pedalStatusLabel.textContent = newState ? '踩下中 (Down)' : '关 (Up)';
+    if (oscStatus) {
+      oscStatus.textContent = newState ? '● 延音踏板已踩下 (Sustain ON)' : '● 延音踏板已抬起 (Sustain OFF)';
+    }
+  }
+
+  if (btnToggleSustain) {
+    btnToggleSustain.addEventListener('click', toggleSustainPedal);
+  }
+
+  // 监听键盘空格键踩下/抬起延音踏板
+  window.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && (e.target === document.body || e.target.classList?.contains('acoustic-lab-root') || e.target.closest?.('.acoustic-lab-root'))) {
+      e.preventDefault();
+      toggleSustainPedal();
+    }
+  });
+
+  // ==========================================================================
+  // 示波器动画循环 (Vintage Helmholtz Acoustic Oscilloscope: Waveform & Spectrum)
   // ==========================================================================
   const canvas = container.querySelector('#lab-osc-canvas');
   const canvasCtx = canvas.getContext('2d');
@@ -733,28 +854,47 @@ export function createAcousticLabUI(container) {
   function drawOscilloscope() {
     animId = requestAnimationFrame(drawOscilloscope);
 
-    // 背景：优雅温润的古典手稿羊皮纸色
-    canvasCtx.fillStyle = '#FAF5E8';
+    // 背景：复古黑曜石暖深色质感
+    canvasCtx.fillStyle = '#15120E';
     canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if (oscMode === 'waveform') {
-      // 绘制中心细准线（古籍标尺刻度）
-      canvasCtx.strokeStyle = 'rgba(198, 186, 146, 0.65)';
-      canvasCtx.lineWidth = 1;
+    // 绘制示波器古董刻度网格 (Graticule)
+    canvasCtx.strokeStyle = 'rgba(201, 162, 39, 0.12)';
+    canvasCtx.lineWidth = 1;
+
+    for (let y = 15; y < canvas.height; y += 15) {
       canvasCtx.beginPath();
-      canvasCtx.moveTo(0, canvas.height / 2);
-      canvasCtx.lineTo(canvas.width, canvas.height / 2);
+      canvasCtx.moveTo(0, y);
+      canvasCtx.lineTo(canvas.width, y);
       canvasCtx.stroke();
+    }
+    for (let x = 20; x < canvas.width; x += 34) {
+      canvasCtx.beginPath();
+      canvasCtx.moveTo(x, 0);
+      canvasCtx.lineTo(x, canvas.height);
+      canvasCtx.stroke();
+    }
 
-      if (!engine.analyser) return;
+    // 中心零轴金色基准线
+    canvasCtx.strokeStyle = 'rgba(201, 162, 39, 0.35)';
+    canvasCtx.lineWidth = 1;
+    canvasCtx.beginPath();
+    canvasCtx.moveTo(0, canvas.height / 2);
+    canvasCtx.lineTo(canvas.width, canvas.height / 2);
+    canvasCtx.stroke();
 
+    if (!engine.analyser) return;
+
+    if (oscMode === 'waveform') {
       const bufferLength = engine.analyser.frequencyBinCount;
       const timeData = new Uint8Array(bufferLength);
       engine.analyser.getByteTimeDomainData(timeData);
 
-      // 绘制波形：深绯红（Rubric Red #8C2B1F）
-      canvasCtx.lineWidth = 2;
-      canvasCtx.strokeStyle = '#8C2B1F';
+      // 发光威尼斯金琥珀色波形 (Glowing Venetian Amber Beam)
+      canvasCtx.shadowColor = 'rgba(245, 206, 93, 0.65)';
+      canvasCtx.shadowBlur = 6;
+      canvasCtx.lineWidth = 2.2;
+      canvasCtx.strokeStyle = '#F5CE5D';
       canvasCtx.beginPath();
 
       const sliceWidth = (canvas.width * 1.0) / bufferLength;
@@ -770,24 +910,28 @@ export function createAcousticLabUI(container) {
 
       canvasCtx.lineTo(canvas.width, canvas.height / 2);
       canvasCtx.stroke();
+      canvasCtx.shadowBlur = 0;
     } else {
-      // 频域柱状谱 (Spectrum)
-      if (!engine.analyser) return;
+      // 频域柱状谱 (Spectrum) - 金红双色阶梯谱
       const bufferLength = engine.analyser.frequencyBinCount;
       const freqData = new Uint8Array(bufferLength);
       engine.analyser.getByteFrequencyData(freqData);
 
-      const numBars = 36;
+      const numBars = 40;
       const barWidth = (canvas.width / numBars) - 2;
       for (let i = 0; i < numBars; i++) {
-        // 取对数分布频带
         const freqIdx = Math.floor(Math.pow(i / numBars, 1.8) * (bufferLength / 2));
         const val = freqData[freqIdx] || 0;
-        const barHeight = (val / 255) * (canvas.height - 10);
+        const barHeight = (val / 255) * (canvas.height - 12);
         const x = i * (barWidth + 2) + 2;
-        const y = canvas.height - barHeight;
+        const y = canvas.height - barHeight - 2;
 
-        canvasCtx.fillStyle = i % 2 === 0 ? '#8C2B1F' : '#9A7B2D';
+        const grad = canvasCtx.createLinearGradient(0, y, 0, canvas.height);
+        grad.addColorStop(0, '#F5CE5D');
+        grad.addColorStop(0.6, '#C8722A');
+        grad.addColorStop(1, '#7A2E1D');
+
+        canvasCtx.fillStyle = grad;
         canvasCtx.fillRect(x, y, barWidth, barHeight);
       }
     }

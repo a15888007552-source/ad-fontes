@@ -17,7 +17,7 @@
     background: transparent !important;
     color: var(--ink, #35301F) !important;
   }
-  .lab-card, .harmonic-card, .mode-card, .lab-visualizer-card {
+  .lab-card, .harmonic-card, .mode-card {
     background: var(--panel, #F2EBD8) !important;
     border-color: var(--line, #C6BA92) !important;
     color: var(--ink, #35301F) !important;
@@ -33,11 +33,7 @@
   .lab-title-area p, .lab-card-hint {
     color: var(--mut, #77704F) !important;
   }
-  .lab-visualizer-card canvas {
-    background: #FAF5E8 !important;
-    border-color: var(--line, #C6BA92) !important;
-  }
-  .lab-visualizer-status, .lab-card-badge {
+  .lab-card-badge {
     color: var(--acc, #7A2E1D) !important;
   }
   .tuning-chip {
@@ -60,35 +56,6 @@
     background: color-mix(in srgb, var(--panel, #F2EBD8) 88%, var(--bg, #E9E0C9) 12%) !important;
     border-left-color: var(--acc, #7A2E1D) !important;
     color: var(--mut, #77704F) !important;
-  }
-  .keyboard-wrapper {
-    background: color-mix(in srgb, var(--bg, #E9E0C9) 75%, var(--panel, #F2EBD8) 25%) !important;
-    border-color: var(--line, #C6BA92) !important;
-    box-shadow: inset 0 2px 6px rgba(53, 48, 31, 0.12) !important;
-  }
-  .key.white {
-    background: #FAF7EE !important;
-    color: var(--ink, #35301F) !important;
-    border-color: #C6BA92 !important;
-  }
-  .key.white:hover {
-    background: #F4EEDC !important;
-  }
-  .key.white:active, .key.white.pressed {
-    background: var(--acc, #7A2E1D) !important;
-    color: #FFF !important;
-  }
-  .key.black {
-    background: #231C16 !important;
-    color: #EADCB8 !important;
-    border-color: #140F0A !important;
-  }
-  .key.black:hover {
-    background: #3B2E24 !important;
-  }
-  .key.black:active, .key.black.pressed {
-    background: var(--acc, #7A2E1D) !important;
-    color: #FFF !important;
   }
   .lab-nav {
     background: color-mix(in srgb, var(--panel, #F2EBD8) 75%, var(--bg, #E9E0C9) 25%) !important;
