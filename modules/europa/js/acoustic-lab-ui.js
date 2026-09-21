@@ -71,9 +71,9 @@ export function createAcousticLabUI(container) {
                 <span class="inst-icon">🎹</span>
                 <span class="inst-name">大三角钢琴</span>
               </button>
-              <button class="timbre-btn" data-inst="harpsichord" type="button" title="巴洛克羽管键琴 (Harpsichord) · 欧洲古乐与巴赫平均律原声">
+              <button class="timbre-btn" data-inst="harpsichord" type="button" title="羽管键琴 (Harpsichord) · 欧洲古乐与巴赫平均律原声">
                 <span class="inst-icon">🏛️</span>
-                <span class="inst-name">古典羽管键琴</span>
+                <span class="inst-name">羽管键琴</span>
               </button>
               <button class="timbre-btn" data-inst="strings" type="button" title="维奥尔古提琴与大提琴弦乐组 · 纯律持续音">
                 <span class="inst-icon">🎻</span>
@@ -778,7 +778,7 @@ export function createAcousticLabUI(container) {
 
   const TIMBRE_DESCRIPTIONS = {
     piano: '真实斯坦威大三角钢琴 (Acoustic Concert Grand)',
-    harpsichord: '巴洛克古典羽管键琴 (Flemish Double-Manual Harpsichord)',
+    harpsichord: '羽管键琴 (Flemish Double-Manual Harpsichord)',
     strings: '维奥尔古提琴与弦乐合奏 (Viola da Gamba & Strings)',
     sine: '赫姆霍兹纯正弦波 (Helmholtz Acoustic Pure Sine)'
   };
