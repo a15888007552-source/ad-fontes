@@ -106,13 +106,31 @@ export function createAcousticLabUI(container) {
         </div>
       </header>
 
-      <nav class="lab-nav" role="tablist">
-        <button class="lab-tab-btn active" data-tab="tuning"><span class="tab-roman">I</span> 历史律制与中西算律 (Temperament)</button>
-        <button class="lab-tab-btn" data-tab="harmonics"><span class="tab-roman">II</span> 自然泛音与音色物理 (Harmonics)</button>
-        <button class="lab-tab-btn" data-tab="modes"><span class="tab-roman">III</span> 教会调式与东方拉格 (Modes & Ragas)</button>
-        <button class="lab-tab-btn" data-tab="harmonies"><span class="tab-roman">IV</span> 经典和声与声学物理 (Harmonies)</button>
-        <button class="lab-tab-btn" data-tab="avantgarde"><span class="tab-roman">V</span> 先锋音块与微音技法 (Avant-Garde)</button>
-        <button class="lab-tab-btn" data-tab="matrix"><span class="tab-roman">VI</span> 勋伯格十二音序列计算机 (12-Tone Matrix)</button>
+      <nav class="lab-nav" role="tablist" aria-label="声学与乐律实验室主导航">
+        <button class="lab-tab-btn active" data-tab="tuning" type="button">
+          <span class="tab-roman">I</span>
+          <span class="tab-label">历史律制与中西算律 <span class="tab-en">(Temperament)</span></span>
+        </button>
+        <button class="lab-tab-btn" data-tab="harmonics" type="button">
+          <span class="tab-roman">II</span>
+          <span class="tab-label">自然泛音与音色物理 <span class="tab-en">(Harmonics)</span></span>
+        </button>
+        <button class="lab-tab-btn" data-tab="modes" type="button">
+          <span class="tab-roman">III</span>
+          <span class="tab-label">教会调式与东方拉格 <span class="tab-en">(Modes & Ragas)</span></span>
+        </button>
+        <button class="lab-tab-btn" data-tab="harmonies" type="button">
+          <span class="tab-roman">IV</span>
+          <span class="tab-label">经典和声与声学物理 <span class="tab-en">(Harmonies)</span></span>
+        </button>
+        <button class="lab-tab-btn" data-tab="avantgarde" type="button">
+          <span class="tab-roman">V</span>
+          <span class="tab-label">先锋音块与微音技法 <span class="tab-en">(Avant-Garde)</span></span>
+        </button>
+        <button class="lab-tab-btn" data-tab="matrix" type="button">
+          <span class="tab-roman">VI</span>
+          <span class="tab-label">勋伯格十二音序列计算机 <span class="tab-en">(12-Tone Matrix)</span></span>
+        </button>
       </nav>
 
       <!-- 面板 1: 历史律制与中西算律 -->

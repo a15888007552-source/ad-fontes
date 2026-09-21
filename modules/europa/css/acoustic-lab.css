@@ -300,58 +300,102 @@
    实验室导航选项卡 (Lab Navigation Tabs)
    ========================================================================== */
 .lab-nav {
-  display: flex;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   margin-bottom: 24px;
   background: color-mix(in srgb, var(--panel) 75%, var(--bg) 25%);
-  padding: 5px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 6px;
   border: 1px solid var(--line);
-  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(53, 48, 31, 0.05);
 }
 
 .lab-tab-btn {
   background: var(--panel);
   color: var(--mut);
   border: 1px solid var(--line);
-  padding: 9px 16px;
+  padding: 10px 14px;
   font-family: var(--sans);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  border-radius: 3px;
+  letter-spacing: 0.03em;
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.18s var(--ease-out);
   display: flex;
   align-items: center;
-  gap: 7px;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(53, 48, 31, 0.04);
+  text-align: center;
 }
 
 .lab-tab-btn .tab-roman {
   font-family: var(--serif);
   font-weight: 700;
   color: var(--gold);
-  font-size: 13px;
+  font-size: 13.5px;
   border-right: 1px solid var(--line);
-  padding-right: 6px;
+  padding-right: 8px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.lab-tab-btn .tab-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lab-tab-btn .tab-en {
+  font-size: 11px;
+  font-family: var(--sans);
+  color: var(--mut);
+  font-weight: 500;
+  opacity: 0.85;
 }
 
 .lab-tab-btn:hover {
   color: var(--ink);
   border-color: var(--acc);
   transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(53, 48, 31, 0.08);
 }
 
 .lab-tab-btn.active {
-  color: #FFF;
+  color: #FFF !important;
   background: var(--acc);
   border-color: var(--acc);
-  box-shadow: 0 2px 6px rgba(122, 46, 29, 0.32);
+  box-shadow: 0 3px 10px rgba(122, 46, 29, 0.35);
 }
 
 .lab-tab-btn.active .tab-roman {
   color: #FFE6A8;
   border-right-color: rgba(255, 255, 255, 0.35);
+}
+
+.lab-tab-btn.active .tab-label {
+  color: #FFF !important;
+}
+
+.lab-tab-btn.active .tab-en {
+  color: #F7E9C8;
+  opacity: 0.95;
+}
+
+@media (max-width: 1080px) {
+  .lab-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .lab-nav {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 选项卡面板容器 */
