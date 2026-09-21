@@ -99,10 +99,10 @@
       "aiCreated": false
     },
     "poi-d2fcba9043f7": {
-      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-192-d2fcba9043.jpg",
-      "file": "images/poi/poi-192-d2fcba9043.jpg",
-      "credit": "Wikimedia Commons · Public domain",
-      "source": "https://commons.wikimedia.org/wiki/File:The_1896_bronze_statue_of_onetime_president_Theodore_Dwight_Woolsey_before_the_entrance_of_Dwight_Hall,_the_former_college_library_used_as_a_volunteer_center_on_Yale_University%27s_Old_Campus,_New_Haven_LCCN2011634076.tif",
+      "url": "assets/img/poi/poi-d2fcba9043f7.jpg",
+      "file": "assets/img/poi/poi-d2fcba9043f7.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0 by Fluteceleste",
+      "source": "https://commons.wikimedia.org/wiki/File:New_Haven,_Yale_University,_Woolsey_Hall,_Newberry_Memorial_Organ,_Interior_01.jpg",
       "aiCreated": false
     },
     "poi-0eb41979da41": {
@@ -295,10 +295,10 @@
       "aiCreated": false
     },
     "poi-815a005efbf9": {
-      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-215-815a005efb.jpg",
-      "file": "images/poi/poi-215-815a005efb.jpg",
-      "credit": "Wikimedia Commons · CC BY-SA 4.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Nord_Sainte_Chapelle_Statue.jpg",
+      "url": "assets/img/poi/poi-815a005efbf9.jpg",
+      "file": "assets/img/poi/poi-815a005efbf9.jpg",
+      "credit": "Wikimedia Commons · CC BY 4.0 by Laurens R. Krol",
+      "source": "https://commons.wikimedia.org/wiki/File:2017-07-29_France,_Paris_DSC_2711_DxO_2.jpg",
       "aiCreated": false
     },
     "poi-8a81b8809800": {
@@ -316,10 +316,10 @@
       "aiCreated": false
     },
     "poi-14e6156d1898": {
-      "url": "https://a15888007552-source.github.io/ad-fontes-europa-assets/images/poi/poi-218-14e6156d18.jpg",
-      "file": "images/poi/poi-218-14e6156d18.jpg",
-      "credit": "Wikimedia Commons · CC BY-SA 4.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Parma,_Palazzo_della_Pilotta_e_monumento.jpg",
+      "url": "assets/img/poi/poi-14e6156d1898.jpg",
+      "file": "assets/img/poi/poi-14e6156d1898.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 by Magnus Manske",
+      "source": "https://commons.wikimedia.org/wiki/File:Palais_du_Tau,_Reims.jpg",
       "aiCreated": false
     },
     "poi-a2169d263be3": {
@@ -2656,8 +2656,8 @@
     "poi-global-geidai": {
       "url": "assets/img/poi/poi-global-geidai.jpg",
       "file": "assets/img/poi/poi-global-geidai.jpg",
-      "credit": "东京艺术大学音乐学部 · Wikimedia Commons",
-      "source": "https://commons.wikimedia.org/wiki/File:Former_Tokyo_Music_School_Sogakudo_2019.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0 by N509FZ",
+      "source": "https://commons.wikimedia.org/wiki/File:Gate_of_Tokyo_University_of_the_Arts,_Ueno_Campus,_Faculty_of_Music_(20230805120432).jpg",
       "aiCreated": false
     },
     "poi-global-ncpa": {
@@ -2754,8 +2754,8 @@
     "poi-global-bamakopalais": {
       "url": "assets/img/poi/poi-global-bamakopalais.jpg",
       "file": "assets/img/poi/poi-global-bamakopalais.jpg",
-      "credit": "巴马科阿马杜·汉帕特·巴文化宫 · Wikimedia Commons · CC BY-SA 4.0",
-      "source": "https://commons.wikimedia.org/wiki/File:Palais_de_la_Culture_Bamako.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 by Abdouml",
+      "source": "https://commons.wikimedia.org/wiki/File:Palais_de_la_culture_AHB.jpg",
       "aiCreated": false
     },
     "poi-global-markettheatre": {
@@ -2810,29 +2810,29 @@
     "poi-cn-kunqu": {
       "url": "assets/img/poi/poi-cn-kunqu.jpg",
       "file": "assets/img/poi/poi-cn-kunqu.jpg",
-      "credit": "中国昆曲博物馆 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Kunqu",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0 by Ohtashinichiro",
+      "source": "https://commons.wikimedia.org/wiki/File:The_China_Kunqu_Museum_180420_01.jpg",
       "aiCreated": false
     },
     "poi-cn-yongling": {
       "url": "assets/img/poi/poi-cn-yongling.jpg",
       "file": "assets/img/poi/poi-cn-yongling.jpg",
-      "credit": "永陵 (前蜀二十四伎乐) · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Wang_Jian_(Former_Shu)",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 by Nekitarc",
+      "source": "https://commons.wikimedia.org/wiki/File:永陵博物馆.JPG",
       "aiCreated": false
     },
     "poi-cn-abing": {
       "url": "assets/img/poi/poi-cn-abing.jpg",
       "file": "assets/img/poi/poi-cn-abing.jpg",
-      "credit": "阿炳故居与二泉映月纪念馆 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Abing",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0 by EditQ",
+      "source": "https://commons.wikimedia.org/wiki/File:Former_Residence_of_Abing,_Wuxi.jpg",
       "aiCreated": false
     },
     "poi-cn-huguang": {
       "url": "assets/img/poi/poi-cn-huguang.jpg",
       "file": "assets/img/poi/poi-cn-huguang.jpg",
-      "credit": "湖广会馆大戏楼 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Huguang_Guild_Hall",
+      "credit": "Wikimedia Commons · CC BY 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:HuguangHall1.jpg",
       "aiCreated": false
     },
     "poi-cn-fuhao": {
@@ -2859,8 +2859,8 @@
     "poi-ethno-kandydrum": {
       "url": "assets/img/poi/poi-ethno-kandydrum.jpg",
       "file": "assets/img/poi/poi-ethno-kandydrum.jpg",
-      "credit": "佛齿寺与康提鼓舞圣殿 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Temple_of_the_Tooth",
+      "credit": "Wikimedia Commons · FAL by A.Savin",
+      "source": "https://commons.wikimedia.org/wiki/File:SL_Kandy_asv2020-01_img34_Sacred_Tooth_Temple.jpg",
       "aiCreated": false
     },
     "poi-ethno-roudaki": {
@@ -2873,8 +2873,8 @@
     "poi-ethno-baghdadoud": {
       "url": "assets/img/poi/poi-ethno-baghdadoud.jpg",
       "file": "assets/img/poi/poi-ethno-baghdadoud.jpg",
-      "credit": "智慧宫旧址与乌德琴圣所 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/House_of_Wisdom",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 by Makaay31",
+      "source": "https://commons.wikimedia.org/wiki/File:Mustansiriya_Madrasah5.jpg",
       "aiCreated": false
     },
     "poi-ethno-habana": {
@@ -2929,8 +2929,8 @@
     "poi-me-ugarit": {
       "url": "assets/img/poi/poi-me-ugarit.jpg",
       "file": "assets/img/poi/poi-me-ugarit.jpg",
-      "credit": "乌加里特遗址与胡里安颂歌发祥地 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Hurrian_songs",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0 by Dosseman",
+      "source": "https://commons.wikimedia.org/wiki/File:Ugarit_Royal_Palace_3914.jpg",
       "aiCreated": false
     },
     "poi-me-aleppocitadel": {
@@ -2943,8 +2943,8 @@
     "poi-me-damascusmosque": {
       "url": "assets/img/poi/poi-me-damascusmosque.jpg",
       "file": "assets/img/poi/poi-me-damascusmosque.jpg",
-      "credit": "倭马亚大清真寺与大马士革穆瓦沙赫圣所 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Umayyad_Mosque",
+      "credit": "Wikimedia Commons · CC BY 4.0 by Vyacheslav Argenberg",
+      "source": "https://commons.wikimedia.org/wiki/File:The_Umayyad_Mosque,_Courtyard,_Damascus,_Syria.jpg",
       "aiCreated": false
     },
     "poi-me-baalbek": {
@@ -3013,8 +3013,8 @@
     "poi-af-newafrikashrine": {
       "url": "assets/img/poi/poi-af-newafrikashrine.jpg",
       "file": "assets/img/poi/poi-af-newafrikashrine.jpg",
-      "credit": "新非洲神庙与非罗主义圣坛 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/New_Afrika_Shrine",
+      "credit": "Wikimedia Commons · Public domain by Kaizenify",
+      "source": "https://commons.wikimedia.org/wiki/File:Fela_New_Shrine,_Lagos.jpg",
       "aiCreated": false
     },
     "poi-af-danelsorano": {
@@ -3027,8 +3027,8 @@
     "poi-af-ethiopiatheatre": {
       "url": "assets/img/poi/poi-af-ethiopiatheatre.jpg",
       "file": "assets/img/poi/poi-af-ethiopiatheatre.jpg",
-      "credit": "埃塞俄比亚国家大剧院与埃塞爵士摇篮 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Ethiopian_National_Theatre",
+      "credit": "Wikimedia Commons / Wikipedia · Fair use / Historic Landmark",
+      "source": "https://en.wikipedia.org/wiki/File:Ethiopian_National_Theatre.jpg",
       "aiCreated": false
     },
     "poi-af-palaisdupeuple": {
@@ -3048,15 +3048,15 @@
     "poi-af-mindelocc": {
       "url": "assets/img/poi/poi-af-mindelocc.jpg",
       "file": "assets/img/poi/poi-af-mindelocc.jpg",
-      "credit": "明德卢文化中心与赤脚歌后纪念圣地 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Mindelo",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0 by Herbert wie",
+      "source": "https://commons.wikimedia.org/wiki/File:CNAD_Pra%C3%A7a_Nova_Mindelo,_Cabo_Verde.jpg",
       "aiCreated": false
     },
     "poi-af-hararenationalgallery": {
       "url": "assets/img/poi/poi-af-hararenationalgallery.jpg",
       "file": "assets/img/poi/poi-af-hararenationalgallery.jpg",
-      "credit": "哈拉雷国家艺术馆与绍纳姆比拉圣殿 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/National_Gallery_of_Zimbabwe",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Entrance_to_the_National_Gallery_of_Zimbabwe.jpg",
       "aiCreated": false
     },
     "poi-af-ghanatheatre": {
@@ -3104,22 +3104,22 @@
     "poi-cn-ulanmuqir": {
       "url": "assets/img/poi/poi-cn-ulanmuqir.jpg",
       "file": "assets/img/poi/poi-cn-ulanmuqir.jpg",
-      "credit": "内蒙古乌兰牧骑宫与马头琴长调圣殿 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Hohhot",
+      "credit": "Wikimedia Commons · Public domain",
+      "source": "https://commons.wikimedia.org/wiki/File:InnerMongolianTheater.jpg",
       "aiCreated": false
     },
     "poi-cn-zhaoxing": {
       "url": "assets/img/poi/poi-cn-zhaoxing.jpg",
       "file": "assets/img/poi/poi-cn-zhaoxing.jpg",
-      "credit": "肇兴侗寨鼓楼群与侗族大歌圣所 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Zhaoxing",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 by Doron",
+      "source": "https://commons.wikimedia.org/wiki/File:ZhaoxingDrumTower.jpg",
       "aiCreated": false
     },
     "poi-cn-naximusic": {
       "url": "assets/img/poi/poi-cn-naximusic.jpg",
       "file": "assets/img/poi/poi-cn-naximusic.jpg",
-      "credit": "大研纳西古乐会与白沙细乐圣地 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Old_Town_of_Lijiang",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Lijiang_Naxi_Musical_Performing_Hall_-_panoramio.jpg",
       "aiCreated": false
     },
     "poi-cn-sanrenting": {
@@ -3139,8 +3139,8 @@
     "poi-cn-yushanguqin": {
       "url": "assets/img/poi/poi-cn-yushanguqin.jpg",
       "file": "assets/img/poi/poi-cn-yushanguqin.jpg",
-      "credit": "严天池故居与琴川虞山派祖庭 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Changshu",
+      "credit": "Wikimedia Commons · CC BY 4.0 by Cjc7373",
+      "source": "https://commons.wikimedia.org/wiki/File:Longtan,_North_foot_of_Mount_Yu,_Changshu,_Jiangsu,_China.jpg",
       "aiCreated": false
     },
     "poi-cn-shandongzheng": {
@@ -3160,8 +3160,8 @@
     "poi-cn-yanji": {
       "url": "assets/img/poi/poi-cn-yanji.jpg",
       "file": "assets/img/poi/poi-cn-yanji.jpg",
-      "credit": "中国朝鲜族非物质文化遗产馆 · Wikimedia Commons",
-      "source": "https://en.wikipedia.org/wiki/Yanji",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:China_Korean_Folk_Park_1.jpg",
       "aiCreated": false
     },
     "poi-cn-xacom": {
@@ -3197,7 +3197,9 @@
     "poi-cn-tjcm": {
       "url": "assets/img/poi/poi-cn-tjcm.jpg",
       "file": "assets/img/poi/poi-cn-tjcm.jpg",
-      "credit": "天津音乐学院 · 建筑与音乐学术实景"
+      "credit": "Wikimedia Commons · CC BY-SA 4.0 by Amazingloong",
+      "source": "https://commons.wikimedia.org/wiki/File:Tianjin_Juilliard_School.jpg",
+      "aiCreated": false
     },
     "poi-cn-zjcm": {
       "url": "assets/img/poi/poi-cn-zjcm.jpg",
@@ -3295,8 +3297,8 @@
     "poi-tw-bunun-pasibutbut": {
       "url": "assets/img/poi/poi-tw-bunun-pasibutbut.jpg",
       "file": "assets/img/poi/poi-tw-bunun-pasibutbut.jpg",
-      "credit": "台东布农族部落实景 · Wikimedia Commons",
-      "source": "https://commons.wikimedia.org/wiki/File:953,_Taiwan,_%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89%E6%A1%83%E6%BA%90%E6%9D%91_-_panoramio_(11).jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Bunun_Family_House_(Formosan_Aboriginal_Culture_Village).JPG",
       "aiCreated": false
     },
     "poi-tw-hengchun-chenda": {
@@ -3316,7 +3318,7 @@
     "poi-in-chennai": {
       "url": "assets/img/poi/poi-in-chennai.jpg",
       "file": "assets/img/poi/poi-in-chennai.jpg",
-      "credit": "金奈马德拉斯音乐学院大楼实景 · Wikimedia Commons",
+      "credit": "Wikimedia Commons · Public domain by Jayaram36",
       "source": "https://commons.wikimedia.org/wiki/File:Madras_Music_Academy.jpg",
       "aiCreated": false
     },
@@ -3337,8 +3339,8 @@
     "poi-in-tansen": {
       "url": "assets/img/poi/poi-in-tansen.jpg",
       "file": "assets/img/poi/poi-in-tansen.jpg",
-      "credit": "瓜廖尔坦森音乐节现场实景 · Wikimedia Commons",
-      "source": "https://commons.wikimedia.org/wiki/File:Satish_Vyas_at_Tansen_Samaroh,_Gwalior_26_December_2020.jpg",
+      "credit": "Wikimedia Commons · CC BY-SA 4.0 by Souravchakra",
+      "source": "https://commons.wikimedia.org/wiki/File:Burial_place_of_Miyan_Tansen_Gwalior_IMG_20181031_105313800.jpg",
       "aiCreated": false
     },
     "poi-in-maihar": {
@@ -3414,8 +3416,8 @@
     "poi-ph-kulintang": {
       "url": "assets/img/poi/poi-ph-kulintang.jpg",
       "file": "assets/img/poi/poi-ph-kulintang.jpg",
-      "credit": "棉兰老岛传统库林堂与邦萨摩洛打击乐器实景 · Wikimedia Commons",
-      "source": "https://commons.wikimedia.org/wiki/File:Mindanao_Bangsamoro_Islamic_Musical_Instruments.jpg",
+      "credit": "Wikimedia Commons · CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Model_of_Torogan_Marano.jpg",
       "aiCreated": false
     },
     "poi-tw-npac-weiwuying": {
@@ -3449,8 +3451,8 @@
     "poi-tw-puyuma-nanwang": {
       "url": "assets/img/poi/poi-tw-puyuma-nanwang.jpg",
       "file": "assets/img/poi/poi-tw-puyuma-nanwang.jpg",
-      "credit": "台东卑南平原南王部落山水实景 · Wikimedia Commons",
-      "source": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2010_07_17370_5871_Beinan_Township%2C_Taiwan%2C_Jhihben.JPG",
+      "credit": "Wikimedia Commons · CC BY-SA 3.0 by Uwe Aranas",
+      "source": "https://commons.wikimedia.org/wiki/File:Beinan_Taitung_Taiwan_Aboriginal-Stilt-House-01.jpg",
       "aiCreated": false
     },
     "poi-tw-paiwan-nasalflute": {

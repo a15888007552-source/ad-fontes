@@ -1404,9 +1404,9 @@
       "imageKey": "新港|耶鲁伍尔西音乐厅",
       "imageSource": {
         "mediaId": "poi-d2fcba9043f7",
-        "file": "images/poi/poi-192-d2fcba9043.jpg",
-        "credit": "Wikimedia Commons · Public domain",
-        "source": "https://commons.wikimedia.org/wiki/File:The_1896_bronze_statue_of_onetime_president_Theodore_Dwight_Woolsey_before_the_entrance_of_Dwight_Hall,_the_former_college_library_used_as_a_volunteer_center_on_Yale_University%27s_Old_Campus,_New_Haven_LCCN2011634076.tif"
+        "file": "assets/img/poi/poi-d2fcba9043f7.jpg",
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 by Fluteceleste",
+        "source": "https://commons.wikimedia.org/wiki/File:New_Haven,_Yale_University,_Woolsey_Hall,_Newberry_Memorial_Organ,_Interior_01.jpg"
       },
       "imageRequest": null,
       "legacySource": "city-seed"
@@ -2244,9 +2244,9 @@
       "imageKey": "巴黎|圣礼拜堂",
       "imageSource": {
         "mediaId": "poi-815a005efbf9",
-        "file": "images/poi/poi-215-815a005efb.jpg",
-        "credit": "Wikimedia Commons · CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Nord_Sainte_Chapelle_Statue.jpg"
+        "file": "assets/img/poi/poi-815a005efbf9.jpg",
+        "credit": "Wikimedia Commons · CC BY 4.0 by Laurens R. Krol",
+        "source": "https://commons.wikimedia.org/wiki/File:2017-07-29_France,_Paris_DSC_2711_DxO_2.jpg"
       },
       "imageRequest": null,
       "legacySource": "city-seed"
@@ -2334,9 +2334,9 @@
       "imageKey": "兰斯|塔宫",
       "imageSource": {
         "mediaId": "poi-14e6156d1898",
-        "file": "images/poi/poi-218-14e6156d18.jpg",
-        "credit": "Wikimedia Commons · CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Parma,_Palazzo_della_Pilotta_e_monumento.jpg"
+        "file": "assets/img/poi/poi-14e6156d1898.jpg",
+        "credit": "Wikimedia Commons · CC BY-SA 3.0 by Magnus Manske",
+        "source": "https://commons.wikimedia.org/wiki/File:Palais_du_Tau,_Reims.jpg"
       },
       "imageRequest": null,
       "legacySource": "city-seed"
@@ -12355,8 +12355,8 @@
       "imageSource": {
         "mediaId": "poi-global-geidai",
         "file": "assets/img/poi/poi-global-geidai.jpg",
-        "credit": "东京艺术大学旧东京音乐学校奏乐堂 · Wikimedia Commons · CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Former_Tokyo_Music_School_Sogakudo_2019.jpg"
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 by N509FZ",
+        "source": "https://commons.wikimedia.org/wiki/File:Gate_of_Tokyo_University_of_the_Arts,_Ueno_Campus,_Faculty_of_Music_(20230805120432).jpg"
       },
       "imageRequest": null,
       "legacySource": "global-music-curated"
@@ -12775,8 +12775,8 @@
       "imageSource": {
         "mediaId": "poi-global-bamakopalais",
         "file": "assets/img/poi/poi-global-bamakopalais.jpg",
-        "credit": "巴马科阿马杜·汉帕特·巴文化宫 · Wikimedia Commons · CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Palais_de_la_Culture_Bamako.jpg"
+        "credit": "Wikimedia Commons · CC BY-SA 3.0 by Abdouml",
+        "source": "https://commons.wikimedia.org/wiki/File:Palais_de_la_culture_AHB.jpg"
       },
       "imageRequest": null,
       "legacySource": "global-music-curated"
@@ -13015,8 +13015,8 @@
       "imageSource": {
         "mediaId": "poi-cn-kunqu",
         "file": "assets/img/poi/poi-cn-kunqu.jpg",
-        "credit": "中国昆曲博物馆 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Kunqu"
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 by Ohtashinichiro",
+        "source": "https://commons.wikimedia.org/wiki/File:The_China_Kunqu_Museum_180420_01.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13045,8 +13045,8 @@
       "imageSource": {
         "mediaId": "poi-cn-yongling",
         "file": "assets/img/poi/poi-cn-yongling.jpg",
-        "credit": "永陵 (前蜀二十四伎乐) · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Wang_Jian_(Former_Shu)"
+        "credit": "Wikimedia Commons · CC BY-SA 3.0 by Nekitarc",
+        "source": "https://commons.wikimedia.org/wiki/File:永陵博物馆.JPG"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13075,8 +13075,8 @@
       "imageSource": {
         "mediaId": "poi-cn-abing",
         "file": "assets/img/poi/poi-cn-abing.jpg",
-        "credit": "阿炳故居与二泉映月纪念馆 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Abing"
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 by EditQ",
+        "source": "https://commons.wikimedia.org/wiki/File:Former_Residence_of_Abing,_Wuxi.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13105,8 +13105,8 @@
       "imageSource": {
         "mediaId": "poi-cn-huguang",
         "file": "assets/img/poi/poi-cn-huguang.jpg",
-        "credit": "湖广会馆大戏楼 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Huguang_Guild_Hall"
+        "credit": "Wikimedia Commons · CC BY 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:HuguangHall1.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13225,8 +13225,8 @@
       "imageSource": {
         "mediaId": "poi-ethno-kandydrum",
         "file": "assets/img/poi/poi-ethno-kandydrum.jpg",
-        "credit": "佛齿寺与康提鼓舞圣殿 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Temple_of_the_Tooth"
+        "credit": "Wikimedia Commons · FAL by A.Savin",
+        "source": "https://commons.wikimedia.org/wiki/File:SL_Kandy_asv2020-01_img34_Sacred_Tooth_Temple.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13285,8 +13285,8 @@
       "imageSource": {
         "mediaId": "poi-ethno-baghdadoud",
         "file": "assets/img/poi/poi-ethno-baghdadoud.jpg",
-        "credit": "智慧宫旧址与乌德琴圣所 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/House_of_Wisdom"
+        "credit": "Wikimedia Commons · CC BY-SA 3.0 by Makaay31",
+        "source": "https://commons.wikimedia.org/wiki/File:Mustansiriya_Madrasah5.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13525,8 +13525,8 @@
       "imageSource": {
         "mediaId": "poi-me-ugarit",
         "file": "assets/img/poi/poi-me-ugarit.jpg",
-        "credit": "乌加里特遗址与胡里安颂歌发祥地 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Hurrian_songs"
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 by Dosseman",
+        "source": "https://commons.wikimedia.org/wiki/File:Ugarit_Royal_Palace_3914.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13585,8 +13585,8 @@
       "imageSource": {
         "mediaId": "poi-me-damascusmosque",
         "file": "assets/img/poi/poi-me-damascusmosque.jpg",
-        "credit": "倭马亚大清真寺与大马士革穆瓦沙赫圣所 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Umayyad_Mosque"
+        "credit": "Wikimedia Commons · CC BY 4.0 by Vyacheslav Argenberg",
+        "source": "https://commons.wikimedia.org/wiki/File:The_Umayyad_Mosque,_Courtyard,_Damascus,_Syria.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13885,8 +13885,8 @@
       "imageSource": {
         "mediaId": "poi-af-newafrikashrine",
         "file": "assets/img/poi/poi-af-newafrikashrine.jpg",
-        "credit": "新非洲神庙与非罗主义圣坛 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/New_Afrika_Shrine"
+        "credit": "Wikimedia Commons · Public domain by Kaizenify",
+        "source": "https://commons.wikimedia.org/wiki/File:Fela_New_Shrine,_Lagos.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -13945,8 +13945,8 @@
       "imageSource": {
         "mediaId": "poi-af-ethiopiatheatre",
         "file": "assets/img/poi/poi-af-ethiopiatheatre.jpg",
-        "credit": "埃塞俄比亚国家大剧院与埃塞爵士摇篮 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Ethiopian_National_Theatre"
+        "credit": "Wikimedia Commons / Wikipedia · Fair use / Historic Landmark",
+        "source": "https://en.wikipedia.org/wiki/File:Ethiopian_National_Theatre.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -14035,8 +14035,8 @@
       "imageSource": {
         "mediaId": "poi-af-mindelocc",
         "file": "assets/img/poi/poi-af-mindelocc.jpg",
-        "credit": "明德卢文化中心与赤脚歌后纪念圣地 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Mindelo"
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 by Herbert wie",
+        "source": "https://commons.wikimedia.org/wiki/File:CNAD_Pra%C3%A7a_Nova_Mindelo,_Cabo_Verde.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -14065,8 +14065,8 @@
       "imageSource": {
         "mediaId": "poi-af-hararenationalgallery",
         "file": "assets/img/poi/poi-af-hararenationalgallery.jpg",
-        "credit": "哈拉雷国家艺术馆与绍纳姆比拉圣殿 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/National_Gallery_of_Zimbabwe"
+        "credit": "Wikimedia Commons · CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Entrance_to_the_National_Gallery_of_Zimbabwe.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -14275,8 +14275,8 @@
       "imageSource": {
         "mediaId": "poi-cn-ulanmuqir",
         "file": "assets/img/poi/poi-cn-ulanmuqir.jpg",
-        "credit": "内蒙古乌兰牧骑宫与马头琴长调圣殿 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Hohhot"
+        "credit": "Wikimedia Commons · Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:InnerMongolianTheater.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -14305,8 +14305,8 @@
       "imageSource": {
         "mediaId": "poi-cn-zhaoxing",
         "file": "assets/img/poi/poi-cn-zhaoxing.jpg",
-        "credit": "肇兴侗寨鼓楼群与侗族大歌圣所 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Zhaoxing"
+        "credit": "Wikimedia Commons · CC BY-SA 3.0 by Doron",
+        "source": "https://commons.wikimedia.org/wiki/File:ZhaoxingDrumTower.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -14335,8 +14335,8 @@
       "imageSource": {
         "mediaId": "poi-cn-naximusic",
         "file": "assets/img/poi/poi-cn-naximusic.jpg",
-        "credit": "大研纳西古乐会与白沙细乐圣地 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Old_Town_of_Lijiang"
+        "credit": "Wikimedia Commons · CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Lijiang_Naxi_Musical_Performing_Hall_-_panoramio.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -14425,8 +14425,8 @@
       "imageSource": {
         "mediaId": "poi-cn-yushanguqin",
         "file": "assets/img/poi/poi-cn-yushanguqin.jpg",
-        "credit": "严天池故居与琴川虞山派祖庭 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Changshu"
+        "credit": "Wikimedia Commons · CC BY 4.0 by Cjc7373",
+        "source": "https://commons.wikimedia.org/wiki/File:Longtan,_North_foot_of_Mount_Yu,_Changshu,_Jiangsu,_China.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -14515,8 +14515,8 @@
       "imageSource": {
         "mediaId": "poi-cn-yanji",
         "file": "assets/img/poi/poi-cn-yanji.jpg",
-        "credit": "中国朝鲜族非物质文化遗产馆 · Wikimedia Commons",
-        "source": "https://en.wikipedia.org/wiki/Yanji"
+        "credit": "Wikimedia Commons · CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:China_Korean_Folk_Park_1.jpg"
       },
       "imageRequest": null,
       "legacySource": "world-ethno-curated"
@@ -14725,8 +14725,8 @@
       "imageSource": {
         "mediaId": "poi-cn-tjcm",
         "file": "assets/img/poi/poi-cn-tjcm.jpg",
-        "credit": "天津音乐学院 · 建筑与音乐学术实景",
-        "source": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E6%B4%A5%E9%9F%B3%E4%B9%90%E5%AD%A6%E9%99%A2"
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 by Amazingloong",
+        "source": "https://commons.wikimedia.org/wiki/File:Tianjin_Juilliard_School.jpg"
       },
       "imageRequest": null,
       "legacySource": "china-conservatory-curated"
@@ -15225,8 +15225,8 @@
       "imageSource": {
         "mediaId": "poi-tw-bunun-pasibutbut",
         "file": "assets/img/poi/poi-tw-bunun-pasibutbut.jpg",
-        "credit": "台东布农族部落实景 · Wikimedia Commons",
-        "source": "https://commons.wikimedia.org/wiki/File:953,_Taiwan,_%E5%8F%B0%E6%9D%B1%E7%B8%A3%E5%BB%B6%E5%B9%B3%E9%84%89%E6%A1%83%E6%BA%90%E6%9D%91_-_panoramio_(11).jpg"
+        "credit": "Wikimedia Commons · CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Bunun_Family_House_(Formosan_Aboriginal_Culture_Village).JPG"
       },
       "history": "位于台东县海端乡新武吕溪上游峡谷深处的雾鹿布农族古老部落，崇山峻岭环抱，完整保留了南岛语系高山族原住民独特的祭祀习俗与传统长屋社群形态。",
       "musicRelation": "人类世界民族音乐学最震撼的发现之一——布农族“八部合音”（Pasibutbut / 祈祷小米丰收歌）核心圣地。1943年日本音乐学者黑泽隆朝在此录音并寄送联合国教科文组织，彻底打破了西方音乐学界“多声部复调唯独源于古希腊与欧洲”的教条偏见，其纯人声自然泛音阶差上升复音是世界无伴奏合唱艺术的瑰宝。"
@@ -15291,7 +15291,7 @@
       "imageSource": {
         "mediaId": "poi-in-chennai",
         "file": "assets/img/poi/poi-in-chennai.jpg",
-        "credit": "金奈马德拉斯音乐学院大楼实景 · Wikimedia Commons",
+        "credit": "Wikimedia Commons · Public domain by Jayaram36",
         "source": "https://commons.wikimedia.org/wiki/File:Madras_Music_Academy.jpg"
       },
       "history": "创立于1928年印度国大党年会期间，位于泰米尔纳德邦首府金奈（旧称马德拉斯），拥有享誉国际的专业声学礼堂与音乐理论研究所。",
@@ -15357,8 +15357,8 @@
       "imageSource": {
         "mediaId": "poi-in-tansen",
         "file": "assets/img/poi/poi-in-tansen.jpg",
-        "credit": "瓜廖尔坦森音乐节现场实景 · Wikimedia Commons",
-        "source": "https://commons.wikimedia.org/wiki/File:Satish_Vyas_at_Tansen_Samaroh,_Gwalior_26_December_2020.jpg"
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 by Souravchakra",
+        "source": "https://commons.wikimedia.org/wiki/File:Burial_place_of_Miyan_Tansen_Gwalior_IMG_20181031_105313800.jpg"
       },
       "history": "位于中央邦瓜廖尔古堡山脚下的苏菲派圣人穆罕默德·高斯陵墓建筑群内，莫卧儿阿克巴大帝宫廷九宝之首、传奇乐圣坦森（Miyan Tansen，1506–1589）长眠于此。",
       "musicRelation": "北印古典印度斯坦音乐（Hindustani Classical Music）最古老、最正宗的古典歌唱流派“瓜廖尔乐派”（Gwalior Gharana）精神祖庭。相传坦森唱《梅加拉格》能引动降雨，唱《迪帕克拉格》能点燃宫灯；每年在此举行的“坦森音乐节”（Tansen Samaroh）是全印古典德鲁帕德（Dhrupad）与卡亚尔（Khayal）声乐泰斗朝拜圣会。"
@@ -15599,8 +15599,8 @@
       "imageSource": {
         "mediaId": "poi-ph-kulintang",
         "file": "assets/img/poi/poi-ph-kulintang.jpg",
-        "credit": "棉兰老岛传统库林堂与邦萨摩洛打击乐器实景 · Wikimedia Commons",
-        "source": "https://commons.wikimedia.org/wiki/File:Mindanao_Bangsamoro_Islamic_Musical_Instruments.jpg"
+        "credit": "Wikimedia Commons · CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Model_of_Torogan_Marano.jpg"
       },
       "history": "位于菲律宾南部棉兰老岛拉瑙湖畔的伊斯兰文化历史重镇马拉维，是摩洛人马拉瑙族（Maranao）与马京达瑙族的核心聚集区与传统手工艺中心。",
       "musicRelation": "东南亚古老海洋南岛民族铜锣文化“库林堂”（Kulintang）发源地与最高演奏水准大本营。八面渐变音高凸脐青铜锣横向排列于木雕琴架上，配合大型吊锣（Agung）与独木鼓（Dabakan），以复杂的切分复多节奏展现前殖民时代的海洋波涛与神灵祭祀之声。"
@@ -15709,8 +15709,8 @@
       "imageSource": {
         "mediaId": "poi-tw-puyuma-nanwang",
         "file": "assets/img/poi/poi-tw-puyuma-nanwang.jpg",
-        "credit": "台东卑南平原南王部落山水实景 · Wikimedia Commons",
-        "source": "https://upload.wikimedia.org/wikipedia/commons/b/b0/2010_07_17370_5871_Beinan_Township%2C_Taiwan%2C_Jhihben.JPG"
+        "credit": "Wikimedia Commons · CC BY-SA 3.0 by Uwe Aranas",
+        "source": "https://commons.wikimedia.org/wiki/File:Beinan_Taitung_Taiwan_Aboriginal-Stilt-House-01.jpg"
       },
       "history": "位于台东市西北郊卑南平原，南王部落（普悠玛 Puyuma）为卑南族八社之一。部落保留严密的男子集会所（palakuan）年长序列社会组织，年祭与大猎祭歌乐仪式承袭数百年。",
       "musicRelation": "台湾当代原住民民谣与现代流行乐跨界融合的圣殿。这里是卑南族音乐之父陆森宝（BaLiwakes）故里，他创制《美丽的稻穗》《卑南王》《散步歌》等现代部落经典；孕育出陈建年、纪晓君、桑布伊、南王姐妹花等众多享誉华语乐坛的国宝级音乐家。"
