@@ -21,8 +21,8 @@
     const navRect = nav.getBoundingClientRect();
     const buttonRect = button.getBoundingClientRect();
     return {
-      left: buttonRect.left - navRect.left,
-      top: buttonRect.top - navRect.top,
+      left: buttonRect.left - navRect.left + nav.scrollLeft,
+      top: buttonRect.top - navRect.top + nav.scrollTop,
       width: buttonRect.width,
       height: buttonRect.height
     };
