@@ -540,6 +540,7 @@ canvas#net{display:block;width:100%;height:660px;cursor:grab}
 html.motion-paused .archive-orbis img,html.motion-paused .intro-orbis img,html.motion-paused .archive-orbis::after,html.motion-paused .intro-orbis::before,html.motion-paused .motif::after,html.motion-paused .heropan,html.motion-paused .route{animation-play-state:paused!important}
 @media(max-width:720px){
   header.mast{padding-top:15px}.mast-brand{min-width:0}.archive-orbis{width:52px}
+  nav.views{flex:1 1 100%;min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}nav.views::-webkit-scrollbar{display:none}
   .introbrand{grid-template-columns:1fr}.intro-orbis{width:128px;justify-self:center;order:-1}.intro-orbis figcaption{font-size:9.5px}
 }
 
@@ -709,7 +710,9 @@ html[data-mirror="to-europa"]::view-transition-new(yearbook-page){transform-orig
 .mirror-leaving[data-mirror="to-europa"] #app{transform-origin:right center;animation:yearbook-out-right .2s cubic-bezier(.55,.05,.9,.35) both;will-change:transform,opacity}
 .mirror-enter[data-mirror="to-sinica"] #app{transform-origin:right center;animation:yearbook-in-right .36s cubic-bezier(.16,1,.3,1) both;will-change:transform,opacity}
 .mirror-enter[data-mirror="to-europa"] #app{transform-origin:left center;animation:yearbook-in-left .36s cubic-bezier(.16,1,.3,1) both;will-change:transform,opacity}
-@media(max-width:640px){.mirror-switch{bottom:9px;min-height:48px}.mirror-caption{display:none}}
+/* 为底部悬浮翻卷条留出位置，页尾内容不被遮挡 */
+body{padding-bottom:84px}
+@media(max-width:640px){.mirror-switch{bottom:9px;min-height:48px}.mirror-caption{display:none}body{padding-bottom:68px}}
 @media(prefers-reduced-motion:reduce){.mirror-switch,#app{animation:none!important;transition:none!important}::view-transition-old(yearbook-page),::view-transition-new(yearbook-page){animation:none!important}}
 
 /* ---------- opening sequence: archival seal reveal ---------- */
