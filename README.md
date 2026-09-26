@@ -38,3 +38,7 @@ modules/
 
 - [本地开发与 QA](docs/DEVELOPMENT.md)
 - [研究完整性边界](docs/SCHOLARLY_INTEGRITY.md)
+
+## 版权
+
+版权所有 © 2026 辛申奥，保留所有权利。未经书面许可，不得转载、复制或改作本站原创内容；第三方图文的权利归原权利人。详见 [LICENSE](LICENSE)。
