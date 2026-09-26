@@ -27,7 +27,6 @@ const SOURCE_DEFS = [
   { file: "modules/europa/index.html", title: "欧罗巴音乐家年鉴", url: "modules/europa/index.html" },
   { file: "modules/proceedings/index.html", title: "西方音乐学会第八届年会·数字纪要", url: "modules/proceedings/index.html" },
   { file: "modules/theory/index.html", title: "Musica Theorica·乐理", url: "modules/theory/index.html" },
-  { file: "modules/philosophy/index.html", title: "Musica Philosophica·音乐哲学", url: "modules/philosophy/index.html" },
   { file: "modules/tomb-trails/index.html", title: "Archaeological Provenance·考古脉络", url: "modules/tomb-trails/index.html" },
 ];
 
