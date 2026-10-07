@@ -93,6 +93,28 @@
     padding:1.35rem 1.5rem 1.4rem; position:relative;
     transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
   }
+  .mod-featured{
+    border-color:var(--rubric);
+    background:linear-gradient(135deg, color-mix(in srgb, var(--gold) 5%, var(--card)), var(--card) 66%);
+    box-shadow:0 3px 12px var(--shadow);
+  }
+  .mod-featured::before{
+    content:""; position:absolute; inset:6px; border:1px solid color-mix(in srgb, var(--gold) 60%, transparent);
+    border-radius:1px; pointer-events:none;
+    background:
+      linear-gradient(var(--gold),var(--gold)) left top/14px 1px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) left top/1px 14px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) right top/14px 1px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) right top/1px 14px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) left bottom/14px 1px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) left bottom/1px 14px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) right bottom/14px 1px no-repeat,
+      linear-gradient(var(--gold),var(--gold)) right bottom/1px 14px no-repeat;
+  }
+  .mod-featured::after{
+    content:"✦"; position:absolute; top:-.6em; left:50%; transform:translateX(-50%);
+    padding:0 .5em; color:var(--rubric); background:var(--paper); font-size:.9rem; line-height:1;
+  }
   a.mod:hover{border-color:var(--rubric); transform:translateY(-2px); box-shadow:0 8px 24px var(--shadow);}
   .mod-top{display:flex; align-items:baseline; gap:.7rem; margin-bottom:.35rem; flex-wrap:wrap;}
   .num{
@@ -190,9 +212,25 @@
     </li>
 
     <li>
-      <a class="mod" href="modules/busoni/index.html">
+      <a class="mod mod-featured" href="https://lexika-atlas-private.gusgumee777.workers.dev/atlas#e36">
         <div class="mod-top">
           <span class="num">II</span>
+          <h2 class="mod-title">Atlas Musicologicus</h2>
+          <span class="mod-sub">音乐辞典星图</span>
+        </div>
+        <p class="mod-desc">以辞典词条为入口，把人物、作品、乐器、体裁、术语、机构与地点放入可检索的关系图谱；从词条进入提要、史实辨正、出处与研究现状。</p>
+        <div class="mod-meta">
+          <span class="src">辞典词条 · 音乐关系图谱</span>
+          <span class="badge lock">密码访问</span>
+          <span class="go">进入 →</span>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a class="mod" href="modules/busoni/index.html">
+        <div class="mod-top">
+          <span class="num">III</span>
           <h2 class="mod-title">Studia Busoniana</h2>
           <span class="mod-sub">布索尼专栏</span>
         </div>
@@ -209,7 +247,7 @@
     <li>
       <a class="mod" href="modules/proceedings/index.html">
         <div class="mod-top">
-          <span class="num">III</span>
+          <span class="num">IV</span>
           <h2 class="mod-title">Conventus Musicologicus Occidentalis</h2>
           <span class="mod-sub">西方音乐学会第八届年会 · 数字纪要</span>
         </div>
@@ -225,7 +263,7 @@
     <li>
       <a class="mod" href="modules/theory/index.html">
         <div class="mod-top">
-          <span class="num">IV</span>
+          <span class="num">V</span>
           <h2 class="mod-title">Musica Theorica</h2>
           <span class="mod-sub">乐理 · 看得懂、听得见</span>
         </div>
@@ -241,7 +279,7 @@
     <li>
       <a class="mod" href="modules/museum-atlas/index.html">
         <div class="mod-top">
-          <span class="num">V</span>
+          <span class="num">VI</span>
           <h2 class="mod-title">中国博物馆行记</h2>
           <span class="mod-sub">按省份浏览博物馆专题</span>
         </div>
@@ -249,22 +287,6 @@
         <div class="mod-meta">
           <span class="src">根据个人现场拍摄与博物馆公开资料整理</span>
           <span class="badge live">已上线</span>
-          <span class="go">进入 →</span>
-        </div>
-      </a>
-    </li>
-
-    <li>
-      <a class="mod" href="https://lexika-atlas-private.gusgumee777.workers.dev/atlas#e36">
-        <div class="mod-top">
-          <span class="num">VII</span>
-          <h2 class="mod-title">Atlas Musicologicus</h2>
-          <span class="mod-sub">音乐辞典星图</span>
-        </div>
-        <p class="mod-desc">以辞典词条为入口，把人物、作品、乐器、体裁、术语、机构与地点放入可检索的关系图谱；从词条进入提要、史实辨正、出处与研究现状。</p>
-        <div class="mod-meta">
-          <span class="src">辞典词条 · 音乐关系图谱</span>
-          <span class="badge lock">密码访问</span>
           <span class="go">进入 →</span>
         </div>
       </a>
