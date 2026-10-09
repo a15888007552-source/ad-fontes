@@ -12,3 +12,8 @@ artifacts/
 work/
 .pytest_cache/
 __pycache__/
+
+# Local build output and Cloudflare tooling cache
+_site/
+.wrangler/
+.ad-fontes-cloudflare-pages-build-marker

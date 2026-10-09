@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f1e7">
+  <title>退出登录 · Ad Fontes</title>
+  <style>
+    :root { color-scheme: light dark; --paper:#f6f1e7; --ink:#201c17; --muted:#6b6157; --line:#d9cfbe; --accent:#8c2b1f; --card:#fbf8f1; }
+    @media (prefers-color-scheme: dark) { :root { --paper:#16130f; --ink:#e9e2d4; --muted:#a79c8b; --line:#332c22; --accent:#d8695a; --card:#1d1913; } }
+    * { box-sizing:border-box; }
+    body { min-height:100vh; margin:0; display:grid; place-items:center; padding:28px; background:var(--paper); color:var(--ink); font-family:Georgia,"Noto Serif SC",serif; }
+    main { width:min(100%, 440px); padding:clamp(28px, 7vw, 54px); border:1px solid var(--line); background:var(--card); }
+    .wordmark { margin:0 0 36px; color:var(--accent); font:600 12px/1.5 Arial,sans-serif; letter-spacing:.18em; }
+    h1 { margin:0; font-size:clamp(25px,5vw,32px); font-weight:500; letter-spacing:.03em; }
+    p { margin:12px 0 28px; color:var(--muted); font-size:14px; line-height:1.8; }
+    a { color:var(--accent); font:13px/1.7 Arial,sans-serif; text-underline-offset:3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="wordmark">AD FONTES · 溯源</p>
+    <h1>正在退出登录</h1>
+    <p id="status" role="status" aria-live="polite">正在安全清除本机登录状态……</p>
+    <a href="/login/">返回登录页</a>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/shared/js/ad-fontes-auth-client.js?v=20261009"></script>
+  <script>
+    function safeNext() {
+      const value = new URLSearchParams(window.location.search).get("next") || "/";
+      if (!value.startsWith("/") || value.startsWith("//")) return "/";
+      const destination = new URL(value, window.location.origin);
+      return destination.origin === window.location.origin
+        ? destination.pathname + destination.search + destination.hash
+        : "/";
+    }
+
+    const client = window.AdFontesAuth?.client;
+    if (!client) {
+      document.getElementById("status").textContent = "登录组件没有加载成功，请刷新后重试。";
+    } else {
+      client.auth.signOut()
+        .then(({ error }) => {
+          if (error) throw error;
+          window.location.replace(safeNext());
+        })
+        .catch(() => {
+          document.getElementById("status").textContent = "退出登录失败，请刷新页面重试。";
+        });
+    }
+  </script>
+</body>
+</html>

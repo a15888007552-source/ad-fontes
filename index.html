@@ -9,6 +9,7 @@
 <link rel="canonical" href="https://gusgumee.studio/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="shared/css/ad-fontes-assistant.css">
+<link rel="stylesheet" href="shared/css/ad-fontes-auth-ui.css?v=20261009">
 <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16130f" media="(prefers-color-scheme: dark)">
 <!-- Open Graph / Twitter -->
@@ -177,6 +178,8 @@
 </head>
 <body>
 
+<a class="auth-corner auth-corner--login" data-auth-login href="/login/?next=%2Fmodules%2Feuropa%2F">登录</a>
+<a class="auth-corner auth-corner--logout auth-corner--home" data-auth-logout href="/logout/?next=%2F" hidden>退出登录</a>
 <button class="toggle" id="toggle" aria-label="切换明暗">☾ / ☀</button>
 
 <div class="wrap">
@@ -330,6 +333,9 @@
     });
   })();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="shared/js/ad-fontes-auth-client.js?v=20261009" defer></script>
+<script src="shared/js/ad-fontes-auth-ui.js?v=20261009" defer></script>
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="shared/js/ad-fontes-assistant.js"></script>
 </body>
