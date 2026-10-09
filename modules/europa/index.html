@@ -12,12 +12,12 @@
 <link rel="stylesheet" href="./css/europa-liquid-interactions.css">
 <link rel="stylesheet" href="./css/galaxy.css?v=20260911-relations3">
 <link rel="stylesheet" href="./css/acoustic-lab.css?v=20260920-all-staves-v10">
-<link rel="stylesheet" href="../../shared/css/ad-fontes-auth-ui.css?v=20261009">
+<link rel="stylesheet" href="../../shared/css/ad-fontes-auth-ui.css?v=20261009-modal1">
 <script>document.documentElement.classList.add("auth-pending");</script>
-<style>html.auth-pending body { visibility: hidden; }</style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
-<script src="../../shared/js/ad-fontes-auth-client.js?v=20261009" defer></script>
-<script src="../../shared/js/ad-fontes-auth-gate.js?v=20261009" defer></script>
+<style>
+html.auth-pending body > :not(.auth-dialog):not(.auth-gate-notice):not([data-auth-open]):not(script),
+html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-auth-open]):not(script) { visibility: hidden; pointer-events: none; }
+</style>
 <style id="lab-theme-override">
   #v-lab, .acoustic-lab-root {
     background: transparent !important;
@@ -164,6 +164,7 @@
 
 
 <body class="europa-opening-active">
+<button class="auth-corner auth-corner--module" data-auth-open type="button" aria-haspopup="dialog" aria-controls="ad-fontes-auth-dialog">登录 / 注册</button>
 <div id="europa-opening" role="dialog" aria-modal="true" aria-labelledby="europa-opening-title">
   <div class="europa-opening-stage">
     <span class="europa-opening-line" aria-hidden="true"></span>
@@ -187,7 +188,6 @@
   <span class="mirror-word" aria-current="page">欧罗巴卷</span><span class="mirror-axis" aria-hidden="true">⇄</span><span class="mirror-word">华夏卷</span><small class="mirror-caption">ANNALIUM SPECULUM · 一键镜像翻卷</small>
 </a>
 <div id="app" data-ep="greek">
-<a class="auth-corner auth-corner--logout auth-corner--module" data-auth-logout href="../../logout/?next=%2F">退出登录</a>
 <header class="mast">
   <div class="mast-brand">
     <div class="archive-orbis" aria-hidden="true"><img src="assets/img/original-musical-cosmograph.webp?v=1" width="640" height="640" decoding="async" fetchpriority="low" alt=""></div>
@@ -338,8 +338,8 @@
 
 
 
-<script type="module" src="./js/index.js?v=20260920-all-staves-v10"></script>
-<script type="module" src="./js/europa-liquid-interactions.js?v=20260924-scroll"></script>
+<script type="module" data-auth-src="./js/index.js?v=20260920-all-staves-v10"></script>
+<script type="module" data-auth-src="./js/europa-liquid-interactions.js?v=20260924-scroll"></script>
 <script>
 (function(){
   const link=document.querySelector('[data-mirror-to]');if(!link)return;
@@ -428,6 +428,9 @@
   skip&&skip.focus({preventScroll:true});
 })();
 </script>
-<script src="../../shared/js/ad-fontes-auth-ui.js?v=20261009" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../../shared/js/ad-fontes-auth-client.js?v=20261009-modal1" defer></script>
+<script src="../../shared/js/ad-fontes-auth-ui.js?v=20261009-modal1" defer></script>
+<script src="../../shared/js/ad-fontes-auth-gate.js?v=20261009-modal1" defer></script>
 </body>
 </html>
