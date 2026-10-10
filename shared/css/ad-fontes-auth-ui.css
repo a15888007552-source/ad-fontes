@@ -22,6 +22,20 @@
 .auth-corner:hover { border-color: var(--rubric, #8c2b1f); color: var(--rubric, #8c2b1f); }
 .auth-corner:focus-visible, .auth-dialog :focus-visible, .auth-gate-notice :focus-visible { outline: 2px solid var(--rubric, #8c2b1f); outline-offset: 3px; }
 
+/* Europa uses its own scoped palette; its fixed account control should sit on
+   the dark page chrome without introducing a light paper-colored tile. */
+.auth-corner--module {
+  border-color: rgba(223, 201, 149, .28);
+  background: transparent;
+  color: #e8dfd0;
+}
+.auth-corner--module:hover {
+  border-color: rgba(223, 201, 149, .62);
+  background: rgba(223, 201, 149, .06);
+  color: #fff3d7;
+}
+.auth-corner--module:focus-visible { outline-color: rgba(223, 201, 149, .78); }
+
 .auth-dialog {
   --af-paper: var(--paper, #f6f1e7);
   --af-card: var(--card, #fbf8f1);
