@@ -889,7 +889,11 @@ function playFilm(fig){
   frame.src=fig.dataset.filmSrc;frame.title=`影像：${fig.dataset.filmTitle}`;
   frame.allow="fullscreen; picture-in-picture";frame.allowFullscreen=true;
   frame.referrerPolicy="strict-origin-when-cross-origin";
-  fig.querySelector(".era-film-poster").replaceWith(frame);fig.classList.add("is-playing");
+  const poster=fig.querySelector(".era-film-poster");fig._poster=poster;poster.replaceWith(frame);fig.classList.add("is-playing");
+}
+// 切换视图或关闭弹窗时停止播放：隐藏的 iframe 仍会继续出声
+function stopFilms(){
+  document.querySelectorAll(".era-film.is-playing").forEach(fig=>{fig.querySelector("iframe")?.replaceWith(fig._poster);fig.classList.remove("is-playing")});
 }
 document.addEventListener("click",e=>{const btn=e.target.closest?.(".era-film-poster");if(btn)playFilm(btn.closest(".era-film"))});
 function debateSummary(text){return firstSentence(text,116)}
@@ -942,6 +946,7 @@ function renderChapterRail(ep,e){
     <section class="eprail-card"><span class="eprail-kicker">CHAPTER ROUTE · 本章路线</span><h3>${e.zh}的时间坐标</h3><ul class="eprail-list">${events.map(v=>`<li><b>${v[0]}</b><span>${v[1]}</span></li>`).join("")}</ul><p class="eprail-more">前三个节点 · 完整大事记见下方</p></section>
     <section class="eprail-card eprail-note"><span class="eprail-kicker">KEYWORDS · 阅读关键词</span><p class="eprail-keywords">${topics.map(x=>`<span class="term-chip">${x}</span>`).join("")}</p></section>
     <p class="eprail-more">主题词用于定位下方的史学争鸣与音乐家名录。</p>
+    ${filmCard(filmFor(ep))}
   </div>`;
 }
 function renderAlm(){
@@ -960,7 +965,6 @@ function renderAlm(){
       <div class="theme">本章视觉主题 — <b>${e.theme}</b>${art&&art.note?`；篇首画 — ${art.note}`:""}</div>
       ${EPCITE[curEp]?`<div class="theme">本章文献 — ${EPCITE[curEp]}</div>`:""}
       ${renderChapterIntro(e)}
-      ${filmCard(filmFor(curEp))}
     </div>
     ${renderChapterRail(curEp,e)}
   </div>
@@ -2006,7 +2010,7 @@ function setView(v,{historyMode="push"}={}){
   const b=document.querySelector(`#views button[data-v="${targetCode}"]`);if(!b)return;
   v = targetCode;
   EuropaState.setState({currentView:v},{source:"navigation",reason:"view-change"});
-  listening.stop();
+  listening.stop();stopFilms();
   document.body.classList.toggle("europa-galaxy-active",v==="net");
   if(v!=="net"){document.body.classList.remove("galaxy-immersive");$("#galaxy-immersive")?.setAttribute("aria-pressed","false")}
   document.querySelectorAll("#views button").forEach(x=>x.classList.toggle("on",x===b));
@@ -2071,9 +2075,8 @@ const VIEWDESC=[["年 鉴","七时代分章：篇首名画、导论小论文、�
 ["术 语",`${GLOSS.length}条核心概念，逐条注原语与文献出处。`],
   ["文 献","编纂所据的权威著作与凡例。"],
   ["实 景","MapLibre 卫星、街道与地形底图；放大到城市后显示建筑、音乐场所、学院、大学和故居。"]];
-const introFilm=$("#intro-film");
-function resetIntroFilm(){if(introFilm)introFilm.innerHTML=filmCard(filmFor("overview"),{kicker:"总览影像 · PROLOGUS"})}
-resetIntroFilm();
+const bibFilm=$("#bib-film");
+if(bibFilm)bibFilm.innerHTML=filmCard(filmFor("overview"),{kicker:"总览影像 · PROLOGUS"});
 $("#introgrid").innerHTML=VIEWDESC.map(v=>`<div><b>${v[0]}</b><span>${v[1]}</span></div>`).join("");
 const intro=$("#intro");
 function showIntro(){if(!intro.open)intro.showModal()}
@@ -2081,7 +2084,6 @@ function closeIntro(){try{intro.close()}catch(e){}try{localStorage.setItem("anna
 $("#introx").onclick=closeIntro;$("#introgo").onclick=closeIntro;
 $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
-intro.addEventListener("close",resetIntroFilm);
 const filmDlg=$("#film");
 $("#galaxy-film")?.addEventListener("click",()=>{const f=filmFor(netFilter);if(!f||!filmDlg)return;$("#film-body").innerHTML=filmCard(f,{kicker:`${EP[netFilter].zh} · 影像`});filmDlg.dataset.ep=netFilter;filmDlg.showModal();playFilm(filmDlg.querySelector(".era-film"))});
 $("#filmx")?.addEventListener("click",()=>filmDlg.close());
