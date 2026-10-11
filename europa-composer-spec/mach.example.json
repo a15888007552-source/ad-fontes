@@ -1,0 +1,166 @@
+{
+  "_example": "示范数据，只演示结构。内容取自仓库现有 persons.json / relations.json / research/works.json；教科书页码 151 取自现有 cite 字段（Grout 10版第6章），未翻书核对，故 verified=false（未核）；词典卷号留空待填；其余乐谱与题录留空待填。",
+  "schemaVersion": 1,
+  "personId": "mach",
+  "updated": "2026-10-11",
+  "status": "draft",
+  "chronology": [
+    {
+      "id": "mach-t01",
+      "dateStart": 1300,
+      "dateEnd": 1300,
+      "dateDisplay": "约1300年",
+      "certainty": "approximate",
+      "place": "香槟",
+      "title": "出生",
+      "text": "约1300年生于法国东北香槟地区。",
+      "persons": [],
+      "workRefs": [],
+      "refs": [
+        "mach-r01"
+      ]
+    },
+    {
+      "id": "mach-t02",
+      "dateStart": 1323,
+      "dateEnd": 1323,
+      "dateDisplay": "约1323年",
+      "certainty": "approximate",
+      "place": null,
+      "title": "入波希米亚王幕府",
+      "text": "入波希米亚国王卢森堡的约翰幕下任书记，后为国王秘书。",
+      "persons": [],
+      "workRefs": [],
+      "refs": [
+        "mach-r01"
+      ]
+    },
+    {
+      "id": "mach-t03",
+      "dateStart": 1340,
+      "dateEnd": 1377,
+      "dateDisplay": "1340年起",
+      "certainty": "certain",
+      "place": "兰斯",
+      "title": "定居兰斯",
+      "text": "以兰斯主教座堂咏礼司铎身份定居兰斯，直至去世。",
+      "persons": [],
+      "workRefs": [],
+      "refs": [
+        "mach-r01"
+      ]
+    },
+    {
+      "id": "mach-t04",
+      "dateStart": 1360,
+      "dateEnd": 1369,
+      "dateDisplay": "约1360年代",
+      "certainty": "approximate",
+      "place": "兰斯",
+      "title": "《圣母弥撒》",
+      "text": "约1360年代写成《圣母弥撒》。",
+      "persons": [],
+      "workRefs": [
+        "work:machaut-messe-de-nostre-dame"
+      ],
+      "refs": [
+        "mach-r01"
+      ]
+    }
+  ],
+  "lineage": [
+    {
+      "target": "vitr",
+      "category": "影响",
+      "label": "影响",
+      "direction": "in",
+      "evidence": "historiographical",
+      "note": "新艺术记谱与等节奏。",
+      "refs": [],
+      "importedFrom": "relations.json"
+    },
+    {
+      "target": "dufa",
+      "category": "影响",
+      "label": "影响",
+      "direction": "out",
+      "evidence": "historiographical",
+      "note": "法系歌谣曲体裁传承。",
+      "refs": [],
+      "importedFrom": "relations.json"
+    },
+    {
+      "target": "cico",
+      "category": "接续",
+      "label": "承继",
+      "direction": "out",
+      "evidence": "historiographical",
+      "note": "非确证师承：奇科尼亚承接法国新艺术与等节奏传统。",
+      "refs": [],
+      "importedFrom": "relations.json"
+    }
+  ],
+  "works": [
+    {
+      "workId": "work:machaut-messe-de-nostre-dame",
+      "title": "圣母弥撒",
+      "originalTitle": "Messe de Nostre Dame",
+      "catalogue": null,
+      "date": "约1360年代",
+      "genre": "常规弥撒",
+      "scores": [
+        {
+          "site": "IMSLP",
+          "url": "<待填：IMSLP 作品页网址>",
+          "edition": "<待填>",
+          "rightsText": "<待填：页面上的权利原文>",
+          "checked": null
+        }
+      ],
+      "refs": [
+        "mach-r01"
+      ]
+    }
+  ],
+  "scholarship": {
+    "query": {
+      "db": "中国知网 学术期刊",
+      "field": "主题",
+      "q": "马肖",
+      "sourceFilter": [
+        "北大核心",
+        "CSSCI",
+        "AMI"
+      ],
+      "subjectFilter": "音乐舞蹈",
+      "sort": "被引 降序",
+      "total": null,
+      "retrieved": null
+    },
+    "articles": [],
+    "scholars": []
+  },
+  "bookRefs": [
+    {
+      "refId": "mach-r01",
+      "refType": "textbook",
+      "bookId": "grout-en-10",
+      "chapter": "Ch.6",
+      "page": "151",
+      "topic": "马肖生平与作品概述",
+      "anchorId": "mach-a01",
+      "verified": false
+    },
+    {
+      "refId": "mach-r02",
+      "refType": "dictionary",
+      "bookId": "new-grove-2",
+      "volume": null,
+      "headword": "Machaut, Guillaume de",
+      "section": null,
+      "topic": "<待填>",
+      "anchorId": "mach-a02",
+      "verified": false
+    }
+  ]
+}
