@@ -30,7 +30,9 @@ HOSTS = [
     ("baoji", "modules/baoji/", "baoji", 8),
     ("beilin", "modules/beilin/", "beilin", 4),
     ("shangqiu-museum", "modules/shangqiu-museum/", "shangqiu", 5),
+    ("henan-museum", "modules/henan-museum/", "henan", 3),
 ]
+EXPECTED_SLIDES = sum(slides for *_, slides in HOSTS)
 OPENING_SKIP_SELECTORS = ("#opening-skip", ".opening-skip", ".museum-opening-lite__skip")
 OPENING_CONTAINER_SELECTORS = ("#opening", "#opening-screen", ".museum-opening-lite")
 
@@ -204,7 +206,7 @@ def main() -> int:
     external_fallbacks_total = 0
     visual_valid = 0
     occlusion_free_count = 0
-    visual_expected = 14
+    visual_expected = 2 * len(HOSTS)
     fallback_valid: str = "N/A"
 
     with sync_playwright() as pw:
@@ -377,8 +379,8 @@ def main() -> int:
         standalone["nextButton"] = page.locator("#next").count()
         if standalone["museumTabs"] != 8:
             fail(failures, f"standalone: museum tabs {standalone['museumTabs']} != 8")
-        if standalone["slides"] != 38:
-            fail(failures, f"standalone: slides {standalone['slides']} != 38")
+        if standalone["slides"] != EXPECTED_SLIDES:
+            fail(failures, f"standalone: slides {standalone['slides']} != {EXPECTED_SLIDES}")
         if not standalone["prevButton"] or not standalone["nextButton"]:
             fail(failures, "standalone: prev/next controls missing")
         position_before = page.locator("#position").inner_text()
@@ -472,7 +474,7 @@ def main() -> int:
 
     print(f"TOMB_TRAILS_BROWSER_SMOKE={report['status']}")
     total_renderable = sum(e.get("renderableSlides", 0) for e in report["hosts"].values())
-    print(f"RENDERABLE_SLIDES={total_renderable}/38")
+    print(f"RENDERABLE_SLIDES={total_renderable}/{EXPECTED_SLIDES}")
     for name, entry in report["hosts"].items():
         print(f"HOST {name}: iframe={entry.get('tombTrailsIframes')} slides={entry.get('slides')} renderable={entry.get('renderableSlides')} local={entry.get('localImages')} fallbacks={entry.get('externalFallbacks')} broken={entry.get('brokenImgs')} desktopValid={entry.get('desktopValid')}")
     s = report["standalone"]
