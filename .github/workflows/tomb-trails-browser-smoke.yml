@@ -11,6 +11,8 @@ on:
       - "modules/shaanxi-archaeology-museum/index.html"
       - "modules/baoji/index.html"
       - "modules/beilin/index.html"
+      - "modules/shangqiu-museum/index.html"
+      - "modules/henan-museum/index.html"
       - "scripts/smoke_tomb_trails_browser.py"
       - ".github/workflows/tomb-trails-browser-smoke.yml"
   workflow_dispatch:
