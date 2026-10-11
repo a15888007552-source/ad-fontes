@@ -18,6 +18,8 @@ LOCAL_UI_MEDIA = {
     "/modules/qinhan/assets/ui/collection-background.webp",
     "/modules/shaanxi-history/assets/ui/collection-background.webp",
     "/modules/shaanxi-archaeology-museum/assets/ui/collection-background.webp",
+    "/modules/shaanxi-archaeology-museum/assets/ui/card-interior-field-collage-v2.webp",
+    "/modules/shaanxi-archaeology-museum/assets/ui/detail-field-report-v1.webp",
 }
 MEDIA_SUFFIXES = {
     ".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".avif", ".heic", ".tif", ".tiff",
