@@ -18,7 +18,8 @@ from urllib.parse import urljoin
 
 ROUTES = {
     "homepage": ("/", "body"),
-    "europa": ("/modules/europa/", "#v-alm .card"),
+    # Europa requires sign-in; anonymous captures show the login gate.
+    "europa": ("/modules/europa/", ".auth-gate-notice"),
     "museum-atlas": ("/modules/museum-atlas/", ".museum-card"),
 }
 VIEWPORTS = {
