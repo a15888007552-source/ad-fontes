@@ -7,7 +7,7 @@
 <title>欧罗巴音乐家年鉴 · Annales Musicorum Europae</title>
 <meta name="description" content="欧罗巴音乐家年鉴：与华夏音乐家年鉴组成 Ad Fontes 第一模块的镜像双卷。">
 <script>try{var __mirrorDirection=sessionStorage.getItem('ad-fontes-yearbook-direction');if(__mirrorDirection)document.documentElement.dataset.mirror=__mirrorDirection}catch(e){}</script>
-<link rel="stylesheet" href="./css/index.css?v=20260924-mobile-nav-v9">
+<link rel="stylesheet" href="./css/index.css?v=20261011-era-films2">
 <link rel="stylesheet" href="./css/map-real.css">
 <link rel="stylesheet" href="./css/europa-liquid-interactions.css">
 <link rel="stylesheet" href="./css/galaxy.css?v=20260911-relations3">
@@ -269,7 +269,7 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
       <button class="chip on" id="tog3d" aria-pressed="true">3D 星丛</button>
       <button class="chip" id="tog2d" aria-pressed="false">2D 关系网</button>
     </div>
-    <aside class="galaxy-epochs"><div class="galaxy-side-title"><span>时代星群</span><small>PERIODS</small></div><div class="chips" id="netchips"></div></aside>
+    <aside class="galaxy-epochs"><div class="galaxy-side-title"><span>时代星群</span><small>PERIODS</small></div><div class="chips" id="netchips"></div><button type="button" class="galaxy-film" id="galaxy-film" hidden></button></aside>
     <div class="viz-state" id="netstate" role="status" aria-live="polite" hidden></div>
     <div class="netbox">
       <div id="netwrap2d" style="display:none"></div>
@@ -300,6 +300,7 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
   </section>
   <section class="view" id="v-bib">
     <h3 class="rub">BIBLIOTHECA · 文献依据</h3>
+    <div class="bib-layout">
     <ol class="bib">
       <li>J. Peter Burkholder, Donald Jay Grout &amp; Claude V. Palisca, <i>A History of Western Music</i>, 10th ed. New York &amp; London: W. W. Norton, 2019.（另有第九版、第六版英文本与第六版中译本在库）<span class="zot">ZOTERO 在库</span></li>
       <li>Richard Taruskin, <i>The Oxford History of Western Music</i>, 5 vols. Oxford: Oxford University Press, 2005.（五卷分卷本在库）<span class="zot">ZOTERO 在库</span></li>
@@ -313,6 +314,8 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
       <li>Leon Plantinga: <i>Romantic Music: A History of Musical Style in Nineteenth-Century Europe</i>，中译本《浪漫音乐：十九世纪欧洲音乐风格史》，诺顿音乐断代史。<span class="zot">PDF 在库</span></li>
       <li>Robert P. Morgan: <i>Twentieth-Century Music</i>，中译本《二十世纪音乐》，诺顿音乐断代史。<span class="zot">PDF 在库</span></li>
     </ol>
+    <aside class="bib-film" id="bib-film" aria-label="总览影像"></aside>
+    </div>
     <p class="colophon">本年鉴之分期、人名与史实框架以 Burkholder/Grout/Palisca 第十版与 Taruskin 五卷本为准绳；时代页新增的"Norton 断代史导读"据五卷诺顿断代史中译本之断代框架、目录问题意识与相关章节整理改写。十九世纪叙事参照达尔豪斯之结构史观。肖像均为公有领域之传世画作、版画、手抄本细密画或历史照片；确无传世真容者以同时代图像代之并注明，不作臆造。</p>
   </section>
 </main>
@@ -320,6 +323,10 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
 </div>
 
 <dialog id="dlg" aria-label="音乐家详情面板"><div class="dwrap" id="dwrap"></div></dialog>
+<dialog id="film" aria-label="时代影像"><div class="filmwrap">
+  <button class="dclose" id="filmx" aria-label="关闭">✕</button>
+  <div id="film-body"></div>
+</div></dialog>
 <dialog id="intro"><div class="introwrap">
   <button class="dclose" id="introx" aria-label="关闭">✕</button>
   <div class="introbrand">
@@ -338,7 +345,7 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
 
 
 
-<script type="module" data-auth-src="./js/index.js?v=20260920-all-staves-v10"></script>
+<script type="module" data-auth-src="./js/index.js?v=20261011-era-films2"></script>
 <script type="module" data-auth-src="./js/europa-liquid-interactions.js?v=20260924-scroll"></script>
 <script>
 (function(){

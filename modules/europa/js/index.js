@@ -24,6 +24,9 @@ const EUROPA_DATA = Object.assign(
   })))
 );
 
+// 时期影像：B 站合集分P，按时代键索引；缺失时整块不显示，不影响主数据加载
+const ERA_FILMS = await fetch("./data/videos.json?v=20261011-covers2").then(r => r.ok ? r.json() : null).catch(() => null);
+
 const ADDITIONS_20260809 = EUROPA_DATA.ADDITIONS_20260809;
 const ADDITION_CITIES_20260809 = EUROPA_DATA.ADDITION_CITIES_20260809;
 const ADDITION_LINKS_20260809 = EUROPA_DATA.ADDITION_LINKS_20260809;
@@ -861,6 +864,54 @@ function renderChapterIntro(e){
     <aside class="read-takeaway"><b>关键结论 · TAKEAWAY</b><p>${lastSentence(paras.join(" "))}</p></aside>
   </div>`;
 }
+/* ── 时期影像（B 站嵌入，点击后才加载播放器） ── */
+function filmFor(key){
+  const f=key==="overview"?ERA_FILMS?.overview:ERA_FILMS?.eras?.[key];
+  return f&&f.page?{...f,bvid:f.bvid||ERA_FILMS.series.bvid}:null;
+}
+function filmSrc(f,autoplay){return`https://player.bilibili.com/player.html?bvid=${encodeURIComponent(f.bvid)}&page=${f.page}&autoplay=${autoplay?1:0}&high_quality=1&danmaku=0`}
+// 封面：每段影像另配一幅音乐题材的公有领域画作（videos.json cover，取自 Wikimedia Commons），不与章首篇首画重复
+function filmCover(f){
+  return f.cover?`<span class="era-film-art" aria-hidden="true" style="background-image:url('${f.cover.u}')"></span>`:"";
+}
+function filmCredit(f){
+  const c=f.cover;if(!c)return"";
+  const text=`封面 — 《${c.title}》 ${c.artist}，${c.year}`;
+  return c.source?`<a class="era-film-credit" href="${c.source}" target="_blank" rel="noopener" title="Wikimedia Commons · 公有领域">${text}</a>`:text;
+}
+function filmCard(f,opts={}){
+  if(!f)return"";
+  const ep=opts.ep||"overview";
+  const lat=ep==="overview"?"HISTORIA MUSICAE":(EP[ep]?.en||"");
+  const url=`https://www.bilibili.com/video/${encodeURIComponent(f.bvid)}/?p=${f.page}`;
+  const credit=filmCredit(f);
+  return`<figure class="era-film" data-ep="${ep}" data-film-src="${filmSrc(f,true)}" data-film-title="${f.title}">
+    <button type="button" class="era-film-poster" aria-label="播放影像《${f.title}》">
+      ${filmCover(f)}
+      <span class="era-film-text">
+        <span class="era-film-kicker">${opts.kicker||"影像 · VIDEO"}</span>
+        <span class="era-film-lat">${lat}</span>
+        <b>${f.title}</b>
+        <small>第 ${f.page}P${f.duration?` · ${f.duration}`:""}</small>
+      </span>
+      <span class="era-film-play" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30.5"/><circle class="ring" cx="32" cy="32" r="25.5"/><path d="M27 21.5v21l17-10.5z"/></svg></span>
+    </button>
+    <figcaption><span>${credit?`${credit} · `:""}${ERA_FILMS.series.title} 第 ${f.page}P</span><a href="${url}" target="_blank" rel="noopener">在 B 站打开 ↗</a></figcaption>
+  </figure>`;
+}
+function playFilm(fig){
+  if(!fig||fig.querySelector("iframe"))return;
+  const frame=document.createElement("iframe");
+  frame.src=fig.dataset.filmSrc;frame.title=`影像：${fig.dataset.filmTitle}`;
+  frame.allow="fullscreen; picture-in-picture";frame.allowFullscreen=true;
+  frame.referrerPolicy="strict-origin-when-cross-origin";
+  const poster=fig.querySelector(".era-film-poster");fig._poster=poster;poster.replaceWith(frame);fig.classList.add("is-playing");
+}
+// 切换视图或关闭弹窗时停止播放：隐藏的 iframe 仍会继续出声
+function stopFilms(){
+  document.querySelectorAll(".era-film.is-playing").forEach(fig=>{fig.querySelector("iframe")?.replaceWith(fig._poster);fig.classList.remove("is-playing")});
+}
+document.addEventListener("click",e=>{const btn=e.target.closest?.(".era-film-poster");if(btn)playFilm(btn.closest(".era-film"))});
 function debateSummary(text){return firstSentence(text,116)}
 function stateHTML(kicker,title,body,actions=""){
   return `<div class="viz-state-copy"><span class="viz-state-kicker">${kicker}</span><b>${title}</b>${body?`<p>${body}</p>`:""}</div>${actions?`<div class="state-actions">${actions}</div>`:""}`;
@@ -911,6 +962,7 @@ function renderChapterRail(ep,e){
     <section class="eprail-card"><span class="eprail-kicker">CHAPTER ROUTE · 本章路线</span><h3>${e.zh}的时间坐标</h3><ul class="eprail-list">${events.map(v=>`<li><b>${v[0]}</b><span>${v[1]}</span></li>`).join("")}</ul><p class="eprail-more">前三个节点 · 完整大事记见下方</p></section>
     <section class="eprail-card eprail-note"><span class="eprail-kicker">KEYWORDS · 阅读关键词</span><p class="eprail-keywords">${topics.map(x=>`<span class="term-chip">${x}</span>`).join("")}</p></section>
     <p class="eprail-more">主题词用于定位下方的史学争鸣与音乐家名录。</p>
+    ${filmCard(filmFor(ep),{ep})}
   </div>`;
 }
 function renderAlm(){
@@ -1535,6 +1587,8 @@ function netLegend(){
   $("#galaxy-person-count").nextElementSibling.textContent=spatial&&netFilter==="all"?"个时代星群":"位音乐家";
   $("#galaxy-relation-count").textContent=spatial&&netFilter==="all"?graph.nodes.length:graph.links.filter(l=>visible.has(l.source)&&visible.has(l.target)).length;
   $("#galaxy-relation-count").nextElementSibling.textContent=spatial&&netFilter==="all"?"位音乐家":"条关联";
+  const film=netFilter!=="all"&&filmFor(netFilter),filmBtn=$("#galaxy-film");
+  if(filmBtn){filmBtn.hidden=!film;if(film)filmBtn.innerHTML=`<span>影像 · VIDEO</span><b>${film.title}</b><small>P${film.page}${film.duration?` · ${film.duration}`:""} ↗</small>`;}
   $("#netchips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
     netFilter=b.dataset.f;$("#v-net").classList.add("intro-collapsed");netLegend();
     if(net2d)net2d.applyFilter();
@@ -1972,7 +2026,7 @@ function setView(v,{historyMode="push"}={}){
   const b=document.querySelector(`#views button[data-v="${targetCode}"]`);if(!b)return;
   v = targetCode;
   EuropaState.setState({currentView:v},{source:"navigation",reason:"view-change"});
-  listening.stop();
+  listening.stop();stopFilms();
   document.body.classList.toggle("europa-galaxy-active",v==="net");
   if(v!=="net"){document.body.classList.remove("galaxy-immersive");$("#galaxy-immersive")?.setAttribute("aria-pressed","false")}
   document.querySelectorAll("#views button").forEach(x=>x.classList.toggle("on",x===b));
@@ -2037,6 +2091,8 @@ const VIEWDESC=[["年 鉴","七时代分章：篇首名画、导论小论文、�
 ["术 语",`${GLOSS.length}条核心概念，逐条注原语与文献出处。`],
   ["文 献","编纂所据的权威著作与凡例。"],
   ["实 景","MapLibre 卫星、街道与地形底图；放大到城市后显示建筑、音乐场所、学院、大学和故居。"]];
+const bibFilm=$("#bib-film");
+if(bibFilm)bibFilm.innerHTML=filmCard(filmFor("overview"),{kicker:"总览影像 · PROLOGUS"});
 $("#introgrid").innerHTML=VIEWDESC.map(v=>`<div><b>${v[0]}</b><span>${v[1]}</span></div>`).join("");
 const intro=$("#intro");
 function showIntro(){if(!intro.open)intro.showModal()}
@@ -2044,6 +2100,10 @@ function closeIntro(){try{intro.close()}catch(e){}try{localStorage.setItem("anna
 $("#introx").onclick=closeIntro;$("#introgo").onclick=closeIntro;
 $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
+const filmDlg=$("#film");
+$("#galaxy-film")?.addEventListener("click",()=>{const f=filmFor(netFilter);if(!f||!filmDlg)return;$("#film-body").innerHTML=filmCard(f,{ep:netFilter,kicker:`${EP[netFilter].zh} · 影像`});filmDlg.dataset.ep=netFilter;filmDlg.showModal();playFilm(filmDlg.querySelector(".era-film"))});
+$("#filmx")?.addEventListener("click",()=>filmDlg.close());
+filmDlg?.addEventListener("close",()=>{$("#film-body").innerHTML=""});
 
 /* ══════════ 弹窗关闭清锚点 ══════════ */
 $("#dlg").addEventListener("close",()=>{const dg=$("#dlg");if(dg.dataset.m&&(["musician","work","version","fontes","performance","recording","reception"].includes(dg.dataset.kind)))clearSelection();delete dg.dataset.m;delete dg.dataset.kind;delete dg.dataset.work;delete dg.dataset.personScroll;delete dg.dataset.workScroll;delete dg.dataset.source;delete dg.dataset.sourceKey;dg.removeAttribute("aria-labelledby");if(!isRestoringUrl&&location.hash){writeUrlState({person:null},{mode:"replace"});}});

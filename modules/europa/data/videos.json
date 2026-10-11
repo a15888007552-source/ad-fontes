@@ -1,0 +1,73 @@
+{
+  "series": {
+    "title": "西方音乐史科普短剧",
+    "platform": "bilibili",
+    "bvid": "BV1Aypb6LEFi",
+    "url": "https://www.bilibili.com/video/BV1Aypb6LEFi/"
+  },
+  "overview": {
+    "page": 1,
+    "title": "西方音乐史（总）",
+    "duration": "02:00",
+    "cover": {
+      "u": "assets/film-covers/overview.webp",
+      "title": "听觉（五感寓意）",
+      "artist": "老扬·勃鲁盖尔与鲁本斯",
+      "year": "1617—1618年",
+      "source": "https://commons.wikimedia.org/wiki/File:Jan_Brueghel_I_%26_Peter_Paul_Rubens_-_Hearing_(Museo_del_Prado).jpg"
+    }
+  },
+  "eras": {
+    "greek": {
+      "page": 2,
+      "title": "古希腊的音乐",
+      "duration": "01:59",
+      "cover": {
+        "u": "assets/film-covers/greek.webp",
+        "title": "萨福与阿尔凯奥斯",
+        "artist": "劳伦斯·阿尔玛-塔德玛",
+        "year": "1881年",
+        "source": "https://commons.wikimedia.org/wiki/File:Sir_Lawrence_Alma-Tadema,_RA,_OM_-_Sappho_and_Alcaeus_-_Walters_37159.jpg"
+      }
+    },
+    "medieval": {
+      "page": 3,
+      "title": "中世纪的音乐",
+      "duration": "06:47",
+      "cover": {
+        "u": "assets/film-covers/medieval.webp",
+        "title": "马内塞古抄本 · 弗劳恩洛布页（局部）",
+        "artist": "马内塞抄本画师",
+        "year": "约1305—1340年",
+        "source": "https://commons.wikimedia.org/wiki/File:Codex_Manesse_Heinrich_von_Mei%C3%9Fen_(Frauenlob).jpg"
+      }
+    },
+    "ren": {
+      "page": 4,
+      "title": "文艺复兴时期的音乐",
+      "duration": "07:53",
+      "cover": {
+        "u": "assets/film-covers/ren.webp",
+        "title": "音乐会",
+        "artist": "洛伦佐·科斯塔",
+        "year": "约1488—1490年",
+        "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_Costa_-_Un_concerto_(National_Gallery,_London).jpg"
+      }
+    },
+    "baroque": null,
+    "classical": {
+      "page": 5,
+      "title": "古典主义时期的音乐（上）",
+      "duration": "04:16",
+      "cover": {
+        "u": "assets/film-covers/classical.webp",
+        "title": "莫扎特一家",
+        "artist": "约翰·内波穆克·德拉·克罗切",
+        "year": "约1780年",
+        "source": "https://commons.wikimedia.org/wiki/File:Mozart_Family_Croce.jpg"
+      }
+    },
+    "romantic": null,
+    "modern": null
+  }
+}
