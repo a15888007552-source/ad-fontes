@@ -884,7 +884,7 @@ function renderNorton(ep){
   const lis=arr=>(arr||[]).map(x=>`<li>${x}</li>`).join("");
   return `<section class="norton">
     <div class="nhead"><div class="ntag">NORTON PERIOD HISTORY</div>
-      <h3>${n.cn}</h3><div class="nmeta">${n.book}<br>${n.period}<br>${n.path}</div>
+      <h3>${n.cn}</h3><div class="nmeta">${n.book}<br>${n.period}</div>
       <p class="nthesis"><b>核心判断 · THESIS</b>${n.thesis}</p></div>
     <div class="nbody"><div class="ncols">
       <div><h4>FOCUS · 史学重心</h4><ul>${lis(n.focus)}</ul></div>
