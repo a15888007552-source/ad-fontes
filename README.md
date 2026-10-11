@@ -49,15 +49,11 @@
 ## 结构
 
 ```
-index.html                     厂牌门面(首页)
-museum-registry.json           博物馆专题登记表
-modules/<id>/                  各模块,入口为 index.html
-modules/<id>/module.json       模块元数据,规范见 docs/MODULE_STANDARD.md
-guobo-museum/                  国博文物卡片(位于仓库根目录)
-schemas/                       module.json 与来源的 JSON Schema
-scripts/                       校验、冒烟测试与媒体处理脚本
-docs/                          开发、质量与媒体迁移文档
-login/ logout/                 账号登录页
+index.html                   厂牌门面
+modules/
+  europa/index.html          模块一(自包含单文件)
+  museum-atlas/index.html     总馆入口
+  beilin/index.html           碑林专题跳转入口
 ```
 
 ## 编辑原则
