@@ -306,6 +306,9 @@ def main() -> int:
         report["failedMedia"] = sorted(tracker.failed_media)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Museum Atlas browser smoke: {report['status']}")
+    for diagnostic in report["diagnostics"]:
+        print(f"DIAGNOSTIC: {diagnostic}")
     return 0 if report["status"] == "PASS" else 1
 
 
