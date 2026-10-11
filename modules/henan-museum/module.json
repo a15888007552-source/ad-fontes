@@ -1,0 +1,10 @@
+{
+  "id": "henan-museum",
+  "title": "华夏之中 · 河南博物院",
+  "subtitle": "河南博物院专题：华夏之中，中原文明。由莲鹤方壶、云纹铜禁、北齐白釉绿彩长颈瓶与贾湖骨笛，阅读院藏器物与音乐的历史。",
+  "type": "catalog",
+  "status": "published",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "maintainer": "辛申奥"
+}
