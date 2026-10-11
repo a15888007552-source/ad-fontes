@@ -6,20 +6,58 @@
 
 ## 模块
 
-| # | 模块 | 说明 | 状态 |
-|---|------|------|------|
-| I | **Annales Musicorum Europae · 欧罗巴音乐家年鉴** | 一百位音乐家的交互年鉴,据 Grout《西方音乐史》与 Taruskin《牛津西方音乐史》 | 已上线 |
-| II | **Busoni《肖像尝试》译注** | 布索尼论歌剧文献的全文汉译与笺注 | 建设中 |
-| VI | **石墨长安 · 西安碑林博物馆数字档案** | 644 张现场照片整理的碑林专题，包含 180 件文物名录 | 已上线 |
+### 首页模块
+
+编号与首页 `index.html` 一致。
+
+| # | 模块 | 路径 | 说明 | 状态 |
+|---|------|------|------|------|
+| I | **Annales Musicorum · 欧罗巴 ↔ 华夏音乐家年鉴** | `modules/europa/` | 两部并列的交互年鉴，含声律物理实验室；欧罗巴卷据 Grout《西方音乐史》与 Taruskin《牛津西方音乐史》 | 已上线 |
+| II | **Atlas Musicologicus · 音乐辞典星图** | 站外链接(不在本仓库) | 以辞典词条为入口的人物、作品、术语关系图谱 | 站外 |
+| III | **Studia Busoniana · 布索尼专栏** | `modules/busoni/` | 布索尼研究合集,现收《布索尼美学·脉络与观念地图》,《肖像尝试》译注待补;内容加密,需密码访问 | 草稿 |
+| IV | **Conventus Musicologicus Occidentalis · 西方音乐学会第八届年会数字纪要** | `modules/proceedings/` | 2026 北京年会的交互式纪要,可按主题、会期、会场、发言人检索 | 已上线 |
+| V | **Musica Theorica · 乐理** | `modules/theory/` | 可听、可操作的音乐理论工坊,七条路径 | 已上线 |
+| VI | **中国博物馆行记 · Museum Atlas** | `modules/museum-atlas/` | 按省份进入各馆专题(见下表) | 已上线 |
+
+### 博物馆专题(经 Museum Atlas 进入)
+
+据 `museum-registry.json`。
+
+| 省份 | 博物馆 | 专题 | 路径 | 状态 |
+|------|--------|------|------|------|
+| 北京 | 故宫博物院 | — | — | 筹备中 |
+| 北京 | 中国国家博物馆 | 文物卡片 | `guobo-museum/` | 已上线 |
+| 陕西 | 西安碑林博物馆 | 石墨长安 · 数字档案 | `modules/beilin/` | 已上线 |
+| 陕西 | 陕西考古博物馆 | 现场图录 | `modules/shaanxi-archaeology-museum/` | 已上线 |
+| 陕西 | 陕西历史博物馆·秦汉馆 | 秦汉馆藏影录 | `modules/qinhan/` | 已上线 |
+| 陕西 | 宝鸡青铜器博物院 | 青铜铸史,铭文为证 | `modules/baoji/` | 已上线 |
+| 陕西 | 陕西历史博物馆 | 观物档案 | `modules/shaanxi-history/` | 已上线 |
+| 陕西 | 西安博物院 | 观物档案 | `modules/xian-museum/` | 已上线 |
+| 河南 | 洛阳博物馆 | — | — | 筹备中 |
+| 河南 | 商丘博物馆 | 玄鸟生商 · 数字图录 | `modules/shangqiu-museum/` | 已上线 |
+| 河南 | 河南博物院 | 华夏之中 · Central Plains Archive | `modules/henan-museum/` | 已上线 |
+
+另有 `modules/tomb-trails/`(从地下到展柜 · 七馆墓葬与遗址历史脉络),作为嵌入组件出现在宝鸡、秦汉馆等专题页内,也可从 Museum Atlas 的「墓葬」入口打开。
+
+### 未挂到首页的目录
+
+| 路径 | 页面标题 | 备注 |
+|------|----------|------|
+| `modules/ethnomusicology/` | 民族音乐学年鉴 · Annales Ethnomusicologiae | 站内没有页面链接到它 |
+| `modules/modules/beilin/` | 石墨长安 · 入口 | 旧的嵌套路径,`validate_modules.py` 标为 legacy |
 
 ## 结构
 
 ```
-index.html                   厂牌门面
-modules/
-  europa/index.html          模块一(自包含单文件)
-  museum-atlas/index.html     总馆入口
-  beilin/index.html           碑林专题跳转入口
+index.html                     厂牌门面(首页)
+museum-registry.json           博物馆专题登记表
+modules/<id>/                  各模块,入口为 index.html
+modules/<id>/module.json       模块元数据,规范见 docs/MODULE_STANDARD.md
+guobo-museum/                  国博文物卡片(位于仓库根目录)
+schemas/                       module.json 与来源的 JSON Schema
+scripts/                       校验、冒烟测试与媒体处理脚本
+docs/                          开发、质量与媒体迁移文档
+login/ logout/                 账号登录页
 ```
 
 ## 编辑原则
