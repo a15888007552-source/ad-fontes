@@ -25,7 +25,7 @@ const EUROPA_DATA = Object.assign(
 );
 
 // 时期影像：B 站合集分P，按时代键索引；缺失时整块不显示，不影响主数据加载
-const ERA_FILMS = await fetch("./data/videos.json").then(r => r.ok ? r.json() : null).catch(() => null);
+const ERA_FILMS = await fetch("./data/videos.json?v=20261011-covers2").then(r => r.ok ? r.json() : null).catch(() => null);
 
 const ADDITIONS_20260809 = EUROPA_DATA.ADDITIONS_20260809;
 const ADDITION_CITIES_20260809 = EUROPA_DATA.ADDITION_CITIES_20260809;
@@ -870,25 +870,24 @@ function filmFor(key){
   return f&&f.page?{...f,bvid:f.bvid||ERA_FILMS.series.bvid}:null;
 }
 function filmSrc(f,autoplay){return`https://player.bilibili.com/player.html?bvid=${encodeURIComponent(f.bvid)}&page=${f.page}&autoplay=${autoplay?1:0}&high_quality=1&danmaku=0`}
-// 封面：以本章篇首画（公有领域，见 assets.json ART）为底，沿用章首 hero 的暗角与拉丁标题；总览用七幅篇首画拼合
-function filmCover(ep){
-  if(ep==="overview")return`<span class="era-film-mosaic" aria-hidden="true">${EPK.filter(k=>ART[k]).map(k=>`<i style="background-image:url('${ART[k].u}')"></i>`).join("")}</span>`;
-  const art=ART[ep];
-  return art?`<span class="era-film-art" aria-hidden="true" style="background-image:url('${art.u}')"></span>`:"";
+// 封面：每段影像另配一幅音乐题材的公有领域画作（videos.json cover，取自 Wikimedia Commons），不与章首篇首画重复
+function filmCover(f){
+  return f.cover?`<span class="era-film-art" aria-hidden="true" style="background-image:url('${f.cover.u}')"></span>`:"";
 }
-function filmCredit(ep){
-  if(ep==="overview")return"封面 — 七个时代的篇首画拼合";
-  const art=ART[ep];return art?`封面 — 《${art.title}》 ${art.artist}，${art.year}`:"";
+function filmCredit(f){
+  const c=f.cover;if(!c)return"";
+  const text=`封面 — 《${c.title}》 ${c.artist}，${c.year}`;
+  return c.source?`<a class="era-film-credit" href="${c.source}" target="_blank" rel="noopener" title="Wikimedia Commons · 公有领域">${text}</a>`:text;
 }
 function filmCard(f,opts={}){
   if(!f)return"";
   const ep=opts.ep||"overview";
   const lat=ep==="overview"?"HISTORIA MUSICAE":(EP[ep]?.en||"");
   const url=`https://www.bilibili.com/video/${encodeURIComponent(f.bvid)}/?p=${f.page}`;
-  const credit=filmCredit(ep);
+  const credit=filmCredit(f);
   return`<figure class="era-film" data-ep="${ep}" data-film-src="${filmSrc(f,true)}" data-film-title="${f.title}">
     <button type="button" class="era-film-poster" aria-label="播放影像《${f.title}》">
-      ${filmCover(ep)}
+      ${filmCover(f)}
       <span class="era-film-text">
         <span class="era-film-kicker">${opts.kicker||"影像 · VIDEO"}</span>
         <span class="era-film-lat">${lat}</span>
