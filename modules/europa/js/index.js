@@ -870,17 +870,34 @@ function filmFor(key){
   return f&&f.page?{...f,bvid:f.bvid||ERA_FILMS.series.bvid}:null;
 }
 function filmSrc(f,autoplay){return`https://player.bilibili.com/player.html?bvid=${encodeURIComponent(f.bvid)}&page=${f.page}&autoplay=${autoplay?1:0}&high_quality=1&danmaku=0`}
+// 封面：以本章篇首画（公有领域，见 assets.json ART）为底，沿用章首 hero 的暗角与拉丁标题；总览用七幅篇首画拼合
+function filmCover(ep){
+  if(ep==="overview")return`<span class="era-film-mosaic" aria-hidden="true">${EPK.filter(k=>ART[k]).map(k=>`<i style="background-image:url('${ART[k].u}')"></i>`).join("")}</span>`;
+  const art=ART[ep];
+  return art?`<span class="era-film-art" aria-hidden="true" style="background-image:url('${art.u}')"></span>`:"";
+}
+function filmCredit(ep){
+  if(ep==="overview")return"封面 — 七个时代的篇首画拼合";
+  const art=ART[ep];return art?`封面 — 《${art.title}》 ${art.artist}，${art.year}`:"";
+}
 function filmCard(f,opts={}){
   if(!f)return"";
+  const ep=opts.ep||"overview";
+  const lat=ep==="overview"?"HISTORIA MUSICAE":(EP[ep]?.en||"");
   const url=`https://www.bilibili.com/video/${encodeURIComponent(f.bvid)}/?p=${f.page}`;
-  return`<figure class="era-film" data-film-src="${filmSrc(f,true)}" data-film-title="${f.title}">
+  const credit=filmCredit(ep);
+  return`<figure class="era-film" data-ep="${ep}" data-film-src="${filmSrc(f,true)}" data-film-title="${f.title}">
     <button type="button" class="era-film-poster" aria-label="播放影像《${f.title}》">
-      <span class="era-film-kicker">${opts.kicker||"影像 · VIDEO"}</span>
-      <span class="era-film-play" aria-hidden="true"></span>
-      <b>${f.title}</b>
-      <small>P${f.page}${f.duration?` · ${f.duration}`:""} · 点击播放</small>
+      ${filmCover(ep)}
+      <span class="era-film-text">
+        <span class="era-film-kicker">${opts.kicker||"影像 · VIDEO"}</span>
+        <span class="era-film-lat">${lat}</span>
+        <b>${f.title}</b>
+        <small>第 ${f.page}P${f.duration?` · ${f.duration}`:""}</small>
+      </span>
+      <span class="era-film-play" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30.5"/><circle class="ring" cx="32" cy="32" r="25.5"/><path d="M27 21.5v21l17-10.5z"/></svg></span>
     </button>
-    <figcaption><span>${f.title} · ${ERA_FILMS.series.title} 第 ${f.page}P</span><a href="${url}" target="_blank" rel="noopener">在 B 站打开 ↗</a></figcaption>
+    <figcaption><span>${credit?`${credit} · `:""}${ERA_FILMS.series.title} 第 ${f.page}P</span><a href="${url}" target="_blank" rel="noopener">在 B 站打开 ↗</a></figcaption>
   </figure>`;
 }
 function playFilm(fig){
@@ -946,7 +963,7 @@ function renderChapterRail(ep,e){
     <section class="eprail-card"><span class="eprail-kicker">CHAPTER ROUTE · 本章路线</span><h3>${e.zh}的时间坐标</h3><ul class="eprail-list">${events.map(v=>`<li><b>${v[0]}</b><span>${v[1]}</span></li>`).join("")}</ul><p class="eprail-more">前三个节点 · 完整大事记见下方</p></section>
     <section class="eprail-card eprail-note"><span class="eprail-kicker">KEYWORDS · 阅读关键词</span><p class="eprail-keywords">${topics.map(x=>`<span class="term-chip">${x}</span>`).join("")}</p></section>
     <p class="eprail-more">主题词用于定位下方的史学争鸣与音乐家名录。</p>
-    ${filmCard(filmFor(ep))}
+    ${filmCard(filmFor(ep),{ep})}
   </div>`;
 }
 function renderAlm(){
@@ -2085,7 +2102,7 @@ $("#introx").onclick=closeIntro;$("#introgo").onclick=closeIntro;
 $("#helpbtn").onclick=showIntro;
 intro.addEventListener("cancel",()=>{try{localStorage.setItem("annales_seen","1")}catch(e){}});
 const filmDlg=$("#film");
-$("#galaxy-film")?.addEventListener("click",()=>{const f=filmFor(netFilter);if(!f||!filmDlg)return;$("#film-body").innerHTML=filmCard(f,{kicker:`${EP[netFilter].zh} · 影像`});filmDlg.dataset.ep=netFilter;filmDlg.showModal();playFilm(filmDlg.querySelector(".era-film"))});
+$("#galaxy-film")?.addEventListener("click",()=>{const f=filmFor(netFilter);if(!f||!filmDlg)return;$("#film-body").innerHTML=filmCard(f,{ep:netFilter,kicker:`${EP[netFilter].zh} · 影像`});filmDlg.dataset.ep=netFilter;filmDlg.showModal();playFilm(filmDlg.querySelector(".era-film"))});
 $("#filmx")?.addEventListener("click",()=>filmDlg.close());
 filmDlg?.addEventListener("close",()=>{$("#film-body").innerHTML=""});
 
