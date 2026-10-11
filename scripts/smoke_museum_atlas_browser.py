@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -18,9 +19,11 @@ LOCAL_UI_MEDIA = {
     "/modules/qinhan/assets/ui/collection-background.webp",
     "/modules/shaanxi-history/assets/ui/collection-background.webp",
     "/modules/shaanxi-archaeology-museum/assets/ui/collection-background.webp",
-    "/modules/shaanxi-archaeology-museum/assets/ui/card-interior-field-collage-v2.webp",
-    "/modules/shaanxi-archaeology-museum/assets/ui/detail-field-report-v1.webp",
+    # data.js marks this supplement image as localMedia.
+    "/modules/shaanxi-history/assets/supplement/chunhua-dading.jpeg",
 }
+# Decorative interface art that stays in the repo for externalized modules.
+LOCAL_UI_DIRECTORY = re.compile(r"^/modules/(?:qinhan|shaanxi-history|shaanxi-archaeology-museum)/assets/(?:ui|generated)/[^/]+$")
 MEDIA_SUFFIXES = {
     ".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".avif", ".heic", ".tif", ".tiff",
     ".mp3", ".wav", ".flac", ".m4a", ".ogg", ".mp4", ".webm", ".mov", ".pdf",
@@ -58,7 +61,7 @@ class Tracker:
         if parsed.hostname == MEDIA_HOST and module_from_path(parsed.path) in EXTERNALIZED_MODULES:
             return "external"
         if parsed.hostname in {"127.0.0.1", "localhost"}:
-            if parsed.path in LOCAL_UI_MEDIA:
+            if parsed.path in LOCAL_UI_MEDIA or LOCAL_UI_DIRECTORY.match(parsed.path):
                 return "local_ui"
             module = module_from_path(parsed.path)
             if module in EXTERNALIZED_MODULES:
