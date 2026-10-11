@@ -2,9 +2,9 @@
 """Smoke-test the two core public journeys with Python Playwright.
 
 This intentionally complements, rather than replaces, the existing Museum
-Atlas browser smoke.  The Europa assertion checks the regression that matters
-to readers: a search result must be visible with a real bounding box, not just
-present in the DOM behind an overflow or layout boundary.
+Atlas browser smoke.  Europa requires sign-in, so the Europa assertion checks
+that an anonymous visitor sees the login gate with a real bounding box and
+that the search box stays hidden behind it.
 """
 
 from __future__ import annotations
@@ -22,7 +22,6 @@ ROUTES = {
     "europa": "/modules/europa/",
     "museum-atlas": "/modules/museum-atlas/",
 }
-SEARCH_TERM = "巴赫"
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -44,13 +43,6 @@ def visible_box(locator: Any, label: str, timeout: int) -> dict[str, Any]:
     if not box or box["width"] <= 1 or box["height"] <= 1:
         raise AssertionError(f"{label} has no usable visible bounding box: {box}")
     return {key: round(float(value), 2) for key, value in box.items()}
-
-
-def inside_viewport(box: dict[str, Any], viewport: dict[str, int], label: str) -> None:
-    if box["x"] + box["width"] <= 0 or box["x"] >= viewport["width"]:
-        raise AssertionError(f"{label} is horizontally outside the viewport: {box}")
-    if box["y"] + box["height"] <= 0 or box["y"] >= viewport["height"]:
-        raise AssertionError(f"{label} is vertically outside the viewport: {box}")
 
 
 def local_url(base_url: str, route: str) -> str:
@@ -120,18 +112,12 @@ def main(argv: list[str] | None = None) -> int:
                     route_report["title"] = title
 
                     if route_name == "europa":
-                        skip = page.locator("#europa-opening-skip")
-                        if skip.count() and skip.is_visible():
-                            skip.click()
-                        search = page.locator("#q")
-                        route_report["search_box"] = visible_box(search, "Europa search input", args.timeout)
-                        search.fill(SEARCH_TERM)
-                        result = page.locator("#sres > div[data-m]").first
-                        result_box = visible_box(result, "Europa search result", args.timeout)
-                        inside_viewport(result_box, {"width": 1440, "height": 1000}, "Europa search result")
-                        route_report["search_term"] = SEARCH_TERM
-                        route_report["search_result"] = result.inner_text().strip()
-                        route_report["search_result_box"] = result_box
+                        # Europa requires sign-in; an anonymous visitor must see the login gate,
+                        # not the search box.
+                        notice = page.locator(".auth-gate-notice")
+                        route_report["auth_gate_box"] = visible_box(notice, "Europa login gate", args.timeout)
+                        if page.locator("#q").is_visible():
+                            raise AssertionError("Europa search is visible to an anonymous visitor")
 
                     if page_errors:
                         raise AssertionError(f"pageerror: {page_errors[0]}")

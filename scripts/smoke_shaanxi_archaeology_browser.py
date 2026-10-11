@@ -25,6 +25,8 @@ RETIRED_WORKER_HOST = "ad-fontes-media.gusgumee777.workers.dev"
 LOCAL_PREFIX = f"http://127.0.0.1:8765/modules/{MODULE}/"
 LOCAL_UI_MEDIA = {
     "/modules/shaanxi-archaeology-museum/assets/ui/collection-background.webp",
+    "/modules/shaanxi-archaeology-museum/assets/ui/card-interior-field-collage-v2.webp",
+    "/modules/shaanxi-archaeology-museum/assets/ui/detail-field-report-v1.webp",
 }
 PROVENANCE_EXPECTED = 6
 MEDIA_SUFFIXES = {

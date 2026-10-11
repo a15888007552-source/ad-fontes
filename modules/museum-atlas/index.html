@@ -2644,6 +2644,12 @@
           && !value.includes("?")
           && !value.includes("#");
       };
+      const externalMediaPrefix = "https://pub-2f296678a1134f0fa45cf651ddd6f956.r2.dev/";
+      const isExternalizedMediaUrl = (value) => {
+        if (typeof value !== "string" || !value.startsWith(externalMediaPrefix)) return false;
+        const path = value.slice(externalMediaPrefix.length);
+        return isSafeLocalPath(path) && /^modules\/(?:qinhan|shaanxi-history|shaanxi-archaeology-museum)\//.test(path);
+      };
       const normalizeSearch = (value) => String(value ?? "")
         .normalize("NFKC")
         .toLocaleLowerCase("zh-CN")
@@ -2675,7 +2681,7 @@
           if (record.is_highlight !== undefined && typeof record.is_highlight !== "boolean") throw new Error("invalid highlight flag");
           if (record.curatorial_rank !== undefined && (!Number.isInteger(record.curatorial_rank) || record.curatorial_rank < 1)) throw new Error("invalid highlight rank");
           for (const field of ["card_tagline","content_review","record_binding","object_identity","photo_match","object_identity_id","publication_approval","record_kind"]) if (record[field] !== undefined && typeof record[field] !== "string") throw new Error(`invalid ${field}`);
-          if (!isSafeLocalPath(record.site_path) || !isSafeLocalPath(record.image_path, true)) {
+          if (!isSafeLocalPath(record.site_path) || !(isSafeLocalPath(record.image_path, true) || isExternalizedMediaUrl(record.image_path))) {
             throw new Error("unsafe repository path");
           }
           const compositeId = `${record.museum_id}:${record.id}`;

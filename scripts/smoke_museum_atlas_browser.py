@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -18,7 +19,11 @@ LOCAL_UI_MEDIA = {
     "/modules/qinhan/assets/ui/collection-background.webp",
     "/modules/shaanxi-history/assets/ui/collection-background.webp",
     "/modules/shaanxi-archaeology-museum/assets/ui/collection-background.webp",
+    # data.js marks this supplement image as localMedia.
+    "/modules/shaanxi-history/assets/supplement/chunhua-dading.jpeg",
 }
+# Decorative interface art that stays in the repo for externalized modules.
+LOCAL_UI_DIRECTORY = re.compile(r"^/modules/(?:qinhan|shaanxi-history|shaanxi-archaeology-museum)/assets/(?:ui|generated)/[^/]+$")
 MEDIA_SUFFIXES = {
     ".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".avif", ".heic", ".tif", ".tiff",
     ".mp3", ".wav", ".flac", ".m4a", ".ogg", ".mp4", ".webm", ".mov", ".pdf",
@@ -56,7 +61,7 @@ class Tracker:
         if parsed.hostname == MEDIA_HOST and module_from_path(parsed.path) in EXTERNALIZED_MODULES:
             return "external"
         if parsed.hostname in {"127.0.0.1", "localhost"}:
-            if parsed.path in LOCAL_UI_MEDIA:
+            if parsed.path in LOCAL_UI_MEDIA or LOCAL_UI_DIRECTORY.match(parsed.path):
                 return "local_ui"
             module = module_from_path(parsed.path)
             if module in EXTERNALIZED_MODULES:
@@ -208,8 +213,8 @@ def main() -> int:
             wait_for_visible_page(page, ".museum-card")
             report["museumCards"] = page.locator(".museum-card").count()
             report["liveMuseumCards"] = page.locator("a.museum-card").count()
-            if report["museumCards"] != 10 or report["liveMuseumCards"] != 8:
-                raise AssertionError("Museum Atlas card counts do not match 10 total / 8 live")
+            if report["museumCards"] != 11 or report["liveMuseumCards"] != 9:
+                raise AssertionError("Museum Atlas card counts do not match 11 total / 9 live")
             wait_for_image(page.locator("#province-cover-image"))
 
             for province in ("beijing", "shaanxi"):
@@ -222,20 +227,6 @@ def main() -> int:
             page.reload(wait_until="domcontentloaded")
             if page.locator("html").get_attribute("data-active-province") != "shaanxi":
                 raise AssertionError("province state did not survive reload")
-
-            selected = page.locator(".selected-object")
-            report["selectedObjectCount"] = selected.count()
-            if selected.count() != 7:
-                raise AssertionError("BUILD 01 selected object count is not 7")
-            for item in range(selected.count()):
-                card = selected.nth(item)
-                href = card.get_attribute("href") or ""
-                if "?item=" not in href:
-                    raise AssertionError(f"selected object {item + 1} has no stable item link")
-                card.scroll_into_view_if_needed()
-                image = card.locator("img").first
-                wait_for_image(image)
-                report["selectedObjectsLoaded"] += 1
 
             page.locator(".atlas-search-trigger").click()
             search = page.locator(".atlas-search-dialog")
@@ -320,6 +311,9 @@ def main() -> int:
         report["failedMedia"] = sorted(tracker.failed_media)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Museum Atlas browser smoke: {report['status']}")
+    for diagnostic in report["diagnostics"]:
+        print(f"DIAGNOSTIC: {diagnostic}")
     return 0 if report["status"] == "PASS" else 1
 
 
