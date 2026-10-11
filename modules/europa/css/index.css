@@ -1099,3 +1099,40 @@ body.europa-opening-handoff .archive-orbis{visibility:visible;opacity:1;transiti
   #dlg .listening-embed{min-height:var(--listening-embed-min-height,210px)}
 }
 @media(prefers-reduced-motion:reduce){.listening-toggle{transition:none}}
+
+/* ══ 时期影像 · ERA FILMS（B 站嵌入，点击后加载） ══ */
+.era-film{max-width:72ch;margin:25px 0 0;padding:0;border:1px solid var(--line);border-top:3px solid var(--acc);background:var(--panel)}
+.era-film-poster{position:relative;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto auto;column-gap:16px;align-items:center;width:100%;min-height:clamp(150px,22vw,210px);padding:22px clamp(18px,4vw,34px);border:0;cursor:pointer;text-align:left;color:var(--ink);font:inherit;
+  background:radial-gradient(120% 90% at 85% 15%,color-mix(in srgb,var(--acc) 22%,transparent),transparent 60%),repeating-linear-gradient(90deg,transparent 0 46px,color-mix(in srgb,var(--line) 45%,transparent) 46px 47px),var(--bg)}
+.era-film-poster:hover .era-film-play,.era-film-poster:focus-visible .era-film-play{background:var(--acc);color:var(--panel)}
+.era-film-poster:focus-visible{outline:2px solid var(--acc);outline-offset:-4px}
+.era-film-kicker{grid-column:1/-1;align-self:start;font:700 10.5px/1 var(--sans);letter-spacing:.22em;color:var(--acc)}
+.era-film-play{grid-row:2/4;display:grid;place-items:center;width:58px;height:58px;border:1px solid var(--acc);border-radius:50%;color:var(--acc);transition:background .2s,color .2s}
+.era-film-play::before{content:"";margin-left:5px;border-left:15px solid currentColor;border-top:9px solid transparent;border-bottom:9px solid transparent}
+.era-film-poster b{align-self:end;font-family:var(--dfont,serif);font-size:clamp(20px,3vw,26px);font-weight:600;line-height:1.3}
+.era-film-poster small{align-self:start;font:12px/1.6 var(--sans);letter-spacing:.08em;color:var(--mut)}
+.era-film iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+.era-film figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;padding:9px 14px;border-top:1px solid var(--line);font:11.5px/1.5 var(--sans);letter-spacing:.06em;color:var(--mut)}
+.era-film figcaption a{color:var(--acc);text-decoration:none}
+.era-film figcaption a:hover{text-decoration:underline}
+.intro-film:empty{display:none}
+.intro-film .era-film{max-width:none;margin:0 0 22px}
+
+/* 星丛侧栏：选中时代星群后出现的影像入口 */
+.galaxy-film{display:grid;gap:4px;width:100%;margin-top:18px;padding:12px 13px;text-align:left;cursor:pointer;color:#e7dcc4;background:#0a1520c4;border:1px solid #cad7d13a;border-left:2px solid #c9a227;font:inherit}
+.galaxy-film[hidden]{display:none}
+.galaxy-film span{font:9px var(--sans);letter-spacing:.18em;color:#c9a227}
+.galaxy-film b{font:600 13px/1.4 var(--serif,serif)}
+.galaxy-film small{font:10px var(--sans);letter-spacing:.06em;color:#8fa3ab}
+.galaxy-film:hover,.galaxy-film:focus-visible{border-color:#c9a22799;background:#0f1d2ad9}
+body.galaxy-immersive .galaxy-film{display:none}
+/* 手机端星丛底部已被时代芯片、切换与图例占满，入口只保留在年鉴章节里 */
+@media(max-width:760px){.galaxy-film{display:none!important}}
+
+/* 星丛影像弹窗 */
+#film{border:none;background:none;max-width:none;width:fit-content;padding:0;margin:auto}
+#film::backdrop{background:rgba(6,11,17,.82);backdrop-filter:blur(4px)}
+.filmwrap{display:flex;flex-direction:column;gap:10px;width:min(94vw,900px);padding:16px;background:#0a1520;border:1px solid #cad7d13a;
+  --bg:#0f1d2a;--panel:#0a1520;--ink:#e7dcc4;--mut:#8fa3ab;--acc:#c9a227;--line:#2a3b48}
+.filmwrap .dclose{align-self:flex-end;color:#b8c5c9;border-color:#cad7d13a}
+.filmwrap .era-film{max-width:none;margin:0}

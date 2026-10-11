@@ -1,0 +1,18 @@
+{
+  "series": {
+    "title": "西方音乐史科普短剧",
+    "platform": "bilibili",
+    "bvid": "BV1Aypb6LEFi",
+    "url": "https://www.bilibili.com/video/BV1Aypb6LEFi/"
+  },
+  "overview": { "page": 1, "title": "西方音乐史（总）", "duration": "02:00" },
+  "eras": {
+    "greek": { "page": 2, "title": "古希腊的音乐", "duration": "01:59" },
+    "medieval": { "page": 3, "title": "中世纪的音乐", "duration": "06:47" },
+    "ren": { "page": 4, "title": "文艺复兴时期的音乐", "duration": "07:53" },
+    "baroque": null,
+    "classical": { "page": 5, "title": "古典主义时期的音乐（上）", "duration": "04:16" },
+    "romantic": null,
+    "modern": null
+  }
+}

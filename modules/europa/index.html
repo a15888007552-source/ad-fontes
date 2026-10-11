@@ -7,7 +7,7 @@
 <title>欧罗巴音乐家年鉴 · Annales Musicorum Europae</title>
 <meta name="description" content="欧罗巴音乐家年鉴：与华夏音乐家年鉴组成 Ad Fontes 第一模块的镜像双卷。">
 <script>try{var __mirrorDirection=sessionStorage.getItem('ad-fontes-yearbook-direction');if(__mirrorDirection)document.documentElement.dataset.mirror=__mirrorDirection}catch(e){}</script>
-<link rel="stylesheet" href="./css/index.css?v=20260924-mobile-nav-v9">
+<link rel="stylesheet" href="./css/index.css?v=20261011-era-films1">
 <link rel="stylesheet" href="./css/map-real.css">
 <link rel="stylesheet" href="./css/europa-liquid-interactions.css">
 <link rel="stylesheet" href="./css/galaxy.css?v=20260911-relations3">
@@ -269,7 +269,7 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
       <button class="chip on" id="tog3d" aria-pressed="true">3D 星丛</button>
       <button class="chip" id="tog2d" aria-pressed="false">2D 关系网</button>
     </div>
-    <aside class="galaxy-epochs"><div class="galaxy-side-title"><span>时代星群</span><small>PERIODS</small></div><div class="chips" id="netchips"></div></aside>
+    <aside class="galaxy-epochs"><div class="galaxy-side-title"><span>时代星群</span><small>PERIODS</small></div><div class="chips" id="netchips"></div><button type="button" class="galaxy-film" id="galaxy-film" hidden></button></aside>
     <div class="viz-state" id="netstate" role="status" aria-live="polite" hidden></div>
     <div class="netbox">
       <div id="netwrap2d" style="display:none"></div>
@@ -320,6 +320,10 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
 </div>
 
 <dialog id="dlg" aria-label="音乐家详情面板"><div class="dwrap" id="dwrap"></div></dialog>
+<dialog id="film" aria-label="时代影像"><div class="filmwrap">
+  <button class="dclose" id="filmx" aria-label="关闭">✕</button>
+  <div id="film-body"></div>
+</div></dialog>
 <dialog id="intro"><div class="introwrap">
   <button class="dclose" id="introx" aria-label="关闭">✕</button>
   <div class="introbrand">
@@ -328,6 +332,7 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
       <p class="introlede">自古希腊至二十世纪的西方音乐家交互图志——一百余位音乐家的肖像、生平与作品，织成师承与影响之网，铺陈于历史的舆图与脉络之上。分期、史实与"深读"依 <b>格劳特《西方音乐史》第十版</b>、<b>塔鲁斯金《牛津西方音乐史》</b> 与 <b>诺顿音乐断代史</b> 编纂。</p></div>
     <figure class="intro-orbis"><img src="assets/img/original-musical-cosmograph.webp?v=1" width="640" height="640" decoding="async" alt=""></figure>
   </div>
+  <div class="intro-film" id="intro-film"></div>
   <div class="introgrid" id="introgrid"></div>
   <div class="introfoot">
     <p class="introcolo">肖像与历史画作均取自公有领域；确无传世真容者以同时代图像借喻并注明，不作臆造；舆图地标照片采用知识共享(CC)授权。顶部“音乐宇宙纹章”为生成式原创装饰，仅承担界面识别，不充作历史图像。生卒年从格劳特第十版附录。</p>
@@ -338,7 +343,7 @@ html.auth-required body > :not(.auth-dialog):not(.auth-gate-notice):not([data-au
 
 
 
-<script type="module" data-auth-src="./js/index.js?v=20260920-all-staves-v10"></script>
+<script type="module" data-auth-src="./js/index.js?v=20261011-era-films1"></script>
 <script type="module" data-auth-src="./js/europa-liquid-interactions.js?v=20260924-scroll"></script>
 <script>
 (function(){
