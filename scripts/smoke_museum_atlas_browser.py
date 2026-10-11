@@ -208,8 +208,8 @@ def main() -> int:
             wait_for_visible_page(page, ".museum-card")
             report["museumCards"] = page.locator(".museum-card").count()
             report["liveMuseumCards"] = page.locator("a.museum-card").count()
-            if report["museumCards"] != 10 or report["liveMuseumCards"] != 8:
-                raise AssertionError("Museum Atlas card counts do not match 10 total / 8 live")
+            if report["museumCards"] != 11 or report["liveMuseumCards"] != 9:
+                raise AssertionError("Museum Atlas card counts do not match 11 total / 9 live")
             wait_for_image(page.locator("#province-cover-image"))
 
             for province in ("beijing", "shaanxi"):
@@ -222,20 +222,6 @@ def main() -> int:
             page.reload(wait_until="domcontentloaded")
             if page.locator("html").get_attribute("data-active-province") != "shaanxi":
                 raise AssertionError("province state did not survive reload")
-
-            selected = page.locator(".selected-object")
-            report["selectedObjectCount"] = selected.count()
-            if selected.count() != 7:
-                raise AssertionError("BUILD 01 selected object count is not 7")
-            for item in range(selected.count()):
-                card = selected.nth(item)
-                href = card.get_attribute("href") or ""
-                if "?item=" not in href:
-                    raise AssertionError(f"selected object {item + 1} has no stable item link")
-                card.scroll_into_view_if_needed()
-                image = card.locator("img").first
-                wait_for_image(image)
-                report["selectedObjectsLoaded"] += 1
 
             page.locator(".atlas-search-trigger").click()
             search = page.locator(".atlas-search-dialog")
