@@ -1,0 +1,10 @@
+{
+  "id": "shangqiu-museum",
+  "title": "玄鸟生商 · 商丘博物馆",
+  "subtitle": "商丘博物馆数字图录：沿商文化、汉梁遗存与八关斋碑刻进入商丘的器物世界。",
+  "type": "catalog",
+  "status": "published",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "maintainer": "辛申奥"
+}
