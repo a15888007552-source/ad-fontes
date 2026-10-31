@@ -18,6 +18,7 @@
 | IV | **Conventus Musicologicus Occidentalis · 西方音乐学会第八届年会数字纪要** | `modules/proceedings/` | 2026 北京年会的交互式纪要,可按主题、会期、会场、发言人检索 | 已上线 |
 | V | **Musica Theorica · 乐理** | `modules/theory/` | 可听、可操作的音乐理论工坊,七条路径 | 已上线 |
 | VI | **中国博物馆行记 · Museum Atlas** | `modules/museum-atlas/` | 按省份进入各馆专题(见下表) | 已上线 |
+| VII | **Il mio quaderno · 意大利语单词本** | `modules/quaderno/` | 个人笔记词库(3741 词)的卡片复习、拼写自测与错词重练；例句机器编写、人工抽查；记录存在本机浏览器。源码在独立项目中构建，此处只放构建产物 | 已上线 |
 
 ### 博物馆专题(经 Museum Atlas 进入)
 
